@@ -427,6 +427,38 @@ namespace Amazon.LexModelBuildingService
 
         #endregion
         
+        #region  DeleteBotVersion
+
+        internal DeleteBotVersionResponse DeleteBotVersion(DeleteBotVersionRequest request)
+        {
+            var marshaller = new DeleteBotVersionRequestMarshaller();
+            var unmarshaller = DeleteBotVersionResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteBotVersionRequest,DeleteBotVersionResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteBotVersion operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteBotVersion operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/DeleteBotVersion">REST API Reference for DeleteBotVersion Operation</seealso>
+        public Task<DeleteBotVersionResponse> DeleteBotVersionAsync(DeleteBotVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DeleteBotVersionRequestMarshaller();
+            var unmarshaller = DeleteBotVersionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteBotVersionRequest,DeleteBotVersionResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeleteIntent
 
         internal DeleteIntentResponse DeleteIntent(DeleteIntentRequest request)
@@ -459,6 +491,38 @@ namespace Amazon.LexModelBuildingService
 
         #endregion
         
+        #region  DeleteIntentVersion
+
+        internal DeleteIntentVersionResponse DeleteIntentVersion(DeleteIntentVersionRequest request)
+        {
+            var marshaller = new DeleteIntentVersionRequestMarshaller();
+            var unmarshaller = DeleteIntentVersionResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteIntentVersionRequest,DeleteIntentVersionResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteIntentVersion operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteIntentVersion operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/DeleteIntentVersion">REST API Reference for DeleteIntentVersion Operation</seealso>
+        public Task<DeleteIntentVersionResponse> DeleteIntentVersionAsync(DeleteIntentVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DeleteIntentVersionRequestMarshaller();
+            var unmarshaller = DeleteIntentVersionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteIntentVersionRequest,DeleteIntentVersionResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeleteSlotType
 
         internal DeleteSlotTypeResponse DeleteSlotType(DeleteSlotTypeRequest request)
@@ -486,6 +550,38 @@ namespace Amazon.LexModelBuildingService
             var unmarshaller = DeleteSlotTypeResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteSlotTypeRequest,DeleteSlotTypeResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteSlotTypeVersion
+
+        internal DeleteSlotTypeVersionResponse DeleteSlotTypeVersion(DeleteSlotTypeVersionRequest request)
+        {
+            var marshaller = new DeleteSlotTypeVersionRequestMarshaller();
+            var unmarshaller = DeleteSlotTypeVersionResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteSlotTypeVersionRequest,DeleteSlotTypeVersionResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteSlotTypeVersion operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteSlotTypeVersion operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/DeleteSlotTypeVersion">REST API Reference for DeleteSlotTypeVersion Operation</seealso>
+        public Task<DeleteSlotTypeVersionResponse> DeleteSlotTypeVersionAsync(DeleteSlotTypeVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DeleteSlotTypeVersionRequestMarshaller();
+            var unmarshaller = DeleteSlotTypeVersionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteSlotTypeVersionRequest,DeleteSlotTypeVersionResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 

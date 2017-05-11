@@ -29,9 +29,8 @@ namespace Amazon.LexModelBuildingService.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteBot operation.
-    /// Deletes a bot. If you specify a bot version in the request, the API deletes only the
-    /// specified bot version. If you don't specify a version, the API deletes all versions
-    /// of the bot, including the <code>$LATEST</code> version. 
+    /// Deletes all versions of the bot, including the <code>$LATEST</code> version. To delete
+    /// a specific version of the bot, use the operation.
     /// 
     ///  
     /// <para>
@@ -49,7 +48,6 @@ namespace Amazon.LexModelBuildingService.Model
     public partial class DeleteBotRequest : AmazonLexModelBuildingServiceRequest
     {
         private string _name;
-        private string _version;
 
         /// <summary>
         /// Gets and sets the property Name. 
@@ -67,24 +65,6 @@ namespace Amazon.LexModelBuildingService.Model
         internal bool IsSetName()
         {
             return this._name != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property Version. 
-        /// <para>
-        /// The version of the bot.
-        /// </para>
-        /// </summary>
-        public string Version
-        {
-            get { return this._version; }
-            set { this._version = value; }
-        }
-
-        // Check to see if Version property is set
-        internal bool IsSetVersion()
-        {
-            return this._version != null;
         }
 
     }

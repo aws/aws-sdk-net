@@ -191,6 +191,23 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("LexModelBuildingService")]
+        public void DeleteBotVersionMarshallTest()
+        {
+            var operation = service_model.FindOperation("DeleteBotVersion");
+
+            var request = InstantiateClassGenerator.Execute<DeleteBotVersionRequest>();
+            var marshaller = new DeleteBotVersionRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("DeleteBotVersion", request, internalRequest, service_model);            
+
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("LexModelBuildingService")]
         public void DeleteIntentMarshallTest()
         {
             var operation = service_model.FindOperation("DeleteIntent");
@@ -208,6 +225,23 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("LexModelBuildingService")]
+        public void DeleteIntentVersionMarshallTest()
+        {
+            var operation = service_model.FindOperation("DeleteIntentVersion");
+
+            var request = InstantiateClassGenerator.Execute<DeleteIntentVersionRequest>();
+            var marshaller = new DeleteIntentVersionRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("DeleteIntentVersion", request, internalRequest, service_model);            
+
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("LexModelBuildingService")]
         public void DeleteSlotTypeMarshallTest()
         {
             var operation = service_model.FindOperation("DeleteSlotType");
@@ -217,6 +251,23 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
 
             var internalRequest = marshaller.Marshall(request);
             TestTools.RequestValidator.Validate("DeleteSlotType", request, internalRequest, service_model);            
+
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("LexModelBuildingService")]
+        public void DeleteSlotTypeVersionMarshallTest()
+        {
+            var operation = service_model.FindOperation("DeleteSlotTypeVersion");
+
+            var request = InstantiateClassGenerator.Execute<DeleteSlotTypeVersionRequest>();
+            var marshaller = new DeleteSlotTypeVersionRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("DeleteSlotTypeVersion", request, internalRequest, service_model);            
 
         }
 

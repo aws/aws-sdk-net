@@ -96,8 +96,7 @@ namespace Amazon.LexModelBuildingService.Model
     /// </para>
     ///  
     /// <para>
-    /// This operation requires permissions for the <code>lex:PutIntent</code> action. For
-    /// more information, see <a>auth-and-access-control</a>.
+    /// This operation requires permissions for the <code>lex:PutIntent</code> action.
     /// </para>
     /// </summary>
     public partial class PutIntentRequest : AmazonLexModelBuildingServiceRequest

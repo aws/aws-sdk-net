@@ -49,8 +49,19 @@ namespace Amazon.LexModelBuildingService.Model
     /// </para>
     ///  
     /// <para>
-    /// You can request information for up to 5 versions in each request. The response contains
-    /// information about a maximum of 100 utterances for each version.
+    /// Data is available for the last 15 days. You can request information for up to 5 versions
+    /// in each request. The response contains information about a maximum of 100 utterances
+    /// for each version.
+    /// </para>
+    ///  
+    /// <para>
+    /// If the bot's <code>childDirected</code> field is set to <code>true</code>, utterances
+    /// for the bot are not stored and cannot be retrieved with the <code>GetUtterancesView</code>
+    /// operation. For more information, see .
+    /// </para>
+    ///  
+    /// <para>
+    /// This operation requires permissions for the <code>lex:GetUtterancesView</code> action.
     /// </para>
     /// </summary>
     public partial class GetUtterancesViewRequest : AmazonLexModelBuildingServiceRequest

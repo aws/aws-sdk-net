@@ -28,38 +28,24 @@ using Amazon.Runtime.Internal;
 namespace Amazon.LexModelBuildingService.Model
 {
     /// <summary>
-    /// Container for the parameters to the DeleteSlotType operation.
-    /// Deletes all versions of the slot type, including the <code>$LATEST</code> version.
-    /// To delete a specific version of the slot type, use the operation.
+    /// Container for the parameters to the DeleteIntentVersion operation.
+    /// Deletes a specific version of an intent. To delete all versions of a intent, use the
+    /// operation. 
     /// 
     ///  
     /// <para>
-    ///  You can delete a version of a slot type only if it is not referenced. To delete a
-    /// slot type that is referred to in one or more intents, you must remove those references
-    /// first. 
-    /// </para>
-    ///  <note> 
-    /// <para>
-    ///  If you get the <code>ResourceInUseException</code> exception, the exception provides
-    /// an example reference that shows the intent where the slot type is referenced. To remove
-    /// the reference to the slot type, either update the intent or delete it. If you get
-    /// the same exception when you attempt to delete the slot type again, repeat until the
-    /// slot type has no references and the <code>DeleteSlotType</code> call is successful.
-    /// 
-    /// </para>
-    ///  </note> 
-    /// <para>
-    /// This operation requires permission for the <code>lex:DeleteSlotType</code> action.
+    /// This operation requires permissions for the <code>lex:DeleteIntentVersion</code> action.
     /// </para>
     /// </summary>
-    public partial class DeleteSlotTypeRequest : AmazonLexModelBuildingServiceRequest
+    public partial class DeleteIntentVersionRequest : AmazonLexModelBuildingServiceRequest
     {
         private string _name;
+        private string _version;
 
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the slot type. The name is case sensitive. 
+        /// The name of the intent.
         /// </para>
         /// </summary>
         public string Name
@@ -72,6 +58,25 @@ namespace Amazon.LexModelBuildingService.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Version. 
+        /// <para>
+        /// The version of the intent to delete. You cannot delete the <code>$LATEST</code> version
+        /// of the intent. To delete the <code>$LATEST</code> version, use the operation.
+        /// </para>
+        /// </summary>
+        public string Version
+        {
+            get { return this._version; }
+            set { this._version = value; }
+        }
+
+        // Check to see if Version property is set
+        internal bool IsSetVersion()
+        {
+            return this._version != null;
         }
 
     }

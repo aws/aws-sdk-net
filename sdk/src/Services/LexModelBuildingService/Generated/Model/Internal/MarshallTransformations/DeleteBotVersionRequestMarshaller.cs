@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.LexModelBuildingService.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// DeleteIntent Request Marshaller
+    /// DeleteBotVersion Request Marshaller
     /// </summary>       
-    public class DeleteIntentRequestMarshaller : IMarshaller<IRequest, DeleteIntentRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class DeleteBotVersionRequestMarshaller : IMarshaller<IRequest, DeleteBotVersionRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.LexModelBuildingService.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((DeleteIntentRequest)input);
+            return this.Marshall((DeleteBotVersionRequest)input);
         }
 
         /// <summary>
@@ -52,15 +52,18 @@ namespace Amazon.LexModelBuildingService.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(DeleteIntentRequest publicRequest)
+        public IRequest Marshall(DeleteBotVersionRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.LexModelBuildingService");
             request.HttpMethod = "DELETE";
 
-            string uriResourcePath = "/intents/{name}";
+            string uriResourcePath = "/bots/{name}/versions/{version}";
             if (!publicRequest.IsSetName())
                 throw new AmazonLexModelBuildingServiceException("Request object does not have required field Name set");
             uriResourcePath = uriResourcePath.Replace("{name}", StringUtils.FromString(publicRequest.Name));
+            if (!publicRequest.IsSetVersion())
+                throw new AmazonLexModelBuildingServiceException("Request object does not have required field Version set");
+            uriResourcePath = uriResourcePath.Replace("{version}", StringUtils.FromString(publicRequest.Version));
             request.ResourcePath = uriResourcePath;
 
             return request;

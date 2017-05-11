@@ -31,6 +31,12 @@ namespace Amazon.LexModelBuildingService.Model
     /// Container for the parameters to the GetBotChannelAssociation operation.
     /// Returns information about the association between an Amazon Lex bot and a messaging
     /// platform.
+    /// 
+    ///  
+    /// <para>
+    /// This operation requires permissions for the <code>lex:GetBotChannelAssociation</code>
+    /// action.
+    /// </para>
     /// </summary>
     public partial class GetBotChannelAssociationRequest : AmazonLexModelBuildingServiceRequest
     {

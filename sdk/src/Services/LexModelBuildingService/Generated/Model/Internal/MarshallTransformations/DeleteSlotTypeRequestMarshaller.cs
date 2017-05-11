@@ -62,23 +62,6 @@ namespace Amazon.LexModelBuildingService.Model.Internal.MarshallTransformations
                 throw new AmazonLexModelBuildingServiceException("Request object does not have required field Name set");
             uriResourcePath = uriResourcePath.Replace("{name}", StringUtils.FromString(publicRequest.Name));
             request.ResourcePath = uriResourcePath;
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
-            {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetVersion())
-                {
-                    context.Writer.WritePropertyName("version");
-                    context.Writer.Write(publicRequest.Version);
-                }
-
-        
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
-            }
-
 
             return request;
         }

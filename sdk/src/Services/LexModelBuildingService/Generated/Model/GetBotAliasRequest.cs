@@ -31,6 +31,11 @@ namespace Amazon.LexModelBuildingService.Model
     /// Container for the parameters to the GetBotAlias operation.
     /// Returns information about an Amazon Lex bot alias. For more information about aliases,
     /// see <a>versioning-aliases</a>.
+    /// 
+    ///  
+    /// <para>
+    /// This operation requires permissions for the <code>lex:GetBotAlias</code> action.
+    /// </para>
     /// </summary>
     public partial class GetBotAliasRequest : AmazonLexModelBuildingServiceRequest
     {

@@ -29,7 +29,13 @@ namespace Amazon.LexModelBuildingService.Model
 {
     /// <summary>
     /// Container for the parameters to the GetBotChannelAssociations operation.
-    /// Returns a list of all of the channels associated with the specified bot.
+    /// Returns a list of all of the channels associated with the specified bot. 
+    /// 
+    ///  
+    /// <para>
+    /// The <code>GetBotChannelAssociations</code> operation requires permissions for the
+    /// <code>lex:GetBotChannelAssociations</code> action.
+    /// </para>
     /// </summary>
     public partial class GetBotChannelAssociationsRequest : AmazonLexModelBuildingServiceRequest
     {

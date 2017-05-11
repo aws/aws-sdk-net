@@ -70,7 +70,7 @@ namespace Amazon.LexModelBuildingService.Model
         /// <summary>
         /// Gets and sets the property Checksum. 
         /// <para>
-        /// Checksum identifying the version of the boat that was created.
+        /// Checksum identifying the version of the bot that was created.
         /// </para>
         /// </summary>
         public string Checksum

@@ -44,6 +44,10 @@ namespace Amazon.LexModelBuildingService.Model
     /// The <code>GetIntentVersions</code> operation always returns at least one version,
     /// the <code>$LATEST</code> version.
     /// </para>
+    ///  
+    /// <para>
+    /// This operation requires permissions for the <code>lex:GetIntentVersions</code> action.
+    /// </para>
     /// </summary>
     public partial class GetIntentVersionsRequest : AmazonLexModelBuildingServiceRequest
     {

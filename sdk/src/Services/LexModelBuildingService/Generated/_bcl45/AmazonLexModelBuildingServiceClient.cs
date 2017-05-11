@@ -469,9 +469,8 @@ namespace Amazon.LexModelBuildingService
 
 
         /// <summary>
-        /// Deletes a bot. If you specify a bot version in the request, the API deletes only the
-        /// specified bot version. If you don't specify a version, the API deletes all versions
-        /// of the bot, including the <code>$LATEST</code> version. 
+        /// Deletes all versions of the bot, including the <code>$LATEST</code> version. To delete
+        /// a specific version of the bot, use the operation.
         /// 
         ///  
         /// <para>
@@ -704,14 +703,94 @@ namespace Amazon.LexModelBuildingService
 
         #endregion
         
+        #region  DeleteBotVersion
+
+
+        /// <summary>
+        /// Deletes a specific version of a bot. To delete all versions of a bot, use the operation.
+        /// 
+        /// 
+        ///  
+        /// <para>
+        /// This operation requires permissions for the <code>lex:DeleteBotVersion</code> action.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteBotVersion service method.</param>
+        /// 
+        /// <returns>The response from the DeleteBotVersion service method, as returned by LexModelBuildingService.</returns>
+        /// <exception cref="Amazon.LexModelBuildingService.Model.BadRequestException">
+        /// The request is not well formed. For example, a value is invalid or a required field
+        /// is missing. Check the field values, and try again.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelBuildingService.Model.ConflictException">
+        /// There was a conflict processing the request. Try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelBuildingService.Model.InternalFailureException">
+        /// An internal Amazon Lex error occurred. Try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelBuildingService.Model.LimitExceededException">
+        /// The request exceeded a limit. Try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelBuildingService.Model.NotFoundException">
+        /// The resource specified in the request was not found. Check the resource and try again.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelBuildingService.Model.ResourceInUseException">
+        /// The resource that you are attempting to delete is referred to by another resource.
+        /// Use this information to remove references to the resource that you are trying to delete.
+        /// 
+        ///  
+        /// <para>
+        /// The body of the exception contains a JSON object that describes the resource.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>{ "resourceType": BOT | BOTALIAS | BOTCHANNEL | INTENT,</code> 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>"resourceReference": {</code> 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>"name": <i>string</i>, "version": <i>string</i> } }</code> 
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/DeleteBotVersion">REST API Reference for DeleteBotVersion Operation</seealso>
+        public DeleteBotVersionResponse DeleteBotVersion(DeleteBotVersionRequest request)
+        {
+            var marshaller = new DeleteBotVersionRequestMarshaller();
+            var unmarshaller = DeleteBotVersionResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteBotVersionRequest,DeleteBotVersionResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteBotVersion operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteBotVersion operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/DeleteBotVersion">REST API Reference for DeleteBotVersion Operation</seealso>
+        public Task<DeleteBotVersionResponse> DeleteBotVersionAsync(DeleteBotVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DeleteBotVersionRequestMarshaller();
+            var unmarshaller = DeleteBotVersionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteBotVersionRequest,DeleteBotVersionResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeleteIntent
 
 
         /// <summary>
-        /// Deletes an intent. If you specify a version in the request, the API deletes only the
-        /// specified version of the intent. If you don't specify a version in the request, the
-        /// API deletes all of the versions of the intent, including the <code>$LATEST</code>
-        /// version. 
+        /// Deletes all versions of the intent, including the <code>$LATEST</code> version. To
+        /// delete a specific version of the intent, use the operation.
         /// 
         ///  
         /// <para>
@@ -803,13 +882,94 @@ namespace Amazon.LexModelBuildingService
 
         #endregion
         
+        #region  DeleteIntentVersion
+
+
+        /// <summary>
+        /// Deletes a specific version of an intent. To delete all versions of a intent, use the
+        /// operation. 
+        /// 
+        ///  
+        /// <para>
+        /// This operation requires permissions for the <code>lex:DeleteIntentVersion</code> action.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteIntentVersion service method.</param>
+        /// 
+        /// <returns>The response from the DeleteIntentVersion service method, as returned by LexModelBuildingService.</returns>
+        /// <exception cref="Amazon.LexModelBuildingService.Model.BadRequestException">
+        /// The request is not well formed. For example, a value is invalid or a required field
+        /// is missing. Check the field values, and try again.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelBuildingService.Model.ConflictException">
+        /// There was a conflict processing the request. Try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelBuildingService.Model.InternalFailureException">
+        /// An internal Amazon Lex error occurred. Try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelBuildingService.Model.LimitExceededException">
+        /// The request exceeded a limit. Try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelBuildingService.Model.NotFoundException">
+        /// The resource specified in the request was not found. Check the resource and try again.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelBuildingService.Model.ResourceInUseException">
+        /// The resource that you are attempting to delete is referred to by another resource.
+        /// Use this information to remove references to the resource that you are trying to delete.
+        /// 
+        ///  
+        /// <para>
+        /// The body of the exception contains a JSON object that describes the resource.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>{ "resourceType": BOT | BOTALIAS | BOTCHANNEL | INTENT,</code> 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>"resourceReference": {</code> 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>"name": <i>string</i>, "version": <i>string</i> } }</code> 
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/DeleteIntentVersion">REST API Reference for DeleteIntentVersion Operation</seealso>
+        public DeleteIntentVersionResponse DeleteIntentVersion(DeleteIntentVersionRequest request)
+        {
+            var marshaller = new DeleteIntentVersionRequestMarshaller();
+            var unmarshaller = DeleteIntentVersionResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteIntentVersionRequest,DeleteIntentVersionResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteIntentVersion operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteIntentVersion operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/DeleteIntentVersion">REST API Reference for DeleteIntentVersion Operation</seealso>
+        public Task<DeleteIntentVersionResponse> DeleteIntentVersionAsync(DeleteIntentVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DeleteIntentVersionRequestMarshaller();
+            var unmarshaller = DeleteIntentVersionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteIntentVersionRequest,DeleteIntentVersionResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeleteSlotType
 
 
         /// <summary>
-        /// Deletes a slot type. If you specify a version in the request, the API deletes the
-        /// specific version. If you don't specify a version in the request, the API deletes all
-        /// versions of the slot type, including the <code>$LATEST</code> version. 
+        /// Deletes all versions of the slot type, including the <code>$LATEST</code> version.
+        /// To delete a specific version of the slot type, use the operation.
         /// 
         ///  
         /// <para>
@@ -819,11 +979,12 @@ namespace Amazon.LexModelBuildingService
         /// </para>
         ///  <note> 
         /// <para>
-        ///  If you get the <code>SlotTypeInUse</code> exception, the exception provides an example
-        /// reference that shows the intent where the slot type is referenced. To remove the reference
-        /// to the slot type, either update the intent or delete it. If you get the same exception
-        /// when you attempt to delete the intent again, repeat until the intent has no references
-        /// and the <code>DeleteSlotType</code> call is successful. 
+        ///  If you get the <code>ResourceInUseException</code> exception, the exception provides
+        /// an example reference that shows the intent where the slot type is referenced. To remove
+        /// the reference to the slot type, either update the intent or delete it. If you get
+        /// the same exception when you attempt to delete the slot type again, repeat until the
+        /// slot type has no references and the <code>DeleteSlotType</code> call is successful.
+        /// 
         /// </para>
         ///  </note> 
         /// <para>
@@ -900,6 +1061,89 @@ namespace Amazon.LexModelBuildingService
 
         #endregion
         
+        #region  DeleteSlotTypeVersion
+
+
+        /// <summary>
+        /// Deletes a specific version of a slot type. To delete all versions of a slot type,
+        /// use the operation. 
+        /// 
+        ///  
+        /// <para>
+        /// This operation requires permissions for the <code>lex:DeleteSlotTypeVersion</code>
+        /// action.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteSlotTypeVersion service method.</param>
+        /// 
+        /// <returns>The response from the DeleteSlotTypeVersion service method, as returned by LexModelBuildingService.</returns>
+        /// <exception cref="Amazon.LexModelBuildingService.Model.BadRequestException">
+        /// The request is not well formed. For example, a value is invalid or a required field
+        /// is missing. Check the field values, and try again.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelBuildingService.Model.ConflictException">
+        /// There was a conflict processing the request. Try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelBuildingService.Model.InternalFailureException">
+        /// An internal Amazon Lex error occurred. Try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelBuildingService.Model.LimitExceededException">
+        /// The request exceeded a limit. Try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelBuildingService.Model.NotFoundException">
+        /// The resource specified in the request was not found. Check the resource and try again.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelBuildingService.Model.ResourceInUseException">
+        /// The resource that you are attempting to delete is referred to by another resource.
+        /// Use this information to remove references to the resource that you are trying to delete.
+        /// 
+        ///  
+        /// <para>
+        /// The body of the exception contains a JSON object that describes the resource.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>{ "resourceType": BOT | BOTALIAS | BOTCHANNEL | INTENT,</code> 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>"resourceReference": {</code> 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>"name": <i>string</i>, "version": <i>string</i> } }</code> 
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/DeleteSlotTypeVersion">REST API Reference for DeleteSlotTypeVersion Operation</seealso>
+        public DeleteSlotTypeVersionResponse DeleteSlotTypeVersion(DeleteSlotTypeVersionRequest request)
+        {
+            var marshaller = new DeleteSlotTypeVersionRequestMarshaller();
+            var unmarshaller = DeleteSlotTypeVersionResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteSlotTypeVersionRequest,DeleteSlotTypeVersionResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteSlotTypeVersion operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteSlotTypeVersion operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/DeleteSlotTypeVersion">REST API Reference for DeleteSlotTypeVersion Operation</seealso>
+        public Task<DeleteSlotTypeVersionResponse> DeleteSlotTypeVersionAsync(DeleteSlotTypeVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DeleteSlotTypeVersionRequestMarshaller();
+            var unmarshaller = DeleteSlotTypeVersionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteSlotTypeVersionRequest,DeleteSlotTypeVersionResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeleteUtterances
 
 
@@ -908,10 +1152,15 @@ namespace Amazon.LexModelBuildingService
         /// 
         ///  
         /// <para>
-        /// When you create or update a bot using the operation, configure your bot to store user
-        /// utterances by setting <code>privacySetting</code> to <code>STORE_UTTERANCES</code>.
-        /// Use <code>DeleteUtterances</code> to remove the stored utterances for a specific user
-        /// .
+        /// Amazon Lex stores the utterances that users send to your bot unless the <code>childDirected</code>
+        /// field in the bot is set to <code>true</code>. Utterances are stored for 15 days for
+        /// use with the operation, and then stored indefinately for use in improving the ability
+        /// of your bot to respond to user input.
+        /// </para>
+        ///  
+        /// <para>
+        /// Use the <code>DeleteStoredUtterances</code> operation to manually delete stored utterances
+        /// for a specific user.
         /// </para>
         ///  
         /// <para>
@@ -1029,6 +1278,11 @@ namespace Amazon.LexModelBuildingService
         /// <summary>
         /// Returns information about an Amazon Lex bot alias. For more information about aliases,
         /// see <a>versioning-aliases</a>.
+        /// 
+        ///  
+        /// <para>
+        /// This operation requires permissions for the <code>lex:GetBotAlias</code> action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetBotAlias service method.</param>
         /// 
@@ -1081,6 +1335,11 @@ namespace Amazon.LexModelBuildingService
 
         /// <summary>
         /// Returns a list of aliases for a specified Amazon Lex bot.
+        /// 
+        ///  
+        /// <para>
+        /// This operation requires permissions for the <code>lex:GetBotAliases</code> action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetBotAliases service method.</param>
         /// 
@@ -1131,6 +1390,12 @@ namespace Amazon.LexModelBuildingService
         /// <summary>
         /// Returns information about the association between an Amazon Lex bot and a messaging
         /// platform.
+        /// 
+        ///  
+        /// <para>
+        /// This operation requires permissions for the <code>lex:GetBotChannelAssociation</code>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetBotChannelAssociation service method.</param>
         /// 
@@ -1182,7 +1447,13 @@ namespace Amazon.LexModelBuildingService
 
 
         /// <summary>
-        /// Returns a list of all of the channels associated with the specified bot.
+        /// Returns a list of all of the channels associated with the specified bot. 
+        /// 
+        ///  
+        /// <para>
+        /// The <code>GetBotChannelAssociations</code> operation requires permissions for the
+        /// <code>lex:GetBotChannelAssociations</code> action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetBotChannelAssociations service method.</param>
         /// 
@@ -1313,6 +1584,10 @@ namespace Amazon.LexModelBuildingService
         /// <para>
         /// The <code>GetBotVersions</code> operation always returns at least one version, the
         /// <code>$LATEST</code> version.
+        /// </para>
+        ///  
+        /// <para>
+        /// This operation requires permissions for the <code>lex:GetBotVersions</code> action.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetBotVersions service method.</param>
@@ -1676,6 +1951,10 @@ namespace Amazon.LexModelBuildingService
         /// The <code>GetIntentVersions</code> operation always returns at least one version,
         /// the <code>$LATEST</code> version.
         /// </para>
+        ///  
+        /// <para>
+        /// This operation requires permissions for the <code>lex:GetIntentVersions</code> action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetIntentVersions service method.</param>
         /// 
@@ -1867,6 +2146,10 @@ namespace Amazon.LexModelBuildingService
         /// The <code>GetSlotTypeVersions</code> operation always returns at least one version,
         /// the <code>$LATEST</code> version.
         /// </para>
+        ///  
+        /// <para>
+        /// This operation requires permissions for the <code>lex:GetSlotTypeVersions</code> action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetSlotTypeVersions service method.</param>
         /// 
@@ -1938,8 +2221,19 @@ namespace Amazon.LexModelBuildingService
         /// </para>
         ///  
         /// <para>
-        /// You can request information for up to 5 versions in each request. The response contains
-        /// information about a maximum of 100 utterances for each version.
+        /// Data is available for the last 15 days. You can request information for up to 5 versions
+        /// in each request. The response contains information about a maximum of 100 utterances
+        /// for each version.
+        /// </para>
+        ///  
+        /// <para>
+        /// If the bot's <code>childDirected</code> field is set to <code>true</code>, utterances
+        /// for the bot are not stored and cannot be retrieved with the <code>GetUtterancesView</code>
+        /// operation. For more information, see .
+        /// </para>
+        ///  
+        /// <para>
+        /// This operation requires permissions for the <code>lex:GetUtterancesView</code> action.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetUtterancesView service method.</param>
@@ -1990,7 +2284,7 @@ namespace Amazon.LexModelBuildingService
 
         /// <summary>
         /// Creates an Amazon Lex conversational bot or replaces an existing bot. When you create
-        /// or update an intent you only required to specify a name. You can use this to add intents
+        /// or update a bot you only required to specify a name. You can use this to add intents
         /// later, or to remove intents from an existing bot. When you create a bot with a name
         /// only, the bot is created or updated but Amazon Lex returns the <code/> response <code>FAILED</code>.
         /// You can build the bot after you add one or more intents. For more information about
@@ -2194,8 +2488,7 @@ namespace Amazon.LexModelBuildingService
         /// </para>
         ///  
         /// <para>
-        /// This operation requires permissions for the <code>lex:PutIntent</code> action. For
-        /// more information, see <a>auth-and-access-control</a>.
+        /// This operation requires permissions for the <code>lex:PutIntent</code> action.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutIntent service method.</param>
