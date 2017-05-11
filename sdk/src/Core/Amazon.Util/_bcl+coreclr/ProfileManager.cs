@@ -897,7 +897,7 @@ namespace Amazon.Util
             SAMLImmutableCredentials session = null;
             lock (_synclock)
             {
-                if (_session != null && _session.Expires <= DateTime.UtcNow)
+                if (_session != null && _session.Expires <= AWSSDKUtils.CorrectedUtcNow)
                 {
                     UpdateProfileSessionData(null);
                     _session = null;

@@ -13,6 +13,7 @@
  * permissions and limitations under the License.
  */
 using Amazon.Runtime.Internal.Util;
+using Amazon.Util;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -153,7 +154,7 @@ namespace Amazon.Runtime
                 // get the expiry first - if the credentials have expired we can then
                 // ignore the data
                 var expires = DateTime.Parse((string)o[ExpiresProperty], CultureInfo.InvariantCulture).ToUniversalTime();
-                if (expires <= DateTime.UtcNow)
+                if (expires <= AWSSDKUtils.CorrectedUtcNow)
                 {
                     Logger.GetLogger(typeof(SAMLImmutableCredentials)).InfoFormat("Skipping serialized credentials due to expiry.");
                     return null;

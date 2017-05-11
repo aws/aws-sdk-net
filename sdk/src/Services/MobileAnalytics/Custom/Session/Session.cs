@@ -165,7 +165,7 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
                     return;
                 }
 
-                DateTime currentTime = DateTime.UtcNow;
+                DateTime currentTime = AWSSDKUtils.CorrectedUtcNow;
                 if (this.StopTime.Value < currentTime)
                 {
                     // new session 
@@ -192,8 +192,8 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
         private void NewSessionHelper()
         {
 
-            StartTime = DateTime.UtcNow;
-            PreStartTime = DateTime.UtcNow;
+            StartTime = AWSSDKUtils.CorrectedUtcNow;
+            PreStartTime = AWSSDKUtils.CorrectedUtcNow;
             StopTime = null;
             SessionId = Guid.NewGuid().ToString();
             Duration = 0;
@@ -208,7 +208,7 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
 
         private void StopSessionHelper()
         {
-            DateTime currentTime = DateTime.UtcNow;
+            DateTime currentTime = AWSSDKUtils.CorrectedUtcNow;
 
             // update session info
             StopTime = currentTime;
@@ -228,7 +228,7 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
 
         private void PauseSessionHelper()
         {
-            DateTime currentTime = DateTime.UtcNow;
+            DateTime currentTime = AWSSDKUtils.CorrectedUtcNow;
 
             // update session info
             StopTime = currentTime;
@@ -247,7 +247,7 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
 
         private void ResumeSessionHelper()
         {
-            DateTime currentTime = DateTime.UtcNow;
+            DateTime currentTime = AWSSDKUtils.CorrectedUtcNow;
 
             // update session info
             PreStartTime = currentTime;

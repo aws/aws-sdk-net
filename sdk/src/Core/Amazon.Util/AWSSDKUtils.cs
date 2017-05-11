@@ -825,7 +825,9 @@ namespace Amazon.Util
         }
 
         /// <summary>
-        /// Returns DateTime.UtcNow + ClockOffset when
+        /// Returns DateTime.UtcNow + ManualClockCorrection when
+        /// <seealso cref="AWSConfigs.ManualClockCorrection"/> is set.
+        /// Otherwise returns DateTime.UtcNow + ClockOffset when
         /// <seealso cref="AWSConfigs.CorrectForClockSkew"/> is true.
         /// This value should be used when constructing requests, as it
         /// will represent accurate time w.r.t. AWS servers.
@@ -834,8 +836,10 @@ namespace Amazon.Util
         {
             get
             {
-                var now = DateTime.UtcNow;
-                if (AWSConfigs.CorrectForClockSkew)
+                var now = AWSConfigs.utcNowSource();
+                if (AWSConfigs.ManualClockCorrection.HasValue)
+                    now += AWSConfigs.ManualClockCorrection.Value;
+                else if (AWSConfigs.CorrectForClockSkew)
                     now += AWSConfigs.ClockOffset;
                 return now;
             }

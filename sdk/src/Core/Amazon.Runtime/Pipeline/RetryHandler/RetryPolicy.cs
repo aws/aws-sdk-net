@@ -173,7 +173,7 @@ namespace Amazon.Runtime
 
             if (isHead || isClockskewErrorCode)
             {
-                var realNow = DateTime.UtcNow;
+                var realNow = AWSConfigs.utcNowSource();
                 var correctedNow = AWSSDKUtils.CorrectedUtcNow;
 
                 DateTime serverTime;
@@ -199,7 +199,7 @@ namespace Amazon.Runtime
 
                         // Always set the correction, for informational purposes
                         AWSConfigs.ClockOffset = newCorrection;
-                        var shouldRetry = AWSConfigs.CorrectForClockSkew;
+                        var shouldRetry = AWSConfigs.CorrectForClockSkew && !AWSConfigs.ManualClockCorrection.HasValue;
 
                         // Only retry if clock skew correction is not disabled
                         if (shouldRetry)

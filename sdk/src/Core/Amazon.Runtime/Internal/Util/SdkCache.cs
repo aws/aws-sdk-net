@@ -326,7 +326,7 @@ namespace Amazon.Runtime.Internal.Util
             lock (CacheLock)
             {
                 Contents.Clear();
-                LastCacheClean = DateTime.Now;
+                LastCacheClean = AWSSDKUtils.CorrectedUtcNow.ToLocalTime();
             }
         }
         public List<TKey> Keys
@@ -454,7 +454,7 @@ namespace Amazon.Runtime.Internal.Util
         {
             if (item == null)
                 return false;
-            var cutoff = DateTime.Now - this.MaximumItemLifespan;
+            var cutoff = AWSSDKUtils.CorrectedUtcNow.ToLocalTime() - this.MaximumItemLifespan;
             if (item.LastUseTime < cutoff)
                 return false;
 
@@ -462,13 +462,13 @@ namespace Amazon.Runtime.Internal.Util
         }
         private void RemoveOldItems_Locked()
         {
-            if (LastCacheClean + CacheClearPeriod > DateTime.Now)
+            if (LastCacheClean + CacheClearPeriod > AWSSDKUtils.CorrectedUtcNow.ToLocalTime())
                 return;
 
             // Remove all items that were not accessed since the cutoff.
             // Using a cutoff is more optimal than item.Age, as we only need
             // to do DateTime calculation once, not for each item.
-            var cutoff = DateTime.Now - MaximumItemLifespan;
+            var cutoff = AWSSDKUtils.CorrectedUtcNow.ToLocalTime() - MaximumItemLifespan;
 
             var keysToRemove = new List<TKey>();
             foreach (var kvp in Contents)
@@ -483,7 +483,7 @@ namespace Amazon.Runtime.Internal.Util
             foreach (var key in keysToRemove)
                 Contents.Remove(key);
 
-            LastCacheClean = DateTime.Now;
+            LastCacheClean = AWSSDKUtils.CorrectedUtcNow.ToLocalTime();
         }
 
         private class CacheItem<T>
@@ -494,7 +494,7 @@ namespace Amazon.Runtime.Internal.Util
             {
                 get
                 {
-                    LastUseTime = DateTime.Now;
+                    LastUseTime = AWSSDKUtils.CorrectedUtcNow.ToLocalTime();
                     return _value;
                 }
                 private set
@@ -507,7 +507,7 @@ namespace Amazon.Runtime.Internal.Util
             public CacheItem(T value)
             {
                 Value = value;
-                LastUseTime = DateTime.Now;
+                LastUseTime = AWSSDKUtils.CorrectedUtcNow.ToLocalTime();
             }
         }
 

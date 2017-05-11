@@ -279,7 +279,7 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager
             if (null == customEvent)
                 throw new ArgumentNullException("customEvent");
 
-            customEvent.Timestamp = DateTime.UtcNow;
+            customEvent.Timestamp = AWSSDKUtils.CorrectedUtcNow;
             Amazon.MobileAnalytics.Model.Event modelEvent = customEvent.ConvertToMobileAnalyticsModelEvent(this.Session);
 
             BackgroundDeliveryClient.EnqueueEventsForDelivery(modelEvent);

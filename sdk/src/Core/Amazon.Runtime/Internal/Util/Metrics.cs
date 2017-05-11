@@ -534,7 +534,7 @@ namespace Amazon.Runtime.Internal.Util
         public MetricError(Metric metric, string messageFormat, params object[] args) : this(metric, null, messageFormat, args) { }
         public MetricError(Metric metric, Exception exception, string messageFormat, params object[] args)
         {
-            Time = DateTime.Now;
+            Time = AWSSDKUtils.CorrectedUtcNow.ToLocalTime();
             try
             {
                 Message = string.Format(CultureInfo.InvariantCulture, messageFormat, args);

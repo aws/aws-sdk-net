@@ -13,6 +13,7 @@
  * permissions and limitations under the License.
  */
 using Amazon.Runtime.Internal.Util;
+using Amazon.Util;
 using System;
 using System.Globalization;
 
@@ -128,7 +129,7 @@ namespace Amazon.Runtime
                 else
                     errorMessage = string.Format(CultureInfo.InvariantCulture,
                         "The retrieved credentials have already expired: Now = {0}, Credentials expiration = {1}",
-                        DateTime.Now, state.Expiration);
+                        AWSSDKUtils.CorrectedUtcNow.ToLocalTime(), state.Expiration);
                 throw new AmazonClientException(errorMessage);
             }
 
@@ -142,7 +143,7 @@ namespace Amazon.Runtime
                 var logger = Logger.GetLogger(typeof(RefreshingAWSCredentials));
                 logger.InfoFormat(
                     "The preempt expiry time is set too high: Current time = {0}, Credentials expiry time = {1}, Preempt expiry time = {2}.",
-                    DateTime.Now,
+                    AWSSDKUtils.CorrectedUtcNow.ToLocalTime(),
                     currentState.Expiration,
                     PreemptExpiryTime);
             }
@@ -160,7 +161,7 @@ namespace Amazon.Runtime
                     return true;
 
                 //  it's past the expiration time
-                var now = DateTime.UtcNow;
+                var now = AWSSDKUtils.CorrectedUtcNow;
                 var exp = currentState.Expiration.ToUniversalTime();
                 return (now > exp);
             }
