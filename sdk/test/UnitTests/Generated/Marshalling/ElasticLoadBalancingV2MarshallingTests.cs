@@ -284,6 +284,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("ElasticLoadBalancingV2")]
+        public void DescribeAccountLimitsMarshallTest()
+        {
+            var operation = service_model.FindOperation("DescribeAccountLimits");
+
+            var request = InstantiateClassGenerator.Execute<DescribeAccountLimitsRequest>();
+            var marshaller = new DescribeAccountLimitsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = DescribeAccountLimitsResponseUnmarshaller.Instance.Unmarshall(context)
+                as DescribeAccountLimitsResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("ElasticLoadBalancingV2")]
         public void DescribeListenersMarshallTest()
         {
             var operation = service_model.FindOperation("DescribeListeners");
