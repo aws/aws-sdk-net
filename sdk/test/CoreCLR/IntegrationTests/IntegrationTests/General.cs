@@ -132,23 +132,34 @@ namespace Amazon.DNXCore.IntegrationTests
             }
         }
 
+        //[Fact]
+        public void TestManualClockCorrection()
+        {
+            TestClients(TestServiceCallForManualClockCorrection);
+        }
+
         // This test verifies that all service clients are able to
         // correctly handle clock skew errors.
         // By default it only tests a small subset of services.
         //[Fact]
         public void TestClockSkewCorrection()
         {
+            TestClients(TestServiceCallForClockSkew);
+        }
+
+        private void TestClients(Action<Action> serviceCall)
+        {
             bool allPassed = true;
             foreach (var clientTest in clientTests)
             {
                 try
                 {
-                    TestClient(clientTest);
+                    TestClient(clientTest, serviceCall);
                     Console.WriteLine("Client test succeeded");
                 }
-                catch
+                catch (Exception e)
                 {
-                    Console.WriteLine("Client test FAILED");
+                    Console.WriteLine("Client test FAILED: " + e);
                     allPassed = false;
                 }
             }
@@ -156,58 +167,91 @@ namespace Amazon.DNXCore.IntegrationTests
             Assert.True(allPassed);
         }
 
+        private static void TestServiceCallForManualClockCorrection(Action action)
+        {
+            var oldManualClockCorrection = AWSConfigs.ManualClockCorrection;
+            var oldCorrectClockSkew = AWSConfigs.CorrectForClockSkew;
+            var oldClockSkewCorrection = AWSConfigs.ClockOffset;
+            var oldUtcNowSource = GetUtcNowSource();
+
+            try
+            {
+                AWSConfigs.CorrectForClockSkew = false;
+
+                SetUtcNowSource(() => DateTime.UtcNow + IncorrectPositiveClockSkewOffset);
+                AWSConfigs.ManualClockCorrection = null;
+                AssertExtensions.ExpectException(action);
+
+                AWSConfigs.ManualClockCorrection = IncorrectPositiveClockSkewOffset.Negate();
+                action();
+
+                SetUtcNowSource(() => DateTime.UtcNow + IncorrectNegativeClockSkewOffset);
+                AWSConfigs.ManualClockCorrection = IncorrectNegativeClockSkewOffset.Negate();
+                action();
+
+                AWSConfigs.ManualClockCorrection = TimeSpan.FromTicks(IncorrectNegativeClockSkewOffset.Negate().Ticks * 2);
+                AssertExtensions.ExpectException(action);
+
+                AWSConfigs.ManualClockCorrection = TimeSpan.Zero;
+                AssertExtensions.ExpectException(action);
+            }
+            finally
+            {
+                AWSConfigs.ManualClockCorrection = oldManualClockCorrection;
+                AWSConfigs.CorrectForClockSkew = oldCorrectClockSkew;
+                SetClockSkewCorrection(oldClockSkewCorrection);
+                SetUtcNowSource(oldUtcNowSource);
+            }
+        }
+
         private static void TestServiceCallForClockSkew(Action action)
         {
             var oldCorrectClockSkew = AWSConfigs.CorrectForClockSkew;
             var oldClockSkewCorrection = AWSConfigs.ClockOffset;
+            var oldUtcNowSource = GetUtcNowSource();
 
             try
             {
-                // Enable clock skew correction
                 AWSConfigs.CorrectForClockSkew = true;
+                SetClockSkewCorrection(TimeSpan.Zero);
+                action();
+                Assert.True(AWSConfigs.ClockOffset == TimeSpan.Zero);
 
-                // Make call to possibly set the offset
+                SetClockSkewCorrection(IncorrectPositiveClockSkewOffset);
+                action();
+                Assert.NotStrictEqual(IncorrectPositiveClockSkewOffset, AWSConfigs.ClockOffset);
+
+                SetClockSkewCorrection(IncorrectNegativeClockSkewOffset);
+                action();
+                Assert.NotStrictEqual(IncorrectNegativeClockSkewOffset, AWSConfigs.ClockOffset);
+
+                Console.WriteLine("Simulating positive clock skew");
+                SetUtcNowSource(() => DateTime.UtcNow + IncorrectPositiveClockSkewOffset);
+                AWSConfigs.CorrectForClockSkew = false;
+                AssertExtensions.ExpectException(action);
+
+                AWSConfigs.CorrectForClockSkew = true;
+                SetClockSkewCorrection(TimeSpan.Zero);
                 action();
 
-                // Determine if skew exists
-                var skewCorrection = AWSConfigs.ClockOffset;
-                var skewExists = skewCorrection > TimeSpan.Zero;
+                Console.WriteLine("Simulating negative clock skew");
+                SetUtcNowSource(() => DateTime.UtcNow + IncorrectNegativeClockSkewOffset);
+                AWSConfigs.CorrectForClockSkew = true;
+                SetClockSkewCorrection(TimeSpan.Zero);
+                action();
 
-                if (skewExists)
-                {
-                    Console.WriteLine("Clock skew exists, offset is " + AWSConfigs.ClockOffset);
-
-                    // If skew exists, test that disabling correction results in an error
-                    AWSConfigs.CorrectForClockSkew = false;
-                    AssertExtensions.ExpectException(action);
-                }
-                else
-                {
-                    Console.WriteLine("No clock skew found");
-
-                    // If no skew exists, set invalid skew correction and
-                    // verify an exception is thrown before the invalid correction is
-                    // corrected by the SDK
-
-                    // Do this twice, once for positive offset and once for negative
-
-                    SetClockSkewCorrection(IncorrectPositiveClockSkewOffset);
-                    action();
-                    Assert.NotEqual(IncorrectPositiveClockSkewOffset, AWSConfigs.ClockOffset);
-
-                    SetClockSkewCorrection(IncorrectNegativeClockSkewOffset);
-                    action();
-                    Assert.NotEqual(IncorrectNegativeClockSkewOffset, AWSConfigs.ClockOffset);
-                }
+                AWSConfigs.CorrectForClockSkew = false;
+                AssertExtensions.ExpectException(action);
             }
             finally
             {
                 AWSConfigs.CorrectForClockSkew = oldCorrectClockSkew;
                 SetClockSkewCorrection(oldClockSkewCorrection);
+                SetUtcNowSource(oldUtcNowSource);
             }
         }
 
-        private void TestClient(ClientTest ct)
+        private void TestClient(ClientTest ct, Action<Action> serviceCall)
         {
             var clientType = ct.ClientType;
 
@@ -218,7 +262,7 @@ namespace Amazon.DNXCore.IntegrationTests
             }
 
             Console.WriteLine("Testing client: " + clientType.FullName);
-            var region = ct.Region ?? AWSConfigs.RegionEndpoint;
+            var region = AWSConfigs.RegionEndpoint ?? RegionEndpoint.USEast1;
             var client = Activator.CreateInstance(clientType, region) as IDisposable;
 
             // Optionally modify client config
@@ -233,7 +277,7 @@ namespace Amazon.DNXCore.IntegrationTests
                 //var signer = GetSigner(client);
                 //Console.WriteLine("Signer: " + signer.GetType().FullName);
 
-                TestServiceCallForClockSkew(action);
+                serviceCall(action);
             }
         }
         private class ClientTest
@@ -241,7 +285,6 @@ namespace Amazon.DNXCore.IntegrationTests
             public Type ClientType { get; set; }
             public string Method { get; set; }
             public object Request { get; set; }
-            public RegionEndpoint Region { get; set; }
         }
         private static List<ClientTest> clientTests = new List<ClientTest>
         {
@@ -251,7 +294,6 @@ namespace Amazon.DNXCore.IntegrationTests
                 ClientType = typeof(Amazon.CognitoSync.AmazonCognitoSyncClient),
                 Method = "ListIdentityPoolUsage",
                 Request = new Amazon.CognitoSync.Model.ListIdentityPoolUsageRequest { MaxResults = 1 },
-                Region = RegionEndpoint.USEast1
             },
             new ClientTest { ClientType = typeof(Amazon.EC2.AmazonEC2Client), Method = "DescribeKeyPairs" },
             new ClientTest { ClientType = typeof(Amazon.DynamoDBv2.AmazonDynamoDBClient), Method = "ListTables" },
@@ -264,6 +306,16 @@ namespace Amazon.DNXCore.IntegrationTests
         // Reflection helpers
         public static TimeSpan IncorrectPositiveClockSkewOffset = TimeSpan.FromHours(26);
         public static TimeSpan IncorrectNegativeClockSkewOffset = TimeSpan.FromHours(-1);
+        private static Func<DateTime> GetUtcNowSource()
+        {
+            var field = typeof(AWSConfigs).GetField("utcNowSource", BindingFlags.Static | BindingFlags.NonPublic);
+            return (Func<DateTime>)field.GetValue(null);
+        }
+        private static void SetUtcNowSource(Func<DateTime> source)
+        {
+            var field = typeof(AWSConfigs).GetField("utcNowSource", BindingFlags.Static | BindingFlags.NonPublic);
+            field.SetValue(null, source);
+        }
         public static void SetClockSkewCorrection(TimeSpan value)
         {
             var property = typeof(AWSConfigs).GetTypeInfo().GetDeclaredProperty("ClockOffset");

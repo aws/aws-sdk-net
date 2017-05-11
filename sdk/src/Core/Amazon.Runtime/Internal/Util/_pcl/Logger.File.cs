@@ -1,4 +1,5 @@
-﻿using Amazon.Util.Internal;
+﻿using Amazon.Util;
+using Amazon.Util.Internal;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -161,7 +162,7 @@ namespace Amazon.Runtime.Internal.Util
                     messageFormat = InfoMsgFormat;
                     break;
             }
-            string currentTime = DateTime.UtcNow
+            string currentTime = AWSSDKUtils.CorrectedUtcNow
                          .ToString(DATE_FORMAT);
             LogMessage msg = new LogMessage(CultureInfo.InvariantCulture, messageFormat, currentTime, message);
             Queue(msg);

@@ -158,13 +158,13 @@ namespace Amazon.S3
             int position = request.Key.LastIndexOf('/');
             if (position == -1)
             {
-                policyString = "{\"expiration\": \"" + DateTime.UtcNow.AddHours(24).ToString("yyyy-MM-ddTHH:mm:ssZ") + "\",\"conditions\": [{\"bucket\": \"" +
+                policyString = "{\"expiration\": \"" + AWSSDKUtils.CorrectedUtcNow.AddHours(24).ToString("yyyy-MM-ddTHH:mm:ssZ") + "\",\"conditions\": [{\"bucket\": \"" +
                     request.Bucket + "\"},[\"starts-with\", \"$key\", \"" + "\"],{\"acl\": \"" + request.CannedACL.Value + "\"},[\"eq\", \"$Content-Type\", " +
                     "\"" + request.Headers.ContentType + "\"" + "]" + metadataPolicy.ToString() + headersPolicy.ToString() + "]}";
             }
             else
             {
-                policyString = "{\"expiration\": \"" + DateTime.UtcNow.AddHours(24).ToString("yyyy-MM-ddTHH:mm:ssZ") + "\",\"conditions\": [{\"bucket\": \"" +
+                policyString = "{\"expiration\": \"" + AWSSDKUtils.CorrectedUtcNow.AddHours(24).ToString("yyyy-MM-ddTHH:mm:ssZ") + "\",\"conditions\": [{\"bucket\": \"" +
                     request.Bucket + "\"},[\"starts-with\", \"$key\", \"" + request.Key.Substring(0, position) + "/\"],{\"acl\": \"" + request.CannedACL.Value +
                     "\"},[\"eq\", \"$Content-Type\", " + "\"" + request.Headers.ContentType + "\"" + "]" + metadataPolicy.ToString() + headersPolicy.ToString() + "]}";
             }

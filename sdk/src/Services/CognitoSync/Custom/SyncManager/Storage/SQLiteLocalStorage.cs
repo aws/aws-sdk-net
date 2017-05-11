@@ -304,7 +304,7 @@ namespace Amazon.CognitoSync.SyncManager.Internal
                             DatasetColumns.LAST_MODIFIED_TIMESTAMP
                         });
 
-                    CreateDatasetHelper(query, identityId, datasetName, DateTime.Now, DateTime.Now);
+                    CreateDatasetHelper(query, identityId, datasetName, AWSSDKUtils.CorrectedUtcNow.ToLocalTime(), AWSSDKUtils.CorrectedUtcNow.ToLocalTime());
 
                 }
             }
@@ -544,8 +544,8 @@ namespace Amazon.CognitoSync.SyncManager.Internal
                     if (databaseRecord.SyncCount != oldDatabaseRecord.SyncCount
                         || !StringUtils.Equals(databaseRecord.LastModifiedBy, oldDatabaseRecord.LastModifiedBy))
                     {
-                        continue;
-                    }
+                    continue;
+                }
 
                     if (!StringUtils.Equals(databaseRecord.Value, oldDatabaseRecord.Value))
                     {
@@ -575,9 +575,9 @@ namespace Amazon.CognitoSync.SyncManager.Internal
                     }
                     else
                     {
-                        UpdateOrInsertRecord(identityId, datasetName, record);
-                    }
-                }
+                UpdateOrInsertRecord(identityId, datasetName, record);
+            }
+        }
                 else
                 {
                     UpdateOrInsertRecord(identityId, datasetName, record);
@@ -627,7 +627,7 @@ namespace Amazon.CognitoSync.SyncManager.Internal
                 Statement s2 = new Statement
                 {
                     Query = deleteDatasetQuery,
-                    Parameters = new object[] { DateTime.Now, -1, identityId, datasetName }
+                    Parameters = new object[] { AWSSDKUtils.CorrectedUtcNow.ToLocalTime(), -1, identityId, datasetName }
                 };
 
                 List<Statement> statementsToExecute = new List<Statement>() { s1, s2 };
@@ -728,7 +728,7 @@ namespace Amazon.CognitoSync.SyncManager.Internal
                     RecordColumns.IDENTITY_ID + " = @whereIdentityId AND " +
                     RecordColumns.DATASET_NAME + " = @whereDatasetName "
                 );
-                UpdateLastSyncCountHelper(query, lastSyncCount, DateTime.Now, identityId, datasetName);
+                UpdateLastSyncCountHelper(query, lastSyncCount, AWSSDKUtils.CorrectedUtcNow.ToLocalTime(), identityId, datasetName);
             }
         }
 
@@ -776,7 +776,7 @@ namespace Amazon.CognitoSync.SyncManager.Internal
                               + " WHERE " + DatasetColumns.IDENTITY_ID + " = @" + DatasetColumns.IDENTITY_ID
                               + " AND " + DatasetColumns.DATASET_NAME + " = @old" + DatasetColumns.DATASET_NAME + " ";
 
-                        string timestamp = AWSSDKUtils.ConvertToUnixEpochMilliSeconds(DateTime.UtcNow).ToString(CultureInfo.InvariantCulture);
+                        string timestamp = AWSSDKUtils.ConvertToUnixEpochMilliSeconds(AWSSDKUtils.CorrectedUtcNow).ToString(CultureInfo.InvariantCulture);
 
                         Statement updateDatasetStatement = new Statement()
                         {
@@ -956,7 +956,7 @@ namespace Amazon.CognitoSync.SyncManager.Internal
                     DatasetColumns.IDENTITY_ID + " = @whereIdentityId AND " +
                     DatasetColumns.DATASET_NAME + " = @whereDatasetName "
                 );
-                UpdateLastModifiedTimestampHelper(query, DateTime.Now, identityId, datasetName);
+                UpdateLastModifiedTimestampHelper(query, AWSSDKUtils.CorrectedUtcNow.ToLocalTime(), identityId, datasetName);
             }
         }
 
@@ -1025,7 +1025,7 @@ namespace Amazon.CognitoSync.SyncManager.Internal
                     string insertRecord = RecordColumns.BuildInsert();
                     ExecuteMultipleHelper(new List<Statement>{new Statement{
                     Query = insertRecord,
-                    Parameters = new object[]{identityId,datasetName,key,value,0,DateTime.Now,string.Empty,DateTime.Now,1}
+                    Parameters = new object[]{identityId,datasetName,key,value,0,AWSSDKUtils.CorrectedUtcNow.ToLocalTime(),string.Empty,AWSSDKUtils.CorrectedUtcNow.ToLocalTime(),1}
                     }});
                     return true;
                 }
@@ -1044,7 +1044,7 @@ namespace Amazon.CognitoSync.SyncManager.Internal
                     );
                     ExecuteMultipleHelper(new List<Statement>{new Statement{
                     Query = insertRecord,
-                    Parameters = new object[]{identityId,datasetName,key,value,1,record.SyncCount,DateTime.Now,identityId,datasetName,key}
+                    Parameters = new object[]{identityId,datasetName,key,value,1,record.SyncCount,AWSSDKUtils.CorrectedUtcNow.ToLocalTime(),identityId,datasetName,key}
                     }});
                     return true;
                 }

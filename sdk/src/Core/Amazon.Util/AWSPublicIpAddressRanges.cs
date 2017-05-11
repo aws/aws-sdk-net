@@ -145,7 +145,7 @@ namespace Amazon.Util
                 catch (FormatException) { }
                 catch (ArgumentNullException) { }
 
-                instance.CreateDate = creationDateTime.GetValueOrDefault(DateTime.Now.ToUniversalTime());
+                instance.CreateDate = creationDateTime.GetValueOrDefault(AWSSDKUtils.CorrectedUtcNow);
 
                 // ipv4 and v6 addresses occupy different keys in the data file and can't easily be merged
                 // so process each subset separately

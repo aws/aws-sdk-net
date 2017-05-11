@@ -1184,7 +1184,7 @@ namespace Amazon.S3.IO
         {
             int success = 0;
             bool currentState = false;
-            long start = DateTime.Now.Ticks;
+            var start = AWSSDKUtils.CorrectedUtcNow;
             do
             {
                 var buckets = this.S3Client.ListBuckets().Buckets;
@@ -1204,7 +1204,7 @@ namespace Amazon.S3.IO
 
                 Thread.Sleep(EVENTUAL_CONSISTENCY_POLLING_PERIOD);
 
-            } while (new TimeSpan(DateTime.Now.Ticks - start).TotalMilliseconds < EVENTUAL_CONSISTENCY_MAX_WAIT) ;
+            } while ((AWSSDKUtils.CorrectedUtcNow - start).TotalMilliseconds < EVENTUAL_CONSISTENCY_MAX_WAIT) ;
         }
     }
 

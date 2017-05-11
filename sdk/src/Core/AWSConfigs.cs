@@ -72,6 +72,11 @@ namespace Amazon
         #region Private static members
 
         private static char[] validSeparators = new char[] { ' ', ',' };
+        private static TimeSpan? manualClockCorrection;
+        private static object manualClockCorrectionLock = new object();
+
+        // Tests can override this DateTime source.
+        internal static Func<DateTime> utcNowSource = GetUtcNow;
 
         // Deprecated configs
         internal static string _awsRegion = GetConfig(AWSRegionKey);
@@ -101,6 +106,24 @@ namespace Amazon
         #region Clock Skew
 
         /// <summary>
+        /// Manual offset to apply to client clock.
+        /// </summary>
+        public static TimeSpan? ManualClockCorrection
+        {
+            get
+            {
+                lock (manualClockCorrectionLock)
+                    return manualClockCorrection;
+            }
+
+            set
+            {
+                lock (manualClockCorrectionLock)
+                    manualClockCorrection = value;
+            }
+        }
+
+        /// <summary>
         /// Determines if the SDK should correct for client clock skew
         /// by determining the correct server time and reissuing the
         /// request with the correct time.
@@ -108,6 +131,7 @@ namespace Amazon
         /// <seealso cref="ClockOffset"/> will be updated with the calculated
         /// offset even if this field is set to false, though requests
         /// will not be corrected or retried.
+        /// Ignored if <seealso cref="ManualClockCorrection"/> is set.
         /// </summary>
         public static bool CorrectForClockSkew
         {
@@ -525,6 +549,11 @@ namespace Amazon
             {
                 return false;
             }
+        }
+
+        private static DateTime GetUtcNow()
+        {
+            return DateTime.UtcNow;
         }
 
         #endregion

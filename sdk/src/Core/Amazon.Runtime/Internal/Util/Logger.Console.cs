@@ -84,7 +84,7 @@ namespace Amazon.Runtime.Internal.Util
         {
             string formatted = null;
             long sequence = Interlocked.Increment(ref _sequanceId);
-            string dt = DateTime.Now.ToString(AWSSDKUtils.ISO8601DateFormat, CultureInfo.InvariantCulture);
+            string dt = AWSSDKUtils.CorrectedUtcNow.ToLocalTime().ToString(AWSSDKUtils.ISO8601DateFormat, CultureInfo.InvariantCulture);
             string asString = logLevel.ToString().ToUpper(CultureInfo.InvariantCulture);
 
             if (ex != null)

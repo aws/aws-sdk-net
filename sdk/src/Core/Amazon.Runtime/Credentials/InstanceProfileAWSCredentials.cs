@@ -13,6 +13,7 @@
  * permissions and limitations under the License.
  */
 using Amazon.Runtime.Internal.Util;
+using Amazon.Util;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -155,7 +156,7 @@ namespace Amazon.Runtime
         private CredentialsRefreshState GetEarlyRefreshState(CredentialsRefreshState state)
         {
             // New expiry time = Now + _refreshAttemptPeriod + PreemptExpiryTime
-            var newExpiryTime = DateTime.Now + _refreshAttemptPeriod + PreemptExpiryTime;
+            var newExpiryTime = AWSSDKUtils.CorrectedUtcNow.ToLocalTime() + _refreshAttemptPeriod + PreemptExpiryTime;
             // Use this only if the time is earlier than the default expiration time
             if (newExpiryTime.ToUniversalTime() > state.Expiration.ToUniversalTime())
                 newExpiryTime = state.Expiration;

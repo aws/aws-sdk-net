@@ -201,7 +201,7 @@ namespace Amazon.Runtime.CredentialManagement
 
                         }
 
-                        var roleSessionName = RoleSessionNamePrefix + DateTime.UtcNow.Ticks;
+                        var roleSessionName = RoleSessionNamePrefix + AWSSDKUtils.CorrectedUtcNow.Ticks;
                         var assumeRoleOptions = new AssumeRoleAWSCredentialsOptions()
                         {
                             ExternalId = options.ExternalID,
