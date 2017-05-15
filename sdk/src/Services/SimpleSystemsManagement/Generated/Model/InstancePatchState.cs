@@ -145,7 +145,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Gets and sets the property MissingCount. 
         /// <para>
         /// The number of patches from the patch baseline that are applicable for the instance
-        /// but aren’t currently installed.
+        /// but aren't currently installed.
         /// </para>
         /// </summary>
         public int MissingCount
@@ -163,8 +163,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property NotApplicableCount. 
         /// <para>
-        /// The number of patches from the patch baseline that aren’t applicable for the instance
-        /// and hence aren’t installed on the instance.
+        /// The number of patches from the patch baseline that aren't applicable for the instance
+        /// and hence aren't installed on the instance.
         /// </para>
         /// </summary>
         public int NotApplicableCount

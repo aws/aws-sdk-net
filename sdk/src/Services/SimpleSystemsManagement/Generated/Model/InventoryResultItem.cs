@@ -79,9 +79,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Gets and sets the property ContentHash. 
         /// <para>
         /// MD5 hash of the inventory item type contents. The content hash is used to determine
-        /// whether to update inventory information. The <code>PutInventory</code> API does not
-        /// update the inventory item type contents if the MD5 hash has not changed since last
-        /// update. 
+        /// whether to update inventory information. The PutInventory API does not update the
+        /// inventory item type contents if the MD5 hash has not changed since last update. 
         /// </para>
         /// </summary>
         public string ContentHash

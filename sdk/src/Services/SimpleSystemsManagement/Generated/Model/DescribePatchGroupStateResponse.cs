@@ -78,7 +78,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property InstancesWithInstalledOtherPatches. 
         /// <para>
-        /// The number of instances with patches installed that aren’t defined in the patch baseline.
+        /// The number of instances with patches installed that aren't defined in the patch baseline.
         /// </para>
         /// </summary>
         public int InstancesWithInstalledOtherPatches
@@ -132,7 +132,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property InstancesWithNotApplicablePatches. 
         /// <para>
-        /// The number of instances with patches that aren’t applicable.
+        /// The number of instances with patches that aren't applicable.
         /// </para>
         /// </summary>
         public int InstancesWithNotApplicablePatches

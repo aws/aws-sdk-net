@@ -42,8 +42,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Gets and sets the property Filters. 
         /// <para>
         /// Optional filters used to narrow down the scope of the returned tasks. The supported
-        /// filter keys are <code>WindowTaskId</code>, <code>TaskArn</code>, <code>Priority</code>,
-        /// and <code>TaskType</code>.
+        /// filter keys are WindowTaskId, TaskArn, Priority, and TaskType.
         /// </para>
         /// </summary>
         public List<MaintenanceWindowFilter> Filters

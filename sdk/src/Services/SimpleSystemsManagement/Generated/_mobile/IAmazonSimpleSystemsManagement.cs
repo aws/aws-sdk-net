@@ -1916,7 +1916,7 @@ namespace Amazon.SimpleSystemsManagement
         /// Executes commands on one or more remote instances.
         /// </summary>
         /// <param name="documentName">Required. The name of the Systems Manager document to execute. This can be a public document or a custom document.</param>
-        /// <param name="instanceIds">Required. The instance IDs where the command should execute. You can specify a maximum of 50 IDs.</param>
+        /// <param name="instanceIds">The instance IDs where the command should execute. You can specify a maximum of 50 IDs. If you prefer not to list individual instance IDs, you can instead send commands to a fleet of instances using the Targets parameter, which accepts EC2 tags.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>

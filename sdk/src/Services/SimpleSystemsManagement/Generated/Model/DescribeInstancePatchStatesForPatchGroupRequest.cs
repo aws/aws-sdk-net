@@ -45,7 +45,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// </para>
         ///  
         /// <para>
-        /// Key (string 1 ≤ length ≤ 200)
+        /// Key (string between 1 and 200 characters)
         /// </para>
         ///  
         /// <para>
@@ -53,7 +53,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// </para>
         ///  
         /// <para>
-        ///  Type (string “Equal”, “NotEqual”, “LessThan”, “GreaterThan”)
+        ///  Type (string "Equal", "NotEqual", "LessThan", "GreaterThan")
         /// </para>
         /// </summary>
         public List<InstancePatchStateFilter> Filters

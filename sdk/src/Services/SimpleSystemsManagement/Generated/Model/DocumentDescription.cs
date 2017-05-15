@@ -51,7 +51,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property CreatedDate. 
         /// <para>
-        ///  The date when the document was created.
+        /// The date when the document was created.
         /// </para>
         /// </summary>
         public DateTime CreatedDate
@@ -87,7 +87,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        ///  A description of the document. 
+        /// A description of the document. 
         /// </para>
         /// </summary>
         public string Description

@@ -31,7 +31,7 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// Container for the parameters to the DescribeDocumentPermission operation.
     /// Describes the permissions for a Systems Manager document. If you created the document,
     /// you are the owner. If a document is shared, it can either be shared privately (by
-    /// specifying a user’s AWS account ID) or publicly (<i>All</i>).
+    /// specifying a user's AWS account ID) or publicly (<i>All</i>).
     /// </summary>
     public partial class DescribeDocumentPermissionRequest : AmazonSimpleSystemsManagementRequest
     {

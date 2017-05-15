@@ -65,7 +65,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// A user-defined description of the resource that you want to register with Amazon EC2.
+        /// A userdefined description of the resource that you want to register with Amazon EC2.
         /// 
         /// </para>
         /// </summary>

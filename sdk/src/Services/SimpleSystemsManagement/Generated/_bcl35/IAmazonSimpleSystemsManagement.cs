@@ -60,14 +60,18 @@ namespace Amazon.SimpleSystemsManagement
 
         /// <summary>
         /// Adds or overwrites one or more tags for the specified resource. Tags are metadata
-        /// that you assign to your managed instances. Tags enable you to categorize your managed
-        /// instances in different ways, for example, by purpose, owner, or environment. Each
-        /// tag consists of a key and an optional value, both of which you define. For example,
-        /// you could define a set of tags for your account's managed instances that helps you
-        /// track each instance's owner and stack level. For example: Key=Owner and Value=DbAdmin,
-        /// SysAdmin, or Dev. Or Key=Stack and Value=Production, Pre-Production, or Test. Each
-        /// resource can have a maximum of 10 tags. 
+        /// that you assign to your managed instances, Maintenance Windows, or Parameter Store
+        /// parameters. Tags enable you to categorize your resources in different ways, for example,
+        /// by purpose, owner, or environment. Each tag consists of a key and an optional value,
+        /// both of which you define. For example, you could define a set of tags for your account's
+        /// managed instances that helps you track each instance's owner and stack level. For
+        /// example: Key=Owner and Value=DbAdmin, SysAdmin, or Dev. Or Key=Stack and Value=Production,
+        /// Pre-Production, or Test.
         /// 
+        ///  
+        /// <para>
+        /// Each resource can have a maximum of 10 tags. 
+        /// </para>
         ///  
         /// <para>
         /// We recommend that you devise a set of tag keys that meets your needs for each resource
@@ -96,8 +100,8 @@ namespace Amazon.SimpleSystemsManagement
         /// must be a registered, managed instance.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.TooManyTagsErrorException">
-        /// The <code>Targets</code> parameter includes too many tags. Remove one or more tags
-        /// and try the command again.
+        /// The Targets parameter includes too many tags. Remove one or more tags and try the
+        /// command again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/AddTagsToResource">REST API Reference for AddTagsToResource Operation</seealso>
         AddTagsToResourceResponse AddTagsToResource(AddTagsToResourceRequest request);
@@ -746,7 +750,7 @@ namespace Amazon.SimpleSystemsManagement
         /// 
         /// <returns>The response from the CreateMaintenanceWindow service method, as returned by SimpleSystemsManagement.</returns>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.IdempotentParameterMismatchException">
-        /// Error returned when an idempotent operation is retried and the parameters don’t match
+        /// Error returned when an idempotent operation is retried and the parameters don't match
         /// the original call to the API with the same idempotency token.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
@@ -797,7 +801,7 @@ namespace Amazon.SimpleSystemsManagement
         /// 
         /// <returns>The response from the CreatePatchBaseline service method, as returned by SimpleSystemsManagement.</returns>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.IdempotentParameterMismatchException">
-        /// Error returned when an idempotent operation is retried and the parameters don’t match
+        /// Error returned when an idempotent operation is retried and the parameters don't match
         /// the original call to the API with the same idempotency token.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
@@ -1258,7 +1262,7 @@ namespace Amazon.SimpleSystemsManagement
 
         /// <summary>
         /// Removes the server or virtual machine from the list of registered servers. You can
-        /// reregister the instance again at any time. If you don’t plan to use Run Command on
+        /// reregister the instance again at any time. If you don't plan to use Run Command on
         /// the server, we suggest uninstalling the SSM Agent first.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeregisterManagedInstance service method.</param>
@@ -1378,7 +1382,7 @@ namespace Amazon.SimpleSystemsManagement
         /// 
         /// <returns>The response from the DeregisterTargetFromMaintenanceWindow service method, as returned by SimpleSystemsManagement.</returns>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.DoesNotExistException">
-        /// Error returned when the ID specified for a resource (e.g. a Maintenance Window) doesn’t
+        /// Error returned when the ID specified for a resource (e.g. a Maintenance Window) doesn't
         /// exist.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
@@ -1425,7 +1429,7 @@ namespace Amazon.SimpleSystemsManagement
         /// 
         /// <returns>The response from the DeregisterTaskFromMaintenanceWindow service method, as returned by SimpleSystemsManagement.</returns>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.DoesNotExistException">
-        /// Error returned when the ID specified for a resource (e.g. a Maintenance Window) doesn’t
+        /// Error returned when the ID specified for a resource (e.g. a Maintenance Window) doesn't
         /// exist.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
@@ -1791,7 +1795,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <summary>
         /// Describes the permissions for a Systems Manager document. If you created the document,
         /// you are the owner. If a document is shared, it can either be shared privately (by
-        /// specifying a user’s AWS account ID) or publicly (<i>All</i>).
+        /// specifying a user's AWS account ID) or publicly (<i>All</i>).
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeDocumentPermission service method.</param>
         /// 
@@ -1918,7 +1922,7 @@ namespace Amazon.SimpleSystemsManagement
         /// 
         /// <returns>The response from the DescribeEffectivePatchesForPatchBaseline service method, as returned by SimpleSystemsManagement.</returns>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.DoesNotExistException">
-        /// Error returned when the ID specified for a resource (e.g. a Maintenance Window) doesn’t
+        /// Error returned when the ID specified for a resource (e.g. a Maintenance Window) doesn't
         /// exist.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
@@ -2383,7 +2387,7 @@ namespace Amazon.SimpleSystemsManagement
         /// 
         /// <returns>The response from the DescribeMaintenanceWindowExecutionTaskInvocations service method, as returned by SimpleSystemsManagement.</returns>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.DoesNotExistException">
-        /// Error returned when the ID specified for a resource (e.g. a Maintenance Window) doesn’t
+        /// Error returned when the ID specified for a resource (e.g. a Maintenance Window) doesn't
         /// exist.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
@@ -2430,7 +2434,7 @@ namespace Amazon.SimpleSystemsManagement
         /// 
         /// <returns>The response from the DescribeMaintenanceWindowExecutionTasks service method, as returned by SimpleSystemsManagement.</returns>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.DoesNotExistException">
-        /// Error returned when the ID specified for a resource (e.g. a Maintenance Window) doesn’t
+        /// Error returned when the ID specified for a resource (e.g. a Maintenance Window) doesn't
         /// exist.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
@@ -2520,7 +2524,7 @@ namespace Amazon.SimpleSystemsManagement
         /// 
         /// <returns>The response from the DescribeMaintenanceWindowTargets service method, as returned by SimpleSystemsManagement.</returns>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.DoesNotExistException">
-        /// Error returned when the ID specified for a resource (e.g. a Maintenance Window) doesn’t
+        /// Error returned when the ID specified for a resource (e.g. a Maintenance Window) doesn't
         /// exist.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
@@ -2567,7 +2571,7 @@ namespace Amazon.SimpleSystemsManagement
         /// 
         /// <returns>The response from the DescribeMaintenanceWindowTasks service method, as returned by SimpleSystemsManagement.</returns>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.DoesNotExistException">
-        /// Error returned when the ID specified for a resource (e.g. a Maintenance Window) doesn’t
+        /// Error returned when the ID specified for a resource (e.g. a Maintenance Window) doesn't
         /// exist.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
@@ -3178,7 +3182,7 @@ namespace Amazon.SimpleSystemsManagement
         /// 
         /// <returns>The response from the GetMaintenanceWindow service method, as returned by SimpleSystemsManagement.</returns>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.DoesNotExistException">
-        /// Error returned when the ID specified for a resource (e.g. a Maintenance Window) doesn’t
+        /// Error returned when the ID specified for a resource (e.g. a Maintenance Window) doesn't
         /// exist.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
@@ -3225,7 +3229,7 @@ namespace Amazon.SimpleSystemsManagement
         /// 
         /// <returns>The response from the GetMaintenanceWindowExecution service method, as returned by SimpleSystemsManagement.</returns>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.DoesNotExistException">
-        /// Error returned when the ID specified for a resource (e.g. a Maintenance Window) doesn’t
+        /// Error returned when the ID specified for a resource (e.g. a Maintenance Window) doesn't
         /// exist.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
@@ -3273,7 +3277,7 @@ namespace Amazon.SimpleSystemsManagement
         /// 
         /// <returns>The response from the GetMaintenanceWindowExecutionTask service method, as returned by SimpleSystemsManagement.</returns>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.DoesNotExistException">
-        /// Error returned when the ID specified for a resource (e.g. a Maintenance Window) doesn’t
+        /// Error returned when the ID specified for a resource (e.g. a Maintenance Window) doesn't
         /// exist.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
@@ -3412,7 +3416,7 @@ namespace Amazon.SimpleSystemsManagement
         /// 
         /// <returns>The response from the GetPatchBaseline service method, as returned by SimpleSystemsManagement.</returns>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.DoesNotExistException">
-        /// Error returned when the ID specified for a resource (e.g. a Maintenance Window) doesn’t
+        /// Error returned when the ID specified for a resource (e.g. a Maintenance Window) doesn't
         /// exist.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
@@ -4242,8 +4246,7 @@ namespace Amazon.SimpleSystemsManagement
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.UnsupportedInventorySchemaVersionException">
         /// Inventory item type schema version has to match supported versions in the service.
-        /// Check output of <code>GetInventorySchema</code> to see the available schema version
-        /// for each type.
+        /// Check output of GetInventorySchema to see the available schema version for each type.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/PutInventory">REST API Reference for PutInventory Operation</seealso>
         PutInventoryResponse PutInventory(PutInventoryRequest request);
@@ -4345,7 +4348,7 @@ namespace Amazon.SimpleSystemsManagement
         /// 
         /// <returns>The response from the RegisterDefaultPatchBaseline service method, as returned by SimpleSystemsManagement.</returns>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.DoesNotExistException">
-        /// Error returned when the ID specified for a resource (e.g. a Maintenance Window) doesn’t
+        /// Error returned when the ID specified for a resource (e.g. a Maintenance Window) doesn't
         /// exist.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
@@ -4399,7 +4402,7 @@ namespace Amazon.SimpleSystemsManagement
         /// that is already registered with a different patch baseline.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.DoesNotExistException">
-        /// Error returned when the ID specified for a resource (e.g. a Maintenance Window) doesn’t
+        /// Error returned when the ID specified for a resource (e.g. a Maintenance Window) doesn't
         /// exist.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
@@ -4453,11 +4456,11 @@ namespace Amazon.SimpleSystemsManagement
         /// 
         /// <returns>The response from the RegisterTargetWithMaintenanceWindow service method, as returned by SimpleSystemsManagement.</returns>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.DoesNotExistException">
-        /// Error returned when the ID specified for a resource (e.g. a Maintenance Window) doesn’t
+        /// Error returned when the ID specified for a resource (e.g. a Maintenance Window) doesn't
         /// exist.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.IdempotentParameterMismatchException">
-        /// Error returned when an idempotent operation is retried and the parameters don’t match
+        /// Error returned when an idempotent operation is retried and the parameters don't match
         /// the original call to the API with the same idempotency token.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
@@ -4508,11 +4511,11 @@ namespace Amazon.SimpleSystemsManagement
         /// 
         /// <returns>The response from the RegisterTaskWithMaintenanceWindow service method, as returned by SimpleSystemsManagement.</returns>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.DoesNotExistException">
-        /// Error returned when the ID specified for a resource (e.g. a Maintenance Window) doesn’t
+        /// Error returned when the ID specified for a resource (e.g. a Maintenance Window) doesn't
         /// exist.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.IdempotentParameterMismatchException">
-        /// Error returned when an idempotent operation is retried and the parameters don’t match
+        /// Error returned when an idempotent operation is retried and the parameters don't match
         /// the original call to the API with the same idempotency token.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
@@ -4610,7 +4613,7 @@ namespace Amazon.SimpleSystemsManagement
         /// Executes commands on one or more remote instances.
         /// </summary>
         /// <param name="documentName">Required. The name of the Systems Manager document to execute. This can be a public document or a custom document.</param>
-        /// <param name="instanceIds">Required. The instance IDs where the command should execute. You can specify a maximum of 50 IDs.</param>
+        /// <param name="instanceIds">The instance IDs where the command should execute. You can specify a maximum of 50 IDs. If you prefer not to list individual instance IDs, you can instead send commands to a fleet of instances using the Targets parameter, which accepts EC2 tags.</param>
         /// 
         /// <returns>The response from the SendCommand service method, as returned by SimpleSystemsManagement.</returns>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.DuplicateInstanceIdException">
@@ -4890,6 +4893,9 @@ namespace Amazon.SimpleSystemsManagement
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
         /// An error occurred on the server side.
         /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidDocumentException">
+        /// The specified document does not exist.
+        /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidDocumentVersionException">
         /// The document version is not valid or does not exist.
         /// </exception>
@@ -4902,6 +4908,10 @@ namespace Amazon.SimpleSystemsManagement
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidScheduleException">
         /// The schedule is invalid. Verify your cron or rate expression and try again.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidTargetException">
+        /// The target is not valid or does not exist. It might not be configured for EC2 Systems
+        /// Manager or you might not have permission to perform the operation.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidUpdateException">
         /// The update is not valid.
@@ -5146,7 +5156,7 @@ namespace Amazon.SimpleSystemsManagement
         /// 
         /// <returns>The response from the UpdateMaintenanceWindow service method, as returned by SimpleSystemsManagement.</returns>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.DoesNotExistException">
-        /// Error returned when the ID specified for a resource (e.g. a Maintenance Window) doesn’t
+        /// Error returned when the ID specified for a resource (e.g. a Maintenance Window) doesn't
         /// exist.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
@@ -5262,7 +5272,7 @@ namespace Amazon.SimpleSystemsManagement
         /// 
         /// <returns>The response from the UpdatePatchBaseline service method, as returned by SimpleSystemsManagement.</returns>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.DoesNotExistException">
-        /// Error returned when the ID specified for a resource (e.g. a Maintenance Window) doesn’t
+        /// Error returned when the ID specified for a resource (e.g. a Maintenance Window) doesn't
         /// exist.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">

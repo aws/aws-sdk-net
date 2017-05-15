@@ -139,7 +139,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property Language. 
         /// <para>
-        /// The language of the patch if it’s language-specific.
+        /// The language of the patch if it's language-specific.
         /// </para>
         /// </summary>
         public string Language

@@ -128,13 +128,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property OutputLocation. 
         /// <para>
-        /// An Amazon S3 bucket where you want to store the output details of the request. For
-        /// example:
-        /// </para>
-        ///  
-        /// <para>
-        ///  <code>"{ \"S3Location\": { \"OutputS3Region\": \"&lt;region&gt;\", \"OutputS3BucketName\":
-        /// \"bucket name\", \"OutputS3KeyPrefix\": \"folder name\" } }"</code> 
+        /// An Amazon S3 bucket where you want to store the output details of the request.
         /// </para>
         /// </summary>
         public InstanceAssociationOutputLocation OutputLocation
@@ -170,11 +164,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property ScheduleExpression. 
         /// <para>
-        /// A cron expression when the association will be applied to the target(s). Supported
-        /// expressions are every half, 1, 2, 4, 8 or 12 hour(s); every specified day and time
-        /// of the week. For example: cron(0 0/30 * 1/1 * ? *) to run every thirty minutes; cron(0
-        /// 0 0/4 1/1 * ? *) to run every four hours; and cron(0 0 10 ? * SUN *) to run every
-        /// Sunday at 10 a.m.
+        /// A cron expression when the association will be applied to the target(s).
         /// </para>
         /// </summary>
         public string ScheduleExpression
@@ -192,9 +182,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property Targets. 
         /// <para>
-        /// The targets (either instances or tags) for the association. Instances are specified
-        /// using Key=instanceids,Values=&lt;instanceid1&gt;,&lt;instanceid2&gt;. Tags are specified
-        /// using Key=&lt;tag name&gt;,Values=&lt;tag value&gt;.
+        /// The targets (either instances or tags) for the association.
         /// </para>
         /// </summary>
         public List<Target> Targets

@@ -190,7 +190,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property Parameters. 
         /// <para>
-        /// The key-value map of execution parameters, which were supplied when calling <code>StartAutomationExecution</code>.
+        /// The key-value map of execution parameters, which were supplied when calling StartAutomationExecution.
         /// </para>
         /// </summary>
         public Dictionary<string, List<string>> Parameters

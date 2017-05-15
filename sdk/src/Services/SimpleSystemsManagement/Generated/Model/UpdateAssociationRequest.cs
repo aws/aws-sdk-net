@@ -36,9 +36,11 @@ namespace Amazon.SimpleSystemsManagement.Model
     {
         private string _associationId;
         private string _documentVersion;
+        private string _name;
         private InstanceAssociationOutputLocation _outputLocation;
         private Dictionary<string, List<string>> _parameters = new Dictionary<string, List<string>>();
         private string _scheduleExpression;
+        private List<Target> _targets = new List<Target>();
 
         /// <summary>
         /// Gets and sets the property AssociationId. 
@@ -77,14 +79,27 @@ namespace Amazon.SimpleSystemsManagement.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Name. 
+        /// <para>
+        /// The name of the association document.
+        /// </para>
+        /// </summary>
+        public string Name
+        {
+            get { return this._name; }
+            set { this._name = value; }
+        }
+
+        // Check to see if Name property is set
+        internal bool IsSetName()
+        {
+            return this._name != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property OutputLocation. 
         /// <para>
         /// An Amazon S3 bucket where you want to store the results of this request.
-        /// </para>
-        ///  
-        /// <para>
-        ///  <code>"{ \"S3Location\": { \"OutputS3Region\": \"&lt;region&gt;\", \"OutputS3BucketName\":
-        /// \"bucket name\", \"OutputS3KeyPrefix\": \"folder name\" } }"</code> 
         /// </para>
         /// </summary>
         public InstanceAssociationOutputLocation OutputLocation
@@ -121,11 +136,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property ScheduleExpression. 
         /// <para>
-        /// The cron expression used to schedule the association that you want to update. Supported
-        /// expressions are every half, 1, 2, 4, 8 or 12 hour(s); every specified day and time
-        /// of the week. For example: cron(0 0/30 * 1/1 * ? *) to run every thirty minutes; cron(0
-        /// 0 0/4 1/1 * ? *) to run every four hours; and cron(0 0 10 ? * SUN *) to run every
-        /// Sunday at 10 a.m.
+        /// The cron expression used to schedule the association that you want to update.
         /// </para>
         /// </summary>
         public string ScheduleExpression
@@ -138,6 +149,24 @@ namespace Amazon.SimpleSystemsManagement.Model
         internal bool IsSetScheduleExpression()
         {
             return this._scheduleExpression != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Targets. 
+        /// <para>
+        /// The targets of the association.
+        /// </para>
+        /// </summary>
+        public List<Target> Targets
+        {
+            get { return this._targets; }
+            set { this._targets = value; }
+        }
+
+        // Check to see if Targets property is set
+        internal bool IsSetTargets()
+        {
+            return this._targets != null && this._targets.Count > 0; 
         }
 
     }

@@ -61,7 +61,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property InstanceId. 
         /// <para>
-        ///  The ID of the instance. 
+        /// The ID of the instance. 
         /// </para>
         /// </summary>
         public string InstanceId
@@ -79,7 +79,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        ///  The name of the configuration document. 
+        /// The name of the configuration document. 
         /// </para>
         /// </summary>
         public string Name

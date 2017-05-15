@@ -46,11 +46,11 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// </para>
         ///  
         /// <para>
-        /// Key (string, 1 ≤ length ≤ 128)
+        /// Key (string, between 1 and 128 characters)
         /// </para>
         ///  
         /// <para>
-        /// Values (array of strings 1 ≤ length ≤ 256)
+        /// Values (array of strings, each string between 1 and 256 characters)
         /// </para>
         /// </summary>
         public List<PatchOrchestratorFilter> Filters

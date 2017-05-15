@@ -82,6 +82,12 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
                     unmarshalledObject.ExecutionStartTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("FailureDetails", targetDepth))
+                {
+                    var unmarshaller = FailureDetailsUnmarshaller.Instance;
+                    unmarshalledObject.FailureDetails = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("FailureMessage", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

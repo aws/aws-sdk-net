@@ -77,8 +77,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The status of the association. Status can be: <code>Pending</code>, <code>Success</code>,
-        /// or <code>Failed</code>.
+        /// The status of the association. Status can be: Pending, Success, or Failed.
         /// </para>
         /// </summary>
         public string Status

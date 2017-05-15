@@ -28,9 +28,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
-    /// An array of search criteria that targets instances using a <code>Key</code>,<code>Value</code>
-    /// combination that you specify. <code>Targets</code> is required if you don't provide
-    /// one or more instance IDs in the call.
+    /// An array of search criteria that targets instances using a Key,Value combination that
+    /// you specify. Targets is required if you don't provide one or more instance IDs in
+    /// the call.
     /// </summary>
     public partial class Target
     {
@@ -41,9 +41,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Gets and sets the property Key. 
         /// <para>
         /// User-defined criteria for sending commands that target instances that meet the criteria.
-        /// <code>Key</code> can be <code>tag:&lt;Amazon EC2 tag&gt;</code> or <code>InstanceIds</code>.
-        /// For more information about how to send commands that target instances using <code>Key</code>,<code>Value</code>
-        /// parameters, see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Executing
+        /// Key can be tag:&lt;Amazon EC2 tag&gt; or InstanceIds. For more information about how
+        /// to send commands that target instances using Key,Value parameters, see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Executing
         /// a Command Using Systems Manager Run Command</a>.
         /// </para>
         /// </summary>
@@ -62,11 +61,10 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property Values. 
         /// <para>
-        /// User-defined criteria that maps to <code>Key</code>. For example, if you specified
-        /// <code>tag:ServerRole</code>, you could specify <code>value:WebServer</code> to execute
-        /// a command on instances that include Amazon EC2 tags of ServerRole,WebServer. For more
-        /// information about how to send commands that target instances using <code>Key</code>,<code>Value</code>
-        /// parameters, see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Executing
+        /// User-defined criteria that maps to Key. For example, if you specified tag:ServerRole,
+        /// you could specify value:WebServer to execute a command on instances that include Amazon
+        /// EC2 tags of ServerRole,WebServer. For more information about how to send commands
+        /// that target instances using Key,Value parameters, see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Executing
         /// a Command Using Systems Manager Run Command</a>.
         /// </para>
         /// </summary>

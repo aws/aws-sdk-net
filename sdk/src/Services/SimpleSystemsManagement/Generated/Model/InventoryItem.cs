@@ -78,9 +78,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Gets and sets the property ContentHash. 
         /// <para>
         /// MD5 hash of the inventory item type contents. The content hash is used to determine
-        /// whether to update inventory information. The <code>PutInventory</code> API does not
-        /// update the inventory item type contents if the MD5 hash has not changed since last
-        /// update. 
+        /// whether to update inventory information. The PutInventory API does not update the
+        /// inventory item type contents if the MD5 hash has not changed since last update. 
         /// </para>
         /// </summary>
         public string ContentHash
@@ -116,10 +115,10 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property TypeName. 
         /// <para>
-        /// The name of the inventory type. Default inventory item type names start with <code>AWS</code>.
-        /// Custom inventory type names will start with <code>Custom</code>. Default inventory
-        /// item types include the following: <code>AWS:AWSComponent</code>, <code>AWS:Application</code>,
-        /// <code>AWS:InstanceInformation</code>, <code>AWS:Network</code>, and <code>AWS:WindowsUpdate</code>.
+        /// The name of the inventory type. Default inventory item type names start with AWS.
+        /// Custom inventory type names will start with Custom. Default inventory item types include
+        /// the following: AWS:AWSComponent, AWS:Application, AWS:InstanceInformation, AWS:Network,
+        /// and AWS:WindowsUpdate.
         /// </para>
         /// </summary>
         public string TypeName

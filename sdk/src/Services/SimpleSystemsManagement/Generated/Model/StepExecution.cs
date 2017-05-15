@@ -35,6 +35,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         private string _action;
         private DateTime? _executionEndTime;
         private DateTime? _executionStartTime;
+        private FailureDetails _failureDetails;
         private string _failureMessage;
         private Dictionary<string, string> _inputs = new Dictionary<string, string>();
         private Dictionary<string, List<string>> _outputs = new Dictionary<string, List<string>>();
@@ -84,7 +85,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Gets and sets the property ExecutionStartTime. 
         /// <para>
         /// If a step has begun execution, this contains the time the step started. If the step
-        /// is in <code>Pending</code> status, this field is not populated.
+        /// is in Pending status, this field is not populated.
         /// </para>
         /// </summary>
         public DateTime ExecutionStartTime
@@ -97,6 +98,24 @@ namespace Amazon.SimpleSystemsManagement.Model
         internal bool IsSetExecutionStartTime()
         {
             return this._executionStartTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property FailureDetails. 
+        /// <para>
+        /// Information about the Automation failure.
+        /// </para>
+        /// </summary>
+        public FailureDetails FailureDetails
+        {
+            get { return this._failureDetails; }
+            set { this._failureDetails = value; }
+        }
+
+        // Check to see if FailureDetails property is set
+        internal bool IsSetFailureDetails()
+        {
+            return this._failureDetails != null;
         }
 
         /// <summary>
@@ -210,8 +229,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property StepStatus. 
         /// <para>
-        /// The execution status for this step. Valid values include: <code>Pending</code>, <code>InProgress</code>,
-        /// <code>Success</code>, <code>Cancelled</code>, <code>Failed</code>, and <code>TimedOut</code>.
+        /// The execution status for this step. Valid values include: Pending, InProgress, Success,
+        /// Cancelled, Failed, and TimedOut.
         /// </para>
         /// </summary>
         public AutomationExecutionStatus StepStatus

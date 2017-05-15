@@ -42,7 +42,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// </para>
         ///  
         /// <para>
-        /// PatchGroup: string (1 ≤ length ≤ 256, Regex: ^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$)
+        /// PatchGroup: string (between 1 and 256 characters, Regex: ^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$)
         /// </para>
         ///  
         /// <para>

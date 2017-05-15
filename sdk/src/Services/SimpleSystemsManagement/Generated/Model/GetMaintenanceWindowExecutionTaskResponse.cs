@@ -235,11 +235,11 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// </para>
         ///  
         /// <para>
-        /// Key: string, 1 ≤ length ≤ 255
+        /// Key: string, between 1 and 255 characters
         /// </para>
         ///  
         /// <para>
-        /// Value: an array of strings where each string 1 ≤ length ≤ 255
+        /// Value: an array of strings, each string is between 1 and 255 characters
         /// </para>
         /// </summary>
         public List<Dictionary<string, MaintenanceWindowTaskParameterValueExpression>> TaskParameters

@@ -79,6 +79,12 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.DocumentVersion);
                 }
 
+                if(publicRequest.IsSetName())
+                {
+                    context.Writer.WritePropertyName("Name");
+                    context.Writer.Write(publicRequest.Name);
+                }
+
                 if(publicRequest.IsSetOutputLocation())
                 {
                     context.Writer.WritePropertyName("OutputLocation");
@@ -113,6 +119,22 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
                 {
                     context.Writer.WritePropertyName("ScheduleExpression");
                     context.Writer.Write(publicRequest.ScheduleExpression);
+                }
+
+                if(publicRequest.IsSetTargets())
+                {
+                    context.Writer.WritePropertyName("Targets");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestTargetsListValue in publicRequest.Targets)
+                    {
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = TargetMarshaller.Instance;
+                        marshaller.Marshall(publicRequestTargetsListValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteArrayEnd();
                 }
 
         

@@ -80,7 +80,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property ClientToken. 
         /// <para>
-        /// Caller-provided idempotency token.
+        /// User-provided idempotency token.
         /// </para>
         /// </summary>
         public string ClientToken

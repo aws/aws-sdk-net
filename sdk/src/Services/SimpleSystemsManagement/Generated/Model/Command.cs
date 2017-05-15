@@ -94,9 +94,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Gets and sets the property CompletedCount. 
         /// <para>
         /// The number of targets for which the command invocation reached a terminal state. Terminal
-        /// states include the following: <code>Success</code>, <code>Failed</code>, <code>Execution
-        /// Timed Out</code>, <code>Delivery Timed Out</code>, <code>Canceled</code>, <code>Terminated</code>,
-        /// or <code>Undeliverable</code>.
+        /// states include the following: Success, Failed, Execution Timed Out, Delivery Timed
+        /// Out, Canceled, Terminated, or Undeliverable.
         /// </para>
         /// </summary>
         public int CompletedCount
@@ -132,8 +131,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property ErrorCount. 
         /// <para>
-        /// The number of targets for which the status is <code>Failed</code> or <code>Execution
-        /// Timed Out</code>.
+        /// The number of targets for which the status is Failed or Execution Timed Out.
         /// </para>
         /// </summary>
         public int ErrorCount
@@ -191,7 +189,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <para>
         /// The maximum number of instances that are allowed to execute the command at the same
         /// time. You can specify a number of instances, such as 10, or a percentage of instances,
-        /// such as 10%. The default value is 50. For more information about how to use <code>MaxConcurrency</code>,
+        /// such as 10%. The default value is 50. For more information about how to use MaxConcurrency,
         /// see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Executing
         /// a Command Using Systems Manager Run Command</a>.
         /// </para>
@@ -214,7 +212,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The maximum number of errors allowed before the system stops sending the command to
         /// additional targets. You can specify a number of errors, such as 10, or a percentage
         /// or errors, such as 10%. The default value is 50. For more information about how to
-        /// use <code>MaxErrors</code>, see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Executing
+        /// use MaxErrors, see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Executing
         /// a Command Using Systems Manager Run Command</a>.
         /// </para>
         /// </summary>
@@ -381,56 +379,54 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property StatusDetails. 
         /// <para>
-        /// A detailed status of the command execution. <code>StatusDetails</code> includes more
-        /// information than <code>Status</code> because it includes states resulting from error
-        /// and concurrency control parameters. <code>StatusDetails</code> can show different
-        /// results than <code>Status</code>. For more information about these statuses, see <a
-        /// href="http://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-about-status.html">Run
-        /// Command Status</a>. <code>StatusDetails</code> can be one of the following values:
+        /// A detailed status of the command execution. StatusDetails includes more information
+        /// than Status because it includes states resulting from error and concurrency control
+        /// parameters. StatusDetails can show different results than Status. For more information
+        /// about these statuses, see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-about-status.html">Run
+        /// Command Status</a>. StatusDetails can be one of the following values:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Pending – The command has not been sent to any instances.
+        /// Pending: The command has not been sent to any instances.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// In Progress – The command has been sent to at least one instance but has not reached
+        /// In Progress: The command has been sent to at least one instance but has not reached
         /// a final state on all instances.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Success – The command successfully executed on all invocations. This is a terminal
+        /// Success: The command successfully executed on all invocations. This is a terminal
         /// state.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Delivery Timed Out – The value of <code>MaxErrors</code> or more command invocations
-        /// shows a status of <code>Delivery Timed Out</code>. This is a terminal state.
+        /// Delivery Timed Out: The value of MaxErrors or more command invocations shows a status
+        /// of Delivery Timed Out. This is a terminal state.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Execution Timed Out – The value of <code>MaxErrors</code> or more command invocations
-        /// shows a status of <code>Execution Timed Out</code>. This is a terminal state.
+        /// Execution Timed Out: The value of MaxErrors or more command invocations shows a status
+        /// of Execution Timed Out. This is a terminal state.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Failed – The value of <code>MaxErrors</code> or more command invocations shows a status
-        /// of <code>Failed</code>. This is a terminal state.
+        /// Failed: The value of MaxErrors or more command invocations shows a status of Failed.
+        /// This is a terminal state.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Incomplete – The command was attempted on all instances and one or more invocations
-        /// does not have a value of <code>Success</code> but not enough invocations failed for
-        /// the status to be <code>Failed</code>. This is a terminal state.
+        /// Incomplete: The command was attempted on all instances and one or more invocations
+        /// does not have a value of Success but not enough invocations failed for the status
+        /// to be Failed. This is a terminal state.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Canceled – The command was terminated before it was completed. This is a terminal
-        /// state.
+        /// Canceled: The command was terminated before it was completed. This is a terminal state.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Rate Exceeded – The number of instances targeted by the command exceeded the account
+        /// Rate Exceeded: The number of instances targeted by the command exceeded the account
         /// limit for pending invocations. The system has canceled the command before executing
         /// it on any instance. This is a terminal state.
         /// </para>
@@ -469,9 +465,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property Targets. 
         /// <para>
-        /// An array of search criteria that targets instances using a <code>Key</code>,<code>Value</code>
-        /// combination that you specify. <code>Targets</code> is required if you don't provide
-        /// one or more instance IDs in the call.
+        /// An array of search criteria that targets instances using a Key,Value combination that
+        /// you specify. Targets is required if you don't provide one or more instance IDs in
+        /// the call.
         /// </para>
         /// </summary>
         public List<Target> Targets

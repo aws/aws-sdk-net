@@ -978,6 +978,10 @@
     <pattern>([$]LATEST|[$]DEFAULT|^[1-9][0-9]*$)</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.UpdateAssociationRequest.Name</property>
+    <pattern>^[a-zA-Z0-9_\-.]{3,128}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.UpdateAssociationRequest.ScheduleExpression</property>
     <min>1</min>
     <max>256</max>

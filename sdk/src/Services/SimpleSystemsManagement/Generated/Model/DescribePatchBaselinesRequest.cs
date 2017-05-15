@@ -44,11 +44,11 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// </para>
         ///  
         /// <para>
-        /// Key: (string, “NAME_PREFIX” or “OWNER”)
+        /// Key: (string, "NAME_PREFIX" or "OWNER")
         /// </para>
         ///  
         /// <para>
-        /// Value: (array of strings, exactly 1 entry, 1 ≤ length ≤ 255)
+        /// Value: (array of strings, exactly 1 entry, between 1 and 255 characters)
         /// </para>
         /// </summary>
         public List<PatchOrchestratorFilter> Filters

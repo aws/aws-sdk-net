@@ -105,7 +105,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property ExecutionElapsedTime. 
         /// <para>
-        /// Duration since <code>ExecutionStartDateTime</code>.
+        /// Duration since ExecutionStartDateTime.
         /// </para>
         /// </summary>
         public string ExecutionElapsedTime
@@ -202,9 +202,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property ResponseCode. 
         /// <para>
-        /// The error level response code for the plugin script. If the response code is <code>-1</code>,
-        /// then the command has not started executing on the instance, or it was not received
-        /// by the instance.
+        /// The error level response code for the plugin script. If the response code is -1, then
+        /// the command has not started executing on the instance, or it was not received by the
+        /// instance.
         /// </para>
         /// </summary>
         public int ResponseCode
@@ -261,8 +261,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Gets and sets the property StandardOutputContent. 
         /// <para>
         /// The first 24,000 characters written by the plugin to stdout. If the command has not
-        /// finished executing, if <code>ExecutionStatus</code> is neither <code>Succeeded</code>
-        /// nor <code>Failed</code>, then this string is empty.
+        /// finished executing, if ExecutionStatus is neither Succeeded nor Failed, then this
+        /// string is empty.
         /// </para>
         /// </summary>
         public string StandardOutputContent
@@ -300,7 +300,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Gets and sets the property Status. 
         /// <para>
         /// The status of the parent command for this invocation. This status can be different
-        /// than <code>StatusDetails</code>.
+        /// than StatusDetails.
         /// </para>
         /// </summary>
         public CommandInvocationStatus Status
@@ -318,70 +318,66 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property StatusDetails. 
         /// <para>
-        /// A detailed status of the command execution for an invocation. <code>StatusDetails</code>
-        /// includes more information than <code>Status</code> because it includes states resulting
-        /// from error and concurrency control parameters. <code>StatusDetails</code> can show
-        /// different results than <code>Status</code>. For more information about these statuses,
-        /// see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-about-status.html">Run
-        /// Command Status</a>. <code>StatusDetails</code> can be one of the following values:
+        /// A detailed status of the command execution for an invocation. StatusDetails includes
+        /// more information than Status because it includes states resulting from error and concurrency
+        /// control parameters. StatusDetails can show different results than Status. For more
+        /// information about these statuses, see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-about-status.html">Run
+        /// Command Status</a>. StatusDetails can be one of the following values:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Pending – The command has not been sent to the instance.
+        /// Pending: The command has not been sent to the instance.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// In Progress – The command has been sent to the instance but has not reached a terminal
+        /// In Progress: The command has been sent to the instance but has not reached a terminal
         /// state.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Delayed – The system attempted to send the command to the target, but the target was
+        /// Delayed: The system attempted to send the command to the target, but the target was
         /// not available. The instance might not be available because of network issues, the
         /// instance was stopped, etc. The system will try to deliver the command again.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Success – The command or plugin was executed successfully. This is a terminal state.
+        /// Success: The command or plugin was executed successfully. This is a terminal state.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Delivery Timed Out – The command was not delivered to the instance before the delivery
-        /// timeout expired. Delivery timeouts do not count against the parent command’s <code>MaxErrors</code>
-        /// limit, but they do contribute to whether the parent command status is <code>Success</code>
-        /// or <code>Incomplete</code>. This is a terminal state.
+        /// Delivery Timed Out: The command was not delivered to the instance before the delivery
+        /// timeout expired. Delivery timeouts do not count against the parent command's MaxErrors
+        /// limit, but they do contribute to whether the parent command status is Success or Incomplete.
+        /// This is a terminal state.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Execution Timed Out – The command started to execute on the instance, but the execution
+        /// Execution Timed Out: The command started to execute on the instance, but the execution
         /// was not complete before the timeout expired. Execution timeouts count against the
-        /// <code>MaxErrors</code> limit of the parent command. This is a terminal state.
+        /// MaxErrors limit of the parent command. This is a terminal state.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Failed – The command wasn't executed successfully on the instance. For a plugin, this
+        /// Failed: The command wasn't executed successfully on the instance. For a plugin, this
         /// indicates that the result code was not zero. For a command invocation, this indicates
         /// that the result code for one or more plugins was not zero. Invocation failures count
-        /// against the <code>MaxErrors</code> limit of the parent command. This is a terminal
-        /// state.
+        /// against the MaxErrors limit of the parent command. This is a terminal state.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Canceled – The command was terminated before it was completed. This is a terminal
-        /// state.
+        /// Canceled: The command was terminated before it was completed. This is a terminal state.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Undeliverable – The command can't be delivered to the instance. The instance might
+        /// Undeliverable: The command can't be delivered to the instance. The instance might
         /// not exist or might not be responding. Undeliverable invocations don't count against
-        /// the parent command’s <code>MaxErrors</code> limit and don't contribute to whether
-        /// the parent command status is <code>Success</code> or <code>Incomplete</code>. This
-        /// is a terminal state.
+        /// the parent command's MaxErrors limit and don't contribute to whether the parent command
+        /// status is Success or Incomplete. This is a terminal state.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Terminated – The parent command exceeded its <code>MaxErrors</code> limit and subsequent
-        /// command invocations were canceled by the system. This is a terminal state.
+        /// Terminated: The parent command exceeded its MaxErrors limit and subsequent command
+        /// invocations were canceled by the system. This is a terminal state.
         /// </para>
         ///  </li> </ul>
         /// </summary>

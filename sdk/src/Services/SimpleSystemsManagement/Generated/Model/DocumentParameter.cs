@@ -97,7 +97,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The type of parameter. The type can be either “String” or “StringList”.
+        /// The type of parameter. The type can be either String or StringList.
         /// </para>
         /// </summary>
         public DocumentParameterType Type

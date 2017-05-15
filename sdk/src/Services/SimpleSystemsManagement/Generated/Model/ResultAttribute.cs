@@ -37,8 +37,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property TypeName. 
         /// <para>
-        /// Name of the inventory item type. Valid value: “AWS:InstanceInformation”. Default Value:
-        /// “AWS:InstanceInformation”.
+        /// Name of the inventory item type. Valid value: AWS:InstanceInformation. Default Value:
+        /// AWS:InstanceInformation.
         /// </para>
         /// </summary>
         public string TypeName

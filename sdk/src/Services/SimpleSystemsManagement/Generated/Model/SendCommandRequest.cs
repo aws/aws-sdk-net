@@ -58,7 +58,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Instantiates SendCommandRequest with the parameterized properties
         /// </summary>
         /// <param name="documentName">Required. The name of the Systems Manager document to execute. This can be a public document or a custom document.</param>
-        /// <param name="instanceIds">Required. The instance IDs where the command should execute. You can specify a maximum of 50 IDs.</param>
+        /// <param name="instanceIds">The instance IDs where the command should execute. You can specify a maximum of 50 IDs. If you prefer not to list individual instance IDs, you can instead send commands to a fleet of instances using the Targets parameter, which accepts EC2 tags.</param>
         public SendCommandRequest(string documentName, List<string> instanceIds)
         {
             _documentName = documentName;
@@ -152,8 +152,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property InstanceIds. 
         /// <para>
-        /// Required. The instance IDs where the command should execute. You can specify a maximum
-        /// of 50 IDs.
+        /// The instance IDs where the command should execute. You can specify a maximum of 50
+        /// IDs. If you prefer not to list individual instance IDs, you can instead send commands
+        /// to a fleet of instances using the Targets parameter, which accepts EC2 tags.
         /// </para>
         /// </summary>
         public List<string> InstanceIds
@@ -172,9 +173,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Gets and sets the property MaxConcurrency. 
         /// <para>
         /// (Optional) The maximum number of instances that are allowed to execute the command
-        /// at the same time. You can specify a number such as “10” or a percentage such as “10%”.
-        /// The default value is 50. For more information about how to use <code>MaxConcurrency</code>,
-        /// see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Executing
+        /// at the same time. You can specify a number such as 10 or a percentage such as 10%.
+        /// The default value is 50. For more information about how to use MaxConcurrency, see
+        /// <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Executing
         /// a Command Using Systems Manager Run Command</a>.
         /// </para>
         /// </summary>
@@ -194,10 +195,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Gets and sets the property MaxErrors. 
         /// <para>
         /// The maximum number of errors allowed without the command failing. When the command
-        /// fails one more time beyond the value of <code>MaxErrors</code>, the systems stops
-        /// sending the command to additional targets. You can specify a number like “10” or a
-        /// percentage like “10%”. The default value is 50. For more information about how to
-        /// use <code>MaxErrors</code>, see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Executing
+        /// fails one more time beyond the value of MaxErrors, the systems stops sending the command
+        /// to additional targets. You can specify a number like 10 or a percentage like 10%.
+        /// The default value is 50. For more information about how to use MaxErrors, see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Executing
         /// a Command Using Systems Manager Run Command</a>.
         /// </para>
         /// </summary>
@@ -325,10 +325,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property Targets. 
         /// <para>
-        /// (Optional) An array of search criteria that targets instances using a <code>Key</code>,<code>Value</code>
-        /// combination that you specify. <code>Targets</code> is required if you don't provide
-        /// one or more instance IDs in the call. For more information about how to use <code>Targets</code>,
-        /// see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Executing
+        /// (Optional) An array of search criteria that targets instances using a Key,Value combination
+        /// that you specify. Targets is required if you don't provide one or more instance IDs
+        /// in the call. For more information about how to use Targets, see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Executing
         /// a Command Using Systems Manager Run Command</a>.
         /// </para>
         /// </summary>
