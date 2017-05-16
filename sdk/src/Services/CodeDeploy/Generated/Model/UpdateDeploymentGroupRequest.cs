@@ -52,7 +52,7 @@ namespace Amazon.CodeDeploy.Model
         /// Gets and sets the property AlarmConfiguration. 
         /// <para>
         /// Information to add or change about Amazon CloudWatch alarms when the deployment group
-        /// is updated. 
+        /// is updated.
         /// </para>
         /// </summary>
         public AlarmConfiguration AlarmConfiguration
@@ -181,7 +181,7 @@ namespace Amazon.CodeDeploy.Model
         /// <summary>
         /// Gets and sets the property DeploymentStyle. 
         /// <para>
-        /// Information about the type of deployment, either standard or blue/green, you want
+        /// Information about the type of deployment, either in-place or blue/green, you want
         /// to run and whether to route deployment traffic behind a load balancer.
         /// </para>
         /// </summary>
@@ -220,7 +220,7 @@ namespace Amazon.CodeDeploy.Model
         /// <summary>
         /// Gets and sets the property LoadBalancerInfo. 
         /// <para>
-        /// Information about the load balancer used in a blue/green deployment.
+        /// Information about the load balancer used in a deployment.
         /// </para>
         /// </summary>
         public LoadBalancerInfo LoadBalancerInfo

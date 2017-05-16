@@ -69,7 +69,11 @@ namespace Amazon.CodeDeploy.Model
         /// offline for a new deployment, it also means that if the deployment to the last instance
         /// fails, the overall deployment still succeeds.
         /// </para>
-        ///  </note>
+        ///  </note> 
+        /// <para>
+        /// For more information, see <a href="http://docs.aws.amazon.com/codedeploy/latest/userguide/instances-health.html">AWS
+        /// CodeDeploy Instance Health</a> in the <i>AWS CodeDeploy User Guide</i>.
+        /// </para>
         /// </summary>
         public MinimumHealthyHostsType Type
         {

@@ -51,7 +51,6 @@ namespace Amazon.CodeDeploy.Model
         /// Gets and sets the property AlarmConfiguration. 
         /// <para>
         /// Information to add about Amazon CloudWatch alarms when the deployment group is created.
-        /// 
         /// </para>
         /// </summary>
         public AlarmConfiguration AlarmConfiguration
@@ -155,7 +154,7 @@ namespace Amazon.CodeDeploy.Model
         ///  
         /// <para>
         /// For more information about the predefined deployment configurations in AWS CodeDeploy,
-        /// see see <a href="http://docs.aws.amazon.com/codedeploy/latest/userguide/deployment-configurations.html">Working
+        /// see <a href="http://docs.aws.amazon.com/codedeploy/latest/userguide/deployment-configurations.html">Working
         /// with Deployment Groups in AWS CodeDeploy</a> in the AWS CodeDeploy User Guide.
         /// </para>
         /// </summary>
@@ -192,7 +191,7 @@ namespace Amazon.CodeDeploy.Model
         /// <summary>
         /// Gets and sets the property DeploymentStyle. 
         /// <para>
-        /// Information about the type of deployment, standard or blue/green, that you want to
+        /// Information about the type of deployment, in-place or blue/green, that you want to
         /// run and whether to route deployment traffic behind a load balancer.
         /// </para>
         /// </summary>
@@ -211,7 +210,8 @@ namespace Amazon.CodeDeploy.Model
         /// <summary>
         /// Gets and sets the property Ec2TagFilters. 
         /// <para>
-        /// The Amazon EC2 tags on which to filter.
+        /// The Amazon EC2 tags on which to filter. The deployment group will include EC2 instances
+        /// with any of the specified tags.
         /// </para>
         /// </summary>
         public List<EC2TagFilter> Ec2TagFilters
@@ -229,7 +229,7 @@ namespace Amazon.CodeDeploy.Model
         /// <summary>
         /// Gets and sets the property LoadBalancerInfo. 
         /// <para>
-        /// Information about the load balancer used in a blue/green deployment.
+        /// Information about the load balancer used in a deployment.
         /// </para>
         /// </summary>
         public LoadBalancerInfo LoadBalancerInfo
@@ -247,7 +247,8 @@ namespace Amazon.CodeDeploy.Model
         /// <summary>
         /// Gets and sets the property OnPremisesInstanceTagFilters. 
         /// <para>
-        /// The on-premises instance tags on which to filter.
+        /// The on-premises instance tags on which to filter. The deployment group will include
+        /// on-premises instances with any of the specified tags.
         /// </para>
         /// </summary>
         public List<TagFilter> OnPremisesInstanceTagFilters

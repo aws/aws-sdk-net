@@ -196,7 +196,7 @@ namespace Amazon.CodeDeploy.Model
         /// <summary>
         /// Gets and sets the property DeploymentStyle. 
         /// <para>
-        /// Information about the type of deployment, either standard or blue/green, you want
+        /// Information about the type of deployment, either in-place or blue/green, you want
         /// to run and whether to route deployment traffic behind a load balancer.
         /// </para>
         /// </summary>
@@ -233,7 +233,7 @@ namespace Amazon.CodeDeploy.Model
         /// <summary>
         /// Gets and sets the property LoadBalancerInfo. 
         /// <para>
-        /// Information about the load balancer to use in a blue/green deployment.
+        /// Information about the load balancer to use in a deployment.
         /// </para>
         /// </summary>
         public LoadBalancerInfo LoadBalancerInfo

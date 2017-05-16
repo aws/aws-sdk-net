@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CodeDeploy.Model
 {
     /// <summary>
-    /// Information about a tag filter.
+    /// Information about an EC2 tag filter.
     /// </summary>
     public partial class EC2TagFilter
     {

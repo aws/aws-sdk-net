@@ -629,6 +629,60 @@ namespace Amazon.CodeDeploy
 
 
     /// <summary>
+    /// Constants used for properties of type FileExistsBehavior.
+    /// </summary>
+    public class FileExistsBehavior : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DISALLOW for FileExistsBehavior
+        /// </summary>
+        public static readonly FileExistsBehavior DISALLOW = new FileExistsBehavior("DISALLOW");
+        /// <summary>
+        /// Constant OVERWRITE for FileExistsBehavior
+        /// </summary>
+        public static readonly FileExistsBehavior OVERWRITE = new FileExistsBehavior("OVERWRITE");
+        /// <summary>
+        /// Constant RETAIN for FileExistsBehavior
+        /// </summary>
+        public static readonly FileExistsBehavior RETAIN = new FileExistsBehavior("RETAIN");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public FileExistsBehavior(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static FileExistsBehavior FindValue(string value)
+        {
+            return FindValue<FileExistsBehavior>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator FileExistsBehavior(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type GreenFleetProvisioningAction.
     /// </summary>
     public class GreenFleetProvisioningAction : ConstantClass

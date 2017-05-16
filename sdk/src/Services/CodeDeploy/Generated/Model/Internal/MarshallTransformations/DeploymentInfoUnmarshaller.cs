@@ -148,6 +148,12 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
                     unmarshalledObject.ErrorInformation = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("fileExistsBehavior", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.FileExistsBehavior = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ignoreApplicationStopFailures", targetDepth))
                 {
                     var unmarshaller = BoolUnmarshaller.Instance;
@@ -164,6 +170,12 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = LoadBalancerInfoUnmarshaller.Instance;
                     unmarshalledObject.LoadBalancerInfo = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("previousRevision", targetDepth))
+                {
+                    var unmarshaller = RevisionLocationUnmarshaller.Instance;
+                    unmarshalledObject.PreviousRevision = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("revision", targetDepth))

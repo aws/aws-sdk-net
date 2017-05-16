@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CodeDeploy.Model
 {
     /// <summary>
-    /// Information about the load balancer used in a blue/green deployment.
+    /// Information about the load balancer used in a deployment.
     /// </summary>
     public partial class LoadBalancerInfo
     {
@@ -38,7 +38,7 @@ namespace Amazon.CodeDeploy.Model
         /// Gets and sets the property ElbInfoList. 
         /// <para>
         /// An array containing information about the load balancer in Elastic Load Balancing
-        /// to use in a blue/green deployment.
+        /// to use in a deployment.
         /// </para>
         /// </summary>
         public List<ELBInfo> ElbInfoList

@@ -46,9 +46,11 @@ namespace Amazon.CodeDeploy.Model
         private DeploymentStyle _deploymentStyle;
         private string _description;
         private ErrorInformation _errorInformation;
+        private FileExistsBehavior _fileExistsBehavior;
         private bool? _ignoreApplicationStopFailures;
         private bool? _instanceTerminationWaitTimeStarted;
         private LoadBalancerInfo _loadBalancerInfo;
+        private RevisionLocation _previousRevision;
         private RevisionLocation _revision;
         private RollbackInfo _rollbackInfo;
         private DateTime? _startTime;
@@ -271,7 +273,7 @@ namespace Amazon.CodeDeploy.Model
         /// <summary>
         /// Gets and sets the property DeploymentStyle. 
         /// <para>
-        /// Information about the type of deployment, either standard or blue/green, you want
+        /// Information about the type of deployment, either in-place or blue/green, you want
         /// to run and whether to route deployment traffic behind a load balancer.
         /// </para>
         /// </summary>
@@ -324,6 +326,41 @@ namespace Amazon.CodeDeploy.Model
         }
 
         /// <summary>
+        /// Gets and sets the property FileExistsBehavior. 
+        /// <para>
+        /// Information about how AWS CodeDeploy handles files that already exist in a deployment
+        /// target location but weren't part of the previous successful deployment.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// DISALLOW: The deployment fails. This is also the default behavior if no option is
+        /// specified.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// OVERWRITE: The version of the file from the application revision currently being deployed
+        /// replaces the version already on the instance.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// RETAIN: The version of the file already on the instance is kept and used as part of
+        /// the new deployment.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public FileExistsBehavior FileExistsBehavior
+        {
+            get { return this._fileExistsBehavior; }
+            set { this._fileExistsBehavior = value; }
+        }
+
+        // Check to see if FileExistsBehavior property is set
+        internal bool IsSetFileExistsBehavior()
+        {
+            return this._fileExistsBehavior != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property IgnoreApplicationStopFailures. 
         /// <para>
         /// If true, then if the deployment causes the ApplicationStop deployment lifecycle event
@@ -373,7 +410,7 @@ namespace Amazon.CodeDeploy.Model
         /// <summary>
         /// Gets and sets the property LoadBalancerInfo. 
         /// <para>
-        /// Information about the load balancer used in this blue/green deployment.
+        /// Information about the load balancer used in the deployment.
         /// </para>
         /// </summary>
         public LoadBalancerInfo LoadBalancerInfo
@@ -386,6 +423,25 @@ namespace Amazon.CodeDeploy.Model
         internal bool IsSetLoadBalancerInfo()
         {
             return this._loadBalancerInfo != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PreviousRevision. 
+        /// <para>
+        /// Information about the application revision that was deployed to the deployment group
+        /// before the most recent successful deployment.
+        /// </para>
+        /// </summary>
+        public RevisionLocation PreviousRevision
+        {
+            get { return this._previousRevision; }
+            set { this._previousRevision = value; }
+        }
+
+        // Check to see if PreviousRevision property is set
+        internal bool IsSetPreviousRevision()
+        {
+            return this._previousRevision != null;
         }
 
         /// <summary>

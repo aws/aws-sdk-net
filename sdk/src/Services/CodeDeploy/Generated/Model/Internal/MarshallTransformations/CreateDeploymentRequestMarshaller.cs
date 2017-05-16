@@ -102,6 +102,12 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Description);
                 }
 
+                if(publicRequest.IsSetFileExistsBehavior())
+                {
+                    context.Writer.WritePropertyName("fileExistsBehavior");
+                    context.Writer.Write(publicRequest.FileExistsBehavior);
+                }
+
                 if(publicRequest.IsSetIgnoreApplicationStopFailures())
                 {
                     context.Writer.WritePropertyName("ignoreApplicationStopFailures");

@@ -38,6 +38,7 @@ namespace Amazon.CodeDeploy.Model
         private string _deploymentConfigName;
         private string _deploymentGroupName;
         private string _description;
+        private FileExistsBehavior _fileExistsBehavior;
         private bool? _ignoreApplicationStopFailures;
         private RevisionLocation _revision;
         private TargetInstances _targetInstances;
@@ -140,6 +141,45 @@ namespace Amazon.CodeDeploy.Model
         internal bool IsSetDescription()
         {
             return this._description != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property FileExistsBehavior. 
+        /// <para>
+        /// Information about how AWS CodeDeploy handles files that already exist in a deployment
+        /// target location but weren't part of the previous successful deployment.
+        /// </para>
+        ///  
+        /// <para>
+        /// The fileExistsBehavior parameter takes any of the following values:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// DISALLOW: The deployment fails. This is also the default behavior if no option is
+        /// specified.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// OVERWRITE: The version of the file from the application revision currently being deployed
+        /// replaces the version already on the instance.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// RETAIN: The version of the file already on the instance is kept and used as part of
+        /// the new deployment.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public FileExistsBehavior FileExistsBehavior
+        {
+            get { return this._fileExistsBehavior; }
+            set { this._fileExistsBehavior = value; }
+        }
+
+        // Check to see if FileExistsBehavior property is set
+        internal bool IsSetFileExistsBehavior()
+        {
+            return this._fileExistsBehavior != null;
         }
 
         /// <summary>

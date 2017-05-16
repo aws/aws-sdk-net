@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CodeDeploy.Model
 {
     /// <summary>
-    /// Information about the type of deployment, either standard or blue/green, you want
+    /// Information about the type of deployment, either in-place or blue/green, you want
     /// to run and whether to route deployment traffic behind a load balancer.
     /// </summary>
     public partial class DeploymentStyle
@@ -57,7 +57,7 @@ namespace Amazon.CodeDeploy.Model
         /// <summary>
         /// Gets and sets the property DeploymentType. 
         /// <para>
-        /// Indicates whether to run a standard deployment or a blue/green deployment.
+        /// Indicates whether to run an in-place deployment or a blue/green deployment.
         /// </para>
         /// </summary>
         public DeploymentType DeploymentType
