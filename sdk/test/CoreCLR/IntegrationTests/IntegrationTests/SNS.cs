@@ -16,6 +16,7 @@ using Amazon.SQS.Model;
 
 using SNSMessageAttributeValue = Amazon.SimpleNotificationService.Model.MessageAttributeValue;
 using Xunit;
+using Amazon.DNXCore.IntegrationTests.Common;
 
 namespace Amazon.DNXCore.IntegrationTests
 {
@@ -323,13 +324,20 @@ namespace Amazon.DNXCore.IntegrationTests
 
             Assert.Equal(1, messages.Count);
 
-            var getAttributeResponse = await sqsClient.GetQueueAttributesAsync(new GetQueueAttributesRequest
-            {
-                AttributeNames = new List<string> { "All" },
-                QueueUrl = queueUrl
-            });
+            var response = WaitUtils.WaitForComplete(
+                () => {
+                    return sqsClient.GetQueueAttributesAsync(new GetQueueAttributesRequest
+                    {
+                        AttributeNames = new List<string> { "All" },
+                        QueueUrl = queueUrl
+                    }).Result;
+                },
+                (r) =>
+                {
+                    return !string.IsNullOrEmpty(r.Policy);
+                });
 
-            var policy = Policy.FromJson(getAttributeResponse.Policy);
+            var policy = Policy.FromJson(response.Policy);
             Assert.Equal(1, policy.Statements.Count);
         }
 

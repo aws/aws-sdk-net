@@ -181,12 +181,12 @@ namespace Amazon.DNXCore.IntegrationTests.DynamoDB
 
             if (ReuseTables)
             {
-                if (GetStatus(hashTableName) != null)
+                if (await GetStatus(hashTableName).ConfigureAwait(false) != null)
                 {
                     await WaitForTableStatus(hashTableName, TableStatus.ACTIVE);
                     createHashTable = false;
                 }
-                if (GetStatus(hashRangeTableName) != null)
+                if (await GetStatus(hashRangeTableName).ConfigureAwait(false) != null)
                 {
                     await WaitForTableStatus(hashRangeTableName, TableStatus.ACTIVE);
                     createHashRangeTable = false;

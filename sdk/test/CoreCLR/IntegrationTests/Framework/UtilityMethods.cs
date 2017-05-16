@@ -132,7 +132,7 @@ namespace Amazon.DNXCore.IntegrationTests
                 cancellationToken.ThrowIfCancellationRequested();
                 
                 // List all the versions of all the objects in the bucket.
-                listVersionsResponse = await s3Client.ListVersionsAsync(listVersionsRequest);
+                listVersionsResponse = await s3Client.ListVersionsAsync(listVersionsRequest).ConfigureAwait(false);
 
                 // Silverlight uses HTTP caching, so avoid an infinite loop by throwing an exception
                 if (string.Equals(lastRequestId, listVersionsResponse.ResponseMetadata.RequestId, StringComparison.OrdinalIgnoreCase))
@@ -165,7 +165,7 @@ namespace Amazon.DNXCore.IntegrationTests
                         BucketName = bucketName,
                         Objects = keyVersionList,
                         Quiet = true
-                    });
+                    }).ConfigureAwait(false);
 
                     //if (!deleteOptions.QuietMode)
                     //{
@@ -221,7 +221,7 @@ namespace Amazon.DNXCore.IntegrationTests
                     await s3Client.DeleteBucketAsync(new DeleteBucketRequest
                     {
                         BucketName = bucketName
-                    });
+                    }).ConfigureAwait(false);
                     break;
                 }
                 catch (AmazonS3Exception e)
@@ -304,7 +304,7 @@ namespace Amazon.DNXCore.IntegrationTests
         }
         public static async Task SleepAsync(TimeSpan ts)
         {
-            await Task.Delay(ts);
+            await Task.Delay(ts).ConfigureAwait(false);
         }
 
         public static void RunAsSync(Func<Task> asyncFunc)

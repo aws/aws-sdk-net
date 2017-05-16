@@ -56,7 +56,7 @@ namespace Amazon.DNXCore.IntegrationTests
             Assert.Equal(stream.HasMoreShards, false);
             Assert.False(string.IsNullOrEmpty(stream.StreamARN));
             Assert.Equal(stream.StreamName, streamName);
-            Assert.True(stream.StreamStatus == StreamStatus.CREATING);
+            Assert.True(stream.StreamStatus == StreamStatus.CREATING || stream.StreamStatus == StreamStatus.ACTIVE);
 
             // List streams.
             var streamNames = (await Client.ListStreamsAsync()).StreamNames;

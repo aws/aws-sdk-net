@@ -198,9 +198,8 @@ namespace Amazon.DNXCore.IntegrationTests
                     }).Result;
                     break;
                 }
-                catch(Exception e)
+                catch
                 {
-                    Console.WriteLine(e);
                     UtilityMethods.Sleep(TimeSpan.FromSeconds(10));
                 }
             }

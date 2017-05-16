@@ -1,4 +1,5 @@
-﻿using Amazon.S3;
+﻿using Amazon.DNXCore.IntegrationTests.Common;
+using Amazon.S3;
 using Amazon.S3.Model;
 using Amazon.S3.Transfer;
 using Amazon.S3.Util;
@@ -17,23 +18,28 @@ namespace Amazon.DNXCore.IntegrationTests.S3
         public static readonly long MEG_SIZE = (int)Math.Pow(2, 20);
         public static readonly long KILO_SIZE = (int)Math.Pow(2, 10);
 
-        private static string basePath = @"c:\temp\test\transferutility\";
-        private static string bucketName;
-        private static string octetStreamContentType = "application/octet-stream";
-        private static string fullPath;
-        private const string testContent = "This is the content body!";
-        private const string testFile = "PutObjectFile.txt";
+        private const string TEST_CONTENT = "This is the content body!";
+        private const string TEST_FILENAME = "PutObjectFile.txt";
+        private const string OCTET_STREAM_CONTENT_TYPE = "application/octet-stream";
 
+        private string testBucketName;
+        private string basePath;
+        private string testFilePath;
+        
         public TransferUtilityTests()
         {
-            bucketName = UtilityMethods.CreateBucketAsync(Client, "TransferUtilityTests").Result;
-            fullPath = Path.GetFullPath(testFile);
-            File.WriteAllText(fullPath, testContent);
+            testBucketName = UtilityMethods.CreateBucketAsync(Client, "TransferUtilityTests").Result;
+
+            basePath = Path.Combine(Path.GetTempPath(), "test", "transferutility");
+            Directory.CreateDirectory(basePath);
+
+            testFilePath = Path.Combine(basePath, TEST_FILENAME);
+            File.WriteAllText(testFilePath, TEST_CONTENT);
         }
 
         protected override void Dispose(bool disposing)
         {
-            UtilityMethods.DeleteBucketWithObjectsAsync(Client, bucketName).Wait();
+            UtilityMethods.DeleteBucketWithObjectsAsync(Client, testBucketName).Wait();
             try
             {
                 Directory.Delete(basePath, true);
@@ -45,7 +51,7 @@ namespace Amazon.DNXCore.IntegrationTests.S3
         [Trait(CategoryAttribute, "S3")]
         public Task SimpleUploadTest()
         {
-            var fileName = UtilityMethods.GenerateName(@"SimpleUploadTest\SmallFile");
+            var fileName = UtilityMethods.GenerateName(Path.Combine("SimpleUploadTest","SmallFile"));
             return UploadAsync(fileName, 10 * MEG_SIZE, null);
         }
 
@@ -54,7 +60,7 @@ namespace Amazon.DNXCore.IntegrationTests.S3
         public async Task SimpleUploadProgressTest()
         {
             var context = SynchronizationContext.Current;
-            var fileName = UtilityMethods.GenerateName(@"SimpleUploadTest\SmallFile");
+            var fileName = UtilityMethods.GenerateName(Path.Combine("SimpleUploadTest","SmallFile"));
             var progressValidator = new TransferProgressValidator<UploadProgressArgs>
             {
                 Validate = (p) =>
@@ -62,38 +68,42 @@ namespace Amazon.DNXCore.IntegrationTests.S3
                     Assert.Equal(p.FilePath, Path.Combine(basePath, fileName));
                 }
             };
-            await UploadAsync(fileName, 10 * MEG_SIZE, progressValidator);
+            await UploadAsync(fileName, 10 * MEG_SIZE, progressValidator).ConfigureAwait(false);
             progressValidator.AssertOnCompletion();
         }
 
         [Fact]
         [Trait(CategoryAttribute, "S3")]
-        public async Task SimpleUpload()
+        public void SimpleUpload()
         {
             var client = Client;
             using (var tu = new Amazon.S3.Transfer.TransferUtility(client))
             {
-                tu.Upload(fullPath, bucketName);
+                tu.Upload(testFilePath, testBucketName);
 
-                var response = await client.GetObjectMetadataAsync(new GetObjectMetadataRequest
-                {
-                    BucketName = bucketName,
-                    Key = testFile
-                });
+                var response = WaitUtils.WaitForComplete(
+                    () =>
+                    {
+                        return client.GetObjectMetadataAsync(new GetObjectMetadataRequest
+                        {
+                            BucketName = testBucketName,
+                            Key = TEST_FILENAME
+                        }).Result;
+                    });
                 Assert.True(response.ETag.Length > 0);
 
-                var downloadPath = fullPath + ".download";
+                var downloadPath = testFilePath + ".download";
                 var downloadRequest = new Amazon.S3.Transfer.TransferUtilityDownloadRequest
                 {
-                    BucketName = bucketName,
-                    Key = testFile,
+                    BucketName = testBucketName,
+                    Key = TEST_FILENAME,
                     FilePath = downloadPath
                 };
                 tu.Download(downloadRequest);
                 TestDownloadedFile(downloadPath);
 
                 // empty out file, except for 1 byte
-                File.WriteAllText(downloadPath, testContent.Substring(0,1));
+                File.WriteAllText(downloadPath, TEST_CONTENT.Substring(0,1));
                 Assert.True(File.Exists(downloadPath));
                 tu.Download(downloadRequest);
                 TestDownloadedFile(downloadPath);
@@ -105,14 +115,14 @@ namespace Amazon.DNXCore.IntegrationTests.S3
             var fileExists = File.Exists(downloadPath);
             Assert.True(fileExists);
             var fileContent = File.ReadAllText(downloadPath);
-            Assert.Equal(testContent, fileContent);
+            Assert.Equal(TEST_CONTENT, fileContent);
         }
 
         [Fact]
         [Trait(CategoryAttribute, "S3")]
         public async Task MultipartUploadProgressTest()
         {
-            var fileName = UtilityMethods.GenerateName(@"MultipartUploadTest\File");
+            var fileName = UtilityMethods.GenerateName(Path.Combine("MultipartUploadTest","File"));
             var progressValidator = new TransferProgressValidator<UploadProgressArgs>
             {
                 ValidateProgressInterval = false,
@@ -121,7 +131,7 @@ namespace Amazon.DNXCore.IntegrationTests.S3
                     Assert.Equal(p.FilePath, Path.Combine(basePath, fileName));
                 }
             };
-            await UploadAsync(fileName, 20 * MEG_SIZE, progressValidator);
+            await UploadAsync(fileName, 20 * MEG_SIZE, progressValidator).ConfigureAwait(false);
             progressValidator.AssertOnCompletion();
         }
 
@@ -130,9 +140,9 @@ namespace Amazon.DNXCore.IntegrationTests.S3
             var key = fileName;
             await Client.DeleteObjectAsync(new DeleteObjectRequest
             {
-                BucketName = bucketName,
+                BucketName = testBucketName,
                 Key = key
-            });
+            }).ConfigureAwait(false);
 
             var path = Path.Combine(basePath, fileName);
             UtilityMethods.GenerateFile(path, size);
@@ -145,10 +155,10 @@ namespace Amazon.DNXCore.IntegrationTests.S3
                 : new TransferUtility(Client, config);
             var request = new TransferUtilityUploadRequest
             {
-                BucketName = bucketName,
+                BucketName = testBucketName,
                 FilePath = path,
                 Key = key,
-                ContentType = octetStreamContentType
+                ContentType = OCTET_STREAM_CONTENT_TYPE
             };
 
             if (progressValidator != null)
@@ -160,13 +170,13 @@ namespace Amazon.DNXCore.IntegrationTests.S3
 
             var metadata = await Client.GetObjectMetadataAsync(new GetObjectMetadataRequest
             {
-                BucketName = bucketName,
+                BucketName = testBucketName,
                 Key = key
-            });
+            }).ConfigureAwait(false);
             Console.WriteLine("Expected Size: {0} , Actual Size {1}", size, metadata.ContentLength);
-            Assert.Equal(octetStreamContentType, metadata.Headers.ContentType);
+            Assert.Equal(OCTET_STREAM_CONTENT_TYPE, metadata.Headers.ContentType);
             Assert.Equal(size, metadata.ContentLength);
-            await ValidateFileContentsAsync(bucketName, key, path);
+            await ValidateFileContentsAsync(testBucketName, key, path).ConfigureAwait(false);
         }
 
         [Fact]
@@ -177,7 +187,7 @@ namespace Amazon.DNXCore.IntegrationTests.S3
             var progressValidator = new DirectoryProgressValidator<UploadDirectoryProgressArgs>();
             ConfigureProgressValidator(progressValidator);
 
-            await UploadDirectoryAsync(directoryName, 10 * MEG_SIZE, progressValidator, true, false);
+            await UploadDirectoryAsync(directoryName, 10 * MEG_SIZE, progressValidator, true, false).ConfigureAwait(false);
             progressValidator.AssertOnCompletion();
         }
 
@@ -200,7 +210,7 @@ namespace Amazon.DNXCore.IntegrationTests.S3
             var transferUtility = new TransferUtility(Client, config);
             var request = new TransferUtilityUploadDirectoryRequest
             {
-                BucketName = bucketName,
+                BucketName = testBucketName,
                 Directory = directoryPath,
                 KeyPrefix = directoryName,
                 SearchPattern = "*",
@@ -227,7 +237,7 @@ namespace Amazon.DNXCore.IntegrationTests.S3
             Assert.Equal(5, files.Count);
 
             if (validate)
-                return ValidateDirectoryContents(bucketName, directoryName, directoryPath);
+                return ValidateDirectoryContents(testBucketName, directoryName, directoryPath);
             else
                 return Task.FromResult<object>(null);
         }
@@ -241,7 +251,7 @@ namespace Amazon.DNXCore.IntegrationTests.S3
             var progressValidator = new DirectoryProgressValidator<DownloadDirectoryProgressArgs>();
             ConfigureProgressValidator(progressValidator);
 
-            await DownloadDirectoryAsync(directoryName, progressValidator);
+            await DownloadDirectoryAsync(directoryName, progressValidator).ConfigureAwait(false);
             progressValidator.AssertOnCompletion();
         }
 
@@ -249,13 +259,13 @@ namespace Amazon.DNXCore.IntegrationTests.S3
         {
             var directoryPath = Path.Combine(basePath, directoryName);
             await UploadDirectoryAsync(directoryName,
-                20 * MEG_SIZE, null, false);
+                20 * MEG_SIZE, null, false).ConfigureAwait(false);
             Directory.Delete(directoryPath, true);
 
             var transferUtility = new TransferUtility(Client);
             var request = new TransferUtilityDownloadDirectoryRequest
             {
-                BucketName = bucketName,
+                BucketName = testBucketName,
                 LocalDirectory = directoryPath,
                 S3Directory = directoryName
             };
@@ -264,25 +274,25 @@ namespace Amazon.DNXCore.IntegrationTests.S3
                 request.DownloadedDirectoryProgressEvent += progressValidator.OnProgressEvent;
 
             transferUtility.DownloadDirectory(request);
-            await ValidateDirectoryContents(bucketName, directoryName, directoryPath);
+            await ValidateDirectoryContents(testBucketName, directoryName, directoryPath).ConfigureAwait(false);
         }
 
         [Fact]
         [Trait(CategoryAttribute, "S3")]
         public async Task DownloadProgressTest()
         {
-            var fileName = UtilityMethods.GenerateName(@"DownloadTest\File");
+            var fileName = UtilityMethods.GenerateName(Path.Combine("DownloadTest","File"));
             var progressValidator = new TransferProgressValidator<WriteObjectProgressArgs>
             {
                 Validate = (p) =>
                 {
-                    Assert.Equal(p.BucketName, bucketName);
+                    Assert.Equal(p.BucketName, testBucketName);
                     Assert.Equal(p.Key, fileName);
                     Assert.NotNull(p.FilePath);
                     Assert.True(p.FilePath.Contains(fileName));
                 }
             };
-            await DownloadAsync(fileName, 10 * MEG_SIZE, progressValidator);
+            await DownloadAsync(fileName, 10 * MEG_SIZE, progressValidator).ConfigureAwait(false);
             progressValidator.AssertOnCompletion();
         }
 
@@ -294,17 +304,17 @@ namespace Amazon.DNXCore.IntegrationTests.S3
 
             await Client.PutObjectAsync(new PutObjectRequest
             {
-                BucketName = bucketName,
+                BucketName = testBucketName,
                 Key = key,
                 FilePath = originalFilePath
-            });
+            }).ConfigureAwait(false);
 
             var downloadedFilePath = originalFilePath + ".dn";
 
             var transferUtility = new TransferUtility(Client);
             var request = new TransferUtilityDownloadRequest
             {
-                BucketName = bucketName,
+                BucketName = testBucketName,
                 FilePath = downloadedFilePath,
                 Key = key
             };
@@ -321,19 +331,19 @@ namespace Amazon.DNXCore.IntegrationTests.S3
         [Trait(CategoryAttribute, "S3")]
         public async Task OpenStreamTest()
         {
-            var fileName = UtilityMethods.GenerateName(@"OpenStreamTest\File");
+            var fileName = UtilityMethods.GenerateName(Path.Combine("OpenStreamTest","File"));
             var key = fileName;
             var originalFilePath = Path.Combine(basePath, fileName);
             UtilityMethods.GenerateFile(originalFilePath, 2 * MEG_SIZE);
             await Client.PutObjectAsync(new PutObjectRequest
             {
-                BucketName = bucketName,
+                BucketName = testBucketName,
                 Key = key,
                 FilePath = originalFilePath
-            });
+            }).ConfigureAwait(false);
 
             using (var transferUtility = new TransferUtility(Client))
-            using (var stream = transferUtility.OpenStream(bucketName, key))
+            using (var stream = transferUtility.OpenStream(testBucketName, key))
             {
                 Assert.NotNull(stream);
                 Assert.True(stream.CanRead);
@@ -350,23 +360,23 @@ namespace Amazon.DNXCore.IntegrationTests.S3
         /// </summary>
         [Fact]
         [Trait(CategoryAttribute, "S3")]
-        public void TestZeroLengthDownloadToNonExistingPath()
+        public async Task TestZeroLengthDownloadToNonExistingPath()
         {
-            var objectKey = "folder1/folder2/empty_file.txt";
+            var objectKey = Path.Combine("folder1", "folder2", "empty_file.txt");
 
-            Client.PutObjectAsync(new PutObjectRequest
+            await Client.PutObjectAsync(new PutObjectRequest
             {
-                BucketName = bucketName,
+                BucketName = testBucketName,
                 Key = objectKey,
                 ContentBody = ""
-            });
+            }).ConfigureAwait(false);
 
-            var filename = UtilityMethods.GenerateName(objectKey.Replace('/', '\\'));
+            var filename = UtilityMethods.GenerateName(objectKey);
             var filePath = Path.Combine(basePath, filename);
             var transferUtility = new TransferUtility(Client);
             transferUtility.Download(new TransferUtilityDownloadRequest
             {
-                BucketName = bucketName,
+                BucketName = testBucketName,
                 FilePath = filePath,
                 Key = objectKey
             });
@@ -378,13 +388,13 @@ namespace Amazon.DNXCore.IntegrationTests.S3
         [Trait(CategoryAttribute, "S3")]
         public void UploadAsyncCancellationTest()
         {
-            var fileName = UtilityMethods.GenerateName(@"SimpleUploadTest\CancellationTest");
+            var fileName = UtilityMethods.GenerateName(Path.Combine("SimpleUploadTest", "CancellationTest"));
             var path = Path.Combine(basePath, fileName);
             UtilityMethods.GenerateFile(path, 20 * MEG_SIZE);
 
             TransferUtilityUploadRequest uploadRequest = new TransferUtilityUploadRequest()
             {
-                BucketName = bucketName,
+                BucketName = testBucketName,
                 Key = fileName,
                 FilePath = path
             };
@@ -489,10 +499,10 @@ namespace Amazon.DNXCore.IntegrationTests.S3
                         BucketName = bucketName,
                         Key = key,
                     };
-                    using (var response = await Client.GetObjectAsync(request))
+                    using (var response = await Client.GetObjectAsync(request).ConfigureAwait(false))
                     {
                         //Assert.AreEqual(contentType, response.Headers.ContentType);
-                        await response.WriteResponseStreamToFileAsync(downloadPath, false, CancellationToken.None);
+                        await response.WriteResponseStreamToFileAsync(downloadPath, false, CancellationToken.None).ConfigureAwait(false);
                     }
                 }
                 catch(AmazonS3Exception e)
@@ -509,8 +519,10 @@ namespace Amazon.DNXCore.IntegrationTests.S3
             string[] filePaths = Directory.GetFiles(directoryPath, "*", SearchOption.AllDirectories);
             foreach (var filePath in filePaths)
             {
-                var key = filePath.Substring(directoryPath.LastIndexOf("\\") + 1);
-                await ValidateFileContentsAsync(bucketName, key.Replace("\\", "/"), filePath);
+                // Get key based on separators of current platform.  If it's windows, replace any windows style
+                // separators with the unix style separators that S3 is expecting.
+                var key = filePath.Substring(directoryPath.LastIndexOf(Path.DirectorySeparatorChar) + 1).Replace("\\", "/");
+                await ValidateFileContentsAsync(bucketName, key, filePath).ConfigureAwait(false);
             }
         }
 

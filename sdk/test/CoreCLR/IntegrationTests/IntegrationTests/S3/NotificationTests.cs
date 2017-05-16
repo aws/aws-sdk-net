@@ -1,4 +1,5 @@
-﻿using Amazon.S3;
+﻿using Amazon.DNXCore.IntegrationTests.Common;
+using Amazon.S3;
 using Amazon.S3.Model;
 using Amazon.S3.Util;
 using Amazon.SimpleNotificationService;
@@ -43,10 +44,17 @@ namespace Amazon.DNXCore.IntegrationTests
                             }
                         }
                     };
-
                     await Client.PutBucketNotificationAsync(putRequest);
 
-                    var getResponse = await Client.GetBucketNotificationAsync(bucketName);
+                    var getResponse = WaitUtils.WaitForComplete(
+                        () =>
+                        {
+                            return Client.GetBucketNotificationAsync(bucketName).Result;
+                        },
+                        (r) =>
+                        {
+                            return r.TopicConfigurations.Count > 0;
+                        });
 
                     Assert.Equal(1, getResponse.TopicConfigurations.Count);
                     Assert.Equal(1, getResponse.TopicConfigurations[0].Events.Count);
@@ -105,8 +113,15 @@ namespace Amazon.DNXCore.IntegrationTests
                     };
 
                     await Client.PutBucketNotificationAsync(putRequest);
-
-                    var getResponse = await Client.GetBucketNotificationAsync(bucketName);
+                    var getResponse = WaitUtils.WaitForComplete(
+                        () =>
+                        {
+                            return Client.GetBucketNotificationAsync(bucketName).Result;
+                        },
+                        (r) =>
+                        {
+                            return r.QueueConfigurations.Count > 0;
+                        });
 
                     Assert.Equal(1, getResponse.QueueConfigurations.Count);
                     Assert.Equal(1, getResponse.QueueConfigurations[0].Events.Count);
@@ -124,7 +139,20 @@ namespace Amazon.DNXCore.IntegrationTests
 
                     // Purge queue to remove test message sent configuration was setup.
                     await sqsClient.PurgeQueueAsync(createResponse.QueueUrl);
-                    Thread.Sleep(TimeSpan.FromSeconds(1));
+
+                    // make sure the queue is really clear
+                    WaitUtils.WaitForComplete(
+                        () =>
+                        {
+                            return sqsClient.ReceiveMessageAsync(new ReceiveMessageRequest()
+                            {
+                                QueueUrl = createResponse.QueueUrl
+                            }).Result;
+                        },
+                        (r) =>
+                        {
+                            return r.Messages.Count == 0;
+                        });
 
                     var putObjectRequest = new PutObjectRequest
                     {
@@ -132,21 +160,23 @@ namespace Amazon.DNXCore.IntegrationTests
                         Key = "test/data.txt",
                         ContentBody = "Important Data"
                     };
-
                     await Client.PutObjectAsync(putObjectRequest);
 
-                    string messageBody = null;
-                    for (int i = 0; i < 5 && messageBody == null; i++)
-                    {
-                        var receiveResponse = await sqsClient.ReceiveMessageAsync(new ReceiveMessageRequest { QueueUrl = createResponse.QueueUrl, WaitTimeSeconds = 20 });
-                        if (receiveResponse.Messages.Count != 0)
+                    var response = WaitUtils.WaitForComplete(
+                        () =>
                         {
-                            messageBody = receiveResponse.Messages[0].Body;
-                        }
-                    }
+                            return sqsClient.ReceiveMessageAsync(new ReceiveMessageRequest
+                            {
+                                QueueUrl = createResponse.QueueUrl,
+                                WaitTimeSeconds = 20
+                            }).Result;
+                        },
+                        (r) =>
+                        {
+                            return r.Messages.Count > 0;
+                        });
 
-
-                    var evnt = S3EventNotification.ParseJson(messageBody);
+                    var evnt = S3EventNotification.ParseJson(response.Messages[0].Body);
 
                     Assert.Equal(1, evnt.Records.Count);
                     Assert.Equal(putObjectRequest.BucketName, evnt.Records[0].S3.Bucket.Name);
