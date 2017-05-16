@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.3.87.0",
+    "ProductVersion" : "3.3.88.0",
     "CoreVersion"    : "3.3.14.0",
     "DefaultToPreview" : false,
     "ServiceVersions"  : {
@@ -82,7 +82,7 @@
             "InPreview"    : false
         },
         "CodeDeploy"        : {
-            "Version" : "3.3.3.10",
+            "Version" : "3.3.4.0",
             "Dependencies" : {
                 "Core" : "3.3.14.0"
             },
@@ -219,7 +219,7 @@
             "InPreview"    : false
         },
         "KeyManagementService" : {
-            "Version" : "3.3.2.11",
+            "Version" : "3.3.2.12",
             "Dependencies" : {
                 "Core" : "3.3.14.0"
             },
@@ -401,7 +401,7 @@
             "InPreview"    : false
         },
         "Inspector"                       : {
-            "Version" : "3.3.0.19",
+            "Version" : "3.3.1.0",
             "Dependencies" : {
                 "Core" : "3.3.14.0"
             },
@@ -450,7 +450,7 @@
             "InPreview"    : false
         },
         "GameLift"                        : {
-            "Version" : "3.3.4.6",
+            "Version" : "3.3.5.0",
             "Dependencies" : {
                 "Core" : "3.3.14.0"
             },
