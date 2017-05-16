@@ -94,7 +94,10 @@ namespace Amazon.Inspector.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Message.
+        /// Gets and sets the property Message. 
+        /// <para>
+        /// The message included in the notification.
+        /// </para>
         /// </summary>
         public string Message
         {

@@ -591,6 +591,57 @@ namespace Amazon.Inspector
 
         #endregion
         
+        #region  GetAssessmentReport
+
+
+        /// <summary>
+        /// Produces an assessment report that includes detailed and comprehensive results of
+        /// a specified assessment run.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAssessmentReport service method.</param>
+        /// 
+        /// <returns>The response from the GetAssessmentReport service method, as returned by Inspector.</returns>
+        /// <exception cref="Amazon.Inspector.Model.AccessDeniedException">
+        /// You do not have required permissions to access the requested resource.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector.Model.AssessmentRunInProgressException">
+        /// You cannot perform a specified action if an assessment run is currently in progress.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector.Model.InternalException">
+        /// Internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector.Model.InvalidInputException">
+        /// The request was rejected because an invalid or out-of-range value was supplied for
+        /// an input parameter.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector.Model.NoSuchEntityException">
+        /// The request was rejected because it referenced an entity that does not exist. The
+        /// error code describes the entity.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector.Model.UnsupportedFeatureException">
+        /// Used by the <a>GetAssessmentReport</a> API. The request was rejected because you tried
+        /// to generate a report for an assessment run that existed before reporting was supported
+        /// in Amazon Inspector. You can only generate reports for assessment runs that took place
+        /// or will take place after generating reports in Amazon Inspector became available.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/GetAssessmentReport">REST API Reference for GetAssessmentReport Operation</seealso>
+        GetAssessmentReportResponse GetAssessmentReport(GetAssessmentReportRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetAssessmentReport operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetAssessmentReport operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/GetAssessmentReport">REST API Reference for GetAssessmentReport Operation</seealso>
+        Task<GetAssessmentReportResponse> GetAssessmentReportAsync(GetAssessmentReportRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  GetTelemetryMetadata
 
 

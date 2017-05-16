@@ -61,6 +61,15 @@
     <max>300</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Inspector.Model.GetAssessmentReportRequest.AssessmentRunArn</property>
+    <min>1</min>
+    <max>300</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Inspector.Model.GetAssessmentReportResponse.Url</property>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Inspector.Model.GetTelemetryMetadataRequest.AssessmentRunArn</property>
     <min>1</min>
     <max>300</max>
@@ -556,5 +565,10 @@
     <property>Amazon.Inspector.Model.TelemetryMetadata.MessageType</property>
     <min>1</min>
     <max>300</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Inspector.Model.UnsupportedFeatureException.Message</property>
+    <min>0</min>
+    <max>1000</max>
   </property-value-rule>
 </property-value-rules>

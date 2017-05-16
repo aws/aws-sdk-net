@@ -683,6 +683,38 @@ namespace Amazon.Inspector
 
         #endregion
         
+        #region  GetAssessmentReport
+
+        internal GetAssessmentReportResponse GetAssessmentReport(GetAssessmentReportRequest request)
+        {
+            var marshaller = new GetAssessmentReportRequestMarshaller();
+            var unmarshaller = GetAssessmentReportResponseUnmarshaller.Instance;
+
+            return Invoke<GetAssessmentReportRequest,GetAssessmentReportResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetAssessmentReport operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetAssessmentReport operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/GetAssessmentReport">REST API Reference for GetAssessmentReport Operation</seealso>
+        public Task<GetAssessmentReportResponse> GetAssessmentReportAsync(GetAssessmentReportRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new GetAssessmentReportRequestMarshaller();
+            var unmarshaller = GetAssessmentReportResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetAssessmentReportRequest,GetAssessmentReportResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetTelemetryMetadata
 
         internal GetTelemetryMetadataResponse GetTelemetryMetadata(GetTelemetryMetadataRequest request)

@@ -44,6 +44,7 @@ namespace Amazon.Inspector.Model
         private DateTime? _createdAt;
         private bool? _dataCollected;
         private int? _durationInSeconds;
+        private Dictionary<string, int> _findingCounts = new Dictionary<string, int>();
         private string _name;
         private List<AssessmentRunNotification> _notifications = new List<AssessmentRunNotification>();
         private List<string> _rulesPackageArns = new List<string>();
@@ -161,6 +162,24 @@ namespace Amazon.Inspector.Model
         internal bool IsSetDurationInSeconds()
         {
             return this._durationInSeconds.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property FindingCounts. 
+        /// <para>
+        /// Provides a total count of generated findings per severity.
+        /// </para>
+        /// </summary>
+        public Dictionary<string, int> FindingCounts
+        {
+            get { return this._findingCounts; }
+            set { this._findingCounts = value; }
+        }
+
+        // Check to see if FindingCounts property is set
+        internal bool IsSetFindingCounts()
+        {
+            return this._findingCounts != null && this._findingCounts.Count > 0; 
         }
 
         /// <summary>

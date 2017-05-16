@@ -1141,6 +1141,83 @@ namespace Amazon.Inspector
 
         #endregion
         
+        #region  GetAssessmentReport
+
+        /// <summary>
+        /// Produces an assessment report that includes detailed and comprehensive results of
+        /// a specified assessment run.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAssessmentReport service method.</param>
+        /// 
+        /// <returns>The response from the GetAssessmentReport service method, as returned by Inspector.</returns>
+        /// <exception cref="Amazon.Inspector.Model.AccessDeniedException">
+        /// You do not have required permissions to access the requested resource.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector.Model.AssessmentRunInProgressException">
+        /// You cannot perform a specified action if an assessment run is currently in progress.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector.Model.InternalException">
+        /// Internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector.Model.InvalidInputException">
+        /// The request was rejected because an invalid or out-of-range value was supplied for
+        /// an input parameter.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector.Model.NoSuchEntityException">
+        /// The request was rejected because it referenced an entity that does not exist. The
+        /// error code describes the entity.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector.Model.UnsupportedFeatureException">
+        /// Used by the <a>GetAssessmentReport</a> API. The request was rejected because you tried
+        /// to generate a report for an assessment run that existed before reporting was supported
+        /// in Amazon Inspector. You can only generate reports for assessment runs that took place
+        /// or will take place after generating reports in Amazon Inspector became available.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/GetAssessmentReport">REST API Reference for GetAssessmentReport Operation</seealso>
+        public GetAssessmentReportResponse GetAssessmentReport(GetAssessmentReportRequest request)
+        {
+            var marshaller = new GetAssessmentReportRequestMarshaller();
+            var unmarshaller = GetAssessmentReportResponseUnmarshaller.Instance;
+
+            return Invoke<GetAssessmentReportRequest,GetAssessmentReportResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetAssessmentReport operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetAssessmentReport operation on AmazonInspectorClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetAssessmentReport
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/GetAssessmentReport">REST API Reference for GetAssessmentReport Operation</seealso>
+        public IAsyncResult BeginGetAssessmentReport(GetAssessmentReportRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new GetAssessmentReportRequestMarshaller();
+            var unmarshaller = GetAssessmentReportResponseUnmarshaller.Instance;
+
+            return BeginInvoke<GetAssessmentReportRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetAssessmentReport operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetAssessmentReport.</param>
+        /// 
+        /// <returns>Returns a  GetAssessmentReportResult from Inspector.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/GetAssessmentReport">REST API Reference for GetAssessmentReport Operation</seealso>
+        public  GetAssessmentReportResponse EndGetAssessmentReport(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetAssessmentReportResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  GetTelemetryMetadata
 
         /// <summary>

@@ -299,6 +299,10 @@ namespace Amazon.Inspector
         /// </summary>
         public static readonly AssessmentRunState DATA_COLLECTED = new AssessmentRunState("DATA_COLLECTED");
         /// <summary>
+        /// Constant ERROR for AssessmentRunState
+        /// </summary>
+        public static readonly AssessmentRunState ERROR = new AssessmentRunState("ERROR");
+        /// <summary>
         /// Constant EVALUATING_RULES for AssessmentRunState
         /// </summary>
         public static readonly AssessmentRunState EVALUATING_RULES = new AssessmentRunState("EVALUATING_RULES");
@@ -314,6 +318,10 @@ namespace Amazon.Inspector
         /// Constant START_DATA_COLLECTION_PENDING for AssessmentRunState
         /// </summary>
         public static readonly AssessmentRunState START_DATA_COLLECTION_PENDING = new AssessmentRunState("START_DATA_COLLECTION_PENDING");
+        /// <summary>
+        /// Constant START_EVALUATING_RULES_PENDING for AssessmentRunState
+        /// </summary>
+        public static readonly AssessmentRunState START_EVALUATING_RULES_PENDING = new AssessmentRunState("START_EVALUATING_RULES_PENDING");
         /// <summary>
         /// Constant STOP_DATA_COLLECTION_PENDING for AssessmentRunState
         /// </summary>
@@ -1012,6 +1020,160 @@ namespace Amazon.Inspector
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator NoSuchEntityErrorCode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ReportFileFormat.
+    /// </summary>
+    public class ReportFileFormat : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant HTML for ReportFileFormat
+        /// </summary>
+        public static readonly ReportFileFormat HTML = new ReportFileFormat("HTML");
+        /// <summary>
+        /// Constant PDF for ReportFileFormat
+        /// </summary>
+        public static readonly ReportFileFormat PDF = new ReportFileFormat("PDF");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ReportFileFormat(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ReportFileFormat FindValue(string value)
+        {
+            return FindValue<ReportFileFormat>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ReportFileFormat(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ReportStatus.
+    /// </summary>
+    public class ReportStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant COMPLETED for ReportStatus
+        /// </summary>
+        public static readonly ReportStatus COMPLETED = new ReportStatus("COMPLETED");
+        /// <summary>
+        /// Constant FAILED for ReportStatus
+        /// </summary>
+        public static readonly ReportStatus FAILED = new ReportStatus("FAILED");
+        /// <summary>
+        /// Constant WORK_IN_PROGRESS for ReportStatus
+        /// </summary>
+        public static readonly ReportStatus WORK_IN_PROGRESS = new ReportStatus("WORK_IN_PROGRESS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ReportStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ReportStatus FindValue(string value)
+        {
+            return FindValue<ReportStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ReportStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ReportType.
+    /// </summary>
+    public class ReportType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant FINDING for ReportType
+        /// </summary>
+        public static readonly ReportType FINDING = new ReportType("FINDING");
+        /// <summary>
+        /// Constant FULL for ReportType
+        /// </summary>
+        public static readonly ReportType FULL = new ReportType("FULL");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ReportType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ReportType FindValue(string value)
+        {
+            return FindValue<ReportType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ReportType(string value)
         {
             return FindValue(value);
         }

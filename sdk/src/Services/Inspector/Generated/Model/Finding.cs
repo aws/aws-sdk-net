@@ -287,7 +287,10 @@ namespace Amazon.Inspector.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ServiceAttributes.
+        /// Gets and sets the property ServiceAttributes. 
+        /// <para>
+        /// This data type is used in the <a>Finding</a> data type.
+        /// </para>
         /// </summary>
         public InspectorServiceAttributes ServiceAttributes
         {
