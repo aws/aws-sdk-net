@@ -757,6 +757,10 @@ namespace Amazon.GameLift
         /// </summary>
         public static readonly MetricName ActiveInstances = new MetricName("ActiveInstances");
         /// <summary>
+        /// Constant AvailableGameSessions for MetricName
+        /// </summary>
+        public static readonly MetricName AvailableGameSessions = new MetricName("AvailableGameSessions");
+        /// <summary>
         /// Constant AvailablePlayerSessions for MetricName
         /// </summary>
         public static readonly MetricName AvailablePlayerSessions = new MetricName("AvailablePlayerSessions");
@@ -768,6 +772,14 @@ namespace Amazon.GameLift
         /// Constant IdleInstances for MetricName
         /// </summary>
         public static readonly MetricName IdleInstances = new MetricName("IdleInstances");
+        /// <summary>
+        /// Constant PercentAvailableGameSessions for MetricName
+        /// </summary>
+        public static readonly MetricName PercentAvailableGameSessions = new MetricName("PercentAvailableGameSessions");
+        /// <summary>
+        /// Constant PercentIdleInstances for MetricName
+        /// </summary>
+        public static readonly MetricName PercentIdleInstances = new MetricName("PercentIdleInstances");
         /// <summary>
         /// Constant QueueDepth for MetricName
         /// </summary>

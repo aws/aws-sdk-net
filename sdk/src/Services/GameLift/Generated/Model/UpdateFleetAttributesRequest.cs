@@ -37,6 +37,7 @@ namespace Amazon.GameLift.Model
     {
         private string _description;
         private string _fleetId;
+        private List<string> _metricGroups = new List<string>();
         private string _name;
         private ProtectionPolicy _newGameSessionProtectionPolicy;
         private ResourceCreationLimitPolicy _resourceCreationLimitPolicy;
@@ -75,6 +76,27 @@ namespace Amazon.GameLift.Model
         internal bool IsSetFleetId()
         {
             return this._fleetId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MetricGroups. 
+        /// <para>
+        /// Names of metric groups to include this fleet with. A fleet metric group is used in
+        /// Amazon CloudWatch to aggregate metrics from multiple fleets. Use an existing metric
+        /// group name to add this fleet to the group, or use a new name to create a new metric
+        /// group. Currently, a fleet can only be included in one metric group at a time.
+        /// </para>
+        /// </summary>
+        public List<string> MetricGroups
+        {
+            get { return this._metricGroups; }
+            set { this._metricGroups = value; }
+        }
+
+        // Check to see if MetricGroups property is set
+        internal bool IsSetMetricGroups()
+        {
+            return this._metricGroups != null && this._metricGroups.Count > 0; 
         }
 
         /// <summary>

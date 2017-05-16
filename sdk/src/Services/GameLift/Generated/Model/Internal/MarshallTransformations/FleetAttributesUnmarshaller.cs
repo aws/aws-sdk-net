@@ -100,6 +100,12 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
                     unmarshalledObject.LogPaths = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("MetricGroups", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.MetricGroups = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Name", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

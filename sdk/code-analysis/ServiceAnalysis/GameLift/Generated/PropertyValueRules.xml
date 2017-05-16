@@ -1035,6 +1035,16 @@
     <pattern>^fleet-\S+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.GameLift.Model.RuntimeConfiguration.GameSessionActivationTimeoutSeconds</property>
+    <min>1</min>
+    <max>600</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GameLift.Model.RuntimeConfiguration.MaxConcurrentGameSessionActivations</property>
+    <min>1</min>
+    <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.GameLift.Model.S3Location.Bucket</property>
     <min>1</min>
   </property-value-rule>

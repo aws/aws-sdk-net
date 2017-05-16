@@ -45,6 +45,18 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(RuntimeConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetGameSessionActivationTimeoutSeconds())
+            {
+                context.Writer.WritePropertyName("GameSessionActivationTimeoutSeconds");
+                context.Writer.Write(requestObject.GameSessionActivationTimeoutSeconds);
+            }
+
+            if(requestObject.IsSetMaxConcurrentGameSessionActivations())
+            {
+                context.Writer.WritePropertyName("MaxConcurrentGameSessionActivations");
+                context.Writer.Write(requestObject.MaxConcurrentGameSessionActivations);
+            }
+
             if(requestObject.IsSetServerProcesses())
             {
                 context.Writer.WritePropertyName("ServerProcesses");

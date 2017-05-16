@@ -79,6 +79,17 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.FleetId);
                 }
 
+                if(publicRequest.IsSetMetricGroups())
+                {
+                    context.Writer.WritePropertyName("MetricGroups");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestMetricGroupsListValue in publicRequest.MetricGroups)
+                    {
+                            context.Writer.Write(publicRequestMetricGroupsListValue);
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 if(publicRequest.IsSetName())
                 {
                     context.Writer.WritePropertyName("Name");

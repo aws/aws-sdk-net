@@ -39,12 +39,16 @@ namespace Amazon.GameLift.Model
     /// 
     ///  
     /// <para>
-    /// To create a new fleet, provide a fleet name, an EC2 instance type, and a build ID
-    /// of the game build to deploy. You can also configure the new fleet with the following
-    /// settings: (1) a runtime configuration describing what server processes to run on each
-    /// instance in the fleet (required to create fleet), (2) access permissions for inbound
-    /// traffic, (3) fleet-wide game session protection, and (4) the location of default log
-    /// files for Amazon GameLift to upload and store.
+    /// To create a new fleet, you must specify the following: (1) fleet name, (2) build ID
+    /// of an uploaded game build, (3) an EC2 instance type, and (4) a runtime configuration
+    /// that describes which server processes to run on each instance in the fleet. (Although
+    /// the runtime configuration is not a required parameter, the fleet cannot be successfully
+    /// created without it.) You can also configure the new fleet with the following settings:
+    /// fleet description, access permissions for inbound traffic, fleet-wide game session
+    /// protection, and resource creation limit. If you use Amazon CloudWatch for metrics,
+    /// you can add the new fleet to a metric group, which allows you to view aggregated metrics
+    /// for a set of fleets. Once you specify a metric group, the new fleet's metrics are
+    /// included in the metric group's data.
     /// </para>
     ///  
     /// <para>
@@ -115,6 +119,7 @@ namespace Amazon.GameLift.Model
         private List<IpPermission> _ec2InboundPermissions = new List<IpPermission>();
         private EC2InstanceType _ec2InstanceType;
         private List<string> _logPaths = new List<string>();
+        private List<string> _metricGroups = new List<string>();
         private string _name;
         private ProtectionPolicy _newGameSessionProtectionPolicy;
         private ResourceCreationLimitPolicy _resourceCreationLimitPolicy;
@@ -223,6 +228,26 @@ namespace Amazon.GameLift.Model
         internal bool IsSetLogPaths()
         {
             return this._logPaths != null && this._logPaths.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property MetricGroups. 
+        /// <para>
+        /// Names of metric groups to add this fleet to. Use an existing metric group name to
+        /// add this fleet to the group, or use a new name to create a new metric group. Currently,
+        /// a fleet can only be included in one metric group at a time.
+        /// </para>
+        /// </summary>
+        public List<string> MetricGroups
+        {
+            get { return this._metricGroups; }
+            set { this._metricGroups = value; }
+        }
+
+        // Check to see if MetricGroups property is set
+        internal bool IsSetMetricGroups()
+        {
+            return this._metricGroups != null && this._metricGroups.Count > 0; 
         }
 
         /// <summary>

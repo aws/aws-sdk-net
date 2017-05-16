@@ -53,13 +53,55 @@ namespace Amazon.GameLift.Model
     /// </summary>
     public partial class RuntimeConfiguration
     {
+        private int? _gameSessionActivationTimeoutSeconds;
+        private int? _maxConcurrentGameSessionActivations;
         private List<ServerProcess> _serverProcesses = new List<ServerProcess>();
+
+        /// <summary>
+        /// Gets and sets the property GameSessionActivationTimeoutSeconds. 
+        /// <para>
+        /// Maximum amount of time (in seconds) that a game session can remain in status ACTIVATING.
+        /// If the game session is not active before the timeout, activation is terminated and
+        /// the game session status is changed to TERMINATED.
+        /// </para>
+        /// </summary>
+        public int GameSessionActivationTimeoutSeconds
+        {
+            get { return this._gameSessionActivationTimeoutSeconds.GetValueOrDefault(); }
+            set { this._gameSessionActivationTimeoutSeconds = value; }
+        }
+
+        // Check to see if GameSessionActivationTimeoutSeconds property is set
+        internal bool IsSetGameSessionActivationTimeoutSeconds()
+        {
+            return this._gameSessionActivationTimeoutSeconds.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property MaxConcurrentGameSessionActivations. 
+        /// <para>
+        /// Maximum number of game sessions with status ACTIVATING to allow on an instance simultaneously.
+        /// This setting limits the amount of instance resources that can be used for new game
+        /// activations at any one time.
+        /// </para>
+        /// </summary>
+        public int MaxConcurrentGameSessionActivations
+        {
+            get { return this._maxConcurrentGameSessionActivations.GetValueOrDefault(); }
+            set { this._maxConcurrentGameSessionActivations = value; }
+        }
+
+        // Check to see if MaxConcurrentGameSessionActivations property is set
+        internal bool IsSetMaxConcurrentGameSessionActivations()
+        {
+            return this._maxConcurrentGameSessionActivations.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property ServerProcesses. 
         /// <para>
-        /// Collection of server process configurations describing what server processes to run
-        /// on each instance in a fleet
+        /// Collection of server process configurations that describe which server processes to
+        /// run on each instance in a fleet.
         /// </para>
         /// </summary>
         public List<ServerProcess> ServerProcesses

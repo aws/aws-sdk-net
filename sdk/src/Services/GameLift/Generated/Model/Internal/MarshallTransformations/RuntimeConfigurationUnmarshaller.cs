@@ -64,6 +64,18 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("GameSessionActivationTimeoutSeconds", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.GameSessionActivationTimeoutSeconds = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("MaxConcurrentGameSessionActivations", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.MaxConcurrentGameSessionActivations = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ServerProcesses", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<ServerProcess, ServerProcessUnmarshaller>(ServerProcessUnmarshaller.Instance);
