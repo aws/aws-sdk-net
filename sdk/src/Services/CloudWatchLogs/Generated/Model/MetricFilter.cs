@@ -42,7 +42,8 @@ namespace Amazon.CloudWatchLogs.Model
         /// <summary>
         /// Gets and sets the property CreationTime. 
         /// <para>
-        /// The creation time of the metric filter.
+        /// The creation time of the metric filter, expressed as the number of milliseconds since
+        /// Jan 1, 1970 00:00:00 UTC.
         /// </para>
         /// </summary>
         public DateTime CreationTime

@@ -55,7 +55,10 @@ namespace Amazon.CloudWatchLogs.Model
     /// </para>
     ///  </li> </ul> 
     /// <para>
-    /// There can only be one subscription filter associated with a log group.
+    /// There can only be one subscription filter associated with a log group. If you are
+    /// updating an existing filter, you must specify the correct name in <code>filterName</code>.
+    /// Otherwise, the call will fail because you cannot associate a second filter with a
+    /// log group.
     /// </para>
     /// </summary>
     public partial class PutSubscriptionFilterRequest : AmazonCloudWatchLogsRequest
@@ -130,7 +133,10 @@ namespace Amazon.CloudWatchLogs.Model
         /// <summary>
         /// Gets and sets the property FilterName. 
         /// <para>
-        /// A name for the subscription filter.
+        /// A name for the subscription filter. If you are updating an existing filter, you must
+        /// specify the correct name in <code>filterName</code>. Otherwise, the call will fail
+        /// because you cannot associate a second filter with a log group. To find the name of
+        /// the filter currently associated with a log group, use <a>DescribeSubscriptionFilters</a>.
         /// </para>
         /// </summary>
         public string FilterName
