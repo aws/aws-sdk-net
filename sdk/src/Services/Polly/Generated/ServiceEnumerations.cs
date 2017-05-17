@@ -569,6 +569,10 @@ namespace Amazon.Polly
         /// </summary>
         public static readonly VoiceId Tatyana = new VoiceId("Tatyana");
         /// <summary>
+        /// Constant Vicki for VoiceId
+        /// </summary>
+        public static readonly VoiceId Vicki = new VoiceId("Vicki");
+        /// <summary>
         /// Constant Vitoria for VoiceId
         /// </summary>
         public static readonly VoiceId Vitoria = new VoiceId("Vitoria");
