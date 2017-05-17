@@ -242,7 +242,7 @@ namespace Amazon.AutoScaling
         /// </para>
         ///  
         /// <para>
-        /// If there is a Classic load balancer attached to your Auto Scaling group, the instances
+        /// If there is a Classic Load Balancer attached to your Auto Scaling group, the instances
         /// are also registered with the load balancer. If there are target groups attached to
         /// your Auto Scaling group, the instances are also registered with the target groups.
         /// </para>
@@ -259,6 +259,7 @@ namespace Amazon.AutoScaling
         /// You already have a pending update to an Auto Scaling resource (for example, a group,
         /// instance, or load balancer).
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/AttachInstances">REST API Reference for AttachInstances Operation</seealso>
         public AttachInstancesResponse AttachInstances(AttachInstancesRequest request)
         {
             var marshaller = new AttachInstancesRequestMarshaller();
@@ -278,6 +279,7 @@ namespace Amazon.AutoScaling
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAttachInstances
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/AttachInstances">REST API Reference for AttachInstances Operation</seealso>
         public IAsyncResult BeginAttachInstances(AttachInstancesRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new AttachInstancesRequestMarshaller();
@@ -294,6 +296,7 @@ namespace Amazon.AutoScaling
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAttachInstances.</param>
         /// 
         /// <returns>Returns a  AttachInstancesResult from AutoScaling.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/AttachInstances">REST API Reference for AttachInstances Operation</seealso>
         public  AttachInstancesResponse EndAttachInstances(IAsyncResult asyncResult)
         {
             return EndInvoke<AttachInstancesResponse>(asyncResult);
@@ -304,11 +307,11 @@ namespace Amazon.AutoScaling
         #region  AttachLoadBalancers
 
         /// <summary>
-        /// Attaches one or more Classic load balancers to the specified Auto Scaling group.
+        /// Attaches one or more Classic Load Balancers to the specified Auto Scaling group.
         /// 
         ///  
         /// <para>
-        /// To attach an Application load balancer instead, see <a>AttachLoadBalancerTargetGroups</a>.
+        /// To attach an Application Load Balancer instead, see <a>AttachLoadBalancerTargetGroups</a>.
         /// </para>
         ///  
         /// <para>
@@ -328,6 +331,7 @@ namespace Amazon.AutoScaling
         /// You already have a pending update to an Auto Scaling resource (for example, a group,
         /// instance, or load balancer).
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/AttachLoadBalancers">REST API Reference for AttachLoadBalancers Operation</seealso>
         public AttachLoadBalancersResponse AttachLoadBalancers(AttachLoadBalancersRequest request)
         {
             var marshaller = new AttachLoadBalancersRequestMarshaller();
@@ -347,6 +351,7 @@ namespace Amazon.AutoScaling
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAttachLoadBalancers
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/AttachLoadBalancers">REST API Reference for AttachLoadBalancers Operation</seealso>
         public IAsyncResult BeginAttachLoadBalancers(AttachLoadBalancersRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new AttachLoadBalancersRequestMarshaller();
@@ -363,6 +368,7 @@ namespace Amazon.AutoScaling
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAttachLoadBalancers.</param>
         /// 
         /// <returns>Returns a  AttachLoadBalancersResult from AutoScaling.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/AttachLoadBalancers">REST API Reference for AttachLoadBalancers Operation</seealso>
         public  AttachLoadBalancersResponse EndAttachLoadBalancers(IAsyncResult asyncResult)
         {
             return EndInvoke<AttachLoadBalancersResponse>(asyncResult);
@@ -393,6 +399,7 @@ namespace Amazon.AutoScaling
         /// You already have a pending update to an Auto Scaling resource (for example, a group,
         /// instance, or load balancer).
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/AttachLoadBalancerTargetGroups">REST API Reference for AttachLoadBalancerTargetGroups Operation</seealso>
         public AttachLoadBalancerTargetGroupsResponse AttachLoadBalancerTargetGroups(AttachLoadBalancerTargetGroupsRequest request)
         {
             var marshaller = new AttachLoadBalancerTargetGroupsRequestMarshaller();
@@ -412,6 +419,7 @@ namespace Amazon.AutoScaling
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAttachLoadBalancerTargetGroups
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/AttachLoadBalancerTargetGroups">REST API Reference for AttachLoadBalancerTargetGroups Operation</seealso>
         public IAsyncResult BeginAttachLoadBalancerTargetGroups(AttachLoadBalancerTargetGroupsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new AttachLoadBalancerTargetGroupsRequestMarshaller();
@@ -428,6 +436,7 @@ namespace Amazon.AutoScaling
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAttachLoadBalancerTargetGroups.</param>
         /// 
         /// <returns>Returns a  AttachLoadBalancerTargetGroupsResult from AutoScaling.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/AttachLoadBalancerTargetGroups">REST API Reference for AttachLoadBalancerTargetGroups Operation</seealso>
         public  AttachLoadBalancerTargetGroupsResponse EndAttachLoadBalancerTargetGroups(IAsyncResult asyncResult)
         {
             return EndInvoke<AttachLoadBalancerTargetGroupsResponse>(asyncResult);
@@ -485,6 +494,7 @@ namespace Amazon.AutoScaling
         /// You already have a pending update to an Auto Scaling resource (for example, a group,
         /// instance, or load balancer).
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/CompleteLifecycleAction">REST API Reference for CompleteLifecycleAction Operation</seealso>
         public CompleteLifecycleActionResponse CompleteLifecycleAction(CompleteLifecycleActionRequest request)
         {
             var marshaller = new CompleteLifecycleActionRequestMarshaller();
@@ -504,6 +514,7 @@ namespace Amazon.AutoScaling
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCompleteLifecycleAction
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/CompleteLifecycleAction">REST API Reference for CompleteLifecycleAction Operation</seealso>
         public IAsyncResult BeginCompleteLifecycleAction(CompleteLifecycleActionRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CompleteLifecycleActionRequestMarshaller();
@@ -520,6 +531,7 @@ namespace Amazon.AutoScaling
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCompleteLifecycleAction.</param>
         /// 
         /// <returns>Returns a  CompleteLifecycleActionResult from AutoScaling.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/CompleteLifecycleAction">REST API Reference for CompleteLifecycleAction Operation</seealso>
         public  CompleteLifecycleActionResponse EndCompleteLifecycleAction(IAsyncResult asyncResult)
         {
             return EndInvoke<CompleteLifecycleActionResponse>(asyncResult);
@@ -558,6 +570,7 @@ namespace Amazon.AutoScaling
         /// You already have a pending update to an Auto Scaling resource (for example, a group,
         /// instance, or load balancer).
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/CreateAutoScalingGroup">REST API Reference for CreateAutoScalingGroup Operation</seealso>
         public CreateAutoScalingGroupResponse CreateAutoScalingGroup(CreateAutoScalingGroupRequest request)
         {
             var marshaller = new CreateAutoScalingGroupRequestMarshaller();
@@ -577,6 +590,7 @@ namespace Amazon.AutoScaling
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateAutoScalingGroup
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/CreateAutoScalingGroup">REST API Reference for CreateAutoScalingGroup Operation</seealso>
         public IAsyncResult BeginCreateAutoScalingGroup(CreateAutoScalingGroupRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CreateAutoScalingGroupRequestMarshaller();
@@ -593,6 +607,7 @@ namespace Amazon.AutoScaling
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateAutoScalingGroup.</param>
         /// 
         /// <returns>Returns a  CreateAutoScalingGroupResult from AutoScaling.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/CreateAutoScalingGroup">REST API Reference for CreateAutoScalingGroup Operation</seealso>
         public  CreateAutoScalingGroupResponse EndCreateAutoScalingGroup(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateAutoScalingGroupResponse>(asyncResult);
@@ -631,6 +646,7 @@ namespace Amazon.AutoScaling
         /// You already have a pending update to an Auto Scaling resource (for example, a group,
         /// instance, or load balancer).
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/CreateLaunchConfiguration">REST API Reference for CreateLaunchConfiguration Operation</seealso>
         public CreateLaunchConfigurationResponse CreateLaunchConfiguration(CreateLaunchConfigurationRequest request)
         {
             var marshaller = new CreateLaunchConfigurationRequestMarshaller();
@@ -650,6 +666,7 @@ namespace Amazon.AutoScaling
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateLaunchConfiguration
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/CreateLaunchConfiguration">REST API Reference for CreateLaunchConfiguration Operation</seealso>
         public IAsyncResult BeginCreateLaunchConfiguration(CreateLaunchConfigurationRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CreateLaunchConfigurationRequestMarshaller();
@@ -666,6 +683,7 @@ namespace Amazon.AutoScaling
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateLaunchConfiguration.</param>
         /// 
         /// <returns>Returns a  CreateLaunchConfigurationResult from AutoScaling.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/CreateLaunchConfiguration">REST API Reference for CreateLaunchConfiguration Operation</seealso>
         public  CreateLaunchConfigurationResponse EndCreateLaunchConfiguration(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateLaunchConfigurationResponse>(asyncResult);
@@ -703,6 +721,7 @@ namespace Amazon.AutoScaling
         /// You already have a pending update to an Auto Scaling resource (for example, a group,
         /// instance, or load balancer).
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/CreateOrUpdateTags">REST API Reference for CreateOrUpdateTags Operation</seealso>
         public CreateOrUpdateTagsResponse CreateOrUpdateTags(CreateOrUpdateTagsRequest request)
         {
             var marshaller = new CreateOrUpdateTagsRequestMarshaller();
@@ -722,6 +741,7 @@ namespace Amazon.AutoScaling
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateOrUpdateTags
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/CreateOrUpdateTags">REST API Reference for CreateOrUpdateTags Operation</seealso>
         public IAsyncResult BeginCreateOrUpdateTags(CreateOrUpdateTagsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CreateOrUpdateTagsRequestMarshaller();
@@ -738,6 +758,7 @@ namespace Amazon.AutoScaling
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateOrUpdateTags.</param>
         /// 
         /// <returns>Returns a  CreateOrUpdateTagsResult from AutoScaling.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/CreateOrUpdateTags">REST API Reference for CreateOrUpdateTags Operation</seealso>
         public  CreateOrUpdateTagsResponse EndCreateOrUpdateTags(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateOrUpdateTagsResponse>(asyncResult);
@@ -785,6 +806,7 @@ namespace Amazon.AutoScaling
         /// <exception cref="Amazon.AutoScaling.Model.ScalingActivityInProgressException">
         /// The operation can't be performed because there are scaling activities in progress.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DeleteAutoScalingGroup">REST API Reference for DeleteAutoScalingGroup Operation</seealso>
         public DeleteAutoScalingGroupResponse DeleteAutoScalingGroup(DeleteAutoScalingGroupRequest request)
         {
             var marshaller = new DeleteAutoScalingGroupRequestMarshaller();
@@ -804,6 +826,7 @@ namespace Amazon.AutoScaling
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteAutoScalingGroup
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DeleteAutoScalingGroup">REST API Reference for DeleteAutoScalingGroup Operation</seealso>
         public IAsyncResult BeginDeleteAutoScalingGroup(DeleteAutoScalingGroupRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeleteAutoScalingGroupRequestMarshaller();
@@ -820,6 +843,7 @@ namespace Amazon.AutoScaling
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteAutoScalingGroup.</param>
         /// 
         /// <returns>Returns a  DeleteAutoScalingGroupResult from AutoScaling.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DeleteAutoScalingGroup">REST API Reference for DeleteAutoScalingGroup Operation</seealso>
         public  DeleteAutoScalingGroupResponse EndDeleteAutoScalingGroup(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteAutoScalingGroupResponse>(asyncResult);
@@ -848,6 +872,7 @@ namespace Amazon.AutoScaling
         /// <exception cref="Amazon.AutoScaling.Model.ResourceInUseException">
         /// The operation can't be performed because the resource is in use.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DeleteLaunchConfiguration">REST API Reference for DeleteLaunchConfiguration Operation</seealso>
         public DeleteLaunchConfigurationResponse DeleteLaunchConfiguration(DeleteLaunchConfigurationRequest request)
         {
             var marshaller = new DeleteLaunchConfigurationRequestMarshaller();
@@ -867,6 +892,7 @@ namespace Amazon.AutoScaling
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteLaunchConfiguration
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DeleteLaunchConfiguration">REST API Reference for DeleteLaunchConfiguration Operation</seealso>
         public IAsyncResult BeginDeleteLaunchConfiguration(DeleteLaunchConfigurationRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeleteLaunchConfigurationRequestMarshaller();
@@ -883,6 +909,7 @@ namespace Amazon.AutoScaling
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteLaunchConfiguration.</param>
         /// 
         /// <returns>Returns a  DeleteLaunchConfigurationResult from AutoScaling.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DeleteLaunchConfiguration">REST API Reference for DeleteLaunchConfiguration Operation</seealso>
         public  DeleteLaunchConfigurationResponse EndDeleteLaunchConfiguration(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteLaunchConfigurationResponse>(asyncResult);
@@ -908,6 +935,7 @@ namespace Amazon.AutoScaling
         /// You already have a pending update to an Auto Scaling resource (for example, a group,
         /// instance, or load balancer).
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DeleteLifecycleHook">REST API Reference for DeleteLifecycleHook Operation</seealso>
         public DeleteLifecycleHookResponse DeleteLifecycleHook(DeleteLifecycleHookRequest request)
         {
             var marshaller = new DeleteLifecycleHookRequestMarshaller();
@@ -927,6 +955,7 @@ namespace Amazon.AutoScaling
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteLifecycleHook
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DeleteLifecycleHook">REST API Reference for DeleteLifecycleHook Operation</seealso>
         public IAsyncResult BeginDeleteLifecycleHook(DeleteLifecycleHookRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeleteLifecycleHookRequestMarshaller();
@@ -943,6 +972,7 @@ namespace Amazon.AutoScaling
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteLifecycleHook.</param>
         /// 
         /// <returns>Returns a  DeleteLifecycleHookResult from AutoScaling.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DeleteLifecycleHook">REST API Reference for DeleteLifecycleHook Operation</seealso>
         public  DeleteLifecycleHookResponse EndDeleteLifecycleHook(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteLifecycleHookResponse>(asyncResult);
@@ -962,6 +992,7 @@ namespace Amazon.AutoScaling
         /// You already have a pending update to an Auto Scaling resource (for example, a group,
         /// instance, or load balancer).
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DeleteNotificationConfiguration">REST API Reference for DeleteNotificationConfiguration Operation</seealso>
         public DeleteNotificationConfigurationResponse DeleteNotificationConfiguration(DeleteNotificationConfigurationRequest request)
         {
             var marshaller = new DeleteNotificationConfigurationRequestMarshaller();
@@ -981,6 +1012,7 @@ namespace Amazon.AutoScaling
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteNotificationConfiguration
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DeleteNotificationConfiguration">REST API Reference for DeleteNotificationConfiguration Operation</seealso>
         public IAsyncResult BeginDeleteNotificationConfiguration(DeleteNotificationConfigurationRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeleteNotificationConfigurationRequestMarshaller();
@@ -997,6 +1029,7 @@ namespace Amazon.AutoScaling
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteNotificationConfiguration.</param>
         /// 
         /// <returns>Returns a  DeleteNotificationConfigurationResult from AutoScaling.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DeleteNotificationConfiguration">REST API Reference for DeleteNotificationConfiguration Operation</seealso>
         public  DeleteNotificationConfigurationResponse EndDeleteNotificationConfiguration(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteNotificationConfigurationResponse>(asyncResult);
@@ -1022,6 +1055,7 @@ namespace Amazon.AutoScaling
         /// You already have a pending update to an Auto Scaling resource (for example, a group,
         /// instance, or load balancer).
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DeletePolicy">REST API Reference for DeletePolicy Operation</seealso>
         public DeletePolicyResponse DeletePolicy(DeletePolicyRequest request)
         {
             var marshaller = new DeletePolicyRequestMarshaller();
@@ -1041,6 +1075,7 @@ namespace Amazon.AutoScaling
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeletePolicy
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DeletePolicy">REST API Reference for DeletePolicy Operation</seealso>
         public IAsyncResult BeginDeletePolicy(DeletePolicyRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeletePolicyRequestMarshaller();
@@ -1057,6 +1092,7 @@ namespace Amazon.AutoScaling
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeletePolicy.</param>
         /// 
         /// <returns>Returns a  DeletePolicyResult from AutoScaling.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DeletePolicy">REST API Reference for DeletePolicy Operation</seealso>
         public  DeletePolicyResponse EndDeletePolicy(IAsyncResult asyncResult)
         {
             return EndInvoke<DeletePolicyResponse>(asyncResult);
@@ -1076,6 +1112,7 @@ namespace Amazon.AutoScaling
         /// You already have a pending update to an Auto Scaling resource (for example, a group,
         /// instance, or load balancer).
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DeleteScheduledAction">REST API Reference for DeleteScheduledAction Operation</seealso>
         public DeleteScheduledActionResponse DeleteScheduledAction(DeleteScheduledActionRequest request)
         {
             var marshaller = new DeleteScheduledActionRequestMarshaller();
@@ -1095,6 +1132,7 @@ namespace Amazon.AutoScaling
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteScheduledAction
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DeleteScheduledAction">REST API Reference for DeleteScheduledAction Operation</seealso>
         public IAsyncResult BeginDeleteScheduledAction(DeleteScheduledActionRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeleteScheduledActionRequestMarshaller();
@@ -1111,6 +1149,7 @@ namespace Amazon.AutoScaling
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteScheduledAction.</param>
         /// 
         /// <returns>Returns a  DeleteScheduledActionResult from AutoScaling.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DeleteScheduledAction">REST API Reference for DeleteScheduledAction Operation</seealso>
         public  DeleteScheduledActionResponse EndDeleteScheduledAction(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteScheduledActionResponse>(asyncResult);
@@ -1130,6 +1169,7 @@ namespace Amazon.AutoScaling
         /// You already have a pending update to an Auto Scaling resource (for example, a group,
         /// instance, or load balancer).
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DeleteTags">REST API Reference for DeleteTags Operation</seealso>
         public DeleteTagsResponse DeleteTags(DeleteTagsRequest request)
         {
             var marshaller = new DeleteTagsRequestMarshaller();
@@ -1149,6 +1189,7 @@ namespace Amazon.AutoScaling
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteTags
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DeleteTags">REST API Reference for DeleteTags Operation</seealso>
         public IAsyncResult BeginDeleteTags(DeleteTagsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeleteTagsRequestMarshaller();
@@ -1165,6 +1206,7 @@ namespace Amazon.AutoScaling
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteTags.</param>
         /// 
         /// <returns>Returns a  DeleteTagsResult from AutoScaling.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DeleteTags">REST API Reference for DeleteTags Operation</seealso>
         public  DeleteTagsResponse EndDeleteTags(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteTagsResponse>(asyncResult);
@@ -1189,6 +1231,7 @@ namespace Amazon.AutoScaling
         /// You already have a pending update to an Auto Scaling resource (for example, a group,
         /// instance, or load balancer).
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeAccountLimits">REST API Reference for DescribeAccountLimits Operation</seealso>
         public DescribeAccountLimitsResponse DescribeAccountLimits()
         {
             return DescribeAccountLimits(new DescribeAccountLimitsRequest());
@@ -1210,6 +1253,7 @@ namespace Amazon.AutoScaling
         /// You already have a pending update to an Auto Scaling resource (for example, a group,
         /// instance, or load balancer).
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeAccountLimits">REST API Reference for DescribeAccountLimits Operation</seealso>
         public DescribeAccountLimitsResponse DescribeAccountLimits(DescribeAccountLimitsRequest request)
         {
             var marshaller = new DescribeAccountLimitsRequestMarshaller();
@@ -1229,6 +1273,7 @@ namespace Amazon.AutoScaling
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeAccountLimits
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeAccountLimits">REST API Reference for DescribeAccountLimits Operation</seealso>
         public IAsyncResult BeginDescribeAccountLimits(DescribeAccountLimitsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeAccountLimitsRequestMarshaller();
@@ -1245,6 +1290,7 @@ namespace Amazon.AutoScaling
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeAccountLimits.</param>
         /// 
         /// <returns>Returns a  DescribeAccountLimitsResult from AutoScaling.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeAccountLimits">REST API Reference for DescribeAccountLimits Operation</seealso>
         public  DescribeAccountLimitsResponse EndDescribeAccountLimits(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeAccountLimitsResponse>(asyncResult);
@@ -1263,6 +1309,7 @@ namespace Amazon.AutoScaling
         /// You already have a pending update to an Auto Scaling resource (for example, a group,
         /// instance, or load balancer).
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeAdjustmentTypes">REST API Reference for DescribeAdjustmentTypes Operation</seealso>
         public DescribeAdjustmentTypesResponse DescribeAdjustmentTypes()
         {
             return DescribeAdjustmentTypes(new DescribeAdjustmentTypesRequest());
@@ -1278,6 +1325,7 @@ namespace Amazon.AutoScaling
         /// You already have a pending update to an Auto Scaling resource (for example, a group,
         /// instance, or load balancer).
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeAdjustmentTypes">REST API Reference for DescribeAdjustmentTypes Operation</seealso>
         public DescribeAdjustmentTypesResponse DescribeAdjustmentTypes(DescribeAdjustmentTypesRequest request)
         {
             var marshaller = new DescribeAdjustmentTypesRequestMarshaller();
@@ -1297,6 +1345,7 @@ namespace Amazon.AutoScaling
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeAdjustmentTypes
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeAdjustmentTypes">REST API Reference for DescribeAdjustmentTypes Operation</seealso>
         public IAsyncResult BeginDescribeAdjustmentTypes(DescribeAdjustmentTypesRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeAdjustmentTypesRequestMarshaller();
@@ -1313,6 +1362,7 @@ namespace Amazon.AutoScaling
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeAdjustmentTypes.</param>
         /// 
         /// <returns>Returns a  DescribeAdjustmentTypesResult from AutoScaling.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeAdjustmentTypes">REST API Reference for DescribeAdjustmentTypes Operation</seealso>
         public  DescribeAdjustmentTypesResponse EndDescribeAdjustmentTypes(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeAdjustmentTypesResponse>(asyncResult);
@@ -1334,6 +1384,7 @@ namespace Amazon.AutoScaling
         /// You already have a pending update to an Auto Scaling resource (for example, a group,
         /// instance, or load balancer).
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeAutoScalingGroups">REST API Reference for DescribeAutoScalingGroups Operation</seealso>
         public DescribeAutoScalingGroupsResponse DescribeAutoScalingGroups()
         {
             return DescribeAutoScalingGroups(new DescribeAutoScalingGroupsRequest());
@@ -1352,6 +1403,7 @@ namespace Amazon.AutoScaling
         /// You already have a pending update to an Auto Scaling resource (for example, a group,
         /// instance, or load balancer).
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeAutoScalingGroups">REST API Reference for DescribeAutoScalingGroups Operation</seealso>
         public DescribeAutoScalingGroupsResponse DescribeAutoScalingGroups(DescribeAutoScalingGroupsRequest request)
         {
             var marshaller = new DescribeAutoScalingGroupsRequestMarshaller();
@@ -1371,6 +1423,7 @@ namespace Amazon.AutoScaling
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeAutoScalingGroups
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeAutoScalingGroups">REST API Reference for DescribeAutoScalingGroups Operation</seealso>
         public IAsyncResult BeginDescribeAutoScalingGroups(DescribeAutoScalingGroupsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeAutoScalingGroupsRequestMarshaller();
@@ -1387,6 +1440,7 @@ namespace Amazon.AutoScaling
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeAutoScalingGroups.</param>
         /// 
         /// <returns>Returns a  DescribeAutoScalingGroupsResult from AutoScaling.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeAutoScalingGroups">REST API Reference for DescribeAutoScalingGroups Operation</seealso>
         public  DescribeAutoScalingGroupsResponse EndDescribeAutoScalingGroups(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeAutoScalingGroupsResponse>(asyncResult);
@@ -1408,6 +1462,7 @@ namespace Amazon.AutoScaling
         /// You already have a pending update to an Auto Scaling resource (for example, a group,
         /// instance, or load balancer).
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeAutoScalingInstances">REST API Reference for DescribeAutoScalingInstances Operation</seealso>
         public DescribeAutoScalingInstancesResponse DescribeAutoScalingInstances()
         {
             return DescribeAutoScalingInstances(new DescribeAutoScalingInstancesRequest());
@@ -1426,6 +1481,7 @@ namespace Amazon.AutoScaling
         /// You already have a pending update to an Auto Scaling resource (for example, a group,
         /// instance, or load balancer).
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeAutoScalingInstances">REST API Reference for DescribeAutoScalingInstances Operation</seealso>
         public DescribeAutoScalingInstancesResponse DescribeAutoScalingInstances(DescribeAutoScalingInstancesRequest request)
         {
             var marshaller = new DescribeAutoScalingInstancesRequestMarshaller();
@@ -1445,6 +1501,7 @@ namespace Amazon.AutoScaling
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeAutoScalingInstances
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeAutoScalingInstances">REST API Reference for DescribeAutoScalingInstances Operation</seealso>
         public IAsyncResult BeginDescribeAutoScalingInstances(DescribeAutoScalingInstancesRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeAutoScalingInstancesRequestMarshaller();
@@ -1461,6 +1518,7 @@ namespace Amazon.AutoScaling
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeAutoScalingInstances.</param>
         /// 
         /// <returns>Returns a  DescribeAutoScalingInstancesResult from AutoScaling.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeAutoScalingInstances">REST API Reference for DescribeAutoScalingInstances Operation</seealso>
         public  DescribeAutoScalingInstancesResponse EndDescribeAutoScalingInstances(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeAutoScalingInstancesResponse>(asyncResult);
@@ -1479,6 +1537,7 @@ namespace Amazon.AutoScaling
         /// You already have a pending update to an Auto Scaling resource (for example, a group,
         /// instance, or load balancer).
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeAutoScalingNotificationTypes">REST API Reference for DescribeAutoScalingNotificationTypes Operation</seealso>
         public DescribeAutoScalingNotificationTypesResponse DescribeAutoScalingNotificationTypes()
         {
             return DescribeAutoScalingNotificationTypes(new DescribeAutoScalingNotificationTypesRequest());
@@ -1494,6 +1553,7 @@ namespace Amazon.AutoScaling
         /// You already have a pending update to an Auto Scaling resource (for example, a group,
         /// instance, or load balancer).
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeAutoScalingNotificationTypes">REST API Reference for DescribeAutoScalingNotificationTypes Operation</seealso>
         public DescribeAutoScalingNotificationTypesResponse DescribeAutoScalingNotificationTypes(DescribeAutoScalingNotificationTypesRequest request)
         {
             var marshaller = new DescribeAutoScalingNotificationTypesRequestMarshaller();
@@ -1513,6 +1573,7 @@ namespace Amazon.AutoScaling
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeAutoScalingNotificationTypes
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeAutoScalingNotificationTypes">REST API Reference for DescribeAutoScalingNotificationTypes Operation</seealso>
         public IAsyncResult BeginDescribeAutoScalingNotificationTypes(DescribeAutoScalingNotificationTypesRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeAutoScalingNotificationTypesRequestMarshaller();
@@ -1529,6 +1590,7 @@ namespace Amazon.AutoScaling
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeAutoScalingNotificationTypes.</param>
         /// 
         /// <returns>Returns a  DescribeAutoScalingNotificationTypesResult from AutoScaling.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeAutoScalingNotificationTypes">REST API Reference for DescribeAutoScalingNotificationTypes Operation</seealso>
         public  DescribeAutoScalingNotificationTypesResponse EndDescribeAutoScalingNotificationTypes(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeAutoScalingNotificationTypesResponse>(asyncResult);
@@ -1550,6 +1612,7 @@ namespace Amazon.AutoScaling
         /// You already have a pending update to an Auto Scaling resource (for example, a group,
         /// instance, or load balancer).
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeLaunchConfigurations">REST API Reference for DescribeLaunchConfigurations Operation</seealso>
         public DescribeLaunchConfigurationsResponse DescribeLaunchConfigurations()
         {
             return DescribeLaunchConfigurations(new DescribeLaunchConfigurationsRequest());
@@ -1568,6 +1631,7 @@ namespace Amazon.AutoScaling
         /// You already have a pending update to an Auto Scaling resource (for example, a group,
         /// instance, or load balancer).
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeLaunchConfigurations">REST API Reference for DescribeLaunchConfigurations Operation</seealso>
         public DescribeLaunchConfigurationsResponse DescribeLaunchConfigurations(DescribeLaunchConfigurationsRequest request)
         {
             var marshaller = new DescribeLaunchConfigurationsRequestMarshaller();
@@ -1587,6 +1651,7 @@ namespace Amazon.AutoScaling
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeLaunchConfigurations
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeLaunchConfigurations">REST API Reference for DescribeLaunchConfigurations Operation</seealso>
         public IAsyncResult BeginDescribeLaunchConfigurations(DescribeLaunchConfigurationsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeLaunchConfigurationsRequestMarshaller();
@@ -1603,6 +1668,7 @@ namespace Amazon.AutoScaling
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeLaunchConfigurations.</param>
         /// 
         /// <returns>Returns a  DescribeLaunchConfigurationsResult from AutoScaling.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeLaunchConfigurations">REST API Reference for DescribeLaunchConfigurations Operation</seealso>
         public  DescribeLaunchConfigurationsResponse EndDescribeLaunchConfigurations(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeLaunchConfigurationsResponse>(asyncResult);
@@ -1622,6 +1688,7 @@ namespace Amazon.AutoScaling
         /// You already have a pending update to an Auto Scaling resource (for example, a group,
         /// instance, or load balancer).
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeLifecycleHooks">REST API Reference for DescribeLifecycleHooks Operation</seealso>
         public DescribeLifecycleHooksResponse DescribeLifecycleHooks(DescribeLifecycleHooksRequest request)
         {
             var marshaller = new DescribeLifecycleHooksRequestMarshaller();
@@ -1641,6 +1708,7 @@ namespace Amazon.AutoScaling
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeLifecycleHooks
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeLifecycleHooks">REST API Reference for DescribeLifecycleHooks Operation</seealso>
         public IAsyncResult BeginDescribeLifecycleHooks(DescribeLifecycleHooksRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeLifecycleHooksRequestMarshaller();
@@ -1657,6 +1725,7 @@ namespace Amazon.AutoScaling
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeLifecycleHooks.</param>
         /// 
         /// <returns>Returns a  DescribeLifecycleHooksResult from AutoScaling.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeLifecycleHooks">REST API Reference for DescribeLifecycleHooks Operation</seealso>
         public  DescribeLifecycleHooksResponse EndDescribeLifecycleHooks(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeLifecycleHooksResponse>(asyncResult);
@@ -1676,6 +1745,7 @@ namespace Amazon.AutoScaling
         /// You already have a pending update to an Auto Scaling resource (for example, a group,
         /// instance, or load balancer).
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeLifecycleHookTypes">REST API Reference for DescribeLifecycleHookTypes Operation</seealso>
         public DescribeLifecycleHookTypesResponse DescribeLifecycleHookTypes(DescribeLifecycleHookTypesRequest request)
         {
             var marshaller = new DescribeLifecycleHookTypesRequestMarshaller();
@@ -1695,6 +1765,7 @@ namespace Amazon.AutoScaling
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeLifecycleHookTypes
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeLifecycleHookTypes">REST API Reference for DescribeLifecycleHookTypes Operation</seealso>
         public IAsyncResult BeginDescribeLifecycleHookTypes(DescribeLifecycleHookTypesRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeLifecycleHookTypesRequestMarshaller();
@@ -1711,6 +1782,7 @@ namespace Amazon.AutoScaling
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeLifecycleHookTypes.</param>
         /// 
         /// <returns>Returns a  DescribeLifecycleHookTypesResult from AutoScaling.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeLifecycleHookTypes">REST API Reference for DescribeLifecycleHookTypes Operation</seealso>
         public  DescribeLifecycleHookTypesResponse EndDescribeLifecycleHookTypes(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeLifecycleHookTypesResponse>(asyncResult);
@@ -1725,8 +1797,8 @@ namespace Amazon.AutoScaling
         /// 
         ///  
         /// <para>
-        /// Note that this operation describes only Classic load balancers. If you have Application
-        /// load balancers, use <a>DescribeLoadBalancerTargetGroups</a> instead.
+        /// Note that this operation describes only Classic Load Balancers. If you have Application
+        /// Load Balancers, use <a>DescribeLoadBalancerTargetGroups</a> instead.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeLoadBalancers service method.</param>
@@ -1736,6 +1808,7 @@ namespace Amazon.AutoScaling
         /// You already have a pending update to an Auto Scaling resource (for example, a group,
         /// instance, or load balancer).
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeLoadBalancers">REST API Reference for DescribeLoadBalancers Operation</seealso>
         public DescribeLoadBalancersResponse DescribeLoadBalancers(DescribeLoadBalancersRequest request)
         {
             var marshaller = new DescribeLoadBalancersRequestMarshaller();
@@ -1755,6 +1828,7 @@ namespace Amazon.AutoScaling
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeLoadBalancers
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeLoadBalancers">REST API Reference for DescribeLoadBalancers Operation</seealso>
         public IAsyncResult BeginDescribeLoadBalancers(DescribeLoadBalancersRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeLoadBalancersRequestMarshaller();
@@ -1771,6 +1845,7 @@ namespace Amazon.AutoScaling
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeLoadBalancers.</param>
         /// 
         /// <returns>Returns a  DescribeLoadBalancersResult from AutoScaling.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeLoadBalancers">REST API Reference for DescribeLoadBalancers Operation</seealso>
         public  DescribeLoadBalancersResponse EndDescribeLoadBalancers(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeLoadBalancersResponse>(asyncResult);
@@ -1790,6 +1865,7 @@ namespace Amazon.AutoScaling
         /// You already have a pending update to an Auto Scaling resource (for example, a group,
         /// instance, or load balancer).
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeLoadBalancerTargetGroups">REST API Reference for DescribeLoadBalancerTargetGroups Operation</seealso>
         public DescribeLoadBalancerTargetGroupsResponse DescribeLoadBalancerTargetGroups(DescribeLoadBalancerTargetGroupsRequest request)
         {
             var marshaller = new DescribeLoadBalancerTargetGroupsRequestMarshaller();
@@ -1809,6 +1885,7 @@ namespace Amazon.AutoScaling
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeLoadBalancerTargetGroups
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeLoadBalancerTargetGroups">REST API Reference for DescribeLoadBalancerTargetGroups Operation</seealso>
         public IAsyncResult BeginDescribeLoadBalancerTargetGroups(DescribeLoadBalancerTargetGroupsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeLoadBalancerTargetGroupsRequestMarshaller();
@@ -1825,6 +1902,7 @@ namespace Amazon.AutoScaling
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeLoadBalancerTargetGroups.</param>
         /// 
         /// <returns>Returns a  DescribeLoadBalancerTargetGroupsResult from AutoScaling.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeLoadBalancerTargetGroups">REST API Reference for DescribeLoadBalancerTargetGroups Operation</seealso>
         public  DescribeLoadBalancerTargetGroupsResponse EndDescribeLoadBalancerTargetGroups(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeLoadBalancerTargetGroupsResponse>(asyncResult);
@@ -1849,6 +1927,7 @@ namespace Amazon.AutoScaling
         /// You already have a pending update to an Auto Scaling resource (for example, a group,
         /// instance, or load balancer).
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeMetricCollectionTypes">REST API Reference for DescribeMetricCollectionTypes Operation</seealso>
         public DescribeMetricCollectionTypesResponse DescribeMetricCollectionTypes()
         {
             return DescribeMetricCollectionTypes(new DescribeMetricCollectionTypesRequest());
@@ -1870,6 +1949,7 @@ namespace Amazon.AutoScaling
         /// You already have a pending update to an Auto Scaling resource (for example, a group,
         /// instance, or load balancer).
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeMetricCollectionTypes">REST API Reference for DescribeMetricCollectionTypes Operation</seealso>
         public DescribeMetricCollectionTypesResponse DescribeMetricCollectionTypes(DescribeMetricCollectionTypesRequest request)
         {
             var marshaller = new DescribeMetricCollectionTypesRequestMarshaller();
@@ -1889,6 +1969,7 @@ namespace Amazon.AutoScaling
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeMetricCollectionTypes
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeMetricCollectionTypes">REST API Reference for DescribeMetricCollectionTypes Operation</seealso>
         public IAsyncResult BeginDescribeMetricCollectionTypes(DescribeMetricCollectionTypesRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeMetricCollectionTypesRequestMarshaller();
@@ -1905,6 +1986,7 @@ namespace Amazon.AutoScaling
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeMetricCollectionTypes.</param>
         /// 
         /// <returns>Returns a  DescribeMetricCollectionTypesResult from AutoScaling.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeMetricCollectionTypes">REST API Reference for DescribeMetricCollectionTypes Operation</seealso>
         public  DescribeMetricCollectionTypesResponse EndDescribeMetricCollectionTypes(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeMetricCollectionTypesResponse>(asyncResult);
@@ -1926,6 +2008,7 @@ namespace Amazon.AutoScaling
         /// You already have a pending update to an Auto Scaling resource (for example, a group,
         /// instance, or load balancer).
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeNotificationConfigurations">REST API Reference for DescribeNotificationConfigurations Operation</seealso>
         public DescribeNotificationConfigurationsResponse DescribeNotificationConfigurations()
         {
             return DescribeNotificationConfigurations(new DescribeNotificationConfigurationsRequest());
@@ -1944,6 +2027,7 @@ namespace Amazon.AutoScaling
         /// You already have a pending update to an Auto Scaling resource (for example, a group,
         /// instance, or load balancer).
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeNotificationConfigurations">REST API Reference for DescribeNotificationConfigurations Operation</seealso>
         public DescribeNotificationConfigurationsResponse DescribeNotificationConfigurations(DescribeNotificationConfigurationsRequest request)
         {
             var marshaller = new DescribeNotificationConfigurationsRequestMarshaller();
@@ -1963,6 +2047,7 @@ namespace Amazon.AutoScaling
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeNotificationConfigurations
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeNotificationConfigurations">REST API Reference for DescribeNotificationConfigurations Operation</seealso>
         public IAsyncResult BeginDescribeNotificationConfigurations(DescribeNotificationConfigurationsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeNotificationConfigurationsRequestMarshaller();
@@ -1979,6 +2064,7 @@ namespace Amazon.AutoScaling
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeNotificationConfigurations.</param>
         /// 
         /// <returns>Returns a  DescribeNotificationConfigurationsResult from AutoScaling.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeNotificationConfigurations">REST API Reference for DescribeNotificationConfigurations Operation</seealso>
         public  DescribeNotificationConfigurationsResponse EndDescribeNotificationConfigurations(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeNotificationConfigurationsResponse>(asyncResult);
@@ -2000,6 +2086,7 @@ namespace Amazon.AutoScaling
         /// You already have a pending update to an Auto Scaling resource (for example, a group,
         /// instance, or load balancer).
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribePolicies">REST API Reference for DescribePolicies Operation</seealso>
         public DescribePoliciesResponse DescribePolicies()
         {
             return DescribePolicies(new DescribePoliciesRequest());
@@ -2018,6 +2105,7 @@ namespace Amazon.AutoScaling
         /// You already have a pending update to an Auto Scaling resource (for example, a group,
         /// instance, or load balancer).
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribePolicies">REST API Reference for DescribePolicies Operation</seealso>
         public DescribePoliciesResponse DescribePolicies(DescribePoliciesRequest request)
         {
             var marshaller = new DescribePoliciesRequestMarshaller();
@@ -2037,6 +2125,7 @@ namespace Amazon.AutoScaling
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribePolicies
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribePolicies">REST API Reference for DescribePolicies Operation</seealso>
         public IAsyncResult BeginDescribePolicies(DescribePoliciesRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribePoliciesRequestMarshaller();
@@ -2053,6 +2142,7 @@ namespace Amazon.AutoScaling
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribePolicies.</param>
         /// 
         /// <returns>Returns a  DescribePoliciesResult from AutoScaling.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribePolicies">REST API Reference for DescribePolicies Operation</seealso>
         public  DescribePoliciesResponse EndDescribePolicies(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribePoliciesResponse>(asyncResult);
@@ -2074,6 +2164,7 @@ namespace Amazon.AutoScaling
         /// You already have a pending update to an Auto Scaling resource (for example, a group,
         /// instance, or load balancer).
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeScalingActivities">REST API Reference for DescribeScalingActivities Operation</seealso>
         public DescribeScalingActivitiesResponse DescribeScalingActivities()
         {
             return DescribeScalingActivities(new DescribeScalingActivitiesRequest());
@@ -2092,6 +2183,7 @@ namespace Amazon.AutoScaling
         /// You already have a pending update to an Auto Scaling resource (for example, a group,
         /// instance, or load balancer).
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeScalingActivities">REST API Reference for DescribeScalingActivities Operation</seealso>
         public DescribeScalingActivitiesResponse DescribeScalingActivities(DescribeScalingActivitiesRequest request)
         {
             var marshaller = new DescribeScalingActivitiesRequestMarshaller();
@@ -2111,6 +2203,7 @@ namespace Amazon.AutoScaling
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeScalingActivities
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeScalingActivities">REST API Reference for DescribeScalingActivities Operation</seealso>
         public IAsyncResult BeginDescribeScalingActivities(DescribeScalingActivitiesRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeScalingActivitiesRequestMarshaller();
@@ -2127,6 +2220,7 @@ namespace Amazon.AutoScaling
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeScalingActivities.</param>
         /// 
         /// <returns>Returns a  DescribeScalingActivitiesResult from AutoScaling.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeScalingActivities">REST API Reference for DescribeScalingActivities Operation</seealso>
         public  DescribeScalingActivitiesResponse EndDescribeScalingActivities(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeScalingActivitiesResponse>(asyncResult);
@@ -2145,6 +2239,7 @@ namespace Amazon.AutoScaling
         /// You already have a pending update to an Auto Scaling resource (for example, a group,
         /// instance, or load balancer).
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeScalingProcessTypes">REST API Reference for DescribeScalingProcessTypes Operation</seealso>
         public DescribeScalingProcessTypesResponse DescribeScalingProcessTypes()
         {
             return DescribeScalingProcessTypes(new DescribeScalingProcessTypesRequest());
@@ -2160,6 +2255,7 @@ namespace Amazon.AutoScaling
         /// You already have a pending update to an Auto Scaling resource (for example, a group,
         /// instance, or load balancer).
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeScalingProcessTypes">REST API Reference for DescribeScalingProcessTypes Operation</seealso>
         public DescribeScalingProcessTypesResponse DescribeScalingProcessTypes(DescribeScalingProcessTypesRequest request)
         {
             var marshaller = new DescribeScalingProcessTypesRequestMarshaller();
@@ -2179,6 +2275,7 @@ namespace Amazon.AutoScaling
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeScalingProcessTypes
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeScalingProcessTypes">REST API Reference for DescribeScalingProcessTypes Operation</seealso>
         public IAsyncResult BeginDescribeScalingProcessTypes(DescribeScalingProcessTypesRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeScalingProcessTypesRequestMarshaller();
@@ -2195,6 +2292,7 @@ namespace Amazon.AutoScaling
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeScalingProcessTypes.</param>
         /// 
         /// <returns>Returns a  DescribeScalingProcessTypesResult from AutoScaling.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeScalingProcessTypes">REST API Reference for DescribeScalingProcessTypes Operation</seealso>
         public  DescribeScalingProcessTypesResponse EndDescribeScalingProcessTypes(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeScalingProcessTypesResponse>(asyncResult);
@@ -2217,6 +2315,7 @@ namespace Amazon.AutoScaling
         /// You already have a pending update to an Auto Scaling resource (for example, a group,
         /// instance, or load balancer).
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeScheduledActions">REST API Reference for DescribeScheduledActions Operation</seealso>
         public DescribeScheduledActionsResponse DescribeScheduledActions()
         {
             return DescribeScheduledActions(new DescribeScheduledActionsRequest());
@@ -2236,6 +2335,7 @@ namespace Amazon.AutoScaling
         /// You already have a pending update to an Auto Scaling resource (for example, a group,
         /// instance, or load balancer).
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeScheduledActions">REST API Reference for DescribeScheduledActions Operation</seealso>
         public DescribeScheduledActionsResponse DescribeScheduledActions(DescribeScheduledActionsRequest request)
         {
             var marshaller = new DescribeScheduledActionsRequestMarshaller();
@@ -2255,6 +2355,7 @@ namespace Amazon.AutoScaling
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeScheduledActions
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeScheduledActions">REST API Reference for DescribeScheduledActions Operation</seealso>
         public IAsyncResult BeginDescribeScheduledActions(DescribeScheduledActionsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeScheduledActionsRequestMarshaller();
@@ -2271,6 +2372,7 @@ namespace Amazon.AutoScaling
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeScheduledActions.</param>
         /// 
         /// <returns>Returns a  DescribeScheduledActionsResult from AutoScaling.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeScheduledActions">REST API Reference for DescribeScheduledActions Operation</seealso>
         public  DescribeScheduledActionsResponse EndDescribeScheduledActions(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeScheduledActionsResponse>(asyncResult);
@@ -2305,6 +2407,7 @@ namespace Amazon.AutoScaling
         /// You already have a pending update to an Auto Scaling resource (for example, a group,
         /// instance, or load balancer).
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeTags">REST API Reference for DescribeTags Operation</seealso>
         public DescribeTagsResponse DescribeTags()
         {
             return DescribeTags(new DescribeTagsRequest());
@@ -2336,6 +2439,7 @@ namespace Amazon.AutoScaling
         /// You already have a pending update to an Auto Scaling resource (for example, a group,
         /// instance, or load balancer).
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeTags">REST API Reference for DescribeTags Operation</seealso>
         public DescribeTagsResponse DescribeTags(DescribeTagsRequest request)
         {
             var marshaller = new DescribeTagsRequestMarshaller();
@@ -2355,6 +2459,7 @@ namespace Amazon.AutoScaling
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeTags
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeTags">REST API Reference for DescribeTags Operation</seealso>
         public IAsyncResult BeginDescribeTags(DescribeTagsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeTagsRequestMarshaller();
@@ -2371,6 +2476,7 @@ namespace Amazon.AutoScaling
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeTags.</param>
         /// 
         /// <returns>Returns a  DescribeTagsResult from AutoScaling.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeTags">REST API Reference for DescribeTags Operation</seealso>
         public  DescribeTagsResponse EndDescribeTags(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeTagsResponse>(asyncResult);
@@ -2389,6 +2495,7 @@ namespace Amazon.AutoScaling
         /// You already have a pending update to an Auto Scaling resource (for example, a group,
         /// instance, or load balancer).
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeTerminationPolicyTypes">REST API Reference for DescribeTerminationPolicyTypes Operation</seealso>
         public DescribeTerminationPolicyTypesResponse DescribeTerminationPolicyTypes()
         {
             return DescribeTerminationPolicyTypes(new DescribeTerminationPolicyTypesRequest());
@@ -2404,6 +2511,7 @@ namespace Amazon.AutoScaling
         /// You already have a pending update to an Auto Scaling resource (for example, a group,
         /// instance, or load balancer).
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeTerminationPolicyTypes">REST API Reference for DescribeTerminationPolicyTypes Operation</seealso>
         public DescribeTerminationPolicyTypesResponse DescribeTerminationPolicyTypes(DescribeTerminationPolicyTypesRequest request)
         {
             var marshaller = new DescribeTerminationPolicyTypesRequestMarshaller();
@@ -2423,6 +2531,7 @@ namespace Amazon.AutoScaling
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeTerminationPolicyTypes
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeTerminationPolicyTypes">REST API Reference for DescribeTerminationPolicyTypes Operation</seealso>
         public IAsyncResult BeginDescribeTerminationPolicyTypes(DescribeTerminationPolicyTypesRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeTerminationPolicyTypesRequestMarshaller();
@@ -2439,6 +2548,7 @@ namespace Amazon.AutoScaling
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeTerminationPolicyTypes.</param>
         /// 
         /// <returns>Returns a  DescribeTerminationPolicyTypesResult from AutoScaling.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeTerminationPolicyTypes">REST API Reference for DescribeTerminationPolicyTypes Operation</seealso>
         public  DescribeTerminationPolicyTypesResponse EndDescribeTerminationPolicyTypes(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeTerminationPolicyTypesResponse>(asyncResult);
@@ -2453,8 +2563,8 @@ namespace Amazon.AutoScaling
         /// 
         ///  
         /// <para>
-        /// After the instances are detached, you can manage them independently from the rest
-        /// of the Auto Scaling group.
+        /// After the instances are detached, you can manage them independent of the Auto Scaling
+        /// group.
         /// </para>
         ///  
         /// <para>
@@ -2463,7 +2573,7 @@ namespace Amazon.AutoScaling
         /// </para>
         ///  
         /// <para>
-        /// If there is a Classic load balancer attached to the Auto Scaling group, the instances
+        /// If there is a Classic Load Balancer attached to the Auto Scaling group, the instances
         /// are deregistered from the load balancer. If there are target groups attached to the
         /// Auto Scaling group, the instances are deregistered from the target groups.
         /// </para>
@@ -2480,6 +2590,7 @@ namespace Amazon.AutoScaling
         /// You already have a pending update to an Auto Scaling resource (for example, a group,
         /// instance, or load balancer).
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DetachInstances">REST API Reference for DetachInstances Operation</seealso>
         public DetachInstancesResponse DetachInstances(DetachInstancesRequest request)
         {
             var marshaller = new DetachInstancesRequestMarshaller();
@@ -2499,6 +2610,7 @@ namespace Amazon.AutoScaling
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDetachInstances
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DetachInstances">REST API Reference for DetachInstances Operation</seealso>
         public IAsyncResult BeginDetachInstances(DetachInstancesRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DetachInstancesRequestMarshaller();
@@ -2515,6 +2627,7 @@ namespace Amazon.AutoScaling
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDetachInstances.</param>
         /// 
         /// <returns>Returns a  DetachInstancesResult from AutoScaling.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DetachInstances">REST API Reference for DetachInstances Operation</seealso>
         public  DetachInstancesResponse EndDetachInstances(IAsyncResult asyncResult)
         {
             return EndInvoke<DetachInstancesResponse>(asyncResult);
@@ -2525,12 +2638,12 @@ namespace Amazon.AutoScaling
         #region  DetachLoadBalancers
 
         /// <summary>
-        /// Detaches one or more Classic load balancers from the specified Auto Scaling group.
+        /// Detaches one or more Classic Load Balancers from the specified Auto Scaling group.
         /// 
         ///  
         /// <para>
-        /// Note that this operation detaches only Classic load balancers. If you have Application
-        /// load balancers, use <a>DetachLoadBalancerTargetGroups</a> instead.
+        /// Note that this operation detaches only Classic Load Balancers. If you have Application
+        /// Load Balancers, use <a>DetachLoadBalancerTargetGroups</a> instead.
         /// </para>
         ///  
         /// <para>
@@ -2547,6 +2660,7 @@ namespace Amazon.AutoScaling
         /// You already have a pending update to an Auto Scaling resource (for example, a group,
         /// instance, or load balancer).
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DetachLoadBalancers">REST API Reference for DetachLoadBalancers Operation</seealso>
         public DetachLoadBalancersResponse DetachLoadBalancers(DetachLoadBalancersRequest request)
         {
             var marshaller = new DetachLoadBalancersRequestMarshaller();
@@ -2566,6 +2680,7 @@ namespace Amazon.AutoScaling
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDetachLoadBalancers
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DetachLoadBalancers">REST API Reference for DetachLoadBalancers Operation</seealso>
         public IAsyncResult BeginDetachLoadBalancers(DetachLoadBalancersRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DetachLoadBalancersRequestMarshaller();
@@ -2582,6 +2697,7 @@ namespace Amazon.AutoScaling
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDetachLoadBalancers.</param>
         /// 
         /// <returns>Returns a  DetachLoadBalancersResult from AutoScaling.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DetachLoadBalancers">REST API Reference for DetachLoadBalancers Operation</seealso>
         public  DetachLoadBalancersResponse EndDetachLoadBalancers(IAsyncResult asyncResult)
         {
             return EndInvoke<DetachLoadBalancersResponse>(asyncResult);
@@ -2601,6 +2717,7 @@ namespace Amazon.AutoScaling
         /// You already have a pending update to an Auto Scaling resource (for example, a group,
         /// instance, or load balancer).
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DetachLoadBalancerTargetGroups">REST API Reference for DetachLoadBalancerTargetGroups Operation</seealso>
         public DetachLoadBalancerTargetGroupsResponse DetachLoadBalancerTargetGroups(DetachLoadBalancerTargetGroupsRequest request)
         {
             var marshaller = new DetachLoadBalancerTargetGroupsRequestMarshaller();
@@ -2620,6 +2737,7 @@ namespace Amazon.AutoScaling
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDetachLoadBalancerTargetGroups
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DetachLoadBalancerTargetGroups">REST API Reference for DetachLoadBalancerTargetGroups Operation</seealso>
         public IAsyncResult BeginDetachLoadBalancerTargetGroups(DetachLoadBalancerTargetGroupsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DetachLoadBalancerTargetGroupsRequestMarshaller();
@@ -2636,6 +2754,7 @@ namespace Amazon.AutoScaling
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDetachLoadBalancerTargetGroups.</param>
         /// 
         /// <returns>Returns a  DetachLoadBalancerTargetGroupsResult from AutoScaling.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DetachLoadBalancerTargetGroups">REST API Reference for DetachLoadBalancerTargetGroups Operation</seealso>
         public  DetachLoadBalancerTargetGroupsResponse EndDetachLoadBalancerTargetGroups(IAsyncResult asyncResult)
         {
             return EndInvoke<DetachLoadBalancerTargetGroupsResponse>(asyncResult);
@@ -2655,6 +2774,7 @@ namespace Amazon.AutoScaling
         /// You already have a pending update to an Auto Scaling resource (for example, a group,
         /// instance, or load balancer).
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DisableMetricsCollection">REST API Reference for DisableMetricsCollection Operation</seealso>
         public DisableMetricsCollectionResponse DisableMetricsCollection(DisableMetricsCollectionRequest request)
         {
             var marshaller = new DisableMetricsCollectionRequestMarshaller();
@@ -2674,6 +2794,7 @@ namespace Amazon.AutoScaling
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDisableMetricsCollection
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DisableMetricsCollection">REST API Reference for DisableMetricsCollection Operation</seealso>
         public IAsyncResult BeginDisableMetricsCollection(DisableMetricsCollectionRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DisableMetricsCollectionRequestMarshaller();
@@ -2690,6 +2811,7 @@ namespace Amazon.AutoScaling
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDisableMetricsCollection.</param>
         /// 
         /// <returns>Returns a  DisableMetricsCollectionResult from AutoScaling.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DisableMetricsCollection">REST API Reference for DisableMetricsCollection Operation</seealso>
         public  DisableMetricsCollectionResponse EndDisableMetricsCollection(IAsyncResult asyncResult)
         {
             return EndInvoke<DisableMetricsCollectionResponse>(asyncResult);
@@ -2711,6 +2833,7 @@ namespace Amazon.AutoScaling
         /// You already have a pending update to an Auto Scaling resource (for example, a group,
         /// instance, or load balancer).
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/EnableMetricsCollection">REST API Reference for EnableMetricsCollection Operation</seealso>
         public EnableMetricsCollectionResponse EnableMetricsCollection(EnableMetricsCollectionRequest request)
         {
             var marshaller = new EnableMetricsCollectionRequestMarshaller();
@@ -2730,6 +2853,7 @@ namespace Amazon.AutoScaling
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndEnableMetricsCollection
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/EnableMetricsCollection">REST API Reference for EnableMetricsCollection Operation</seealso>
         public IAsyncResult BeginEnableMetricsCollection(EnableMetricsCollectionRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new EnableMetricsCollectionRequestMarshaller();
@@ -2746,6 +2870,7 @@ namespace Amazon.AutoScaling
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginEnableMetricsCollection.</param>
         /// 
         /// <returns>Returns a  EnableMetricsCollectionResult from AutoScaling.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/EnableMetricsCollection">REST API Reference for EnableMetricsCollection Operation</seealso>
         public  EnableMetricsCollectionResponse EndEnableMetricsCollection(IAsyncResult asyncResult)
         {
             return EndInvoke<EnableMetricsCollectionResponse>(asyncResult);
@@ -2756,12 +2881,12 @@ namespace Amazon.AutoScaling
         #region  EnterStandby
 
         /// <summary>
-        /// Moves the specified instances into <code>Standby</code> mode.
+        /// Moves the specified instances into the standby state.
         /// 
         ///  
         /// <para>
-        /// For more information, see <a href="http://docs.aws.amazon.com/autoscaling/latest/userguide/AutoScalingGroupLifecycle.html">Auto
-        /// Scaling Lifecycle</a> in the <i>Auto Scaling User Guide</i>.
+        /// For more information, see <a href="http://docs.aws.amazon.com/autoscaling/latest/userguide/as-enter-exit-standby.html">Temporarily
+        /// Removing Instances from Your Auto Scaling Group</a> in the <i>Auto Scaling User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the EnterStandby service method.</param>
@@ -2771,6 +2896,7 @@ namespace Amazon.AutoScaling
         /// You already have a pending update to an Auto Scaling resource (for example, a group,
         /// instance, or load balancer).
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/EnterStandby">REST API Reference for EnterStandby Operation</seealso>
         public EnterStandbyResponse EnterStandby(EnterStandbyRequest request)
         {
             var marshaller = new EnterStandbyRequestMarshaller();
@@ -2790,6 +2916,7 @@ namespace Amazon.AutoScaling
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndEnterStandby
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/EnterStandby">REST API Reference for EnterStandby Operation</seealso>
         public IAsyncResult BeginEnterStandby(EnterStandbyRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new EnterStandbyRequestMarshaller();
@@ -2806,6 +2933,7 @@ namespace Amazon.AutoScaling
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginEnterStandby.</param>
         /// 
         /// <returns>Returns a  EnterStandbyResult from AutoScaling.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/EnterStandby">REST API Reference for EnterStandby Operation</seealso>
         public  EnterStandbyResponse EndEnterStandby(IAsyncResult asyncResult)
         {
             return EndInvoke<EnterStandbyResponse>(asyncResult);
@@ -2828,6 +2956,7 @@ namespace Amazon.AutoScaling
         /// <exception cref="Amazon.AutoScaling.Model.ScalingActivityInProgressException">
         /// The operation can't be performed because there are scaling activities in progress.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/ExecutePolicy">REST API Reference for ExecutePolicy Operation</seealso>
         public ExecutePolicyResponse ExecutePolicy(ExecutePolicyRequest request)
         {
             var marshaller = new ExecutePolicyRequestMarshaller();
@@ -2847,6 +2976,7 @@ namespace Amazon.AutoScaling
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndExecutePolicy
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/ExecutePolicy">REST API Reference for ExecutePolicy Operation</seealso>
         public IAsyncResult BeginExecutePolicy(ExecutePolicyRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ExecutePolicyRequestMarshaller();
@@ -2863,6 +2993,7 @@ namespace Amazon.AutoScaling
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginExecutePolicy.</param>
         /// 
         /// <returns>Returns a  ExecutePolicyResult from AutoScaling.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/ExecutePolicy">REST API Reference for ExecutePolicy Operation</seealso>
         public  ExecutePolicyResponse EndExecutePolicy(IAsyncResult asyncResult)
         {
             return EndInvoke<ExecutePolicyResponse>(asyncResult);
@@ -2873,12 +3004,12 @@ namespace Amazon.AutoScaling
         #region  ExitStandby
 
         /// <summary>
-        /// Moves the specified instances out of <code>Standby</code> mode.
+        /// Moves the specified instances out of the standby state.
         /// 
         ///  
         /// <para>
-        /// For more information, see <a href="http://docs.aws.amazon.com/autoscaling/latest/userguide/AutoScalingGroupLifecycle.html">Auto
-        /// Scaling Lifecycle</a> in the <i>Auto Scaling User Guide</i>.
+        /// For more information, see <a href="http://docs.aws.amazon.com/autoscaling/latest/userguide/as-enter-exit-standby.html">Temporarily
+        /// Removing Instances from Your Auto Scaling Group</a> in the <i>Auto Scaling User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ExitStandby service method.</param>
@@ -2888,6 +3019,7 @@ namespace Amazon.AutoScaling
         /// You already have a pending update to an Auto Scaling resource (for example, a group,
         /// instance, or load balancer).
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/ExitStandby">REST API Reference for ExitStandby Operation</seealso>
         public ExitStandbyResponse ExitStandby(ExitStandbyRequest request)
         {
             var marshaller = new ExitStandbyRequestMarshaller();
@@ -2907,6 +3039,7 @@ namespace Amazon.AutoScaling
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndExitStandby
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/ExitStandby">REST API Reference for ExitStandby Operation</seealso>
         public IAsyncResult BeginExitStandby(ExitStandbyRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ExitStandbyRequestMarshaller();
@@ -2923,6 +3056,7 @@ namespace Amazon.AutoScaling
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginExitStandby.</param>
         /// 
         /// <returns>Returns a  ExitStandbyResult from AutoScaling.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/ExitStandby">REST API Reference for ExitStandby Operation</seealso>
         public  ExitStandbyResponse EndExitStandby(IAsyncResult asyncResult)
         {
             return EndInvoke<ExitStandbyResponse>(asyncResult);
@@ -2994,6 +3128,7 @@ namespace Amazon.AutoScaling
         /// You already have a pending update to an Auto Scaling resource (for example, a group,
         /// instance, or load balancer).
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/PutLifecycleHook">REST API Reference for PutLifecycleHook Operation</seealso>
         public PutLifecycleHookResponse PutLifecycleHook(PutLifecycleHookRequest request)
         {
             var marshaller = new PutLifecycleHookRequestMarshaller();
@@ -3013,6 +3148,7 @@ namespace Amazon.AutoScaling
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutLifecycleHook
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/PutLifecycleHook">REST API Reference for PutLifecycleHook Operation</seealso>
         public IAsyncResult BeginPutLifecycleHook(PutLifecycleHookRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new PutLifecycleHookRequestMarshaller();
@@ -3029,6 +3165,7 @@ namespace Amazon.AutoScaling
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutLifecycleHook.</param>
         /// 
         /// <returns>Returns a  PutLifecycleHookResult from AutoScaling.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/PutLifecycleHook">REST API Reference for PutLifecycleHook Operation</seealso>
         public  PutLifecycleHookResponse EndPutLifecycleHook(IAsyncResult asyncResult)
         {
             return EndInvoke<PutLifecycleHookResponse>(asyncResult);
@@ -3065,6 +3202,7 @@ namespace Amazon.AutoScaling
         /// You already have a pending update to an Auto Scaling resource (for example, a group,
         /// instance, or load balancer).
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/PutNotificationConfiguration">REST API Reference for PutNotificationConfiguration Operation</seealso>
         public PutNotificationConfigurationResponse PutNotificationConfiguration(PutNotificationConfigurationRequest request)
         {
             var marshaller = new PutNotificationConfigurationRequestMarshaller();
@@ -3084,6 +3222,7 @@ namespace Amazon.AutoScaling
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutNotificationConfiguration
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/PutNotificationConfiguration">REST API Reference for PutNotificationConfiguration Operation</seealso>
         public IAsyncResult BeginPutNotificationConfiguration(PutNotificationConfigurationRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new PutNotificationConfigurationRequestMarshaller();
@@ -3100,6 +3239,7 @@ namespace Amazon.AutoScaling
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutNotificationConfiguration.</param>
         /// 
         /// <returns>Returns a  PutNotificationConfigurationResult from AutoScaling.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/PutNotificationConfiguration">REST API Reference for PutNotificationConfiguration Operation</seealso>
         public  PutNotificationConfigurationResponse EndPutNotificationConfiguration(IAsyncResult asyncResult)
         {
             return EndInvoke<PutNotificationConfigurationResponse>(asyncResult);
@@ -3133,6 +3273,7 @@ namespace Amazon.AutoScaling
         /// You already have a pending update to an Auto Scaling resource (for example, a group,
         /// instance, or load balancer).
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/PutScalingPolicy">REST API Reference for PutScalingPolicy Operation</seealso>
         public PutScalingPolicyResponse PutScalingPolicy(PutScalingPolicyRequest request)
         {
             var marshaller = new PutScalingPolicyRequestMarshaller();
@@ -3152,6 +3293,7 @@ namespace Amazon.AutoScaling
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutScalingPolicy
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/PutScalingPolicy">REST API Reference for PutScalingPolicy Operation</seealso>
         public IAsyncResult BeginPutScalingPolicy(PutScalingPolicyRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new PutScalingPolicyRequestMarshaller();
@@ -3168,6 +3310,7 @@ namespace Amazon.AutoScaling
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutScalingPolicy.</param>
         /// 
         /// <returns>Returns a  PutScalingPolicyResult from AutoScaling.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/PutScalingPolicy">REST API Reference for PutScalingPolicy Operation</seealso>
         public  PutScalingPolicyResponse EndPutScalingPolicy(IAsyncResult asyncResult)
         {
             return EndInvoke<PutScalingPolicyResponse>(asyncResult);
@@ -3202,6 +3345,7 @@ namespace Amazon.AutoScaling
         /// You already have a pending update to an Auto Scaling resource (for example, a group,
         /// instance, or load balancer).
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/PutScheduledUpdateGroupAction">REST API Reference for PutScheduledUpdateGroupAction Operation</seealso>
         public PutScheduledUpdateGroupActionResponse PutScheduledUpdateGroupAction(PutScheduledUpdateGroupActionRequest request)
         {
             var marshaller = new PutScheduledUpdateGroupActionRequestMarshaller();
@@ -3221,6 +3365,7 @@ namespace Amazon.AutoScaling
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutScheduledUpdateGroupAction
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/PutScheduledUpdateGroupAction">REST API Reference for PutScheduledUpdateGroupAction Operation</seealso>
         public IAsyncResult BeginPutScheduledUpdateGroupAction(PutScheduledUpdateGroupActionRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new PutScheduledUpdateGroupActionRequestMarshaller();
@@ -3237,6 +3382,7 @@ namespace Amazon.AutoScaling
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutScheduledUpdateGroupAction.</param>
         /// 
         /// <returns>Returns a  PutScheduledUpdateGroupActionResult from AutoScaling.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/PutScheduledUpdateGroupAction">REST API Reference for PutScheduledUpdateGroupAction Operation</seealso>
         public  PutScheduledUpdateGroupActionResponse EndPutScheduledUpdateGroupAction(IAsyncResult asyncResult)
         {
             return EndInvoke<PutScheduledUpdateGroupActionResponse>(asyncResult);
@@ -3293,6 +3439,7 @@ namespace Amazon.AutoScaling
         /// You already have a pending update to an Auto Scaling resource (for example, a group,
         /// instance, or load balancer).
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/RecordLifecycleActionHeartbeat">REST API Reference for RecordLifecycleActionHeartbeat Operation</seealso>
         public RecordLifecycleActionHeartbeatResponse RecordLifecycleActionHeartbeat(RecordLifecycleActionHeartbeatRequest request)
         {
             var marshaller = new RecordLifecycleActionHeartbeatRequestMarshaller();
@@ -3312,6 +3459,7 @@ namespace Amazon.AutoScaling
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndRecordLifecycleActionHeartbeat
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/RecordLifecycleActionHeartbeat">REST API Reference for RecordLifecycleActionHeartbeat Operation</seealso>
         public IAsyncResult BeginRecordLifecycleActionHeartbeat(RecordLifecycleActionHeartbeatRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new RecordLifecycleActionHeartbeatRequestMarshaller();
@@ -3328,6 +3476,7 @@ namespace Amazon.AutoScaling
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginRecordLifecycleActionHeartbeat.</param>
         /// 
         /// <returns>Returns a  RecordLifecycleActionHeartbeatResult from AutoScaling.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/RecordLifecycleActionHeartbeat">REST API Reference for RecordLifecycleActionHeartbeat Operation</seealso>
         public  RecordLifecycleActionHeartbeatResponse EndRecordLifecycleActionHeartbeat(IAsyncResult asyncResult)
         {
             return EndInvoke<RecordLifecycleActionHeartbeatResponse>(asyncResult);
@@ -3357,6 +3506,7 @@ namespace Amazon.AutoScaling
         /// <exception cref="Amazon.AutoScaling.Model.ResourceInUseException">
         /// The operation can't be performed because the resource is in use.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/ResumeProcesses">REST API Reference for ResumeProcesses Operation</seealso>
         public ResumeProcessesResponse ResumeProcesses(ResumeProcessesRequest request)
         {
             var marshaller = new ResumeProcessesRequestMarshaller();
@@ -3376,6 +3526,7 @@ namespace Amazon.AutoScaling
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndResumeProcesses
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/ResumeProcesses">REST API Reference for ResumeProcesses Operation</seealso>
         public IAsyncResult BeginResumeProcesses(ResumeProcessesRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ResumeProcessesRequestMarshaller();
@@ -3392,6 +3543,7 @@ namespace Amazon.AutoScaling
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginResumeProcesses.</param>
         /// 
         /// <returns>Returns a  ResumeProcessesResult from AutoScaling.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/ResumeProcesses">REST API Reference for ResumeProcesses Operation</seealso>
         public  ResumeProcessesResponse EndResumeProcesses(IAsyncResult asyncResult)
         {
             return EndInvoke<ResumeProcessesResponse>(asyncResult);
@@ -3420,6 +3572,7 @@ namespace Amazon.AutoScaling
         /// <exception cref="Amazon.AutoScaling.Model.ScalingActivityInProgressException">
         /// The operation can't be performed because there are scaling activities in progress.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/SetDesiredCapacity">REST API Reference for SetDesiredCapacity Operation</seealso>
         public SetDesiredCapacityResponse SetDesiredCapacity(SetDesiredCapacityRequest request)
         {
             var marshaller = new SetDesiredCapacityRequestMarshaller();
@@ -3439,6 +3592,7 @@ namespace Amazon.AutoScaling
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndSetDesiredCapacity
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/SetDesiredCapacity">REST API Reference for SetDesiredCapacity Operation</seealso>
         public IAsyncResult BeginSetDesiredCapacity(SetDesiredCapacityRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new SetDesiredCapacityRequestMarshaller();
@@ -3455,6 +3609,7 @@ namespace Amazon.AutoScaling
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginSetDesiredCapacity.</param>
         /// 
         /// <returns>Returns a  SetDesiredCapacityResult from AutoScaling.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/SetDesiredCapacity">REST API Reference for SetDesiredCapacity Operation</seealso>
         public  SetDesiredCapacityResponse EndSetDesiredCapacity(IAsyncResult asyncResult)
         {
             return EndInvoke<SetDesiredCapacityResponse>(asyncResult);
@@ -3480,6 +3635,7 @@ namespace Amazon.AutoScaling
         /// You already have a pending update to an Auto Scaling resource (for example, a group,
         /// instance, or load balancer).
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/SetInstanceHealth">REST API Reference for SetInstanceHealth Operation</seealso>
         public SetInstanceHealthResponse SetInstanceHealth(SetInstanceHealthRequest request)
         {
             var marshaller = new SetInstanceHealthRequestMarshaller();
@@ -3499,6 +3655,7 @@ namespace Amazon.AutoScaling
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndSetInstanceHealth
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/SetInstanceHealth">REST API Reference for SetInstanceHealth Operation</seealso>
         public IAsyncResult BeginSetInstanceHealth(SetInstanceHealthRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new SetInstanceHealthRequestMarshaller();
@@ -3515,6 +3672,7 @@ namespace Amazon.AutoScaling
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginSetInstanceHealth.</param>
         /// 
         /// <returns>Returns a  SetInstanceHealthResult from AutoScaling.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/SetInstanceHealth">REST API Reference for SetInstanceHealth Operation</seealso>
         public  SetInstanceHealthResponse EndSetInstanceHealth(IAsyncResult asyncResult)
         {
             return EndInvoke<SetInstanceHealthResponse>(asyncResult);
@@ -3544,6 +3702,7 @@ namespace Amazon.AutoScaling
         /// You already have a pending update to an Auto Scaling resource (for example, a group,
         /// instance, or load balancer).
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/SetInstanceProtection">REST API Reference for SetInstanceProtection Operation</seealso>
         public SetInstanceProtectionResponse SetInstanceProtection(SetInstanceProtectionRequest request)
         {
             var marshaller = new SetInstanceProtectionRequestMarshaller();
@@ -3563,6 +3722,7 @@ namespace Amazon.AutoScaling
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndSetInstanceProtection
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/SetInstanceProtection">REST API Reference for SetInstanceProtection Operation</seealso>
         public IAsyncResult BeginSetInstanceProtection(SetInstanceProtectionRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new SetInstanceProtectionRequestMarshaller();
@@ -3579,6 +3739,7 @@ namespace Amazon.AutoScaling
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginSetInstanceProtection.</param>
         /// 
         /// <returns>Returns a  SetInstanceProtectionResult from AutoScaling.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/SetInstanceProtection">REST API Reference for SetInstanceProtection Operation</seealso>
         public  SetInstanceProtectionResponse EndSetInstanceProtection(IAsyncResult asyncResult)
         {
             return EndInvoke<SetInstanceProtectionResponse>(asyncResult);
@@ -3617,6 +3778,7 @@ namespace Amazon.AutoScaling
         /// <exception cref="Amazon.AutoScaling.Model.ResourceInUseException">
         /// The operation can't be performed because the resource is in use.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/SuspendProcesses">REST API Reference for SuspendProcesses Operation</seealso>
         public SuspendProcessesResponse SuspendProcesses(SuspendProcessesRequest request)
         {
             var marshaller = new SuspendProcessesRequestMarshaller();
@@ -3636,6 +3798,7 @@ namespace Amazon.AutoScaling
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndSuspendProcesses
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/SuspendProcesses">REST API Reference for SuspendProcesses Operation</seealso>
         public IAsyncResult BeginSuspendProcesses(SuspendProcessesRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new SuspendProcessesRequestMarshaller();
@@ -3652,6 +3815,7 @@ namespace Amazon.AutoScaling
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginSuspendProcesses.</param>
         /// 
         /// <returns>Returns a  SuspendProcessesResult from AutoScaling.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/SuspendProcesses">REST API Reference for SuspendProcesses Operation</seealso>
         public  SuspendProcessesResponse EndSuspendProcesses(IAsyncResult asyncResult)
         {
             return EndInvoke<SuspendProcessesResponse>(asyncResult);
@@ -3679,6 +3843,7 @@ namespace Amazon.AutoScaling
         /// <exception cref="Amazon.AutoScaling.Model.ScalingActivityInProgressException">
         /// The operation can't be performed because there are scaling activities in progress.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/TerminateInstanceInAutoScalingGroup">REST API Reference for TerminateInstanceInAutoScalingGroup Operation</seealso>
         public TerminateInstanceInAutoScalingGroupResponse TerminateInstanceInAutoScalingGroup(TerminateInstanceInAutoScalingGroupRequest request)
         {
             var marshaller = new TerminateInstanceInAutoScalingGroupRequestMarshaller();
@@ -3698,6 +3863,7 @@ namespace Amazon.AutoScaling
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndTerminateInstanceInAutoScalingGroup
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/TerminateInstanceInAutoScalingGroup">REST API Reference for TerminateInstanceInAutoScalingGroup Operation</seealso>
         public IAsyncResult BeginTerminateInstanceInAutoScalingGroup(TerminateInstanceInAutoScalingGroupRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new TerminateInstanceInAutoScalingGroupRequestMarshaller();
@@ -3714,6 +3880,7 @@ namespace Amazon.AutoScaling
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginTerminateInstanceInAutoScalingGroup.</param>
         /// 
         /// <returns>Returns a  TerminateInstanceInAutoScalingGroupResult from AutoScaling.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/TerminateInstanceInAutoScalingGroup">REST API Reference for TerminateInstanceInAutoScalingGroup Operation</seealso>
         public  TerminateInstanceInAutoScalingGroupResponse EndTerminateInstanceInAutoScalingGroup(IAsyncResult asyncResult)
         {
             return EndInvoke<TerminateInstanceInAutoScalingGroupResponse>(asyncResult);
@@ -3728,16 +3895,15 @@ namespace Amazon.AutoScaling
         /// 
         ///  
         /// <para>
-        /// To update an Auto Scaling group with a launch configuration with <code>InstanceMonitoring</code>
-        /// set to <code>False</code>, you must first disable the collection of group metrics.
-        /// Otherwise, you will get an error. If you have previously enabled the collection of
-        /// group metrics, you can disable it using <a>DisableMetricsCollection</a>.
+        /// The new settings take effect on any scaling activities after this call returns. Scaling
+        /// activities that are currently in progress aren't affected.
         /// </para>
         ///  
         /// <para>
-        /// The new settings are registered upon the completion of this call. Any launch configuration
-        /// settings take effect on any triggers after this call returns. Scaling activities that
-        /// are currently in progress aren't affected.
+        /// To update an Auto Scaling group with a launch configuration with <code>InstanceMonitoring</code>
+        /// set to <code>false</code>, you must first disable the collection of group metrics.
+        /// Otherwise, you will get an error. If you have previously enabled the collection of
+        /// group metrics, you can disable it using <a>DisableMetricsCollection</a>.
         /// </para>
         ///  
         /// <para>
@@ -3773,6 +3939,7 @@ namespace Amazon.AutoScaling
         /// <exception cref="Amazon.AutoScaling.Model.ScalingActivityInProgressException">
         /// The operation can't be performed because there are scaling activities in progress.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/UpdateAutoScalingGroup">REST API Reference for UpdateAutoScalingGroup Operation</seealso>
         public UpdateAutoScalingGroupResponse UpdateAutoScalingGroup(UpdateAutoScalingGroupRequest request)
         {
             var marshaller = new UpdateAutoScalingGroupRequestMarshaller();
@@ -3792,6 +3959,7 @@ namespace Amazon.AutoScaling
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateAutoScalingGroup
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/UpdateAutoScalingGroup">REST API Reference for UpdateAutoScalingGroup Operation</seealso>
         public IAsyncResult BeginUpdateAutoScalingGroup(UpdateAutoScalingGroupRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new UpdateAutoScalingGroupRequestMarshaller();
@@ -3808,6 +3976,7 @@ namespace Amazon.AutoScaling
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateAutoScalingGroup.</param>
         /// 
         /// <returns>Returns a  UpdateAutoScalingGroupResult from AutoScaling.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/UpdateAutoScalingGroup">REST API Reference for UpdateAutoScalingGroup Operation</seealso>
         public  UpdateAutoScalingGroupResponse EndUpdateAutoScalingGroup(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateAutoScalingGroupResponse>(asyncResult);

@@ -33,8 +33,8 @@ namespace Amazon.AutoScaling.Model
     /// 
     ///  
     /// <para>
-    /// After the instances are detached, you can manage them independently from the rest
-    /// of the Auto Scaling group.
+    /// After the instances are detached, you can manage them independent of the Auto Scaling
+    /// group.
     /// </para>
     ///  
     /// <para>
@@ -43,7 +43,7 @@ namespace Amazon.AutoScaling.Model
     /// </para>
     ///  
     /// <para>
-    /// If there is a Classic load balancer attached to the Auto Scaling group, the instances
+    /// If there is a Classic Load Balancer attached to the Auto Scaling group, the instances
     /// are deregistered from the load balancer. If there are target groups attached to the
     /// Auto Scaling group, the instances are deregistered from the target groups.
     /// </para>

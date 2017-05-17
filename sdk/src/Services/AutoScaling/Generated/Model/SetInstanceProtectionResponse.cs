@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AutoScaling.Model
 {
     /// <summary>
-    /// Contains the output of SetInstanceProtection.
+    /// This is the response object from the SetInstanceProtection operation.
     /// </summary>
     public partial class SetInstanceProtectionResponse : AmazonWebServiceResponse
     {

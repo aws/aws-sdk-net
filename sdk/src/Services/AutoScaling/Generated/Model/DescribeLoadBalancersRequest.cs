@@ -33,8 +33,8 @@ namespace Amazon.AutoScaling.Model
     /// 
     ///  
     /// <para>
-    /// Note that this operation describes only Classic load balancers. If you have Application
-    /// load balancers, use <a>DescribeLoadBalancerTargetGroups</a> instead.
+    /// Note that this operation describes only Classic Load Balancers. If you have Application
+    /// Load Balancers, use <a>DescribeLoadBalancerTargetGroups</a> instead.
     /// </para>
     /// </summary>
     public partial class DescribeLoadBalancersRequest : AmazonAutoScalingRequest
@@ -64,7 +64,8 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property MaxRecords. 
         /// <para>
-        /// The maximum number of items to return with this call.
+        /// The maximum number of items to return with this call. The default value is 50 and
+        /// the maximum value is 100.
         /// </para>
         /// </summary>
         public int MaxRecords

@@ -1,0 +1,1105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<docs>
+    <doc>
+        <members>
+            <member name="M:Amazon.AutoScaling.IAmazonAutoScaling.AttachInstances(Amazon.AutoScaling.Model.AttachInstancesRequest)" />
+            <member name="M:Amazon.AutoScaling.AmazonAutoScalingClient.AttachInstances(Amazon.AutoScaling.Model.AttachInstancesRequest)" />
+            <member name="T:Amazon.AutoScaling.Model.AttachInstancesRequest" />
+            <member name="T:Amazon.AutoScaling.Model.AttachInstancesResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example attaches the specified instance to the specified Auto Scaling group.
+                </para>
+                <code
+                    title="To attach an instance to an Auto Scaling group"
+                    source=".\AWSSDKDocSamples\AutoScaling\AutoScaling.GeneratedSamples.cs"
+                    region="autoscaling-attach-instances-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.AutoScaling.IAmazonAutoScaling.AttachLoadBalancers(Amazon.AutoScaling.Model.AttachLoadBalancersRequest)" />
+            <member name="M:Amazon.AutoScaling.AmazonAutoScalingClient.AttachLoadBalancers(Amazon.AutoScaling.Model.AttachLoadBalancersRequest)" />
+            <member name="T:Amazon.AutoScaling.Model.AttachLoadBalancersRequest" />
+            <member name="T:Amazon.AutoScaling.Model.AttachLoadBalancersResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example attaches the specified load balancer to the specified Auto Scaling group.
+                </para>
+                <code
+                    title="To attach a load balancer to an Auto Scaling group"
+                    source=".\AWSSDKDocSamples\AutoScaling\AutoScaling.GeneratedSamples.cs"
+                    region="autoscaling-attach-load-balancers-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.AutoScaling.IAmazonAutoScaling.AttachLoadBalancerTargetGroups(Amazon.AutoScaling.Model.AttachLoadBalancerTargetGroupsRequest)" />
+            <member name="M:Amazon.AutoScaling.AmazonAutoScalingClient.AttachLoadBalancerTargetGroups(Amazon.AutoScaling.Model.AttachLoadBalancerTargetGroupsRequest)" />
+            <member name="T:Amazon.AutoScaling.Model.AttachLoadBalancerTargetGroupsRequest" />
+            <member name="T:Amazon.AutoScaling.Model.AttachLoadBalancerTargetGroupsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example attaches the specified target group to the specified Auto Scaling group.
+                </para>
+                <code
+                    title="To attach a target group to an Auto Scaling group"
+                    source=".\AWSSDKDocSamples\AutoScaling\AutoScaling.GeneratedSamples.cs"
+                    region="autoscaling-attach-load-balancer-target-groups-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.AutoScaling.IAmazonAutoScaling.CompleteLifecycleAction(Amazon.AutoScaling.Model.CompleteLifecycleActionRequest)" />
+            <member name="M:Amazon.AutoScaling.AmazonAutoScalingClient.CompleteLifecycleAction(Amazon.AutoScaling.Model.CompleteLifecycleActionRequest)" />
+            <member name="T:Amazon.AutoScaling.Model.CompleteLifecycleActionRequest" />
+            <member name="T:Amazon.AutoScaling.Model.CompleteLifecycleActionResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example notifies Auto Scaling that the specified lifecycle action is complete so that it can finish launching or terminating the instance.
+                </para>
+                <code
+                    title="To complete the lifecycle action"
+                    source=".\AWSSDKDocSamples\AutoScaling\AutoScaling.GeneratedSamples.cs"
+                    region="autoscaling-complete-lifecycle-action-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.AutoScaling.IAmazonAutoScaling.CreateAutoScalingGroup(Amazon.AutoScaling.Model.CreateAutoScalingGroupRequest)" />
+            <member name="M:Amazon.AutoScaling.AmazonAutoScalingClient.CreateAutoScalingGroup(Amazon.AutoScaling.Model.CreateAutoScalingGroupRequest)" />
+            <member name="T:Amazon.AutoScaling.Model.CreateAutoScalingGroupRequest" />
+            <member name="T:Amazon.AutoScaling.Model.CreateAutoScalingGroupResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example creates an Auto Scaling group.
+                </para>
+                <code
+                    title="To create an Auto Scaling group"
+                    source=".\AWSSDKDocSamples\AutoScaling\AutoScaling.GeneratedSamples.cs"
+                    region="autoscaling-create-auto-scaling-group-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.AutoScaling.IAmazonAutoScaling.CreateAutoScalingGroup(Amazon.AutoScaling.Model.CreateAutoScalingGroupRequest)" />
+            <member name="M:Amazon.AutoScaling.AmazonAutoScalingClient.CreateAutoScalingGroup(Amazon.AutoScaling.Model.CreateAutoScalingGroupRequest)" />
+            <member name="T:Amazon.AutoScaling.Model.CreateAutoScalingGroupRequest" />
+            <member name="T:Amazon.AutoScaling.Model.CreateAutoScalingGroupResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example creates an Auto Scaling group and attaches the specified Classic Load Balancer.
+                </para>
+                <code
+                    title="To create an Auto Scaling group with an attached load balancer"
+                    source=".\AWSSDKDocSamples\AutoScaling\AutoScaling.GeneratedSamples.cs"
+                    region="autoscaling-create-auto-scaling-group-2" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.AutoScaling.IAmazonAutoScaling.CreateAutoScalingGroup(Amazon.AutoScaling.Model.CreateAutoScalingGroupRequest)" />
+            <member name="M:Amazon.AutoScaling.AmazonAutoScalingClient.CreateAutoScalingGroup(Amazon.AutoScaling.Model.CreateAutoScalingGroupRequest)" />
+            <member name="T:Amazon.AutoScaling.Model.CreateAutoScalingGroupRequest" />
+            <member name="T:Amazon.AutoScaling.Model.CreateAutoScalingGroupResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example creates an Auto Scaling group and attaches the specified target group.
+                </para>
+                <code
+                    title="To create an Auto Scaling group with an attached target group"
+                    source=".\AWSSDKDocSamples\AutoScaling\AutoScaling.GeneratedSamples.cs"
+                    region="autoscaling-create-auto-scaling-group-3" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.AutoScaling.IAmazonAutoScaling.CreateLaunchConfiguration(Amazon.AutoScaling.Model.CreateLaunchConfigurationRequest)" />
+            <member name="M:Amazon.AutoScaling.AmazonAutoScalingClient.CreateLaunchConfiguration(Amazon.AutoScaling.Model.CreateLaunchConfigurationRequest)" />
+            <member name="T:Amazon.AutoScaling.Model.CreateLaunchConfigurationRequest" />
+            <member name="T:Amazon.AutoScaling.Model.CreateLaunchConfigurationResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example creates a launch configuration.
+                </para>
+                <code
+                    title="To create a launch configuration"
+                    source=".\AWSSDKDocSamples\AutoScaling\AutoScaling.GeneratedSamples.cs"
+                    region="autoscaling-create-launch-configuration-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.AutoScaling.IAmazonAutoScaling.CreateOrUpdateTags(Amazon.AutoScaling.Model.CreateOrUpdateTagsRequest)" />
+            <member name="M:Amazon.AutoScaling.AmazonAutoScalingClient.CreateOrUpdateTags(Amazon.AutoScaling.Model.CreateOrUpdateTagsRequest)" />
+            <member name="T:Amazon.AutoScaling.Model.CreateOrUpdateTagsRequest" />
+            <member name="T:Amazon.AutoScaling.Model.CreateOrUpdateTagsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example adds two tags to the specified Auto Scaling group.
+                </para>
+                <code
+                    title="To create or update tags for an Auto Scaling group"
+                    source=".\AWSSDKDocSamples\AutoScaling\AutoScaling.GeneratedSamples.cs"
+                    region="autoscaling-create-or-update-tags-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.AutoScaling.IAmazonAutoScaling.DeleteAutoScalingGroup(Amazon.AutoScaling.Model.DeleteAutoScalingGroupRequest)" />
+            <member name="M:Amazon.AutoScaling.AmazonAutoScalingClient.DeleteAutoScalingGroup(Amazon.AutoScaling.Model.DeleteAutoScalingGroupRequest)" />
+            <member name="T:Amazon.AutoScaling.Model.DeleteAutoScalingGroupRequest" />
+            <member name="T:Amazon.AutoScaling.Model.DeleteAutoScalingGroupResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example deletes the specified Auto Scaling group.
+                </para>
+                <code
+                    title="To delete an Auto Scaling group"
+                    source=".\AWSSDKDocSamples\AutoScaling\AutoScaling.GeneratedSamples.cs"
+                    region="autoscaling-delete-auto-scaling-group-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.AutoScaling.IAmazonAutoScaling.DeleteAutoScalingGroup(Amazon.AutoScaling.Model.DeleteAutoScalingGroupRequest)" />
+            <member name="M:Amazon.AutoScaling.AmazonAutoScalingClient.DeleteAutoScalingGroup(Amazon.AutoScaling.Model.DeleteAutoScalingGroupRequest)" />
+            <member name="T:Amazon.AutoScaling.Model.DeleteAutoScalingGroupRequest" />
+            <member name="T:Amazon.AutoScaling.Model.DeleteAutoScalingGroupResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example deletes the specified Auto Scaling group and all its instances.
+                </para>
+                <code
+                    title="To delete an Auto Scaling group and all its instances"
+                    source=".\AWSSDKDocSamples\AutoScaling\AutoScaling.GeneratedSamples.cs"
+                    region="autoscaling-delete-auto-scaling-group-2" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.AutoScaling.IAmazonAutoScaling.DeleteLaunchConfiguration(Amazon.AutoScaling.Model.DeleteLaunchConfigurationRequest)" />
+            <member name="M:Amazon.AutoScaling.AmazonAutoScalingClient.DeleteLaunchConfiguration(Amazon.AutoScaling.Model.DeleteLaunchConfigurationRequest)" />
+            <member name="T:Amazon.AutoScaling.Model.DeleteLaunchConfigurationRequest" />
+            <member name="T:Amazon.AutoScaling.Model.DeleteLaunchConfigurationResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example deletes the specified launch configuration.
+                </para>
+                <code
+                    title="To delete a launch configuration"
+                    source=".\AWSSDKDocSamples\AutoScaling\AutoScaling.GeneratedSamples.cs"
+                    region="autoscaling-delete-launch-configuration-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.AutoScaling.IAmazonAutoScaling.DeleteLifecycleHook(Amazon.AutoScaling.Model.DeleteLifecycleHookRequest)" />
+            <member name="M:Amazon.AutoScaling.AmazonAutoScalingClient.DeleteLifecycleHook(Amazon.AutoScaling.Model.DeleteLifecycleHookRequest)" />
+            <member name="T:Amazon.AutoScaling.Model.DeleteLifecycleHookRequest" />
+            <member name="T:Amazon.AutoScaling.Model.DeleteLifecycleHookResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example deletes the specified lifecycle hook.
+                </para>
+                <code
+                    title="To delete a lifecycle hook"
+                    source=".\AWSSDKDocSamples\AutoScaling\AutoScaling.GeneratedSamples.cs"
+                    region="autoscaling-delete-lifecycle-hook-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.AutoScaling.IAmazonAutoScaling.DeleteNotificationConfiguration(Amazon.AutoScaling.Model.DeleteNotificationConfigurationRequest)" />
+            <member name="M:Amazon.AutoScaling.AmazonAutoScalingClient.DeleteNotificationConfiguration(Amazon.AutoScaling.Model.DeleteNotificationConfigurationRequest)" />
+            <member name="T:Amazon.AutoScaling.Model.DeleteNotificationConfigurationRequest" />
+            <member name="T:Amazon.AutoScaling.Model.DeleteNotificationConfigurationResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example deletes the specified notification from the specified Auto Scaling group.
+                </para>
+                <code
+                    title="To delete an Auto Scaling notification"
+                    source=".\AWSSDKDocSamples\AutoScaling\AutoScaling.GeneratedSamples.cs"
+                    region="autoscaling-delete-notification-configuration-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.AutoScaling.IAmazonAutoScaling.DeletePolicy(Amazon.AutoScaling.Model.DeletePolicyRequest)" />
+            <member name="M:Amazon.AutoScaling.AmazonAutoScalingClient.DeletePolicy(Amazon.AutoScaling.Model.DeletePolicyRequest)" />
+            <member name="T:Amazon.AutoScaling.Model.DeletePolicyRequest" />
+            <member name="T:Amazon.AutoScaling.Model.DeletePolicyResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example deletes the specified Auto Scaling policy.
+                </para>
+                <code
+                    title="To delete an Auto Scaling policy"
+                    source=".\AWSSDKDocSamples\AutoScaling\AutoScaling.GeneratedSamples.cs"
+                    region="autoscaling-delete-policy-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.AutoScaling.IAmazonAutoScaling.DeleteScheduledAction(Amazon.AutoScaling.Model.DeleteScheduledActionRequest)" />
+            <member name="M:Amazon.AutoScaling.AmazonAutoScalingClient.DeleteScheduledAction(Amazon.AutoScaling.Model.DeleteScheduledActionRequest)" />
+            <member name="T:Amazon.AutoScaling.Model.DeleteScheduledActionRequest" />
+            <member name="T:Amazon.AutoScaling.Model.DeleteScheduledActionResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example deletes the specified scheduled action from the specified Auto Scaling group.
+                </para>
+                <code
+                    title="To delete a scheduled action from an Auto Scaling group"
+                    source=".\AWSSDKDocSamples\AutoScaling\AutoScaling.GeneratedSamples.cs"
+                    region="autoscaling-delete-scheduled-action-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.AutoScaling.IAmazonAutoScaling.DeleteTags(Amazon.AutoScaling.Model.DeleteTagsRequest)" />
+            <member name="M:Amazon.AutoScaling.AmazonAutoScalingClient.DeleteTags(Amazon.AutoScaling.Model.DeleteTagsRequest)" />
+            <member name="T:Amazon.AutoScaling.Model.DeleteTagsRequest" />
+            <member name="T:Amazon.AutoScaling.Model.DeleteTagsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example deletes the specified tag from the specified Auto Scaling group.
+                </para>
+                <code
+                    title="To delete a tag from an Auto Scaling group"
+                    source=".\AWSSDKDocSamples\AutoScaling\AutoScaling.GeneratedSamples.cs"
+                    region="autoscaling-delete-tags-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.AutoScaling.IAmazonAutoScaling.DescribeAccountLimits(Amazon.AutoScaling.Model.DescribeAccountLimitsRequest)" />
+            <member name="M:Amazon.AutoScaling.AmazonAutoScalingClient.DescribeAccountLimits(Amazon.AutoScaling.Model.DescribeAccountLimitsRequest)" />
+            <member name="T:Amazon.AutoScaling.Model.DescribeAccountLimitsRequest" />
+            <member name="T:Amazon.AutoScaling.Model.DescribeAccountLimitsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example describes the Auto Scaling limits for your AWS account.
+                </para>
+                <code
+                    title="To describe your Auto Scaling account limits"
+                    source=".\AWSSDKDocSamples\AutoScaling\AutoScaling.GeneratedSamples.cs"
+                    region="autoscaling-describe-account-limits-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.AutoScaling.IAmazonAutoScaling.DescribeAdjustmentTypes(Amazon.AutoScaling.Model.DescribeAdjustmentTypesRequest)" />
+            <member name="M:Amazon.AutoScaling.AmazonAutoScalingClient.DescribeAdjustmentTypes(Amazon.AutoScaling.Model.DescribeAdjustmentTypesRequest)" />
+            <member name="T:Amazon.AutoScaling.Model.DescribeAdjustmentTypesRequest" />
+            <member name="T:Amazon.AutoScaling.Model.DescribeAdjustmentTypesResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example describes the available adjustment types.
+                </para>
+                <code
+                    title="To describe the Auto Scaling adjustment types"
+                    source=".\AWSSDKDocSamples\AutoScaling\AutoScaling.GeneratedSamples.cs"
+                    region="autoscaling-describe-adjustment-types-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.AutoScaling.IAmazonAutoScaling.DescribeAutoScalingGroups(Amazon.AutoScaling.Model.DescribeAutoScalingGroupsRequest)" />
+            <member name="M:Amazon.AutoScaling.AmazonAutoScalingClient.DescribeAutoScalingGroups(Amazon.AutoScaling.Model.DescribeAutoScalingGroupsRequest)" />
+            <member name="T:Amazon.AutoScaling.Model.DescribeAutoScalingGroupsRequest" />
+            <member name="T:Amazon.AutoScaling.Model.DescribeAutoScalingGroupsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example describes the specified Auto Scaling group.
+                </para>
+                <code
+                    title="To describe an Auto Scaling group"
+                    source=".\AWSSDKDocSamples\AutoScaling\AutoScaling.GeneratedSamples.cs"
+                    region="autoscaling-describe-auto-scaling-groups-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.AutoScaling.IAmazonAutoScaling.DescribeAutoScalingInstances(Amazon.AutoScaling.Model.DescribeAutoScalingInstancesRequest)" />
+            <member name="M:Amazon.AutoScaling.AmazonAutoScalingClient.DescribeAutoScalingInstances(Amazon.AutoScaling.Model.DescribeAutoScalingInstancesRequest)" />
+            <member name="T:Amazon.AutoScaling.Model.DescribeAutoScalingInstancesRequest" />
+            <member name="T:Amazon.AutoScaling.Model.DescribeAutoScalingInstancesResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example describes the specified Auto Scaling instance.
+                </para>
+                <code
+                    title="To describe one or more Auto Scaling instances"
+                    source=".\AWSSDKDocSamples\AutoScaling\AutoScaling.GeneratedSamples.cs"
+                    region="autoscaling-describe-auto-scaling-instances-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.AutoScaling.IAmazonAutoScaling.DescribeAutoScalingNotificationTypes(Amazon.AutoScaling.Model.DescribeAutoScalingNotificationTypesRequest)" />
+            <member name="M:Amazon.AutoScaling.AmazonAutoScalingClient.DescribeAutoScalingNotificationTypes(Amazon.AutoScaling.Model.DescribeAutoScalingNotificationTypesRequest)" />
+            <member name="T:Amazon.AutoScaling.Model.DescribeAutoScalingNotificationTypesRequest" />
+            <member name="T:Amazon.AutoScaling.Model.DescribeAutoScalingNotificationTypesResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example describes the available notification types.
+                </para>
+                <code
+                    title="To describe the Auto Scaling notification types"
+                    source=".\AWSSDKDocSamples\AutoScaling\AutoScaling.GeneratedSamples.cs"
+                    region="autoscaling-describe-auto-scaling-notification-types-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.AutoScaling.IAmazonAutoScaling.DescribeLaunchConfigurations(Amazon.AutoScaling.Model.DescribeLaunchConfigurationsRequest)" />
+            <member name="M:Amazon.AutoScaling.AmazonAutoScalingClient.DescribeLaunchConfigurations(Amazon.AutoScaling.Model.DescribeLaunchConfigurationsRequest)" />
+            <member name="T:Amazon.AutoScaling.Model.DescribeLaunchConfigurationsRequest" />
+            <member name="T:Amazon.AutoScaling.Model.DescribeLaunchConfigurationsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example describes the specified launch configuration.
+                </para>
+                <code
+                    title="To describe Auto Scaling launch configurations"
+                    source=".\AWSSDKDocSamples\AutoScaling\AutoScaling.GeneratedSamples.cs"
+                    region="autoscaling-describe-launch-configurations-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.AutoScaling.IAmazonAutoScaling.DescribeLifecycleHooks(Amazon.AutoScaling.Model.DescribeLifecycleHooksRequest)" />
+            <member name="M:Amazon.AutoScaling.AmazonAutoScalingClient.DescribeLifecycleHooks(Amazon.AutoScaling.Model.DescribeLifecycleHooksRequest)" />
+            <member name="T:Amazon.AutoScaling.Model.DescribeLifecycleHooksRequest" />
+            <member name="T:Amazon.AutoScaling.Model.DescribeLifecycleHooksResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example describes the lifecycle hooks for the specified Auto Scaling group.
+                </para>
+                <code
+                    title="To describe your lifecycle hooks"
+                    source=".\AWSSDKDocSamples\AutoScaling\AutoScaling.GeneratedSamples.cs"
+                    region="autoscaling-describe-lifecycle-hooks-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.AutoScaling.IAmazonAutoScaling.DescribeLifecycleHookTypes(Amazon.AutoScaling.Model.DescribeLifecycleHookTypesRequest)" />
+            <member name="M:Amazon.AutoScaling.AmazonAutoScalingClient.DescribeLifecycleHookTypes(Amazon.AutoScaling.Model.DescribeLifecycleHookTypesRequest)" />
+            <member name="T:Amazon.AutoScaling.Model.DescribeLifecycleHookTypesRequest" />
+            <member name="T:Amazon.AutoScaling.Model.DescribeLifecycleHookTypesResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example describes the available lifecycle hook types.
+                </para>
+                <code
+                    title="To describe the available types of lifecycle hooks"
+                    source=".\AWSSDKDocSamples\AutoScaling\AutoScaling.GeneratedSamples.cs"
+                    region="autoscaling-describe-lifecycle-hook-types-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.AutoScaling.IAmazonAutoScaling.DescribeLoadBalancers(Amazon.AutoScaling.Model.DescribeLoadBalancersRequest)" />
+            <member name="M:Amazon.AutoScaling.AmazonAutoScalingClient.DescribeLoadBalancers(Amazon.AutoScaling.Model.DescribeLoadBalancersRequest)" />
+            <member name="T:Amazon.AutoScaling.Model.DescribeLoadBalancersRequest" />
+            <member name="T:Amazon.AutoScaling.Model.DescribeLoadBalancersResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example describes the load balancers attached to the specified Auto Scaling group.
+                </para>
+                <code
+                    title="To describe the load balancers for an Auto Scaling group"
+                    source=".\AWSSDKDocSamples\AutoScaling\AutoScaling.GeneratedSamples.cs"
+                    region="autoscaling-describe-load-balancers-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.AutoScaling.IAmazonAutoScaling.DescribeLoadBalancerTargetGroups(Amazon.AutoScaling.Model.DescribeLoadBalancerTargetGroupsRequest)" />
+            <member name="M:Amazon.AutoScaling.AmazonAutoScalingClient.DescribeLoadBalancerTargetGroups(Amazon.AutoScaling.Model.DescribeLoadBalancerTargetGroupsRequest)" />
+            <member name="T:Amazon.AutoScaling.Model.DescribeLoadBalancerTargetGroupsRequest" />
+            <member name="T:Amazon.AutoScaling.Model.DescribeLoadBalancerTargetGroupsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example describes the target groups attached to the specified Auto Scaling group.
+                </para>
+                <code
+                    title="To describe the target groups for an Auto Scaling group"
+                    source=".\AWSSDKDocSamples\AutoScaling\AutoScaling.GeneratedSamples.cs"
+                    region="autoscaling-describe-load-balancer-target-groups-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.AutoScaling.IAmazonAutoScaling.DescribeMetricCollectionTypes(Amazon.AutoScaling.Model.DescribeMetricCollectionTypesRequest)" />
+            <member name="M:Amazon.AutoScaling.AmazonAutoScalingClient.DescribeMetricCollectionTypes(Amazon.AutoScaling.Model.DescribeMetricCollectionTypesRequest)" />
+            <member name="T:Amazon.AutoScaling.Model.DescribeMetricCollectionTypesRequest" />
+            <member name="T:Amazon.AutoScaling.Model.DescribeMetricCollectionTypesResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example describes the available metric collection types.
+                </para>
+                <code
+                    title="To describe the Auto Scaling metric collection types"
+                    source=".\AWSSDKDocSamples\AutoScaling\AutoScaling.GeneratedSamples.cs"
+                    region="autoscaling-describe-metric-collection-types-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.AutoScaling.IAmazonAutoScaling.DescribeNotificationConfigurations(Amazon.AutoScaling.Model.DescribeNotificationConfigurationsRequest)" />
+            <member name="M:Amazon.AutoScaling.AmazonAutoScalingClient.DescribeNotificationConfigurations(Amazon.AutoScaling.Model.DescribeNotificationConfigurationsRequest)" />
+            <member name="T:Amazon.AutoScaling.Model.DescribeNotificationConfigurationsRequest" />
+            <member name="T:Amazon.AutoScaling.Model.DescribeNotificationConfigurationsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example describes the notification configurations for the specified Auto Scaling group.
+                </para>
+                <code
+                    title="To describe Auto Scaling notification configurations"
+                    source=".\AWSSDKDocSamples\AutoScaling\AutoScaling.GeneratedSamples.cs"
+                    region="autoscaling-describe-notification-configurations-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.AutoScaling.IAmazonAutoScaling.DescribePolicies(Amazon.AutoScaling.Model.DescribePoliciesRequest)" />
+            <member name="M:Amazon.AutoScaling.AmazonAutoScalingClient.DescribePolicies(Amazon.AutoScaling.Model.DescribePoliciesRequest)" />
+            <member name="T:Amazon.AutoScaling.Model.DescribePoliciesRequest" />
+            <member name="T:Amazon.AutoScaling.Model.DescribePoliciesResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example describes the policies for the specified Auto Scaling group.
+                </para>
+                <code
+                    title="To describe Auto Scaling policies"
+                    source=".\AWSSDKDocSamples\AutoScaling\AutoScaling.GeneratedSamples.cs"
+                    region="autoscaling-describe-policies-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.AutoScaling.IAmazonAutoScaling.DescribeScalingActivities(Amazon.AutoScaling.Model.DescribeScalingActivitiesRequest)" />
+            <member name="M:Amazon.AutoScaling.AmazonAutoScalingClient.DescribeScalingActivities(Amazon.AutoScaling.Model.DescribeScalingActivitiesRequest)" />
+            <member name="T:Amazon.AutoScaling.Model.DescribeScalingActivitiesRequest" />
+            <member name="T:Amazon.AutoScaling.Model.DescribeScalingActivitiesResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example describes the scaling activities for the specified Auto Scaling group.
+                </para>
+                <code
+                    title="To describe the scaling activities for an Auto Scaling group"
+                    source=".\AWSSDKDocSamples\AutoScaling\AutoScaling.GeneratedSamples.cs"
+                    region="autoscaling-describe-scaling-activities-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.AutoScaling.IAmazonAutoScaling.DescribeScalingProcessTypes(Amazon.AutoScaling.Model.DescribeScalingProcessTypesRequest)" />
+            <member name="M:Amazon.AutoScaling.AmazonAutoScalingClient.DescribeScalingProcessTypes(Amazon.AutoScaling.Model.DescribeScalingProcessTypesRequest)" />
+            <member name="T:Amazon.AutoScaling.Model.DescribeScalingProcessTypesRequest" />
+            <member name="T:Amazon.AutoScaling.Model.DescribeScalingProcessTypesResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example describes the Auto Scaling process types.
+                </para>
+                <code
+                    title="To describe the Auto Scaling process types"
+                    source=".\AWSSDKDocSamples\AutoScaling\AutoScaling.GeneratedSamples.cs"
+                    region="autoscaling-describe-scaling-process-types-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.AutoScaling.IAmazonAutoScaling.DescribeScheduledActions(Amazon.AutoScaling.Model.DescribeScheduledActionsRequest)" />
+            <member name="M:Amazon.AutoScaling.AmazonAutoScalingClient.DescribeScheduledActions(Amazon.AutoScaling.Model.DescribeScheduledActionsRequest)" />
+            <member name="T:Amazon.AutoScaling.Model.DescribeScheduledActionsRequest" />
+            <member name="T:Amazon.AutoScaling.Model.DescribeScheduledActionsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example describes the scheduled actions for the specified Auto Scaling group.
+                </para>
+                <code
+                    title="To describe scheduled actions"
+                    source=".\AWSSDKDocSamples\AutoScaling\AutoScaling.GeneratedSamples.cs"
+                    region="autoscaling-describe-scheduled-actions-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.AutoScaling.IAmazonAutoScaling.DescribeTags(Amazon.AutoScaling.Model.DescribeTagsRequest)" />
+            <member name="M:Amazon.AutoScaling.AmazonAutoScalingClient.DescribeTags(Amazon.AutoScaling.Model.DescribeTagsRequest)" />
+            <member name="T:Amazon.AutoScaling.Model.DescribeTagsRequest" />
+            <member name="T:Amazon.AutoScaling.Model.DescribeTagsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example describes the tags for the specified Auto Scaling group.
+                </para>
+                <code
+                    title="To describe tags"
+                    source=".\AWSSDKDocSamples\AutoScaling\AutoScaling.GeneratedSamples.cs"
+                    region="autoscaling-describe-tags-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.AutoScaling.IAmazonAutoScaling.DescribeTerminationPolicyTypes(Amazon.AutoScaling.Model.DescribeTerminationPolicyTypesRequest)" />
+            <member name="M:Amazon.AutoScaling.AmazonAutoScalingClient.DescribeTerminationPolicyTypes(Amazon.AutoScaling.Model.DescribeTerminationPolicyTypesRequest)" />
+            <member name="T:Amazon.AutoScaling.Model.DescribeTerminationPolicyTypesRequest" />
+            <member name="T:Amazon.AutoScaling.Model.DescribeTerminationPolicyTypesResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example describes the available termination policy types.
+                </para>
+                <code
+                    title="To describe termination policy types"
+                    source=".\AWSSDKDocSamples\AutoScaling\AutoScaling.GeneratedSamples.cs"
+                    region="autoscaling-describe-termination-policy-types-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.AutoScaling.IAmazonAutoScaling.DetachInstances(Amazon.AutoScaling.Model.DetachInstancesRequest)" />
+            <member name="M:Amazon.AutoScaling.AmazonAutoScalingClient.DetachInstances(Amazon.AutoScaling.Model.DetachInstancesRequest)" />
+            <member name="T:Amazon.AutoScaling.Model.DetachInstancesRequest" />
+            <member name="T:Amazon.AutoScaling.Model.DetachInstancesResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example detaches the specified instance from the specified Auto Scaling group.
+                </para>
+                <code
+                    title="To detach an instance from an Auto Scaling group"
+                    source=".\AWSSDKDocSamples\AutoScaling\AutoScaling.GeneratedSamples.cs"
+                    region="autoscaling-detach-instances-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.AutoScaling.IAmazonAutoScaling.DetachLoadBalancers(Amazon.AutoScaling.Model.DetachLoadBalancersRequest)" />
+            <member name="M:Amazon.AutoScaling.AmazonAutoScalingClient.DetachLoadBalancers(Amazon.AutoScaling.Model.DetachLoadBalancersRequest)" />
+            <member name="T:Amazon.AutoScaling.Model.DetachLoadBalancersRequest" />
+            <member name="T:Amazon.AutoScaling.Model.DetachLoadBalancersResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example detaches the specified load balancer from the specified Auto Scaling group.
+                </para>
+                <code
+                    title="To detach a load balancer from an Auto Scaling group"
+                    source=".\AWSSDKDocSamples\AutoScaling\AutoScaling.GeneratedSamples.cs"
+                    region="autoscaling-detach-load-balancers-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.AutoScaling.IAmazonAutoScaling.DetachLoadBalancerTargetGroups(Amazon.AutoScaling.Model.DetachLoadBalancerTargetGroupsRequest)" />
+            <member name="M:Amazon.AutoScaling.AmazonAutoScalingClient.DetachLoadBalancerTargetGroups(Amazon.AutoScaling.Model.DetachLoadBalancerTargetGroupsRequest)" />
+            <member name="T:Amazon.AutoScaling.Model.DetachLoadBalancerTargetGroupsRequest" />
+            <member name="T:Amazon.AutoScaling.Model.DetachLoadBalancerTargetGroupsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example detaches the specified target group from the specified Auto Scaling group
+                </para>
+                <code
+                    title="To detach a target group from an Auto Scaling group"
+                    source=".\AWSSDKDocSamples\AutoScaling\AutoScaling.GeneratedSamples.cs"
+                    region="autoscaling-detach-load-balancer-target-groups-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.AutoScaling.IAmazonAutoScaling.DisableMetricsCollection(Amazon.AutoScaling.Model.DisableMetricsCollectionRequest)" />
+            <member name="M:Amazon.AutoScaling.AmazonAutoScalingClient.DisableMetricsCollection(Amazon.AutoScaling.Model.DisableMetricsCollectionRequest)" />
+            <member name="T:Amazon.AutoScaling.Model.DisableMetricsCollectionRequest" />
+            <member name="T:Amazon.AutoScaling.Model.DisableMetricsCollectionResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example disables collecting data for the GroupDesiredCapacity metric for the specified Auto Scaling group.
+                </para>
+                <code
+                    title="To disable metrics collection for an Auto Scaling group"
+                    source=".\AWSSDKDocSamples\AutoScaling\AutoScaling.GeneratedSamples.cs"
+                    region="autoscaling-disable-metrics-collection-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.AutoScaling.IAmazonAutoScaling.EnableMetricsCollection(Amazon.AutoScaling.Model.EnableMetricsCollectionRequest)" />
+            <member name="M:Amazon.AutoScaling.AmazonAutoScalingClient.EnableMetricsCollection(Amazon.AutoScaling.Model.EnableMetricsCollectionRequest)" />
+            <member name="T:Amazon.AutoScaling.Model.EnableMetricsCollectionRequest" />
+            <member name="T:Amazon.AutoScaling.Model.EnableMetricsCollectionResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example enables data collection for the specified Auto Scaling group.
+                </para>
+                <code
+                    title="To enable metrics collection for an Auto Scaling group"
+                    source=".\AWSSDKDocSamples\AutoScaling\AutoScaling.GeneratedSamples.cs"
+                    region="autoscaling-enable-metrics-collection-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.AutoScaling.IAmazonAutoScaling.EnterStandby(Amazon.AutoScaling.Model.EnterStandbyRequest)" />
+            <member name="M:Amazon.AutoScaling.AmazonAutoScalingClient.EnterStandby(Amazon.AutoScaling.Model.EnterStandbyRequest)" />
+            <member name="T:Amazon.AutoScaling.Model.EnterStandbyRequest" />
+            <member name="T:Amazon.AutoScaling.Model.EnterStandbyResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example puts the specified instance into standby mode.
+                </para>
+                <code
+                    title="To move instances into standby mode"
+                    source=".\AWSSDKDocSamples\AutoScaling\AutoScaling.GeneratedSamples.cs"
+                    region="autoscaling-enter-standby-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.AutoScaling.IAmazonAutoScaling.ExecutePolicy(Amazon.AutoScaling.Model.ExecutePolicyRequest)" />
+            <member name="M:Amazon.AutoScaling.AmazonAutoScalingClient.ExecutePolicy(Amazon.AutoScaling.Model.ExecutePolicyRequest)" />
+            <member name="T:Amazon.AutoScaling.Model.ExecutePolicyRequest" />
+            <member name="T:Amazon.AutoScaling.Model.ExecutePolicyResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example executes the specified Auto Scaling policy for the specified Auto Scaling group.
+                </para>
+                <code
+                    title="To execute an Auto Scaling policy"
+                    source=".\AWSSDKDocSamples\AutoScaling\AutoScaling.GeneratedSamples.cs"
+                    region="autoscaling-execute-policy-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.AutoScaling.IAmazonAutoScaling.ExitStandby(Amazon.AutoScaling.Model.ExitStandbyRequest)" />
+            <member name="M:Amazon.AutoScaling.AmazonAutoScalingClient.ExitStandby(Amazon.AutoScaling.Model.ExitStandbyRequest)" />
+            <member name="T:Amazon.AutoScaling.Model.ExitStandbyRequest" />
+            <member name="T:Amazon.AutoScaling.Model.ExitStandbyResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example moves the specified instance out of standby mode.
+                </para>
+                <code
+                    title="To move instances out of standby mode"
+                    source=".\AWSSDKDocSamples\AutoScaling\AutoScaling.GeneratedSamples.cs"
+                    region="autoscaling-exit-standby-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.AutoScaling.IAmazonAutoScaling.PutLifecycleHook(Amazon.AutoScaling.Model.PutLifecycleHookRequest)" />
+            <member name="M:Amazon.AutoScaling.AmazonAutoScalingClient.PutLifecycleHook(Amazon.AutoScaling.Model.PutLifecycleHookRequest)" />
+            <member name="T:Amazon.AutoScaling.Model.PutLifecycleHookRequest" />
+            <member name="T:Amazon.AutoScaling.Model.PutLifecycleHookResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example creates a lifecycle hook.
+                </para>
+                <code
+                    title="To create a lifecycle hook"
+                    source=".\AWSSDKDocSamples\AutoScaling\AutoScaling.GeneratedSamples.cs"
+                    region="autoscaling-put-lifecycle-hook-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.AutoScaling.IAmazonAutoScaling.PutNotificationConfiguration(Amazon.AutoScaling.Model.PutNotificationConfigurationRequest)" />
+            <member name="M:Amazon.AutoScaling.AmazonAutoScalingClient.PutNotificationConfiguration(Amazon.AutoScaling.Model.PutNotificationConfigurationRequest)" />
+            <member name="T:Amazon.AutoScaling.Model.PutNotificationConfigurationRequest" />
+            <member name="T:Amazon.AutoScaling.Model.PutNotificationConfigurationResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example adds the specified notification to the specified Auto Scaling group.
+                </para>
+                <code
+                    title="To add an Auto Scaling notification"
+                    source=".\AWSSDKDocSamples\AutoScaling\AutoScaling.GeneratedSamples.cs"
+                    region="autoscaling-put-notification-configuration-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.AutoScaling.IAmazonAutoScaling.PutScalingPolicy(Amazon.AutoScaling.Model.PutScalingPolicyRequest)" />
+            <member name="M:Amazon.AutoScaling.AmazonAutoScalingClient.PutScalingPolicy(Amazon.AutoScaling.Model.PutScalingPolicyRequest)" />
+            <member name="T:Amazon.AutoScaling.Model.PutScalingPolicyRequest" />
+            <member name="T:Amazon.AutoScaling.Model.PutScalingPolicyResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example adds the specified policy to the specified Auto Scaling group.
+                </para>
+                <code
+                    title="To add a scaling policy to an Auto Scaling group"
+                    source=".\AWSSDKDocSamples\AutoScaling\AutoScaling.GeneratedSamples.cs"
+                    region="autoscaling-put-scaling-policy-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.AutoScaling.IAmazonAutoScaling.PutScheduledUpdateGroupAction(Amazon.AutoScaling.Model.PutScheduledUpdateGroupActionRequest)" />
+            <member name="M:Amazon.AutoScaling.AmazonAutoScalingClient.PutScheduledUpdateGroupAction(Amazon.AutoScaling.Model.PutScheduledUpdateGroupActionRequest)" />
+            <member name="T:Amazon.AutoScaling.Model.PutScheduledUpdateGroupActionRequest" />
+            <member name="T:Amazon.AutoScaling.Model.PutScheduledUpdateGroupActionResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example adds the specified scheduled action to the specified Auto Scaling group.
+                </para>
+                <code
+                    title="To add a scheduled action to an Auto Scaling group"
+                    source=".\AWSSDKDocSamples\AutoScaling\AutoScaling.GeneratedSamples.cs"
+                    region="autoscaling-put-scheduled-update-group-action-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.AutoScaling.IAmazonAutoScaling.RecordLifecycleActionHeartbeat(Amazon.AutoScaling.Model.RecordLifecycleActionHeartbeatRequest)" />
+            <member name="M:Amazon.AutoScaling.AmazonAutoScalingClient.RecordLifecycleActionHeartbeat(Amazon.AutoScaling.Model.RecordLifecycleActionHeartbeatRequest)" />
+            <member name="T:Amazon.AutoScaling.Model.RecordLifecycleActionHeartbeatRequest" />
+            <member name="T:Amazon.AutoScaling.Model.RecordLifecycleActionHeartbeatResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example records a lifecycle action heartbeat to keep the instance in a pending state.
+                </para>
+                <code
+                    title="To record a lifecycle action heartbeat"
+                    source=".\AWSSDKDocSamples\AutoScaling\AutoScaling.GeneratedSamples.cs"
+                    region="autoscaling-record-lifecycle-action-heartbeat-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.AutoScaling.IAmazonAutoScaling.ResumeProcesses(Amazon.AutoScaling.Model.ResumeProcessesRequest)" />
+            <member name="M:Amazon.AutoScaling.AmazonAutoScalingClient.ResumeProcesses(Amazon.AutoScaling.Model.ResumeProcessesRequest)" />
+            <member name="T:Amazon.AutoScaling.Model.ResumeProcessesRequest" />
+            <member name="T:Amazon.AutoScaling.Model.ResumeProcessesResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example resumes the specified suspended scaling process for the specified Auto Scaling group.
+                </para>
+                <code
+                    title="To resume Auto Scaling processes"
+                    source=".\AWSSDKDocSamples\AutoScaling\AutoScaling.GeneratedSamples.cs"
+                    region="autoscaling-resume-processes-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.AutoScaling.IAmazonAutoScaling.SetDesiredCapacity(Amazon.AutoScaling.Model.SetDesiredCapacityRequest)" />
+            <member name="M:Amazon.AutoScaling.AmazonAutoScalingClient.SetDesiredCapacity(Amazon.AutoScaling.Model.SetDesiredCapacityRequest)" />
+            <member name="T:Amazon.AutoScaling.Model.SetDesiredCapacityRequest" />
+            <member name="T:Amazon.AutoScaling.Model.SetDesiredCapacityResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example sets the desired capacity for the specified Auto Scaling group.
+                </para>
+                <code
+                    title="To set the desired capacity for an Auto Scaling group"
+                    source=".\AWSSDKDocSamples\AutoScaling\AutoScaling.GeneratedSamples.cs"
+                    region="autoscaling-set-desired-capacity-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.AutoScaling.IAmazonAutoScaling.SetInstanceHealth(Amazon.AutoScaling.Model.SetInstanceHealthRequest)" />
+            <member name="M:Amazon.AutoScaling.AmazonAutoScalingClient.SetInstanceHealth(Amazon.AutoScaling.Model.SetInstanceHealthRequest)" />
+            <member name="T:Amazon.AutoScaling.Model.SetInstanceHealthRequest" />
+            <member name="T:Amazon.AutoScaling.Model.SetInstanceHealthResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example sets the health status of the specified instance to Unhealthy.
+                </para>
+                <code
+                    title="To set the health status of an instance"
+                    source=".\AWSSDKDocSamples\AutoScaling\AutoScaling.GeneratedSamples.cs"
+                    region="autoscaling-set-instance-health-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.AutoScaling.IAmazonAutoScaling.SetInstanceProtection(Amazon.AutoScaling.Model.SetInstanceProtectionRequest)" />
+            <member name="M:Amazon.AutoScaling.AmazonAutoScalingClient.SetInstanceProtection(Amazon.AutoScaling.Model.SetInstanceProtectionRequest)" />
+            <member name="T:Amazon.AutoScaling.Model.SetInstanceProtectionRequest" />
+            <member name="T:Amazon.AutoScaling.Model.SetInstanceProtectionResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example enables instance protection for the specified instance.
+                </para>
+                <code
+                    title="To enable instance protection for an instance"
+                    source=".\AWSSDKDocSamples\AutoScaling\AutoScaling.GeneratedSamples.cs"
+                    region="autoscaling-set-instance-protection-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.AutoScaling.IAmazonAutoScaling.SetInstanceProtection(Amazon.AutoScaling.Model.SetInstanceProtectionRequest)" />
+            <member name="M:Amazon.AutoScaling.AmazonAutoScalingClient.SetInstanceProtection(Amazon.AutoScaling.Model.SetInstanceProtectionRequest)" />
+            <member name="T:Amazon.AutoScaling.Model.SetInstanceProtectionRequest" />
+            <member name="T:Amazon.AutoScaling.Model.SetInstanceProtectionResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example disables instance protection for the specified instance.
+                </para>
+                <code
+                    title="To disable instance protection for an instance"
+                    source=".\AWSSDKDocSamples\AutoScaling\AutoScaling.GeneratedSamples.cs"
+                    region="autoscaling-set-instance-protection-2" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.AutoScaling.IAmazonAutoScaling.SuspendProcesses(Amazon.AutoScaling.Model.SuspendProcessesRequest)" />
+            <member name="M:Amazon.AutoScaling.AmazonAutoScalingClient.SuspendProcesses(Amazon.AutoScaling.Model.SuspendProcessesRequest)" />
+            <member name="T:Amazon.AutoScaling.Model.SuspendProcessesRequest" />
+            <member name="T:Amazon.AutoScaling.Model.SuspendProcessesResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example suspends the specified scaling process for the specified Auto Scaling group.
+                </para>
+                <code
+                    title="To suspend Auto Scaling processes"
+                    source=".\AWSSDKDocSamples\AutoScaling\AutoScaling.GeneratedSamples.cs"
+                    region="autoscaling-suspend-processes-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.AutoScaling.IAmazonAutoScaling.TerminateInstanceInAutoScalingGroup(Amazon.AutoScaling.Model.TerminateInstanceInAutoScalingGroupRequest)" />
+            <member name="M:Amazon.AutoScaling.AmazonAutoScalingClient.TerminateInstanceInAutoScalingGroup(Amazon.AutoScaling.Model.TerminateInstanceInAutoScalingGroupRequest)" />
+            <member name="T:Amazon.AutoScaling.Model.TerminateInstanceInAutoScalingGroupRequest" />
+            <member name="T:Amazon.AutoScaling.Model.TerminateInstanceInAutoScalingGroupResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example terminates the specified instance from the specified Auto Scaling group without updating the size of the group. Auto Scaling launches a replacement instance after the specified instance terminates.
+                </para>
+                <code
+                    title="To terminate an instance in an Auto Scaling group"
+                    source=".\AWSSDKDocSamples\AutoScaling\AutoScaling.GeneratedSamples.cs"
+                    region="autoscaling-terminate-instance-in-auto-scaling-group-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.AutoScaling.IAmazonAutoScaling.UpdateAutoScalingGroup(Amazon.AutoScaling.Model.UpdateAutoScalingGroupRequest)" />
+            <member name="M:Amazon.AutoScaling.AmazonAutoScalingClient.UpdateAutoScalingGroup(Amazon.AutoScaling.Model.UpdateAutoScalingGroupRequest)" />
+            <member name="T:Amazon.AutoScaling.Model.UpdateAutoScalingGroupRequest" />
+            <member name="T:Amazon.AutoScaling.Model.UpdateAutoScalingGroupResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example updates the launch configuration of the specified Auto Scaling group.
+                </para>
+                <code
+                    title="To update the launch configuration"
+                    source=".\AWSSDKDocSamples\AutoScaling\AutoScaling.GeneratedSamples.cs"
+                    region="autoscaling-update-auto-scaling-group-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.AutoScaling.IAmazonAutoScaling.UpdateAutoScalingGroup(Amazon.AutoScaling.Model.UpdateAutoScalingGroupRequest)" />
+            <member name="M:Amazon.AutoScaling.AmazonAutoScalingClient.UpdateAutoScalingGroup(Amazon.AutoScaling.Model.UpdateAutoScalingGroupRequest)" />
+            <member name="T:Amazon.AutoScaling.Model.UpdateAutoScalingGroupRequest" />
+            <member name="T:Amazon.AutoScaling.Model.UpdateAutoScalingGroupResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example updates the minimum size and maximum size of the specified Auto Scaling group.
+                </para>
+                <code
+                    title="To update the minimum and maximum size"
+                    source=".\AWSSDKDocSamples\AutoScaling\AutoScaling.GeneratedSamples.cs"
+                    region="autoscaling-update-auto-scaling-group-2" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.AutoScaling.IAmazonAutoScaling.UpdateAutoScalingGroup(Amazon.AutoScaling.Model.UpdateAutoScalingGroupRequest)" />
+            <member name="M:Amazon.AutoScaling.AmazonAutoScalingClient.UpdateAutoScalingGroup(Amazon.AutoScaling.Model.UpdateAutoScalingGroupRequest)" />
+            <member name="T:Amazon.AutoScaling.Model.UpdateAutoScalingGroupRequest" />
+            <member name="T:Amazon.AutoScaling.Model.UpdateAutoScalingGroupResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example enables instance protection for the specified Auto Scaling group.
+                </para>
+                <code
+                    title="To enable instance protection"
+                    source=".\AWSSDKDocSamples\AutoScaling\AutoScaling.GeneratedSamples.cs"
+                    region="autoscaling-update-auto-scaling-group-3" />
+            </example>
+        </value>
+    </doc>
+</docs>

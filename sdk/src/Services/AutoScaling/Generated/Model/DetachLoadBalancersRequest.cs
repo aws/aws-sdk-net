@@ -29,12 +29,12 @@ namespace Amazon.AutoScaling.Model
 {
     /// <summary>
     /// Container for the parameters to the DetachLoadBalancers operation.
-    /// Detaches one or more Classic load balancers from the specified Auto Scaling group.
+    /// Detaches one or more Classic Load Balancers from the specified Auto Scaling group.
     /// 
     ///  
     /// <para>
-    /// Note that this operation detaches only Classic load balancers. If you have Application
-    /// load balancers, use <a>DetachLoadBalancerTargetGroups</a> instead.
+    /// Note that this operation detaches only Classic Load Balancers. If you have Application
+    /// Load Balancers, use <a>DetachLoadBalancerTargetGroups</a> instead.
     /// </para>
     ///  
     /// <para>

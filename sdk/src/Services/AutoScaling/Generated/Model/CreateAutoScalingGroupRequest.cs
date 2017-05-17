@@ -129,7 +129,8 @@ namespace Amazon.AutoScaling.Model
         /// <para>
         /// The number of EC2 instances that should be running in the group. This number must
         /// be greater than or equal to the minimum size of the group and less than or equal to
-        /// the maximum size of the group.
+        /// the maximum size of the group. If you do not specify a desired capacity, the default
+        /// is the minimum size of the group.
         /// </para>
         /// </summary>
         public int DesiredCapacity
@@ -250,7 +251,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property LoadBalancerNames. 
         /// <para>
-        /// One or more Classic load balancers. To specify an Application load balancer, use <code>TargetGroupARNs</code>
+        /// One or more Classic Load Balancers. To specify an Application Load Balancer, use <code>TargetGroupARNs</code>
         /// instead.
         /// </para>
         ///  

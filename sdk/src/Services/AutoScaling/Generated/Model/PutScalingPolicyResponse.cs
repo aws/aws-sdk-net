@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AutoScaling.Model
 {
     /// <summary>
-    /// Contains the output of PutScalingPolicy.
+    /// This is the response object from the PutScalingPolicy operation.
     /// </summary>
     public partial class PutScalingPolicyResponse : AmazonWebServiceResponse
     {

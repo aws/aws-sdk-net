@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AutoScaling.Model
 {
     /// <summary>
-    /// Contains the output of DetachInstances.
+    /// This is the response object from the DetachInstances operation.
     /// </summary>
     public partial class DetachInstancesResponse : AmazonWebServiceResponse
     {

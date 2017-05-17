@@ -245,7 +245,7 @@ namespace Amazon.AutoScaling
         /// </para>
         ///  
         /// <para>
-        /// If there is a Classic load balancer attached to your Auto Scaling group, the instances
+        /// If there is a Classic Load Balancer attached to your Auto Scaling group, the instances
         /// are also registered with the load balancer. If there are target groups attached to
         /// your Auto Scaling group, the instances are also registered with the target groups.
         /// </para>
@@ -262,6 +262,7 @@ namespace Amazon.AutoScaling
         /// You already have a pending update to an Auto Scaling resource (for example, a group,
         /// instance, or load balancer).
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/AttachInstances">REST API Reference for AttachInstances Operation</seealso>
         public AttachInstancesResponse AttachInstances(AttachInstancesRequest request)
         {
             var marshaller = new AttachInstancesRequestMarshaller();
@@ -279,6 +280,7 @@ namespace Amazon.AutoScaling
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/AttachInstances">REST API Reference for AttachInstances Operation</seealso>
         public Task<AttachInstancesResponse> AttachInstancesAsync(AttachInstancesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new AttachInstancesRequestMarshaller();
@@ -294,11 +296,11 @@ namespace Amazon.AutoScaling
 
 
         /// <summary>
-        /// Attaches one or more Classic load balancers to the specified Auto Scaling group.
+        /// Attaches one or more Classic Load Balancers to the specified Auto Scaling group.
         /// 
         ///  
         /// <para>
-        /// To attach an Application load balancer instead, see <a>AttachLoadBalancerTargetGroups</a>.
+        /// To attach an Application Load Balancer instead, see <a>AttachLoadBalancerTargetGroups</a>.
         /// </para>
         ///  
         /// <para>
@@ -318,6 +320,7 @@ namespace Amazon.AutoScaling
         /// You already have a pending update to an Auto Scaling resource (for example, a group,
         /// instance, or load balancer).
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/AttachLoadBalancers">REST API Reference for AttachLoadBalancers Operation</seealso>
         public AttachLoadBalancersResponse AttachLoadBalancers(AttachLoadBalancersRequest request)
         {
             var marshaller = new AttachLoadBalancersRequestMarshaller();
@@ -335,6 +338,7 @@ namespace Amazon.AutoScaling
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/AttachLoadBalancers">REST API Reference for AttachLoadBalancers Operation</seealso>
         public Task<AttachLoadBalancersResponse> AttachLoadBalancersAsync(AttachLoadBalancersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new AttachLoadBalancersRequestMarshaller();
@@ -370,6 +374,7 @@ namespace Amazon.AutoScaling
         /// You already have a pending update to an Auto Scaling resource (for example, a group,
         /// instance, or load balancer).
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/AttachLoadBalancerTargetGroups">REST API Reference for AttachLoadBalancerTargetGroups Operation</seealso>
         public AttachLoadBalancerTargetGroupsResponse AttachLoadBalancerTargetGroups(AttachLoadBalancerTargetGroupsRequest request)
         {
             var marshaller = new AttachLoadBalancerTargetGroupsRequestMarshaller();
@@ -387,6 +392,7 @@ namespace Amazon.AutoScaling
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/AttachLoadBalancerTargetGroups">REST API Reference for AttachLoadBalancerTargetGroups Operation</seealso>
         public Task<AttachLoadBalancerTargetGroupsResponse> AttachLoadBalancerTargetGroupsAsync(AttachLoadBalancerTargetGroupsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new AttachLoadBalancerTargetGroupsRequestMarshaller();
@@ -449,6 +455,7 @@ namespace Amazon.AutoScaling
         /// You already have a pending update to an Auto Scaling resource (for example, a group,
         /// instance, or load balancer).
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/CompleteLifecycleAction">REST API Reference for CompleteLifecycleAction Operation</seealso>
         public CompleteLifecycleActionResponse CompleteLifecycleAction(CompleteLifecycleActionRequest request)
         {
             var marshaller = new CompleteLifecycleActionRequestMarshaller();
@@ -466,6 +473,7 @@ namespace Amazon.AutoScaling
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/CompleteLifecycleAction">REST API Reference for CompleteLifecycleAction Operation</seealso>
         public Task<CompleteLifecycleActionResponse> CompleteLifecycleActionAsync(CompleteLifecycleActionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CompleteLifecycleActionRequestMarshaller();
@@ -509,6 +517,7 @@ namespace Amazon.AutoScaling
         /// You already have a pending update to an Auto Scaling resource (for example, a group,
         /// instance, or load balancer).
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/CreateAutoScalingGroup">REST API Reference for CreateAutoScalingGroup Operation</seealso>
         public CreateAutoScalingGroupResponse CreateAutoScalingGroup(CreateAutoScalingGroupRequest request)
         {
             var marshaller = new CreateAutoScalingGroupRequestMarshaller();
@@ -526,6 +535,7 @@ namespace Amazon.AutoScaling
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/CreateAutoScalingGroup">REST API Reference for CreateAutoScalingGroup Operation</seealso>
         public Task<CreateAutoScalingGroupResponse> CreateAutoScalingGroupAsync(CreateAutoScalingGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateAutoScalingGroupRequestMarshaller();
@@ -569,6 +579,7 @@ namespace Amazon.AutoScaling
         /// You already have a pending update to an Auto Scaling resource (for example, a group,
         /// instance, or load balancer).
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/CreateLaunchConfiguration">REST API Reference for CreateLaunchConfiguration Operation</seealso>
         public CreateLaunchConfigurationResponse CreateLaunchConfiguration(CreateLaunchConfigurationRequest request)
         {
             var marshaller = new CreateLaunchConfigurationRequestMarshaller();
@@ -586,6 +597,7 @@ namespace Amazon.AutoScaling
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/CreateLaunchConfiguration">REST API Reference for CreateLaunchConfiguration Operation</seealso>
         public Task<CreateLaunchConfigurationResponse> CreateLaunchConfigurationAsync(CreateLaunchConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateLaunchConfigurationRequestMarshaller();
@@ -628,6 +640,7 @@ namespace Amazon.AutoScaling
         /// You already have a pending update to an Auto Scaling resource (for example, a group,
         /// instance, or load balancer).
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/CreateOrUpdateTags">REST API Reference for CreateOrUpdateTags Operation</seealso>
         public CreateOrUpdateTagsResponse CreateOrUpdateTags(CreateOrUpdateTagsRequest request)
         {
             var marshaller = new CreateOrUpdateTagsRequestMarshaller();
@@ -645,6 +658,7 @@ namespace Amazon.AutoScaling
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/CreateOrUpdateTags">REST API Reference for CreateOrUpdateTags Operation</seealso>
         public Task<CreateOrUpdateTagsResponse> CreateOrUpdateTagsAsync(CreateOrUpdateTagsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateOrUpdateTagsRequestMarshaller();
@@ -697,6 +711,7 @@ namespace Amazon.AutoScaling
         /// <exception cref="Amazon.AutoScaling.Model.ScalingActivityInProgressException">
         /// The operation can't be performed because there are scaling activities in progress.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DeleteAutoScalingGroup">REST API Reference for DeleteAutoScalingGroup Operation</seealso>
         public DeleteAutoScalingGroupResponse DeleteAutoScalingGroup(DeleteAutoScalingGroupRequest request)
         {
             var marshaller = new DeleteAutoScalingGroupRequestMarshaller();
@@ -714,6 +729,7 @@ namespace Amazon.AutoScaling
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DeleteAutoScalingGroup">REST API Reference for DeleteAutoScalingGroup Operation</seealso>
         public Task<DeleteAutoScalingGroupResponse> DeleteAutoScalingGroupAsync(DeleteAutoScalingGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteAutoScalingGroupRequestMarshaller();
@@ -747,6 +763,7 @@ namespace Amazon.AutoScaling
         /// <exception cref="Amazon.AutoScaling.Model.ResourceInUseException">
         /// The operation can't be performed because the resource is in use.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DeleteLaunchConfiguration">REST API Reference for DeleteLaunchConfiguration Operation</seealso>
         public DeleteLaunchConfigurationResponse DeleteLaunchConfiguration(DeleteLaunchConfigurationRequest request)
         {
             var marshaller = new DeleteLaunchConfigurationRequestMarshaller();
@@ -764,6 +781,7 @@ namespace Amazon.AutoScaling
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DeleteLaunchConfiguration">REST API Reference for DeleteLaunchConfiguration Operation</seealso>
         public Task<DeleteLaunchConfigurationResponse> DeleteLaunchConfigurationAsync(DeleteLaunchConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteLaunchConfigurationRequestMarshaller();
@@ -794,6 +812,7 @@ namespace Amazon.AutoScaling
         /// You already have a pending update to an Auto Scaling resource (for example, a group,
         /// instance, or load balancer).
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DeleteLifecycleHook">REST API Reference for DeleteLifecycleHook Operation</seealso>
         public DeleteLifecycleHookResponse DeleteLifecycleHook(DeleteLifecycleHookRequest request)
         {
             var marshaller = new DeleteLifecycleHookRequestMarshaller();
@@ -811,6 +830,7 @@ namespace Amazon.AutoScaling
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DeleteLifecycleHook">REST API Reference for DeleteLifecycleHook Operation</seealso>
         public Task<DeleteLifecycleHookResponse> DeleteLifecycleHookAsync(DeleteLifecycleHookRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteLifecycleHookRequestMarshaller();
@@ -835,6 +855,7 @@ namespace Amazon.AutoScaling
         /// You already have a pending update to an Auto Scaling resource (for example, a group,
         /// instance, or load balancer).
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DeleteNotificationConfiguration">REST API Reference for DeleteNotificationConfiguration Operation</seealso>
         public DeleteNotificationConfigurationResponse DeleteNotificationConfiguration(DeleteNotificationConfigurationRequest request)
         {
             var marshaller = new DeleteNotificationConfigurationRequestMarshaller();
@@ -852,6 +873,7 @@ namespace Amazon.AutoScaling
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DeleteNotificationConfiguration">REST API Reference for DeleteNotificationConfiguration Operation</seealso>
         public Task<DeleteNotificationConfigurationResponse> DeleteNotificationConfigurationAsync(DeleteNotificationConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteNotificationConfigurationRequestMarshaller();
@@ -882,6 +904,7 @@ namespace Amazon.AutoScaling
         /// You already have a pending update to an Auto Scaling resource (for example, a group,
         /// instance, or load balancer).
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DeletePolicy">REST API Reference for DeletePolicy Operation</seealso>
         public DeletePolicyResponse DeletePolicy(DeletePolicyRequest request)
         {
             var marshaller = new DeletePolicyRequestMarshaller();
@@ -899,6 +922,7 @@ namespace Amazon.AutoScaling
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DeletePolicy">REST API Reference for DeletePolicy Operation</seealso>
         public Task<DeletePolicyResponse> DeletePolicyAsync(DeletePolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeletePolicyRequestMarshaller();
@@ -923,6 +947,7 @@ namespace Amazon.AutoScaling
         /// You already have a pending update to an Auto Scaling resource (for example, a group,
         /// instance, or load balancer).
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DeleteScheduledAction">REST API Reference for DeleteScheduledAction Operation</seealso>
         public DeleteScheduledActionResponse DeleteScheduledAction(DeleteScheduledActionRequest request)
         {
             var marshaller = new DeleteScheduledActionRequestMarshaller();
@@ -940,6 +965,7 @@ namespace Amazon.AutoScaling
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DeleteScheduledAction">REST API Reference for DeleteScheduledAction Operation</seealso>
         public Task<DeleteScheduledActionResponse> DeleteScheduledActionAsync(DeleteScheduledActionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteScheduledActionRequestMarshaller();
@@ -964,6 +990,7 @@ namespace Amazon.AutoScaling
         /// You already have a pending update to an Auto Scaling resource (for example, a group,
         /// instance, or load balancer).
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DeleteTags">REST API Reference for DeleteTags Operation</seealso>
         public DeleteTagsResponse DeleteTags(DeleteTagsRequest request)
         {
             var marshaller = new DeleteTagsRequestMarshaller();
@@ -981,6 +1008,7 @@ namespace Amazon.AutoScaling
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DeleteTags">REST API Reference for DeleteTags Operation</seealso>
         public Task<DeleteTagsResponse> DeleteTagsAsync(DeleteTagsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteTagsRequestMarshaller();
@@ -1010,6 +1038,7 @@ namespace Amazon.AutoScaling
         /// You already have a pending update to an Auto Scaling resource (for example, a group,
         /// instance, or load balancer).
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeAccountLimits">REST API Reference for DescribeAccountLimits Operation</seealso>
         public DescribeAccountLimitsResponse DescribeAccountLimits()
         {
             return DescribeAccountLimits(new DescribeAccountLimitsRequest());
@@ -1032,6 +1061,7 @@ namespace Amazon.AutoScaling
         /// You already have a pending update to an Auto Scaling resource (for example, a group,
         /// instance, or load balancer).
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeAccountLimits">REST API Reference for DescribeAccountLimits Operation</seealso>
         public DescribeAccountLimitsResponse DescribeAccountLimits(DescribeAccountLimitsRequest request)
         {
             var marshaller = new DescribeAccountLimitsRequestMarshaller();
@@ -1059,6 +1089,7 @@ namespace Amazon.AutoScaling
         /// You already have a pending update to an Auto Scaling resource (for example, a group,
         /// instance, or load balancer).
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeAccountLimits">REST API Reference for DescribeAccountLimits Operation</seealso>
         public Task<DescribeAccountLimitsResponse> DescribeAccountLimitsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             return DescribeAccountLimitsAsync(new DescribeAccountLimitsRequest(), cancellationToken);
@@ -1072,6 +1103,7 @@ namespace Amazon.AutoScaling
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeAccountLimits">REST API Reference for DescribeAccountLimits Operation</seealso>
         public Task<DescribeAccountLimitsResponse> DescribeAccountLimitsAsync(DescribeAccountLimitsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeAccountLimitsRequestMarshaller();
@@ -1095,6 +1127,7 @@ namespace Amazon.AutoScaling
         /// You already have a pending update to an Auto Scaling resource (for example, a group,
         /// instance, or load balancer).
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeAdjustmentTypes">REST API Reference for DescribeAdjustmentTypes Operation</seealso>
         public DescribeAdjustmentTypesResponse DescribeAdjustmentTypes()
         {
             return DescribeAdjustmentTypes(new DescribeAdjustmentTypesRequest());
@@ -1111,6 +1144,7 @@ namespace Amazon.AutoScaling
         /// You already have a pending update to an Auto Scaling resource (for example, a group,
         /// instance, or load balancer).
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeAdjustmentTypes">REST API Reference for DescribeAdjustmentTypes Operation</seealso>
         public DescribeAdjustmentTypesResponse DescribeAdjustmentTypes(DescribeAdjustmentTypesRequest request)
         {
             var marshaller = new DescribeAdjustmentTypesRequestMarshaller();
@@ -1132,6 +1166,7 @@ namespace Amazon.AutoScaling
         /// You already have a pending update to an Auto Scaling resource (for example, a group,
         /// instance, or load balancer).
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeAdjustmentTypes">REST API Reference for DescribeAdjustmentTypes Operation</seealso>
         public Task<DescribeAdjustmentTypesResponse> DescribeAdjustmentTypesAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             return DescribeAdjustmentTypesAsync(new DescribeAdjustmentTypesRequest(), cancellationToken);
@@ -1145,6 +1180,7 @@ namespace Amazon.AutoScaling
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeAdjustmentTypes">REST API Reference for DescribeAdjustmentTypes Operation</seealso>
         public Task<DescribeAdjustmentTypesResponse> DescribeAdjustmentTypesAsync(DescribeAdjustmentTypesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeAdjustmentTypesRequestMarshaller();
@@ -1171,6 +1207,7 @@ namespace Amazon.AutoScaling
         /// You already have a pending update to an Auto Scaling resource (for example, a group,
         /// instance, or load balancer).
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeAutoScalingGroups">REST API Reference for DescribeAutoScalingGroups Operation</seealso>
         public DescribeAutoScalingGroupsResponse DescribeAutoScalingGroups()
         {
             return DescribeAutoScalingGroups(new DescribeAutoScalingGroupsRequest());
@@ -1190,6 +1227,7 @@ namespace Amazon.AutoScaling
         /// You already have a pending update to an Auto Scaling resource (for example, a group,
         /// instance, or load balancer).
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeAutoScalingGroups">REST API Reference for DescribeAutoScalingGroups Operation</seealso>
         public DescribeAutoScalingGroupsResponse DescribeAutoScalingGroups(DescribeAutoScalingGroupsRequest request)
         {
             var marshaller = new DescribeAutoScalingGroupsRequestMarshaller();
@@ -1214,6 +1252,7 @@ namespace Amazon.AutoScaling
         /// You already have a pending update to an Auto Scaling resource (for example, a group,
         /// instance, or load balancer).
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeAutoScalingGroups">REST API Reference for DescribeAutoScalingGroups Operation</seealso>
         public Task<DescribeAutoScalingGroupsResponse> DescribeAutoScalingGroupsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             return DescribeAutoScalingGroupsAsync(new DescribeAutoScalingGroupsRequest(), cancellationToken);
@@ -1227,6 +1266,7 @@ namespace Amazon.AutoScaling
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeAutoScalingGroups">REST API Reference for DescribeAutoScalingGroups Operation</seealso>
         public Task<DescribeAutoScalingGroupsResponse> DescribeAutoScalingGroupsAsync(DescribeAutoScalingGroupsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeAutoScalingGroupsRequestMarshaller();
@@ -1253,6 +1293,7 @@ namespace Amazon.AutoScaling
         /// You already have a pending update to an Auto Scaling resource (for example, a group,
         /// instance, or load balancer).
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeAutoScalingInstances">REST API Reference for DescribeAutoScalingInstances Operation</seealso>
         public DescribeAutoScalingInstancesResponse DescribeAutoScalingInstances()
         {
             return DescribeAutoScalingInstances(new DescribeAutoScalingInstancesRequest());
@@ -1272,6 +1313,7 @@ namespace Amazon.AutoScaling
         /// You already have a pending update to an Auto Scaling resource (for example, a group,
         /// instance, or load balancer).
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeAutoScalingInstances">REST API Reference for DescribeAutoScalingInstances Operation</seealso>
         public DescribeAutoScalingInstancesResponse DescribeAutoScalingInstances(DescribeAutoScalingInstancesRequest request)
         {
             var marshaller = new DescribeAutoScalingInstancesRequestMarshaller();
@@ -1296,6 +1338,7 @@ namespace Amazon.AutoScaling
         /// You already have a pending update to an Auto Scaling resource (for example, a group,
         /// instance, or load balancer).
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeAutoScalingInstances">REST API Reference for DescribeAutoScalingInstances Operation</seealso>
         public Task<DescribeAutoScalingInstancesResponse> DescribeAutoScalingInstancesAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             return DescribeAutoScalingInstancesAsync(new DescribeAutoScalingInstancesRequest(), cancellationToken);
@@ -1309,6 +1352,7 @@ namespace Amazon.AutoScaling
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeAutoScalingInstances">REST API Reference for DescribeAutoScalingInstances Operation</seealso>
         public Task<DescribeAutoScalingInstancesResponse> DescribeAutoScalingInstancesAsync(DescribeAutoScalingInstancesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeAutoScalingInstancesRequestMarshaller();
@@ -1332,6 +1376,7 @@ namespace Amazon.AutoScaling
         /// You already have a pending update to an Auto Scaling resource (for example, a group,
         /// instance, or load balancer).
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeAutoScalingNotificationTypes">REST API Reference for DescribeAutoScalingNotificationTypes Operation</seealso>
         public DescribeAutoScalingNotificationTypesResponse DescribeAutoScalingNotificationTypes()
         {
             return DescribeAutoScalingNotificationTypes(new DescribeAutoScalingNotificationTypesRequest());
@@ -1348,6 +1393,7 @@ namespace Amazon.AutoScaling
         /// You already have a pending update to an Auto Scaling resource (for example, a group,
         /// instance, or load balancer).
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeAutoScalingNotificationTypes">REST API Reference for DescribeAutoScalingNotificationTypes Operation</seealso>
         public DescribeAutoScalingNotificationTypesResponse DescribeAutoScalingNotificationTypes(DescribeAutoScalingNotificationTypesRequest request)
         {
             var marshaller = new DescribeAutoScalingNotificationTypesRequestMarshaller();
@@ -1369,6 +1415,7 @@ namespace Amazon.AutoScaling
         /// You already have a pending update to an Auto Scaling resource (for example, a group,
         /// instance, or load balancer).
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeAutoScalingNotificationTypes">REST API Reference for DescribeAutoScalingNotificationTypes Operation</seealso>
         public Task<DescribeAutoScalingNotificationTypesResponse> DescribeAutoScalingNotificationTypesAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             return DescribeAutoScalingNotificationTypesAsync(new DescribeAutoScalingNotificationTypesRequest(), cancellationToken);
@@ -1382,6 +1429,7 @@ namespace Amazon.AutoScaling
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeAutoScalingNotificationTypes">REST API Reference for DescribeAutoScalingNotificationTypes Operation</seealso>
         public Task<DescribeAutoScalingNotificationTypesResponse> DescribeAutoScalingNotificationTypesAsync(DescribeAutoScalingNotificationTypesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeAutoScalingNotificationTypesRequestMarshaller();
@@ -1408,6 +1456,7 @@ namespace Amazon.AutoScaling
         /// You already have a pending update to an Auto Scaling resource (for example, a group,
         /// instance, or load balancer).
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeLaunchConfigurations">REST API Reference for DescribeLaunchConfigurations Operation</seealso>
         public DescribeLaunchConfigurationsResponse DescribeLaunchConfigurations()
         {
             return DescribeLaunchConfigurations(new DescribeLaunchConfigurationsRequest());
@@ -1427,6 +1476,7 @@ namespace Amazon.AutoScaling
         /// You already have a pending update to an Auto Scaling resource (for example, a group,
         /// instance, or load balancer).
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeLaunchConfigurations">REST API Reference for DescribeLaunchConfigurations Operation</seealso>
         public DescribeLaunchConfigurationsResponse DescribeLaunchConfigurations(DescribeLaunchConfigurationsRequest request)
         {
             var marshaller = new DescribeLaunchConfigurationsRequestMarshaller();
@@ -1451,6 +1501,7 @@ namespace Amazon.AutoScaling
         /// You already have a pending update to an Auto Scaling resource (for example, a group,
         /// instance, or load balancer).
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeLaunchConfigurations">REST API Reference for DescribeLaunchConfigurations Operation</seealso>
         public Task<DescribeLaunchConfigurationsResponse> DescribeLaunchConfigurationsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             return DescribeLaunchConfigurationsAsync(new DescribeLaunchConfigurationsRequest(), cancellationToken);
@@ -1464,6 +1515,7 @@ namespace Amazon.AutoScaling
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeLaunchConfigurations">REST API Reference for DescribeLaunchConfigurations Operation</seealso>
         public Task<DescribeLaunchConfigurationsResponse> DescribeLaunchConfigurationsAsync(DescribeLaunchConfigurationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeLaunchConfigurationsRequestMarshaller();
@@ -1488,6 +1540,7 @@ namespace Amazon.AutoScaling
         /// You already have a pending update to an Auto Scaling resource (for example, a group,
         /// instance, or load balancer).
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeLifecycleHooks">REST API Reference for DescribeLifecycleHooks Operation</seealso>
         public DescribeLifecycleHooksResponse DescribeLifecycleHooks(DescribeLifecycleHooksRequest request)
         {
             var marshaller = new DescribeLifecycleHooksRequestMarshaller();
@@ -1505,6 +1558,7 @@ namespace Amazon.AutoScaling
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeLifecycleHooks">REST API Reference for DescribeLifecycleHooks Operation</seealso>
         public Task<DescribeLifecycleHooksResponse> DescribeLifecycleHooksAsync(DescribeLifecycleHooksRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeLifecycleHooksRequestMarshaller();
@@ -1529,6 +1583,7 @@ namespace Amazon.AutoScaling
         /// You already have a pending update to an Auto Scaling resource (for example, a group,
         /// instance, or load balancer).
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeLifecycleHookTypes">REST API Reference for DescribeLifecycleHookTypes Operation</seealso>
         public DescribeLifecycleHookTypesResponse DescribeLifecycleHookTypes(DescribeLifecycleHookTypesRequest request)
         {
             var marshaller = new DescribeLifecycleHookTypesRequestMarshaller();
@@ -1546,6 +1601,7 @@ namespace Amazon.AutoScaling
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeLifecycleHookTypes">REST API Reference for DescribeLifecycleHookTypes Operation</seealso>
         public Task<DescribeLifecycleHookTypesResponse> DescribeLifecycleHookTypesAsync(DescribeLifecycleHookTypesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeLifecycleHookTypesRequestMarshaller();
@@ -1565,8 +1621,8 @@ namespace Amazon.AutoScaling
         /// 
         ///  
         /// <para>
-        /// Note that this operation describes only Classic load balancers. If you have Application
-        /// load balancers, use <a>DescribeLoadBalancerTargetGroups</a> instead.
+        /// Note that this operation describes only Classic Load Balancers. If you have Application
+        /// Load Balancers, use <a>DescribeLoadBalancerTargetGroups</a> instead.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeLoadBalancers service method.</param>
@@ -1576,6 +1632,7 @@ namespace Amazon.AutoScaling
         /// You already have a pending update to an Auto Scaling resource (for example, a group,
         /// instance, or load balancer).
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeLoadBalancers">REST API Reference for DescribeLoadBalancers Operation</seealso>
         public DescribeLoadBalancersResponse DescribeLoadBalancers(DescribeLoadBalancersRequest request)
         {
             var marshaller = new DescribeLoadBalancersRequestMarshaller();
@@ -1593,6 +1650,7 @@ namespace Amazon.AutoScaling
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeLoadBalancers">REST API Reference for DescribeLoadBalancers Operation</seealso>
         public Task<DescribeLoadBalancersResponse> DescribeLoadBalancersAsync(DescribeLoadBalancersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeLoadBalancersRequestMarshaller();
@@ -1617,6 +1675,7 @@ namespace Amazon.AutoScaling
         /// You already have a pending update to an Auto Scaling resource (for example, a group,
         /// instance, or load balancer).
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeLoadBalancerTargetGroups">REST API Reference for DescribeLoadBalancerTargetGroups Operation</seealso>
         public DescribeLoadBalancerTargetGroupsResponse DescribeLoadBalancerTargetGroups(DescribeLoadBalancerTargetGroupsRequest request)
         {
             var marshaller = new DescribeLoadBalancerTargetGroupsRequestMarshaller();
@@ -1634,6 +1693,7 @@ namespace Amazon.AutoScaling
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeLoadBalancerTargetGroups">REST API Reference for DescribeLoadBalancerTargetGroups Operation</seealso>
         public Task<DescribeLoadBalancerTargetGroupsResponse> DescribeLoadBalancerTargetGroupsAsync(DescribeLoadBalancerTargetGroupsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeLoadBalancerTargetGroupsRequestMarshaller();
@@ -1663,6 +1723,7 @@ namespace Amazon.AutoScaling
         /// You already have a pending update to an Auto Scaling resource (for example, a group,
         /// instance, or load balancer).
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeMetricCollectionTypes">REST API Reference for DescribeMetricCollectionTypes Operation</seealso>
         public DescribeMetricCollectionTypesResponse DescribeMetricCollectionTypes()
         {
             return DescribeMetricCollectionTypes(new DescribeMetricCollectionTypesRequest());
@@ -1685,6 +1746,7 @@ namespace Amazon.AutoScaling
         /// You already have a pending update to an Auto Scaling resource (for example, a group,
         /// instance, or load balancer).
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeMetricCollectionTypes">REST API Reference for DescribeMetricCollectionTypes Operation</seealso>
         public DescribeMetricCollectionTypesResponse DescribeMetricCollectionTypes(DescribeMetricCollectionTypesRequest request)
         {
             var marshaller = new DescribeMetricCollectionTypesRequestMarshaller();
@@ -1712,6 +1774,7 @@ namespace Amazon.AutoScaling
         /// You already have a pending update to an Auto Scaling resource (for example, a group,
         /// instance, or load balancer).
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeMetricCollectionTypes">REST API Reference for DescribeMetricCollectionTypes Operation</seealso>
         public Task<DescribeMetricCollectionTypesResponse> DescribeMetricCollectionTypesAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             return DescribeMetricCollectionTypesAsync(new DescribeMetricCollectionTypesRequest(), cancellationToken);
@@ -1725,6 +1788,7 @@ namespace Amazon.AutoScaling
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeMetricCollectionTypes">REST API Reference for DescribeMetricCollectionTypes Operation</seealso>
         public Task<DescribeMetricCollectionTypesResponse> DescribeMetricCollectionTypesAsync(DescribeMetricCollectionTypesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeMetricCollectionTypesRequestMarshaller();
@@ -1751,6 +1815,7 @@ namespace Amazon.AutoScaling
         /// You already have a pending update to an Auto Scaling resource (for example, a group,
         /// instance, or load balancer).
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeNotificationConfigurations">REST API Reference for DescribeNotificationConfigurations Operation</seealso>
         public DescribeNotificationConfigurationsResponse DescribeNotificationConfigurations()
         {
             return DescribeNotificationConfigurations(new DescribeNotificationConfigurationsRequest());
@@ -1770,6 +1835,7 @@ namespace Amazon.AutoScaling
         /// You already have a pending update to an Auto Scaling resource (for example, a group,
         /// instance, or load balancer).
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeNotificationConfigurations">REST API Reference for DescribeNotificationConfigurations Operation</seealso>
         public DescribeNotificationConfigurationsResponse DescribeNotificationConfigurations(DescribeNotificationConfigurationsRequest request)
         {
             var marshaller = new DescribeNotificationConfigurationsRequestMarshaller();
@@ -1794,6 +1860,7 @@ namespace Amazon.AutoScaling
         /// You already have a pending update to an Auto Scaling resource (for example, a group,
         /// instance, or load balancer).
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeNotificationConfigurations">REST API Reference for DescribeNotificationConfigurations Operation</seealso>
         public Task<DescribeNotificationConfigurationsResponse> DescribeNotificationConfigurationsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             return DescribeNotificationConfigurationsAsync(new DescribeNotificationConfigurationsRequest(), cancellationToken);
@@ -1807,6 +1874,7 @@ namespace Amazon.AutoScaling
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeNotificationConfigurations">REST API Reference for DescribeNotificationConfigurations Operation</seealso>
         public Task<DescribeNotificationConfigurationsResponse> DescribeNotificationConfigurationsAsync(DescribeNotificationConfigurationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeNotificationConfigurationsRequestMarshaller();
@@ -1833,6 +1901,7 @@ namespace Amazon.AutoScaling
         /// You already have a pending update to an Auto Scaling resource (for example, a group,
         /// instance, or load balancer).
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribePolicies">REST API Reference for DescribePolicies Operation</seealso>
         public DescribePoliciesResponse DescribePolicies()
         {
             return DescribePolicies(new DescribePoliciesRequest());
@@ -1852,6 +1921,7 @@ namespace Amazon.AutoScaling
         /// You already have a pending update to an Auto Scaling resource (for example, a group,
         /// instance, or load balancer).
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribePolicies">REST API Reference for DescribePolicies Operation</seealso>
         public DescribePoliciesResponse DescribePolicies(DescribePoliciesRequest request)
         {
             var marshaller = new DescribePoliciesRequestMarshaller();
@@ -1876,6 +1946,7 @@ namespace Amazon.AutoScaling
         /// You already have a pending update to an Auto Scaling resource (for example, a group,
         /// instance, or load balancer).
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribePolicies">REST API Reference for DescribePolicies Operation</seealso>
         public Task<DescribePoliciesResponse> DescribePoliciesAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             return DescribePoliciesAsync(new DescribePoliciesRequest(), cancellationToken);
@@ -1889,6 +1960,7 @@ namespace Amazon.AutoScaling
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribePolicies">REST API Reference for DescribePolicies Operation</seealso>
         public Task<DescribePoliciesResponse> DescribePoliciesAsync(DescribePoliciesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribePoliciesRequestMarshaller();
@@ -1915,6 +1987,7 @@ namespace Amazon.AutoScaling
         /// You already have a pending update to an Auto Scaling resource (for example, a group,
         /// instance, or load balancer).
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeScalingActivities">REST API Reference for DescribeScalingActivities Operation</seealso>
         public DescribeScalingActivitiesResponse DescribeScalingActivities()
         {
             return DescribeScalingActivities(new DescribeScalingActivitiesRequest());
@@ -1934,6 +2007,7 @@ namespace Amazon.AutoScaling
         /// You already have a pending update to an Auto Scaling resource (for example, a group,
         /// instance, or load balancer).
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeScalingActivities">REST API Reference for DescribeScalingActivities Operation</seealso>
         public DescribeScalingActivitiesResponse DescribeScalingActivities(DescribeScalingActivitiesRequest request)
         {
             var marshaller = new DescribeScalingActivitiesRequestMarshaller();
@@ -1958,6 +2032,7 @@ namespace Amazon.AutoScaling
         /// You already have a pending update to an Auto Scaling resource (for example, a group,
         /// instance, or load balancer).
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeScalingActivities">REST API Reference for DescribeScalingActivities Operation</seealso>
         public Task<DescribeScalingActivitiesResponse> DescribeScalingActivitiesAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             return DescribeScalingActivitiesAsync(new DescribeScalingActivitiesRequest(), cancellationToken);
@@ -1971,6 +2046,7 @@ namespace Amazon.AutoScaling
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeScalingActivities">REST API Reference for DescribeScalingActivities Operation</seealso>
         public Task<DescribeScalingActivitiesResponse> DescribeScalingActivitiesAsync(DescribeScalingActivitiesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeScalingActivitiesRequestMarshaller();
@@ -1994,6 +2070,7 @@ namespace Amazon.AutoScaling
         /// You already have a pending update to an Auto Scaling resource (for example, a group,
         /// instance, or load balancer).
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeScalingProcessTypes">REST API Reference for DescribeScalingProcessTypes Operation</seealso>
         public DescribeScalingProcessTypesResponse DescribeScalingProcessTypes()
         {
             return DescribeScalingProcessTypes(new DescribeScalingProcessTypesRequest());
@@ -2010,6 +2087,7 @@ namespace Amazon.AutoScaling
         /// You already have a pending update to an Auto Scaling resource (for example, a group,
         /// instance, or load balancer).
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeScalingProcessTypes">REST API Reference for DescribeScalingProcessTypes Operation</seealso>
         public DescribeScalingProcessTypesResponse DescribeScalingProcessTypes(DescribeScalingProcessTypesRequest request)
         {
             var marshaller = new DescribeScalingProcessTypesRequestMarshaller();
@@ -2031,6 +2109,7 @@ namespace Amazon.AutoScaling
         /// You already have a pending update to an Auto Scaling resource (for example, a group,
         /// instance, or load balancer).
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeScalingProcessTypes">REST API Reference for DescribeScalingProcessTypes Operation</seealso>
         public Task<DescribeScalingProcessTypesResponse> DescribeScalingProcessTypesAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             return DescribeScalingProcessTypesAsync(new DescribeScalingProcessTypesRequest(), cancellationToken);
@@ -2044,6 +2123,7 @@ namespace Amazon.AutoScaling
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeScalingProcessTypes">REST API Reference for DescribeScalingProcessTypes Operation</seealso>
         public Task<DescribeScalingProcessTypesResponse> DescribeScalingProcessTypesAsync(DescribeScalingProcessTypesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeScalingProcessTypesRequestMarshaller();
@@ -2071,6 +2151,7 @@ namespace Amazon.AutoScaling
         /// You already have a pending update to an Auto Scaling resource (for example, a group,
         /// instance, or load balancer).
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeScheduledActions">REST API Reference for DescribeScheduledActions Operation</seealso>
         public DescribeScheduledActionsResponse DescribeScheduledActions()
         {
             return DescribeScheduledActions(new DescribeScheduledActionsRequest());
@@ -2091,6 +2172,7 @@ namespace Amazon.AutoScaling
         /// You already have a pending update to an Auto Scaling resource (for example, a group,
         /// instance, or load balancer).
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeScheduledActions">REST API Reference for DescribeScheduledActions Operation</seealso>
         public DescribeScheduledActionsResponse DescribeScheduledActions(DescribeScheduledActionsRequest request)
         {
             var marshaller = new DescribeScheduledActionsRequestMarshaller();
@@ -2116,6 +2198,7 @@ namespace Amazon.AutoScaling
         /// You already have a pending update to an Auto Scaling resource (for example, a group,
         /// instance, or load balancer).
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeScheduledActions">REST API Reference for DescribeScheduledActions Operation</seealso>
         public Task<DescribeScheduledActionsResponse> DescribeScheduledActionsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             return DescribeScheduledActionsAsync(new DescribeScheduledActionsRequest(), cancellationToken);
@@ -2129,6 +2212,7 @@ namespace Amazon.AutoScaling
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeScheduledActions">REST API Reference for DescribeScheduledActions Operation</seealso>
         public Task<DescribeScheduledActionsResponse> DescribeScheduledActionsAsync(DescribeScheduledActionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeScheduledActionsRequestMarshaller();
@@ -2168,6 +2252,7 @@ namespace Amazon.AutoScaling
         /// You already have a pending update to an Auto Scaling resource (for example, a group,
         /// instance, or load balancer).
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeTags">REST API Reference for DescribeTags Operation</seealso>
         public DescribeTagsResponse DescribeTags()
         {
             return DescribeTags(new DescribeTagsRequest());
@@ -2200,6 +2285,7 @@ namespace Amazon.AutoScaling
         /// You already have a pending update to an Auto Scaling resource (for example, a group,
         /// instance, or load balancer).
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeTags">REST API Reference for DescribeTags Operation</seealso>
         public DescribeTagsResponse DescribeTags(DescribeTagsRequest request)
         {
             var marshaller = new DescribeTagsRequestMarshaller();
@@ -2237,6 +2323,7 @@ namespace Amazon.AutoScaling
         /// You already have a pending update to an Auto Scaling resource (for example, a group,
         /// instance, or load balancer).
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeTags">REST API Reference for DescribeTags Operation</seealso>
         public Task<DescribeTagsResponse> DescribeTagsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             return DescribeTagsAsync(new DescribeTagsRequest(), cancellationToken);
@@ -2250,6 +2337,7 @@ namespace Amazon.AutoScaling
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeTags">REST API Reference for DescribeTags Operation</seealso>
         public Task<DescribeTagsResponse> DescribeTagsAsync(DescribeTagsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeTagsRequestMarshaller();
@@ -2273,6 +2361,7 @@ namespace Amazon.AutoScaling
         /// You already have a pending update to an Auto Scaling resource (for example, a group,
         /// instance, or load balancer).
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeTerminationPolicyTypes">REST API Reference for DescribeTerminationPolicyTypes Operation</seealso>
         public DescribeTerminationPolicyTypesResponse DescribeTerminationPolicyTypes()
         {
             return DescribeTerminationPolicyTypes(new DescribeTerminationPolicyTypesRequest());
@@ -2289,6 +2378,7 @@ namespace Amazon.AutoScaling
         /// You already have a pending update to an Auto Scaling resource (for example, a group,
         /// instance, or load balancer).
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeTerminationPolicyTypes">REST API Reference for DescribeTerminationPolicyTypes Operation</seealso>
         public DescribeTerminationPolicyTypesResponse DescribeTerminationPolicyTypes(DescribeTerminationPolicyTypesRequest request)
         {
             var marshaller = new DescribeTerminationPolicyTypesRequestMarshaller();
@@ -2310,6 +2400,7 @@ namespace Amazon.AutoScaling
         /// You already have a pending update to an Auto Scaling resource (for example, a group,
         /// instance, or load balancer).
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeTerminationPolicyTypes">REST API Reference for DescribeTerminationPolicyTypes Operation</seealso>
         public Task<DescribeTerminationPolicyTypesResponse> DescribeTerminationPolicyTypesAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             return DescribeTerminationPolicyTypesAsync(new DescribeTerminationPolicyTypesRequest(), cancellationToken);
@@ -2323,6 +2414,7 @@ namespace Amazon.AutoScaling
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeTerminationPolicyTypes">REST API Reference for DescribeTerminationPolicyTypes Operation</seealso>
         public Task<DescribeTerminationPolicyTypesResponse> DescribeTerminationPolicyTypesAsync(DescribeTerminationPolicyTypesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeTerminationPolicyTypesRequestMarshaller();
@@ -2342,8 +2434,8 @@ namespace Amazon.AutoScaling
         /// 
         ///  
         /// <para>
-        /// After the instances are detached, you can manage them independently from the rest
-        /// of the Auto Scaling group.
+        /// After the instances are detached, you can manage them independent of the Auto Scaling
+        /// group.
         /// </para>
         ///  
         /// <para>
@@ -2352,7 +2444,7 @@ namespace Amazon.AutoScaling
         /// </para>
         ///  
         /// <para>
-        /// If there is a Classic load balancer attached to the Auto Scaling group, the instances
+        /// If there is a Classic Load Balancer attached to the Auto Scaling group, the instances
         /// are deregistered from the load balancer. If there are target groups attached to the
         /// Auto Scaling group, the instances are deregistered from the target groups.
         /// </para>
@@ -2369,6 +2461,7 @@ namespace Amazon.AutoScaling
         /// You already have a pending update to an Auto Scaling resource (for example, a group,
         /// instance, or load balancer).
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DetachInstances">REST API Reference for DetachInstances Operation</seealso>
         public DetachInstancesResponse DetachInstances(DetachInstancesRequest request)
         {
             var marshaller = new DetachInstancesRequestMarshaller();
@@ -2386,6 +2479,7 @@ namespace Amazon.AutoScaling
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DetachInstances">REST API Reference for DetachInstances Operation</seealso>
         public Task<DetachInstancesResponse> DetachInstancesAsync(DetachInstancesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DetachInstancesRequestMarshaller();
@@ -2401,12 +2495,12 @@ namespace Amazon.AutoScaling
 
 
         /// <summary>
-        /// Detaches one or more Classic load balancers from the specified Auto Scaling group.
+        /// Detaches one or more Classic Load Balancers from the specified Auto Scaling group.
         /// 
         ///  
         /// <para>
-        /// Note that this operation detaches only Classic load balancers. If you have Application
-        /// load balancers, use <a>DetachLoadBalancerTargetGroups</a> instead.
+        /// Note that this operation detaches only Classic Load Balancers. If you have Application
+        /// Load Balancers, use <a>DetachLoadBalancerTargetGroups</a> instead.
         /// </para>
         ///  
         /// <para>
@@ -2423,6 +2517,7 @@ namespace Amazon.AutoScaling
         /// You already have a pending update to an Auto Scaling resource (for example, a group,
         /// instance, or load balancer).
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DetachLoadBalancers">REST API Reference for DetachLoadBalancers Operation</seealso>
         public DetachLoadBalancersResponse DetachLoadBalancers(DetachLoadBalancersRequest request)
         {
             var marshaller = new DetachLoadBalancersRequestMarshaller();
@@ -2440,6 +2535,7 @@ namespace Amazon.AutoScaling
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DetachLoadBalancers">REST API Reference for DetachLoadBalancers Operation</seealso>
         public Task<DetachLoadBalancersResponse> DetachLoadBalancersAsync(DetachLoadBalancersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DetachLoadBalancersRequestMarshaller();
@@ -2464,6 +2560,7 @@ namespace Amazon.AutoScaling
         /// You already have a pending update to an Auto Scaling resource (for example, a group,
         /// instance, or load balancer).
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DetachLoadBalancerTargetGroups">REST API Reference for DetachLoadBalancerTargetGroups Operation</seealso>
         public DetachLoadBalancerTargetGroupsResponse DetachLoadBalancerTargetGroups(DetachLoadBalancerTargetGroupsRequest request)
         {
             var marshaller = new DetachLoadBalancerTargetGroupsRequestMarshaller();
@@ -2481,6 +2578,7 @@ namespace Amazon.AutoScaling
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DetachLoadBalancerTargetGroups">REST API Reference for DetachLoadBalancerTargetGroups Operation</seealso>
         public Task<DetachLoadBalancerTargetGroupsResponse> DetachLoadBalancerTargetGroupsAsync(DetachLoadBalancerTargetGroupsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DetachLoadBalancerTargetGroupsRequestMarshaller();
@@ -2505,6 +2603,7 @@ namespace Amazon.AutoScaling
         /// You already have a pending update to an Auto Scaling resource (for example, a group,
         /// instance, or load balancer).
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DisableMetricsCollection">REST API Reference for DisableMetricsCollection Operation</seealso>
         public DisableMetricsCollectionResponse DisableMetricsCollection(DisableMetricsCollectionRequest request)
         {
             var marshaller = new DisableMetricsCollectionRequestMarshaller();
@@ -2522,6 +2621,7 @@ namespace Amazon.AutoScaling
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DisableMetricsCollection">REST API Reference for DisableMetricsCollection Operation</seealso>
         public Task<DisableMetricsCollectionResponse> DisableMetricsCollectionAsync(DisableMetricsCollectionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DisableMetricsCollectionRequestMarshaller();
@@ -2548,6 +2648,7 @@ namespace Amazon.AutoScaling
         /// You already have a pending update to an Auto Scaling resource (for example, a group,
         /// instance, or load balancer).
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/EnableMetricsCollection">REST API Reference for EnableMetricsCollection Operation</seealso>
         public EnableMetricsCollectionResponse EnableMetricsCollection(EnableMetricsCollectionRequest request)
         {
             var marshaller = new EnableMetricsCollectionRequestMarshaller();
@@ -2565,6 +2666,7 @@ namespace Amazon.AutoScaling
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/EnableMetricsCollection">REST API Reference for EnableMetricsCollection Operation</seealso>
         public Task<EnableMetricsCollectionResponse> EnableMetricsCollectionAsync(EnableMetricsCollectionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new EnableMetricsCollectionRequestMarshaller();
@@ -2580,12 +2682,12 @@ namespace Amazon.AutoScaling
 
 
         /// <summary>
-        /// Moves the specified instances into <code>Standby</code> mode.
+        /// Moves the specified instances into the standby state.
         /// 
         ///  
         /// <para>
-        /// For more information, see <a href="http://docs.aws.amazon.com/autoscaling/latest/userguide/AutoScalingGroupLifecycle.html">Auto
-        /// Scaling Lifecycle</a> in the <i>Auto Scaling User Guide</i>.
+        /// For more information, see <a href="http://docs.aws.amazon.com/autoscaling/latest/userguide/as-enter-exit-standby.html">Temporarily
+        /// Removing Instances from Your Auto Scaling Group</a> in the <i>Auto Scaling User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the EnterStandby service method.</param>
@@ -2595,6 +2697,7 @@ namespace Amazon.AutoScaling
         /// You already have a pending update to an Auto Scaling resource (for example, a group,
         /// instance, or load balancer).
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/EnterStandby">REST API Reference for EnterStandby Operation</seealso>
         public EnterStandbyResponse EnterStandby(EnterStandbyRequest request)
         {
             var marshaller = new EnterStandbyRequestMarshaller();
@@ -2612,6 +2715,7 @@ namespace Amazon.AutoScaling
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/EnterStandby">REST API Reference for EnterStandby Operation</seealso>
         public Task<EnterStandbyResponse> EnterStandbyAsync(EnterStandbyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new EnterStandbyRequestMarshaller();
@@ -2639,6 +2743,7 @@ namespace Amazon.AutoScaling
         /// <exception cref="Amazon.AutoScaling.Model.ScalingActivityInProgressException">
         /// The operation can't be performed because there are scaling activities in progress.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/ExecutePolicy">REST API Reference for ExecutePolicy Operation</seealso>
         public ExecutePolicyResponse ExecutePolicy(ExecutePolicyRequest request)
         {
             var marshaller = new ExecutePolicyRequestMarshaller();
@@ -2656,6 +2761,7 @@ namespace Amazon.AutoScaling
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/ExecutePolicy">REST API Reference for ExecutePolicy Operation</seealso>
         public Task<ExecutePolicyResponse> ExecutePolicyAsync(ExecutePolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ExecutePolicyRequestMarshaller();
@@ -2671,12 +2777,12 @@ namespace Amazon.AutoScaling
 
 
         /// <summary>
-        /// Moves the specified instances out of <code>Standby</code> mode.
+        /// Moves the specified instances out of the standby state.
         /// 
         ///  
         /// <para>
-        /// For more information, see <a href="http://docs.aws.amazon.com/autoscaling/latest/userguide/AutoScalingGroupLifecycle.html">Auto
-        /// Scaling Lifecycle</a> in the <i>Auto Scaling User Guide</i>.
+        /// For more information, see <a href="http://docs.aws.amazon.com/autoscaling/latest/userguide/as-enter-exit-standby.html">Temporarily
+        /// Removing Instances from Your Auto Scaling Group</a> in the <i>Auto Scaling User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ExitStandby service method.</param>
@@ -2686,6 +2792,7 @@ namespace Amazon.AutoScaling
         /// You already have a pending update to an Auto Scaling resource (for example, a group,
         /// instance, or load balancer).
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/ExitStandby">REST API Reference for ExitStandby Operation</seealso>
         public ExitStandbyResponse ExitStandby(ExitStandbyRequest request)
         {
             var marshaller = new ExitStandbyRequestMarshaller();
@@ -2703,6 +2810,7 @@ namespace Amazon.AutoScaling
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/ExitStandby">REST API Reference for ExitStandby Operation</seealso>
         public Task<ExitStandbyResponse> ExitStandbyAsync(ExitStandbyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ExitStandbyRequestMarshaller();
@@ -2779,6 +2887,7 @@ namespace Amazon.AutoScaling
         /// You already have a pending update to an Auto Scaling resource (for example, a group,
         /// instance, or load balancer).
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/PutLifecycleHook">REST API Reference for PutLifecycleHook Operation</seealso>
         public PutLifecycleHookResponse PutLifecycleHook(PutLifecycleHookRequest request)
         {
             var marshaller = new PutLifecycleHookRequestMarshaller();
@@ -2796,6 +2905,7 @@ namespace Amazon.AutoScaling
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/PutLifecycleHook">REST API Reference for PutLifecycleHook Operation</seealso>
         public Task<PutLifecycleHookResponse> PutLifecycleHookAsync(PutLifecycleHookRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new PutLifecycleHookRequestMarshaller();
@@ -2837,6 +2947,7 @@ namespace Amazon.AutoScaling
         /// You already have a pending update to an Auto Scaling resource (for example, a group,
         /// instance, or load balancer).
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/PutNotificationConfiguration">REST API Reference for PutNotificationConfiguration Operation</seealso>
         public PutNotificationConfigurationResponse PutNotificationConfiguration(PutNotificationConfigurationRequest request)
         {
             var marshaller = new PutNotificationConfigurationRequestMarshaller();
@@ -2854,6 +2965,7 @@ namespace Amazon.AutoScaling
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/PutNotificationConfiguration">REST API Reference for PutNotificationConfiguration Operation</seealso>
         public Task<PutNotificationConfigurationResponse> PutNotificationConfigurationAsync(PutNotificationConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new PutNotificationConfigurationRequestMarshaller();
@@ -2892,6 +3004,7 @@ namespace Amazon.AutoScaling
         /// You already have a pending update to an Auto Scaling resource (for example, a group,
         /// instance, or load balancer).
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/PutScalingPolicy">REST API Reference for PutScalingPolicy Operation</seealso>
         public PutScalingPolicyResponse PutScalingPolicy(PutScalingPolicyRequest request)
         {
             var marshaller = new PutScalingPolicyRequestMarshaller();
@@ -2909,6 +3022,7 @@ namespace Amazon.AutoScaling
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/PutScalingPolicy">REST API Reference for PutScalingPolicy Operation</seealso>
         public Task<PutScalingPolicyResponse> PutScalingPolicyAsync(PutScalingPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new PutScalingPolicyRequestMarshaller();
@@ -2948,6 +3062,7 @@ namespace Amazon.AutoScaling
         /// You already have a pending update to an Auto Scaling resource (for example, a group,
         /// instance, or load balancer).
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/PutScheduledUpdateGroupAction">REST API Reference for PutScheduledUpdateGroupAction Operation</seealso>
         public PutScheduledUpdateGroupActionResponse PutScheduledUpdateGroupAction(PutScheduledUpdateGroupActionRequest request)
         {
             var marshaller = new PutScheduledUpdateGroupActionRequestMarshaller();
@@ -2965,6 +3080,7 @@ namespace Amazon.AutoScaling
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/PutScheduledUpdateGroupAction">REST API Reference for PutScheduledUpdateGroupAction Operation</seealso>
         public Task<PutScheduledUpdateGroupActionResponse> PutScheduledUpdateGroupActionAsync(PutScheduledUpdateGroupActionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new PutScheduledUpdateGroupActionRequestMarshaller();
@@ -3026,6 +3142,7 @@ namespace Amazon.AutoScaling
         /// You already have a pending update to an Auto Scaling resource (for example, a group,
         /// instance, or load balancer).
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/RecordLifecycleActionHeartbeat">REST API Reference for RecordLifecycleActionHeartbeat Operation</seealso>
         public RecordLifecycleActionHeartbeatResponse RecordLifecycleActionHeartbeat(RecordLifecycleActionHeartbeatRequest request)
         {
             var marshaller = new RecordLifecycleActionHeartbeatRequestMarshaller();
@@ -3043,6 +3160,7 @@ namespace Amazon.AutoScaling
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/RecordLifecycleActionHeartbeat">REST API Reference for RecordLifecycleActionHeartbeat Operation</seealso>
         public Task<RecordLifecycleActionHeartbeatResponse> RecordLifecycleActionHeartbeatAsync(RecordLifecycleActionHeartbeatRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new RecordLifecycleActionHeartbeatRequestMarshaller();
@@ -3077,6 +3195,7 @@ namespace Amazon.AutoScaling
         /// <exception cref="Amazon.AutoScaling.Model.ResourceInUseException">
         /// The operation can't be performed because the resource is in use.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/ResumeProcesses">REST API Reference for ResumeProcesses Operation</seealso>
         public ResumeProcessesResponse ResumeProcesses(ResumeProcessesRequest request)
         {
             var marshaller = new ResumeProcessesRequestMarshaller();
@@ -3094,6 +3213,7 @@ namespace Amazon.AutoScaling
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/ResumeProcesses">REST API Reference for ResumeProcesses Operation</seealso>
         public Task<ResumeProcessesResponse> ResumeProcessesAsync(ResumeProcessesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ResumeProcessesRequestMarshaller();
@@ -3127,6 +3247,7 @@ namespace Amazon.AutoScaling
         /// <exception cref="Amazon.AutoScaling.Model.ScalingActivityInProgressException">
         /// The operation can't be performed because there are scaling activities in progress.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/SetDesiredCapacity">REST API Reference for SetDesiredCapacity Operation</seealso>
         public SetDesiredCapacityResponse SetDesiredCapacity(SetDesiredCapacityRequest request)
         {
             var marshaller = new SetDesiredCapacityRequestMarshaller();
@@ -3144,6 +3265,7 @@ namespace Amazon.AutoScaling
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/SetDesiredCapacity">REST API Reference for SetDesiredCapacity Operation</seealso>
         public Task<SetDesiredCapacityResponse> SetDesiredCapacityAsync(SetDesiredCapacityRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new SetDesiredCapacityRequestMarshaller();
@@ -3174,6 +3296,7 @@ namespace Amazon.AutoScaling
         /// You already have a pending update to an Auto Scaling resource (for example, a group,
         /// instance, or load balancer).
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/SetInstanceHealth">REST API Reference for SetInstanceHealth Operation</seealso>
         public SetInstanceHealthResponse SetInstanceHealth(SetInstanceHealthRequest request)
         {
             var marshaller = new SetInstanceHealthRequestMarshaller();
@@ -3191,6 +3314,7 @@ namespace Amazon.AutoScaling
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/SetInstanceHealth">REST API Reference for SetInstanceHealth Operation</seealso>
         public Task<SetInstanceHealthResponse> SetInstanceHealthAsync(SetInstanceHealthRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new SetInstanceHealthRequestMarshaller();
@@ -3225,6 +3349,7 @@ namespace Amazon.AutoScaling
         /// You already have a pending update to an Auto Scaling resource (for example, a group,
         /// instance, or load balancer).
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/SetInstanceProtection">REST API Reference for SetInstanceProtection Operation</seealso>
         public SetInstanceProtectionResponse SetInstanceProtection(SetInstanceProtectionRequest request)
         {
             var marshaller = new SetInstanceProtectionRequestMarshaller();
@@ -3242,6 +3367,7 @@ namespace Amazon.AutoScaling
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/SetInstanceProtection">REST API Reference for SetInstanceProtection Operation</seealso>
         public Task<SetInstanceProtectionResponse> SetInstanceProtectionAsync(SetInstanceProtectionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new SetInstanceProtectionRequestMarshaller();
@@ -3285,6 +3411,7 @@ namespace Amazon.AutoScaling
         /// <exception cref="Amazon.AutoScaling.Model.ResourceInUseException">
         /// The operation can't be performed because the resource is in use.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/SuspendProcesses">REST API Reference for SuspendProcesses Operation</seealso>
         public SuspendProcessesResponse SuspendProcesses(SuspendProcessesRequest request)
         {
             var marshaller = new SuspendProcessesRequestMarshaller();
@@ -3302,6 +3429,7 @@ namespace Amazon.AutoScaling
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/SuspendProcesses">REST API Reference for SuspendProcesses Operation</seealso>
         public Task<SuspendProcessesResponse> SuspendProcessesAsync(SuspendProcessesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new SuspendProcessesRequestMarshaller();
@@ -3334,6 +3462,7 @@ namespace Amazon.AutoScaling
         /// <exception cref="Amazon.AutoScaling.Model.ScalingActivityInProgressException">
         /// The operation can't be performed because there are scaling activities in progress.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/TerminateInstanceInAutoScalingGroup">REST API Reference for TerminateInstanceInAutoScalingGroup Operation</seealso>
         public TerminateInstanceInAutoScalingGroupResponse TerminateInstanceInAutoScalingGroup(TerminateInstanceInAutoScalingGroupRequest request)
         {
             var marshaller = new TerminateInstanceInAutoScalingGroupRequestMarshaller();
@@ -3351,6 +3480,7 @@ namespace Amazon.AutoScaling
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/TerminateInstanceInAutoScalingGroup">REST API Reference for TerminateInstanceInAutoScalingGroup Operation</seealso>
         public Task<TerminateInstanceInAutoScalingGroupResponse> TerminateInstanceInAutoScalingGroupAsync(TerminateInstanceInAutoScalingGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new TerminateInstanceInAutoScalingGroupRequestMarshaller();
@@ -3370,16 +3500,15 @@ namespace Amazon.AutoScaling
         /// 
         ///  
         /// <para>
-        /// To update an Auto Scaling group with a launch configuration with <code>InstanceMonitoring</code>
-        /// set to <code>False</code>, you must first disable the collection of group metrics.
-        /// Otherwise, you will get an error. If you have previously enabled the collection of
-        /// group metrics, you can disable it using <a>DisableMetricsCollection</a>.
+        /// The new settings take effect on any scaling activities after this call returns. Scaling
+        /// activities that are currently in progress aren't affected.
         /// </para>
         ///  
         /// <para>
-        /// The new settings are registered upon the completion of this call. Any launch configuration
-        /// settings take effect on any triggers after this call returns. Scaling activities that
-        /// are currently in progress aren't affected.
+        /// To update an Auto Scaling group with a launch configuration with <code>InstanceMonitoring</code>
+        /// set to <code>false</code>, you must first disable the collection of group metrics.
+        /// Otherwise, you will get an error. If you have previously enabled the collection of
+        /// group metrics, you can disable it using <a>DisableMetricsCollection</a>.
         /// </para>
         ///  
         /// <para>
@@ -3415,6 +3544,7 @@ namespace Amazon.AutoScaling
         /// <exception cref="Amazon.AutoScaling.Model.ScalingActivityInProgressException">
         /// The operation can't be performed because there are scaling activities in progress.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/UpdateAutoScalingGroup">REST API Reference for UpdateAutoScalingGroup Operation</seealso>
         public UpdateAutoScalingGroupResponse UpdateAutoScalingGroup(UpdateAutoScalingGroupRequest request)
         {
             var marshaller = new UpdateAutoScalingGroupRequestMarshaller();
@@ -3432,6 +3562,7 @@ namespace Amazon.AutoScaling
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/UpdateAutoScalingGroup">REST API Reference for UpdateAutoScalingGroup Operation</seealso>
         public Task<UpdateAutoScalingGroupResponse> UpdateAutoScalingGroupAsync(UpdateAutoScalingGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new UpdateAutoScalingGroupRequestMarshaller();

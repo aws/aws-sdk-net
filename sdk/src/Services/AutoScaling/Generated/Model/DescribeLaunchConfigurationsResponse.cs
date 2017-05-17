@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AutoScaling.Model
 {
     /// <summary>
-    /// Contains the output of DescribeLaunchConfigurations.
+    /// This is the response object from the DescribeLaunchConfigurations operation.
     /// </summary>
     public partial class DescribeLaunchConfigurationsResponse : AmazonWebServiceResponse
     {

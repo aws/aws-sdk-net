@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AutoScaling.Model
 {
     /// <summary>
-    /// Contains the output of DeleteLifecycleHook.
+    /// This is the response object from the DeleteLifecycleHook operation.
     /// </summary>
     public partial class DeleteLifecycleHookResponse : AmazonWebServiceResponse
     {

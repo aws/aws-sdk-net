@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AutoScaling.Model
 {
     /// <summary>
-    /// Contains the output from DescribeNotificationConfigurations.
+    /// This is the response object from the DescribeNotificationConfigurations operation.
     /// </summary>
     public partial class DescribeNotificationConfigurationsResponse : AmazonWebServiceResponse
     {

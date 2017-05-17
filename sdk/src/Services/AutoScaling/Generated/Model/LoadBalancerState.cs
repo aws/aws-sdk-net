@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AutoScaling.Model
 {
     /// <summary>
-    /// Describes the state of a Classic load balancer.
+    /// Describes the state of a Classic Load Balancer.
     /// 
     ///  
     /// <para>

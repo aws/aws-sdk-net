@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AutoScaling.Model
 {
     /// <summary>
-    /// Contains the output of DescribeScalingActivities.
+    /// This is the response object from the DescribeScalingActivities operation.
     /// </summary>
     public partial class DescribeScalingActivitiesResponse : AmazonWebServiceResponse
     {

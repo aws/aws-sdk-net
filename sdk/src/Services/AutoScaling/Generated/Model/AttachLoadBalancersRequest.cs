@@ -29,11 +29,11 @@ namespace Amazon.AutoScaling.Model
 {
     /// <summary>
     /// Container for the parameters to the AttachLoadBalancers operation.
-    /// Attaches one or more Classic load balancers to the specified Auto Scaling group.
+    /// Attaches one or more Classic Load Balancers to the specified Auto Scaling group.
     /// 
     ///  
     /// <para>
-    /// To attach an Application load balancer instead, see <a>AttachLoadBalancerTargetGroups</a>.
+    /// To attach an Application Load Balancer instead, see <a>AttachLoadBalancerTargetGroups</a>.
     /// </para>
     ///  
     /// <para>

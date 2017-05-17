@@ -212,8 +212,15 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property ImageId. 
         /// <para>
-        /// The ID of the Amazon Machine Image (AMI) to use to launch your EC2 instances. For
-        /// more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/finding-an-ami.html">Finding
+        /// The ID of the Amazon Machine Image (AMI) to use to launch your EC2 instances.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you do not specify <code>InstanceId</code>, you must specify <code>ImageId</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/finding-an-ami.html">Finding
         /// an AMI</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         /// </summary>
@@ -232,12 +239,13 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property InstanceId. 
         /// <para>
-        /// The ID of the instance to use to create the launch configuration.
+        /// The ID of the instance to use to create the launch configuration. The new launch configuration
+        /// derives attributes from the instance, with the exception of the block device mapping.
         /// </para>
         ///  
         /// <para>
-        /// The new launch configuration derives attributes from the instance, with the exception
-        /// of the block device mapping.
+        /// If you do not specify <code>InstanceId</code>, you must specify both <code>ImageId</code>
+        /// and <code>InstanceType</code>.
         /// </para>
         ///  
         /// <para>
@@ -266,7 +274,7 @@ namespace Amazon.AutoScaling.Model
         /// Gets and sets the property InstanceMonitoring. 
         /// <para>
         /// Enables detailed monitoring (<code>true</code>) or basic monitoring (<code>false</code>)
-        /// for the Auto Scaling instances.
+        /// for the Auto Scaling instances. The default is <code>true</code>.
         /// </para>
         /// </summary>
         public InstanceMonitoring InstanceMonitoring
@@ -284,10 +292,16 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property InstanceType. 
         /// <para>
-        /// The instance type of the EC2 instance. For information about available instance types,
-        /// see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#AvailableInstanceTypes">
-        /// Available Instance Types</a> in the <i>Amazon Elastic Compute Cloud User Guide.</i>
-        /// 
+        /// The instance type of the EC2 instance.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you do not specify <code>InstanceId</code>, you must specify <code>InstanceType</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// For information about available instance types, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#AvailableInstanceTypes">Available
+        /// Instance Types</a> in the <i>Amazon Elastic Compute Cloud User Guide.</i> 
         /// </para>
         /// </summary>
         public string InstanceType

@@ -105,7 +105,7 @@ namespace Amazon.AutoScaling.Model
         /// Gets and sets the property Cooldown. 
         /// <para>
         /// The amount of time, in seconds, after a scaling activity completes before any further
-        /// trigger-related scaling activities can start.
+        /// dynamic scaling activities can start.
         /// </para>
         /// </summary>
         public int Cooldown

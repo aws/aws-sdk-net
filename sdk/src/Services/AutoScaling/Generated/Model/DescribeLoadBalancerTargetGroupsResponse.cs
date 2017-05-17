@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AutoScaling.Model
 {
     /// <summary>
-    /// Contains the output of DescribeLoadBalancerTargetGroups.
+    /// This is the response object from the DescribeLoadBalancerTargetGroups operation.
     /// </summary>
     public partial class DescribeLoadBalancerTargetGroupsResponse : AmazonWebServiceResponse
     {
