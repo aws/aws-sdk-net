@@ -894,7 +894,7 @@ namespace Amazon.CloudWatchEvents
         /// <para>
         /// If <b>InputPath</b> is specified in the form of JSONPath (for example, <code>$.detail</code>),
         /// then only the part of the event specified in the path is passed to the target (for
-        /// example, only the detail part of the event is passed). 
+        /// example, only the detail part of the event is passed).
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -904,9 +904,20 @@ namespace Amazon.CloudWatchEvents
         /// </para>
         ///  </li> </ul> 
         /// <para>
+        /// When you specify <code>Input</code>, <code>InputPath</code>, or <code>InputTransformer</code>,
+        /// you must use JSON dot notation, not bracket notation.
+        /// </para>
+        ///  
+        /// <para>
         /// When you add targets to a rule and the associated rule triggers soon after, new or
         /// updated targets might not be immediately invoked. Please allow a short period of time
         /// for changes to take effect.
+        /// </para>
+        ///  
+        /// <para>
+        /// This action can partially fail if too many requests are made at the same time. If
+        /// that happens, <code>FailedEntryCount</code> is non-zero in the response and each entry
+        /// in <code>FailedEntries</code> provides the ID of the failed target and the error code.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutTargets service method.</param>
@@ -979,6 +990,12 @@ namespace Amazon.CloudWatchEvents
         /// <para>
         /// When you remove a target, when the associated rule triggers, removed targets might
         /// continue to be invoked. Please allow a short period of time for changes to take effect.
+        /// </para>
+        ///  
+        /// <para>
+        /// This action can partially fail if too many requests are made at the same time. If
+        /// that happens, <code>FailedEntryCount</code> is non-zero in the response and each entry
+        /// in <code>FailedEntries</code> provides the ID of the failed target and the error code.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RemoveTargets service method.</param>

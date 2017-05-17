@@ -40,7 +40,7 @@ namespace Amazon.CloudWatchEvents.Model
         /// Gets and sets the property InputPathsMap. 
         /// <para>
         /// Map of JSON paths to be extracted from the event. These are key-value pairs, where
-        /// each value is a JSON path.
+        /// each value is a JSON path. You must use JSON dot notation, not bracket notation.
         /// </para>
         /// </summary>
         public Dictionary<string, string> InputPathsMap

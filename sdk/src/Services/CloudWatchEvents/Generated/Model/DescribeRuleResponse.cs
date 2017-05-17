@@ -79,7 +79,8 @@ namespace Amazon.CloudWatchEvents.Model
         /// <summary>
         /// Gets and sets the property EventPattern. 
         /// <para>
-        /// The event pattern.
+        /// The event pattern. For more information, see <a href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/events/CloudWatchEventsandEventPatterns.html">Events
+        /// and Event Patterns</a> in the <i>Amazon CloudWatch Events User Guide</i>.
         /// </para>
         /// </summary>
         public string EventPattern

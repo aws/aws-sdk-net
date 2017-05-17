@@ -37,6 +37,12 @@ namespace Amazon.CloudWatchEvents.Model
     /// When you remove a target, when the associated rule triggers, removed targets might
     /// continue to be invoked. Please allow a short period of time for changes to take effect.
     /// </para>
+    ///  
+    /// <para>
+    /// This action can partially fail if too many requests are made at the same time. If
+    /// that happens, <code>FailedEntryCount</code> is non-zero in the response and each entry
+    /// in <code>FailedEntries</code> provides the ID of the failed target and the error code.
+    /// </para>
     /// </summary>
     public partial class RemoveTargetsRequest : AmazonCloudWatchEventsRequest
     {
