@@ -50,6 +50,18 @@ namespace AWSSDK.UnitTests
             .AppendLine("property=value")
             .ToString();
 
+        private static readonly string DuplicatePropertySection = new StringBuilder()
+            .AppendLine("[section]")
+            .AppendLine("property=value")
+            .AppendLine("property=value")
+            .ToString();
+
+        private static readonly string DuplicateCommentPropertySection = new StringBuilder()
+            .AppendLine("[section]")
+            .AppendLine("#property=value")
+            .AppendLine("#property=value")
+            .ToString();
+
         [TestMethod]
         public void ReadInvalid()
         {
@@ -85,6 +97,37 @@ namespace AWSSDK.UnitTests
             using (var tester = new IniFileTester(ValidSection1))
             {
                 tester.AssertSection("section", "property", "value");
+            }
+        }
+
+        [TestMethod]
+        public void TryGetSectionCommentsAreNotProperties()
+        {
+            using (var tester = new IniFileTester(DuplicateCommentPropertySection))
+            {
+                Dictionary<string, string> properties;
+                Assert.IsTrue(tester.TestFile.TryGetSection("section", out properties));
+                Assert.AreEqual(0, properties.Count);
+            }
+        }
+
+        [TestMethod]
+        public void TryGetSectionDuplicateProperty()
+        {
+            using (var tester = new IniFileTester(DuplicatePropertySection))
+            {
+                Dictionary<string, string> properties;
+                Assert.IsFalse(tester.TestFile.TryGetSection("section", out properties));
+            }
+        }
+
+        [TestMethod]
+        public void TryGetSectionDuplicatePropertyRegex()
+        {
+            using (var tester = new IniFileTester(DuplicatePropertySection))
+            {
+                Dictionary<string, string> properties;
+                Assert.IsFalse(tester.TestFile.TryGetSection(new Regex("ectio"), out properties));
             }
         }
 

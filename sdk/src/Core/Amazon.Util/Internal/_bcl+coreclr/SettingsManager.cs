@@ -210,7 +210,7 @@ namespace Amazon.Util.Internal
         {
             if (!IsAvailable)
             {
-                throw new AmazonClientException("The encrypted store is not available on this platform.");
+                throw new AmazonClientException("The encrypted store is not available.  This may be due to use of a non-Windows operating system or Windows Nano Server, or the current user account may not have its profile loaded.");
             }
         }
 

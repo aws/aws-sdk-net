@@ -36,12 +36,15 @@ namespace Amazon.Runtime.Internal.Util
 
         private OptimisticLockedTextFile textFile;
 
+        private Logger logger;
+
         /// <summary>
         /// Construct a new IniFile.
         /// </summary>
         /// <param name="filePath">path of the IniFile</param>
         public IniFile(string filePath)
         {
+            logger = Logger.GetLogger(GetType());
             textFile = new OptimisticLockedTextFile(filePath);
             Validate();
         }
@@ -343,6 +346,12 @@ namespace Amazon.Runtime.Internal.Util
                 string propertyValue;
                 while (SeekProperty(ref lineNumber, out propertyName, out propertyValue))
                 {
+                    if (IsDuplicateProperty(properties, propertyName, sectionName, lineNumber))
+                    {
+                        properties.Clear();
+                        return false;
+                    }
+
                     properties.Add(propertyName, propertyValue);
                     lineNumber++;
                 }
@@ -382,6 +391,13 @@ namespace Amazon.Runtime.Internal.Util
                 string propertyValue;
                 while (SeekProperty(ref lineNumber, out propertyName, out propertyValue))
                 {
+                    if (IsDuplicateProperty(properties, propertyName, sectionName, lineNumber))
+                    {
+                        sectionName = null;
+                        properties.Clear();
+                        return false;
+                    }
+
                     properties.Add(propertyName, propertyValue);
                     lineNumber++;
                 }
@@ -393,6 +409,14 @@ namespace Amazon.Runtime.Internal.Util
         override public string ToString()
         {
             return textFile.ToString();
+        }
+
+        private bool IsDuplicateProperty(Dictionary<string, string> properties, string propertyName, string sectionName, int lineNumber)
+        {
+            var result = properties.ContainsKey(propertyName);
+            if (result)
+                logger.InfoFormat("Skipping section {0} because of duplicate property {1}.  {2}", sectionName, propertyName, GetLineMessage(lineNumber));
+            return result;
         }
 
         private void Validate()
@@ -525,7 +549,7 @@ namespace Amazon.Runtime.Internal.Util
 
         private static bool TryParseProperty(string line, out string propertyName, out string propertyValue)
         {
-            if (line != null)
+            if (line != null && !IsCommentOrBlank(line))
             {
                 line = line.Trim();
                 var separatorIndex = line.IndexOf(keyValueSeparator, StringComparison.Ordinal);

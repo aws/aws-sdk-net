@@ -637,13 +637,23 @@ namespace AWSSDK.UnitTests
         }
 
         [TestMethod]
-        public void ListProfilesExcludeInvalid()
+        public void ListProfilesExcludeInvalidNoCredentials()
         {
             using (var tester = new SharedCredentialsFileTestFixture(SessionProfileText + Environment.NewLine + InvalidProfileText))
             {
                 var profiles = tester.CredentialsFile.ListProfiles();
                 Assert.AreEqual(1, profiles.Count);
                 Assert.AreEqual("session_profile", profiles[0].Name);
+            }
+        }
+
+        [TestMethod]
+        public void ListProfilesExcludeInvalidDuplicateProperty()
+        {
+            using (var tester = new SharedCredentialsFileTestFixture(SessionProfileText + Environment.NewLine + "aws_session_token=session_aws_session_token"))
+            {
+                var profiles = tester.CredentialsFile.ListProfiles();
+                Assert.AreEqual(0, profiles.Count);
             }
         }
 

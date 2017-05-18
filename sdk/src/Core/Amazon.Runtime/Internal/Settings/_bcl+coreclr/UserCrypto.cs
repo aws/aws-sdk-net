@@ -214,7 +214,7 @@ namespace Amazon.Runtime.Internal.Settings
                     catch(Exception e)
                     {
                         var logger = Logger.GetLogger(typeof(UserCrypto));
-                        logger.InfoFormat("UserCrypto not support on this platform, you will need to use the shared credentials file: {0}", e.Message);
+                        logger.InfoFormat("UserCrypto is not supported.  This may be due to use of a non-Windows operating system or Windows Nano Server, or the current user account may not have its profile loaded. {0}", e.Message);
                         _isUserCryptAvailable = false;
                     }
                 }
