@@ -677,6 +677,10 @@ namespace Amazon.Lightsail
         /// </summary>
         public static readonly OperationType OpenInstancePublicPorts = new OperationType("OpenInstancePublicPorts");
         /// <summary>
+        /// Constant PutInstancePublicPorts for OperationType
+        /// </summary>
+        public static readonly OperationType PutInstancePublicPorts = new OperationType("PutInstancePublicPorts");
+        /// <summary>
         /// Constant RebootInstance for OperationType
         /// </summary>
         public static readonly OperationType RebootInstance = new OperationType("RebootInstance");

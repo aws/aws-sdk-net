@@ -28,31 +28,28 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Lightsail.Model
 {
     /// <summary>
-    /// Container for the parameters to the GetRegions operation.
-    /// Returns a list of all valid regions for Amazon Lightsail. Use the <code>include availability
-    /// zones</code> parameter to also return the availability zones in a region.
+    /// This is the response object from the PutInstancePublicPorts operation.
     /// </summary>
-    public partial class GetRegionsRequest : AmazonLightsailRequest
+    public partial class PutInstancePublicPortsResponse : AmazonWebServiceResponse
     {
-        private bool? _includeAvailabilityZones;
+        private Operation _operation;
 
         /// <summary>
-        /// Gets and sets the property IncludeAvailabilityZones. 
+        /// Gets and sets the property Operation. 
         /// <para>
-        /// A Boolean value indicating whether to also include Availability Zones in your get
-        /// regions request. Availability Zones are indicated with a letter: e.g., <code>us-east-1a</code>.
+        /// Describes metadata about the operation you just executed.
         /// </para>
         /// </summary>
-        public bool IncludeAvailabilityZones
+        public Operation Operation
         {
-            get { return this._includeAvailabilityZones.GetValueOrDefault(); }
-            set { this._includeAvailabilityZones = value; }
+            get { return this._operation; }
+            set { this._operation = value; }
         }
 
-        // Check to see if IncludeAvailabilityZones property is set
-        internal bool IsSetIncludeAvailabilityZones()
+        // Check to see if Operation property is set
+        internal bool IsSetOperation()
         {
-            return this._includeAvailabilityZones.HasValue; 
+            return this._operation != null;
         }
 
     }

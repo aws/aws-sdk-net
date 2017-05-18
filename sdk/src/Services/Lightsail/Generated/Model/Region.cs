@@ -41,7 +41,7 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property AvailabilityZones. 
         /// <para>
-        /// The Availability Zones.
+        /// The Availability Zones. Follows the format <code>us-east-1a</code> (case-sensitive).
         /// </para>
         /// </summary>
         public List<AvailabilityZone> AvailabilityZones

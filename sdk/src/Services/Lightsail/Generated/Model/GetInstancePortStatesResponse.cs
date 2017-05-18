@@ -32,7 +32,7 @@ namespace Amazon.Lightsail.Model
     /// </summary>
     public partial class GetInstancePortStatesResponse : AmazonWebServiceResponse
     {
-        private List<string> _portStates = new List<string>();
+        private List<InstancePortState> _portStates = new List<InstancePortState>();
 
         /// <summary>
         /// Gets and sets the property PortStates. 
@@ -40,7 +40,7 @@ namespace Amazon.Lightsail.Model
         /// Information about the port states resulting from your request.
         /// </para>
         /// </summary>
-        public List<string> PortStates
+        public List<InstancePortState> PortStates
         {
             get { return this._portStates; }
             set { this._portStates = value; }

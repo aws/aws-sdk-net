@@ -56,7 +56,7 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property ZoneName. 
         /// <para>
-        /// The name of the Availability Zone.
+        /// The name of the Availability Zone. The format is <code>us-east-1a</code> (case-sensitive).
         /// </para>
         /// </summary>
         public string ZoneName

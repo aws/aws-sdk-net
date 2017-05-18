@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for GetInstancePortStates operation
+    /// Response Unmarshaller for PutInstancePublicPorts operation
     /// </summary>  
-    public class GetInstancePortStatesResponseUnmarshaller : JsonResponseUnmarshaller
+    public class PutInstancePublicPortsResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,16 +45,16 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            GetInstancePortStatesResponse response = new GetInstancePortStatesResponse();
+            PutInstancePublicPortsResponse response = new PutInstancePublicPortsResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("portStates", targetDepth))
+                if (context.TestExpression("operation", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<InstancePortState, InstancePortStateUnmarshaller>(InstancePortStateUnmarshaller.Instance);
-                    response.PortStates = unmarshaller.Unmarshall(context);
+                    var unmarshaller = OperationUnmarshaller.Instance;
+                    response.Operation = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -103,9 +103,9 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
             return new AmazonLightsailException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
 
-        private static GetInstancePortStatesResponseUnmarshaller _instance = new GetInstancePortStatesResponseUnmarshaller();        
+        private static PutInstancePublicPortsResponseUnmarshaller _instance = new PutInstancePublicPortsResponseUnmarshaller();        
 
-        internal static GetInstancePortStatesResponseUnmarshaller GetInstance()
+        internal static PutInstancePublicPortsResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -113,7 +113,7 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static GetInstancePortStatesResponseUnmarshaller Instance
+        public static PutInstancePublicPortsResponseUnmarshaller Instance
         {
             get
             {

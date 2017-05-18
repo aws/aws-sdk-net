@@ -28,89 +28,14 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Lightsail.Model
 {
     /// <summary>
-    /// Describes information about the instance ports.
+    /// Describes the port state.
     /// </summary>
-    public partial class InstancePortInfo
+    public partial class InstancePortState
     {
-        private AccessDirection _accessDirection;
-        private string _accessFrom;
-        private PortAccessType _accessType;
-        private string _commonName;
         private int? _fromPort;
         private NetworkProtocol _protocol;
+        private PortState _state;
         private int? _toPort;
-
-        /// <summary>
-        /// Gets and sets the property AccessDirection. 
-        /// <para>
-        /// The access direction (<code>inbound</code> or <code>outbound</code>).
-        /// </para>
-        /// </summary>
-        public AccessDirection AccessDirection
-        {
-            get { return this._accessDirection; }
-            set { this._accessDirection = value; }
-        }
-
-        // Check to see if AccessDirection property is set
-        internal bool IsSetAccessDirection()
-        {
-            return this._accessDirection != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property AccessFrom. 
-        /// <para>
-        /// The location from which access is allowed (e.g., <code>Anywhere (0.0.0.0/0)</code>).
-        /// </para>
-        /// </summary>
-        public string AccessFrom
-        {
-            get { return this._accessFrom; }
-            set { this._accessFrom = value; }
-        }
-
-        // Check to see if AccessFrom property is set
-        internal bool IsSetAccessFrom()
-        {
-            return this._accessFrom != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property AccessType. 
-        /// <para>
-        /// The type of access (<code>Public</code> or <code>Private</code>).
-        /// </para>
-        /// </summary>
-        public PortAccessType AccessType
-        {
-            get { return this._accessType; }
-            set { this._accessType = value; }
-        }
-
-        // Check to see if AccessType property is set
-        internal bool IsSetAccessType()
-        {
-            return this._accessType != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property CommonName. 
-        /// <para>
-        /// The common name.
-        /// </para>
-        /// </summary>
-        public string CommonName
-        {
-            get { return this._commonName; }
-            set { this._commonName = value; }
-        }
-
-        // Check to see if CommonName property is set
-        internal bool IsSetCommonName()
-        {
-            return this._commonName != null;
-        }
 
         /// <summary>
         /// Gets and sets the property FromPort. 
@@ -169,6 +94,24 @@ namespace Amazon.Lightsail.Model
         internal bool IsSetProtocol()
         {
             return this._protocol != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property State. 
+        /// <para>
+        /// Specifies whether the instance port is <code>open</code> or <code>closed</code>.
+        /// </para>
+        /// </summary>
+        public PortState State
+        {
+            get { return this._state; }
+            set { this._state = value; }
+        }
+
+        // Check to see if State property is set
+        internal bool IsSetState()
+        {
+            return this._state != null;
         }
 
         /// <summary>

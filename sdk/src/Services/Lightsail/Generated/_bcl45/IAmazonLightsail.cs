@@ -39,14 +39,14 @@ namespace Amazon.Lightsail
     /// 
     ///  
     /// <para>
-    /// For more information about Lightsail concepts and tasks, see the <a href="http://lightsail.aws.amazon.com/ls/docs">Lightsail
+    /// For more information about Lightsail concepts and tasks, see the <a href="https://lightsail.aws.amazon.com/ls/docs/all">Lightsail
     /// Dev Guide</a>.
     /// </para>
     ///  
     /// <para>
     /// To use the Lightsail API or the CLI, you will need to use AWS Identity and Access
     /// Management (IAM) to generate access keys. For details about how to set this up, see
-    /// the <a href="http://lightsail.aws.amazon.com/ls/docs/how-to/articles/lightsail-how-to-set-up-access-keys-to-use-sdk-api-cli">Lightsail
+    /// the <a href="http://lightsail.aws.amazon.com/ls/docs/how-to/article/lightsail-how-to-set-up-access-keys-to-use-sdk-api-cli">Lightsail
     /// Dev Guide</a>.
     /// </para>
     /// </summary>
@@ -74,6 +74,13 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.InvalidInputException">
         /// Lightsail throws this exception when user input does not conform to the validation
         /// rules of an input field.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please
+        /// set your Region configuration to us-east-1 to create, view, or edit these resources.
+        /// </para>
+        ///  </note>
         /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.NotFoundException">
         /// Lightsail throws this exception when it cannot find a resource.
@@ -125,6 +132,13 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.InvalidInputException">
         /// Lightsail throws this exception when user input does not conform to the validation
         /// rules of an input field.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please
+        /// set your Region configuration to us-east-1 to create, view, or edit these resources.
+        /// </para>
+        ///  </note>
         /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.NotFoundException">
         /// Lightsail throws this exception when it cannot find a resource.
@@ -176,6 +190,13 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.InvalidInputException">
         /// Lightsail throws this exception when user input does not conform to the validation
         /// rules of an input field.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please
+        /// set your Region configuration to us-east-1 to create, view, or edit these resources.
+        /// </para>
+        ///  </note>
         /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.NotFoundException">
         /// Lightsail throws this exception when it cannot find a resource.
@@ -227,6 +248,13 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.InvalidInputException">
         /// Lightsail throws this exception when user input does not conform to the validation
         /// rules of an input field.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please
+        /// set your Region configuration to us-east-1 to create, view, or edit these resources.
+        /// </para>
+        ///  </note>
         /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.NotFoundException">
         /// Lightsail throws this exception when it cannot find a resource.
@@ -279,6 +307,13 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.InvalidInputException">
         /// Lightsail throws this exception when user input does not conform to the validation
         /// rules of an input field.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please
+        /// set your Region configuration to us-east-1 to create, view, or edit these resources.
+        /// </para>
+        ///  </note>
         /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.NotFoundException">
         /// Lightsail throws this exception when it cannot find a resource.
@@ -330,6 +365,13 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.InvalidInputException">
         /// Lightsail throws this exception when user input does not conform to the validation
         /// rules of an input field.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please
+        /// set your Region configuration to us-east-1 to create, view, or edit these resources.
+        /// </para>
+        ///  </note>
         /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.NotFoundException">
         /// Lightsail throws this exception when it cannot find a resource.
@@ -382,6 +424,13 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.InvalidInputException">
         /// Lightsail throws this exception when user input does not conform to the validation
         /// rules of an input field.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please
+        /// set your Region configuration to us-east-1 to create, view, or edit these resources.
+        /// </para>
+        ///  </note>
         /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.NotFoundException">
         /// Lightsail throws this exception when it cannot find a resource.
@@ -434,6 +483,13 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.InvalidInputException">
         /// Lightsail throws this exception when user input does not conform to the validation
         /// rules of an input field.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please
+        /// set your Region configuration to us-east-1 to create, view, or edit these resources.
+        /// </para>
+        ///  </note>
         /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.NotFoundException">
         /// Lightsail throws this exception when it cannot find a resource.
@@ -485,6 +541,13 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.InvalidInputException">
         /// Lightsail throws this exception when user input does not conform to the validation
         /// rules of an input field.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please
+        /// set your Region configuration to us-east-1 to create, view, or edit these resources.
+        /// </para>
+        ///  </note>
         /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.NotFoundException">
         /// Lightsail throws this exception when it cannot find a resource.
@@ -536,6 +599,13 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.InvalidInputException">
         /// Lightsail throws this exception when user input does not conform to the validation
         /// rules of an input field.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please
+        /// set your Region configuration to us-east-1 to create, view, or edit these resources.
+        /// </para>
+        ///  </note>
         /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.NotFoundException">
         /// Lightsail throws this exception when it cannot find a resource.
@@ -587,6 +657,13 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.InvalidInputException">
         /// Lightsail throws this exception when user input does not conform to the validation
         /// rules of an input field.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please
+        /// set your Region configuration to us-east-1 to create, view, or edit these resources.
+        /// </para>
+        ///  </note>
         /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.NotFoundException">
         /// Lightsail throws this exception when it cannot find a resource.
@@ -638,6 +715,13 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.InvalidInputException">
         /// Lightsail throws this exception when user input does not conform to the validation
         /// rules of an input field.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please
+        /// set your Region configuration to us-east-1 to create, view, or edit these resources.
+        /// </para>
+        ///  </note>
         /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.NotFoundException">
         /// Lightsail throws this exception when it cannot find a resource.
@@ -689,6 +773,13 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.InvalidInputException">
         /// Lightsail throws this exception when user input does not conform to the validation
         /// rules of an input field.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please
+        /// set your Region configuration to us-east-1 to create, view, or edit these resources.
+        /// </para>
+        ///  </note>
         /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.NotFoundException">
         /// Lightsail throws this exception when it cannot find a resource.
@@ -740,6 +831,13 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.InvalidInputException">
         /// Lightsail throws this exception when user input does not conform to the validation
         /// rules of an input field.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please
+        /// set your Region configuration to us-east-1 to create, view, or edit these resources.
+        /// </para>
+        ///  </note>
         /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.NotFoundException">
         /// Lightsail throws this exception when it cannot find a resource.
@@ -791,6 +889,13 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.InvalidInputException">
         /// Lightsail throws this exception when user input does not conform to the validation
         /// rules of an input field.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please
+        /// set your Region configuration to us-east-1 to create, view, or edit these resources.
+        /// </para>
+        ///  </note>
         /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.NotFoundException">
         /// Lightsail throws this exception when it cannot find a resource.
@@ -842,6 +947,13 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.InvalidInputException">
         /// Lightsail throws this exception when user input does not conform to the validation
         /// rules of an input field.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please
+        /// set your Region configuration to us-east-1 to create, view, or edit these resources.
+        /// </para>
+        ///  </note>
         /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.NotFoundException">
         /// Lightsail throws this exception when it cannot find a resource.
@@ -893,6 +1005,13 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.InvalidInputException">
         /// Lightsail throws this exception when user input does not conform to the validation
         /// rules of an input field.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please
+        /// set your Region configuration to us-east-1 to create, view, or edit these resources.
+        /// </para>
+        ///  </note>
         /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.NotFoundException">
         /// Lightsail throws this exception when it cannot find a resource.
@@ -947,6 +1066,13 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.InvalidInputException">
         /// Lightsail throws this exception when user input does not conform to the validation
         /// rules of an input field.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please
+        /// set your Region configuration to us-east-1 to create, view, or edit these resources.
+        /// </para>
+        ///  </note>
         /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.NotFoundException">
         /// Lightsail throws this exception when it cannot find a resource.
@@ -999,6 +1125,13 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.InvalidInputException">
         /// Lightsail throws this exception when user input does not conform to the validation
         /// rules of an input field.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please
+        /// set your Region configuration to us-east-1 to create, view, or edit these resources.
+        /// </para>
+        ///  </note>
         /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.NotFoundException">
         /// Lightsail throws this exception when it cannot find a resource.
@@ -1050,6 +1183,13 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.InvalidInputException">
         /// Lightsail throws this exception when user input does not conform to the validation
         /// rules of an input field.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please
+        /// set your Region configuration to us-east-1 to create, view, or edit these resources.
+        /// </para>
+        ///  </note>
         /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.NotFoundException">
         /// Lightsail throws this exception when it cannot find a resource.
@@ -1101,6 +1241,13 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.InvalidInputException">
         /// Lightsail throws this exception when user input does not conform to the validation
         /// rules of an input field.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please
+        /// set your Region configuration to us-east-1 to create, view, or edit these resources.
+        /// </para>
+        ///  </note>
         /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.NotFoundException">
         /// Lightsail throws this exception when it cannot find a resource.
@@ -1153,6 +1300,13 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.InvalidInputException">
         /// Lightsail throws this exception when user input does not conform to the validation
         /// rules of an input field.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please
+        /// set your Region configuration to us-east-1 to create, view, or edit these resources.
+        /// </para>
+        ///  </note>
         /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.NotFoundException">
         /// Lightsail throws this exception when it cannot find a resource.
@@ -1205,6 +1359,13 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.InvalidInputException">
         /// Lightsail throws this exception when user input does not conform to the validation
         /// rules of an input field.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please
+        /// set your Region configuration to us-east-1 to create, view, or edit these resources.
+        /// </para>
+        ///  </note>
         /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.NotFoundException">
         /// Lightsail throws this exception when it cannot find a resource.
@@ -1257,6 +1418,13 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.InvalidInputException">
         /// Lightsail throws this exception when user input does not conform to the validation
         /// rules of an input field.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please
+        /// set your Region configuration to us-east-1 to create, view, or edit these resources.
+        /// </para>
+        ///  </note>
         /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.NotFoundException">
         /// Lightsail throws this exception when it cannot find a resource.
@@ -1308,6 +1476,13 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.InvalidInputException">
         /// Lightsail throws this exception when user input does not conform to the validation
         /// rules of an input field.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please
+        /// set your Region configuration to us-east-1 to create, view, or edit these resources.
+        /// </para>
+        ///  </note>
         /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.NotFoundException">
         /// Lightsail throws this exception when it cannot find a resource.
@@ -1359,6 +1534,13 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.InvalidInputException">
         /// Lightsail throws this exception when user input does not conform to the validation
         /// rules of an input field.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please
+        /// set your Region configuration to us-east-1 to create, view, or edit these resources.
+        /// </para>
+        ///  </note>
         /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.NotFoundException">
         /// Lightsail throws this exception when it cannot find a resource.
@@ -1410,6 +1592,13 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.InvalidInputException">
         /// Lightsail throws this exception when user input does not conform to the validation
         /// rules of an input field.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please
+        /// set your Region configuration to us-east-1 to create, view, or edit these resources.
+        /// </para>
+        ///  </note>
         /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.NotFoundException">
         /// Lightsail throws this exception when it cannot find a resource.
@@ -1461,6 +1650,13 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.InvalidInputException">
         /// Lightsail throws this exception when user input does not conform to the validation
         /// rules of an input field.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please
+        /// set your Region configuration to us-east-1 to create, view, or edit these resources.
+        /// </para>
+        ///  </note>
         /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.NotFoundException">
         /// Lightsail throws this exception when it cannot find a resource.
@@ -1512,6 +1708,13 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.InvalidInputException">
         /// Lightsail throws this exception when user input does not conform to the validation
         /// rules of an input field.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please
+        /// set your Region configuration to us-east-1 to create, view, or edit these resources.
+        /// </para>
+        ///  </note>
         /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.NotFoundException">
         /// Lightsail throws this exception when it cannot find a resource.
@@ -1563,6 +1766,13 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.InvalidInputException">
         /// Lightsail throws this exception when user input does not conform to the validation
         /// rules of an input field.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please
+        /// set your Region configuration to us-east-1 to create, view, or edit these resources.
+        /// </para>
+        ///  </note>
         /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.NotFoundException">
         /// Lightsail throws this exception when it cannot find a resource.
@@ -1614,6 +1824,13 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.InvalidInputException">
         /// Lightsail throws this exception when user input does not conform to the validation
         /// rules of an input field.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please
+        /// set your Region configuration to us-east-1 to create, view, or edit these resources.
+        /// </para>
+        ///  </note>
         /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.NotFoundException">
         /// Lightsail throws this exception when it cannot find a resource.
@@ -1666,6 +1883,13 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.InvalidInputException">
         /// Lightsail throws this exception when user input does not conform to the validation
         /// rules of an input field.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please
+        /// set your Region configuration to us-east-1 to create, view, or edit these resources.
+        /// </para>
+        ///  </note>
         /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.NotFoundException">
         /// Lightsail throws this exception when it cannot find a resource.
@@ -1724,6 +1948,13 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.InvalidInputException">
         /// Lightsail throws this exception when user input does not conform to the validation
         /// rules of an input field.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please
+        /// set your Region configuration to us-east-1 to create, view, or edit these resources.
+        /// </para>
+        ///  </note>
         /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.NotFoundException">
         /// Lightsail throws this exception when it cannot find a resource.
@@ -1775,6 +2006,13 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.InvalidInputException">
         /// Lightsail throws this exception when user input does not conform to the validation
         /// rules of an input field.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please
+        /// set your Region configuration to us-east-1 to create, view, or edit these resources.
+        /// </para>
+        ///  </note>
         /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.NotFoundException">
         /// Lightsail throws this exception when it cannot find a resource.
@@ -1810,7 +2048,8 @@ namespace Amazon.Lightsail
 
 
         /// <summary>
-        /// Returns a list of all valid regions for Amazon Lightsail.
+        /// Returns a list of all valid regions for Amazon Lightsail. Use the <code>include availability
+        /// zones</code> parameter to also return the availability zones in a region.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetRegions service method.</param>
         /// 
@@ -1826,6 +2065,13 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.InvalidInputException">
         /// Lightsail throws this exception when user input does not conform to the validation
         /// rules of an input field.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please
+        /// set your Region configuration to us-east-1 to create, view, or edit these resources.
+        /// </para>
+        ///  </note>
         /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.NotFoundException">
         /// Lightsail throws this exception when it cannot find a resource.
@@ -1877,6 +2123,13 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.InvalidInputException">
         /// Lightsail throws this exception when user input does not conform to the validation
         /// rules of an input field.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please
+        /// set your Region configuration to us-east-1 to create, view, or edit these resources.
+        /// </para>
+        ///  </note>
         /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.NotFoundException">
         /// Lightsail throws this exception when it cannot find a resource.
@@ -1928,6 +2181,13 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.InvalidInputException">
         /// Lightsail throws this exception when user input does not conform to the validation
         /// rules of an input field.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please
+        /// set your Region configuration to us-east-1 to create, view, or edit these resources.
+        /// </para>
+        ///  </note>
         /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.NotFoundException">
         /// Lightsail throws this exception when it cannot find a resource.
@@ -1979,6 +2239,13 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.InvalidInputException">
         /// Lightsail throws this exception when user input does not conform to the validation
         /// rules of an input field.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please
+        /// set your Region configuration to us-east-1 to create, view, or edit these resources.
+        /// </para>
+        ///  </note>
         /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.NotFoundException">
         /// Lightsail throws this exception when it cannot find a resource.
@@ -2030,6 +2297,13 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.InvalidInputException">
         /// Lightsail throws this exception when user input does not conform to the validation
         /// rules of an input field.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please
+        /// set your Region configuration to us-east-1 to create, view, or edit these resources.
+        /// </para>
+        ///  </note>
         /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.NotFoundException">
         /// Lightsail throws this exception when it cannot find a resource.
@@ -2081,6 +2355,13 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.InvalidInputException">
         /// Lightsail throws this exception when user input does not conform to the validation
         /// rules of an input field.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please
+        /// set your Region configuration to us-east-1 to create, view, or edit these resources.
+        /// </para>
+        ///  </note>
         /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.NotFoundException">
         /// Lightsail throws this exception when it cannot find a resource.
@@ -2132,6 +2413,13 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.InvalidInputException">
         /// Lightsail throws this exception when user input does not conform to the validation
         /// rules of an input field.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please
+        /// set your Region configuration to us-east-1 to create, view, or edit these resources.
+        /// </para>
+        ///  </note>
         /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.NotFoundException">
         /// Lightsail throws this exception when it cannot find a resource.
@@ -2163,6 +2451,65 @@ namespace Amazon.Lightsail
 
         #endregion
         
+        #region  PutInstancePublicPorts
+
+
+        /// <summary>
+        /// Sets the specified open ports for an Amazon Lightsail instance, and closes all ports
+        /// for every protocol not included in the current request.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutInstancePublicPorts service method.</param>
+        /// 
+        /// <returns>The response from the PutInstancePublicPorts service method, as returned by Lightsail.</returns>
+        /// <exception cref="Amazon.Lightsail.Model.AccessDeniedException">
+        /// Lightsail throws this exception when the user cannot be authenticated or uses invalid
+        /// credentials to access a resource.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.AccountSetupInProgressException">
+        /// Lightsail throws this exception when an account is still in the setup in progress
+        /// state.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.InvalidInputException">
+        /// Lightsail throws this exception when user input does not conform to the validation
+        /// rules of an input field.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please
+        /// set your Region configuration to us-east-1 to create, view, or edit these resources.
+        /// </para>
+        ///  </note>
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.NotFoundException">
+        /// Lightsail throws this exception when it cannot find a resource.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.OperationFailureException">
+        /// Lightsail throws this exception when an operation fails to execute.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.ServiceException">
+        /// A general service exception.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.UnauthenticatedException">
+        /// Lightsail throws this exception when the user has not been authenticated.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/PutInstancePublicPorts">REST API Reference for PutInstancePublicPorts Operation</seealso>
+        PutInstancePublicPortsResponse PutInstancePublicPorts(PutInstancePublicPortsRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutInstancePublicPorts operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutInstancePublicPorts operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/PutInstancePublicPorts">REST API Reference for PutInstancePublicPorts Operation</seealso>
+        Task<PutInstancePublicPortsResponse> PutInstancePublicPortsAsync(PutInstancePublicPortsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  RebootInstance
 
 
@@ -2185,6 +2532,13 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.InvalidInputException">
         /// Lightsail throws this exception when user input does not conform to the validation
         /// rules of an input field.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please
+        /// set your Region configuration to us-east-1 to create, view, or edit these resources.
+        /// </para>
+        ///  </note>
         /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.NotFoundException">
         /// Lightsail throws this exception when it cannot find a resource.
@@ -2236,6 +2590,13 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.InvalidInputException">
         /// Lightsail throws this exception when user input does not conform to the validation
         /// rules of an input field.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please
+        /// set your Region configuration to us-east-1 to create, view, or edit these resources.
+        /// </para>
+        ///  </note>
         /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.NotFoundException">
         /// Lightsail throws this exception when it cannot find a resource.
@@ -2288,6 +2649,13 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.InvalidInputException">
         /// Lightsail throws this exception when user input does not conform to the validation
         /// rules of an input field.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please
+        /// set your Region configuration to us-east-1 to create, view, or edit these resources.
+        /// </para>
+        ///  </note>
         /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.NotFoundException">
         /// Lightsail throws this exception when it cannot find a resource.
@@ -2339,6 +2707,13 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.InvalidInputException">
         /// Lightsail throws this exception when user input does not conform to the validation
         /// rules of an input field.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please
+        /// set your Region configuration to us-east-1 to create, view, or edit these resources.
+        /// </para>
+        ///  </note>
         /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.NotFoundException">
         /// Lightsail throws this exception when it cannot find a resource.
@@ -2390,6 +2765,13 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.InvalidInputException">
         /// Lightsail throws this exception when user input does not conform to the validation
         /// rules of an input field.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please
+        /// set your Region configuration to us-east-1 to create, view, or edit these resources.
+        /// </para>
+        ///  </note>
         /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.NotFoundException">
         /// Lightsail throws this exception when it cannot find a resource.
@@ -2441,6 +2823,13 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.InvalidInputException">
         /// Lightsail throws this exception when user input does not conform to the validation
         /// rules of an input field.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please
+        /// set your Region configuration to us-east-1 to create, view, or edit these resources.
+        /// </para>
+        ///  </note>
         /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.NotFoundException">
         /// Lightsail throws this exception when it cannot find a resource.
