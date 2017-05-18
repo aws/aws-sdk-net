@@ -15,6 +15,7 @@
         "ApplicationAutoScaling" : "1.0.0-*",
         "ApplicationDiscoveryService" : "1.0.0-*",
         "AppStream"                   : "1.0.0-*",
+        "Athena"                      : "1.0.0-*",
         "AutoScaling"                 : "1.0.0-*",
         "AWSHealth"                   : "1.0.0-*",
         "AWSMarketplaceCommerceAnalytics" : "1.0.0-*",

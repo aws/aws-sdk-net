@@ -81,6 +81,10 @@
       <Project>{24DDBBEC-9989-47BA-B006-53FC49085B36}</Project>
       <Name>AWSSDK.AppStream.Net35</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\src\Services\Athena\AWSSDK.Athena.Net35.csproj">
+      <Project>{15837FB4-FADF-41E8-8ECF-DCFA69063670}</Project>
+      <Name>AWSSDK.Athena.Net35</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\src\Services\AutoScaling\AWSSDK.AutoScaling.Net35.csproj">
       <Project>{88F2CD8C-2C47-4E66-A4D4-93B2CF5BDCBC}</Project>
       <Name>AWSSDK.AutoScaling.Net35</Name>

@@ -72,6 +72,8 @@ Unit tests can be found in the **AWSSDK.UnitTests** project.
 	* AWS Application Discovery Service helps Systems Integrators quickly and reliably plan application migration projects by automatically identifying applications running in your data center, their associated dependencies, and their performance profile.
 * [AWSSDK.AppStream](https://www.nuget.org/packages/AWSSDK.AppStream/)
 	* Amazon AppStream is a fully managed, secure application streaming service that allows you to stream desktop applications from AWS to a web browser.
+* [AWSSDK.Athena](https://www.nuget.org/packages/AWSSDK.Athena/)
+	* This release adds support for Amazon Athena. Amazon Athena is an interactive query service that makes it easy to analyze data in Amazon S3 using standard SQL. Athena is serverless, so there is no infrastructure to manage, and you pay only for the queries that you run.
 * [AWSSDK.AutoScaling](https://www.nuget.org/packages/AWSSDK.AutoScaling/)
 	* Auto Scaling helps you maintain application availability and allows you to scale your capacity up or down automatically according to conditions you define.
 * [AWSSDK.AWSHealth](https://www.nuget.org/packages/AWSSDK.AWSHealth/)

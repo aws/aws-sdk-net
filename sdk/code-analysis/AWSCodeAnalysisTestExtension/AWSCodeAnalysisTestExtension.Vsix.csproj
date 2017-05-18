@@ -68,6 +68,10 @@
       <Project>{C8E84B00-7398-4F52-A7CA-B64E5EF6339F}</Project>
       <Name>AWSSDK.AppStream.CodeAnalysis</Name>
     </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/Athena/AWSSDK.Athena.CodeAnalysis.csproj">
+      <Project>{C759B78F-82AA-4460-9E39-2C8A695A76B6}</Project>
+      <Name>AWSSDK.Athena.CodeAnalysis</Name>
+    </ProjectReference>
     <ProjectReference Include="../ServiceAnalysis/AutoScaling/AWSSDK.AutoScaling.CodeAnalysis.csproj">
       <Project>{DE877AEA-BBDF-43E5-90C5-765D0B02BFC3}</Project>
       <Name>AWSSDK.AutoScaling.CodeAnalysis</Name>
