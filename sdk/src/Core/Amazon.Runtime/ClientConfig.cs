@@ -1,5 +1,5 @@
  /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -45,7 +45,7 @@ namespace Amazon.Runtime
         private string serviceURL = null;
         private string authRegion = null;
         private string authServiceName = null;
-        private string signatureVersion = "2";
+        private string signatureVersion = "4";
         private SigningAlgorithm signatureMethod = SigningAlgorithm.HmacSHA256;
         private int maxErrorRetry = 4;
         private bool readEntireResponse = false;
@@ -79,6 +79,9 @@ namespace Amazon.Runtime
 
         /// <summary>
         /// Gets and sets of the SignatureVersion property.
+        ///
+        /// Note: This property exists for backward compatibility but is no longer
+        /// used by any service other than S3.
         /// </summary>
         public string SignatureVersion
         {
@@ -116,19 +119,7 @@ namespace Amazon.Runtime
             {
                 this.serviceURL = null;
                 this.regionEndpoint = value;
-
-                if (this.regionEndpoint != null)
-                {
-                    this.probeForRegionEndpoint = false;
-
-                    var endpoint = this.regionEndpoint.GetEndpointForService(RegionEndpointServiceName, this.UseDualstackEndpoint);
-                    if (endpoint != null && endpoint.SignatureVersionOverride != null)
-                        this.SignatureVersion = endpoint.SignatureVersionOverride;
-                }
-                else
-                {
-                    this.probeForRegionEndpoint = true;
-                }
+                this.probeForRegionEndpoint = this.regionEndpoint == null;
             }
         }
 

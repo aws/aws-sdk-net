@@ -48,6 +48,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
                         Console.WriteLine(domains.Infos.Count);
                     }
 
+
                     using (var swf = new Amazon.SimpleWorkflow.AmazonSimpleWorkflowClient(credentials, new Amazon.SimpleWorkflow.AmazonSimpleWorkflowConfig { SignatureVersion = "4" }))
                     {
                         var domains = swf.ListDomains(new Amazon.SimpleWorkflow.Model.ListDomainsRequest { RegistrationStatus = "REGISTERED" }).DomainInfos;

@@ -301,10 +301,8 @@ namespace Amazon
             }
 
             /// <summary>
-            /// Overrides the default signing protocol for an
-            /// endpoint. Typically used to force Signature V4
-            /// for services that can support multiple signing
-            /// protocols.
+            /// This property is only set for S3 endpoints.  For all other services this property returns null.
+            /// For S3 endpoints, if the endpoint supports signature version 2 this property will be "2", otherwise it will be "4".
             /// </summary>
             public string SignatureVersionOverride
             {

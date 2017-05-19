@@ -1,5 +1,5 @@
 ﻿/*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -91,33 +91,39 @@ namespace Amazon.Runtime.Internal.Auth
         /// <returns>True if signature v4 request signing should be used</returns>
         protected static bool UseV4Signing(bool useSigV4Setting, IRequest request, IClientConfig config)
         {
-            if (useSigV4Setting || request.UseSigV4 || config.SignatureVersion == "4")
+            if (request.UseSigV4 ||
+                config.SignatureVersion == "4" ||
+                (useSigV4Setting && config.SignatureVersion != "2"))
+            {
                 return true;
-
-            // do a cascading series of checks to try and arrive at whether we have
-            // a recognisable region; this is required to use the AWS4 signer
-            RegionEndpoint r = null;
-            if (!string.IsNullOrEmpty(request.AuthenticationRegion))
-                r = RegionEndpoint.GetBySystemName(request.AuthenticationRegion);
-
-            if (r == null && !string.IsNullOrEmpty(config.ServiceURL))
-            {
-                var parsedRegion = AWSSDKUtils.DetermineRegion(config.ServiceURL);
-                if (!string.IsNullOrEmpty(parsedRegion))
-                    r = RegionEndpoint.GetBySystemName(parsedRegion);
             }
-
-            if (r == null && config.RegionEndpoint != null)
-                r = config.RegionEndpoint;
-
-            if (r != null)
+            else
             {
-                var endpoint = r.GetEndpointForService(config.RegionEndpointServiceName, config.UseDualstackEndpoint);
-                if (endpoint != null && (endpoint.SignatureVersionOverride == "4" || string.IsNullOrEmpty(endpoint.SignatureVersionOverride)))
-                    return true;
-            }
+                // do a cascading series of checks to try and arrive at whether we have
+                // a recognisable region; this is required to use the AWS4 signer
+                RegionEndpoint r = null;
+                if (!string.IsNullOrEmpty(request.AuthenticationRegion))
+                    r = RegionEndpoint.GetBySystemName(request.AuthenticationRegion);
 
-            return false;
+                if (r == null && !string.IsNullOrEmpty(config.ServiceURL))
+                {
+                    var parsedRegion = AWSSDKUtils.DetermineRegion(config.ServiceURL);
+                    if (!string.IsNullOrEmpty(parsedRegion))
+                        r = RegionEndpoint.GetBySystemName(parsedRegion);
+                }
+
+                if (r == null && config.RegionEndpoint != null)
+                    r = config.RegionEndpoint;
+
+                if (r != null)
+                {
+                    var endpoint = r.GetEndpointForService(config.RegionEndpointServiceName, config.UseDualstackEndpoint);
+                    if (endpoint != null && (endpoint.SignatureVersionOverride == "4" || string.IsNullOrEmpty(endpoint.SignatureVersionOverride)))
+                        return true;
+                }
+
+                return false;
+            }
         }
 
         

@@ -69,6 +69,9 @@ namespace Amazon.Runtime
 
         /// <summary>
         /// Gets the SignatureVersion property.
+        ///
+        /// Note: This property exists for backward compatibility but is no longer
+        /// used by any service other than S3.
         /// </summary>
         string SignatureVersion { get; }
 

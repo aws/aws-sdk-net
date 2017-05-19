@@ -53,6 +53,23 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             AWSConfigsS3.UseSignatureVersion4 = useSigV4;
             SetAWSConfigsS3InternalProperty(useSigV4SetExplicitly);
 
+            var usEast1ClientConfig = new AmazonS3Config()
+            {
+                SignatureVersion = useSigV4 ? "4" : "2",
+                RegionEndpoint = RegionEndpoint.USEast1
+            };
+            USEast1Client = new AmazonS3Client(usEast1ClientConfig);
+
+            var sessionCredentials = new AmazonSecurityTokenServiceClient().GetSessionToken().Credentials;
+            USEast1ClientWithSessionCredentials = new AmazonS3Client(sessionCredentials, usEast1ClientConfig);
+
+            USWest1Client = new AmazonS3Client(new AmazonS3Config()
+            {
+                SignatureVersion = useSigV4 ? "4" : "2",
+                RegionEndpoint = RegionEndpoint.USWest1
+            });
+
+
             CreateAndCheckTestBucket();
             if (TestBucketIsReady)
             {
@@ -79,10 +96,6 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         private void CreateAndCheckTestBucket()
         {
             TestBucketIsReady = false;
-            USEast1Client = new AmazonS3Client(RegionEndpoint.USEast1);
-            USWest1Client = new AmazonS3Client(RegionEndpoint.USWest1);
-            var sessionCredentials = new AmazonSecurityTokenServiceClient().GetSessionToken().Credentials;
-            USEast1ClientWithSessionCredentials = new AmazonS3Client(sessionCredentials, RegionEndpoint.USEast1);
 
             TestBucket = USWest1Client.ListBuckets().Buckets.Find(bucket => bucket.BucketName.StartsWith(BucketPrefix));
             if (TestBucket == null)
