@@ -33,6 +33,7 @@
             "InPreview"    : false
         },
         "CloudFront"     : {
+            "AssemblyVersionOverride" : "3.3.4.0",
             "Version" : "3.3.3.6",
             "Dependencies" : {
                 "Core" : "3.3.14.0"

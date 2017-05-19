@@ -49,11 +49,11 @@ namespace Amazon.CloudFront
             /// <summary>
             /// Http Protocol
             /// </summary>
-            Http,
+            Http = 1,
             /// <summary>
             /// Https Protocol
             /// </summary>
-            Https
+            Https = 2
         }
 
         /// <summary>
@@ -295,6 +295,13 @@ namespace Amazon.CloudFront
                                                    string distributionDomain,
                                                    string path)
         {
+            if (protocol == 0)
+            {
+                // Uninitialized protocol value.
+                throw new ArgumentException("Invalid value for AmazonCloudFrontCookieSigner.Protocols enum." +
+                    " Valid values are AmazonCloudFrontCookieSigner.Protocols.Http or AmazonCloudFrontCookieSigner.Protocols.Https .",
+                    "protocol");
+            }
 
             if (protocol == (Protocols.Http | Protocols.Https))
             {
