@@ -358,6 +358,12 @@ namespace ServiceClientGenerator
                 var versionText = versionInfoJson["Version"].ToString();
                 config.ServiceFileVersion = versionText;
 
+                var assemblyVersionOverride = versionInfoJson["AssemblyVersionOverride"];
+                if (assemblyVersionOverride != null)
+                {
+                    config.ServiceAssemblyVersionOverride = assemblyVersionOverride.ToString();
+                }
+
                 if(versionInfoJson["InPreview"] != null && (bool)versionInfoJson["InPreview"])
                     config.InPreview = true;
                 else

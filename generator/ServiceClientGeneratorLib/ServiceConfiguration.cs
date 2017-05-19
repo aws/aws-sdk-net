@@ -235,11 +235,21 @@ namespace ServiceClientGenerator
         {
             get
             {
+                if (!string.IsNullOrEmpty(this.ServiceAssemblyVersionOverride))
+                {
+                    return ServiceAssemblyVersionOverride;
+                }
                 return Utils.GetVersion(ServiceFileVersion);
             }
         }
 
         public string ServiceFileVersion { get; set; }
+
+        /// <summary>
+        /// If specified this overrides the AssemblyVersion for the service package in AssemblyInfo.cs.
+        /// Assembly version defaults to x.y of ServiceFileVersion if this is not specified.
+        /// </summary>
+        public string ServiceAssemblyVersionOverride { get; set; }
 
         public bool SkipV1 { get; set; }
 
