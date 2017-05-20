@@ -1,3 +1,11 @@
+### 3.3.91.0 (2017-05-19 22:45 UTC)
+* CloudFront (3.3.4.0)
+	* Security update to CloudFront Cookie Signer in the SDK. The fix contains a
+change to the AmazonCloudFrontCookieSigner.Protocols enum's
+underlying values (a breaking change) and requires a recompilation of the
+consuming application. The assembly version for AWSSDK.CloudFront.dll has been
+updated for this fix. There are no other breaking API changes in this version.
+
 ### 3.3.90.0 (2017-05-18 20:37 UTC)
 * Athena (3.3.0.0)
 	* This release adds support for Amazon Athena. Amazon Athena is an interactive query service that makes it easy to analyze data in Amazon S3 using standard SQL. Athena is serverless, so there is no infrastructure to manage, and you pay only for the queries that you run.
