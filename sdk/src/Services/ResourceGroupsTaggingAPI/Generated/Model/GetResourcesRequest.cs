@@ -38,6 +38,7 @@ namespace Amazon.ResourceGroupsTaggingAPI.Model
     public partial class GetResourcesRequest : AmazonResourceGroupsTaggingAPIRequest
     {
         private string _paginationToken;
+        private int? _resourcesPerPage;
         private List<string> _resourceTypeFilters = new List<string>();
         private List<TagFilter> _tagFilters = new List<TagFilter>();
         private int? _tagsPerPage;
@@ -60,6 +61,26 @@ namespace Amazon.ResourceGroupsTaggingAPI.Model
         internal bool IsSetPaginationToken()
         {
             return this._paginationToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ResourcesPerPage. 
+        /// <para>
+        /// A limit that restricts the number of resources returned by GetResources in paginated
+        /// output. You can set ResourcesPerPage to a minimum of 1 item and the maximum of 50
+        /// items. 
+        /// </para>
+        /// </summary>
+        public int ResourcesPerPage
+        {
+            get { return this._resourcesPerPage.GetValueOrDefault(); }
+            set { this._resourcesPerPage = value; }
+        }
+
+        // Check to see if ResourcesPerPage property is set
+        internal bool IsSetResourcesPerPage()
+        {
+            return this._resourcesPerPage.HasValue; 
         }
 
         /// <summary>

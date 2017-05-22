@@ -73,6 +73,12 @@ namespace Amazon.ResourceGroupsTaggingAPI.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.PaginationToken);
                 }
 
+                if(publicRequest.IsSetResourcesPerPage())
+                {
+                    context.Writer.WritePropertyName("ResourcesPerPage");
+                    context.Writer.Write(publicRequest.ResourcesPerPage);
+                }
+
                 if(publicRequest.IsSetResourceTypeFilters())
                 {
                     context.Writer.WritePropertyName("ResourceTypeFilters");
