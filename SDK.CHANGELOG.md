@@ -1,3 +1,7 @@
+### 3.3.92.0 (2017-05-22 23:22 UTC)
+* ResourceGroupsTaggingAPI (3.3.1.0)
+	* You can now specify the number of resources returned per page in GetResources operation, as an optional parameter, to easily manage the list of resources returned by your queries.
+
 ### 3.3.91.0 (2017-05-19 22:45 UTC)
 * CloudFront (3.3.4.0)
 	* Security update to CloudFront Cookie Signer in the SDK. The fix contains a
