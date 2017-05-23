@@ -156,3 +156,8 @@ See [GitHub Issue #496](https://github.com/aws/aws-sdk-net/issues/496)
 #### ASP.NET Data Protection Support
 
 See [GitHub Issue #371](https://github.com/aws/aws-sdk-net/issues/371)
+
+#### Add settings to appsettings.json
+
+See [GitHub Issue #371](https://github.com/aws/aws-sdk-net/issues/656)
+See [GitHub Issue #371](https://github.com/aws/aws-sdk-net/issues/624)
