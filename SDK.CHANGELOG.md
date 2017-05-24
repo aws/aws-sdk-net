@@ -1,3 +1,7 @@
+### 3.3.93.0 (2017-05-24 00:31 UTC)
+* DatabaseMigrationService (3.3.2.0)
+	* This release adds support for using Amazon S3 and Amazon DynamoDB as targets for database migration, and using MongoDB as a source for database migration. For more information, see the AWS Database Migration Service documentation.
+
 ### 3.3.92.0 (2017-05-22 23:22 UTC)
 * ResourceGroupsTaggingAPI (3.3.1.0)
 	* You can now specify the number of resources returned per page in GetResources operation, as an optional parameter, to easily manage the list of resources returned by your queries.

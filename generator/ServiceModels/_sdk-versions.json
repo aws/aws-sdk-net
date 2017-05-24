@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.3.92.0",
+    "ProductVersion" : "3.3.93.0",
     "CoreVersion"    : "3.3.14.0",
     "DefaultToPreview" : false,
     "ServiceVersions"  : {
@@ -521,7 +521,7 @@
             "InPreview"               : false
         },
         "DatabaseMigrationService"        : {
-            "Version" : "3.3.1.12",
+            "Version" : "3.3.2.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.14.0"
