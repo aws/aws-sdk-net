@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<docs>
+    <doc>
+        <members>
+            <member name="M:Amazon.SecurityToken.IAmazonSecurityTokenService.AssumeRole(Amazon.SecurityToken.Model.AssumeRoleRequest)" />
+            <member name="M:Amazon.SecurityToken.AmazonSecurityTokenServiceClient.AssumeRole(Amazon.SecurityToken.Model.AssumeRoleRequest)" />
+            <member name="T:Amazon.SecurityToken.Model.AssumeRoleRequest" />
+            <member name="T:Amazon.SecurityToken.Model.AssumeRoleResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="To assume a role"
+                    source=".\AWSSDKDocSamples\SecurityToken\SecurityToken.GeneratedSamples.cs"
+                    region="to-assume-a-role-1480532402212" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.SecurityToken.IAmazonSecurityTokenService.AssumeRoleWithWebIdentity(Amazon.SecurityToken.Model.AssumeRoleWithWebIdentityRequest)" />
+            <member name="M:Amazon.SecurityToken.AmazonSecurityTokenServiceClient.AssumeRoleWithWebIdentity(Amazon.SecurityToken.Model.AssumeRoleWithWebIdentityRequest)" />
+            <member name="T:Amazon.SecurityToken.Model.AssumeRoleWithWebIdentityRequest" />
+            <member name="T:Amazon.SecurityToken.Model.AssumeRoleWithWebIdentityResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="To assume a role as an OpenID Connect-federated user"
+                    source=".\AWSSDKDocSamples\SecurityToken\SecurityToken.GeneratedSamples.cs"
+                    region="to-assume-a-role-as-an-openid-connect-federated-user-1480533445696" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.SecurityToken.IAmazonSecurityTokenService.DecodeAuthorizationMessage(Amazon.SecurityToken.Model.DecodeAuthorizationMessageRequest)" />
+            <member name="M:Amazon.SecurityToken.AmazonSecurityTokenServiceClient.DecodeAuthorizationMessage(Amazon.SecurityToken.Model.DecodeAuthorizationMessageRequest)" />
+            <member name="T:Amazon.SecurityToken.Model.DecodeAuthorizationMessageRequest" />
+            <member name="T:Amazon.SecurityToken.Model.DecodeAuthorizationMessageResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="To decode information about an authorization status of a request"
+                    source=".\AWSSDKDocSamples\SecurityToken\SecurityToken.GeneratedSamples.cs"
+                    region="to-decode-information-about-an-authorization-status-of-a-request-1480533854499" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.SecurityToken.IAmazonSecurityTokenService.GetCallerIdentity(Amazon.SecurityToken.Model.GetCallerIdentityRequest)" />
+            <member name="M:Amazon.SecurityToken.AmazonSecurityTokenServiceClient.GetCallerIdentity(Amazon.SecurityToken.Model.GetCallerIdentityRequest)" />
+            <member name="T:Amazon.SecurityToken.Model.GetCallerIdentityRequest" />
+            <member name="T:Amazon.SecurityToken.Model.GetCallerIdentityResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example shows a request and response made with the credentials for a user named Alice in the AWS account 123456789012.
+                </para>
+                <code
+                    title="To get details about a calling IAM user"
+                    source=".\AWSSDKDocSamples\SecurityToken\SecurityToken.GeneratedSamples.cs"
+                    region="to-get-details-about-a-calling-iam-user-1480540050376" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.SecurityToken.IAmazonSecurityTokenService.GetCallerIdentity(Amazon.SecurityToken.Model.GetCallerIdentityRequest)" />
+            <member name="M:Amazon.SecurityToken.AmazonSecurityTokenServiceClient.GetCallerIdentity(Amazon.SecurityToken.Model.GetCallerIdentityRequest)" />
+            <member name="T:Amazon.SecurityToken.Model.GetCallerIdentityRequest" />
+            <member name="T:Amazon.SecurityToken.Model.GetCallerIdentityResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example shows a request and response made with temporary credentials created by AssumeRole. The name of the assumed role is my-role-name, and the RoleSessionName is set to my-role-session-name.
+                </para>
+                <code
+                    title="To get details about a calling user federated with AssumeRole"
+                    source=".\AWSSDKDocSamples\SecurityToken\SecurityToken.GeneratedSamples.cs"
+                    region="to-get-details-about-a-calling-user-federated-with-assumerole-1480540158545" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.SecurityToken.IAmazonSecurityTokenService.GetCallerIdentity(Amazon.SecurityToken.Model.GetCallerIdentityRequest)" />
+            <member name="M:Amazon.SecurityToken.AmazonSecurityTokenServiceClient.GetCallerIdentity(Amazon.SecurityToken.Model.GetCallerIdentityRequest)" />
+            <member name="T:Amazon.SecurityToken.Model.GetCallerIdentityRequest" />
+            <member name="T:Amazon.SecurityToken.Model.GetCallerIdentityResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example shows a request and response made with temporary credentials created by using GetFederationToken. The Name parameter is set to my-federated-user-name.
+                </para>
+                <code
+                    title="To get details about a calling user federated with GetFederationToken"
+                    source=".\AWSSDKDocSamples\SecurityToken\SecurityToken.GeneratedSamples.cs"
+                    region="to-get-details-about-a-calling-user-federated-with-getfederationtoken-1480540231316" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.SecurityToken.IAmazonSecurityTokenService.GetFederationToken(Amazon.SecurityToken.Model.GetFederationTokenRequest)" />
+            <member name="M:Amazon.SecurityToken.AmazonSecurityTokenServiceClient.GetFederationToken(Amazon.SecurityToken.Model.GetFederationTokenRequest)" />
+            <member name="T:Amazon.SecurityToken.Model.GetFederationTokenRequest" />
+            <member name="T:Amazon.SecurityToken.Model.GetFederationTokenResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="To get temporary credentials for a role by using GetFederationToken"
+                    source=".\AWSSDKDocSamples\SecurityToken\SecurityToken.GeneratedSamples.cs"
+                    region="to-get-temporary-credentials-for-a-role-by-using-getfederationtoken-1480540749900" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.SecurityToken.IAmazonSecurityTokenService.GetSessionToken(Amazon.SecurityToken.Model.GetSessionTokenRequest)" />
+            <member name="M:Amazon.SecurityToken.AmazonSecurityTokenServiceClient.GetSessionToken(Amazon.SecurityToken.Model.GetSessionTokenRequest)" />
+            <member name="T:Amazon.SecurityToken.Model.GetSessionTokenRequest" />
+            <member name="T:Amazon.SecurityToken.Model.GetSessionTokenResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="To get temporary credentials for an IAM user or an AWS account"
+                    source=".\AWSSDKDocSamples\SecurityToken\SecurityToken.GeneratedSamples.cs"
+                    region="to-get-temporary-credentials-for-an-iam-user-or-an-aws-account-1480540814038" />
+            </example>
+        </value>
+    </doc>
+</docs>

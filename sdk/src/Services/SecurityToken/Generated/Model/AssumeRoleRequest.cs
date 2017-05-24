@@ -198,7 +198,7 @@ namespace Amazon.SecurityToken.Model
         /// <para>
         /// The regex used to validated this parameter is a string of characters consisting of
         /// upper- and lower-case alphanumeric characters with no spaces. You can also include
-        /// underscores or any of the following characters: =,.@:\/-
+        /// underscores or any of the following characters: =,.@:/-
         /// </para>
         /// </summary>
         public string ExternalId
