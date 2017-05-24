@@ -96,6 +96,14 @@ namespace Amazon.DynamoDBv2.DataModel
         #endregion
 
         #region BatchGet
+#if BCL35
+        /// <summary>
+        /// Creates a strongly-typed BatchGet object, allowing
+        /// a batch-get operation against DynamoDB.
+        /// </summary>
+        /// <typeparam name="T">Type of objects to get</typeparam>
+        /// <returns>Empty strongly-typed BatchGet object</returns>
+        BatchGet<T> CreateBatchGet<T>();
 
         /// <summary>
         /// Creates a strongly-typed BatchGet object, allowing
@@ -104,7 +112,17 @@ namespace Amazon.DynamoDBv2.DataModel
         /// <typeparam name="T">Type of objects to get</typeparam>
         /// <param name="operationConfig">Config object which can be used to override that table used.</param>
         /// <returns>Empty strongly-typed BatchGet object</returns>
+        BatchGet<T> CreateBatchGet<T>(DynamoDBOperationConfig operationConfig);
+#else
+        /// <summary>
+        /// Creates a strongly-typed BatchGet object, allowing
+        /// a batch-get operation against DynamoDB.
+        /// </summary>
+        /// <typeparam name="T">Type of objects to get</typeparam>
+        /// <param name="operationConfig">Config object which can be used to override that table used.</param>
+        /// <returns>Empty strongly-typed BatchGet object</returns>
         BatchGet<T> CreateBatchGet<T>(DynamoDBOperationConfig operationConfig = null);
+#endif
 
         /// <summary>
         /// Creates a MultiTableBatchGet object, composed of multiple
@@ -118,6 +136,24 @@ namespace Amazon.DynamoDBv2.DataModel
 
         #region Batch Write
 
+#if BCL35
+        /// <summary>
+        /// Creates a strongly-typed BatchWrite object, allowing
+        /// a batch-write operation against DynamoDB.
+        /// </summary>
+        /// <typeparam name="T">Type of objects to write</typeparam>
+        /// <returns>Empty strongly-typed BatchWrite object</returns>
+        BatchWrite<T> CreateBatchWrite<T>();
+
+        /// <summary>
+        /// Creates a strongly-typed BatchWrite object, allowing
+        /// a batch-write operation against DynamoDB.
+        /// </summary>
+        /// <typeparam name="T">Type of objects to write</typeparam>
+        /// <param name="operationConfig">Config object which can be used to override that table used.</param>
+        /// <returns>Empty strongly-typed BatchWrite object</returns>
+        BatchWrite<T> CreateBatchWrite<T>(DynamoDBOperationConfig operationConfig);
+#else
         /// <summary>
         /// Creates a strongly-typed BatchWrite object, allowing
         /// a batch-write operation against DynamoDB.
@@ -126,6 +162,7 @@ namespace Amazon.DynamoDBv2.DataModel
         /// <param name="operationConfig">Config object which can be used to override that table used.</param>
         /// <returns>Empty strongly-typed BatchWrite object</returns>
         BatchWrite<T> CreateBatchWrite<T>(DynamoDBOperationConfig operationConfig = null);
+#endif
 
         /// <summary>
         /// Creates a MultiTableBatchWrite object, composed of multiple

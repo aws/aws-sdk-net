@@ -242,13 +242,6 @@ namespace Amazon.DynamoDBv2.DataModel
         /// </param>
         void ExecuteBatchGet(params BatchGet[] batches);
 
-        /// <summary>
-        /// Creates a strongly-typed BatchGet object, allowing
-        /// a batch-get operation against DynamoDB.
-        /// </summary>
-        /// <typeparam name="T">Type of objects to get</typeparam>
-        /// <returns>Empty strongly-typed BatchGet object</returns>
-        BatchGet<T> CreateBatchGet<T>();
 
         #endregion
 
@@ -262,13 +255,6 @@ namespace Amazon.DynamoDBv2.DataModel
         /// </param>
         void ExecuteBatchWrite(params BatchWrite[] batches);
 
-        /// <summary>
-        /// Creates a strongly-typed BatchWrite object, allowing
-        /// a batch-write operation against DynamoDB.
-        /// </summary>
-        /// <typeparam name="T">Type of objects to write</typeparam>
-        /// <returns>Empty strongly-typed BatchWrite object</returns>
-        BatchWrite<T> CreateBatchWrite<T>();
 
         #endregion
 
