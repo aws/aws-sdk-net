@@ -250,23 +250,6 @@ namespace Amazon.DynamoDBv2.DataModel
         /// <returns>Empty strongly-typed BatchGet object</returns>
         BatchGet<T> CreateBatchGet<T>();
 
-        /// <summary>
-        /// Creates a strongly-typed BatchGet object, allowing
-        /// a batch-get operation against DynamoDB.
-        /// </summary>
-        /// <typeparam name="T">Type of objects to get</typeparam>
-        /// <param name="operationConfig">Config object which can be used to override that table used.</param>
-        /// <returns>Empty strongly-typed BatchGet object</returns>
-        BatchGet<T> CreateBatchGet<T>(DynamoDBOperationConfig operationConfig);
-
-        /// <summary>
-        /// Creates a MultiTableBatchGet object, composed of multiple
-        /// individual BatchGet objects.
-        /// </summary>
-        /// <param name="batches">Individual BatchGet objects</param>
-        /// <returns>Composite MultiTableBatchGet object</returns>
-        MultiTableBatchGet CreateMultiTableBatchGet(params BatchGet[] batches);
-
         #endregion
 
         #region Batch Write
@@ -286,23 +269,6 @@ namespace Amazon.DynamoDBv2.DataModel
         /// <typeparam name="T">Type of objects to write</typeparam>
         /// <returns>Empty strongly-typed BatchWrite object</returns>
         BatchWrite<T> CreateBatchWrite<T>();
-
-        /// <summary>
-        /// Creates a strongly-typed BatchWrite object, allowing
-        /// a batch-write operation against DynamoDB.
-        /// </summary>
-        /// <typeparam name="T">Type of objects to write</typeparam>
-        /// <param name="operationConfig">Config object which can be used to override that table used.</param>
-        /// <returns>Empty strongly-typed BatchWrite object</returns>
-        BatchWrite<T> CreateBatchWrite<T>(DynamoDBOperationConfig operationConfig);
-
-        /// <summary>
-        /// Creates a MultiTableBatchWrite object, composed of multiple
-        /// individual BatchWrite objects.
-        /// </summary>
-        /// <param name="batches">Individual BatchWrite objects</param>
-        /// <returns>Composite MultiTableBatchWrite object</returns>
-        MultiTableBatchWrite CreateMultiTableBatchWrite(params BatchWrite[] batches);
 
         #endregion
 
