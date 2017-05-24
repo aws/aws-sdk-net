@@ -30,6 +30,12 @@ namespace Amazon.DatabaseMigrationService.Model
     /// <summary>
     /// Container for the parameters to the StartReplicationTask operation.
     /// Starts the replication task.
+    /// 
+    ///  
+    /// <para>
+    /// For more information about AWS DMS tasks, see the AWS DMS user guide at <a href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.html">
+    /// Working with Migration Tasks </a> 
+    /// </para>
     /// </summary>
     public partial class StartReplicationTaskRequest : AmazonDatabaseMigrationServiceRequest
     {

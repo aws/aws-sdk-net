@@ -42,6 +42,11 @@ namespace Amazon.DatabaseMigrationService
     /// as well as heterogeneous migrations between different database platforms, such as
     /// Oracle to MySQL or SQL Server to PostgreSQL.
     /// </para>
+    ///  
+    /// <para>
+    /// For more information about AWS DMS, see the AWS DMS user guide at <a href="http://docs.aws.amazon.com/dms/latest/userguide/Welcome.html">
+    /// What Is AWS Database Migration Service? </a> 
+    /// </para>
     /// </summary>
     public partial class AmazonDatabaseMigrationServiceClient : AmazonServiceClient, IAmazonDatabaseMigrationService
     {
@@ -357,6 +362,95 @@ namespace Amazon.DatabaseMigrationService
         public  CreateEndpointResponse EndCreateEndpoint(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateEndpointResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  CreateEventSubscription
+
+        /// <summary>
+        /// Creates an AWS DMS event notification subscription. 
+        /// 
+        ///  
+        /// <para>
+        /// You can specify the type of source (<code>SourceType</code>) you want to be notified
+        /// of, provide a list of AWS DMS source IDs (<code>SourceIds</code>) that triggers the
+        /// events, and provide a list of event categories (<code>EventCategories</code>) for
+        /// events you want to be notified of. If you specify both the <code>SourceType</code>
+        /// and <code>SourceIds</code>, such as <code>SourceType = replication-instance</code>
+        /// and <code>SourceIdentifier = my-replinstance</code>, you will be notified of all the
+        /// replication instance events for the specified source. If you specify a <code>SourceType</code>
+        /// but don't specify a <code>SourceIdentifier</code>, you receive notice of the events
+        /// for that source type for all your AWS DMS sources. If you don't specify either <code>SourceType</code>
+        /// nor <code>SourceIdentifier</code>, you will be notified of events generated from all
+        /// AWS DMS sources belonging to your customer account.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about AWS DMS events, see <a href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Events.html">
+        /// Working with Events and Notifications </a> in the AWS Database MIgration Service User
+        /// Guide.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateEventSubscription service method.</param>
+        /// 
+        /// <returns>The response from the CreateEventSubscription service method, as returned by DatabaseMigrationService.</returns>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceAlreadyExistsException">
+        /// The resource you are attempting to create already exists.
+        /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceQuotaExceededException">
+        /// The quota for this resource quota has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.SNSInvalidTopicException">
+        /// The SNS topic is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.SNSNoAuthorizationException">
+        /// You are not authorized for the SNS subscription.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/CreateEventSubscription">REST API Reference for CreateEventSubscription Operation</seealso>
+        public CreateEventSubscriptionResponse CreateEventSubscription(CreateEventSubscriptionRequest request)
+        {
+            var marshaller = new CreateEventSubscriptionRequestMarshaller();
+            var unmarshaller = CreateEventSubscriptionResponseUnmarshaller.Instance;
+
+            return Invoke<CreateEventSubscriptionRequest,CreateEventSubscriptionResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateEventSubscription operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateEventSubscription operation on AmazonDatabaseMigrationServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateEventSubscription
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/CreateEventSubscription">REST API Reference for CreateEventSubscription Operation</seealso>
+        public IAsyncResult BeginCreateEventSubscription(CreateEventSubscriptionRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new CreateEventSubscriptionRequestMarshaller();
+            var unmarshaller = CreateEventSubscriptionResponseUnmarshaller.Instance;
+
+            return BeginInvoke<CreateEventSubscriptionRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateEventSubscription operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateEventSubscription.</param>
+        /// 
+        /// <returns>Returns a  CreateEventSubscriptionResult from DatabaseMigrationService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/CreateEventSubscription">REST API Reference for CreateEventSubscription Operation</seealso>
+        public  CreateEventSubscriptionResponse EndCreateEventSubscription(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateEventSubscriptionResponse>(asyncResult);
         }
 
         #endregion
@@ -705,6 +799,65 @@ namespace Amazon.DatabaseMigrationService
         public  DeleteEndpointResponse EndDeleteEndpoint(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteEndpointResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeleteEventSubscription
+
+        /// <summary>
+        /// Deletes an AWS DMS event subscription.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteEventSubscription service method.</param>
+        /// 
+        /// <returns>The response from the DeleteEventSubscription service method, as returned by DatabaseMigrationService.</returns>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.InvalidResourceStateException">
+        /// The resource is in a state that prevents it from being used for database migration.
+        /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DeleteEventSubscription">REST API Reference for DeleteEventSubscription Operation</seealso>
+        public DeleteEventSubscriptionResponse DeleteEventSubscription(DeleteEventSubscriptionRequest request)
+        {
+            var marshaller = new DeleteEventSubscriptionRequestMarshaller();
+            var unmarshaller = DeleteEventSubscriptionResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteEventSubscriptionRequest,DeleteEventSubscriptionResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteEventSubscription operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteEventSubscription operation on AmazonDatabaseMigrationServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteEventSubscription
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DeleteEventSubscription">REST API Reference for DeleteEventSubscription Operation</seealso>
+        public IAsyncResult BeginDeleteEventSubscription(DeleteEventSubscriptionRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new DeleteEventSubscriptionRequestMarshaller();
+            var unmarshaller = DeleteEventSubscriptionResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DeleteEventSubscriptionRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteEventSubscription operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteEventSubscription.</param>
+        /// 
+        /// <returns>Returns a  DeleteEventSubscriptionResult from DatabaseMigrationService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DeleteEventSubscription">REST API Reference for DeleteEventSubscription Operation</seealso>
+        public  DeleteEventSubscriptionResponse EndDeleteEventSubscription(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteEventSubscriptionResponse>(asyncResult);
         }
 
         #endregion
@@ -1172,6 +1325,182 @@ namespace Amazon.DatabaseMigrationService
         public  DescribeEndpointTypesResponse EndDescribeEndpointTypes(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeEndpointTypesResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DescribeEventCategories
+
+        /// <summary>
+        /// Lists categories for all event source types, or, if specified, for a specified source
+        /// type. You can see a list of the event categories and source types in <a href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Events.html">
+        /// Working with Events and Notifications </a> in the AWS Database Migration Service User
+        /// Guide.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeEventCategories service method.</param>
+        /// 
+        /// <returns>The response from the DescribeEventCategories service method, as returned by DatabaseMigrationService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeEventCategories">REST API Reference for DescribeEventCategories Operation</seealso>
+        public DescribeEventCategoriesResponse DescribeEventCategories(DescribeEventCategoriesRequest request)
+        {
+            var marshaller = new DescribeEventCategoriesRequestMarshaller();
+            var unmarshaller = DescribeEventCategoriesResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeEventCategoriesRequest,DescribeEventCategoriesResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeEventCategories operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeEventCategories operation on AmazonDatabaseMigrationServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeEventCategories
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeEventCategories">REST API Reference for DescribeEventCategories Operation</seealso>
+        public IAsyncResult BeginDescribeEventCategories(DescribeEventCategoriesRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new DescribeEventCategoriesRequestMarshaller();
+            var unmarshaller = DescribeEventCategoriesResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DescribeEventCategoriesRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeEventCategories operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeEventCategories.</param>
+        /// 
+        /// <returns>Returns a  DescribeEventCategoriesResult from DatabaseMigrationService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeEventCategories">REST API Reference for DescribeEventCategories Operation</seealso>
+        public  DescribeEventCategoriesResponse EndDescribeEventCategories(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeEventCategoriesResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DescribeEvents
+
+        /// <summary>
+        /// Lists events for a given source identifier and source type. You can also specify
+        /// a start and end time. For more information on AWS DMS events, see <a href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Events.html">
+        /// Working with Events and Notifications </a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeEvents service method.</param>
+        /// 
+        /// <returns>The response from the DescribeEvents service method, as returned by DatabaseMigrationService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeEvents">REST API Reference for DescribeEvents Operation</seealso>
+        public DescribeEventsResponse DescribeEvents(DescribeEventsRequest request)
+        {
+            var marshaller = new DescribeEventsRequestMarshaller();
+            var unmarshaller = DescribeEventsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeEventsRequest,DescribeEventsResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeEvents operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeEvents operation on AmazonDatabaseMigrationServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeEvents
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeEvents">REST API Reference for DescribeEvents Operation</seealso>
+        public IAsyncResult BeginDescribeEvents(DescribeEventsRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new DescribeEventsRequestMarshaller();
+            var unmarshaller = DescribeEventsResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DescribeEventsRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeEvents operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeEvents.</param>
+        /// 
+        /// <returns>Returns a  DescribeEventsResult from DatabaseMigrationService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeEvents">REST API Reference for DescribeEvents Operation</seealso>
+        public  DescribeEventsResponse EndDescribeEvents(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeEventsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DescribeEventSubscriptions
+
+        /// <summary>
+        /// Lists all the event subscriptions for a customer account. The description of a subscription
+        /// includes <code>SubscriptionName</code>, <code>SNSTopicARN</code>, <code>CustomerID</code>,
+        /// <code>SourceType</code>, <code>SourceID</code>, <code>CreationTime</code>, and <code>Status</code>.
+        /// 
+        /// 
+        ///  
+        /// <para>
+        /// If you specify <code>SubscriptionName</code>, this action lists the description for
+        /// that subscription.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeEventSubscriptions service method.</param>
+        /// 
+        /// <returns>The response from the DescribeEventSubscriptions service method, as returned by DatabaseMigrationService.</returns>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeEventSubscriptions">REST API Reference for DescribeEventSubscriptions Operation</seealso>
+        public DescribeEventSubscriptionsResponse DescribeEventSubscriptions(DescribeEventSubscriptionsRequest request)
+        {
+            var marshaller = new DescribeEventSubscriptionsRequestMarshaller();
+            var unmarshaller = DescribeEventSubscriptionsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeEventSubscriptionsRequest,DescribeEventSubscriptionsResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeEventSubscriptions operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeEventSubscriptions operation on AmazonDatabaseMigrationServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeEventSubscriptions
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeEventSubscriptions">REST API Reference for DescribeEventSubscriptions Operation</seealso>
+        public IAsyncResult BeginDescribeEventSubscriptions(DescribeEventSubscriptionsRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new DescribeEventSubscriptionsRequestMarshaller();
+            var unmarshaller = DescribeEventSubscriptionsResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DescribeEventSubscriptionsRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeEventSubscriptions operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeEventSubscriptions.</param>
+        /// 
+        /// <returns>Returns a  DescribeEventSubscriptionsResult from DatabaseMigrationService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeEventSubscriptions">REST API Reference for DescribeEventSubscriptions Operation</seealso>
+        public  DescribeEventSubscriptionsResponse EndDescribeEventSubscriptions(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeEventSubscriptionsResponse>(asyncResult);
         }
 
         #endregion
@@ -1699,6 +2028,9 @@ namespace Amazon.DatabaseMigrationService
         /// <param name="request">Container for the necessary parameters to execute the ModifyEndpoint service method.</param>
         /// 
         /// <returns>The response from the ModifyEndpoint service method, as returned by DatabaseMigrationService.</returns>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.AccessDeniedException">
+        /// AWS DMS was denied access to the endpoint.
+        /// </exception>
         /// <exception cref="Amazon.DatabaseMigrationService.Model.InvalidResourceStateException">
         /// The resource is in a state that prevents it from being used for database migration.
         /// </exception>
@@ -1752,6 +2084,71 @@ namespace Amazon.DatabaseMigrationService
         public  ModifyEndpointResponse EndModifyEndpoint(IAsyncResult asyncResult)
         {
             return EndInvoke<ModifyEndpointResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ModifyEventSubscription
+
+        /// <summary>
+        /// Modifies an existing AWS DMS event notification subscription.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyEventSubscription service method.</param>
+        /// 
+        /// <returns>The response from the ModifyEventSubscription service method, as returned by DatabaseMigrationService.</returns>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceQuotaExceededException">
+        /// The quota for this resource quota has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.SNSInvalidTopicException">
+        /// The SNS topic is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.SNSNoAuthorizationException">
+        /// You are not authorized for the SNS subscription.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/ModifyEventSubscription">REST API Reference for ModifyEventSubscription Operation</seealso>
+        public ModifyEventSubscriptionResponse ModifyEventSubscription(ModifyEventSubscriptionRequest request)
+        {
+            var marshaller = new ModifyEventSubscriptionRequestMarshaller();
+            var unmarshaller = ModifyEventSubscriptionResponseUnmarshaller.Instance;
+
+            return Invoke<ModifyEventSubscriptionRequest,ModifyEventSubscriptionResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ModifyEventSubscription operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ModifyEventSubscription operation on AmazonDatabaseMigrationServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndModifyEventSubscription
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/ModifyEventSubscription">REST API Reference for ModifyEventSubscription Operation</seealso>
+        public IAsyncResult BeginModifyEventSubscription(ModifyEventSubscriptionRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new ModifyEventSubscriptionRequestMarshaller();
+            var unmarshaller = ModifyEventSubscriptionResponseUnmarshaller.Instance;
+
+            return BeginInvoke<ModifyEventSubscriptionRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ModifyEventSubscription operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginModifyEventSubscription.</param>
+        /// 
+        /// <returns>Returns a  ModifyEventSubscriptionResult from DatabaseMigrationService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/ModifyEventSubscription">REST API Reference for ModifyEventSubscription Operation</seealso>
+        public  ModifyEventSubscriptionResponse EndModifyEventSubscription(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ModifyEventSubscriptionResponse>(asyncResult);
         }
 
         #endregion
@@ -1915,6 +2312,11 @@ namespace Amazon.DatabaseMigrationService
         /// You can't modify the task endpoints. The task must be stopped before you can modify
         /// it. 
         /// </para>
+        ///  
+        /// <para>
+        /// For more information about AWS DMS tasks, see the AWS DMS user guide at <a href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.html">
+        /// Working with Migration Tasks </a> 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ModifyReplicationTask service method.</param>
         /// 
@@ -2043,6 +2445,65 @@ namespace Amazon.DatabaseMigrationService
 
         #endregion
         
+        #region  ReloadTables
+
+        /// <summary>
+        /// Reloads the target database table with the source data.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ReloadTables service method.</param>
+        /// 
+        /// <returns>The response from the ReloadTables service method, as returned by DatabaseMigrationService.</returns>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.InvalidResourceStateException">
+        /// The resource is in a state that prevents it from being used for database migration.
+        /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/ReloadTables">REST API Reference for ReloadTables Operation</seealso>
+        public ReloadTablesResponse ReloadTables(ReloadTablesRequest request)
+        {
+            var marshaller = new ReloadTablesRequestMarshaller();
+            var unmarshaller = ReloadTablesResponseUnmarshaller.Instance;
+
+            return Invoke<ReloadTablesRequest,ReloadTablesResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ReloadTables operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ReloadTables operation on AmazonDatabaseMigrationServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndReloadTables
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/ReloadTables">REST API Reference for ReloadTables Operation</seealso>
+        public IAsyncResult BeginReloadTables(ReloadTablesRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new ReloadTablesRequestMarshaller();
+            var unmarshaller = ReloadTablesResponseUnmarshaller.Instance;
+
+            return BeginInvoke<ReloadTablesRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ReloadTables operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginReloadTables.</param>
+        /// 
+        /// <returns>Returns a  ReloadTablesResult from DatabaseMigrationService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/ReloadTables">REST API Reference for ReloadTables Operation</seealso>
+        public  ReloadTablesResponse EndReloadTables(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ReloadTablesResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  RemoveTagsFromResource
 
         /// <summary>
@@ -2103,6 +2564,12 @@ namespace Amazon.DatabaseMigrationService
 
         /// <summary>
         /// Starts the replication task.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about AWS DMS tasks, see the AWS DMS user guide at <a href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.html">
+        /// Working with Migration Tasks </a> 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartReplicationTask service method.</param>
         /// 

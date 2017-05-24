@@ -35,15 +35,17 @@ namespace Amazon.DatabaseMigrationService.Model
     {
         private string _certificateArn;
         private string _databaseName;
+        private DynamoDbSettings _dynamoDbSettings;
         private string _endpointArn;
         private string _endpointIdentifier;
         private ReplicationEndpointTypeValue _endpointType;
         private string _engineName;
         private string _extraConnectionAttributes;
+        private MongoDbSettings _mongoDbSettings;
         private string _password;
         private int? _port;
+        private S3Settings _s3Settings;
         private string _serverName;
-        private string _serviceAccessRoleArn;
         private DmsSslModeValue _sslMode;
         private string _username;
 
@@ -81,6 +83,28 @@ namespace Amazon.DatabaseMigrationService.Model
         internal bool IsSetDatabaseName()
         {
             return this._databaseName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DynamoDbSettings. 
+        /// <para>
+        /// Settings in JSON format for the target Amazon DynamoDB endpoint. For more information
+        /// about the available settings, see the <b>Using Object Mapping to Migrate Data to DynamoDB</b>
+        /// section at <a href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.DynamoDB.html">
+        /// Using an Amazon DynamoDB Database as a Target for AWS Database Migration Service</a>.
+        /// 
+        /// </para>
+        /// </summary>
+        public DynamoDbSettings DynamoDbSettings
+        {
+            get { return this._dynamoDbSettings; }
+            set { this._dynamoDbSettings = value; }
+        }
+
+        // Check to see if DynamoDbSettings property is set
+        internal bool IsSetDynamoDbSettings()
+        {
+            return this._dynamoDbSettings != null;
         }
 
         /// <summary>
@@ -142,8 +166,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property EngineName. 
         /// <para>
-        /// The type of engine for the endpoint. Valid values include MYSQL, ORACLE, POSTGRES,
-        /// MARIADB, AURORA, REDSHIFT, SYBASE, and SQLSERVER.
+        /// The type of engine for the endpoint. Valid values, depending on the EndPointType,
+        /// include MYSQL, ORACLE, POSTGRES, MARIADB, AURORA, REDSHIFT, S3, DYNAMODB, MONGODB,
+        /// SYBASE, and SQLSERVER.
         /// </para>
         /// </summary>
         public string EngineName
@@ -174,6 +199,27 @@ namespace Amazon.DatabaseMigrationService.Model
         internal bool IsSetExtraConnectionAttributes()
         {
             return this._extraConnectionAttributes != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MongoDbSettings. 
+        /// <para>
+        /// Settings in JSON format for the source MongoDB endpoint. For more information about
+        /// the available settings, see the <b>Configuration Properties When Using MongoDB as
+        /// a Source for AWS Database Migration Service</b> section at <a href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.MongoDB.html">
+        /// Using Amazon S3 as a Target for AWS Database Migration Service</a>. 
+        /// </para>
+        /// </summary>
+        public MongoDbSettings MongoDbSettings
+        {
+            get { return this._mongoDbSettings; }
+            set { this._mongoDbSettings = value; }
+        }
+
+        // Check to see if MongoDbSettings property is set
+        internal bool IsSetMongoDbSettings()
+        {
+            return this._mongoDbSettings != null;
         }
 
         /// <summary>
@@ -213,6 +259,26 @@ namespace Amazon.DatabaseMigrationService.Model
         }
 
         /// <summary>
+        /// Gets and sets the property S3Settings. 
+        /// <para>
+        /// Settings in JSON format for the target S3 endpoint. For more information about the
+        /// available settings, see the <b>Extra Connection Attributes</b> section at <a href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html">
+        /// Using Amazon S3 as a Target for AWS Database Migration Service</a>. 
+        /// </para>
+        /// </summary>
+        public S3Settings S3Settings
+        {
+            get { return this._s3Settings; }
+            set { this._s3Settings = value; }
+        }
+
+        // Check to see if S3Settings property is set
+        internal bool IsSetS3Settings()
+        {
+            return this._s3Settings != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property ServerName. 
         /// <para>
         /// The name of the server where the endpoint database resides.
@@ -228,21 +294,6 @@ namespace Amazon.DatabaseMigrationService.Model
         internal bool IsSetServerName()
         {
             return this._serverName != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property ServiceAccessRoleArn.
-        /// </summary>
-        public string ServiceAccessRoleArn
-        {
-            get { return this._serviceAccessRoleArn; }
-            set { this._serviceAccessRoleArn = value; }
-        }
-
-        // Check to see if ServiceAccessRoleArn property is set
-        internal bool IsSetServiceAccessRoleArn()
-        {
-            return this._serviceAccessRoleArn != null;
         }
 
         /// <summary>

@@ -1,0 +1,614 @@
+<?xml version="1.0" encoding="utf-8"?>
+<docs>
+    <doc>
+        <members>
+            <member name="M:Amazon.DatabaseMigrationService.IAmazonDatabaseMigrationService.AddTagsToResource(Amazon.DatabaseMigrationService.Model.AddTagsToResourceRequest)" />
+            <member name="M:Amazon.DatabaseMigrationService.AmazonDatabaseMigrationServiceClient.AddTagsToResource(Amazon.DatabaseMigrationService.Model.AddTagsToResourceRequest)" />
+            <member name="T:Amazon.DatabaseMigrationService.Model.AddTagsToResourceRequest" />
+            <member name="T:Amazon.DatabaseMigrationService.Model.AddTagsToResourceResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Adds metadata tags to an AWS DMS resource, including replication instance, endpoint, security group, and migration task. These tags can also be used with cost allocation reporting to track cost associated with AWS DMS resources, or used in a Condition statement in an IAM policy for AWS DMS.
+                </para>
+                <code
+                    title="Add tags to resource"
+                    source=".\AWSSDKDocSamples\DatabaseMigrationService\DatabaseMigrationService.GeneratedSamples.cs"
+                    region="add-tags-to-resource-1481744141435" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.DatabaseMigrationService.IAmazonDatabaseMigrationService.CreateEndpoint(Amazon.DatabaseMigrationService.Model.CreateEndpointRequest)" />
+            <member name="M:Amazon.DatabaseMigrationService.AmazonDatabaseMigrationServiceClient.CreateEndpoint(Amazon.DatabaseMigrationService.Model.CreateEndpointRequest)" />
+            <member name="T:Amazon.DatabaseMigrationService.Model.CreateEndpointRequest" />
+            <member name="T:Amazon.DatabaseMigrationService.Model.CreateEndpointResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Creates an endpoint using the provided settings.
+                </para>
+                <code
+                    title="Create endpoint"
+                    source=".\AWSSDKDocSamples\DatabaseMigrationService\DatabaseMigrationService.GeneratedSamples.cs"
+                    region="create-endpoint-1481746254348" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.DatabaseMigrationService.IAmazonDatabaseMigrationService.CreateReplicationInstance(Amazon.DatabaseMigrationService.Model.CreateReplicationInstanceRequest)" />
+            <member name="M:Amazon.DatabaseMigrationService.AmazonDatabaseMigrationServiceClient.CreateReplicationInstance(Amazon.DatabaseMigrationService.Model.CreateReplicationInstanceRequest)" />
+            <member name="T:Amazon.DatabaseMigrationService.Model.CreateReplicationInstanceRequest" />
+            <member name="T:Amazon.DatabaseMigrationService.Model.CreateReplicationInstanceResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Creates the replication instance using the specified parameters.
+                </para>
+                <code
+                    title="Create replication instance"
+                    source=".\AWSSDKDocSamples\DatabaseMigrationService\DatabaseMigrationService.GeneratedSamples.cs"
+                    region="create-replication-instance-1481746705295" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.DatabaseMigrationService.IAmazonDatabaseMigrationService.CreateReplicationSubnetGroup(Amazon.DatabaseMigrationService.Model.CreateReplicationSubnetGroupRequest)" />
+            <member name="M:Amazon.DatabaseMigrationService.AmazonDatabaseMigrationServiceClient.CreateReplicationSubnetGroup(Amazon.DatabaseMigrationService.Model.CreateReplicationSubnetGroupRequest)" />
+            <member name="T:Amazon.DatabaseMigrationService.Model.CreateReplicationSubnetGroupRequest" />
+            <member name="T:Amazon.DatabaseMigrationService.Model.CreateReplicationSubnetGroupResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Creates a replication subnet group given a list of the subnet IDs in a VPC.
+                </para>
+                <code
+                    title="Create replication subnet group"
+                    source=".\AWSSDKDocSamples\DatabaseMigrationService\DatabaseMigrationService.GeneratedSamples.cs"
+                    region="create-replication-subnet-group-1481747297930" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.DatabaseMigrationService.IAmazonDatabaseMigrationService.CreateReplicationTask(Amazon.DatabaseMigrationService.Model.CreateReplicationTaskRequest)" />
+            <member name="M:Amazon.DatabaseMigrationService.AmazonDatabaseMigrationServiceClient.CreateReplicationTask(Amazon.DatabaseMigrationService.Model.CreateReplicationTaskRequest)" />
+            <member name="T:Amazon.DatabaseMigrationService.Model.CreateReplicationTaskRequest" />
+            <member name="T:Amazon.DatabaseMigrationService.Model.CreateReplicationTaskResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Creates a replication task using the specified parameters.
+                </para>
+                <code
+                    title="Create replication task"
+                    source=".\AWSSDKDocSamples\DatabaseMigrationService\DatabaseMigrationService.GeneratedSamples.cs"
+                    region="create-replication-task-1481747646288" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.DatabaseMigrationService.IAmazonDatabaseMigrationService.DeleteCertificate(Amazon.DatabaseMigrationService.Model.DeleteCertificateRequest)" />
+            <member name="M:Amazon.DatabaseMigrationService.AmazonDatabaseMigrationServiceClient.DeleteCertificate(Amazon.DatabaseMigrationService.Model.DeleteCertificateRequest)" />
+            <member name="T:Amazon.DatabaseMigrationService.Model.DeleteCertificateRequest" />
+            <member name="T:Amazon.DatabaseMigrationService.Model.DeleteCertificateResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Deletes the specified certificate.
+                </para>
+                <code
+                    title="Delete Certificate"
+                    source=".\AWSSDKDocSamples\DatabaseMigrationService\DatabaseMigrationService.GeneratedSamples.cs"
+                    region="delete-certificate-1481751957981" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.DatabaseMigrationService.IAmazonDatabaseMigrationService.DeleteEndpoint(Amazon.DatabaseMigrationService.Model.DeleteEndpointRequest)" />
+            <member name="M:Amazon.DatabaseMigrationService.AmazonDatabaseMigrationServiceClient.DeleteEndpoint(Amazon.DatabaseMigrationService.Model.DeleteEndpointRequest)" />
+            <member name="T:Amazon.DatabaseMigrationService.Model.DeleteEndpointRequest" />
+            <member name="T:Amazon.DatabaseMigrationService.Model.DeleteEndpointResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Deletes the specified endpoint. All tasks associated with the endpoint must be deleted before you can delete the endpoint.
+
+                </para>
+                <code
+                    title="Delete Endpoint"
+                    source=".\AWSSDKDocSamples\DatabaseMigrationService\DatabaseMigrationService.GeneratedSamples.cs"
+                    region="delete-endpoint-1481752425530" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.DatabaseMigrationService.IAmazonDatabaseMigrationService.DeleteReplicationInstance(Amazon.DatabaseMigrationService.Model.DeleteReplicationInstanceRequest)" />
+            <member name="M:Amazon.DatabaseMigrationService.AmazonDatabaseMigrationServiceClient.DeleteReplicationInstance(Amazon.DatabaseMigrationService.Model.DeleteReplicationInstanceRequest)" />
+            <member name="T:Amazon.DatabaseMigrationService.Model.DeleteReplicationInstanceRequest" />
+            <member name="T:Amazon.DatabaseMigrationService.Model.DeleteReplicationInstanceResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Deletes the specified replication instance. You must delete any migration tasks that are associated with the replication instance before you can delete it.
+
+
+                </para>
+                <code
+                    title="Delete Replication Instance"
+                    source=".\AWSSDKDocSamples\DatabaseMigrationService\DatabaseMigrationService.GeneratedSamples.cs"
+                    region="delete-replication-instance-1481752552839" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.DatabaseMigrationService.IAmazonDatabaseMigrationService.DeleteReplicationSubnetGroup(Amazon.DatabaseMigrationService.Model.DeleteReplicationSubnetGroupRequest)" />
+            <member name="M:Amazon.DatabaseMigrationService.AmazonDatabaseMigrationServiceClient.DeleteReplicationSubnetGroup(Amazon.DatabaseMigrationService.Model.DeleteReplicationSubnetGroupRequest)" />
+            <member name="T:Amazon.DatabaseMigrationService.Model.DeleteReplicationSubnetGroupRequest" />
+            <member name="T:Amazon.DatabaseMigrationService.Model.DeleteReplicationSubnetGroupResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Deletes a replication subnet group.
+                </para>
+                <code
+                    title="Delete Replication Subnet Group"
+                    source=".\AWSSDKDocSamples\DatabaseMigrationService\DatabaseMigrationService.GeneratedSamples.cs"
+                    region="delete-replication-subnet-group-1481752728597" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.DatabaseMigrationService.IAmazonDatabaseMigrationService.DeleteReplicationTask(Amazon.DatabaseMigrationService.Model.DeleteReplicationTaskRequest)" />
+            <member name="M:Amazon.DatabaseMigrationService.AmazonDatabaseMigrationServiceClient.DeleteReplicationTask(Amazon.DatabaseMigrationService.Model.DeleteReplicationTaskRequest)" />
+            <member name="T:Amazon.DatabaseMigrationService.Model.DeleteReplicationTaskRequest" />
+            <member name="T:Amazon.DatabaseMigrationService.Model.DeleteReplicationTaskResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Deletes the specified replication task.
+                </para>
+                <code
+                    title="Delete Replication Task"
+                    source=".\AWSSDKDocSamples\DatabaseMigrationService\DatabaseMigrationService.GeneratedSamples.cs"
+                    region="delete-replication-task-1481752903506" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.DatabaseMigrationService.IAmazonDatabaseMigrationService.DescribeAccountAttributes(Amazon.DatabaseMigrationService.Model.DescribeAccountAttributesRequest)" />
+            <member name="M:Amazon.DatabaseMigrationService.AmazonDatabaseMigrationServiceClient.DescribeAccountAttributes(Amazon.DatabaseMigrationService.Model.DescribeAccountAttributesRequest)" />
+            <member name="T:Amazon.DatabaseMigrationService.Model.DescribeAccountAttributesRequest" />
+            <member name="T:Amazon.DatabaseMigrationService.Model.DescribeAccountAttributesResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Lists all of the AWS DMS attributes for a customer account. The attributes include AWS DMS quotas for the account, such as the number of replication instances allowed. The description for a quota includes the quota name, current usage toward that quota, and the quota's maximum value. This operation does not take any parameters.
+                </para>
+                <code
+                    title="Describe acount attributes"
+                    source=".\AWSSDKDocSamples\DatabaseMigrationService\DatabaseMigrationService.GeneratedSamples.cs"
+                    region="describe-acount-attributes-1481753085663" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.DatabaseMigrationService.IAmazonDatabaseMigrationService.DescribeCertificates(Amazon.DatabaseMigrationService.Model.DescribeCertificatesRequest)" />
+            <member name="M:Amazon.DatabaseMigrationService.AmazonDatabaseMigrationServiceClient.DescribeCertificates(Amazon.DatabaseMigrationService.Model.DescribeCertificatesRequest)" />
+            <member name="T:Amazon.DatabaseMigrationService.Model.DescribeCertificatesRequest" />
+            <member name="T:Amazon.DatabaseMigrationService.Model.DescribeCertificatesResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Provides a description of the certificate.
+                </para>
+                <code
+                    title="Describe certificates"
+                    source=".\AWSSDKDocSamples\DatabaseMigrationService\DatabaseMigrationService.GeneratedSamples.cs"
+                    region="describe-certificates-1481753186244" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.DatabaseMigrationService.IAmazonDatabaseMigrationService.DescribeConnections(Amazon.DatabaseMigrationService.Model.DescribeConnectionsRequest)" />
+            <member name="M:Amazon.DatabaseMigrationService.AmazonDatabaseMigrationServiceClient.DescribeConnections(Amazon.DatabaseMigrationService.Model.DescribeConnectionsRequest)" />
+            <member name="T:Amazon.DatabaseMigrationService.Model.DescribeConnectionsRequest" />
+            <member name="T:Amazon.DatabaseMigrationService.Model.DescribeConnectionsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Describes the status of the connections that have been made between the replication instance and an endpoint. Connections are created when you test an endpoint.
+                </para>
+                <code
+                    title="Describe connections"
+                    source=".\AWSSDKDocSamples\DatabaseMigrationService\DatabaseMigrationService.GeneratedSamples.cs"
+                    region="describe-connections-1481754477953" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.DatabaseMigrationService.IAmazonDatabaseMigrationService.DescribeEndpoints(Amazon.DatabaseMigrationService.Model.DescribeEndpointsRequest)" />
+            <member name="M:Amazon.DatabaseMigrationService.AmazonDatabaseMigrationServiceClient.DescribeEndpoints(Amazon.DatabaseMigrationService.Model.DescribeEndpointsRequest)" />
+            <member name="T:Amazon.DatabaseMigrationService.Model.DescribeEndpointsRequest" />
+            <member name="T:Amazon.DatabaseMigrationService.Model.DescribeEndpointsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Returns information about the endpoints for your account in the current region.
+                </para>
+                <code
+                    title="Describe endpoints"
+                    source=".\AWSSDKDocSamples\DatabaseMigrationService\DatabaseMigrationService.GeneratedSamples.cs"
+                    region="describe-endpoints-1481754926060" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.DatabaseMigrationService.IAmazonDatabaseMigrationService.DescribeEndpointTypes(Amazon.DatabaseMigrationService.Model.DescribeEndpointTypesRequest)" />
+            <member name="M:Amazon.DatabaseMigrationService.AmazonDatabaseMigrationServiceClient.DescribeEndpointTypes(Amazon.DatabaseMigrationService.Model.DescribeEndpointTypesRequest)" />
+            <member name="T:Amazon.DatabaseMigrationService.Model.DescribeEndpointTypesRequest" />
+            <member name="T:Amazon.DatabaseMigrationService.Model.DescribeEndpointTypesResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Returns information about the type of endpoints available.
+                </para>
+                <code
+                    title="Describe endpoint types"
+                    source=".\AWSSDKDocSamples\DatabaseMigrationService\DatabaseMigrationService.GeneratedSamples.cs"
+                    region="describe-endpoint-types-1481754742591" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.DatabaseMigrationService.IAmazonDatabaseMigrationService.DescribeOrderableReplicationInstances(Amazon.DatabaseMigrationService.Model.DescribeOrderableReplicationInstancesRequest)" />
+            <member name="M:Amazon.DatabaseMigrationService.AmazonDatabaseMigrationServiceClient.DescribeOrderableReplicationInstances(Amazon.DatabaseMigrationService.Model.DescribeOrderableReplicationInstancesRequest)" />
+            <member name="T:Amazon.DatabaseMigrationService.Model.DescribeOrderableReplicationInstancesRequest" />
+            <member name="T:Amazon.DatabaseMigrationService.Model.DescribeOrderableReplicationInstancesResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Returns information about the replication instance types that can be created in the specified region.
+                </para>
+                <code
+                    title="Describe orderable replication instances"
+                    source=".\AWSSDKDocSamples\DatabaseMigrationService\DatabaseMigrationService.GeneratedSamples.cs"
+                    region="describe-orderable-replication-instances-1481755123669" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.DatabaseMigrationService.IAmazonDatabaseMigrationService.DescribeRefreshSchemasStatus(Amazon.DatabaseMigrationService.Model.DescribeRefreshSchemasStatusRequest)" />
+            <member name="M:Amazon.DatabaseMigrationService.AmazonDatabaseMigrationServiceClient.DescribeRefreshSchemasStatus(Amazon.DatabaseMigrationService.Model.DescribeRefreshSchemasStatusRequest)" />
+            <member name="T:Amazon.DatabaseMigrationService.Model.DescribeRefreshSchemasStatusRequest" />
+            <member name="T:Amazon.DatabaseMigrationService.Model.DescribeRefreshSchemasStatusResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Returns the status of the refresh-schemas operation.
+                </para>
+                <code
+                    title="Describe refresh schema status"
+                    source=".\AWSSDKDocSamples\DatabaseMigrationService\DatabaseMigrationService.GeneratedSamples.cs"
+                    region="describe-refresh-schema-status-1481755303497" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.DatabaseMigrationService.IAmazonDatabaseMigrationService.DescribeReplicationInstances(Amazon.DatabaseMigrationService.Model.DescribeReplicationInstancesRequest)" />
+            <member name="M:Amazon.DatabaseMigrationService.AmazonDatabaseMigrationServiceClient.DescribeReplicationInstances(Amazon.DatabaseMigrationService.Model.DescribeReplicationInstancesRequest)" />
+            <member name="T:Amazon.DatabaseMigrationService.Model.DescribeReplicationInstancesRequest" />
+            <member name="T:Amazon.DatabaseMigrationService.Model.DescribeReplicationInstancesResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Returns the status of the refresh-schemas operation.
+                </para>
+                <code
+                    title="Describe replication instances"
+                    source=".\AWSSDKDocSamples\DatabaseMigrationService\DatabaseMigrationService.GeneratedSamples.cs"
+                    region="describe-replication-instances-1481755443952" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.DatabaseMigrationService.IAmazonDatabaseMigrationService.DescribeReplicationSubnetGroups(Amazon.DatabaseMigrationService.Model.DescribeReplicationSubnetGroupsRequest)" />
+            <member name="M:Amazon.DatabaseMigrationService.AmazonDatabaseMigrationServiceClient.DescribeReplicationSubnetGroups(Amazon.DatabaseMigrationService.Model.DescribeReplicationSubnetGroupsRequest)" />
+            <member name="T:Amazon.DatabaseMigrationService.Model.DescribeReplicationSubnetGroupsRequest" />
+            <member name="T:Amazon.DatabaseMigrationService.Model.DescribeReplicationSubnetGroupsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Returns information about the replication subnet groups.
+                </para>
+                <code
+                    title="Describe replication subnet groups"
+                    source=".\AWSSDKDocSamples\DatabaseMigrationService\DatabaseMigrationService.GeneratedSamples.cs"
+                    region="describe-replication-subnet-groups-1481755621284" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.DatabaseMigrationService.IAmazonDatabaseMigrationService.DescribeReplicationTasks(Amazon.DatabaseMigrationService.Model.DescribeReplicationTasksRequest)" />
+            <member name="M:Amazon.DatabaseMigrationService.AmazonDatabaseMigrationServiceClient.DescribeReplicationTasks(Amazon.DatabaseMigrationService.Model.DescribeReplicationTasksRequest)" />
+            <member name="T:Amazon.DatabaseMigrationService.Model.DescribeReplicationTasksRequest" />
+            <member name="T:Amazon.DatabaseMigrationService.Model.DescribeReplicationTasksResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Returns information about replication tasks for your account in the current region.
+                </para>
+                <code
+                    title="Describe replication tasks"
+                    source=".\AWSSDKDocSamples\DatabaseMigrationService\DatabaseMigrationService.GeneratedSamples.cs"
+                    region="describe-replication-tasks-1481755777563" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.DatabaseMigrationService.IAmazonDatabaseMigrationService.DescribeSchemas(Amazon.DatabaseMigrationService.Model.DescribeSchemasRequest)" />
+            <member name="M:Amazon.DatabaseMigrationService.AmazonDatabaseMigrationServiceClient.DescribeSchemas(Amazon.DatabaseMigrationService.Model.DescribeSchemasRequest)" />
+            <member name="T:Amazon.DatabaseMigrationService.Model.DescribeSchemasRequest" />
+            <member name="T:Amazon.DatabaseMigrationService.Model.DescribeSchemasResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Returns information about the schema for the specified endpoint.
+                </para>
+                <code
+                    title="Describe schemas"
+                    source=".\AWSSDKDocSamples\DatabaseMigrationService\DatabaseMigrationService.GeneratedSamples.cs"
+                    region="describe-schemas-1481755933924" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.DatabaseMigrationService.IAmazonDatabaseMigrationService.DescribeTableStatistics(Amazon.DatabaseMigrationService.Model.DescribeTableStatisticsRequest)" />
+            <member name="M:Amazon.DatabaseMigrationService.AmazonDatabaseMigrationServiceClient.DescribeTableStatistics(Amazon.DatabaseMigrationService.Model.DescribeTableStatisticsRequest)" />
+            <member name="T:Amazon.DatabaseMigrationService.Model.DescribeTableStatisticsRequest" />
+            <member name="T:Amazon.DatabaseMigrationService.Model.DescribeTableStatisticsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Returns table statistics on the database migration task, including table name, rows inserted, rows updated, and rows deleted.
+                </para>
+                <code
+                    title="Describe table statistics"
+                    source=".\AWSSDKDocSamples\DatabaseMigrationService\DatabaseMigrationService.GeneratedSamples.cs"
+                    region="describe-table-statistics-1481756071890" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.DatabaseMigrationService.IAmazonDatabaseMigrationService.ImportCertificate(Amazon.DatabaseMigrationService.Model.ImportCertificateRequest)" />
+            <member name="M:Amazon.DatabaseMigrationService.AmazonDatabaseMigrationServiceClient.ImportCertificate(Amazon.DatabaseMigrationService.Model.ImportCertificateRequest)" />
+            <member name="T:Amazon.DatabaseMigrationService.Model.ImportCertificateRequest" />
+            <member name="T:Amazon.DatabaseMigrationService.Model.ImportCertificateResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Uploads the specified certificate.
+                </para>
+                <code
+                    title="Import certificate"
+                    source=".\AWSSDKDocSamples\DatabaseMigrationService\DatabaseMigrationService.GeneratedSamples.cs"
+                    region="import-certificate-1481756197206" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.DatabaseMigrationService.IAmazonDatabaseMigrationService.ListTagsForResource(Amazon.DatabaseMigrationService.Model.ListTagsForResourceRequest)" />
+            <member name="M:Amazon.DatabaseMigrationService.AmazonDatabaseMigrationServiceClient.ListTagsForResource(Amazon.DatabaseMigrationService.Model.ListTagsForResourceRequest)" />
+            <member name="T:Amazon.DatabaseMigrationService.Model.ListTagsForResourceRequest" />
+            <member name="T:Amazon.DatabaseMigrationService.Model.ListTagsForResourceResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Lists all tags for an AWS DMS resource.
+                </para>
+                <code
+                    title="List tags for resource"
+                    source=".\AWSSDKDocSamples\DatabaseMigrationService\DatabaseMigrationService.GeneratedSamples.cs"
+                    region="list-tags-for-resource-1481761095501" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.DatabaseMigrationService.IAmazonDatabaseMigrationService.ModifyEndpoint(Amazon.DatabaseMigrationService.Model.ModifyEndpointRequest)" />
+            <member name="M:Amazon.DatabaseMigrationService.AmazonDatabaseMigrationServiceClient.ModifyEndpoint(Amazon.DatabaseMigrationService.Model.ModifyEndpointRequest)" />
+            <member name="T:Amazon.DatabaseMigrationService.Model.ModifyEndpointRequest" />
+            <member name="T:Amazon.DatabaseMigrationService.Model.ModifyEndpointResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Modifies the specified endpoint.
+                </para>
+                <code
+                    title="Modify endpoint"
+                    source=".\AWSSDKDocSamples\DatabaseMigrationService\DatabaseMigrationService.GeneratedSamples.cs"
+                    region="modify-endpoint-1481761649937" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.DatabaseMigrationService.IAmazonDatabaseMigrationService.ModifyReplicationInstance(Amazon.DatabaseMigrationService.Model.ModifyReplicationInstanceRequest)" />
+            <member name="M:Amazon.DatabaseMigrationService.AmazonDatabaseMigrationServiceClient.ModifyReplicationInstance(Amazon.DatabaseMigrationService.Model.ModifyReplicationInstanceRequest)" />
+            <member name="T:Amazon.DatabaseMigrationService.Model.ModifyReplicationInstanceRequest" />
+            <member name="T:Amazon.DatabaseMigrationService.Model.ModifyReplicationInstanceResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Modifies the replication instance to apply new settings. You can change one or more parameters by specifying these parameters and the new values in the request. Some settings are applied during the maintenance window.
+                </para>
+                <code
+                    title="Modify replication instance"
+                    source=".\AWSSDKDocSamples\DatabaseMigrationService\DatabaseMigrationService.GeneratedSamples.cs"
+                    region="modify-replication-instance-1481761784746" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.DatabaseMigrationService.IAmazonDatabaseMigrationService.ModifyReplicationSubnetGroup(Amazon.DatabaseMigrationService.Model.ModifyReplicationSubnetGroupRequest)" />
+            <member name="M:Amazon.DatabaseMigrationService.AmazonDatabaseMigrationServiceClient.ModifyReplicationSubnetGroup(Amazon.DatabaseMigrationService.Model.ModifyReplicationSubnetGroupRequest)" />
+            <member name="T:Amazon.DatabaseMigrationService.Model.ModifyReplicationSubnetGroupRequest" />
+            <member name="T:Amazon.DatabaseMigrationService.Model.ModifyReplicationSubnetGroupResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Modifies the settings for the specified replication subnet group.
+                </para>
+                <code
+                    title="Modify replication subnet group"
+                    source=".\AWSSDKDocSamples\DatabaseMigrationService\DatabaseMigrationService.GeneratedSamples.cs"
+                    region="modify-replication-subnet-group-1481762275392" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.DatabaseMigrationService.IAmazonDatabaseMigrationService.RefreshSchemas(Amazon.DatabaseMigrationService.Model.RefreshSchemasRequest)" />
+            <member name="M:Amazon.DatabaseMigrationService.AmazonDatabaseMigrationServiceClient.RefreshSchemas(Amazon.DatabaseMigrationService.Model.RefreshSchemasRequest)" />
+            <member name="T:Amazon.DatabaseMigrationService.Model.RefreshSchemasRequest" />
+            <member name="T:Amazon.DatabaseMigrationService.Model.RefreshSchemasResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Populates the schema for the specified endpoint. This is an asynchronous operation and can take several minutes. You can check the status of this operation by calling the describe-refresh-schemas-status operation.
+                </para>
+                <code
+                    title="Refresh schema"
+                    source=".\AWSSDKDocSamples\DatabaseMigrationService\DatabaseMigrationService.GeneratedSamples.cs"
+                    region="refresh-schema-1481762399111" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.DatabaseMigrationService.IAmazonDatabaseMigrationService.RemoveTagsFromResource(Amazon.DatabaseMigrationService.Model.RemoveTagsFromResourceRequest)" />
+            <member name="M:Amazon.DatabaseMigrationService.AmazonDatabaseMigrationServiceClient.RemoveTagsFromResource(Amazon.DatabaseMigrationService.Model.RemoveTagsFromResourceRequest)" />
+            <member name="T:Amazon.DatabaseMigrationService.Model.RemoveTagsFromResourceRequest" />
+            <member name="T:Amazon.DatabaseMigrationService.Model.RemoveTagsFromResourceResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Removes metadata tags from an AWS DMS resource.
+                </para>
+                <code
+                    title="Remove tags from resource"
+                    source=".\AWSSDKDocSamples\DatabaseMigrationService\DatabaseMigrationService.GeneratedSamples.cs"
+                    region="remove-tags-from-resource-1481762571330" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.DatabaseMigrationService.IAmazonDatabaseMigrationService.StartReplicationTask(Amazon.DatabaseMigrationService.Model.StartReplicationTaskRequest)" />
+            <member name="M:Amazon.DatabaseMigrationService.AmazonDatabaseMigrationServiceClient.StartReplicationTask(Amazon.DatabaseMigrationService.Model.StartReplicationTaskRequest)" />
+            <member name="T:Amazon.DatabaseMigrationService.Model.StartReplicationTaskRequest" />
+            <member name="T:Amazon.DatabaseMigrationService.Model.StartReplicationTaskResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Starts the replication task.
+                </para>
+                <code
+                    title="Start replication task"
+                    source=".\AWSSDKDocSamples\DatabaseMigrationService\DatabaseMigrationService.GeneratedSamples.cs"
+                    region="start-replication-task-1481762706778" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.DatabaseMigrationService.IAmazonDatabaseMigrationService.StopReplicationTask(Amazon.DatabaseMigrationService.Model.StopReplicationTaskRequest)" />
+            <member name="M:Amazon.DatabaseMigrationService.AmazonDatabaseMigrationServiceClient.StopReplicationTask(Amazon.DatabaseMigrationService.Model.StopReplicationTaskRequest)" />
+            <member name="T:Amazon.DatabaseMigrationService.Model.StopReplicationTaskRequest" />
+            <member name="T:Amazon.DatabaseMigrationService.Model.StopReplicationTaskResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Stops the replication task.
+                </para>
+                <code
+                    title="Stop replication task"
+                    source=".\AWSSDKDocSamples\DatabaseMigrationService\DatabaseMigrationService.GeneratedSamples.cs"
+                    region="stop-replication-task-1481762924947" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.DatabaseMigrationService.IAmazonDatabaseMigrationService.TestConnection(Amazon.DatabaseMigrationService.Model.TestConnectionRequest)" />
+            <member name="M:Amazon.DatabaseMigrationService.AmazonDatabaseMigrationServiceClient.TestConnection(Amazon.DatabaseMigrationService.Model.TestConnectionRequest)" />
+            <member name="T:Amazon.DatabaseMigrationService.Model.TestConnectionRequest" />
+            <member name="T:Amazon.DatabaseMigrationService.Model.TestConnectionResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Tests the connection between the replication instance and the endpoint.
+                </para>
+                <code
+                    title="Test conection"
+                    source=".\AWSSDKDocSamples\DatabaseMigrationService\DatabaseMigrationService.GeneratedSamples.cs"
+                    region="test-conection-1481763017636" />
+            </example>
+        </value>
+    </doc>
+</docs>

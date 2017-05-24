@@ -148,7 +148,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Must contain from 1 to 63 alphanumeric characters or hyphens.
+        /// Must contain from 1 to 255 alphanumeric characters or hyphens.
         /// </para>
         ///  </li> <li> 
         /// <para>

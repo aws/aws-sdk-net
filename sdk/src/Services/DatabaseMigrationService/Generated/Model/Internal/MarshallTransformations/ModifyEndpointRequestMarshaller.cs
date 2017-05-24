@@ -79,6 +79,17 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.DatabaseName);
                 }
 
+                if(publicRequest.IsSetDynamoDbSettings())
+                {
+                    context.Writer.WritePropertyName("DynamoDbSettings");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = DynamoDbSettingsMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.DynamoDbSettings, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetEndpointArn())
                 {
                     context.Writer.WritePropertyName("EndpointArn");
@@ -109,6 +120,17 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.ExtraConnectionAttributes);
                 }
 
+                if(publicRequest.IsSetMongoDbSettings())
+                {
+                    context.Writer.WritePropertyName("MongoDbSettings");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = MongoDbSettingsMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.MongoDbSettings, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetPassword())
                 {
                     context.Writer.WritePropertyName("Password");
@@ -121,16 +143,21 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Port);
                 }
 
+                if(publicRequest.IsSetS3Settings())
+                {
+                    context.Writer.WritePropertyName("S3Settings");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = S3SettingsMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.S3Settings, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetServerName())
                 {
                     context.Writer.WritePropertyName("ServerName");
                     context.Writer.Write(publicRequest.ServerName);
-                }
-
-                if(publicRequest.IsSetServiceAccessRoleArn())
-                {
-                    context.Writer.WritePropertyName("ServiceAccessRoleArn");
-                    context.Writer.Write(publicRequest.ServiceAccessRoleArn);
                 }
 
                 if(publicRequest.IsSetSslMode())

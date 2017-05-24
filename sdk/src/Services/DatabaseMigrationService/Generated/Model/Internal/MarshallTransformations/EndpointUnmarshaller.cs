@@ -76,6 +76,12 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
                     unmarshalledObject.DatabaseName = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("DynamoDbSettings", targetDepth))
+                {
+                    var unmarshaller = DynamoDbSettingsUnmarshaller.Instance;
+                    unmarshalledObject.DynamoDbSettings = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("EndpointArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -100,6 +106,12 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
                     unmarshalledObject.EngineName = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ExternalId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ExternalId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ExtraConnectionAttributes", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -112,22 +124,28 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
                     unmarshalledObject.KmsKeyId = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("MongoDbSettings", targetDepth))
+                {
+                    var unmarshaller = MongoDbSettingsUnmarshaller.Instance;
+                    unmarshalledObject.MongoDbSettings = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Port", targetDepth))
                 {
                     var unmarshaller = IntUnmarshaller.Instance;
                     unmarshalledObject.Port = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("S3Settings", targetDepth))
+                {
+                    var unmarshaller = S3SettingsUnmarshaller.Instance;
+                    unmarshalledObject.S3Settings = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ServerName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ServerName = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("ServiceAccessRoleArn", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ServiceAccessRoleArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("SslMode", targetDepth))

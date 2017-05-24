@@ -76,12 +76,6 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
                     unmarshalledObject.EngineName = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("ServiceType", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ServiceType = unmarshaller.Unmarshall(context);
-                    continue;
-                }
                 if (context.TestExpression("SupportsCDC", targetDepth))
                 {
                     var unmarshaller = BoolUnmarshaller.Instance;

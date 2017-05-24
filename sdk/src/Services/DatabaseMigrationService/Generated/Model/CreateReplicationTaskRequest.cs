@@ -108,7 +108,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Must contain from 1 to 63 alphanumeric characters or hyphens.
+        /// Must contain from 1 to 255 alphanumeric characters or hyphens.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -173,8 +173,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property TableMappings. 
         /// <para>
-        /// The path of the JSON file that contains the table mappings. Preceed the path with
-        /// "file://".
+        /// When using the AWS CLI or boto3, provide the path of the JSON file that contains the
+        /// table mappings. Precede the path with "file://". When working with the DMS API, provide
+        /// the JSON as the parameter value.
         /// </para>
         ///  
         /// <para>

@@ -34,7 +34,6 @@ namespace Amazon.DatabaseMigrationService.Model
     {
         private ReplicationEndpointTypeValue _endpointType;
         private string _engineName;
-        private ReplicationEndpointServiceTypeValue _serviceType;
         private bool? _supportsCDC;
 
         /// <summary>
@@ -58,8 +57,8 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property EngineName. 
         /// <para>
-        /// The database engine name. Valid values include MYSQL, ORACLE, POSTGRES, MARIADB, AURORA,
-        /// REDSHIFT, SYBASE, and SQLSERVER.
+        /// The database engine name. Valid values, depending on the EndPointType, include MYSQL,
+        /// ORACLE, POSTGRES, MARIADB, AURORA, REDSHIFT, S3, SYBASE, DYNAMODB, MONGODB, and SQLSERVER.
         /// </para>
         /// </summary>
         public string EngineName
@@ -72,24 +71,6 @@ namespace Amazon.DatabaseMigrationService.Model
         internal bool IsSetEngineName()
         {
             return this._engineName != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property ServiceType. 
-        /// <para>
-        /// The type of the service.
-        /// </para>
-        /// </summary>
-        public ReplicationEndpointServiceTypeValue ServiceType
-        {
-            get { return this._serviceType; }
-            set { this._serviceType = value; }
-        }
-
-        // Check to see if ServiceType property is set
-        internal bool IsSetServiceType()
-        {
-            return this._serviceType != null;
         }
 
         /// <summary>

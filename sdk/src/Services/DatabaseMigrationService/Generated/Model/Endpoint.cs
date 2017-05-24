@@ -34,15 +34,18 @@ namespace Amazon.DatabaseMigrationService.Model
     {
         private string _certificateArn;
         private string _databaseName;
+        private DynamoDbSettings _dynamoDbSettings;
         private string _endpointArn;
         private string _endpointIdentifier;
         private ReplicationEndpointTypeValue _endpointType;
         private string _engineName;
+        private string _externalId;
         private string _extraConnectionAttributes;
         private string _kmsKeyId;
+        private MongoDbSettings _mongoDbSettings;
         private int? _port;
+        private S3Settings _s3Settings;
         private string _serverName;
-        private string _serviceAccessRoleArn;
         private DmsSslModeValue _sslMode;
         private string _status;
         private string _username;
@@ -81,6 +84,25 @@ namespace Amazon.DatabaseMigrationService.Model
         internal bool IsSetDatabaseName()
         {
             return this._databaseName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DynamoDbSettings. 
+        /// <para>
+        /// The settings for the target DynamoDB database. For more information, see the <code>DynamoDBSettings</code>
+        /// structure.
+        /// </para>
+        /// </summary>
+        public DynamoDbSettings DynamoDbSettings
+        {
+            get { return this._dynamoDbSettings; }
+            set { this._dynamoDbSettings = value; }
+        }
+
+        // Check to see if DynamoDbSettings property is set
+        internal bool IsSetDynamoDbSettings()
+        {
+            return this._dynamoDbSettings != null;
         }
 
         /// <summary>
@@ -142,8 +164,8 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property EngineName. 
         /// <para>
-        /// The database engine name. Valid values include MYSQL, ORACLE, POSTGRES, MARIADB, AURORA,
-        /// REDSHIFT, SYBASE, and SQLSERVER.
+        /// The database engine name. Valid values, depending on the EndPointType, include MYSQL,
+        /// ORACLE, POSTGRES, MARIADB, AURORA, REDSHIFT, S3, SYBASE, DYNAMODB, MONGODB, and SQLSERVER.
         /// </para>
         /// </summary>
         public string EngineName
@@ -156,6 +178,26 @@ namespace Amazon.DatabaseMigrationService.Model
         internal bool IsSetEngineName()
         {
             return this._engineName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ExternalId. 
+        /// <para>
+        ///  Value returned by a call to CreateEndpoint that can be used for cross-account validation.
+        /// Use it on a subsequent call to CreateEndpoint to create the endpoint with a cross-account.
+        /// 
+        /// </para>
+        /// </summary>
+        public string ExternalId
+        {
+            get { return this._externalId; }
+            set { this._externalId = value; }
+        }
+
+        // Check to see if ExternalId property is set
+        internal bool IsSetExternalId()
+        {
+            return this._externalId != null;
         }
 
         /// <summary>
@@ -198,6 +240,25 @@ namespace Amazon.DatabaseMigrationService.Model
         }
 
         /// <summary>
+        /// Gets and sets the property MongoDbSettings. 
+        /// <para>
+        /// The settings for the MongoDB source endpoint. For more information, see the <code>MongoDbSettings</code>
+        /// structure.
+        /// </para>
+        /// </summary>
+        public MongoDbSettings MongoDbSettings
+        {
+            get { return this._mongoDbSettings; }
+            set { this._mongoDbSettings = value; }
+        }
+
+        // Check to see if MongoDbSettings property is set
+        internal bool IsSetMongoDbSettings()
+        {
+            return this._mongoDbSettings != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Port. 
         /// <para>
         /// The port value used to access the endpoint.
@@ -216,6 +277,25 @@ namespace Amazon.DatabaseMigrationService.Model
         }
 
         /// <summary>
+        /// Gets and sets the property S3Settings. 
+        /// <para>
+        /// The settings for the S3 target endpoint. For more information, see the <code>S3Settings</code>
+        /// structure.
+        /// </para>
+        /// </summary>
+        public S3Settings S3Settings
+        {
+            get { return this._s3Settings; }
+            set { this._s3Settings = value; }
+        }
+
+        // Check to see if S3Settings property is set
+        internal bool IsSetS3Settings()
+        {
+            return this._s3Settings != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property ServerName. 
         /// <para>
         /// The name of the server at the endpoint.
@@ -231,24 +311,6 @@ namespace Amazon.DatabaseMigrationService.Model
         internal bool IsSetServerName()
         {
             return this._serverName != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property ServiceAccessRoleArn. 
-        /// <para>
-        /// The Amazon Resource Name (ARN) used by the service access IAM role.
-        /// </para>
-        /// </summary>
-        public string ServiceAccessRoleArn
-        {
-            get { return this._serviceAccessRoleArn; }
-            set { this._serviceAccessRoleArn = value; }
-        }
-
-        // Check to see if ServiceAccessRoleArn property is set
-        internal bool IsSetServiceAccessRoleArn()
-        {
-            return this._serviceAccessRoleArn != null;
         }
 
         /// <summary>

@@ -45,6 +45,11 @@ namespace Amazon.DatabaseMigrationService
     /// as well as heterogeneous migrations between different database platforms, such as
     /// Oracle to MySQL or SQL Server to PostgreSQL.
     /// </para>
+    ///  
+    /// <para>
+    /// For more information about AWS DMS, see the AWS DMS user guide at <a href="http://docs.aws.amazon.com/dms/latest/userguide/Welcome.html">
+    /// What Is AWS Database Migration Service? </a> 
+    /// </para>
     /// </summary>
     public partial class AmazonDatabaseMigrationServiceClient : AmazonServiceClient, IAmazonDatabaseMigrationService
     {
@@ -302,6 +307,38 @@ namespace Amazon.DatabaseMigrationService
 
         #endregion
         
+        #region  CreateEventSubscription
+
+        internal CreateEventSubscriptionResponse CreateEventSubscription(CreateEventSubscriptionRequest request)
+        {
+            var marshaller = new CreateEventSubscriptionRequestMarshaller();
+            var unmarshaller = CreateEventSubscriptionResponseUnmarshaller.Instance;
+
+            return Invoke<CreateEventSubscriptionRequest,CreateEventSubscriptionResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateEventSubscription operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateEventSubscription operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/CreateEventSubscription">REST API Reference for CreateEventSubscription Operation</seealso>
+        public Task<CreateEventSubscriptionResponse> CreateEventSubscriptionAsync(CreateEventSubscriptionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new CreateEventSubscriptionRequestMarshaller();
+            var unmarshaller = CreateEventSubscriptionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateEventSubscriptionRequest,CreateEventSubscriptionResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateReplicationInstance
 
         internal CreateReplicationInstanceResponse CreateReplicationInstance(CreateReplicationInstanceRequest request)
@@ -457,6 +494,38 @@ namespace Amazon.DatabaseMigrationService
             var unmarshaller = DeleteEndpointResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteEndpointRequest,DeleteEndpointResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteEventSubscription
+
+        internal DeleteEventSubscriptionResponse DeleteEventSubscription(DeleteEventSubscriptionRequest request)
+        {
+            var marshaller = new DeleteEventSubscriptionRequestMarshaller();
+            var unmarshaller = DeleteEventSubscriptionResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteEventSubscriptionRequest,DeleteEventSubscriptionResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteEventSubscription operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteEventSubscription operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DeleteEventSubscription">REST API Reference for DeleteEventSubscription Operation</seealso>
+        public Task<DeleteEventSubscriptionResponse> DeleteEventSubscriptionAsync(DeleteEventSubscriptionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DeleteEventSubscriptionRequestMarshaller();
+            var unmarshaller = DeleteEventSubscriptionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteEventSubscriptionRequest,DeleteEventSubscriptionResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -713,6 +782,102 @@ namespace Amazon.DatabaseMigrationService
             var unmarshaller = DescribeEndpointTypesResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeEndpointTypesRequest,DescribeEndpointTypesResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeEventCategories
+
+        internal DescribeEventCategoriesResponse DescribeEventCategories(DescribeEventCategoriesRequest request)
+        {
+            var marshaller = new DescribeEventCategoriesRequestMarshaller();
+            var unmarshaller = DescribeEventCategoriesResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeEventCategoriesRequest,DescribeEventCategoriesResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeEventCategories operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeEventCategories operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeEventCategories">REST API Reference for DescribeEventCategories Operation</seealso>
+        public Task<DescribeEventCategoriesResponse> DescribeEventCategoriesAsync(DescribeEventCategoriesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DescribeEventCategoriesRequestMarshaller();
+            var unmarshaller = DescribeEventCategoriesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeEventCategoriesRequest,DescribeEventCategoriesResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeEvents
+
+        internal DescribeEventsResponse DescribeEvents(DescribeEventsRequest request)
+        {
+            var marshaller = new DescribeEventsRequestMarshaller();
+            var unmarshaller = DescribeEventsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeEventsRequest,DescribeEventsResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeEvents operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeEvents operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeEvents">REST API Reference for DescribeEvents Operation</seealso>
+        public Task<DescribeEventsResponse> DescribeEventsAsync(DescribeEventsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DescribeEventsRequestMarshaller();
+            var unmarshaller = DescribeEventsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeEventsRequest,DescribeEventsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeEventSubscriptions
+
+        internal DescribeEventSubscriptionsResponse DescribeEventSubscriptions(DescribeEventSubscriptionsRequest request)
+        {
+            var marshaller = new DescribeEventSubscriptionsRequestMarshaller();
+            var unmarshaller = DescribeEventSubscriptionsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeEventSubscriptionsRequest,DescribeEventSubscriptionsResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeEventSubscriptions operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeEventSubscriptions operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeEventSubscriptions">REST API Reference for DescribeEventSubscriptions Operation</seealso>
+        public Task<DescribeEventSubscriptionsResponse> DescribeEventSubscriptionsAsync(DescribeEventSubscriptionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DescribeEventSubscriptionsRequestMarshaller();
+            var unmarshaller = DescribeEventSubscriptionsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeEventSubscriptionsRequest,DescribeEventSubscriptionsResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -1038,6 +1203,38 @@ namespace Amazon.DatabaseMigrationService
 
         #endregion
         
+        #region  ModifyEventSubscription
+
+        internal ModifyEventSubscriptionResponse ModifyEventSubscription(ModifyEventSubscriptionRequest request)
+        {
+            var marshaller = new ModifyEventSubscriptionRequestMarshaller();
+            var unmarshaller = ModifyEventSubscriptionResponseUnmarshaller.Instance;
+
+            return Invoke<ModifyEventSubscriptionRequest,ModifyEventSubscriptionResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ModifyEventSubscription operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ModifyEventSubscription operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/ModifyEventSubscription">REST API Reference for ModifyEventSubscription Operation</seealso>
+        public Task<ModifyEventSubscriptionResponse> ModifyEventSubscriptionAsync(ModifyEventSubscriptionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new ModifyEventSubscriptionRequestMarshaller();
+            var unmarshaller = ModifyEventSubscriptionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ModifyEventSubscriptionRequest,ModifyEventSubscriptionResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ModifyReplicationInstance
 
         internal ModifyReplicationInstanceResponse ModifyReplicationInstance(ModifyReplicationInstanceRequest request)
@@ -1161,6 +1358,38 @@ namespace Amazon.DatabaseMigrationService
             var unmarshaller = RefreshSchemasResponseUnmarshaller.Instance;
 
             return InvokeAsync<RefreshSchemasRequest,RefreshSchemasResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ReloadTables
+
+        internal ReloadTablesResponse ReloadTables(ReloadTablesRequest request)
+        {
+            var marshaller = new ReloadTablesRequestMarshaller();
+            var unmarshaller = ReloadTablesResponseUnmarshaller.Instance;
+
+            return Invoke<ReloadTablesRequest,ReloadTablesResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ReloadTables operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ReloadTables operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/ReloadTables">REST API Reference for ReloadTables Operation</seealso>
+        public Task<ReloadTablesResponse> ReloadTablesAsync(ReloadTablesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new ReloadTablesRequestMarshaller();
+            var unmarshaller = ReloadTablesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ReloadTablesRequest,ReloadTablesResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
