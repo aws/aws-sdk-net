@@ -36,8 +36,8 @@ namespace Amazon.StorageGateway.Model
     /// <para>
     /// A recovery point is a point-in-time view of a virtual tape at which all the data on
     /// the virtual tape is consistent. If your gateway crashes, virtual tapes that have recovery
-    /// points can be recovered to a new gateway. This operation is only supported in tape
-    /// gateways.
+    /// points can be recovered to a new gateway. This operation is only supported in the
+    /// tape gateway architecture.
     /// </para>
     /// </summary>
     public partial class DescribeTapeRecoveryPointsRequest : AmazonStorageGatewayRequest

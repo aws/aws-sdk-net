@@ -37,8 +37,8 @@ namespace Amazon.StorageGateway.Model
     /// data to Amazon Simple Storage (S3) for durable off-site recovery, as well as import
     /// the data to an Amazon Elastic Block Store (EBS) volume in Amazon Elastic Compute Cloud
     /// (EC2). You can take snapshots of your gateway volume on a scheduled or ad-hoc basis.
-    /// This API enables you to take ad-hoc snapshot. For more information, see <a href="http://docs.aws.amazon.com/storagegateway/latest/userguide/WorkingWithSnapshots.html">Working
-    /// With Snapshots in the AWS Storage Gateway Console</a>.
+    /// This API enables you to take ad-hoc snapshot. For more information, see <a href="http://docs.aws.amazon.com/storagegateway/latest/userguide/managing-volumes.html#SchedulingSnapshot">Editing
+    /// a Snapshot Schedule</a>.
     /// </para>
     ///  
     /// <para>
@@ -48,7 +48,7 @@ namespace Amazon.StorageGateway.Model
     /// AWS Storage Gateway Console. In response, AWS Storage Gateway returns you a snapshot
     /// ID. You can use this snapshot ID to check the snapshot progress or later use it when
     /// you want to create a volume from a snapshot. This operation is only supported in stored
-    /// and cached volumes gateways.
+    /// and cached volume gateway architecture.
     /// </para>
     ///  <note> 
     /// <para>

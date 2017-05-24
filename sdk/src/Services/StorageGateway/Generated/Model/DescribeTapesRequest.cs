@@ -31,7 +31,8 @@ namespace Amazon.StorageGateway.Model
     /// Container for the parameters to the DescribeTapes operation.
     /// Returns a description of the specified Amazon Resource Name (ARN) of virtual tapes.
     /// If a <code>TapeARN</code> is not specified, returns a description of all virtual tapes
-    /// associated with the specified gateway. This operation is only supported in tape gateways.
+    /// associated with the specified gateway. This operation is only supported in the tape
+    /// gateway architecture.
     /// </summary>
     public partial class DescribeTapesRequest : AmazonStorageGatewayRequest
     {
@@ -105,8 +106,8 @@ namespace Amazon.StorageGateway.Model
         /// Gets and sets the property TapeARNs. 
         /// <para>
         /// Specifies one or more unique Amazon Resource Names (ARNs) that represent the virtual
-        /// tapes you want to describe. If this parameter is not specified, AWS Storage Gateway
-        /// returns a description of all virtual tapes associated with the specified gateway.
+        /// tapes you want to describe. If this parameter is not specified, Tape gateway returns
+        /// a description of all virtual tapes associated with the specified gateway.
         /// </para>
         /// </summary>
         public List<string> TapeARNs

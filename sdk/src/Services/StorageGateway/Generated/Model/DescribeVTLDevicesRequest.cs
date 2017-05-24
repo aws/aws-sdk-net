@@ -34,7 +34,7 @@ namespace Amazon.StorageGateway.Model
     /// 
     ///  
     /// <para>
-    /// This operation is only supported in tape gateways.
+    /// This operation is only supported in the tape gateway architecture.
     /// </para>
     /// </summary>
     public partial class DescribeVTLDevicesRequest : AmazonStorageGatewayRequest

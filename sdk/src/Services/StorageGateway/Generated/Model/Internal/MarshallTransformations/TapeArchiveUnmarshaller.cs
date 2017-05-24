@@ -106,6 +106,12 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
                     unmarshalledObject.TapeStatus = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("TapeUsedInBytes", targetDepth))
+                {
+                    var unmarshaller = LongUnmarshaller.Instance;
+                    unmarshalledObject.TapeUsedInBytes = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;

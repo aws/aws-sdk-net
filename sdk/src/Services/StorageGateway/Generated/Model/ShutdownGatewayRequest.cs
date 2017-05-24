@@ -34,8 +34,8 @@ namespace Amazon.StorageGateway.Model
     /// 
     ///  
     /// <para>
-    /// The operation shuts down the gateway service component running in the storage gateway's
-    /// virtual machine (VM) and not the VM.
+    /// The operation shuts down the gateway service component running in the gateway's virtual
+    /// machine (VM) and not the host VM.
     /// </para>
     ///  <note> 
     /// <para>

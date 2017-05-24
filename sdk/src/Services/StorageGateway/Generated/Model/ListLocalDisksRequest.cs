@@ -39,7 +39,7 @@ namespace Amazon.StorageGateway.Model
     /// a <code>DiskStatus</code> field. This field can have a value of present (the disk
     /// is available to use), missing (the disk is no longer connected to the gateway), or
     /// mismatch (the disk node is occupied by a disk that has incorrect metadata or the disk
-    /// content is corrupted). 
+    /// content is corrupted).
     /// </para>
     /// </summary>
     public partial class ListLocalDisksRequest : AmazonStorageGatewayRequest

@@ -29,12 +29,14 @@ namespace Amazon.StorageGateway.Model
 {
     /// <summary>
     /// Container for the parameters to the DisableGateway operation.
-    /// Disables a gateway when the gateway is no longer functioning. For example, if your
-    /// gateway VM is damaged, you can disable the gateway so you can recover virtual tapes.
+    /// Disables a tape gateway when the gateway is no longer functioning. For example, if
+    /// your gateway VM is damaged, you can disable the gateway so you can recover virtual
+    /// tapes.
     /// 
     ///  
     /// <para>
-    /// Use this operation for a tape gateway that is not reachable or not functioning.
+    /// Use this operation for a tape gateway that is not reachable or not functioning. This
+    /// operation is only supported in the tape gateway architectures.
     /// </para>
     ///  <important> 
     /// <para>

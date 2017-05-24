@@ -29,11 +29,40 @@ namespace Amazon.StorageGateway.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateNFSFileShare operation.
-    /// Updates a file share. This operation is only supported in file gateways.
+    /// Updates a file share. This operation is only supported in the file gateway architecture.
     /// 
     ///  <note> 
     /// <para>
     /// To leave a file share field unchanged, set the corresponding input field to null.
+    /// </para>
+    ///  </note> 
+    /// <para>
+    /// Updates the following file share setting:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// Default storage class for your S3 bucket
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Metadata defaults for your S3 bucket
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Allowed NFS clients for your file share
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Squash settings
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Write status of your file share
+    /// </para>
+    ///  </li> </ul> <note> 
+    /// <para>
+    /// To leave a file share field unchanged, set the corresponding input field to null.
+    /// This operation is only supported in file gateways.
     /// </para>
     ///  </note>
     /// </summary>
@@ -164,8 +193,8 @@ namespace Amazon.StorageGateway.Model
         /// <summary>
         /// Gets and sets the property ReadOnly. 
         /// <para>
-        /// Sets the write status of a file share. "true", if the write status is read-only; otherwise
-        /// "false.
+        /// Sets the write status of a file share: "true" if the write status is read-only, and
+        /// otherwise "false".
         /// </para>
         /// </summary>
         public bool ReadOnly
@@ -183,10 +212,21 @@ namespace Amazon.StorageGateway.Model
         /// <summary>
         /// Gets and sets the property Squash. 
         /// <para>
-        /// Indicates the user mapped to anonymous user. Valid options: "RootSquash" - Only root
-        /// is mapped to anonymous user, "NoSquash" - No one is mapped to anonymous user or "AllSquash"
-        /// - Everyone is mapped to anonymous user.
+        /// The user mapped to anonymous user. Valid options are the following:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// "RootSquash" - Only root is mapped to anonymous user.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// "NoSquash" - No one is mapped to anonymous user
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// "AllSquash" - Everyone is mapped to anonymous user.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public string Squash
         {

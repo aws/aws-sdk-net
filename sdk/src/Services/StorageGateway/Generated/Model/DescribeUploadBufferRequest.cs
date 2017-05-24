@@ -30,7 +30,7 @@ namespace Amazon.StorageGateway.Model
     /// <summary>
     /// Container for the parameters to the DescribeUploadBuffer operation.
     /// Returns information about the upload buffer of a gateway. This operation is supported
-    /// for both the stored volume and cached volumes gateway architectures.
+    /// for the stored volume, cached volume and tape gateway architectures.
     /// 
     ///  
     /// <para>

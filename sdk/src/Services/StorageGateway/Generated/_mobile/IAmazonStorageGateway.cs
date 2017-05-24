@@ -70,8 +70,8 @@ namespace Amazon.StorageGateway
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a href="http://docs.aws.amazon.com/general/latest/gr/index.html?rande.html">AWS
-    /// Storage Gateway Regions and Endpoints</a>: Provides a list of each of the s and endpoints
+    ///  <a href="http://docs.aws.amazon.com/general/latest/general/latest/gr/rande.html#sg_region">AWS
+    /// Storage Gateway Regions and Endpoints</a>: Provides a list of each region and endpoints
     /// available for use with AWS Storage Gateway.
     /// </para>
     ///  </li> </ul> <note> 
@@ -79,9 +79,9 @@ namespace Amazon.StorageGateway
     /// AWS Storage Gateway resource IDs are in uppercase. When you use these resource IDs
     /// with the Amazon EC2 API, EC2 expects resource IDs in lowercase. You must change your
     /// resource ID to lowercase to use it with the EC2 API. For example, in Storage Gateway
-    /// the ID for a volume might be <code>vol-1122AABB</code>. When you use this ID with
-    /// the EC2 API, you must change it to <code>vol-1122aabb</code>. Otherwise, the EC2 API
-    /// might not behave as expected.
+    /// the ID for a volume might be <code>vol-AA22BB012345DAF670</code>. When you use this
+    /// ID with the EC2 API, you must change it to <code>vol-aa22bb012345daf670</code>. Otherwise,
+    /// the EC2 API might not behave as expected.
     /// </para>
     ///  </note> <important> 
     /// <para>
@@ -94,7 +94,8 @@ namespace Amazon.StorageGateway
     /// </para>
     ///  
     /// <para>
-    ///  For example, a volume ARN with the longer volume ID format will look like this:
+    ///  For example, a volume Amazon Resource Name (ARN) with the longer volume ID format
+    /// looks like the following:
     /// </para>
     ///  
     /// <para>
@@ -102,7 +103,7 @@ namespace Amazon.StorageGateway
     /// </para>
     ///  
     /// <para>
-    /// A snapshot ID with the longer ID format will look like this: <code>snap-78e226633445566ee</code>.
+    /// A snapshot ID with the longer ID format looks like the following: <code>snap-78e226633445566ee</code>.
     /// </para>
     ///  
     /// <para>
@@ -646,12 +647,12 @@ namespace Amazon.StorageGateway
 
         /// <summary>
         /// Returns a description of specified virtual tapes in the virtual tape shelf (VTS).
+        /// This operation is only supported in the tape gateway architecture.
         /// 
         ///  
         /// <para>
         /// If a specific <code>TapeARN</code> is not specified, AWS Storage Gateway returns a
-        /// description of all virtual tapes found in the VTS associated with your account. This
-        /// operation is only supported in tape gateways.
+        /// description of all virtual tapes found in the VTS associated with your account.
         /// </para>
         /// </summary>
         /// <param name="cancellationToken">
@@ -1000,7 +1001,8 @@ namespace Amazon.StorageGateway
         /// prevents read and write operations on virtual tapes in the gateway. For example, an
         /// error can occur when a disk is corrupted or removed from the gateway. When a cache
         /// is reset, the gateway loses its cache storage. At this point you can reconfigure the
-        /// disks as cache disks.
+        /// disks as cache disks. This operation is only supported in the cached volume,tape and
+        /// file gateway architectures.
         /// 
         ///  <important> 
         /// <para>

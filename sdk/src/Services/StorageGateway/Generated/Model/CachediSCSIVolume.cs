@@ -43,7 +43,11 @@ namespace Amazon.StorageGateway.Model
         private string _volumeType;
 
         /// <summary>
-        /// Gets and sets the property CreatedDate.
+        /// Gets and sets the property CreatedDate. 
+        /// <para>
+        /// The date the volume was created. Volumes created prior to March 28, 2017 don’t have
+        /// this time stamp.
+        /// </para>
         /// </summary>
         public DateTime CreatedDate
         {

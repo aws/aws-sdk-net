@@ -30,7 +30,7 @@ namespace Amazon.StorageGateway.Model
     /// <summary>
     /// Container for the parameters to the CreateTapeWithBarcode operation.
     /// Creates a virtual tape by using your own barcode. You write data to the virtual tape
-    /// and then archive the tape. This operation is only supported in tape gateways.
+    /// and then archive the tape. This operation is only supported in the tape gateway architecture.
     /// 
     ///  <note> 
     /// <para>

@@ -32,7 +32,21 @@ namespace Amazon.StorageGateway.Model
     /// Creates a file share on an existing file gateway. In Storage Gateway, a file share
     /// is a file system mount point backed by Amazon S3 cloud storage. Storage Gateway exposes
     /// file shares using a Network File System (NFS) interface. This operation is only supported
-    /// in file gateways.
+    /// in the file gateway architecture.
+    /// 
+    ///  <important> 
+    /// <para>
+    /// File gateway requires AWS Security Token Service (AWS STS) to be activated to enable
+    /// you create a file share. Make sure AWS STS is activated in the region you are creating
+    /// your file gateway in. If AWS STS is not activated in the region, activate it. For
+    /// information about how to activate AWS STS, see Activating and Deactivating AWS STS
+    /// in an AWS Region in the AWS Identity and Access Management User Guide. 
+    /// </para>
+    ///  
+    /// <para>
+    /// File gateway does not support creating hard or symbolic links on a file share.
+    /// </para>
+    ///  </important>
     /// </summary>
     public partial class CreateNFSFileShareRequest : AmazonStorageGatewayRequest
     {
@@ -166,7 +180,7 @@ namespace Amazon.StorageGateway.Model
         /// <summary>
         /// Gets and sets the property LocationARN. 
         /// <para>
-        /// The ARN of the backend storage used for storing file data. 
+        /// The ARN of the backed storage used for storing file data. 
         /// </para>
         /// </summary>
         public string LocationARN
@@ -202,8 +216,8 @@ namespace Amazon.StorageGateway.Model
         /// <summary>
         /// Gets and sets the property ReadOnly. 
         /// <para>
-        /// Sets the write status of a file share. "true", if the write status is read-only; otherwise
-        /// "false.
+        /// Sets the write status of a file share: "true" if the write status is read-only, and
+        /// otherwise "false".
         /// </para>
         /// </summary>
         public bool ReadOnly
@@ -240,10 +254,21 @@ namespace Amazon.StorageGateway.Model
         /// <summary>
         /// Gets and sets the property Squash. 
         /// <para>
-        /// Maps a user to anonymous user. Valid options: "RootSquash" - Only root is mapped to
-        /// anonymous user, "NoSquash" - No one is mapped to anonymous user or "AllSquash" - Everyone
-        /// is mapped to anonymous user. 
+        /// Maps a user to anonymous user. Valid options are the following: 
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// "RootSquash" - Only root is mapped to anonymous user.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// "NoSquash" - No one is mapped to anonymous user.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// "AllSquash" - Everyone is mapped to anonymous user.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public string Squash
         {

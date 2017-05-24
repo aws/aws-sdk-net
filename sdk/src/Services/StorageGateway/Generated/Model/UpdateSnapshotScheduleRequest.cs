@@ -29,7 +29,8 @@ namespace Amazon.StorageGateway.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateSnapshotSchedule operation.
-    /// Updates a snapshot schedule configured for a gateway volume.
+    /// Updates a snapshot schedule configured for a gateway volume. This operation is only
+    /// supported in the cached volume and stored volume gateway architectures.
     /// 
     ///  
     /// <para>

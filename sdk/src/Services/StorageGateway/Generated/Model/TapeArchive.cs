@@ -39,6 +39,7 @@ namespace Amazon.StorageGateway.Model
         private DateTime? _tapeCreatedDate;
         private long? _tapeSizeInBytes;
         private string _tapeStatus;
+        private long? _tapeUsedInBytes;
 
         /// <summary>
         /// Gets and sets the property CompletionTime. 
@@ -171,6 +172,29 @@ namespace Amazon.StorageGateway.Model
         internal bool IsSetTapeStatus()
         {
             return this._tapeStatus != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TapeUsedInBytes. 
+        /// <para>
+        /// The size, in bytes, of data written to the virtual tape.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// This value is not available for tapes created prior to May,13 2015.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public long TapeUsedInBytes
+        {
+            get { return this._tapeUsedInBytes.GetValueOrDefault(); }
+            set { this._tapeUsedInBytes = value; }
+        }
+
+        // Check to see if TapeUsedInBytes property is set
+        internal bool IsSetTapeUsedInBytes()
+        {
+            return this._tapeUsedInBytes.HasValue; 
         }
 
     }
