@@ -268,7 +268,7 @@
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.DeleteAccessKeyRequest.AccessKeyId</property>
     <min>16</min>
-    <max>32</max>
+    <max>128</max>
     <pattern>[\w]+</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -481,7 +481,7 @@
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.GetAccessKeyLastUsedRequest.AccessKeyId</property>
     <min>16</min>
-    <max>32</max>
+    <max>128</max>
     <pattern>[\w]+</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -1432,7 +1432,7 @@
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.UpdateAccessKeyRequest.AccessKeyId</property>
     <min>16</min>
-    <max>32</max>
+    <max>128</max>
     <pattern>[\w]+</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -1658,7 +1658,7 @@
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.AccessKey.AccessKeyId</property>
     <min>16</min>
-    <max>32</max>
+    <max>128</max>
     <pattern>[\w]+</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -1670,7 +1670,7 @@
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.AccessKeyMetadata.AccessKeyId</property>
     <min>16</min>
-    <max>32</max>
+    <max>128</max>
     <pattern>[\w]+</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -1713,7 +1713,7 @@
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.Group.GroupId</property>
     <min>16</min>
-    <max>32</max>
+    <max>128</max>
     <pattern>[\w]+</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -1736,7 +1736,7 @@
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.GroupDetail.GroupId</property>
     <min>16</min>
-    <max>32</max>
+    <max>128</max>
     <pattern>[\w]+</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -1759,7 +1759,7 @@
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.InstanceProfile.InstanceProfileId</property>
     <min>16</min>
-    <max>32</max>
+    <max>128</max>
     <pattern>[\w]+</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -1800,7 +1800,7 @@
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.ManagedPolicy.PolicyId</property>
     <min>16</min>
-    <max>32</max>
+    <max>128</max>
     <pattern>[\w]+</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -1829,7 +1829,7 @@
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.ManagedPolicyDetail.PolicyId</property>
     <min>16</min>
-    <max>32</max>
+    <max>128</max>
     <pattern>[\w]+</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -1885,7 +1885,7 @@
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.PolicyGroup.GroupId</property>
     <min>16</min>
-    <max>32</max>
+    <max>128</max>
     <pattern>[\w]+</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -1897,7 +1897,7 @@
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.PolicyRole.RoleId</property>
     <min>16</min>
-    <max>32</max>
+    <max>128</max>
     <pattern>[\w]+</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -1909,7 +1909,7 @@
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.PolicyUser.UserId</property>
     <min>16</min>
-    <max>32</max>
+    <max>128</max>
     <pattern>[\w]+</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -1958,7 +1958,7 @@
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.Role.RoleId</property>
     <min>16</min>
-    <max>32</max>
+    <max>128</max>
     <pattern>[\w]+</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -1987,7 +1987,7 @@
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.RoleDetail.RoleId</property>
     <min>16</min>
-    <max>32</max>
+    <max>128</max>
     <pattern>[\w]+</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -2027,7 +2027,7 @@
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.ServerCertificateMetadata.ServerCertificateId</property>
     <min>16</min>
-    <max>32</max>
+    <max>128</max>
     <pattern>[\w]+</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -2140,7 +2140,7 @@
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.User.UserId</property>
     <min>16</min>
-    <max>32</max>
+    <max>128</max>
     <pattern>[\w]+</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -2163,7 +2163,7 @@
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.UserDetail.UserId</property>
     <min>16</min>
-    <max>32</max>
+    <max>128</max>
     <pattern>[\w]+</pattern>
   </property-value-rule>
   <property-value-rule>
