@@ -100,5 +100,15 @@ namespace Amazon.SQS.Util
         /// The parameters for dead letter queue functionality of the source queue. For more information about RedrivePolicy and dead letter queues, see <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/SQSDeadLetterQueue.html">Using Amazon SQS Dead Letter Queues</a> in the <i>Amazon SQS Developer Guide</i>.
         /// </summary>
         public const string ATTRIBUTE_REDRIVE_POLICY = "RedrivePolicy";
+		
+		/// <summary>
+        /// Enables content-based deduplication on a First-In-First-Out (FIFO) queue. For more information see <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-exactly-once-processing">Exactly-Once Processing</a> in the <i>Amazon SQS Developer Guide</i>.
+        /// </summary>
+		public const string ATTRIBUTE_CONTENT_BASED_DEDUPLICATION = "ContentBasedDeduplication";
+		
+		/// <summary>
+        /// Specifies whether or not the queue is a First-In-First-Out (FIFO) queue.
+        /// </summary>
+		public const string ATTRIBUTE_FIFO_QUEUE = "FifoQueue";
     }
 }
