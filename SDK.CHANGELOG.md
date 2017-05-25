@@ -1,3 +1,13 @@
+### 3.3.94.0 (2017-05-24 23:55 UTC)
+* DynamoDBv2 (3.3.4.13)
+	* Add missing Batch operations to IDynamoDBContext
+* IdentityManagement (3.3.4.0)
+	* The unique ID and access key lengths were extended from 32 to 128
+* SecurityToken (3.3.2.0)
+	* The unique ID and access key lengths were extended from 32 to 128.
+* StorageGateway (3.3.4.0)
+	* Two Storage Gateway data types, Tape and TapeArchive, each have a new response element, TapeUsedInBytes. This element helps you manage your virtual tapes. By using TapeUsedInBytes, you can see the amount of data written to each virtual tape.
+
 ### 3.3.93.0 (2017-05-24 00:31 UTC)
 * DatabaseMigrationService (3.3.2.0)
 	* This release adds support for using Amazon S3 and Amazon DynamoDB as targets for database migration, and using MongoDB as a source for database migration. For more information, see the AWS Database Migration Service documentation.
