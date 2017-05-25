@@ -1,3 +1,9 @@
+### 3.3.95.0 (2017-05-25 22:08 UTC)
+* AppStream (3.3.2.0)
+	* Support added for persistent user storage, backed by S3.
+* Rekognition (3.3.4.0)
+	* Updated the CompareFaces API response to include orientation information, unmatched faces, landmarks, pose, and quality of the compared faces.
+
 ### 3.3.94.0 (2017-05-24 23:55 UTC)
 * DynamoDBv2 (3.3.4.13)
 	* Add missing Batch operations to IDynamoDBContext

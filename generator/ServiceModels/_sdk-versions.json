@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.3.94.0",
+    "ProductVersion" : "3.3.95.0",
     "CoreVersion"    : "3.3.14.0",
     "DefaultToPreview" : false,
     "ServiceVersions"  : {
@@ -609,7 +609,7 @@
             "InPreview"               : false
         },
         "Rekognition"                     : {
-            "Version" : "3.3.3.3",
+            "Version" : "3.3.4.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.14.0"
@@ -641,7 +641,7 @@
             "InPreview"               : false
         },
         "AppStream"                       : {
-            "Version" : "3.3.1.4",
+            "Version" : "3.3.2.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.14.0"
