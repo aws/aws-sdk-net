@@ -43,7 +43,7 @@ namespace Amazon.AppStream.Model
         /// Gets and sets the property AuthenticationType. 
         /// <para>
         /// The authentication method of the user for whom the session was created. It can be
-        /// <code>API</code> for a user authenticated using a streaming url or <code>SAML</code>
+        /// <code>API</code> for a user authenticated using a streaming URL or <code>SAML</code>
         /// for a SAML federated user.
         /// </para>
         /// </summary>

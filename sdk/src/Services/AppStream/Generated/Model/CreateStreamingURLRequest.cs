@@ -134,8 +134,8 @@ namespace Amazon.AppStream.Model
         /// <summary>
         /// Gets and sets the property Validity. 
         /// <para>
-        /// The validity duration of the URL in seconds. After this duration, the URL returned
-        /// by this operation becomes invalid.
+        /// The duration up to which the URL returned by this action is valid. The input can be
+        /// any numeric value in seconds between 1 and 604800 seconds.
         /// </para>
         /// </summary>
         public long Validity

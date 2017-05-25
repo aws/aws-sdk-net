@@ -67,6 +67,12 @@ namespace Amazon.AppStream.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetDeleteStorageConnectors())
+                {
+                    context.Writer.WritePropertyName("DeleteStorageConnectors");
+                    context.Writer.Write(publicRequest.DeleteStorageConnectors);
+                }
+
                 if(publicRequest.IsSetDescription())
                 {
                     context.Writer.WritePropertyName("Description");
@@ -83,6 +89,22 @@ namespace Amazon.AppStream.Model.Internal.MarshallTransformations
                 {
                     context.Writer.WritePropertyName("Name");
                     context.Writer.Write(publicRequest.Name);
+                }
+
+                if(publicRequest.IsSetStorageConnectors())
+                {
+                    context.Writer.WritePropertyName("StorageConnectors");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestStorageConnectorsListValue in publicRequest.StorageConnectors)
+                    {
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = StorageConnectorMarshaller.Instance;
+                        marshaller.Marshall(publicRequestStorageConnectorsListValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteArrayEnd();
                 }
 
         

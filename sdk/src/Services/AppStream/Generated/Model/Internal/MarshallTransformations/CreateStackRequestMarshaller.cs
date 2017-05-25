@@ -85,6 +85,22 @@ namespace Amazon.AppStream.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Name);
                 }
 
+                if(publicRequest.IsSetStorageConnectors())
+                {
+                    context.Writer.WritePropertyName("StorageConnectors");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestStorageConnectorsListValue in publicRequest.StorageConnectors)
+                    {
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = StorageConnectorMarshaller.Instance;
+                        marshaller.Marshall(publicRequestStorageConnectorsListValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
         
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();

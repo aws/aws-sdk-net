@@ -42,6 +42,7 @@ namespace Amazon.AppStream.Model
         private bool? _imageBuilderSupported;
         private string _name;
         private PlatformType _platform;
+        private DateTime? _publicBaseImageReleasedDate;
         private ImageState _state;
         private ImageStateChangeReason _stateChangeReason;
         private VisibilityType _visibility;
@@ -157,7 +158,7 @@ namespace Amazon.AppStream.Model
         /// <summary>
         /// Gets and sets the property ImageBuilderSupported. 
         /// <para>
-        /// Indicates whether an image builder can be launched from this image.
+        /// Whether an image builder can be launched from this image.
         /// </para>
         /// </summary>
         public bool ImageBuilderSupported
@@ -206,6 +207,25 @@ namespace Amazon.AppStream.Model
         internal bool IsSetPlatform()
         {
             return this._platform != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PublicBaseImageReleasedDate. 
+        /// <para>
+        /// The AWS release date of the public base image. For private images, this date is the
+        /// release date of the base image from which the image was created.
+        /// </para>
+        /// </summary>
+        public DateTime PublicBaseImageReleasedDate
+        {
+            get { return this._publicBaseImageReleasedDate.GetValueOrDefault(); }
+            set { this._publicBaseImageReleasedDate = value; }
+        }
+
+        // Check to see if PublicBaseImageReleasedDate property is set
+        internal bool IsSetPublicBaseImageReleasedDate()
+        {
+            return this._publicBaseImageReleasedDate.HasValue; 
         }
 
         /// <summary>

@@ -105,9 +105,10 @@ namespace Amazon.AppStream.Model
         /// <summary>
         /// Gets and sets the property DisconnectTimeoutInSeconds. 
         /// <para>
-        /// The time after disconnection when a session is considered to have ended. When the
-        /// user reconnects after a disconnection, the user is connected to the same instance
-        /// within this time interval.
+        /// The time after disconnection when a session is considered to have ended. If a user
+        /// who got disconnected reconnects within this timeout interval, the user is connected
+        /// back to their previous session. The input can be any numeric value in seconds between
+        /// 60 and 57600.
         /// </para>
         /// </summary>
         public int DisconnectTimeoutInSeconds
@@ -143,7 +144,7 @@ namespace Amazon.AppStream.Model
         /// <summary>
         /// Gets and sets the property EnableDefaultInternetAccess. 
         /// <para>
-        /// Enable/Disable default Internet access from fleet.
+        /// Enables or disables default Internet access for the fleet.
         /// </para>
         /// </summary>
         public bool EnableDefaultInternetAccess
@@ -198,7 +199,8 @@ namespace Amazon.AppStream.Model
         /// <summary>
         /// Gets and sets the property MaxUserDurationInSeconds. 
         /// <para>
-        /// The maximum time during which a streaming session can run.
+        /// The maximum time for which a streaming session can run. The input can be any numeric
+        /// value in seconds between 600 and 57600.
         /// </para>
         /// </summary>
         public int MaxUserDurationInSeconds

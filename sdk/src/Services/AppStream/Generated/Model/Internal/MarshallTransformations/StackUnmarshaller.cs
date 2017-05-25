@@ -94,6 +94,18 @@ namespace Amazon.AppStream.Model.Internal.MarshallTransformations
                     unmarshalledObject.Name = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("StackErrors", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<StackError, StackErrorUnmarshaller>(StackErrorUnmarshaller.Instance);
+                    unmarshalledObject.StackErrors = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("StorageConnectors", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<StorageConnector, StorageConnectorUnmarshaller>(StorageConnectorUnmarshaller.Instance);
+                    unmarshalledObject.StorageConnectors = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;

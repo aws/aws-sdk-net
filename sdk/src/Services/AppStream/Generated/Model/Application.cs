@@ -133,7 +133,7 @@ namespace Amazon.AppStream.Model
         /// <summary>
         /// Gets and sets the property Metadata. 
         /// <para>
-        /// Additional attributes that describes the application.
+        /// Additional attributes that describe the application.
         /// </para>
         /// </summary>
         public Dictionary<string, string> Metadata

@@ -33,7 +33,7 @@ namespace Amazon.AppStream.Model
     /// this operation returns streaming sessions for only that user. Pass this value for
     /// the <code>nextToken</code> parameter in a subsequent call to this operation to retrieve
     /// the next set of items. If an authentication type is not provided, the operation defaults
-    /// to users authenticated using a streaming url.
+    /// to users authenticated using a streaming URL.
     /// </summary>
     public partial class DescribeSessionsRequest : AmazonAppStreamRequest
     {
@@ -48,9 +48,9 @@ namespace Amazon.AppStream.Model
         /// Gets and sets the property AuthenticationType. 
         /// <para>
         /// The authentication method of the user. It can be <code>API</code> for a user authenticated
-        /// using a streaming url or <code>SAML</code> for a SAML federated user. If an authentication
+        /// using a streaming URL, or <code>SAML</code> for a SAML federated user. If an authentication
         /// type is not provided, the operation defaults to users authenticated using a streaming
-        /// url.
+        /// URL.
         /// </para>
         /// </summary>
         public AuthenticationType AuthenticationType

@@ -36,6 +36,7 @@ namespace Amazon.AppStream.Model
         private string _description;
         private string _displayName;
         private string _name;
+        private List<StorageConnector> _storageConnectors = new List<StorageConnector>();
 
         /// <summary>
         /// Gets and sets the property Description. 
@@ -89,6 +90,24 @@ namespace Amazon.AppStream.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property StorageConnectors. 
+        /// <para>
+        /// The storage connectors to be enabled for the stack.
+        /// </para>
+        /// </summary>
+        public List<StorageConnector> StorageConnectors
+        {
+            get { return this._storageConnectors; }
+            set { this._storageConnectors = value; }
+        }
+
+        // Check to see if StorageConnectors property is set
+        internal bool IsSetStorageConnectors()
+        {
+            return this._storageConnectors != null && this._storageConnectors.Count > 0; 
         }
 
     }

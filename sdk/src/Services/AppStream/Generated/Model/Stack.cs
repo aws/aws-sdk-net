@@ -37,6 +37,8 @@ namespace Amazon.AppStream.Model
         private string _description;
         private string _displayName;
         private string _name;
+        private List<StackError> _stackErrors = new List<StackError>();
+        private List<StorageConnector> _storageConnectors = new List<StorageConnector>();
 
         /// <summary>
         /// Gets and sets the property Arn. 
@@ -126,6 +128,42 @@ namespace Amazon.AppStream.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property StackErrors. 
+        /// <para>
+        /// The list of errors associated with the stack.
+        /// </para>
+        /// </summary>
+        public List<StackError> StackErrors
+        {
+            get { return this._stackErrors; }
+            set { this._stackErrors = value; }
+        }
+
+        // Check to see if StackErrors property is set
+        internal bool IsSetStackErrors()
+        {
+            return this._stackErrors != null && this._stackErrors.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property StorageConnectors. 
+        /// <para>
+        /// The storage connectors to be enabled for the stack.
+        /// </para>
+        /// </summary>
+        public List<StorageConnector> StorageConnectors
+        {
+            get { return this._storageConnectors; }
+            set { this._storageConnectors = value; }
+        }
+
+        // Check to see if StorageConnectors property is set
+        internal bool IsSetStorageConnectors()
+        {
+            return this._storageConnectors != null && this._storageConnectors.Count > 0; 
         }
 
     }

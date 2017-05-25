@@ -33,9 +33,29 @@ namespace Amazon.AppStream.Model
     /// </summary>
     public partial class UpdateStackRequest : AmazonAppStreamRequest
     {
+        private bool? _deleteStorageConnectors;
         private string _description;
         private string _displayName;
         private string _name;
+        private List<StorageConnector> _storageConnectors = new List<StorageConnector>();
+
+        /// <summary>
+        /// Gets and sets the property DeleteStorageConnectors. 
+        /// <para>
+        /// Remove all the storage connectors currently enabled for the stack.
+        /// </para>
+        /// </summary>
+        public bool DeleteStorageConnectors
+        {
+            get { return this._deleteStorageConnectors.GetValueOrDefault(); }
+            set { this._deleteStorageConnectors = value; }
+        }
+
+        // Check to see if DeleteStorageConnectors property is set
+        internal bool IsSetDeleteStorageConnectors()
+        {
+            return this._deleteStorageConnectors.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property Description. 
@@ -89,6 +109,24 @@ namespace Amazon.AppStream.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property StorageConnectors. 
+        /// <para>
+        /// The storage connectors to be enabled for the stack.
+        /// </para>
+        /// </summary>
+        public List<StorageConnector> StorageConnectors
+        {
+            get { return this._storageConnectors; }
+            set { this._storageConnectors = value; }
+        }
+
+        // Check to see if StorageConnectors property is set
+        internal bool IsSetStorageConnectors()
+        {
+            return this._storageConnectors != null && this._storageConnectors.Count > 0; 
         }
 
     }
