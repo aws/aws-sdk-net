@@ -37,7 +37,7 @@ namespace Amazon.Rekognition.Model
         /// <summary>
         /// Gets and sets the property ModerationLabels. 
         /// <para>
-        /// A list of labels for explicit or suggestive adult content found in the image. The
+        /// An array of labels for explicit or suggestive adult content found in the image. The
         /// list includes the top-level label and each child label detected in the image. This
         /// is useful for filtering specific categories of content. 
         /// </para>

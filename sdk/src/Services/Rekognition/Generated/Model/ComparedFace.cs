@@ -28,13 +28,15 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Rekognition.Model
 {
     /// <summary>
-    /// Provides face metadata (bounding box and confidence that the bounding box actually
-    /// contains a face).
+    /// Provides face metadata for target image faces that are analysed by <code>CompareFaces</code>.
     /// </summary>
     public partial class ComparedFace
     {
         private BoundingBox _boundingBox;
         private float? _confidence;
+        private List<Landmark> _landmarks = new List<Landmark>();
+        private Pose _pose;
+        private ImageQuality _quality;
 
         /// <summary>
         /// Gets and sets the property BoundingBox.
@@ -67,6 +69,60 @@ namespace Amazon.Rekognition.Model
         internal bool IsSetConfidence()
         {
             return this._confidence.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Landmarks. 
+        /// <para>
+        /// An array of facial landmarks.
+        /// </para>
+        /// </summary>
+        public List<Landmark> Landmarks
+        {
+            get { return this._landmarks; }
+            set { this._landmarks = value; }
+        }
+
+        // Check to see if Landmarks property is set
+        internal bool IsSetLandmarks()
+        {
+            return this._landmarks != null && this._landmarks.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Pose. 
+        /// <para>
+        /// Indicates the pose of the face as determined by its pitch, roll, and yaw.
+        /// </para>
+        /// </summary>
+        public Pose Pose
+        {
+            get { return this._pose; }
+            set { this._pose = value; }
+        }
+
+        // Check to see if Pose property is set
+        internal bool IsSetPose()
+        {
+            return this._pose != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Quality. 
+        /// <para>
+        /// Identifies face image brightness and sharpness. 
+        /// </para>
+        /// </summary>
+        public ImageQuality Quality
+        {
+            get { return this._quality; }
+            set { this._quality = value; }
+        }
+
+        // Check to see if Quality property is set
+        internal bool IsSetQuality()
+        {
+            return this._quality != null;
         }
 
     }

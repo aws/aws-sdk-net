@@ -56,11 +56,10 @@ namespace Amazon.Rekognition.Model
         /// <summary>
         /// Gets and sets the property OrientationCorrection. 
         /// <para>
-        ///  Amazon Rekognition returns the orientation of the input image that was detected (clockwise
-        /// direction). If your application displays the image, you can use this value to correct
-        /// the orientation. If Amazon Rekognition detects that the input image was rotated (for
-        /// example, by 90 degrees), it first corrects the orientation before detecting the labels.
-        /// 
+        ///  The orientation of the input image (counter-clockwise direction). If your application
+        /// displays the image, you can use this value to correct the orientation. If Amazon Rekognition
+        /// detects that the input image was rotated (for example, by 90 degrees), it first corrects
+        /// the orientation before detecting the labels. 
         /// </para>
         ///  <note> 
         /// <para>

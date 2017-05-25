@@ -200,7 +200,7 @@ namespace Amazon.Rekognition.Model
         /// <summary>
         /// Gets and sets the property Landmarks. 
         /// <para>
-        /// Indicates the location of the landmark on the face.
+        /// Indicates the location of landmarks on the face.
         /// </para>
         /// </summary>
         public List<Landmark> Landmarks
@@ -256,7 +256,7 @@ namespace Amazon.Rekognition.Model
         /// <summary>
         /// Gets and sets the property Pose. 
         /// <para>
-        /// Indicates the pose of the face as determined by pitch, roll, and the yaw.
+        /// Indicates the pose of the face as determined by its pitch, roll, and yaw.
         /// </para>
         /// </summary>
         public Pose Pose

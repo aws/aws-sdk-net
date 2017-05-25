@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Rekognition.Model
 {
     /// <summary>
-    /// Indicates the pose of the face as determined by pitch, roll, and the yaw.
+    /// Indicates the pose of the face as determined by its pitch, roll, and yaw.
     /// </summary>
     public partial class Pose
     {

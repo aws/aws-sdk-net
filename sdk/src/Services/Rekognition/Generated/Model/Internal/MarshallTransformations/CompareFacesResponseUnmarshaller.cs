@@ -63,6 +63,24 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
                     response.SourceImageFace = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("SourceImageOrientationCorrection", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.SourceImageOrientationCorrection = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("TargetImageOrientationCorrection", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.TargetImageOrientationCorrection = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("UnmatchedFaces", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<ComparedFace, ComparedFaceUnmarshaller>(ComparedFaceUnmarshaller.Instance);
+                    response.UnmatchedFaces = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
 
             return response;

@@ -76,6 +76,24 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
                     unmarshalledObject.Confidence = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("Landmarks", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<Landmark, LandmarkUnmarshaller>(LandmarkUnmarshaller.Instance);
+                    unmarshalledObject.Landmarks = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Pose", targetDepth))
+                {
+                    var unmarshaller = PoseUnmarshaller.Instance;
+                    unmarshalledObject.Pose = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Quality", targetDepth))
+                {
+                    var unmarshaller = ImageQualityUnmarshaller.Instance;
+                    unmarshalledObject.Quality = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;

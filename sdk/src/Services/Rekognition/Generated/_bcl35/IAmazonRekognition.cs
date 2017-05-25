@@ -45,34 +45,44 @@ namespace Amazon.Rekognition
         ///  <note> 
         /// <para>
         ///  If the source image contains multiple faces, the service detects the largest face
-        /// and uses it to compare with each face detected in the target image. 
+        /// and compares it with each face detected in the target image. 
         /// </para>
         ///  </note> 
         /// <para>
         /// In response, the operation returns an array of face matches ordered by similarity
-        /// score with the highest similarity scores first. For each face match, the response
-        /// provides a bounding box of the face and <code>confidence</code> value (indicating
-        /// the level of confidence that the bounding box contains a face). The response also
-        /// provides a <code>similarity</code> score, which indicates how closely the faces match.
-        /// 
+        /// score in descending order. For each face match, the response provides a bounding box
+        /// of the face, facial landmarks, pose details (pitch, role, and yaw), quality (brightness
+        /// and sharpness), and confidence value (indicating the level of confidence that the
+        /// bounding box contains a face). The response also provides a similarity score, which
+        /// indicates how closely the faces match. 
         /// </para>
         ///  <note> 
         /// <para>
-        /// By default, only faces with the similarity score of greater than or equal to 80% are
-        /// returned in the response. You can change this value.
+        /// By default, only faces with a similarity score of greater than or equal to 80% are
+        /// returned in the response. You can change this value by specifying the <code>SimilarityThreshold</code>
+        /// parameter.
         /// </para>
         ///  </note> 
         /// <para>
-        /// In addition to the face matches, the response returns information about the face in
-        /// the source image, including the bounding box of the face and confidence value.
+        ///  <code>CompareFaces</code> also returns an array of faces that don't match the source
+        /// image. For each face, it returns a bounding box, confidence value, landmarks, pose
+        /// details, and quality. The response also returns information about the face in the
+        /// source image, including the bounding box of the face and confidence value.
+        /// </para>
+        ///  
+        /// <para>
+        /// If the image doesn't contain Exif metadata, <code>CompareFaces</code> returns orientation
+        /// information for the source and target images. Use these values to display the images
+        /// with the correct image orientation.
         /// </para>
         ///  <note> 
         /// <para>
-        ///  This is a stateless API operation. That is, the operation does not persist any data.
+        ///  This is a stateless API operation. That is, data returned by this operation doesn't
+        /// persist.
         /// </para>
         ///  </note> 
         /// <para>
-        /// For an example, see <a>get-started-exercise-compare-faces</a> 
+        /// For an example, see <a>get-started-exercise-compare-faces</a>.
         /// </para>
         ///  
         /// <para>
@@ -151,7 +161,11 @@ namespace Amazon.Rekognition
         /// results in a specific collection. Then, a user can search the collection for faces
         /// in the user-specific container. 
         /// </para>
-        ///  
+        ///  <note> 
+        /// <para>
+        /// Collection names are case-sensitive.
+        /// </para>
+        ///  </note> 
         /// <para>
         /// For an example, see <a>example1</a>. 
         /// </para>
@@ -566,8 +580,8 @@ namespace Amazon.Rekognition
 
 
         /// <summary>
-        /// Detects explicit or suggestive adult content in a specified .jpeg or .png image. Use
-        /// <code>DetectModerationLabels</code> to moderate images depending on your requirements.
+        /// Detects explicit or suggestive adult content in a specified JPEG or PNG format image.
+        /// Use <code>DetectModerationLabels</code> to moderate images depending on your requirements.
         /// For example, you might want to filter images that contain nudity, but not images containing
         /// suggestive content.
         /// 

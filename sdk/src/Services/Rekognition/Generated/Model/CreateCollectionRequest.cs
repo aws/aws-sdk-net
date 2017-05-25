@@ -39,7 +39,11 @@ namespace Amazon.Rekognition.Model
     /// results in a specific collection. Then, a user can search the collection for faces
     /// in the user-specific container. 
     /// </para>
-    ///  
+    ///  <note> 
+    /// <para>
+    /// Collection names are case-sensitive.
+    /// </para>
+    ///  </note> 
     /// <para>
     /// For an example, see <a>example1</a>. 
     /// </para>
