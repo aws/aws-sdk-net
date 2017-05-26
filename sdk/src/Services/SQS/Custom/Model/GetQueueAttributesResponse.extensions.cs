@@ -13,12 +13,7 @@
  * permissions and limitations under the License.
  */
 using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
-using System.IO;
 
-using Amazon.Runtime;
 using Amazon.SQS.Util;
 using Amazon.Util;
 
@@ -84,7 +79,6 @@ namespace Amazon.SQS.Model
                 return value;
             }
         }
-
 
         /// <summary>
         /// Gets the approximate number of messages from the Attributes collection.
@@ -175,6 +169,28 @@ namespace Amazon.SQS.Model
             get
             {
                 return getAttributeValue(SQSConstants.ATTRIBUTE_POLICY);
+            }
+        }
+
+        /// <summary>
+        /// Whether or not the queue is a First-In-First-Out (FIFO) queue
+        /// </summary>
+        public bool? FifoQueue
+        {
+            get
+            {
+                return getAttributeValue(SQSConstants.ATTRIBUTE_FIFO_QUEUE)?.ToUpper().Equals("TRUE");
+            }
+        }
+
+        /// <summary>
+        /// Whether or not the First-In-First-Out (FIFO) queue has content based deduplication enabled
+        /// </summary>
+        public bool? ContentBasedDeduplication
+        {
+            get
+            {
+                return getAttributeValue(SQSConstants.ATTRIBUTE_CONTENT_BASED_DEDUPLICATION)?.ToUpper().Equals("TRUE");
             }
         }
 
