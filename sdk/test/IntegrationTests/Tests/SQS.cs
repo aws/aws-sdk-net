@@ -261,5 +261,40 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
 
             return "fail";
         }
+
+        [TestMethod]
+        [TestCategory("SQS")]
+        public void SQSFIFOTest()
+        {
+            string fifoQueueName = prefix + new Random().Next() + ".fifo";
+
+            var sqsClient = new AmazonSQSClient(RegionEndpoint.USEast2);
+            var result = sqsClient.CreateQueue(new CreateQueueRequest()
+            {
+                QueueName = fifoQueueName,
+                Attributes = new Dictionary<string, string>
+                {
+                    [SQSConstants.ATTRIBUTE_FIFO_QUEUE] = "true",
+                    [SQSConstants.ATTRIBUTE_CONTENT_BASED_DEDUPLICATION] = "true"
+                }
+            });
+
+            Assert.IsNotNull(result);
+            Assert.IsNotNull(result.QueueUrl);
+
+            var attrResults = sqsClient.GetQueueAttributes(new GetQueueAttributesRequest()
+            {
+                QueueUrl = result.QueueUrl,
+                AttributeNames = new List<string>() { SQSConstants.ATTRIBUTE_FIFO_QUEUE, SQSConstants.ATTRIBUTE_CONTENT_BASED_DEDUPLICATION }
+            });
+
+            sqsClient.Dispose();
+
+            Assert.AreEqual(true, attrResults.FifoQueue.HasValue);
+            Assert.AreEqual(true, attrResults.FifoQueue);
+
+            Assert.AreEqual(true, attrResults.ContentBasedDeduplication.HasValue);
+            Assert.AreEqual(true, attrResults.ContentBasedDeduplication);
+        }
     }
 }
