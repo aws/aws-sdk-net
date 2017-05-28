@@ -135,6 +135,7 @@ namespace Amazon.ApplicationDiscoveryService
         /// <exception cref="Amazon.ApplicationDiscoveryService.Model.ServerInternalErrorException">
         /// The server experienced an internal error. Try again.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/AssociateConfigurationItemsToApplication">REST API Reference for AssociateConfigurationItemsToApplication Operation</seealso>
         AssociateConfigurationItemsToApplicationResponse AssociateConfigurationItemsToApplication(AssociateConfigurationItemsToApplicationRequest request);
 
 
@@ -147,6 +148,7 @@ namespace Amazon.ApplicationDiscoveryService
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/AssociateConfigurationItemsToApplication">REST API Reference for AssociateConfigurationItemsToApplication Operation</seealso>
         Task<AssociateConfigurationItemsToApplicationResponse> AssociateConfigurationItemsToApplicationAsync(AssociateConfigurationItemsToApplicationRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -174,6 +176,7 @@ namespace Amazon.ApplicationDiscoveryService
         /// <exception cref="Amazon.ApplicationDiscoveryService.Model.ServerInternalErrorException">
         /// The server experienced an internal error. Try again.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/CreateApplication">REST API Reference for CreateApplication Operation</seealso>
         CreateApplicationResponse CreateApplication(CreateApplicationRequest request);
 
 
@@ -186,6 +189,7 @@ namespace Amazon.ApplicationDiscoveryService
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/CreateApplication">REST API Reference for CreateApplication Operation</seealso>
         Task<CreateApplicationResponse> CreateApplicationAsync(CreateApplicationRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -218,6 +222,7 @@ namespace Amazon.ApplicationDiscoveryService
         /// <exception cref="Amazon.ApplicationDiscoveryService.Model.ServerInternalErrorException">
         /// The server experienced an internal error. Try again.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/CreateTags">REST API Reference for CreateTags Operation</seealso>
         CreateTagsResponse CreateTags(CreateTagsRequest request);
 
 
@@ -230,6 +235,7 @@ namespace Amazon.ApplicationDiscoveryService
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/CreateTags">REST API Reference for CreateTags Operation</seealso>
         Task<CreateTagsResponse> CreateTagsAsync(CreateTagsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -257,6 +263,7 @@ namespace Amazon.ApplicationDiscoveryService
         /// <exception cref="Amazon.ApplicationDiscoveryService.Model.ServerInternalErrorException">
         /// The server experienced an internal error. Try again.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/DeleteApplications">REST API Reference for DeleteApplications Operation</seealso>
         DeleteApplicationsResponse DeleteApplications(DeleteApplicationsRequest request);
 
 
@@ -269,6 +276,7 @@ namespace Amazon.ApplicationDiscoveryService
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/DeleteApplications">REST API Reference for DeleteApplications Operation</seealso>
         Task<DeleteApplicationsResponse> DeleteApplicationsAsync(DeleteApplicationsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -301,6 +309,7 @@ namespace Amazon.ApplicationDiscoveryService
         /// <exception cref="Amazon.ApplicationDiscoveryService.Model.ServerInternalErrorException">
         /// The server experienced an internal error. Try again.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/DeleteTags">REST API Reference for DeleteTags Operation</seealso>
         DeleteTagsResponse DeleteTags(DeleteTagsRequest request);
 
 
@@ -313,6 +322,7 @@ namespace Amazon.ApplicationDiscoveryService
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/DeleteTags">REST API Reference for DeleteTags Operation</seealso>
         Task<DeleteTagsResponse> DeleteTagsAsync(DeleteTagsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -341,6 +351,7 @@ namespace Amazon.ApplicationDiscoveryService
         /// <exception cref="Amazon.ApplicationDiscoveryService.Model.ServerInternalErrorException">
         /// The server experienced an internal error. Try again.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/DescribeAgents">REST API Reference for DescribeAgents Operation</seealso>
         DescribeAgentsResponse DescribeAgents(DescribeAgentsRequest request);
 
 
@@ -353,6 +364,7 @@ namespace Amazon.ApplicationDiscoveryService
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/DescribeAgents">REST API Reference for DescribeAgents Operation</seealso>
         Task<DescribeAgentsResponse> DescribeAgentsAsync(DescribeAgentsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -390,6 +402,7 @@ namespace Amazon.ApplicationDiscoveryService
         /// <exception cref="Amazon.ApplicationDiscoveryService.Model.ServerInternalErrorException">
         /// The server experienced an internal error. Try again.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/DescribeConfigurations">REST API Reference for DescribeConfigurations Operation</seealso>
         DescribeConfigurationsResponse DescribeConfigurations(DescribeConfigurationsRequest request);
 
 
@@ -402,6 +415,7 @@ namespace Amazon.ApplicationDiscoveryService
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/DescribeConfigurations">REST API Reference for DescribeConfigurations Operation</seealso>
         Task<DescribeConfigurationsResponse> DescribeConfigurationsAsync(DescribeConfigurationsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -439,6 +453,7 @@ namespace Amazon.ApplicationDiscoveryService
         /// <exception cref="Amazon.ApplicationDiscoveryService.Model.ServerInternalErrorException">
         /// The server experienced an internal error. Try again.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/DescribeExportConfigurations">REST API Reference for DescribeExportConfigurations Operation</seealso>
         [Obsolete("Deprecated in favor of DescribeExportTasks.")]
         DescribeExportConfigurationsResponse DescribeExportConfigurations(DescribeExportConfigurationsRequest request);
 
@@ -452,6 +467,7 @@ namespace Amazon.ApplicationDiscoveryService
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/DescribeExportConfigurations">REST API Reference for DescribeExportConfigurations Operation</seealso>
         [Obsolete("Deprecated in favor of DescribeExportTasks.")]
         Task<DescribeExportConfigurationsResponse> DescribeExportConfigurationsAsync(DescribeExportConfigurationsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
@@ -481,6 +497,7 @@ namespace Amazon.ApplicationDiscoveryService
         /// <exception cref="Amazon.ApplicationDiscoveryService.Model.ServerInternalErrorException">
         /// The server experienced an internal error. Try again.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/DescribeExportTasks">REST API Reference for DescribeExportTasks Operation</seealso>
         DescribeExportTasksResponse DescribeExportTasks(DescribeExportTasksRequest request);
 
 
@@ -493,6 +510,7 @@ namespace Amazon.ApplicationDiscoveryService
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/DescribeExportTasks">REST API Reference for DescribeExportTasks Operation</seealso>
         Task<DescribeExportTasksResponse> DescribeExportTasksAsync(DescribeExportTasksRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -525,6 +543,7 @@ namespace Amazon.ApplicationDiscoveryService
         /// <exception cref="Amazon.ApplicationDiscoveryService.Model.ServerInternalErrorException">
         /// The server experienced an internal error. Try again.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/DescribeTags">REST API Reference for DescribeTags Operation</seealso>
         DescribeTagsResponse DescribeTags(DescribeTagsRequest request);
 
 
@@ -537,6 +556,7 @@ namespace Amazon.ApplicationDiscoveryService
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/DescribeTags">REST API Reference for DescribeTags Operation</seealso>
         Task<DescribeTagsResponse> DescribeTagsAsync(DescribeTagsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -564,6 +584,7 @@ namespace Amazon.ApplicationDiscoveryService
         /// <exception cref="Amazon.ApplicationDiscoveryService.Model.ServerInternalErrorException">
         /// The server experienced an internal error. Try again.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/DisassociateConfigurationItemsFromApplication">REST API Reference for DisassociateConfigurationItemsFromApplication Operation</seealso>
         DisassociateConfigurationItemsFromApplicationResponse DisassociateConfigurationItemsFromApplication(DisassociateConfigurationItemsFromApplicationRequest request);
 
 
@@ -576,6 +597,7 @@ namespace Amazon.ApplicationDiscoveryService
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/DisassociateConfigurationItemsFromApplication">REST API Reference for DisassociateConfigurationItemsFromApplication Operation</seealso>
         Task<DisassociateConfigurationItemsFromApplicationResponse> DisassociateConfigurationItemsFromApplicationAsync(DisassociateConfigurationItemsFromApplicationRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -615,6 +637,7 @@ namespace Amazon.ApplicationDiscoveryService
         /// <exception cref="Amazon.ApplicationDiscoveryService.Model.ServerInternalErrorException">
         /// The server experienced an internal error. Try again.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/ExportConfigurations">REST API Reference for ExportConfigurations Operation</seealso>
         [Obsolete("Deprecated in favor of StartExportTask.")]
         ExportConfigurationsResponse ExportConfigurations(ExportConfigurationsRequest request);
 
@@ -628,6 +651,7 @@ namespace Amazon.ApplicationDiscoveryService
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/ExportConfigurations">REST API Reference for ExportConfigurations Operation</seealso>
         [Obsolete("Deprecated in favor of StartExportTask.")]
         Task<ExportConfigurationsResponse> ExportConfigurationsAsync(ExportConfigurationsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
@@ -656,6 +680,7 @@ namespace Amazon.ApplicationDiscoveryService
         /// <exception cref="Amazon.ApplicationDiscoveryService.Model.ServerInternalErrorException">
         /// The server experienced an internal error. Try again.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/GetDiscoverySummary">REST API Reference for GetDiscoverySummary Operation</seealso>
         GetDiscoverySummaryResponse GetDiscoverySummary(GetDiscoverySummaryRequest request);
 
 
@@ -668,6 +693,7 @@ namespace Amazon.ApplicationDiscoveryService
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/GetDiscoverySummary">REST API Reference for GetDiscoverySummary Operation</seealso>
         Task<GetDiscoverySummaryResponse> GetDiscoverySummaryAsync(GetDiscoverySummaryRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -700,6 +726,7 @@ namespace Amazon.ApplicationDiscoveryService
         /// <exception cref="Amazon.ApplicationDiscoveryService.Model.ServerInternalErrorException">
         /// The server experienced an internal error. Try again.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/ListConfigurations">REST API Reference for ListConfigurations Operation</seealso>
         ListConfigurationsResponse ListConfigurations(ListConfigurationsRequest request);
 
 
@@ -712,6 +739,7 @@ namespace Amazon.ApplicationDiscoveryService
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/ListConfigurations">REST API Reference for ListConfigurations Operation</seealso>
         Task<ListConfigurationsResponse> ListConfigurationsAsync(ListConfigurationsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -739,6 +767,7 @@ namespace Amazon.ApplicationDiscoveryService
         /// <exception cref="Amazon.ApplicationDiscoveryService.Model.ServerInternalErrorException">
         /// The server experienced an internal error. Try again.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/ListServerNeighbors">REST API Reference for ListServerNeighbors Operation</seealso>
         ListServerNeighborsResponse ListServerNeighbors(ListServerNeighborsRequest request);
 
 
@@ -751,6 +780,7 @@ namespace Amazon.ApplicationDiscoveryService
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/ListServerNeighbors">REST API Reference for ListServerNeighbors Operation</seealso>
         Task<ListServerNeighborsResponse> ListServerNeighborsAsync(ListServerNeighborsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -778,6 +808,7 @@ namespace Amazon.ApplicationDiscoveryService
         /// <exception cref="Amazon.ApplicationDiscoveryService.Model.ServerInternalErrorException">
         /// The server experienced an internal error. Try again.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/StartDataCollectionByAgentIds">REST API Reference for StartDataCollectionByAgentIds Operation</seealso>
         StartDataCollectionByAgentIdsResponse StartDataCollectionByAgentIds(StartDataCollectionByAgentIdsRequest request);
 
 
@@ -790,6 +821,7 @@ namespace Amazon.ApplicationDiscoveryService
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/StartDataCollectionByAgentIds">REST API Reference for StartDataCollectionByAgentIds Operation</seealso>
         Task<StartDataCollectionByAgentIdsResponse> StartDataCollectionByAgentIdsAsync(StartDataCollectionByAgentIdsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -821,6 +853,7 @@ namespace Amazon.ApplicationDiscoveryService
         /// <exception cref="Amazon.ApplicationDiscoveryService.Model.ServerInternalErrorException">
         /// The server experienced an internal error. Try again.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/StartExportTask">REST API Reference for StartExportTask Operation</seealso>
         StartExportTaskResponse StartExportTask(StartExportTaskRequest request);
 
 
@@ -833,6 +866,7 @@ namespace Amazon.ApplicationDiscoveryService
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/StartExportTask">REST API Reference for StartExportTask Operation</seealso>
         Task<StartExportTaskResponse> StartExportTaskAsync(StartExportTaskRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -860,6 +894,7 @@ namespace Amazon.ApplicationDiscoveryService
         /// <exception cref="Amazon.ApplicationDiscoveryService.Model.ServerInternalErrorException">
         /// The server experienced an internal error. Try again.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/StopDataCollectionByAgentIds">REST API Reference for StopDataCollectionByAgentIds Operation</seealso>
         StopDataCollectionByAgentIdsResponse StopDataCollectionByAgentIds(StopDataCollectionByAgentIdsRequest request);
 
 
@@ -872,6 +907,7 @@ namespace Amazon.ApplicationDiscoveryService
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/StopDataCollectionByAgentIds">REST API Reference for StopDataCollectionByAgentIds Operation</seealso>
         Task<StopDataCollectionByAgentIdsResponse> StopDataCollectionByAgentIdsAsync(StopDataCollectionByAgentIdsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -899,6 +935,7 @@ namespace Amazon.ApplicationDiscoveryService
         /// <exception cref="Amazon.ApplicationDiscoveryService.Model.ServerInternalErrorException">
         /// The server experienced an internal error. Try again.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/UpdateApplication">REST API Reference for UpdateApplication Operation</seealso>
         UpdateApplicationResponse UpdateApplication(UpdateApplicationRequest request);
 
 
@@ -911,6 +948,7 @@ namespace Amazon.ApplicationDiscoveryService
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/UpdateApplication">REST API Reference for UpdateApplication Operation</seealso>
         Task<UpdateApplicationResponse> UpdateApplicationAsync(UpdateApplicationRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion

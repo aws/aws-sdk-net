@@ -121,6 +121,7 @@ namespace Amazon.Rekognition
         /// <exception cref="Amazon.Rekognition.Model.ThrottlingException">
         /// Amazon Rekognition is temporarily unable to process the request. Try your call again.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/CompareFaces">REST API Reference for CompareFaces Operation</seealso>
         CompareFacesResponse CompareFaces(CompareFacesRequest request);
 
 
@@ -133,6 +134,7 @@ namespace Amazon.Rekognition
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/CompareFaces">REST API Reference for CompareFaces Operation</seealso>
         Task<CompareFacesResponse> CompareFacesAsync(CompareFacesRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -188,6 +190,7 @@ namespace Amazon.Rekognition
         /// <exception cref="Amazon.Rekognition.Model.ThrottlingException">
         /// Amazon Rekognition is temporarily unable to process the request. Try your call again.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/CreateCollection">REST API Reference for CreateCollection Operation</seealso>
         CreateCollectionResponse CreateCollection(CreateCollectionRequest request);
 
 
@@ -200,6 +203,7 @@ namespace Amazon.Rekognition
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/CreateCollection">REST API Reference for CreateCollection Operation</seealso>
         Task<CreateCollectionResponse> CreateCollectionAsync(CreateCollectionRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -240,6 +244,7 @@ namespace Amazon.Rekognition
         /// <exception cref="Amazon.Rekognition.Model.ThrottlingException">
         /// Amazon Rekognition is temporarily unable to process the request. Try your call again.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/DeleteCollection">REST API Reference for DeleteCollection Operation</seealso>
         DeleteCollectionResponse DeleteCollection(DeleteCollectionRequest request);
 
 
@@ -252,6 +257,7 @@ namespace Amazon.Rekognition
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/DeleteCollection">REST API Reference for DeleteCollection Operation</seealso>
         Task<DeleteCollectionResponse> DeleteCollectionAsync(DeleteCollectionRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -292,6 +298,7 @@ namespace Amazon.Rekognition
         /// <exception cref="Amazon.Rekognition.Model.ThrottlingException">
         /// Amazon Rekognition is temporarily unable to process the request. Try your call again.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/DeleteFaces">REST API Reference for DeleteFaces Operation</seealso>
         DeleteFacesResponse DeleteFaces(DeleteFacesRequest request);
 
 
@@ -304,6 +311,7 @@ namespace Amazon.Rekognition
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/DeleteFaces">REST API Reference for DeleteFaces Operation</seealso>
         Task<DeleteFacesResponse> DeleteFacesAsync(DeleteFacesRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -370,6 +378,7 @@ namespace Amazon.Rekognition
         /// <exception cref="Amazon.Rekognition.Model.ThrottlingException">
         /// Amazon Rekognition is temporarily unable to process the request. Try your call again.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/DetectFaces">REST API Reference for DetectFaces Operation</seealso>
         DetectFacesResponse DetectFaces(DetectFacesRequest request);
 
 
@@ -382,6 +391,7 @@ namespace Amazon.Rekognition
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/DetectFaces">REST API Reference for DetectFaces Operation</seealso>
         Task<DetectFacesResponse> DetectFacesAsync(DetectFacesRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -490,6 +500,7 @@ namespace Amazon.Rekognition
         /// <exception cref="Amazon.Rekognition.Model.ThrottlingException">
         /// Amazon Rekognition is temporarily unable to process the request. Try your call again.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/DetectLabels">REST API Reference for DetectLabels Operation</seealso>
         DetectLabelsResponse DetectLabels(DetectLabelsRequest request);
 
 
@@ -502,6 +513,7 @@ namespace Amazon.Rekognition
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/DetectLabels">REST API Reference for DetectLabels Operation</seealso>
         Task<DetectLabelsResponse> DetectLabelsAsync(DetectLabelsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -551,6 +563,7 @@ namespace Amazon.Rekognition
         /// <exception cref="Amazon.Rekognition.Model.ThrottlingException">
         /// Amazon Rekognition is temporarily unable to process the request. Try your call again.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/DetectModerationLabels">REST API Reference for DetectModerationLabels Operation</seealso>
         DetectModerationLabelsResponse DetectModerationLabels(DetectModerationLabelsRequest request);
 
 
@@ -563,6 +576,7 @@ namespace Amazon.Rekognition
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/DetectModerationLabels">REST API Reference for DetectModerationLabels Operation</seealso>
         Task<DetectModerationLabelsResponse> DetectModerationLabelsAsync(DetectModerationLabelsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -644,6 +658,7 @@ namespace Amazon.Rekognition
         /// <exception cref="Amazon.Rekognition.Model.ThrottlingException">
         /// Amazon Rekognition is temporarily unable to process the request. Try your call again.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/IndexFaces">REST API Reference for IndexFaces Operation</seealso>
         IndexFacesResponse IndexFaces(IndexFacesRequest request);
 
 
@@ -656,6 +671,7 @@ namespace Amazon.Rekognition
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/IndexFaces">REST API Reference for IndexFaces Operation</seealso>
         Task<IndexFacesResponse> IndexFacesAsync(IndexFacesRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -704,6 +720,7 @@ namespace Amazon.Rekognition
         /// <exception cref="Amazon.Rekognition.Model.ThrottlingException">
         /// Amazon Rekognition is temporarily unable to process the request. Try your call again.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/ListCollections">REST API Reference for ListCollections Operation</seealso>
         ListCollectionsResponse ListCollections(ListCollectionsRequest request);
 
 
@@ -716,6 +733,7 @@ namespace Amazon.Rekognition
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/ListCollections">REST API Reference for ListCollections Operation</seealso>
         Task<ListCollectionsResponse> ListCollectionsAsync(ListCollectionsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -760,6 +778,7 @@ namespace Amazon.Rekognition
         /// <exception cref="Amazon.Rekognition.Model.ThrottlingException">
         /// Amazon Rekognition is temporarily unable to process the request. Try your call again.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/ListFaces">REST API Reference for ListFaces Operation</seealso>
         ListFacesResponse ListFaces(ListFacesRequest request);
 
 
@@ -772,6 +791,7 @@ namespace Amazon.Rekognition
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/ListFaces">REST API Reference for ListFaces Operation</seealso>
         Task<ListFacesResponse> ListFacesAsync(ListFacesRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -831,6 +851,7 @@ namespace Amazon.Rekognition
         /// <exception cref="Amazon.Rekognition.Model.ThrottlingException">
         /// Amazon Rekognition is temporarily unable to process the request. Try your call again.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/SearchFaces">REST API Reference for SearchFaces Operation</seealso>
         SearchFacesResponse SearchFaces(SearchFacesRequest request);
 
 
@@ -843,6 +864,7 @@ namespace Amazon.Rekognition
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/SearchFaces">REST API Reference for SearchFaces Operation</seealso>
         Task<SearchFacesResponse> SearchFacesAsync(SearchFacesRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -917,6 +939,7 @@ namespace Amazon.Rekognition
         /// <exception cref="Amazon.Rekognition.Model.ThrottlingException">
         /// Amazon Rekognition is temporarily unable to process the request. Try your call again.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/SearchFacesByImage">REST API Reference for SearchFacesByImage Operation</seealso>
         SearchFacesByImageResponse SearchFacesByImage(SearchFacesByImageRequest request);
 
 
@@ -929,6 +952,7 @@ namespace Amazon.Rekognition
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/SearchFacesByImage">REST API Reference for SearchFacesByImage Operation</seealso>
         Task<SearchFacesByImageResponse> SearchFacesByImageAsync(SearchFacesByImageRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion

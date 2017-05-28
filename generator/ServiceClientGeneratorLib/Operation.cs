@@ -647,19 +647,14 @@ namespace ServiceClientGenerator
             "budgets",
             "cloudsearch",
             "cloudsearchdomain",
-            "discovery",
             "elastictranscoder",
             "es",
             "glacier",
             "importexport",
-            "iot",
             "iot-data",
-            "machinelearning",
-            "rekognition",
             "s3",
             "sdb",
-            "swf",
-            "xray"
+            "xray",
         };
         private static Dictionary<string, bool> _checkedService = new Dictionary<string, bool>();
         private static bool IsExcludedServiceId(string serviceId)

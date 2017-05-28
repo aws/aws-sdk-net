@@ -323,6 +323,7 @@ namespace Amazon.ApplicationDiscoveryService
         /// <exception cref="Amazon.ApplicationDiscoveryService.Model.ServerInternalErrorException">
         /// The server experienced an internal error. Try again.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/AssociateConfigurationItemsToApplication">REST API Reference for AssociateConfigurationItemsToApplication Operation</seealso>
         public AssociateConfigurationItemsToApplicationResponse AssociateConfigurationItemsToApplication(AssociateConfigurationItemsToApplicationRequest request)
         {
             var marshaller = new AssociateConfigurationItemsToApplicationRequestMarshaller();
@@ -340,6 +341,7 @@ namespace Amazon.ApplicationDiscoveryService
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/AssociateConfigurationItemsToApplication">REST API Reference for AssociateConfigurationItemsToApplication Operation</seealso>
         public Task<AssociateConfigurationItemsToApplicationResponse> AssociateConfigurationItemsToApplicationAsync(AssociateConfigurationItemsToApplicationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new AssociateConfigurationItemsToApplicationRequestMarshaller();
@@ -374,6 +376,7 @@ namespace Amazon.ApplicationDiscoveryService
         /// <exception cref="Amazon.ApplicationDiscoveryService.Model.ServerInternalErrorException">
         /// The server experienced an internal error. Try again.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/CreateApplication">REST API Reference for CreateApplication Operation</seealso>
         public CreateApplicationResponse CreateApplication(CreateApplicationRequest request)
         {
             var marshaller = new CreateApplicationRequestMarshaller();
@@ -391,6 +394,7 @@ namespace Amazon.ApplicationDiscoveryService
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/CreateApplication">REST API Reference for CreateApplication Operation</seealso>
         public Task<CreateApplicationResponse> CreateApplicationAsync(CreateApplicationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateApplicationRequestMarshaller();
@@ -430,6 +434,7 @@ namespace Amazon.ApplicationDiscoveryService
         /// <exception cref="Amazon.ApplicationDiscoveryService.Model.ServerInternalErrorException">
         /// The server experienced an internal error. Try again.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/CreateTags">REST API Reference for CreateTags Operation</seealso>
         public CreateTagsResponse CreateTags(CreateTagsRequest request)
         {
             var marshaller = new CreateTagsRequestMarshaller();
@@ -447,6 +452,7 @@ namespace Amazon.ApplicationDiscoveryService
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/CreateTags">REST API Reference for CreateTags Operation</seealso>
         public Task<CreateTagsResponse> CreateTagsAsync(CreateTagsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateTagsRequestMarshaller();
@@ -481,6 +487,7 @@ namespace Amazon.ApplicationDiscoveryService
         /// <exception cref="Amazon.ApplicationDiscoveryService.Model.ServerInternalErrorException">
         /// The server experienced an internal error. Try again.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/DeleteApplications">REST API Reference for DeleteApplications Operation</seealso>
         public DeleteApplicationsResponse DeleteApplications(DeleteApplicationsRequest request)
         {
             var marshaller = new DeleteApplicationsRequestMarshaller();
@@ -498,6 +505,7 @@ namespace Amazon.ApplicationDiscoveryService
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/DeleteApplications">REST API Reference for DeleteApplications Operation</seealso>
         public Task<DeleteApplicationsResponse> DeleteApplicationsAsync(DeleteApplicationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteApplicationsRequestMarshaller();
@@ -537,6 +545,7 @@ namespace Amazon.ApplicationDiscoveryService
         /// <exception cref="Amazon.ApplicationDiscoveryService.Model.ServerInternalErrorException">
         /// The server experienced an internal error. Try again.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/DeleteTags">REST API Reference for DeleteTags Operation</seealso>
         public DeleteTagsResponse DeleteTags(DeleteTagsRequest request)
         {
             var marshaller = new DeleteTagsRequestMarshaller();
@@ -554,6 +563,7 @@ namespace Amazon.ApplicationDiscoveryService
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/DeleteTags">REST API Reference for DeleteTags Operation</seealso>
         public Task<DeleteTagsResponse> DeleteTagsAsync(DeleteTagsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteTagsRequestMarshaller();
@@ -589,6 +599,7 @@ namespace Amazon.ApplicationDiscoveryService
         /// <exception cref="Amazon.ApplicationDiscoveryService.Model.ServerInternalErrorException">
         /// The server experienced an internal error. Try again.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/DescribeAgents">REST API Reference for DescribeAgents Operation</seealso>
         public DescribeAgentsResponse DescribeAgents(DescribeAgentsRequest request)
         {
             var marshaller = new DescribeAgentsRequestMarshaller();
@@ -606,6 +617,7 @@ namespace Amazon.ApplicationDiscoveryService
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/DescribeAgents">REST API Reference for DescribeAgents Operation</seealso>
         public Task<DescribeAgentsResponse> DescribeAgentsAsync(DescribeAgentsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeAgentsRequestMarshaller();
@@ -650,6 +662,7 @@ namespace Amazon.ApplicationDiscoveryService
         /// <exception cref="Amazon.ApplicationDiscoveryService.Model.ServerInternalErrorException">
         /// The server experienced an internal error. Try again.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/DescribeConfigurations">REST API Reference for DescribeConfigurations Operation</seealso>
         public DescribeConfigurationsResponse DescribeConfigurations(DescribeConfigurationsRequest request)
         {
             var marshaller = new DescribeConfigurationsRequestMarshaller();
@@ -667,6 +680,7 @@ namespace Amazon.ApplicationDiscoveryService
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/DescribeConfigurations">REST API Reference for DescribeConfigurations Operation</seealso>
         public Task<DescribeConfigurationsResponse> DescribeConfigurationsAsync(DescribeConfigurationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeConfigurationsRequestMarshaller();
@@ -711,6 +725,7 @@ namespace Amazon.ApplicationDiscoveryService
         /// <exception cref="Amazon.ApplicationDiscoveryService.Model.ServerInternalErrorException">
         /// The server experienced an internal error. Try again.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/DescribeExportConfigurations">REST API Reference for DescribeExportConfigurations Operation</seealso>
         [Obsolete("Deprecated in favor of DescribeExportTasks.")]
         public DescribeExportConfigurationsResponse DescribeExportConfigurations(DescribeExportConfigurationsRequest request)
         {
@@ -729,6 +744,7 @@ namespace Amazon.ApplicationDiscoveryService
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/DescribeExportConfigurations">REST API Reference for DescribeExportConfigurations Operation</seealso>
         [Obsolete("Deprecated in favor of DescribeExportTasks.")]
         public Task<DescribeExportConfigurationsResponse> DescribeExportConfigurationsAsync(DescribeExportConfigurationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -765,6 +781,7 @@ namespace Amazon.ApplicationDiscoveryService
         /// <exception cref="Amazon.ApplicationDiscoveryService.Model.ServerInternalErrorException">
         /// The server experienced an internal error. Try again.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/DescribeExportTasks">REST API Reference for DescribeExportTasks Operation</seealso>
         public DescribeExportTasksResponse DescribeExportTasks(DescribeExportTasksRequest request)
         {
             var marshaller = new DescribeExportTasksRequestMarshaller();
@@ -782,6 +799,7 @@ namespace Amazon.ApplicationDiscoveryService
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/DescribeExportTasks">REST API Reference for DescribeExportTasks Operation</seealso>
         public Task<DescribeExportTasksResponse> DescribeExportTasksAsync(DescribeExportTasksRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeExportTasksRequestMarshaller();
@@ -821,6 +839,7 @@ namespace Amazon.ApplicationDiscoveryService
         /// <exception cref="Amazon.ApplicationDiscoveryService.Model.ServerInternalErrorException">
         /// The server experienced an internal error. Try again.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/DescribeTags">REST API Reference for DescribeTags Operation</seealso>
         public DescribeTagsResponse DescribeTags(DescribeTagsRequest request)
         {
             var marshaller = new DescribeTagsRequestMarshaller();
@@ -838,6 +857,7 @@ namespace Amazon.ApplicationDiscoveryService
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/DescribeTags">REST API Reference for DescribeTags Operation</seealso>
         public Task<DescribeTagsResponse> DescribeTagsAsync(DescribeTagsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeTagsRequestMarshaller();
@@ -872,6 +892,7 @@ namespace Amazon.ApplicationDiscoveryService
         /// <exception cref="Amazon.ApplicationDiscoveryService.Model.ServerInternalErrorException">
         /// The server experienced an internal error. Try again.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/DisassociateConfigurationItemsFromApplication">REST API Reference for DisassociateConfigurationItemsFromApplication Operation</seealso>
         public DisassociateConfigurationItemsFromApplicationResponse DisassociateConfigurationItemsFromApplication(DisassociateConfigurationItemsFromApplicationRequest request)
         {
             var marshaller = new DisassociateConfigurationItemsFromApplicationRequestMarshaller();
@@ -889,6 +910,7 @@ namespace Amazon.ApplicationDiscoveryService
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/DisassociateConfigurationItemsFromApplication">REST API Reference for DisassociateConfigurationItemsFromApplication Operation</seealso>
         public Task<DisassociateConfigurationItemsFromApplicationResponse> DisassociateConfigurationItemsFromApplicationAsync(DisassociateConfigurationItemsFromApplicationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DisassociateConfigurationItemsFromApplicationRequestMarshaller();
@@ -935,6 +957,7 @@ namespace Amazon.ApplicationDiscoveryService
         /// <exception cref="Amazon.ApplicationDiscoveryService.Model.ServerInternalErrorException">
         /// The server experienced an internal error. Try again.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/ExportConfigurations">REST API Reference for ExportConfigurations Operation</seealso>
         [Obsolete("Deprecated in favor of StartExportTask.")]
         public ExportConfigurationsResponse ExportConfigurations(ExportConfigurationsRequest request)
         {
@@ -953,6 +976,7 @@ namespace Amazon.ApplicationDiscoveryService
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/ExportConfigurations">REST API Reference for ExportConfigurations Operation</seealso>
         [Obsolete("Deprecated in favor of StartExportTask.")]
         public Task<ExportConfigurationsResponse> ExportConfigurationsAsync(ExportConfigurationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -988,6 +1012,7 @@ namespace Amazon.ApplicationDiscoveryService
         /// <exception cref="Amazon.ApplicationDiscoveryService.Model.ServerInternalErrorException">
         /// The server experienced an internal error. Try again.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/GetDiscoverySummary">REST API Reference for GetDiscoverySummary Operation</seealso>
         public GetDiscoverySummaryResponse GetDiscoverySummary(GetDiscoverySummaryRequest request)
         {
             var marshaller = new GetDiscoverySummaryRequestMarshaller();
@@ -1005,6 +1030,7 @@ namespace Amazon.ApplicationDiscoveryService
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/GetDiscoverySummary">REST API Reference for GetDiscoverySummary Operation</seealso>
         public Task<GetDiscoverySummaryResponse> GetDiscoverySummaryAsync(GetDiscoverySummaryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetDiscoverySummaryRequestMarshaller();
@@ -1044,6 +1070,7 @@ namespace Amazon.ApplicationDiscoveryService
         /// <exception cref="Amazon.ApplicationDiscoveryService.Model.ServerInternalErrorException">
         /// The server experienced an internal error. Try again.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/ListConfigurations">REST API Reference for ListConfigurations Operation</seealso>
         public ListConfigurationsResponse ListConfigurations(ListConfigurationsRequest request)
         {
             var marshaller = new ListConfigurationsRequestMarshaller();
@@ -1061,6 +1088,7 @@ namespace Amazon.ApplicationDiscoveryService
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/ListConfigurations">REST API Reference for ListConfigurations Operation</seealso>
         public Task<ListConfigurationsResponse> ListConfigurationsAsync(ListConfigurationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListConfigurationsRequestMarshaller();
@@ -1095,6 +1123,7 @@ namespace Amazon.ApplicationDiscoveryService
         /// <exception cref="Amazon.ApplicationDiscoveryService.Model.ServerInternalErrorException">
         /// The server experienced an internal error. Try again.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/ListServerNeighbors">REST API Reference for ListServerNeighbors Operation</seealso>
         public ListServerNeighborsResponse ListServerNeighbors(ListServerNeighborsRequest request)
         {
             var marshaller = new ListServerNeighborsRequestMarshaller();
@@ -1112,6 +1141,7 @@ namespace Amazon.ApplicationDiscoveryService
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/ListServerNeighbors">REST API Reference for ListServerNeighbors Operation</seealso>
         public Task<ListServerNeighborsResponse> ListServerNeighborsAsync(ListServerNeighborsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListServerNeighborsRequestMarshaller();
@@ -1146,6 +1176,7 @@ namespace Amazon.ApplicationDiscoveryService
         /// <exception cref="Amazon.ApplicationDiscoveryService.Model.ServerInternalErrorException">
         /// The server experienced an internal error. Try again.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/StartDataCollectionByAgentIds">REST API Reference for StartDataCollectionByAgentIds Operation</seealso>
         public StartDataCollectionByAgentIdsResponse StartDataCollectionByAgentIds(StartDataCollectionByAgentIdsRequest request)
         {
             var marshaller = new StartDataCollectionByAgentIdsRequestMarshaller();
@@ -1163,6 +1194,7 @@ namespace Amazon.ApplicationDiscoveryService
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/StartDataCollectionByAgentIds">REST API Reference for StartDataCollectionByAgentIds Operation</seealso>
         public Task<StartDataCollectionByAgentIdsResponse> StartDataCollectionByAgentIdsAsync(StartDataCollectionByAgentIdsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new StartDataCollectionByAgentIdsRequestMarshaller();
@@ -1201,6 +1233,7 @@ namespace Amazon.ApplicationDiscoveryService
         /// <exception cref="Amazon.ApplicationDiscoveryService.Model.ServerInternalErrorException">
         /// The server experienced an internal error. Try again.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/StartExportTask">REST API Reference for StartExportTask Operation</seealso>
         public StartExportTaskResponse StartExportTask(StartExportTaskRequest request)
         {
             var marshaller = new StartExportTaskRequestMarshaller();
@@ -1218,6 +1251,7 @@ namespace Amazon.ApplicationDiscoveryService
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/StartExportTask">REST API Reference for StartExportTask Operation</seealso>
         public Task<StartExportTaskResponse> StartExportTaskAsync(StartExportTaskRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new StartExportTaskRequestMarshaller();
@@ -1252,6 +1286,7 @@ namespace Amazon.ApplicationDiscoveryService
         /// <exception cref="Amazon.ApplicationDiscoveryService.Model.ServerInternalErrorException">
         /// The server experienced an internal error. Try again.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/StopDataCollectionByAgentIds">REST API Reference for StopDataCollectionByAgentIds Operation</seealso>
         public StopDataCollectionByAgentIdsResponse StopDataCollectionByAgentIds(StopDataCollectionByAgentIdsRequest request)
         {
             var marshaller = new StopDataCollectionByAgentIdsRequestMarshaller();
@@ -1269,6 +1304,7 @@ namespace Amazon.ApplicationDiscoveryService
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/StopDataCollectionByAgentIds">REST API Reference for StopDataCollectionByAgentIds Operation</seealso>
         public Task<StopDataCollectionByAgentIdsResponse> StopDataCollectionByAgentIdsAsync(StopDataCollectionByAgentIdsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new StopDataCollectionByAgentIdsRequestMarshaller();
@@ -1303,6 +1339,7 @@ namespace Amazon.ApplicationDiscoveryService
         /// <exception cref="Amazon.ApplicationDiscoveryService.Model.ServerInternalErrorException">
         /// The server experienced an internal error. Try again.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/UpdateApplication">REST API Reference for UpdateApplication Operation</seealso>
         public UpdateApplicationResponse UpdateApplication(UpdateApplicationRequest request)
         {
             var marshaller = new UpdateApplicationRequestMarshaller();
@@ -1320,6 +1357,7 @@ namespace Amazon.ApplicationDiscoveryService
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/UpdateApplication">REST API Reference for UpdateApplication Operation</seealso>
         public Task<UpdateApplicationResponse> UpdateApplicationAsync(UpdateApplicationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new UpdateApplicationRequestMarshaller();

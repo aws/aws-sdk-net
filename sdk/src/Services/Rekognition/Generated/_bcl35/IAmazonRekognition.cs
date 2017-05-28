@@ -119,6 +119,7 @@ namespace Amazon.Rekognition
         /// <exception cref="Amazon.Rekognition.Model.ThrottlingException">
         /// Amazon Rekognition is temporarily unable to process the request. Try your call again.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/CompareFaces">REST API Reference for CompareFaces Operation</seealso>
         CompareFacesResponse CompareFaces(CompareFacesRequest request);
 
         /// <summary>
@@ -132,6 +133,7 @@ namespace Amazon.Rekognition
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCompareFaces
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/CompareFaces">REST API Reference for CompareFaces Operation</seealso>
         IAsyncResult BeginCompareFaces(CompareFacesRequest request, AsyncCallback callback, object state);
 
 
@@ -143,6 +145,7 @@ namespace Amazon.Rekognition
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCompareFaces.</param>
         /// 
         /// <returns>Returns a  CompareFacesResult from Rekognition.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/CompareFaces">REST API Reference for CompareFaces Operation</seealso>
         CompareFacesResponse EndCompareFaces(IAsyncResult asyncResult);
 
         #endregion
@@ -198,6 +201,7 @@ namespace Amazon.Rekognition
         /// <exception cref="Amazon.Rekognition.Model.ThrottlingException">
         /// Amazon Rekognition is temporarily unable to process the request. Try your call again.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/CreateCollection">REST API Reference for CreateCollection Operation</seealso>
         CreateCollectionResponse CreateCollection(CreateCollectionRequest request);
 
         /// <summary>
@@ -211,6 +215,7 @@ namespace Amazon.Rekognition
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateCollection
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/CreateCollection">REST API Reference for CreateCollection Operation</seealso>
         IAsyncResult BeginCreateCollection(CreateCollectionRequest request, AsyncCallback callback, object state);
 
 
@@ -222,6 +227,7 @@ namespace Amazon.Rekognition
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateCollection.</param>
         /// 
         /// <returns>Returns a  CreateCollectionResult from Rekognition.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/CreateCollection">REST API Reference for CreateCollection Operation</seealso>
         CreateCollectionResponse EndCreateCollection(IAsyncResult asyncResult);
 
         #endregion
@@ -262,6 +268,7 @@ namespace Amazon.Rekognition
         /// <exception cref="Amazon.Rekognition.Model.ThrottlingException">
         /// Amazon Rekognition is temporarily unable to process the request. Try your call again.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/DeleteCollection">REST API Reference for DeleteCollection Operation</seealso>
         DeleteCollectionResponse DeleteCollection(DeleteCollectionRequest request);
 
         /// <summary>
@@ -275,6 +282,7 @@ namespace Amazon.Rekognition
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteCollection
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/DeleteCollection">REST API Reference for DeleteCollection Operation</seealso>
         IAsyncResult BeginDeleteCollection(DeleteCollectionRequest request, AsyncCallback callback, object state);
 
 
@@ -286,6 +294,7 @@ namespace Amazon.Rekognition
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteCollection.</param>
         /// 
         /// <returns>Returns a  DeleteCollectionResult from Rekognition.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/DeleteCollection">REST API Reference for DeleteCollection Operation</seealso>
         DeleteCollectionResponse EndDeleteCollection(IAsyncResult asyncResult);
 
         #endregion
@@ -326,6 +335,7 @@ namespace Amazon.Rekognition
         /// <exception cref="Amazon.Rekognition.Model.ThrottlingException">
         /// Amazon Rekognition is temporarily unable to process the request. Try your call again.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/DeleteFaces">REST API Reference for DeleteFaces Operation</seealso>
         DeleteFacesResponse DeleteFaces(DeleteFacesRequest request);
 
         /// <summary>
@@ -339,6 +349,7 @@ namespace Amazon.Rekognition
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteFaces
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/DeleteFaces">REST API Reference for DeleteFaces Operation</seealso>
         IAsyncResult BeginDeleteFaces(DeleteFacesRequest request, AsyncCallback callback, object state);
 
 
@@ -350,6 +361,7 @@ namespace Amazon.Rekognition
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteFaces.</param>
         /// 
         /// <returns>Returns a  DeleteFacesResult from Rekognition.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/DeleteFaces">REST API Reference for DeleteFaces Operation</seealso>
         DeleteFacesResponse EndDeleteFaces(IAsyncResult asyncResult);
 
         #endregion
@@ -416,6 +428,7 @@ namespace Amazon.Rekognition
         /// <exception cref="Amazon.Rekognition.Model.ThrottlingException">
         /// Amazon Rekognition is temporarily unable to process the request. Try your call again.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/DetectFaces">REST API Reference for DetectFaces Operation</seealso>
         DetectFacesResponse DetectFaces(DetectFacesRequest request);
 
         /// <summary>
@@ -429,6 +442,7 @@ namespace Amazon.Rekognition
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDetectFaces
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/DetectFaces">REST API Reference for DetectFaces Operation</seealso>
         IAsyncResult BeginDetectFaces(DetectFacesRequest request, AsyncCallback callback, object state);
 
 
@@ -440,6 +454,7 @@ namespace Amazon.Rekognition
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDetectFaces.</param>
         /// 
         /// <returns>Returns a  DetectFacesResult from Rekognition.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/DetectFaces">REST API Reference for DetectFaces Operation</seealso>
         DetectFacesResponse EndDetectFaces(IAsyncResult asyncResult);
 
         #endregion
@@ -548,6 +563,7 @@ namespace Amazon.Rekognition
         /// <exception cref="Amazon.Rekognition.Model.ThrottlingException">
         /// Amazon Rekognition is temporarily unable to process the request. Try your call again.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/DetectLabels">REST API Reference for DetectLabels Operation</seealso>
         DetectLabelsResponse DetectLabels(DetectLabelsRequest request);
 
         /// <summary>
@@ -561,6 +577,7 @@ namespace Amazon.Rekognition
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDetectLabels
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/DetectLabels">REST API Reference for DetectLabels Operation</seealso>
         IAsyncResult BeginDetectLabels(DetectLabelsRequest request, AsyncCallback callback, object state);
 
 
@@ -572,6 +589,7 @@ namespace Amazon.Rekognition
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDetectLabels.</param>
         /// 
         /// <returns>Returns a  DetectLabelsResult from Rekognition.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/DetectLabels">REST API Reference for DetectLabels Operation</seealso>
         DetectLabelsResponse EndDetectLabels(IAsyncResult asyncResult);
 
         #endregion
@@ -621,6 +639,7 @@ namespace Amazon.Rekognition
         /// <exception cref="Amazon.Rekognition.Model.ThrottlingException">
         /// Amazon Rekognition is temporarily unable to process the request. Try your call again.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/DetectModerationLabels">REST API Reference for DetectModerationLabels Operation</seealso>
         DetectModerationLabelsResponse DetectModerationLabels(DetectModerationLabelsRequest request);
 
         /// <summary>
@@ -634,6 +653,7 @@ namespace Amazon.Rekognition
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDetectModerationLabels
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/DetectModerationLabels">REST API Reference for DetectModerationLabels Operation</seealso>
         IAsyncResult BeginDetectModerationLabels(DetectModerationLabelsRequest request, AsyncCallback callback, object state);
 
 
@@ -645,6 +665,7 @@ namespace Amazon.Rekognition
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDetectModerationLabels.</param>
         /// 
         /// <returns>Returns a  DetectModerationLabelsResult from Rekognition.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/DetectModerationLabels">REST API Reference for DetectModerationLabels Operation</seealso>
         DetectModerationLabelsResponse EndDetectModerationLabels(IAsyncResult asyncResult);
 
         #endregion
@@ -726,6 +747,7 @@ namespace Amazon.Rekognition
         /// <exception cref="Amazon.Rekognition.Model.ThrottlingException">
         /// Amazon Rekognition is temporarily unable to process the request. Try your call again.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/IndexFaces">REST API Reference for IndexFaces Operation</seealso>
         IndexFacesResponse IndexFaces(IndexFacesRequest request);
 
         /// <summary>
@@ -739,6 +761,7 @@ namespace Amazon.Rekognition
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndIndexFaces
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/IndexFaces">REST API Reference for IndexFaces Operation</seealso>
         IAsyncResult BeginIndexFaces(IndexFacesRequest request, AsyncCallback callback, object state);
 
 
@@ -750,6 +773,7 @@ namespace Amazon.Rekognition
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginIndexFaces.</param>
         /// 
         /// <returns>Returns a  IndexFacesResult from Rekognition.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/IndexFaces">REST API Reference for IndexFaces Operation</seealso>
         IndexFacesResponse EndIndexFaces(IAsyncResult asyncResult);
 
         #endregion
@@ -798,6 +822,7 @@ namespace Amazon.Rekognition
         /// <exception cref="Amazon.Rekognition.Model.ThrottlingException">
         /// Amazon Rekognition is temporarily unable to process the request. Try your call again.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/ListCollections">REST API Reference for ListCollections Operation</seealso>
         ListCollectionsResponse ListCollections(ListCollectionsRequest request);
 
         /// <summary>
@@ -811,6 +836,7 @@ namespace Amazon.Rekognition
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListCollections
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/ListCollections">REST API Reference for ListCollections Operation</seealso>
         IAsyncResult BeginListCollections(ListCollectionsRequest request, AsyncCallback callback, object state);
 
 
@@ -822,6 +848,7 @@ namespace Amazon.Rekognition
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListCollections.</param>
         /// 
         /// <returns>Returns a  ListCollectionsResult from Rekognition.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/ListCollections">REST API Reference for ListCollections Operation</seealso>
         ListCollectionsResponse EndListCollections(IAsyncResult asyncResult);
 
         #endregion
@@ -866,6 +893,7 @@ namespace Amazon.Rekognition
         /// <exception cref="Amazon.Rekognition.Model.ThrottlingException">
         /// Amazon Rekognition is temporarily unable to process the request. Try your call again.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/ListFaces">REST API Reference for ListFaces Operation</seealso>
         ListFacesResponse ListFaces(ListFacesRequest request);
 
         /// <summary>
@@ -879,6 +907,7 @@ namespace Amazon.Rekognition
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListFaces
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/ListFaces">REST API Reference for ListFaces Operation</seealso>
         IAsyncResult BeginListFaces(ListFacesRequest request, AsyncCallback callback, object state);
 
 
@@ -890,6 +919,7 @@ namespace Amazon.Rekognition
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListFaces.</param>
         /// 
         /// <returns>Returns a  ListFacesResult from Rekognition.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/ListFaces">REST API Reference for ListFaces Operation</seealso>
         ListFacesResponse EndListFaces(IAsyncResult asyncResult);
 
         #endregion
@@ -949,6 +979,7 @@ namespace Amazon.Rekognition
         /// <exception cref="Amazon.Rekognition.Model.ThrottlingException">
         /// Amazon Rekognition is temporarily unable to process the request. Try your call again.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/SearchFaces">REST API Reference for SearchFaces Operation</seealso>
         SearchFacesResponse SearchFaces(SearchFacesRequest request);
 
         /// <summary>
@@ -962,6 +993,7 @@ namespace Amazon.Rekognition
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndSearchFaces
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/SearchFaces">REST API Reference for SearchFaces Operation</seealso>
         IAsyncResult BeginSearchFaces(SearchFacesRequest request, AsyncCallback callback, object state);
 
 
@@ -973,6 +1005,7 @@ namespace Amazon.Rekognition
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginSearchFaces.</param>
         /// 
         /// <returns>Returns a  SearchFacesResult from Rekognition.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/SearchFaces">REST API Reference for SearchFaces Operation</seealso>
         SearchFacesResponse EndSearchFaces(IAsyncResult asyncResult);
 
         #endregion
@@ -1047,6 +1080,7 @@ namespace Amazon.Rekognition
         /// <exception cref="Amazon.Rekognition.Model.ThrottlingException">
         /// Amazon Rekognition is temporarily unable to process the request. Try your call again.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/SearchFacesByImage">REST API Reference for SearchFacesByImage Operation</seealso>
         SearchFacesByImageResponse SearchFacesByImage(SearchFacesByImageRequest request);
 
         /// <summary>
@@ -1060,6 +1094,7 @@ namespace Amazon.Rekognition
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndSearchFacesByImage
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/SearchFacesByImage">REST API Reference for SearchFacesByImage Operation</seealso>
         IAsyncResult BeginSearchFacesByImage(SearchFacesByImageRequest request, AsyncCallback callback, object state);
 
 
@@ -1071,6 +1106,7 @@ namespace Amazon.Rekognition
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginSearchFacesByImage.</param>
         /// 
         /// <returns>Returns a  SearchFacesByImageResult from Rekognition.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/SearchFacesByImage">REST API Reference for SearchFacesByImage Operation</seealso>
         SearchFacesByImageResponse EndSearchFacesByImage(IAsyncResult asyncResult);
 
         #endregion

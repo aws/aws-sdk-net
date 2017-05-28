@@ -133,6 +133,7 @@ namespace Amazon.ApplicationDiscoveryService
         /// <exception cref="Amazon.ApplicationDiscoveryService.Model.ServerInternalErrorException">
         /// The server experienced an internal error. Try again.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/AssociateConfigurationItemsToApplication">REST API Reference for AssociateConfigurationItemsToApplication Operation</seealso>
         AssociateConfigurationItemsToApplicationResponse AssociateConfigurationItemsToApplication(AssociateConfigurationItemsToApplicationRequest request);
 
         /// <summary>
@@ -146,6 +147,7 @@ namespace Amazon.ApplicationDiscoveryService
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAssociateConfigurationItemsToApplication
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/AssociateConfigurationItemsToApplication">REST API Reference for AssociateConfigurationItemsToApplication Operation</seealso>
         IAsyncResult BeginAssociateConfigurationItemsToApplication(AssociateConfigurationItemsToApplicationRequest request, AsyncCallback callback, object state);
 
 
@@ -157,6 +159,7 @@ namespace Amazon.ApplicationDiscoveryService
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAssociateConfigurationItemsToApplication.</param>
         /// 
         /// <returns>Returns a  AssociateConfigurationItemsToApplicationResult from ApplicationDiscoveryService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/AssociateConfigurationItemsToApplication">REST API Reference for AssociateConfigurationItemsToApplication Operation</seealso>
         AssociateConfigurationItemsToApplicationResponse EndAssociateConfigurationItemsToApplication(IAsyncResult asyncResult);
 
         #endregion
@@ -184,6 +187,7 @@ namespace Amazon.ApplicationDiscoveryService
         /// <exception cref="Amazon.ApplicationDiscoveryService.Model.ServerInternalErrorException">
         /// The server experienced an internal error. Try again.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/CreateApplication">REST API Reference for CreateApplication Operation</seealso>
         CreateApplicationResponse CreateApplication(CreateApplicationRequest request);
 
         /// <summary>
@@ -197,6 +201,7 @@ namespace Amazon.ApplicationDiscoveryService
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateApplication
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/CreateApplication">REST API Reference for CreateApplication Operation</seealso>
         IAsyncResult BeginCreateApplication(CreateApplicationRequest request, AsyncCallback callback, object state);
 
 
@@ -208,6 +213,7 @@ namespace Amazon.ApplicationDiscoveryService
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateApplication.</param>
         /// 
         /// <returns>Returns a  CreateApplicationResult from ApplicationDiscoveryService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/CreateApplication">REST API Reference for CreateApplication Operation</seealso>
         CreateApplicationResponse EndCreateApplication(IAsyncResult asyncResult);
 
         #endregion
@@ -240,6 +246,7 @@ namespace Amazon.ApplicationDiscoveryService
         /// <exception cref="Amazon.ApplicationDiscoveryService.Model.ServerInternalErrorException">
         /// The server experienced an internal error. Try again.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/CreateTags">REST API Reference for CreateTags Operation</seealso>
         CreateTagsResponse CreateTags(CreateTagsRequest request);
 
         /// <summary>
@@ -253,6 +260,7 @@ namespace Amazon.ApplicationDiscoveryService
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateTags
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/CreateTags">REST API Reference for CreateTags Operation</seealso>
         IAsyncResult BeginCreateTags(CreateTagsRequest request, AsyncCallback callback, object state);
 
 
@@ -264,6 +272,7 @@ namespace Amazon.ApplicationDiscoveryService
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateTags.</param>
         /// 
         /// <returns>Returns a  CreateTagsResult from ApplicationDiscoveryService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/CreateTags">REST API Reference for CreateTags Operation</seealso>
         CreateTagsResponse EndCreateTags(IAsyncResult asyncResult);
 
         #endregion
@@ -291,6 +300,7 @@ namespace Amazon.ApplicationDiscoveryService
         /// <exception cref="Amazon.ApplicationDiscoveryService.Model.ServerInternalErrorException">
         /// The server experienced an internal error. Try again.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/DeleteApplications">REST API Reference for DeleteApplications Operation</seealso>
         DeleteApplicationsResponse DeleteApplications(DeleteApplicationsRequest request);
 
         /// <summary>
@@ -304,6 +314,7 @@ namespace Amazon.ApplicationDiscoveryService
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteApplications
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/DeleteApplications">REST API Reference for DeleteApplications Operation</seealso>
         IAsyncResult BeginDeleteApplications(DeleteApplicationsRequest request, AsyncCallback callback, object state);
 
 
@@ -315,6 +326,7 @@ namespace Amazon.ApplicationDiscoveryService
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteApplications.</param>
         /// 
         /// <returns>Returns a  DeleteApplicationsResult from ApplicationDiscoveryService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/DeleteApplications">REST API Reference for DeleteApplications Operation</seealso>
         DeleteApplicationsResponse EndDeleteApplications(IAsyncResult asyncResult);
 
         #endregion
@@ -347,6 +359,7 @@ namespace Amazon.ApplicationDiscoveryService
         /// <exception cref="Amazon.ApplicationDiscoveryService.Model.ServerInternalErrorException">
         /// The server experienced an internal error. Try again.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/DeleteTags">REST API Reference for DeleteTags Operation</seealso>
         DeleteTagsResponse DeleteTags(DeleteTagsRequest request);
 
         /// <summary>
@@ -360,6 +373,7 @@ namespace Amazon.ApplicationDiscoveryService
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteTags
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/DeleteTags">REST API Reference for DeleteTags Operation</seealso>
         IAsyncResult BeginDeleteTags(DeleteTagsRequest request, AsyncCallback callback, object state);
 
 
@@ -371,6 +385,7 @@ namespace Amazon.ApplicationDiscoveryService
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteTags.</param>
         /// 
         /// <returns>Returns a  DeleteTagsResult from ApplicationDiscoveryService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/DeleteTags">REST API Reference for DeleteTags Operation</seealso>
         DeleteTagsResponse EndDeleteTags(IAsyncResult asyncResult);
 
         #endregion
@@ -399,6 +414,7 @@ namespace Amazon.ApplicationDiscoveryService
         /// <exception cref="Amazon.ApplicationDiscoveryService.Model.ServerInternalErrorException">
         /// The server experienced an internal error. Try again.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/DescribeAgents">REST API Reference for DescribeAgents Operation</seealso>
         DescribeAgentsResponse DescribeAgents(DescribeAgentsRequest request);
 
         /// <summary>
@@ -412,6 +428,7 @@ namespace Amazon.ApplicationDiscoveryService
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeAgents
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/DescribeAgents">REST API Reference for DescribeAgents Operation</seealso>
         IAsyncResult BeginDescribeAgents(DescribeAgentsRequest request, AsyncCallback callback, object state);
 
 
@@ -423,6 +440,7 @@ namespace Amazon.ApplicationDiscoveryService
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeAgents.</param>
         /// 
         /// <returns>Returns a  DescribeAgentsResult from ApplicationDiscoveryService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/DescribeAgents">REST API Reference for DescribeAgents Operation</seealso>
         DescribeAgentsResponse EndDescribeAgents(IAsyncResult asyncResult);
 
         #endregion
@@ -460,6 +478,7 @@ namespace Amazon.ApplicationDiscoveryService
         /// <exception cref="Amazon.ApplicationDiscoveryService.Model.ServerInternalErrorException">
         /// The server experienced an internal error. Try again.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/DescribeConfigurations">REST API Reference for DescribeConfigurations Operation</seealso>
         DescribeConfigurationsResponse DescribeConfigurations(DescribeConfigurationsRequest request);
 
         /// <summary>
@@ -473,6 +492,7 @@ namespace Amazon.ApplicationDiscoveryService
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeConfigurations
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/DescribeConfigurations">REST API Reference for DescribeConfigurations Operation</seealso>
         IAsyncResult BeginDescribeConfigurations(DescribeConfigurationsRequest request, AsyncCallback callback, object state);
 
 
@@ -484,6 +504,7 @@ namespace Amazon.ApplicationDiscoveryService
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeConfigurations.</param>
         /// 
         /// <returns>Returns a  DescribeConfigurationsResult from ApplicationDiscoveryService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/DescribeConfigurations">REST API Reference for DescribeConfigurations Operation</seealso>
         DescribeConfigurationsResponse EndDescribeConfigurations(IAsyncResult asyncResult);
 
         #endregion
@@ -521,6 +542,7 @@ namespace Amazon.ApplicationDiscoveryService
         /// <exception cref="Amazon.ApplicationDiscoveryService.Model.ServerInternalErrorException">
         /// The server experienced an internal error. Try again.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/DescribeExportConfigurations">REST API Reference for DescribeExportConfigurations Operation</seealso>
         [Obsolete("Deprecated in favor of DescribeExportTasks.")]
         DescribeExportConfigurationsResponse DescribeExportConfigurations(DescribeExportConfigurationsRequest request);
 
@@ -535,6 +557,7 @@ namespace Amazon.ApplicationDiscoveryService
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeExportConfigurations
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/DescribeExportConfigurations">REST API Reference for DescribeExportConfigurations Operation</seealso>
         [Obsolete("Deprecated in favor of DescribeExportTasks.")]
         IAsyncResult BeginDescribeExportConfigurations(DescribeExportConfigurationsRequest request, AsyncCallback callback, object state);
 
@@ -547,6 +570,7 @@ namespace Amazon.ApplicationDiscoveryService
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeExportConfigurations.</param>
         /// 
         /// <returns>Returns a  DescribeExportConfigurationsResult from ApplicationDiscoveryService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/DescribeExportConfigurations">REST API Reference for DescribeExportConfigurations Operation</seealso>
         [Obsolete("Deprecated in favor of DescribeExportTasks.")]
         DescribeExportConfigurationsResponse EndDescribeExportConfigurations(IAsyncResult asyncResult);
 
@@ -576,6 +600,7 @@ namespace Amazon.ApplicationDiscoveryService
         /// <exception cref="Amazon.ApplicationDiscoveryService.Model.ServerInternalErrorException">
         /// The server experienced an internal error. Try again.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/DescribeExportTasks">REST API Reference for DescribeExportTasks Operation</seealso>
         DescribeExportTasksResponse DescribeExportTasks(DescribeExportTasksRequest request);
 
         /// <summary>
@@ -589,6 +614,7 @@ namespace Amazon.ApplicationDiscoveryService
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeExportTasks
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/DescribeExportTasks">REST API Reference for DescribeExportTasks Operation</seealso>
         IAsyncResult BeginDescribeExportTasks(DescribeExportTasksRequest request, AsyncCallback callback, object state);
 
 
@@ -600,6 +626,7 @@ namespace Amazon.ApplicationDiscoveryService
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeExportTasks.</param>
         /// 
         /// <returns>Returns a  DescribeExportTasksResult from ApplicationDiscoveryService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/DescribeExportTasks">REST API Reference for DescribeExportTasks Operation</seealso>
         DescribeExportTasksResponse EndDescribeExportTasks(IAsyncResult asyncResult);
 
         #endregion
@@ -632,6 +659,7 @@ namespace Amazon.ApplicationDiscoveryService
         /// <exception cref="Amazon.ApplicationDiscoveryService.Model.ServerInternalErrorException">
         /// The server experienced an internal error. Try again.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/DescribeTags">REST API Reference for DescribeTags Operation</seealso>
         DescribeTagsResponse DescribeTags(DescribeTagsRequest request);
 
         /// <summary>
@@ -645,6 +673,7 @@ namespace Amazon.ApplicationDiscoveryService
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeTags
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/DescribeTags">REST API Reference for DescribeTags Operation</seealso>
         IAsyncResult BeginDescribeTags(DescribeTagsRequest request, AsyncCallback callback, object state);
 
 
@@ -656,6 +685,7 @@ namespace Amazon.ApplicationDiscoveryService
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeTags.</param>
         /// 
         /// <returns>Returns a  DescribeTagsResult from ApplicationDiscoveryService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/DescribeTags">REST API Reference for DescribeTags Operation</seealso>
         DescribeTagsResponse EndDescribeTags(IAsyncResult asyncResult);
 
         #endregion
@@ -683,6 +713,7 @@ namespace Amazon.ApplicationDiscoveryService
         /// <exception cref="Amazon.ApplicationDiscoveryService.Model.ServerInternalErrorException">
         /// The server experienced an internal error. Try again.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/DisassociateConfigurationItemsFromApplication">REST API Reference for DisassociateConfigurationItemsFromApplication Operation</seealso>
         DisassociateConfigurationItemsFromApplicationResponse DisassociateConfigurationItemsFromApplication(DisassociateConfigurationItemsFromApplicationRequest request);
 
         /// <summary>
@@ -696,6 +727,7 @@ namespace Amazon.ApplicationDiscoveryService
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDisassociateConfigurationItemsFromApplication
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/DisassociateConfigurationItemsFromApplication">REST API Reference for DisassociateConfigurationItemsFromApplication Operation</seealso>
         IAsyncResult BeginDisassociateConfigurationItemsFromApplication(DisassociateConfigurationItemsFromApplicationRequest request, AsyncCallback callback, object state);
 
 
@@ -707,6 +739,7 @@ namespace Amazon.ApplicationDiscoveryService
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDisassociateConfigurationItemsFromApplication.</param>
         /// 
         /// <returns>Returns a  DisassociateConfigurationItemsFromApplicationResult from ApplicationDiscoveryService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/DisassociateConfigurationItemsFromApplication">REST API Reference for DisassociateConfigurationItemsFromApplication Operation</seealso>
         DisassociateConfigurationItemsFromApplicationResponse EndDisassociateConfigurationItemsFromApplication(IAsyncResult asyncResult);
 
         #endregion
@@ -746,6 +779,7 @@ namespace Amazon.ApplicationDiscoveryService
         /// <exception cref="Amazon.ApplicationDiscoveryService.Model.ServerInternalErrorException">
         /// The server experienced an internal error. Try again.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/ExportConfigurations">REST API Reference for ExportConfigurations Operation</seealso>
         [Obsolete("Deprecated in favor of StartExportTask.")]
         ExportConfigurationsResponse ExportConfigurations(ExportConfigurationsRequest request);
 
@@ -760,6 +794,7 @@ namespace Amazon.ApplicationDiscoveryService
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndExportConfigurations
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/ExportConfigurations">REST API Reference for ExportConfigurations Operation</seealso>
         [Obsolete("Deprecated in favor of StartExportTask.")]
         IAsyncResult BeginExportConfigurations(ExportConfigurationsRequest request, AsyncCallback callback, object state);
 
@@ -772,6 +807,7 @@ namespace Amazon.ApplicationDiscoveryService
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginExportConfigurations.</param>
         /// 
         /// <returns>Returns a  ExportConfigurationsResult from ApplicationDiscoveryService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/ExportConfigurations">REST API Reference for ExportConfigurations Operation</seealso>
         [Obsolete("Deprecated in favor of StartExportTask.")]
         ExportConfigurationsResponse EndExportConfigurations(IAsyncResult asyncResult);
 
@@ -800,6 +836,7 @@ namespace Amazon.ApplicationDiscoveryService
         /// <exception cref="Amazon.ApplicationDiscoveryService.Model.ServerInternalErrorException">
         /// The server experienced an internal error. Try again.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/GetDiscoverySummary">REST API Reference for GetDiscoverySummary Operation</seealso>
         GetDiscoverySummaryResponse GetDiscoverySummary(GetDiscoverySummaryRequest request);
 
         /// <summary>
@@ -813,6 +850,7 @@ namespace Amazon.ApplicationDiscoveryService
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetDiscoverySummary
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/GetDiscoverySummary">REST API Reference for GetDiscoverySummary Operation</seealso>
         IAsyncResult BeginGetDiscoverySummary(GetDiscoverySummaryRequest request, AsyncCallback callback, object state);
 
 
@@ -824,6 +862,7 @@ namespace Amazon.ApplicationDiscoveryService
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetDiscoverySummary.</param>
         /// 
         /// <returns>Returns a  GetDiscoverySummaryResult from ApplicationDiscoveryService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/GetDiscoverySummary">REST API Reference for GetDiscoverySummary Operation</seealso>
         GetDiscoverySummaryResponse EndGetDiscoverySummary(IAsyncResult asyncResult);
 
         #endregion
@@ -856,6 +895,7 @@ namespace Amazon.ApplicationDiscoveryService
         /// <exception cref="Amazon.ApplicationDiscoveryService.Model.ServerInternalErrorException">
         /// The server experienced an internal error. Try again.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/ListConfigurations">REST API Reference for ListConfigurations Operation</seealso>
         ListConfigurationsResponse ListConfigurations(ListConfigurationsRequest request);
 
         /// <summary>
@@ -869,6 +909,7 @@ namespace Amazon.ApplicationDiscoveryService
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListConfigurations
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/ListConfigurations">REST API Reference for ListConfigurations Operation</seealso>
         IAsyncResult BeginListConfigurations(ListConfigurationsRequest request, AsyncCallback callback, object state);
 
 
@@ -880,6 +921,7 @@ namespace Amazon.ApplicationDiscoveryService
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListConfigurations.</param>
         /// 
         /// <returns>Returns a  ListConfigurationsResult from ApplicationDiscoveryService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/ListConfigurations">REST API Reference for ListConfigurations Operation</seealso>
         ListConfigurationsResponse EndListConfigurations(IAsyncResult asyncResult);
 
         #endregion
@@ -907,6 +949,7 @@ namespace Amazon.ApplicationDiscoveryService
         /// <exception cref="Amazon.ApplicationDiscoveryService.Model.ServerInternalErrorException">
         /// The server experienced an internal error. Try again.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/ListServerNeighbors">REST API Reference for ListServerNeighbors Operation</seealso>
         ListServerNeighborsResponse ListServerNeighbors(ListServerNeighborsRequest request);
 
         /// <summary>
@@ -920,6 +963,7 @@ namespace Amazon.ApplicationDiscoveryService
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListServerNeighbors
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/ListServerNeighbors">REST API Reference for ListServerNeighbors Operation</seealso>
         IAsyncResult BeginListServerNeighbors(ListServerNeighborsRequest request, AsyncCallback callback, object state);
 
 
@@ -931,6 +975,7 @@ namespace Amazon.ApplicationDiscoveryService
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListServerNeighbors.</param>
         /// 
         /// <returns>Returns a  ListServerNeighborsResult from ApplicationDiscoveryService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/ListServerNeighbors">REST API Reference for ListServerNeighbors Operation</seealso>
         ListServerNeighborsResponse EndListServerNeighbors(IAsyncResult asyncResult);
 
         #endregion
@@ -958,6 +1003,7 @@ namespace Amazon.ApplicationDiscoveryService
         /// <exception cref="Amazon.ApplicationDiscoveryService.Model.ServerInternalErrorException">
         /// The server experienced an internal error. Try again.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/StartDataCollectionByAgentIds">REST API Reference for StartDataCollectionByAgentIds Operation</seealso>
         StartDataCollectionByAgentIdsResponse StartDataCollectionByAgentIds(StartDataCollectionByAgentIdsRequest request);
 
         /// <summary>
@@ -971,6 +1017,7 @@ namespace Amazon.ApplicationDiscoveryService
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStartDataCollectionByAgentIds
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/StartDataCollectionByAgentIds">REST API Reference for StartDataCollectionByAgentIds Operation</seealso>
         IAsyncResult BeginStartDataCollectionByAgentIds(StartDataCollectionByAgentIdsRequest request, AsyncCallback callback, object state);
 
 
@@ -982,6 +1029,7 @@ namespace Amazon.ApplicationDiscoveryService
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStartDataCollectionByAgentIds.</param>
         /// 
         /// <returns>Returns a  StartDataCollectionByAgentIdsResult from ApplicationDiscoveryService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/StartDataCollectionByAgentIds">REST API Reference for StartDataCollectionByAgentIds Operation</seealso>
         StartDataCollectionByAgentIdsResponse EndStartDataCollectionByAgentIds(IAsyncResult asyncResult);
 
         #endregion
@@ -1013,6 +1061,7 @@ namespace Amazon.ApplicationDiscoveryService
         /// <exception cref="Amazon.ApplicationDiscoveryService.Model.ServerInternalErrorException">
         /// The server experienced an internal error. Try again.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/StartExportTask">REST API Reference for StartExportTask Operation</seealso>
         StartExportTaskResponse StartExportTask(StartExportTaskRequest request);
 
         /// <summary>
@@ -1026,6 +1075,7 @@ namespace Amazon.ApplicationDiscoveryService
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStartExportTask
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/StartExportTask">REST API Reference for StartExportTask Operation</seealso>
         IAsyncResult BeginStartExportTask(StartExportTaskRequest request, AsyncCallback callback, object state);
 
 
@@ -1037,6 +1087,7 @@ namespace Amazon.ApplicationDiscoveryService
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStartExportTask.</param>
         /// 
         /// <returns>Returns a  StartExportTaskResult from ApplicationDiscoveryService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/StartExportTask">REST API Reference for StartExportTask Operation</seealso>
         StartExportTaskResponse EndStartExportTask(IAsyncResult asyncResult);
 
         #endregion
@@ -1064,6 +1115,7 @@ namespace Amazon.ApplicationDiscoveryService
         /// <exception cref="Amazon.ApplicationDiscoveryService.Model.ServerInternalErrorException">
         /// The server experienced an internal error. Try again.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/StopDataCollectionByAgentIds">REST API Reference for StopDataCollectionByAgentIds Operation</seealso>
         StopDataCollectionByAgentIdsResponse StopDataCollectionByAgentIds(StopDataCollectionByAgentIdsRequest request);
 
         /// <summary>
@@ -1077,6 +1129,7 @@ namespace Amazon.ApplicationDiscoveryService
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStopDataCollectionByAgentIds
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/StopDataCollectionByAgentIds">REST API Reference for StopDataCollectionByAgentIds Operation</seealso>
         IAsyncResult BeginStopDataCollectionByAgentIds(StopDataCollectionByAgentIdsRequest request, AsyncCallback callback, object state);
 
 
@@ -1088,6 +1141,7 @@ namespace Amazon.ApplicationDiscoveryService
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStopDataCollectionByAgentIds.</param>
         /// 
         /// <returns>Returns a  StopDataCollectionByAgentIdsResult from ApplicationDiscoveryService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/StopDataCollectionByAgentIds">REST API Reference for StopDataCollectionByAgentIds Operation</seealso>
         StopDataCollectionByAgentIdsResponse EndStopDataCollectionByAgentIds(IAsyncResult asyncResult);
 
         #endregion
@@ -1115,6 +1169,7 @@ namespace Amazon.ApplicationDiscoveryService
         /// <exception cref="Amazon.ApplicationDiscoveryService.Model.ServerInternalErrorException">
         /// The server experienced an internal error. Try again.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/UpdateApplication">REST API Reference for UpdateApplication Operation</seealso>
         UpdateApplicationResponse UpdateApplication(UpdateApplicationRequest request);
 
         /// <summary>
@@ -1128,6 +1183,7 @@ namespace Amazon.ApplicationDiscoveryService
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateApplication
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/UpdateApplication">REST API Reference for UpdateApplication Operation</seealso>
         IAsyncResult BeginUpdateApplication(UpdateApplicationRequest request, AsyncCallback callback, object state);
 
 
@@ -1139,6 +1195,7 @@ namespace Amazon.ApplicationDiscoveryService
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateApplication.</param>
         /// 
         /// <returns>Returns a  UpdateApplicationResult from ApplicationDiscoveryService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/UpdateApplication">REST API Reference for UpdateApplication Operation</seealso>
         UpdateApplicationResponse EndUpdateApplication(IAsyncResult asyncResult);
 
         #endregion
