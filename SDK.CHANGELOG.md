@@ -1,3 +1,9 @@
+### 3.3.95.1 (2017-05-28 00:08 UTC)
+* ApplicationDiscoveryService (3.3.2.8)
+	* Doc update
+* Rekognition (3.3.4.1)
+	* Doc update
+
 ### 3.3.95.0 (2017-05-25 22:08 UTC)
 * AppStream (3.3.2.0)
 	* Support added for persistent user storage, backed by S3.
