@@ -107,7 +107,7 @@ namespace Amazon.SQS.Util
         public const string ATTRIBUTE_CONTENT_BASED_DEDUPLICATION = "ContentBasedDeduplication";
 
         /// <summary>
-        /// Specifies whether or not the queue is a First-In-First-Out (FIFO) queue.
+        /// Designates a queue as a First-In-First-Out (FIFO) queue. You can provide this attribute only during queue creation. You can't change it for an existing queue. When you set this attribute, you must also provide the <code>MessageGroupId</code> for your messages explicitly.
         /// </summary>
         public const string ATTRIBUTE_FIFO_QUEUE = "FifoQueue";
     }
