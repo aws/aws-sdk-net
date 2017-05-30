@@ -159,5 +159,4 @@ See [GitHub Issue #371](https://github.com/aws/aws-sdk-net/issues/371)
 
 #### Add settings to appsettings.json
 
-See [GitHub Issue #371](https://github.com/aws/aws-sdk-net/issues/656)
-See [GitHub Issue #371](https://github.com/aws/aws-sdk-net/issues/624)
+See GitHub Issues [#656](https://github.com/aws/aws-sdk-net/issues/656) and [#624](https://github.com/aws/aws-sdk-net/issues/624)
