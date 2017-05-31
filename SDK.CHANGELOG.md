@@ -1,3 +1,7 @@
+### 3.3.97.0 (2017-05-31 19:29 UTC)
+* RDS (3.3.11.0)
+	* Amazon RDS customers can now easily and quickly stop and start their DB instances.
+
 ### 3.3.96.0 (2017-05-31 00:28 UTC)
 * CloudDirectory (3.3.3.0)
 	* Cloud Directory has launched support for Typed Links, enabling customers to create object-to-object relationships that are not hierarchical in nature. Typed Links enable customers to quickly query for data along these relationships. Customers can also enforce referential integrity using Typed Links, ensuring data in use is not inadvertently deleted.
