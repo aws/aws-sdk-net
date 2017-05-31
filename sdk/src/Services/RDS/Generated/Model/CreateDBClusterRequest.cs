@@ -143,7 +143,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property DatabaseName. 
         /// <para>
-        /// The name for your database of up to 8 alpha-numeric characters. If you do not provide
+        /// The name for your database of up to 64 alpha-numeric characters. If you do not provide
         /// a name, Amazon RDS will not create a database in the DB cluster you are creating.
         /// </para>
         /// </summary>

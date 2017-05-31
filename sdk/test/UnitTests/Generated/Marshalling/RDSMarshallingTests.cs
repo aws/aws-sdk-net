@@ -2082,5 +2082,53 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         }
 
         
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("RDS")]
+        public void StartDBInstanceMarshallTest()
+        {
+            var operation = service_model.FindOperation("StartDBInstance");
+
+            var request = InstantiateClassGenerator.Execute<StartDBInstanceRequest>();
+            var marshaller = new StartDBInstanceRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = StartDBInstanceResponseUnmarshaller.Instance.Unmarshall(context)
+                as StartDBInstanceResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("RDS")]
+        public void StopDBInstanceMarshallTest()
+        {
+            var operation = service_model.FindOperation("StopDBInstance");
+
+            var request = InstantiateClassGenerator.Execute<StopDBInstanceRequest>();
+            var marshaller = new StopDBInstanceRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = StopDBInstanceResponseUnmarshaller.Instance.Unmarshall(context)
+                as StopDBInstanceResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
     }
 }

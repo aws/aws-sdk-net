@@ -6078,5 +6078,146 @@ namespace Amazon.RDS
 
         #endregion
         
+        #region  StartDBInstance
+
+
+        /// <summary>
+        /// Starts a DB instance that was stopped using the AWS console, the stop-db-instance
+        /// AWS CLI command, or the StopDBInstance action. For more information, see Stopping
+        /// and Starting a DB instance in the AWS RDS user guide.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartDBInstance service method.</param>
+        /// 
+        /// <returns>The response from the StartDBInstance service method, as returned by RDS.</returns>
+        /// <exception cref="Amazon.RDS.Model.AuthorizationNotFoundException">
+        /// Specified CIDRIP or EC2 security group is not authorized for the specified DB security
+        /// group.
+        /// 
+        ///  
+        /// <para>
+        /// RDS may not also be authorized via IAM to perform necessary actions on your behalf.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.DBClusterNotFoundException">
+        /// <i>DBClusterIdentifier</i> does not refer to an existing DB cluster.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.DBInstanceNotFoundException">
+        /// <i>DBInstanceIdentifier</i> does not refer to an existing DB instance.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.DBSubnetGroupDoesNotCoverEnoughAZsException">
+        /// Subnets in the DB subnet group should cover at least two Availability Zones unless
+        /// there is only one Availability Zone.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.DBSubnetGroupNotFoundException">
+        /// <i>DBSubnetGroupName</i> does not refer to an existing DB subnet group.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.InsufficientDBInstanceCapacityException">
+        /// Specified DB instance class is not available in the specified Availability Zone.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.InvalidDBClusterStateException">
+        /// The DB cluster is not in a valid state.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.InvalidDBInstanceStateException">
+        /// The specified DB instance is not in the <i>available</i> state.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.InvalidSubnetException">
+        /// The requested subnet is invalid, or multiple subnets were requested that are not all
+        /// in a common VPC.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.InvalidVPCNetworkStateException">
+        /// DB subnet group does not cover all Availability Zones after it is created because
+        /// users' change.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.KMSKeyNotAccessibleException">
+        /// Error accessing KMS key.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/StartDBInstance">REST API Reference for StartDBInstance Operation</seealso>
+        public StartDBInstanceResponse StartDBInstance(StartDBInstanceRequest request)
+        {
+            var marshaller = new StartDBInstanceRequestMarshaller();
+            var unmarshaller = StartDBInstanceResponseUnmarshaller.Instance;
+
+            return Invoke<StartDBInstanceRequest,StartDBInstanceResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StartDBInstance operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StartDBInstance operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/StartDBInstance">REST API Reference for StartDBInstance Operation</seealso>
+        public Task<StartDBInstanceResponse> StartDBInstanceAsync(StartDBInstanceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new StartDBInstanceRequestMarshaller();
+            var unmarshaller = StartDBInstanceResponseUnmarshaller.Instance;
+
+            return InvokeAsync<StartDBInstanceRequest,StartDBInstanceResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  StopDBInstance
+
+
+        /// <summary>
+        /// Stops a DB instance. When you stop a DB instance, Amazon RDS retains the DB instance's
+        /// metadata, including its endpoint, DB parameter group, and option group membership.
+        /// Amazon RDS also retains the transaction logs so you can do a point-in-time restore
+        /// if necessary. For more information, see Stopping and Starting a DB instance in the
+        /// AWS RDS user guide.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StopDBInstance service method.</param>
+        /// 
+        /// <returns>The response from the StopDBInstance service method, as returned by RDS.</returns>
+        /// <exception cref="Amazon.RDS.Model.DBInstanceNotFoundException">
+        /// <i>DBInstanceIdentifier</i> does not refer to an existing DB instance.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.DBSnapshotAlreadyExistsException">
+        /// <i>DBSnapshotIdentifier</i> is already used by an existing snapshot.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.InvalidDBClusterStateException">
+        /// The DB cluster is not in a valid state.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.InvalidDBInstanceStateException">
+        /// The specified DB instance is not in the <i>available</i> state.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.SnapshotQuotaExceededException">
+        /// Request would result in user exceeding the allowed number of DB snapshots.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/StopDBInstance">REST API Reference for StopDBInstance Operation</seealso>
+        public StopDBInstanceResponse StopDBInstance(StopDBInstanceRequest request)
+        {
+            var marshaller = new StopDBInstanceRequestMarshaller();
+            var unmarshaller = StopDBInstanceResponseUnmarshaller.Instance;
+
+            return Invoke<StopDBInstanceRequest,StopDBInstanceResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StopDBInstance operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StopDBInstance operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/StopDBInstance">REST API Reference for StopDBInstance Operation</seealso>
+        public Task<StopDBInstanceResponse> StopDBInstanceAsync(StopDBInstanceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new StopDBInstanceRequestMarshaller();
+            var unmarshaller = StopDBInstanceResponseUnmarshaller.Instance;
+
+            return InvokeAsync<StopDBInstanceRequest,StopDBInstanceResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
     }
 }

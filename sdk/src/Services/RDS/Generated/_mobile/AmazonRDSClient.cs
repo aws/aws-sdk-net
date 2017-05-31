@@ -3400,5 +3400,69 @@ namespace Amazon.RDS
 
         #endregion
         
+        #region  StartDBInstance
+
+        internal StartDBInstanceResponse StartDBInstance(StartDBInstanceRequest request)
+        {
+            var marshaller = new StartDBInstanceRequestMarshaller();
+            var unmarshaller = StartDBInstanceResponseUnmarshaller.Instance;
+
+            return Invoke<StartDBInstanceRequest,StartDBInstanceResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StartDBInstance operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StartDBInstance operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/StartDBInstance">REST API Reference for StartDBInstance Operation</seealso>
+        public Task<StartDBInstanceResponse> StartDBInstanceAsync(StartDBInstanceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new StartDBInstanceRequestMarshaller();
+            var unmarshaller = StartDBInstanceResponseUnmarshaller.Instance;
+
+            return InvokeAsync<StartDBInstanceRequest,StartDBInstanceResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  StopDBInstance
+
+        internal StopDBInstanceResponse StopDBInstance(StopDBInstanceRequest request)
+        {
+            var marshaller = new StopDBInstanceRequestMarshaller();
+            var unmarshaller = StopDBInstanceResponseUnmarshaller.Instance;
+
+            return Invoke<StopDBInstanceRequest,StopDBInstanceResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StopDBInstance operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StopDBInstance operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/StopDBInstance">REST API Reference for StopDBInstance Operation</seealso>
+        public Task<StopDBInstanceResponse> StopDBInstanceAsync(StopDBInstanceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new StopDBInstanceRequestMarshaller();
+            var unmarshaller = StopDBInstanceResponseUnmarshaller.Instance;
+
+            return InvokeAsync<StopDBInstanceRequest,StopDBInstanceResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
     }
 }

@@ -476,7 +476,9 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// The Oracle System ID (SID) of the created DB instance.
+        /// The Oracle System ID (SID) of the created DB instance. If you specify <code>null</code>,
+        /// the default value <code>ORCL</code> is used. You can't specify the string NULL, or
+        /// any other reserved word, for <code>DBName</code>. 
         /// </para>
         ///  
         /// <para>
@@ -870,6 +872,11 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
+        ///  <code>12.1.0.2.v8</code> (supported for EE in all AWS regions, and SE2 in all AWS
+        /// regions except us-gov-west-1)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <code>12.1.0.2.v7</code> (supported for EE in all AWS regions, and SE2 in all AWS
         /// regions except us-gov-west-1)
         /// </para>
@@ -908,6 +915,10 @@ namespace Amazon.RDS.Model
         ///  <b>Oracle 11g</b> 
         /// </para>
         ///  <ul> <li> 
+        /// <para>
+        ///  <code>11.2.0.4.v12</code> (supported for EE, SE1, and SE, in all AWS regions)
+        /// </para>
+        ///  </li> <li> 
         /// <para>
         ///  <code>11.2.0.4.v11</code> (supported for EE, SE1, and SE, in all AWS regions)
         /// </para>
@@ -953,20 +964,19 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <b>Version 9.6:</b> <code> 9.6.1</code> 
+        ///  <b>Version 9.6.x:</b> <code> 9.6.1 | 9.6.2</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>Version 9.5:</b> <code>9.5.4 | 9.5.2</code> 
+        ///  <b>Version 9.5.x:</b> <code>9.5.6 | 9.5.4 | 9.5.2</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>Version 9.4:</b> <code> 9.4.9 | 9.4.7 | 9.4.5 | 9.4.4 | 9.4.1</code> 
+        ///  <b>Version 9.4.x:</b> <code>9.4.11 | 9.4.9 | 9.4.7</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>Version 9.3:</b> <code> 9.3.14 | 9.3.12 | 9.3.10 | 9.3.9 | 9.3.6 | 9.3.5 | 9.3.3
-        /// | 9.3.2 | 9.3.1</code> 
+        ///  <b>Version 9.3.x:</b> <code>9.3.16 | 9.3.14 | 9.3.12</code> 
         /// </para>
         ///  </li> </ul>
         /// </summary>
