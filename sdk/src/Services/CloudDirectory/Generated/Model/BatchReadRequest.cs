@@ -59,7 +59,8 @@ namespace Amazon.CloudDirectory.Model
         /// <summary>
         /// Gets and sets the property DirectoryArn. 
         /// <para>
-        /// ARN associated with the <a>Directory</a>. For more information, see <a>arns</a>.
+        /// The Amazon Resource Name (ARN) that is associated with the <a>Directory</a>. For more
+        /// information, see <a>arns</a>.
         /// </para>
         /// </summary>
         public string DirectoryArn
@@ -77,7 +78,7 @@ namespace Amazon.CloudDirectory.Model
         /// <summary>
         /// Gets and sets the property Operations. 
         /// <para>
-        /// List of operations that are part of the batch.
+        /// A list of operations that are part of the batch.
         /// </para>
         /// </summary>
         public List<BatchReadOperation> Operations

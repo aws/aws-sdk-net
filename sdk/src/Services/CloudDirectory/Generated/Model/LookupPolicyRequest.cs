@@ -34,7 +34,7 @@ namespace Amazon.CloudDirectory.Model
     /// and if some objects don't have the policies attached, it returns the <code>ObjectIdentifier</code>
     /// for such objects. If policies are present, it returns <code>ObjectIdentifier</code>,
     /// <code>policyId</code>, and <code>policyType</code>. Paths that don't lead to the root
-    /// from the target object are ignored.
+    /// from the target object are ignored. For more information, see <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_key_concepts.html#policies">Policies</a>.
     /// </summary>
     public partial class LookupPolicyRequest : AmazonCloudDirectoryRequest
     {
@@ -46,7 +46,8 @@ namespace Amazon.CloudDirectory.Model
         /// <summary>
         /// Gets and sets the property DirectoryArn. 
         /// <para>
-        /// ARN associated with the <a>Directory</a>. For more information, see <a>arns</a>.
+        /// The Amazon Resource Name (ARN) that is associated with the <a>Directory</a>. For more
+        /// information, see <a>arns</a>.
         /// </para>
         /// </summary>
         public string DirectoryArn
@@ -64,7 +65,8 @@ namespace Amazon.CloudDirectory.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// Maximum number of items to be retrieved in a single call. This is an approximate number.
+        /// The maximum number of items to be retrieved in a single call. This is an approximate
+        /// number.
         /// </para>
         /// </summary>
         public int MaxResults

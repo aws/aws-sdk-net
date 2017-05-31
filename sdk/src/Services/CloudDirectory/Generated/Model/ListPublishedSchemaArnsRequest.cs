@@ -29,7 +29,7 @@ namespace Amazon.CloudDirectory.Model
 {
     /// <summary>
     /// Container for the parameters to the ListPublishedSchemaArns operation.
-    /// Retrieves published schema ARNs.
+    /// Retrieves each published schema Amazon Resource Name (ARN).
     /// </summary>
     public partial class ListPublishedSchemaArnsRequest : AmazonCloudDirectoryRequest
     {

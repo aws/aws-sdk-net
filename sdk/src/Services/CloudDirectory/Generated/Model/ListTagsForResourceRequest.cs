@@ -42,8 +42,8 @@ namespace Amazon.CloudDirectory.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// The MaxResults parameter sets the maximum number of results returned in a single page.
-        /// This is for future use and is not supported currently.
+        /// The <code>MaxResults</code> parameter sets the maximum number of results returned
+        /// in a single page. This is for future use and is not supported currently.
         /// </para>
         /// </summary>
         public int MaxResults
@@ -80,7 +80,7 @@ namespace Amazon.CloudDirectory.Model
         /// <summary>
         /// Gets and sets the property ResourceArn. 
         /// <para>
-        /// ARN of the resource. Tagging is only supported for directories.
+        /// The Amazon Resource Name (ARN) of the resource. Tagging is only supported for directories.
         /// </para>
         /// </summary>
         public string ResourceArn

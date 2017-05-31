@@ -39,7 +39,7 @@ namespace Amazon.CloudDirectory.Model
     /// the root of the directory up to the requested object. The API returns the number of
     /// paths based on user-defined <code>MaxResults</code>, in case there are multiple paths
     /// to the parent. The order of the paths and nodes returned is consistent among multiple
-    /// API calls unless the objects are deleted or moved. Paths not leading to directory
+    /// API calls unless the objects are deleted or moved. Paths not leading to the directory
     /// root are ignored from the target object.
     /// </para>
     /// </summary>
@@ -71,7 +71,8 @@ namespace Amazon.CloudDirectory.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// Maximum number of items to be retrieved in a single call. This is an approximate number.
+        /// The maximum number of items to be retrieved in a single call. This is an approximate
+        /// number.
         /// </para>
         /// </summary>
         public int MaxResults
@@ -107,7 +108,7 @@ namespace Amazon.CloudDirectory.Model
         /// <summary>
         /// Gets and sets the property ObjectReference. 
         /// <para>
-        /// Reference that identifies the object whose parent paths are listed.
+        /// The reference that identifies the object whose parent paths are listed.
         /// </para>
         /// </summary>
         public ObjectReference ObjectReference

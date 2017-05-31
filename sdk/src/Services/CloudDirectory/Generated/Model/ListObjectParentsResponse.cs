@@ -56,8 +56,8 @@ namespace Amazon.CloudDirectory.Model
         /// <summary>
         /// Gets and sets the property Parents. 
         /// <para>
-        /// Parent structure, which is a map with key as the <code>ObjectIdentifier</code> and
-        /// LinkName as the value.
+        /// The parent structure, which is a map with key as the <code>ObjectIdentifier</code>
+        /// and LinkName as the value.
         /// </para>
         /// </summary>
         public Dictionary<string, string> Parents

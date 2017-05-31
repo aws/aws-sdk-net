@@ -58,7 +58,8 @@ namespace Amazon.CloudDirectory.Model
         /// <summary>
         /// Gets and sets the property DirectoryArn. 
         /// <para>
-        /// ARN associated with the directory. For more information, see <a>arns</a>.
+        /// The Amazon Resource Name (ARN) that is associated with the directory. For more information,
+        /// see <a>arns</a>.
         /// </para>
         /// </summary>
         public string DirectoryArn

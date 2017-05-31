@@ -37,7 +37,8 @@ namespace Amazon.CloudDirectory.Model
         /// <summary>
         /// Gets and sets the property SchemaArn. 
         /// <para>
-        /// Input ARN that is returned as part of the response. For more information, see <a>arns</a>.
+        /// The input ARN that is returned as part of the response. For more information, see
+        /// <a>arns</a>.
         /// </para>
         /// </summary>
         public string SchemaArn

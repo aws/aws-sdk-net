@@ -39,7 +39,7 @@ namespace Amazon.CloudDirectory.Model
         /// <summary>
         /// Gets and sets the property FacetName. 
         /// <para>
-        /// The name of the facet the attribute exists within.
+        /// The name of the facet that the attribute exists within.
         /// </para>
         /// </summary>
         public string FacetName
@@ -75,7 +75,7 @@ namespace Amazon.CloudDirectory.Model
         /// <summary>
         /// Gets and sets the property SchemaArn. 
         /// <para>
-        /// The ARN of the schema that contains the facet and attribute.
+        /// The Amazon Resource Name (ARN) of the schema that contains the facet and attribute.
         /// </para>
         /// </summary>
         public string SchemaArn

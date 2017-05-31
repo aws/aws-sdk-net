@@ -42,7 +42,7 @@ namespace Amazon.CloudDirectory.Model
         /// <summary>
         /// Gets and sets the property Attributes. 
         /// <para>
-        /// Attributes associated with the <a>Facet</a>.e
+        /// The attributes that are associated with the <a>Facet</a>.
         /// </para>
         /// </summary>
         public List<FacetAttribute> Attributes
@@ -60,7 +60,7 @@ namespace Amazon.CloudDirectory.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// Name of the <a>Facet</a>, which is unique for a given schema.
+        /// The name of the <a>Facet</a>, which is unique for a given schema.
         /// </para>
         /// </summary>
         public string Name
@@ -78,8 +78,8 @@ namespace Amazon.CloudDirectory.Model
         /// <summary>
         /// Gets and sets the property ObjectType. 
         /// <para>
-        /// Specifies whether a given object created from this facet is of type Node, Leaf Node,
-        /// Policy or Index.
+        /// Specifies whether a given object created from this facet is of type node, leaf node,
+        /// policy or index.
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -87,7 +87,7 @@ namespace Amazon.CloudDirectory.Model
         /// </para>
         ///  </li> </ul> <ul> <li> 
         /// <para>
-        /// Leaf Node: Cannot have children but can have multiple parents.
+        /// Leaf node: Cannot have children but can have multiple parents.
         /// </para>
         ///  </li> </ul> <ul> <li> 
         /// <para>
@@ -115,8 +115,8 @@ namespace Amazon.CloudDirectory.Model
         /// <summary>
         /// Gets and sets the property SchemaArn. 
         /// <para>
-        /// Schema ARN in which the new <a>Facet</a> will be created. For more information, see
-        /// <a>arns</a>.
+        /// The schema ARN in which the new <a>Facet</a> will be created. For more information,
+        /// see <a>arns</a>.
         /// </para>
         /// </summary>
         public string SchemaArn

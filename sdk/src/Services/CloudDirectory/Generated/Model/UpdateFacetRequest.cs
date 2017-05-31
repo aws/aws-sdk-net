@@ -56,8 +56,8 @@ namespace Amazon.CloudDirectory.Model
         /// Gets and sets the property AttributeUpdates. 
         /// <para>
         /// List of attributes that need to be updated in a given schema <a>Facet</a>. Each attribute
-        /// is followed by AttributeAction, which specifies the type of update operation to perform.
-        /// 
+        /// is followed by <code>AttributeAction</code>, which specifies the type of update operation
+        /// to perform. 
         /// </para>
         /// </summary>
         public List<FacetAttributeUpdate> AttributeUpdates
@@ -75,7 +75,7 @@ namespace Amazon.CloudDirectory.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        ///  
+        /// The name of the facet.
         /// </para>
         /// </summary>
         public string Name
@@ -93,8 +93,8 @@ namespace Amazon.CloudDirectory.Model
         /// <summary>
         /// Gets and sets the property ObjectType. 
         /// <para>
-        /// Object type associated with the facet. See <a>CreateFacetRequest$ObjectType</a> for
-        /// more details.
+        /// The object type that is associated with the facet. See <a>CreateFacetRequest$ObjectType</a>
+        /// for more details.
         /// </para>
         /// </summary>
         public ObjectType ObjectType
@@ -112,7 +112,8 @@ namespace Amazon.CloudDirectory.Model
         /// <summary>
         /// Gets and sets the property SchemaArn. 
         /// <para>
-        /// ARN associated with the <a>Facet</a>. For more information, see <a>arns</a>.
+        /// The Amazon Resource Name (ARN) that is associated with the <a>Facet</a>. For more
+        /// information, see <a>arns</a>.
         /// </para>
         /// </summary>
         public string SchemaArn

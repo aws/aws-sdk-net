@@ -30,9 +30,9 @@ namespace Amazon.CloudDirectory.Model
     /// <summary>
     /// Container for the parameters to the CreateObject operation.
     /// Creates an object in a <a>Directory</a>. Additionally attaches the object to a parent,
-    /// if a parent reference and LinkName is specified. An object is simply a collection
-    /// of <a>Facet</a> attributes. You can also use this API call to create a policy object,
-    /// if the facet from which you create the object is a policy facet.
+    /// if a parent reference and <code>LinkName</code> is specified. An object is simply
+    /// a collection of <a>Facet</a> attributes. You can also use this API call to create
+    /// a policy object, if the facet from which you create the object is a policy facet.
     /// </summary>
     public partial class CreateObjectRequest : AmazonCloudDirectoryRequest
     {
@@ -45,8 +45,8 @@ namespace Amazon.CloudDirectory.Model
         /// <summary>
         /// Gets and sets the property DirectoryArn. 
         /// <para>
-        /// ARN associated with the <a>Directory</a> in which the object will be created. For
-        /// more information, see <a>arns</a>.
+        /// The Amazon Resource Name (ARN) that is associated with the <a>Directory</a> in which
+        /// the object will be created. For more information, see <a>arns</a>.
         /// </para>
         /// </summary>
         public string DirectoryArn
@@ -82,8 +82,8 @@ namespace Amazon.CloudDirectory.Model
         /// <summary>
         /// Gets and sets the property ObjectAttributeList. 
         /// <para>
-        /// Attribute map whose attribute ARN contains the key and attribute value as the map
-        /// value.
+        /// The attribute map whose attribute ARN contains the key and attribute value as the
+        /// map value.
         /// </para>
         /// </summary>
         public List<AttributeKeyAndValue> ObjectAttributeList
@@ -119,7 +119,8 @@ namespace Amazon.CloudDirectory.Model
         /// <summary>
         /// Gets and sets the property SchemaFacets. 
         /// <para>
-        /// List of facet ARNs to be associated with the object. For more information, see <a>arns</a>.
+        /// A list of schema facets to be associated with the object that contains <code>SchemaArn</code>
+        /// and facet name. For more information, see <a>arns</a>.
         /// </para>
         /// </summary>
         public List<SchemaFacet> SchemaFacets

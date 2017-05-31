@@ -29,9 +29,9 @@ namespace Amazon.CloudDirectory.Model
 {
     /// <summary>
     /// Container for the parameters to the GetFacet operation.
-    /// Gets details of the <a>Facet</a>, such as Facet Name, Attributes, <a>Rule</a>s, or
-    /// ObjectType. You can call this on all kinds of schema facets -- published, development,
-    /// or applied.
+    /// Gets details of the <a>Facet</a>, such as facet name, attributes, <a>Rule</a>s, or
+    /// <code>ObjectType</code>. You can call this on all kinds of schema facets -- published,
+    /// development, or applied.
     /// </summary>
     public partial class GetFacetRequest : AmazonCloudDirectoryRequest
     {
@@ -59,7 +59,8 @@ namespace Amazon.CloudDirectory.Model
         /// <summary>
         /// Gets and sets the property SchemaArn. 
         /// <para>
-        /// ARN associated with the <a>Facet</a>. For more information, see <a>arns</a>.
+        /// The Amazon Resource Name (ARN) that is associated with the <a>Facet</a>. For more
+        /// information, see <a>arns</a>.
         /// </para>
         /// </summary>
         public string SchemaArn

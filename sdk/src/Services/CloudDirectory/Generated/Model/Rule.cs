@@ -28,7 +28,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudDirectory.Model
 {
     /// <summary>
-    /// Contains an ARN and parameters associated with the rule.
+    /// Contains an Amazon Resource Name (ARN) and parameters that are associated with the
+    /// rule.
     /// </summary>
     public partial class Rule
     {
@@ -38,7 +39,7 @@ namespace Amazon.CloudDirectory.Model
         /// <summary>
         /// Gets and sets the property Parameters. 
         /// <para>
-        /// Min and max parameters associated with the rule.
+        /// The minimum and maximum parameters that are associated with the rule.
         /// </para>
         /// </summary>
         public Dictionary<string, string> Parameters

@@ -38,7 +38,7 @@ namespace Amazon.CloudDirectory.Model
         /// <summary>
         /// Gets and sets the property Directories. 
         /// <para>
-        /// Lists all directories associated with your account in pagination fashion.
+        /// Lists all directories that are associated with your account in pagination fashion.
         /// </para>
         /// </summary>
         public List<Directory> Directories

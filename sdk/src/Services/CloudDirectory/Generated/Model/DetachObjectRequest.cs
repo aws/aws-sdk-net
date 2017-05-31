@@ -41,8 +41,8 @@ namespace Amazon.CloudDirectory.Model
         /// <summary>
         /// Gets and sets the property DirectoryArn. 
         /// <para>
-        /// ARN associated with the <a>Directory</a> where objects reside. For more information,
-        /// see <a>arns</a>.
+        /// The Amazon Resource Name (ARN) that is associated with the <a>Directory</a> where
+        /// objects reside. For more information, see <a>arns</a>.
         /// </para>
         /// </summary>
         public string DirectoryArn
@@ -60,7 +60,7 @@ namespace Amazon.CloudDirectory.Model
         /// <summary>
         /// Gets and sets the property LinkName. 
         /// <para>
-        /// Link name associated with the object that needs to be detached.
+        /// The link name associated with the object that needs to be detached.
         /// </para>
         /// </summary>
         public string LinkName
@@ -78,7 +78,7 @@ namespace Amazon.CloudDirectory.Model
         /// <summary>
         /// Gets and sets the property ParentReference. 
         /// <para>
-        /// Parent reference from which the object with the specified link name is detached.
+        /// The parent reference from which the object with the specified link name is detached.
         /// </para>
         /// </summary>
         public ObjectReference ParentReference

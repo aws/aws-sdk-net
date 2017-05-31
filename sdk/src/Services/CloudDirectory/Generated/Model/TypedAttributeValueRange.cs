@@ -40,7 +40,7 @@ namespace Amazon.CloudDirectory.Model
         /// <summary>
         /// Gets and sets the property EndMode. 
         /// <para>
-        /// Inclusive or exclusive range end.
+        /// The inclusive or exclusive range end.
         /// </para>
         /// </summary>
         public RangeMode EndMode
@@ -76,7 +76,7 @@ namespace Amazon.CloudDirectory.Model
         /// <summary>
         /// Gets and sets the property StartMode. 
         /// <para>
-        /// Inclusive or exclusive range start.
+        /// The inclusive or exclusive range start.
         /// </para>
         /// </summary>
         public RangeMode StartMode

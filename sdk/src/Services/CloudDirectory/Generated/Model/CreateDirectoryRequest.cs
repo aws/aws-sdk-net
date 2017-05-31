@@ -40,7 +40,7 @@ namespace Amazon.CloudDirectory.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// Name of the <a>Directory</a>. Should be unique per account, per region.
+        /// The name of the <a>Directory</a>. Should be unique per account, per region.
         /// </para>
         /// </summary>
         public string Name
@@ -58,8 +58,8 @@ namespace Amazon.CloudDirectory.Model
         /// <summary>
         /// Gets and sets the property SchemaArn. 
         /// <para>
-        /// ARN of the published schema that will be copied into the data <a>Directory</a>. For
-        /// more information, see <a>arns</a>.
+        /// The Amazon Resource Name (ARN) of the published schema that will be copied into the
+        /// data <a>Directory</a>. For more information, see <a>arns</a>.
         /// </para>
         /// </summary>
         public string SchemaArn

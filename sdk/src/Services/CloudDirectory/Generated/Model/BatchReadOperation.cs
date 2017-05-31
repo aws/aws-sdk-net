@@ -38,7 +38,7 @@ namespace Amazon.CloudDirectory.Model
         /// <summary>
         /// Gets and sets the property ListObjectAttributes. 
         /// <para>
-        /// Lists all attributes associated with an object.
+        /// Lists all attributes that are associated with an object.
         /// </para>
         /// </summary>
         public BatchListObjectAttributes ListObjectAttributes

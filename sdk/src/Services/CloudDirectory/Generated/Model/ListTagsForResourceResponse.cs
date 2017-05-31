@@ -57,7 +57,7 @@ namespace Amazon.CloudDirectory.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// List of tag key value pairs associated with the response.
+        /// A list of tag key value pairs that are associated with the response.
         /// </para>
         /// </summary>
         public List<Tag> Tags

@@ -57,8 +57,8 @@ namespace Amazon.CloudDirectory.Model
         /// <summary>
         /// Gets and sets the property ObjectType. 
         /// <para>
-        /// Object type associated with the facet. See <a>CreateFacetRequest$ObjectType</a> for
-        /// more details.
+        /// The object type that is associated with the facet. See <a>CreateFacetRequest$ObjectType</a>
+        /// for more details.
         /// </para>
         /// </summary>
         public ObjectType ObjectType

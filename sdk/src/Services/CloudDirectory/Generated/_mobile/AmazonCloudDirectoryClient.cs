@@ -39,10 +39,10 @@ namespace Amazon.CloudDirectory
     /// Amazon Cloud Directory 
     /// <para>
     /// Amazon Cloud Directory is a component of the AWS Directory Service that simplifies
-    /// the development and management of cloud-scale web, mobile and IoT applications. This
-    /// guide describes the Cloud Directory operations that you can call programatically and
-    /// includes detailed information on data types and errors. For information about AWS
-    /// Directory Services features, see <a href="https://aws.amazon.com/directoryservice/">AWS
+    /// the development and management of cloud-scale web, mobile, and IoT applications. This
+    /// guide describes the Cloud Directory operations that you can call programmatically
+    /// and includes detailed information on data types and errors. For information about
+    /// AWS Directory Services features, see <a href="https://aws.amazon.com/directoryservice/">AWS
     /// Directory Service</a> and the <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/what_is.html">AWS
     /// Directory Service Administration Guide</a>.
     /// </para>
@@ -399,6 +399,38 @@ namespace Amazon.CloudDirectory
 
         #endregion
         
+        #region  AttachTypedLink
+
+        internal AttachTypedLinkResponse AttachTypedLink(AttachTypedLinkRequest request)
+        {
+            var marshaller = new AttachTypedLinkRequestMarshaller();
+            var unmarshaller = AttachTypedLinkResponseUnmarshaller.Instance;
+
+            return Invoke<AttachTypedLinkRequest,AttachTypedLinkResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AttachTypedLink operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AttachTypedLink operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/AttachTypedLink">REST API Reference for AttachTypedLink Operation</seealso>
+        public Task<AttachTypedLinkResponse> AttachTypedLinkAsync(AttachTypedLinkRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new AttachTypedLinkRequestMarshaller();
+            var unmarshaller = AttachTypedLinkResponseUnmarshaller.Instance;
+
+            return InvokeAsync<AttachTypedLinkRequest,AttachTypedLinkResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  BatchRead
 
         internal BatchReadResponse BatchRead(BatchReadRequest request)
@@ -623,6 +655,38 @@ namespace Amazon.CloudDirectory
 
         #endregion
         
+        #region  CreateTypedLinkFacet
+
+        internal CreateTypedLinkFacetResponse CreateTypedLinkFacet(CreateTypedLinkFacetRequest request)
+        {
+            var marshaller = new CreateTypedLinkFacetRequestMarshaller();
+            var unmarshaller = CreateTypedLinkFacetResponseUnmarshaller.Instance;
+
+            return Invoke<CreateTypedLinkFacetRequest,CreateTypedLinkFacetResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateTypedLinkFacet operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateTypedLinkFacet operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/CreateTypedLinkFacet">REST API Reference for CreateTypedLinkFacet Operation</seealso>
+        public Task<CreateTypedLinkFacetResponse> CreateTypedLinkFacetAsync(CreateTypedLinkFacetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new CreateTypedLinkFacetRequestMarshaller();
+            var unmarshaller = CreateTypedLinkFacetResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateTypedLinkFacetRequest,CreateTypedLinkFacetResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeleteDirectory
 
         internal DeleteDirectoryResponse DeleteDirectory(DeleteDirectoryRequest request)
@@ -751,6 +815,38 @@ namespace Amazon.CloudDirectory
 
         #endregion
         
+        #region  DeleteTypedLinkFacet
+
+        internal DeleteTypedLinkFacetResponse DeleteTypedLinkFacet(DeleteTypedLinkFacetRequest request)
+        {
+            var marshaller = new DeleteTypedLinkFacetRequestMarshaller();
+            var unmarshaller = DeleteTypedLinkFacetResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteTypedLinkFacetRequest,DeleteTypedLinkFacetResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteTypedLinkFacet operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteTypedLinkFacet operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/DeleteTypedLinkFacet">REST API Reference for DeleteTypedLinkFacet Operation</seealso>
+        public Task<DeleteTypedLinkFacetResponse> DeleteTypedLinkFacetAsync(DeleteTypedLinkFacetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DeleteTypedLinkFacetRequestMarshaller();
+            var unmarshaller = DeleteTypedLinkFacetResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteTypedLinkFacetRequest,DeleteTypedLinkFacetResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DetachFromIndex
 
         internal DetachFromIndexResponse DetachFromIndex(DetachFromIndexRequest request)
@@ -842,6 +938,38 @@ namespace Amazon.CloudDirectory
             var unmarshaller = DetachPolicyResponseUnmarshaller.Instance;
 
             return InvokeAsync<DetachPolicyRequest,DetachPolicyResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DetachTypedLink
+
+        internal DetachTypedLinkResponse DetachTypedLink(DetachTypedLinkRequest request)
+        {
+            var marshaller = new DetachTypedLinkRequestMarshaller();
+            var unmarshaller = DetachTypedLinkResponseUnmarshaller.Instance;
+
+            return Invoke<DetachTypedLinkRequest,DetachTypedLinkResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DetachTypedLink operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DetachTypedLink operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/DetachTypedLink">REST API Reference for DetachTypedLink Operation</seealso>
+        public Task<DetachTypedLinkResponse> DetachTypedLinkAsync(DetachTypedLinkRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DetachTypedLinkRequestMarshaller();
+            var unmarshaller = DetachTypedLinkResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DetachTypedLinkRequest,DetachTypedLinkResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -1039,6 +1167,38 @@ namespace Amazon.CloudDirectory
 
         #endregion
         
+        #region  GetTypedLinkFacetInformation
+
+        internal GetTypedLinkFacetInformationResponse GetTypedLinkFacetInformation(GetTypedLinkFacetInformationRequest request)
+        {
+            var marshaller = new GetTypedLinkFacetInformationRequestMarshaller();
+            var unmarshaller = GetTypedLinkFacetInformationResponseUnmarshaller.Instance;
+
+            return Invoke<GetTypedLinkFacetInformationRequest,GetTypedLinkFacetInformationResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetTypedLinkFacetInformation operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetTypedLinkFacetInformation operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/GetTypedLinkFacetInformation">REST API Reference for GetTypedLinkFacetInformation Operation</seealso>
+        public Task<GetTypedLinkFacetInformationResponse> GetTypedLinkFacetInformationAsync(GetTypedLinkFacetInformationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new GetTypedLinkFacetInformationRequestMarshaller();
+            var unmarshaller = GetTypedLinkFacetInformationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetTypedLinkFacetInformationRequest,GetTypedLinkFacetInformationResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListAppliedSchemaArns
 
         internal ListAppliedSchemaArnsResponse ListAppliedSchemaArns(ListAppliedSchemaArnsRequest request)
@@ -1226,6 +1386,38 @@ namespace Amazon.CloudDirectory
             var unmarshaller = ListFacetNamesResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListFacetNamesRequest,ListFacetNamesResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListIncomingTypedLinks
+
+        internal ListIncomingTypedLinksResponse ListIncomingTypedLinks(ListIncomingTypedLinksRequest request)
+        {
+            var marshaller = new ListIncomingTypedLinksRequestMarshaller();
+            var unmarshaller = ListIncomingTypedLinksResponseUnmarshaller.Instance;
+
+            return Invoke<ListIncomingTypedLinksRequest,ListIncomingTypedLinksResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListIncomingTypedLinks operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListIncomingTypedLinks operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListIncomingTypedLinks">REST API Reference for ListIncomingTypedLinks Operation</seealso>
+        public Task<ListIncomingTypedLinksResponse> ListIncomingTypedLinksAsync(ListIncomingTypedLinksRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new ListIncomingTypedLinksRequestMarshaller();
+            var unmarshaller = ListIncomingTypedLinksResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListIncomingTypedLinksRequest,ListIncomingTypedLinksResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -1423,6 +1615,38 @@ namespace Amazon.CloudDirectory
 
         #endregion
         
+        #region  ListOutgoingTypedLinks
+
+        internal ListOutgoingTypedLinksResponse ListOutgoingTypedLinks(ListOutgoingTypedLinksRequest request)
+        {
+            var marshaller = new ListOutgoingTypedLinksRequestMarshaller();
+            var unmarshaller = ListOutgoingTypedLinksResponseUnmarshaller.Instance;
+
+            return Invoke<ListOutgoingTypedLinksRequest,ListOutgoingTypedLinksResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListOutgoingTypedLinks operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListOutgoingTypedLinks operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListOutgoingTypedLinks">REST API Reference for ListOutgoingTypedLinks Operation</seealso>
+        public Task<ListOutgoingTypedLinksResponse> ListOutgoingTypedLinksAsync(ListOutgoingTypedLinksRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new ListOutgoingTypedLinksRequestMarshaller();
+            var unmarshaller = ListOutgoingTypedLinksResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListOutgoingTypedLinksRequest,ListOutgoingTypedLinksResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListPolicyAttachments
 
         internal ListPolicyAttachmentsResponse ListPolicyAttachments(ListPolicyAttachmentsRequest request)
@@ -1514,6 +1738,70 @@ namespace Amazon.CloudDirectory
             var unmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListTagsForResourceRequest,ListTagsForResourceResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListTypedLinkFacetAttributes
+
+        internal ListTypedLinkFacetAttributesResponse ListTypedLinkFacetAttributes(ListTypedLinkFacetAttributesRequest request)
+        {
+            var marshaller = new ListTypedLinkFacetAttributesRequestMarshaller();
+            var unmarshaller = ListTypedLinkFacetAttributesResponseUnmarshaller.Instance;
+
+            return Invoke<ListTypedLinkFacetAttributesRequest,ListTypedLinkFacetAttributesResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListTypedLinkFacetAttributes operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListTypedLinkFacetAttributes operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListTypedLinkFacetAttributes">REST API Reference for ListTypedLinkFacetAttributes Operation</seealso>
+        public Task<ListTypedLinkFacetAttributesResponse> ListTypedLinkFacetAttributesAsync(ListTypedLinkFacetAttributesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new ListTypedLinkFacetAttributesRequestMarshaller();
+            var unmarshaller = ListTypedLinkFacetAttributesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListTypedLinkFacetAttributesRequest,ListTypedLinkFacetAttributesResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListTypedLinkFacetNames
+
+        internal ListTypedLinkFacetNamesResponse ListTypedLinkFacetNames(ListTypedLinkFacetNamesRequest request)
+        {
+            var marshaller = new ListTypedLinkFacetNamesRequestMarshaller();
+            var unmarshaller = ListTypedLinkFacetNamesResponseUnmarshaller.Instance;
+
+            return Invoke<ListTypedLinkFacetNamesRequest,ListTypedLinkFacetNamesResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListTypedLinkFacetNames operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListTypedLinkFacetNames operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListTypedLinkFacetNames">REST API Reference for ListTypedLinkFacetNames Operation</seealso>
+        public Task<ListTypedLinkFacetNamesResponse> ListTypedLinkFacetNamesAsync(ListTypedLinkFacetNamesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new ListTypedLinkFacetNamesRequestMarshaller();
+            var unmarshaller = ListTypedLinkFacetNamesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListTypedLinkFacetNamesRequest,ListTypedLinkFacetNamesResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -1802,6 +2090,38 @@ namespace Amazon.CloudDirectory
             var unmarshaller = UpdateSchemaResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdateSchemaRequest,UpdateSchemaResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateTypedLinkFacet
+
+        internal UpdateTypedLinkFacetResponse UpdateTypedLinkFacet(UpdateTypedLinkFacetRequest request)
+        {
+            var marshaller = new UpdateTypedLinkFacetRequestMarshaller();
+            var unmarshaller = UpdateTypedLinkFacetResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateTypedLinkFacetRequest,UpdateTypedLinkFacetResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateTypedLinkFacet operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateTypedLinkFacet operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/UpdateTypedLinkFacet">REST API Reference for UpdateTypedLinkFacet Operation</seealso>
+        public Task<UpdateTypedLinkFacetResponse> UpdateTypedLinkFacetAsync(UpdateTypedLinkFacetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new UpdateTypedLinkFacetRequestMarshaller();
+            var unmarshaller = UpdateTypedLinkFacetResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateTypedLinkFacetRequest,UpdateTypedLinkFacetResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 

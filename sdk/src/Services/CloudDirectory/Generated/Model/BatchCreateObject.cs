@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudDirectory.Model
 {
     /// <summary>
-    /// Represents the output of a CreateObject operation.
+    /// Represents the output of a <code>CreateObject</code> operation.
     /// </summary>
     public partial class BatchCreateObject
     {
@@ -78,8 +78,8 @@ namespace Amazon.CloudDirectory.Model
         /// <summary>
         /// Gets and sets the property ObjectAttributeList. 
         /// <para>
-        /// Attribute map, which contains an attribute ARN as the key and attribute value as the
-        /// map value.
+        /// An attribute map, which contains an attribute ARN as the key and attribute value as
+        /// the map value.
         /// </para>
         /// </summary>
         public List<AttributeKeyAndValue> ObjectAttributeList
@@ -115,8 +115,8 @@ namespace Amazon.CloudDirectory.Model
         /// <summary>
         /// Gets and sets the property SchemaFacet. 
         /// <para>
-        /// List of FacetArns that will be associated with the object. For more information, see
-        /// <a>arns</a>.
+        /// A list of <code>FacetArns</code> that will be associated with the object. For more
+        /// information, see <a>arns</a>.
         /// </para>
         /// </summary>
         public List<SchemaFacet> SchemaFacet

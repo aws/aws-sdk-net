@@ -38,7 +38,7 @@ namespace Amazon.CloudDirectory.Model
         /// <summary>
         /// Gets and sets the property AttributeKey. 
         /// <para>
-        /// The key of the attribute the attribute range covers.
+        /// The key of the attribute that the attribute range covers.
         /// </para>
         /// </summary>
         public AttributeKey AttributeKey

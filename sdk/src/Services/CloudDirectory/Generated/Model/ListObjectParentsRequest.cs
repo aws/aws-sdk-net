@@ -29,7 +29,7 @@ namespace Amazon.CloudDirectory.Model
 {
     /// <summary>
     /// Container for the parameters to the ListObjectParents operation.
-    /// Lists parent objects associated with a given object in pagination fashion.
+    /// Lists parent objects that are associated with a given object in pagination fashion.
     /// </summary>
     public partial class ListObjectParentsRequest : AmazonCloudDirectoryRequest
     {
@@ -61,8 +61,8 @@ namespace Amazon.CloudDirectory.Model
         /// <summary>
         /// Gets and sets the property DirectoryArn. 
         /// <para>
-        /// ARN associated with the <a>Directory</a> where the object resides. For more information,
-        /// see <a>arns</a>.
+        /// The Amazon Resource Name (ARN) that is associated with the <a>Directory</a> where
+        /// the object resides. For more information, see <a>arns</a>.
         /// </para>
         /// </summary>
         public string DirectoryArn
@@ -80,7 +80,8 @@ namespace Amazon.CloudDirectory.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// Maximum number of items to be retrieved in a single call. This is an approximate number.
+        /// The maximum number of items to be retrieved in a single call. This is an approximate
+        /// number.
         /// </para>
         /// </summary>
         public int MaxResults
@@ -116,7 +117,7 @@ namespace Amazon.CloudDirectory.Model
         /// <summary>
         /// Gets and sets the property ObjectReference. 
         /// <para>
-        /// Reference that identifies the object for which parent objects are being listed.
+        /// The reference that identifies the object for which parent objects are being listed.
         /// </para>
         /// </summary>
         public ObjectReference ObjectReference

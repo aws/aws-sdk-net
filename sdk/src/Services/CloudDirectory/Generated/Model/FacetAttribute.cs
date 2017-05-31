@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudDirectory.Model
 {
     /// <summary>
-    /// Attribute associated with the <a>Facet</a>.
+    /// An attribute that is associated with the <a>Facet</a>.
     /// </summary>
     public partial class FacetAttribute
     {
@@ -60,7 +60,7 @@ namespace Amazon.CloudDirectory.Model
         /// <summary>
         /// Gets and sets the property AttributeReference. 
         /// <para>
-        /// Attribute reference associated with the attribute. See <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_advanced.html#attributereferences">Attribute
+        /// An attribute reference that is associated with the attribute. See <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_advanced.html#attributereferences">Attribute
         /// References</a> for more information.
         /// </para>
         /// </summary>

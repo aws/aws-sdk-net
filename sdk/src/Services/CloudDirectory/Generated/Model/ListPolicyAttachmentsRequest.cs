@@ -61,8 +61,8 @@ namespace Amazon.CloudDirectory.Model
         /// <summary>
         /// Gets and sets the property DirectoryArn. 
         /// <para>
-        /// ARN associated with the <a>Directory</a> where objects reside. For more information,
-        /// see <a>arns</a>.
+        /// The Amazon Resource Name (ARN) that is associated with the <a>Directory</a> where
+        /// objects reside. For more information, see <a>arns</a>.
         /// </para>
         /// </summary>
         public string DirectoryArn
@@ -80,7 +80,8 @@ namespace Amazon.CloudDirectory.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// Maximum number of items to be retrieved in a single call. This is an approximate number.
+        /// The maximum number of items to be retrieved in a single call. This is an approximate
+        /// number.
         /// </para>
         /// </summary>
         public int MaxResults
@@ -116,7 +117,7 @@ namespace Amazon.CloudDirectory.Model
         /// <summary>
         /// Gets and sets the property PolicyReference. 
         /// <para>
-        /// Reference that identifies the policy object.
+        /// The reference that identifies the policy object.
         /// </para>
         /// </summary>
         public ObjectReference PolicyReference

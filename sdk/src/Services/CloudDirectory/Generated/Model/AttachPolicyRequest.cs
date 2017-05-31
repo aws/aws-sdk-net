@@ -41,8 +41,8 @@ namespace Amazon.CloudDirectory.Model
         /// <summary>
         /// Gets and sets the property DirectoryArn. 
         /// <para>
-        /// ARN associated with the <a>Directory</a> where both objects reside. For more information,
-        /// see <a>arns</a>.
+        /// The Amazon Resource Name (ARN) that is associated with the <a>Directory</a> where
+        /// both objects reside. For more information, see <a>arns</a>.
         /// </para>
         /// </summary>
         public string DirectoryArn
@@ -60,7 +60,7 @@ namespace Amazon.CloudDirectory.Model
         /// <summary>
         /// Gets and sets the property ObjectReference. 
         /// <para>
-        /// Reference that identifies the object to which the policy will be attached.
+        /// The reference that identifies the object to which the policy will be attached.
         /// </para>
         /// </summary>
         public ObjectReference ObjectReference
@@ -78,7 +78,7 @@ namespace Amazon.CloudDirectory.Model
         /// <summary>
         /// Gets and sets the property PolicyReference. 
         /// <para>
-        /// Reference associated with the policy object.
+        /// The reference that is associated with the policy object.
         /// </para>
         /// </summary>
         public ObjectReference PolicyReference

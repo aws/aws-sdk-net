@@ -37,7 +37,7 @@ namespace Amazon.CloudDirectory.Model
         /// <summary>
         /// Gets and sets the property Responses. 
         /// <para>
-        /// List of all the responses for each batch write.
+        /// A list of all the responses for each batch write.
         /// </para>
         /// </summary>
         public List<BatchWriteOperationResponse> Responses

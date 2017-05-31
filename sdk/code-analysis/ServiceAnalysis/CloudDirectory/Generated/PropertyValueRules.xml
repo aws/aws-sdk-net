@@ -2,7 +2,9 @@
 <property-value-rules>
   <property-value-rule>
     <property>Amazon.CloudDirectory.Model.AttachObjectRequest.LinkName</property>
+    <min>1</min>
     <max>64</max>
+    <pattern>[^\/\[\]\(\):\{\}#@!?\s\\;]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudDirectory.Model.CreateDirectoryRequest.Name</property>
@@ -24,11 +26,15 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudDirectory.Model.CreateIndexRequest.LinkName</property>
+    <min>1</min>
     <max>64</max>
+    <pattern>[^\/\[\]\(\):\{\}#@!?\s\\;]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudDirectory.Model.CreateObjectRequest.LinkName</property>
+    <min>1</min>
     <max>64</max>
+    <pattern>[^\/\[\]\(\):\{\}#@!?\s\\;]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudDirectory.Model.CreateSchemaRequest.Name</property>
@@ -43,8 +49,14 @@
     <pattern>^[a-zA-Z0-9._-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CloudDirectory.Model.DeleteTypedLinkFacetRequest.Name</property>
+    <pattern>^[a-zA-Z0-9._-]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CloudDirectory.Model.DetachObjectRequest.LinkName</property>
+    <min>1</min>
     <max>64</max>
+    <pattern>[^\/\[\]\(\):\{\}#@!?\s\\;]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudDirectory.Model.GetFacetRequest.Name</property>
@@ -56,6 +68,10 @@
     <property>Amazon.CloudDirectory.Model.GetSchemaAsJsonResponse.Name</property>
     <min>1</min>
     <max>32</max>
+    <pattern>^[a-zA-Z0-9._-]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudDirectory.Model.GetTypedLinkFacetInformationRequest.Name</property>
     <pattern>^[a-zA-Z0-9._-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -89,6 +105,10 @@
     <min>1</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CloudDirectory.Model.ListIncomingTypedLinksRequest.MaxResults</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CloudDirectory.Model.ListIndexRequest.MaxResults</property>
     <min>1</min>
   </property-value-rule>
@@ -113,6 +133,10 @@
     <min>1</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CloudDirectory.Model.ListOutgoingTypedLinksRequest.MaxResults</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CloudDirectory.Model.ListPolicyAttachmentsRequest.MaxResults</property>
     <min>1</min>
   </property-value-rule>
@@ -123,6 +147,18 @@
   <property-value-rule>
     <property>Amazon.CloudDirectory.Model.ListTagsForResourceRequest.MaxResults</property>
     <min>50</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudDirectory.Model.ListTypedLinkFacetAttributesRequest.MaxResults</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudDirectory.Model.ListTypedLinkFacetAttributesRequest.Name</property>
+    <pattern>^[a-zA-Z0-9._-]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudDirectory.Model.ListTypedLinkFacetNamesRequest.MaxResults</property>
+    <min>1</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudDirectory.Model.LookupPolicyRequest.MaxResults</property>
@@ -153,6 +189,10 @@
     <pattern>^[a-zA-Z0-9._-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CloudDirectory.Model.UpdateTypedLinkFacetRequest.Name</property>
+    <pattern>^[a-zA-Z0-9._-]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CloudDirectory.Model.AttributeKey.FacetName</property>
     <min>1</min>
     <max>64</max>
@@ -165,16 +205,28 @@
     <pattern>^[a-zA-Z0-9._-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.CloudDirectory.Model.BatchAttachObject.LinkName</property>
+    <property>Amazon.CloudDirectory.Model.AttributeNameAndValue.AttributeName</property>
+    <min>1</min>
     <max>64</max>
+    <pattern>^[a-zA-Z0-9._-]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudDirectory.Model.BatchAttachObject.LinkName</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[^\/\[\]\(\):\{\}#@!?\s\\;]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudDirectory.Model.BatchCreateObject.LinkName</property>
+    <min>1</min>
     <max>64</max>
+    <pattern>[^\/\[\]\(\):\{\}#@!?\s\\;]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudDirectory.Model.BatchDetachObject.LinkName</property>
+    <min>1</min>
     <max>64</max>
+    <pattern>[^\/\[\]\(\):\{\}#@!?\s\\;]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudDirectory.Model.BatchListObjectAttributes.MaxResults</property>
@@ -218,6 +270,26 @@
     <property>Amazon.CloudDirectory.Model.SchemaFacet.FacetName</property>
     <min>1</min>
     <max>64</max>
+    <pattern>^[a-zA-Z0-9._-]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudDirectory.Model.TypedLinkAttributeDefinition.Name</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[a-zA-Z0-9._-]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudDirectory.Model.TypedLinkAttributeRange.AttributeName</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[a-zA-Z0-9._-]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudDirectory.Model.TypedLinkFacet.Name</property>
+    <pattern>^[a-zA-Z0-9._-]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudDirectory.Model.TypedLinkSchemaAndFacetName.TypedLinkName</property>
     <pattern>^[a-zA-Z0-9._-]*$</pattern>
   </property-value-rule>
 </property-value-rules>

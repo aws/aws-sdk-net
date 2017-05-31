@@ -38,7 +38,7 @@ namespace Amazon.CloudDirectory.Model
         /// <summary>
         /// Gets and sets the property AttachedPolicyIds. 
         /// <para>
-        /// List of policy <code>ObjectIdentifiers</code>, that are attached to the object.
+        /// A list of policy <code>ObjectIdentifiers</code>, that are attached to the object.
         /// </para>
         /// </summary>
         public List<string> AttachedPolicyIds

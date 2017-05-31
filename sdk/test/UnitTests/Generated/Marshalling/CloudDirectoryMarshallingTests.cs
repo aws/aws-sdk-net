@@ -204,6 +204,38 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("CloudDirectory")]
+        public void AttachTypedLinkMarshallTest()
+        {
+            var operation = service_model.FindOperation("AttachTypedLink");
+
+            var request = InstantiateClassGenerator.Execute<AttachTypedLinkRequest>();
+            var marshaller = new AttachTypedLinkRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("AttachTypedLink", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString());
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = AttachTypedLinkResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as AttachTypedLinkResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("CloudDirectory")]
         public void BatchReadMarshallTest()
         {
             var operation = service_model.FindOperation("BatchRead");
@@ -428,6 +460,38 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("CloudDirectory")]
+        public void CreateTypedLinkFacetMarshallTest()
+        {
+            var operation = service_model.FindOperation("CreateTypedLinkFacet");
+
+            var request = InstantiateClassGenerator.Execute<CreateTypedLinkFacetRequest>();
+            var marshaller = new CreateTypedLinkFacetRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("CreateTypedLinkFacet", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString());
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = CreateTypedLinkFacetResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as CreateTypedLinkFacetResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("CloudDirectory")]
         public void DeleteDirectoryMarshallTest()
         {
             var operation = service_model.FindOperation("DeleteDirectory");
@@ -556,6 +620,38 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("CloudDirectory")]
+        public void DeleteTypedLinkFacetMarshallTest()
+        {
+            var operation = service_model.FindOperation("DeleteTypedLinkFacet");
+
+            var request = InstantiateClassGenerator.Execute<DeleteTypedLinkFacetRequest>();
+            var marshaller = new DeleteTypedLinkFacetRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("DeleteTypedLinkFacet", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString());
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = DeleteTypedLinkFacetResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as DeleteTypedLinkFacetResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("CloudDirectory")]
         public void DetachFromIndexMarshallTest()
         {
             var operation = service_model.FindOperation("DetachFromIndex");
@@ -645,6 +741,23 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var response = unmarshaller.Unmarshall(context)
                 as DetachPolicyResponse;   
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("CloudDirectory")]
+        public void DetachTypedLinkMarshallTest()
+        {
+            var operation = service_model.FindOperation("DetachTypedLink");
+
+            var request = InstantiateClassGenerator.Execute<DetachTypedLinkRequest>();
+            var marshaller = new DetachTypedLinkRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("DetachTypedLink", request, internalRequest, service_model);            
+
         }
 
         
@@ -836,6 +949,38 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             ResponseUnmarshaller unmarshaller = GetSchemaAsJsonResponseUnmarshaller.Instance;
             var response = unmarshaller.Unmarshall(context)
                 as GetSchemaAsJsonResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("CloudDirectory")]
+        public void GetTypedLinkFacetInformationMarshallTest()
+        {
+            var operation = service_model.FindOperation("GetTypedLinkFacetInformation");
+
+            var request = InstantiateClassGenerator.Execute<GetTypedLinkFacetInformationRequest>();
+            var marshaller = new GetTypedLinkFacetInformationRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("GetTypedLinkFacetInformation", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString());
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = GetTypedLinkFacetInformationResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as GetTypedLinkFacetInformationResponse;   
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
         }
 
@@ -1036,6 +1181,38 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("CloudDirectory")]
+        public void ListIncomingTypedLinksMarshallTest()
+        {
+            var operation = service_model.FindOperation("ListIncomingTypedLinks");
+
+            var request = InstantiateClassGenerator.Execute<ListIncomingTypedLinksRequest>();
+            var marshaller = new ListIncomingTypedLinksRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("ListIncomingTypedLinks", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString());
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = ListIncomingTypedLinksResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as ListIncomingTypedLinksResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("CloudDirectory")]
         public void ListIndexMarshallTest()
         {
             var operation = service_model.FindOperation("ListIndex");
@@ -1228,6 +1405,38 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("CloudDirectory")]
+        public void ListOutgoingTypedLinksMarshallTest()
+        {
+            var operation = service_model.FindOperation("ListOutgoingTypedLinks");
+
+            var request = InstantiateClassGenerator.Execute<ListOutgoingTypedLinksRequest>();
+            var marshaller = new ListOutgoingTypedLinksRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("ListOutgoingTypedLinks", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString());
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = ListOutgoingTypedLinksResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as ListOutgoingTypedLinksResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("CloudDirectory")]
         public void ListPolicyAttachmentsMarshallTest()
         {
             var operation = service_model.FindOperation("ListPolicyAttachments");
@@ -1316,6 +1525,70 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             ResponseUnmarshaller unmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
             var response = unmarshaller.Unmarshall(context)
                 as ListTagsForResourceResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("CloudDirectory")]
+        public void ListTypedLinkFacetAttributesMarshallTest()
+        {
+            var operation = service_model.FindOperation("ListTypedLinkFacetAttributes");
+
+            var request = InstantiateClassGenerator.Execute<ListTypedLinkFacetAttributesRequest>();
+            var marshaller = new ListTypedLinkFacetAttributesRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("ListTypedLinkFacetAttributes", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString());
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = ListTypedLinkFacetAttributesResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as ListTypedLinkFacetAttributesResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("CloudDirectory")]
+        public void ListTypedLinkFacetNamesMarshallTest()
+        {
+            var operation = service_model.FindOperation("ListTypedLinkFacetNames");
+
+            var request = InstantiateClassGenerator.Execute<ListTypedLinkFacetNamesRequest>();
+            var marshaller = new ListTypedLinkFacetNamesRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("ListTypedLinkFacetNames", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString());
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = ListTypedLinkFacetNamesResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as ListTypedLinkFacetNamesResponse;   
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
         }
 
@@ -1604,6 +1877,38 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             ResponseUnmarshaller unmarshaller = UpdateSchemaResponseUnmarshaller.Instance;
             var response = unmarshaller.Unmarshall(context)
                 as UpdateSchemaResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("CloudDirectory")]
+        public void UpdateTypedLinkFacetMarshallTest()
+        {
+            var operation = service_model.FindOperation("UpdateTypedLinkFacet");
+
+            var request = InstantiateClassGenerator.Execute<UpdateTypedLinkFacetRequest>();
+            var marshaller = new UpdateTypedLinkFacetRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("UpdateTypedLinkFacet", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString());
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = UpdateTypedLinkFacetResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as UpdateTypedLinkFacetResponse;   
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
         }
 

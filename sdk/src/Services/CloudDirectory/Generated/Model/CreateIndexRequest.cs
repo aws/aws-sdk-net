@@ -61,8 +61,7 @@ namespace Amazon.CloudDirectory.Model
         /// <summary>
         /// Gets and sets the property IsUnique. 
         /// <para>
-        /// Indicates whether objects with the same indexed attribute value can be added to the
-        /// index.
+        /// Indicates whether the attribute that is being indexed has unique values or not.
         /// </para>
         /// </summary>
         public bool IsUnique
@@ -98,7 +97,7 @@ namespace Amazon.CloudDirectory.Model
         /// <summary>
         /// Gets and sets the property OrderedIndexedAttributeList. 
         /// <para>
-        /// Specifies the Attributes that should be indexed on. Currently only a single attribute
+        /// Specifies the attributes that should be indexed on. Currently only a single attribute
         /// is supported.
         /// </para>
         /// </summary>

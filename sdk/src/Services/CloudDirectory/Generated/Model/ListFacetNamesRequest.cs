@@ -40,7 +40,7 @@ namespace Amazon.CloudDirectory.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// The maximum number of results to retrieve
+        /// The maximum number of results to retrieve.
         /// </para>
         /// </summary>
         public int MaxResults
@@ -76,7 +76,7 @@ namespace Amazon.CloudDirectory.Model
         /// <summary>
         /// Gets and sets the property SchemaArn. 
         /// <para>
-        /// The ARN to retrieve facet names from.
+        /// The Amazon Resource Name (ARN) to retrieve facet names from.
         /// </para>
         /// </summary>
         public string SchemaArn

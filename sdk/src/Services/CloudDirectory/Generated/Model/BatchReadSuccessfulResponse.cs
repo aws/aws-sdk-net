@@ -38,7 +38,7 @@ namespace Amazon.CloudDirectory.Model
         /// <summary>
         /// Gets and sets the property ListObjectAttributes. 
         /// <para>
-        /// Lists all attributes associated with an object.
+        /// Lists all attributes that are associated with an object.
         /// </para>
         /// </summary>
         public BatchListObjectAttributesResponse ListObjectAttributes
@@ -56,7 +56,7 @@ namespace Amazon.CloudDirectory.Model
         /// <summary>
         /// Gets and sets the property ListObjectChildren. 
         /// <para>
-        /// Returns a paginated list of child objects associated with a given object.
+        /// Returns a paginated list of child objects that are associated with a given object.
         /// </para>
         /// </summary>
         public BatchListObjectChildrenResponse ListObjectChildren

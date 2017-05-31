@@ -40,9 +40,9 @@ namespace Amazon.CloudDirectory.Model
         /// <summary>
         /// Gets and sets the property AppliedSchemaArn. 
         /// <para>
-        /// ARN of the published schema in the <a>Directory</a>. Once a published schema is copied
-        /// into the directory, it has its own ARN which is referred to applied schema ARN. For
-        /// more information, see <a>arns</a>.
+        /// The ARN of the published schema in the <a>Directory</a>. Once a published schema is
+        /// copied into the directory, it has its own ARN, which is referred to applied schema
+        /// ARN. For more information, see <a>arns</a>.
         /// </para>
         /// </summary>
         public string AppliedSchemaArn
@@ -60,7 +60,7 @@ namespace Amazon.CloudDirectory.Model
         /// <summary>
         /// Gets and sets the property DirectoryArn. 
         /// <para>
-        /// ARN associated with the <a>Directory</a>. For more information, see <a>arns</a>.
+        /// The ARN that is associated with the <a>Directory</a>. For more information, see <a>arns</a>.
         /// </para>
         /// </summary>
         public string DirectoryArn
@@ -78,7 +78,7 @@ namespace Amazon.CloudDirectory.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// Name of the <a>Directory</a>.
+        /// The name of the <a>Directory</a>.
         /// </para>
         /// </summary>
         public string Name

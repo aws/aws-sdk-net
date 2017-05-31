@@ -38,8 +38,8 @@ namespace Amazon.CloudDirectory.Model
         /// <summary>
         /// Gets and sets the property Attributes. 
         /// <para>
-        /// Attributes map associated with the object. <code>AttributeArn</code> is the key; attribute
-        /// value is the value.
+        /// The attributes map that is associated with the object. <code>AttributeArn</code> is
+        /// the key; attribute value is the value.
         /// </para>
         /// </summary>
         public List<AttributeKeyAndValue> Attributes

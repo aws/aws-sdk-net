@@ -51,7 +51,7 @@ namespace Amazon.CloudDirectory.Model
         /// <summary>
         /// Gets and sets the property ChildReference. 
         /// <para>
-        /// Child object reference to be attached to the object.
+        /// The child object reference to be attached to the object.
         /// </para>
         /// </summary>
         public ObjectReference ChildReference
@@ -69,8 +69,8 @@ namespace Amazon.CloudDirectory.Model
         /// <summary>
         /// Gets and sets the property DirectoryArn. 
         /// <para>
-        /// ARN associated with the <a>Directory</a> where both objects reside. For more information,
-        /// see <a>arns</a>.
+        /// Amazon Resource Name (ARN) that is associated with the <a>Directory</a> where both
+        /// objects reside. For more information, see <a>arns</a>.
         /// </para>
         /// </summary>
         public string DirectoryArn
@@ -88,7 +88,7 @@ namespace Amazon.CloudDirectory.Model
         /// <summary>
         /// Gets and sets the property LinkName. 
         /// <para>
-        /// Link name with which the child object is attached to the parent.
+        /// The link name with which the child object is attached to the parent.
         /// </para>
         /// </summary>
         public string LinkName
@@ -106,7 +106,7 @@ namespace Amazon.CloudDirectory.Model
         /// <summary>
         /// Gets and sets the property ParentReference. 
         /// <para>
-        /// Parent object reference.
+        /// The parent object reference.
         /// </para>
         /// </summary>
         public ObjectReference ParentReference

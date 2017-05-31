@@ -29,7 +29,7 @@ namespace Amazon.CloudDirectory.Model
 {
     /// <summary>
     /// Container for the parameters to the TagResource operation.
-    /// API for adding tags to a resource.
+    /// An API operation for adding tags to a resource.
     /// </summary>
     public partial class TagResourceRequest : AmazonCloudDirectoryRequest
     {
@@ -39,7 +39,7 @@ namespace Amazon.CloudDirectory.Model
         /// <summary>
         /// Gets and sets the property ResourceArn. 
         /// <para>
-        /// ARN of the resource. Tagging is only supported for directories.
+        /// The Amazon Resource Name (ARN) of the resource. Tagging is only supported for directories.
         /// </para>
         /// </summary>
         public string ResourceArn
@@ -57,7 +57,7 @@ namespace Amazon.CloudDirectory.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// List of tag key value pairs.
+        /// A list of tag key-value pairs.
         /// </para>
         /// </summary>
         public List<Tag> Tags

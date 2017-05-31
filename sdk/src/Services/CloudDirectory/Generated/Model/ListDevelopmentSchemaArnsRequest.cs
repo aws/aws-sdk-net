@@ -29,7 +29,7 @@ namespace Amazon.CloudDirectory.Model
 {
     /// <summary>
     /// Container for the parameters to the ListDevelopmentSchemaArns operation.
-    /// Retrieves the ARNs of schemas in the development state.
+    /// Retrieves each Amazon Resource Name (ARN) of schemas in the development state.
     /// </summary>
     public partial class ListDevelopmentSchemaArnsRequest : AmazonCloudDirectoryRequest
     {

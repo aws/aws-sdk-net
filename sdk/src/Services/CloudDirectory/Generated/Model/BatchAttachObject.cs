@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudDirectory.Model
 {
     /// <summary>
-    /// Represents the output of an AttachObject operation.
+    /// Represents the output of an <code>AttachObject</code> operation.
     /// </summary>
     public partial class BatchAttachObject
     {
@@ -39,7 +39,7 @@ namespace Amazon.CloudDirectory.Model
         /// <summary>
         /// Gets and sets the property ChildReference. 
         /// <para>
-        /// Child object reference to be attached to the object.
+        /// The child object reference that is to be attached to the object.
         /// </para>
         /// </summary>
         public ObjectReference ChildReference
@@ -75,7 +75,7 @@ namespace Amazon.CloudDirectory.Model
         /// <summary>
         /// Gets and sets the property ParentReference. 
         /// <para>
-        /// Parent object reference.
+        /// The parent object reference.
         /// </para>
         /// </summary>
         public ObjectReference ParentReference

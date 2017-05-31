@@ -56,7 +56,8 @@ namespace Amazon.CloudDirectory.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// Name associated with the schema. This is unique to each account and in each region.
+        /// The name that is associated with the schema. This is unique to each account and in
+        /// each region.
         /// </para>
         /// </summary>
         public string Name

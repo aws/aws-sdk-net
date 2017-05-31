@@ -29,7 +29,7 @@ namespace Amazon.CloudDirectory.Model
 {
     /// <summary>
     /// Container for the parameters to the ListObjectAttributes operation.
-    /// Lists all attributes associated with an object.
+    /// Lists all attributes that are associated with an object.
     /// </summary>
     public partial class ListObjectAttributesRequest : AmazonCloudDirectoryRequest
     {
@@ -62,8 +62,8 @@ namespace Amazon.CloudDirectory.Model
         /// <summary>
         /// Gets and sets the property DirectoryArn. 
         /// <para>
-        /// ARN associated with the <a>Directory</a> where the object resides. For more information,
-        /// see <a>arns</a>.
+        /// The Amazon Resource Name (ARN) that is associated with the <a>Directory</a> where
+        /// the object resides. For more information, see <a>arns</a>.
         /// </para>
         /// </summary>
         public string DirectoryArn
@@ -81,7 +81,7 @@ namespace Amazon.CloudDirectory.Model
         /// <summary>
         /// Gets and sets the property FacetFilter. 
         /// <para>
-        /// Used to filter the list of object attributes associated with a certain facet.
+        /// Used to filter the list of object attributes that are associated with a certain facet.
         /// </para>
         /// </summary>
         public SchemaFacet FacetFilter
@@ -99,7 +99,8 @@ namespace Amazon.CloudDirectory.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// Maximum number of items to be retrieved in a single call. This is an approximate number.
+        /// The maximum number of items to be retrieved in a single call. This is an approximate
+        /// number.
         /// </para>
         /// </summary>
         public int MaxResults
@@ -135,7 +136,7 @@ namespace Amazon.CloudDirectory.Model
         /// <summary>
         /// Gets and sets the property ObjectReference. 
         /// <para>
-        /// Reference that identifies the object whose attributes will be listed.
+        /// The reference that identifies the object whose attributes will be listed.
         /// </para>
         /// </summary>
         public ObjectReference ObjectReference

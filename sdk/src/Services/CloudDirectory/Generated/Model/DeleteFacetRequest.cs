@@ -29,8 +29,8 @@ namespace Amazon.CloudDirectory.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteFacet operation.
-    /// Deletes a given <a>Facet</a>. All attributes and <a>Rule</a>s associated with the
-    /// facet will be deleted. Only development schema facets are allowed deletion.
+    /// Deletes a given <a>Facet</a>. All attributes and <a>Rule</a>s that are associated
+    /// with the facet will be deleted. Only development schema facets are allowed deletion.
     /// </summary>
     public partial class DeleteFacetRequest : AmazonCloudDirectoryRequest
     {
@@ -58,7 +58,8 @@ namespace Amazon.CloudDirectory.Model
         /// <summary>
         /// Gets and sets the property SchemaArn. 
         /// <para>
-        /// ARN associated with the <a>Facet</a>. For more information, see <a>arns</a>.
+        /// The Amazon Resource Name (ARN) that is associated with the <a>Facet</a>. For more
+        /// information, see <a>arns</a>.
         /// </para>
         /// </summary>
         public string SchemaArn

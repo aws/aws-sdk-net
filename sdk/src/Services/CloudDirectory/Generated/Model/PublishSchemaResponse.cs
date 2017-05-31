@@ -37,7 +37,7 @@ namespace Amazon.CloudDirectory.Model
         /// <summary>
         /// Gets and sets the property PublishedSchemaArn. 
         /// <para>
-        /// ARN associated with the published schema. For more information, see <a>arns</a>.
+        /// The ARN that is associated with the published schema. For more information, see <a>arns</a>.
         /// </para>
         /// </summary>
         public string PublishedSchemaArn

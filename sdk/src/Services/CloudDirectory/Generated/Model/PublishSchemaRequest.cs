@@ -30,8 +30,8 @@ namespace Amazon.CloudDirectory.Model
     /// <summary>
     /// Container for the parameters to the PublishSchema operation.
     /// Publishes a development schema with a version. If description and attributes are specified,
-    /// PublishSchema overrides the development schema description and attributes. If not,
-    /// the development schema description and attributes are used.
+    /// <code>PublishSchema</code> overrides the development schema description and attributes.
+    /// If not, the development schema description and attributes are used.
     /// </summary>
     public partial class PublishSchemaRequest : AmazonCloudDirectoryRequest
     {
@@ -42,7 +42,8 @@ namespace Amazon.CloudDirectory.Model
         /// <summary>
         /// Gets and sets the property DevelopmentSchemaArn. 
         /// <para>
-        /// ARN associated with the development schema. For more information, see <a>arns</a>.
+        /// The Amazon Resource Name (ARN) that is associated with the development schema. For
+        /// more information, see <a>arns</a>.
         /// </para>
         /// </summary>
         public string DevelopmentSchemaArn
@@ -60,8 +61,8 @@ namespace Amazon.CloudDirectory.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// New name under which the schema will be published. If this is not provided, the development
-        /// schema is considered.
+        /// The new name under which the schema will be published. If this is not provided, the
+        /// development schema is considered.
         /// </para>
         /// </summary>
         public string Name
@@ -79,7 +80,7 @@ namespace Amazon.CloudDirectory.Model
         /// <summary>
         /// Gets and sets the property Version. 
         /// <para>
-        /// Version under which the schema will be published.
+        /// The version under which the schema will be published.
         /// </para>
         /// </summary>
         public string Version

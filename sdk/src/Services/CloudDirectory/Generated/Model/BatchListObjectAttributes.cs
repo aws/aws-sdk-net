@@ -40,7 +40,7 @@ namespace Amazon.CloudDirectory.Model
         /// <summary>
         /// Gets and sets the property FacetFilter. 
         /// <para>
-        /// Used to filter the list of object attributes associated with a certain facet.
+        /// Used to filter the list of object attributes that are associated with a certain facet.
         /// </para>
         /// </summary>
         public SchemaFacet FacetFilter
@@ -58,7 +58,8 @@ namespace Amazon.CloudDirectory.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// Maximum number of items to be retrieved in a single call. This is an approximate number.
+        /// The maximum number of items to be retrieved in a single call. This is an approximate
+        /// number.
         /// </para>
         /// </summary>
         public int MaxResults

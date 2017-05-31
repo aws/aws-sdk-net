@@ -37,7 +37,8 @@ namespace Amazon.CloudDirectory.Model
         /// <summary>
         /// Gets and sets the property SchemaArn. 
         /// <para>
-        /// ARN associated with the schema. For more information, see <a>arns</a>.
+        /// The Amazon Resource Name (ARN) that is associated with the schema. For more information,
+        /// see <a>arns</a>.
         /// </para>
         /// </summary>
         public string SchemaArn

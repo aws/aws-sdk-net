@@ -28,7 +28,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudDirectory.Model
 {
     /// <summary>
-    /// Returns the path to the <code>ObjectIdentifiers</code> associated with the directory.
+    /// Returns the path to the <code>ObjectIdentifiers</code> that is associated with the
+    /// directory.
     /// </summary>
     public partial class PathToObjectIdentifiers
     {
@@ -57,7 +58,7 @@ namespace Amazon.CloudDirectory.Model
         /// <summary>
         /// Gets and sets the property Path. 
         /// <para>
-        /// The path used to identify the object starting from directory root.
+        /// The path that is used to identify the object starting from directory root.
         /// </para>
         /// </summary>
         public string Path

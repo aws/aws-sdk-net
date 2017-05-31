@@ -43,7 +43,7 @@ namespace Amazon.CloudDirectory.Model
         /// <summary>
         /// Gets and sets the property AddFacetToObject. 
         /// <para>
-        /// Result of an add facet to object batch operation.
+        /// The result of an add facet to object batch operation.
         /// </para>
         /// </summary>
         public BatchAddFacetToObjectResponse AddFacetToObject
@@ -133,7 +133,7 @@ namespace Amazon.CloudDirectory.Model
         /// <summary>
         /// Gets and sets the property RemoveFacetFromObject. 
         /// <para>
-        /// Result of a batch remove facet from object operation.
+        /// The result of a batch remove facet from object operation.
         /// </para>
         /// </summary>
         public BatchRemoveFacetFromObjectResponse RemoveFacetFromObject

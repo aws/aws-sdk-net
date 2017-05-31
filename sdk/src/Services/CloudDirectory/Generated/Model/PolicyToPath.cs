@@ -29,7 +29,7 @@ namespace Amazon.CloudDirectory.Model
 {
     /// <summary>
     /// Used when a regular object exists in a <a>Directory</a> and you want to find all of
-    /// the policies associated with that object and the parent to that object.
+    /// the policies that are associated with that object and the parent to that object.
     /// </summary>
     public partial class PolicyToPath
     {

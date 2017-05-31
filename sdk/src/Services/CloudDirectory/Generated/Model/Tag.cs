@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudDirectory.Model
 {
     /// <summary>
-    /// Tag structure which contains tag key and value.
+    /// The tag structure that contains a tag key and value.
     /// </summary>
     public partial class Tag
     {
@@ -38,7 +38,7 @@ namespace Amazon.CloudDirectory.Model
         /// <summary>
         /// Gets and sets the property Key. 
         /// <para>
-        /// Key associated with the tag.
+        /// The key that is associated with the tag.
         /// </para>
         /// </summary>
         public string Key
@@ -56,7 +56,7 @@ namespace Amazon.CloudDirectory.Model
         /// <summary>
         /// Gets and sets the property Value. 
         /// <para>
-        /// Value associated with the tag.
+        /// The value that is associated with the tag.
         /// </para>
         /// </summary>
         public string Value

@@ -28,8 +28,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudDirectory.Model
 {
     /// <summary>
-    /// Facet attribute reference that specifies the attribute definition which contains attribute
-    /// facet name and attribute name.
+    /// The facet attribute reference that specifies the attribute definition that contains
+    /// the attribute facet name and attribute name.
     /// </summary>
     public partial class FacetAttributeReference
     {
@@ -39,7 +39,7 @@ namespace Amazon.CloudDirectory.Model
         /// <summary>
         /// Gets and sets the property TargetAttributeName. 
         /// <para>
-        /// Target attribute name associated with the facet reference. See <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_advanced.html#attributereferences">Attribute
+        /// The target attribute name that is associated with the facet reference. See <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_advanced.html#attributereferences">Attribute
         /// References</a> for more information.
         /// </para>
         /// </summary>
@@ -58,7 +58,7 @@ namespace Amazon.CloudDirectory.Model
         /// <summary>
         /// Gets and sets the property TargetFacetName. 
         /// <para>
-        /// Target facet name associated with the facet reference. See <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_advanced.html#attributereferences">Attribute
+        /// The target facet name that is associated with the facet reference. See <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_advanced.html#attributereferences">Attribute
         /// References</a> for more information.
         /// </para>
         /// </summary>

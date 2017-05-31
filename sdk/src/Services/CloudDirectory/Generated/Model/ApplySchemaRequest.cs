@@ -29,8 +29,8 @@ namespace Amazon.CloudDirectory.Model
 {
     /// <summary>
     /// Container for the parameters to the ApplySchema operation.
-    /// Copies input published schema into <a>Directory</a> with same name and version as
-    /// that of published schema .
+    /// Copies the input published schema into the <a>Directory</a> with the same name and
+    /// version as that of the published schema .
     /// </summary>
     public partial class ApplySchemaRequest : AmazonCloudDirectoryRequest
     {
@@ -40,8 +40,8 @@ namespace Amazon.CloudDirectory.Model
         /// <summary>
         /// Gets and sets the property DirectoryArn. 
         /// <para>
-        /// ARN associated with the <a>Directory</a> into which the schema is copied. For more
-        /// information, see <a>arns</a>.
+        /// The Amazon Resource Name (ARN) that is associated with the <a>Directory</a> into which
+        /// the schema is copied. For more information, see <a>arns</a>.
         /// </para>
         /// </summary>
         public string DirectoryArn
@@ -59,7 +59,8 @@ namespace Amazon.CloudDirectory.Model
         /// <summary>
         /// Gets and sets the property PublishedSchemaArn. 
         /// <para>
-        /// Published schema ARN that needs to be copied. For more information, see <a>arns</a>.
+        /// Published schema Amazon Resource Name (ARN) that needs to be copied. For more information,
+        /// see <a>arns</a>.
         /// </para>
         /// </summary>
         public string PublishedSchemaArn

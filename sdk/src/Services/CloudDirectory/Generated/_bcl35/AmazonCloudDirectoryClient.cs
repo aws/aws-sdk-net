@@ -36,10 +36,10 @@ namespace Amazon.CloudDirectory
     /// Amazon Cloud Directory 
     /// <para>
     /// Amazon Cloud Directory is a component of the AWS Directory Service that simplifies
-    /// the development and management of cloud-scale web, mobile and IoT applications. This
-    /// guide describes the Cloud Directory operations that you can call programatically and
-    /// includes detailed information on data types and errors. For information about AWS
-    /// Directory Services features, see <a href="https://aws.amazon.com/directoryservice/">AWS
+    /// the development and management of cloud-scale web, mobile, and IoT applications. This
+    /// guide describes the Cloud Directory operations that you can call programmatically
+    /// and includes detailed information on data types and errors. For information about
+    /// AWS Directory Services features, see <a href="https://aws.amazon.com/directoryservice/">AWS
     /// Directory Service</a> and the <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/what_is.html">AWS
     /// Directory Service Administration Guide</a>.
     /// </para>
@@ -247,8 +247,8 @@ namespace Amazon.CloudDirectory
         /// An operation can only operate on a directory that is not enabled.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.FacetValidationException">
-        /// The <a>Facet</a> you provided was not well formed or could not be validated with the
-        /// schema.
+        /// The <a>Facet</a> that you provided was not well formed or could not be validated with
+        /// the schema.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.InternalServiceException">
         /// Indicates a problem that must be resolved by Amazon Web Services. This might be a
@@ -260,7 +260,7 @@ namespace Amazon.CloudDirectory
         /// Indicates that the provided ARN value is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.LimitExceededException">
-        /// Indicates limits are exceeded. See <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a>
+        /// Indicates that limits are exceeded. See <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a>
         /// for more information.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.ResourceNotFoundException">
@@ -275,7 +275,7 @@ namespace Amazon.CloudDirectory
         /// exception.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.ValidationException">
-        /// Indicates your request is malformed in some manner. See the exception message.
+        /// Indicates that your request is malformed in some manner. See the exception message.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/AddFacetToObject">REST API Reference for AddFacetToObject Operation</seealso>
         public AddFacetToObjectResponse AddFacetToObject(AddFacetToObjectRequest request)
@@ -325,8 +325,8 @@ namespace Amazon.CloudDirectory
         #region  ApplySchema
 
         /// <summary>
-        /// Copies input published schema into <a>Directory</a> with same name and version as
-        /// that of published schema .
+        /// Copies the input published schema into the <a>Directory</a> with the same name and
+        /// version as that of the published schema .
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ApplySchema service method.</param>
         /// 
@@ -345,10 +345,11 @@ namespace Amazon.CloudDirectory
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.InvalidAttachmentException">
         /// Indicates that an attempt to attach an object with the same link name or to apply
-        /// a schema with same name has occurred. Rename the link or the schema and then try again.
+        /// a schema with the same name has occurred. Rename the link or the schema and then try
+        /// again.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.LimitExceededException">
-        /// Indicates limits are exceeded. See <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a>
+        /// Indicates that limits are exceeded. See <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a>
         /// for more information.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.ResourceNotFoundException">
@@ -363,7 +364,7 @@ namespace Amazon.CloudDirectory
         /// exception.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.ValidationException">
-        /// Indicates your request is malformed in some manner. See the exception message.
+        /// Indicates that your request is malformed in some manner. See the exception message.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ApplySchema">REST API Reference for ApplySchema Operation</seealso>
         public ApplySchemaResponse ApplySchema(ApplySchemaRequest request)
@@ -435,8 +436,8 @@ namespace Amazon.CloudDirectory
         /// An operation can only operate on a directory that is not enabled.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.FacetValidationException">
-        /// The <a>Facet</a> you provided was not well formed or could not be validated with the
-        /// schema.
+        /// The <a>Facet</a> that you provided was not well formed or could not be validated with
+        /// the schema.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.InternalServiceException">
         /// Indicates a problem that must be resolved by Amazon Web Services. This might be a
@@ -449,10 +450,11 @@ namespace Amazon.CloudDirectory
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.InvalidAttachmentException">
         /// Indicates that an attempt to attach an object with the same link name or to apply
-        /// a schema with same name has occurred. Rename the link or the schema and then try again.
+        /// a schema with the same name has occurred. Rename the link or the schema and then try
+        /// again.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.LimitExceededException">
-        /// Indicates limits are exceeded. See <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a>
+        /// Indicates that limits are exceeded. See <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a>
         /// for more information.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.LinkNameAlreadyInUseException">
@@ -471,10 +473,10 @@ namespace Amazon.CloudDirectory
         /// exception.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.ValidationException">
-        /// Indicates your request is malformed in some manner. See the exception message.
+        /// Indicates that your request is malformed in some manner. See the exception message.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.ValidationException">
-        /// Indicates your request is malformed in some manner. See the exception message.
+        /// Indicates that your request is malformed in some manner. See the exception message.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/AttachObject">REST API Reference for AttachObject Operation</seealso>
         public AttachObjectResponse AttachObject(AttachObjectRequest request)
@@ -549,11 +551,11 @@ namespace Amazon.CloudDirectory
         /// Indicates that the provided ARN value is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.LimitExceededException">
-        /// Indicates limits are exceeded. See <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a>
+        /// Indicates that limits are exceeded. See <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a>
         /// for more information.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.NotPolicyException">
-        /// Indicates the requested operation can only operate on policy objects.
+        /// Indicates that the requested operation can only operate on policy objects.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.ResourceNotFoundException">
         /// The specified resource could not be found.
@@ -567,7 +569,7 @@ namespace Amazon.CloudDirectory
         /// exception.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.ValidationException">
-        /// Indicates your request is malformed in some manner. See the exception message.
+        /// Indicates that your request is malformed in some manner. See the exception message.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/AttachPolicy">REST API Reference for AttachPolicy Operation</seealso>
         public AttachPolicyResponse AttachPolicy(AttachPolicyRequest request)
@@ -642,7 +644,7 @@ namespace Amazon.CloudDirectory
         /// Indicates that the provided ARN value is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.LimitExceededException">
-        /// Indicates limits are exceeded. See <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a>
+        /// Indicates that limits are exceeded. See <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a>
         /// for more information.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.LinkNameAlreadyInUseException">
@@ -650,7 +652,7 @@ namespace Amazon.CloudDirectory
         /// name and then try again.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.NotIndexException">
-        /// Indicates the requested operation can only operate on index objects.
+        /// Indicates that the requested operation can only operate on index objects.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.ResourceNotFoundException">
         /// The specified resource could not be found.
@@ -664,7 +666,7 @@ namespace Amazon.CloudDirectory
         /// exception.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.ValidationException">
-        /// Indicates your request is malformed in some manner. See the exception message.
+        /// Indicates that your request is malformed in some manner. See the exception message.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/AttachToIndex">REST API Reference for AttachToIndex Operation</seealso>
         public AttachToIndexResponse AttachToIndex(AttachToIndexRequest request)
@@ -711,6 +713,103 @@ namespace Amazon.CloudDirectory
 
         #endregion
         
+        #region  AttachTypedLink
+
+        /// <summary>
+        /// Attaches a typed link to a specified source and target object. For more information,
+        /// see <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#typedlink">Typed
+        /// link</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AttachTypedLink service method.</param>
+        /// 
+        /// <returns>The response from the AttachTypedLink service method, as returned by CloudDirectory.</returns>
+        /// <exception cref="Amazon.CloudDirectory.Model.AccessDeniedException">
+        /// Access denied. Check your permissions.
+        /// </exception>
+        /// <exception cref="Amazon.CloudDirectory.Model.FacetValidationException">
+        /// The <a>Facet</a> that you provided was not well formed or could not be validated with
+        /// the schema.
+        /// </exception>
+        /// <exception cref="Amazon.CloudDirectory.Model.InternalServiceException">
+        /// Indicates a problem that must be resolved by Amazon Web Services. This might be a
+        /// transient error in which case you can retry your request until it succeeds. Otherwise,
+        /// go to the <a href="http://status.aws.amazon.com/">AWS Service Health Dashboard</a>
+        /// site to see if there are any operational issues with the service.
+        /// </exception>
+        /// <exception cref="Amazon.CloudDirectory.Model.InvalidArnException">
+        /// Indicates that the provided ARN value is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudDirectory.Model.InvalidAttachmentException">
+        /// Indicates that an attempt to attach an object with the same link name or to apply
+        /// a schema with the same name has occurred. Rename the link or the schema and then try
+        /// again.
+        /// </exception>
+        /// <exception cref="Amazon.CloudDirectory.Model.LimitExceededException">
+        /// Indicates that limits are exceeded. See <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a>
+        /// for more information.
+        /// </exception>
+        /// <exception cref="Amazon.CloudDirectory.Model.ResourceNotFoundException">
+        /// The specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudDirectory.Model.RetryableConflictException">
+        /// Occurs when a conflict with a previous successful write is detected. For example,
+        /// if a write operation occurs on an object and then an attempt is made to read the object
+        /// using “SERIALIZABLE” consistency, this exception may result. This generally occurs
+        /// when the previous write did not have time to propagate to the host serving the current
+        /// request. A retry (with appropriate backoff logic) is the recommended response to this
+        /// exception.
+        /// </exception>
+        /// <exception cref="Amazon.CloudDirectory.Model.ValidationException">
+        /// Indicates that your request is malformed in some manner. See the exception message.
+        /// </exception>
+        /// <exception cref="Amazon.CloudDirectory.Model.ValidationException">
+        /// Indicates that your request is malformed in some manner. See the exception message.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/AttachTypedLink">REST API Reference for AttachTypedLink Operation</seealso>
+        public AttachTypedLinkResponse AttachTypedLink(AttachTypedLinkRequest request)
+        {
+            var marshaller = new AttachTypedLinkRequestMarshaller();
+            var unmarshaller = AttachTypedLinkResponseUnmarshaller.Instance;
+
+            return Invoke<AttachTypedLinkRequest,AttachTypedLinkResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AttachTypedLink operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AttachTypedLink operation on AmazonCloudDirectoryClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAttachTypedLink
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/AttachTypedLink">REST API Reference for AttachTypedLink Operation</seealso>
+        public IAsyncResult BeginAttachTypedLink(AttachTypedLinkRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new AttachTypedLinkRequestMarshaller();
+            var unmarshaller = AttachTypedLinkResponseUnmarshaller.Instance;
+
+            return BeginInvoke<AttachTypedLinkRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  AttachTypedLink operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAttachTypedLink.</param>
+        /// 
+        /// <returns>Returns a  AttachTypedLinkResult from CloudDirectory.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/AttachTypedLink">REST API Reference for AttachTypedLink Operation</seealso>
+        public  AttachTypedLinkResponse EndAttachTypedLink(IAsyncResult asyncResult)
+        {
+            return EndInvoke<AttachTypedLinkResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  BatchRead
 
         /// <summary>
@@ -735,7 +834,7 @@ namespace Amazon.CloudDirectory
         /// Indicates that the provided ARN value is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.LimitExceededException">
-        /// Indicates limits are exceeded. See <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a>
+        /// Indicates that limits are exceeded. See <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a>
         /// for more information.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.RetryableConflictException">
@@ -747,7 +846,7 @@ namespace Amazon.CloudDirectory
         /// exception.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.ValidationException">
-        /// Indicates your request is malformed in some manner. See the exception message.
+        /// Indicates that your request is malformed in some manner. See the exception message.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/BatchRead">REST API Reference for BatchRead Operation</seealso>
         public BatchReadResponse BatchRead(BatchReadRequest request)
@@ -822,7 +921,7 @@ namespace Amazon.CloudDirectory
         /// Indicates that the provided ARN value is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.LimitExceededException">
-        /// Indicates limits are exceeded. See <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a>
+        /// Indicates that limits are exceeded. See <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a>
         /// for more information.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.RetryableConflictException">
@@ -834,7 +933,7 @@ namespace Amazon.CloudDirectory
         /// exception.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.ValidationException">
-        /// Indicates your request is malformed in some manner. See the exception message.
+        /// Indicates that your request is malformed in some manner. See the exception message.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/BatchWrite">REST API Reference for BatchWrite Operation</seealso>
         public BatchWriteResponse BatchWrite(BatchWriteRequest request)
@@ -910,7 +1009,7 @@ namespace Amazon.CloudDirectory
         /// Indicates that the provided ARN value is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.LimitExceededException">
-        /// Indicates limits are exceeded. See <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a>
+        /// Indicates that limits are exceeded. See <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a>
         /// for more information.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.ResourceNotFoundException">
@@ -925,7 +1024,7 @@ namespace Amazon.CloudDirectory
         /// exception.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.ValidationException">
-        /// Indicates your request is malformed in some manner. See the exception message.
+        /// Indicates that your request is malformed in some manner. See the exception message.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/CreateDirectory">REST API Reference for CreateDirectory Operation</seealso>
         public CreateDirectoryResponse CreateDirectory(CreateDirectoryRequest request)
@@ -987,6 +1086,10 @@ namespace Amazon.CloudDirectory
         /// <exception cref="Amazon.CloudDirectory.Model.FacetAlreadyExistsException">
         /// A facet with the same name already exists.
         /// </exception>
+        /// <exception cref="Amazon.CloudDirectory.Model.FacetValidationException">
+        /// The <a>Facet</a> that you provided was not well formed or could not be validated with
+        /// the schema.
+        /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.InternalServiceException">
         /// Indicates a problem that must be resolved by Amazon Web Services. This might be a
         /// transient error in which case you can retry your request until it succeeds. Otherwise,
@@ -1000,7 +1103,7 @@ namespace Amazon.CloudDirectory
         /// Occurs when any of the rule parameter keys or values are invalid.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.LimitExceededException">
-        /// Indicates limits are exceeded. See <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a>
+        /// Indicates that limits are exceeded. See <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a>
         /// for more information.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.ResourceNotFoundException">
@@ -1015,7 +1118,7 @@ namespace Amazon.CloudDirectory
         /// exception.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.ValidationException">
-        /// Indicates your request is malformed in some manner. See the exception message.
+        /// Indicates that your request is malformed in some manner. See the exception message.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/CreateFacet">REST API Reference for CreateFacet Operation</seealso>
         public CreateFacetResponse CreateFacet(CreateFacetRequest request)
@@ -1078,8 +1181,8 @@ namespace Amazon.CloudDirectory
         /// An operation can only operate on a directory that is not enabled.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.FacetValidationException">
-        /// The <a>Facet</a> you provided was not well formed or could not be validated with the
-        /// schema.
+        /// The <a>Facet</a> that you provided was not well formed or could not be validated with
+        /// the schema.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.InternalServiceException">
         /// Indicates a problem that must be resolved by Amazon Web Services. This might be a
@@ -1091,7 +1194,7 @@ namespace Amazon.CloudDirectory
         /// Indicates that the provided ARN value is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.LimitExceededException">
-        /// Indicates limits are exceeded. See <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a>
+        /// Indicates that limits are exceeded. See <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a>
         /// for more information.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.LinkNameAlreadyInUseException">
@@ -1110,10 +1213,10 @@ namespace Amazon.CloudDirectory
         /// exception.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.UnsupportedIndexTypeException">
-        /// Indicates the requested index type is not supported.
+        /// Indicates that the requested index type is not supported.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.ValidationException">
-        /// Indicates your request is malformed in some manner. See the exception message.
+        /// Indicates that your request is malformed in some manner. See the exception message.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/CreateIndex">REST API Reference for CreateIndex Operation</seealso>
         public CreateIndexResponse CreateIndex(CreateIndexRequest request)
@@ -1164,9 +1267,9 @@ namespace Amazon.CloudDirectory
 
         /// <summary>
         /// Creates an object in a <a>Directory</a>. Additionally attaches the object to a parent,
-        /// if a parent reference and LinkName is specified. An object is simply a collection
-        /// of <a>Facet</a> attributes. You can also use this API call to create a policy object,
-        /// if the facet from which you create the object is a policy facet.
+        /// if a parent reference and <code>LinkName</code> is specified. An object is simply
+        /// a collection of <a>Facet</a> attributes. You can also use this API call to create
+        /// a policy object, if the facet from which you create the object is a policy facet.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateObject service method.</param>
         /// 
@@ -1178,8 +1281,8 @@ namespace Amazon.CloudDirectory
         /// An operation can only operate on a directory that is not enabled.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.FacetValidationException">
-        /// The <a>Facet</a> you provided was not well formed or could not be validated with the
-        /// schema.
+        /// The <a>Facet</a> that you provided was not well formed or could not be validated with
+        /// the schema.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.InternalServiceException">
         /// Indicates a problem that must be resolved by Amazon Web Services. This might be a
@@ -1194,7 +1297,7 @@ namespace Amazon.CloudDirectory
         /// Indicates that the provided ARN value is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.LimitExceededException">
-        /// Indicates limits are exceeded. See <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a>
+        /// Indicates that limits are exceeded. See <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a>
         /// for more information.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.LinkNameAlreadyInUseException">
@@ -1213,10 +1316,10 @@ namespace Amazon.CloudDirectory
         /// exception.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.UnsupportedIndexTypeException">
-        /// Indicates the requested index type is not supported.
+        /// Indicates that the requested index type is not supported.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.ValidationException">
-        /// Indicates your request is malformed in some manner. See the exception message.
+        /// Indicates that your request is malformed in some manner. See the exception message.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/CreateObject">REST API Reference for CreateObject Operation</seealso>
         public CreateObjectResponse CreateObject(CreateObjectRequest request)
@@ -1305,7 +1408,7 @@ namespace Amazon.CloudDirectory
         /// Indicates that the provided ARN value is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.LimitExceededException">
-        /// Indicates limits are exceeded. See <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a>
+        /// Indicates that limits are exceeded. See <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a>
         /// for more information.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.RetryableConflictException">
@@ -1321,7 +1424,7 @@ namespace Amazon.CloudDirectory
         /// a different name and then try again.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.ValidationException">
-        /// Indicates your request is malformed in some manner. See the exception message.
+        /// Indicates that your request is malformed in some manner. See the exception message.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/CreateSchema">REST API Reference for CreateSchema Operation</seealso>
         public CreateSchemaResponse CreateSchema(CreateSchemaRequest request)
@@ -1368,24 +1471,24 @@ namespace Amazon.CloudDirectory
 
         #endregion
         
-        #region  DeleteDirectory
+        #region  CreateTypedLinkFacet
 
         /// <summary>
-        /// Deletes a directory. Only disabled directories can be deleted. A deleted directory
-        /// cannot be undone. Exercise extreme caution when deleting directories.
+        /// Creates a <a>TypedLinkFacet</a>. For more information, see <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#typedlink">Typed
+        /// link</a>.
         /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the DeleteDirectory service method.</param>
+        /// <param name="request">Container for the necessary parameters to execute the CreateTypedLinkFacet service method.</param>
         /// 
-        /// <returns>The response from the DeleteDirectory service method, as returned by CloudDirectory.</returns>
+        /// <returns>The response from the CreateTypedLinkFacet service method, as returned by CloudDirectory.</returns>
         /// <exception cref="Amazon.CloudDirectory.Model.AccessDeniedException">
         /// Access denied. Check your permissions.
         /// </exception>
-        /// <exception cref="Amazon.CloudDirectory.Model.DirectoryDeletedException">
-        /// A directory that has been deleted has been attempted to be accessed. Note: The requested
-        /// resource will eventually cease to exist.
+        /// <exception cref="Amazon.CloudDirectory.Model.FacetAlreadyExistsException">
+        /// A facet with the same name already exists.
         /// </exception>
-        /// <exception cref="Amazon.CloudDirectory.Model.DirectoryNotDisabledException">
-        /// An operation can only operate on a disabled directory.
+        /// <exception cref="Amazon.CloudDirectory.Model.FacetValidationException">
+        /// The <a>Facet</a> that you provided was not well formed or could not be validated with
+        /// the schema.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.InternalServiceException">
         /// Indicates a problem that must be resolved by Amazon Web Services. This might be a
@@ -1393,8 +1496,14 @@ namespace Amazon.CloudDirectory
         /// go to the <a href="http://status.aws.amazon.com/">AWS Service Health Dashboard</a>
         /// site to see if there are any operational issues with the service.
         /// </exception>
+        /// <exception cref="Amazon.CloudDirectory.Model.InvalidArnException">
+        /// Indicates that the provided ARN value is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudDirectory.Model.InvalidRuleException">
+        /// Occurs when any of the rule parameter keys or values are invalid.
+        /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.LimitExceededException">
-        /// Indicates limits are exceeded. See <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a>
+        /// Indicates that limits are exceeded. See <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a>
         /// for more information.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.ResourceNotFoundException">
@@ -1409,7 +1518,98 @@ namespace Amazon.CloudDirectory
         /// exception.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.ValidationException">
-        /// Indicates your request is malformed in some manner. See the exception message.
+        /// Indicates that your request is malformed in some manner. See the exception message.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/CreateTypedLinkFacet">REST API Reference for CreateTypedLinkFacet Operation</seealso>
+        public CreateTypedLinkFacetResponse CreateTypedLinkFacet(CreateTypedLinkFacetRequest request)
+        {
+            var marshaller = new CreateTypedLinkFacetRequestMarshaller();
+            var unmarshaller = CreateTypedLinkFacetResponseUnmarshaller.Instance;
+
+            return Invoke<CreateTypedLinkFacetRequest,CreateTypedLinkFacetResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateTypedLinkFacet operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateTypedLinkFacet operation on AmazonCloudDirectoryClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateTypedLinkFacet
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/CreateTypedLinkFacet">REST API Reference for CreateTypedLinkFacet Operation</seealso>
+        public IAsyncResult BeginCreateTypedLinkFacet(CreateTypedLinkFacetRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new CreateTypedLinkFacetRequestMarshaller();
+            var unmarshaller = CreateTypedLinkFacetResponseUnmarshaller.Instance;
+
+            return BeginInvoke<CreateTypedLinkFacetRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateTypedLinkFacet operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateTypedLinkFacet.</param>
+        /// 
+        /// <returns>Returns a  CreateTypedLinkFacetResult from CloudDirectory.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/CreateTypedLinkFacet">REST API Reference for CreateTypedLinkFacet Operation</seealso>
+        public  CreateTypedLinkFacetResponse EndCreateTypedLinkFacet(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateTypedLinkFacetResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeleteDirectory
+
+        /// <summary>
+        /// Deletes a directory. Only disabled directories can be deleted. A deleted directory
+        /// cannot be undone. Exercise extreme caution when deleting directories.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteDirectory service method.</param>
+        /// 
+        /// <returns>The response from the DeleteDirectory service method, as returned by CloudDirectory.</returns>
+        /// <exception cref="Amazon.CloudDirectory.Model.AccessDeniedException">
+        /// Access denied. Check your permissions.
+        /// </exception>
+        /// <exception cref="Amazon.CloudDirectory.Model.DirectoryDeletedException">
+        /// A directory that has been deleted and to which access has been attempted. Note: The
+        /// requested resource will eventually cease to exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudDirectory.Model.DirectoryNotDisabledException">
+        /// An operation can only operate on a disabled directory.
+        /// </exception>
+        /// <exception cref="Amazon.CloudDirectory.Model.InternalServiceException">
+        /// Indicates a problem that must be resolved by Amazon Web Services. This might be a
+        /// transient error in which case you can retry your request until it succeeds. Otherwise,
+        /// go to the <a href="http://status.aws.amazon.com/">AWS Service Health Dashboard</a>
+        /// site to see if there are any operational issues with the service.
+        /// </exception>
+        /// <exception cref="Amazon.CloudDirectory.Model.InvalidArnException">
+        /// Indicates that the provided ARN value is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudDirectory.Model.LimitExceededException">
+        /// Indicates that limits are exceeded. See <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a>
+        /// for more information.
+        /// </exception>
+        /// <exception cref="Amazon.CloudDirectory.Model.ResourceNotFoundException">
+        /// The specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudDirectory.Model.RetryableConflictException">
+        /// Occurs when a conflict with a previous successful write is detected. For example,
+        /// if a write operation occurs on an object and then an attempt is made to read the object
+        /// using “SERIALIZABLE” consistency, this exception may result. This generally occurs
+        /// when the previous write did not have time to propagate to the host serving the current
+        /// request. A retry (with appropriate backoff logic) is the recommended response to this
+        /// exception.
+        /// </exception>
+        /// <exception cref="Amazon.CloudDirectory.Model.ValidationException">
+        /// Indicates that your request is malformed in some manner. See the exception message.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/DeleteDirectory">REST API Reference for DeleteDirectory Operation</seealso>
         public DeleteDirectoryResponse DeleteDirectory(DeleteDirectoryRequest request)
@@ -1459,8 +1659,8 @@ namespace Amazon.CloudDirectory
         #region  DeleteFacet
 
         /// <summary>
-        /// Deletes a given <a>Facet</a>. All attributes and <a>Rule</a>s associated with the
-        /// facet will be deleted. Only development schema facets are allowed deletion.
+        /// Deletes a given <a>Facet</a>. All attributes and <a>Rule</a>s that are associated
+        /// with the facet will be deleted. Only development schema facets are allowed deletion.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteFacet service method.</param>
         /// 
@@ -1469,7 +1669,7 @@ namespace Amazon.CloudDirectory
         /// Access denied. Check your permissions.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.FacetInUseException">
-        /// Occurs when deleting a facet that contains an attribute which is a target to an attribute
+        /// Occurs when deleting a facet that contains an attribute that is a target to an attribute
         /// reference in a different facet.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.FacetNotFoundException">
@@ -1485,7 +1685,7 @@ namespace Amazon.CloudDirectory
         /// Indicates that the provided ARN value is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.LimitExceededException">
-        /// Indicates limits are exceeded. See <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a>
+        /// Indicates that limits are exceeded. See <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a>
         /// for more information.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.ResourceNotFoundException">
@@ -1500,7 +1700,7 @@ namespace Amazon.CloudDirectory
         /// exception.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.ValidationException">
-        /// Indicates your request is malformed in some manner. See the exception message.
+        /// Indicates that your request is malformed in some manner. See the exception message.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/DeleteFacet">REST API Reference for DeleteFacet Operation</seealso>
         public DeleteFacetResponse DeleteFacet(DeleteFacetRequest request)
@@ -1572,12 +1772,12 @@ namespace Amazon.CloudDirectory
         /// Indicates that the provided ARN value is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.LimitExceededException">
-        /// Indicates limits are exceeded. See <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a>
+        /// Indicates that limits are exceeded. See <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a>
         /// for more information.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.ObjectNotDetachedException">
-        /// Indicates the requested operation cannot be completed because the object has not been
-        /// detached from the tree.
+        /// Indicates that the requested operation cannot be completed because the object has
+        /// not been detached from the tree.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.ResourceNotFoundException">
         /// The specified resource could not be found.
@@ -1591,7 +1791,7 @@ namespace Amazon.CloudDirectory
         /// exception.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.ValidationException">
-        /// Indicates your request is malformed in some manner. See the exception message.
+        /// Indicates that your request is malformed in some manner. See the exception message.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/DeleteObject">REST API Reference for DeleteObject Operation</seealso>
         public DeleteObjectResponse DeleteObject(DeleteObjectRequest request)
@@ -1659,7 +1859,7 @@ namespace Amazon.CloudDirectory
         /// Indicates that the provided ARN value is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.LimitExceededException">
-        /// Indicates limits are exceeded. See <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a>
+        /// Indicates that limits are exceeded. See <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a>
         /// for more information.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.ResourceNotFoundException">
@@ -1678,7 +1878,7 @@ namespace Amazon.CloudDirectory
         /// try the operation again.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.ValidationException">
-        /// Indicates your request is malformed in some manner. See the exception message.
+        /// Indicates that your request is malformed in some manner. See the exception message.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/DeleteSchema">REST API Reference for DeleteSchema Operation</seealso>
         public DeleteSchemaResponse DeleteSchema(DeleteSchemaRequest request)
@@ -1725,6 +1925,93 @@ namespace Amazon.CloudDirectory
 
         #endregion
         
+        #region  DeleteTypedLinkFacet
+
+        /// <summary>
+        /// Deletes a <a>TypedLinkFacet</a>. For more information, see <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#typedlink">Typed
+        /// link</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteTypedLinkFacet service method.</param>
+        /// 
+        /// <returns>The response from the DeleteTypedLinkFacet service method, as returned by CloudDirectory.</returns>
+        /// <exception cref="Amazon.CloudDirectory.Model.AccessDeniedException">
+        /// Access denied. Check your permissions.
+        /// </exception>
+        /// <exception cref="Amazon.CloudDirectory.Model.FacetNotFoundException">
+        /// The specified <a>Facet</a> could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudDirectory.Model.InternalServiceException">
+        /// Indicates a problem that must be resolved by Amazon Web Services. This might be a
+        /// transient error in which case you can retry your request until it succeeds. Otherwise,
+        /// go to the <a href="http://status.aws.amazon.com/">AWS Service Health Dashboard</a>
+        /// site to see if there are any operational issues with the service.
+        /// </exception>
+        /// <exception cref="Amazon.CloudDirectory.Model.InvalidArnException">
+        /// Indicates that the provided ARN value is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudDirectory.Model.LimitExceededException">
+        /// Indicates that limits are exceeded. See <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a>
+        /// for more information.
+        /// </exception>
+        /// <exception cref="Amazon.CloudDirectory.Model.ResourceNotFoundException">
+        /// The specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudDirectory.Model.RetryableConflictException">
+        /// Occurs when a conflict with a previous successful write is detected. For example,
+        /// if a write operation occurs on an object and then an attempt is made to read the object
+        /// using “SERIALIZABLE” consistency, this exception may result. This generally occurs
+        /// when the previous write did not have time to propagate to the host serving the current
+        /// request. A retry (with appropriate backoff logic) is the recommended response to this
+        /// exception.
+        /// </exception>
+        /// <exception cref="Amazon.CloudDirectory.Model.ValidationException">
+        /// Indicates that your request is malformed in some manner. See the exception message.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/DeleteTypedLinkFacet">REST API Reference for DeleteTypedLinkFacet Operation</seealso>
+        public DeleteTypedLinkFacetResponse DeleteTypedLinkFacet(DeleteTypedLinkFacetRequest request)
+        {
+            var marshaller = new DeleteTypedLinkFacetRequestMarshaller();
+            var unmarshaller = DeleteTypedLinkFacetResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteTypedLinkFacetRequest,DeleteTypedLinkFacetResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteTypedLinkFacet operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteTypedLinkFacet operation on AmazonCloudDirectoryClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteTypedLinkFacet
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/DeleteTypedLinkFacet">REST API Reference for DeleteTypedLinkFacet Operation</seealso>
+        public IAsyncResult BeginDeleteTypedLinkFacet(DeleteTypedLinkFacetRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new DeleteTypedLinkFacetRequestMarshaller();
+            var unmarshaller = DeleteTypedLinkFacetResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DeleteTypedLinkFacetRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteTypedLinkFacet operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteTypedLinkFacet.</param>
+        /// 
+        /// <returns>Returns a  DeleteTypedLinkFacetResult from CloudDirectory.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/DeleteTypedLinkFacet">REST API Reference for DeleteTypedLinkFacet Operation</seealso>
+        public  DeleteTypedLinkFacetResponse EndDeleteTypedLinkFacet(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteTypedLinkFacetResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DetachFromIndex
 
         /// <summary>
@@ -1749,14 +2036,14 @@ namespace Amazon.CloudDirectory
         /// Indicates that the provided ARN value is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.LimitExceededException">
-        /// Indicates limits are exceeded. See <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a>
+        /// Indicates that limits are exceeded. See <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a>
         /// for more information.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.NotIndexException">
-        /// Indicates the requested operation can only operate on index objects.
+        /// Indicates that the requested operation can only operate on index objects.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.ObjectAlreadyDetachedException">
-        /// Indicates the object is not attached to the index.
+        /// Indicates that the object is not attached to the index.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.ResourceNotFoundException">
         /// The specified resource could not be found.
@@ -1770,7 +2057,7 @@ namespace Amazon.CloudDirectory
         /// exception.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.ValidationException">
-        /// Indicates your request is malformed in some manner. See the exception message.
+        /// Indicates that your request is malformed in some manner. See the exception message.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/DetachFromIndex">REST API Reference for DetachFromIndex Operation</seealso>
         public DetachFromIndexResponse DetachFromIndex(DetachFromIndexRequest request)
@@ -1842,7 +2129,7 @@ namespace Amazon.CloudDirectory
         /// Indicates that the provided ARN value is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.LimitExceededException">
-        /// Indicates limits are exceeded. See <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a>
+        /// Indicates that limits are exceeded. See <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a>
         /// for more information.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.ResourceNotFoundException">
@@ -1857,7 +2144,7 @@ namespace Amazon.CloudDirectory
         /// exception.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.ValidationException">
-        /// Indicates your request is malformed in some manner. See the exception message.
+        /// Indicates that your request is malformed in some manner. See the exception message.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/DetachObject">REST API Reference for DetachObject Operation</seealso>
         public DetachObjectResponse DetachObject(DetachObjectRequest request)
@@ -1931,11 +2218,11 @@ namespace Amazon.CloudDirectory
         /// Indicates that the provided ARN value is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.LimitExceededException">
-        /// Indicates limits are exceeded. See <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a>
+        /// Indicates that limits are exceeded. See <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a>
         /// for more information.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.NotPolicyException">
-        /// Indicates the requested operation can only operate on policy objects.
+        /// Indicates that the requested operation can only operate on policy objects.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.ResourceNotFoundException">
         /// The specified resource could not be found.
@@ -1949,7 +2236,7 @@ namespace Amazon.CloudDirectory
         /// exception.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.ValidationException">
-        /// Indicates your request is malformed in some manner. See the exception message.
+        /// Indicates that your request is malformed in some manner. See the exception message.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/DetachPolicy">REST API Reference for DetachPolicy Operation</seealso>
         public DetachPolicyResponse DetachPolicy(DetachPolicyRequest request)
@@ -1996,21 +2283,22 @@ namespace Amazon.CloudDirectory
 
         #endregion
         
-        #region  DisableDirectory
+        #region  DetachTypedLink
 
         /// <summary>
-        /// Disables the specified directory. Disabled directories cannot be read or written to.
-        /// Only enabled directories can be disabled. Disabled directories may be reenabled.
+        /// Detaches a typed link from a specified source and target object. For more information,
+        /// see <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#typedlink">Typed
+        /// link</a>.
         /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the DisableDirectory service method.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DetachTypedLink service method.</param>
         /// 
-        /// <returns>The response from the DisableDirectory service method, as returned by CloudDirectory.</returns>
+        /// <returns>The response from the DetachTypedLink service method, as returned by CloudDirectory.</returns>
         /// <exception cref="Amazon.CloudDirectory.Model.AccessDeniedException">
         /// Access denied. Check your permissions.
         /// </exception>
-        /// <exception cref="Amazon.CloudDirectory.Model.DirectoryDeletedException">
-        /// A directory that has been deleted has been attempted to be accessed. Note: The requested
-        /// resource will eventually cease to exist.
+        /// <exception cref="Amazon.CloudDirectory.Model.FacetValidationException">
+        /// The <a>Facet</a> that you provided was not well formed or could not be validated with
+        /// the schema.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.InternalServiceException">
         /// Indicates a problem that must be resolved by Amazon Web Services. This might be a
@@ -2018,8 +2306,11 @@ namespace Amazon.CloudDirectory
         /// go to the <a href="http://status.aws.amazon.com/">AWS Service Health Dashboard</a>
         /// site to see if there are any operational issues with the service.
         /// </exception>
+        /// <exception cref="Amazon.CloudDirectory.Model.InvalidArnException">
+        /// Indicates that the provided ARN value is not valid.
+        /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.LimitExceededException">
-        /// Indicates limits are exceeded. See <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a>
+        /// Indicates that limits are exceeded. See <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a>
         /// for more information.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.ResourceNotFoundException">
@@ -2034,7 +2325,95 @@ namespace Amazon.CloudDirectory
         /// exception.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.ValidationException">
-        /// Indicates your request is malformed in some manner. See the exception message.
+        /// Indicates that your request is malformed in some manner. See the exception message.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/DetachTypedLink">REST API Reference for DetachTypedLink Operation</seealso>
+        public DetachTypedLinkResponse DetachTypedLink(DetachTypedLinkRequest request)
+        {
+            var marshaller = new DetachTypedLinkRequestMarshaller();
+            var unmarshaller = DetachTypedLinkResponseUnmarshaller.Instance;
+
+            return Invoke<DetachTypedLinkRequest,DetachTypedLinkResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DetachTypedLink operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DetachTypedLink operation on AmazonCloudDirectoryClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDetachTypedLink
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/DetachTypedLink">REST API Reference for DetachTypedLink Operation</seealso>
+        public IAsyncResult BeginDetachTypedLink(DetachTypedLinkRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new DetachTypedLinkRequestMarshaller();
+            var unmarshaller = DetachTypedLinkResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DetachTypedLinkRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DetachTypedLink operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDetachTypedLink.</param>
+        /// 
+        /// <returns>Returns a  DetachTypedLinkResult from CloudDirectory.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/DetachTypedLink">REST API Reference for DetachTypedLink Operation</seealso>
+        public  DetachTypedLinkResponse EndDetachTypedLink(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DetachTypedLinkResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DisableDirectory
+
+        /// <summary>
+        /// Disables the specified directory. Disabled directories cannot be read or written to.
+        /// Only enabled directories can be disabled. Disabled directories may be reenabled.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisableDirectory service method.</param>
+        /// 
+        /// <returns>The response from the DisableDirectory service method, as returned by CloudDirectory.</returns>
+        /// <exception cref="Amazon.CloudDirectory.Model.AccessDeniedException">
+        /// Access denied. Check your permissions.
+        /// </exception>
+        /// <exception cref="Amazon.CloudDirectory.Model.DirectoryDeletedException">
+        /// A directory that has been deleted and to which access has been attempted. Note: The
+        /// requested resource will eventually cease to exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudDirectory.Model.InternalServiceException">
+        /// Indicates a problem that must be resolved by Amazon Web Services. This might be a
+        /// transient error in which case you can retry your request until it succeeds. Otherwise,
+        /// go to the <a href="http://status.aws.amazon.com/">AWS Service Health Dashboard</a>
+        /// site to see if there are any operational issues with the service.
+        /// </exception>
+        /// <exception cref="Amazon.CloudDirectory.Model.InvalidArnException">
+        /// Indicates that the provided ARN value is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudDirectory.Model.LimitExceededException">
+        /// Indicates that limits are exceeded. See <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a>
+        /// for more information.
+        /// </exception>
+        /// <exception cref="Amazon.CloudDirectory.Model.ResourceNotFoundException">
+        /// The specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudDirectory.Model.RetryableConflictException">
+        /// Occurs when a conflict with a previous successful write is detected. For example,
+        /// if a write operation occurs on an object and then an attempt is made to read the object
+        /// using “SERIALIZABLE” consistency, this exception may result. This generally occurs
+        /// when the previous write did not have time to propagate to the host serving the current
+        /// request. A retry (with appropriate backoff logic) is the recommended response to this
+        /// exception.
+        /// </exception>
+        /// <exception cref="Amazon.CloudDirectory.Model.ValidationException">
+        /// Indicates that your request is malformed in some manner. See the exception message.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/DisableDirectory">REST API Reference for DisableDirectory Operation</seealso>
         public DisableDirectoryResponse DisableDirectory(DisableDirectoryRequest request)
@@ -2094,8 +2473,8 @@ namespace Amazon.CloudDirectory
         /// Access denied. Check your permissions.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.DirectoryDeletedException">
-        /// A directory that has been deleted has been attempted to be accessed. Note: The requested
-        /// resource will eventually cease to exist.
+        /// A directory that has been deleted and to which access has been attempted. Note: The
+        /// requested resource will eventually cease to exist.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.InternalServiceException">
         /// Indicates a problem that must be resolved by Amazon Web Services. This might be a
@@ -2103,8 +2482,11 @@ namespace Amazon.CloudDirectory
         /// go to the <a href="http://status.aws.amazon.com/">AWS Service Health Dashboard</a>
         /// site to see if there are any operational issues with the service.
         /// </exception>
+        /// <exception cref="Amazon.CloudDirectory.Model.InvalidArnException">
+        /// Indicates that the provided ARN value is not valid.
+        /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.LimitExceededException">
-        /// Indicates limits are exceeded. See <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a>
+        /// Indicates that limits are exceeded. See <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a>
         /// for more information.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.ResourceNotFoundException">
@@ -2119,7 +2501,7 @@ namespace Amazon.CloudDirectory
         /// exception.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.ValidationException">
-        /// Indicates your request is malformed in some manner. See the exception message.
+        /// Indicates that your request is malformed in some manner. See the exception message.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/EnableDirectory">REST API Reference for EnableDirectory Operation</seealso>
         public EnableDirectoryResponse EnableDirectory(EnableDirectoryRequest request)
@@ -2187,7 +2569,7 @@ namespace Amazon.CloudDirectory
         /// Indicates that the provided ARN value is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.LimitExceededException">
-        /// Indicates limits are exceeded. See <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a>
+        /// Indicates that limits are exceeded. See <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a>
         /// for more information.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.RetryableConflictException">
@@ -2199,7 +2581,7 @@ namespace Amazon.CloudDirectory
         /// exception.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.ValidationException">
-        /// Indicates your request is malformed in some manner. See the exception message.
+        /// Indicates that your request is malformed in some manner. See the exception message.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/GetDirectory">REST API Reference for GetDirectory Operation</seealso>
         public GetDirectoryResponse GetDirectory(GetDirectoryRequest request)
@@ -2249,9 +2631,9 @@ namespace Amazon.CloudDirectory
         #region  GetFacet
 
         /// <summary>
-        /// Gets details of the <a>Facet</a>, such as Facet Name, Attributes, <a>Rule</a>s, or
-        /// ObjectType. You can call this on all kinds of schema facets -- published, development,
-        /// or applied.
+        /// Gets details of the <a>Facet</a>, such as facet name, attributes, <a>Rule</a>s, or
+        /// <code>ObjectType</code>. You can call this on all kinds of schema facets -- published,
+        /// development, or applied.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetFacet service method.</param>
         /// 
@@ -2272,7 +2654,7 @@ namespace Amazon.CloudDirectory
         /// Indicates that the provided ARN value is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.LimitExceededException">
-        /// Indicates limits are exceeded. See <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a>
+        /// Indicates that limits are exceeded. See <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a>
         /// for more information.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.ResourceNotFoundException">
@@ -2287,7 +2669,7 @@ namespace Amazon.CloudDirectory
         /// exception.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.ValidationException">
-        /// Indicates your request is malformed in some manner. See the exception message.
+        /// Indicates that your request is malformed in some manner. See the exception message.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/GetFacet">REST API Reference for GetFacet Operation</seealso>
         public GetFacetResponse GetFacet(GetFacetRequest request)
@@ -2358,7 +2740,7 @@ namespace Amazon.CloudDirectory
         /// Indicates that the provided ARN value is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.LimitExceededException">
-        /// Indicates limits are exceeded. See <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a>
+        /// Indicates that limits are exceeded. See <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a>
         /// for more information.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.ResourceNotFoundException">
@@ -2373,7 +2755,7 @@ namespace Amazon.CloudDirectory
         /// exception.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.ValidationException">
-        /// Indicates your request is malformed in some manner. See the exception message.
+        /// Indicates that your request is malformed in some manner. See the exception message.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/GetObjectInformation">REST API Reference for GetObjectInformation Operation</seealso>
         public GetObjectInformationResponse GetObjectInformation(GetObjectInformationRequest request)
@@ -2442,7 +2824,7 @@ namespace Amazon.CloudDirectory
         /// Indicates that the provided ARN value is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.LimitExceededException">
-        /// Indicates limits are exceeded. See <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a>
+        /// Indicates that limits are exceeded. See <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a>
         /// for more information.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.ResourceNotFoundException">
@@ -2457,10 +2839,10 @@ namespace Amazon.CloudDirectory
         /// exception.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.ValidationException">
-        /// Indicates your request is malformed in some manner. See the exception message.
+        /// Indicates that your request is malformed in some manner. See the exception message.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.ValidationException">
-        /// Indicates your request is malformed in some manner. See the exception message.
+        /// Indicates that your request is malformed in some manner. See the exception message.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/GetSchemaAsJson">REST API Reference for GetSchemaAsJson Operation</seealso>
         public GetSchemaAsJsonResponse GetSchemaAsJson(GetSchemaAsJsonRequest request)
@@ -2507,6 +2889,97 @@ namespace Amazon.CloudDirectory
 
         #endregion
         
+        #region  GetTypedLinkFacetInformation
+
+        /// <summary>
+        /// Returns the identity attribute order for a specific <a>TypedLinkFacet</a>. For more
+        /// information, see <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#typedlink">Typed
+        /// link</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetTypedLinkFacetInformation service method.</param>
+        /// 
+        /// <returns>The response from the GetTypedLinkFacetInformation service method, as returned by CloudDirectory.</returns>
+        /// <exception cref="Amazon.CloudDirectory.Model.AccessDeniedException">
+        /// Access denied. Check your permissions.
+        /// </exception>
+        /// <exception cref="Amazon.CloudDirectory.Model.FacetNotFoundException">
+        /// The specified <a>Facet</a> could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudDirectory.Model.InternalServiceException">
+        /// Indicates a problem that must be resolved by Amazon Web Services. This might be a
+        /// transient error in which case you can retry your request until it succeeds. Otherwise,
+        /// go to the <a href="http://status.aws.amazon.com/">AWS Service Health Dashboard</a>
+        /// site to see if there are any operational issues with the service.
+        /// </exception>
+        /// <exception cref="Amazon.CloudDirectory.Model.InvalidArnException">
+        /// Indicates that the provided ARN value is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudDirectory.Model.InvalidNextTokenException">
+        /// Indicates that the <code>NextToken</code> value is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudDirectory.Model.LimitExceededException">
+        /// Indicates that limits are exceeded. See <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a>
+        /// for more information.
+        /// </exception>
+        /// <exception cref="Amazon.CloudDirectory.Model.ResourceNotFoundException">
+        /// The specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudDirectory.Model.RetryableConflictException">
+        /// Occurs when a conflict with a previous successful write is detected. For example,
+        /// if a write operation occurs on an object and then an attempt is made to read the object
+        /// using “SERIALIZABLE” consistency, this exception may result. This generally occurs
+        /// when the previous write did not have time to propagate to the host serving the current
+        /// request. A retry (with appropriate backoff logic) is the recommended response to this
+        /// exception.
+        /// </exception>
+        /// <exception cref="Amazon.CloudDirectory.Model.ValidationException">
+        /// Indicates that your request is malformed in some manner. See the exception message.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/GetTypedLinkFacetInformation">REST API Reference for GetTypedLinkFacetInformation Operation</seealso>
+        public GetTypedLinkFacetInformationResponse GetTypedLinkFacetInformation(GetTypedLinkFacetInformationRequest request)
+        {
+            var marshaller = new GetTypedLinkFacetInformationRequestMarshaller();
+            var unmarshaller = GetTypedLinkFacetInformationResponseUnmarshaller.Instance;
+
+            return Invoke<GetTypedLinkFacetInformationRequest,GetTypedLinkFacetInformationResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetTypedLinkFacetInformation operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetTypedLinkFacetInformation operation on AmazonCloudDirectoryClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetTypedLinkFacetInformation
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/GetTypedLinkFacetInformation">REST API Reference for GetTypedLinkFacetInformation Operation</seealso>
+        public IAsyncResult BeginGetTypedLinkFacetInformation(GetTypedLinkFacetInformationRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new GetTypedLinkFacetInformationRequestMarshaller();
+            var unmarshaller = GetTypedLinkFacetInformationResponseUnmarshaller.Instance;
+
+            return BeginInvoke<GetTypedLinkFacetInformationRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetTypedLinkFacetInformation operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetTypedLinkFacetInformation.</param>
+        /// 
+        /// <returns>Returns a  GetTypedLinkFacetInformationResult from CloudDirectory.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/GetTypedLinkFacetInformation">REST API Reference for GetTypedLinkFacetInformation Operation</seealso>
+        public  GetTypedLinkFacetInformationResponse EndGetTypedLinkFacetInformation(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetTypedLinkFacetInformationResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ListAppliedSchemaArns
 
         /// <summary>
@@ -2531,7 +3004,7 @@ namespace Amazon.CloudDirectory
         /// Indicates that the <code>NextToken</code> value is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.LimitExceededException">
-        /// Indicates limits are exceeded. See <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a>
+        /// Indicates that limits are exceeded. See <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a>
         /// for more information.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.ResourceNotFoundException">
@@ -2546,7 +3019,7 @@ namespace Amazon.CloudDirectory
         /// exception.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.ValidationException">
-        /// Indicates your request is malformed in some manner. See the exception message.
+        /// Indicates that your request is malformed in some manner. See the exception message.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListAppliedSchemaArns">REST API Reference for ListAppliedSchemaArns Operation</seealso>
         public ListAppliedSchemaArnsResponse ListAppliedSchemaArns(ListAppliedSchemaArnsRequest request)
@@ -2617,7 +3090,7 @@ namespace Amazon.CloudDirectory
         /// Indicates that the provided ARN value is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.LimitExceededException">
-        /// Indicates limits are exceeded. See <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a>
+        /// Indicates that limits are exceeded. See <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a>
         /// for more information.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.ResourceNotFoundException">
@@ -2632,7 +3105,7 @@ namespace Amazon.CloudDirectory
         /// exception.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.ValidationException">
-        /// Indicates your request is malformed in some manner. See the exception message.
+        /// Indicates that your request is malformed in some manner. See the exception message.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListAttachedIndices">REST API Reference for ListAttachedIndices Operation</seealso>
         public ListAttachedIndicesResponse ListAttachedIndices(ListAttachedIndicesRequest request)
@@ -2682,7 +3155,7 @@ namespace Amazon.CloudDirectory
         #region  ListDevelopmentSchemaArns
 
         /// <summary>
-        /// Retrieves the ARNs of schemas in the development state.
+        /// Retrieves each Amazon Resource Name (ARN) of schemas in the development state.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListDevelopmentSchemaArns service method.</param>
         /// 
@@ -2703,7 +3176,7 @@ namespace Amazon.CloudDirectory
         /// Indicates that the <code>NextToken</code> value is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.LimitExceededException">
-        /// Indicates limits are exceeded. See <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a>
+        /// Indicates that limits are exceeded. See <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a>
         /// for more information.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.ResourceNotFoundException">
@@ -2718,7 +3191,7 @@ namespace Amazon.CloudDirectory
         /// exception.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.ValidationException">
-        /// Indicates your request is malformed in some manner. See the exception message.
+        /// Indicates that your request is malformed in some manner. See the exception message.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListDevelopmentSchemaArns">REST API Reference for ListDevelopmentSchemaArns Operation</seealso>
         public ListDevelopmentSchemaArnsResponse ListDevelopmentSchemaArns(ListDevelopmentSchemaArnsRequest request)
@@ -2789,7 +3262,7 @@ namespace Amazon.CloudDirectory
         /// Indicates that the <code>NextToken</code> value is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.LimitExceededException">
-        /// Indicates limits are exceeded. See <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a>
+        /// Indicates that limits are exceeded. See <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a>
         /// for more information.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.RetryableConflictException">
@@ -2801,7 +3274,7 @@ namespace Amazon.CloudDirectory
         /// exception.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.ValidationException">
-        /// Indicates your request is malformed in some manner. See the exception message.
+        /// Indicates that your request is malformed in some manner. See the exception message.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListDirectories">REST API Reference for ListDirectories Operation</seealso>
         public ListDirectoriesResponse ListDirectories(ListDirectoriesRequest request)
@@ -2875,7 +3348,7 @@ namespace Amazon.CloudDirectory
         /// Indicates that the <code>NextToken</code> value is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.LimitExceededException">
-        /// Indicates limits are exceeded. See <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a>
+        /// Indicates that limits are exceeded. See <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a>
         /// for more information.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.ResourceNotFoundException">
@@ -2890,7 +3363,7 @@ namespace Amazon.CloudDirectory
         /// exception.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.ValidationException">
-        /// Indicates your request is malformed in some manner. See the exception message.
+        /// Indicates that your request is malformed in some manner. See the exception message.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListFacetAttributes">REST API Reference for ListFacetAttributes Operation</seealso>
         public ListFacetAttributesResponse ListFacetAttributes(ListFacetAttributesRequest request)
@@ -2961,7 +3434,7 @@ namespace Amazon.CloudDirectory
         /// Indicates that the <code>NextToken</code> value is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.LimitExceededException">
-        /// Indicates limits are exceeded. See <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a>
+        /// Indicates that limits are exceeded. See <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a>
         /// for more information.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.ResourceNotFoundException">
@@ -2976,7 +3449,7 @@ namespace Amazon.CloudDirectory
         /// exception.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.ValidationException">
-        /// Indicates your request is malformed in some manner. See the exception message.
+        /// Indicates that your request is malformed in some manner. See the exception message.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListFacetNames">REST API Reference for ListFacetNames Operation</seealso>
         public ListFacetNamesResponse ListFacetNames(ListFacetNamesRequest request)
@@ -3023,6 +3496,99 @@ namespace Amazon.CloudDirectory
 
         #endregion
         
+        #region  ListIncomingTypedLinks
+
+        /// <summary>
+        /// Returns a paginated list of all the incoming <a>TypedLinkSpecifier</a> information
+        /// for an object. It also supports filtering by typed link facet and identity attributes.
+        /// For more information, see <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#typedlink">Typed
+        /// link</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListIncomingTypedLinks service method.</param>
+        /// 
+        /// <returns>The response from the ListIncomingTypedLinks service method, as returned by CloudDirectory.</returns>
+        /// <exception cref="Amazon.CloudDirectory.Model.AccessDeniedException">
+        /// Access denied. Check your permissions.
+        /// </exception>
+        /// <exception cref="Amazon.CloudDirectory.Model.FacetValidationException">
+        /// The <a>Facet</a> that you provided was not well formed or could not be validated with
+        /// the schema.
+        /// </exception>
+        /// <exception cref="Amazon.CloudDirectory.Model.InternalServiceException">
+        /// Indicates a problem that must be resolved by Amazon Web Services. This might be a
+        /// transient error in which case you can retry your request until it succeeds. Otherwise,
+        /// go to the <a href="http://status.aws.amazon.com/">AWS Service Health Dashboard</a>
+        /// site to see if there are any operational issues with the service.
+        /// </exception>
+        /// <exception cref="Amazon.CloudDirectory.Model.InvalidArnException">
+        /// Indicates that the provided ARN value is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudDirectory.Model.InvalidNextTokenException">
+        /// Indicates that the <code>NextToken</code> value is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudDirectory.Model.LimitExceededException">
+        /// Indicates that limits are exceeded. See <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a>
+        /// for more information.
+        /// </exception>
+        /// <exception cref="Amazon.CloudDirectory.Model.ResourceNotFoundException">
+        /// The specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudDirectory.Model.RetryableConflictException">
+        /// Occurs when a conflict with a previous successful write is detected. For example,
+        /// if a write operation occurs on an object and then an attempt is made to read the object
+        /// using “SERIALIZABLE” consistency, this exception may result. This generally occurs
+        /// when the previous write did not have time to propagate to the host serving the current
+        /// request. A retry (with appropriate backoff logic) is the recommended response to this
+        /// exception.
+        /// </exception>
+        /// <exception cref="Amazon.CloudDirectory.Model.ValidationException">
+        /// Indicates that your request is malformed in some manner. See the exception message.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListIncomingTypedLinks">REST API Reference for ListIncomingTypedLinks Operation</seealso>
+        public ListIncomingTypedLinksResponse ListIncomingTypedLinks(ListIncomingTypedLinksRequest request)
+        {
+            var marshaller = new ListIncomingTypedLinksRequestMarshaller();
+            var unmarshaller = ListIncomingTypedLinksResponseUnmarshaller.Instance;
+
+            return Invoke<ListIncomingTypedLinksRequest,ListIncomingTypedLinksResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListIncomingTypedLinks operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListIncomingTypedLinks operation on AmazonCloudDirectoryClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListIncomingTypedLinks
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListIncomingTypedLinks">REST API Reference for ListIncomingTypedLinks Operation</seealso>
+        public IAsyncResult BeginListIncomingTypedLinks(ListIncomingTypedLinksRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new ListIncomingTypedLinksRequestMarshaller();
+            var unmarshaller = ListIncomingTypedLinksResponseUnmarshaller.Instance;
+
+            return BeginInvoke<ListIncomingTypedLinksRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListIncomingTypedLinks operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListIncomingTypedLinks.</param>
+        /// 
+        /// <returns>Returns a  ListIncomingTypedLinksResult from CloudDirectory.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListIncomingTypedLinks">REST API Reference for ListIncomingTypedLinks Operation</seealso>
+        public  ListIncomingTypedLinksResponse EndListIncomingTypedLinks(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListIncomingTypedLinksResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ListIndex
 
         /// <summary>
@@ -3047,11 +3613,11 @@ namespace Amazon.CloudDirectory
         /// Indicates that the provided ARN value is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.LimitExceededException">
-        /// Indicates limits are exceeded. See <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a>
+        /// Indicates that limits are exceeded. See <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a>
         /// for more information.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.NotIndexException">
-        /// Indicates the requested operation can only operate on index objects.
+        /// Indicates that the requested operation can only operate on index objects.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.ResourceNotFoundException">
         /// The specified resource could not be found.
@@ -3065,7 +3631,7 @@ namespace Amazon.CloudDirectory
         /// exception.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.ValidationException">
-        /// Indicates your request is malformed in some manner. See the exception message.
+        /// Indicates that your request is malformed in some manner. See the exception message.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListIndex">REST API Reference for ListIndex Operation</seealso>
         public ListIndexResponse ListIndex(ListIndexRequest request)
@@ -3115,7 +3681,7 @@ namespace Amazon.CloudDirectory
         #region  ListObjectAttributes
 
         /// <summary>
-        /// Lists all attributes associated with an object.
+        /// Lists all attributes that are associated with an object.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListObjectAttributes service method.</param>
         /// 
@@ -3127,8 +3693,8 @@ namespace Amazon.CloudDirectory
         /// An operation can only operate on a directory that is not enabled.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.FacetValidationException">
-        /// The <a>Facet</a> you provided was not well formed or could not be validated with the
-        /// schema.
+        /// The <a>Facet</a> that you provided was not well formed or could not be validated with
+        /// the schema.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.InternalServiceException">
         /// Indicates a problem that must be resolved by Amazon Web Services. This might be a
@@ -3146,7 +3712,7 @@ namespace Amazon.CloudDirectory
         /// Indicates that the <code>NextToken</code> value is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.LimitExceededException">
-        /// Indicates limits are exceeded. See <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a>
+        /// Indicates that limits are exceeded. See <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a>
         /// for more information.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.ResourceNotFoundException">
@@ -3161,7 +3727,7 @@ namespace Amazon.CloudDirectory
         /// exception.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.ValidationException">
-        /// Indicates your request is malformed in some manner. See the exception message.
+        /// Indicates that your request is malformed in some manner. See the exception message.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListObjectAttributes">REST API Reference for ListObjectAttributes Operation</seealso>
         public ListObjectAttributesResponse ListObjectAttributes(ListObjectAttributesRequest request)
@@ -3211,7 +3777,7 @@ namespace Amazon.CloudDirectory
         #region  ListObjectChildren
 
         /// <summary>
-        /// Returns a paginated list of child objects associated with a given object.
+        /// Returns a paginated list of child objects that are associated with a given object.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListObjectChildren service method.</param>
         /// 
@@ -3238,11 +3804,11 @@ namespace Amazon.CloudDirectory
         /// Indicates that the <code>NextToken</code> value is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.LimitExceededException">
-        /// Indicates limits are exceeded. See <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a>
+        /// Indicates that limits are exceeded. See <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a>
         /// for more information.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.NotNodeException">
-        /// Occurs when any invalid operations are performed on an object which is not a node,
+        /// Occurs when any invalid operations are performed on an object that is not a node,
         /// such as calling <code>ListObjectChildren</code> for a leaf node object.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.ResourceNotFoundException">
@@ -3257,7 +3823,7 @@ namespace Amazon.CloudDirectory
         /// exception.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.ValidationException">
-        /// Indicates your request is malformed in some manner. See the exception message.
+        /// Indicates that your request is malformed in some manner. See the exception message.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListObjectChildren">REST API Reference for ListObjectChildren Operation</seealso>
         public ListObjectChildrenResponse ListObjectChildren(ListObjectChildrenRequest request)
@@ -3317,7 +3883,7 @@ namespace Amazon.CloudDirectory
         /// the root of the directory up to the requested object. The API returns the number of
         /// paths based on user-defined <code>MaxResults</code>, in case there are multiple paths
         /// to the parent. The order of the paths and nodes returned is consistent among multiple
-        /// API calls unless the objects are deleted or moved. Paths not leading to directory
+        /// API calls unless the objects are deleted or moved. Paths not leading to the directory
         /// root are ignored from the target object.
         /// </para>
         /// </summary>
@@ -3343,7 +3909,7 @@ namespace Amazon.CloudDirectory
         /// Indicates that the <code>NextToken</code> value is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.LimitExceededException">
-        /// Indicates limits are exceeded. See <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a>
+        /// Indicates that limits are exceeded. See <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a>
         /// for more information.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.ResourceNotFoundException">
@@ -3358,7 +3924,7 @@ namespace Amazon.CloudDirectory
         /// exception.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.ValidationException">
-        /// Indicates your request is malformed in some manner. See the exception message.
+        /// Indicates that your request is malformed in some manner. See the exception message.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListObjectParentPaths">REST API Reference for ListObjectParentPaths Operation</seealso>
         public ListObjectParentPathsResponse ListObjectParentPaths(ListObjectParentPathsRequest request)
@@ -3408,7 +3974,7 @@ namespace Amazon.CloudDirectory
         #region  ListObjectParents
 
         /// <summary>
-        /// Lists parent objects associated with a given object in pagination fashion.
+        /// Lists parent objects that are associated with a given object in pagination fashion.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListObjectParents service method.</param>
         /// 
@@ -3438,7 +4004,7 @@ namespace Amazon.CloudDirectory
         /// Indicates that the <code>NextToken</code> value is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.LimitExceededException">
-        /// Indicates limits are exceeded. See <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a>
+        /// Indicates that limits are exceeded. See <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a>
         /// for more information.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.ResourceNotFoundException">
@@ -3453,7 +4019,7 @@ namespace Amazon.CloudDirectory
         /// exception.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.ValidationException">
-        /// Indicates your request is malformed in some manner. See the exception message.
+        /// Indicates that your request is malformed in some manner. See the exception message.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListObjectParents">REST API Reference for ListObjectParents Operation</seealso>
         public ListObjectParentsResponse ListObjectParents(ListObjectParentsRequest request)
@@ -3527,7 +4093,7 @@ namespace Amazon.CloudDirectory
         /// Indicates that the <code>NextToken</code> value is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.LimitExceededException">
-        /// Indicates limits are exceeded. See <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a>
+        /// Indicates that limits are exceeded. See <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a>
         /// for more information.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.ResourceNotFoundException">
@@ -3542,7 +4108,7 @@ namespace Amazon.CloudDirectory
         /// exception.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.ValidationException">
-        /// Indicates your request is malformed in some manner. See the exception message.
+        /// Indicates that your request is malformed in some manner. See the exception message.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListObjectPolicies">REST API Reference for ListObjectPolicies Operation</seealso>
         public ListObjectPoliciesResponse ListObjectPolicies(ListObjectPoliciesRequest request)
@@ -3589,6 +4155,99 @@ namespace Amazon.CloudDirectory
 
         #endregion
         
+        #region  ListOutgoingTypedLinks
+
+        /// <summary>
+        /// Returns a paginated list of all the outgoing <a>TypedLinkSpecifier</a> information
+        /// for an object. It also supports filtering by typed link facet and identity attributes.
+        /// For more information, see <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#typedlink">Typed
+        /// link</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListOutgoingTypedLinks service method.</param>
+        /// 
+        /// <returns>The response from the ListOutgoingTypedLinks service method, as returned by CloudDirectory.</returns>
+        /// <exception cref="Amazon.CloudDirectory.Model.AccessDeniedException">
+        /// Access denied. Check your permissions.
+        /// </exception>
+        /// <exception cref="Amazon.CloudDirectory.Model.FacetValidationException">
+        /// The <a>Facet</a> that you provided was not well formed or could not be validated with
+        /// the schema.
+        /// </exception>
+        /// <exception cref="Amazon.CloudDirectory.Model.InternalServiceException">
+        /// Indicates a problem that must be resolved by Amazon Web Services. This might be a
+        /// transient error in which case you can retry your request until it succeeds. Otherwise,
+        /// go to the <a href="http://status.aws.amazon.com/">AWS Service Health Dashboard</a>
+        /// site to see if there are any operational issues with the service.
+        /// </exception>
+        /// <exception cref="Amazon.CloudDirectory.Model.InvalidArnException">
+        /// Indicates that the provided ARN value is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudDirectory.Model.InvalidNextTokenException">
+        /// Indicates that the <code>NextToken</code> value is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudDirectory.Model.LimitExceededException">
+        /// Indicates that limits are exceeded. See <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a>
+        /// for more information.
+        /// </exception>
+        /// <exception cref="Amazon.CloudDirectory.Model.ResourceNotFoundException">
+        /// The specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudDirectory.Model.RetryableConflictException">
+        /// Occurs when a conflict with a previous successful write is detected. For example,
+        /// if a write operation occurs on an object and then an attempt is made to read the object
+        /// using “SERIALIZABLE” consistency, this exception may result. This generally occurs
+        /// when the previous write did not have time to propagate to the host serving the current
+        /// request. A retry (with appropriate backoff logic) is the recommended response to this
+        /// exception.
+        /// </exception>
+        /// <exception cref="Amazon.CloudDirectory.Model.ValidationException">
+        /// Indicates that your request is malformed in some manner. See the exception message.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListOutgoingTypedLinks">REST API Reference for ListOutgoingTypedLinks Operation</seealso>
+        public ListOutgoingTypedLinksResponse ListOutgoingTypedLinks(ListOutgoingTypedLinksRequest request)
+        {
+            var marshaller = new ListOutgoingTypedLinksRequestMarshaller();
+            var unmarshaller = ListOutgoingTypedLinksResponseUnmarshaller.Instance;
+
+            return Invoke<ListOutgoingTypedLinksRequest,ListOutgoingTypedLinksResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListOutgoingTypedLinks operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListOutgoingTypedLinks operation on AmazonCloudDirectoryClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListOutgoingTypedLinks
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListOutgoingTypedLinks">REST API Reference for ListOutgoingTypedLinks Operation</seealso>
+        public IAsyncResult BeginListOutgoingTypedLinks(ListOutgoingTypedLinksRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new ListOutgoingTypedLinksRequestMarshaller();
+            var unmarshaller = ListOutgoingTypedLinksResponseUnmarshaller.Instance;
+
+            return BeginInvoke<ListOutgoingTypedLinksRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListOutgoingTypedLinks operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListOutgoingTypedLinks.</param>
+        /// 
+        /// <returns>Returns a  ListOutgoingTypedLinksResult from CloudDirectory.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListOutgoingTypedLinks">REST API Reference for ListOutgoingTypedLinks Operation</seealso>
+        public  ListOutgoingTypedLinksResponse EndListOutgoingTypedLinks(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListOutgoingTypedLinksResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ListPolicyAttachments
 
         /// <summary>
@@ -3619,11 +4278,11 @@ namespace Amazon.CloudDirectory
         /// Indicates that the <code>NextToken</code> value is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.LimitExceededException">
-        /// Indicates limits are exceeded. See <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a>
+        /// Indicates that limits are exceeded. See <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a>
         /// for more information.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.NotPolicyException">
-        /// Indicates the requested operation can only operate on policy objects.
+        /// Indicates that the requested operation can only operate on policy objects.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.ResourceNotFoundException">
         /// The specified resource could not be found.
@@ -3637,7 +4296,7 @@ namespace Amazon.CloudDirectory
         /// exception.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.ValidationException">
-        /// Indicates your request is malformed in some manner. See the exception message.
+        /// Indicates that your request is malformed in some manner. See the exception message.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListPolicyAttachments">REST API Reference for ListPolicyAttachments Operation</seealso>
         public ListPolicyAttachmentsResponse ListPolicyAttachments(ListPolicyAttachmentsRequest request)
@@ -3687,7 +4346,7 @@ namespace Amazon.CloudDirectory
         #region  ListPublishedSchemaArns
 
         /// <summary>
-        /// Retrieves published schema ARNs.
+        /// Retrieves each published schema Amazon Resource Name (ARN).
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListPublishedSchemaArns service method.</param>
         /// 
@@ -3708,7 +4367,7 @@ namespace Amazon.CloudDirectory
         /// Indicates that the <code>NextToken</code> value is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.LimitExceededException">
-        /// Indicates limits are exceeded. See <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a>
+        /// Indicates that limits are exceeded. See <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a>
         /// for more information.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.ResourceNotFoundException">
@@ -3723,7 +4382,7 @@ namespace Amazon.CloudDirectory
         /// exception.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.ValidationException">
-        /// Indicates your request is malformed in some manner. See the exception message.
+        /// Indicates that your request is malformed in some manner. See the exception message.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListPublishedSchemaArns">REST API Reference for ListPublishedSchemaArns Operation</seealso>
         public ListPublishedSchemaArnsResponse ListPublishedSchemaArns(ListPublishedSchemaArnsRequest request)
@@ -3798,7 +4457,7 @@ namespace Amazon.CloudDirectory
         /// limit is 50 tags per resource.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.LimitExceededException">
-        /// Indicates limits are exceeded. See <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a>
+        /// Indicates that limits are exceeded. See <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a>
         /// for more information.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.ResourceNotFoundException">
@@ -3813,7 +4472,7 @@ namespace Amazon.CloudDirectory
         /// exception.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.ValidationException">
-        /// Indicates your request is malformed in some manner. See the exception message.
+        /// Indicates that your request is malformed in some manner. See the exception message.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
@@ -3860,6 +4519,185 @@ namespace Amazon.CloudDirectory
 
         #endregion
         
+        #region  ListTypedLinkFacetAttributes
+
+        /// <summary>
+        /// Returns a paginated list of all attribute definitions for a particular <a>TypedLinkFacet</a>.
+        /// For more information, see <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#typedlink">Typed
+        /// link</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTypedLinkFacetAttributes service method.</param>
+        /// 
+        /// <returns>The response from the ListTypedLinkFacetAttributes service method, as returned by CloudDirectory.</returns>
+        /// <exception cref="Amazon.CloudDirectory.Model.AccessDeniedException">
+        /// Access denied. Check your permissions.
+        /// </exception>
+        /// <exception cref="Amazon.CloudDirectory.Model.FacetNotFoundException">
+        /// The specified <a>Facet</a> could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudDirectory.Model.InternalServiceException">
+        /// Indicates a problem that must be resolved by Amazon Web Services. This might be a
+        /// transient error in which case you can retry your request until it succeeds. Otherwise,
+        /// go to the <a href="http://status.aws.amazon.com/">AWS Service Health Dashboard</a>
+        /// site to see if there are any operational issues with the service.
+        /// </exception>
+        /// <exception cref="Amazon.CloudDirectory.Model.InvalidArnException">
+        /// Indicates that the provided ARN value is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudDirectory.Model.InvalidNextTokenException">
+        /// Indicates that the <code>NextToken</code> value is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudDirectory.Model.LimitExceededException">
+        /// Indicates that limits are exceeded. See <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a>
+        /// for more information.
+        /// </exception>
+        /// <exception cref="Amazon.CloudDirectory.Model.ResourceNotFoundException">
+        /// The specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudDirectory.Model.RetryableConflictException">
+        /// Occurs when a conflict with a previous successful write is detected. For example,
+        /// if a write operation occurs on an object and then an attempt is made to read the object
+        /// using “SERIALIZABLE” consistency, this exception may result. This generally occurs
+        /// when the previous write did not have time to propagate to the host serving the current
+        /// request. A retry (with appropriate backoff logic) is the recommended response to this
+        /// exception.
+        /// </exception>
+        /// <exception cref="Amazon.CloudDirectory.Model.ValidationException">
+        /// Indicates that your request is malformed in some manner. See the exception message.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListTypedLinkFacetAttributes">REST API Reference for ListTypedLinkFacetAttributes Operation</seealso>
+        public ListTypedLinkFacetAttributesResponse ListTypedLinkFacetAttributes(ListTypedLinkFacetAttributesRequest request)
+        {
+            var marshaller = new ListTypedLinkFacetAttributesRequestMarshaller();
+            var unmarshaller = ListTypedLinkFacetAttributesResponseUnmarshaller.Instance;
+
+            return Invoke<ListTypedLinkFacetAttributesRequest,ListTypedLinkFacetAttributesResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListTypedLinkFacetAttributes operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListTypedLinkFacetAttributes operation on AmazonCloudDirectoryClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListTypedLinkFacetAttributes
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListTypedLinkFacetAttributes">REST API Reference for ListTypedLinkFacetAttributes Operation</seealso>
+        public IAsyncResult BeginListTypedLinkFacetAttributes(ListTypedLinkFacetAttributesRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new ListTypedLinkFacetAttributesRequestMarshaller();
+            var unmarshaller = ListTypedLinkFacetAttributesResponseUnmarshaller.Instance;
+
+            return BeginInvoke<ListTypedLinkFacetAttributesRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListTypedLinkFacetAttributes operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListTypedLinkFacetAttributes.</param>
+        /// 
+        /// <returns>Returns a  ListTypedLinkFacetAttributesResult from CloudDirectory.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListTypedLinkFacetAttributes">REST API Reference for ListTypedLinkFacetAttributes Operation</seealso>
+        public  ListTypedLinkFacetAttributesResponse EndListTypedLinkFacetAttributes(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListTypedLinkFacetAttributesResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListTypedLinkFacetNames
+
+        /// <summary>
+        /// Returns a paginated list of <code>TypedLink</code> facet names for a particular schema.
+        /// For more information, see <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#typedlink">Typed
+        /// link</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTypedLinkFacetNames service method.</param>
+        /// 
+        /// <returns>The response from the ListTypedLinkFacetNames service method, as returned by CloudDirectory.</returns>
+        /// <exception cref="Amazon.CloudDirectory.Model.AccessDeniedException">
+        /// Access denied. Check your permissions.
+        /// </exception>
+        /// <exception cref="Amazon.CloudDirectory.Model.InternalServiceException">
+        /// Indicates a problem that must be resolved by Amazon Web Services. This might be a
+        /// transient error in which case you can retry your request until it succeeds. Otherwise,
+        /// go to the <a href="http://status.aws.amazon.com/">AWS Service Health Dashboard</a>
+        /// site to see if there are any operational issues with the service.
+        /// </exception>
+        /// <exception cref="Amazon.CloudDirectory.Model.InvalidArnException">
+        /// Indicates that the provided ARN value is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudDirectory.Model.InvalidNextTokenException">
+        /// Indicates that the <code>NextToken</code> value is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudDirectory.Model.LimitExceededException">
+        /// Indicates that limits are exceeded. See <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a>
+        /// for more information.
+        /// </exception>
+        /// <exception cref="Amazon.CloudDirectory.Model.ResourceNotFoundException">
+        /// The specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudDirectory.Model.RetryableConflictException">
+        /// Occurs when a conflict with a previous successful write is detected. For example,
+        /// if a write operation occurs on an object and then an attempt is made to read the object
+        /// using “SERIALIZABLE” consistency, this exception may result. This generally occurs
+        /// when the previous write did not have time to propagate to the host serving the current
+        /// request. A retry (with appropriate backoff logic) is the recommended response to this
+        /// exception.
+        /// </exception>
+        /// <exception cref="Amazon.CloudDirectory.Model.ValidationException">
+        /// Indicates that your request is malformed in some manner. See the exception message.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListTypedLinkFacetNames">REST API Reference for ListTypedLinkFacetNames Operation</seealso>
+        public ListTypedLinkFacetNamesResponse ListTypedLinkFacetNames(ListTypedLinkFacetNamesRequest request)
+        {
+            var marshaller = new ListTypedLinkFacetNamesRequestMarshaller();
+            var unmarshaller = ListTypedLinkFacetNamesResponseUnmarshaller.Instance;
+
+            return Invoke<ListTypedLinkFacetNamesRequest,ListTypedLinkFacetNamesResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListTypedLinkFacetNames operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListTypedLinkFacetNames operation on AmazonCloudDirectoryClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListTypedLinkFacetNames
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListTypedLinkFacetNames">REST API Reference for ListTypedLinkFacetNames Operation</seealso>
+        public IAsyncResult BeginListTypedLinkFacetNames(ListTypedLinkFacetNamesRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new ListTypedLinkFacetNamesRequestMarshaller();
+            var unmarshaller = ListTypedLinkFacetNamesResponseUnmarshaller.Instance;
+
+            return BeginInvoke<ListTypedLinkFacetNamesRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListTypedLinkFacetNames operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListTypedLinkFacetNames.</param>
+        /// 
+        /// <returns>Returns a  ListTypedLinkFacetNamesResult from CloudDirectory.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListTypedLinkFacetNames">REST API Reference for ListTypedLinkFacetNames Operation</seealso>
+        public  ListTypedLinkFacetNamesResponse EndListTypedLinkFacetNames(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListTypedLinkFacetNamesResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  LookupPolicy
 
         /// <summary>
@@ -3868,7 +4706,7 @@ namespace Amazon.CloudDirectory
         /// and if some objects don't have the policies attached, it returns the <code>ObjectIdentifier</code>
         /// for such objects. If policies are present, it returns <code>ObjectIdentifier</code>,
         /// <code>policyId</code>, and <code>policyType</code>. Paths that don't lead to the root
-        /// from the target object are ignored.
+        /// from the target object are ignored. For more information, see <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_key_concepts.html#policies">Policies</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the LookupPolicy service method.</param>
         /// 
@@ -3895,7 +4733,7 @@ namespace Amazon.CloudDirectory
         /// Indicates that the <code>NextToken</code> value is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.LimitExceededException">
-        /// Indicates limits are exceeded. See <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a>
+        /// Indicates that limits are exceeded. See <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a>
         /// for more information.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.ResourceNotFoundException">
@@ -3910,7 +4748,7 @@ namespace Amazon.CloudDirectory
         /// exception.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.ValidationException">
-        /// Indicates your request is malformed in some manner. See the exception message.
+        /// Indicates that your request is malformed in some manner. See the exception message.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/LookupPolicy">REST API Reference for LookupPolicy Operation</seealso>
         public LookupPolicyResponse LookupPolicy(LookupPolicyRequest request)
@@ -3961,8 +4799,8 @@ namespace Amazon.CloudDirectory
 
         /// <summary>
         /// Publishes a development schema with a version. If description and attributes are specified,
-        /// PublishSchema overrides the development schema description and attributes. If not,
-        /// the development schema description and attributes are used.
+        /// <code>PublishSchema</code> overrides the development schema description and attributes.
+        /// If not, the development schema description and attributes are used.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PublishSchema service method.</param>
         /// 
@@ -3980,7 +4818,7 @@ namespace Amazon.CloudDirectory
         /// Indicates that the provided ARN value is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.LimitExceededException">
-        /// Indicates limits are exceeded. See <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a>
+        /// Indicates that limits are exceeded. See <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a>
         /// for more information.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.ResourceNotFoundException">
@@ -3995,10 +4833,10 @@ namespace Amazon.CloudDirectory
         /// exception.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.SchemaAlreadyPublishedException">
-        /// Indicates a schema is already published.
+        /// Indicates that a schema is already published.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.ValidationException">
-        /// Indicates your request is malformed in some manner. See the exception message.
+        /// Indicates that your request is malformed in some manner. See the exception message.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/PublishSchema">REST API Reference for PublishSchema Operation</seealso>
         public PublishSchemaResponse PublishSchema(PublishSchemaRequest request)
@@ -4074,7 +4912,7 @@ namespace Amazon.CloudDirectory
         /// Indicates that the provided <code>SchemaDoc</code> value is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.LimitExceededException">
-        /// Indicates limits are exceeded. See <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a>
+        /// Indicates that limits are exceeded. See <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a>
         /// for more information.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.RetryableConflictException">
@@ -4086,7 +4924,7 @@ namespace Amazon.CloudDirectory
         /// exception.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.ValidationException">
-        /// Indicates your request is malformed in some manner. See the exception message.
+        /// Indicates that your request is malformed in some manner. See the exception message.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/PutSchemaFromJson">REST API Reference for PutSchemaFromJson Operation</seealso>
         public PutSchemaFromJsonResponse PutSchemaFromJson(PutSchemaFromJsonRequest request)
@@ -4148,8 +4986,8 @@ namespace Amazon.CloudDirectory
         /// An operation can only operate on a directory that is not enabled.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.FacetValidationException">
-        /// The <a>Facet</a> you provided was not well formed or could not be validated with the
-        /// schema.
+        /// The <a>Facet</a> that you provided was not well formed or could not be validated with
+        /// the schema.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.InternalServiceException">
         /// Indicates a problem that must be resolved by Amazon Web Services. This might be a
@@ -4161,7 +4999,7 @@ namespace Amazon.CloudDirectory
         /// Indicates that the provided ARN value is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.LimitExceededException">
-        /// Indicates limits are exceeded. See <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a>
+        /// Indicates that limits are exceeded. See <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a>
         /// for more information.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.ResourceNotFoundException">
@@ -4176,7 +5014,7 @@ namespace Amazon.CloudDirectory
         /// exception.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.ValidationException">
-        /// Indicates your request is malformed in some manner. See the exception message.
+        /// Indicates that your request is malformed in some manner. See the exception message.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/RemoveFacetFromObject">REST API Reference for RemoveFacetFromObject Operation</seealso>
         public RemoveFacetFromObjectResponse RemoveFacetFromObject(RemoveFacetFromObjectRequest request)
@@ -4226,7 +5064,7 @@ namespace Amazon.CloudDirectory
         #region  TagResource
 
         /// <summary>
-        /// API for adding tags to a resource.
+        /// An API operation for adding tags to a resource.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
         /// 
@@ -4249,7 +5087,7 @@ namespace Amazon.CloudDirectory
         /// limit is 50 tags per resource.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.LimitExceededException">
-        /// Indicates limits are exceeded. See <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a>
+        /// Indicates that limits are exceeded. See <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a>
         /// for more information.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.ResourceNotFoundException">
@@ -4264,7 +5102,7 @@ namespace Amazon.CloudDirectory
         /// exception.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.ValidationException">
-        /// Indicates your request is malformed in some manner. See the exception message.
+        /// Indicates that your request is malformed in some manner. See the exception message.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/TagResource">REST API Reference for TagResource Operation</seealso>
         public TagResourceResponse TagResource(TagResourceRequest request)
@@ -4314,7 +5152,7 @@ namespace Amazon.CloudDirectory
         #region  UntagResource
 
         /// <summary>
-        /// API for removing tags from a resource.
+        /// An API operation for removing tags from a resource.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
         /// 
@@ -4337,7 +5175,7 @@ namespace Amazon.CloudDirectory
         /// limit is 50 tags per resource.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.LimitExceededException">
-        /// Indicates limits are exceeded. See <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a>
+        /// Indicates that limits are exceeded. See <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a>
         /// for more information.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.ResourceNotFoundException">
@@ -4352,7 +5190,7 @@ namespace Amazon.CloudDirectory
         /// exception.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.ValidationException">
-        /// Indicates your request is malformed in some manner. See the exception message.
+        /// Indicates that your request is malformed in some manner. See the exception message.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public UntagResourceResponse UntagResource(UntagResourceRequest request)
@@ -4443,7 +5281,7 @@ namespace Amazon.CloudDirectory
         /// Occurs when any of the rule parameter keys or values are invalid.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.LimitExceededException">
-        /// Indicates limits are exceeded. See <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a>
+        /// Indicates that limits are exceeded. See <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a>
         /// for more information.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.ResourceNotFoundException">
@@ -4458,7 +5296,7 @@ namespace Amazon.CloudDirectory
         /// exception.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.ValidationException">
-        /// Indicates your request is malformed in some manner. See the exception message.
+        /// Indicates that your request is malformed in some manner. See the exception message.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/UpdateFacet">REST API Reference for UpdateFacet Operation</seealso>
         public UpdateFacetResponse UpdateFacet(UpdateFacetRequest request)
@@ -4520,8 +5358,8 @@ namespace Amazon.CloudDirectory
         /// An operation can only operate on a directory that is not enabled.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.FacetValidationException">
-        /// The <a>Facet</a> you provided was not well formed or could not be validated with the
-        /// schema.
+        /// The <a>Facet</a> that you provided was not well formed or could not be validated with
+        /// the schema.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.InternalServiceException">
         /// Indicates a problem that must be resolved by Amazon Web Services. This might be a
@@ -4533,7 +5371,7 @@ namespace Amazon.CloudDirectory
         /// Indicates that the provided ARN value is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.LimitExceededException">
-        /// Indicates limits are exceeded. See <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a>
+        /// Indicates that limits are exceeded. See <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a>
         /// for more information.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.ResourceNotFoundException">
@@ -4548,7 +5386,7 @@ namespace Amazon.CloudDirectory
         /// exception.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.ValidationException">
-        /// Indicates your request is malformed in some manner. See the exception message.
+        /// Indicates that your request is malformed in some manner. See the exception message.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/UpdateObjectAttributes">REST API Reference for UpdateObjectAttributes Operation</seealso>
         public UpdateObjectAttributesResponse UpdateObjectAttributes(UpdateObjectAttributesRequest request)
@@ -4616,7 +5454,7 @@ namespace Amazon.CloudDirectory
         /// Indicates that the provided ARN value is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.LimitExceededException">
-        /// Indicates limits are exceeded. See <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a>
+        /// Indicates that limits are exceeded. See <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a>
         /// for more information.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.ResourceNotFoundException">
@@ -4631,7 +5469,7 @@ namespace Amazon.CloudDirectory
         /// exception.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.ValidationException">
-        /// Indicates your request is malformed in some manner. See the exception message.
+        /// Indicates that your request is malformed in some manner. See the exception message.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/UpdateSchema">REST API Reference for UpdateSchema Operation</seealso>
         public UpdateSchemaResponse UpdateSchema(UpdateSchemaRequest request)
@@ -4674,6 +5512,103 @@ namespace Amazon.CloudDirectory
         public  UpdateSchemaResponse EndUpdateSchema(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateSchemaResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpdateTypedLinkFacet
+
+        /// <summary>
+        /// Updates a <a>TypedLinkFacet</a>. For more information, see <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#typedlink">Typed
+        /// link</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateTypedLinkFacet service method.</param>
+        /// 
+        /// <returns>The response from the UpdateTypedLinkFacet service method, as returned by CloudDirectory.</returns>
+        /// <exception cref="Amazon.CloudDirectory.Model.AccessDeniedException">
+        /// Access denied. Check your permissions.
+        /// </exception>
+        /// <exception cref="Amazon.CloudDirectory.Model.FacetNotFoundException">
+        /// The specified <a>Facet</a> could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudDirectory.Model.FacetValidationException">
+        /// The <a>Facet</a> that you provided was not well formed or could not be validated with
+        /// the schema.
+        /// </exception>
+        /// <exception cref="Amazon.CloudDirectory.Model.InternalServiceException">
+        /// Indicates a problem that must be resolved by Amazon Web Services. This might be a
+        /// transient error in which case you can retry your request until it succeeds. Otherwise,
+        /// go to the <a href="http://status.aws.amazon.com/">AWS Service Health Dashboard</a>
+        /// site to see if there are any operational issues with the service.
+        /// </exception>
+        /// <exception cref="Amazon.CloudDirectory.Model.InvalidArnException">
+        /// Indicates that the provided ARN value is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudDirectory.Model.InvalidFacetUpdateException">
+        /// An attempt to modify a <a>Facet</a> resulted in an invalid schema exception.
+        /// </exception>
+        /// <exception cref="Amazon.CloudDirectory.Model.InvalidRuleException">
+        /// Occurs when any of the rule parameter keys or values are invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudDirectory.Model.LimitExceededException">
+        /// Indicates that limits are exceeded. See <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a>
+        /// for more information.
+        /// </exception>
+        /// <exception cref="Amazon.CloudDirectory.Model.ResourceNotFoundException">
+        /// The specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudDirectory.Model.RetryableConflictException">
+        /// Occurs when a conflict with a previous successful write is detected. For example,
+        /// if a write operation occurs on an object and then an attempt is made to read the object
+        /// using “SERIALIZABLE” consistency, this exception may result. This generally occurs
+        /// when the previous write did not have time to propagate to the host serving the current
+        /// request. A retry (with appropriate backoff logic) is the recommended response to this
+        /// exception.
+        /// </exception>
+        /// <exception cref="Amazon.CloudDirectory.Model.ValidationException">
+        /// Indicates that your request is malformed in some manner. See the exception message.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/UpdateTypedLinkFacet">REST API Reference for UpdateTypedLinkFacet Operation</seealso>
+        public UpdateTypedLinkFacetResponse UpdateTypedLinkFacet(UpdateTypedLinkFacetRequest request)
+        {
+            var marshaller = new UpdateTypedLinkFacetRequestMarshaller();
+            var unmarshaller = UpdateTypedLinkFacetResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateTypedLinkFacetRequest,UpdateTypedLinkFacetResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateTypedLinkFacet operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateTypedLinkFacet operation on AmazonCloudDirectoryClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateTypedLinkFacet
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/UpdateTypedLinkFacet">REST API Reference for UpdateTypedLinkFacet Operation</seealso>
+        public IAsyncResult BeginUpdateTypedLinkFacet(UpdateTypedLinkFacetRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new UpdateTypedLinkFacetRequestMarshaller();
+            var unmarshaller = UpdateTypedLinkFacetResponseUnmarshaller.Instance;
+
+            return BeginInvoke<UpdateTypedLinkFacetRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateTypedLinkFacet operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateTypedLinkFacet.</param>
+        /// 
+        /// <returns>Returns a  UpdateTypedLinkFacetResult from CloudDirectory.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/UpdateTypedLinkFacet">REST API Reference for UpdateTypedLinkFacet Operation</seealso>
+        public  UpdateTypedLinkFacetResponse EndUpdateTypedLinkFacet(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateTypedLinkFacetResponse>(asyncResult);
         }
 
         #endregion

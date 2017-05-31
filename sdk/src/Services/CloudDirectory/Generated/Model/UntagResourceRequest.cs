@@ -29,7 +29,7 @@ namespace Amazon.CloudDirectory.Model
 {
     /// <summary>
     /// Container for the parameters to the UntagResource operation.
-    /// API for removing tags from a resource.
+    /// An API operation for removing tags from a resource.
     /// </summary>
     public partial class UntagResourceRequest : AmazonCloudDirectoryRequest
     {
@@ -39,7 +39,7 @@ namespace Amazon.CloudDirectory.Model
         /// <summary>
         /// Gets and sets the property ResourceArn. 
         /// <para>
-        /// ARN of the resource. Tagging is only supported for directories.
+        /// The Amazon Resource Name (ARN) of the resource. Tagging is only supported for directories.
         /// </para>
         /// </summary>
         public string ResourceArn
@@ -57,7 +57,7 @@ namespace Amazon.CloudDirectory.Model
         /// <summary>
         /// Gets and sets the property TagKeys. 
         /// <para>
-        /// Keys of the tag that needs to be removed from the resource.
+        /// Keys of the tag that need to be removed from the resource.
         /// </para>
         /// </summary>
         public List<string> TagKeys

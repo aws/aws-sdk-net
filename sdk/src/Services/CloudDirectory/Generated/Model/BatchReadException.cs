@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudDirectory.Model
 {
     /// <summary>
-    /// Batch Read Exception structure, which contains exception type and message.
+    /// The batch read exception structure, which contains the exception type and message.
     /// </summary>
     public partial class BatchReadException
     {
@@ -38,7 +38,7 @@ namespace Amazon.CloudDirectory.Model
         /// <summary>
         /// Gets and sets the property Message. 
         /// <para>
-        /// Exception message associated with the failure.
+        /// An exception message that is associated with the failure.
         /// </para>
         /// </summary>
         public string Message
@@ -56,7 +56,7 @@ namespace Amazon.CloudDirectory.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// Type of exception, such as <code>InvalidArnException</code>.
+        /// A type of exception, such as <code>InvalidArnException</code>.
         /// </para>
         /// </summary>
         public BatchReadExceptionType Type

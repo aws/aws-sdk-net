@@ -37,7 +37,7 @@ namespace Amazon.CloudDirectory.Model
         /// <summary>
         /// Gets and sets the property ObjectReference. 
         /// <para>
-        /// Reference that identifies the object.
+        /// The reference that identifies the object.
         /// </para>
         /// </summary>
         public ObjectReference ObjectReference

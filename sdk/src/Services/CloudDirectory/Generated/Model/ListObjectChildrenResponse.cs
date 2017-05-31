@@ -38,7 +38,7 @@ namespace Amazon.CloudDirectory.Model
         /// <summary>
         /// Gets and sets the property Children. 
         /// <para>
-        /// Children structure, which is a map with key as the LinkName and <code>ObjectIdentifier</code>
+        /// Children structure, which is a map with key as the <code>LinkName</code> and <code>ObjectIdentifier</code>
         /// as the value.
         /// </para>
         /// </summary>

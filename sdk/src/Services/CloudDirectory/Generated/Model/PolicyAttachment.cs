@@ -29,7 +29,7 @@ namespace Amazon.CloudDirectory.Model
 {
     /// <summary>
     /// Contains the <code>PolicyType</code>, <code>PolicyId</code>, and the <code>ObjectIdentifier</code>
-    /// to which it is attached.
+    /// to which it is attached. For more information, see <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_key_concepts.html#policies">Policies</a>.
     /// </summary>
     public partial class PolicyAttachment
     {
@@ -40,7 +40,7 @@ namespace Amazon.CloudDirectory.Model
         /// <summary>
         /// Gets and sets the property ObjectIdentifier. 
         /// <para>
-        /// The <code>ObjectIdentifier</code> associated with <code>PolicyAttachment</code>.
+        /// The <code>ObjectIdentifier</code> that is associated with <code>PolicyAttachment</code>.
         /// </para>
         /// </summary>
         public string ObjectIdentifier

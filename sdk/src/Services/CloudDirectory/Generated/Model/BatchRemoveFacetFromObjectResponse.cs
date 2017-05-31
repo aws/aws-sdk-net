@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudDirectory.Model
 {
     /// <summary>
-    /// Empty result representing success.
+    /// An empty result that represents success.
     /// </summary>
     public partial class BatchRemoveFacetFromObjectResponse
     {

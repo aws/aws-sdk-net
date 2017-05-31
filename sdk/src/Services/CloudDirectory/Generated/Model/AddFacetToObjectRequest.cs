@@ -41,8 +41,8 @@ namespace Amazon.CloudDirectory.Model
         /// <summary>
         /// Gets and sets the property DirectoryArn. 
         /// <para>
-        /// ARN associated with the <a>Directory</a> where the object resides. For more information,
-        /// see <a>arns</a>.
+        /// The Amazon Resource Name (ARN) that is associated with the <a>Directory</a> where
+        /// the object resides. For more information, see <a>arns</a>.
         /// </para>
         /// </summary>
         public string DirectoryArn
@@ -60,7 +60,7 @@ namespace Amazon.CloudDirectory.Model
         /// <summary>
         /// Gets and sets the property ObjectAttributeList. 
         /// <para>
-        /// Attributes on the facet you are adding to the object.
+        /// Attributes on the facet that you are adding to the object.
         /// </para>
         /// </summary>
         public List<AttributeKeyAndValue> ObjectAttributeList

@@ -37,7 +37,7 @@ namespace Amazon.CloudDirectory.Model
         /// <summary>
         /// Gets and sets the property Facet. 
         /// <para>
-        ///  <a>Facet</a> structure associated with the facet.
+        /// The <a>Facet</a> structure that is associated with the facet.
         /// </para>
         /// </summary>
         public Facet Facet

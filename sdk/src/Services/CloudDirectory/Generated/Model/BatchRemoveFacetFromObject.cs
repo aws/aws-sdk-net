@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudDirectory.Model
 {
     /// <summary>
-    /// Batch operation to remove a facet from an object.
+    /// A batch operation to remove a facet from an object.
     /// </summary>
     public partial class BatchRemoveFacetFromObject
     {
