@@ -175,22 +175,38 @@ namespace Amazon.SQS.Model
         /// <summary>
         /// Whether or not the queue is a First-In-First-Out (FIFO) queue
         /// </summary>
-        public bool? FifoQueue
+        public bool FifoQueue
         {
             get
             {
-                return getAttributeValue(SQSConstants.ATTRIBUTE_FIFO_QUEUE)?.ToUpper().Equals("TRUE");
+                var attributeValue = getAttributeValue(SQSConstants.ATTRIBUTE_FIFO_QUEUE);
+
+                if (attributeValue == null || attributeValue.Trim() == string.Empty)
+                {
+                    return false;
+                }
+
+                bool result;
+                return bool.TryParse(attributeValue, out result);
             }
         }
 
         /// <summary>
         /// Whether or not the First-In-First-Out (FIFO) queue has content based deduplication enabled
         /// </summary>
-        public bool? ContentBasedDeduplication
+        public bool ContentBasedDeduplication
         {
             get
             {
-                return getAttributeValue(SQSConstants.ATTRIBUTE_CONTENT_BASED_DEDUPLICATION)?.ToUpper().Equals("TRUE");
+                var attributeValue = getAttributeValue(SQSConstants.ATTRIBUTE_CONTENT_BASED_DEDUPLICATION);
+
+                if (attributeValue == null || attributeValue.Trim() == string.Empty)
+                {
+                    return false;
+                }
+
+                bool result;
+                return bool.TryParse(attributeValue, out result);
             }
         }
 

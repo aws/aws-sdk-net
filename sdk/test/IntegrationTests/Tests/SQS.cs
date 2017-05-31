@@ -242,11 +242,13 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
             var attrResults = Client.GetQueueAttributes(new GetQueueAttributesRequest()
             {
                 QueueUrl = result.QueueUrl,
-                AttributeNames = new List<string>() { SQSConstants.ATTRIBUTE_VISIBILITY_TIMEOUT }
+                AttributeNames = new List<string>() { SQSConstants.ATTRIBUTE_ALL }
             });
 
-            Assert.AreEqual(1, attrResults.Attributes.Count);
+            Assert.AreEqual(11, attrResults.Attributes.Count);
             Assert.AreEqual(int.Parse(defaultTimeout), int.Parse(attrResults.Attributes[SQSConstants.ATTRIBUTE_VISIBILITY_TIMEOUT]));
+            Assert.AreEqual(false, attrResults.FifoQueue);
+            Assert.AreEqual(false, attrResults.ContentBasedDeduplication);
 
             for (int i = 0; i < 30; i++)
             {
@@ -289,10 +291,8 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
                     AttributeNames = new List<string>() { SQSConstants.ATTRIBUTE_FIFO_QUEUE, SQSConstants.ATTRIBUTE_CONTENT_BASED_DEDUPLICATION }
                 });
 
-                Assert.AreEqual(true, attrResults.FifoQueue.HasValue);
                 Assert.AreEqual(true, attrResults.FifoQueue);
 
-                Assert.AreEqual(true, attrResults.ContentBasedDeduplication.HasValue);
                 Assert.AreEqual(true, attrResults.ContentBasedDeduplication);
             }
         }
