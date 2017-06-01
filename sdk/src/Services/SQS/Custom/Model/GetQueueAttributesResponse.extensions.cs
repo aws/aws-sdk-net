@@ -181,13 +181,10 @@ namespace Amazon.SQS.Model
             {
                 var attributeValue = getAttributeValue(SQSConstants.ATTRIBUTE_FIFO_QUEUE);
 
-                if (attributeValue == null || attributeValue.Trim() == string.Empty)
-                {
-                    return false;
-                }
-
                 bool result;
-                return bool.TryParse(attributeValue, out result);
+                if (bool.TryParse(attributeValue, out result))
+                    return result;
+                return false;
             }
         }
 
