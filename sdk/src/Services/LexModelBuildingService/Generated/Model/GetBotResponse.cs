@@ -335,7 +335,7 @@ namespace Amazon.LexModelBuildingService.Model
         /// <summary>
         /// Gets and sets the property VoiceId. 
         /// <para>
-        /// The Amazon Parrot voice ID that Amazon Lex uses for voice interaction with the user.
+        /// The Amazon Polly voice ID that Amazon Lex uses for voice interaction with the user.
         /// For more information, see .
         /// </para>
         /// </summary>

@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<docs>
+    <doc>
+        <members>
+            <member name="M:Amazon.LexModelBuildingService.IAmazonLexModelBuildingService.GetBot(Amazon.LexModelBuildingService.Model.GetBotRequest)" />
+            <member name="M:Amazon.LexModelBuildingService.AmazonLexModelBuildingServiceClient.GetBot(Amazon.LexModelBuildingService.Model.GetBotRequest)" />
+            <member name="T:Amazon.LexModelBuildingService.Model.GetBotRequest" />
+            <member name="T:Amazon.LexModelBuildingService.Model.GetBotResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example shows how to get configuration information for a bot.
+                </para>
+                <code
+                    title="To get information about a bot"
+                    source=".\AWSSDKDocSamples\LexModelBuildingService\LexModelBuildingService.GeneratedSamples.cs"
+                    region="to-get-information-about-a-bot-1494431724188" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.LexModelBuildingService.IAmazonLexModelBuildingService.GetBots(Amazon.LexModelBuildingService.Model.GetBotsRequest)" />
+            <member name="M:Amazon.LexModelBuildingService.AmazonLexModelBuildingServiceClient.GetBots(Amazon.LexModelBuildingService.Model.GetBotsRequest)" />
+            <member name="T:Amazon.LexModelBuildingService.Model.GetBotsRequest" />
+            <member name="T:Amazon.LexModelBuildingService.Model.GetBotsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example shows how to get a list of all of the bots in your account.
+                </para>
+                <code
+                    title="To get a list of bots"
+                    source=".\AWSSDKDocSamples\LexModelBuildingService\LexModelBuildingService.GeneratedSamples.cs"
+                    region="to-get-a-list-of-bots-1494432220036" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.LexModelBuildingService.IAmazonLexModelBuildingService.GetIntent(Amazon.LexModelBuildingService.Model.GetIntentRequest)" />
+            <member name="M:Amazon.LexModelBuildingService.AmazonLexModelBuildingServiceClient.GetIntent(Amazon.LexModelBuildingService.Model.GetIntentRequest)" />
+            <member name="T:Amazon.LexModelBuildingService.Model.GetIntentRequest" />
+            <member name="T:Amazon.LexModelBuildingService.Model.GetIntentResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example shows how to get information about an intent.
+                </para>
+                <code
+                    title="To get a information about an intent"
+                    source=".\AWSSDKDocSamples\LexModelBuildingService\LexModelBuildingService.GeneratedSamples.cs"
+                    region="to-get-a-information-about-an-intent-1494432574147" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.LexModelBuildingService.IAmazonLexModelBuildingService.GetIntents(Amazon.LexModelBuildingService.Model.GetIntentsRequest)" />
+            <member name="M:Amazon.LexModelBuildingService.AmazonLexModelBuildingServiceClient.GetIntents(Amazon.LexModelBuildingService.Model.GetIntentsRequest)" />
+            <member name="T:Amazon.LexModelBuildingService.Model.GetIntentsRequest" />
+            <member name="T:Amazon.LexModelBuildingService.Model.GetIntentsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example shows how to get a list of all of the intents in your account.
+                </para>
+                <code
+                    title="To get a list of intents"
+                    source=".\AWSSDKDocSamples\LexModelBuildingService\LexModelBuildingService.GeneratedSamples.cs"
+                    region="to-get-a-list-of-intents-1494432416363" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.LexModelBuildingService.IAmazonLexModelBuildingService.GetSlotType(Amazon.LexModelBuildingService.Model.GetSlotTypeRequest)" />
+            <member name="M:Amazon.LexModelBuildingService.AmazonLexModelBuildingServiceClient.GetSlotType(Amazon.LexModelBuildingService.Model.GetSlotTypeRequest)" />
+            <member name="T:Amazon.LexModelBuildingService.Model.GetSlotTypeRequest" />
+            <member name="T:Amazon.LexModelBuildingService.Model.GetSlotTypeResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example shows how to get information about a slot type.
+                </para>
+                <code
+                    title="To get information about a slot type"
+                    source=".\AWSSDKDocSamples\LexModelBuildingService\LexModelBuildingService.GeneratedSamples.cs"
+                    region="to-get-information-about-a-slot-type-1494432961004" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.LexModelBuildingService.IAmazonLexModelBuildingService.GetSlotTypes(Amazon.LexModelBuildingService.Model.GetSlotTypesRequest)" />
+            <member name="M:Amazon.LexModelBuildingService.AmazonLexModelBuildingServiceClient.GetSlotTypes(Amazon.LexModelBuildingService.Model.GetSlotTypesRequest)" />
+            <member name="T:Amazon.LexModelBuildingService.Model.GetSlotTypesRequest" />
+            <member name="T:Amazon.LexModelBuildingService.Model.GetSlotTypesResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example shows how to get a list of all of the slot types in your account.
+                </para>
+                <code
+                    title="To get a list of slot types"
+                    source=".\AWSSDKDocSamples\LexModelBuildingService\LexModelBuildingService.GeneratedSamples.cs"
+                    region="to-get-a-list-of-slot-types-1494432757458" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.LexModelBuildingService.IAmazonLexModelBuildingService.PutBot(Amazon.LexModelBuildingService.Model.PutBotRequest)" />
+            <member name="M:Amazon.LexModelBuildingService.AmazonLexModelBuildingServiceClient.PutBot(Amazon.LexModelBuildingService.Model.PutBotRequest)" />
+            <member name="T:Amazon.LexModelBuildingService.Model.PutBotRequest" />
+            <member name="T:Amazon.LexModelBuildingService.Model.PutBotResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example shows how to create a bot for ordering pizzas.
+                </para>
+                <code
+                    title="To create a bot"
+                    source=".\AWSSDKDocSamples\LexModelBuildingService\LexModelBuildingService.GeneratedSamples.cs"
+                    region="to-create-a-bot-1494360003886" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.LexModelBuildingService.IAmazonLexModelBuildingService.PutIntent(Amazon.LexModelBuildingService.Model.PutIntentRequest)" />
+            <member name="M:Amazon.LexModelBuildingService.AmazonLexModelBuildingServiceClient.PutIntent(Amazon.LexModelBuildingService.Model.PutIntentRequest)" />
+            <member name="T:Amazon.LexModelBuildingService.Model.PutIntentRequest" />
+            <member name="T:Amazon.LexModelBuildingService.Model.PutIntentResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example shows how to create an intent for ordering pizzas.
+                </para>
+                <code
+                    title="To create an intent"
+                    source=".\AWSSDKDocSamples\LexModelBuildingService\LexModelBuildingService.GeneratedSamples.cs"
+                    region="to-create-an-intent-1494358144659" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.LexModelBuildingService.IAmazonLexModelBuildingService.PutSlotType(Amazon.LexModelBuildingService.Model.PutSlotTypeRequest)" />
+            <member name="M:Amazon.LexModelBuildingService.AmazonLexModelBuildingServiceClient.PutSlotType(Amazon.LexModelBuildingService.Model.PutSlotTypeRequest)" />
+            <member name="T:Amazon.LexModelBuildingService.Model.PutSlotTypeRequest" />
+            <member name="T:Amazon.LexModelBuildingService.Model.PutSlotTypeResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example shows how to create a slot type that describes pizza sauces.
+                </para>
+                <code
+                    title="To Create a Slot Type"
+                    source=".\AWSSDKDocSamples\LexModelBuildingService\LexModelBuildingService.GeneratedSamples.cs"
+                    region="to-create-a-slot-type-1494357262258" />
+            </example>
+        </value>
+    </doc>
+</docs>

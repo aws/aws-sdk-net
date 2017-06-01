@@ -105,7 +105,8 @@ namespace Amazon.LexModelBuildingService.Model
         /// <para>
         /// Substring to match in channel association names. An association will be returned if
         /// any part of its name matches the substring. For example, "xyz" matches both "xyzabc"
-        /// and "abcxyz."
+        /// and "abcxyz." To return all bot channel associations, use a hyphen ("-") as the <code>nameContains</code>
+        /// parameter.
         /// </para>
         /// </summary>
         public string NameContains
