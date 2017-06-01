@@ -1291,6 +1291,38 @@ namespace Amazon.CodeDeploy
 
         #endregion
         
+        #region  ListGitHubAccountTokenNames
+
+        internal ListGitHubAccountTokenNamesResponse ListGitHubAccountTokenNames(ListGitHubAccountTokenNamesRequest request)
+        {
+            var marshaller = new ListGitHubAccountTokenNamesRequestMarshaller();
+            var unmarshaller = ListGitHubAccountTokenNamesResponseUnmarshaller.Instance;
+
+            return Invoke<ListGitHubAccountTokenNamesRequest,ListGitHubAccountTokenNamesResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListGitHubAccountTokenNames operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListGitHubAccountTokenNames operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/ListGitHubAccountTokenNames">REST API Reference for ListGitHubAccountTokenNames Operation</seealso>
+        public Task<ListGitHubAccountTokenNamesResponse> ListGitHubAccountTokenNamesAsync(ListGitHubAccountTokenNamesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new ListGitHubAccountTokenNamesRequestMarshaller();
+            var unmarshaller = ListGitHubAccountTokenNamesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListGitHubAccountTokenNamesRequest,ListGitHubAccountTokenNamesResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListOnPremisesInstances
 
         internal ListOnPremisesInstancesResponse ListOnPremisesInstances(ListOnPremisesInstancesRequest request)

@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CodeDeploy.Model
 {
     /// <summary>
-    /// Represents the output of a list deployment groups operation.
+    /// Represents the output of a ListDeploymentGroups operation.
     /// </summary>
     public partial class ListDeploymentGroupsResponse : AmazonWebServiceResponse
     {

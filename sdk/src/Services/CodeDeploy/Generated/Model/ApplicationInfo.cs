@@ -35,6 +35,7 @@ namespace Amazon.CodeDeploy.Model
         private string _applicationId;
         private string _applicationName;
         private DateTime? _createTime;
+        private string _gitHubAccountName;
         private bool? _linkedToGitHub;
 
         /// <summary>
@@ -89,6 +90,24 @@ namespace Amazon.CodeDeploy.Model
         internal bool IsSetCreateTime()
         {
             return this._createTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property GitHubAccountName. 
+        /// <para>
+        /// The name for a connection to a GitHub account.
+        /// </para>
+        /// </summary>
+        public string GitHubAccountName
+        {
+            get { return this._gitHubAccountName; }
+            set { this._gitHubAccountName = value; }
+        }
+
+        // Check to see if GitHubAccountName property is set
+        internal bool IsSetGitHubAccountName()
+        {
+            return this._gitHubAccountName != null;
         }
 
         /// <summary>

@@ -28,19 +28,19 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CodeDeploy.Model
 {
     /// <summary>
-    /// Represents the output of a ListApplicationRevisions operation.
+    /// Represents the output of a ListGitHubAccountTokenNames operation.
     /// </summary>
-    public partial class ListApplicationRevisionsResponse : AmazonWebServiceResponse
+    public partial class ListGitHubAccountTokenNamesResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<RevisionLocation> _revisions = new List<RevisionLocation>();
+        private List<string> _tokenNameList = new List<string>();
 
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// If a large amount of information is returned, an identifier will also be returned.
-        /// It can be used in a subsequent list application revisions call to return the next
-        /// set of application revisions in the list.
+        /// If a large amount of information is returned, an identifier is also returned. It can
+        /// be used in a subsequent ListGitHubAccountTokenNames call to return the next set of
+        /// names in the list. 
         /// </para>
         /// </summary>
         public string NextToken
@@ -56,21 +56,21 @@ namespace Amazon.CodeDeploy.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Revisions. 
+        /// Gets and sets the property TokenNameList. 
         /// <para>
-        /// A list of locations that contain the matching revisions.
+        /// A list of names of connections to GitHub accounts.
         /// </para>
         /// </summary>
-        public List<RevisionLocation> Revisions
+        public List<string> TokenNameList
         {
-            get { return this._revisions; }
-            set { this._revisions = value; }
+            get { return this._tokenNameList; }
+            set { this._tokenNameList = value; }
         }
 
-        // Check to see if Revisions property is set
-        internal bool IsSetRevisions()
+        // Check to see if TokenNameList property is set
+        internal bool IsSetTokenNameList()
         {
-            return this._revisions != null && this._revisions.Count > 0; 
+            return this._tokenNameList != null && this._tokenNameList.Count > 0; 
         }
 
     }

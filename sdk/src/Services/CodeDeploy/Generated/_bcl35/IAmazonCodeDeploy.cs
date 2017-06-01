@@ -1873,6 +1873,52 @@ namespace Amazon.CodeDeploy
 
         #endregion
         
+        #region  ListGitHubAccountTokenNames
+
+
+        /// <summary>
+        /// Lists the names of stored connections to GitHub accounts.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListGitHubAccountTokenNames service method.</param>
+        /// 
+        /// <returns>The response from the ListGitHubAccountTokenNames service method, as returned by CodeDeploy.</returns>
+        /// <exception cref="Amazon.CodeDeploy.Model.InvalidNextTokenException">
+        /// The next token was specified in an invalid format.
+        /// </exception>
+        /// <exception cref="Amazon.CodeDeploy.Model.ResourceValidationException">
+        /// The specified resource could not be validated.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/ListGitHubAccountTokenNames">REST API Reference for ListGitHubAccountTokenNames Operation</seealso>
+        ListGitHubAccountTokenNamesResponse ListGitHubAccountTokenNames(ListGitHubAccountTokenNamesRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListGitHubAccountTokenNames operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListGitHubAccountTokenNames operation on AmazonCodeDeployClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListGitHubAccountTokenNames
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/ListGitHubAccountTokenNames">REST API Reference for ListGitHubAccountTokenNames Operation</seealso>
+        IAsyncResult BeginListGitHubAccountTokenNames(ListGitHubAccountTokenNamesRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListGitHubAccountTokenNames operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListGitHubAccountTokenNames.</param>
+        /// 
+        /// <returns>Returns a  ListGitHubAccountTokenNamesResult from CodeDeploy.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/ListGitHubAccountTokenNames">REST API Reference for ListGitHubAccountTokenNames Operation</seealso>
+        ListGitHubAccountTokenNamesResponse EndListGitHubAccountTokenNames(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  ListOnPremisesInstances
 
 

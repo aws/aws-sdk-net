@@ -28,19 +28,18 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CodeDeploy.Model
 {
     /// <summary>
-    /// Represents the output of a ListApplicationRevisions operation.
+    /// Container for the parameters to the ListGitHubAccountTokenNames operation.
+    /// Lists the names of stored connections to GitHub accounts.
     /// </summary>
-    public partial class ListApplicationRevisionsResponse : AmazonWebServiceResponse
+    public partial class ListGitHubAccountTokenNamesRequest : AmazonCodeDeployRequest
     {
         private string _nextToken;
-        private List<RevisionLocation> _revisions = new List<RevisionLocation>();
 
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// If a large amount of information is returned, an identifier will also be returned.
-        /// It can be used in a subsequent list application revisions call to return the next
-        /// set of application revisions in the list.
+        /// An identifier returned from the previous ListGitHubAccountTokenNames call. It can
+        /// be used to return the next set of names in the list. 
         /// </para>
         /// </summary>
         public string NextToken
@@ -53,24 +52,6 @@ namespace Amazon.CodeDeploy.Model
         internal bool IsSetNextToken()
         {
             return this._nextToken != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property Revisions. 
-        /// <para>
-        /// A list of locations that contain the matching revisions.
-        /// </para>
-        /// </summary>
-        public List<RevisionLocation> Revisions
-        {
-            get { return this._revisions; }
-            set { this._revisions = value; }
-        }
-
-        // Check to see if Revisions property is set
-        internal bool IsSetRevisions()
-        {
-            return this._revisions != null && this._revisions.Count > 0; 
         }
 
     }

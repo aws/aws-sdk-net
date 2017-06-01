@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CodeDeploy.Model
 {
     /// <summary>
-    /// Represents the output of a batch get applications operation.
+    /// Represents the output of a BatchGetApplications operation.
     /// </summary>
     public partial class BatchGetApplicationsResponse : AmazonWebServiceResponse
     {

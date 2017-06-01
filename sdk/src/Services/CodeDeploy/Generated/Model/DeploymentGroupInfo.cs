@@ -42,6 +42,8 @@ namespace Amazon.CodeDeploy.Model
         private string _deploymentGroupName;
         private DeploymentStyle _deploymentStyle;
         private List<EC2TagFilter> _ec2TagFilters = new List<EC2TagFilter>();
+        private LastDeploymentInfo _lastAttemptedDeployment;
+        private LastDeploymentInfo _lastSuccessfulDeployment;
         private LoadBalancerInfo _loadBalancerInfo;
         private List<TagFilter> _onPremisesInstanceTagFilters = new List<TagFilter>();
         private string _serviceRoleArn;
@@ -228,6 +230,42 @@ namespace Amazon.CodeDeploy.Model
         internal bool IsSetEc2TagFilters()
         {
             return this._ec2TagFilters != null && this._ec2TagFilters.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property LastAttemptedDeployment. 
+        /// <para>
+        /// Information about the most recent attempted deployment to the deployment group.
+        /// </para>
+        /// </summary>
+        public LastDeploymentInfo LastAttemptedDeployment
+        {
+            get { return this._lastAttemptedDeployment; }
+            set { this._lastAttemptedDeployment = value; }
+        }
+
+        // Check to see if LastAttemptedDeployment property is set
+        internal bool IsSetLastAttemptedDeployment()
+        {
+            return this._lastAttemptedDeployment != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LastSuccessfulDeployment. 
+        /// <para>
+        /// Information about the most recent successful deployment to the deployment group.
+        /// </para>
+        /// </summary>
+        public LastDeploymentInfo LastSuccessfulDeployment
+        {
+            get { return this._lastSuccessfulDeployment; }
+            set { this._lastSuccessfulDeployment = value; }
+        }
+
+        // Check to see if LastSuccessfulDeployment property is set
+        internal bool IsSetLastSuccessfulDeployment()
+        {
+            return this._lastSuccessfulDeployment != null;
         }
 
         /// <summary>

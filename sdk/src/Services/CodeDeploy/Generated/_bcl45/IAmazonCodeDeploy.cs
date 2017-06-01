@@ -1530,6 +1530,39 @@ namespace Amazon.CodeDeploy
 
         #endregion
         
+        #region  ListGitHubAccountTokenNames
+
+
+        /// <summary>
+        /// Lists the names of stored connections to GitHub accounts.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListGitHubAccountTokenNames service method.</param>
+        /// 
+        /// <returns>The response from the ListGitHubAccountTokenNames service method, as returned by CodeDeploy.</returns>
+        /// <exception cref="Amazon.CodeDeploy.Model.InvalidNextTokenException">
+        /// The next token was specified in an invalid format.
+        /// </exception>
+        /// <exception cref="Amazon.CodeDeploy.Model.ResourceValidationException">
+        /// The specified resource could not be validated.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/ListGitHubAccountTokenNames">REST API Reference for ListGitHubAccountTokenNames Operation</seealso>
+        ListGitHubAccountTokenNamesResponse ListGitHubAccountTokenNames(ListGitHubAccountTokenNamesRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListGitHubAccountTokenNames operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListGitHubAccountTokenNames operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/ListGitHubAccountTokenNames">REST API Reference for ListGitHubAccountTokenNames Operation</seealso>
+        Task<ListGitHubAccountTokenNamesResponse> ListGitHubAccountTokenNamesAsync(ListGitHubAccountTokenNamesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  ListOnPremisesInstances
 
 

@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ApplicationInfo Object
+    /// Response Unmarshaller for LastDeploymentInfo Object
     /// </summary>  
-    public class ApplicationInfoUnmarshaller : IUnmarshaller<ApplicationInfo, XmlUnmarshallerContext>, IUnmarshaller<ApplicationInfo, JsonUnmarshallerContext>
+    public class LastDeploymentInfoUnmarshaller : IUnmarshaller<LastDeploymentInfo, XmlUnmarshallerContext>, IUnmarshaller<LastDeploymentInfo, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        ApplicationInfo IUnmarshaller<ApplicationInfo, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        LastDeploymentInfo IUnmarshaller<LastDeploymentInfo, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,45 +53,39 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public ApplicationInfo Unmarshall(JsonUnmarshallerContext context)
+        public LastDeploymentInfo Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            ApplicationInfo unmarshalledObject = new ApplicationInfo();
+            LastDeploymentInfo unmarshalledObject = new LastDeploymentInfo();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("applicationId", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ApplicationId = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("applicationName", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ApplicationName = unmarshaller.Unmarshall(context);
-                    continue;
-                }
                 if (context.TestExpression("createTime", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;
                     unmarshalledObject.CreateTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("gitHubAccountName", targetDepth))
+                if (context.TestExpression("deploymentId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.GitHubAccountName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DeploymentId = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("linkedToGitHub", targetDepth))
+                if (context.TestExpression("endTime", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
-                    unmarshalledObject.LinkedToGitHub = unmarshaller.Unmarshall(context);
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    unmarshalledObject.EndTime = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("status", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Status = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -100,12 +94,12 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
         }
 
 
-        private static ApplicationInfoUnmarshaller _instance = new ApplicationInfoUnmarshaller();        
+        private static LastDeploymentInfoUnmarshaller _instance = new LastDeploymentInfoUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ApplicationInfoUnmarshaller Instance
+        public static LastDeploymentInfoUnmarshaller Instance
         {
             get
             {

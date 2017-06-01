@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CodeDeploy.Model
 {
     /// <summary>
-    /// Represents the output of a stop deployment operation.
+    /// Represents the output of a StopDeployment operation.
     /// </summary>
     public partial class StopDeploymentResponse : AmazonWebServiceResponse
     {

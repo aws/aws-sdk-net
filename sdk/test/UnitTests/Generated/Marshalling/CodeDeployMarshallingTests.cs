@@ -819,6 +819,35 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Json")]
         [TestCategory("CodeDeploy")]
+        public void ListGitHubAccountTokenNamesMarshallTest()
+        {
+            var request = InstantiateClassGenerator.Execute<ListGitHubAccountTokenNamesRequest>();
+            var marshaller = new ListGitHubAccountTokenNamesRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            Comparer.CompareObjectToJson<ListGitHubAccountTokenNamesRequest>(request,jsonRequest);
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("ListGitHubAccountTokenNames").ResponseStructure).Execute();
+            webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
+            UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
+            var response = ListGitHubAccountTokenNamesResponseUnmarshaller.Instance.Unmarshall(context)
+                as ListGitHubAccountTokenNamesResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("CodeDeploy")]
         public void ListOnPremisesInstancesMarshallTest()
         {
             var request = InstantiateClassGenerator.Execute<ListOnPremisesInstancesRequest>();

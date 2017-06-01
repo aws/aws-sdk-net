@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CodeDeploy.Model
 {
     /// <summary>
-    /// Represents the output of an update deployment group operation.
+    /// Represents the output of an UpdateDeploymentGroup operation.
     /// </summary>
     public partial class UpdateDeploymentGroupResponse : AmazonWebServiceResponse
     {

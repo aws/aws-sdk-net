@@ -124,6 +124,18 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
                     unmarshalledObject.Ec2TagFilters = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("lastAttemptedDeployment", targetDepth))
+                {
+                    var unmarshaller = LastDeploymentInfoUnmarshaller.Instance;
+                    unmarshalledObject.LastAttemptedDeployment = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("lastSuccessfulDeployment", targetDepth))
+                {
+                    var unmarshaller = LastDeploymentInfoUnmarshaller.Instance;
+                    unmarshalledObject.LastSuccessfulDeployment = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("loadBalancerInfo", targetDepth))
                 {
                     var unmarshaller = LoadBalancerInfoUnmarshaller.Instance;
