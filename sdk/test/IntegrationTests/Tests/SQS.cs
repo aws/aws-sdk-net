@@ -248,7 +248,8 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
             Assert.AreEqual(11, attrResults.Attributes.Count);
             Assert.AreEqual(int.Parse(defaultTimeout), int.Parse(attrResults.Attributes[SQSConstants.ATTRIBUTE_VISIBILITY_TIMEOUT]));
             Assert.AreEqual(false, attrResults.FifoQueue);
-            Assert.AreEqual(false, attrResults.ContentBasedDeduplication);
+            Assert.AreEqual(false, attrResults.ContentBasedDeduplication.HasValue);
+            Assert.AreEqual(null, attrResults.ContentBasedDeduplication);
 
             for (int i = 0; i < 30; i++)
             {

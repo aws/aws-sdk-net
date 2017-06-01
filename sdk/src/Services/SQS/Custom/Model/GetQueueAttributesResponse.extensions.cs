@@ -192,9 +192,9 @@ namespace Amazon.SQS.Model
         }
 
         /// <summary>
-        /// Whether or not the First-In-First-Out (FIFO) queue has content based deduplication enabled
+        /// Whether or not the First-In-First-Out (FIFO) queue has content based deduplication enabled. For non-FIFO queues this will return null.
         /// </summary>
-        public bool ContentBasedDeduplication
+        public bool? ContentBasedDeduplication
         {
             get
             {
@@ -202,11 +202,13 @@ namespace Amazon.SQS.Model
 
                 if (attributeValue == null || attributeValue.Trim() == string.Empty)
                 {
-                    return false;
+                    return null;
                 }
 
                 bool result;
-                return bool.TryParse(attributeValue, out result);
+                if (bool.TryParse(attributeValue, out result))
+                    return result;
+                return false;
             }
         }
 
