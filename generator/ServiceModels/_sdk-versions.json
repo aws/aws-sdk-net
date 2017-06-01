@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.3.97.0",
+    "ProductVersion" : "3.3.98.0",
     "CoreVersion"    : "3.3.14.0",
     "DefaultToPreview" : false,
     "ServiceVersions"  : {
@@ -93,7 +93,7 @@
             "InPreview"               : false
         },
         "CodeDeploy"        : {
-            "Version" : "3.3.4.0",
+            "Version" : "3.3.5.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.14.0"
@@ -537,7 +537,7 @@
             "InPreview"               : false
         },
         "CognitoIdentityProvider"         : {
-            "Version" : "3.3.3.1",
+            "Version" : "3.3.4.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.14.0"
@@ -569,7 +569,7 @@
             "InPreview"               : false
         },
         "ElasticLoadBalancingV2"          : {
-            "Version" : "3.3.2.0",
+            "Version" : "3.3.3.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.14.0"
@@ -777,7 +777,7 @@
             "InPreview"               : false
         },
         "LexModelBuildingService"         : {
-            "Version" : "3.3.1.0",
+            "Version" : "3.3.1.1",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.14.0"
