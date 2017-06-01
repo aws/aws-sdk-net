@@ -58,7 +58,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property ChallengeName. 
         /// <para>
-        /// The name of the challenge.
+        /// The name of the challenge. For more information, see <a href="API_AdminInitiateAuth.html">AdminInitiateAuth</a>.
         /// </para>
         /// </summary>
         public ChallengeNameType ChallengeName
@@ -76,7 +76,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property ChallengeParameters. 
         /// <para>
-        /// The challenge parameters.
+        /// The challenge parameters. For more information, see <a href="API_AdminInitiateAuth.html">AdminInitiateAuth</a>.
         /// </para>
         /// </summary>
         public Dictionary<string, string> ChallengeParameters
@@ -94,7 +94,11 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property Session. 
         /// <para>
-        /// The session.
+        /// The session which should be passed both ways in challenge-response calls to the service.
+        /// If the <a href="API_InitiateAuth.html">InitiateAuth</a> or <a href="API_RespondToAuthChallenge.html">RespondToAuthChallenge</a>
+        /// API call determines that the caller needs to go through another challenge, they return
+        /// a session with other challenge parameters. This session should be passed as it is
+        /// to the next <code>RespondToAuthChallenge</code> API call.
         /// </para>
         /// </summary>
         public string Session

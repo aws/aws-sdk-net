@@ -37,7 +37,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property PasswordPolicy. 
         /// <para>
-        /// A container with information about the user pool password policy.
+        /// A container for information about the user pool password policy.
         /// </para>
         /// </summary>
         public PasswordPolicyType PasswordPolicy

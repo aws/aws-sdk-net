@@ -47,7 +47,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property ChallengeName. 
         /// <para>
-        /// The name of the challenge.
+        /// The challenge name. For more information, see <a href="API_AdminInitiateAuth.html">AdminInitiateAuth</a>.
         /// </para>
         /// </summary>
         public ChallengeNameType ChallengeName
@@ -65,7 +65,37 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property ChallengeResponses. 
         /// <para>
-        /// The challenge response.
+        /// The challenge responses. These are inputs corresponding to the value of <code>ChallengeName</code>,
+        /// for example:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>SMS_MFA</code>: <code>SMS_MFA_CODE</code>, <code>USERNAME</code>, <code>SECRET_HASH</code>
+        /// (if app client is configured with client secret).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>PASSWORD_VERIFIER</code>: <code>PASSWORD_CLAIM_SIGNATURE</code>, <code>PASSWORD_CLAIM_SECRET_BLOCK</code>,
+        /// <code>TIMESTAMP</code>, <code>USERNAME</code>, <code>SECRET_HASH</code> (if app client
+        /// is configured with client secret).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>ADMIN_NO_SRP_AUTH</code>: <code>PASSWORD</code>, <code>USERNAME</code>, <code>SECRET_HASH</code>
+        /// (if app client is configured with client secret). 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>NEW_PASSWORD_REQUIRED</code>: <code>NEW_PASSWORD</code>, any other required
+        /// attributes, <code>USERNAME</code>, <code>SECRET_HASH</code> (if app client is configured
+        /// with client secret). 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// The value of the <code>USERNAME</code> attribute must be the user's actual username,
+        /// not an alias (such as email address or phone number). To make this easier, the <code>AdminInitiateAuth</code>
+        /// response includes the actual username value in the <code>USERNAMEUSER_ID_FOR_SRP</code>
+        /// attribute, even if you specified an alias in your call to <code>AdminInitiateAuth</code>.
         /// </para>
         /// </summary>
         public Dictionary<string, string> ChallengeResponses
@@ -83,7 +113,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property ClientId. 
         /// <para>
-        /// The client ID.
+        /// The app client ID.
         /// </para>
         /// </summary>
         public string ClientId
@@ -101,7 +131,11 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property Session. 
         /// <para>
-        /// The session.
+        /// The session which should be passed both ways in challenge-response calls to the service.
+        /// If <code>InitiateAuth</code> or <code>RespondToAuthChallenge</code> API call determines
+        /// that the caller needs to go through another challenge, they return a session with
+        /// other challenge parameters. This session should be passed as it is to the next <code>RespondToAuthChallenge</code>
+        /// API call.
         /// </para>
         /// </summary>
         public string Session

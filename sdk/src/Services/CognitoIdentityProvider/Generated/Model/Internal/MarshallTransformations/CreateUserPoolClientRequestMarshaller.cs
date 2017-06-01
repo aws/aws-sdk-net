@@ -67,10 +67,55 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetAllowedOAuthFlows())
+                {
+                    context.Writer.WritePropertyName("AllowedOAuthFlows");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestAllowedOAuthFlowsListValue in publicRequest.AllowedOAuthFlows)
+                    {
+                            context.Writer.Write(publicRequestAllowedOAuthFlowsListValue);
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
+                if(publicRequest.IsSetAllowedOAuthFlowsUserPoolClient())
+                {
+                    context.Writer.WritePropertyName("AllowedOAuthFlowsUserPoolClient");
+                    context.Writer.Write(publicRequest.AllowedOAuthFlowsUserPoolClient);
+                }
+
+                if(publicRequest.IsSetAllowedOAuthScopes())
+                {
+                    context.Writer.WritePropertyName("AllowedOAuthScopes");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestAllowedOAuthScopesListValue in publicRequest.AllowedOAuthScopes)
+                    {
+                            context.Writer.Write(publicRequestAllowedOAuthScopesListValue);
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
+                if(publicRequest.IsSetCallbackURLs())
+                {
+                    context.Writer.WritePropertyName("CallbackURLs");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestCallbackURLsListValue in publicRequest.CallbackURLs)
+                    {
+                            context.Writer.Write(publicRequestCallbackURLsListValue);
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 if(publicRequest.IsSetClientName())
                 {
                     context.Writer.WritePropertyName("ClientName");
                     context.Writer.Write(publicRequest.ClientName);
+                }
+
+                if(publicRequest.IsSetDefaultRedirectURI())
+                {
+                    context.Writer.WritePropertyName("DefaultRedirectURI");
+                    context.Writer.Write(publicRequest.DefaultRedirectURI);
                 }
 
                 if(publicRequest.IsSetExplicitAuthFlows())
@@ -90,6 +135,17 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.GenerateSecret);
                 }
 
+                if(publicRequest.IsSetLogoutURLs())
+                {
+                    context.Writer.WritePropertyName("LogoutURLs");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestLogoutURLsListValue in publicRequest.LogoutURLs)
+                    {
+                            context.Writer.Write(publicRequestLogoutURLsListValue);
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 if(publicRequest.IsSetReadAttributes())
                 {
                     context.Writer.WritePropertyName("ReadAttributes");
@@ -105,6 +161,17 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
                 {
                     context.Writer.WritePropertyName("RefreshTokenValidity");
                     context.Writer.Write(publicRequest.RefreshTokenValidity);
+                }
+
+                if(publicRequest.IsSetSupportedIdentityProviders())
+                {
+                    context.Writer.WritePropertyName("SupportedIdentityProviders");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestSupportedIdentityProvidersListValue in publicRequest.SupportedIdentityProviders)
+                    {
+                            context.Writer.Write(publicRequestSupportedIdentityProvidersListValue);
+                    }
+                    context.Writer.WriteArrayEnd();
                 }
 
                 if(publicRequest.IsSetUserPoolId())

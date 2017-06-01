@@ -33,14 +33,13 @@ namespace Amazon.CognitoIdentityProvider
     /// <summary>
     /// Implementation for accessing CognitoIdentityProvider
     ///
-    /// Using the Amazon Cognito Your User Pools API, you can create a user pool to manage
-    /// directories and users. You can authenticate a user to obtain tokens related to user
-    /// identity and access policies.
+    /// Using the Amazon Cognito User Pools API, you can create a user pool to manage directories
+    /// and users. You can authenticate a user to obtain tokens related to user identity and
+    /// access policies.
     /// 
     ///  
     /// <para>
-    /// This API reference provides information about user pools in Amazon Cognito Your User
-    /// Pools.
+    /// This API reference provides information about user pools in Amazon Cognito User Pools.
     /// </para>
     ///  
     /// <para>
@@ -250,14 +249,14 @@ namespace Amazon.CognitoIdentityProvider
         /// This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
-        /// This exception gets thrown when a user is not authorized.
+        /// This exception is thrown when a user is not authorized.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
         /// This exception is thrown when the Amazon Cognito service cannot find the requested
         /// resource.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.TooManyRequestsException">
-        /// This exception gets thrown when the user has made too many requests for a given operation.
+        /// This exception is thrown when the user has made too many requests for a given operation.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserImportInProgressException">
         /// This exception is thrown when you are trying to modify a user pool while a user import
@@ -328,14 +327,14 @@ namespace Amazon.CognitoIdentityProvider
         /// This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
-        /// This exception gets thrown when a user is not authorized.
+        /// This exception is thrown when a user is not authorized.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
         /// This exception is thrown when the Amazon Cognito service cannot find the requested
         /// resource.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.TooManyRequestsException">
-        /// This exception gets thrown when the user has made too many requests for a given operation.
+        /// This exception is thrown when the user has made too many requests for a given operation.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserNotFoundException">
         /// This exception is thrown when a user is not found.
@@ -413,25 +412,25 @@ namespace Amazon.CognitoIdentityProvider
         /// This exception is thrown when a user exceeds the limit for a requested AWS resource.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
-        /// This exception gets thrown when a user is not authorized.
+        /// This exception is thrown when a user is not authorized.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
         /// This exception is thrown when the Amazon Cognito service cannot find the requested
         /// resource.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.TooManyFailedAttemptsException">
-        /// This exception gets thrown when the user has made too many failed attempts for a given
+        /// This exception is thrown when the user has made too many failed attempts for a given
         /// action (e.g., sign in).
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.TooManyRequestsException">
-        /// This exception gets thrown when the user has made too many requests for a given operation.
+        /// This exception is thrown when the user has made too many requests for a given operation.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.UnexpectedLambdaException">
-        /// This exception gets thrown when the Amazon Cognito service encounters an unexpected
+        /// This exception is thrown when the Amazon Cognito service encounters an unexpected
         /// exception with the AWS Lambda service.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserLambdaValidationException">
-        /// This exception gets thrown when the Amazon Cognito service encounters a user validation
+        /// This exception is thrown when the Amazon Cognito service encounters a user validation
         /// exception with the AWS Lambda service.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserNotFoundException">
@@ -487,8 +486,9 @@ namespace Amazon.CognitoIdentityProvider
         /// <summary>
         /// Creates a new user in the specified user pool and sends a welcome message via email
         /// or phone (SMS). This message is based on a template that you configured in your call
-        /// to CreateUserPool or UpdateUserPool. This template includes your custom sign-up instructions
-        /// and placeholders for user name and temporary password.
+        /// to <a href="API_CreateUserPool.html">CreateUserPool</a> or <a href="API_UpdateUserPool.html">UpdateUserPool</a>.
+        /// This template includes your custom sign-up instructions and placeholders for user
+        /// name and temporary password.
         /// 
         ///  
         /// <para>
@@ -525,7 +525,7 @@ namespace Amazon.CognitoIdentityProvider
         /// configuration for the user pool.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
-        /// This exception gets thrown when a user is not authorized.
+        /// This exception is thrown when a user is not authorized.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.PreconditionNotMetException">
         /// This exception is thrown when a precondition is not met.
@@ -535,17 +535,17 @@ namespace Amazon.CognitoIdentityProvider
         /// resource.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.TooManyRequestsException">
-        /// This exception gets thrown when the user has made too many requests for a given operation.
+        /// This exception is thrown when the user has made too many requests for a given operation.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.UnexpectedLambdaException">
-        /// This exception gets thrown when the Amazon Cognito service encounters an unexpected
+        /// This exception is thrown when the Amazon Cognito service encounters an unexpected
         /// exception with the AWS Lambda service.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.UnsupportedUserStateException">
         /// The request failed because the user is in an unsupported state.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserLambdaValidationException">
-        /// This exception gets thrown when the Amazon Cognito service encounters a user validation
+        /// This exception is thrown when the Amazon Cognito service encounters a user validation
         /// exception with the AWS Lambda service.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.UsernameExistsException">
@@ -620,14 +620,14 @@ namespace Amazon.CognitoIdentityProvider
         /// This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
-        /// This exception gets thrown when a user is not authorized.
+        /// This exception is thrown when a user is not authorized.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
         /// This exception is thrown when the Amazon Cognito service cannot find the requested
         /// resource.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.TooManyRequestsException">
-        /// This exception gets thrown when the user has made too many requests for a given operation.
+        /// This exception is thrown when the user has made too many requests for a given operation.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserNotFoundException">
         /// This exception is thrown when a user is not found.
@@ -697,14 +697,14 @@ namespace Amazon.CognitoIdentityProvider
         /// This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
-        /// This exception gets thrown when a user is not authorized.
+        /// This exception is thrown when a user is not authorized.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
         /// This exception is thrown when the Amazon Cognito service cannot find the requested
         /// resource.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.TooManyRequestsException">
-        /// This exception gets thrown when the user has made too many requests for a given operation.
+        /// This exception is thrown when the user has made too many requests for a given operation.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserNotFoundException">
         /// This exception is thrown when a user is not found.
@@ -774,14 +774,14 @@ namespace Amazon.CognitoIdentityProvider
         /// This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
-        /// This exception gets thrown when a user is not authorized.
+        /// This exception is thrown when a user is not authorized.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
         /// This exception is thrown when the Amazon Cognito service cannot find the requested
         /// resource.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.TooManyRequestsException">
-        /// This exception gets thrown when the user has made too many requests for a given operation.
+        /// This exception is thrown when the user has made too many requests for a given operation.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserNotFoundException">
         /// This exception is thrown when a user is not found.
@@ -851,14 +851,14 @@ namespace Amazon.CognitoIdentityProvider
         /// This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
-        /// This exception gets thrown when a user is not authorized.
+        /// This exception is thrown when a user is not authorized.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
         /// This exception is thrown when the Amazon Cognito service cannot find the requested
         /// resource.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.TooManyRequestsException">
-        /// This exception gets thrown when the user has made too many requests for a given operation.
+        /// This exception is thrown when the user has made too many requests for a given operation.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserNotFoundException">
         /// This exception is thrown when a user is not found.
@@ -931,14 +931,14 @@ namespace Amazon.CognitoIdentityProvider
         /// This exception is thrown when the user pool configuration is invalid.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
-        /// This exception gets thrown when a user is not authorized.
+        /// This exception is thrown when a user is not authorized.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
         /// This exception is thrown when the Amazon Cognito service cannot find the requested
         /// resource.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.TooManyRequestsException">
-        /// This exception gets thrown when the user has made too many requests for a given operation.
+        /// This exception is thrown when the user has made too many requests for a given operation.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserNotFoundException">
         /// This exception is thrown when a user is not found.
@@ -1011,14 +1011,14 @@ namespace Amazon.CognitoIdentityProvider
         /// This exception is thrown when the user pool configuration is invalid.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
-        /// This exception gets thrown when a user is not authorized.
+        /// This exception is thrown when a user is not authorized.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
         /// This exception is thrown when the Amazon Cognito service cannot find the requested
         /// resource.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.TooManyRequestsException">
-        /// This exception gets thrown when the user has made too many requests for a given operation.
+        /// This exception is thrown when the user has made too many requests for a given operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminGetDevice">REST API Reference for AdminGetDevice Operation</seealso>
         public AdminGetDeviceResponse AdminGetDevice(AdminGetDeviceRequest request)
@@ -1086,14 +1086,14 @@ namespace Amazon.CognitoIdentityProvider
         /// This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
-        /// This exception gets thrown when a user is not authorized.
+        /// This exception is thrown when a user is not authorized.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
         /// This exception is thrown when the Amazon Cognito service cannot find the requested
         /// resource.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.TooManyRequestsException">
-        /// This exception gets thrown when the user has made too many requests for a given operation.
+        /// This exception is thrown when the user has made too many requests for a given operation.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserNotFoundException">
         /// This exception is thrown when a user is not found.
@@ -1184,7 +1184,7 @@ namespace Amazon.CognitoIdentityProvider
         /// (MFA) method.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
-        /// This exception gets thrown when a user is not authorized.
+        /// This exception is thrown when a user is not authorized.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.PasswordResetRequiredException">
         /// This exception is thrown when a password reset is required.
@@ -1194,14 +1194,14 @@ namespace Amazon.CognitoIdentityProvider
         /// resource.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.TooManyRequestsException">
-        /// This exception gets thrown when the user has made too many requests for a given operation.
+        /// This exception is thrown when the user has made too many requests for a given operation.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.UnexpectedLambdaException">
-        /// This exception gets thrown when the Amazon Cognito service encounters an unexpected
+        /// This exception is thrown when the Amazon Cognito service encounters an unexpected
         /// exception with the AWS Lambda service.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserLambdaValidationException">
-        /// This exception gets thrown when the Amazon Cognito service encounters a user validation
+        /// This exception is thrown when the Amazon Cognito service encounters a user validation
         /// exception with the AWS Lambda service.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserNotConfirmedException">
@@ -1278,14 +1278,14 @@ namespace Amazon.CognitoIdentityProvider
         /// This exception is thrown when the user pool configuration is invalid.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
-        /// This exception gets thrown when a user is not authorized.
+        /// This exception is thrown when a user is not authorized.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
         /// This exception is thrown when the Amazon Cognito service cannot find the requested
         /// resource.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.TooManyRequestsException">
-        /// This exception gets thrown when the user has made too many requests for a given operation.
+        /// This exception is thrown when the user has made too many requests for a given operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminListDevices">REST API Reference for AdminListDevices Operation</seealso>
         public AdminListDevicesResponse AdminListDevices(AdminListDevicesRequest request)
@@ -1352,14 +1352,14 @@ namespace Amazon.CognitoIdentityProvider
         /// This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
-        /// This exception gets thrown when a user is not authorized.
+        /// This exception is thrown when a user is not authorized.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
         /// This exception is thrown when the Amazon Cognito service cannot find the requested
         /// resource.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.TooManyRequestsException">
-        /// This exception gets thrown when the user has made too many requests for a given operation.
+        /// This exception is thrown when the user has made too many requests for a given operation.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserNotFoundException">
         /// This exception is thrown when a user is not found.
@@ -1429,14 +1429,14 @@ namespace Amazon.CognitoIdentityProvider
         /// This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
-        /// This exception gets thrown when a user is not authorized.
+        /// This exception is thrown when a user is not authorized.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
         /// This exception is thrown when the Amazon Cognito service cannot find the requested
         /// resource.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.TooManyRequestsException">
-        /// This exception gets thrown when the user has made too many requests for a given operation.
+        /// This exception is thrown when the user has made too many requests for a given operation.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserNotFoundException">
         /// This exception is thrown when a user is not found.
@@ -1524,21 +1524,21 @@ namespace Amazon.CognitoIdentityProvider
         /// This exception is thrown when a user exceeds the limit for a requested AWS resource.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
-        /// This exception gets thrown when a user is not authorized.
+        /// This exception is thrown when a user is not authorized.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
         /// This exception is thrown when the Amazon Cognito service cannot find the requested
         /// resource.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.TooManyRequestsException">
-        /// This exception gets thrown when the user has made too many requests for a given operation.
+        /// This exception is thrown when the user has made too many requests for a given operation.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.UnexpectedLambdaException">
-        /// This exception gets thrown when the Amazon Cognito service encounters an unexpected
+        /// This exception is thrown when the Amazon Cognito service encounters an unexpected
         /// exception with the AWS Lambda service.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserLambdaValidationException">
-        /// This exception gets thrown when the Amazon Cognito service encounters a user validation
+        /// This exception is thrown when the Amazon Cognito service encounters a user validation
         /// exception with the AWS Lambda service.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserNotFoundException">
@@ -1644,7 +1644,7 @@ namespace Amazon.CognitoIdentityProvider
         /// (MFA) method.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
-        /// This exception gets thrown when a user is not authorized.
+        /// This exception is thrown when a user is not authorized.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.PasswordResetRequiredException">
         /// This exception is thrown when a password reset is required.
@@ -1654,14 +1654,14 @@ namespace Amazon.CognitoIdentityProvider
         /// resource.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.TooManyRequestsException">
-        /// This exception gets thrown when the user has made too many requests for a given operation.
+        /// This exception is thrown when the user has made too many requests for a given operation.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.UnexpectedLambdaException">
-        /// This exception gets thrown when the Amazon Cognito service encounters an unexpected
+        /// This exception is thrown when the Amazon Cognito service encounters an unexpected
         /// exception with the AWS Lambda service.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserLambdaValidationException">
-        /// This exception gets thrown when the Amazon Cognito service encounters a user validation
+        /// This exception is thrown when the Amazon Cognito service encounters a user validation
         /// exception with the AWS Lambda service.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserNotConfirmedException">
@@ -1735,7 +1735,7 @@ namespace Amazon.CognitoIdentityProvider
         /// This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
-        /// This exception gets thrown when a user is not authorized.
+        /// This exception is thrown when a user is not authorized.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
         /// This exception is thrown when the Amazon Cognito service cannot find the requested
@@ -1812,14 +1812,14 @@ namespace Amazon.CognitoIdentityProvider
         /// This exception is thrown when the user pool configuration is invalid.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
-        /// This exception gets thrown when a user is not authorized.
+        /// This exception is thrown when a user is not authorized.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
         /// This exception is thrown when the Amazon Cognito service cannot find the requested
         /// resource.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.TooManyRequestsException">
-        /// This exception gets thrown when the user has made too many requests for a given operation.
+        /// This exception is thrown when the user has made too many requests for a given operation.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserNotFoundException">
         /// This exception is thrown when a user is not found.
@@ -1877,6 +1877,16 @@ namespace Amazon.CognitoIdentityProvider
         /// 
         ///  
         /// <para>
+        /// For custom attributes, you must prepend the <code>custom:</code> prefix to the attribute
+        /// name.
+        /// </para>
+        ///  
+        /// <para>
+        /// In addition to updating user attributes, this API can also be used to mark phone and
+        /// email as verified.
+        /// </para>
+        ///  
+        /// <para>
         /// Requires developer credentials.
         /// </para>
         /// </summary>
@@ -1899,21 +1909,21 @@ namespace Amazon.CognitoIdentityProvider
         /// This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
-        /// This exception gets thrown when a user is not authorized.
+        /// This exception is thrown when a user is not authorized.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
         /// This exception is thrown when the Amazon Cognito service cannot find the requested
         /// resource.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.TooManyRequestsException">
-        /// This exception gets thrown when the user has made too many requests for a given operation.
+        /// This exception is thrown when the user has made too many requests for a given operation.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.UnexpectedLambdaException">
-        /// This exception gets thrown when the Amazon Cognito service encounters an unexpected
+        /// This exception is thrown when the Amazon Cognito service encounters an unexpected
         /// exception with the AWS Lambda service.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserLambdaValidationException">
-        /// This exception gets thrown when the Amazon Cognito service encounters a user validation
+        /// This exception is thrown when the Amazon Cognito service encounters a user validation
         /// exception with the AWS Lambda service.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserNotFoundException">
@@ -1984,14 +1994,14 @@ namespace Amazon.CognitoIdentityProvider
         /// This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
-        /// This exception gets thrown when a user is not authorized.
+        /// This exception is thrown when a user is not authorized.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
         /// This exception is thrown when the Amazon Cognito service cannot find the requested
         /// resource.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.TooManyRequestsException">
-        /// This exception gets thrown when the user has made too many requests for a given operation.
+        /// This exception is thrown when the user has made too many requests for a given operation.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserNotFoundException">
         /// This exception is thrown when a user is not found.
@@ -2062,7 +2072,7 @@ namespace Amazon.CognitoIdentityProvider
         /// This exception is thrown when a user exceeds the limit for a requested AWS resource.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
-        /// This exception gets thrown when a user is not authorized.
+        /// This exception is thrown when a user is not authorized.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.PasswordResetRequiredException">
         /// This exception is thrown when a password reset is required.
@@ -2072,7 +2082,7 @@ namespace Amazon.CognitoIdentityProvider
         /// resource.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.TooManyRequestsException">
-        /// This exception gets thrown when the user has made too many requests for a given operation.
+        /// This exception is thrown when the user has made too many requests for a given operation.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserNotConfirmedException">
         /// This exception is thrown when a user is not confirmed successfully.
@@ -2128,7 +2138,7 @@ namespace Amazon.CognitoIdentityProvider
         #region  ConfirmDevice
 
         /// <summary>
-        /// Confirms tracking of the device. This API call is the call that beings device tracking.
+        /// Confirms tracking of the device. This API call is the call that begins device tracking.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ConfirmDevice service method.</param>
         /// 
@@ -2150,7 +2160,7 @@ namespace Amazon.CognitoIdentityProvider
         /// This exception is thrown when the user pool configuration is invalid.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
-        /// This exception gets thrown when a user is not authorized.
+        /// This exception is thrown when a user is not authorized.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.PasswordResetRequiredException">
         /// This exception is thrown when a password reset is required.
@@ -2160,7 +2170,7 @@ namespace Amazon.CognitoIdentityProvider
         /// resource.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.TooManyRequestsException">
-        /// This exception gets thrown when the user has made too many requests for a given operation.
+        /// This exception is thrown when the user has made too many requests for a given operation.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.UsernameExistsException">
         /// This exception is thrown when Amazon Cognito encounters a user name that already exists
@@ -2220,8 +2230,7 @@ namespace Amazon.CognitoIdentityProvider
         #region  ConfirmForgotPassword
 
         /// <summary>
-        /// Allows a user to enter a code provided when they reset their password to update their
-        /// password.
+        /// Allows a user to enter a confirmation code to reset a forgotten password.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ConfirmForgotPassword service method.</param>
         /// 
@@ -2249,25 +2258,25 @@ namespace Amazon.CognitoIdentityProvider
         /// This exception is thrown when a user exceeds the limit for a requested AWS resource.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
-        /// This exception gets thrown when a user is not authorized.
+        /// This exception is thrown when a user is not authorized.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
         /// This exception is thrown when the Amazon Cognito service cannot find the requested
         /// resource.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.TooManyFailedAttemptsException">
-        /// This exception gets thrown when the user has made too many failed attempts for a given
+        /// This exception is thrown when the user has made too many failed attempts for a given
         /// action (e.g., sign in).
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.TooManyRequestsException">
-        /// This exception gets thrown when the user has made too many requests for a given operation.
+        /// This exception is thrown when the user has made too many requests for a given operation.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.UnexpectedLambdaException">
-        /// This exception gets thrown when the Amazon Cognito service encounters an unexpected
+        /// This exception is thrown when the Amazon Cognito service encounters an unexpected
         /// exception with the AWS Lambda service.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserLambdaValidationException">
-        /// This exception gets thrown when the Amazon Cognito service encounters a user validation
+        /// This exception is thrown when the Amazon Cognito service encounters a user validation
         /// exception with the AWS Lambda service.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserNotConfirmedException">
@@ -2354,25 +2363,25 @@ namespace Amazon.CognitoIdentityProvider
         /// This exception is thrown when a user exceeds the limit for a requested AWS resource.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
-        /// This exception gets thrown when a user is not authorized.
+        /// This exception is thrown when a user is not authorized.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
         /// This exception is thrown when the Amazon Cognito service cannot find the requested
         /// resource.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.TooManyFailedAttemptsException">
-        /// This exception gets thrown when the user has made too many failed attempts for a given
+        /// This exception is thrown when the user has made too many failed attempts for a given
         /// action (e.g., sign in).
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.TooManyRequestsException">
-        /// This exception gets thrown when the user has made too many requests for a given operation.
+        /// This exception is thrown when the user has made too many requests for a given operation.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.UnexpectedLambdaException">
-        /// This exception gets thrown when the Amazon Cognito service encounters an unexpected
+        /// This exception is thrown when the Amazon Cognito service encounters an unexpected
         /// exception with the AWS Lambda service.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserLambdaValidationException">
-        /// This exception gets thrown when the Amazon Cognito service encounters a user validation
+        /// This exception is thrown when the Amazon Cognito service encounters a user validation
         /// exception with the AWS Lambda service.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserNotFoundException">
@@ -2450,14 +2459,14 @@ namespace Amazon.CognitoIdentityProvider
         /// This exception is thrown when a user exceeds the limit for a requested AWS resource.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
-        /// This exception gets thrown when a user is not authorized.
+        /// This exception is thrown when a user is not authorized.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
         /// This exception is thrown when the Amazon Cognito service cannot find the requested
         /// resource.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.TooManyRequestsException">
-        /// This exception gets thrown when the user has made too many requests for a given operation.
+        /// This exception is thrown when the user has made too many requests for a given operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/CreateGroup">REST API Reference for CreateGroup Operation</seealso>
         public CreateGroupResponse CreateGroup(CreateGroupRequest request)
@@ -2504,6 +2513,81 @@ namespace Amazon.CognitoIdentityProvider
 
         #endregion
         
+        #region  CreateIdentityProvider
+
+        /// <summary>
+        /// Creates an identity provider for a user pool.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateIdentityProvider service method.</param>
+        /// 
+        /// <returns>The response from the CreateIdentityProvider service method, as returned by CognitoIdentityProvider.</returns>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.DuplicateProviderException">
+        /// This exception is thrown when the provider is already supported by the user pool.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InternalErrorException">
+        /// This exception is thrown when Amazon Cognito encounters an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidParameterException">
+        /// This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.LimitExceededException">
+        /// This exception is thrown when a user exceeds the limit for a requested AWS resource.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
+        /// This exception is thrown when a user is not authorized.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
+        /// This exception is thrown when the Amazon Cognito service cannot find the requested
+        /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.TooManyRequestsException">
+        /// This exception is thrown when the user has made too many requests for a given operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/CreateIdentityProvider">REST API Reference for CreateIdentityProvider Operation</seealso>
+        public CreateIdentityProviderResponse CreateIdentityProvider(CreateIdentityProviderRequest request)
+        {
+            var marshaller = new CreateIdentityProviderRequestMarshaller();
+            var unmarshaller = CreateIdentityProviderResponseUnmarshaller.Instance;
+
+            return Invoke<CreateIdentityProviderRequest,CreateIdentityProviderResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateIdentityProvider operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateIdentityProvider operation on AmazonCognitoIdentityProviderClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateIdentityProvider
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/CreateIdentityProvider">REST API Reference for CreateIdentityProvider Operation</seealso>
+        public IAsyncResult BeginCreateIdentityProvider(CreateIdentityProviderRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new CreateIdentityProviderRequestMarshaller();
+            var unmarshaller = CreateIdentityProviderResponseUnmarshaller.Instance;
+
+            return BeginInvoke<CreateIdentityProviderRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateIdentityProvider operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateIdentityProvider.</param>
+        /// 
+        /// <returns>Returns a  CreateIdentityProviderResult from CognitoIdentityProvider.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/CreateIdentityProvider">REST API Reference for CreateIdentityProvider Operation</seealso>
+        public  CreateIdentityProviderResponse EndCreateIdentityProvider(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateIdentityProviderResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  CreateUserImportJob
 
         /// <summary>
@@ -2522,7 +2606,7 @@ namespace Amazon.CognitoIdentityProvider
         /// This exception is thrown when a user exceeds the limit for a requested AWS resource.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
-        /// This exception gets thrown when a user is not authorized.
+        /// This exception is thrown when a user is not authorized.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.PreconditionNotMetException">
         /// This exception is thrown when a precondition is not met.
@@ -2532,7 +2616,7 @@ namespace Amazon.CognitoIdentityProvider
         /// resource.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.TooManyRequestsException">
-        /// This exception gets thrown when the user has made too many requests for a given operation.
+        /// This exception is thrown when the user has made too many requests for a given operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/CreateUserImportJob">REST API Reference for CreateUserImportJob Operation</seealso>
         public CreateUserImportJobResponse CreateUserImportJob(CreateUserImportJobRequest request)
@@ -2611,13 +2695,13 @@ namespace Amazon.CognitoIdentityProvider
         /// This exception is thrown when a user exceeds the limit for a requested AWS resource.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
-        /// This exception gets thrown when a user is not authorized.
+        /// This exception is thrown when a user is not authorized.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.TooManyRequestsException">
-        /// This exception gets thrown when the user has made too many requests for a given operation.
+        /// This exception is thrown when the user has made too many requests for a given operation.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserPoolTaggingException">
-        /// This exception gets thrown when a user pool tag cannot be set or updated.
+        /// This exception is thrown when a user pool tag cannot be set or updated.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/CreateUserPool">REST API Reference for CreateUserPool Operation</seealso>
         public CreateUserPoolResponse CreateUserPool(CreateUserPoolRequest request)
@@ -2675,6 +2759,9 @@ namespace Amazon.CognitoIdentityProvider
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.InternalErrorException">
         /// This exception is thrown when Amazon Cognito encounters an internal error.
         /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidOAuthFlowException">
+        /// This exception is thrown when the specified OAuth flow is invalid.
+        /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidParameterException">
         /// This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
         /// </exception>
@@ -2682,14 +2769,17 @@ namespace Amazon.CognitoIdentityProvider
         /// This exception is thrown when a user exceeds the limit for a requested AWS resource.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
-        /// This exception gets thrown when a user is not authorized.
+        /// This exception is thrown when a user is not authorized.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
         /// This exception is thrown when the Amazon Cognito service cannot find the requested
         /// resource.
         /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.ScopeDoesNotExistException">
+        /// This exception is thrown when the specified scope does not exist.
+        /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.TooManyRequestsException">
-        /// This exception gets thrown when the user has made too many requests for a given operation.
+        /// This exception is thrown when the user has made too many requests for a given operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/CreateUserPoolClient">REST API Reference for CreateUserPoolClient Operation</seealso>
         public CreateUserPoolClientResponse CreateUserPoolClient(CreateUserPoolClientRequest request)
@@ -2736,6 +2826,72 @@ namespace Amazon.CognitoIdentityProvider
 
         #endregion
         
+        #region  CreateUserPoolDomain
+
+        /// <summary>
+        /// Creates a new domain for a user pool.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateUserPoolDomain service method.</param>
+        /// 
+        /// <returns>The response from the CreateUserPoolDomain service method, as returned by CognitoIdentityProvider.</returns>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InternalErrorException">
+        /// This exception is thrown when Amazon Cognito encounters an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidParameterException">
+        /// This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
+        /// This exception is thrown when a user is not authorized.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
+        /// This exception is thrown when the Amazon Cognito service cannot find the requested
+        /// resource.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/CreateUserPoolDomain">REST API Reference for CreateUserPoolDomain Operation</seealso>
+        public CreateUserPoolDomainResponse CreateUserPoolDomain(CreateUserPoolDomainRequest request)
+        {
+            var marshaller = new CreateUserPoolDomainRequestMarshaller();
+            var unmarshaller = CreateUserPoolDomainResponseUnmarshaller.Instance;
+
+            return Invoke<CreateUserPoolDomainRequest,CreateUserPoolDomainResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateUserPoolDomain operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateUserPoolDomain operation on AmazonCognitoIdentityProviderClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateUserPoolDomain
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/CreateUserPoolDomain">REST API Reference for CreateUserPoolDomain Operation</seealso>
+        public IAsyncResult BeginCreateUserPoolDomain(CreateUserPoolDomainRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new CreateUserPoolDomainRequestMarshaller();
+            var unmarshaller = CreateUserPoolDomainResponseUnmarshaller.Instance;
+
+            return BeginInvoke<CreateUserPoolDomainRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateUserPoolDomain operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateUserPoolDomain.</param>
+        /// 
+        /// <returns>Returns a  CreateUserPoolDomainResult from CognitoIdentityProvider.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/CreateUserPoolDomain">REST API Reference for CreateUserPoolDomain Operation</seealso>
+        public  CreateUserPoolDomainResponse EndCreateUserPoolDomain(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateUserPoolDomainResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DeleteGroup
 
         /// <summary>
@@ -2756,14 +2912,14 @@ namespace Amazon.CognitoIdentityProvider
         /// This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
-        /// This exception gets thrown when a user is not authorized.
+        /// This exception is thrown when a user is not authorized.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
         /// This exception is thrown when the Amazon Cognito service cannot find the requested
         /// resource.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.TooManyRequestsException">
-        /// This exception gets thrown when the user has made too many requests for a given operation.
+        /// This exception is thrown when the user has made too many requests for a given operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/DeleteGroup">REST API Reference for DeleteGroup Operation</seealso>
         public DeleteGroupResponse DeleteGroup(DeleteGroupRequest request)
@@ -2810,6 +2966,78 @@ namespace Amazon.CognitoIdentityProvider
 
         #endregion
         
+        #region  DeleteIdentityProvider
+
+        /// <summary>
+        /// Deletes an identity provider for a user pool.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteIdentityProvider service method.</param>
+        /// 
+        /// <returns>The response from the DeleteIdentityProvider service method, as returned by CognitoIdentityProvider.</returns>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InternalErrorException">
+        /// This exception is thrown when Amazon Cognito encounters an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidParameterException">
+        /// This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
+        /// This exception is thrown when a user is not authorized.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
+        /// This exception is thrown when the Amazon Cognito service cannot find the requested
+        /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.TooManyRequestsException">
+        /// This exception is thrown when the user has made too many requests for a given operation.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.UnsupportedIdentityProviderException">
+        /// This exception is thrown when the specified identifier is not supported.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/DeleteIdentityProvider">REST API Reference for DeleteIdentityProvider Operation</seealso>
+        public DeleteIdentityProviderResponse DeleteIdentityProvider(DeleteIdentityProviderRequest request)
+        {
+            var marshaller = new DeleteIdentityProviderRequestMarshaller();
+            var unmarshaller = DeleteIdentityProviderResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteIdentityProviderRequest,DeleteIdentityProviderResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteIdentityProvider operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteIdentityProvider operation on AmazonCognitoIdentityProviderClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteIdentityProvider
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/DeleteIdentityProvider">REST API Reference for DeleteIdentityProvider Operation</seealso>
+        public IAsyncResult BeginDeleteIdentityProvider(DeleteIdentityProviderRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new DeleteIdentityProviderRequestMarshaller();
+            var unmarshaller = DeleteIdentityProviderResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DeleteIdentityProviderRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteIdentityProvider operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteIdentityProvider.</param>
+        /// 
+        /// <returns>Returns a  DeleteIdentityProviderResult from CognitoIdentityProvider.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/DeleteIdentityProvider">REST API Reference for DeleteIdentityProvider Operation</seealso>
+        public  DeleteIdentityProviderResponse EndDeleteIdentityProvider(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteIdentityProviderResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DeleteUser
 
         /// <summary>
@@ -2825,7 +3053,7 @@ namespace Amazon.CognitoIdentityProvider
         /// This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
-        /// This exception gets thrown when a user is not authorized.
+        /// This exception is thrown when a user is not authorized.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.PasswordResetRequiredException">
         /// This exception is thrown when a password reset is required.
@@ -2835,7 +3063,7 @@ namespace Amazon.CognitoIdentityProvider
         /// resource.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.TooManyRequestsException">
-        /// This exception gets thrown when the user has made too many requests for a given operation.
+        /// This exception is thrown when the user has made too many requests for a given operation.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserNotConfirmedException">
         /// This exception is thrown when a user is not confirmed successfully.
@@ -2903,7 +3131,7 @@ namespace Amazon.CognitoIdentityProvider
         /// This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
-        /// This exception gets thrown when a user is not authorized.
+        /// This exception is thrown when a user is not authorized.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.PasswordResetRequiredException">
         /// This exception is thrown when a password reset is required.
@@ -2913,7 +3141,7 @@ namespace Amazon.CognitoIdentityProvider
         /// resource.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.TooManyRequestsException">
-        /// This exception gets thrown when the user has made too many requests for a given operation.
+        /// This exception is thrown when the user has made too many requests for a given operation.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserNotConfirmedException">
         /// This exception is thrown when a user is not confirmed successfully.
@@ -2981,14 +3209,14 @@ namespace Amazon.CognitoIdentityProvider
         /// This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
-        /// This exception gets thrown when a user is not authorized.
+        /// This exception is thrown when a user is not authorized.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
         /// This exception is thrown when the Amazon Cognito service cannot find the requested
         /// resource.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.TooManyRequestsException">
-        /// This exception gets thrown when the user has made too many requests for a given operation.
+        /// This exception is thrown when the user has made too many requests for a given operation.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserImportInProgressException">
         /// This exception is thrown when you are trying to modify a user pool while a user import
@@ -3054,14 +3282,14 @@ namespace Amazon.CognitoIdentityProvider
         /// This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
-        /// This exception gets thrown when a user is not authorized.
+        /// This exception is thrown when a user is not authorized.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
         /// This exception is thrown when the Amazon Cognito service cannot find the requested
         /// resource.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.TooManyRequestsException">
-        /// This exception gets thrown when the user has made too many requests for a given operation.
+        /// This exception is thrown when the user has made too many requests for a given operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/DeleteUserPoolClient">REST API Reference for DeleteUserPoolClient Operation</seealso>
         public DeleteUserPoolClientResponse DeleteUserPoolClient(DeleteUserPoolClientRequest request)
@@ -3108,6 +3336,141 @@ namespace Amazon.CognitoIdentityProvider
 
         #endregion
         
+        #region  DeleteUserPoolDomain
+
+        /// <summary>
+        /// Deletes a domain for a user pool.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteUserPoolDomain service method.</param>
+        /// 
+        /// <returns>The response from the DeleteUserPoolDomain service method, as returned by CognitoIdentityProvider.</returns>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InternalErrorException">
+        /// This exception is thrown when Amazon Cognito encounters an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidParameterException">
+        /// This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
+        /// This exception is thrown when a user is not authorized.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
+        /// This exception is thrown when the Amazon Cognito service cannot find the requested
+        /// resource.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/DeleteUserPoolDomain">REST API Reference for DeleteUserPoolDomain Operation</seealso>
+        public DeleteUserPoolDomainResponse DeleteUserPoolDomain(DeleteUserPoolDomainRequest request)
+        {
+            var marshaller = new DeleteUserPoolDomainRequestMarshaller();
+            var unmarshaller = DeleteUserPoolDomainResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteUserPoolDomainRequest,DeleteUserPoolDomainResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteUserPoolDomain operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteUserPoolDomain operation on AmazonCognitoIdentityProviderClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteUserPoolDomain
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/DeleteUserPoolDomain">REST API Reference for DeleteUserPoolDomain Operation</seealso>
+        public IAsyncResult BeginDeleteUserPoolDomain(DeleteUserPoolDomainRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new DeleteUserPoolDomainRequestMarshaller();
+            var unmarshaller = DeleteUserPoolDomainResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DeleteUserPoolDomainRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteUserPoolDomain operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteUserPoolDomain.</param>
+        /// 
+        /// <returns>Returns a  DeleteUserPoolDomainResult from CognitoIdentityProvider.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/DeleteUserPoolDomain">REST API Reference for DeleteUserPoolDomain Operation</seealso>
+        public  DeleteUserPoolDomainResponse EndDeleteUserPoolDomain(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteUserPoolDomainResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DescribeIdentityProvider
+
+        /// <summary>
+        /// Gets information about a specific identity provider.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeIdentityProvider service method.</param>
+        /// 
+        /// <returns>The response from the DescribeIdentityProvider service method, as returned by CognitoIdentityProvider.</returns>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InternalErrorException">
+        /// This exception is thrown when Amazon Cognito encounters an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidParameterException">
+        /// This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
+        /// This exception is thrown when a user is not authorized.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
+        /// This exception is thrown when the Amazon Cognito service cannot find the requested
+        /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.TooManyRequestsException">
+        /// This exception is thrown when the user has made too many requests for a given operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/DescribeIdentityProvider">REST API Reference for DescribeIdentityProvider Operation</seealso>
+        public DescribeIdentityProviderResponse DescribeIdentityProvider(DescribeIdentityProviderRequest request)
+        {
+            var marshaller = new DescribeIdentityProviderRequestMarshaller();
+            var unmarshaller = DescribeIdentityProviderResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeIdentityProviderRequest,DescribeIdentityProviderResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeIdentityProvider operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeIdentityProvider operation on AmazonCognitoIdentityProviderClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeIdentityProvider
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/DescribeIdentityProvider">REST API Reference for DescribeIdentityProvider Operation</seealso>
+        public IAsyncResult BeginDescribeIdentityProvider(DescribeIdentityProviderRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new DescribeIdentityProviderRequestMarshaller();
+            var unmarshaller = DescribeIdentityProviderResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DescribeIdentityProviderRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeIdentityProvider operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeIdentityProvider.</param>
+        /// 
+        /// <returns>Returns a  DescribeIdentityProviderResult from CognitoIdentityProvider.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/DescribeIdentityProvider">REST API Reference for DescribeIdentityProvider Operation</seealso>
+        public  DescribeIdentityProviderResponse EndDescribeIdentityProvider(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeIdentityProviderResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DescribeUserImportJob
 
         /// <summary>
@@ -3123,14 +3486,14 @@ namespace Amazon.CognitoIdentityProvider
         /// This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
-        /// This exception gets thrown when a user is not authorized.
+        /// This exception is thrown when a user is not authorized.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
         /// This exception is thrown when the Amazon Cognito service cannot find the requested
         /// resource.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.TooManyRequestsException">
-        /// This exception gets thrown when the user has made too many requests for a given operation.
+        /// This exception is thrown when the user has made too many requests for a given operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/DescribeUserImportJob">REST API Reference for DescribeUserImportJob Operation</seealso>
         public DescribeUserImportJobResponse DescribeUserImportJob(DescribeUserImportJobRequest request)
@@ -3192,17 +3555,17 @@ namespace Amazon.CognitoIdentityProvider
         /// This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
-        /// This exception gets thrown when a user is not authorized.
+        /// This exception is thrown when a user is not authorized.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
         /// This exception is thrown when the Amazon Cognito service cannot find the requested
         /// resource.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.TooManyRequestsException">
-        /// This exception gets thrown when the user has made too many requests for a given operation.
+        /// This exception is thrown when the user has made too many requests for a given operation.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserPoolTaggingException">
-        /// This exception gets thrown when a user pool tag cannot be set or updated.
+        /// This exception is thrown when a user pool tag cannot be set or updated.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/DescribeUserPool">REST API Reference for DescribeUserPool Operation</seealso>
         public DescribeUserPoolResponse DescribeUserPool(DescribeUserPoolRequest request)
@@ -3265,14 +3628,14 @@ namespace Amazon.CognitoIdentityProvider
         /// This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
-        /// This exception gets thrown when a user is not authorized.
+        /// This exception is thrown when a user is not authorized.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
         /// This exception is thrown when the Amazon Cognito service cannot find the requested
         /// resource.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.TooManyRequestsException">
-        /// This exception gets thrown when the user has made too many requests for a given operation.
+        /// This exception is thrown when the user has made too many requests for a given operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/DescribeUserPoolClient">REST API Reference for DescribeUserPoolClient Operation</seealso>
         public DescribeUserPoolClientResponse DescribeUserPoolClient(DescribeUserPoolClientRequest request)
@@ -3319,6 +3682,72 @@ namespace Amazon.CognitoIdentityProvider
 
         #endregion
         
+        #region  DescribeUserPoolDomain
+
+        /// <summary>
+        /// Gets information about a domain.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeUserPoolDomain service method.</param>
+        /// 
+        /// <returns>The response from the DescribeUserPoolDomain service method, as returned by CognitoIdentityProvider.</returns>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InternalErrorException">
+        /// This exception is thrown when Amazon Cognito encounters an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidParameterException">
+        /// This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
+        /// This exception is thrown when a user is not authorized.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
+        /// This exception is thrown when the Amazon Cognito service cannot find the requested
+        /// resource.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/DescribeUserPoolDomain">REST API Reference for DescribeUserPoolDomain Operation</seealso>
+        public DescribeUserPoolDomainResponse DescribeUserPoolDomain(DescribeUserPoolDomainRequest request)
+        {
+            var marshaller = new DescribeUserPoolDomainRequestMarshaller();
+            var unmarshaller = DescribeUserPoolDomainResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeUserPoolDomainRequest,DescribeUserPoolDomainResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeUserPoolDomain operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeUserPoolDomain operation on AmazonCognitoIdentityProviderClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeUserPoolDomain
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/DescribeUserPoolDomain">REST API Reference for DescribeUserPoolDomain Operation</seealso>
+        public IAsyncResult BeginDescribeUserPoolDomain(DescribeUserPoolDomainRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new DescribeUserPoolDomainRequestMarshaller();
+            var unmarshaller = DescribeUserPoolDomainResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DescribeUserPoolDomainRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeUserPoolDomain operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeUserPoolDomain.</param>
+        /// 
+        /// <returns>Returns a  DescribeUserPoolDomainResult from CognitoIdentityProvider.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/DescribeUserPoolDomain">REST API Reference for DescribeUserPoolDomain Operation</seealso>
+        public  DescribeUserPoolDomainResponse EndDescribeUserPoolDomain(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeUserPoolDomainResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ForgetDevice
 
         /// <summary>
@@ -3337,7 +3766,7 @@ namespace Amazon.CognitoIdentityProvider
         /// This exception is thrown when the user pool configuration is invalid.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
-        /// This exception gets thrown when a user is not authorized.
+        /// This exception is thrown when a user is not authorized.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.PasswordResetRequiredException">
         /// This exception is thrown when a password reset is required.
@@ -3347,7 +3776,7 @@ namespace Amazon.CognitoIdentityProvider
         /// resource.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.TooManyRequestsException">
-        /// This exception gets thrown when the user has made too many requests for a given operation.
+        /// This exception is thrown when the user has made too many requests for a given operation.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserNotConfirmedException">
         /// This exception is thrown when a user is not confirmed successfully.
@@ -3403,7 +3832,13 @@ namespace Amazon.CognitoIdentityProvider
         #region  ForgotPassword
 
         /// <summary>
-        /// Retrieves the password for the specified client ID or username.
+        /// Calling this API causes a message to be sent to the end user with a confirmation code
+        /// that is required to change the user's password. For the <code>Username</code> parameter,
+        /// you can use the username or user alias. If a verified phone number exists for the
+        /// user, the confirmation code is sent to the phone number. Otherwise, if a verified
+        /// email exists, the confirmation code is sent to the email. If neither a verified phone
+        /// number nor a verified email exists, <code>InvalidParameterException</code> is thrown.
+        /// To use the confirmation code for resetting the password, call <a href="API_ConfirmForgotPassword.html">ConfirmForgotPassword</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ForgotPassword service method.</param>
         /// 
@@ -3439,21 +3874,21 @@ namespace Amazon.CognitoIdentityProvider
         /// This exception is thrown when a user exceeds the limit for a requested AWS resource.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
-        /// This exception gets thrown when a user is not authorized.
+        /// This exception is thrown when a user is not authorized.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
         /// This exception is thrown when the Amazon Cognito service cannot find the requested
         /// resource.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.TooManyRequestsException">
-        /// This exception gets thrown when the user has made too many requests for a given operation.
+        /// This exception is thrown when the user has made too many requests for a given operation.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.UnexpectedLambdaException">
-        /// This exception gets thrown when the Amazon Cognito service encounters an unexpected
+        /// This exception is thrown when the Amazon Cognito service encounters an unexpected
         /// exception with the AWS Lambda service.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserLambdaValidationException">
-        /// This exception gets thrown when the Amazon Cognito service encounters a user validation
+        /// This exception is thrown when the Amazon Cognito service encounters a user validation
         /// exception with the AWS Lambda service.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserNotConfirmedException">
@@ -3523,14 +3958,14 @@ namespace Amazon.CognitoIdentityProvider
         /// This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
-        /// This exception gets thrown when a user is not authorized.
+        /// This exception is thrown when a user is not authorized.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
         /// This exception is thrown when the Amazon Cognito service cannot find the requested
         /// resource.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.TooManyRequestsException">
-        /// This exception gets thrown when the user has made too many requests for a given operation.
+        /// This exception is thrown when the user has made too many requests for a given operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/GetCSVHeader">REST API Reference for GetCSVHeader Operation</seealso>
         public GetCSVHeaderResponse GetCSVHeader(GetCSVHeaderRequest request)
@@ -3595,7 +4030,7 @@ namespace Amazon.CognitoIdentityProvider
         /// This exception is thrown when the user pool configuration is invalid.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
-        /// This exception gets thrown when a user is not authorized.
+        /// This exception is thrown when a user is not authorized.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.PasswordResetRequiredException">
         /// This exception is thrown when a password reset is required.
@@ -3605,7 +4040,7 @@ namespace Amazon.CognitoIdentityProvider
         /// resource.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.TooManyRequestsException">
-        /// This exception gets thrown when the user has made too many requests for a given operation.
+        /// This exception is thrown when the user has made too many requests for a given operation.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserNotConfirmedException">
         /// This exception is thrown when a user is not confirmed successfully.
@@ -3678,14 +4113,14 @@ namespace Amazon.CognitoIdentityProvider
         /// This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
-        /// This exception gets thrown when a user is not authorized.
+        /// This exception is thrown when a user is not authorized.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
         /// This exception is thrown when the Amazon Cognito service cannot find the requested
         /// resource.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.TooManyRequestsException">
-        /// This exception gets thrown when the user has made too many requests for a given operation.
+        /// This exception is thrown when the user has made too many requests for a given operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/GetGroup">REST API Reference for GetGroup Operation</seealso>
         public GetGroupResponse GetGroup(GetGroupRequest request)
@@ -3732,6 +4167,75 @@ namespace Amazon.CognitoIdentityProvider
 
         #endregion
         
+        #region  GetIdentityProviderByIdentifier
+
+        /// <summary>
+        /// Gets the specified identity provider.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetIdentityProviderByIdentifier service method.</param>
+        /// 
+        /// <returns>The response from the GetIdentityProviderByIdentifier service method, as returned by CognitoIdentityProvider.</returns>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InternalErrorException">
+        /// This exception is thrown when Amazon Cognito encounters an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidParameterException">
+        /// This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
+        /// This exception is thrown when a user is not authorized.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
+        /// This exception is thrown when the Amazon Cognito service cannot find the requested
+        /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.TooManyRequestsException">
+        /// This exception is thrown when the user has made too many requests for a given operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/GetIdentityProviderByIdentifier">REST API Reference for GetIdentityProviderByIdentifier Operation</seealso>
+        public GetIdentityProviderByIdentifierResponse GetIdentityProviderByIdentifier(GetIdentityProviderByIdentifierRequest request)
+        {
+            var marshaller = new GetIdentityProviderByIdentifierRequestMarshaller();
+            var unmarshaller = GetIdentityProviderByIdentifierResponseUnmarshaller.Instance;
+
+            return Invoke<GetIdentityProviderByIdentifierRequest,GetIdentityProviderByIdentifierResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetIdentityProviderByIdentifier operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetIdentityProviderByIdentifier operation on AmazonCognitoIdentityProviderClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetIdentityProviderByIdentifier
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/GetIdentityProviderByIdentifier">REST API Reference for GetIdentityProviderByIdentifier Operation</seealso>
+        public IAsyncResult BeginGetIdentityProviderByIdentifier(GetIdentityProviderByIdentifierRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new GetIdentityProviderByIdentifierRequestMarshaller();
+            var unmarshaller = GetIdentityProviderByIdentifierResponseUnmarshaller.Instance;
+
+            return BeginInvoke<GetIdentityProviderByIdentifierRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetIdentityProviderByIdentifier operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetIdentityProviderByIdentifier.</param>
+        /// 
+        /// <returns>Returns a  GetIdentityProviderByIdentifierResult from CognitoIdentityProvider.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/GetIdentityProviderByIdentifier">REST API Reference for GetIdentityProviderByIdentifier Operation</seealso>
+        public  GetIdentityProviderByIdentifierResponse EndGetIdentityProviderByIdentifier(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetIdentityProviderByIdentifierResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  GetUser
 
         /// <summary>
@@ -3747,7 +4251,7 @@ namespace Amazon.CognitoIdentityProvider
         /// This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
-        /// This exception gets thrown when a user is not authorized.
+        /// This exception is thrown when a user is not authorized.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.PasswordResetRequiredException">
         /// This exception is thrown when a password reset is required.
@@ -3757,7 +4261,7 @@ namespace Amazon.CognitoIdentityProvider
         /// resource.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.TooManyRequestsException">
-        /// This exception gets thrown when the user has made too many requests for a given operation.
+        /// This exception is thrown when the user has made too many requests for a given operation.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserNotConfirmedException">
         /// This exception is thrown when a user is not confirmed successfully.
@@ -3849,7 +4353,7 @@ namespace Amazon.CognitoIdentityProvider
         /// This exception is thrown when a user exceeds the limit for a requested AWS resource.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
-        /// This exception gets thrown when a user is not authorized.
+        /// This exception is thrown when a user is not authorized.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.PasswordResetRequiredException">
         /// This exception is thrown when a password reset is required.
@@ -3859,14 +4363,14 @@ namespace Amazon.CognitoIdentityProvider
         /// resource.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.TooManyRequestsException">
-        /// This exception gets thrown when the user has made too many requests for a given operation.
+        /// This exception is thrown when the user has made too many requests for a given operation.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.UnexpectedLambdaException">
-        /// This exception gets thrown when the Amazon Cognito service encounters an unexpected
+        /// This exception is thrown when the Amazon Cognito service encounters an unexpected
         /// exception with the AWS Lambda service.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserLambdaValidationException">
-        /// This exception gets thrown when the Amazon Cognito service encounters a user validation
+        /// This exception is thrown when the Amazon Cognito service encounters a user validation
         /// exception with the AWS Lambda service.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserNotConfirmedException">
@@ -3935,7 +4439,7 @@ namespace Amazon.CognitoIdentityProvider
         /// This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
-        /// This exception gets thrown when a user is not authorized.
+        /// This exception is thrown when a user is not authorized.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.PasswordResetRequiredException">
         /// This exception is thrown when a password reset is required.
@@ -3945,7 +4449,7 @@ namespace Amazon.CognitoIdentityProvider
         /// resource.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.TooManyRequestsException">
-        /// This exception gets thrown when the user has made too many requests for a given operation.
+        /// This exception is thrown when the user has made too many requests for a given operation.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserNotConfirmedException">
         /// This exception is thrown when a user is not confirmed successfully.
@@ -4017,7 +4521,7 @@ namespace Amazon.CognitoIdentityProvider
         /// This exception is thrown when the user pool configuration is invalid.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
-        /// This exception gets thrown when a user is not authorized.
+        /// This exception is thrown when a user is not authorized.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.PasswordResetRequiredException">
         /// This exception is thrown when a password reset is required.
@@ -4027,14 +4531,14 @@ namespace Amazon.CognitoIdentityProvider
         /// resource.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.TooManyRequestsException">
-        /// This exception gets thrown when the user has made too many requests for a given operation.
+        /// This exception is thrown when the user has made too many requests for a given operation.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.UnexpectedLambdaException">
-        /// This exception gets thrown when the Amazon Cognito service encounters an unexpected
+        /// This exception is thrown when the Amazon Cognito service encounters an unexpected
         /// exception with the AWS Lambda service.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserLambdaValidationException">
-        /// This exception gets thrown when the Amazon Cognito service encounters a user validation
+        /// This exception is thrown when the Amazon Cognito service encounters a user validation
         /// exception with the AWS Lambda service.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserNotConfirmedException">
@@ -4106,7 +4610,7 @@ namespace Amazon.CognitoIdentityProvider
         /// This exception is thrown when the user pool configuration is invalid.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
-        /// This exception gets thrown when a user is not authorized.
+        /// This exception is thrown when a user is not authorized.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.PasswordResetRequiredException">
         /// This exception is thrown when a password reset is required.
@@ -4116,7 +4620,7 @@ namespace Amazon.CognitoIdentityProvider
         /// resource.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.TooManyRequestsException">
-        /// This exception gets thrown when the user has made too many requests for a given operation.
+        /// This exception is thrown when the user has made too many requests for a given operation.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserNotConfirmedException">
         /// This exception is thrown when a user is not confirmed successfully.
@@ -4189,14 +4693,14 @@ namespace Amazon.CognitoIdentityProvider
         /// This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
-        /// This exception gets thrown when a user is not authorized.
+        /// This exception is thrown when a user is not authorized.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
         /// This exception is thrown when the Amazon Cognito service cannot find the requested
         /// resource.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.TooManyRequestsException">
-        /// This exception gets thrown when the user has made too many requests for a given operation.
+        /// This exception is thrown when the user has made too many requests for a given operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/ListGroups">REST API Reference for ListGroups Operation</seealso>
         public ListGroupsResponse ListGroups(ListGroupsRequest request)
@@ -4243,6 +4747,75 @@ namespace Amazon.CognitoIdentityProvider
 
         #endregion
         
+        #region  ListIdentityProviders
+
+        /// <summary>
+        /// Lists information about all identity providers for a user pool.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListIdentityProviders service method.</param>
+        /// 
+        /// <returns>The response from the ListIdentityProviders service method, as returned by CognitoIdentityProvider.</returns>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InternalErrorException">
+        /// This exception is thrown when Amazon Cognito encounters an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidParameterException">
+        /// This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
+        /// This exception is thrown when a user is not authorized.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
+        /// This exception is thrown when the Amazon Cognito service cannot find the requested
+        /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.TooManyRequestsException">
+        /// This exception is thrown when the user has made too many requests for a given operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/ListIdentityProviders">REST API Reference for ListIdentityProviders Operation</seealso>
+        public ListIdentityProvidersResponse ListIdentityProviders(ListIdentityProvidersRequest request)
+        {
+            var marshaller = new ListIdentityProvidersRequestMarshaller();
+            var unmarshaller = ListIdentityProvidersResponseUnmarshaller.Instance;
+
+            return Invoke<ListIdentityProvidersRequest,ListIdentityProvidersResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListIdentityProviders operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListIdentityProviders operation on AmazonCognitoIdentityProviderClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListIdentityProviders
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/ListIdentityProviders">REST API Reference for ListIdentityProviders Operation</seealso>
+        public IAsyncResult BeginListIdentityProviders(ListIdentityProvidersRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new ListIdentityProvidersRequestMarshaller();
+            var unmarshaller = ListIdentityProvidersResponseUnmarshaller.Instance;
+
+            return BeginInvoke<ListIdentityProvidersRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListIdentityProviders operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListIdentityProviders.</param>
+        /// 
+        /// <returns>Returns a  ListIdentityProvidersResult from CognitoIdentityProvider.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/ListIdentityProviders">REST API Reference for ListIdentityProviders Operation</seealso>
+        public  ListIdentityProvidersResponse EndListIdentityProviders(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListIdentityProvidersResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ListUserImportJobs
 
         /// <summary>
@@ -4258,14 +4831,14 @@ namespace Amazon.CognitoIdentityProvider
         /// This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
-        /// This exception gets thrown when a user is not authorized.
+        /// This exception is thrown when a user is not authorized.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
         /// This exception is thrown when the Amazon Cognito service cannot find the requested
         /// resource.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.TooManyRequestsException">
-        /// This exception gets thrown when the user has made too many requests for a given operation.
+        /// This exception is thrown when the user has made too many requests for a given operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/ListUserImportJobs">REST API Reference for ListUserImportJobs Operation</seealso>
         public ListUserImportJobsResponse ListUserImportJobs(ListUserImportJobsRequest request)
@@ -4327,14 +4900,14 @@ namespace Amazon.CognitoIdentityProvider
         /// This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
-        /// This exception gets thrown when a user is not authorized.
+        /// This exception is thrown when a user is not authorized.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
         /// This exception is thrown when the Amazon Cognito service cannot find the requested
         /// resource.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.TooManyRequestsException">
-        /// This exception gets thrown when the user has made too many requests for a given operation.
+        /// This exception is thrown when the user has made too many requests for a given operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/ListUserPoolClients">REST API Reference for ListUserPoolClients Operation</seealso>
         public ListUserPoolClientsResponse ListUserPoolClients(ListUserPoolClientsRequest request)
@@ -4396,10 +4969,10 @@ namespace Amazon.CognitoIdentityProvider
         /// This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
-        /// This exception gets thrown when a user is not authorized.
+        /// This exception is thrown when a user is not authorized.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.TooManyRequestsException">
-        /// This exception gets thrown when the user has made too many requests for a given operation.
+        /// This exception is thrown when the user has made too many requests for a given operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/ListUserPools">REST API Reference for ListUserPools Operation</seealso>
         public ListUserPoolsResponse ListUserPools(ListUserPoolsRequest request)
@@ -4461,14 +5034,14 @@ namespace Amazon.CognitoIdentityProvider
         /// This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
-        /// This exception gets thrown when a user is not authorized.
+        /// This exception is thrown when a user is not authorized.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
         /// This exception is thrown when the Amazon Cognito service cannot find the requested
         /// resource.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.TooManyRequestsException">
-        /// This exception gets thrown when the user has made too many requests for a given operation.
+        /// This exception is thrown when the user has made too many requests for a given operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/ListUsers">REST API Reference for ListUsers Operation</seealso>
         public ListUsersResponse ListUsers(ListUsersRequest request)
@@ -4535,14 +5108,14 @@ namespace Amazon.CognitoIdentityProvider
         /// This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
-        /// This exception gets thrown when a user is not authorized.
+        /// This exception is thrown when a user is not authorized.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
         /// This exception is thrown when the Amazon Cognito service cannot find the requested
         /// resource.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.TooManyRequestsException">
-        /// This exception gets thrown when the user has made too many requests for a given operation.
+        /// This exception is thrown when the user has made too many requests for a given operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/ListUsersInGroup">REST API Reference for ListUsersInGroup Operation</seealso>
         public ListUsersInGroupResponse ListUsersInGroup(ListUsersInGroupRequest request)
@@ -4629,21 +5202,21 @@ namespace Amazon.CognitoIdentityProvider
         /// This exception is thrown when a user exceeds the limit for a requested AWS resource.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
-        /// This exception gets thrown when a user is not authorized.
+        /// This exception is thrown when a user is not authorized.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
         /// This exception is thrown when the Amazon Cognito service cannot find the requested
         /// resource.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.TooManyRequestsException">
-        /// This exception gets thrown when the user has made too many requests for a given operation.
+        /// This exception is thrown when the user has made too many requests for a given operation.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.UnexpectedLambdaException">
-        /// This exception gets thrown when the Amazon Cognito service encounters an unexpected
+        /// This exception is thrown when the Amazon Cognito service encounters an unexpected
         /// exception with the AWS Lambda service.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserLambdaValidationException">
-        /// This exception gets thrown when the Amazon Cognito service encounters a user validation
+        /// This exception is thrown when the Amazon Cognito service encounters a user validation
         /// exception with the AWS Lambda service.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserNotFoundException">
@@ -4744,7 +5317,7 @@ namespace Amazon.CognitoIdentityProvider
         /// (MFA) method.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
-        /// This exception gets thrown when a user is not authorized.
+        /// This exception is thrown when a user is not authorized.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.PasswordResetRequiredException">
         /// This exception is thrown when a password reset is required.
@@ -4754,14 +5327,14 @@ namespace Amazon.CognitoIdentityProvider
         /// resource.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.TooManyRequestsException">
-        /// This exception gets thrown when the user has made too many requests for a given operation.
+        /// This exception is thrown when the user has made too many requests for a given operation.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.UnexpectedLambdaException">
-        /// This exception gets thrown when the Amazon Cognito service encounters an unexpected
+        /// This exception is thrown when the Amazon Cognito service encounters an unexpected
         /// exception with the AWS Lambda service.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserLambdaValidationException">
-        /// This exception gets thrown when the Amazon Cognito service encounters a user validation
+        /// This exception is thrown when the Amazon Cognito service encounters a user validation
         /// exception with the AWS Lambda service.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserNotConfirmedException">
@@ -4832,7 +5405,7 @@ namespace Amazon.CognitoIdentityProvider
         /// This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
-        /// This exception gets thrown when a user is not authorized.
+        /// This exception is thrown when a user is not authorized.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.PasswordResetRequiredException">
         /// This exception is thrown when a password reset is required.
@@ -4932,21 +5505,21 @@ namespace Amazon.CognitoIdentityProvider
         /// configuration for the user pool.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
-        /// This exception gets thrown when a user is not authorized.
+        /// This exception is thrown when a user is not authorized.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
         /// This exception is thrown when the Amazon Cognito service cannot find the requested
         /// resource.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.TooManyRequestsException">
-        /// This exception gets thrown when the user has made too many requests for a given operation.
+        /// This exception is thrown when the user has made too many requests for a given operation.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.UnexpectedLambdaException">
-        /// This exception gets thrown when the Amazon Cognito service encounters an unexpected
+        /// This exception is thrown when the Amazon Cognito service encounters an unexpected
         /// exception with the AWS Lambda service.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserLambdaValidationException">
-        /// This exception gets thrown when the Amazon Cognito service encounters a user validation
+        /// This exception is thrown when the Amazon Cognito service encounters a user validation
         /// exception with the AWS Lambda service.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.UsernameExistsException">
@@ -5013,7 +5586,7 @@ namespace Amazon.CognitoIdentityProvider
         /// This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
-        /// This exception gets thrown when a user is not authorized.
+        /// This exception is thrown when a user is not authorized.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.PreconditionNotMetException">
         /// This exception is thrown when a precondition is not met.
@@ -5023,7 +5596,7 @@ namespace Amazon.CognitoIdentityProvider
         /// resource.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.TooManyRequestsException">
-        /// This exception gets thrown when the user has made too many requests for a given operation.
+        /// This exception is thrown when the user has made too many requests for a given operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/StartUserImportJob">REST API Reference for StartUserImportJob Operation</seealso>
         public StartUserImportJobResponse StartUserImportJob(StartUserImportJobRequest request)
@@ -5085,7 +5658,7 @@ namespace Amazon.CognitoIdentityProvider
         /// This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
-        /// This exception gets thrown when a user is not authorized.
+        /// This exception is thrown when a user is not authorized.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.PreconditionNotMetException">
         /// This exception is thrown when a precondition is not met.
@@ -5095,7 +5668,7 @@ namespace Amazon.CognitoIdentityProvider
         /// resource.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.TooManyRequestsException">
-        /// This exception gets thrown when the user has made too many requests for a given operation.
+        /// This exception is thrown when the user has made too many requests for a given operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/StopUserImportJob">REST API Reference for StopUserImportJob Operation</seealso>
         public StopUserImportJobResponse StopUserImportJob(StopUserImportJobRequest request)
@@ -5160,7 +5733,7 @@ namespace Amazon.CognitoIdentityProvider
         /// This exception is thrown when the user pool configuration is invalid.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
-        /// This exception gets thrown when a user is not authorized.
+        /// This exception is thrown when a user is not authorized.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.PasswordResetRequiredException">
         /// This exception is thrown when a password reset is required.
@@ -5170,7 +5743,7 @@ namespace Amazon.CognitoIdentityProvider
         /// resource.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.TooManyRequestsException">
-        /// This exception gets thrown when the user has made too many requests for a given operation.
+        /// This exception is thrown when the user has made too many requests for a given operation.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserNotConfirmedException">
         /// This exception is thrown when a user is not confirmed successfully.
@@ -5243,14 +5816,14 @@ namespace Amazon.CognitoIdentityProvider
         /// This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
-        /// This exception gets thrown when a user is not authorized.
+        /// This exception is thrown when a user is not authorized.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
         /// This exception is thrown when the Amazon Cognito service cannot find the requested
         /// resource.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.TooManyRequestsException">
-        /// This exception gets thrown when the user has made too many requests for a given operation.
+        /// This exception is thrown when the user has made too many requests for a given operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/UpdateGroup">REST API Reference for UpdateGroup Operation</seealso>
         public UpdateGroupResponse UpdateGroup(UpdateGroupRequest request)
@@ -5293,6 +5866,78 @@ namespace Amazon.CognitoIdentityProvider
         public  UpdateGroupResponse EndUpdateGroup(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateGroupResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpdateIdentityProvider
+
+        /// <summary>
+        /// Updates identity provider information for a user pool.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateIdentityProvider service method.</param>
+        /// 
+        /// <returns>The response from the UpdateIdentityProvider service method, as returned by CognitoIdentityProvider.</returns>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InternalErrorException">
+        /// This exception is thrown when Amazon Cognito encounters an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidParameterException">
+        /// This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
+        /// This exception is thrown when a user is not authorized.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
+        /// This exception is thrown when the Amazon Cognito service cannot find the requested
+        /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.TooManyRequestsException">
+        /// This exception is thrown when the user has made too many requests for a given operation.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.UnsupportedIdentityProviderException">
+        /// This exception is thrown when the specified identifier is not supported.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/UpdateIdentityProvider">REST API Reference for UpdateIdentityProvider Operation</seealso>
+        public UpdateIdentityProviderResponse UpdateIdentityProvider(UpdateIdentityProviderRequest request)
+        {
+            var marshaller = new UpdateIdentityProviderRequestMarshaller();
+            var unmarshaller = UpdateIdentityProviderResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateIdentityProviderRequest,UpdateIdentityProviderResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateIdentityProvider operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateIdentityProvider operation on AmazonCognitoIdentityProviderClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateIdentityProvider
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/UpdateIdentityProvider">REST API Reference for UpdateIdentityProvider Operation</seealso>
+        public IAsyncResult BeginUpdateIdentityProvider(UpdateIdentityProviderRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new UpdateIdentityProviderRequestMarshaller();
+            var unmarshaller = UpdateIdentityProviderResponseUnmarshaller.Instance;
+
+            return BeginInvoke<UpdateIdentityProviderRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateIdentityProvider operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateIdentityProvider.</param>
+        /// 
+        /// <returns>Returns a  UpdateIdentityProviderResult from CognitoIdentityProvider.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/UpdateIdentityProvider">REST API Reference for UpdateIdentityProvider Operation</seealso>
+        public  UpdateIdentityProviderResponse EndUpdateIdentityProvider(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateIdentityProviderResponse>(asyncResult);
         }
 
         #endregion
@@ -5344,7 +5989,7 @@ namespace Amazon.CognitoIdentityProvider
         /// configuration for the user pool.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
-        /// This exception gets thrown when a user is not authorized.
+        /// This exception is thrown when a user is not authorized.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.PasswordResetRequiredException">
         /// This exception is thrown when a password reset is required.
@@ -5354,14 +5999,14 @@ namespace Amazon.CognitoIdentityProvider
         /// resource.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.TooManyRequestsException">
-        /// This exception gets thrown when the user has made too many requests for a given operation.
+        /// This exception is thrown when the user has made too many requests for a given operation.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.UnexpectedLambdaException">
-        /// This exception gets thrown when the Amazon Cognito service encounters an unexpected
+        /// This exception is thrown when the Amazon Cognito service encounters an unexpected
         /// exception with the AWS Lambda service.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserLambdaValidationException">
-        /// This exception gets thrown when the Amazon Cognito service encounters a user validation
+        /// This exception is thrown when the Amazon Cognito service encounters a user validation
         /// exception with the AWS Lambda service.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserNotConfirmedException">
@@ -5447,21 +6092,21 @@ namespace Amazon.CognitoIdentityProvider
         /// configuration for the user pool.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
-        /// This exception gets thrown when a user is not authorized.
+        /// This exception is thrown when a user is not authorized.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
         /// This exception is thrown when the Amazon Cognito service cannot find the requested
         /// resource.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.TooManyRequestsException">
-        /// This exception gets thrown when the user has made too many requests for a given operation.
+        /// This exception is thrown when the user has made too many requests for a given operation.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserImportInProgressException">
         /// This exception is thrown when you are trying to modify a user pool while a user import
         /// job is in progress for that pool.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserPoolTaggingException">
-        /// This exception gets thrown when a user pool tag cannot be set or updated.
+        /// This exception is thrown when a user pool tag cannot be set or updated.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/UpdateUserPool">REST API Reference for UpdateUserPool Operation</seealso>
         public UpdateUserPoolResponse UpdateUserPool(UpdateUserPoolRequest request)
@@ -5519,18 +6164,24 @@ namespace Amazon.CognitoIdentityProvider
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.InternalErrorException">
         /// This exception is thrown when Amazon Cognito encounters an internal error.
         /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidOAuthFlowException">
+        /// This exception is thrown when the specified OAuth flow is invalid.
+        /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidParameterException">
         /// This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
-        /// This exception gets thrown when a user is not authorized.
+        /// This exception is thrown when a user is not authorized.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
         /// This exception is thrown when the Amazon Cognito service cannot find the requested
         /// resource.
         /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.ScopeDoesNotExistException">
+        /// This exception is thrown when the specified scope does not exist.
+        /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.TooManyRequestsException">
-        /// This exception gets thrown when the user has made too many requests for a given operation.
+        /// This exception is thrown when the user has made too many requests for a given operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/UpdateUserPoolClient">REST API Reference for UpdateUserPoolClient Operation</seealso>
         public UpdateUserPoolClientResponse UpdateUserPoolClient(UpdateUserPoolClientRequest request)
@@ -5601,7 +6252,7 @@ namespace Amazon.CognitoIdentityProvider
         /// This exception is thrown when a user exceeds the limit for a requested AWS resource.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
-        /// This exception gets thrown when a user is not authorized.
+        /// This exception is thrown when a user is not authorized.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.PasswordResetRequiredException">
         /// This exception is thrown when a password reset is required.
@@ -5611,7 +6262,7 @@ namespace Amazon.CognitoIdentityProvider
         /// resource.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.TooManyRequestsException">
-        /// This exception gets thrown when the user has made too many requests for a given operation.
+        /// This exception is thrown when the user has made too many requests for a given operation.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserNotConfirmedException">
         /// This exception is thrown when a user is not confirmed successfully.

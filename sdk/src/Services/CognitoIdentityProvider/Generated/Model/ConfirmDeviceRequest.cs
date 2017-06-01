@@ -29,7 +29,7 @@ namespace Amazon.CognitoIdentityProvider.Model
 {
     /// <summary>
     /// Container for the parameters to the ConfirmDevice operation.
-    /// Confirms tracking of the device. This API call is the call that beings device tracking.
+    /// Confirms tracking of the device. This API call is the call that begins device tracking.
     /// </summary>
     public partial class ConfirmDeviceRequest : AmazonCognitoIdentityProviderRequest
     {

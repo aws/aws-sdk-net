@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CognitoIdentityProvider.Model
 {
     /// <summary>
-    /// A container with information about the user pool type.
+    /// A container for information about the user pool type.
     /// </summary>
     public partial class UserPoolType
     {
@@ -59,7 +59,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property AdminCreateUserConfig. 
         /// <para>
-        /// The configuration for AdminCreateUser requests.
+        /// The configuration for <code>AdminCreateUser</code> requests.
         /// </para>
         /// </summary>
         public AdminCreateUserConfigType AdminCreateUserConfig
@@ -113,7 +113,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property CreationDate. 
         /// <para>
-        /// The creation date of a user pool.
+        /// The date the user pool was created.
         /// </para>
         /// </summary>
         public DateTime CreationDate
@@ -257,7 +257,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property LambdaConfig. 
         /// <para>
-        /// A container describing the AWS Lambda triggers associated with a user pool.
+        /// A container for the AWS Lambda triggers associated with a user pool.
         /// </para>
         /// </summary>
         public LambdaConfigType LambdaConfig
@@ -275,7 +275,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property LastModifiedDate. 
         /// <para>
-        /// The last modified date of a user pool.
+        /// The date the user pool was last modified.
         /// </para>
         /// </summary>
         public DateTime LastModifiedDate
@@ -344,7 +344,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property Policies. 
         /// <para>
-        /// A container describing the policies associated with a user pool.
+        /// A container for the policies associated with a user pool.
         /// </para>
         /// </summary>
         public UserPoolPolicyType Policies
@@ -416,7 +416,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property SmsConfigurationFailure. 
         /// <para>
-        /// The reason why the SMS configuration cannot send the message(s) to your users.
+        /// The reason why the SMS configuration cannot send the messages to your users.
         /// </para>
         /// </summary>
         public string SmsConfigurationFailure

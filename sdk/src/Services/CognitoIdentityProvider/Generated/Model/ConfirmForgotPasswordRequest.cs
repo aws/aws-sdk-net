@@ -30,8 +30,7 @@ namespace Amazon.CognitoIdentityProvider.Model
 {
     /// <summary>
     /// Container for the parameters to the ConfirmForgotPassword operation.
-    /// Allows a user to enter a code provided when they reset their password to update their
-    /// password.
+    /// Allows a user to enter a confirmation code to reset a forgotten password.
     /// </summary>
     public partial class ConfirmForgotPasswordRequest : AmazonCognitoIdentityProviderRequest
     {
@@ -62,7 +61,8 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property ConfirmationCode. 
         /// <para>
-        /// The confirmation code sent by a user's request to retrieve a forgotten password.
+        /// The confirmation code sent by a user's request to retrieve a forgotten password. For
+        /// more information, see <a href="API_ForgotPassword.html">ForgotPassword</a> 
         /// </para>
         /// </summary>
         public string ConfirmationCode
@@ -80,7 +80,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property Password. 
         /// <para>
-        /// The password sent by sent by a user's request to retrieve a forgotten password.
+        /// The password sent by a user's request to retrieve a forgotten password.
         /// </para>
         /// </summary>
         public string Password

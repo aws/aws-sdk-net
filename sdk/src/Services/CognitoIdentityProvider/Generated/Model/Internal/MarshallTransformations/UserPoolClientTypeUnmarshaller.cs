@@ -64,6 +64,30 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("AllowedOAuthFlows", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.AllowedOAuthFlows = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("AllowedOAuthFlowsUserPoolClient", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.AllowedOAuthFlowsUserPoolClient = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("AllowedOAuthScopes", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.AllowedOAuthScopes = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("CallbackURLs", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.CallbackURLs = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ClientId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -88,6 +112,12 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
                     unmarshalledObject.CreationDate = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("DefaultRedirectURI", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.DefaultRedirectURI = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ExplicitAuthFlows", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
@@ -100,6 +130,12 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
                     unmarshalledObject.LastModifiedDate = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("LogoutURLs", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.LogoutURLs = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ReadAttributes", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
@@ -110,6 +146,12 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = IntUnmarshaller.Instance;
                     unmarshalledObject.RefreshTokenValidity = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("SupportedIdentityProviders", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.SupportedIdentityProviders = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("UserPoolId", targetDepth))

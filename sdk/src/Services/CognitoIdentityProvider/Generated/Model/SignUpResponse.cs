@@ -34,6 +34,7 @@ namespace Amazon.CognitoIdentityProvider.Model
     {
         private CodeDeliveryDetailsType _codeDeliveryDetails;
         private bool? _userConfirmed;
+        private string _userSub;
 
         /// <summary>
         /// Gets and sets the property CodeDeliveryDetails. 
@@ -70,6 +71,24 @@ namespace Amazon.CognitoIdentityProvider.Model
         internal bool IsSetUserConfirmed()
         {
             return this._userConfirmed.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property UserSub. 
+        /// <para>
+        /// The UUID of the authenticated user. This is not the same as <code>username</code>.
+        /// </para>
+        /// </summary>
+        public string UserSub
+        {
+            get { return this._userSub; }
+            set { this._userSub = value; }
+        }
+
+        // Check to see if UserSub property is set
+        internal bool IsSetUserSub()
+        {
+            return this._userSub != null;
         }
 
     }

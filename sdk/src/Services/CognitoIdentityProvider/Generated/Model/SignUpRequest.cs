@@ -102,6 +102,11 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <para>
         /// An array of name-value pairs representing user attributes.
         /// </para>
+        ///  
+        /// <para>
+        /// For custom attributes, you must prepend the <code>custom:</code> prefix to the attribute
+        /// name.
+        /// </para>
         /// </summary>
         public List<AttributeType> UserAttributes
         {

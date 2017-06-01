@@ -30,7 +30,13 @@ namespace Amazon.CognitoIdentityProvider.Model
 {
     /// <summary>
     /// Container for the parameters to the ForgotPassword operation.
-    /// Retrieves the password for the specified client ID or username.
+    /// Calling this API causes a message to be sent to the end user with a confirmation code
+    /// that is required to change the user's password. For the <code>Username</code> parameter,
+    /// you can use the username or user alias. If a verified phone number exists for the
+    /// user, the confirmation code is sent to the phone number. Otherwise, if a verified
+    /// email exists, the confirmation code is sent to the email. If neither a verified phone
+    /// number nor a verified email exists, <code>InvalidParameterException</code> is thrown.
+    /// To use the confirmation code for resetting the password, call <a href="API_ConfirmForgotPassword.html">ConfirmForgotPassword</a>.
     /// </summary>
     public partial class ForgotPasswordRequest : AmazonCognitoIdentityProviderRequest
     {

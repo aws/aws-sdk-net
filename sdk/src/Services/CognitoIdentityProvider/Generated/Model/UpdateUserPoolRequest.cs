@@ -51,7 +51,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property AdminCreateUserConfig. 
         /// <para>
-        /// The configuration for AdminCreateUser requests.
+        /// The configuration for <code>AdminCreateUser</code> requests.
         /// </para>
         /// </summary>
         public AdminCreateUserConfigType AdminCreateUserConfig
@@ -142,7 +142,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property EmailVerificationSubject. 
         /// <para>
-        /// The subject of the email verfication message.
+        /// The subject of the email verification message.
         /// </para>
         /// </summary>
         public string EmailVerificationSubject

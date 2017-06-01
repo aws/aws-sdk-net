@@ -42,7 +42,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property CreationDate. 
         /// <para>
-        /// The creation date in a user pool description.
+        /// The date the user pool description was created.
         /// </para>
         /// </summary>
         public DateTime CreationDate
@@ -96,7 +96,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property LastModifiedDate. 
         /// <para>
-        /// The last modified date in a user pool description.
+        /// The date the user pool description was last modified.
         /// </para>
         /// </summary>
         public DateTime LastModifiedDate

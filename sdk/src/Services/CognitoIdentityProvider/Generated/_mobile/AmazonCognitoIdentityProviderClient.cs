@@ -36,14 +36,13 @@ namespace Amazon.CognitoIdentityProvider
     /// <summary>
     /// Implementation for accessing CognitoIdentityProvider
     ///
-    /// Using the Amazon Cognito Your User Pools API, you can create a user pool to manage
-    /// directories and users. You can authenticate a user to obtain tokens related to user
-    /// identity and access policies.
+    /// Using the Amazon Cognito User Pools API, you can create a user pool to manage directories
+    /// and users. You can authenticate a user to obtain tokens related to user identity and
+    /// access policies.
     /// 
     ///  
     /// <para>
-    /// This API reference provides information about user pools in Amazon Cognito Your User
-    /// Pools.
+    /// This API reference provides information about user pools in Amazon Cognito User Pools.
     /// </para>
     ///  
     /// <para>
@@ -1074,6 +1073,38 @@ namespace Amazon.CognitoIdentityProvider
 
         #endregion
         
+        #region  CreateIdentityProvider
+
+        internal CreateIdentityProviderResponse CreateIdentityProvider(CreateIdentityProviderRequest request)
+        {
+            var marshaller = new CreateIdentityProviderRequestMarshaller();
+            var unmarshaller = CreateIdentityProviderResponseUnmarshaller.Instance;
+
+            return Invoke<CreateIdentityProviderRequest,CreateIdentityProviderResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateIdentityProvider operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateIdentityProvider operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/CreateIdentityProvider">REST API Reference for CreateIdentityProvider Operation</seealso>
+        public Task<CreateIdentityProviderResponse> CreateIdentityProviderAsync(CreateIdentityProviderRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new CreateIdentityProviderRequestMarshaller();
+            var unmarshaller = CreateIdentityProviderResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateIdentityProviderRequest,CreateIdentityProviderResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateUserImportJob
 
         internal CreateUserImportJobResponse CreateUserImportJob(CreateUserImportJobRequest request)
@@ -1170,6 +1201,38 @@ namespace Amazon.CognitoIdentityProvider
 
         #endregion
         
+        #region  CreateUserPoolDomain
+
+        internal CreateUserPoolDomainResponse CreateUserPoolDomain(CreateUserPoolDomainRequest request)
+        {
+            var marshaller = new CreateUserPoolDomainRequestMarshaller();
+            var unmarshaller = CreateUserPoolDomainResponseUnmarshaller.Instance;
+
+            return Invoke<CreateUserPoolDomainRequest,CreateUserPoolDomainResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateUserPoolDomain operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateUserPoolDomain operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/CreateUserPoolDomain">REST API Reference for CreateUserPoolDomain Operation</seealso>
+        public Task<CreateUserPoolDomainResponse> CreateUserPoolDomainAsync(CreateUserPoolDomainRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new CreateUserPoolDomainRequestMarshaller();
+            var unmarshaller = CreateUserPoolDomainResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateUserPoolDomainRequest,CreateUserPoolDomainResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeleteGroup
 
         internal DeleteGroupResponse DeleteGroup(DeleteGroupRequest request)
@@ -1197,6 +1260,38 @@ namespace Amazon.CognitoIdentityProvider
             var unmarshaller = DeleteGroupResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteGroupRequest,DeleteGroupResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteIdentityProvider
+
+        internal DeleteIdentityProviderResponse DeleteIdentityProvider(DeleteIdentityProviderRequest request)
+        {
+            var marshaller = new DeleteIdentityProviderRequestMarshaller();
+            var unmarshaller = DeleteIdentityProviderResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteIdentityProviderRequest,DeleteIdentityProviderResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteIdentityProvider operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteIdentityProvider operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/DeleteIdentityProvider">REST API Reference for DeleteIdentityProvider Operation</seealso>
+        public Task<DeleteIdentityProviderResponse> DeleteIdentityProviderAsync(DeleteIdentityProviderRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DeleteIdentityProviderRequestMarshaller();
+            var unmarshaller = DeleteIdentityProviderResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteIdentityProviderRequest,DeleteIdentityProviderResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -1330,6 +1425,70 @@ namespace Amazon.CognitoIdentityProvider
 
         #endregion
         
+        #region  DeleteUserPoolDomain
+
+        internal DeleteUserPoolDomainResponse DeleteUserPoolDomain(DeleteUserPoolDomainRequest request)
+        {
+            var marshaller = new DeleteUserPoolDomainRequestMarshaller();
+            var unmarshaller = DeleteUserPoolDomainResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteUserPoolDomainRequest,DeleteUserPoolDomainResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteUserPoolDomain operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteUserPoolDomain operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/DeleteUserPoolDomain">REST API Reference for DeleteUserPoolDomain Operation</seealso>
+        public Task<DeleteUserPoolDomainResponse> DeleteUserPoolDomainAsync(DeleteUserPoolDomainRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DeleteUserPoolDomainRequestMarshaller();
+            var unmarshaller = DeleteUserPoolDomainResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteUserPoolDomainRequest,DeleteUserPoolDomainResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeIdentityProvider
+
+        internal DescribeIdentityProviderResponse DescribeIdentityProvider(DescribeIdentityProviderRequest request)
+        {
+            var marshaller = new DescribeIdentityProviderRequestMarshaller();
+            var unmarshaller = DescribeIdentityProviderResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeIdentityProviderRequest,DescribeIdentityProviderResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeIdentityProvider operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeIdentityProvider operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/DescribeIdentityProvider">REST API Reference for DescribeIdentityProvider Operation</seealso>
+        public Task<DescribeIdentityProviderResponse> DescribeIdentityProviderAsync(DescribeIdentityProviderRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DescribeIdentityProviderRequestMarshaller();
+            var unmarshaller = DescribeIdentityProviderResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeIdentityProviderRequest,DescribeIdentityProviderResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DescribeUserImportJob
 
         internal DescribeUserImportJobResponse DescribeUserImportJob(DescribeUserImportJobRequest request)
@@ -1421,6 +1580,38 @@ namespace Amazon.CognitoIdentityProvider
             var unmarshaller = DescribeUserPoolClientResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeUserPoolClientRequest,DescribeUserPoolClientResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeUserPoolDomain
+
+        internal DescribeUserPoolDomainResponse DescribeUserPoolDomain(DescribeUserPoolDomainRequest request)
+        {
+            var marshaller = new DescribeUserPoolDomainRequestMarshaller();
+            var unmarshaller = DescribeUserPoolDomainResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeUserPoolDomainRequest,DescribeUserPoolDomainResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeUserPoolDomain operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeUserPoolDomain operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/DescribeUserPoolDomain">REST API Reference for DescribeUserPoolDomain Operation</seealso>
+        public Task<DescribeUserPoolDomainResponse> DescribeUserPoolDomainAsync(DescribeUserPoolDomainRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DescribeUserPoolDomainRequestMarshaller();
+            var unmarshaller = DescribeUserPoolDomainResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeUserPoolDomainRequest,DescribeUserPoolDomainResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -1581,6 +1772,38 @@ namespace Amazon.CognitoIdentityProvider
             var unmarshaller = GetGroupResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetGroupRequest,GetGroupResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetIdentityProviderByIdentifier
+
+        internal GetIdentityProviderByIdentifierResponse GetIdentityProviderByIdentifier(GetIdentityProviderByIdentifierRequest request)
+        {
+            var marshaller = new GetIdentityProviderByIdentifierRequestMarshaller();
+            var unmarshaller = GetIdentityProviderByIdentifierResponseUnmarshaller.Instance;
+
+            return Invoke<GetIdentityProviderByIdentifierRequest,GetIdentityProviderByIdentifierResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetIdentityProviderByIdentifier operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetIdentityProviderByIdentifier operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/GetIdentityProviderByIdentifier">REST API Reference for GetIdentityProviderByIdentifier Operation</seealso>
+        public Task<GetIdentityProviderByIdentifierResponse> GetIdentityProviderByIdentifierAsync(GetIdentityProviderByIdentifierRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new GetIdentityProviderByIdentifierRequestMarshaller();
+            var unmarshaller = GetIdentityProviderByIdentifierResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetIdentityProviderByIdentifierRequest,GetIdentityProviderByIdentifierResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -1773,6 +1996,38 @@ namespace Amazon.CognitoIdentityProvider
             var unmarshaller = ListGroupsResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListGroupsRequest,ListGroupsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListIdentityProviders
+
+        internal ListIdentityProvidersResponse ListIdentityProviders(ListIdentityProvidersRequest request)
+        {
+            var marshaller = new ListIdentityProvidersRequestMarshaller();
+            var unmarshaller = ListIdentityProvidersResponseUnmarshaller.Instance;
+
+            return Invoke<ListIdentityProvidersRequest,ListIdentityProvidersResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListIdentityProviders operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListIdentityProviders operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/ListIdentityProviders">REST API Reference for ListIdentityProviders Operation</seealso>
+        public Task<ListIdentityProvidersResponse> ListIdentityProvidersAsync(ListIdentityProvidersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new ListIdentityProvidersRequestMarshaller();
+            var unmarshaller = ListIdentityProvidersResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListIdentityProvidersRequest,ListIdentityProvidersResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -2189,6 +2444,38 @@ namespace Amazon.CognitoIdentityProvider
             var unmarshaller = UpdateGroupResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdateGroupRequest,UpdateGroupResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateIdentityProvider
+
+        internal UpdateIdentityProviderResponse UpdateIdentityProvider(UpdateIdentityProviderRequest request)
+        {
+            var marshaller = new UpdateIdentityProviderRequestMarshaller();
+            var unmarshaller = UpdateIdentityProviderResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateIdentityProviderRequest,UpdateIdentityProviderResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateIdentityProvider operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateIdentityProvider operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/UpdateIdentityProvider">REST API Reference for UpdateIdentityProvider Operation</seealso>
+        public Task<UpdateIdentityProviderResponse> UpdateIdentityProviderAsync(UpdateIdentityProviderRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new UpdateIdentityProviderRequestMarshaller();
+            var unmarshaller = UpdateIdentityProviderResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateIdentityProviderRequest,UpdateIdentityProviderResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 

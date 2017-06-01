@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CognitoIdentityProvider.Model
 {
     /// <summary>
-    /// The SMS configuratoin type.
+    /// The SMS configuration type.
     /// </summary>
     public partial class SmsConfigurationType
     {

@@ -47,6 +47,11 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <para>
         /// An array of strings representing the user attribute names you wish to delete.
         /// </para>
+        ///  
+        /// <para>
+        /// For custom attributes, you must prepend the <code>custom:</code> prefix to the attribute
+        /// name.
+        /// </para>
         /// </summary>
         public List<string> UserAttributeNames
         {

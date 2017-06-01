@@ -40,7 +40,10 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property AuthenticationResult. 
         /// <para>
-        /// The result of the authentication response.
+        /// The result of the authentication response. This is only returned if the caller does
+        /// not need to pass another challenge. If the caller does need to pass another challenge
+        /// before it gets tokens, <code>ChallengeName</code>, <code>ChallengeParameters</code>,
+        /// and <code>Session</code> are returned.
         /// </para>
         /// </summary>
         public AuthenticationResultType AuthenticationResult
@@ -58,8 +61,50 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property ChallengeName. 
         /// <para>
-        /// The name of the challenge.
+        /// The name of the challenge which you are responding to with this call. This is returned
+        /// to you in the <code>AdminInitiateAuth</code> response if you need to pass another
+        /// challenge.
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>SMS_MFA</code>: Next challenge is to supply an <code>SMS_MFA_CODE</code>, delivered
+        /// via SMS.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>PASSWORD_VERIFIER</code>: Next challenge is to supply <code>PASSWORD_CLAIM_SIGNATURE</code>,
+        /// <code>PASSWORD_CLAIM_SECRET_BLOCK</code>, and <code>TIMESTAMP</code> after the client-side
+        /// SRP calculations.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>CUSTOM_CHALLENGE</code>: This is returned if your custom authentication flow
+        /// determines that the user should pass another challenge before tokens are issued.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>DEVICE_SRP_AUTH</code>: If device tracking was enabled on your user pool and
+        /// the previous challenges were passed, this challenge is returned so that Amazon Cognito
+        /// can start tracking this device.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>DEVICE_PASSWORD_VERIFIER</code>: Similar to <code>PASSWORD_VERIFIER</code>,
+        /// but for devices only.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>ADMIN_NO_SRP_AUTH</code>: This is returned if you need to authenticate with
+        /// <code>USERNAME</code> and <code>PASSWORD</code> directly. An app client must be enabled
+        /// to use this flow.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>NEW_PASSWORD_REQUIRED</code>: For users which are required to change their
+        /// passwords after successful first login. This challenge should be passed with <code>NEW_PASSWORD</code>
+        /// and any other required attributes.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public ChallengeNameType ChallengeName
         {
@@ -76,7 +121,21 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property ChallengeParameters. 
         /// <para>
-        /// The challenge parameters.
+        /// The challenge parameters. These are returned to you in the <code>AdminInitiateAuth</code>
+        /// response if you need to pass another challenge. The responses in this parameter should
+        /// be used to compute inputs to the next call (<code>AdminRespondToAuthChallenge</code>).
+        /// </para>
+        ///  
+        /// <para>
+        /// All challenges require <code>USERNAME</code> and <code>SECRET_HASH</code> (if applicable).
+        /// </para>
+        ///  
+        /// <para>
+        /// The value of the <code>USER_IF_FOR_SRP</code> attribute will be the user's actual
+        /// username, not an alias (such as email address or phone number), even if you specified
+        /// an alias in your call to <code>AdminInitiateAuth</code>. This is because, in the <code>AdminRespondToAuthChallenge</code>
+        /// API <code>ChallengeResponses</code>, the <code>USERNAME</code> attribute cannot be
+        /// an alias.
         /// </para>
         /// </summary>
         public Dictionary<string, string> ChallengeParameters
@@ -94,7 +153,11 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property Session. 
         /// <para>
-        /// The session.
+        /// The session which should be passed both ways in challenge-response calls to the service.
+        /// If <code>AdminInitiateAuth</code> or <code>AdminRespondToAuthChallenge</code> API
+        /// call determines that the caller needs to go through another challenge, they return
+        /// a session with other challenge parameters. This session should be passed as it is
+        /// to the next <code>AdminRespondToAuthChallenge</code> API call.
         /// </para>
         /// </summary>
         public string Session

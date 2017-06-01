@@ -44,7 +44,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property Username. 
         /// <para>
-        /// The user name of the user you wish to ebable.
+        /// The user name of the user you wish to enable.
         /// </para>
         /// </summary>
         public string Username

@@ -58,8 +58,8 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property PaginationToken. 
         /// <para>
-        /// An identifier that was returned from the previous call to ListUserImportJobs, which
-        /// can be used to return the next set of import jobs in the list.
+        /// An identifier that was returned from the previous call to <code>ListUserImportJobs</code>,
+        /// which can be used to return the next set of import jobs in the list.
         /// </para>
         /// </summary>
         public string PaginationToken

@@ -39,8 +39,8 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property AllowAdminCreateUserOnly. 
         /// <para>
-        /// Set to True if only the administrator is allowed to create user profiles. Set to False
-        /// if users can sign themselves up via an app.
+        /// Set to <code>True</code> if only the administrator is allowed to create user profiles.
+        /// Set to <code>False</code> if users can sign themselves up via an app.
         /// </para>
         /// </summary>
         public bool AllowAdminCreateUserOnly
@@ -77,8 +77,9 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// Gets and sets the property UnusedAccountValidityDays. 
         /// <para>
         /// The user account expiration limit, in days, after which the account is no longer usable.
-        /// To reset the account after that time limit, you must call AdminCreateUser again, specifying
-        /// "RESEND" for the MessageAction parameter. The default value for this paameter is 7.
+        /// To reset the account after that time limit, you must call <code>AdminCreateUser</code>
+        /// again, specifying <code>"RESEND"</code> for the <code>MessageAction</code> parameter.
+        /// The default value for this parameter is 7.
         /// </para>
         /// </summary>
         public int UnusedAccountValidityDays

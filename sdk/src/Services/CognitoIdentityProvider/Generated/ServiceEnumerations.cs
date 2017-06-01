@@ -369,6 +369,64 @@ namespace Amazon.CognitoIdentityProvider
 
 
     /// <summary>
+    /// Constants used for properties of type DomainStatusType.
+    /// </summary>
+    public class DomainStatusType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACTIVE for DomainStatusType
+        /// </summary>
+        public static readonly DomainStatusType ACTIVE = new DomainStatusType("ACTIVE");
+        /// <summary>
+        /// Constant CREATING for DomainStatusType
+        /// </summary>
+        public static readonly DomainStatusType CREATING = new DomainStatusType("CREATING");
+        /// <summary>
+        /// Constant DELETING for DomainStatusType
+        /// </summary>
+        public static readonly DomainStatusType DELETING = new DomainStatusType("DELETING");
+        /// <summary>
+        /// Constant UPDATING for DomainStatusType
+        /// </summary>
+        public static readonly DomainStatusType UPDATING = new DomainStatusType("UPDATING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DomainStatusType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DomainStatusType FindValue(string value)
+        {
+            return FindValue<DomainStatusType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DomainStatusType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ExplicitAuthFlowsType.
     /// </summary>
     public class ExplicitAuthFlowsType : ConstantClass
@@ -419,6 +477,52 @@ namespace Amazon.CognitoIdentityProvider
 
 
     /// <summary>
+    /// Constants used for properties of type IdentityProviderTypeType.
+    /// </summary>
+    public class IdentityProviderTypeType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant SAML for IdentityProviderTypeType
+        /// </summary>
+        public static readonly IdentityProviderTypeType SAML = new IdentityProviderTypeType("SAML");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public IdentityProviderTypeType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static IdentityProviderTypeType FindValue(string value)
+        {
+            return FindValue<IdentityProviderTypeType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator IdentityProviderTypeType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type MessageActionType.
     /// </summary>
     public class MessageActionType : ConstantClass
@@ -462,6 +566,60 @@ namespace Amazon.CognitoIdentityProvider
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator MessageActionType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type OAuthFlowType.
+    /// </summary>
+    public class OAuthFlowType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Client_credentials for OAuthFlowType
+        /// </summary>
+        public static readonly OAuthFlowType Client_credentials = new OAuthFlowType("client_credentials");
+        /// <summary>
+        /// Constant Code for OAuthFlowType
+        /// </summary>
+        public static readonly OAuthFlowType Code = new OAuthFlowType("code");
+        /// <summary>
+        /// Constant Implicit for OAuthFlowType
+        /// </summary>
+        public static readonly OAuthFlowType Implicit = new OAuthFlowType("implicit");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public OAuthFlowType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static OAuthFlowType FindValue(string value)
+        {
+            return FindValue<OAuthFlowType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator OAuthFlowType(string value)
         {
             return FindValue(value);
         }

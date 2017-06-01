@@ -41,7 +41,40 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property AuthFlow. 
         /// <para>
-        /// The authentication flow.
+        /// The authentication flow for this call to execute. The API action will depend on this
+        /// value. For example: 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>REFRESH_TOKEN_AUTH</code> will take in a valid refresh token and return new
+        /// tokens.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>USER_SRP_AUTH</code> will take in USERNAME and SRPA and return the SRP variables
+        /// to be used for next challenge execution.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// Valid values include:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>USER_SRP_AUTH</code>: Authentication flow for the Secure Remote Password (SRP)
+        /// protocol.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>REFRESH_TOKEN_AUTH</code>/<code>REFRESH_TOKEN</code>: Authentication flow for
+        /// refreshing the access token and ID token by supplying a valid refresh token.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>CUSTOM_AUTH</code>: Custom authentication flow.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <code>ADMIN_NO_SRP_AUTH</code> is not a valid value.
         /// </para>
         /// </summary>
         public AuthFlowType AuthFlow
@@ -59,8 +92,27 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property AuthParameters. 
         /// <para>
-        /// The authentication parameters.
+        /// The authentication parameters. These are inputs corresponding to the <code>AuthFlow</code>
+        /// that you are invoking. The required values depend on the value of <code>AuthFlow</code>:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// For <code>USER_SRP_AUTH</code>: <code>USERNAME</code> (required), <code>SRPA</code>
+        /// (required), <code>SECRET_HASH</code> (required if the app client is configured with
+        /// a client secret), <code>DEVICE_KEY</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For <code>REFRESH_TOKEN_AUTH/REFRESH_TOKEN</code>: <code>USERNAME</code> (required),
+        /// <code>SECRET_HASH</code> (required if the app client is configured with a client secret),
+        /// <code>REFRESH_TOKEN</code> (required), <code>DEVICE_KEY</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For <code>CUSTOM_AUTH</code>: <code>USERNAME</code> (required), <code>SECRET_HASH</code>
+        /// (if app client is configured with client secret), <code>DEVICE_KEY</code> 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public Dictionary<string, string> AuthParameters
         {
@@ -77,7 +129,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property ClientId. 
         /// <para>
-        /// The client ID.
+        /// The app client ID.
         /// </para>
         /// </summary>
         public string ClientId
@@ -95,7 +147,9 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property ClientMetadata. 
         /// <para>
-        /// The client app's metadata.
+        /// This is a random key-value pair map which can contain any key and will be passed to
+        /// your PreAuthentication Lambda trigger as-is. It can be used to implement additional
+        /// validations around authentication.
         /// </para>
         /// </summary>
         public Dictionary<string, string> ClientMetadata

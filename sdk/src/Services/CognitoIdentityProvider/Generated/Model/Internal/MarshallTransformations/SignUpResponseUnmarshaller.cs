@@ -63,6 +63,12 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
                     response.UserConfirmed = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("UserSub", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.UserSub = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
 
             return response;

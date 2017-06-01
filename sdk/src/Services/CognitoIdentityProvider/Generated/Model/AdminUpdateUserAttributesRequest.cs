@@ -34,6 +34,16 @@ namespace Amazon.CognitoIdentityProvider.Model
     /// 
     ///  
     /// <para>
+    /// For custom attributes, you must prepend the <code>custom:</code> prefix to the attribute
+    /// name.
+    /// </para>
+    ///  
+    /// <para>
+    /// In addition to updating user attributes, this API can also be used to mark phone and
+    /// email as verified.
+    /// </para>
+    ///  
+    /// <para>
     /// Requires developer credentials.
     /// </para>
     /// </summary>
@@ -47,6 +57,11 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// Gets and sets the property UserAttributes. 
         /// <para>
         /// An array of name-value pairs representing user attributes.
+        /// </para>
+        ///  
+        /// <para>
+        /// For custom attributes, you must prepend the <code>custom:</code> prefix to the attribute
+        /// name.
         /// </para>
         /// </summary>
         public List<AttributeType> UserAttributes

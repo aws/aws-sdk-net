@@ -69,7 +69,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property CompletionDate. 
         /// <para>
-        /// The date when the user imoprt job was completed.
+        /// The date when the user import job was completed.
         /// </para>
         /// </summary>
         public DateTime CompletionDate
@@ -105,7 +105,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property CreationDate. 
         /// <para>
-        /// The date when the user import job was created.
+        /// The date the user import job was created.
         /// </para>
         /// </summary>
         public DateTime CreationDate
@@ -195,7 +195,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property PreSignedUrl. 
         /// <para>
-        /// The pre-signed URL to be used to upload the .csv file.
+        /// The pre-signed URL to be used to upload the <code>.csv</code> file.
         /// </para>
         /// </summary>
         public string PreSignedUrl
@@ -253,37 +253,39 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Created - The job was created but not started.
+        ///  <code>Created</code> - The job was created but not started.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Pending - A transition state. You have started the job, but it has not begun importing
+        ///  <code>Pending</code> - A transition state. You have started the job, but it has not
+        /// begun importing users yet.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>InProgress</code> - The job has started, and users are being imported.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>Stopping</code> - You have stopped the job, but the job has not stopped importing
         /// users yet.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// InProgress - The job has started, and users are being imported.
+        ///  <code>Stopped</code> - You have stopped the job, and the job has stopped importing
+        /// users.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Stopping - You have stopped the job, but the job has not stopped importing users yet.
+        ///  <code>Succeeded</code> - The job has completed successfully.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Stopped - You have stopped the job, and the job has stopped importing users.
+        ///  <code>Failed</code> - The job has stopped due to an error.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Succeeded - The job has completed successfully.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Failed - The job has stopped due to an error.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Expired - You created a job, but did not start the job within 24-48 hours. All data
-        /// associated with the job was deleted, and the job cannot be started.
+        ///  <code>Expired</code> - You created a job, but did not start the job within 24-48
+        /// hours. All data associated with the job was deleted, and the job cannot be started.
         /// </para>
         ///  </li> </ul>
         /// </summary>
