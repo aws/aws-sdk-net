@@ -32,7 +32,27 @@ namespace Amazon.ElasticLoadBalancingV2.Model
     /// </summary>
     public partial class DescribeRulesResponse : AmazonWebServiceResponse
     {
+        private string _nextMarker;
         private List<Rule> _rules = new List<Rule>();
+
+        /// <summary>
+        /// Gets and sets the property NextMarker. 
+        /// <para>
+        /// The marker to use when requesting the next set of results. If there are no additional
+        /// results, the string is empty.
+        /// </para>
+        /// </summary>
+        public string NextMarker
+        {
+            get { return this._nextMarker; }
+            set { this._nextMarker = value; }
+        }
+
+        // Check to see if NextMarker property is set
+        internal bool IsSetNextMarker()
+        {
+            return this._nextMarker != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Rules. 

@@ -56,6 +56,11 @@
     <max>400</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ElasticLoadBalancingV2.Model.DescribeRulesRequest.PageSize</property>
+    <min>1</min>
+    <max>400</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ElasticLoadBalancingV2.Model.DescribeSSLPoliciesRequest.PageSize</property>
     <min>1</min>
     <max>400</max>

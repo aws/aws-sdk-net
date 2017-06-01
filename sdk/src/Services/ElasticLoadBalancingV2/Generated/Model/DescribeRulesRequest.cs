@@ -35,6 +35,8 @@ namespace Amazon.ElasticLoadBalancingV2.Model
     public partial class DescribeRulesRequest : AmazonElasticLoadBalancingV2Request
     {
         private string _listenerArn;
+        private string _marker;
+        private int? _pageSize;
         private List<string> _ruleArns = new List<string>();
 
         /// <summary>
@@ -53,6 +55,43 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         internal bool IsSetListenerArn()
         {
             return this._listenerArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Marker. 
+        /// <para>
+        /// The marker for the next set of results. (You received this marker from a previous
+        /// call.)
+        /// </para>
+        /// </summary>
+        public string Marker
+        {
+            get { return this._marker; }
+            set { this._marker = value; }
+        }
+
+        // Check to see if Marker property is set
+        internal bool IsSetMarker()
+        {
+            return this._marker != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PageSize. 
+        /// <para>
+        /// The maximum number of results to return with this call.
+        /// </para>
+        /// </summary>
+        public int PageSize
+        {
+            get { return this._pageSize.GetValueOrDefault(); }
+            set { this._pageSize = value; }
+        }
+
+        // Check to see if PageSize property is set
+        internal bool IsSetPageSize()
+        {
+            return this._pageSize.HasValue; 
         }
 
         /// <summary>

@@ -81,6 +81,12 @@ namespace Amazon.ElasticLoadBalancingV2.Model.Internal.MarshallTransformations
                 if (context.IsStartElement || context.IsAttribute)
                 {
 
+                    if (context.TestExpression("NextMarker", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        response.NextMarker = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("Rules/member", targetDepth))
                     {
                         var unmarshaller = RuleUnmarshaller.Instance;

@@ -62,6 +62,14 @@ namespace Amazon.ElasticLoadBalancingV2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("ListenerArn", StringUtils.FromString(publicRequest.ListenerArn));
                 }
+                if(publicRequest.IsSetMarker())
+                {
+                    request.Parameters.Add("Marker", StringUtils.FromString(publicRequest.Marker));
+                }
+                if(publicRequest.IsSetPageSize())
+                {
+                    request.Parameters.Add("PageSize", StringUtils.FromInt(publicRequest.PageSize));
+                }
                 if(publicRequest.IsSetRuleArns())
                 {
                     int publicRequestlistValueIndex = 1;
