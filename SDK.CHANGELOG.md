@@ -1,3 +1,14 @@
+### 3.3.99.0 (2017-06-02 19:32 UTC)
+* KinesisAnalytics (3.3.1.0)
+	* Kinesis Analytics publishes error messages CloudWatch logs in case of application misconfigurations
+* S3 (3.3.6.2)
+	* Updated to use new Core, version 3.3.14.1
+	* Allow users to force SigV2 using S3 client config and default S3 client config to use SigV4.
+* WorkDocs (3.3.1.0)
+	* This release includes new APIs to manage tags and custom metadata on resources and also new APIs to add and retrieve comments at the document level.
+* Core 3.3.14.1
+	* Fix issue when reading profiles with duplicate keys from shared credentials file. Updated the endpoints file.
+
 ### 3.3.98.0 (2017-06-01 19:41 UTC)
 * CodeDeploy (3.3.5.0)
 	* AWS CodeDeploy has improved how it manages connections to GitHub accounts and repositories. You can now create and store up to 25 connections to GitHub accounts in order to associate AWS CodeDeploy applications with GitHub repositories. Each connection can support multiple repositories. You can create connections to up to 25 different GitHub accounts, or create more than one connection to a single account. The ListGitHubAccountTokenNames command has been introduced to retrieve the names of stored connections to GitHub accounts that you have created. The name of the connection to GitHub used for an AWS CodeDeploy application is also included in the ApplicationInfo structure.  Two new fields, lastAttemptedDeployment and lastSuccessfulDeployment, have been added to DeploymentGroupInfo to improve the handling of deployment group information in the AWS CodeDeploy console. Information about these latest deployments can also be retrieved using the GetDeploymentGroup and BatchGetDeployment group requests. Also includes a region update  (us-gov-west-1).
