@@ -28,31 +28,22 @@ using Amazon.Runtime.Internal;
 namespace Amazon.KinesisAnalytics.Model
 {
     /// <summary>
-    /// Container for the parameters to the UpdateApplication operation.
-    /// Updates an existing Amazon Kinesis Analytics application. Using this API, you can
-    /// update application code, input configuration, and output configuration. 
-    /// 
-    ///  
-    /// <para>
-    /// Note that Amazon Kinesis Analytics updates the <code>CurrentApplicationVersionId</code>
-    /// each time you update your application. 
-    /// </para>
-    ///  
-    /// <para>
-    /// This operation requires permission for the <code>kinesisanalytics:UpdateApplication</code>
-    /// action.
-    /// </para>
+    /// Container for the parameters to the AddApplicationCloudWatchLoggingOption operation.
+    /// Adds a CloudWatch log stream to monitor application configuration errors. For more
+    /// information about using CloudWatch log streams with Amazon Kinesis Analytics applications,
+    /// see <a href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/cloudwatch-monitor-configuration.html">Monitoring
+    /// Configuration Errors</a>.
     /// </summary>
-    public partial class UpdateApplicationRequest : AmazonKinesisAnalyticsRequest
+    public partial class AddApplicationCloudWatchLoggingOptionRequest : AmazonKinesisAnalyticsRequest
     {
         private string _applicationName;
-        private ApplicationUpdate _applicationUpdate;
+        private CloudWatchLoggingOption _cloudWatchLoggingOption;
         private long? _currentApplicationVersionId;
 
         /// <summary>
         /// Gets and sets the property ApplicationName. 
         /// <para>
-        /// Name of the Amazon Kinesis Analytics application to update.
+        /// The Amazon Kinesis Analytics application name.
         /// </para>
         /// </summary>
         public string ApplicationName
@@ -68,28 +59,29 @@ namespace Amazon.KinesisAnalytics.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ApplicationUpdate. 
+        /// Gets and sets the property CloudWatchLoggingOption. 
         /// <para>
-        /// Describes application updates.
+        /// Provide the CloudWatch log stream ARN and the IAM role ARN. Note: To write application
+        /// messages to CloudWatch, the IAM role used must have the <code>PutLogEvents</code>
+        /// policy action enabled. 
         /// </para>
         /// </summary>
-        public ApplicationUpdate ApplicationUpdate
+        public CloudWatchLoggingOption CloudWatchLoggingOption
         {
-            get { return this._applicationUpdate; }
-            set { this._applicationUpdate = value; }
+            get { return this._cloudWatchLoggingOption; }
+            set { this._cloudWatchLoggingOption = value; }
         }
 
-        // Check to see if ApplicationUpdate property is set
-        internal bool IsSetApplicationUpdate()
+        // Check to see if CloudWatchLoggingOption property is set
+        internal bool IsSetCloudWatchLoggingOption()
         {
-            return this._applicationUpdate != null;
+            return this._cloudWatchLoggingOption != null;
         }
 
         /// <summary>
         /// Gets and sets the property CurrentApplicationVersionId. 
         /// <para>
-        /// The current application version ID. You can use the <a>DescribeApplication</a> operation
-        /// to get this value.
+        /// The version ID of the Amazon Kinesis Analytics application.
         /// </para>
         /// </summary>
         public long CurrentApplicationVersionId

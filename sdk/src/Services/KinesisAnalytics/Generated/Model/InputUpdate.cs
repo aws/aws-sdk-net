@@ -61,8 +61,8 @@ namespace Amazon.KinesisAnalytics.Model
         /// <summary>
         /// Gets and sets the property InputParallelismUpdate. 
         /// <para>
-        /// Describes the parallelism updates (the number in-application streams Kinesis Analytics
-        /// creates for the specific streaming source).
+        /// Describes the parallelism updates (the number in-application streams Amazon Kinesis
+        /// Analytics creates for the specific streaming source).
         /// </para>
         /// </summary>
         public InputParallelismUpdate InputParallelismUpdate
@@ -137,8 +137,8 @@ namespace Amazon.KinesisAnalytics.Model
         /// <summary>
         /// Gets and sets the property NamePrefixUpdate. 
         /// <para>
-        /// Name prefix for in-application stream(s) that Kinesis Analytics creates for the specific
-        /// streaming source.
+        /// Name prefix for in-application streams that Amazon Kinesis Analytics creates for the
+        /// specific streaming source.
         /// </para>
         /// </summary>
         public string NamePrefixUpdate

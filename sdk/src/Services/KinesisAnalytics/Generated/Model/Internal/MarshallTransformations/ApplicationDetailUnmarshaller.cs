@@ -100,6 +100,12 @@ namespace Amazon.KinesisAnalytics.Model.Internal.MarshallTransformations
                     unmarshalledObject.ApplicationVersionId = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("CloudWatchLoggingOptionDescriptions", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<CloudWatchLoggingOptionDescription, CloudWatchLoggingOptionDescriptionUnmarshaller>(CloudWatchLoggingOptionDescriptionUnmarshaller.Instance);
+                    unmarshalledObject.CloudWatchLoggingOptionDescriptions = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("CreateTimestamp", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;

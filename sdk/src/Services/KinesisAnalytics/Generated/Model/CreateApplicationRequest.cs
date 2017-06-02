@@ -40,8 +40,7 @@ namespace Amazon.KinesisAnalytics.Model
     /// In the input configuration, you map the streaming source to an in-application stream,
     /// which you can think of as a constantly updating table. In the mapping, you must provide
     /// a schema for the in-application stream and map each data column in the in-application
-    /// stream to a data element in the streaming source, with the option of renaming, casting
-    /// and dropping columns as desired.
+    /// stream to a data element in the streaming source.
     /// </para>
     ///  
     /// <para>
@@ -73,6 +72,7 @@ namespace Amazon.KinesisAnalytics.Model
         private string _applicationCode;
         private string _applicationDescription;
         private string _applicationName;
+        private List<CloudWatchLoggingOption> _cloudWatchLoggingOptions = new List<CloudWatchLoggingOption>();
         private List<Input> _inputs = new List<Input>();
         private List<Output> _outputs = new List<Output>();
 
@@ -80,13 +80,17 @@ namespace Amazon.KinesisAnalytics.Model
         /// Gets and sets the property ApplicationCode. 
         /// <para>
         /// One or more SQL statements that read input data, transform it, and generate output.
-        /// For example, you can write a SQL statement that reads input data and generates a running
-        /// average of the number of advertisement clicks by vendor.
+        /// For example, you can write a SQL statement that reads data from one in-application
+        /// stream, generates a running average of the number of advertisement clicks by vendor,
+        /// and insert resulting rows in another in-application stream using pumps. For more inforamtion
+        /// about the typical pattern, see <a href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-app-code.html">Application
+        /// Code</a>. 
         /// </para>
         ///  
         /// <para>
-        /// You can also provide a series of SQL statements, where output of one statement can
-        /// be used as the input for the next statement.
+        /// You can provide such series of SQL statements, where output of one statement can be
+        /// used as the input for the next statement. You store intermediate results by creating
+        /// in-application streams and pumps.
         /// </para>
         ///  
         /// <para>
@@ -142,6 +146,26 @@ namespace Amazon.KinesisAnalytics.Model
         internal bool IsSetApplicationName()
         {
             return this._applicationName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CloudWatchLoggingOptions. 
+        /// <para>
+        /// Use this parameter to configure a CloudWatch log stream to monitor application configuration
+        /// errors. For more information, see <a href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/cloudwatch-monitor-configuration.html">Monitoring
+        /// Configuration Errors</a>.
+        /// </para>
+        /// </summary>
+        public List<CloudWatchLoggingOption> CloudWatchLoggingOptions
+        {
+            get { return this._cloudWatchLoggingOptions; }
+            set { this._cloudWatchLoggingOptions = value; }
+        }
+
+        // Check to see if CloudWatchLoggingOptions property is set
+        internal bool IsSetCloudWatchLoggingOptions()
+        {
+            return this._cloudWatchLoggingOptions != null && this._cloudWatchLoggingOptions.Count > 0; 
         }
 
         /// <summary>

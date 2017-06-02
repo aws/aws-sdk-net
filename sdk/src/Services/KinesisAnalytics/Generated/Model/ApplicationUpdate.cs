@@ -28,11 +28,12 @@ using Amazon.Runtime.Internal;
 namespace Amazon.KinesisAnalytics.Model
 {
     /// <summary>
-    /// Describes updates to apply to an existing Kinesis Analytics application.
+    /// Describes updates to apply to an existing Amazon Kinesis Analytics application.
     /// </summary>
     public partial class ApplicationUpdate
     {
         private string _applicationCodeUpdate;
+        private List<CloudWatchLoggingOptionUpdate> _cloudWatchLoggingOptionUpdates = new List<CloudWatchLoggingOptionUpdate>();
         private List<InputUpdate> _inputUpdates = new List<InputUpdate>();
         private List<OutputUpdate> _outputUpdates = new List<OutputUpdate>();
         private List<ReferenceDataSourceUpdate> _referenceDataSourceUpdates = new List<ReferenceDataSourceUpdate>();
@@ -53,6 +54,24 @@ namespace Amazon.KinesisAnalytics.Model
         internal bool IsSetApplicationCodeUpdate()
         {
             return this._applicationCodeUpdate != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CloudWatchLoggingOptionUpdates. 
+        /// <para>
+        /// Describes application CloudWatch logging option updates.
+        /// </para>
+        /// </summary>
+        public List<CloudWatchLoggingOptionUpdate> CloudWatchLoggingOptionUpdates
+        {
+            get { return this._cloudWatchLoggingOptionUpdates; }
+            set { this._cloudWatchLoggingOptionUpdates = value; }
+        }
+
+        // Check to see if CloudWatchLoggingOptionUpdates property is set
+        internal bool IsSetCloudWatchLoggingOptionUpdates()
+        {
+            return this._cloudWatchLoggingOptionUpdates != null && this._cloudWatchLoggingOptionUpdates.Count > 0; 
         }
 
         /// <summary>

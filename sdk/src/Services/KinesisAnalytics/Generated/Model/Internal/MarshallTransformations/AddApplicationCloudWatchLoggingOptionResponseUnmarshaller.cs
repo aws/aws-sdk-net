@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.KinesisAnalytics.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for DeleteApplicationOutput operation
+    /// Response Unmarshaller for AddApplicationCloudWatchLoggingOption operation
     /// </summary>  
-    public class DeleteApplicationOutputResponseUnmarshaller : JsonResponseUnmarshaller
+    public class AddApplicationCloudWatchLoggingOptionResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,7 +45,7 @@ namespace Amazon.KinesisAnalytics.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            DeleteApplicationOutputResponse response = new DeleteApplicationOutputResponse();
+            AddApplicationCloudWatchLoggingOptionResponse response = new AddApplicationCloudWatchLoggingOptionResponse();
 
 
             return response;
@@ -80,9 +80,9 @@ namespace Amazon.KinesisAnalytics.Model.Internal.MarshallTransformations
             return new AmazonKinesisAnalyticsException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
 
-        private static DeleteApplicationOutputResponseUnmarshaller _instance = new DeleteApplicationOutputResponseUnmarshaller();        
+        private static AddApplicationCloudWatchLoggingOptionResponseUnmarshaller _instance = new AddApplicationCloudWatchLoggingOptionResponseUnmarshaller();        
 
-        internal static DeleteApplicationOutputResponseUnmarshaller GetInstance()
+        internal static AddApplicationCloudWatchLoggingOptionResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -90,7 +90,7 @@ namespace Amazon.KinesisAnalytics.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static DeleteApplicationOutputResponseUnmarshaller Instance
+        public static AddApplicationCloudWatchLoggingOptionResponseUnmarshaller Instance
         {
             get
             {

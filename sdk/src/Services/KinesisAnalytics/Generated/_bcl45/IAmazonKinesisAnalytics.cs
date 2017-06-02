@@ -37,6 +37,49 @@ namespace Amazon.KinesisAnalytics
     {
 
         
+        #region  AddApplicationCloudWatchLoggingOption
+
+
+        /// <summary>
+        /// Adds a CloudWatch log stream to monitor application configuration errors. For more
+        /// information about using CloudWatch log streams with Amazon Kinesis Analytics applications,
+        /// see <a href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/cloudwatch-monitor-configuration.html">Monitoring
+        /// Configuration Errors</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AddApplicationCloudWatchLoggingOption service method.</param>
+        /// 
+        /// <returns>The response from the AddApplicationCloudWatchLoggingOption service method, as returned by KinesisAnalytics.</returns>
+        /// <exception cref="Amazon.KinesisAnalytics.Model.ConcurrentModificationException">
+        /// Exception thrown as a result of concurrent modification to an application. For example,
+        /// two individuals attempting to edit the same application at the same time.
+        /// </exception>
+        /// <exception cref="Amazon.KinesisAnalytics.Model.InvalidArgumentException">
+        /// Specified input parameter value is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.KinesisAnalytics.Model.ResourceInUseException">
+        /// Application is not available for this operation.
+        /// </exception>
+        /// <exception cref="Amazon.KinesisAnalytics.Model.ResourceNotFoundException">
+        /// Specified application can't be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/AddApplicationCloudWatchLoggingOption">REST API Reference for AddApplicationCloudWatchLoggingOption Operation</seealso>
+        AddApplicationCloudWatchLoggingOptionResponse AddApplicationCloudWatchLoggingOption(AddApplicationCloudWatchLoggingOptionRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AddApplicationCloudWatchLoggingOption operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AddApplicationCloudWatchLoggingOption operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/AddApplicationCloudWatchLoggingOption">REST API Reference for AddApplicationCloudWatchLoggingOption Operation</seealso>
+        Task<AddApplicationCloudWatchLoggingOptionResponse> AddApplicationCloudWatchLoggingOptionAsync(AddApplicationCloudWatchLoggingOptionRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  AddApplicationInput
 
 
@@ -79,6 +122,7 @@ namespace Amazon.KinesisAnalytics
         /// <exception cref="Amazon.KinesisAnalytics.Model.ResourceNotFoundException">
         /// Specified application can't be found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/AddApplicationInput">REST API Reference for AddApplicationInput Operation</seealso>
         AddApplicationInputResponse AddApplicationInput(AddApplicationInputRequest request);
 
 
@@ -91,6 +135,7 @@ namespace Amazon.KinesisAnalytics
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/AddApplicationInput">REST API Reference for AddApplicationInput Operation</seealso>
         Task<AddApplicationInputResponse> AddApplicationInputAsync(AddApplicationInputRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -149,6 +194,7 @@ namespace Amazon.KinesisAnalytics
         /// <exception cref="Amazon.KinesisAnalytics.Model.ResourceNotFoundException">
         /// Specified application can't be found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/AddApplicationOutput">REST API Reference for AddApplicationOutput Operation</seealso>
         AddApplicationOutputResponse AddApplicationOutput(AddApplicationOutputRequest request);
 
 
@@ -161,6 +207,7 @@ namespace Amazon.KinesisAnalytics
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/AddApplicationOutput">REST API Reference for AddApplicationOutput Operation</seealso>
         Task<AddApplicationOutputResponse> AddApplicationOutputAsync(AddApplicationOutputRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -208,6 +255,7 @@ namespace Amazon.KinesisAnalytics
         /// <exception cref="Amazon.KinesisAnalytics.Model.ResourceNotFoundException">
         /// Specified application can't be found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/AddApplicationReferenceDataSource">REST API Reference for AddApplicationReferenceDataSource Operation</seealso>
         AddApplicationReferenceDataSourceResponse AddApplicationReferenceDataSource(AddApplicationReferenceDataSourceRequest request);
 
 
@@ -220,6 +268,7 @@ namespace Amazon.KinesisAnalytics
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/AddApplicationReferenceDataSource">REST API Reference for AddApplicationReferenceDataSource Operation</seealso>
         Task<AddApplicationReferenceDataSourceResponse> AddApplicationReferenceDataSourceAsync(AddApplicationReferenceDataSourceRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -239,8 +288,7 @@ namespace Amazon.KinesisAnalytics
         /// In the input configuration, you map the streaming source to an in-application stream,
         /// which you can think of as a constantly updating table. In the mapping, you must provide
         /// a schema for the in-application stream and map each data column in the in-application
-        /// stream to a data element in the streaming source, with the option of renaming, casting
-        /// and dropping columns as desired.
+        /// stream to a data element in the streaming source.
         /// </para>
         ///  
         /// <para>
@@ -282,6 +330,7 @@ namespace Amazon.KinesisAnalytics
         /// <exception cref="Amazon.KinesisAnalytics.Model.ResourceInUseException">
         /// Application is not available for this operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/CreateApplication">REST API Reference for CreateApplication Operation</seealso>
         CreateApplicationResponse CreateApplication(CreateApplicationRequest request);
 
 
@@ -294,6 +343,7 @@ namespace Amazon.KinesisAnalytics
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/CreateApplication">REST API Reference for CreateApplication Operation</seealso>
         Task<CreateApplicationResponse> CreateApplicationAsync(CreateApplicationRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -325,6 +375,7 @@ namespace Amazon.KinesisAnalytics
         /// <exception cref="Amazon.KinesisAnalytics.Model.ResourceNotFoundException">
         /// Specified application can't be found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/DeleteApplication">REST API Reference for DeleteApplication Operation</seealso>
         DeleteApplicationResponse DeleteApplication(DeleteApplicationRequest request);
 
 
@@ -337,7 +388,50 @@ namespace Amazon.KinesisAnalytics
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/DeleteApplication">REST API Reference for DeleteApplication Operation</seealso>
         Task<DeleteApplicationResponse> DeleteApplicationAsync(DeleteApplicationRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DeleteApplicationCloudWatchLoggingOption
+
+
+        /// <summary>
+        /// Deletes a CloudWatch log stream from an application. For more information about using
+        /// CloudWatch log streams with Amazon Kinesis Analytics applications, see <a href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/cloudwatch-monitor-configuration.html">Monitoring
+        /// Configuration Errors</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteApplicationCloudWatchLoggingOption service method.</param>
+        /// 
+        /// <returns>The response from the DeleteApplicationCloudWatchLoggingOption service method, as returned by KinesisAnalytics.</returns>
+        /// <exception cref="Amazon.KinesisAnalytics.Model.ConcurrentModificationException">
+        /// Exception thrown as a result of concurrent modification to an application. For example,
+        /// two individuals attempting to edit the same application at the same time.
+        /// </exception>
+        /// <exception cref="Amazon.KinesisAnalytics.Model.InvalidArgumentException">
+        /// Specified input parameter value is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.KinesisAnalytics.Model.ResourceInUseException">
+        /// Application is not available for this operation.
+        /// </exception>
+        /// <exception cref="Amazon.KinesisAnalytics.Model.ResourceNotFoundException">
+        /// Specified application can't be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/DeleteApplicationCloudWatchLoggingOption">REST API Reference for DeleteApplicationCloudWatchLoggingOption Operation</seealso>
+        DeleteApplicationCloudWatchLoggingOptionResponse DeleteApplicationCloudWatchLoggingOption(DeleteApplicationCloudWatchLoggingOptionRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteApplicationCloudWatchLoggingOption operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteApplicationCloudWatchLoggingOption operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/DeleteApplicationCloudWatchLoggingOption">REST API Reference for DeleteApplicationCloudWatchLoggingOption Operation</seealso>
+        Task<DeleteApplicationCloudWatchLoggingOptionResponse> DeleteApplicationCloudWatchLoggingOptionAsync(DeleteApplicationCloudWatchLoggingOptionRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -362,12 +456,16 @@ namespace Amazon.KinesisAnalytics
         /// Exception thrown as a result of concurrent modification to an application. For example,
         /// two individuals attempting to edit the same application at the same time.
         /// </exception>
+        /// <exception cref="Amazon.KinesisAnalytics.Model.InvalidArgumentException">
+        /// Specified input parameter value is invalid.
+        /// </exception>
         /// <exception cref="Amazon.KinesisAnalytics.Model.ResourceInUseException">
         /// Application is not available for this operation.
         /// </exception>
         /// <exception cref="Amazon.KinesisAnalytics.Model.ResourceNotFoundException">
         /// Specified application can't be found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/DeleteApplicationOutput">REST API Reference for DeleteApplicationOutput Operation</seealso>
         DeleteApplicationOutputResponse DeleteApplicationOutput(DeleteApplicationOutputRequest request);
 
 
@@ -380,6 +478,7 @@ namespace Amazon.KinesisAnalytics
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/DeleteApplicationOutput">REST API Reference for DeleteApplicationOutput Operation</seealso>
         Task<DeleteApplicationOutputResponse> DeleteApplicationOutputAsync(DeleteApplicationOutputRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -418,6 +517,7 @@ namespace Amazon.KinesisAnalytics
         /// <exception cref="Amazon.KinesisAnalytics.Model.ResourceNotFoundException">
         /// Specified application can't be found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/DeleteApplicationReferenceDataSource">REST API Reference for DeleteApplicationReferenceDataSource Operation</seealso>
         DeleteApplicationReferenceDataSourceResponse DeleteApplicationReferenceDataSource(DeleteApplicationReferenceDataSourceRequest request);
 
 
@@ -430,6 +530,7 @@ namespace Amazon.KinesisAnalytics
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/DeleteApplicationReferenceDataSource">REST API Reference for DeleteApplicationReferenceDataSource Operation</seealso>
         Task<DeleteApplicationReferenceDataSourceResponse> DeleteApplicationReferenceDataSourceAsync(DeleteApplicationReferenceDataSourceRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -458,6 +559,7 @@ namespace Amazon.KinesisAnalytics
         /// <exception cref="Amazon.KinesisAnalytics.Model.ResourceNotFoundException">
         /// Specified application can't be found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/DescribeApplication">REST API Reference for DescribeApplication Operation</seealso>
         DescribeApplicationResponse DescribeApplication(DescribeApplicationRequest request);
 
 
@@ -470,6 +572,7 @@ namespace Amazon.KinesisAnalytics
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/DescribeApplication">REST API Reference for DescribeApplication Operation</seealso>
         Task<DescribeApplicationResponse> DescribeApplicationAsync(DescribeApplicationRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -504,13 +607,15 @@ namespace Amazon.KinesisAnalytics
         /// Specified input parameter value is invalid.
         /// </exception>
         /// <exception cref="Amazon.KinesisAnalytics.Model.ResourceProvisionedThroughputExceededException">
-        /// Discovery failed to get a record from the streaming source because of the Kinesis
-        /// Streams ProvisionedThroughputExceededException.
+        /// Discovery failed to get a record from the streaming source because of the Amazon Kinesis
+        /// Streams ProvisionedThroughputExceededException. For more information, see <a href="http://docs.aws.amazon.com/kinesis/latest/APIReference/API_GetRecords.html">GetRecords</a>
+        /// in the Amazon Kinesis Streams API Reference.
         /// </exception>
         /// <exception cref="Amazon.KinesisAnalytics.Model.UnableToDetectSchemaException">
-        /// Data format is not valid, Kinesis Analytics is not able to detect schema for the given
-        /// streaming source.
+        /// Data format is not valid, Amazon Kinesis Analytics is not able to detect schema for
+        /// the given streaming source.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/DiscoverInputSchema">REST API Reference for DiscoverInputSchema Operation</seealso>
         DiscoverInputSchemaResponse DiscoverInputSchema(DiscoverInputSchemaRequest request);
 
 
@@ -523,6 +628,7 @@ namespace Amazon.KinesisAnalytics
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/DiscoverInputSchema">REST API Reference for DiscoverInputSchema Operation</seealso>
         Task<DiscoverInputSchemaResponse> DiscoverInputSchemaAsync(DiscoverInputSchemaRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -551,6 +657,7 @@ namespace Amazon.KinesisAnalytics
         /// <param name="request">Container for the necessary parameters to execute the ListApplications service method.</param>
         /// 
         /// <returns>The response from the ListApplications service method, as returned by KinesisAnalytics.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/ListApplications">REST API Reference for ListApplications Operation</seealso>
         ListApplicationsResponse ListApplications(ListApplicationsRequest request);
 
 
@@ -563,6 +670,7 @@ namespace Amazon.KinesisAnalytics
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/ListApplications">REST API Reference for ListApplications Operation</seealso>
         Task<ListApplicationsResponse> ListApplicationsAsync(ListApplicationsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -611,6 +719,7 @@ namespace Amazon.KinesisAnalytics
         /// <exception cref="Amazon.KinesisAnalytics.Model.ResourceNotFoundException">
         /// Specified application can't be found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/StartApplication">REST API Reference for StartApplication Operation</seealso>
         StartApplicationResponse StartApplication(StartApplicationRequest request);
 
 
@@ -623,6 +732,7 @@ namespace Amazon.KinesisAnalytics
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/StartApplication">REST API Reference for StartApplication Operation</seealso>
         Task<StartApplicationResponse> StartApplicationAsync(StartApplicationRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -652,6 +762,7 @@ namespace Amazon.KinesisAnalytics
         /// <exception cref="Amazon.KinesisAnalytics.Model.ResourceNotFoundException">
         /// Specified application can't be found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/StopApplication">REST API Reference for StopApplication Operation</seealso>
         StopApplicationResponse StopApplication(StopApplicationRequest request);
 
 
@@ -664,6 +775,7 @@ namespace Amazon.KinesisAnalytics
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/StopApplication">REST API Reference for StopApplication Operation</seealso>
         Task<StopApplicationResponse> StopApplicationAsync(StopApplicationRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -672,17 +784,17 @@ namespace Amazon.KinesisAnalytics
 
 
         /// <summary>
-        /// Updates an existing Kinesis Analytics application. Using this API, you can update
-        /// application code, input configuration, and output configuration. 
+        /// Updates an existing Amazon Kinesis Analytics application. Using this API, you can
+        /// update application code, input configuration, and output configuration. 
         /// 
         ///  
         /// <para>
-        /// Note that Kinesis Analytics updates the <code>CurrentApplicationVersionId</code> each
-        /// time you update your application. 
+        /// Note that Amazon Kinesis Analytics updates the <code>CurrentApplicationVersionId</code>
+        /// each time you update your application. 
         /// </para>
         ///  
         /// <para>
-        /// This opeation requires permission for the <code>kinesisanalytics:UpdateApplication</code>
+        /// This operation requires permission for the <code>kinesisanalytics:UpdateApplication</code>
         /// action.
         /// </para>
         /// </summary>
@@ -705,6 +817,7 @@ namespace Amazon.KinesisAnalytics
         /// <exception cref="Amazon.KinesisAnalytics.Model.ResourceNotFoundException">
         /// Specified application can't be found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/UpdateApplication">REST API Reference for UpdateApplication Operation</seealso>
         UpdateApplicationResponse UpdateApplication(UpdateApplicationRequest request);
 
 
@@ -717,6 +830,7 @@ namespace Amazon.KinesisAnalytics
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/UpdateApplication">REST API Reference for UpdateApplication Operation</seealso>
         Task<UpdateApplicationResponse> UpdateApplicationAsync(UpdateApplicationRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion

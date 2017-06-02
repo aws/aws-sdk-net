@@ -28,32 +28,10 @@ using Amazon.Runtime.Internal;
 namespace Amazon.KinesisAnalytics.Model
 {
     /// <summary>
-    /// Describes the number of in-application streams to create for a given streaming source.
-    /// For information about parallelism, see <a href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-input.html">Configuring
-    /// Application Input</a>.
+    /// This is the response object from the DeleteApplicationCloudWatchLoggingOption operation.
     /// </summary>
-    public partial class InputParallelism
+    public partial class DeleteApplicationCloudWatchLoggingOptionResponse : AmazonWebServiceResponse
     {
-        private int? _count;
-
-        /// <summary>
-        /// Gets and sets the property Count. 
-        /// <para>
-        /// Number of in-application streams to create. For more information, see <a href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/limits.html">Limits</a>.
-        /// 
-        /// </para>
-        /// </summary>
-        public int Count
-        {
-            get { return this._count.GetValueOrDefault(); }
-            set { this._count = value; }
-        }
-
-        // Check to see if Count property is set
-        internal bool IsSetCount()
-        {
-            return this._count.HasValue; 
-        }
 
     }
 }

@@ -51,6 +51,22 @@ namespace Amazon.KinesisAnalytics.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.ApplicationCodeUpdate);
             }
 
+            if(requestObject.IsSetCloudWatchLoggingOptionUpdates())
+            {
+                context.Writer.WritePropertyName("CloudWatchLoggingOptionUpdates");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectCloudWatchLoggingOptionUpdatesListValue in requestObject.CloudWatchLoggingOptionUpdates)
+                {
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = CloudWatchLoggingOptionUpdateMarshaller.Instance;
+                    marshaller.Marshall(requestObjectCloudWatchLoggingOptionUpdatesListValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
             if(requestObject.IsSetInputUpdates())
             {
                 context.Writer.WritePropertyName("InputUpdates");

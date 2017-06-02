@@ -39,6 +39,7 @@ namespace Amazon.KinesisAnalytics.Model
         private string _applicationName;
         private ApplicationStatus _applicationStatus;
         private long? _applicationVersionId;
+        private List<CloudWatchLoggingOptionDescription> _cloudWatchLoggingOptionDescriptions = new List<CloudWatchLoggingOptionDescription>();
         private DateTime? _createTimestamp;
         private List<InputDescription> _inputDescriptions = new List<InputDescription>();
         private DateTime? _lastUpdateTimestamp;
@@ -152,6 +153,27 @@ namespace Amazon.KinesisAnalytics.Model
         internal bool IsSetApplicationVersionId()
         {
             return this._applicationVersionId.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property CloudWatchLoggingOptionDescriptions. 
+        /// <para>
+        /// Describes the CloudWatch log streams configured to receive application messages. For
+        /// more information about using CloudWatch log streams with Amazon Kinesis Analytics
+        /// applications, see <a href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/cloudwatch-monitor-configuration.html">Monitoring
+        /// Configuration Errors</a>. 
+        /// </para>
+        /// </summary>
+        public List<CloudWatchLoggingOptionDescription> CloudWatchLoggingOptionDescriptions
+        {
+            get { return this._cloudWatchLoggingOptionDescriptions; }
+            set { this._cloudWatchLoggingOptionDescriptions = value; }
+        }
+
+        // Check to see if CloudWatchLoggingOptionDescriptions property is set
+        internal bool IsSetCloudWatchLoggingOptionDescriptions()
+        {
+            return this._cloudWatchLoggingOptionDescriptions != null && this._cloudWatchLoggingOptionDescriptions.Count > 0; 
         }
 
         /// <summary>
