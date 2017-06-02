@@ -34,6 +34,8 @@ namespace Amazon.WorkDocs.Model
     /// </summary>
     public partial class CreateUserRequest : AmazonWorkDocsRequest
     {
+        private string _authenticationToken;
+        private string _emailAddress;
         private string _givenName;
         private string _organizationId;
         private string _password;
@@ -41,6 +43,43 @@ namespace Amazon.WorkDocs.Model
         private string _surname;
         private string _timeZoneId;
         private string _username;
+
+        /// <summary>
+        /// Gets and sets the property AuthenticationToken. 
+        /// <para>
+        /// Amazon WorkDocs authentication token. This field should not be set when using administrative
+        /// API actions, as in accessing the API using AWS credentials.
+        /// </para>
+        /// </summary>
+        public string AuthenticationToken
+        {
+            get { return this._authenticationToken; }
+            set { this._authenticationToken = value; }
+        }
+
+        // Check to see if AuthenticationToken property is set
+        internal bool IsSetAuthenticationToken()
+        {
+            return this._authenticationToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EmailAddress. 
+        /// <para>
+        /// The email address of the user.
+        /// </para>
+        /// </summary>
+        public string EmailAddress
+        {
+            get { return this._emailAddress; }
+            set { this._emailAddress = value; }
+        }
+
+        // Check to see if EmailAddress property is set
+        internal bool IsSetEmailAddress()
+        {
+            return this._emailAddress != null;
+        }
 
         /// <summary>
         /// Gets and sets the property GivenName. 

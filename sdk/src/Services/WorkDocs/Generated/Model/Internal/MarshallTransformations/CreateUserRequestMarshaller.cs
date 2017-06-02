@@ -65,6 +65,12 @@ namespace Amazon.WorkDocs.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetEmailAddress())
+                {
+                    context.Writer.WritePropertyName("EmailAddress");
+                    context.Writer.Write(publicRequest.EmailAddress);
+                }
+
                 if(publicRequest.IsSetGivenName())
                 {
                     context.Writer.WritePropertyName("GivenName");
@@ -118,6 +124,9 @@ namespace Amazon.WorkDocs.Model.Internal.MarshallTransformations
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
             }
 
+        
+            if(publicRequest.IsSetAuthenticationToken())
+                request.Headers["Authentication"] = publicRequest.AuthenticationToken;
 
             return request;
         }

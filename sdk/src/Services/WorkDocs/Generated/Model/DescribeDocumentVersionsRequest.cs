@@ -38,11 +38,31 @@ namespace Amazon.WorkDocs.Model
     /// </summary>
     public partial class DescribeDocumentVersionsRequest : AmazonWorkDocsRequest
     {
+        private string _authenticationToken;
         private string _documentId;
         private string _fields;
         private string _include;
         private int? _limit;
         private string _marker;
+
+        /// <summary>
+        /// Gets and sets the property AuthenticationToken. 
+        /// <para>
+        /// Amazon WorkDocs authentication token. This field should not be set when using administrative
+        /// API actions, as in accessing the API using AWS credentials.
+        /// </para>
+        /// </summary>
+        public string AuthenticationToken
+        {
+            get { return this._authenticationToken; }
+            set { this._authenticationToken = value; }
+        }
+
+        // Check to see if AuthenticationToken property is set
+        internal bool IsSetAuthenticationToken()
+        {
+            return this._authenticationToken != null;
+        }
 
         /// <summary>
         /// Gets and sets the property DocumentId. 

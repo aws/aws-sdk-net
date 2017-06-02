@@ -29,16 +29,37 @@ namespace Amazon.WorkDocs.Model
 {
     /// <summary>
     /// Container for the parameters to the GetDocument operation.
-    /// Retrieves the specified document object.
+    /// Retrieves details of a document.
     /// </summary>
     public partial class GetDocumentRequest : AmazonWorkDocsRequest
     {
+        private string _authenticationToken;
         private string _documentId;
+        private bool? _includeCustomMetadata;
+
+        /// <summary>
+        /// Gets and sets the property AuthenticationToken. 
+        /// <para>
+        /// Amazon WorkDocs authentication token. This field should not be set when using administrative
+        /// API actions, as in accessing the API using AWS credentials.
+        /// </para>
+        /// </summary>
+        public string AuthenticationToken
+        {
+            get { return this._authenticationToken; }
+            set { this._authenticationToken = value; }
+        }
+
+        // Check to see if AuthenticationToken property is set
+        internal bool IsSetAuthenticationToken()
+        {
+            return this._authenticationToken != null;
+        }
 
         /// <summary>
         /// Gets and sets the property DocumentId. 
         /// <para>
-        /// The ID of the document object.
+        /// The ID of the document.
         /// </para>
         /// </summary>
         public string DocumentId
@@ -51,6 +72,24 @@ namespace Amazon.WorkDocs.Model
         internal bool IsSetDocumentId()
         {
             return this._documentId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IncludeCustomMetadata. 
+        /// <para>
+        /// Set this to <code>TRUE</code> to include custom metadata in the response.
+        /// </para>
+        /// </summary>
+        public bool IncludeCustomMetadata
+        {
+            get { return this._includeCustomMetadata.GetValueOrDefault(); }
+            set { this._includeCustomMetadata = value; }
+        }
+
+        // Check to see if IncludeCustomMetadata property is set
+        internal bool IsSetIncludeCustomMetadata()
+        {
+            return this._includeCustomMetadata.HasValue; 
         }
 
     }

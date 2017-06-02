@@ -67,7 +67,13 @@ namespace Amazon.WorkDocs.Model.Internal.MarshallTransformations
             
             if (publicRequest.IsSetFields())
                 request.Parameters.Add("fields", StringUtils.FromString(publicRequest.Fields));
+            
+            if (publicRequest.IsSetIncludeCustomMetadata())
+                request.Parameters.Add("includeCustomMetadata", StringUtils.FromBool(publicRequest.IncludeCustomMetadata));
             request.ResourcePath = uriResourcePath;
+        
+            if(publicRequest.IsSetAuthenticationToken())
+                request.Headers["Authentication"] = publicRequest.AuthenticationToken;
             request.UseQueryString = true;
 
             return request;

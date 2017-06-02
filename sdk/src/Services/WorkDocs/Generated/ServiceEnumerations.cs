@@ -25,6 +25,110 @@ namespace Amazon.WorkDocs
 {
 
     /// <summary>
+    /// Constants used for properties of type CommentStatusType.
+    /// </summary>
+    public class CommentStatusType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DELETED for CommentStatusType
+        /// </summary>
+        public static readonly CommentStatusType DELETED = new CommentStatusType("DELETED");
+        /// <summary>
+        /// Constant DRAFT for CommentStatusType
+        /// </summary>
+        public static readonly CommentStatusType DRAFT = new CommentStatusType("DRAFT");
+        /// <summary>
+        /// Constant PUBLISHED for CommentStatusType
+        /// </summary>
+        public static readonly CommentStatusType PUBLISHED = new CommentStatusType("PUBLISHED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CommentStatusType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CommentStatusType FindValue(string value)
+        {
+            return FindValue<CommentStatusType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CommentStatusType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type CommentVisibilityType.
+    /// </summary>
+    public class CommentVisibilityType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant PRIVATE for CommentVisibilityType
+        /// </summary>
+        public static readonly CommentVisibilityType PRIVATE = new CommentVisibilityType("PRIVATE");
+        /// <summary>
+        /// Constant PUBLIC for CommentVisibilityType
+        /// </summary>
+        public static readonly CommentVisibilityType PUBLIC = new CommentVisibilityType("PUBLIC");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CommentVisibilityType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CommentVisibilityType FindValue(string value)
+        {
+            return FindValue<CommentVisibilityType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CommentVisibilityType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type DocumentSourceType.
     /// </summary>
     public class DocumentSourceType : ConstantClass

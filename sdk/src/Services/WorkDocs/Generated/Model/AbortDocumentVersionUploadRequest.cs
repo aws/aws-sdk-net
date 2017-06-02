@@ -31,12 +31,32 @@ namespace Amazon.WorkDocs.Model
     /// Container for the parameters to the AbortDocumentVersionUpload operation.
     /// Aborts the upload of the specified document version that was previously initiated
     /// by <a>InitiateDocumentVersionUpload</a>. The client should make this call only when
-    /// it no longer intends or fails to upload the document version.
+    /// it no longer intends to upload the document version, or fails to do so.
     /// </summary>
     public partial class AbortDocumentVersionUploadRequest : AmazonWorkDocsRequest
     {
+        private string _authenticationToken;
         private string _documentId;
         private string _versionId;
+
+        /// <summary>
+        /// Gets and sets the property AuthenticationToken. 
+        /// <para>
+        /// Amazon WorkDocs authentication token. This field should not be set when using administrative
+        /// API actions, as in accessing the API using AWS credentials.
+        /// </para>
+        /// </summary>
+        public string AuthenticationToken
+        {
+            get { return this._authenticationToken; }
+            set { this._authenticationToken = value; }
+        }
+
+        // Check to see if AuthenticationToken property is set
+        internal bool IsSetAuthenticationToken()
+        {
+            return this._authenticationToken != null;
+        }
 
         /// <summary>
         /// Gets and sets the property DocumentId. 

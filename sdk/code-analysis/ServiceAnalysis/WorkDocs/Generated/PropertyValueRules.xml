@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="utf-16"?>
 <property-value-rules>
   <property-value-rule>
+    <property>Amazon.WorkDocs.Model.AbortDocumentVersionUploadRequest.AuthenticationToken</property>
+    <min>1</min>
+    <max>8199</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.WorkDocs.Model.AbortDocumentVersionUploadRequest.DocumentId</property>
     <min>1</min>
     <max>128</max>
@@ -13,16 +18,82 @@
     <pattern>[\w+-.@]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.WorkDocs.Model.ActivateUserRequest.AuthenticationToken</property>
+    <min>1</min>
+    <max>8199</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.WorkDocs.Model.ActivateUserRequest.UserId</property>
     <min>1</min>
     <max>256</max>
     <pattern>[&amp;\w+-.@]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.WorkDocs.Model.AddResourcePermissionsRequest.AuthenticationToken</property>
+    <min>1</min>
+    <max>8199</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.WorkDocs.Model.AddResourcePermissionsRequest.ResourceId</property>
     <min>1</min>
     <max>128</max>
     <pattern>[\w+-.@]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkDocs.Model.CreateCommentRequest.AuthenticationToken</property>
+    <min>1</min>
+    <max>8199</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkDocs.Model.CreateCommentRequest.DocumentId</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[\w+-.@]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkDocs.Model.CreateCommentRequest.ParentId</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[\w+-.@]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkDocs.Model.CreateCommentRequest.Text</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkDocs.Model.CreateCommentRequest.ThreadId</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[\w+-.@]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkDocs.Model.CreateCommentRequest.VersionId</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[\w+-.@]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkDocs.Model.CreateCustomMetadataRequest.AuthenticationToken</property>
+    <min>1</min>
+    <max>8199</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkDocs.Model.CreateCustomMetadataRequest.ResourceId</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[\w+-.@]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkDocs.Model.CreateCustomMetadataRequest.VersionId</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[\w+-.@]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkDocs.Model.CreateFolderRequest.AuthenticationToken</property>
+    <min>1</min>
+    <max>8199</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkDocs.Model.CreateFolderRequest.Name</property>
@@ -37,6 +108,17 @@
     <pattern>[\w+-.@]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.WorkDocs.Model.CreateLabelsRequest.AuthenticationToken</property>
+    <min>1</min>
+    <max>8199</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkDocs.Model.CreateLabelsRequest.ResourceId</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[\w+-.@]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.WorkDocs.Model.CreateNotificationSubscriptionRequest.Endpoint</property>
     <min>1</min>
     <max>256</max>
@@ -46,6 +128,17 @@
     <min>1</min>
     <max>256</max>
     <pattern>[&amp;\w+-.@]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkDocs.Model.CreateUserRequest.AuthenticationToken</property>
+    <min>1</min>
+    <max>8199</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkDocs.Model.CreateUserRequest.EmailAddress</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkDocs.Model.CreateUserRequest.GivenName</property>
@@ -78,7 +171,12 @@
     <property>Amazon.WorkDocs.Model.CreateUserRequest.Username</property>
     <min>1</min>
     <max>256</max>
-    <pattern>[\w\-.]+(@[a-zA-Z0-9.\-]+\.[a-zA-Z]+)?</pattern>
+    <pattern>[\w\-+.]+(@[a-zA-Z0-9.\-]+\.[a-zA-Z]+)?</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkDocs.Model.DeactivateUserRequest.AuthenticationToken</property>
+    <min>1</min>
+    <max>8199</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkDocs.Model.DeactivateUserRequest.UserId</property>
@@ -87,10 +185,60 @@
     <pattern>[&amp;\w+-.@]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.WorkDocs.Model.DeleteCommentRequest.AuthenticationToken</property>
+    <min>1</min>
+    <max>8199</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkDocs.Model.DeleteCommentRequest.CommentId</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[\w+-.@]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkDocs.Model.DeleteCommentRequest.DocumentId</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[\w+-.@]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkDocs.Model.DeleteCommentRequest.VersionId</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[\w+-.@]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkDocs.Model.DeleteCustomMetadataRequest.AuthenticationToken</property>
+    <min>1</min>
+    <max>8199</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkDocs.Model.DeleteCustomMetadataRequest.ResourceId</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[\w+-.@]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkDocs.Model.DeleteCustomMetadataRequest.VersionId</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[\w+-.@]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkDocs.Model.DeleteDocumentRequest.AuthenticationToken</property>
+    <min>1</min>
+    <max>8199</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.WorkDocs.Model.DeleteDocumentRequest.DocumentId</property>
     <min>1</min>
     <max>128</max>
     <pattern>[\w+-.@]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkDocs.Model.DeleteFolderRequest.AuthenticationToken</property>
+    <min>1</min>
+    <max>8199</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkDocs.Model.DeleteFolderRequest.FolderId</property>
@@ -99,7 +247,23 @@
     <pattern>[\w+-.@]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.WorkDocs.Model.DeleteFolderContentsRequest.AuthenticationToken</property>
+    <min>1</min>
+    <max>8199</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.WorkDocs.Model.DeleteFolderContentsRequest.FolderId</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[\w+-.@]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkDocs.Model.DeleteLabelsRequest.AuthenticationToken</property>
+    <min>1</min>
+    <max>8199</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkDocs.Model.DeleteLabelsRequest.ResourceId</property>
     <min>1</min>
     <max>128</max>
     <pattern>[\w+-.@]+</pattern>
@@ -117,10 +281,54 @@
     <pattern>[&amp;\w+-.@]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.WorkDocs.Model.DeleteUserRequest.AuthenticationToken</property>
+    <min>1</min>
+    <max>8199</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.WorkDocs.Model.DeleteUserRequest.UserId</property>
     <min>1</min>
     <max>256</max>
     <pattern>[&amp;\w+-.@]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkDocs.Model.DescribeCommentsRequest.AuthenticationToken</property>
+    <min>1</min>
+    <max>8199</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkDocs.Model.DescribeCommentsRequest.DocumentId</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[\w+-.@]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkDocs.Model.DescribeCommentsRequest.Limit</property>
+    <min>1</min>
+    <max>999</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkDocs.Model.DescribeCommentsRequest.Marker</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>[\u0000-\u00FF]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkDocs.Model.DescribeCommentsRequest.VersionId</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[\w+-.@]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkDocs.Model.DescribeCommentsResponse.Marker</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>[\u0000-\u00FF]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkDocs.Model.DescribeDocumentVersionsRequest.AuthenticationToken</property>
+    <min>1</min>
+    <max>8199</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkDocs.Model.DescribeDocumentVersionsRequest.DocumentId</property>
@@ -154,6 +362,11 @@
     <property>Amazon.WorkDocs.Model.DescribeDocumentVersionsResponse.Marker</property>
     <min>1</min>
     <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkDocs.Model.DescribeFolderContentsRequest.AuthenticationToken</property>
+    <min>1</min>
+    <max>8199</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkDocs.Model.DescribeFolderContentsRequest.FolderId</property>
@@ -204,6 +417,11 @@
     <max>2048</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.WorkDocs.Model.DescribeResourcePermissionsRequest.AuthenticationToken</property>
+    <min>1</min>
+    <max>8199</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.WorkDocs.Model.DescribeResourcePermissionsRequest.Limit</property>
     <min>1</min>
     <max>999</max>
@@ -223,6 +441,11 @@
     <property>Amazon.WorkDocs.Model.DescribeResourcePermissionsResponse.Marker</property>
     <min>1</min>
     <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkDocs.Model.DescribeUsersRequest.AuthenticationToken</property>
+    <min>1</min>
+    <max>8199</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkDocs.Model.DescribeUsersRequest.Fields</property>
@@ -264,10 +487,20 @@
     <max>2048</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.WorkDocs.Model.GetDocumentRequest.AuthenticationToken</property>
+    <min>1</min>
+    <max>8199</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.WorkDocs.Model.GetDocumentRequest.DocumentId</property>
     <min>1</min>
     <max>128</max>
     <pattern>[\w+-.@]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkDocs.Model.GetDocumentPathRequest.AuthenticationToken</property>
+    <min>1</min>
+    <max>8199</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkDocs.Model.GetDocumentPathRequest.DocumentId</property>
@@ -292,6 +525,11 @@
     <max>2048</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.WorkDocs.Model.GetDocumentVersionRequest.AuthenticationToken</property>
+    <min>1</min>
+    <max>8199</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.WorkDocs.Model.GetDocumentVersionRequest.DocumentId</property>
     <min>1</min>
     <max>128</max>
@@ -310,10 +548,20 @@
     <pattern>[\w+-.@]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.WorkDocs.Model.GetFolderRequest.AuthenticationToken</property>
+    <min>1</min>
+    <max>8199</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.WorkDocs.Model.GetFolderRequest.FolderId</property>
     <min>1</min>
     <max>128</max>
     <pattern>[\w+-.@]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkDocs.Model.GetFolderPathRequest.AuthenticationToken</property>
+    <min>1</min>
+    <max>8199</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkDocs.Model.GetFolderPathRequest.Fields</property>
@@ -336,6 +584,11 @@
     <property>Amazon.WorkDocs.Model.GetFolderPathRequest.Marker</property>
     <min>1</min>
     <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkDocs.Model.InitiateDocumentVersionUploadRequest.AuthenticationToken</property>
+    <min>1</min>
+    <max>8199</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkDocs.Model.InitiateDocumentVersionUploadRequest.ContentType</property>
@@ -361,10 +614,20 @@
     <pattern>[\w+-.@]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.WorkDocs.Model.RemoveAllResourcePermissionsRequest.AuthenticationToken</property>
+    <min>1</min>
+    <max>8199</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.WorkDocs.Model.RemoveAllResourcePermissionsRequest.ResourceId</property>
     <min>1</min>
     <max>128</max>
     <pattern>[\w+-.@]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkDocs.Model.RemoveResourcePermissionRequest.AuthenticationToken</property>
+    <min>1</min>
+    <max>8199</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkDocs.Model.RemoveResourcePermissionRequest.PrincipalId</property>
@@ -377,6 +640,11 @@
     <min>1</min>
     <max>128</max>
     <pattern>[\w+-.@]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkDocs.Model.UpdateDocumentRequest.AuthenticationToken</property>
+    <min>1</min>
+    <max>8199</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkDocs.Model.UpdateDocumentRequest.DocumentId</property>
@@ -397,6 +665,11 @@
     <pattern>[\w+-.@]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.WorkDocs.Model.UpdateDocumentVersionRequest.AuthenticationToken</property>
+    <min>1</min>
+    <max>8199</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.WorkDocs.Model.UpdateDocumentVersionRequest.DocumentId</property>
     <min>1</min>
     <max>128</max>
@@ -407,6 +680,11 @@
     <min>1</min>
     <max>128</max>
     <pattern>[\w+-.@]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkDocs.Model.UpdateFolderRequest.AuthenticationToken</property>
+    <min>1</min>
+    <max>8199</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkDocs.Model.UpdateFolderRequest.FolderId</property>
@@ -425,6 +703,11 @@
     <min>1</min>
     <max>128</max>
     <pattern>[\w+-.@]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkDocs.Model.UpdateUserRequest.AuthenticationToken</property>
+    <min>1</min>
+    <max>8199</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkDocs.Model.UpdateUserRequest.GivenName</property>
@@ -446,6 +729,35 @@
     <min>1</min>
     <max>256</max>
     <pattern>[&amp;\w+-.@]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkDocs.Model.Comment.CommentId</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[\w+-.@]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkDocs.Model.Comment.ParentId</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[\w+-.@]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkDocs.Model.Comment.RecipientId</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>[&amp;\w+-.@]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkDocs.Model.Comment.Text</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkDocs.Model.Comment.ThreadId</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[\w+-.@]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkDocs.Model.DocumentMetadata.CreatorId</property>
@@ -634,6 +946,6 @@
     <property>Amazon.WorkDocs.Model.User.Username</property>
     <min>1</min>
     <max>256</max>
-    <pattern>[\w\-.]+(@[a-zA-Z0-9.\-]+\.[a-zA-Z]+)?</pattern>
+    <pattern>[\w\-+.]+(@[a-zA-Z0-9.\-]+\.[a-zA-Z]+)?</pattern>
   </property-value-rule>
 </property-value-rules>

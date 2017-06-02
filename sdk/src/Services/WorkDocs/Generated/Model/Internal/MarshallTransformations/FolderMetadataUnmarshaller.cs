@@ -82,6 +82,18 @@ namespace Amazon.WorkDocs.Model.Internal.MarshallTransformations
                     unmarshalledObject.Id = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("Labels", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.Labels = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("LatestVersionSize", targetDepth))
+                {
+                    var unmarshaller = LongUnmarshaller.Instance;
+                    unmarshalledObject.LatestVersionSize = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ModifiedTimestamp", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;
@@ -110,6 +122,12 @@ namespace Amazon.WorkDocs.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Signature = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Size", targetDepth))
+                {
+                    var unmarshaller = LongUnmarshaller.Instance;
+                    unmarshalledObject.Size = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

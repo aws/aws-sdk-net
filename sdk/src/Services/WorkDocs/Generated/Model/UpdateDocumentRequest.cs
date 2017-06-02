@@ -29,15 +29,35 @@ namespace Amazon.WorkDocs.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateDocument operation.
-    /// Updates the specified attributes of the specified document. The user must have access
-    /// to both the document and its parent folder, if applicable.
+    /// Updates the specified attributes of a document. The user must have access to both
+    /// the document and its parent folder, if applicable.
     /// </summary>
     public partial class UpdateDocumentRequest : AmazonWorkDocsRequest
     {
+        private string _authenticationToken;
         private string _documentId;
         private string _name;
         private string _parentFolderId;
         private ResourceStateType _resourceState;
+
+        /// <summary>
+        /// Gets and sets the property AuthenticationToken. 
+        /// <para>
+        /// Amazon WorkDocs authentication token. This field should not be set when using administrative
+        /// API actions, as in accessing the API using AWS credentials.
+        /// </para>
+        /// </summary>
+        public string AuthenticationToken
+        {
+            get { return this._authenticationToken; }
+            set { this._authenticationToken = value; }
+        }
+
+        // Check to see if AuthenticationToken property is set
+        internal bool IsSetAuthenticationToken()
+        {
+            return this._authenticationToken != null;
+        }
 
         /// <summary>
         /// Gets and sets the property DocumentId. 

@@ -32,7 +32,26 @@ namespace Amazon.WorkDocs.Model
     /// </summary>
     public partial class GetDocumentVersionResponse : AmazonWebServiceResponse
     {
+        private Dictionary<string, string> _customMetadata = new Dictionary<string, string>();
         private DocumentVersionMetadata _metadata;
+
+        /// <summary>
+        /// Gets and sets the property CustomMetadata. 
+        /// <para>
+        /// The custom metadata on the document version.
+        /// </para>
+        /// </summary>
+        public Dictionary<string, string> CustomMetadata
+        {
+            get { return this._customMetadata; }
+            set { this._customMetadata = value; }
+        }
+
+        // Check to see if CustomMetadata property is set
+        internal bool IsSetCustomMetadata()
+        {
+            return this._customMetadata != null && this._customMetadata.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property Metadata. 

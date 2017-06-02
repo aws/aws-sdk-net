@@ -35,6 +35,7 @@ namespace Amazon.WorkDocs.Model
         private DateTime? _createdTimestamp;
         private string _creatorId;
         private string _id;
+        private List<string> _labels = new List<string>();
         private DocumentVersionMetadata _latestVersionMetadata;
         private DateTime? _modifiedTimestamp;
         private string _parentFolderId;
@@ -92,6 +93,24 @@ namespace Amazon.WorkDocs.Model
         internal bool IsSetId()
         {
             return this._id != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Labels. 
+        /// <para>
+        /// List of labels on the document.
+        /// </para>
+        /// </summary>
+        public List<string> Labels
+        {
+            get { return this._labels; }
+            set { this._labels = value; }
+        }
+
+        // Check to see if Labels property is set
+        internal bool IsSetLabels()
+        {
+            return this._labels != null && this._labels.Count > 0; 
         }
 
         /// <summary>

@@ -63,6 +63,9 @@ namespace Amazon.WorkDocs.Model.Internal.MarshallTransformations
                 throw new AmazonWorkDocsException("Request object does not have required field UserId set");
             uriResourcePath = uriResourcePath.Replace("{UserId}", StringUtils.FromString(publicRequest.UserId));
             request.ResourcePath = uriResourcePath;
+        
+            if(publicRequest.IsSetAuthenticationToken())
+                request.Headers["Authentication"] = publicRequest.AuthenticationToken;
 
             return request;
         }

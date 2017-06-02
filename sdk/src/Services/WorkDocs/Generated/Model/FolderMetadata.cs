@@ -35,11 +35,14 @@ namespace Amazon.WorkDocs.Model
         private DateTime? _createdTimestamp;
         private string _creatorId;
         private string _id;
+        private List<string> _labels = new List<string>();
+        private long? _latestVersionSize;
         private DateTime? _modifiedTimestamp;
         private string _name;
         private string _parentFolderId;
         private ResourceStateType _resourceState;
         private string _signature;
+        private long? _size;
 
         /// <summary>
         /// Gets and sets the property CreatedTimestamp. 
@@ -93,6 +96,39 @@ namespace Amazon.WorkDocs.Model
         internal bool IsSetId()
         {
             return this._id != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Labels. 
+        /// <para>
+        /// List of labels on the folder.
+        /// </para>
+        /// </summary>
+        public List<string> Labels
+        {
+            get { return this._labels; }
+            set { this._labels = value; }
+        }
+
+        // Check to see if Labels property is set
+        internal bool IsSetLabels()
+        {
+            return this._labels != null && this._labels.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property LatestVersionSize.
+        /// </summary>
+        public long LatestVersionSize
+        {
+            get { return this._latestVersionSize.GetValueOrDefault(); }
+            set { this._latestVersionSize = value; }
+        }
+
+        // Check to see if LatestVersionSize property is set
+        internal bool IsSetLatestVersionSize()
+        {
+            return this._latestVersionSize.HasValue; 
         }
 
         /// <summary>
@@ -183,6 +219,21 @@ namespace Amazon.WorkDocs.Model
         internal bool IsSetSignature()
         {
             return this._signature != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Size.
+        /// </summary>
+        public long Size
+        {
+            get { return this._size.GetValueOrDefault(); }
+            set { this._size = value; }
+        }
+
+        // Check to see if Size property is set
+        internal bool IsSetSize()
+        {
+            return this._size.HasValue; 
         }
 
     }

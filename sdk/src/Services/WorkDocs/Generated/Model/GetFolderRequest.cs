@@ -33,7 +33,28 @@ namespace Amazon.WorkDocs.Model
     /// </summary>
     public partial class GetFolderRequest : AmazonWorkDocsRequest
     {
+        private string _authenticationToken;
         private string _folderId;
+        private bool? _includeCustomMetadata;
+
+        /// <summary>
+        /// Gets and sets the property AuthenticationToken. 
+        /// <para>
+        /// Amazon WorkDocs authentication token. This field should not be set when using administrative
+        /// API actions, as in accessing the API using AWS credentials.
+        /// </para>
+        /// </summary>
+        public string AuthenticationToken
+        {
+            get { return this._authenticationToken; }
+            set { this._authenticationToken = value; }
+        }
+
+        // Check to see if AuthenticationToken property is set
+        internal bool IsSetAuthenticationToken()
+        {
+            return this._authenticationToken != null;
+        }
 
         /// <summary>
         /// Gets and sets the property FolderId. 
@@ -51,6 +72,24 @@ namespace Amazon.WorkDocs.Model
         internal bool IsSetFolderId()
         {
             return this._folderId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IncludeCustomMetadata. 
+        /// <para>
+        /// Set to TRUE to include custom metadata in the response.
+        /// </para>
+        /// </summary>
+        public bool IncludeCustomMetadata
+        {
+            get { return this._includeCustomMetadata.GetValueOrDefault(); }
+            set { this._includeCustomMetadata = value; }
+        }
+
+        // Check to see if IncludeCustomMetadata property is set
+        internal bool IsSetIncludeCustomMetadata()
+        {
+            return this._includeCustomMetadata.HasValue; 
         }
 
     }

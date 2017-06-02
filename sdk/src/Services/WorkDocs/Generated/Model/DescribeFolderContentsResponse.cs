@@ -57,7 +57,7 @@ namespace Amazon.WorkDocs.Model
         /// <summary>
         /// Gets and sets the property Folders. 
         /// <para>
-        /// The sub-folders in the specified folder.
+        /// The subfolders in the specified folder.
         /// </para>
         /// </summary>
         public List<FolderMetadata> Folders

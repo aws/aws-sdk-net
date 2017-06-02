@@ -79,7 +79,7 @@ namespace Amazon.WorkDocs
         /// <summary>
         /// Aborts the upload of the specified document version that was previously initiated
         /// by <a>InitiateDocumentVersionUpload</a>. The client should make this call only when
-        /// it no longer intends or fails to upload the document version.
+        /// it no longer intends to upload the document version, or fails to do so.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AbortDocumentVersionUpload service method.</param>
         /// 
@@ -205,6 +205,106 @@ namespace Amazon.WorkDocs
 
         #endregion
         
+        #region  CreateComment
+
+
+        /// <summary>
+        /// Adds a new comment to the specified document version.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateComment service method.</param>
+        /// 
+        /// <returns>The response from the CreateComment service method, as returned by WorkDocs.</returns>
+        /// <exception cref="Amazon.WorkDocs.Model.DocumentLockedForCommentsException">
+        /// This exception is thrown when the document is locked for comments and user tries to
+        /// create or delete a comment on that document.
+        /// </exception>
+        /// <exception cref="Amazon.WorkDocs.Model.EntityNotExistsException">
+        /// The resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.WorkDocs.Model.FailedDependencyException">
+        /// The AWS Directory Service cannot reach an on-premises instance. Or a dependency under
+        /// the control of the organization is failing, such as a connected active directory.
+        /// </exception>
+        /// <exception cref="Amazon.WorkDocs.Model.ProhibitedStateException">
+        /// The specified document version is not in the INITIALIZED state.
+        /// </exception>
+        /// <exception cref="Amazon.WorkDocs.Model.ServiceUnavailableException">
+        /// One or more of the dependencies is unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.WorkDocs.Model.UnauthorizedOperationException">
+        /// The operation is not permitted.
+        /// </exception>
+        /// <exception cref="Amazon.WorkDocs.Model.UnauthorizedResourceAccessException">
+        /// The caller does not have access to perform the action on the resource.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/CreateComment">REST API Reference for CreateComment Operation</seealso>
+        CreateCommentResponse CreateComment(CreateCommentRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateComment operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateComment operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/CreateComment">REST API Reference for CreateComment Operation</seealso>
+        Task<CreateCommentResponse> CreateCommentAsync(CreateCommentRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  CreateCustomMetadata
+
+
+        /// <summary>
+        /// Adds one or more custom properties to the specified resource (a folder, document,
+        /// or version).
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateCustomMetadata service method.</param>
+        /// 
+        /// <returns>The response from the CreateCustomMetadata service method, as returned by WorkDocs.</returns>
+        /// <exception cref="Amazon.WorkDocs.Model.CustomMetadataLimitExceededException">
+        /// The limit has been reached on the number of custom properties for the specified resource.
+        /// </exception>
+        /// <exception cref="Amazon.WorkDocs.Model.EntityNotExistsException">
+        /// The resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.WorkDocs.Model.FailedDependencyException">
+        /// The AWS Directory Service cannot reach an on-premises instance. Or a dependency under
+        /// the control of the organization is failing, such as a connected active directory.
+        /// </exception>
+        /// <exception cref="Amazon.WorkDocs.Model.ProhibitedStateException">
+        /// The specified document version is not in the INITIALIZED state.
+        /// </exception>
+        /// <exception cref="Amazon.WorkDocs.Model.ServiceUnavailableException">
+        /// One or more of the dependencies is unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.WorkDocs.Model.UnauthorizedOperationException">
+        /// The operation is not permitted.
+        /// </exception>
+        /// <exception cref="Amazon.WorkDocs.Model.UnauthorizedResourceAccessException">
+        /// The caller does not have access to perform the action on the resource.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/CreateCustomMetadata">REST API Reference for CreateCustomMetadata Operation</seealso>
+        CreateCustomMetadataResponse CreateCustomMetadata(CreateCustomMetadataRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateCustomMetadata operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateCustomMetadata operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/CreateCustomMetadata">REST API Reference for CreateCustomMetadata Operation</seealso>
+        Task<CreateCustomMetadataResponse> CreateCustomMetadataAsync(CreateCustomMetadataRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  CreateFolder
 
 
@@ -225,7 +325,7 @@ namespace Amazon.WorkDocs
         /// the control of the organization is failing, such as a connected active directory.
         /// </exception>
         /// <exception cref="Amazon.WorkDocs.Model.LimitExceededException">
-        /// You've exceeded the maximum of 100,000 folders under the parent folder.
+        /// The maximum of 100,000 folders under the parent folder has been exceeded.
         /// </exception>
         /// <exception cref="Amazon.WorkDocs.Model.ProhibitedStateException">
         /// The specified document version is not in the INITIALIZED state.
@@ -254,6 +354,52 @@ namespace Amazon.WorkDocs
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/CreateFolder">REST API Reference for CreateFolder Operation</seealso>
         Task<CreateFolderResponse> CreateFolderAsync(CreateFolderRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  CreateLabels
+
+
+        /// <summary>
+        /// Adds the specified list of labels to the given resource (a document or folder)
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateLabels service method.</param>
+        /// 
+        /// <returns>The response from the CreateLabels service method, as returned by WorkDocs.</returns>
+        /// <exception cref="Amazon.WorkDocs.Model.EntityNotExistsException">
+        /// The resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.WorkDocs.Model.FailedDependencyException">
+        /// The AWS Directory Service cannot reach an on-premises instance. Or a dependency under
+        /// the control of the organization is failing, such as a connected active directory.
+        /// </exception>
+        /// <exception cref="Amazon.WorkDocs.Model.ServiceUnavailableException">
+        /// One or more of the dependencies is unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.WorkDocs.Model.TooManyLabelsException">
+        /// The limit has been reached on the number of labels for the specified resource.
+        /// </exception>
+        /// <exception cref="Amazon.WorkDocs.Model.UnauthorizedOperationException">
+        /// The operation is not permitted.
+        /// </exception>
+        /// <exception cref="Amazon.WorkDocs.Model.UnauthorizedResourceAccessException">
+        /// The caller does not have access to perform the action on the resource.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/CreateLabels">REST API Reference for CreateLabels Operation</seealso>
+        CreateLabelsResponse CreateLabels(CreateLabelsRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateLabels operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateLabels operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/CreateLabels">REST API Reference for CreateLabels Operation</seealso>
+        Task<CreateLabelsResponse> CreateLabelsAsync(CreateLabelsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -384,6 +530,102 @@ namespace Amazon.WorkDocs
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/DeactivateUser">REST API Reference for DeactivateUser Operation</seealso>
         Task<DeactivateUserResponse> DeactivateUserAsync(DeactivateUserRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DeleteComment
+
+
+        /// <summary>
+        /// Deletes the specified comment from the document version.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteComment service method.</param>
+        /// 
+        /// <returns>The response from the DeleteComment service method, as returned by WorkDocs.</returns>
+        /// <exception cref="Amazon.WorkDocs.Model.DocumentLockedForCommentsException">
+        /// This exception is thrown when the document is locked for comments and user tries to
+        /// create or delete a comment on that document.
+        /// </exception>
+        /// <exception cref="Amazon.WorkDocs.Model.EntityNotExistsException">
+        /// The resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.WorkDocs.Model.FailedDependencyException">
+        /// The AWS Directory Service cannot reach an on-premises instance. Or a dependency under
+        /// the control of the organization is failing, such as a connected active directory.
+        /// </exception>
+        /// <exception cref="Amazon.WorkDocs.Model.ProhibitedStateException">
+        /// The specified document version is not in the INITIALIZED state.
+        /// </exception>
+        /// <exception cref="Amazon.WorkDocs.Model.ServiceUnavailableException">
+        /// One or more of the dependencies is unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.WorkDocs.Model.UnauthorizedOperationException">
+        /// The operation is not permitted.
+        /// </exception>
+        /// <exception cref="Amazon.WorkDocs.Model.UnauthorizedResourceAccessException">
+        /// The caller does not have access to perform the action on the resource.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/DeleteComment">REST API Reference for DeleteComment Operation</seealso>
+        DeleteCommentResponse DeleteComment(DeleteCommentRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteComment operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteComment operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/DeleteComment">REST API Reference for DeleteComment Operation</seealso>
+        Task<DeleteCommentResponse> DeleteCommentAsync(DeleteCommentRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DeleteCustomMetadata
+
+
+        /// <summary>
+        /// Deletes custom metadata from the specified resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteCustomMetadata service method.</param>
+        /// 
+        /// <returns>The response from the DeleteCustomMetadata service method, as returned by WorkDocs.</returns>
+        /// <exception cref="Amazon.WorkDocs.Model.EntityNotExistsException">
+        /// The resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.WorkDocs.Model.FailedDependencyException">
+        /// The AWS Directory Service cannot reach an on-premises instance. Or a dependency under
+        /// the control of the organization is failing, such as a connected active directory.
+        /// </exception>
+        /// <exception cref="Amazon.WorkDocs.Model.ProhibitedStateException">
+        /// The specified document version is not in the INITIALIZED state.
+        /// </exception>
+        /// <exception cref="Amazon.WorkDocs.Model.ServiceUnavailableException">
+        /// One or more of the dependencies is unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.WorkDocs.Model.UnauthorizedOperationException">
+        /// The operation is not permitted.
+        /// </exception>
+        /// <exception cref="Amazon.WorkDocs.Model.UnauthorizedResourceAccessException">
+        /// The caller does not have access to perform the action on the resource.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/DeleteCustomMetadata">REST API Reference for DeleteCustomMetadata Operation</seealso>
+        DeleteCustomMetadataResponse DeleteCustomMetadata(DeleteCustomMetadataRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteCustomMetadata operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteCustomMetadata operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/DeleteCustomMetadata">REST API Reference for DeleteCustomMetadata Operation</seealso>
+        Task<DeleteCustomMetadataResponse> DeleteCustomMetadataAsync(DeleteCustomMetadataRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -528,6 +770,49 @@ namespace Amazon.WorkDocs
 
         #endregion
         
+        #region  DeleteLabels
+
+
+        /// <summary>
+        /// Deletes the specified list of labels from a resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteLabels service method.</param>
+        /// 
+        /// <returns>The response from the DeleteLabels service method, as returned by WorkDocs.</returns>
+        /// <exception cref="Amazon.WorkDocs.Model.EntityNotExistsException">
+        /// The resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.WorkDocs.Model.FailedDependencyException">
+        /// The AWS Directory Service cannot reach an on-premises instance. Or a dependency under
+        /// the control of the organization is failing, such as a connected active directory.
+        /// </exception>
+        /// <exception cref="Amazon.WorkDocs.Model.ServiceUnavailableException">
+        /// One or more of the dependencies is unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.WorkDocs.Model.UnauthorizedOperationException">
+        /// The operation is not permitted.
+        /// </exception>
+        /// <exception cref="Amazon.WorkDocs.Model.UnauthorizedResourceAccessException">
+        /// The caller does not have access to perform the action on the resource.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/DeleteLabels">REST API Reference for DeleteLabels Operation</seealso>
+        DeleteLabelsResponse DeleteLabels(DeleteLabelsRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteLabels operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteLabels operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/DeleteLabels">REST API Reference for DeleteLabels Operation</seealso>
+        Task<DeleteLabelsResponse> DeleteLabelsAsync(DeleteLabelsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  DeleteNotificationSubscription
 
 
@@ -610,6 +895,52 @@ namespace Amazon.WorkDocs
 
         #endregion
         
+        #region  DescribeComments
+
+
+        /// <summary>
+        /// List all the comments for the specified document version.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeComments service method.</param>
+        /// 
+        /// <returns>The response from the DescribeComments service method, as returned by WorkDocs.</returns>
+        /// <exception cref="Amazon.WorkDocs.Model.EntityNotExistsException">
+        /// The resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.WorkDocs.Model.FailedDependencyException">
+        /// The AWS Directory Service cannot reach an on-premises instance. Or a dependency under
+        /// the control of the organization is failing, such as a connected active directory.
+        /// </exception>
+        /// <exception cref="Amazon.WorkDocs.Model.ProhibitedStateException">
+        /// The specified document version is not in the INITIALIZED state.
+        /// </exception>
+        /// <exception cref="Amazon.WorkDocs.Model.ServiceUnavailableException">
+        /// One or more of the dependencies is unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.WorkDocs.Model.UnauthorizedOperationException">
+        /// The operation is not permitted.
+        /// </exception>
+        /// <exception cref="Amazon.WorkDocs.Model.UnauthorizedResourceAccessException">
+        /// The caller does not have access to perform the action on the resource.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/DescribeComments">REST API Reference for DescribeComments Operation</seealso>
+        DescribeCommentsResponse DescribeComments(DescribeCommentsRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeComments operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeComments operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/DescribeComments">REST API Reference for DescribeComments Operation</seealso>
+        Task<DescribeCommentsResponse> DescribeCommentsAsync(DescribeCommentsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  DescribeDocumentVersions
 
 
@@ -668,7 +999,7 @@ namespace Amazon.WorkDocs
 
 
         /// <summary>
-        /// Describes the contents of the specified folder, including its documents and sub-folders.
+        /// Describes the contents of the specified folder, including its documents and subfolders.
         /// 
         ///  
         /// <para>
@@ -848,7 +1179,7 @@ namespace Amazon.WorkDocs
 
 
         /// <summary>
-        /// Retrieves the specified document object.
+        /// Retrieves details of a document.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetDocument service method.</param>
         /// 
@@ -1108,6 +1439,10 @@ namespace Amazon.WorkDocs
         /// <param name="request">Container for the necessary parameters to execute the InitiateDocumentVersionUpload service method.</param>
         /// 
         /// <returns>The response from the InitiateDocumentVersionUpload service method, as returned by WorkDocs.</returns>
+        /// <exception cref="Amazon.WorkDocs.Model.DraftUploadOutOfSyncException">
+        /// This exception is thrown when a valid checkout ID is not presented on document version
+        /// upload calls for a document that has been checked out from Web client.
+        /// </exception>
         /// <exception cref="Amazon.WorkDocs.Model.EntityAlreadyExistsException">
         /// The resource already exists.
         /// </exception>
@@ -1120,6 +1455,9 @@ namespace Amazon.WorkDocs
         /// </exception>
         /// <exception cref="Amazon.WorkDocs.Model.ProhibitedStateException">
         /// The specified document version is not in the INITIALIZED state.
+        /// </exception>
+        /// <exception cref="Amazon.WorkDocs.Model.ResourceAlreadyCheckedOutException">
+        /// 
         /// </exception>
         /// <exception cref="Amazon.WorkDocs.Model.ServiceUnavailableException">
         /// One or more of the dependencies is unavailable.
@@ -1238,8 +1576,8 @@ namespace Amazon.WorkDocs
 
 
         /// <summary>
-        /// Updates the specified attributes of the specified document. The user must have access
-        /// to both the document and its parent folder, if applicable.
+        /// Updates the specified attributes of a document. The user must have access to both
+        /// the document and its parent folder, if applicable.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateDocument service method.</param>
         /// 
@@ -1258,7 +1596,7 @@ namespace Amazon.WorkDocs
         /// the control of the organization is failing, such as a connected active directory.
         /// </exception>
         /// <exception cref="Amazon.WorkDocs.Model.LimitExceededException">
-        /// You've exceeded the maximum of 100,000 folders under the parent folder.
+        /// The maximum of 100,000 folders under the parent folder has been exceeded.
         /// </exception>
         /// <exception cref="Amazon.WorkDocs.Model.ProhibitedStateException">
         /// The specified document version is not in the INITIALIZED state.
@@ -1373,7 +1711,7 @@ namespace Amazon.WorkDocs
         /// the control of the organization is failing, such as a connected active directory.
         /// </exception>
         /// <exception cref="Amazon.WorkDocs.Model.LimitExceededException">
-        /// You've exceeded the maximum of 100,000 folders under the parent folder.
+        /// The maximum of 100,000 folders under the parent folder has been exceeded.
         /// </exception>
         /// <exception cref="Amazon.WorkDocs.Model.ProhibitedStateException">
         /// The specified document version is not in the INITIALIZED state.

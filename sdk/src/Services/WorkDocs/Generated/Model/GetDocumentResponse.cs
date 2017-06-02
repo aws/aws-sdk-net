@@ -32,12 +32,31 @@ namespace Amazon.WorkDocs.Model
     /// </summary>
     public partial class GetDocumentResponse : AmazonWebServiceResponse
     {
+        private Dictionary<string, string> _customMetadata = new Dictionary<string, string>();
         private DocumentMetadata _metadata;
+
+        /// <summary>
+        /// Gets and sets the property CustomMetadata. 
+        /// <para>
+        /// The custom metadata on the document.
+        /// </para>
+        /// </summary>
+        public Dictionary<string, string> CustomMetadata
+        {
+            get { return this._customMetadata; }
+            set { this._customMetadata = value; }
+        }
+
+        // Check to see if CustomMetadata property is set
+        internal bool IsSetCustomMetadata()
+        {
+            return this._customMetadata != null && this._customMetadata.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property Metadata. 
         /// <para>
-        /// The document object.
+        /// The metadata details of the document.
         /// </para>
         /// </summary>
         public DocumentMetadata Metadata

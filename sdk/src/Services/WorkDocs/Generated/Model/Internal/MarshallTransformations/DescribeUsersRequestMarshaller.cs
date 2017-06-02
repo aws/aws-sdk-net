@@ -86,6 +86,9 @@ namespace Amazon.WorkDocs.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetUserIds())
                 request.Parameters.Add("userIds", StringUtils.FromString(publicRequest.UserIds));
             request.ResourcePath = uriResourcePath;
+        
+            if(publicRequest.IsSetAuthenticationToken())
+                request.Headers["Authentication"] = publicRequest.AuthenticationToken;
             request.UseQueryString = true;
 
             return request;

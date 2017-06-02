@@ -362,6 +362,70 @@ namespace Amazon.WorkDocs
 
         #endregion
         
+        #region  CreateComment
+
+        internal CreateCommentResponse CreateComment(CreateCommentRequest request)
+        {
+            var marshaller = new CreateCommentRequestMarshaller();
+            var unmarshaller = CreateCommentResponseUnmarshaller.Instance;
+
+            return Invoke<CreateCommentRequest,CreateCommentResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateComment operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateComment operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/CreateComment">REST API Reference for CreateComment Operation</seealso>
+        public Task<CreateCommentResponse> CreateCommentAsync(CreateCommentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new CreateCommentRequestMarshaller();
+            var unmarshaller = CreateCommentResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateCommentRequest,CreateCommentResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CreateCustomMetadata
+
+        internal CreateCustomMetadataResponse CreateCustomMetadata(CreateCustomMetadataRequest request)
+        {
+            var marshaller = new CreateCustomMetadataRequestMarshaller();
+            var unmarshaller = CreateCustomMetadataResponseUnmarshaller.Instance;
+
+            return Invoke<CreateCustomMetadataRequest,CreateCustomMetadataResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateCustomMetadata operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateCustomMetadata operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/CreateCustomMetadata">REST API Reference for CreateCustomMetadata Operation</seealso>
+        public Task<CreateCustomMetadataResponse> CreateCustomMetadataAsync(CreateCustomMetadataRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new CreateCustomMetadataRequestMarshaller();
+            var unmarshaller = CreateCustomMetadataResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateCustomMetadataRequest,CreateCustomMetadataResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateFolder
 
         internal CreateFolderResponse CreateFolder(CreateFolderRequest request)
@@ -389,6 +453,38 @@ namespace Amazon.WorkDocs
             var unmarshaller = CreateFolderResponseUnmarshaller.Instance;
 
             return InvokeAsync<CreateFolderRequest,CreateFolderResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CreateLabels
+
+        internal CreateLabelsResponse CreateLabels(CreateLabelsRequest request)
+        {
+            var marshaller = new CreateLabelsRequestMarshaller();
+            var unmarshaller = CreateLabelsResponseUnmarshaller.Instance;
+
+            return Invoke<CreateLabelsRequest,CreateLabelsResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateLabels operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateLabels operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/CreateLabels">REST API Reference for CreateLabels Operation</seealso>
+        public Task<CreateLabelsResponse> CreateLabelsAsync(CreateLabelsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new CreateLabelsRequestMarshaller();
+            var unmarshaller = CreateLabelsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateLabelsRequest,CreateLabelsResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -490,6 +586,70 @@ namespace Amazon.WorkDocs
 
         #endregion
         
+        #region  DeleteComment
+
+        internal DeleteCommentResponse DeleteComment(DeleteCommentRequest request)
+        {
+            var marshaller = new DeleteCommentRequestMarshaller();
+            var unmarshaller = DeleteCommentResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteCommentRequest,DeleteCommentResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteComment operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteComment operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/DeleteComment">REST API Reference for DeleteComment Operation</seealso>
+        public Task<DeleteCommentResponse> DeleteCommentAsync(DeleteCommentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DeleteCommentRequestMarshaller();
+            var unmarshaller = DeleteCommentResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteCommentRequest,DeleteCommentResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteCustomMetadata
+
+        internal DeleteCustomMetadataResponse DeleteCustomMetadata(DeleteCustomMetadataRequest request)
+        {
+            var marshaller = new DeleteCustomMetadataRequestMarshaller();
+            var unmarshaller = DeleteCustomMetadataResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteCustomMetadataRequest,DeleteCustomMetadataResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteCustomMetadata operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteCustomMetadata operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/DeleteCustomMetadata">REST API Reference for DeleteCustomMetadata Operation</seealso>
+        public Task<DeleteCustomMetadataResponse> DeleteCustomMetadataAsync(DeleteCustomMetadataRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DeleteCustomMetadataRequestMarshaller();
+            var unmarshaller = DeleteCustomMetadataResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteCustomMetadataRequest,DeleteCustomMetadataResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeleteDocument
 
         internal DeleteDocumentResponse DeleteDocument(DeleteDocumentRequest request)
@@ -586,6 +746,38 @@ namespace Amazon.WorkDocs
 
         #endregion
         
+        #region  DeleteLabels
+
+        internal DeleteLabelsResponse DeleteLabels(DeleteLabelsRequest request)
+        {
+            var marshaller = new DeleteLabelsRequestMarshaller();
+            var unmarshaller = DeleteLabelsResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteLabelsRequest,DeleteLabelsResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteLabels operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteLabels operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/DeleteLabels">REST API Reference for DeleteLabels Operation</seealso>
+        public Task<DeleteLabelsResponse> DeleteLabelsAsync(DeleteLabelsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DeleteLabelsRequestMarshaller();
+            var unmarshaller = DeleteLabelsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteLabelsRequest,DeleteLabelsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeleteNotificationSubscription
 
         internal DeleteNotificationSubscriptionResponse DeleteNotificationSubscription(DeleteNotificationSubscriptionRequest request)
@@ -645,6 +837,38 @@ namespace Amazon.WorkDocs
             var unmarshaller = DeleteUserResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteUserRequest,DeleteUserResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeComments
+
+        internal DescribeCommentsResponse DescribeComments(DescribeCommentsRequest request)
+        {
+            var marshaller = new DescribeCommentsRequestMarshaller();
+            var unmarshaller = DescribeCommentsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeCommentsRequest,DescribeCommentsResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeComments operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeComments operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/DescribeComments">REST API Reference for DescribeComments Operation</seealso>
+        public Task<DescribeCommentsResponse> DescribeCommentsAsync(DescribeCommentsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DescribeCommentsRequestMarshaller();
+            var unmarshaller = DescribeCommentsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeCommentsRequest,DescribeCommentsResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 

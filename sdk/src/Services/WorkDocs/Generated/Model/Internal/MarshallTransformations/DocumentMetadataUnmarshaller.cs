@@ -82,6 +82,12 @@ namespace Amazon.WorkDocs.Model.Internal.MarshallTransformations
                     unmarshalledObject.Id = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("Labels", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.Labels = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("LatestVersionMetadata", targetDepth))
                 {
                     var unmarshaller = DocumentVersionMetadataUnmarshaller.Instance;
