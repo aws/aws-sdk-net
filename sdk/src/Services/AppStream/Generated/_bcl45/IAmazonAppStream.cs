@@ -680,9 +680,6 @@ namespace Amazon.AppStream
         /// <exception cref="Amazon.AppStream.Model.ResourceNotFoundException">
         /// The specified resource was not found.
         /// </exception>
-        /// <exception cref="Amazon.AppStream.Model.ResourceNotFoundException">
-        /// The specified resource was not found.
-        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/UpdateStack">REST API Reference for UpdateStack Operation</seealso>
         UpdateStackResponse UpdateStack(UpdateStackRequest request);
 

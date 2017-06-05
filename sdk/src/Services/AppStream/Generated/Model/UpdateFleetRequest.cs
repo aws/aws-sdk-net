@@ -36,6 +36,7 @@ namespace Amazon.AppStream.Model
     /// </summary>
     public partial class UpdateFleetRequest : AmazonAppStreamRequest
     {
+        private List<string> _attributesToDelete = new List<string>();
         private ComputeCapacity _computeCapacity;
         private bool? _deleteVpcConfig;
         private string _description;
@@ -47,6 +48,24 @@ namespace Amazon.AppStream.Model
         private int? _maxUserDurationInSeconds;
         private string _name;
         private VpcConfig _vpcConfig;
+
+        /// <summary>
+        /// Gets and sets the property AttributesToDelete. 
+        /// <para>
+        /// Fleet attributes to be deleted.
+        /// </para>
+        /// </summary>
+        public List<string> AttributesToDelete
+        {
+            get { return this._attributesToDelete; }
+            set { this._attributesToDelete = value; }
+        }
+
+        // Check to see if AttributesToDelete property is set
+        internal bool IsSetAttributesToDelete()
+        {
+            return this._attributesToDelete != null && this._attributesToDelete.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property ComputeCapacity. 

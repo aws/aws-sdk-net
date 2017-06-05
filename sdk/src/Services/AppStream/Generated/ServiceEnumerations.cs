@@ -38,6 +38,10 @@ namespace Amazon.AppStream
         /// Constant SAML for AuthenticationType
         /// </summary>
         public static readonly AuthenticationType SAML = new AuthenticationType("SAML");
+        /// <summary>
+        /// Constant USERPOOL for AuthenticationType
+        /// </summary>
+        public static readonly AuthenticationType USERPOOL = new AuthenticationType("USERPOOL");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -68,6 +72,56 @@ namespace Amazon.AppStream
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator AuthenticationType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type FleetAttribute.
+    /// </summary>
+    public class FleetAttribute : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant VPC_CONFIGURATION for FleetAttribute
+        /// </summary>
+        public static readonly FleetAttribute VPC_CONFIGURATION = new FleetAttribute("VPC_CONFIGURATION");
+        /// <summary>
+        /// Constant VPC_CONFIGURATION_SECURITY_GROUP_IDS for FleetAttribute
+        /// </summary>
+        public static readonly FleetAttribute VPC_CONFIGURATION_SECURITY_GROUP_IDS = new FleetAttribute("VPC_CONFIGURATION_SECURITY_GROUP_IDS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public FleetAttribute(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static FleetAttribute FindValue(string value)
+        {
+            return FindValue<FleetAttribute>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator FleetAttribute(string value)
         {
             return FindValue(value);
         }

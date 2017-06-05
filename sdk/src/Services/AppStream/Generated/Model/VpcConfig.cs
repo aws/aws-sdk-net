@@ -32,7 +32,26 @@ namespace Amazon.AppStream.Model
     /// </summary>
     public partial class VpcConfig
     {
+        private List<string> _securityGroupIds = new List<string>();
         private List<string> _subnetIds = new List<string>();
+
+        /// <summary>
+        /// Gets and sets the property SecurityGroupIds. 
+        /// <para>
+        /// Security groups associated with the fleet.
+        /// </para>
+        /// </summary>
+        public List<string> SecurityGroupIds
+        {
+            get { return this._securityGroupIds; }
+            set { this._securityGroupIds = value; }
+        }
+
+        // Check to see if SecurityGroupIds property is set
+        internal bool IsSetSecurityGroupIds()
+        {
+            return this._securityGroupIds != null && this._securityGroupIds.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property SubnetIds. 
