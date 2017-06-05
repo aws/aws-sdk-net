@@ -160,3 +160,7 @@ See [GitHub Issue #371](https://github.com/aws/aws-sdk-net/issues/371)
 #### Add settings to appsettings.json
 
 See GitHub Issues [#656](https://github.com/aws/aws-sdk-net/issues/656) and [#624](https://github.com/aws/aws-sdk-net/issues/624)
+
+#### Return list of DynamoDBContext batch-operation unprocessed objects
+
+See [GitHub Issue #623](https://github.com/aws/aws-sdk-net/issues/623)
