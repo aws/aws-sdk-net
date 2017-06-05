@@ -197,15 +197,10 @@ namespace Amazon.SQS.Model
             {
                 var attributeValue = getAttributeValue(SQSConstants.ATTRIBUTE_CONTENT_BASED_DEDUPLICATION);
 
-                if (attributeValue == null || attributeValue.Trim() == string.Empty)
-                {
-                    return null;
-                }
-
                 bool result;
                 if (bool.TryParse(attributeValue, out result))
                     return result;
-                return false;
+                return null;
             }
         }
 
