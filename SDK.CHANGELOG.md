@@ -1,3 +1,9 @@
+### 3.3.100.0 (2017-06-05 21:17 UTC)
+* AppStream (3.3.3.0)
+	* AppStream 2.0 Custom Security Groups allows you to easily control what network resources your streaming instances and images have access to. You can assign up to 5 security groups per Fleet to control the inbound and outbound network access to your streaming instances to specific IP ranges, network protocols, or ports.
+* IoT (3.3.2.0)
+	*  Added Salesforce action to IoT Rules Engine.
+
 ### 3.3.99.0 (2017-06-02 19:32 UTC)
 * KinesisAnalytics (3.3.1.0)
 	* Kinesis Analytics publishes error messages CloudWatch logs in case of application misconfigurations
