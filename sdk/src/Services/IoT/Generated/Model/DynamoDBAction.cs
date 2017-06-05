@@ -49,7 +49,7 @@ namespace Amazon.IoT.Model
     /// </para>
     ///  
     /// <para>
-    /// <code>"hashKeyValue": "${topic(3)}"</code>
+    ///  <code>"hashKeyValue": "${topic(3)}"</code> 
     /// </para>
     ///  
     /// <para>
@@ -57,7 +57,7 @@ namespace Amazon.IoT.Model
     /// </para>
     ///  
     /// <para>
-    /// <code>"rangeKeyValue": "${timestamp()}"</code>
+    ///  <code>"rangeKeyValue": "${timestamp()}"</code> 
     /// </para>
     /// </summary>
     public partial class DynamoDBAction

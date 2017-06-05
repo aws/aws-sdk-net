@@ -95,7 +95,10 @@ namespace Amazon.IoT.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Status.
+        /// Gets and sets the property Status. 
+        /// <para>
+        /// The status of the register certificate request.
+        /// </para>
         /// </summary>
         public CertificateStatus Status
         {

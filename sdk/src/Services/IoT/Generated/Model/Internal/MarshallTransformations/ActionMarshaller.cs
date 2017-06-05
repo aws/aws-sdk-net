@@ -155,6 +155,17 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetSalesforce())
+            {
+                context.Writer.WritePropertyName("salesforce");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = SalesforceActionMarshaller.Instance;
+                marshaller.Marshall(requestObject.Salesforce, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetSns())
             {
                 context.Writer.WritePropertyName("sns");

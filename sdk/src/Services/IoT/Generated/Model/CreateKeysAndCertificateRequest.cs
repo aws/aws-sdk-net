@@ -34,7 +34,7 @@ namespace Amazon.IoT.Model
     /// 
     ///  
     /// <para>
-    /// <b>Note</b> This is the only time AWS IoT issues the private key for this certificate,
+    ///  <b>Note</b> This is the only time AWS IoT issues the private key for this certificate,
     /// so it is important to keep it in a secure location.
     /// </para>
     /// </summary>

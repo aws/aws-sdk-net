@@ -46,7 +46,7 @@ namespace Amazon.IoT.Model
         /// </para>
         ///  
         /// <para>
-        /// <code>{\"attributes\":{\"name1\":\"value2\"}})</code>
+        ///  <code>{\"attributes\":{\"name1\":\"value2\"}}</code> 
         /// </para>
         ///  
         /// <para>

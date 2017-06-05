@@ -84,6 +84,7 @@ namespace Amazon.IoT
         /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
         /// You are not authorized to perform this operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/AcceptCertificateTransfer">REST API Reference for AcceptCertificateTransfer Operation</seealso>
         AcceptCertificateTransferResponse AcceptCertificateTransfer(AcceptCertificateTransferRequest request);
 
         /// <summary>
@@ -97,6 +98,7 @@ namespace Amazon.IoT
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAcceptCertificateTransfer
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/AcceptCertificateTransfer">REST API Reference for AcceptCertificateTransfer Operation</seealso>
         IAsyncResult BeginAcceptCertificateTransfer(AcceptCertificateTransferRequest request, AsyncCallback callback, object state);
 
 
@@ -108,6 +110,7 @@ namespace Amazon.IoT
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAcceptCertificateTransfer.</param>
         /// 
         /// <returns>Returns a  AcceptCertificateTransferResult from IoT.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/AcceptCertificateTransfer">REST API Reference for AcceptCertificateTransfer Operation</seealso>
         AcceptCertificateTransferResponse EndAcceptCertificateTransfer(IAsyncResult asyncResult);
 
         #endregion
@@ -143,6 +146,7 @@ namespace Amazon.IoT
         /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
         /// You are not authorized to perform this operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/AttachPrincipalPolicy">REST API Reference for AttachPrincipalPolicy Operation</seealso>
         AttachPrincipalPolicyResponse AttachPrincipalPolicy(string policyName, string principal);
 
         /// <summary>
@@ -172,6 +176,7 @@ namespace Amazon.IoT
         /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
         /// You are not authorized to perform this operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/AttachPrincipalPolicy">REST API Reference for AttachPrincipalPolicy Operation</seealso>
         AttachPrincipalPolicyResponse AttachPrincipalPolicy(AttachPrincipalPolicyRequest request);
 
         /// <summary>
@@ -185,6 +190,7 @@ namespace Amazon.IoT
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAttachPrincipalPolicy
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/AttachPrincipalPolicy">REST API Reference for AttachPrincipalPolicy Operation</seealso>
         IAsyncResult BeginAttachPrincipalPolicy(AttachPrincipalPolicyRequest request, AsyncCallback callback, object state);
 
 
@@ -196,6 +202,7 @@ namespace Amazon.IoT
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAttachPrincipalPolicy.</param>
         /// 
         /// <returns>Returns a  AttachPrincipalPolicyResult from IoT.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/AttachPrincipalPolicy">REST API Reference for AttachPrincipalPolicy Operation</seealso>
         AttachPrincipalPolicyResponse EndAttachPrincipalPolicy(IAsyncResult asyncResult);
 
         #endregion
@@ -228,6 +235,7 @@ namespace Amazon.IoT
         /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
         /// You are not authorized to perform this operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/AttachThingPrincipal">REST API Reference for AttachThingPrincipal Operation</seealso>
         AttachThingPrincipalResponse AttachThingPrincipal(string thingName, string principal);
 
         /// <summary>
@@ -254,6 +262,7 @@ namespace Amazon.IoT
         /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
         /// You are not authorized to perform this operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/AttachThingPrincipal">REST API Reference for AttachThingPrincipal Operation</seealso>
         AttachThingPrincipalResponse AttachThingPrincipal(AttachThingPrincipalRequest request);
 
         /// <summary>
@@ -267,6 +276,7 @@ namespace Amazon.IoT
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAttachThingPrincipal
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/AttachThingPrincipal">REST API Reference for AttachThingPrincipal Operation</seealso>
         IAsyncResult BeginAttachThingPrincipal(AttachThingPrincipalRequest request, AsyncCallback callback, object state);
 
 
@@ -278,6 +288,7 @@ namespace Amazon.IoT
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAttachThingPrincipal.</param>
         /// 
         /// <returns>Returns a  AttachThingPrincipalResult from IoT.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/AttachThingPrincipal">REST API Reference for AttachThingPrincipal Operation</seealso>
         AttachThingPrincipalResponse EndAttachThingPrincipal(IAsyncResult asyncResult);
 
         #endregion
@@ -290,7 +301,7 @@ namespace Amazon.IoT
         /// 
         ///  
         /// <para>
-        /// <b>Note</b> Only the transfer source account can use this operation to cancel a transfer.
+        ///  <b>Note</b> Only the transfer source account can use this operation to cancel a transfer.
         /// (Transfer destinations can use <a>RejectCertificateTransfer</a> instead.) After transfer,
         /// AWS IoT returns the certificate to the source account in the INACTIVE state. After
         /// the destination account has accepted the transfer, the transfer cannot be cancelled.
@@ -325,6 +336,7 @@ namespace Amazon.IoT
         /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
         /// You are not authorized to perform this operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CancelCertificateTransfer">REST API Reference for CancelCertificateTransfer Operation</seealso>
         CancelCertificateTransferResponse CancelCertificateTransfer(string certificateId);
 
         /// <summary>
@@ -332,7 +344,7 @@ namespace Amazon.IoT
         /// 
         ///  
         /// <para>
-        /// <b>Note</b> Only the transfer source account can use this operation to cancel a transfer.
+        ///  <b>Note</b> Only the transfer source account can use this operation to cancel a transfer.
         /// (Transfer destinations can use <a>RejectCertificateTransfer</a> instead.) After transfer,
         /// AWS IoT returns the certificate to the source account in the INACTIVE state. After
         /// the destination account has accepted the transfer, the transfer cannot be cancelled.
@@ -367,6 +379,7 @@ namespace Amazon.IoT
         /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
         /// You are not authorized to perform this operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CancelCertificateTransfer">REST API Reference for CancelCertificateTransfer Operation</seealso>
         CancelCertificateTransferResponse CancelCertificateTransfer(CancelCertificateTransferRequest request);
 
         /// <summary>
@@ -380,6 +393,7 @@ namespace Amazon.IoT
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCancelCertificateTransfer
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CancelCertificateTransfer">REST API Reference for CancelCertificateTransfer Operation</seealso>
         IAsyncResult BeginCancelCertificateTransfer(CancelCertificateTransferRequest request, AsyncCallback callback, object state);
 
 
@@ -391,6 +405,7 @@ namespace Amazon.IoT
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCancelCertificateTransfer.</param>
         /// 
         /// <returns>Returns a  CancelCertificateTransferResult from IoT.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CancelCertificateTransfer">REST API Reference for CancelCertificateTransfer Operation</seealso>
         CancelCertificateTransferResponse EndCancelCertificateTransfer(IAsyncResult asyncResult);
 
         #endregion
@@ -403,7 +418,12 @@ namespace Amazon.IoT
         /// 
         ///  
         /// <para>
-        /// <b>Note</b> Reusing the same certificate signing request (CSR) results in a distinct
+        ///  <b>Note:</b> The CSR must include a public key that is either an RSA key with a length
+        /// of at least 2048 bits or an ECC key from NIST P-256 or NIST P-384 curves. 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Note:</b> Reusing the same certificate signing request (CSR) results in a distinct
         /// certificate.
         /// </para>
         ///  
@@ -411,7 +431,7 @@ namespace Amazon.IoT
         /// You can create multiple certificates in a batch by creating a directory, copying multiple
         /// .csr files into that directory, and then specifying that directory on the command
         /// line. The following commands show how to create a batch of certificates given a batch
-        /// of CSRs. 
+        /// of CSRs.
         /// </para>
         ///  
         /// <para>
@@ -428,39 +448,39 @@ namespace Amazon.IoT
         /// </para>
         ///  
         /// <para>
-        ///  This command lists all of the CSRs in my-csr-directory and pipes each CSR file name
+        /// This command lists all of the CSRs in my-csr-directory and pipes each CSR file name
         /// to the aws iot create-certificate-from-csr AWS CLI command to create a certificate
-        /// for the corresponding CSR. 
+        /// for the corresponding CSR.
         /// </para>
         ///  
         /// <para>
-        ///  The aws iot create-certificate-from-csr part of the command can also be run in parallel
-        /// to speed up the certificate creation process: 
+        /// The aws iot create-certificate-from-csr part of the command can also be run in parallel
+        /// to speed up the certificate creation process:
         /// </para>
         ///  
         /// <para>
-        ///  $ ls my-csr-directory/ | xargs -P 10 -I {} aws iot create-certificate-from-csr --certificate-signing-request
-        /// file://my-csr-directory/{} 
+        /// $ ls my-csr-directory/ | xargs -P 10 -I {} aws iot create-certificate-from-csr --certificate-signing-request
+        /// file://my-csr-directory/{}
         /// </para>
         ///  
         /// <para>
-        ///  On Windows PowerShell, the command to create certificates for all CSRs in my-csr-directory
-        /// is: 
+        /// On Windows PowerShell, the command to create certificates for all CSRs in my-csr-directory
+        /// is:
         /// </para>
         ///  
         /// <para>
-        ///  &gt; ls -Name my-csr-directory | %{aws iot create-certificate-from-csr --certificate-signing-request
-        /// file://my-csr-directory/$_} 
+        /// &gt; ls -Name my-csr-directory | %{aws iot create-certificate-from-csr --certificate-signing-request
+        /// file://my-csr-directory/$_}
         /// </para>
         ///  
         /// <para>
-        ///  On a Windows command prompt, the command to create certificates for all CSRs in my-csr-directory
-        /// is: 
+        /// On a Windows command prompt, the command to create certificates for all CSRs in my-csr-directory
+        /// is:
         /// </para>
         ///  
         /// <para>
-        ///  &gt; forfiles /p my-csr-directory /c "cmd /c aws iot create-certificate-from-csr
-        /// --certificate-signing-request file://@path"
+        /// &gt; forfiles /p my-csr-directory /c "cmd /c aws iot create-certificate-from-csr --certificate-signing-request
+        /// file://@path"
         /// </para>
         /// </summary>
         /// <param name="certificateSigningRequest">The certificate signing request (CSR).</param>
@@ -481,6 +501,7 @@ namespace Amazon.IoT
         /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
         /// You are not authorized to perform this operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreateCertificateFromCsr">REST API Reference for CreateCertificateFromCsr Operation</seealso>
         CreateCertificateFromCsrResponse CreateCertificateFromCsr(string certificateSigningRequest);
 
         /// <summary>
@@ -488,7 +509,12 @@ namespace Amazon.IoT
         /// 
         ///  
         /// <para>
-        /// <b>Note</b> Reusing the same certificate signing request (CSR) results in a distinct
+        ///  <b>Note:</b> The CSR must include a public key that is either an RSA key with a length
+        /// of at least 2048 bits or an ECC key from NIST P-256 or NIST P-384 curves. 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Note:</b> Reusing the same certificate signing request (CSR) results in a distinct
         /// certificate.
         /// </para>
         ///  
@@ -496,7 +522,7 @@ namespace Amazon.IoT
         /// You can create multiple certificates in a batch by creating a directory, copying multiple
         /// .csr files into that directory, and then specifying that directory on the command
         /// line. The following commands show how to create a batch of certificates given a batch
-        /// of CSRs. 
+        /// of CSRs.
         /// </para>
         ///  
         /// <para>
@@ -513,39 +539,39 @@ namespace Amazon.IoT
         /// </para>
         ///  
         /// <para>
-        ///  This command lists all of the CSRs in my-csr-directory and pipes each CSR file name
+        /// This command lists all of the CSRs in my-csr-directory and pipes each CSR file name
         /// to the aws iot create-certificate-from-csr AWS CLI command to create a certificate
-        /// for the corresponding CSR. 
+        /// for the corresponding CSR.
         /// </para>
         ///  
         /// <para>
-        ///  The aws iot create-certificate-from-csr part of the command can also be run in parallel
-        /// to speed up the certificate creation process: 
+        /// The aws iot create-certificate-from-csr part of the command can also be run in parallel
+        /// to speed up the certificate creation process:
         /// </para>
         ///  
         /// <para>
-        ///  $ ls my-csr-directory/ | xargs -P 10 -I {} aws iot create-certificate-from-csr --certificate-signing-request
-        /// file://my-csr-directory/{} 
+        /// $ ls my-csr-directory/ | xargs -P 10 -I {} aws iot create-certificate-from-csr --certificate-signing-request
+        /// file://my-csr-directory/{}
         /// </para>
         ///  
         /// <para>
-        ///  On Windows PowerShell, the command to create certificates for all CSRs in my-csr-directory
-        /// is: 
+        /// On Windows PowerShell, the command to create certificates for all CSRs in my-csr-directory
+        /// is:
         /// </para>
         ///  
         /// <para>
-        ///  &gt; ls -Name my-csr-directory | %{aws iot create-certificate-from-csr --certificate-signing-request
-        /// file://my-csr-directory/$_} 
+        /// &gt; ls -Name my-csr-directory | %{aws iot create-certificate-from-csr --certificate-signing-request
+        /// file://my-csr-directory/$_}
         /// </para>
         ///  
         /// <para>
-        ///  On a Windows command prompt, the command to create certificates for all CSRs in my-csr-directory
-        /// is: 
+        /// On a Windows command prompt, the command to create certificates for all CSRs in my-csr-directory
+        /// is:
         /// </para>
         ///  
         /// <para>
-        ///  &gt; forfiles /p my-csr-directory /c "cmd /c aws iot create-certificate-from-csr
-        /// --certificate-signing-request file://@path"
+        /// &gt; forfiles /p my-csr-directory /c "cmd /c aws iot create-certificate-from-csr --certificate-signing-request
+        /// file://@path"
         /// </para>
         /// </summary>
         /// <param name="certificateSigningRequest">The certificate signing request (CSR).</param>
@@ -567,6 +593,7 @@ namespace Amazon.IoT
         /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
         /// You are not authorized to perform this operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreateCertificateFromCsr">REST API Reference for CreateCertificateFromCsr Operation</seealso>
         CreateCertificateFromCsrResponse CreateCertificateFromCsr(string certificateSigningRequest, bool setAsActive);
 
         /// <summary>
@@ -574,7 +601,12 @@ namespace Amazon.IoT
         /// 
         ///  
         /// <para>
-        /// <b>Note</b> Reusing the same certificate signing request (CSR) results in a distinct
+        ///  <b>Note:</b> The CSR must include a public key that is either an RSA key with a length
+        /// of at least 2048 bits or an ECC key from NIST P-256 or NIST P-384 curves. 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Note:</b> Reusing the same certificate signing request (CSR) results in a distinct
         /// certificate.
         /// </para>
         ///  
@@ -582,7 +614,7 @@ namespace Amazon.IoT
         /// You can create multiple certificates in a batch by creating a directory, copying multiple
         /// .csr files into that directory, and then specifying that directory on the command
         /// line. The following commands show how to create a batch of certificates given a batch
-        /// of CSRs. 
+        /// of CSRs.
         /// </para>
         ///  
         /// <para>
@@ -599,39 +631,39 @@ namespace Amazon.IoT
         /// </para>
         ///  
         /// <para>
-        ///  This command lists all of the CSRs in my-csr-directory and pipes each CSR file name
+        /// This command lists all of the CSRs in my-csr-directory and pipes each CSR file name
         /// to the aws iot create-certificate-from-csr AWS CLI command to create a certificate
-        /// for the corresponding CSR. 
+        /// for the corresponding CSR.
         /// </para>
         ///  
         /// <para>
-        ///  The aws iot create-certificate-from-csr part of the command can also be run in parallel
-        /// to speed up the certificate creation process: 
+        /// The aws iot create-certificate-from-csr part of the command can also be run in parallel
+        /// to speed up the certificate creation process:
         /// </para>
         ///  
         /// <para>
-        ///  $ ls my-csr-directory/ | xargs -P 10 -I {} aws iot create-certificate-from-csr --certificate-signing-request
-        /// file://my-csr-directory/{} 
+        /// $ ls my-csr-directory/ | xargs -P 10 -I {} aws iot create-certificate-from-csr --certificate-signing-request
+        /// file://my-csr-directory/{}
         /// </para>
         ///  
         /// <para>
-        ///  On Windows PowerShell, the command to create certificates for all CSRs in my-csr-directory
-        /// is: 
+        /// On Windows PowerShell, the command to create certificates for all CSRs in my-csr-directory
+        /// is:
         /// </para>
         ///  
         /// <para>
-        ///  &gt; ls -Name my-csr-directory | %{aws iot create-certificate-from-csr --certificate-signing-request
-        /// file://my-csr-directory/$_} 
+        /// &gt; ls -Name my-csr-directory | %{aws iot create-certificate-from-csr --certificate-signing-request
+        /// file://my-csr-directory/$_}
         /// </para>
         ///  
         /// <para>
-        ///  On a Windows command prompt, the command to create certificates for all CSRs in my-csr-directory
-        /// is: 
+        /// On a Windows command prompt, the command to create certificates for all CSRs in my-csr-directory
+        /// is:
         /// </para>
         ///  
         /// <para>
-        ///  &gt; forfiles /p my-csr-directory /c "cmd /c aws iot create-certificate-from-csr
-        /// --certificate-signing-request file://@path"
+        /// &gt; forfiles /p my-csr-directory /c "cmd /c aws iot create-certificate-from-csr --certificate-signing-request
+        /// file://@path"
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateCertificateFromCsr service method.</param>
@@ -652,6 +684,7 @@ namespace Amazon.IoT
         /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
         /// You are not authorized to perform this operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreateCertificateFromCsr">REST API Reference for CreateCertificateFromCsr Operation</seealso>
         CreateCertificateFromCsrResponse CreateCertificateFromCsr(CreateCertificateFromCsrRequest request);
 
         /// <summary>
@@ -665,6 +698,7 @@ namespace Amazon.IoT
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateCertificateFromCsr
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreateCertificateFromCsr">REST API Reference for CreateCertificateFromCsr Operation</seealso>
         IAsyncResult BeginCreateCertificateFromCsr(CreateCertificateFromCsrRequest request, AsyncCallback callback, object state);
 
 
@@ -676,6 +710,7 @@ namespace Amazon.IoT
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateCertificateFromCsr.</param>
         /// 
         /// <returns>Returns a  CreateCertificateFromCsrResult from IoT.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreateCertificateFromCsr">REST API Reference for CreateCertificateFromCsr Operation</seealso>
         CreateCertificateFromCsrResponse EndCreateCertificateFromCsr(IAsyncResult asyncResult);
 
         #endregion
@@ -689,7 +724,7 @@ namespace Amazon.IoT
         /// 
         ///  
         /// <para>
-        /// <b>Note</b> This is the only time AWS IoT issues the private key for this certificate,
+        ///  <b>Note</b> This is the only time AWS IoT issues the private key for this certificate,
         /// so it is important to keep it in a secure location.
         /// </para>
         /// </summary>
@@ -710,6 +745,7 @@ namespace Amazon.IoT
         /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
         /// You are not authorized to perform this operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreateKeysAndCertificate">REST API Reference for CreateKeysAndCertificate Operation</seealso>
         CreateKeysAndCertificateResponse CreateKeysAndCertificate();
 
         /// <summary>
@@ -718,7 +754,7 @@ namespace Amazon.IoT
         /// 
         ///  
         /// <para>
-        /// <b>Note</b> This is the only time AWS IoT issues the private key for this certificate,
+        ///  <b>Note</b> This is the only time AWS IoT issues the private key for this certificate,
         /// so it is important to keep it in a secure location.
         /// </para>
         /// </summary>
@@ -740,6 +776,7 @@ namespace Amazon.IoT
         /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
         /// You are not authorized to perform this operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreateKeysAndCertificate">REST API Reference for CreateKeysAndCertificate Operation</seealso>
         CreateKeysAndCertificateResponse CreateKeysAndCertificate(bool setAsActive);
 
         /// <summary>
@@ -748,7 +785,7 @@ namespace Amazon.IoT
         /// 
         ///  
         /// <para>
-        /// <b>Note</b> This is the only time AWS IoT issues the private key for this certificate,
+        ///  <b>Note</b> This is the only time AWS IoT issues the private key for this certificate,
         /// so it is important to keep it in a secure location.
         /// </para>
         /// </summary>
@@ -770,6 +807,7 @@ namespace Amazon.IoT
         /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
         /// You are not authorized to perform this operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreateKeysAndCertificate">REST API Reference for CreateKeysAndCertificate Operation</seealso>
         CreateKeysAndCertificateResponse CreateKeysAndCertificate(CreateKeysAndCertificateRequest request);
 
         /// <summary>
@@ -783,6 +821,7 @@ namespace Amazon.IoT
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateKeysAndCertificate
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreateKeysAndCertificate">REST API Reference for CreateKeysAndCertificate Operation</seealso>
         IAsyncResult BeginCreateKeysAndCertificate(CreateKeysAndCertificateRequest request, AsyncCallback callback, object state);
 
 
@@ -794,6 +833,7 @@ namespace Amazon.IoT
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateKeysAndCertificate.</param>
         /// 
         /// <returns>Returns a  CreateKeysAndCertificateResult from IoT.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreateKeysAndCertificate">REST API Reference for CreateKeysAndCertificate Operation</seealso>
         CreateKeysAndCertificateResponse EndCreateKeysAndCertificate(IAsyncResult asyncResult);
 
         #endregion
@@ -836,6 +876,7 @@ namespace Amazon.IoT
         /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
         /// You are not authorized to perform this operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreatePolicy">REST API Reference for CreatePolicy Operation</seealso>
         CreatePolicyResponse CreatePolicy(string policyName, string policyDocument);
 
         /// <summary>
@@ -872,6 +913,7 @@ namespace Amazon.IoT
         /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
         /// You are not authorized to perform this operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreatePolicy">REST API Reference for CreatePolicy Operation</seealso>
         CreatePolicyResponse CreatePolicy(CreatePolicyRequest request);
 
         /// <summary>
@@ -885,6 +927,7 @@ namespace Amazon.IoT
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreatePolicy
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreatePolicy">REST API Reference for CreatePolicy Operation</seealso>
         IAsyncResult BeginCreatePolicy(CreatePolicyRequest request, AsyncCallback callback, object state);
 
 
@@ -896,6 +939,7 @@ namespace Amazon.IoT
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreatePolicy.</param>
         /// 
         /// <returns>Returns a  CreatePolicyResult from IoT.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreatePolicy">REST API Reference for CreatePolicy Operation</seealso>
         CreatePolicyResponse EndCreatePolicy(IAsyncResult asyncResult);
 
         #endregion
@@ -944,6 +988,7 @@ namespace Amazon.IoT
         /// <exception cref="Amazon.IoT.Model.VersionsLimitExceededException">
         /// The number of policy versions exceeds the limit.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreatePolicyVersion">REST API Reference for CreatePolicyVersion Operation</seealso>
         CreatePolicyVersionResponse CreatePolicyVersion(string policyName, string policyDocument);
 
         /// <summary>
@@ -988,6 +1033,7 @@ namespace Amazon.IoT
         /// <exception cref="Amazon.IoT.Model.VersionsLimitExceededException">
         /// The number of policy versions exceeds the limit.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreatePolicyVersion">REST API Reference for CreatePolicyVersion Operation</seealso>
         CreatePolicyVersionResponse CreatePolicyVersion(string policyName, string policyDocument, bool setAsDefault);
 
         /// <summary>
@@ -1030,6 +1076,7 @@ namespace Amazon.IoT
         /// <exception cref="Amazon.IoT.Model.VersionsLimitExceededException">
         /// The number of policy versions exceeds the limit.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreatePolicyVersion">REST API Reference for CreatePolicyVersion Operation</seealso>
         CreatePolicyVersionResponse CreatePolicyVersion(CreatePolicyVersionRequest request);
 
         /// <summary>
@@ -1043,6 +1090,7 @@ namespace Amazon.IoT
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreatePolicyVersion
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreatePolicyVersion">REST API Reference for CreatePolicyVersion Operation</seealso>
         IAsyncResult BeginCreatePolicyVersion(CreatePolicyVersionRequest request, AsyncCallback callback, object state);
 
 
@@ -1054,6 +1102,7 @@ namespace Amazon.IoT
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreatePolicyVersion.</param>
         /// 
         /// <returns>Returns a  CreatePolicyVersionResult from IoT.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreatePolicyVersion">REST API Reference for CreatePolicyVersion Operation</seealso>
         CreatePolicyVersionResponse EndCreatePolicyVersion(IAsyncResult asyncResult);
 
         #endregion
@@ -1088,6 +1137,7 @@ namespace Amazon.IoT
         /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
         /// You are not authorized to perform this operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreateThing">REST API Reference for CreateThing Operation</seealso>
         CreateThingResponse CreateThing(CreateThingRequest request);
 
         /// <summary>
@@ -1101,6 +1151,7 @@ namespace Amazon.IoT
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateThing
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreateThing">REST API Reference for CreateThing Operation</seealso>
         IAsyncResult BeginCreateThing(CreateThingRequest request, AsyncCallback callback, object state);
 
 
@@ -1112,6 +1163,7 @@ namespace Amazon.IoT
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateThing.</param>
         /// 
         /// <returns>Returns a  CreateThingResult from IoT.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreateThing">REST API Reference for CreateThing Operation</seealso>
         CreateThingResponse EndCreateThing(IAsyncResult asyncResult);
 
         #endregion
@@ -1143,6 +1195,7 @@ namespace Amazon.IoT
         /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
         /// You are not authorized to perform this operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreateThingType">REST API Reference for CreateThingType Operation</seealso>
         CreateThingTypeResponse CreateThingType(CreateThingTypeRequest request);
 
         /// <summary>
@@ -1156,6 +1209,7 @@ namespace Amazon.IoT
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateThingType
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreateThingType">REST API Reference for CreateThingType Operation</seealso>
         IAsyncResult BeginCreateThingType(CreateThingTypeRequest request, AsyncCallback callback, object state);
 
 
@@ -1167,6 +1221,7 @@ namespace Amazon.IoT
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateThingType.</param>
         /// 
         /// <returns>Returns a  CreateThingTypeResult from IoT.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreateThingType">REST API Reference for CreateThingType Operation</seealso>
         CreateThingTypeResponse EndCreateThingType(IAsyncResult asyncResult);
 
         #endregion
@@ -1196,6 +1251,7 @@ namespace Amazon.IoT
         /// <exception cref="Amazon.IoT.Model.SqlParseException">
         /// The Rule-SQL expression can't be parsed correctly.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreateTopicRule">REST API Reference for CreateTopicRule Operation</seealso>
         CreateTopicRuleResponse CreateTopicRule(CreateTopicRuleRequest request);
 
         /// <summary>
@@ -1209,6 +1265,7 @@ namespace Amazon.IoT
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateTopicRule
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreateTopicRule">REST API Reference for CreateTopicRule Operation</seealso>
         IAsyncResult BeginCreateTopicRule(CreateTopicRuleRequest request, AsyncCallback callback, object state);
 
 
@@ -1220,6 +1277,7 @@ namespace Amazon.IoT
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateTopicRule.</param>
         /// 
         /// <returns>Returns a  CreateTopicRuleResult from IoT.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreateTopicRule">REST API Reference for CreateTopicRule Operation</seealso>
         CreateTopicRuleResponse EndCreateTopicRule(IAsyncResult asyncResult);
 
         #endregion
@@ -1254,6 +1312,7 @@ namespace Amazon.IoT
         /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
         /// You are not authorized to perform this operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeleteCACertificate">REST API Reference for DeleteCACertificate Operation</seealso>
         DeleteCACertificateResponse DeleteCACertificate(DeleteCACertificateRequest request);
 
         /// <summary>
@@ -1267,6 +1326,7 @@ namespace Amazon.IoT
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteCACertificate
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeleteCACertificate">REST API Reference for DeleteCACertificate Operation</seealso>
         IAsyncResult BeginDeleteCACertificate(DeleteCACertificateRequest request, AsyncCallback callback, object state);
 
 
@@ -1278,6 +1338,7 @@ namespace Amazon.IoT
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteCACertificate.</param>
         /// 
         /// <returns>Returns a  DeleteCACertificateResult from IoT.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeleteCACertificate">REST API Reference for DeleteCACertificate Operation</seealso>
         DeleteCACertificateResponse EndDeleteCACertificate(IAsyncResult asyncResult);
 
         #endregion
@@ -1323,6 +1384,7 @@ namespace Amazon.IoT
         /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
         /// You are not authorized to perform this operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeleteCertificate">REST API Reference for DeleteCertificate Operation</seealso>
         DeleteCertificateResponse DeleteCertificate(string certificateId);
 
         /// <summary>
@@ -1363,6 +1425,7 @@ namespace Amazon.IoT
         /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
         /// You are not authorized to perform this operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeleteCertificate">REST API Reference for DeleteCertificate Operation</seealso>
         DeleteCertificateResponse DeleteCertificate(DeleteCertificateRequest request);
 
         /// <summary>
@@ -1376,6 +1439,7 @@ namespace Amazon.IoT
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteCertificate
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeleteCertificate">REST API Reference for DeleteCertificate Operation</seealso>
         IAsyncResult BeginDeleteCertificate(DeleteCertificateRequest request, AsyncCallback callback, object state);
 
 
@@ -1387,6 +1451,7 @@ namespace Amazon.IoT
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteCertificate.</param>
         /// 
         /// <returns>Returns a  DeleteCertificateResult from IoT.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeleteCertificate">REST API Reference for DeleteCertificate Operation</seealso>
         DeleteCertificateResponse EndDeleteCertificate(IAsyncResult asyncResult);
 
         #endregion
@@ -1437,6 +1502,7 @@ namespace Amazon.IoT
         /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
         /// You are not authorized to perform this operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeletePolicy">REST API Reference for DeletePolicy Operation</seealso>
         DeletePolicyResponse DeletePolicy(string policyName);
 
         /// <summary>
@@ -1482,6 +1548,7 @@ namespace Amazon.IoT
         /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
         /// You are not authorized to perform this operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeletePolicy">REST API Reference for DeletePolicy Operation</seealso>
         DeletePolicyResponse DeletePolicy(DeletePolicyRequest request);
 
         /// <summary>
@@ -1495,6 +1562,7 @@ namespace Amazon.IoT
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeletePolicy
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeletePolicy">REST API Reference for DeletePolicy Operation</seealso>
         IAsyncResult BeginDeletePolicy(DeletePolicyRequest request, AsyncCallback callback, object state);
 
 
@@ -1506,6 +1574,7 @@ namespace Amazon.IoT
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeletePolicy.</param>
         /// 
         /// <returns>Returns a  DeletePolicyResult from IoT.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeletePolicy">REST API Reference for DeletePolicy Operation</seealso>
         DeletePolicyResponse EndDeletePolicy(IAsyncResult asyncResult);
 
         #endregion
@@ -1544,6 +1613,7 @@ namespace Amazon.IoT
         /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
         /// You are not authorized to perform this operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeletePolicyVersion">REST API Reference for DeletePolicyVersion Operation</seealso>
         DeletePolicyVersionResponse DeletePolicyVersion(string policyName, string policyVersionId);
 
         /// <summary>
@@ -1576,6 +1646,7 @@ namespace Amazon.IoT
         /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
         /// You are not authorized to perform this operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeletePolicyVersion">REST API Reference for DeletePolicyVersion Operation</seealso>
         DeletePolicyVersionResponse DeletePolicyVersion(DeletePolicyVersionRequest request);
 
         /// <summary>
@@ -1589,6 +1660,7 @@ namespace Amazon.IoT
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeletePolicyVersion
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeletePolicyVersion">REST API Reference for DeletePolicyVersion Operation</seealso>
         IAsyncResult BeginDeletePolicyVersion(DeletePolicyVersionRequest request, AsyncCallback callback, object state);
 
 
@@ -1600,6 +1672,7 @@ namespace Amazon.IoT
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeletePolicyVersion.</param>
         /// 
         /// <returns>Returns a  DeletePolicyVersionResult from IoT.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeletePolicyVersion">REST API Reference for DeletePolicyVersion Operation</seealso>
         DeletePolicyVersionResponse EndDeletePolicyVersion(IAsyncResult asyncResult);
 
         #endregion
@@ -1628,6 +1701,7 @@ namespace Amazon.IoT
         /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
         /// You are not authorized to perform this operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeleteRegistrationCode">REST API Reference for DeleteRegistrationCode Operation</seealso>
         DeleteRegistrationCodeResponse DeleteRegistrationCode(DeleteRegistrationCodeRequest request);
 
         /// <summary>
@@ -1641,6 +1715,7 @@ namespace Amazon.IoT
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteRegistrationCode
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeleteRegistrationCode">REST API Reference for DeleteRegistrationCode Operation</seealso>
         IAsyncResult BeginDeleteRegistrationCode(DeleteRegistrationCodeRequest request, AsyncCallback callback, object state);
 
 
@@ -1652,6 +1727,7 @@ namespace Amazon.IoT
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteRegistrationCode.</param>
         /// 
         /// <returns>Returns a  DeleteRegistrationCodeResult from IoT.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeleteRegistrationCode">REST API Reference for DeleteRegistrationCode Operation</seealso>
         DeleteRegistrationCodeResponse EndDeleteRegistrationCode(IAsyncResult asyncResult);
 
         #endregion
@@ -1687,6 +1763,7 @@ namespace Amazon.IoT
         /// An exception thrown when the version of a thing passed to a command is different than
         /// the version specified with the --version parameter.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeleteThing">REST API Reference for DeleteThing Operation</seealso>
         DeleteThingResponse DeleteThing(string thingName);
 
         /// <summary>
@@ -1717,6 +1794,7 @@ namespace Amazon.IoT
         /// An exception thrown when the version of a thing passed to a command is different than
         /// the version specified with the --version parameter.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeleteThing">REST API Reference for DeleteThing Operation</seealso>
         DeleteThingResponse DeleteThing(DeleteThingRequest request);
 
         /// <summary>
@@ -1730,6 +1808,7 @@ namespace Amazon.IoT
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteThing
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeleteThing">REST API Reference for DeleteThing Operation</seealso>
         IAsyncResult BeginDeleteThing(DeleteThingRequest request, AsyncCallback callback, object state);
 
 
@@ -1741,6 +1820,7 @@ namespace Amazon.IoT
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteThing.</param>
         /// 
         /// <returns>Returns a  DeleteThingResult from IoT.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeleteThing">REST API Reference for DeleteThing Operation</seealso>
         DeleteThingResponse EndDeleteThing(IAsyncResult asyncResult);
 
         #endregion
@@ -1776,6 +1856,7 @@ namespace Amazon.IoT
         /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
         /// You are not authorized to perform this operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeleteThingType">REST API Reference for DeleteThingType Operation</seealso>
         DeleteThingTypeResponse DeleteThingType(DeleteThingTypeRequest request);
 
         /// <summary>
@@ -1789,6 +1870,7 @@ namespace Amazon.IoT
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteThingType
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeleteThingType">REST API Reference for DeleteThingType Operation</seealso>
         IAsyncResult BeginDeleteThingType(DeleteThingTypeRequest request, AsyncCallback callback, object state);
 
 
@@ -1800,6 +1882,7 @@ namespace Amazon.IoT
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteThingType.</param>
         /// 
         /// <returns>Returns a  DeleteThingTypeResult from IoT.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeleteThingType">REST API Reference for DeleteThingType Operation</seealso>
         DeleteThingTypeResponse EndDeleteThingType(IAsyncResult asyncResult);
 
         #endregion
@@ -1825,6 +1908,7 @@ namespace Amazon.IoT
         /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
         /// You are not authorized to perform this operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeleteTopicRule">REST API Reference for DeleteTopicRule Operation</seealso>
         DeleteTopicRuleResponse DeleteTopicRule(string ruleName);
 
         /// <summary>
@@ -1845,6 +1929,7 @@ namespace Amazon.IoT
         /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
         /// You are not authorized to perform this operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeleteTopicRule">REST API Reference for DeleteTopicRule Operation</seealso>
         DeleteTopicRuleResponse DeleteTopicRule(DeleteTopicRuleRequest request);
 
         /// <summary>
@@ -1858,6 +1943,7 @@ namespace Amazon.IoT
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteTopicRule
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeleteTopicRule">REST API Reference for DeleteTopicRule Operation</seealso>
         IAsyncResult BeginDeleteTopicRule(DeleteTopicRuleRequest request, AsyncCallback callback, object state);
 
 
@@ -1869,6 +1955,7 @@ namespace Amazon.IoT
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteTopicRule.</param>
         /// 
         /// <returns>Returns a  DeleteTopicRuleResult from IoT.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeleteTopicRule">REST API Reference for DeleteTopicRule Operation</seealso>
         DeleteTopicRuleResponse EndDeleteTopicRule(IAsyncResult asyncResult);
 
         #endregion
@@ -1900,6 +1987,7 @@ namespace Amazon.IoT
         /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
         /// You are not authorized to perform this operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeprecateThingType">REST API Reference for DeprecateThingType Operation</seealso>
         DeprecateThingTypeResponse DeprecateThingType(DeprecateThingTypeRequest request);
 
         /// <summary>
@@ -1913,6 +2001,7 @@ namespace Amazon.IoT
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeprecateThingType
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeprecateThingType">REST API Reference for DeprecateThingType Operation</seealso>
         IAsyncResult BeginDeprecateThingType(DeprecateThingTypeRequest request, AsyncCallback callback, object state);
 
 
@@ -1924,6 +2013,7 @@ namespace Amazon.IoT
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeprecateThingType.</param>
         /// 
         /// <returns>Returns a  DeprecateThingTypeResult from IoT.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeprecateThingType">REST API Reference for DeprecateThingType Operation</seealso>
         DeprecateThingTypeResponse EndDeprecateThingType(IAsyncResult asyncResult);
 
         #endregion
@@ -1955,6 +2045,7 @@ namespace Amazon.IoT
         /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
         /// You are not authorized to perform this operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DescribeCACertificate">REST API Reference for DescribeCACertificate Operation</seealso>
         DescribeCACertificateResponse DescribeCACertificate(DescribeCACertificateRequest request);
 
         /// <summary>
@@ -1968,6 +2059,7 @@ namespace Amazon.IoT
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeCACertificate
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DescribeCACertificate">REST API Reference for DescribeCACertificate Operation</seealso>
         IAsyncResult BeginDescribeCACertificate(DescribeCACertificateRequest request, AsyncCallback callback, object state);
 
 
@@ -1979,6 +2071,7 @@ namespace Amazon.IoT
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeCACertificate.</param>
         /// 
         /// <returns>Returns a  DescribeCACertificateResult from IoT.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DescribeCACertificate">REST API Reference for DescribeCACertificate Operation</seealso>
         DescribeCACertificateResponse EndDescribeCACertificate(IAsyncResult asyncResult);
 
         #endregion
@@ -2010,6 +2103,7 @@ namespace Amazon.IoT
         /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
         /// You are not authorized to perform this operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DescribeCertificate">REST API Reference for DescribeCertificate Operation</seealso>
         DescribeCertificateResponse DescribeCertificate(string certificateId);
 
         /// <summary>
@@ -2036,6 +2130,7 @@ namespace Amazon.IoT
         /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
         /// You are not authorized to perform this operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DescribeCertificate">REST API Reference for DescribeCertificate Operation</seealso>
         DescribeCertificateResponse DescribeCertificate(DescribeCertificateRequest request);
 
         /// <summary>
@@ -2049,6 +2144,7 @@ namespace Amazon.IoT
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeCertificate
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DescribeCertificate">REST API Reference for DescribeCertificate Operation</seealso>
         IAsyncResult BeginDescribeCertificate(DescribeCertificateRequest request, AsyncCallback callback, object state);
 
 
@@ -2060,6 +2156,7 @@ namespace Amazon.IoT
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeCertificate.</param>
         /// 
         /// <returns>Returns a  DescribeCertificateResult from IoT.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DescribeCertificate">REST API Reference for DescribeCertificate Operation</seealso>
         DescribeCertificateResponse EndDescribeCertificate(IAsyncResult asyncResult);
 
         #endregion
@@ -2081,6 +2178,7 @@ namespace Amazon.IoT
         /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
         /// You are not authorized to perform this operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DescribeEndpoint">REST API Reference for DescribeEndpoint Operation</seealso>
         DescribeEndpointResponse DescribeEndpoint();
 
         /// <summary>
@@ -2098,6 +2196,7 @@ namespace Amazon.IoT
         /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
         /// You are not authorized to perform this operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DescribeEndpoint">REST API Reference for DescribeEndpoint Operation</seealso>
         DescribeEndpointResponse DescribeEndpoint(DescribeEndpointRequest request);
 
         /// <summary>
@@ -2111,6 +2210,7 @@ namespace Amazon.IoT
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeEndpoint
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DescribeEndpoint">REST API Reference for DescribeEndpoint Operation</seealso>
         IAsyncResult BeginDescribeEndpoint(DescribeEndpointRequest request, AsyncCallback callback, object state);
 
 
@@ -2122,6 +2222,7 @@ namespace Amazon.IoT
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeEndpoint.</param>
         /// 
         /// <returns>Returns a  DescribeEndpointResult from IoT.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DescribeEndpoint">REST API Reference for DescribeEndpoint Operation</seealso>
         DescribeEndpointResponse EndDescribeEndpoint(IAsyncResult asyncResult);
 
         #endregion
@@ -2153,6 +2254,7 @@ namespace Amazon.IoT
         /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
         /// You are not authorized to perform this operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DescribeThing">REST API Reference for DescribeThing Operation</seealso>
         DescribeThingResponse DescribeThing(string thingName);
 
         /// <summary>
@@ -2179,6 +2281,7 @@ namespace Amazon.IoT
         /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
         /// You are not authorized to perform this operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DescribeThing">REST API Reference for DescribeThing Operation</seealso>
         DescribeThingResponse DescribeThing(DescribeThingRequest request);
 
         /// <summary>
@@ -2192,6 +2295,7 @@ namespace Amazon.IoT
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeThing
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DescribeThing">REST API Reference for DescribeThing Operation</seealso>
         IAsyncResult BeginDescribeThing(DescribeThingRequest request, AsyncCallback callback, object state);
 
 
@@ -2203,6 +2307,7 @@ namespace Amazon.IoT
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeThing.</param>
         /// 
         /// <returns>Returns a  DescribeThingResult from IoT.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DescribeThing">REST API Reference for DescribeThing Operation</seealso>
         DescribeThingResponse EndDescribeThing(IAsyncResult asyncResult);
 
         #endregion
@@ -2234,6 +2339,7 @@ namespace Amazon.IoT
         /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
         /// You are not authorized to perform this operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DescribeThingType">REST API Reference for DescribeThingType Operation</seealso>
         DescribeThingTypeResponse DescribeThingType(DescribeThingTypeRequest request);
 
         /// <summary>
@@ -2247,6 +2353,7 @@ namespace Amazon.IoT
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeThingType
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DescribeThingType">REST API Reference for DescribeThingType Operation</seealso>
         IAsyncResult BeginDescribeThingType(DescribeThingTypeRequest request, AsyncCallback callback, object state);
 
 
@@ -2258,6 +2365,7 @@ namespace Amazon.IoT
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeThingType.</param>
         /// 
         /// <returns>Returns a  DescribeThingTypeResult from IoT.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DescribeThingType">REST API Reference for DescribeThingType Operation</seealso>
         DescribeThingTypeResponse EndDescribeThingType(IAsyncResult asyncResult);
 
         #endregion
@@ -2290,6 +2398,7 @@ namespace Amazon.IoT
         /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
         /// You are not authorized to perform this operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DetachPrincipalPolicy">REST API Reference for DetachPrincipalPolicy Operation</seealso>
         DetachPrincipalPolicyResponse DetachPrincipalPolicy(string policyName, string principal);
 
         /// <summary>
@@ -2316,6 +2425,7 @@ namespace Amazon.IoT
         /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
         /// You are not authorized to perform this operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DetachPrincipalPolicy">REST API Reference for DetachPrincipalPolicy Operation</seealso>
         DetachPrincipalPolicyResponse DetachPrincipalPolicy(DetachPrincipalPolicyRequest request);
 
         /// <summary>
@@ -2329,6 +2439,7 @@ namespace Amazon.IoT
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDetachPrincipalPolicy
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DetachPrincipalPolicy">REST API Reference for DetachPrincipalPolicy Operation</seealso>
         IAsyncResult BeginDetachPrincipalPolicy(DetachPrincipalPolicyRequest request, AsyncCallback callback, object state);
 
 
@@ -2340,6 +2451,7 @@ namespace Amazon.IoT
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDetachPrincipalPolicy.</param>
         /// 
         /// <returns>Returns a  DetachPrincipalPolicyResult from IoT.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DetachPrincipalPolicy">REST API Reference for DetachPrincipalPolicy Operation</seealso>
         DetachPrincipalPolicyResponse EndDetachPrincipalPolicy(IAsyncResult asyncResult);
 
         #endregion
@@ -2372,6 +2484,7 @@ namespace Amazon.IoT
         /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
         /// You are not authorized to perform this operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DetachThingPrincipal">REST API Reference for DetachThingPrincipal Operation</seealso>
         DetachThingPrincipalResponse DetachThingPrincipal(string thingName, string principal);
 
         /// <summary>
@@ -2398,6 +2511,7 @@ namespace Amazon.IoT
         /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
         /// You are not authorized to perform this operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DetachThingPrincipal">REST API Reference for DetachThingPrincipal Operation</seealso>
         DetachThingPrincipalResponse DetachThingPrincipal(DetachThingPrincipalRequest request);
 
         /// <summary>
@@ -2411,6 +2525,7 @@ namespace Amazon.IoT
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDetachThingPrincipal
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DetachThingPrincipal">REST API Reference for DetachThingPrincipal Operation</seealso>
         IAsyncResult BeginDetachThingPrincipal(DetachThingPrincipalRequest request, AsyncCallback callback, object state);
 
 
@@ -2422,6 +2537,7 @@ namespace Amazon.IoT
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDetachThingPrincipal.</param>
         /// 
         /// <returns>Returns a  DetachThingPrincipalResult from IoT.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DetachThingPrincipal">REST API Reference for DetachThingPrincipal Operation</seealso>
         DetachThingPrincipalResponse EndDetachThingPrincipal(IAsyncResult asyncResult);
 
         #endregion
@@ -2447,6 +2563,7 @@ namespace Amazon.IoT
         /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
         /// You are not authorized to perform this operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DisableTopicRule">REST API Reference for DisableTopicRule Operation</seealso>
         DisableTopicRuleResponse DisableTopicRule(DisableTopicRuleRequest request);
 
         /// <summary>
@@ -2460,6 +2577,7 @@ namespace Amazon.IoT
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDisableTopicRule
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DisableTopicRule">REST API Reference for DisableTopicRule Operation</seealso>
         IAsyncResult BeginDisableTopicRule(DisableTopicRuleRequest request, AsyncCallback callback, object state);
 
 
@@ -2471,6 +2589,7 @@ namespace Amazon.IoT
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDisableTopicRule.</param>
         /// 
         /// <returns>Returns a  DisableTopicRuleResult from IoT.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DisableTopicRule">REST API Reference for DisableTopicRule Operation</seealso>
         DisableTopicRuleResponse EndDisableTopicRule(IAsyncResult asyncResult);
 
         #endregion
@@ -2496,6 +2615,7 @@ namespace Amazon.IoT
         /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
         /// You are not authorized to perform this operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/EnableTopicRule">REST API Reference for EnableTopicRule Operation</seealso>
         EnableTopicRuleResponse EnableTopicRule(EnableTopicRuleRequest request);
 
         /// <summary>
@@ -2509,6 +2629,7 @@ namespace Amazon.IoT
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndEnableTopicRule
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/EnableTopicRule">REST API Reference for EnableTopicRule Operation</seealso>
         IAsyncResult BeginEnableTopicRule(EnableTopicRuleRequest request, AsyncCallback callback, object state);
 
 
@@ -2520,6 +2641,7 @@ namespace Amazon.IoT
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginEnableTopicRule.</param>
         /// 
         /// <returns>Returns a  EnableTopicRuleResult from IoT.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/EnableTopicRule">REST API Reference for EnableTopicRule Operation</seealso>
         EnableTopicRuleResponse EndEnableTopicRule(IAsyncResult asyncResult);
 
         #endregion
@@ -2542,6 +2664,7 @@ namespace Amazon.IoT
         /// <exception cref="Amazon.IoT.Model.ServiceUnavailableException">
         /// The service is temporarily unavailable.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/GetLoggingOptions">REST API Reference for GetLoggingOptions Operation</seealso>
         GetLoggingOptionsResponse GetLoggingOptions(GetLoggingOptionsRequest request);
 
         /// <summary>
@@ -2555,6 +2678,7 @@ namespace Amazon.IoT
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetLoggingOptions
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/GetLoggingOptions">REST API Reference for GetLoggingOptions Operation</seealso>
         IAsyncResult BeginGetLoggingOptions(GetLoggingOptionsRequest request, AsyncCallback callback, object state);
 
 
@@ -2566,6 +2690,7 @@ namespace Amazon.IoT
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetLoggingOptions.</param>
         /// 
         /// <returns>Returns a  GetLoggingOptionsResult from IoT.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/GetLoggingOptions">REST API Reference for GetLoggingOptions Operation</seealso>
         GetLoggingOptionsResponse EndGetLoggingOptions(IAsyncResult asyncResult);
 
         #endregion
@@ -2598,6 +2723,7 @@ namespace Amazon.IoT
         /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
         /// You are not authorized to perform this operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/GetPolicy">REST API Reference for GetPolicy Operation</seealso>
         GetPolicyResponse GetPolicy(string policyName);
 
         /// <summary>
@@ -2625,6 +2751,7 @@ namespace Amazon.IoT
         /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
         /// You are not authorized to perform this operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/GetPolicy">REST API Reference for GetPolicy Operation</seealso>
         GetPolicyResponse GetPolicy(GetPolicyRequest request);
 
         /// <summary>
@@ -2638,6 +2765,7 @@ namespace Amazon.IoT
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetPolicy
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/GetPolicy">REST API Reference for GetPolicy Operation</seealso>
         IAsyncResult BeginGetPolicy(GetPolicyRequest request, AsyncCallback callback, object state);
 
 
@@ -2649,6 +2777,7 @@ namespace Amazon.IoT
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetPolicy.</param>
         /// 
         /// <returns>Returns a  GetPolicyResult from IoT.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/GetPolicy">REST API Reference for GetPolicy Operation</seealso>
         GetPolicyResponse EndGetPolicy(IAsyncResult asyncResult);
 
         #endregion
@@ -2681,6 +2810,7 @@ namespace Amazon.IoT
         /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
         /// You are not authorized to perform this operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/GetPolicyVersion">REST API Reference for GetPolicyVersion Operation</seealso>
         GetPolicyVersionResponse GetPolicyVersion(string policyName, string policyVersionId);
 
         /// <summary>
@@ -2707,6 +2837,7 @@ namespace Amazon.IoT
         /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
         /// You are not authorized to perform this operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/GetPolicyVersion">REST API Reference for GetPolicyVersion Operation</seealso>
         GetPolicyVersionResponse GetPolicyVersion(GetPolicyVersionRequest request);
 
         /// <summary>
@@ -2720,6 +2851,7 @@ namespace Amazon.IoT
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetPolicyVersion
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/GetPolicyVersion">REST API Reference for GetPolicyVersion Operation</seealso>
         IAsyncResult BeginGetPolicyVersion(GetPolicyVersionRequest request, AsyncCallback callback, object state);
 
 
@@ -2731,6 +2863,7 @@ namespace Amazon.IoT
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetPolicyVersion.</param>
         /// 
         /// <returns>Returns a  GetPolicyVersionResult from IoT.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/GetPolicyVersion">REST API Reference for GetPolicyVersion Operation</seealso>
         GetPolicyVersionResponse EndGetPolicyVersion(IAsyncResult asyncResult);
 
         #endregion
@@ -2759,6 +2892,7 @@ namespace Amazon.IoT
         /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
         /// You are not authorized to perform this operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/GetRegistrationCode">REST API Reference for GetRegistrationCode Operation</seealso>
         GetRegistrationCodeResponse GetRegistrationCode(GetRegistrationCodeRequest request);
 
         /// <summary>
@@ -2772,6 +2906,7 @@ namespace Amazon.IoT
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetRegistrationCode
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/GetRegistrationCode">REST API Reference for GetRegistrationCode Operation</seealso>
         IAsyncResult BeginGetRegistrationCode(GetRegistrationCodeRequest request, AsyncCallback callback, object state);
 
 
@@ -2783,6 +2918,7 @@ namespace Amazon.IoT
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetRegistrationCode.</param>
         /// 
         /// <returns>Returns a  GetRegistrationCodeResult from IoT.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/GetRegistrationCode">REST API Reference for GetRegistrationCode Operation</seealso>
         GetRegistrationCodeResponse EndGetRegistrationCode(IAsyncResult asyncResult);
 
         #endregion
@@ -2808,6 +2944,7 @@ namespace Amazon.IoT
         /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
         /// You are not authorized to perform this operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/GetTopicRule">REST API Reference for GetTopicRule Operation</seealso>
         GetTopicRuleResponse GetTopicRule(string ruleName);
 
         /// <summary>
@@ -2828,6 +2965,7 @@ namespace Amazon.IoT
         /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
         /// You are not authorized to perform this operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/GetTopicRule">REST API Reference for GetTopicRule Operation</seealso>
         GetTopicRuleResponse GetTopicRule(GetTopicRuleRequest request);
 
         /// <summary>
@@ -2841,6 +2979,7 @@ namespace Amazon.IoT
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetTopicRule
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/GetTopicRule">REST API Reference for GetTopicRule Operation</seealso>
         IAsyncResult BeginGetTopicRule(GetTopicRuleRequest request, AsyncCallback callback, object state);
 
 
@@ -2852,6 +2991,7 @@ namespace Amazon.IoT
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetTopicRule.</param>
         /// 
         /// <returns>Returns a  GetTopicRuleResult from IoT.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/GetTopicRule">REST API Reference for GetTopicRule Operation</seealso>
         GetTopicRuleResponse EndGetTopicRule(IAsyncResult asyncResult);
 
         #endregion
@@ -2886,6 +3026,7 @@ namespace Amazon.IoT
         /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
         /// You are not authorized to perform this operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListCACertificates">REST API Reference for ListCACertificates Operation</seealso>
         ListCACertificatesResponse ListCACertificates(ListCACertificatesRequest request);
 
         /// <summary>
@@ -2899,6 +3040,7 @@ namespace Amazon.IoT
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListCACertificates
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListCACertificates">REST API Reference for ListCACertificates Operation</seealso>
         IAsyncResult BeginListCACertificates(ListCACertificatesRequest request, AsyncCallback callback, object state);
 
 
@@ -2910,6 +3052,7 @@ namespace Amazon.IoT
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListCACertificates.</param>
         /// 
         /// <returns>Returns a  ListCACertificatesResult from IoT.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListCACertificates">REST API Reference for ListCACertificates Operation</seealso>
         ListCACertificatesResponse EndListCACertificates(IAsyncResult asyncResult);
 
         #endregion
@@ -2943,6 +3086,7 @@ namespace Amazon.IoT
         /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
         /// You are not authorized to perform this operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListCertificates">REST API Reference for ListCertificates Operation</seealso>
         ListCertificatesResponse ListCertificates();
 
         /// <summary>
@@ -2972,6 +3116,7 @@ namespace Amazon.IoT
         /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
         /// You are not authorized to perform this operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListCertificates">REST API Reference for ListCertificates Operation</seealso>
         ListCertificatesResponse ListCertificates(ListCertificatesRequest request);
 
         /// <summary>
@@ -2985,6 +3130,7 @@ namespace Amazon.IoT
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListCertificates
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListCertificates">REST API Reference for ListCertificates Operation</seealso>
         IAsyncResult BeginListCertificates(ListCertificatesRequest request, AsyncCallback callback, object state);
 
 
@@ -2996,6 +3142,7 @@ namespace Amazon.IoT
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListCertificates.</param>
         /// 
         /// <returns>Returns a  ListCertificatesResult from IoT.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListCertificates">REST API Reference for ListCertificates Operation</seealso>
         ListCertificatesResponse EndListCertificates(IAsyncResult asyncResult);
 
         #endregion
@@ -3024,6 +3171,7 @@ namespace Amazon.IoT
         /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
         /// You are not authorized to perform this operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListCertificatesByCA">REST API Reference for ListCertificatesByCA Operation</seealso>
         ListCertificatesByCAResponse ListCertificatesByCA(ListCertificatesByCARequest request);
 
         /// <summary>
@@ -3037,6 +3185,7 @@ namespace Amazon.IoT
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListCertificatesByCA
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListCertificatesByCA">REST API Reference for ListCertificatesByCA Operation</seealso>
         IAsyncResult BeginListCertificatesByCA(ListCertificatesByCARequest request, AsyncCallback callback, object state);
 
 
@@ -3048,6 +3197,7 @@ namespace Amazon.IoT
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListCertificatesByCA.</param>
         /// 
         /// <returns>Returns a  ListCertificatesByCAResult from IoT.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListCertificatesByCA">REST API Reference for ListCertificatesByCA Operation</seealso>
         ListCertificatesByCAResponse EndListCertificatesByCA(IAsyncResult asyncResult);
 
         #endregion
@@ -3076,6 +3226,7 @@ namespace Amazon.IoT
         /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
         /// You are not authorized to perform this operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListOutgoingCertificates">REST API Reference for ListOutgoingCertificates Operation</seealso>
         ListOutgoingCertificatesResponse ListOutgoingCertificates(ListOutgoingCertificatesRequest request);
 
         /// <summary>
@@ -3089,6 +3240,7 @@ namespace Amazon.IoT
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListOutgoingCertificates
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListOutgoingCertificates">REST API Reference for ListOutgoingCertificates Operation</seealso>
         IAsyncResult BeginListOutgoingCertificates(ListOutgoingCertificatesRequest request, AsyncCallback callback, object state);
 
 
@@ -3100,6 +3252,7 @@ namespace Amazon.IoT
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListOutgoingCertificates.</param>
         /// 
         /// <returns>Returns a  ListOutgoingCertificatesResult from IoT.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListOutgoingCertificates">REST API Reference for ListOutgoingCertificates Operation</seealso>
         ListOutgoingCertificatesResponse EndListOutgoingCertificates(IAsyncResult asyncResult);
 
         #endregion
@@ -3127,6 +3280,7 @@ namespace Amazon.IoT
         /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
         /// You are not authorized to perform this operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListPolicies">REST API Reference for ListPolicies Operation</seealso>
         ListPoliciesResponse ListPolicies();
 
         /// <summary>
@@ -3150,6 +3304,7 @@ namespace Amazon.IoT
         /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
         /// You are not authorized to perform this operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListPolicies">REST API Reference for ListPolicies Operation</seealso>
         ListPoliciesResponse ListPolicies(ListPoliciesRequest request);
 
         /// <summary>
@@ -3163,6 +3318,7 @@ namespace Amazon.IoT
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListPolicies
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListPolicies">REST API Reference for ListPolicies Operation</seealso>
         IAsyncResult BeginListPolicies(ListPoliciesRequest request, AsyncCallback callback, object state);
 
 
@@ -3174,6 +3330,7 @@ namespace Amazon.IoT
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListPolicies.</param>
         /// 
         /// <returns>Returns a  ListPoliciesResult from IoT.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListPolicies">REST API Reference for ListPolicies Operation</seealso>
         ListPoliciesResponse EndListPolicies(IAsyncResult asyncResult);
 
         #endregion
@@ -3205,6 +3362,7 @@ namespace Amazon.IoT
         /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
         /// You are not authorized to perform this operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListPolicyPrincipals">REST API Reference for ListPolicyPrincipals Operation</seealso>
         ListPolicyPrincipalsResponse ListPolicyPrincipals(ListPolicyPrincipalsRequest request);
 
         /// <summary>
@@ -3218,6 +3376,7 @@ namespace Amazon.IoT
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListPolicyPrincipals
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListPolicyPrincipals">REST API Reference for ListPolicyPrincipals Operation</seealso>
         IAsyncResult BeginListPolicyPrincipals(ListPolicyPrincipalsRequest request, AsyncCallback callback, object state);
 
 
@@ -3229,6 +3388,7 @@ namespace Amazon.IoT
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListPolicyPrincipals.</param>
         /// 
         /// <returns>Returns a  ListPolicyPrincipalsResult from IoT.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListPolicyPrincipals">REST API Reference for ListPolicyPrincipals Operation</seealso>
         ListPolicyPrincipalsResponse EndListPolicyPrincipals(IAsyncResult asyncResult);
 
         #endregion
@@ -3260,6 +3420,7 @@ namespace Amazon.IoT
         /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
         /// You are not authorized to perform this operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListPolicyVersions">REST API Reference for ListPolicyVersions Operation</seealso>
         ListPolicyVersionsResponse ListPolicyVersions(string policyName);
 
         /// <summary>
@@ -3286,6 +3447,7 @@ namespace Amazon.IoT
         /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
         /// You are not authorized to perform this operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListPolicyVersions">REST API Reference for ListPolicyVersions Operation</seealso>
         ListPolicyVersionsResponse ListPolicyVersions(ListPolicyVersionsRequest request);
 
         /// <summary>
@@ -3299,6 +3461,7 @@ namespace Amazon.IoT
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListPolicyVersions
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListPolicyVersions">REST API Reference for ListPolicyVersions Operation</seealso>
         IAsyncResult BeginListPolicyVersions(ListPolicyVersionsRequest request, AsyncCallback callback, object state);
 
 
@@ -3310,6 +3473,7 @@ namespace Amazon.IoT
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListPolicyVersions.</param>
         /// 
         /// <returns>Returns a  ListPolicyVersionsResult from IoT.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListPolicyVersions">REST API Reference for ListPolicyVersions Operation</seealso>
         ListPolicyVersionsResponse EndListPolicyVersions(IAsyncResult asyncResult);
 
         #endregion
@@ -3343,6 +3507,7 @@ namespace Amazon.IoT
         /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
         /// You are not authorized to perform this operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListPrincipalPolicies">REST API Reference for ListPrincipalPolicies Operation</seealso>
         ListPrincipalPoliciesResponse ListPrincipalPolicies(string principal);
 
         /// <summary>
@@ -3371,6 +3536,7 @@ namespace Amazon.IoT
         /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
         /// You are not authorized to perform this operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListPrincipalPolicies">REST API Reference for ListPrincipalPolicies Operation</seealso>
         ListPrincipalPoliciesResponse ListPrincipalPolicies(ListPrincipalPoliciesRequest request);
 
         /// <summary>
@@ -3384,6 +3550,7 @@ namespace Amazon.IoT
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListPrincipalPolicies
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListPrincipalPolicies">REST API Reference for ListPrincipalPolicies Operation</seealso>
         IAsyncResult BeginListPrincipalPolicies(ListPrincipalPoliciesRequest request, AsyncCallback callback, object state);
 
 
@@ -3395,6 +3562,7 @@ namespace Amazon.IoT
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListPrincipalPolicies.</param>
         /// 
         /// <returns>Returns a  ListPrincipalPoliciesResult from IoT.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListPrincipalPolicies">REST API Reference for ListPrincipalPolicies Operation</seealso>
         ListPrincipalPoliciesResponse EndListPrincipalPolicies(IAsyncResult asyncResult);
 
         #endregion
@@ -3426,6 +3594,7 @@ namespace Amazon.IoT
         /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
         /// You are not authorized to perform this operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListPrincipalThings">REST API Reference for ListPrincipalThings Operation</seealso>
         ListPrincipalThingsResponse ListPrincipalThings(string principal);
 
         /// <summary>
@@ -3452,6 +3621,7 @@ namespace Amazon.IoT
         /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
         /// You are not authorized to perform this operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListPrincipalThings">REST API Reference for ListPrincipalThings Operation</seealso>
         ListPrincipalThingsResponse ListPrincipalThings(ListPrincipalThingsRequest request);
 
         /// <summary>
@@ -3465,6 +3635,7 @@ namespace Amazon.IoT
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListPrincipalThings
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListPrincipalThings">REST API Reference for ListPrincipalThings Operation</seealso>
         IAsyncResult BeginListPrincipalThings(ListPrincipalThingsRequest request, AsyncCallback callback, object state);
 
 
@@ -3476,6 +3647,7 @@ namespace Amazon.IoT
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListPrincipalThings.</param>
         /// 
         /// <returns>Returns a  ListPrincipalThingsResult from IoT.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListPrincipalThings">REST API Reference for ListPrincipalThings Operation</seealso>
         ListPrincipalThingsResponse EndListPrincipalThings(IAsyncResult asyncResult);
 
         #endregion
@@ -3507,6 +3679,7 @@ namespace Amazon.IoT
         /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
         /// You are not authorized to perform this operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListThingPrincipals">REST API Reference for ListThingPrincipals Operation</seealso>
         ListThingPrincipalsResponse ListThingPrincipals(string thingName);
 
         /// <summary>
@@ -3533,6 +3706,7 @@ namespace Amazon.IoT
         /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
         /// You are not authorized to perform this operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListThingPrincipals">REST API Reference for ListThingPrincipals Operation</seealso>
         ListThingPrincipalsResponse ListThingPrincipals(ListThingPrincipalsRequest request);
 
         /// <summary>
@@ -3546,6 +3720,7 @@ namespace Amazon.IoT
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListThingPrincipals
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListThingPrincipals">REST API Reference for ListThingPrincipals Operation</seealso>
         IAsyncResult BeginListThingPrincipals(ListThingPrincipalsRequest request, AsyncCallback callback, object state);
 
 
@@ -3557,6 +3732,7 @@ namespace Amazon.IoT
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListThingPrincipals.</param>
         /// 
         /// <returns>Returns a  ListThingPrincipalsResult from IoT.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListThingPrincipals">REST API Reference for ListThingPrincipals Operation</seealso>
         ListThingPrincipalsResponse EndListThingPrincipals(IAsyncResult asyncResult);
 
         #endregion
@@ -3587,6 +3763,7 @@ namespace Amazon.IoT
         /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
         /// You are not authorized to perform this operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListThings">REST API Reference for ListThings Operation</seealso>
         ListThingsResponse ListThings();
 
         /// <summary>
@@ -3613,6 +3790,7 @@ namespace Amazon.IoT
         /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
         /// You are not authorized to perform this operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListThings">REST API Reference for ListThings Operation</seealso>
         ListThingsResponse ListThings(ListThingsRequest request);
 
         /// <summary>
@@ -3626,6 +3804,7 @@ namespace Amazon.IoT
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListThings
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListThings">REST API Reference for ListThings Operation</seealso>
         IAsyncResult BeginListThings(ListThingsRequest request, AsyncCallback callback, object state);
 
 
@@ -3637,6 +3816,7 @@ namespace Amazon.IoT
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListThings.</param>
         /// 
         /// <returns>Returns a  ListThingsResult from IoT.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListThings">REST API Reference for ListThings Operation</seealso>
         ListThingsResponse EndListThings(IAsyncResult asyncResult);
 
         #endregion
@@ -3665,6 +3845,7 @@ namespace Amazon.IoT
         /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
         /// You are not authorized to perform this operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListThingTypes">REST API Reference for ListThingTypes Operation</seealso>
         ListThingTypesResponse ListThingTypes(ListThingTypesRequest request);
 
         /// <summary>
@@ -3678,6 +3859,7 @@ namespace Amazon.IoT
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListThingTypes
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListThingTypes">REST API Reference for ListThingTypes Operation</seealso>
         IAsyncResult BeginListThingTypes(ListThingTypesRequest request, AsyncCallback callback, object state);
 
 
@@ -3689,6 +3871,7 @@ namespace Amazon.IoT
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListThingTypes.</param>
         /// 
         /// <returns>Returns a  ListThingTypesResult from IoT.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListThingTypes">REST API Reference for ListThingTypes Operation</seealso>
         ListThingTypesResponse EndListThingTypes(IAsyncResult asyncResult);
 
         #endregion
@@ -3711,6 +3894,7 @@ namespace Amazon.IoT
         /// <exception cref="Amazon.IoT.Model.ServiceUnavailableException">
         /// The service is temporarily unavailable.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListTopicRules">REST API Reference for ListTopicRules Operation</seealso>
         ListTopicRulesResponse ListTopicRules(string topic);
 
         /// <summary>
@@ -3728,6 +3912,7 @@ namespace Amazon.IoT
         /// <exception cref="Amazon.IoT.Model.ServiceUnavailableException">
         /// The service is temporarily unavailable.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListTopicRules">REST API Reference for ListTopicRules Operation</seealso>
         ListTopicRulesResponse ListTopicRules(ListTopicRulesRequest request);
 
         /// <summary>
@@ -3741,6 +3926,7 @@ namespace Amazon.IoT
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListTopicRules
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListTopicRules">REST API Reference for ListTopicRules Operation</seealso>
         IAsyncResult BeginListTopicRules(ListTopicRulesRequest request, AsyncCallback callback, object state);
 
 
@@ -3752,6 +3938,7 @@ namespace Amazon.IoT
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListTopicRules.</param>
         /// 
         /// <returns>Returns a  ListTopicRulesResult from IoT.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListTopicRules">REST API Reference for ListTopicRules Operation</seealso>
         ListTopicRulesResponse EndListTopicRules(IAsyncResult asyncResult);
 
         #endregion
@@ -3762,9 +3949,9 @@ namespace Amazon.IoT
         /// <summary>
         /// Registers a CA certificate with AWS IoT. This CA certificate can then be used to sign
         /// device certificates, which can be then registered with AWS IoT. You can register up
-        /// to 10 CA certificates per AWS account that have the same subject field and public
-        /// key. This enables you to have up to 10 certificate authorities sign your device certificates.
-        /// If you have more than one CA certificate registered, make sure you pass the CA certificate
+        /// to 10 CA certificates per AWS account that have the same subject field. This enables
+        /// you to have up to 10 certificate authorities sign your device certificates. If you
+        /// have more than one CA certificate registered, make sure you pass the CA certificate
         /// when you register your device certificates with the RegisterCertificate API.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RegisterCACertificate service method.</param>
@@ -3797,6 +3984,7 @@ namespace Amazon.IoT
         /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
         /// You are not authorized to perform this operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/RegisterCACertificate">REST API Reference for RegisterCACertificate Operation</seealso>
         RegisterCACertificateResponse RegisterCACertificate(RegisterCACertificateRequest request);
 
         /// <summary>
@@ -3810,6 +3998,7 @@ namespace Amazon.IoT
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndRegisterCACertificate
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/RegisterCACertificate">REST API Reference for RegisterCACertificate Operation</seealso>
         IAsyncResult BeginRegisterCACertificate(RegisterCACertificateRequest request, AsyncCallback callback, object state);
 
 
@@ -3821,6 +4010,7 @@ namespace Amazon.IoT
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginRegisterCACertificate.</param>
         /// 
         /// <returns>Returns a  RegisterCACertificateResult from IoT.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/RegisterCACertificate">REST API Reference for RegisterCACertificate Operation</seealso>
         RegisterCACertificateResponse EndRegisterCACertificate(IAsyncResult asyncResult);
 
         #endregion
@@ -3865,6 +4055,7 @@ namespace Amazon.IoT
         /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
         /// You are not authorized to perform this operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/RegisterCertificate">REST API Reference for RegisterCertificate Operation</seealso>
         RegisterCertificateResponse RegisterCertificate(RegisterCertificateRequest request);
 
         /// <summary>
@@ -3878,6 +4069,7 @@ namespace Amazon.IoT
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndRegisterCertificate
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/RegisterCertificate">REST API Reference for RegisterCertificate Operation</seealso>
         IAsyncResult BeginRegisterCertificate(RegisterCertificateRequest request, AsyncCallback callback, object state);
 
 
@@ -3889,6 +4081,7 @@ namespace Amazon.IoT
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginRegisterCertificate.</param>
         /// 
         /// <returns>Returns a  RegisterCertificateResult from IoT.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/RegisterCertificate">REST API Reference for RegisterCertificate Operation</seealso>
         RegisterCertificateResponse EndRegisterCertificate(IAsyncResult asyncResult);
 
         #endregion
@@ -3935,6 +4128,7 @@ namespace Amazon.IoT
         /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
         /// You are not authorized to perform this operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/RejectCertificateTransfer">REST API Reference for RejectCertificateTransfer Operation</seealso>
         RejectCertificateTransferResponse RejectCertificateTransfer(string certificateId);
 
         /// <summary>
@@ -3976,6 +4170,7 @@ namespace Amazon.IoT
         /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
         /// You are not authorized to perform this operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/RejectCertificateTransfer">REST API Reference for RejectCertificateTransfer Operation</seealso>
         RejectCertificateTransferResponse RejectCertificateTransfer(RejectCertificateTransferRequest request);
 
         /// <summary>
@@ -3989,6 +4184,7 @@ namespace Amazon.IoT
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndRejectCertificateTransfer
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/RejectCertificateTransfer">REST API Reference for RejectCertificateTransfer Operation</seealso>
         IAsyncResult BeginRejectCertificateTransfer(RejectCertificateTransferRequest request, AsyncCallback callback, object state);
 
 
@@ -4000,6 +4196,7 @@ namespace Amazon.IoT
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginRejectCertificateTransfer.</param>
         /// 
         /// <returns>Returns a  RejectCertificateTransferResult from IoT.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/RejectCertificateTransfer">REST API Reference for RejectCertificateTransfer Operation</seealso>
         RejectCertificateTransferResponse EndRejectCertificateTransfer(IAsyncResult asyncResult);
 
         #endregion
@@ -4030,6 +4227,7 @@ namespace Amazon.IoT
         /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
         /// You are not authorized to perform this operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ReplaceTopicRule">REST API Reference for ReplaceTopicRule Operation</seealso>
         ReplaceTopicRuleResponse ReplaceTopicRule(ReplaceTopicRuleRequest request);
 
         /// <summary>
@@ -4043,6 +4241,7 @@ namespace Amazon.IoT
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndReplaceTopicRule
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ReplaceTopicRule">REST API Reference for ReplaceTopicRule Operation</seealso>
         IAsyncResult BeginReplaceTopicRule(ReplaceTopicRuleRequest request, AsyncCallback callback, object state);
 
 
@@ -4054,6 +4253,7 @@ namespace Amazon.IoT
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginReplaceTopicRule.</param>
         /// 
         /// <returns>Returns a  ReplaceTopicRuleResult from IoT.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ReplaceTopicRule">REST API Reference for ReplaceTopicRule Operation</seealso>
         ReplaceTopicRuleResponse EndReplaceTopicRule(IAsyncResult asyncResult);
 
         #endregion
@@ -4088,6 +4288,7 @@ namespace Amazon.IoT
         /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
         /// You are not authorized to perform this operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/SetDefaultPolicyVersion">REST API Reference for SetDefaultPolicyVersion Operation</seealso>
         SetDefaultPolicyVersionResponse SetDefaultPolicyVersion(string policyName, string policyVersionId);
 
         /// <summary>
@@ -4116,6 +4317,7 @@ namespace Amazon.IoT
         /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
         /// You are not authorized to perform this operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/SetDefaultPolicyVersion">REST API Reference for SetDefaultPolicyVersion Operation</seealso>
         SetDefaultPolicyVersionResponse SetDefaultPolicyVersion(SetDefaultPolicyVersionRequest request);
 
         /// <summary>
@@ -4129,6 +4331,7 @@ namespace Amazon.IoT
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndSetDefaultPolicyVersion
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/SetDefaultPolicyVersion">REST API Reference for SetDefaultPolicyVersion Operation</seealso>
         IAsyncResult BeginSetDefaultPolicyVersion(SetDefaultPolicyVersionRequest request, AsyncCallback callback, object state);
 
 
@@ -4140,6 +4343,7 @@ namespace Amazon.IoT
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginSetDefaultPolicyVersion.</param>
         /// 
         /// <returns>Returns a  SetDefaultPolicyVersionResult from IoT.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/SetDefaultPolicyVersion">REST API Reference for SetDefaultPolicyVersion Operation</seealso>
         SetDefaultPolicyVersionResponse EndSetDefaultPolicyVersion(IAsyncResult asyncResult);
 
         #endregion
@@ -4162,6 +4366,7 @@ namespace Amazon.IoT
         /// <exception cref="Amazon.IoT.Model.ServiceUnavailableException">
         /// The service is temporarily unavailable.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/SetLoggingOptions">REST API Reference for SetLoggingOptions Operation</seealso>
         SetLoggingOptionsResponse SetLoggingOptions(SetLoggingOptionsRequest request);
 
         /// <summary>
@@ -4175,6 +4380,7 @@ namespace Amazon.IoT
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndSetLoggingOptions
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/SetLoggingOptions">REST API Reference for SetLoggingOptions Operation</seealso>
         IAsyncResult BeginSetLoggingOptions(SetLoggingOptionsRequest request, AsyncCallback callback, object state);
 
 
@@ -4186,6 +4392,7 @@ namespace Amazon.IoT
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginSetLoggingOptions.</param>
         /// 
         /// <returns>Returns a  SetLoggingOptionsResult from IoT.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/SetLoggingOptions">REST API Reference for SetLoggingOptions Operation</seealso>
         SetLoggingOptionsResponse EndSetLoggingOptions(IAsyncResult asyncResult);
 
         #endregion
@@ -4244,6 +4451,7 @@ namespace Amazon.IoT
         /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
         /// You are not authorized to perform this operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/TransferCertificate">REST API Reference for TransferCertificate Operation</seealso>
         TransferCertificateResponse TransferCertificate(string certificateId, string targetAwsAccount);
 
         /// <summary>
@@ -4296,6 +4504,7 @@ namespace Amazon.IoT
         /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
         /// You are not authorized to perform this operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/TransferCertificate">REST API Reference for TransferCertificate Operation</seealso>
         TransferCertificateResponse TransferCertificate(TransferCertificateRequest request);
 
         /// <summary>
@@ -4309,6 +4518,7 @@ namespace Amazon.IoT
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndTransferCertificate
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/TransferCertificate">REST API Reference for TransferCertificate Operation</seealso>
         IAsyncResult BeginTransferCertificate(TransferCertificateRequest request, AsyncCallback callback, object state);
 
 
@@ -4320,6 +4530,7 @@ namespace Amazon.IoT
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginTransferCertificate.</param>
         /// 
         /// <returns>Returns a  TransferCertificateResult from IoT.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/TransferCertificate">REST API Reference for TransferCertificate Operation</seealso>
         TransferCertificateResponse EndTransferCertificate(IAsyncResult asyncResult);
 
         #endregion
@@ -4351,6 +4562,7 @@ namespace Amazon.IoT
         /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
         /// You are not authorized to perform this operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/UpdateCACertificate">REST API Reference for UpdateCACertificate Operation</seealso>
         UpdateCACertificateResponse UpdateCACertificate(UpdateCACertificateRequest request);
 
         /// <summary>
@@ -4364,6 +4576,7 @@ namespace Amazon.IoT
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateCACertificate
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/UpdateCACertificate">REST API Reference for UpdateCACertificate Operation</seealso>
         IAsyncResult BeginUpdateCACertificate(UpdateCACertificateRequest request, AsyncCallback callback, object state);
 
 
@@ -4375,6 +4588,7 @@ namespace Amazon.IoT
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateCACertificate.</param>
         /// 
         /// <returns>Returns a  UpdateCACertificateResult from IoT.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/UpdateCACertificate">REST API Reference for UpdateCACertificate Operation</seealso>
         UpdateCACertificateResponse EndUpdateCACertificate(IAsyncResult asyncResult);
 
         #endregion
@@ -4397,7 +4611,7 @@ namespace Amazon.IoT
         /// </para>
         /// </summary>
         /// <param name="certificateId">The ID of the certificate.</param>
-        /// <param name="newStatus">The new status. <b>Note:</b> Setting the status to PENDING_TRANSFER will result in an exception being thrown. PENDING_TRANSFER is a status used internally by AWS IoT. It is not intended for developer use. <b>Note:</b> The status value REGISTER_INACTIVE is deprecated and should not be used.</param>
+        /// <param name="newStatus">The new status.  <b>Note:</b> Setting the status to PENDING_TRANSFER will result in an exception being thrown. PENDING_TRANSFER is a status used internally by AWS IoT. It is not intended for developer use.  <b>Note:</b> The status value REGISTER_INACTIVE is deprecated and should not be used.</param>
         /// 
         /// <returns>The response from the UpdateCertificate service method, as returned by IoT.</returns>
         /// <exception cref="Amazon.IoT.Model.CertificateStateException">
@@ -4421,6 +4635,7 @@ namespace Amazon.IoT
         /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
         /// You are not authorized to perform this operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/UpdateCertificate">REST API Reference for UpdateCertificate Operation</seealso>
         UpdateCertificateResponse UpdateCertificate(string certificateId, CertificateStatus newStatus);
 
         /// <summary>
@@ -4461,6 +4676,7 @@ namespace Amazon.IoT
         /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
         /// You are not authorized to perform this operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/UpdateCertificate">REST API Reference for UpdateCertificate Operation</seealso>
         UpdateCertificateResponse UpdateCertificate(UpdateCertificateRequest request);
 
         /// <summary>
@@ -4474,6 +4690,7 @@ namespace Amazon.IoT
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateCertificate
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/UpdateCertificate">REST API Reference for UpdateCertificate Operation</seealso>
         IAsyncResult BeginUpdateCertificate(UpdateCertificateRequest request, AsyncCallback callback, object state);
 
 
@@ -4485,6 +4702,7 @@ namespace Amazon.IoT
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateCertificate.</param>
         /// 
         /// <returns>Returns a  UpdateCertificateResult from IoT.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/UpdateCertificate">REST API Reference for UpdateCertificate Operation</seealso>
         UpdateCertificateResponse EndUpdateCertificate(IAsyncResult asyncResult);
 
         #endregion
@@ -4520,6 +4738,7 @@ namespace Amazon.IoT
         /// An exception thrown when the version of a thing passed to a command is different than
         /// the version specified with the --version parameter.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/UpdateThing">REST API Reference for UpdateThing Operation</seealso>
         UpdateThingResponse UpdateThing(UpdateThingRequest request);
 
         /// <summary>
@@ -4533,6 +4752,7 @@ namespace Amazon.IoT
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateThing
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/UpdateThing">REST API Reference for UpdateThing Operation</seealso>
         IAsyncResult BeginUpdateThing(UpdateThingRequest request, AsyncCallback callback, object state);
 
 
@@ -4544,6 +4764,7 @@ namespace Amazon.IoT
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateThing.</param>
         /// 
         /// <returns>Returns a  UpdateThingResult from IoT.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/UpdateThing">REST API Reference for UpdateThing Operation</seealso>
         UpdateThingResponse EndUpdateThing(IAsyncResult asyncResult);
 
         #endregion

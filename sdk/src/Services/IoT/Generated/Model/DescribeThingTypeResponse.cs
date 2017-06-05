@@ -37,7 +37,12 @@ namespace Amazon.IoT.Model
         private ThingTypeProperties _thingTypeProperties;
 
         /// <summary>
-        /// Gets and sets the property ThingTypeMetadata.
+        /// Gets and sets the property ThingTypeMetadata. 
+        /// <para>
+        /// The ThingTypeMetadata contains additional information about the thing type including:
+        /// creation date and time, a value indicating whether the thing type is deprecated, and
+        /// a date and time when it was deprecated.
+        /// </para>
         /// </summary>
         public ThingTypeMetadata ThingTypeMetadata
         {

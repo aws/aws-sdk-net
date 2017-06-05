@@ -274,6 +274,7 @@ namespace Amazon.IoT
         /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
         /// You are not authorized to perform this operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/AcceptCertificateTransfer">REST API Reference for AcceptCertificateTransfer Operation</seealso>
         public AcceptCertificateTransferResponse AcceptCertificateTransfer(AcceptCertificateTransferRequest request)
         {
             var marshaller = new AcceptCertificateTransferRequestMarshaller();
@@ -291,6 +292,7 @@ namespace Amazon.IoT
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/AcceptCertificateTransfer">REST API Reference for AcceptCertificateTransfer Operation</seealso>
         public Task<AcceptCertificateTransferResponse> AcceptCertificateTransferAsync(AcceptCertificateTransferRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new AcceptCertificateTransferRequestMarshaller();
@@ -333,6 +335,7 @@ namespace Amazon.IoT
         /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
         /// You are not authorized to perform this operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/AttachPrincipalPolicy">REST API Reference for AttachPrincipalPolicy Operation</seealso>
         public AttachPrincipalPolicyResponse AttachPrincipalPolicy(string policyName, string principal)
         {
             var request = new AttachPrincipalPolicyRequest();
@@ -369,6 +372,7 @@ namespace Amazon.IoT
         /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
         /// You are not authorized to perform this operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/AttachPrincipalPolicy">REST API Reference for AttachPrincipalPolicy Operation</seealso>
         public AttachPrincipalPolicyResponse AttachPrincipalPolicy(AttachPrincipalPolicyRequest request)
         {
             var marshaller = new AttachPrincipalPolicyRequestMarshaller();
@@ -409,6 +413,7 @@ namespace Amazon.IoT
         /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
         /// You are not authorized to perform this operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/AttachPrincipalPolicy">REST API Reference for AttachPrincipalPolicy Operation</seealso>
         public Task<AttachPrincipalPolicyResponse> AttachPrincipalPolicyAsync(string policyName, string principal, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var request = new AttachPrincipalPolicyRequest();
@@ -426,6 +431,7 @@ namespace Amazon.IoT
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/AttachPrincipalPolicy">REST API Reference for AttachPrincipalPolicy Operation</seealso>
         public Task<AttachPrincipalPolicyResponse> AttachPrincipalPolicyAsync(AttachPrincipalPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new AttachPrincipalPolicyRequestMarshaller();
@@ -465,6 +471,7 @@ namespace Amazon.IoT
         /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
         /// You are not authorized to perform this operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/AttachThingPrincipal">REST API Reference for AttachThingPrincipal Operation</seealso>
         public AttachThingPrincipalResponse AttachThingPrincipal(string thingName, string principal)
         {
             var request = new AttachThingPrincipalRequest();
@@ -498,6 +505,7 @@ namespace Amazon.IoT
         /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
         /// You are not authorized to perform this operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/AttachThingPrincipal">REST API Reference for AttachThingPrincipal Operation</seealso>
         public AttachThingPrincipalResponse AttachThingPrincipal(AttachThingPrincipalRequest request)
         {
             var marshaller = new AttachThingPrincipalRequestMarshaller();
@@ -535,6 +543,7 @@ namespace Amazon.IoT
         /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
         /// You are not authorized to perform this operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/AttachThingPrincipal">REST API Reference for AttachThingPrincipal Operation</seealso>
         public Task<AttachThingPrincipalResponse> AttachThingPrincipalAsync(string thingName, string principal, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var request = new AttachThingPrincipalRequest();
@@ -552,6 +561,7 @@ namespace Amazon.IoT
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/AttachThingPrincipal">REST API Reference for AttachThingPrincipal Operation</seealso>
         public Task<AttachThingPrincipalResponse> AttachThingPrincipalAsync(AttachThingPrincipalRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new AttachThingPrincipalRequestMarshaller();
@@ -571,7 +581,7 @@ namespace Amazon.IoT
         /// 
         ///  
         /// <para>
-        /// <b>Note</b> Only the transfer source account can use this operation to cancel a transfer.
+        ///  <b>Note</b> Only the transfer source account can use this operation to cancel a transfer.
         /// (Transfer destinations can use <a>RejectCertificateTransfer</a> instead.) After transfer,
         /// AWS IoT returns the certificate to the source account in the INACTIVE state. After
         /// the destination account has accepted the transfer, the transfer cannot be cancelled.
@@ -606,6 +616,7 @@ namespace Amazon.IoT
         /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
         /// You are not authorized to perform this operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CancelCertificateTransfer">REST API Reference for CancelCertificateTransfer Operation</seealso>
         public CancelCertificateTransferResponse CancelCertificateTransfer(string certificateId)
         {
             var request = new CancelCertificateTransferRequest();
@@ -619,7 +630,7 @@ namespace Amazon.IoT
         /// 
         ///  
         /// <para>
-        /// <b>Note</b> Only the transfer source account can use this operation to cancel a transfer.
+        ///  <b>Note</b> Only the transfer source account can use this operation to cancel a transfer.
         /// (Transfer destinations can use <a>RejectCertificateTransfer</a> instead.) After transfer,
         /// AWS IoT returns the certificate to the source account in the INACTIVE state. After
         /// the destination account has accepted the transfer, the transfer cannot be cancelled.
@@ -654,6 +665,7 @@ namespace Amazon.IoT
         /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
         /// You are not authorized to perform this operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CancelCertificateTransfer">REST API Reference for CancelCertificateTransfer Operation</seealso>
         public CancelCertificateTransferResponse CancelCertificateTransfer(CancelCertificateTransferRequest request)
         {
             var marshaller = new CancelCertificateTransferRequestMarshaller();
@@ -668,7 +680,7 @@ namespace Amazon.IoT
         /// 
         ///  
         /// <para>
-        /// <b>Note</b> Only the transfer source account can use this operation to cancel a transfer.
+        ///  <b>Note</b> Only the transfer source account can use this operation to cancel a transfer.
         /// (Transfer destinations can use <a>RejectCertificateTransfer</a> instead.) After transfer,
         /// AWS IoT returns the certificate to the source account in the INACTIVE state. After
         /// the destination account has accepted the transfer, the transfer cannot be cancelled.
@@ -706,6 +718,7 @@ namespace Amazon.IoT
         /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
         /// You are not authorized to perform this operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CancelCertificateTransfer">REST API Reference for CancelCertificateTransfer Operation</seealso>
         public Task<CancelCertificateTransferResponse> CancelCertificateTransferAsync(string certificateId, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var request = new CancelCertificateTransferRequest();
@@ -722,6 +735,7 @@ namespace Amazon.IoT
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CancelCertificateTransfer">REST API Reference for CancelCertificateTransfer Operation</seealso>
         public Task<CancelCertificateTransferResponse> CancelCertificateTransferAsync(CancelCertificateTransferRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CancelCertificateTransferRequestMarshaller();
@@ -741,7 +755,12 @@ namespace Amazon.IoT
         /// 
         ///  
         /// <para>
-        /// <b>Note</b> Reusing the same certificate signing request (CSR) results in a distinct
+        ///  <b>Note:</b> The CSR must include a public key that is either an RSA key with a length
+        /// of at least 2048 bits or an ECC key from NIST P-256 or NIST P-384 curves. 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Note:</b> Reusing the same certificate signing request (CSR) results in a distinct
         /// certificate.
         /// </para>
         ///  
@@ -749,7 +768,7 @@ namespace Amazon.IoT
         /// You can create multiple certificates in a batch by creating a directory, copying multiple
         /// .csr files into that directory, and then specifying that directory on the command
         /// line. The following commands show how to create a batch of certificates given a batch
-        /// of CSRs. 
+        /// of CSRs.
         /// </para>
         ///  
         /// <para>
@@ -766,39 +785,39 @@ namespace Amazon.IoT
         /// </para>
         ///  
         /// <para>
-        ///  This command lists all of the CSRs in my-csr-directory and pipes each CSR file name
+        /// This command lists all of the CSRs in my-csr-directory and pipes each CSR file name
         /// to the aws iot create-certificate-from-csr AWS CLI command to create a certificate
-        /// for the corresponding CSR. 
+        /// for the corresponding CSR.
         /// </para>
         ///  
         /// <para>
-        ///  The aws iot create-certificate-from-csr part of the command can also be run in parallel
-        /// to speed up the certificate creation process: 
+        /// The aws iot create-certificate-from-csr part of the command can also be run in parallel
+        /// to speed up the certificate creation process:
         /// </para>
         ///  
         /// <para>
-        ///  $ ls my-csr-directory/ | xargs -P 10 -I {} aws iot create-certificate-from-csr --certificate-signing-request
-        /// file://my-csr-directory/{} 
+        /// $ ls my-csr-directory/ | xargs -P 10 -I {} aws iot create-certificate-from-csr --certificate-signing-request
+        /// file://my-csr-directory/{}
         /// </para>
         ///  
         /// <para>
-        ///  On Windows PowerShell, the command to create certificates for all CSRs in my-csr-directory
-        /// is: 
+        /// On Windows PowerShell, the command to create certificates for all CSRs in my-csr-directory
+        /// is:
         /// </para>
         ///  
         /// <para>
-        ///  &gt; ls -Name my-csr-directory | %{aws iot create-certificate-from-csr --certificate-signing-request
-        /// file://my-csr-directory/$_} 
+        /// &gt; ls -Name my-csr-directory | %{aws iot create-certificate-from-csr --certificate-signing-request
+        /// file://my-csr-directory/$_}
         /// </para>
         ///  
         /// <para>
-        ///  On a Windows command prompt, the command to create certificates for all CSRs in my-csr-directory
-        /// is: 
+        /// On a Windows command prompt, the command to create certificates for all CSRs in my-csr-directory
+        /// is:
         /// </para>
         ///  
         /// <para>
-        ///  &gt; forfiles /p my-csr-directory /c "cmd /c aws iot create-certificate-from-csr
-        /// --certificate-signing-request file://@path"
+        /// &gt; forfiles /p my-csr-directory /c "cmd /c aws iot create-certificate-from-csr --certificate-signing-request
+        /// file://@path"
         /// </para>
         /// </summary>
         /// <param name="certificateSigningRequest">The certificate signing request (CSR).</param>
@@ -819,6 +838,7 @@ namespace Amazon.IoT
         /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
         /// You are not authorized to perform this operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreateCertificateFromCsr">REST API Reference for CreateCertificateFromCsr Operation</seealso>
         public CreateCertificateFromCsrResponse CreateCertificateFromCsr(string certificateSigningRequest)
         {
             var request = new CreateCertificateFromCsrRequest();
@@ -832,7 +852,12 @@ namespace Amazon.IoT
         /// 
         ///  
         /// <para>
-        /// <b>Note</b> Reusing the same certificate signing request (CSR) results in a distinct
+        ///  <b>Note:</b> The CSR must include a public key that is either an RSA key with a length
+        /// of at least 2048 bits or an ECC key from NIST P-256 or NIST P-384 curves. 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Note:</b> Reusing the same certificate signing request (CSR) results in a distinct
         /// certificate.
         /// </para>
         ///  
@@ -840,7 +865,7 @@ namespace Amazon.IoT
         /// You can create multiple certificates in a batch by creating a directory, copying multiple
         /// .csr files into that directory, and then specifying that directory on the command
         /// line. The following commands show how to create a batch of certificates given a batch
-        /// of CSRs. 
+        /// of CSRs.
         /// </para>
         ///  
         /// <para>
@@ -857,39 +882,39 @@ namespace Amazon.IoT
         /// </para>
         ///  
         /// <para>
-        ///  This command lists all of the CSRs in my-csr-directory and pipes each CSR file name
+        /// This command lists all of the CSRs in my-csr-directory and pipes each CSR file name
         /// to the aws iot create-certificate-from-csr AWS CLI command to create a certificate
-        /// for the corresponding CSR. 
+        /// for the corresponding CSR.
         /// </para>
         ///  
         /// <para>
-        ///  The aws iot create-certificate-from-csr part of the command can also be run in parallel
-        /// to speed up the certificate creation process: 
+        /// The aws iot create-certificate-from-csr part of the command can also be run in parallel
+        /// to speed up the certificate creation process:
         /// </para>
         ///  
         /// <para>
-        ///  $ ls my-csr-directory/ | xargs -P 10 -I {} aws iot create-certificate-from-csr --certificate-signing-request
-        /// file://my-csr-directory/{} 
+        /// $ ls my-csr-directory/ | xargs -P 10 -I {} aws iot create-certificate-from-csr --certificate-signing-request
+        /// file://my-csr-directory/{}
         /// </para>
         ///  
         /// <para>
-        ///  On Windows PowerShell, the command to create certificates for all CSRs in my-csr-directory
-        /// is: 
+        /// On Windows PowerShell, the command to create certificates for all CSRs in my-csr-directory
+        /// is:
         /// </para>
         ///  
         /// <para>
-        ///  &gt; ls -Name my-csr-directory | %{aws iot create-certificate-from-csr --certificate-signing-request
-        /// file://my-csr-directory/$_} 
+        /// &gt; ls -Name my-csr-directory | %{aws iot create-certificate-from-csr --certificate-signing-request
+        /// file://my-csr-directory/$_}
         /// </para>
         ///  
         /// <para>
-        ///  On a Windows command prompt, the command to create certificates for all CSRs in my-csr-directory
-        /// is: 
+        /// On a Windows command prompt, the command to create certificates for all CSRs in my-csr-directory
+        /// is:
         /// </para>
         ///  
         /// <para>
-        ///  &gt; forfiles /p my-csr-directory /c "cmd /c aws iot create-certificate-from-csr
-        /// --certificate-signing-request file://@path"
+        /// &gt; forfiles /p my-csr-directory /c "cmd /c aws iot create-certificate-from-csr --certificate-signing-request
+        /// file://@path"
         /// </para>
         /// </summary>
         /// <param name="certificateSigningRequest">The certificate signing request (CSR).</param>
@@ -911,6 +936,7 @@ namespace Amazon.IoT
         /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
         /// You are not authorized to perform this operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreateCertificateFromCsr">REST API Reference for CreateCertificateFromCsr Operation</seealso>
         public CreateCertificateFromCsrResponse CreateCertificateFromCsr(string certificateSigningRequest, bool setAsActive)
         {
             var request = new CreateCertificateFromCsrRequest();
@@ -925,7 +951,12 @@ namespace Amazon.IoT
         /// 
         ///  
         /// <para>
-        /// <b>Note</b> Reusing the same certificate signing request (CSR) results in a distinct
+        ///  <b>Note:</b> The CSR must include a public key that is either an RSA key with a length
+        /// of at least 2048 bits or an ECC key from NIST P-256 or NIST P-384 curves. 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Note:</b> Reusing the same certificate signing request (CSR) results in a distinct
         /// certificate.
         /// </para>
         ///  
@@ -933,7 +964,7 @@ namespace Amazon.IoT
         /// You can create multiple certificates in a batch by creating a directory, copying multiple
         /// .csr files into that directory, and then specifying that directory on the command
         /// line. The following commands show how to create a batch of certificates given a batch
-        /// of CSRs. 
+        /// of CSRs.
         /// </para>
         ///  
         /// <para>
@@ -950,39 +981,39 @@ namespace Amazon.IoT
         /// </para>
         ///  
         /// <para>
-        ///  This command lists all of the CSRs in my-csr-directory and pipes each CSR file name
+        /// This command lists all of the CSRs in my-csr-directory and pipes each CSR file name
         /// to the aws iot create-certificate-from-csr AWS CLI command to create a certificate
-        /// for the corresponding CSR. 
+        /// for the corresponding CSR.
         /// </para>
         ///  
         /// <para>
-        ///  The aws iot create-certificate-from-csr part of the command can also be run in parallel
-        /// to speed up the certificate creation process: 
+        /// The aws iot create-certificate-from-csr part of the command can also be run in parallel
+        /// to speed up the certificate creation process:
         /// </para>
         ///  
         /// <para>
-        ///  $ ls my-csr-directory/ | xargs -P 10 -I {} aws iot create-certificate-from-csr --certificate-signing-request
-        /// file://my-csr-directory/{} 
+        /// $ ls my-csr-directory/ | xargs -P 10 -I {} aws iot create-certificate-from-csr --certificate-signing-request
+        /// file://my-csr-directory/{}
         /// </para>
         ///  
         /// <para>
-        ///  On Windows PowerShell, the command to create certificates for all CSRs in my-csr-directory
-        /// is: 
+        /// On Windows PowerShell, the command to create certificates for all CSRs in my-csr-directory
+        /// is:
         /// </para>
         ///  
         /// <para>
-        ///  &gt; ls -Name my-csr-directory | %{aws iot create-certificate-from-csr --certificate-signing-request
-        /// file://my-csr-directory/$_} 
+        /// &gt; ls -Name my-csr-directory | %{aws iot create-certificate-from-csr --certificate-signing-request
+        /// file://my-csr-directory/$_}
         /// </para>
         ///  
         /// <para>
-        ///  On a Windows command prompt, the command to create certificates for all CSRs in my-csr-directory
-        /// is: 
+        /// On a Windows command prompt, the command to create certificates for all CSRs in my-csr-directory
+        /// is:
         /// </para>
         ///  
         /// <para>
-        ///  &gt; forfiles /p my-csr-directory /c "cmd /c aws iot create-certificate-from-csr
-        /// --certificate-signing-request file://@path"
+        /// &gt; forfiles /p my-csr-directory /c "cmd /c aws iot create-certificate-from-csr --certificate-signing-request
+        /// file://@path"
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateCertificateFromCsr service method.</param>
@@ -1003,6 +1034,7 @@ namespace Amazon.IoT
         /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
         /// You are not authorized to perform this operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreateCertificateFromCsr">REST API Reference for CreateCertificateFromCsr Operation</seealso>
         public CreateCertificateFromCsrResponse CreateCertificateFromCsr(CreateCertificateFromCsrRequest request)
         {
             var marshaller = new CreateCertificateFromCsrRequestMarshaller();
@@ -1017,7 +1049,12 @@ namespace Amazon.IoT
         /// 
         ///  
         /// <para>
-        /// <b>Note</b> Reusing the same certificate signing request (CSR) results in a distinct
+        ///  <b>Note:</b> The CSR must include a public key that is either an RSA key with a length
+        /// of at least 2048 bits or an ECC key from NIST P-256 or NIST P-384 curves. 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Note:</b> Reusing the same certificate signing request (CSR) results in a distinct
         /// certificate.
         /// </para>
         ///  
@@ -1025,7 +1062,7 @@ namespace Amazon.IoT
         /// You can create multiple certificates in a batch by creating a directory, copying multiple
         /// .csr files into that directory, and then specifying that directory on the command
         /// line. The following commands show how to create a batch of certificates given a batch
-        /// of CSRs. 
+        /// of CSRs.
         /// </para>
         ///  
         /// <para>
@@ -1042,39 +1079,39 @@ namespace Amazon.IoT
         /// </para>
         ///  
         /// <para>
-        ///  This command lists all of the CSRs in my-csr-directory and pipes each CSR file name
+        /// This command lists all of the CSRs in my-csr-directory and pipes each CSR file name
         /// to the aws iot create-certificate-from-csr AWS CLI command to create a certificate
-        /// for the corresponding CSR. 
+        /// for the corresponding CSR.
         /// </para>
         ///  
         /// <para>
-        ///  The aws iot create-certificate-from-csr part of the command can also be run in parallel
-        /// to speed up the certificate creation process: 
+        /// The aws iot create-certificate-from-csr part of the command can also be run in parallel
+        /// to speed up the certificate creation process:
         /// </para>
         ///  
         /// <para>
-        ///  $ ls my-csr-directory/ | xargs -P 10 -I {} aws iot create-certificate-from-csr --certificate-signing-request
-        /// file://my-csr-directory/{} 
+        /// $ ls my-csr-directory/ | xargs -P 10 -I {} aws iot create-certificate-from-csr --certificate-signing-request
+        /// file://my-csr-directory/{}
         /// </para>
         ///  
         /// <para>
-        ///  On Windows PowerShell, the command to create certificates for all CSRs in my-csr-directory
-        /// is: 
+        /// On Windows PowerShell, the command to create certificates for all CSRs in my-csr-directory
+        /// is:
         /// </para>
         ///  
         /// <para>
-        ///  &gt; ls -Name my-csr-directory | %{aws iot create-certificate-from-csr --certificate-signing-request
-        /// file://my-csr-directory/$_} 
+        /// &gt; ls -Name my-csr-directory | %{aws iot create-certificate-from-csr --certificate-signing-request
+        /// file://my-csr-directory/$_}
         /// </para>
         ///  
         /// <para>
-        ///  On a Windows command prompt, the command to create certificates for all CSRs in my-csr-directory
-        /// is: 
+        /// On a Windows command prompt, the command to create certificates for all CSRs in my-csr-directory
+        /// is:
         /// </para>
         ///  
         /// <para>
-        ///  &gt; forfiles /p my-csr-directory /c "cmd /c aws iot create-certificate-from-csr
-        /// --certificate-signing-request file://@path"
+        /// &gt; forfiles /p my-csr-directory /c "cmd /c aws iot create-certificate-from-csr --certificate-signing-request
+        /// file://@path"
         /// </para>
         /// </summary>
         /// <param name="certificateSigningRequest">The certificate signing request (CSR).</param>
@@ -1098,6 +1135,7 @@ namespace Amazon.IoT
         /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
         /// You are not authorized to perform this operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreateCertificateFromCsr">REST API Reference for CreateCertificateFromCsr Operation</seealso>
         public Task<CreateCertificateFromCsrResponse> CreateCertificateFromCsrAsync(string certificateSigningRequest, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var request = new CreateCertificateFromCsrRequest();
@@ -1111,7 +1149,12 @@ namespace Amazon.IoT
         /// 
         ///  
         /// <para>
-        /// <b>Note</b> Reusing the same certificate signing request (CSR) results in a distinct
+        ///  <b>Note:</b> The CSR must include a public key that is either an RSA key with a length
+        /// of at least 2048 bits or an ECC key from NIST P-256 or NIST P-384 curves. 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Note:</b> Reusing the same certificate signing request (CSR) results in a distinct
         /// certificate.
         /// </para>
         ///  
@@ -1119,7 +1162,7 @@ namespace Amazon.IoT
         /// You can create multiple certificates in a batch by creating a directory, copying multiple
         /// .csr files into that directory, and then specifying that directory on the command
         /// line. The following commands show how to create a batch of certificates given a batch
-        /// of CSRs. 
+        /// of CSRs.
         /// </para>
         ///  
         /// <para>
@@ -1136,39 +1179,39 @@ namespace Amazon.IoT
         /// </para>
         ///  
         /// <para>
-        ///  This command lists all of the CSRs in my-csr-directory and pipes each CSR file name
+        /// This command lists all of the CSRs in my-csr-directory and pipes each CSR file name
         /// to the aws iot create-certificate-from-csr AWS CLI command to create a certificate
-        /// for the corresponding CSR. 
+        /// for the corresponding CSR.
         /// </para>
         ///  
         /// <para>
-        ///  The aws iot create-certificate-from-csr part of the command can also be run in parallel
-        /// to speed up the certificate creation process: 
+        /// The aws iot create-certificate-from-csr part of the command can also be run in parallel
+        /// to speed up the certificate creation process:
         /// </para>
         ///  
         /// <para>
-        ///  $ ls my-csr-directory/ | xargs -P 10 -I {} aws iot create-certificate-from-csr --certificate-signing-request
-        /// file://my-csr-directory/{} 
+        /// $ ls my-csr-directory/ | xargs -P 10 -I {} aws iot create-certificate-from-csr --certificate-signing-request
+        /// file://my-csr-directory/{}
         /// </para>
         ///  
         /// <para>
-        ///  On Windows PowerShell, the command to create certificates for all CSRs in my-csr-directory
-        /// is: 
+        /// On Windows PowerShell, the command to create certificates for all CSRs in my-csr-directory
+        /// is:
         /// </para>
         ///  
         /// <para>
-        ///  &gt; ls -Name my-csr-directory | %{aws iot create-certificate-from-csr --certificate-signing-request
-        /// file://my-csr-directory/$_} 
+        /// &gt; ls -Name my-csr-directory | %{aws iot create-certificate-from-csr --certificate-signing-request
+        /// file://my-csr-directory/$_}
         /// </para>
         ///  
         /// <para>
-        ///  On a Windows command prompt, the command to create certificates for all CSRs in my-csr-directory
-        /// is: 
+        /// On a Windows command prompt, the command to create certificates for all CSRs in my-csr-directory
+        /// is:
         /// </para>
         ///  
         /// <para>
-        ///  &gt; forfiles /p my-csr-directory /c "cmd /c aws iot create-certificate-from-csr
-        /// --certificate-signing-request file://@path"
+        /// &gt; forfiles /p my-csr-directory /c "cmd /c aws iot create-certificate-from-csr --certificate-signing-request
+        /// file://@path"
         /// </para>
         /// </summary>
         /// <param name="certificateSigningRequest">The certificate signing request (CSR).</param>
@@ -1193,6 +1236,7 @@ namespace Amazon.IoT
         /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
         /// You are not authorized to perform this operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreateCertificateFromCsr">REST API Reference for CreateCertificateFromCsr Operation</seealso>
         public Task<CreateCertificateFromCsrResponse> CreateCertificateFromCsrAsync(string certificateSigningRequest, bool setAsActive, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var request = new CreateCertificateFromCsrRequest();
@@ -1210,6 +1254,7 @@ namespace Amazon.IoT
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreateCertificateFromCsr">REST API Reference for CreateCertificateFromCsr Operation</seealso>
         public Task<CreateCertificateFromCsrResponse> CreateCertificateFromCsrAsync(CreateCertificateFromCsrRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateCertificateFromCsrRequestMarshaller();
@@ -1230,7 +1275,7 @@ namespace Amazon.IoT
         /// 
         ///  
         /// <para>
-        /// <b>Note</b> This is the only time AWS IoT issues the private key for this certificate,
+        ///  <b>Note</b> This is the only time AWS IoT issues the private key for this certificate,
         /// so it is important to keep it in a secure location.
         /// </para>
         /// </summary>
@@ -1251,6 +1296,7 @@ namespace Amazon.IoT
         /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
         /// You are not authorized to perform this operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreateKeysAndCertificate">REST API Reference for CreateKeysAndCertificate Operation</seealso>
         public CreateKeysAndCertificateResponse CreateKeysAndCertificate()
         {
             var request = new CreateKeysAndCertificateRequest();
@@ -1264,7 +1310,7 @@ namespace Amazon.IoT
         /// 
         ///  
         /// <para>
-        /// <b>Note</b> This is the only time AWS IoT issues the private key for this certificate,
+        ///  <b>Note</b> This is the only time AWS IoT issues the private key for this certificate,
         /// so it is important to keep it in a secure location.
         /// </para>
         /// </summary>
@@ -1286,6 +1332,7 @@ namespace Amazon.IoT
         /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
         /// You are not authorized to perform this operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreateKeysAndCertificate">REST API Reference for CreateKeysAndCertificate Operation</seealso>
         public CreateKeysAndCertificateResponse CreateKeysAndCertificate(bool setAsActive)
         {
             var request = new CreateKeysAndCertificateRequest();
@@ -1300,7 +1347,7 @@ namespace Amazon.IoT
         /// 
         ///  
         /// <para>
-        /// <b>Note</b> This is the only time AWS IoT issues the private key for this certificate,
+        ///  <b>Note</b> This is the only time AWS IoT issues the private key for this certificate,
         /// so it is important to keep it in a secure location.
         /// </para>
         /// </summary>
@@ -1322,6 +1369,7 @@ namespace Amazon.IoT
         /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
         /// You are not authorized to perform this operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreateKeysAndCertificate">REST API Reference for CreateKeysAndCertificate Operation</seealso>
         public CreateKeysAndCertificateResponse CreateKeysAndCertificate(CreateKeysAndCertificateRequest request)
         {
             var marshaller = new CreateKeysAndCertificateRequestMarshaller();
@@ -1337,7 +1385,7 @@ namespace Amazon.IoT
         /// 
         ///  
         /// <para>
-        /// <b>Note</b> This is the only time AWS IoT issues the private key for this certificate,
+        ///  <b>Note</b> This is the only time AWS IoT issues the private key for this certificate,
         /// so it is important to keep it in a secure location.
         /// </para>
         /// </summary>
@@ -1361,6 +1409,7 @@ namespace Amazon.IoT
         /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
         /// You are not authorized to perform this operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreateKeysAndCertificate">REST API Reference for CreateKeysAndCertificate Operation</seealso>
         public Task<CreateKeysAndCertificateResponse> CreateKeysAndCertificateAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var request = new CreateKeysAndCertificateRequest();
@@ -1374,7 +1423,7 @@ namespace Amazon.IoT
         /// 
         ///  
         /// <para>
-        /// <b>Note</b> This is the only time AWS IoT issues the private key for this certificate,
+        ///  <b>Note</b> This is the only time AWS IoT issues the private key for this certificate,
         /// so it is important to keep it in a secure location.
         /// </para>
         /// </summary>
@@ -1399,6 +1448,7 @@ namespace Amazon.IoT
         /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
         /// You are not authorized to perform this operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreateKeysAndCertificate">REST API Reference for CreateKeysAndCertificate Operation</seealso>
         public Task<CreateKeysAndCertificateResponse> CreateKeysAndCertificateAsync(bool setAsActive, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var request = new CreateKeysAndCertificateRequest();
@@ -1415,6 +1465,7 @@ namespace Amazon.IoT
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreateKeysAndCertificate">REST API Reference for CreateKeysAndCertificate Operation</seealso>
         public Task<CreateKeysAndCertificateResponse> CreateKeysAndCertificateAsync(CreateKeysAndCertificateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateKeysAndCertificateRequestMarshaller();
@@ -1464,6 +1515,7 @@ namespace Amazon.IoT
         /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
         /// You are not authorized to perform this operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreatePolicy">REST API Reference for CreatePolicy Operation</seealso>
         public CreatePolicyResponse CreatePolicy(string policyName, string policyDocument)
         {
             var request = new CreatePolicyRequest();
@@ -1507,6 +1559,7 @@ namespace Amazon.IoT
         /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
         /// You are not authorized to perform this operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreatePolicy">REST API Reference for CreatePolicy Operation</seealso>
         public CreatePolicyResponse CreatePolicy(CreatePolicyRequest request)
         {
             var marshaller = new CreatePolicyRequestMarshaller();
@@ -1554,6 +1607,7 @@ namespace Amazon.IoT
         /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
         /// You are not authorized to perform this operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreatePolicy">REST API Reference for CreatePolicy Operation</seealso>
         public Task<CreatePolicyResponse> CreatePolicyAsync(string policyName, string policyDocument, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var request = new CreatePolicyRequest();
@@ -1571,6 +1625,7 @@ namespace Amazon.IoT
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreatePolicy">REST API Reference for CreatePolicy Operation</seealso>
         public Task<CreatePolicyResponse> CreatePolicyAsync(CreatePolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreatePolicyRequestMarshaller();
@@ -1626,6 +1681,7 @@ namespace Amazon.IoT
         /// <exception cref="Amazon.IoT.Model.VersionsLimitExceededException">
         /// The number of policy versions exceeds the limit.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreatePolicyVersion">REST API Reference for CreatePolicyVersion Operation</seealso>
         public CreatePolicyVersionResponse CreatePolicyVersion(string policyName, string policyDocument)
         {
             var request = new CreatePolicyVersionRequest();
@@ -1677,6 +1733,7 @@ namespace Amazon.IoT
         /// <exception cref="Amazon.IoT.Model.VersionsLimitExceededException">
         /// The number of policy versions exceeds the limit.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreatePolicyVersion">REST API Reference for CreatePolicyVersion Operation</seealso>
         public CreatePolicyVersionResponse CreatePolicyVersion(string policyName, string policyDocument, bool setAsDefault)
         {
             var request = new CreatePolicyVersionRequest();
@@ -1727,6 +1784,7 @@ namespace Amazon.IoT
         /// <exception cref="Amazon.IoT.Model.VersionsLimitExceededException">
         /// The number of policy versions exceeds the limit.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreatePolicyVersion">REST API Reference for CreatePolicyVersion Operation</seealso>
         public CreatePolicyVersionResponse CreatePolicyVersion(CreatePolicyVersionRequest request)
         {
             var marshaller = new CreatePolicyVersionRequestMarshaller();
@@ -1780,6 +1838,7 @@ namespace Amazon.IoT
         /// <exception cref="Amazon.IoT.Model.VersionsLimitExceededException">
         /// The number of policy versions exceeds the limit.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreatePolicyVersion">REST API Reference for CreatePolicyVersion Operation</seealso>
         public Task<CreatePolicyVersionResponse> CreatePolicyVersionAsync(string policyName, string policyDocument, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var request = new CreatePolicyVersionRequest();
@@ -1834,6 +1893,7 @@ namespace Amazon.IoT
         /// <exception cref="Amazon.IoT.Model.VersionsLimitExceededException">
         /// The number of policy versions exceeds the limit.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreatePolicyVersion">REST API Reference for CreatePolicyVersion Operation</seealso>
         public Task<CreatePolicyVersionResponse> CreatePolicyVersionAsync(string policyName, string policyDocument, bool setAsDefault, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var request = new CreatePolicyVersionRequest();
@@ -1852,6 +1912,7 @@ namespace Amazon.IoT
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreatePolicyVersion">REST API Reference for CreatePolicyVersion Operation</seealso>
         public Task<CreatePolicyVersionResponse> CreatePolicyVersionAsync(CreatePolicyVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreatePolicyVersionRequestMarshaller();
@@ -1893,6 +1954,7 @@ namespace Amazon.IoT
         /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
         /// You are not authorized to perform this operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreateThing">REST API Reference for CreateThing Operation</seealso>
         public CreateThingResponse CreateThing(CreateThingRequest request)
         {
             var marshaller = new CreateThingRequestMarshaller();
@@ -1910,6 +1972,7 @@ namespace Amazon.IoT
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreateThing">REST API Reference for CreateThing Operation</seealso>
         public Task<CreateThingResponse> CreateThingAsync(CreateThingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateThingRequestMarshaller();
@@ -1948,6 +2011,7 @@ namespace Amazon.IoT
         /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
         /// You are not authorized to perform this operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreateThingType">REST API Reference for CreateThingType Operation</seealso>
         public CreateThingTypeResponse CreateThingType(CreateThingTypeRequest request)
         {
             var marshaller = new CreateThingTypeRequestMarshaller();
@@ -1965,6 +2029,7 @@ namespace Amazon.IoT
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreateThingType">REST API Reference for CreateThingType Operation</seealso>
         public Task<CreateThingTypeResponse> CreateThingTypeAsync(CreateThingTypeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateThingTypeRequestMarshaller();
@@ -2001,6 +2066,7 @@ namespace Amazon.IoT
         /// <exception cref="Amazon.IoT.Model.SqlParseException">
         /// The Rule-SQL expression can't be parsed correctly.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreateTopicRule">REST API Reference for CreateTopicRule Operation</seealso>
         public CreateTopicRuleResponse CreateTopicRule(CreateTopicRuleRequest request)
         {
             var marshaller = new CreateTopicRuleRequestMarshaller();
@@ -2018,6 +2084,7 @@ namespace Amazon.IoT
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreateTopicRule">REST API Reference for CreateTopicRule Operation</seealso>
         public Task<CreateTopicRuleResponse> CreateTopicRuleAsync(CreateTopicRuleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateTopicRuleRequestMarshaller();
@@ -2059,6 +2126,7 @@ namespace Amazon.IoT
         /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
         /// You are not authorized to perform this operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeleteCACertificate">REST API Reference for DeleteCACertificate Operation</seealso>
         public DeleteCACertificateResponse DeleteCACertificate(DeleteCACertificateRequest request)
         {
             var marshaller = new DeleteCACertificateRequestMarshaller();
@@ -2076,6 +2144,7 @@ namespace Amazon.IoT
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeleteCACertificate">REST API Reference for DeleteCACertificate Operation</seealso>
         public Task<DeleteCACertificateResponse> DeleteCACertificateAsync(DeleteCACertificateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteCACertificateRequestMarshaller();
@@ -2128,6 +2197,7 @@ namespace Amazon.IoT
         /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
         /// You are not authorized to perform this operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeleteCertificate">REST API Reference for DeleteCertificate Operation</seealso>
         public DeleteCertificateResponse DeleteCertificate(string certificateId)
         {
             var request = new DeleteCertificateRequest();
@@ -2174,6 +2244,7 @@ namespace Amazon.IoT
         /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
         /// You are not authorized to perform this operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeleteCertificate">REST API Reference for DeleteCertificate Operation</seealso>
         public DeleteCertificateResponse DeleteCertificate(DeleteCertificateRequest request)
         {
             var marshaller = new DeleteCertificateRequestMarshaller();
@@ -2224,6 +2295,7 @@ namespace Amazon.IoT
         /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
         /// You are not authorized to perform this operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeleteCertificate">REST API Reference for DeleteCertificate Operation</seealso>
         public Task<DeleteCertificateResponse> DeleteCertificateAsync(string certificateId, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var request = new DeleteCertificateRequest();
@@ -2240,6 +2312,7 @@ namespace Amazon.IoT
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeleteCertificate">REST API Reference for DeleteCertificate Operation</seealso>
         public Task<DeleteCertificateResponse> DeleteCertificateAsync(DeleteCertificateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteCertificateRequestMarshaller();
@@ -2297,6 +2370,7 @@ namespace Amazon.IoT
         /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
         /// You are not authorized to perform this operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeletePolicy">REST API Reference for DeletePolicy Operation</seealso>
         public DeletePolicyResponse DeletePolicy(string policyName)
         {
             var request = new DeletePolicyRequest();
@@ -2348,6 +2422,7 @@ namespace Amazon.IoT
         /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
         /// You are not authorized to perform this operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeletePolicy">REST API Reference for DeletePolicy Operation</seealso>
         public DeletePolicyResponse DeletePolicy(DeletePolicyRequest request)
         {
             var marshaller = new DeletePolicyRequestMarshaller();
@@ -2403,6 +2478,7 @@ namespace Amazon.IoT
         /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
         /// You are not authorized to perform this operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeletePolicy">REST API Reference for DeletePolicy Operation</seealso>
         public Task<DeletePolicyResponse> DeletePolicyAsync(string policyName, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var request = new DeletePolicyRequest();
@@ -2419,6 +2495,7 @@ namespace Amazon.IoT
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeletePolicy">REST API Reference for DeletePolicy Operation</seealso>
         public Task<DeletePolicyResponse> DeletePolicyAsync(DeletePolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeletePolicyRequestMarshaller();
@@ -2464,6 +2541,7 @@ namespace Amazon.IoT
         /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
         /// You are not authorized to perform this operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeletePolicyVersion">REST API Reference for DeletePolicyVersion Operation</seealso>
         public DeletePolicyVersionResponse DeletePolicyVersion(string policyName, string policyVersionId)
         {
             var request = new DeletePolicyVersionRequest();
@@ -2503,6 +2581,7 @@ namespace Amazon.IoT
         /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
         /// You are not authorized to perform this operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeletePolicyVersion">REST API Reference for DeletePolicyVersion Operation</seealso>
         public DeletePolicyVersionResponse DeletePolicyVersion(DeletePolicyVersionRequest request)
         {
             var marshaller = new DeletePolicyVersionRequestMarshaller();
@@ -2546,6 +2625,7 @@ namespace Amazon.IoT
         /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
         /// You are not authorized to perform this operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeletePolicyVersion">REST API Reference for DeletePolicyVersion Operation</seealso>
         public Task<DeletePolicyVersionResponse> DeletePolicyVersionAsync(string policyName, string policyVersionId, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var request = new DeletePolicyVersionRequest();
@@ -2563,6 +2643,7 @@ namespace Amazon.IoT
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeletePolicyVersion">REST API Reference for DeletePolicyVersion Operation</seealso>
         public Task<DeletePolicyVersionResponse> DeletePolicyVersionAsync(DeletePolicyVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeletePolicyVersionRequestMarshaller();
@@ -2598,6 +2679,7 @@ namespace Amazon.IoT
         /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
         /// You are not authorized to perform this operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeleteRegistrationCode">REST API Reference for DeleteRegistrationCode Operation</seealso>
         public DeleteRegistrationCodeResponse DeleteRegistrationCode(DeleteRegistrationCodeRequest request)
         {
             var marshaller = new DeleteRegistrationCodeRequestMarshaller();
@@ -2615,6 +2697,7 @@ namespace Amazon.IoT
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeleteRegistrationCode">REST API Reference for DeleteRegistrationCode Operation</seealso>
         public Task<DeleteRegistrationCodeResponse> DeleteRegistrationCodeAsync(DeleteRegistrationCodeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteRegistrationCodeRequestMarshaller();
@@ -2657,6 +2740,7 @@ namespace Amazon.IoT
         /// An exception thrown when the version of a thing passed to a command is different than
         /// the version specified with the --version parameter.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeleteThing">REST API Reference for DeleteThing Operation</seealso>
         public DeleteThingResponse DeleteThing(string thingName)
         {
             var request = new DeleteThingRequest();
@@ -2693,6 +2777,7 @@ namespace Amazon.IoT
         /// An exception thrown when the version of a thing passed to a command is different than
         /// the version specified with the --version parameter.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeleteThing">REST API Reference for DeleteThing Operation</seealso>
         public DeleteThingResponse DeleteThing(DeleteThingRequest request)
         {
             var marshaller = new DeleteThingRequestMarshaller();
@@ -2733,6 +2818,7 @@ namespace Amazon.IoT
         /// An exception thrown when the version of a thing passed to a command is different than
         /// the version specified with the --version parameter.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeleteThing">REST API Reference for DeleteThing Operation</seealso>
         public Task<DeleteThingResponse> DeleteThingAsync(string thingName, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var request = new DeleteThingRequest();
@@ -2749,6 +2835,7 @@ namespace Amazon.IoT
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeleteThing">REST API Reference for DeleteThing Operation</seealso>
         public Task<DeleteThingResponse> DeleteThingAsync(DeleteThingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteThingRequestMarshaller();
@@ -2791,6 +2878,7 @@ namespace Amazon.IoT
         /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
         /// You are not authorized to perform this operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeleteThingType">REST API Reference for DeleteThingType Operation</seealso>
         public DeleteThingTypeResponse DeleteThingType(DeleteThingTypeRequest request)
         {
             var marshaller = new DeleteThingTypeRequestMarshaller();
@@ -2808,6 +2896,7 @@ namespace Amazon.IoT
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeleteThingType">REST API Reference for DeleteThingType Operation</seealso>
         public Task<DeleteThingTypeResponse> DeleteThingTypeAsync(DeleteThingTypeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteThingTypeRequestMarshaller();
@@ -2840,6 +2929,7 @@ namespace Amazon.IoT
         /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
         /// You are not authorized to perform this operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeleteTopicRule">REST API Reference for DeleteTopicRule Operation</seealso>
         public DeleteTopicRuleResponse DeleteTopicRule(string ruleName)
         {
             var request = new DeleteTopicRuleRequest();
@@ -2866,6 +2956,7 @@ namespace Amazon.IoT
         /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
         /// You are not authorized to perform this operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeleteTopicRule">REST API Reference for DeleteTopicRule Operation</seealso>
         public DeleteTopicRuleResponse DeleteTopicRule(DeleteTopicRuleRequest request)
         {
             var marshaller = new DeleteTopicRuleRequestMarshaller();
@@ -2896,6 +2987,7 @@ namespace Amazon.IoT
         /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
         /// You are not authorized to perform this operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeleteTopicRule">REST API Reference for DeleteTopicRule Operation</seealso>
         public Task<DeleteTopicRuleResponse> DeleteTopicRuleAsync(string ruleName, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var request = new DeleteTopicRuleRequest();
@@ -2912,6 +3004,7 @@ namespace Amazon.IoT
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeleteTopicRule">REST API Reference for DeleteTopicRule Operation</seealso>
         public Task<DeleteTopicRuleResponse> DeleteTopicRuleAsync(DeleteTopicRuleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteTopicRuleRequestMarshaller();
@@ -2950,6 +3043,7 @@ namespace Amazon.IoT
         /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
         /// You are not authorized to perform this operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeprecateThingType">REST API Reference for DeprecateThingType Operation</seealso>
         public DeprecateThingTypeResponse DeprecateThingType(DeprecateThingTypeRequest request)
         {
             var marshaller = new DeprecateThingTypeRequestMarshaller();
@@ -2967,6 +3061,7 @@ namespace Amazon.IoT
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeprecateThingType">REST API Reference for DeprecateThingType Operation</seealso>
         public Task<DeprecateThingTypeResponse> DeprecateThingTypeAsync(DeprecateThingTypeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeprecateThingTypeRequestMarshaller();
@@ -3005,6 +3100,7 @@ namespace Amazon.IoT
         /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
         /// You are not authorized to perform this operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DescribeCACertificate">REST API Reference for DescribeCACertificate Operation</seealso>
         public DescribeCACertificateResponse DescribeCACertificate(DescribeCACertificateRequest request)
         {
             var marshaller = new DescribeCACertificateRequestMarshaller();
@@ -3022,6 +3118,7 @@ namespace Amazon.IoT
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DescribeCACertificate">REST API Reference for DescribeCACertificate Operation</seealso>
         public Task<DescribeCACertificateResponse> DescribeCACertificateAsync(DescribeCACertificateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeCACertificateRequestMarshaller();
@@ -3060,6 +3157,7 @@ namespace Amazon.IoT
         /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
         /// You are not authorized to perform this operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DescribeCertificate">REST API Reference for DescribeCertificate Operation</seealso>
         public DescribeCertificateResponse DescribeCertificate(string certificateId)
         {
             var request = new DescribeCertificateRequest();
@@ -3092,6 +3190,7 @@ namespace Amazon.IoT
         /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
         /// You are not authorized to perform this operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DescribeCertificate">REST API Reference for DescribeCertificate Operation</seealso>
         public DescribeCertificateResponse DescribeCertificate(DescribeCertificateRequest request)
         {
             var marshaller = new DescribeCertificateRequestMarshaller();
@@ -3128,6 +3227,7 @@ namespace Amazon.IoT
         /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
         /// You are not authorized to perform this operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DescribeCertificate">REST API Reference for DescribeCertificate Operation</seealso>
         public Task<DescribeCertificateResponse> DescribeCertificateAsync(string certificateId, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var request = new DescribeCertificateRequest();
@@ -3144,6 +3244,7 @@ namespace Amazon.IoT
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DescribeCertificate">REST API Reference for DescribeCertificate Operation</seealso>
         public Task<DescribeCertificateResponse> DescribeCertificateAsync(DescribeCertificateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeCertificateRequestMarshaller();
@@ -3172,6 +3273,7 @@ namespace Amazon.IoT
         /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
         /// You are not authorized to perform this operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DescribeEndpoint">REST API Reference for DescribeEndpoint Operation</seealso>
         public DescribeEndpointResponse DescribeEndpoint()
         {
             var request = new DescribeEndpointRequest();
@@ -3194,6 +3296,7 @@ namespace Amazon.IoT
         /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
         /// You are not authorized to perform this operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DescribeEndpoint">REST API Reference for DescribeEndpoint Operation</seealso>
         public DescribeEndpointResponse DescribeEndpoint(DescribeEndpointRequest request)
         {
             var marshaller = new DescribeEndpointRequestMarshaller();
@@ -3220,6 +3323,7 @@ namespace Amazon.IoT
         /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
         /// You are not authorized to perform this operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DescribeEndpoint">REST API Reference for DescribeEndpoint Operation</seealso>
         public Task<DescribeEndpointResponse> DescribeEndpointAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var request = new DescribeEndpointRequest();
@@ -3235,6 +3339,7 @@ namespace Amazon.IoT
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DescribeEndpoint">REST API Reference for DescribeEndpoint Operation</seealso>
         public Task<DescribeEndpointResponse> DescribeEndpointAsync(DescribeEndpointRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeEndpointRequestMarshaller();
@@ -3273,6 +3378,7 @@ namespace Amazon.IoT
         /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
         /// You are not authorized to perform this operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DescribeThing">REST API Reference for DescribeThing Operation</seealso>
         public DescribeThingResponse DescribeThing(string thingName)
         {
             var request = new DescribeThingRequest();
@@ -3305,6 +3411,7 @@ namespace Amazon.IoT
         /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
         /// You are not authorized to perform this operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DescribeThing">REST API Reference for DescribeThing Operation</seealso>
         public DescribeThingResponse DescribeThing(DescribeThingRequest request)
         {
             var marshaller = new DescribeThingRequestMarshaller();
@@ -3341,6 +3448,7 @@ namespace Amazon.IoT
         /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
         /// You are not authorized to perform this operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DescribeThing">REST API Reference for DescribeThing Operation</seealso>
         public Task<DescribeThingResponse> DescribeThingAsync(string thingName, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var request = new DescribeThingRequest();
@@ -3357,6 +3465,7 @@ namespace Amazon.IoT
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DescribeThing">REST API Reference for DescribeThing Operation</seealso>
         public Task<DescribeThingResponse> DescribeThingAsync(DescribeThingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeThingRequestMarshaller();
@@ -3395,6 +3504,7 @@ namespace Amazon.IoT
         /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
         /// You are not authorized to perform this operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DescribeThingType">REST API Reference for DescribeThingType Operation</seealso>
         public DescribeThingTypeResponse DescribeThingType(DescribeThingTypeRequest request)
         {
             var marshaller = new DescribeThingTypeRequestMarshaller();
@@ -3412,6 +3522,7 @@ namespace Amazon.IoT
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DescribeThingType">REST API Reference for DescribeThingType Operation</seealso>
         public Task<DescribeThingTypeResponse> DescribeThingTypeAsync(DescribeThingTypeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeThingTypeRequestMarshaller();
@@ -3451,6 +3562,7 @@ namespace Amazon.IoT
         /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
         /// You are not authorized to perform this operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DetachPrincipalPolicy">REST API Reference for DetachPrincipalPolicy Operation</seealso>
         public DetachPrincipalPolicyResponse DetachPrincipalPolicy(string policyName, string principal)
         {
             var request = new DetachPrincipalPolicyRequest();
@@ -3484,6 +3596,7 @@ namespace Amazon.IoT
         /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
         /// You are not authorized to perform this operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DetachPrincipalPolicy">REST API Reference for DetachPrincipalPolicy Operation</seealso>
         public DetachPrincipalPolicyResponse DetachPrincipalPolicy(DetachPrincipalPolicyRequest request)
         {
             var marshaller = new DetachPrincipalPolicyRequestMarshaller();
@@ -3521,6 +3634,7 @@ namespace Amazon.IoT
         /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
         /// You are not authorized to perform this operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DetachPrincipalPolicy">REST API Reference for DetachPrincipalPolicy Operation</seealso>
         public Task<DetachPrincipalPolicyResponse> DetachPrincipalPolicyAsync(string policyName, string principal, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var request = new DetachPrincipalPolicyRequest();
@@ -3538,6 +3652,7 @@ namespace Amazon.IoT
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DetachPrincipalPolicy">REST API Reference for DetachPrincipalPolicy Operation</seealso>
         public Task<DetachPrincipalPolicyResponse> DetachPrincipalPolicyAsync(DetachPrincipalPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DetachPrincipalPolicyRequestMarshaller();
@@ -3577,6 +3692,7 @@ namespace Amazon.IoT
         /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
         /// You are not authorized to perform this operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DetachThingPrincipal">REST API Reference for DetachThingPrincipal Operation</seealso>
         public DetachThingPrincipalResponse DetachThingPrincipal(string thingName, string principal)
         {
             var request = new DetachThingPrincipalRequest();
@@ -3610,6 +3726,7 @@ namespace Amazon.IoT
         /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
         /// You are not authorized to perform this operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DetachThingPrincipal">REST API Reference for DetachThingPrincipal Operation</seealso>
         public DetachThingPrincipalResponse DetachThingPrincipal(DetachThingPrincipalRequest request)
         {
             var marshaller = new DetachThingPrincipalRequestMarshaller();
@@ -3647,6 +3764,7 @@ namespace Amazon.IoT
         /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
         /// You are not authorized to perform this operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DetachThingPrincipal">REST API Reference for DetachThingPrincipal Operation</seealso>
         public Task<DetachThingPrincipalResponse> DetachThingPrincipalAsync(string thingName, string principal, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var request = new DetachThingPrincipalRequest();
@@ -3664,6 +3782,7 @@ namespace Amazon.IoT
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DetachThingPrincipal">REST API Reference for DetachThingPrincipal Operation</seealso>
         public Task<DetachThingPrincipalResponse> DetachThingPrincipalAsync(DetachThingPrincipalRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DetachThingPrincipalRequestMarshaller();
@@ -3696,6 +3815,7 @@ namespace Amazon.IoT
         /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
         /// You are not authorized to perform this operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DisableTopicRule">REST API Reference for DisableTopicRule Operation</seealso>
         public DisableTopicRuleResponse DisableTopicRule(DisableTopicRuleRequest request)
         {
             var marshaller = new DisableTopicRuleRequestMarshaller();
@@ -3713,6 +3833,7 @@ namespace Amazon.IoT
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DisableTopicRule">REST API Reference for DisableTopicRule Operation</seealso>
         public Task<DisableTopicRuleResponse> DisableTopicRuleAsync(DisableTopicRuleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DisableTopicRuleRequestMarshaller();
@@ -3745,6 +3866,7 @@ namespace Amazon.IoT
         /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
         /// You are not authorized to perform this operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/EnableTopicRule">REST API Reference for EnableTopicRule Operation</seealso>
         public EnableTopicRuleResponse EnableTopicRule(EnableTopicRuleRequest request)
         {
             var marshaller = new EnableTopicRuleRequestMarshaller();
@@ -3762,6 +3884,7 @@ namespace Amazon.IoT
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/EnableTopicRule">REST API Reference for EnableTopicRule Operation</seealso>
         public Task<EnableTopicRuleResponse> EnableTopicRuleAsync(EnableTopicRuleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new EnableTopicRuleRequestMarshaller();
@@ -3791,6 +3914,7 @@ namespace Amazon.IoT
         /// <exception cref="Amazon.IoT.Model.ServiceUnavailableException">
         /// The service is temporarily unavailable.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/GetLoggingOptions">REST API Reference for GetLoggingOptions Operation</seealso>
         public GetLoggingOptionsResponse GetLoggingOptions(GetLoggingOptionsRequest request)
         {
             var marshaller = new GetLoggingOptionsRequestMarshaller();
@@ -3808,6 +3932,7 @@ namespace Amazon.IoT
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/GetLoggingOptions">REST API Reference for GetLoggingOptions Operation</seealso>
         public Task<GetLoggingOptionsResponse> GetLoggingOptionsAsync(GetLoggingOptionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetLoggingOptionsRequestMarshaller();
@@ -3847,6 +3972,7 @@ namespace Amazon.IoT
         /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
         /// You are not authorized to perform this operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/GetPolicy">REST API Reference for GetPolicy Operation</seealso>
         public GetPolicyResponse GetPolicy(string policyName)
         {
             var request = new GetPolicyRequest();
@@ -3880,6 +4006,7 @@ namespace Amazon.IoT
         /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
         /// You are not authorized to perform this operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/GetPolicy">REST API Reference for GetPolicy Operation</seealso>
         public GetPolicyResponse GetPolicy(GetPolicyRequest request)
         {
             var marshaller = new GetPolicyRequestMarshaller();
@@ -3917,6 +4044,7 @@ namespace Amazon.IoT
         /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
         /// You are not authorized to perform this operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/GetPolicy">REST API Reference for GetPolicy Operation</seealso>
         public Task<GetPolicyResponse> GetPolicyAsync(string policyName, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var request = new GetPolicyRequest();
@@ -3933,6 +4061,7 @@ namespace Amazon.IoT
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/GetPolicy">REST API Reference for GetPolicy Operation</seealso>
         public Task<GetPolicyResponse> GetPolicyAsync(GetPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetPolicyRequestMarshaller();
@@ -3972,6 +4101,7 @@ namespace Amazon.IoT
         /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
         /// You are not authorized to perform this operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/GetPolicyVersion">REST API Reference for GetPolicyVersion Operation</seealso>
         public GetPolicyVersionResponse GetPolicyVersion(string policyName, string policyVersionId)
         {
             var request = new GetPolicyVersionRequest();
@@ -4005,6 +4135,7 @@ namespace Amazon.IoT
         /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
         /// You are not authorized to perform this operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/GetPolicyVersion">REST API Reference for GetPolicyVersion Operation</seealso>
         public GetPolicyVersionResponse GetPolicyVersion(GetPolicyVersionRequest request)
         {
             var marshaller = new GetPolicyVersionRequestMarshaller();
@@ -4042,6 +4173,7 @@ namespace Amazon.IoT
         /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
         /// You are not authorized to perform this operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/GetPolicyVersion">REST API Reference for GetPolicyVersion Operation</seealso>
         public Task<GetPolicyVersionResponse> GetPolicyVersionAsync(string policyName, string policyVersionId, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var request = new GetPolicyVersionRequest();
@@ -4059,6 +4191,7 @@ namespace Amazon.IoT
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/GetPolicyVersion">REST API Reference for GetPolicyVersion Operation</seealso>
         public Task<GetPolicyVersionResponse> GetPolicyVersionAsync(GetPolicyVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetPolicyVersionRequestMarshaller();
@@ -4094,6 +4227,7 @@ namespace Amazon.IoT
         /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
         /// You are not authorized to perform this operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/GetRegistrationCode">REST API Reference for GetRegistrationCode Operation</seealso>
         public GetRegistrationCodeResponse GetRegistrationCode(GetRegistrationCodeRequest request)
         {
             var marshaller = new GetRegistrationCodeRequestMarshaller();
@@ -4111,6 +4245,7 @@ namespace Amazon.IoT
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/GetRegistrationCode">REST API Reference for GetRegistrationCode Operation</seealso>
         public Task<GetRegistrationCodeResponse> GetRegistrationCodeAsync(GetRegistrationCodeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetRegistrationCodeRequestMarshaller();
@@ -4143,6 +4278,7 @@ namespace Amazon.IoT
         /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
         /// You are not authorized to perform this operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/GetTopicRule">REST API Reference for GetTopicRule Operation</seealso>
         public GetTopicRuleResponse GetTopicRule(string ruleName)
         {
             var request = new GetTopicRuleRequest();
@@ -4169,6 +4305,7 @@ namespace Amazon.IoT
         /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
         /// You are not authorized to perform this operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/GetTopicRule">REST API Reference for GetTopicRule Operation</seealso>
         public GetTopicRuleResponse GetTopicRule(GetTopicRuleRequest request)
         {
             var marshaller = new GetTopicRuleRequestMarshaller();
@@ -4199,6 +4336,7 @@ namespace Amazon.IoT
         /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
         /// You are not authorized to perform this operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/GetTopicRule">REST API Reference for GetTopicRule Operation</seealso>
         public Task<GetTopicRuleResponse> GetTopicRuleAsync(string ruleName, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var request = new GetTopicRuleRequest();
@@ -4215,6 +4353,7 @@ namespace Amazon.IoT
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/GetTopicRule">REST API Reference for GetTopicRule Operation</seealso>
         public Task<GetTopicRuleResponse> GetTopicRuleAsync(GetTopicRuleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetTopicRuleRequestMarshaller();
@@ -4256,6 +4395,7 @@ namespace Amazon.IoT
         /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
         /// You are not authorized to perform this operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListCACertificates">REST API Reference for ListCACertificates Operation</seealso>
         public ListCACertificatesResponse ListCACertificates(ListCACertificatesRequest request)
         {
             var marshaller = new ListCACertificatesRequestMarshaller();
@@ -4273,6 +4413,7 @@ namespace Amazon.IoT
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListCACertificates">REST API Reference for ListCACertificates Operation</seealso>
         public Task<ListCACertificatesResponse> ListCACertificatesAsync(ListCACertificatesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListCACertificatesRequestMarshaller();
@@ -4313,6 +4454,7 @@ namespace Amazon.IoT
         /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
         /// You are not authorized to perform this operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListCertificates">REST API Reference for ListCertificates Operation</seealso>
         public ListCertificatesResponse ListCertificates()
         {
             var request = new ListCertificatesRequest();
@@ -4347,6 +4489,7 @@ namespace Amazon.IoT
         /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
         /// You are not authorized to perform this operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListCertificates">REST API Reference for ListCertificates Operation</seealso>
         public ListCertificatesResponse ListCertificates(ListCertificatesRequest request)
         {
             var marshaller = new ListCertificatesRequestMarshaller();
@@ -4385,6 +4528,7 @@ namespace Amazon.IoT
         /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
         /// You are not authorized to perform this operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListCertificates">REST API Reference for ListCertificates Operation</seealso>
         public Task<ListCertificatesResponse> ListCertificatesAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var request = new ListCertificatesRequest();
@@ -4400,6 +4544,7 @@ namespace Amazon.IoT
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListCertificates">REST API Reference for ListCertificates Operation</seealso>
         public Task<ListCertificatesResponse> ListCertificatesAsync(ListCertificatesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListCertificatesRequestMarshaller();
@@ -4435,6 +4580,7 @@ namespace Amazon.IoT
         /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
         /// You are not authorized to perform this operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListCertificatesByCA">REST API Reference for ListCertificatesByCA Operation</seealso>
         public ListCertificatesByCAResponse ListCertificatesByCA(ListCertificatesByCARequest request)
         {
             var marshaller = new ListCertificatesByCARequestMarshaller();
@@ -4452,6 +4598,7 @@ namespace Amazon.IoT
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListCertificatesByCA">REST API Reference for ListCertificatesByCA Operation</seealso>
         public Task<ListCertificatesByCAResponse> ListCertificatesByCAAsync(ListCertificatesByCARequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListCertificatesByCARequestMarshaller();
@@ -4487,6 +4634,7 @@ namespace Amazon.IoT
         /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
         /// You are not authorized to perform this operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListOutgoingCertificates">REST API Reference for ListOutgoingCertificates Operation</seealso>
         public ListOutgoingCertificatesResponse ListOutgoingCertificates(ListOutgoingCertificatesRequest request)
         {
             var marshaller = new ListOutgoingCertificatesRequestMarshaller();
@@ -4504,6 +4652,7 @@ namespace Amazon.IoT
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListOutgoingCertificates">REST API Reference for ListOutgoingCertificates Operation</seealso>
         public Task<ListOutgoingCertificatesResponse> ListOutgoingCertificatesAsync(ListOutgoingCertificatesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListOutgoingCertificatesRequestMarshaller();
@@ -4538,6 +4687,7 @@ namespace Amazon.IoT
         /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
         /// You are not authorized to perform this operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListPolicies">REST API Reference for ListPolicies Operation</seealso>
         public ListPoliciesResponse ListPolicies()
         {
             var request = new ListPoliciesRequest();
@@ -4566,6 +4716,7 @@ namespace Amazon.IoT
         /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
         /// You are not authorized to perform this operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListPolicies">REST API Reference for ListPolicies Operation</seealso>
         public ListPoliciesResponse ListPolicies(ListPoliciesRequest request)
         {
             var marshaller = new ListPoliciesRequestMarshaller();
@@ -4598,6 +4749,7 @@ namespace Amazon.IoT
         /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
         /// You are not authorized to perform this operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListPolicies">REST API Reference for ListPolicies Operation</seealso>
         public Task<ListPoliciesResponse> ListPoliciesAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var request = new ListPoliciesRequest();
@@ -4613,6 +4765,7 @@ namespace Amazon.IoT
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListPolicies">REST API Reference for ListPolicies Operation</seealso>
         public Task<ListPoliciesResponse> ListPoliciesAsync(ListPoliciesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListPoliciesRequestMarshaller();
@@ -4651,6 +4804,7 @@ namespace Amazon.IoT
         /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
         /// You are not authorized to perform this operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListPolicyPrincipals">REST API Reference for ListPolicyPrincipals Operation</seealso>
         public ListPolicyPrincipalsResponse ListPolicyPrincipals(ListPolicyPrincipalsRequest request)
         {
             var marshaller = new ListPolicyPrincipalsRequestMarshaller();
@@ -4668,6 +4822,7 @@ namespace Amazon.IoT
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListPolicyPrincipals">REST API Reference for ListPolicyPrincipals Operation</seealso>
         public Task<ListPolicyPrincipalsResponse> ListPolicyPrincipalsAsync(ListPolicyPrincipalsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListPolicyPrincipalsRequestMarshaller();
@@ -4706,6 +4861,7 @@ namespace Amazon.IoT
         /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
         /// You are not authorized to perform this operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListPolicyVersions">REST API Reference for ListPolicyVersions Operation</seealso>
         public ListPolicyVersionsResponse ListPolicyVersions(string policyName)
         {
             var request = new ListPolicyVersionsRequest();
@@ -4738,6 +4894,7 @@ namespace Amazon.IoT
         /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
         /// You are not authorized to perform this operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListPolicyVersions">REST API Reference for ListPolicyVersions Operation</seealso>
         public ListPolicyVersionsResponse ListPolicyVersions(ListPolicyVersionsRequest request)
         {
             var marshaller = new ListPolicyVersionsRequestMarshaller();
@@ -4774,6 +4931,7 @@ namespace Amazon.IoT
         /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
         /// You are not authorized to perform this operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListPolicyVersions">REST API Reference for ListPolicyVersions Operation</seealso>
         public Task<ListPolicyVersionsResponse> ListPolicyVersionsAsync(string policyName, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var request = new ListPolicyVersionsRequest();
@@ -4790,6 +4948,7 @@ namespace Amazon.IoT
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListPolicyVersions">REST API Reference for ListPolicyVersions Operation</seealso>
         public Task<ListPolicyVersionsResponse> ListPolicyVersionsAsync(ListPolicyVersionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListPolicyVersionsRequestMarshaller();
@@ -4830,6 +4989,7 @@ namespace Amazon.IoT
         /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
         /// You are not authorized to perform this operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListPrincipalPolicies">REST API Reference for ListPrincipalPolicies Operation</seealso>
         public ListPrincipalPoliciesResponse ListPrincipalPolicies(string principal)
         {
             var request = new ListPrincipalPoliciesRequest();
@@ -4864,6 +5024,7 @@ namespace Amazon.IoT
         /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
         /// You are not authorized to perform this operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListPrincipalPolicies">REST API Reference for ListPrincipalPolicies Operation</seealso>
         public ListPrincipalPoliciesResponse ListPrincipalPolicies(ListPrincipalPoliciesRequest request)
         {
             var marshaller = new ListPrincipalPoliciesRequestMarshaller();
@@ -4902,6 +5063,7 @@ namespace Amazon.IoT
         /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
         /// You are not authorized to perform this operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListPrincipalPolicies">REST API Reference for ListPrincipalPolicies Operation</seealso>
         public Task<ListPrincipalPoliciesResponse> ListPrincipalPoliciesAsync(string principal, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var request = new ListPrincipalPoliciesRequest();
@@ -4918,6 +5080,7 @@ namespace Amazon.IoT
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListPrincipalPolicies">REST API Reference for ListPrincipalPolicies Operation</seealso>
         public Task<ListPrincipalPoliciesResponse> ListPrincipalPoliciesAsync(ListPrincipalPoliciesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListPrincipalPoliciesRequestMarshaller();
@@ -4956,6 +5119,7 @@ namespace Amazon.IoT
         /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
         /// You are not authorized to perform this operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListPrincipalThings">REST API Reference for ListPrincipalThings Operation</seealso>
         public ListPrincipalThingsResponse ListPrincipalThings(string principal)
         {
             var request = new ListPrincipalThingsRequest();
@@ -4988,6 +5152,7 @@ namespace Amazon.IoT
         /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
         /// You are not authorized to perform this operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListPrincipalThings">REST API Reference for ListPrincipalThings Operation</seealso>
         public ListPrincipalThingsResponse ListPrincipalThings(ListPrincipalThingsRequest request)
         {
             var marshaller = new ListPrincipalThingsRequestMarshaller();
@@ -5024,6 +5189,7 @@ namespace Amazon.IoT
         /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
         /// You are not authorized to perform this operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListPrincipalThings">REST API Reference for ListPrincipalThings Operation</seealso>
         public Task<ListPrincipalThingsResponse> ListPrincipalThingsAsync(string principal, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var request = new ListPrincipalThingsRequest();
@@ -5040,6 +5206,7 @@ namespace Amazon.IoT
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListPrincipalThings">REST API Reference for ListPrincipalThings Operation</seealso>
         public Task<ListPrincipalThingsResponse> ListPrincipalThingsAsync(ListPrincipalThingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListPrincipalThingsRequestMarshaller();
@@ -5078,6 +5245,7 @@ namespace Amazon.IoT
         /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
         /// You are not authorized to perform this operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListThingPrincipals">REST API Reference for ListThingPrincipals Operation</seealso>
         public ListThingPrincipalsResponse ListThingPrincipals(string thingName)
         {
             var request = new ListThingPrincipalsRequest();
@@ -5110,6 +5278,7 @@ namespace Amazon.IoT
         /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
         /// You are not authorized to perform this operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListThingPrincipals">REST API Reference for ListThingPrincipals Operation</seealso>
         public ListThingPrincipalsResponse ListThingPrincipals(ListThingPrincipalsRequest request)
         {
             var marshaller = new ListThingPrincipalsRequestMarshaller();
@@ -5146,6 +5315,7 @@ namespace Amazon.IoT
         /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
         /// You are not authorized to perform this operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListThingPrincipals">REST API Reference for ListThingPrincipals Operation</seealso>
         public Task<ListThingPrincipalsResponse> ListThingPrincipalsAsync(string thingName, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var request = new ListThingPrincipalsRequest();
@@ -5162,6 +5332,7 @@ namespace Amazon.IoT
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListThingPrincipals">REST API Reference for ListThingPrincipals Operation</seealso>
         public Task<ListThingPrincipalsResponse> ListThingPrincipalsAsync(ListThingPrincipalsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListThingPrincipalsRequestMarshaller();
@@ -5199,6 +5370,7 @@ namespace Amazon.IoT
         /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
         /// You are not authorized to perform this operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListThings">REST API Reference for ListThings Operation</seealso>
         public ListThingsResponse ListThings()
         {
             var request = new ListThingsRequest();
@@ -5230,6 +5402,7 @@ namespace Amazon.IoT
         /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
         /// You are not authorized to perform this operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListThings">REST API Reference for ListThings Operation</seealso>
         public ListThingsResponse ListThings(ListThingsRequest request)
         {
             var marshaller = new ListThingsRequestMarshaller();
@@ -5265,6 +5438,7 @@ namespace Amazon.IoT
         /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
         /// You are not authorized to perform this operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListThings">REST API Reference for ListThings Operation</seealso>
         public Task<ListThingsResponse> ListThingsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var request = new ListThingsRequest();
@@ -5280,6 +5454,7 @@ namespace Amazon.IoT
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListThings">REST API Reference for ListThings Operation</seealso>
         public Task<ListThingsResponse> ListThingsAsync(ListThingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListThingsRequestMarshaller();
@@ -5315,6 +5490,7 @@ namespace Amazon.IoT
         /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
         /// You are not authorized to perform this operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListThingTypes">REST API Reference for ListThingTypes Operation</seealso>
         public ListThingTypesResponse ListThingTypes(ListThingTypesRequest request)
         {
             var marshaller = new ListThingTypesRequestMarshaller();
@@ -5332,6 +5508,7 @@ namespace Amazon.IoT
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListThingTypes">REST API Reference for ListThingTypes Operation</seealso>
         public Task<ListThingTypesResponse> ListThingTypesAsync(ListThingTypesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListThingTypesRequestMarshaller();
@@ -5361,6 +5538,7 @@ namespace Amazon.IoT
         /// <exception cref="Amazon.IoT.Model.ServiceUnavailableException">
         /// The service is temporarily unavailable.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListTopicRules">REST API Reference for ListTopicRules Operation</seealso>
         public ListTopicRulesResponse ListTopicRules(string topic)
         {
             var request = new ListTopicRulesRequest();
@@ -5384,6 +5562,7 @@ namespace Amazon.IoT
         /// <exception cref="Amazon.IoT.Model.ServiceUnavailableException">
         /// The service is temporarily unavailable.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListTopicRules">REST API Reference for ListTopicRules Operation</seealso>
         public ListTopicRulesResponse ListTopicRules(ListTopicRulesRequest request)
         {
             var marshaller = new ListTopicRulesRequestMarshaller();
@@ -5411,6 +5590,7 @@ namespace Amazon.IoT
         /// <exception cref="Amazon.IoT.Model.ServiceUnavailableException">
         /// The service is temporarily unavailable.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListTopicRules">REST API Reference for ListTopicRules Operation</seealso>
         public Task<ListTopicRulesResponse> ListTopicRulesAsync(string topic, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var request = new ListTopicRulesRequest();
@@ -5427,6 +5607,7 @@ namespace Amazon.IoT
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListTopicRules">REST API Reference for ListTopicRules Operation</seealso>
         public Task<ListTopicRulesResponse> ListTopicRulesAsync(ListTopicRulesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListTopicRulesRequestMarshaller();
@@ -5444,9 +5625,9 @@ namespace Amazon.IoT
         /// <summary>
         /// Registers a CA certificate with AWS IoT. This CA certificate can then be used to sign
         /// device certificates, which can be then registered with AWS IoT. You can register up
-        /// to 10 CA certificates per AWS account that have the same subject field and public
-        /// key. This enables you to have up to 10 certificate authorities sign your device certificates.
-        /// If you have more than one CA certificate registered, make sure you pass the CA certificate
+        /// to 10 CA certificates per AWS account that have the same subject field. This enables
+        /// you to have up to 10 certificate authorities sign your device certificates. If you
+        /// have more than one CA certificate registered, make sure you pass the CA certificate
         /// when you register your device certificates with the RegisterCertificate API.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RegisterCACertificate service method.</param>
@@ -5479,6 +5660,7 @@ namespace Amazon.IoT
         /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
         /// You are not authorized to perform this operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/RegisterCACertificate">REST API Reference for RegisterCACertificate Operation</seealso>
         public RegisterCACertificateResponse RegisterCACertificate(RegisterCACertificateRequest request)
         {
             var marshaller = new RegisterCACertificateRequestMarshaller();
@@ -5496,6 +5678,7 @@ namespace Amazon.IoT
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/RegisterCACertificate">REST API Reference for RegisterCACertificate Operation</seealso>
         public Task<RegisterCACertificateResponse> RegisterCACertificateAsync(RegisterCACertificateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new RegisterCACertificateRequestMarshaller();
@@ -5547,6 +5730,7 @@ namespace Amazon.IoT
         /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
         /// You are not authorized to perform this operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/RegisterCertificate">REST API Reference for RegisterCertificate Operation</seealso>
         public RegisterCertificateResponse RegisterCertificate(RegisterCertificateRequest request)
         {
             var marshaller = new RegisterCertificateRequestMarshaller();
@@ -5564,6 +5748,7 @@ namespace Amazon.IoT
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/RegisterCertificate">REST API Reference for RegisterCertificate Operation</seealso>
         public Task<RegisterCertificateResponse> RegisterCertificateAsync(RegisterCertificateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new RegisterCertificateRequestMarshaller();
@@ -5617,6 +5802,7 @@ namespace Amazon.IoT
         /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
         /// You are not authorized to perform this operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/RejectCertificateTransfer">REST API Reference for RejectCertificateTransfer Operation</seealso>
         public RejectCertificateTransferResponse RejectCertificateTransfer(string certificateId)
         {
             var request = new RejectCertificateTransferRequest();
@@ -5664,6 +5850,7 @@ namespace Amazon.IoT
         /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
         /// You are not authorized to perform this operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/RejectCertificateTransfer">REST API Reference for RejectCertificateTransfer Operation</seealso>
         public RejectCertificateTransferResponse RejectCertificateTransfer(RejectCertificateTransferRequest request)
         {
             var marshaller = new RejectCertificateTransferRequestMarshaller();
@@ -5715,6 +5902,7 @@ namespace Amazon.IoT
         /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
         /// You are not authorized to perform this operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/RejectCertificateTransfer">REST API Reference for RejectCertificateTransfer Operation</seealso>
         public Task<RejectCertificateTransferResponse> RejectCertificateTransferAsync(string certificateId, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var request = new RejectCertificateTransferRequest();
@@ -5731,6 +5919,7 @@ namespace Amazon.IoT
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/RejectCertificateTransfer">REST API Reference for RejectCertificateTransfer Operation</seealso>
         public Task<RejectCertificateTransferResponse> RejectCertificateTransferAsync(RejectCertificateTransferRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new RejectCertificateTransferRequestMarshaller();
@@ -5768,6 +5957,7 @@ namespace Amazon.IoT
         /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
         /// You are not authorized to perform this operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ReplaceTopicRule">REST API Reference for ReplaceTopicRule Operation</seealso>
         public ReplaceTopicRuleResponse ReplaceTopicRule(ReplaceTopicRuleRequest request)
         {
             var marshaller = new ReplaceTopicRuleRequestMarshaller();
@@ -5785,6 +5975,7 @@ namespace Amazon.IoT
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ReplaceTopicRule">REST API Reference for ReplaceTopicRule Operation</seealso>
         public Task<ReplaceTopicRuleResponse> ReplaceTopicRuleAsync(ReplaceTopicRuleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ReplaceTopicRuleRequestMarshaller();
@@ -5826,6 +6017,7 @@ namespace Amazon.IoT
         /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
         /// You are not authorized to perform this operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/SetDefaultPolicyVersion">REST API Reference for SetDefaultPolicyVersion Operation</seealso>
         public SetDefaultPolicyVersionResponse SetDefaultPolicyVersion(string policyName, string policyVersionId)
         {
             var request = new SetDefaultPolicyVersionRequest();
@@ -5861,6 +6053,7 @@ namespace Amazon.IoT
         /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
         /// You are not authorized to perform this operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/SetDefaultPolicyVersion">REST API Reference for SetDefaultPolicyVersion Operation</seealso>
         public SetDefaultPolicyVersionResponse SetDefaultPolicyVersion(SetDefaultPolicyVersionRequest request)
         {
             var marshaller = new SetDefaultPolicyVersionRequestMarshaller();
@@ -5900,6 +6093,7 @@ namespace Amazon.IoT
         /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
         /// You are not authorized to perform this operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/SetDefaultPolicyVersion">REST API Reference for SetDefaultPolicyVersion Operation</seealso>
         public Task<SetDefaultPolicyVersionResponse> SetDefaultPolicyVersionAsync(string policyName, string policyVersionId, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var request = new SetDefaultPolicyVersionRequest();
@@ -5917,6 +6111,7 @@ namespace Amazon.IoT
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/SetDefaultPolicyVersion">REST API Reference for SetDefaultPolicyVersion Operation</seealso>
         public Task<SetDefaultPolicyVersionResponse> SetDefaultPolicyVersionAsync(SetDefaultPolicyVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new SetDefaultPolicyVersionRequestMarshaller();
@@ -5946,6 +6141,7 @@ namespace Amazon.IoT
         /// <exception cref="Amazon.IoT.Model.ServiceUnavailableException">
         /// The service is temporarily unavailable.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/SetLoggingOptions">REST API Reference for SetLoggingOptions Operation</seealso>
         public SetLoggingOptionsResponse SetLoggingOptions(SetLoggingOptionsRequest request)
         {
             var marshaller = new SetLoggingOptionsRequestMarshaller();
@@ -5963,6 +6159,7 @@ namespace Amazon.IoT
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/SetLoggingOptions">REST API Reference for SetLoggingOptions Operation</seealso>
         public Task<SetLoggingOptionsResponse> SetLoggingOptionsAsync(SetLoggingOptionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new SetLoggingOptionsRequestMarshaller();
@@ -6028,6 +6225,7 @@ namespace Amazon.IoT
         /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
         /// You are not authorized to perform this operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/TransferCertificate">REST API Reference for TransferCertificate Operation</seealso>
         public TransferCertificateResponse TransferCertificate(string certificateId, string targetAwsAccount)
         {
             var request = new TransferCertificateRequest();
@@ -6087,6 +6285,7 @@ namespace Amazon.IoT
         /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
         /// You are not authorized to perform this operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/TransferCertificate">REST API Reference for TransferCertificate Operation</seealso>
         public TransferCertificateResponse TransferCertificate(TransferCertificateRequest request)
         {
             var marshaller = new TransferCertificateRequestMarshaller();
@@ -6150,6 +6349,7 @@ namespace Amazon.IoT
         /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
         /// You are not authorized to perform this operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/TransferCertificate">REST API Reference for TransferCertificate Operation</seealso>
         public Task<TransferCertificateResponse> TransferCertificateAsync(string certificateId, string targetAwsAccount, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var request = new TransferCertificateRequest();
@@ -6167,6 +6367,7 @@ namespace Amazon.IoT
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/TransferCertificate">REST API Reference for TransferCertificate Operation</seealso>
         public Task<TransferCertificateResponse> TransferCertificateAsync(TransferCertificateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new TransferCertificateRequestMarshaller();
@@ -6205,6 +6406,7 @@ namespace Amazon.IoT
         /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
         /// You are not authorized to perform this operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/UpdateCACertificate">REST API Reference for UpdateCACertificate Operation</seealso>
         public UpdateCACertificateResponse UpdateCACertificate(UpdateCACertificateRequest request)
         {
             var marshaller = new UpdateCACertificateRequestMarshaller();
@@ -6222,6 +6424,7 @@ namespace Amazon.IoT
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/UpdateCACertificate">REST API Reference for UpdateCACertificate Operation</seealso>
         public Task<UpdateCACertificateResponse> UpdateCACertificateAsync(UpdateCACertificateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new UpdateCACertificateRequestMarshaller();
@@ -6251,7 +6454,7 @@ namespace Amazon.IoT
         /// </para>
         /// </summary>
         /// <param name="certificateId">The ID of the certificate.</param>
-        /// <param name="newStatus">The new status. <b>Note:</b> Setting the status to PENDING_TRANSFER will result in an exception being thrown. PENDING_TRANSFER is a status used internally by AWS IoT. It is not intended for developer use. <b>Note:</b> The status value REGISTER_INACTIVE is deprecated and should not be used.</param>
+        /// <param name="newStatus">The new status.  <b>Note:</b> Setting the status to PENDING_TRANSFER will result in an exception being thrown. PENDING_TRANSFER is a status used internally by AWS IoT. It is not intended for developer use.  <b>Note:</b> The status value REGISTER_INACTIVE is deprecated and should not be used.</param>
         /// 
         /// <returns>The response from the UpdateCertificate service method, as returned by IoT.</returns>
         /// <exception cref="Amazon.IoT.Model.CertificateStateException">
@@ -6275,6 +6478,7 @@ namespace Amazon.IoT
         /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
         /// You are not authorized to perform this operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/UpdateCertificate">REST API Reference for UpdateCertificate Operation</seealso>
         public UpdateCertificateResponse UpdateCertificate(string certificateId, CertificateStatus newStatus)
         {
             var request = new UpdateCertificateRequest();
@@ -6322,6 +6526,7 @@ namespace Amazon.IoT
         /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
         /// You are not authorized to perform this operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/UpdateCertificate">REST API Reference for UpdateCertificate Operation</seealso>
         public UpdateCertificateResponse UpdateCertificate(UpdateCertificateRequest request)
         {
             var marshaller = new UpdateCertificateRequestMarshaller();
@@ -6346,7 +6551,7 @@ namespace Amazon.IoT
         /// </para>
         /// </summary>
         /// <param name="certificateId">The ID of the certificate.</param>
-        /// <param name="newStatus">The new status. <b>Note:</b> Setting the status to PENDING_TRANSFER will result in an exception being thrown. PENDING_TRANSFER is a status used internally by AWS IoT. It is not intended for developer use. <b>Note:</b> The status value REGISTER_INACTIVE is deprecated and should not be used.</param>
+        /// <param name="newStatus">The new status.  <b>Note:</b> Setting the status to PENDING_TRANSFER will result in an exception being thrown. PENDING_TRANSFER is a status used internally by AWS IoT. It is not intended for developer use.  <b>Note:</b> The status value REGISTER_INACTIVE is deprecated and should not be used.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
@@ -6373,6 +6578,7 @@ namespace Amazon.IoT
         /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
         /// You are not authorized to perform this operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/UpdateCertificate">REST API Reference for UpdateCertificate Operation</seealso>
         public Task<UpdateCertificateResponse> UpdateCertificateAsync(string certificateId, CertificateStatus newStatus, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var request = new UpdateCertificateRequest();
@@ -6390,6 +6596,7 @@ namespace Amazon.IoT
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/UpdateCertificate">REST API Reference for UpdateCertificate Operation</seealso>
         public Task<UpdateCertificateResponse> UpdateCertificateAsync(UpdateCertificateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new UpdateCertificateRequestMarshaller();
@@ -6432,6 +6639,7 @@ namespace Amazon.IoT
         /// An exception thrown when the version of a thing passed to a command is different than
         /// the version specified with the --version parameter.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/UpdateThing">REST API Reference for UpdateThing Operation</seealso>
         public UpdateThingResponse UpdateThing(UpdateThingRequest request)
         {
             var marshaller = new UpdateThingRequestMarshaller();
@@ -6449,6 +6657,7 @@ namespace Amazon.IoT
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/UpdateThing">REST API Reference for UpdateThing Operation</seealso>
         public Task<UpdateThingResponse> UpdateThingAsync(UpdateThingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new UpdateThingRequestMarshaller();

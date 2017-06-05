@@ -334,7 +334,7 @@
   <property-value-rule>
     <property>Amazon.IoT.Model.ListPrincipalThingsRequest.MaxResults</property>
     <min>1</min>
-    <max>10000</max>
+    <max>250</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoT.Model.ListThingPrincipalsRequest.ThingName</property>
@@ -355,7 +355,7 @@
   <property-value-rule>
     <property>Amazon.IoT.Model.ListThingsRequest.MaxResults</property>
     <min>1</min>
-    <max>10000</max>
+    <max>250</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoT.Model.ListThingsRequest.ThingTypeName</property>
@@ -366,7 +366,7 @@
   <property-value-rule>
     <property>Amazon.IoT.Model.ListThingTypesRequest.MaxResults</property>
     <min>1</min>
-    <max>10000</max>
+    <max>250</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoT.Model.ListThingTypesRequest.ThingTypeName</property>
@@ -566,6 +566,14 @@
   <property-value-rule>
     <property>Amazon.IoT.Model.PolicyVersion.VersionId</property>
     <pattern>[0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.SalesforceAction.Token</property>
+    <min>40</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.SalesforceAction.Url</property>
+    <pattern>https://ingestion-[a-zA-Z0-9]+.[a-zA-Z0-9]+.((sfdc-matrix.net)|(sfdcnow.com))/streams/\w+/\w+/\w+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoT.Model.ThingAttribute.ThingName</property>

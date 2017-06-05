@@ -42,6 +42,7 @@ namespace Amazon.IoT.Model
         private LambdaAction _lambda;
         private RepublishAction _republish;
         private S3Action _s3;
+        private SalesforceAction _salesforce;
         private SnsAction _sns;
         private SqsAction _sqs;
 
@@ -224,6 +225,24 @@ namespace Amazon.IoT.Model
         internal bool IsSetS3()
         {
             return this._s3 != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Salesforce. 
+        /// <para>
+        /// Send a message to a Salesforce IoT Cloud Input Stream.
+        /// </para>
+        /// </summary>
+        public SalesforceAction Salesforce
+        {
+            get { return this._salesforce; }
+            set { this._salesforce = value; }
+        }
+
+        // Check to see if Salesforce property is set
+        internal bool IsSetSalesforce()
+        {
+            return this._salesforce != null;
         }
 
         /// <summary>

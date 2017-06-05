@@ -124,6 +124,12 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
                     unmarshalledObject.S3 = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("salesforce", targetDepth))
+                {
+                    var unmarshaller = SalesforceActionUnmarshaller.Instance;
+                    unmarshalledObject.Salesforce = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("sns", targetDepth))
                 {
                     var unmarshaller = SnsActionUnmarshaller.Instance;

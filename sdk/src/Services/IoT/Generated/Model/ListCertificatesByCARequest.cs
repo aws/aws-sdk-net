@@ -61,7 +61,7 @@ namespace Amazon.IoT.Model
         /// Gets and sets the property CaCertificateId. 
         /// <para>
         /// The ID of the CA certificate. This operation will list all registered device certificate
-        /// that were signed by this CA certificate. 
+        /// that were signed by this CA certificate.
         /// </para>
         /// </summary>
         public string CaCertificateId

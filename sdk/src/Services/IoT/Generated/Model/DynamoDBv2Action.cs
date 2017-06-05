@@ -48,8 +48,8 @@ namespace Amazon.IoT.Model
         /// </para>
         ///  
         /// <para>
-        /// <code>{ "dynamoDBv2": { "roleArn": "aws:iam:12341251:my-role" "putItem": { "tableName":
-        /// "my-table" } } }</code>
+        ///  <code>{ "dynamoDBv2": { "roleArn": "aws:iam:12341251:my-role" "putItem": { "tableName":
+        /// "my-table" } } }</code> 
         /// </para>
         ///  
         /// <para>

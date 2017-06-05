@@ -80,7 +80,7 @@ namespace Amazon.IoT.Model
         /// </para>
         ///  
         /// <para>
-        /// <b>Note:</b> The status value REGISTER_INACTIVE is deprecated and should not be used.
+        ///  <b>Note:</b> The status value REGISTER_INACTIVE is deprecated and should not be used.
         /// </para>
         /// </summary>
         public CACertificateStatus NewStatus

@@ -94,7 +94,7 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The status of the CA certificate. 
+        /// The status of the CA certificate.
         /// </para>
         ///  
         /// <para>
