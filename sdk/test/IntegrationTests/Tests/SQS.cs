@@ -2,16 +2,14 @@ using System;
 using System.Linq;
 using System.Collections.Generic;
 using System.IO;
-using System.Reflection;
 using System.Text;
 using System.Threading;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-using AWSSDK_DotNet.IntegrationTests.Utils;
-
 using Amazon.SQS;
 using Amazon.SQS.Model;
 using Amazon.SQS.Util;
+using Amazon;
 
 namespace AWSSDK_DotNet.IntegrationTests.Tests
 {
@@ -21,7 +19,6 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
     [TestClass]
     public class SQS : TestBase<AmazonSQSClient>
     {
-
         private const string prefix = "TestQueue";
         private const string defaultTimeout = "30";
 
@@ -210,7 +207,6 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
             }).QueueARN;
         }
 
-
         private void deleteQueueTest(string queueUrl)
         {
             var listResult = Client.ListQueues(new ListQueuesRequest() { QueueNamePrefix = prefix });
@@ -246,11 +242,14 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
             var attrResults = Client.GetQueueAttributes(new GetQueueAttributesRequest()
             {
                 QueueUrl = result.QueueUrl,
-                AttributeNames = new List<string>() { SQSConstants.ATTRIBUTE_VISIBILITY_TIMEOUT }
+                AttributeNames = new List<string>() { SQSConstants.ATTRIBUTE_ALL }
             });
 
-            Assert.AreEqual(1, attrResults.Attributes.Count);
+            Assert.AreEqual(11, attrResults.Attributes.Count);
             Assert.AreEqual(int.Parse(defaultTimeout), int.Parse(attrResults.Attributes[SQSConstants.ATTRIBUTE_VISIBILITY_TIMEOUT]));
+            Assert.AreEqual(false, attrResults.FifoQueue);
+            Assert.AreEqual(false, attrResults.ContentBasedDeduplication.HasValue);
+            Assert.AreEqual(null, attrResults.ContentBasedDeduplication);
 
             for (int i = 0; i < 30; i++)
             {
@@ -264,6 +263,39 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
             Assert.Fail("Queue never created");
 
             return "fail";
+        }
+
+        [TestMethod]
+        [TestCategory("SQS")]
+        public void SQSFIFOTest()
+        {
+            string fifoQueueName = prefix + new Random().Next() + ".fifo";
+
+            using (var sqsClient = new AmazonSQSClient(RegionEndpoint.USEast2))
+            {
+                var result = sqsClient.CreateQueue(new CreateQueueRequest()
+                {
+                    QueueName = fifoQueueName,
+                    Attributes = new Dictionary<string, string>
+                    {
+                        [SQSConstants.ATTRIBUTE_FIFO_QUEUE] = "true",
+                        [SQSConstants.ATTRIBUTE_CONTENT_BASED_DEDUPLICATION] = "true"
+                    }
+                });
+
+                Assert.IsNotNull(result);
+                Assert.IsNotNull(result.QueueUrl);
+
+                var attrResults = sqsClient.GetQueueAttributes(new GetQueueAttributesRequest()
+                {
+                    QueueUrl = result.QueueUrl,
+                    AttributeNames = new List<string>() { SQSConstants.ATTRIBUTE_FIFO_QUEUE, SQSConstants.ATTRIBUTE_CONTENT_BASED_DEDUPLICATION }
+                });
+
+                Assert.AreEqual(true, attrResults.FifoQueue);
+
+                Assert.AreEqual(true, attrResults.ContentBasedDeduplication);
+            }
         }
     }
 }
