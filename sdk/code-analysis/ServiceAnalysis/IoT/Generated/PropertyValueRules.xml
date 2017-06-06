@@ -573,7 +573,8 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoT.Model.SalesforceAction.Url</property>
-    <pattern>https://ingestion-[a-zA-Z0-9]+.[a-zA-Z0-9]+.((sfdc-matrix.net)|(sfdcnow.com))/streams/\w+/\w+/\w+</pattern>
+    <max>2000</max>
+    <pattern>https://ingestion-[a-zA-Z0-9]{1,12}\.[a-zA-Z0-9]+\.((sfdc-matrix\.net)|(sfdcnow\.com))/streams/\w{1,20}/\w{1,20}/event</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoT.Model.ThingAttribute.ThingName</property>
