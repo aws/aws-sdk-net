@@ -121,6 +121,11 @@ namespace Amazon
         public static readonly RegionEndpoint CACentral1 = NewEndpoint("ca-central-1", "Canada (Central)");
 
         /// <summary>
+        /// The Asia Pacfic (Mumbai) endpoint.
+        /// </summary>
+        public static readonly RegionEndpoint APSouth1 = NewEndpoint("ap-south-1", "Asia Pacific (Mumbai)");
+        
+        /// <summary>
         /// Enumerate through all the regions.
         /// </summary>
         public static IEnumerable<RegionEndpoint> EnumerableAllRegions
