@@ -44,7 +44,7 @@ namespace Amazon.CloudFront.Model
         /// </para>
         ///  
         /// <para>
-        /// origin-access-identity/CloudFront/<i>ID-of-origin-access-identity</i> 
+        /// origin-access-identity/cloudfront/<i>ID-of-origin-access-identity</i> 
         /// </para>
         ///  
         /// <para>
