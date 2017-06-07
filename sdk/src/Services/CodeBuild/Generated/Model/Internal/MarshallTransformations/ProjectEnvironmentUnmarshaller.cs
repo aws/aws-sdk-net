@@ -82,6 +82,12 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
                     unmarshalledObject.Image = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("privilegedMode", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.PrivilegedMode = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("type", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

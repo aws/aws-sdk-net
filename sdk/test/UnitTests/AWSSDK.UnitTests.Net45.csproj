@@ -275,6 +275,10 @@
       <Project>{CC49CFB0-F27C-4D16-AAF8-21097F468129}</Project>
       <Name>AWSSDK.Glacier.Net45</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\src\Services\Greengrass\AWSSDK.Greengrass.Net45.csproj">
+      <Project>{4181D369-DE85-4276-8B61-1F2F48B1274D}</Project>
+      <Name>AWSSDK.Greengrass.Net45</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\src\Services\IdentityManagement\AWSSDK.IdentityManagement.Net45.csproj">
       <Project>{02374DF3-D0F8-43DD-A638-8130A604A683}</Project>
       <Name>AWSSDK.IdentityManagement.Net45</Name>
