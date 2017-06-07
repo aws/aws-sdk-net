@@ -65,6 +65,7 @@
         "ElasticTranscoder"               : "1.0.0-*",
         "GameLift"                        : "1.0.0-*",
         "Glacier"                         : "1.0.0-*",
+        "Greengrass"                      : "1.0.0-*",
         "IdentityManagement"              : "1.0.0-*",
         "ImportExport"                    : "1.0.0-*",
         "Inspector"                       : "1.0.0-*",
