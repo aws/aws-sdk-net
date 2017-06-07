@@ -21,7 +21,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeBuild.Model.CreateProjectRequest.TimeoutInMinutes</property>
-    <min>1</min>
+    <min>5</min>
     <max>480</max>
   </property-value-rule>
   <property-value-rule>
@@ -42,7 +42,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeBuild.Model.StartBuildRequest.TimeoutInMinutesOverride</property>
-    <min>1</min>
+    <min>5</min>
     <max>480</max>
   </property-value-rule>
   <property-value-rule>
@@ -68,7 +68,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeBuild.Model.UpdateProjectRequest.TimeoutInMinutes</property>
-    <min>1</min>
+    <min>5</min>
     <max>480</max>
   </property-value-rule>
   <property-value-rule>
@@ -112,7 +112,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeBuild.Model.Project.TimeoutInMinutes</property>
-    <min>1</min>
+    <min>5</min>
     <max>480</max>
   </property-value-rule>
   <property-value-rule>

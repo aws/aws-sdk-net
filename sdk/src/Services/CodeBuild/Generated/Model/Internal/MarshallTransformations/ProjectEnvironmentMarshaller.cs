@@ -73,6 +73,12 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.Image);
             }
 
+            if(requestObject.IsSetPrivilegedMode())
+            {
+                context.Writer.WritePropertyName("privilegedMode");
+                context.Writer.Write(requestObject.PrivilegedMode);
+            }
+
             if(requestObject.IsSetType())
             {
                 context.Writer.WritePropertyName("type");

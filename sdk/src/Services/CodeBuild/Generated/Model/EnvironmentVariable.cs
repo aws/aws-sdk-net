@@ -58,6 +58,14 @@ namespace Amazon.CodeBuild.Model
         /// <para>
         /// The value of the environment variable.
         /// </para>
+        ///  <important> 
+        /// <para>
+        /// We strongly discourage using environment variables to store sensitive values, especially
+        /// AWS secret key IDs and secret access keys. Environment variables can be displayed
+        /// in plain text using tools such as the AWS CodeBuild console and the AWS Command Line
+        /// Interface (AWS CLI).
+        /// </para>
+        ///  </important>
         /// </summary>
         public string Value
         {
