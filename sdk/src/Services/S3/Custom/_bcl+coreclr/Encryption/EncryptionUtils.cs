@@ -212,7 +212,7 @@ namespace Amazon.S3.Encryption
         {
             Aes AesObject = Aes.Create();
             byte[] encryptedEnvelopeKey = EncryptEnvelopeKey(AesObject.Key, materials);
-            return new EncryptionInstructions(EncryptionMaterials.EmptyMaterialsDescription, AesObject.Key, encryptedEnvelopeKey, AesObject.IV);
+            return new EncryptionInstructions(materials.MaterialsDescription, AesObject.Key, encryptedEnvelopeKey, AesObject.IV);
         }
 
         internal static GetObjectRequest GetInstructionFileRequest(GetObjectResponse response)
@@ -247,7 +247,7 @@ namespace Amazon.S3.Encryption
             string base64EncodedIV = metadata[initVectorInMetadata];
             byte[] IV = Convert.FromBase64String(base64EncodedIV);
 
-            return new EncryptionInstructions(EncryptionMaterials.EmptyMaterialsDescription, decryptedEnvelopeKey, encryptedEvelopeKey, IV);
+            return new EncryptionInstructions(materials.MaterialsDescription, decryptedEnvelopeKey, encryptedEvelopeKey, IV);
         }
 
         /// <summary>
@@ -273,7 +273,7 @@ namespace Amazon.S3.Encryption
                 var base64EncodedIV = jsonData["IV"];
                 byte[] IV = Convert.FromBase64String((string)base64EncodedIV);
 
-                return new EncryptionInstructions(EncryptionMaterials.EmptyMaterialsDescription, decryptedEnvelopeKey, IV);
+                return new EncryptionInstructions(materials.MaterialsDescription, decryptedEnvelopeKey, IV);
             }
         }
 
