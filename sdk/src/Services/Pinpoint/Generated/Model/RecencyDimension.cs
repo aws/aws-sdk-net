@@ -52,9 +52,9 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property RecencyType. The recency dimension type:ACTIVE – Users
+        /// Gets and sets the property RecencyType. The recency dimension type:ACTIVE - Users
         /// who have used your app within the specified duration are included in the segment.INACTIVE
-        /// – Users who have not used your app within the specified duration are included in the
+        /// - Users who have not used your app within the specified duration are included in the
         /// segment.
         /// </summary>
         public RecencyType RecencyType

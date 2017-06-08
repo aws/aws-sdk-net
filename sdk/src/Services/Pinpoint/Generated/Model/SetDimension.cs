@@ -36,8 +36,8 @@ namespace Amazon.Pinpoint.Model
         private List<string> _values = new List<string>();
 
         /// <summary>
-        /// Gets and sets the property DimensionType. The type of dimension:INCLUSIVE – Endpoints
-        /// that match the criteria are included in the segment.EXCLUSIVE – Endpoints that match
+        /// Gets and sets the property DimensionType. The type of dimension:INCLUSIVE - Endpoints
+        /// that match the criteria are included in the segment.EXCLUSIVE - Endpoints that match
         /// the criteria are excluded from the segment.
         /// </summary>
         public DimensionType DimensionType

@@ -82,6 +82,12 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
                     unmarshalledObject.Credential = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("Enabled", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.Enabled = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Id", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

@@ -63,6 +63,12 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.ImageIconUrl);
             }
 
+            if(requestObject.IsSetImageSmallIconUrl())
+            {
+                context.Writer.WritePropertyName("ImageSmallIconUrl");
+                context.Writer.Write(requestObject.ImageSmallIconUrl);
+            }
+
             if(requestObject.IsSetImageUrl())
             {
                 context.Writer.WritePropertyName("ImageUrl");

@@ -51,6 +51,12 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.Certificate);
             }
 
+            if(requestObject.IsSetEnabled())
+            {
+                context.Writer.WritePropertyName("Enabled");
+                context.Writer.Write(requestObject.Enabled);
+            }
+
             if(requestObject.IsSetPrivateKey())
             {
                 context.Writer.WritePropertyName("PrivateKey");

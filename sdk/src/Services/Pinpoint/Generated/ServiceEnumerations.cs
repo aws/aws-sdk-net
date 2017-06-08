@@ -197,13 +197,29 @@ namespace Amazon.Pinpoint
     {
 
         /// <summary>
+        /// Constant ADM for ChannelType
+        /// </summary>
+        public static readonly ChannelType ADM = new ChannelType("ADM");
+        /// <summary>
         /// Constant APNS for ChannelType
         /// </summary>
         public static readonly ChannelType APNS = new ChannelType("APNS");
         /// <summary>
+        /// Constant APNS_SANDBOX for ChannelType
+        /// </summary>
+        public static readonly ChannelType APNS_SANDBOX = new ChannelType("APNS_SANDBOX");
+        /// <summary>
+        /// Constant EMAIL for ChannelType
+        /// </summary>
+        public static readonly ChannelType EMAIL = new ChannelType("EMAIL");
+        /// <summary>
         /// Constant GCM for ChannelType
         /// </summary>
         public static readonly ChannelType GCM = new ChannelType("GCM");
+        /// <summary>
+        /// Constant SMS for ChannelType
+        /// </summary>
+        public static readonly ChannelType SMS = new ChannelType("SMS");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -234,6 +250,64 @@ namespace Amazon.Pinpoint
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ChannelType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type DeliveryStatus.
+    /// </summary>
+    public class DeliveryStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant PERMANENT_FAILURE for DeliveryStatus
+        /// </summary>
+        public static readonly DeliveryStatus PERMANENT_FAILURE = new DeliveryStatus("PERMANENT_FAILURE");
+        /// <summary>
+        /// Constant SUCCESSFUL for DeliveryStatus
+        /// </summary>
+        public static readonly DeliveryStatus SUCCESSFUL = new DeliveryStatus("SUCCESSFUL");
+        /// <summary>
+        /// Constant TEMPORARY_FAILURE for DeliveryStatus
+        /// </summary>
+        public static readonly DeliveryStatus TEMPORARY_FAILURE = new DeliveryStatus("TEMPORARY_FAILURE");
+        /// <summary>
+        /// Constant THROTTLED for DeliveryStatus
+        /// </summary>
+        public static readonly DeliveryStatus THROTTLED = new DeliveryStatus("THROTTLED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DeliveryStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DeliveryStatus FindValue(string value)
+        {
+            return FindValue<DeliveryStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DeliveryStatus(string value)
         {
             return FindValue(value);
         }
@@ -524,6 +598,56 @@ namespace Amazon.Pinpoint
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator JobStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type MessageType.
+    /// </summary>
+    public class MessageType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant PROMOTIONAL for MessageType
+        /// </summary>
+        public static readonly MessageType PROMOTIONAL = new MessageType("PROMOTIONAL");
+        /// <summary>
+        /// Constant TRANSACTIONAL for MessageType
+        /// </summary>
+        public static readonly MessageType TRANSACTIONAL = new MessageType("TRANSACTIONAL");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public MessageType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static MessageType FindValue(string value)
+        {
+            return FindValue<MessageType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator MessageType(string value)
         {
             return FindValue(value);
         }

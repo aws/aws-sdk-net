@@ -82,6 +82,12 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
                     unmarshalledObject.ImageIconUrl = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ImageSmallIconUrl", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ImageSmallIconUrl = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ImageUrl", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

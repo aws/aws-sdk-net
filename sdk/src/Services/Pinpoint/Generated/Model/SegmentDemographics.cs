@@ -33,6 +33,7 @@ namespace Amazon.Pinpoint.Model
     public partial class SegmentDemographics
     {
         private SetDimension _appVersion;
+        private SetDimension _channel;
         private SetDimension _deviceType;
         private SetDimension _make;
         private SetDimension _model;
@@ -51,6 +52,21 @@ namespace Amazon.Pinpoint.Model
         internal bool IsSetAppVersion()
         {
             return this._appVersion != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Channel. The channel criteria for the segment.
+        /// </summary>
+        public SetDimension Channel
+        {
+            get { return this._channel; }
+            set { this._channel = value; }
+        }
+
+        // Check to see if Channel property is set
+        internal bool IsSetChannel()
+        {
+            return this._channel != null;
         }
 
         /// <summary>

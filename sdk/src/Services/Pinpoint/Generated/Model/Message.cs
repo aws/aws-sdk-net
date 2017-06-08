@@ -35,6 +35,7 @@ namespace Amazon.Pinpoint.Model
         private Action _action;
         private string _body;
         private string _imageIconUrl;
+        private string _imageSmallIconUrl;
         private string _imageUrl;
         private string _jsonBody;
         private string _mediaUrl;
@@ -44,10 +45,10 @@ namespace Amazon.Pinpoint.Model
 
         /// <summary>
         /// Gets and sets the property Action. The action that occurs if the user taps a push
-        /// notification delivered by the campaign:OPEN_APP – Your app launches, or it becomes
+        /// notification delivered by the campaign:OPEN_APP - Your app launches, or it becomes
         /// the foreground app if it has been sent to the background. This is the default action.DEEP_LINK
-        /// – Uses deep linking features in iOS and Android to open your app and display a designated
-        /// user interface within the app.URL – The default mobile browser on the user's device
+        /// - Uses deep linking features in iOS and Android to open your app and display a designated
+        /// user interface within the app.URL - The default mobile browser on the user's device
         /// launches and opens a web page at the URL you specify.
         /// </summary>
         public Action Action
@@ -91,6 +92,22 @@ namespace Amazon.Pinpoint.Model
         internal bool IsSetImageIconUrl()
         {
             return this._imageIconUrl != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ImageSmallIconUrl. The URL that points to the small icon
+        /// image for the push notification icon, for example, the app icon.
+        /// </summary>
+        public string ImageSmallIconUrl
+        {
+            get { return this._imageSmallIconUrl; }
+            set { this._imageSmallIconUrl = value; }
+        }
+
+        // Check to see if ImageSmallIconUrl property is set
+        internal bool IsSetImageSmallIconUrl()
+        {
+            return this._imageSmallIconUrl != null;
         }
 
         /// <summary>

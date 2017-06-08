@@ -56,6 +56,17 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetChannel())
+            {
+                context.Writer.WritePropertyName("Channel");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = SetDimensionMarshaller.Instance;
+                marshaller.Marshall(requestObject.Channel, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetDeviceType())
             {
                 context.Writer.WritePropertyName("DeviceType");

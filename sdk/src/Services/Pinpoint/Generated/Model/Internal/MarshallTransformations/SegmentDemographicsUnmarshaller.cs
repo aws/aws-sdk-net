@@ -70,6 +70,12 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
                     unmarshalledObject.AppVersion = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("Channel", targetDepth))
+                {
+                    var unmarshaller = SetDimensionUnmarshaller.Instance;
+                    unmarshalledObject.Channel = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("DeviceType", targetDepth))
                 {
                     var unmarshaller = SetDimensionUnmarshaller.Instance;

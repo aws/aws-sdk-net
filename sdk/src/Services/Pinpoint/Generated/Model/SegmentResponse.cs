@@ -151,10 +151,10 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SegmentType. The segment type:DIMENSIONAL – A dynamic segment
+        /// Gets and sets the property SegmentType. The segment type:DIMENSIONAL - A dynamic segment
         /// built from selection criteria based on endpoint data reported by your app. You create
         /// this type of segment by using the segment builder in the Amazon Pinpoint console or
-        /// by making a POST request to the segments resource.IMPORT – A static segment built
+        /// by making a POST request to the segments resource.IMPORT - A static segment built
         /// from an imported set of endpoint definitions. You create this type of segment by importing
         /// a segment in the Amazon Pinpoint console or by making a POST request to the jobs/import
         /// resource.

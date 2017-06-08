@@ -76,10 +76,22 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
                     unmarshalledObject.DefaultMessage = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("EmailMessage", targetDepth))
+                {
+                    var unmarshaller = CampaignEmailMessageUnmarshaller.Instance;
+                    unmarshalledObject.EmailMessage = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("GCMMessage", targetDepth))
                 {
                     var unmarshaller = MessageUnmarshaller.Instance;
                     unmarshalledObject.GCMMessage = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("SMSMessage", targetDepth))
+                {
+                    var unmarshaller = CampaignSmsMessageUnmarshaller.Instance;
+                    unmarshalledObject.SMSMessage = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

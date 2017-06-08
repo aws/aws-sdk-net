@@ -495,6 +495,74 @@ namespace Amazon.Pinpoint
 
         #endregion
         
+        #region  DeleteApnsSandboxChannel
+
+        /// <summary>
+        /// Delete an APNS sandbox channel
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteApnsSandboxChannel service method.</param>
+        /// 
+        /// <returns>The response from the DeleteApnsSandboxChannel service method, as returned by Pinpoint.</returns>
+        /// <exception cref="Amazon.Pinpoint.Model.BadRequestException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.ForbiddenException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.InternalServerErrorException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.MethodNotAllowedException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.NotFoundException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
+        /// Simple message object.
+        /// </exception>
+        public DeleteApnsSandboxChannelResponse DeleteApnsSandboxChannel(DeleteApnsSandboxChannelRequest request)
+        {
+            var marshaller = new DeleteApnsSandboxChannelRequestMarshaller();
+            var unmarshaller = DeleteApnsSandboxChannelResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteApnsSandboxChannelRequest,DeleteApnsSandboxChannelResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteApnsSandboxChannel operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteApnsSandboxChannel operation on AmazonPinpointClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteApnsSandboxChannel
+        ///         operation.</returns>
+        public IAsyncResult BeginDeleteApnsSandboxChannel(DeleteApnsSandboxChannelRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new DeleteApnsSandboxChannelRequestMarshaller();
+            var unmarshaller = DeleteApnsSandboxChannelResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DeleteApnsSandboxChannelRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteApnsSandboxChannel operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteApnsSandboxChannel.</param>
+        /// 
+        /// <returns>Returns a  DeleteApnsSandboxChannelResult from Pinpoint.</returns>
+        public  DeleteApnsSandboxChannelResponse EndDeleteApnsSandboxChannel(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteApnsSandboxChannelResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DeleteCampaign
 
         /// <summary>
@@ -559,6 +627,74 @@ namespace Amazon.Pinpoint
         public  DeleteCampaignResponse EndDeleteCampaign(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteCampaignResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeleteEmailChannel
+
+        /// <summary>
+        /// Delete an email channel
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteEmailChannel service method.</param>
+        /// 
+        /// <returns>The response from the DeleteEmailChannel service method, as returned by Pinpoint.</returns>
+        /// <exception cref="Amazon.Pinpoint.Model.BadRequestException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.ForbiddenException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.InternalServerErrorException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.MethodNotAllowedException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.NotFoundException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
+        /// Simple message object.
+        /// </exception>
+        public DeleteEmailChannelResponse DeleteEmailChannel(DeleteEmailChannelRequest request)
+        {
+            var marshaller = new DeleteEmailChannelRequestMarshaller();
+            var unmarshaller = DeleteEmailChannelResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteEmailChannelRequest,DeleteEmailChannelResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteEmailChannel operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteEmailChannel operation on AmazonPinpointClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteEmailChannel
+        ///         operation.</returns>
+        public IAsyncResult BeginDeleteEmailChannel(DeleteEmailChannelRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new DeleteEmailChannelRequestMarshaller();
+            var unmarshaller = DeleteEmailChannelResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DeleteEmailChannelRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteEmailChannel operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteEmailChannel.</param>
+        /// 
+        /// <returns>Returns a  DeleteEmailChannelResult from Pinpoint.</returns>
+        public  DeleteEmailChannelResponse EndDeleteEmailChannel(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteEmailChannelResponse>(asyncResult);
         }
 
         #endregion
@@ -767,6 +903,74 @@ namespace Amazon.Pinpoint
 
         #endregion
         
+        #region  DeleteSmsChannel
+
+        /// <summary>
+        /// Delete an SMS channel
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteSmsChannel service method.</param>
+        /// 
+        /// <returns>The response from the DeleteSmsChannel service method, as returned by Pinpoint.</returns>
+        /// <exception cref="Amazon.Pinpoint.Model.BadRequestException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.ForbiddenException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.InternalServerErrorException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.MethodNotAllowedException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.NotFoundException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
+        /// Simple message object.
+        /// </exception>
+        public DeleteSmsChannelResponse DeleteSmsChannel(DeleteSmsChannelRequest request)
+        {
+            var marshaller = new DeleteSmsChannelRequestMarshaller();
+            var unmarshaller = DeleteSmsChannelResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteSmsChannelRequest,DeleteSmsChannelResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteSmsChannel operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteSmsChannel operation on AmazonPinpointClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteSmsChannel
+        ///         operation.</returns>
+        public IAsyncResult BeginDeleteSmsChannel(DeleteSmsChannelRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new DeleteSmsChannelRequestMarshaller();
+            var unmarshaller = DeleteSmsChannelResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DeleteSmsChannelRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteSmsChannel operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteSmsChannel.</param>
+        /// 
+        /// <returns>Returns a  DeleteSmsChannelResult from Pinpoint.</returns>
+        public  DeleteSmsChannelResponse EndDeleteSmsChannel(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteSmsChannelResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  GetApnsChannel
 
         /// <summary>
@@ -831,6 +1035,74 @@ namespace Amazon.Pinpoint
         public  GetApnsChannelResponse EndGetApnsChannel(IAsyncResult asyncResult)
         {
             return EndInvoke<GetApnsChannelResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetApnsSandboxChannel
+
+        /// <summary>
+        /// Get an APNS sandbox channel
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetApnsSandboxChannel service method.</param>
+        /// 
+        /// <returns>The response from the GetApnsSandboxChannel service method, as returned by Pinpoint.</returns>
+        /// <exception cref="Amazon.Pinpoint.Model.BadRequestException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.ForbiddenException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.InternalServerErrorException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.MethodNotAllowedException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.NotFoundException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
+        /// Simple message object.
+        /// </exception>
+        public GetApnsSandboxChannelResponse GetApnsSandboxChannel(GetApnsSandboxChannelRequest request)
+        {
+            var marshaller = new GetApnsSandboxChannelRequestMarshaller();
+            var unmarshaller = GetApnsSandboxChannelResponseUnmarshaller.Instance;
+
+            return Invoke<GetApnsSandboxChannelRequest,GetApnsSandboxChannelResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetApnsSandboxChannel operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetApnsSandboxChannel operation on AmazonPinpointClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetApnsSandboxChannel
+        ///         operation.</returns>
+        public IAsyncResult BeginGetApnsSandboxChannel(GetApnsSandboxChannelRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new GetApnsSandboxChannelRequestMarshaller();
+            var unmarshaller = GetApnsSandboxChannelResponseUnmarshaller.Instance;
+
+            return BeginInvoke<GetApnsSandboxChannelRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetApnsSandboxChannel operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetApnsSandboxChannel.</param>
+        /// 
+        /// <returns>Returns a  GetApnsSandboxChannelResult from Pinpoint.</returns>
+        public  GetApnsSandboxChannelResponse EndGetApnsSandboxChannel(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetApnsSandboxChannelResponse>(asyncResult);
         }
 
         #endregion
@@ -1239,6 +1511,74 @@ namespace Amazon.Pinpoint
         public  GetCampaignVersionsResponse EndGetCampaignVersions(IAsyncResult asyncResult)
         {
             return EndInvoke<GetCampaignVersionsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetEmailChannel
+
+        /// <summary>
+        /// Get an email channel
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetEmailChannel service method.</param>
+        /// 
+        /// <returns>The response from the GetEmailChannel service method, as returned by Pinpoint.</returns>
+        /// <exception cref="Amazon.Pinpoint.Model.BadRequestException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.ForbiddenException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.InternalServerErrorException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.MethodNotAllowedException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.NotFoundException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
+        /// Simple message object.
+        /// </exception>
+        public GetEmailChannelResponse GetEmailChannel(GetEmailChannelRequest request)
+        {
+            var marshaller = new GetEmailChannelRequestMarshaller();
+            var unmarshaller = GetEmailChannelResponseUnmarshaller.Instance;
+
+            return Invoke<GetEmailChannelRequest,GetEmailChannelResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetEmailChannel operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetEmailChannel operation on AmazonPinpointClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetEmailChannel
+        ///         operation.</returns>
+        public IAsyncResult BeginGetEmailChannel(GetEmailChannelRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new GetEmailChannelRequestMarshaller();
+            var unmarshaller = GetEmailChannelResponseUnmarshaller.Instance;
+
+            return BeginInvoke<GetEmailChannelRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetEmailChannel operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetEmailChannel.</param>
+        /// 
+        /// <returns>Returns a  GetEmailChannelResult from Pinpoint.</returns>
+        public  GetEmailChannelResponse EndGetEmailChannel(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetEmailChannelResponse>(asyncResult);
         }
 
         #endregion
@@ -1923,6 +2263,74 @@ namespace Amazon.Pinpoint
 
         #endregion
         
+        #region  GetSmsChannel
+
+        /// <summary>
+        /// Get an SMS channel
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetSmsChannel service method.</param>
+        /// 
+        /// <returns>The response from the GetSmsChannel service method, as returned by Pinpoint.</returns>
+        /// <exception cref="Amazon.Pinpoint.Model.BadRequestException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.ForbiddenException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.InternalServerErrorException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.MethodNotAllowedException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.NotFoundException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
+        /// Simple message object.
+        /// </exception>
+        public GetSmsChannelResponse GetSmsChannel(GetSmsChannelRequest request)
+        {
+            var marshaller = new GetSmsChannelRequestMarshaller();
+            var unmarshaller = GetSmsChannelResponseUnmarshaller.Instance;
+
+            return Invoke<GetSmsChannelRequest,GetSmsChannelResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetSmsChannel operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetSmsChannel operation on AmazonPinpointClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetSmsChannel
+        ///         operation.</returns>
+        public IAsyncResult BeginGetSmsChannel(GetSmsChannelRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new GetSmsChannelRequestMarshaller();
+            var unmarshaller = GetSmsChannelResponseUnmarshaller.Instance;
+
+            return BeginInvoke<GetSmsChannelRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetSmsChannel operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetSmsChannel.</param>
+        /// 
+        /// <returns>Returns a  GetSmsChannelResult from Pinpoint.</returns>
+        public  GetSmsChannelResponse EndGetSmsChannel(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetSmsChannelResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  PutEventStream
 
         /// <summary>
@@ -1991,6 +2399,74 @@ namespace Amazon.Pinpoint
 
         #endregion
         
+        #region  SendMessages
+
+        /// <summary>
+        /// Send a batch of messages
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SendMessages service method.</param>
+        /// 
+        /// <returns>The response from the SendMessages service method, as returned by Pinpoint.</returns>
+        /// <exception cref="Amazon.Pinpoint.Model.BadRequestException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.ForbiddenException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.InternalServerErrorException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.MethodNotAllowedException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.NotFoundException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
+        /// Simple message object.
+        /// </exception>
+        public SendMessagesResponse SendMessages(SendMessagesRequest request)
+        {
+            var marshaller = new SendMessagesRequestMarshaller();
+            var unmarshaller = SendMessagesResponseUnmarshaller.Instance;
+
+            return Invoke<SendMessagesRequest,SendMessagesResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the SendMessages operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the SendMessages operation on AmazonPinpointClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndSendMessages
+        ///         operation.</returns>
+        public IAsyncResult BeginSendMessages(SendMessagesRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new SendMessagesRequestMarshaller();
+            var unmarshaller = SendMessagesResponseUnmarshaller.Instance;
+
+            return BeginInvoke<SendMessagesRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  SendMessages operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginSendMessages.</param>
+        /// 
+        /// <returns>Returns a  SendMessagesResult from Pinpoint.</returns>
+        public  SendMessagesResponse EndSendMessages(IAsyncResult asyncResult)
+        {
+            return EndInvoke<SendMessagesResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  UpdateApnsChannel
 
         /// <summary>
@@ -2055,6 +2531,74 @@ namespace Amazon.Pinpoint
         public  UpdateApnsChannelResponse EndUpdateApnsChannel(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateApnsChannelResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpdateApnsSandboxChannel
+
+        /// <summary>
+        /// Update an APNS sandbox channel
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateApnsSandboxChannel service method.</param>
+        /// 
+        /// <returns>The response from the UpdateApnsSandboxChannel service method, as returned by Pinpoint.</returns>
+        /// <exception cref="Amazon.Pinpoint.Model.BadRequestException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.ForbiddenException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.InternalServerErrorException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.MethodNotAllowedException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.NotFoundException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
+        /// Simple message object.
+        /// </exception>
+        public UpdateApnsSandboxChannelResponse UpdateApnsSandboxChannel(UpdateApnsSandboxChannelRequest request)
+        {
+            var marshaller = new UpdateApnsSandboxChannelRequestMarshaller();
+            var unmarshaller = UpdateApnsSandboxChannelResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateApnsSandboxChannelRequest,UpdateApnsSandboxChannelResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateApnsSandboxChannel operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateApnsSandboxChannel operation on AmazonPinpointClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateApnsSandboxChannel
+        ///         operation.</returns>
+        public IAsyncResult BeginUpdateApnsSandboxChannel(UpdateApnsSandboxChannelRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new UpdateApnsSandboxChannelRequestMarshaller();
+            var unmarshaller = UpdateApnsSandboxChannelResponseUnmarshaller.Instance;
+
+            return BeginInvoke<UpdateApnsSandboxChannelRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateApnsSandboxChannel operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateApnsSandboxChannel.</param>
+        /// 
+        /// <returns>Returns a  UpdateApnsSandboxChannelResult from Pinpoint.</returns>
+        public  UpdateApnsSandboxChannelResponse EndUpdateApnsSandboxChannel(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateApnsSandboxChannelResponse>(asyncResult);
         }
 
         #endregion
@@ -2191,6 +2735,74 @@ namespace Amazon.Pinpoint
         public  UpdateCampaignResponse EndUpdateCampaign(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateCampaignResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpdateEmailChannel
+
+        /// <summary>
+        /// Update an email channel
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateEmailChannel service method.</param>
+        /// 
+        /// <returns>The response from the UpdateEmailChannel service method, as returned by Pinpoint.</returns>
+        /// <exception cref="Amazon.Pinpoint.Model.BadRequestException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.ForbiddenException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.InternalServerErrorException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.MethodNotAllowedException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.NotFoundException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
+        /// Simple message object.
+        /// </exception>
+        public UpdateEmailChannelResponse UpdateEmailChannel(UpdateEmailChannelRequest request)
+        {
+            var marshaller = new UpdateEmailChannelRequestMarshaller();
+            var unmarshaller = UpdateEmailChannelResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateEmailChannelRequest,UpdateEmailChannelResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateEmailChannel operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateEmailChannel operation on AmazonPinpointClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateEmailChannel
+        ///         operation.</returns>
+        public IAsyncResult BeginUpdateEmailChannel(UpdateEmailChannelRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new UpdateEmailChannelRequestMarshaller();
+            var unmarshaller = UpdateEmailChannelResponseUnmarshaller.Instance;
+
+            return BeginInvoke<UpdateEmailChannelRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateEmailChannel operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateEmailChannel.</param>
+        /// 
+        /// <returns>Returns a  UpdateEmailChannelResult from Pinpoint.</returns>
+        public  UpdateEmailChannelResponse EndUpdateEmailChannel(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateEmailChannelResponse>(asyncResult);
         }
 
         #endregion
@@ -2463,6 +3075,74 @@ namespace Amazon.Pinpoint
         public  UpdateSegmentResponse EndUpdateSegment(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateSegmentResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpdateSmsChannel
+
+        /// <summary>
+        /// Update an SMS channel
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateSmsChannel service method.</param>
+        /// 
+        /// <returns>The response from the UpdateSmsChannel service method, as returned by Pinpoint.</returns>
+        /// <exception cref="Amazon.Pinpoint.Model.BadRequestException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.ForbiddenException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.InternalServerErrorException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.MethodNotAllowedException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.NotFoundException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
+        /// Simple message object.
+        /// </exception>
+        public UpdateSmsChannelResponse UpdateSmsChannel(UpdateSmsChannelRequest request)
+        {
+            var marshaller = new UpdateSmsChannelRequestMarshaller();
+            var unmarshaller = UpdateSmsChannelResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateSmsChannelRequest,UpdateSmsChannelResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateSmsChannel operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateSmsChannel operation on AmazonPinpointClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateSmsChannel
+        ///         operation.</returns>
+        public IAsyncResult BeginUpdateSmsChannel(UpdateSmsChannelRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new UpdateSmsChannelRequestMarshaller();
+            var unmarshaller = UpdateSmsChannelResponseUnmarshaller.Instance;
+
+            return BeginInvoke<UpdateSmsChannelRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateSmsChannel operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateSmsChannel.</param>
+        /// 
+        /// <returns>Returns a  UpdateSmsChannelResult from Pinpoint.</returns>
+        public  UpdateSmsChannelResponse EndUpdateSmsChannel(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateSmsChannelResponse>(asyncResult);
         }
 
         #endregion

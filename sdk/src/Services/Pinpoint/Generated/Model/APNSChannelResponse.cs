@@ -34,6 +34,7 @@ namespace Amazon.Pinpoint.Model
     {
         private string _applicationId;
         private string _creationDate;
+        private bool? _enabled;
         private string _id;
         private bool? _isArchived;
         private string _lastModifiedBy;
@@ -73,7 +74,22 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Id. The unique channel ID.
+        /// Gets and sets the property Enabled. If the channel is enabled for sending messages.
+        /// </summary>
+        public bool Enabled
+        {
+            get { return this._enabled.GetValueOrDefault(); }
+            set { this._enabled = value; }
+        }
+
+        // Check to see if Enabled property is set
+        internal bool IsSetEnabled()
+        {
+            return this._enabled.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Id. Channel ID. Not used, only for backwards compatibility.
         /// </summary>
         public string Id
         {

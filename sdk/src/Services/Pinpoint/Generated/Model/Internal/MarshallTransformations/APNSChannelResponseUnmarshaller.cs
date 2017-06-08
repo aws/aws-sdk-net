@@ -76,6 +76,12 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
                     unmarshalledObject.CreationDate = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("Enabled", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.Enabled = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Id", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

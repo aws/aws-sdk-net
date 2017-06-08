@@ -33,6 +33,7 @@ namespace Amazon.Pinpoint.Model
     public partial class APNSChannelRequest
     {
         private string _certificate;
+        private bool? _enabled;
         private string _privateKey;
 
         /// <summary>
@@ -48,6 +49,21 @@ namespace Amazon.Pinpoint.Model
         internal bool IsSetCertificate()
         {
             return this._certificate != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Enabled. If the channel is enabled for sending messages.
+        /// </summary>
+        public bool Enabled
+        {
+            get { return this._enabled.GetValueOrDefault(); }
+            set { this._enabled = value; }
+        }
+
+        // Check to see if Enabled property is set
+        internal bool IsSetEnabled()
+        {
+            return this._enabled.HasValue; 
         }
 
         /// <summary>

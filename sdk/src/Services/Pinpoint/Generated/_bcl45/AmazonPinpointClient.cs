@@ -445,6 +445,61 @@ namespace Amazon.Pinpoint
 
         #endregion
         
+        #region  DeleteApnsSandboxChannel
+
+
+        /// <summary>
+        /// Delete an APNS sandbox channel
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteApnsSandboxChannel service method.</param>
+        /// 
+        /// <returns>The response from the DeleteApnsSandboxChannel service method, as returned by Pinpoint.</returns>
+        /// <exception cref="Amazon.Pinpoint.Model.BadRequestException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.ForbiddenException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.InternalServerErrorException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.MethodNotAllowedException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.NotFoundException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
+        /// Simple message object.
+        /// </exception>
+        public DeleteApnsSandboxChannelResponse DeleteApnsSandboxChannel(DeleteApnsSandboxChannelRequest request)
+        {
+            var marshaller = new DeleteApnsSandboxChannelRequestMarshaller();
+            var unmarshaller = DeleteApnsSandboxChannelResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteApnsSandboxChannelRequest,DeleteApnsSandboxChannelResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteApnsSandboxChannel operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteApnsSandboxChannel operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<DeleteApnsSandboxChannelResponse> DeleteApnsSandboxChannelAsync(DeleteApnsSandboxChannelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DeleteApnsSandboxChannelRequestMarshaller();
+            var unmarshaller = DeleteApnsSandboxChannelResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteApnsSandboxChannelRequest,DeleteApnsSandboxChannelResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeleteCampaign
 
 
@@ -495,6 +550,61 @@ namespace Amazon.Pinpoint
             var unmarshaller = DeleteCampaignResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteCampaignRequest,DeleteCampaignResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteEmailChannel
+
+
+        /// <summary>
+        /// Delete an email channel
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteEmailChannel service method.</param>
+        /// 
+        /// <returns>The response from the DeleteEmailChannel service method, as returned by Pinpoint.</returns>
+        /// <exception cref="Amazon.Pinpoint.Model.BadRequestException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.ForbiddenException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.InternalServerErrorException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.MethodNotAllowedException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.NotFoundException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
+        /// Simple message object.
+        /// </exception>
+        public DeleteEmailChannelResponse DeleteEmailChannel(DeleteEmailChannelRequest request)
+        {
+            var marshaller = new DeleteEmailChannelRequestMarshaller();
+            var unmarshaller = DeleteEmailChannelResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteEmailChannelRequest,DeleteEmailChannelResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteEmailChannel operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteEmailChannel operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<DeleteEmailChannelResponse> DeleteEmailChannelAsync(DeleteEmailChannelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DeleteEmailChannelRequestMarshaller();
+            var unmarshaller = DeleteEmailChannelResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteEmailChannelRequest,DeleteEmailChannelResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -665,6 +775,61 @@ namespace Amazon.Pinpoint
 
         #endregion
         
+        #region  DeleteSmsChannel
+
+
+        /// <summary>
+        /// Delete an SMS channel
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteSmsChannel service method.</param>
+        /// 
+        /// <returns>The response from the DeleteSmsChannel service method, as returned by Pinpoint.</returns>
+        /// <exception cref="Amazon.Pinpoint.Model.BadRequestException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.ForbiddenException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.InternalServerErrorException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.MethodNotAllowedException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.NotFoundException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
+        /// Simple message object.
+        /// </exception>
+        public DeleteSmsChannelResponse DeleteSmsChannel(DeleteSmsChannelRequest request)
+        {
+            var marshaller = new DeleteSmsChannelRequestMarshaller();
+            var unmarshaller = DeleteSmsChannelResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteSmsChannelRequest,DeleteSmsChannelResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteSmsChannel operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteSmsChannel operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<DeleteSmsChannelResponse> DeleteSmsChannelAsync(DeleteSmsChannelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DeleteSmsChannelRequestMarshaller();
+            var unmarshaller = DeleteSmsChannelResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteSmsChannelRequest,DeleteSmsChannelResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetApnsChannel
 
 
@@ -715,6 +880,61 @@ namespace Amazon.Pinpoint
             var unmarshaller = GetApnsChannelResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetApnsChannelRequest,GetApnsChannelResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetApnsSandboxChannel
+
+
+        /// <summary>
+        /// Get an APNS sandbox channel
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetApnsSandboxChannel service method.</param>
+        /// 
+        /// <returns>The response from the GetApnsSandboxChannel service method, as returned by Pinpoint.</returns>
+        /// <exception cref="Amazon.Pinpoint.Model.BadRequestException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.ForbiddenException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.InternalServerErrorException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.MethodNotAllowedException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.NotFoundException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
+        /// Simple message object.
+        /// </exception>
+        public GetApnsSandboxChannelResponse GetApnsSandboxChannel(GetApnsSandboxChannelRequest request)
+        {
+            var marshaller = new GetApnsSandboxChannelRequestMarshaller();
+            var unmarshaller = GetApnsSandboxChannelResponseUnmarshaller.Instance;
+
+            return Invoke<GetApnsSandboxChannelRequest,GetApnsSandboxChannelResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetApnsSandboxChannel operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetApnsSandboxChannel operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<GetApnsSandboxChannelResponse> GetApnsSandboxChannelAsync(GetApnsSandboxChannelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new GetApnsSandboxChannelRequestMarshaller();
+            var unmarshaller = GetApnsSandboxChannelResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetApnsSandboxChannelRequest,GetApnsSandboxChannelResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -1045,6 +1265,61 @@ namespace Amazon.Pinpoint
             var unmarshaller = GetCampaignVersionsResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetCampaignVersionsRequest,GetCampaignVersionsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetEmailChannel
+
+
+        /// <summary>
+        /// Get an email channel
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetEmailChannel service method.</param>
+        /// 
+        /// <returns>The response from the GetEmailChannel service method, as returned by Pinpoint.</returns>
+        /// <exception cref="Amazon.Pinpoint.Model.BadRequestException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.ForbiddenException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.InternalServerErrorException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.MethodNotAllowedException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.NotFoundException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
+        /// Simple message object.
+        /// </exception>
+        public GetEmailChannelResponse GetEmailChannel(GetEmailChannelRequest request)
+        {
+            var marshaller = new GetEmailChannelRequestMarshaller();
+            var unmarshaller = GetEmailChannelResponseUnmarshaller.Instance;
+
+            return Invoke<GetEmailChannelRequest,GetEmailChannelResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetEmailChannel operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetEmailChannel operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<GetEmailChannelResponse> GetEmailChannelAsync(GetEmailChannelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new GetEmailChannelRequestMarshaller();
+            var unmarshaller = GetEmailChannelResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetEmailChannelRequest,GetEmailChannelResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -1600,6 +1875,61 @@ namespace Amazon.Pinpoint
 
         #endregion
         
+        #region  GetSmsChannel
+
+
+        /// <summary>
+        /// Get an SMS channel
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetSmsChannel service method.</param>
+        /// 
+        /// <returns>The response from the GetSmsChannel service method, as returned by Pinpoint.</returns>
+        /// <exception cref="Amazon.Pinpoint.Model.BadRequestException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.ForbiddenException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.InternalServerErrorException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.MethodNotAllowedException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.NotFoundException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
+        /// Simple message object.
+        /// </exception>
+        public GetSmsChannelResponse GetSmsChannel(GetSmsChannelRequest request)
+        {
+            var marshaller = new GetSmsChannelRequestMarshaller();
+            var unmarshaller = GetSmsChannelResponseUnmarshaller.Instance;
+
+            return Invoke<GetSmsChannelRequest,GetSmsChannelResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetSmsChannel operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetSmsChannel operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<GetSmsChannelResponse> GetSmsChannelAsync(GetSmsChannelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new GetSmsChannelRequestMarshaller();
+            var unmarshaller = GetSmsChannelResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetSmsChannelRequest,GetSmsChannelResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  PutEventStream
 
 
@@ -1655,6 +1985,61 @@ namespace Amazon.Pinpoint
 
         #endregion
         
+        #region  SendMessages
+
+
+        /// <summary>
+        /// Send a batch of messages
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SendMessages service method.</param>
+        /// 
+        /// <returns>The response from the SendMessages service method, as returned by Pinpoint.</returns>
+        /// <exception cref="Amazon.Pinpoint.Model.BadRequestException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.ForbiddenException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.InternalServerErrorException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.MethodNotAllowedException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.NotFoundException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
+        /// Simple message object.
+        /// </exception>
+        public SendMessagesResponse SendMessages(SendMessagesRequest request)
+        {
+            var marshaller = new SendMessagesRequestMarshaller();
+            var unmarshaller = SendMessagesResponseUnmarshaller.Instance;
+
+            return Invoke<SendMessagesRequest,SendMessagesResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the SendMessages operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the SendMessages operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<SendMessagesResponse> SendMessagesAsync(SendMessagesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new SendMessagesRequestMarshaller();
+            var unmarshaller = SendMessagesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<SendMessagesRequest,SendMessagesResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  UpdateApnsChannel
 
 
@@ -1705,6 +2090,61 @@ namespace Amazon.Pinpoint
             var unmarshaller = UpdateApnsChannelResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdateApnsChannelRequest,UpdateApnsChannelResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateApnsSandboxChannel
+
+
+        /// <summary>
+        /// Update an APNS sandbox channel
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateApnsSandboxChannel service method.</param>
+        /// 
+        /// <returns>The response from the UpdateApnsSandboxChannel service method, as returned by Pinpoint.</returns>
+        /// <exception cref="Amazon.Pinpoint.Model.BadRequestException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.ForbiddenException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.InternalServerErrorException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.MethodNotAllowedException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.NotFoundException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
+        /// Simple message object.
+        /// </exception>
+        public UpdateApnsSandboxChannelResponse UpdateApnsSandboxChannel(UpdateApnsSandboxChannelRequest request)
+        {
+            var marshaller = new UpdateApnsSandboxChannelRequestMarshaller();
+            var unmarshaller = UpdateApnsSandboxChannelResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateApnsSandboxChannelRequest,UpdateApnsSandboxChannelResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateApnsSandboxChannel operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateApnsSandboxChannel operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<UpdateApnsSandboxChannelResponse> UpdateApnsSandboxChannelAsync(UpdateApnsSandboxChannelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new UpdateApnsSandboxChannelRequestMarshaller();
+            var unmarshaller = UpdateApnsSandboxChannelResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateApnsSandboxChannelRequest,UpdateApnsSandboxChannelResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -1815,6 +2255,61 @@ namespace Amazon.Pinpoint
             var unmarshaller = UpdateCampaignResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdateCampaignRequest,UpdateCampaignResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateEmailChannel
+
+
+        /// <summary>
+        /// Update an email channel
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateEmailChannel service method.</param>
+        /// 
+        /// <returns>The response from the UpdateEmailChannel service method, as returned by Pinpoint.</returns>
+        /// <exception cref="Amazon.Pinpoint.Model.BadRequestException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.ForbiddenException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.InternalServerErrorException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.MethodNotAllowedException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.NotFoundException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
+        /// Simple message object.
+        /// </exception>
+        public UpdateEmailChannelResponse UpdateEmailChannel(UpdateEmailChannelRequest request)
+        {
+            var marshaller = new UpdateEmailChannelRequestMarshaller();
+            var unmarshaller = UpdateEmailChannelResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateEmailChannelRequest,UpdateEmailChannelResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateEmailChannel operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateEmailChannel operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<UpdateEmailChannelResponse> UpdateEmailChannelAsync(UpdateEmailChannelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new UpdateEmailChannelRequestMarshaller();
+            var unmarshaller = UpdateEmailChannelResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateEmailChannelRequest,UpdateEmailChannelResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -2035,6 +2530,61 @@ namespace Amazon.Pinpoint
             var unmarshaller = UpdateSegmentResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdateSegmentRequest,UpdateSegmentResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateSmsChannel
+
+
+        /// <summary>
+        /// Update an SMS channel
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateSmsChannel service method.</param>
+        /// 
+        /// <returns>The response from the UpdateSmsChannel service method, as returned by Pinpoint.</returns>
+        /// <exception cref="Amazon.Pinpoint.Model.BadRequestException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.ForbiddenException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.InternalServerErrorException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.MethodNotAllowedException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.NotFoundException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
+        /// Simple message object.
+        /// </exception>
+        public UpdateSmsChannelResponse UpdateSmsChannel(UpdateSmsChannelRequest request)
+        {
+            var marshaller = new UpdateSmsChannelRequestMarshaller();
+            var unmarshaller = UpdateSmsChannelResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateSmsChannelRequest,UpdateSmsChannelResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateSmsChannel operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateSmsChannel operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<UpdateSmsChannelResponse> UpdateSmsChannelAsync(UpdateSmsChannelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new UpdateSmsChannelRequestMarshaller();
+            var unmarshaller = UpdateSmsChannelResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateSmsChannelRequest,UpdateSmsChannelResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 

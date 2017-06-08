@@ -33,6 +33,7 @@ namespace Amazon.Pinpoint.Model
     public partial class GCMChannelRequest
     {
         private string _apiKey;
+        private bool? _enabled;
 
         /// <summary>
         /// Gets and sets the property ApiKey. Platform credential API key from Google.
@@ -47,6 +48,21 @@ namespace Amazon.Pinpoint.Model
         internal bool IsSetApiKey()
         {
             return this._apiKey != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Enabled. If the channel is enabled for sending messages.
+        /// </summary>
+        public bool Enabled
+        {
+            get { return this._enabled.GetValueOrDefault(); }
+            set { this._enabled = value; }
+        }
+
+        // Check to see if Enabled property is set
+        internal bool IsSetEnabled()
+        {
+            return this._enabled.HasValue; 
         }
 
     }

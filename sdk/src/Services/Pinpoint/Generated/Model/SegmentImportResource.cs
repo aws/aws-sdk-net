@@ -32,11 +32,27 @@ namespace Amazon.Pinpoint.Model
     /// </summary>
     public partial class SegmentImportResource
     {
+        private Dictionary<string, int> _channelCounts = new Dictionary<string, int>();
         private string _externalId;
         private Format _format;
         private string _roleArn;
         private string _s3Url;
         private int? _size;
+
+        /// <summary>
+        /// Gets and sets the property ChannelCounts. Channel type counts
+        /// </summary>
+        public Dictionary<string, int> ChannelCounts
+        {
+            get { return this._channelCounts; }
+            set { this._channelCounts = value; }
+        }
+
+        // Check to see if ChannelCounts property is set
+        internal bool IsSetChannelCounts()
+        {
+            return this._channelCounts != null && this._channelCounts.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property ExternalId. A unique, custom ID assigned to the IAM role

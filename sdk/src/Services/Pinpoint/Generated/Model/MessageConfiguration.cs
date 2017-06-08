@@ -34,7 +34,9 @@ namespace Amazon.Pinpoint.Model
     {
         private Message _apnsMessage;
         private Message _defaultMessage;
+        private CampaignEmailMessage _emailMessage;
         private Message _gcmMessage;
+        private CampaignSmsMessage _smsMessage;
 
         /// <summary>
         /// Gets and sets the property APNSMessage. The message that the campaign delivers to
@@ -68,6 +70,21 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
+        /// Gets and sets the property EmailMessage. The email message configuration.
+        /// </summary>
+        public CampaignEmailMessage EmailMessage
+        {
+            get { return this._emailMessage; }
+            set { this._emailMessage = value; }
+        }
+
+        // Check to see if EmailMessage property is set
+        internal bool IsSetEmailMessage()
+        {
+            return this._emailMessage != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property GCMMessage. The message that the campaign delivers to GCM
         /// channels. Overrides the default message.
         /// </summary>
@@ -81,6 +98,21 @@ namespace Amazon.Pinpoint.Model
         internal bool IsSetGCMMessage()
         {
             return this._gcmMessage != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SMSMessage. The SMS message configuration.
+        /// </summary>
+        public CampaignSmsMessage SMSMessage
+        {
+            get { return this._smsMessage; }
+            set { this._smsMessage = value; }
+        }
+
+        // Check to see if SMSMessage property is set
+        internal bool IsSetSMSMessage()
+        {
+            return this._smsMessage != null;
         }
 
     }

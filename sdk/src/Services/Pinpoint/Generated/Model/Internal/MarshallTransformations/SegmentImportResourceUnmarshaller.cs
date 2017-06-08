@@ -64,6 +64,12 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("ChannelCounts", targetDepth))
+                {
+                    var unmarshaller = new DictionaryUnmarshaller<string, int, StringUnmarshaller, IntUnmarshaller>(StringUnmarshaller.Instance, IntUnmarshaller.Instance);
+                    unmarshalledObject.ChannelCounts = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ExternalId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
