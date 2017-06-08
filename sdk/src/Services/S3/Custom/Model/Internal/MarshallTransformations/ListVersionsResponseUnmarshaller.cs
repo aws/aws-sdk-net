@@ -95,13 +95,16 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("Version", targetDepth))
                     {
-                        response.Versions.Add(VersionsItemUnmarshaller.Instance.Unmarshall(context));
+                        var version = VersionsItemUnmarshaller.Instance.Unmarshall(context);
+                        version.BucketName = response.Name;
+                        response.Versions.Add(version);
                             
                         continue;
                     }
                     if (context.TestExpression("DeleteMarker", targetDepth))
                     {
                         var version = VersionsItemUnmarshaller.Instance.Unmarshall(context);
+                        version.BucketName = response.Name;
                         version.IsDeleteMarker = true;
                         response.Versions.Add(version);
                             
