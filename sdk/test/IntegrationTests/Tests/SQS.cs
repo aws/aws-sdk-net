@@ -278,8 +278,8 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
                     QueueName = fifoQueueName,
                     Attributes = new Dictionary<string, string>
                     {
-                        [SQSConstants.ATTRIBUTE_FIFO_QUEUE] = "true",
-                        [SQSConstants.ATTRIBUTE_CONTENT_BASED_DEDUPLICATION] = "true"
+                        { SQSConstants.ATTRIBUTE_FIFO_QUEUE, "true" },
+                        { SQSConstants.ATTRIBUTE_CONTENT_BASED_DEDUPLICATION , "true" }
                     }
                 });
 
