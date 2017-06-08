@@ -108,7 +108,10 @@ namespace Amazon.Rekognition.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Image.
+        /// Gets and sets the property Image. 
+        /// <para>
+        /// The input image as bytes or an S3 object.
+        /// </para>
         /// </summary>
         public Image Image
         {

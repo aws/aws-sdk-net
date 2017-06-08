@@ -64,11 +64,11 @@ namespace Amazon.Rekognition.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// If the source image is in jpeg format, it might contain exchangeable image (Exif)
-        /// metadata. If so, and the Exif metadata populates the orientation field, the value
-        /// of <code>OrientationCorrection</code> is nil and the bounding box coordinates in <code>FaceRecords</code>
-        /// represent face locations after Exif metadata is used to correct the image orientation.
-        /// Images in .png format don't contain Exif metadata.
+        /// If the input image is in jpeg format, it might contain exchangeable image (Exif) metadata.
+        /// If so, and the Exif metadata populates the orientation field, the value of <code>OrientationCorrection</code>
+        /// is null and the bounding box coordinates in <code>FaceRecords</code> represent face
+        /// locations after Exif metadata is used to correct the image orientation. Images in
+        /// .png format don't contain Exif metadata.
         /// </para>
         ///  </note>
         /// </summary>

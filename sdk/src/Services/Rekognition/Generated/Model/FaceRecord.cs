@@ -37,7 +37,11 @@ namespace Amazon.Rekognition.Model
         private FaceDetail _faceDetail;
 
         /// <summary>
-        /// Gets and sets the property Face.
+        /// Gets and sets the property Face. 
+        /// <para>
+        /// Describes the face properties such as the bounding box, face ID, image ID of the input
+        /// image, and external image ID that you assigned. 
+        /// </para>
         /// </summary>
         public Face Face
         {
@@ -52,7 +56,10 @@ namespace Amazon.Rekognition.Model
         }
 
         /// <summary>
-        /// Gets and sets the property FaceDetail.
+        /// Gets and sets the property FaceDetail. 
+        /// <para>
+        /// Structure containing attributes of the face that the algorithm detected.
+        /// </para>
         /// </summary>
         public FaceDetail FaceDetail
         {

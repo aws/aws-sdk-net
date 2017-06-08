@@ -46,6 +46,10 @@
     <max>100</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Rekognition.Model.GetCelebrityInfoRequest.Id</property>
+    <pattern>[0-9A-Za-z]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Rekognition.Model.IndexFacesRequest.CollectionId</property>
     <min>1</min>
     <max>255</max>
@@ -140,6 +144,15 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Rekognition.Model.Beard.Confidence</property>
+    <min>0</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Rekognition.Model.Celebrity.Id</property>
+    <pattern>[0-9A-Za-z]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Rekognition.Model.Celebrity.MatchConfidence</property>
     <min>0</min>
     <max>100</max>
   </property-value-rule>

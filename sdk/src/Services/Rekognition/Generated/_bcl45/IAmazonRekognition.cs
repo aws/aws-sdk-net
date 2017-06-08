@@ -531,7 +531,7 @@ namespace Amazon.Rekognition
         /// <para>
         /// To filter images, use the labels returned by <code>DetectModerationLabels</code> to
         /// determine which types of content are appropriate. For information about moderation
-        /// labels, see <a>howitworks-moderateimage</a>.
+        /// labels, see <a>image-moderation</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DetectModerationLabels service method.</param>
@@ -581,6 +581,61 @@ namespace Amazon.Rekognition
 
         #endregion
         
+        #region  GetCelebrityInfo
+
+
+        /// <summary>
+        /// Gets the name and additional information about a celebrity based on his or her Rekognition
+        /// ID. The additional information is returned as an array of URLs. If there is no additional
+        /// information about the celebrity, this list is empty. For more information, see <a>celebrity-recognition</a>.
+        /// 
+        ///  
+        /// <para>
+        /// This operation requires permissions to perform the <code>rekognition:GetCelebrityInfo</code>
+        /// action. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetCelebrityInfo service method.</param>
+        /// 
+        /// <returns>The response from the GetCelebrityInfo service method, as returned by Rekognition.</returns>
+        /// <exception cref="Amazon.Rekognition.Model.AccessDeniedException">
+        /// You are not authorized to perform the action.
+        /// </exception>
+        /// <exception cref="Amazon.Rekognition.Model.InternalServerErrorException">
+        /// Amazon Rekognition experienced a service issue. Try your call again.
+        /// </exception>
+        /// <exception cref="Amazon.Rekognition.Model.InvalidParameterException">
+        /// Input parameter violated a constraint. Validate your parameter before calling the
+        /// API operation again.
+        /// </exception>
+        /// <exception cref="Amazon.Rekognition.Model.ProvisionedThroughputExceededException">
+        /// The number of requests exceeded your throughput limit. If you want to increase this
+        /// limit, contact Amazon Rekognition.
+        /// </exception>
+        /// <exception cref="Amazon.Rekognition.Model.ResourceNotFoundException">
+        /// Collection specified in the request is not found.
+        /// </exception>
+        /// <exception cref="Amazon.Rekognition.Model.ThrottlingException">
+        /// Amazon Rekognition is temporarily unable to process the request. Try your call again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/GetCelebrityInfo">REST API Reference for GetCelebrityInfo Operation</seealso>
+        GetCelebrityInfoResponse GetCelebrityInfo(GetCelebrityInfoRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetCelebrityInfo operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetCelebrityInfo operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/GetCelebrityInfo">REST API Reference for GetCelebrityInfo Operation</seealso>
+        Task<GetCelebrityInfoResponse> GetCelebrityInfoAsync(GetCelebrityInfoRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  IndexFaces
 
 
@@ -608,7 +663,7 @@ namespace Amazon.Rekognition
         /// In response, the operation returns an array of metadata for all detected faces. This
         /// includes, the bounding box of the detected face, confidence value (indicating the
         /// bounding box contains a face), a face ID assigned by the service for each face that
-        /// is detected and stored, and an image ID assigned by the service for the input image
+        /// is detected and stored, and an image ID assigned by the service for the input image.
         /// If you request all facial attributes (using the <code>detectionAttributes</code> parameter,
         /// Amazon Rekognition returns detailed facial attributes such as facial landmarks (for
         /// example, location of eye and mount) and other facial attributes such gender. If you
@@ -793,6 +848,97 @@ namespace Amazon.Rekognition
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/ListFaces">REST API Reference for ListFaces Operation</seealso>
         Task<ListFacesResponse> ListFacesAsync(ListFacesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  RecognizeCelebrities
+
+
+        /// <summary>
+        /// Returns an array of celebrities recognized in the input image. The image is passed
+        /// either as base64-encoded image bytes or as a reference to an image in an Amazon S3
+        /// bucket. The image must be either a PNG or JPEG formatted file. For more information,
+        /// see <a>celebrity-recognition</a>. 
+        /// 
+        ///  
+        /// <para>
+        ///  <code>RecognizeCelebrities</code> returns the 15 largest faces in the image. It lists
+        /// recognized celebrities in the <code>CelebrityFaces</code> list and unrecognized faces
+        /// in the <code>UnrecognizedFaces</code> list. The operation doesn't return celebrities
+        /// whose face sizes are smaller than the largest 15 faces in the image.
+        /// </para>
+        ///  
+        /// <para>
+        /// For each celebrity recognized, the API returns a <code>Celebrity</code> object. The
+        /// <code>Celebrity</code> object contains the celebrity name, ID, URL links to additional
+        /// information, match confidence, and a <code>ComparedFace</code> object that you can
+        /// use to locate the celebrity's face on the image.
+        /// </para>
+        ///  
+        /// <para>
+        /// Rekognition does not retain information about which images a celebrity has been recognized
+        /// in. Your application must store this information and use the <code>Celebrity</code>
+        /// ID property as a unique identifier for the celebrity. If you don't store the celebrity
+        /// name or additional information URLs returned by <code>RecognizeCelebrities</code>,
+        /// you will need the ID to identify the celebrity in a call to the operation.
+        /// </para>
+        ///  
+        /// <para>
+        /// For an example, see <a>recognize-celebrities-tutorial</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// This operation requires permissions to perform the <code>rekognition:RecognizeCelebrities</code>
+        /// operation.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RecognizeCelebrities service method.</param>
+        /// 
+        /// <returns>The response from the RecognizeCelebrities service method, as returned by Rekognition.</returns>
+        /// <exception cref="Amazon.Rekognition.Model.AccessDeniedException">
+        /// You are not authorized to perform the action.
+        /// </exception>
+        /// <exception cref="Amazon.Rekognition.Model.ImageTooLargeException">
+        /// The input image size exceeds the allowed limit. For more information, see <a>limits</a>.
+        /// </exception>
+        /// <exception cref="Amazon.Rekognition.Model.InternalServerErrorException">
+        /// Amazon Rekognition experienced a service issue. Try your call again.
+        /// </exception>
+        /// <exception cref="Amazon.Rekognition.Model.InvalidImageFormatException">
+        /// The provided image format is not supported.
+        /// </exception>
+        /// <exception cref="Amazon.Rekognition.Model.InvalidImageFormatException">
+        /// The provided image format is not supported.
+        /// </exception>
+        /// <exception cref="Amazon.Rekognition.Model.InvalidParameterException">
+        /// Input parameter violated a constraint. Validate your parameter before calling the
+        /// API operation again.
+        /// </exception>
+        /// <exception cref="Amazon.Rekognition.Model.InvalidS3ObjectException">
+        /// Amazon Rekognition is unable to access the S3 object specified in the request.
+        /// </exception>
+        /// <exception cref="Amazon.Rekognition.Model.ProvisionedThroughputExceededException">
+        /// The number of requests exceeded your throughput limit. If you want to increase this
+        /// limit, contact Amazon Rekognition.
+        /// </exception>
+        /// <exception cref="Amazon.Rekognition.Model.ThrottlingException">
+        /// Amazon Rekognition is temporarily unable to process the request. Try your call again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/RecognizeCelebrities">REST API Reference for RecognizeCelebrities Operation</seealso>
+        RecognizeCelebritiesResponse RecognizeCelebrities(RecognizeCelebritiesRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the RecognizeCelebrities operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the RecognizeCelebrities operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/RecognizeCelebrities">REST API Reference for RecognizeCelebrities Operation</seealso>
+        Task<RecognizeCelebritiesResponse> RecognizeCelebritiesAsync(RecognizeCelebritiesRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         

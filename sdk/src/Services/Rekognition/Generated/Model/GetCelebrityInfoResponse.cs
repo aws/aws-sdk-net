@@ -28,49 +28,47 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Rekognition.Model
 {
     /// <summary>
-    /// Provides face metadata. In addition, it also provides the confidence in the match
-    /// of this face with the input face.
+    /// This is the response object from the GetCelebrityInfo operation.
     /// </summary>
-    public partial class FaceMatch
+    public partial class GetCelebrityInfoResponse : AmazonWebServiceResponse
     {
-        private Face _face;
-        private float? _similarity;
+        private string _name;
+        private List<string> _urls = new List<string>();
 
         /// <summary>
-        /// Gets and sets the property Face. 
+        /// Gets and sets the property Name. 
         /// <para>
-        /// Describes the face properties such as the bounding box, face ID, image ID of the source
-        /// image, and external image ID that you assigned.
+        /// The name of the celebrity.
         /// </para>
         /// </summary>
-        public Face Face
+        public string Name
         {
-            get { return this._face; }
-            set { this._face = value; }
+            get { return this._name; }
+            set { this._name = value; }
         }
 
-        // Check to see if Face property is set
-        internal bool IsSetFace()
+        // Check to see if Name property is set
+        internal bool IsSetName()
         {
-            return this._face != null;
+            return this._name != null;
         }
 
         /// <summary>
-        /// Gets and sets the property Similarity. 
+        /// Gets and sets the property Urls. 
         /// <para>
-        /// Confidence in the match of this face with the input face.
+        /// An array of URLs pointing to additional celebrity information. 
         /// </para>
         /// </summary>
-        public float Similarity
+        public List<string> Urls
         {
-            get { return this._similarity.GetValueOrDefault(); }
-            set { this._similarity = value; }
+            get { return this._urls; }
+            set { this._urls = value; }
         }
 
-        // Check to see if Similarity property is set
-        internal bool IsSetSimilarity()
+        // Check to see if Urls property is set
+        internal bool IsSetUrls()
         {
-            return this._similarity.HasValue; 
+            return this._urls != null && this._urls.Count > 0; 
         }
 
     }

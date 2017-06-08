@@ -454,6 +454,38 @@ namespace Amazon.Rekognition
 
         #endregion
         
+        #region  GetCelebrityInfo
+
+        internal GetCelebrityInfoResponse GetCelebrityInfo(GetCelebrityInfoRequest request)
+        {
+            var marshaller = new GetCelebrityInfoRequestMarshaller();
+            var unmarshaller = GetCelebrityInfoResponseUnmarshaller.Instance;
+
+            return Invoke<GetCelebrityInfoRequest,GetCelebrityInfoResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetCelebrityInfo operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetCelebrityInfo operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/GetCelebrityInfo">REST API Reference for GetCelebrityInfo Operation</seealso>
+        public Task<GetCelebrityInfoResponse> GetCelebrityInfoAsync(GetCelebrityInfoRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new GetCelebrityInfoRequestMarshaller();
+            var unmarshaller = GetCelebrityInfoResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetCelebrityInfoRequest,GetCelebrityInfoResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  IndexFaces
 
         internal IndexFacesResponse IndexFaces(IndexFacesRequest request)
@@ -545,6 +577,38 @@ namespace Amazon.Rekognition
             var unmarshaller = ListFacesResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListFacesRequest,ListFacesResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  RecognizeCelebrities
+
+        internal RecognizeCelebritiesResponse RecognizeCelebrities(RecognizeCelebritiesRequest request)
+        {
+            var marshaller = new RecognizeCelebritiesRequestMarshaller();
+            var unmarshaller = RecognizeCelebritiesResponseUnmarshaller.Instance;
+
+            return Invoke<RecognizeCelebritiesRequest,RecognizeCelebritiesResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the RecognizeCelebrities operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the RecognizeCelebrities operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/RecognizeCelebrities">REST API Reference for RecognizeCelebrities Operation</seealso>
+        public Task<RecognizeCelebritiesResponse> RecognizeCelebritiesAsync(RecognizeCelebritiesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new RecognizeCelebritiesRequestMarshaller();
+            var unmarshaller = RecognizeCelebritiesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<RecognizeCelebritiesRequest,RecognizeCelebritiesResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 

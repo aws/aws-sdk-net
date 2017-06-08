@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Rekognition.Model
 {
     /// <summary>
-    /// Provides the source image either as bytes or an S3 object.
+    /// Provides the input image either as bytes or an S3 object.
     /// 
     ///  
     /// <para>

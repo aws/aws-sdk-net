@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Rekognition.Model
 {
     /// <summary>
-    /// Describes the face properties such as the bounding box, face ID, image ID of the source
+    /// Describes the face properties such as the bounding box, face ID, image ID of the input
     /// image, and external image ID that you assigned.
     /// </summary>
     public partial class Face
@@ -40,7 +40,10 @@ namespace Amazon.Rekognition.Model
         private string _imageId;
 
         /// <summary>
-        /// Gets and sets the property BoundingBox.
+        /// Gets and sets the property BoundingBox. 
+        /// <para>
+        /// Bounding box of the face.
+        /// </para>
         /// </summary>
         public BoundingBox BoundingBox
         {
@@ -112,7 +115,7 @@ namespace Amazon.Rekognition.Model
         /// <summary>
         /// Gets and sets the property ImageId. 
         /// <para>
-        /// Unique identifier that Amazon Rekognition assigns to the source image.
+        /// Unique identifier that Amazon Rekognition assigns to the input image.
         /// </para>
         /// </summary>
         public string ImageId

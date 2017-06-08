@@ -38,7 +38,7 @@ namespace Amazon.Rekognition.Model
     /// <para>
     /// To filter images, use the labels returned by <code>DetectModerationLabels</code> to
     /// determine which types of content are appropriate. For information about moderation
-    /// labels, see <a>howitworks-moderateimage</a>.
+    /// labels, see <a>image-moderation</a>.
     /// </para>
     /// </summary>
     public partial class DetectModerationLabelsRequest : AmazonRekognitionRequest
@@ -47,7 +47,10 @@ namespace Amazon.Rekognition.Model
         private float? _minConfidence;
 
         /// <summary>
-        /// Gets and sets the property Image.
+        /// Gets and sets the property Image. 
+        /// <para>
+        /// The input image as bytes or an S3 object.
+        /// </para>
         /// </summary>
         public Image Image
         {

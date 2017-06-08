@@ -39,7 +39,10 @@ namespace Amazon.Rekognition.Model
         private float? _confidence;
 
         /// <summary>
-        /// Gets and sets the property BoundingBox.
+        /// Gets and sets the property BoundingBox. 
+        /// <para>
+        /// Bounding box of the face.
+        /// </para>
         /// </summary>
         public BoundingBox BoundingBox
         {

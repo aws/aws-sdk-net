@@ -63,9 +63,9 @@ namespace Amazon.Rekognition.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// If the source image Exif metadata populates the orientation field, Amazon Rekognition
+        /// If the input image Exif metadata populates the orientation field, Amazon Rekognition
         /// does not perform orientation correction and the value of OrientationCorrection will
-        /// be nil.
+        /// be null.
         /// </para>
         ///  </note>
         /// </summary>

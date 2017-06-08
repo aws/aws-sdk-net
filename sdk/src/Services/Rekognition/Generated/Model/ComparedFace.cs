@@ -28,7 +28,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Rekognition.Model
 {
     /// <summary>
-    /// Provides face metadata for target image faces that are analysed by <code>CompareFaces</code>.
+    /// Provides face metadata for target image faces that are analysed by <code>CompareFaces</code>
+    /// and <code>RecognizeCelebrities</code>.
     /// </summary>
     public partial class ComparedFace
     {
@@ -39,7 +40,10 @@ namespace Amazon.Rekognition.Model
         private ImageQuality _quality;
 
         /// <summary>
-        /// Gets and sets the property BoundingBox.
+        /// Gets and sets the property BoundingBox. 
+        /// <para>
+        /// Bounding box of the face.
+        /// </para>
         /// </summary>
         public BoundingBox BoundingBox
         {

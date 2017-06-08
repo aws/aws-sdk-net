@@ -52,7 +52,7 @@ namespace Amazon.Rekognition.Model
     /// In response, the operation returns an array of metadata for all detected faces. This
     /// includes, the bounding box of the detected face, confidence value (indicating the
     /// bounding box contains a face), a face ID assigned by the service for each face that
-    /// is detected and stored, and an image ID assigned by the service for the input image
+    /// is detected and stored, and an image ID assigned by the service for the input image.
     /// If you request all facial attributes (using the <code>detectionAttributes</code> parameter,
     /// Amazon Rekognition returns detailed facial attributes such as facial landmarks (for
     /// example, location of eye and mount) and other facial attributes such gender. If you
@@ -143,7 +143,10 @@ namespace Amazon.Rekognition.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Image.
+        /// Gets and sets the property Image. 
+        /// <para>
+        /// The input image as bytes or an S3 object.
+        /// </para>
         /// </summary>
         public Image Image
         {

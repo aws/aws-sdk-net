@@ -30,7 +30,7 @@ namespace Amazon.Rekognition.Model
     /// <summary>
     /// Provides information about a single type of moderated content found in an image. Each
     /// type of moderated content has a label within a hierarchical taxonomy. For more information,
-    /// see <a>howitworks-moderateimage</a>.
+    /// see <a>image-moderation</a>.
     /// </summary>
     public partial class ModerationLabel
     {
