@@ -29,11 +29,13 @@ namespace Amazon.IoT.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeCertificate operation.
-    /// Gets information about the specified certificate.
+    /// Gets information about the specified certificate. You may specify the certificate
+    /// using either its ID or PEM.
     /// </summary>
     public partial class DescribeCertificateRequest : AmazonIoTRequest
     {
         private string _certificateId;
+        private string _certificatePem;
 
         /// <summary>
         /// Gets and sets the property CertificateId. 
@@ -51,6 +53,24 @@ namespace Amazon.IoT.Model
         internal bool IsSetCertificateId()
         {
             return this._certificateId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CertificatePem. 
+        /// <para>
+        /// The PEM of the certificate.
+        /// </para>
+        /// </summary>
+        public string CertificatePem
+        {
+            get { return this._certificatePem; }
+            set { this._certificatePem = value; }
+        }
+
+        // Check to see if CertificatePem property is set
+        internal bool IsSetCertificatePem()
+        {
+            return this._certificatePem != null;
         }
 
     }
