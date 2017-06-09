@@ -1,3 +1,7 @@
+### 3.3.104.0 (2017-06-09 16:57 UTC)
+* OpsWorks (3.3.2.0)
+	* Tagging Support for AWS OpsWorks Stacks
+
 ### 3.3.103.0 (2017-06-08 20:33 UTC)
 * IoT (3.3.4.0)
 	* In addition to using certificate ID, AWS IoT customers can now obtain the description of a certificate with the certificate PEM.
