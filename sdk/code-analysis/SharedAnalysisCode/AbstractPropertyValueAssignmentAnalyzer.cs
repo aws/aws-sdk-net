@@ -193,14 +193,13 @@ namespace Amazon.CodeAnalysis.Shared
                 return;
 
             var assignmentExpr = (AssignmentExpressionSyntax)context.Node;
-
-            var literal = assignmentExpr.Right as LiteralExpressionSyntax;
-            if (literal == null)
+            if (assignmentExpr == null)
                 return;
 
-            var literalOpt = context.SemanticModel.GetConstantValue(literal);
+            var literalOpt = context.SemanticModel.GetConstantValue(assignmentExpr.Right);
             if (!literalOpt.HasValue)
                 return;
+            var constantExpression = assignmentExpr.Right;
 
             var symbol = context.SemanticModel.GetSymbolInfo(assignmentExpr.Left).Symbol;
             if (symbol == null)
@@ -223,7 +222,7 @@ namespace Amazon.CodeAnalysis.Shared
                     {
                         var diagnostic =
                             Diagnostic.Create(MinLengthRule,
-                            literal.GetLocation(),
+                            constantExpression.GetLocation(),
                             new object[] { value, memberSymbol.Name, propertyValueRule.Min.Value });
                         context.ReportDiagnostic(diagnostic);
                     }
@@ -234,7 +233,7 @@ namespace Amazon.CodeAnalysis.Shared
                     {
                         var diagnostic =
                             Diagnostic.Create(MaxLengthRule,
-                            literal.GetLocation(),
+                            constantExpression.GetLocation(),
                             new object[] { value, memberSymbol.Name, propertyValueRule.Max.Value });
                         context.ReportDiagnostic(diagnostic);
                     }
@@ -246,7 +245,7 @@ namespace Amazon.CodeAnalysis.Shared
                     {
                         var diagnostic =
                             Diagnostic.Create(PatternRule,
-                            literal.GetLocation(),
+                            constantExpression.GetLocation(),
                             new object[] { value, propertyValueRule.Pattern, memberSymbol.Name });
                         context.ReportDiagnostic(diagnostic);
                     }
@@ -262,7 +261,7 @@ namespace Amazon.CodeAnalysis.Shared
                     {
                         var diagnostic =
                             Diagnostic.Create(MinValueRule,
-                            literal.GetLocation(),
+                            constantExpression.GetLocation(),
                             new object[] { value, propertyValueRule.Min.Value, memberSymbol.Name });
                         context.ReportDiagnostic(diagnostic);
                     }
@@ -273,7 +272,7 @@ namespace Amazon.CodeAnalysis.Shared
                     {
                         var diagnostic =
                             Diagnostic.Create(MaxValueRule,
-                            literal.GetLocation(),
+                            constantExpression.GetLocation(),
                             new object[] { value, propertyValueRule.Max.Value, memberSymbol.Name });
                         context.ReportDiagnostic(diagnostic);
                     }
