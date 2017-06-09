@@ -1,3 +1,4 @@
+using Amazon;
 using Amazon.S3;
 using Amazon.S3.Model;
 using Amazon.S3.Util;
@@ -9,6 +10,10 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
     [TestClass]
     public class ObjecTaggingTest : TestBase<AmazonS3Client>
     {
+        private const char iUmlautChar = (char)0x00EF;
+        private const string TestObjectKey = "testObjectKey";
+        private const string TestObjectContent = "content";
+
         private static string bucketName;
 
         [ClassInitialize()]
@@ -22,6 +27,50 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         {
             AmazonS3Util.DeleteS3BucketWithObjects(Client, bucketName);
             BaseClean();
+        }
+
+        [TestMethod]
+        [TestCategory("S3")]
+        public void TagWithUnicodeKey()
+        {
+            Client.PutObject(new PutObjectRequest
+            {
+                BucketName = bucketName,
+                Key = TestObjectKey,
+                ContentBody = TestObjectContent,
+                TagSet = new List<Tag> { new Tag { Key = "key" + iUmlautChar, Value = "value" } }
+            });
+
+            var response = Client.GetObjectTagging(new GetObjectTaggingRequest
+            {
+                BucketName = bucketName,
+                Key = TestObjectKey
+            });
+
+            Assert.AreEqual(response.Tagging[0].Key, "key" + iUmlautChar);
+            Assert.AreEqual(response.Tagging[0].Value, "value");
+        }
+
+        [TestMethod]
+        [TestCategory("S3")]
+        public void TagWithUnicodeValue()
+        {
+            Client.PutObject(new PutObjectRequest
+            {
+                BucketName = bucketName,
+                Key = TestObjectKey,
+                ContentBody = TestObjectContent,
+                TagSet = new List<Tag> { new Tag { Key = "key", Value = "value" + iUmlautChar } }
+            });
+
+            var response = Client.GetObjectTagging(new GetObjectTaggingRequest
+            {
+                BucketName = bucketName,
+                Key = TestObjectKey
+            });
+
+            Assert.AreEqual(response.Tagging[0].Key, "key");
+            Assert.AreEqual(response.Tagging[0].Value, "value" + iUmlautChar);
         }
 
         [TestMethod]

@@ -439,7 +439,7 @@ namespace Amazon.S3.Util
         {
             if (queryString.Length > 0)
                 queryString.Append("&");
-            queryString.AppendFormat("{0}={1}", parameterName, parameterValue);
+            queryString.AppendFormat("{0}={1}", AWSSDKUtils.UrlEncode(parameterName, false), AWSSDKUtils.UrlEncode(parameterValue, false));
             if (parameterMap != null)
                 parameterMap.Add(parameterName, parameterValue);
         }
