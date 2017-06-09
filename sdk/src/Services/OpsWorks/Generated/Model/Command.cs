@@ -229,11 +229,31 @@ namespace Amazon.OpsWorks.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
+        ///  <code>configure</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <code>deploy</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
+        ///  <code>execute_recipes</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>install_dependencies</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>restart</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <code>rollback</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>setup</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -245,19 +265,7 @@ namespace Amazon.OpsWorks.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>restart</code> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
         ///  <code>undeploy</code> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>update_dependencies</code> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>install_dependencies</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -265,7 +273,7 @@ namespace Amazon.OpsWorks.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>execute_recipes</code> 
+        ///  <code>update_dependencies</code> 
         /// </para>
         ///  </li> </ul>
         /// </summary>

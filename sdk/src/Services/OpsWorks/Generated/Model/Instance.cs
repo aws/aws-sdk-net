@@ -35,6 +35,7 @@ namespace Amazon.OpsWorks.Model
         private string _agentVersion;
         private string _amiId;
         private Architecture _architecture;
+        private string _arn;
         private AutoScalingType _autoScalingType;
         private string _availabilityZone;
         private List<BlockDeviceMapping> _blockDeviceMappings = new List<BlockDeviceMapping>();
@@ -127,6 +128,21 @@ namespace Amazon.OpsWorks.Model
         internal bool IsSetArchitecture()
         {
             return this._architecture != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Arn.
+        /// </summary>
+        public string Arn
+        {
+            get { return this._arn; }
+            set { this._arn = value; }
+        }
+
+        // Check to see if Arn property is set
+        internal bool IsSetArn()
+        {
+            return this._arn != null;
         }
 
         /// <summary>
@@ -489,7 +505,7 @@ namespace Amazon.OpsWorks.Model
         /// <summary>
         /// Gets and sets the property PrivateDns. 
         /// <para>
-        /// The The instance's private DNS name.
+        /// The instance's private DNS name.
         /// </para>
         /// </summary>
         public string PrivateDns

@@ -142,7 +142,7 @@ namespace Amazon.OpsWorks.Model
         /// <summary>
         /// Gets and sets the property Url. 
         /// <para>
-        /// The source URL.
+        /// The source URL. The following is an example of an Amazon S3 source URL: <code>https://s3.amazonaws.com/opsworks-demo-bucket/opsworks_cookbook_demo.tar.gz</code>.
         /// </para>
         /// </summary>
         public string Url

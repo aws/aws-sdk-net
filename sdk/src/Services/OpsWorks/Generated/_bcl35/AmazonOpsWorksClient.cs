@@ -583,8 +583,9 @@ namespace Amazon.OpsWorks
         #region  AttachElasticLoadBalancer
 
         /// <summary>
-        /// Attaches an Elastic Load Balancing load balancer to a specified layer. For more information,
-        /// see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/load-balancer-elb.html">Elastic
+        /// Attaches an Elastic Load Balancing load balancer to a specified layer. AWS OpsWorks
+        /// Stacks does not support Application Load Balancer. You can only use Classic Load Balancer
+        /// with AWS OpsWorks Stacks. For more information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/layers-elb.html">Elastic
         /// Load Balancing</a>.
         /// 
         ///  <note> 
@@ -3670,6 +3671,65 @@ namespace Amazon.OpsWorks
 
         #endregion
         
+        #region  ListTags
+
+        /// <summary>
+        /// Returns a list of tags that are applied to the specified stack or layer.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTags service method.</param>
+        /// 
+        /// <returns>The response from the ListTags service method, as returned by OpsWorks.</returns>
+        /// <exception cref="Amazon.OpsWorks.Model.ResourceNotFoundException">
+        /// Indicates that a resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.OpsWorks.Model.ValidationException">
+        /// Indicates that a request was not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/ListTags">REST API Reference for ListTags Operation</seealso>
+        public ListTagsResponse ListTags(ListTagsRequest request)
+        {
+            var marshaller = new ListTagsRequestMarshaller();
+            var unmarshaller = ListTagsResponseUnmarshaller.Instance;
+
+            return Invoke<ListTagsRequest,ListTagsResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListTags operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListTags operation on AmazonOpsWorksClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListTags
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/ListTags">REST API Reference for ListTags Operation</seealso>
+        public IAsyncResult BeginListTags(ListTagsRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new ListTagsRequestMarshaller();
+            var unmarshaller = ListTagsResponseUnmarshaller.Instance;
+
+            return BeginInvoke<ListTagsRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListTags operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListTags.</param>
+        /// 
+        /// <returns>Returns a  ListTagsResult from OpsWorks.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/ListTags">REST API Reference for ListTags Operation</seealso>
+        public  ListTagsResponse EndListTags(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListTagsResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  RebootInstance
 
         /// <summary>
@@ -4586,6 +4646,67 @@ namespace Amazon.OpsWorks
 
         #endregion
         
+        #region  TagResource
+
+        /// <summary>
+        /// Apply cost-allocation tags to a specified stack or layer in AWS OpsWorks Stacks. For
+        /// more information about how tagging works, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/tagging.html">Tags</a>
+        /// in the AWS OpsWorks User Guide.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
+        /// 
+        /// <returns>The response from the TagResource service method, as returned by OpsWorks.</returns>
+        /// <exception cref="Amazon.OpsWorks.Model.ResourceNotFoundException">
+        /// Indicates that a resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.OpsWorks.Model.ValidationException">
+        /// Indicates that a request was not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/TagResource">REST API Reference for TagResource Operation</seealso>
+        public TagResourceResponse TagResource(TagResourceRequest request)
+        {
+            var marshaller = new TagResourceRequestMarshaller();
+            var unmarshaller = TagResourceResponseUnmarshaller.Instance;
+
+            return Invoke<TagResourceRequest,TagResourceResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the TagResource operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the TagResource operation on AmazonOpsWorksClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndTagResource
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/TagResource">REST API Reference for TagResource Operation</seealso>
+        public IAsyncResult BeginTagResource(TagResourceRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new TagResourceRequestMarshaller();
+            var unmarshaller = TagResourceResponseUnmarshaller.Instance;
+
+            return BeginInvoke<TagResourceRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  TagResource operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginTagResource.</param>
+        /// 
+        /// <returns>Returns a  TagResourceResult from OpsWorks.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/TagResource">REST API Reference for TagResource Operation</seealso>
+        public  TagResourceResponse EndTagResource(IAsyncResult asyncResult)
+        {
+            return EndInvoke<TagResourceResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  UnassignInstance
 
         /// <summary>
@@ -4720,6 +4841,65 @@ namespace Amazon.OpsWorks
         public  UnassignVolumeResponse EndUnassignVolume(IAsyncResult asyncResult)
         {
             return EndInvoke<UnassignVolumeResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UntagResource
+
+        /// <summary>
+        /// Removes tags from a specified stack or layer.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
+        /// 
+        /// <returns>The response from the UntagResource service method, as returned by OpsWorks.</returns>
+        /// <exception cref="Amazon.OpsWorks.Model.ResourceNotFoundException">
+        /// Indicates that a resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.OpsWorks.Model.ValidationException">
+        /// Indicates that a request was not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/UntagResource">REST API Reference for UntagResource Operation</seealso>
+        public UntagResourceResponse UntagResource(UntagResourceRequest request)
+        {
+            var marshaller = new UntagResourceRequestMarshaller();
+            var unmarshaller = UntagResourceResponseUnmarshaller.Instance;
+
+            return Invoke<UntagResourceRequest,UntagResourceResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UntagResource operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UntagResource operation on AmazonOpsWorksClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUntagResource
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/UntagResource">REST API Reference for UntagResource Operation</seealso>
+        public IAsyncResult BeginUntagResource(UntagResourceRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new UntagResourceRequestMarshaller();
+            var unmarshaller = UntagResourceResponseUnmarshaller.Instance;
+
+            return BeginInvoke<UntagResourceRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UntagResource operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUntagResource.</param>
+        /// 
+        /// <returns>Returns a  UntagResourceResult from OpsWorks.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/UntagResource">REST API Reference for UntagResource Operation</seealso>
+        public  UntagResourceResponse EndUntagResource(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UntagResourceResponse>(asyncResult);
         }
 
         #endregion

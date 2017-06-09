@@ -32,6 +32,7 @@ namespace Amazon.OpsWorks.Model
     /// </summary>
     public partial class Layer
     {
+        private string _arn;
         private Dictionary<string, string> _attributes = new Dictionary<string, string>();
         private bool? _autoAssignElasticIps;
         private bool? _autoAssignPublicIps;
@@ -54,6 +55,21 @@ namespace Amazon.OpsWorks.Model
         private LayerType _type;
         private bool? _useEbsOptimizedInstances;
         private List<VolumeConfiguration> _volumeConfigurations = new List<VolumeConfiguration>();
+
+        /// <summary>
+        /// Gets and sets the property Arn.
+        /// </summary>
+        public string Arn
+        {
+            get { return this._arn; }
+            set { this._arn = value; }
+        }
+
+        // Check to see if Arn property is set
+        internal bool IsSetArn()
+        {
+            return this._arn != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Attributes. 

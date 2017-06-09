@@ -82,6 +82,12 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
                     unmarshalledObject.Architecture = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("Arn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Arn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("AutoScalingType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

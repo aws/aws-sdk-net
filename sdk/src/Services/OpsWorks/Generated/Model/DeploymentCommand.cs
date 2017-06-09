@@ -53,7 +53,7 @@ namespace Amazon.OpsWorks.Model
         ///  <ul> <li> 
         /// <para>
         ///  <code>upgrade_os_to</code> - Specifies the desired Amazon Linux version for instances
-        /// whose OS you want to upgrade, such as <code>Amazon Linux 2014.09</code>. You must
+        /// whose OS you want to upgrade, such as <code>Amazon Linux 2016.09</code>. You must
         /// also set the <code>allow_reboot</code> argument to true.
         /// </para>
         ///  </li> <li> 
@@ -64,12 +64,12 @@ namespace Amazon.OpsWorks.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// For example, to upgrade an instance to Amazon Linux 2014.09, set <code>Args</code>
+        /// For example, to upgrade an instance to Amazon Linux 2016.09, set <code>Args</code>
         /// to the following.
         /// </para>
         ///  
         /// <para>
-        ///  <code> { "upgrade_os_to":["Amazon Linux 2014.09"], "allow_reboot":["true"] } </code>
+        ///  <code> { "upgrade_os_to":["Amazon Linux 2016.09"], "allow_reboot":["true"] } </code>
         /// 
         /// </para>
         /// </summary>
