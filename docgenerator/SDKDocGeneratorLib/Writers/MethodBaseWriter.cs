@@ -40,14 +40,9 @@ namespace SDKDocGenerator.Writers
                         writer.WriteLine("<dd>");
 
                             var paramType = parameter.ParameterType;
-                            string url, target;
-                            paramType.GetHelpURL(this._version, out url, out target);
 
-                            if(url == null)
-                                writer.WriteLine("Type: {0}<br />", paramType.GetDisplayName(true));
-                            else
-                                writer.WriteLine("Type: <a href=\"{0}\" {2}>{1}</a><br />", url, paramType.GetDisplayName(true), target);
-
+                            writer.WriteLine("Type: {0}<br />", paramType.CreateReferenceHtml(fullTypeName: true));
+                            
                             var doc = NDocUtilities.FindParameterDocumentation(ndoc, parameter.Name);
                             writer.WriteLine("<p>{0}</p>", doc);
 

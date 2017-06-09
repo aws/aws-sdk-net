@@ -24,10 +24,21 @@ namespace SDKDocGenerator
         public const string crossReferenceOpeningTagText = "<see"; // <see> and <seealso> tags
         public const string crossReferenceClosingTagText = "/>";
 
-        // inner attribute of a cross reference tag we're interested in
-        public const string innerCrefAttributeText = "cref=\"";
-        public const string innerHrefAttributeText = "href=\"";
+        public const string crefAttributeName = "cref";
+        public const string hrefAttributeName = "href";
+        public const string nameAttributeName = "name";
 
+        // inner attribute of a cross reference tag we're interested in
+        public static readonly string innerCrefAttributeText = crefAttributeName + "=\"";
+        public static readonly string innerHrefAttributeText = hrefAttributeName + "=\"";
+
+        private static readonly Dictionary<string, string> NdocToHtmlElementMapping = new Dictionary<string, string>(StringComparer.Ordinal)
+        {
+            { "summary", "p" },
+            { "para", "p" },
+            { "see", "a" },
+            { "paramref", "code" }
+        };
 
         #region manage ndoc instances
         // The reason we cache the doc data on the side instead of directly referencing doc instances from
@@ -179,12 +190,14 @@ namespace SDKDocGenerator
         public static string DetermineNDocNameLookupSignature(MethodInfoWrapper info)
         {
             var type = info.DeclaringType;
+            var fullName = type.FullName ?? type.Namespace + "." + type.Name;
+            var typeGenericParameters = type.GetGenericArguments();
             var parameters = new StringBuilder();
             foreach (var param in info.GetParameters())
             {
                 if (parameters.Length > 0)
                     parameters.Append(",");
-                DetermineParameterName(param.ParameterType, parameters);
+                DetermineParameterName(param.ParameterType, parameters, typeGenericParameters);
                 if (param.IsOut)
                 {
                     parameters.Append("@");
@@ -198,16 +211,25 @@ namespace SDKDocGenerator
             }
 
             var signature = parameters.Length > 0
-                ? string.Format("M:{0}.{1}{2}({3})", type.FullName, info.Name, genericTag, parameters)
-                : string.Format("M:{0}.{1}{2}", type.FullName, info.Name, genericTag);
+                ? string.Format("M:{0}.{1}{2}({3})", fullName, info.Name, genericTag, parameters)
+                : string.Format("M:{0}.{1}{2}", fullName, info.Name, genericTag);
 
             return signature;
         }
 
-        private static void DetermineParameterName(TypeWrapper parameterTypeInfo, StringBuilder parameters)
+        private static void DetermineParameterName(TypeWrapper parameterTypeInfo, StringBuilder parameters, IList<TypeWrapper> typeGenericParameters)
         {
+            if (parameterTypeInfo.IsGenericParameter)
+            {
+                var typeGenericParameterIndex = typeGenericParameters.IndexOf(parameterTypeInfo);
+                var isClassGenericParameter = typeGenericParameterIndex >= 0;
 
-            if (parameterTypeInfo.IsGenericType)
+                if (isClassGenericParameter)
+                    parameters.AppendFormat("`{0}", typeGenericParameterIndex);
+                else
+                    parameters.AppendFormat("``{0}", 0);
+            }
+            else if (parameterTypeInfo.IsGenericType)
             {
                 parameters
                     .Append(parameterTypeInfo.GenericTypeName)
@@ -220,7 +242,7 @@ namespace SDKDocGenerator
                     {
                         parameters.Append(",");
                     }
-                    DetermineParameterName(args[i], parameters);
+                    DetermineParameterName(args[i], parameters, typeGenericParameters);
                 }
                 parameters.Append("}");
 
@@ -479,11 +501,16 @@ namespace SDKDocGenerator
         {
             var type = info.DeclaringType;
             var parameters = new StringBuilder();
+            var typeGenericParameters = type.GetGenericArguments();
             foreach (var param in info.GetParameters())
             {
                 if (parameters.Length > 0)
                     parameters.Append(",");
-                parameters.Append(param.ParameterType.FullName);
+                DetermineParameterName(param.ParameterType, parameters, typeGenericParameters);
+                if (param.IsOut)
+                {
+                    parameters.Append("@");
+                }
             }
 
             var formattedParmaters = parameters.Length > 0
@@ -561,81 +588,103 @@ namespace SDKDocGenerator
 
         private static string DocBlobToHTML(XElement rootNode, AbstractTypeProvider typeProvider, FrameworkVersion version)
         {
-            var reader = rootNode.CreateReader();
-            reader.MoveToContent();
-            var innerXml = reader.ReadInnerXml();
-
-            innerXml = innerXml.Replace("<summary>", "<p>");
-            innerXml = innerXml.Replace("</summary>", "</p>");
-            innerXml = innerXml.Replace("<para>", "<p>");
-            innerXml = innerXml.Replace("</para>", "</p>");
-            //innerText = innerText.Replace("<code", "<pre class=\"code-sample\">");
-            //innerText = innerText.Replace("</code>", "</pre>");
-
-            // scan for <see> and <seealso> cross-reference tags and replace with <a> links with the
-            // content - which // can be a cref indication to a typename, or a href.
-            var scanIndex = innerXml.IndexOf(crossReferenceOpeningTagText, StringComparison.Ordinal);
-            while (scanIndex >= 0)
+            using (var textWriter = new StringWriter())
             {
-                var attrStart = innerXml.IndexOf(innerCrefAttributeText, scanIndex, StringComparison.Ordinal);
-                if (attrStart >= 0)
+                var writerSettings = new XmlWriterSettings { OmitXmlDeclaration = true };
+                using (var writer = XmlWriter.Create(textWriter, writerSettings))
                 {
-                    int crossRefTagEndIndex;
-                    var cref = ExtractCrefAttributeContent(innerXml, attrStart, out crossRefTagEndIndex);
-                    var replacement = BaseWriter.CreateCrossReferenceTagReplacement(typeProvider, cref, version);
-
-                    var oldCrossRefTag = innerXml.Substring(scanIndex, crossRefTagEndIndex - scanIndex);
-                    innerXml = innerXml.Replace(oldCrossRefTag, replacement);
-
-                    scanIndex += replacement.Length;
-                }
-                else
-                {
-                    attrStart = innerXml.IndexOf(innerHrefAttributeText, scanIndex, StringComparison.Ordinal);
-                    if (attrStart >= 0)
+                    var reader = rootNode.CreateReader();
+                    while (reader.Read())
                     {
-                        int crossRefTagEndIndex;
-                        var url = ExtractHrefAttributeContent(innerXml, attrStart, out crossRefTagEndIndex);
-                        var replacement = string.Format("<a href=\"{0}\">{0}</a>", url);
+                        switch (reader.NodeType)
+                        {
+                            case XmlNodeType.Element:
+                                // handle self-closing element, like <a />
+                                // this must be read before any other reading is done
+                                var selfClosingElement = reader.IsEmptyElement;
 
-                        var oldCrossRefTag = innerXml.Substring(scanIndex, crossRefTagEndIndex - scanIndex);
-                        innerXml = innerXml.Replace(oldCrossRefTag, replacement);
-                        scanIndex += replacement.Length;
+                                // element name substitution, if necessary
+                                string elementName;
+                                if (!NdocToHtmlElementMapping.TryGetValue(reader.LocalName, out elementName))
+                                    elementName = reader.LocalName;
+
+                                // some elements can't be empty, use this variable for that
+                                string emptyElementContents = null;
+
+                                // start element
+                                writer.WriteStartElement(elementName);
+
+                                // copy over attributes
+                                if (reader.HasAttributes)
+                                {
+                                    for (int i = 0; i < reader.AttributeCount; i++)
+                                    {
+                                        reader.MoveToAttribute(i);
+                                        var attributeName = reader.Name;
+                                        var attributeValue = reader.Value;
+
+                                        var isCref = string.Equals(attributeName, crefAttributeName, StringComparison.Ordinal);
+                                        var isHref = string.Equals(attributeName, hrefAttributeName, StringComparison.Ordinal);
+                                        var isName = string.Equals(attributeName, nameAttributeName, StringComparison.Ordinal);
+
+                                        if (isCref)
+                                        {
+                                            // replace cref with href
+                                            attributeName = hrefAttributeName;
+
+                                            // extract type name from cref value for emptyElementContents
+                                            var crefParts = attributeValue.Split(':');
+                                            if (crefParts.Length != 2)
+                                                throw new InvalidOperationException();
+                                            var typeName = crefParts[1];
+                                            var targetType = typeProvider.GetType(typeName);
+                                            if (targetType == null)
+                                                emptyElementContents = typeName;
+                                            else
+                                                emptyElementContents = targetType.CreateReferenceHtml(fullTypeName: true);
+                                        }
+                                        else if (isHref)
+                                        {
+                                            // extract href value for emptyElementContents
+                                            emptyElementContents = attributeValue;
+                                        }
+                                        else if (isName)
+                                        {
+                                            emptyElementContents = attributeValue;
+                                        }
+
+                                        writer.WriteAttributeString(attributeName, attributeValue);
+                                    }
+                                }
+
+                                // if this is a self-closing element, close it
+                                if (selfClosingElement)
+                                {
+                                    // write empty element contents, if any
+                                    if (!string.IsNullOrEmpty(emptyElementContents))
+                                    {
+                                        writer.WriteRaw(emptyElementContents);
+                                    }
+
+                                    // close element now
+                                    writer.WriteEndElement();
+                                }
+
+                                break;
+                            case XmlNodeType.EndElement:
+                                writer.WriteEndElement();
+                                break;
+                            case XmlNodeType.Text:
+                                writer.WriteRaw(reader.Value);
+                                break;
+                            default:
+                                throw new InvalidOperationException();
+                        }
                     }
-                    else
-                        scanIndex++;
                 }
 
-                scanIndex = innerXml.IndexOf(crossReferenceOpeningTagText, scanIndex, StringComparison.Ordinal);
+                return textWriter.ToString();
             }
-
-            return innerXml;
-        }
-
-        static string ExtractCrefAttributeContent(string nodeText, int crefAttrStart, out int crossRefTagEndIndex)
-        {
-            var attrTargetStart = crefAttrStart + innerCrefAttributeText.Length;
-
-            var crefTargetEnd = nodeText.IndexOf('"', attrTargetStart);
-            crossRefTagEndIndex = nodeText.IndexOf(crossReferenceClosingTagText, crefTargetEnd, StringComparison.Ordinal)
-                                    + crossReferenceClosingTagText.Length;
-
-            var cref = nodeText.Substring(attrTargetStart, crefTargetEnd - attrTargetStart);
-            if (cref.Length > 2 && cref[1] == ':')
-                cref = cref.Substring(2);
-
-            return cref;
-        }
-
-        static string ExtractHrefAttributeContent(string nodeText, int hrefAttrStart, out int crossRefTagEndIndex)
-        {
-            var attrTargetStart = hrefAttrStart + innerHrefAttributeText.Length;
-
-            var crefTargetEnd = nodeText.IndexOf('"', attrTargetStart);
-            crossRefTagEndIndex = nodeText.IndexOf(crossReferenceClosingTagText, crefTargetEnd, StringComparison.Ordinal)
-                                    + crossReferenceClosingTagText.Length;
-
-            return nodeText.Substring(attrTargetStart, crefTargetEnd - attrTargetStart);
         }
 
         public static void PreprocessCodeBlocksToPreTags(GeneratorOptions options, XDocument doc)

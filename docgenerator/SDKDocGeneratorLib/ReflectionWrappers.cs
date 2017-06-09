@@ -70,10 +70,30 @@ namespace SDKDocGenerator
             {
                 if (type.Namespace == null ||
                     !type.Namespace.StartsWith("Amazon") ||
-                    type.Namespace.Contains("Internal") ||
-                    !(type.IsPublic || type.IsNestedPublic))
+                    type.Namespace.Contains(".Internal"))
                 {
                     continue;
+                }
+
+                if (type.IsNested)
+                {
+                    if (type.IsVisible)
+                    {
+                        // nested + visible = publicly-accessible
+                    }
+                    else if (type.IsNestedFamily)
+                    {
+                        // nested + nested family = protected class inside a public class
+                    }
+                    else
+                    {
+                        continue;
+                    }
+                }
+                else // not-nested
+                {
+                    if (!type.IsPublic)
+                        continue;
                 }
 
                 var wrapper = new TypeWrapper(type, DocId);
@@ -228,6 +248,33 @@ namespace SDKDocGenerator
             this._type = type;
         }
 
+        public override bool Equals(object obj)
+        {
+            return Equals(obj as TypeWrapper);
+        }
+        public bool Equals(TypeWrapper other)
+        {
+            if (other == null)
+                return false;
+
+            if (!string.Equals(DocId, other.DocId))
+                return false;
+
+            if (_type != other._type)
+                return false;
+
+            return true;
+        }
+        public override int GetHashCode()
+        {
+            return _type.GetHashCode() + DocId.GetHashCode();
+        }
+
+        public string JustName
+        {
+            get { return this._type.Name; }
+        }
+
         public string Name
         {
             get {
@@ -278,7 +325,7 @@ namespace SDKDocGenerator
         {
             string name;
             if (this.IsGenericParameter)
-                name = this.Name;
+                name = this.JustName;
             else if (this.IsGenericType)
             {
                 var baseName = this.Name;
@@ -355,6 +402,13 @@ namespace SDKDocGenerator
 
                 return new TypeWrapper(this._type.BaseType, DocId); 
             }
+        }
+
+
+        public TypeWrapper GetElementType()
+        {
+            var elementType = this._type.GetElementType();
+            return new TypeWrapper(elementType, DocId);
         }
 
         public IList<TypeWrapper> GetInterfaces()
@@ -444,29 +498,98 @@ namespace SDKDocGenerator
             return this._fields;
         }
 
-        public void GetHelpURL(FrameworkVersion version, out string url, out string target)
+        public string CreateReferenceHtml(bool fullTypeName)
         {
-            target = "";
-            url = null;
+            string html;
+            var fullName = this.FullName;
+            var nameOrFullName = fullTypeName ? (this.FullName ?? this.Name) : this.Name;
 
-            if (IsSystemNamespace)
+            if (this.IsGenericParameter)
             {
-                // msdn urls for generic collections are not predictable, so
-                // we elect to output as simple text
-                if (!this.IsGenericType)
+                html = this.JustName;
+            }
+            else if (this.IsGenericType)
+            {
+
+                var fixedName = nameOrFullName.Substring(0, nameOrFullName.IndexOf('`'));
+                using(var writer = new StringWriter())
                 {
-                    target = "target=_new";
-                    url = string.Format(NDocUtilities.MSDN_TYPE_URL_PATTERN, this.GetDisplayName(true).ToLower());
+                    writer.Write("<a");
+
+                    string url;
+                    if (this.IsAmazonNamespace)
+                    {
+                        url = string.Format("../{0}/{1}",
+                                GenerationManifest.OutputSubFolderFromNamespace(this.Namespace),
+                                FilenameGenerator.GenerateFilename(this));
+                    }
+                    else if (this.IsSystemNamespace)
+                    {
+                        writer.Write(" target=_new");
+
+                        var fixedMsdnName = this.Name.Replace('`', '-');
+                        url = string.Format("https://docs.microsoft.com/en-us/dotnet/api/{0}.{1}", this.Namespace, fixedMsdnName);
+                    }
+                    else
+                    {
+                        throw new ApplicationException(string.Format(
+                            "Type {0} is not a System or Amazon type, no idea how to handle its help URL", this.FullName));
+                    }
+
+                    writer.Write(" href=\"{0}\"", url);
+                    writer.Write(">");
+
+                    writer.Write(fixedName);
+                    writer.Write("</a>");
+
+                    writer.Write("&lt;");
+                    var typeArguments = this.GenericTypeArguments();
+                    for (int i = 0; i < typeArguments.Count;i++ )
+                    {
+                        if (i != 0)
+                            writer.Write(", ");
+                        var typeArgument = typeArguments[i];
+                        var argumentHtml = typeArgument.CreateReferenceHtml(fullTypeName);
+                        writer.Write(argumentHtml);
+                    }
+                    writer.Write("&gt;");
+
+                    html = writer.ToString();
                 }
             }
-            else if (IsAmazonNamespace)
+            else if (this.IsArray)
             {
-                // don't know if reference is to a type in folder for namespace of declaring type we're
-                // processing, or in another namespace (folder), so jump to output root on the link
-                url = string.Format("../{0}/{1}", 
-                                    GenerationManifest.OutputSubFolderFromNamespace(this.Namespace),
-                                    FilenameGenerator.GenerateFilename(this));
+                var elementType = this.GetElementType();
+                var elementTypeHtml = elementType.CreateReferenceHtml(fullTypeName);
+                html = string.Format("{0}[]", elementTypeHtml);
             }
+            else
+            {
+                string url, label, target;
+                if (this.IsAmazonNamespace)
+                {
+                    url = string.Format("../{0}/{1}",
+                            GenerationManifest.OutputSubFolderFromNamespace(this.Namespace),
+                            FilenameGenerator.GenerateFilename(this));
+                    label = nameOrFullName;
+                    target = string.Empty;
+                }
+                else if (this.IsSystemNamespace)
+                {
+                    url = string.Format(NDocUtilities.MSDN_TYPE_URL_PATTERN, this.GetDisplayName(true).ToLower());
+                    target = " target=_new";
+                    label = nameOrFullName;
+                }
+                else
+                {
+                    throw new ApplicationException(string.Format(
+                        "Type {0} is not a System or Amazon type, no idea how to handle its help URL", this.FullName));
+                }
+
+                html = string.Format("<a{0} href=\"{1}\">{2}</a>", target, url, label);
+            }
+
+            return html;
         }
 
         public bool IsSystemNamespace
@@ -575,6 +698,11 @@ namespace SDKDocGenerator
             get { return this._type.IsValueType && !this._type.IsEnum; }
         }
 
+        public bool IsArray
+        {
+            get { return this._type.IsArray; }
+        }
+
         public override string ToString()
         {
             return this._type.FullName;
@@ -593,6 +721,14 @@ namespace SDKDocGenerator
             }
 
             return this._genericTypeArguments;
+        }
+
+        public IList<TypeWrapper> GetGenericArguments()
+        {
+            return this._type
+                .GetGenericArguments()
+                .Select(a => new TypeWrapper(a, DocId))
+                .ToList();
         }
     }
 
@@ -765,6 +901,14 @@ namespace SDKDocGenerator
             }
 
             return wrappers;
+        }
+
+        public string FullName
+        {
+            get
+            {
+                return this._info.ToString();
+            }
         }
     }
 

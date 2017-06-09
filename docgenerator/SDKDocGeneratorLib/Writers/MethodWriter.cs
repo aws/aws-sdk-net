@@ -89,13 +89,7 @@ namespace SDKDocGenerator.Writers
                     writer.WriteLine("<strong class=\"subHeading\">Return Value</strong><br />");
                 writer.WriteLine("</div>");
 
-                string url, target;
-                returnType.GetHelpURL(this._version, out url, out target);
-
-                if (url == null)
-                    writer.WriteLine("<div class=\"returnTypeName\">Type: {0}</div>", returnType.GetDisplayName(false));
-                else
-                    writer.WriteLine("<div class=\"returnTypeName\">Type: <a href=\"{0}\" {2}>{1}</a></div>", url, returnType.GetDisplayName(false), target);
+                writer.WriteLine("<div class=\"returnTypeName\">Type: {0}</div>", returnType.CreateReferenceHtml(fullTypeName: false));
 
                 var ndoc = GetSummaryDocumentation();
                 if (ndoc != null)

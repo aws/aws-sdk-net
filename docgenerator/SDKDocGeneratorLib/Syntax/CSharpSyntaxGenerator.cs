@@ -8,6 +8,7 @@ namespace SDKDocGenerator.Syntax
 {
     public class CSharpSyntaxGenerator
     {
+        private static readonly string _objectTypeName = "System.Object";
         FrameworkVersion _version;
 
         public CSharpSyntaxGenerator(FrameworkVersion version)
@@ -46,7 +47,8 @@ namespace SDKDocGenerator.Syntax
                 syntax.WriteTypeName(type);
 
                 var baseType = type.BaseType;
-                if (baseType != null)
+                if (baseType != null &&
+                    !string.Equals(baseType.FullName, _objectTypeName, StringComparison.OrdinalIgnoreCase))
                 {
                     syntax.WriteRaw(" :");
                     syntax.WriteTypeName(baseType);

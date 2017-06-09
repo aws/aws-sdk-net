@@ -112,12 +112,7 @@ namespace SDKDocGenerator.Writers
                     writer.WriteLine("{0}.{1}", type.Namespace, type.GetDisplayName(false));
                 else
                 {
-                    string url, target;
-                    type.GetHelpURL(this._version, out url, out target);
-                    if (url == null)
-                        writer.WriteLine(type.FullName);
-                    else
-                        writer.WriteLine("<a href=\"{0}\" {1}>{2}.{3}</a>", url, target, type.Namespace, type.GetDisplayName(false));
+                    writer.WriteLine(type.CreateReferenceHtml(fullTypeName: true));
                 }
 
                 writer.WriteLine("<br />");
@@ -171,7 +166,7 @@ namespace SDKDocGenerator.Writers
 
         void AddProperties(TextWriter writer)
         {
-            var properties = this._versionType.GetProperties().Where(x => x.IsPublic);
+            var properties = this._versionType.GetProperties();
             if (!properties.Any())
                 return;
 
@@ -205,7 +200,8 @@ namespace SDKDocGenerator.Writers
             writer.WriteLine("<td>");
 
             string html = string.Empty;
-            if (_versionType.Namespace != propertyInfo.DeclaringType.Namespace)
+            var isInherited = !propertyInfo.DeclaringType.Equals(_versionType);
+            if (isInherited)
             {
                 html = string.Format("Inherited from {0}.{1}.", propertyInfo.DeclaringType.Namespace, propertyInfo.DeclaringType.Name);
             }
@@ -262,7 +258,8 @@ namespace SDKDocGenerator.Writers
             writer.WriteLine("<td>");
 
             string html = string.Empty;
-            if (_versionType.Namespace != info.DeclaringType.Namespace)
+            var isInherited = !info.DeclaringType.Equals(_versionType);
+            if (isInherited)
             {
                 html = string.Format("Inherited from {0}.{1}.", info.DeclaringType.Namespace, info.DeclaringType.Name);
             }
@@ -309,7 +306,8 @@ namespace SDKDocGenerator.Writers
             writer.WriteLine("<td>");
 
             string html = string.Empty;
-            if (_versionType.Namespace != info.DeclaringType.Namespace)
+            var isInherited = !info.DeclaringType.Equals(_versionType);
+            if (isInherited)
             {
                 html = string.Format("Inherited from {0}.{1}.", info.DeclaringType.Namespace, info.DeclaringType.Name);
             }
@@ -358,7 +356,8 @@ namespace SDKDocGenerator.Writers
             writer.WriteLine("<td>");
 
             string html = string.Empty;
-            if (_versionType.Namespace != info.DeclaringType.Namespace)
+            var isInherited = !info.DeclaringType.Equals(_versionType);
+            if (isInherited)
             {
                 html = string.Format("Inherited from {0}.{1}.", info.DeclaringType.Namespace, info.DeclaringType.Name);
             }
@@ -418,11 +417,7 @@ namespace SDKDocGenerator.Writers
         string ConstructTypeInfoLinkContent(TypeWrapper typeWrapper)
         {
             var sb = new StringBuilder("<span>");
-            sb.Append(PropertyWriter.EmitTypeLinkMarkup(typeWrapper, _version));
-            if (typeWrapper.IsGenericType)
-            {
-                sb.Append(PropertyWriter.ProcessGenericParameterTypes(typeWrapper.GenericTypeArguments(), _version));
-            }
+            sb.Append(typeWrapper.CreateReferenceHtml(fullTypeName: true));
             sb.Append("</span>");
 
             return sb.ToString();

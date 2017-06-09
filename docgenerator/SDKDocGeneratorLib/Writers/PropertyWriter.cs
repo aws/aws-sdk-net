@@ -105,16 +105,7 @@ namespace SDKDocGenerator.Writers
 
         internal static string EmitTypeLinkMarkup(TypeWrapper t, FrameworkVersion version)
         {
-            string url, target;
-
-            t.GetHelpURL(version, out url, out target);
-            if (url != null)
-                return string.Format("<a href=\"{0}\" {1}>{2}</a>",
-                                url,
-                                target,
-                                t.IsGenericType ? t.GenericTypeName : t.GetDisplayName(true));
-
-            return t.IsGenericType ? t.GenericTypeName : t.GetDisplayName(true);
+            return t.CreateReferenceHtml(fullTypeName: false);
         }
     }
 }
