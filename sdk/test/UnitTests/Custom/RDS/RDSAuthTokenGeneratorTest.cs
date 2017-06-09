@@ -41,14 +41,13 @@ namespace AWSSDK.UnitTests.RDS
         private static readonly AWSCredentials SessionCredentials = new SessionAWSCredentials(AccessKey, SecretKey, SessionToken);
 
         private List<FallbackCredentialsFactory.CredentialsGenerator> originalFallbackList;
-        private string originalRegion;
 
         [TestInitialize]
         public void Initialize()
         {
             originalFallbackList = FallbackCredentialsFactory.CredentialsGenerators;
-            originalRegion = AWSConfigs.AWSRegion;
 
+            FallbackCredentialsFactory.Reset();
             FallbackCredentialsFactory.CredentialsGenerators = new List<FallbackCredentialsFactory.CredentialsGenerator>()
             {
                 () => { return BasicCredentials; }
@@ -59,6 +58,7 @@ namespace AWSSDK.UnitTests.RDS
         [TestCleanup]
         public void Cleanup()
         {
+            FallbackCredentialsFactory.Reset();
             FallbackCredentialsFactory.CredentialsGenerators = originalFallbackList;
         }
 
