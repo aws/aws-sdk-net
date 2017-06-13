@@ -587,6 +587,10 @@ namespace Amazon.ConfigService
         /// </summary>
         public static readonly ResourceType AWSCloudTrailTrail = new ResourceType("AWS::CloudTrail::Trail");
         /// <summary>
+        /// Constant AWSCloudWatchAlarm for ResourceType
+        /// </summary>
+        public static readonly ResourceType AWSCloudWatchAlarm = new ResourceType("AWS::CloudWatch::Alarm");
+        /// <summary>
         /// Constant AWSEC2CustomerGateway for ResourceType
         /// </summary>
         public static readonly ResourceType AWSEC2CustomerGateway = new ResourceType("AWS::EC2::CustomerGateway");
