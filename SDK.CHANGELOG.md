@@ -1,3 +1,7 @@
+### 3.3.106.0 (2017-06-13 19:03 UTC)
+* ConfigService (3.3.7.0)
+	* With this release AWS Config supports the Amazon CloudWatch alarm resource type.
+
 ### 3.3.105.0 (2017-06-13 00:46 UTC)
 * RDS (3.3.12.0)
 	* API Update for RDS: this update enables copy-on-write, a new Aurora MySQL Compatible Edition feature that allows users to restore their database, and support copy of TDE enabled snapshot cross region.
