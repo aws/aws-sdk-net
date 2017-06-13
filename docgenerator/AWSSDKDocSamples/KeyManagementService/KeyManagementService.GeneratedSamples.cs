@@ -85,11 +85,11 @@ namespace AWSSDKDocSamples.Amazon.KeyManagementService.Generated
 
             var response = client.Decrypt(new DecryptRequest 
             {
-                CiphertextBlob =  // The encrypted data (ciphertext).
+                CiphertextBlob = new MemoryStream(<binary data>) // The encrypted data (ciphertext).
             });
 
             string keyId = response.KeyId; // The Amazon Resource Name (ARN) of the CMK that was used to decrypt the data.
-            blob plaintext = response.Plaintext; // The decrypted (plaintext) data.
+            MemoryStream plaintext = response.Plaintext; // The decrypted (plaintext) data.
 
             #endregion
         }
@@ -193,10 +193,10 @@ namespace AWSSDKDocSamples.Amazon.KeyManagementService.Generated
             var response = client.Encrypt(new EncryptRequest 
             {
                 KeyId = "1234abcd-12ab-34cd-56ef-1234567890ab", // The identifier of the CMK to use for encryption. You can use the key ID or Amazon Resource Name (ARN) of the CMK, or the name or ARN of an alias that refers to the CMK.
-                Plaintext =  // The data to encrypt.
+                Plaintext = new MemoryStream(<binary data>) // The data to encrypt.
             });
 
-            blob ciphertextBlob = response.CiphertextBlob; // The encrypted data (ciphertext).
+            MemoryStream ciphertextBlob = response.CiphertextBlob; // The encrypted data (ciphertext).
             string keyId = response.KeyId; // The ARN of the CMK that was used to encrypt the data.
 
             #endregion
@@ -212,9 +212,9 @@ namespace AWSSDKDocSamples.Amazon.KeyManagementService.Generated
                 KeySpec = "AES_256" // Specifies the type of data key to return.
             });
 
-            blob ciphertextBlob = response.CiphertextBlob; // The encrypted data key.
+            MemoryStream ciphertextBlob = response.CiphertextBlob; // The encrypted data key.
             string keyId = response.KeyId; // The ARN of the CMK that was used to encrypt the data key.
-            blob plaintext = response.Plaintext; // The unencrypted (plaintext) data key.
+            MemoryStream plaintext = response.Plaintext; // The unencrypted (plaintext) data key.
 
             #endregion
         }
@@ -229,7 +229,7 @@ namespace AWSSDKDocSamples.Amazon.KeyManagementService.Generated
                 KeySpec = "AES_256" // Specifies the type of data key to return.
             });
 
-            blob ciphertextBlob = response.CiphertextBlob; // The encrypted data key.
+            MemoryStream ciphertextBlob = response.CiphertextBlob; // The encrypted data key.
             string keyId = response.KeyId; // The ARN of the CMK that was used to encrypt the data key.
 
             #endregion
@@ -244,7 +244,7 @@ namespace AWSSDKDocSamples.Amazon.KeyManagementService.Generated
                 NumberOfBytes = 32 // The length of the random data, specified in number of bytes.
             });
 
-            blob plaintext = response.Plaintext; // The random data.
+            MemoryStream plaintext = response.Plaintext; // The random data.
 
             #endregion
         }
@@ -289,10 +289,10 @@ namespace AWSSDKDocSamples.Amazon.KeyManagementService.Generated
                 WrappingKeySpec = "RSA_2048" // The type of wrapping key (public key) to return in the response.
             });
 
-            blob importToken = response.ImportToken; // The import token to send with a subsequent ImportKeyMaterial request.
+            MemoryStream importToken = response.ImportToken; // The import token to send with a subsequent ImportKeyMaterial request.
             string keyId = response.KeyId; // The ARN of the CMK for which you are retrieving the public key and import token. This is the same CMK specified in the request.
             DateTime parametersValidTo = response.ParametersValidTo; // The time at which the import token and public key are no longer valid.
-            blob publicKey = response.PublicKey; // The public key to use to encrypt the key material before importing it.
+            MemoryStream publicKey = response.PublicKey; // The public key to use to encrypt the key material before importing it.
 
             #endregion
         }
@@ -303,9 +303,9 @@ namespace AWSSDKDocSamples.Amazon.KeyManagementService.Generated
 
             var response = client.ImportKeyMaterial(new ImportKeyMaterialRequest 
             {
-                EncryptedKeyMaterial = , // The encrypted key material to import.
+                EncryptedKeyMaterial = new MemoryStream(<binary data>), // The encrypted key material to import.
                 ExpirationModel = "KEY_MATERIAL_DOES_NOT_EXPIRE", // A value that specifies whether the key material expires.
-                ImportToken = , // The import token that you received in the response to a previous GetParametersForImport request.
+                ImportToken = new MemoryStream(<binary data>), // The import token that you received in the response to a previous GetParametersForImport request.
                 KeyId = "1234abcd-12ab-34cd-56ef-1234567890ab" // The identifier of the CMK to import the key material into. You can use the key ID or the Amazon Resource Name (ARN) of the CMK.
             });
 
@@ -495,11 +495,11 @@ namespace AWSSDKDocSamples.Amazon.KeyManagementService.Generated
 
             var response = client.ReEncrypt(new ReEncryptRequest 
             {
-                CiphertextBlob = , // The data to reencrypt.
+                CiphertextBlob = new MemoryStream(<binary data>), // The data to reencrypt.
                 DestinationKeyId = "0987dcba-09fe-87dc-65ba-ab0987654321" // The identifier of the CMK to use to reencrypt the data. You can use the key ID or Amazon Resource Name (ARN) of the CMK, or the name or ARN of an alias that refers to the CMK.
             });
 
-            blob ciphertextBlob = response.CiphertextBlob; // The reencrypted data.
+            MemoryStream ciphertextBlob = response.CiphertextBlob; // The reencrypted data.
             string keyId = response.KeyId; // The ARN of the CMK that was used to reencrypt the data.
             string sourceKeyId = response.SourceKeyId; // The ARN of the CMK that was used to originally encrypt the data.
 

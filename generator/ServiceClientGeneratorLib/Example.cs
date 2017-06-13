@@ -191,8 +191,9 @@ namespace ServiceClientGenerator
                 if (null == member)
                     continue;
 
+                var shapeType = ShapeType(member.Shape);
                 result.Add(string.Format("{0} {1} = response.{2};{3}",
-                    ShapeType(member.Shape),
+                    shapeType,
                     member.ArgumentName,
                     member.PropertyName,
                     OutputComments.ContainsKey(param.Key) ? " // " + OutputComments[param.Key] : ""));
@@ -225,12 +226,12 @@ namespace ServiceClientGenerator
         {
             if (shape.IsString && data.IsString)
                 cb.AppendQuote(data.ToString());
-            if (shape.IsBoolean)
+            else if (shape.IsBoolean)
                 cb.Append(data.ToString().ToLower());
-            if (shape.IsFloat || shape.IsInt || shape.IsDouble || shape.IsLong)
+            else if (shape.IsFloat || shape.IsInt || shape.IsDouble || shape.IsLong)
                 cb.Append(data.ToString());
 
-            if (shape.IsList && data.IsArray)
+            else if (shape.IsList && data.IsArray)
             {
                 var itemType = shape.ListShape;
 
@@ -246,7 +247,7 @@ namespace ServiceClientGenerator
                 cb.CloseBlock();
             }
 
-            if (shape.IsMap && data.IsObject)
+            else if (shape.IsMap && data.IsObject)
             {
                 var keyType = shape.KeyShape;
                 var valType = shape.ValueShape;
@@ -272,7 +273,7 @@ namespace ServiceClientGenerator
 
             }
 
-            if (shape.IsStructure && data.IsObject)
+            else if (shape.IsStructure && data.IsObject)
             {
                 cb.AppendFormat("new {0} ", ShapeType(shape));
 
@@ -301,6 +302,15 @@ namespace ServiceClientGenerator
                 else
                     cb.Append(" }");
             }
+
+            else if (shape.IsBlob && shape.IsMemoryStream && data.IsString)
+            {
+                cb.AppendFormat("new {0}({1})", ShapeType(shape), data.ToString());
+            }
+            else
+            {
+                throw new InvalidOperationException();
+            }
         }
 
         /// <summary>
@@ -314,16 +324,16 @@ namespace ServiceClientGenerator
                 return "bool";
             if (shape.IsDateTime)
                 return "DateTime";
-            if (shape.IsPrimitiveType)
-                return shape.Type;
+            if (shape.IsMemoryStream)
+                return "MemoryStream";
             if (shape.IsMap)
                 return string.Format("Dictionary<{0}, {1}>", ShapeType(shape.KeyShape), ShapeType(shape.ValueShape));
             if (shape.IsList)
                 return string.Format("List<{0}>", ShapeType(shape.ListShape));
             if (shape.IsStructure)
                 return shape.Name;
-            if (shape.IsMemoryStream)
-                return "MemoryStream";
+            if (shape.IsPrimitiveType)
+                return shape.Type;
             throw new InvalidOperationException(string.Format("Unable to resolve type for shape {0}", shape.Name));
         }
     }
