@@ -1,3 +1,9 @@
+### 3.3.105.0 (2017-06-13 00:46 UTC)
+* RDS (3.3.12.0)
+	* API Update for RDS: this update enables copy-on-write, a new Aurora MySQL Compatible Edition feature that allows users to restore their database, and support copy of TDE enabled snapshot cross region.
+* S3 (3.3.7.0)
+	* URL encode tagging keys and values in requests to S3 PutObject.
+
 ### 3.3.104.0 (2017-06-09 16:57 UTC)
 * OpsWorks (3.3.2.0)
 	* Tagging Support for AWS OpsWorks Stacks
