@@ -84,7 +84,7 @@ namespace Amazon.RDS.Model
         /// <param name="dbInstanceIdentifier">The DB instance identifier. This parameter is stored as a lowercase string. Constraints: <ul> <li> Must contain from 1 to 63 alphanumeric characters or hyphens (1 to 15 for SQL Server). </li> <li> First character must be a letter. </li> <li> Cannot end with a hyphen or contain two consecutive hyphens. </li> </ul> Example: <code>mydbinstance</code> </param>
         /// <param name="allocatedStorage">The amount of storage (in gigabytes) to be initially allocated for the database instance. Type: Integer  <b>Amazon Aurora</b>  Not applicable. Aurora cluster volumes automatically grow as the amount of data in your database increases, though you are only charged for the space that you use in an Aurora cluster volume.  <b>MySQL</b>  Constraints: Must be an integer from 5 to 6144.  <b>MariaDB</b>  Constraints: Must be an integer from 5 to 6144.  <b>PostgreSQL</b>  Constraints: Must be an integer from 5 to 6144.  <b>Oracle</b>  Constraints: Must be an integer from 10 to 6144.  <b>SQL Server</b>  Constraints: Must be an integer from 200 to 4096 (Standard Edition and Enterprise Edition) or from 20 to 4096 (Express Edition and Web Edition)</param>
         /// <param name="dbInstanceClass">The compute and memory capacity of the DB instance. Note that not all instance classes are available in all regions for all DB engines.  Valid Values: <code>db.t1.micro | db.m1.small | db.m1.medium | db.m1.large | db.m1.xlarge | db.m2.xlarge |db.m2.2xlarge | db.m2.4xlarge | db.m3.medium | db.m3.large | db.m3.xlarge | db.m3.2xlarge | db.m4.large | db.m4.xlarge | db.m4.2xlarge | db.m4.4xlarge | db.m4.10xlarge | db.r3.large | db.r3.xlarge | db.r3.2xlarge | db.r3.4xlarge | db.r3.8xlarge | db.t2.micro | db.t2.small | db.t2.medium | db.t2.large</code> </param>
-        /// <param name="engine">The name of the database engine to be used for this instance.  Valid Values: <code>mysql</code> | <code>mariadb</code> | <code>oracle-se1</code> | <code>oracle-se2</code> | <code>oracle-se</code> | <code>oracle-ee</code> | <code>sqlserver-ee</code> | <code>sqlserver-se</code> | <code>sqlserver-ex</code> | <code>sqlserver-web</code> | <code>postgres</code> | <code>aurora</code>  Not every database engine is available for every AWS region.</param>
+        /// <param name="engine">The name of the database engine to be used for this instance.  Not every database engine is available for every AWS region.  Valid Values:  <ul> <li>  <code>aurora</code>  </li> <li>  <code>mariadb</code>  </li> <li>  <code>mysql</code>  </li> <li>  <code>oracle-ee</code>  </li> <li>  <code>oracle-se2</code>  </li> <li>  <code>oracle-se1</code>  </li> <li>  <code>oracle-se</code>  </li> <li>  <code>postgres</code>  </li> <li>  <code>sqlserver-ee</code>  </li> <li>  <code>sqlserver-se</code>  </li> <li>  <code>sqlserver-ex</code>  </li> <li>  <code>sqlserver-web</code>  </li> </ul></param>
         /// <param name="masterUsername">The name for the master database user.  <b>Amazon Aurora</b>  Not applicable. You specify the name for the master database user when you create your DB cluster.   <b>MariaDB</b>  Constraints: <ul> <li> Must be 1 to 16 alphanumeric characters. </li> <li> Cannot be a reserved word for the chosen database engine. </li> </ul>  <b>Microsoft SQL Server</b>  Constraints: <ul> <li> Must be 1 to 128 alphanumeric characters. </li> <li> First character must be a letter. </li> <li> Cannot be a reserved word for the chosen database engine. </li> </ul>  <b>MySQL</b>  Constraints: <ul> <li> Must be 1 to 16 alphanumeric characters. </li> <li> First character must be a letter. </li> <li> Cannot be a reserved word for the chosen database engine. </li> </ul>  <b>Oracle</b>  Constraints: <ul> <li> Must be 1 to 30 alphanumeric characters. </li> <li> First character must be a letter. </li> <li> Cannot be a reserved word for the chosen database engine. </li> </ul>  <b>PostgreSQL</b>  Constraints: <ul> <li> Must be 1 to 63 alphanumeric characters. </li> <li> First character must be a letter. </li> <li> Cannot be a reserved word for the chosen database engine. </li> </ul></param>
         /// <param name="masterUserPassword">The password for the master database user. Can be any printable ASCII character except "/", """, or "@".  <b>Amazon Aurora</b>  Not applicable. You specify the password for the master database user when you create your DB cluster.   <b>MariaDB</b>  Constraints: Must contain from 8 to 41 characters.  <b>Microsoft SQL Server</b>  Constraints: Must contain from 8 to 128 characters.  <b>MySQL</b>  Constraints: Must contain from 8 to 41 characters.  <b>Oracle</b>  Constraints: Must contain from 8 to 30 characters.  <b>PostgreSQL</b>  Constraints: Must contain from 8 to 128 characters.</param>
         public CreateDBInstanceRequest(string dbInstanceIdentifier, int allocatedStorage, string dbInstanceClass, string engine, string masterUsername, string masterUserPassword)
@@ -660,7 +660,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        ///  You can enable IAM database authentication for the following database engines
+        ///  You can enable IAM database authentication for the following database engines:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -690,19 +690,65 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property Engine. 
         /// <para>
-        /// The name of the database engine to be used for this instance.
+        /// The name of the database engine to be used for this instance. 
         /// </para>
         ///  
         /// <para>
-        ///  Valid Values: <code>mysql</code> | <code>mariadb</code> | <code>oracle-se1</code>
-        /// | <code>oracle-se2</code> | <code>oracle-se</code> | <code>oracle-ee</code> | <code>sqlserver-ee</code>
-        /// | <code>sqlserver-se</code> | <code>sqlserver-ex</code> | <code>sqlserver-web</code>
-        /// | <code>postgres</code> | <code>aurora</code> 
+        /// Not every database engine is available for every AWS region. 
         /// </para>
         ///  
         /// <para>
-        /// Not every database engine is available for every AWS region.
+        /// Valid Values: 
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>aurora</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>mariadb</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>mysql</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>oracle-ee</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>oracle-se2</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>oracle-se1</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>oracle-se</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>postgres</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>sqlserver-ee</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>sqlserver-se</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>sqlserver-ex</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>sqlserver-web</code> 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public string Engine
         {
@@ -732,8 +778,8 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <b>Version 5.6 (available in these AWS regions: ap-northeast-1, ap-northeast-2, ap-south-1,
-        /// ap-southeast-2, eu-west-1, us-east-1, us-east-2, us-west-2):</b> <code> 5.6.10a</code>
+        /// Version 5.6 (available in these AWS regions: ap-northeast-1, ap-northeast-2, ap-south-1,
+        /// ap-southeast-2, eu-west-1, us-east-1, us-east-2, us-west-2): <code> 5.6.10a</code>
         /// 
         /// </para>
         ///  </li> </ul> 
@@ -742,24 +788,23 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <b>Version 10.1 (available in these AWS regions: us-east-2):</b> <code> 10.1.16</code>
-        /// 
+        ///  <code>10.1.19</code> (supported in all AWS regions)
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>Version 10.1 (available in these AWS regions: ap-northeast-1, ap-northeast-2,
-        /// ap-south-1, ap-southeast-1, ap-southeast-2, eu-central-1, eu-west-1, sa-east-1, us-east-1,
-        /// us-west-1, us-west-2):</b> <code> 10.1.14</code> 
+        ///  <code>10.1.14</code> (supported in all regions except us-east-2)
+        /// </para>
+        ///  </li> </ul>  <ul> <li> 
+        /// <para>
+        ///  <code>10.0.28</code> (supported in all AWS regions)
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>Version 10.0 (available in all AWS regions):</b> <code> 10.0.24</code> 
+        ///  <code>10.0.24</code> (supported in all AWS regions)
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>Version 10.0 (available in these AWS regions: ap-northeast-1, ap-northeast-2,
-        /// ap-south-1, ap-southeast-1, ap-southeast-2, eu-central-1, eu-west-1, sa-east-1, us-east-1,
-        /// us-gov-west-1, us-west-1, us-west-2):</b> <code> 10.0.17</code> 
+        ///  <code>10.0.17</code> (supported in all regions except us-east-2, ca-central-1, eu-west-2)
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -767,8 +812,11 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>13.00.2164.0.v1</code> (supported for all editions, and all AWS regions except
-        /// sa-east-1)
+        ///  <code>13.00.4422.0.v1</code> (supported for all editions, and all AWS regions)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>13.00.2164.0.v1</code> (supported for all editions, and all AWS regions)
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -776,12 +824,16 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
+        ///  <code>12.00.5546.0.v1</code> (supported for all editions, and all AWS regions)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <code>12.00.5000.0.v1</code> (supported for all editions, and all AWS regions)
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <code>12.00.4422.0.v1</code> (supported for all editions except Enterprise Edition,
-        /// and all AWS regions except us-east-2)
+        /// and all AWS regions except ca-central-1 and eu-west-2)
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -789,17 +841,21 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
+        ///  <code>11.00.6594.0.v1</code> (supported for all editions, and all AWS regions)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <code>11.00.6020.0.v1</code> (supported for all editions, and all AWS regions)
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <code>11.00.5058.0.v1</code> (supported for all editions, and all AWS regions except
-        /// us-east-2)
+        /// us-east-2, ca-central-1, and eu-west-2)
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <code>11.00.2100.60.v1</code> (supported for all editions, and all AWS regions except
-        /// us-east-2)
+        /// us-east-2, ca-central-1, and eu-west-2)
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -808,17 +864,17 @@ namespace Amazon.RDS.Model
         ///  <ul> <li> 
         /// <para>
         ///  <code>10.50.6529.0.v1</code> (supported for all editions, and all AWS regions except
-        /// us-east-2)
+        /// us-east-2, ca-central-1, and eu-west-2)
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <code>10.50.6000.34.v1</code> (supported for all editions, and all AWS regions except
-        /// us-east-2)
+        /// us-east-2, ca-central-1, and eu-west-2)
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <code>10.50.2789.0.v1</code> (supported for all editions, and all AWS regions except
-        /// us-east-2)
+        /// us-east-2, ca-central-1, and eu-west-2)
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -826,45 +882,77 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <b>Version 5.7 (available in all AWS regions):</b> <code> 5.7.11</code> 
+        ///  <code>5.7.17</code> (supported in all AWS regions)
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>Version 5.7 (available in these AWS regions: ap-northeast-1, ap-northeast-2, ap-south-1,
-        /// ap-southeast-1, ap-southeast-2, eu-central-1, eu-west-1, sa-east-1, us-east-1, us-gov-west-1,
-        /// us-west-1, us-west-2):</b> <code> 5.7.10</code> 
+        ///  <code>5.7.16</code> (supported in all AWS regions)
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>Version 5.6 (available in all AWS regions):</b> <code> 5.6.29</code> 
+        ///  <code>5.7.11</code> (supported in all AWS regions)
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>Version 5.6 (available in these AWS regions: ap-northeast-1, ap-northeast-2, ap-south-1,
-        /// ap-southeast-1, ap-southeast-2, eu-central-1, eu-west-1, sa-east-1, us-east-1, us-gov-west-1,
-        /// us-west-1, us-west-2):</b> <code> 5.6.27</code> 
+        ///  <code>5.7.10</code> (supported in all regions except us-east-2, ca-central-1, eu-west-2)
+        /// </para>
+        ///  </li> </ul>  <ul> <li> 
+        /// <para>
+        ///  <code>5.6.35</code> (supported in all AWS regions)
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>Version 5.6 (available in these AWS regions: ap-northeast-1, ap-northeast-2, ap-southeast-1,
-        /// ap-southeast-2, eu-central-1, eu-west-1, sa-east-1, us-east-1, us-gov-west-1, us-west-1,
-        /// us-west-2):</b> <code> 5.6.23</code> 
+        ///  <code>5.6.34</code> (supported in all AWS regions)
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>Version 5.6 (available in these AWS regions: ap-northeast-1, ap-southeast-1, ap-southeast-2,
-        /// eu-central-1, eu-west-1, sa-east-1, us-east-1, us-gov-west-1, us-west-1, us-west-2):</b>
-        /// <code> 5.6.19a | 5.6.19b | 5.6.21 | 5.6.21b | 5.6.22</code> 
+        ///  <code>5.6.29</code> (supported in all AWS regions)
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>Version 5.5 (available in all AWS regions):</b> <code> 5.5.46</code> 
+        ///  <code>5.6.27</code> (supported in all regions except us-east-2, ca-central-1, eu-west-2)
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>Version 5.1 (only available in AWS regions ap-northeast-1, ap-southeast-1, ap-southeast-2,
-        /// eu-west-1, sa-east-1, us-east-1, us-gov-west-1, us-west-1, us-west-2):</b> <code>
-        /// 5.1.73a | 5.1.73b</code> 
+        ///  <code>5.6.23</code> (supported in all regions except us-east-2, ap-south-1, ca-central-1,
+        /// eu-west-2)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>5.6.22</code> (supported in all regions except us-east-2, ap-south-1, ap-northeast-2,
+        /// ca-central-1, eu-west-2)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>5.6.21b</code> (supported in all regions except us-east-2, ap-south-1, ap-northeast-2,
+        /// ca-central-1, eu-west-2)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>5.6.21</code> (supported in all regions except us-east-2, ap-south-1, ap-northeast-2,
+        /// ca-central-1, eu-west-2)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>5.6.19b</code> (supported in all regions except us-east-2, ap-south-1, ap-northeast-2,
+        /// ca-central-1, eu-west-2)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>5.6.19a</code> (supported in all regions except us-east-2, ap-south-1, ap-northeast-2,
+        /// ca-central-1, eu-west-2)
+        /// </para>
+        ///  </li> </ul>  <ul> <li> 
+        /// <para>
+        ///  <code>5.5.54</code> (supported in all AWS regions)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>5.5.53</code> (supported in all AWS regions)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>5.5.46</code> (supported in all AWS regions)
         /// </para>
         ///  </li> </ul> 
         /// <para>

@@ -66,6 +66,7 @@ namespace Amazon.RDS.Model
         private List<string> _availabilityZones = new List<string>();
         private int? _backupRetentionPeriod;
         private string _characterSetName;
+        private string _cloneGroupId;
         private DateTime? _clusterCreateTime;
         private string _databaseName;
         private string _dbClusterArn;
@@ -191,6 +192,24 @@ namespace Amazon.RDS.Model
         internal bool IsSetCharacterSetName()
         {
             return this._characterSetName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CloneGroupId. 
+        /// <para>
+        /// Identifies the clone group to which the DB cluster is associated.
+        /// </para>
+        /// </summary>
+        public string CloneGroupId
+        {
+            get { return this._cloneGroupId; }
+            set { this._cloneGroupId = value; }
+        }
+
+        // Check to see if CloneGroupId property is set
+        internal bool IsSetCloneGroupId()
+        {
+            return this._cloneGroupId != null;
         }
 
         /// <summary>

@@ -86,6 +86,10 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("RestoreToTime", StringUtils.FromDateTime(publicRequest.RestoreToTime));
                 }
+                if(publicRequest.IsSetRestoreType())
+                {
+                    request.Parameters.Add("RestoreType", StringUtils.FromString(publicRequest.RestoreType));
+                }
                 if(publicRequest.IsSetSourceDBClusterIdentifier())
                 {
                     request.Parameters.Add("SourceDBClusterIdentifier", StringUtils.FromString(publicRequest.SourceDBClusterIdentifier));

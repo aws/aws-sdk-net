@@ -42,6 +42,14 @@ namespace Amazon.RDS.Model
     /// <para>
     ///  <a>ModifyDBInstance</a> 
     /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>StopDBInstance</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>StartDBInstance</a> 
+    /// </para>
     ///  </li> </ul> 
     /// <para>
     /// This data type is used as a response element in the <a>DescribeDBInstances</a> action.

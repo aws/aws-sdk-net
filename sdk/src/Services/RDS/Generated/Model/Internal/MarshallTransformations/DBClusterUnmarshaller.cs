@@ -86,6 +86,12 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                         unmarshalledObject.CharacterSetName = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("CloneGroupId", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.CloneGroupId = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("ClusterCreateTime", targetDepth))
                     {
                         var unmarshaller = DateTimeUnmarshaller.Instance;

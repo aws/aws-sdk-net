@@ -50,6 +50,7 @@ namespace Amazon.RDS.Model
         private string _optionGroupName;
         private int? _port;
         private DateTime? _restoreToTime;
+        private string _restoreType;
         private string _sourceDBClusterIdentifier;
         private List<Tag> _tags = new List<Tag>();
         private bool? _useLatestRestorableTime;
@@ -176,7 +177,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// If <code>DBClusterIdentifier</code> refers to a DB cluster that is note encrypted,
+        /// If <code>DBClusterIdentifier</code> refers to a DB cluster that is not encrypted,
         /// then the restore request is rejected.
         /// </para>
         /// </summary>
@@ -255,7 +256,16 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// Must be specified if <code>UseLatestRestorableTime</code> parameter is not provided
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// Cannot be specified if <code>UseLatestRestorableTime</code> parameter is true
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Cannot be specified if <code>RestoreType</code> parameter is <code>copy-on-write</code>
+        /// 
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -272,6 +282,44 @@ namespace Amazon.RDS.Model
         internal bool IsSetRestoreToTime()
         {
             return this._restoreToTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property RestoreType. 
+        /// <para>
+        /// The type of restore to be performed. You can specify one of the following values:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>full-copy</code> - The new DB cluster is restored as a full copy of the source
+        /// DB cluster.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>copy-on-write</code> - The new DB cluster is restored as a clone of the source
+        /// DB cluster.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// Constraints: You cannot specify <code>copy-on-write</code> if the engine version of
+        /// the source DB cluster is earlier than 1.11.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you don't specify a <code>RestoreType</code> value, then the new DB cluster is
+        /// restored as a full copy of the source DB cluster.
+        /// </para>
+        /// </summary>
+        public string RestoreType
+        {
+            get { return this._restoreType; }
+            set { this._restoreType = value; }
+        }
+
+        // Check to see if RestoreType property is set
+        internal bool IsSetRestoreType()
+        {
+            return this._restoreType != null;
         }
 
         /// <summary>
@@ -358,7 +406,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property VpcSecurityGroupIds. 
         /// <para>
-        /// A lst of VPC security groups that the new DB cluster belongs to.
+        /// A list of VPC security groups that the new DB cluster belongs to.
         /// </para>
         /// </summary>
         public List<string> VpcSecurityGroupIds
