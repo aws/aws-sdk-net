@@ -122,6 +122,16 @@ namespace Amazon.ApplicationAutoScaling.Model
         /// AppStream 2.0 fleet - The resource type is <code>fleet</code> and the unique identifier
         /// is the fleet name. Example: <code>fleet/sample-fleet</code>.
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// DynamoDB table - The resource type is <code>table</code> and the unique identifier
+        /// is the resource ID. Example: <code>table/my-table</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// DynamoDB global secondary index - The resource type is <code>index</code> and the
+        /// unique identifier is the resource ID. Example: <code>table/my-table/index/my-table-index</code>.
+        /// </para>
         ///  </li> </ul>
         /// </summary>
         public List<string> ResourceIds
@@ -161,6 +171,26 @@ namespace Amazon.ApplicationAutoScaling.Model
         /// <para>
         ///  <code>appstream:fleet:DesiredCapacity</code> - The desired capacity of an AppStream
         /// 2.0 fleet.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>dynamodb:table:ReadCapacityUnits</code> - The provisioned read capacity for
+        /// a DynamoDB table.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>dynamodb:table:WriteCapacityUnits</code> - The provisioned write capacity for
+        /// a DynamoDB table.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>dynamodb:index:ReadCapacityUnits</code> - The provisioned read capacity for
+        /// a DynamoDB global secondary index.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>dynamodb:index:WriteCapacityUnits</code> - The provisioned write capacity for
+        /// a DynamoDB global secondary index.
         /// </para>
         ///  </li> </ul>
         /// </summary>

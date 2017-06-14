@@ -41,6 +41,7 @@ namespace Amazon.ApplicationAutoScaling.Model
         private ScalableDimension _scalableDimension;
         private ServiceNamespace _serviceNamespace;
         private StepScalingPolicyConfiguration _stepScalingPolicyConfiguration;
+        private TargetTrackingScalingPolicyConfiguration _targetTrackingScalingPolicyConfiguration;
 
         /// <summary>
         /// Gets and sets the property Alarms. 
@@ -158,6 +159,16 @@ namespace Amazon.ApplicationAutoScaling.Model
         /// AppStream 2.0 fleet - The resource type is <code>fleet</code> and the unique identifier
         /// is the fleet name. Example: <code>fleet/sample-fleet</code>.
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// DynamoDB table - The resource type is <code>table</code> and the unique identifier
+        /// is the resource ID. Example: <code>table/my-table</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// DynamoDB global secondary index - The resource type is <code>index</code> and the
+        /// unique identifier is the resource ID. Example: <code>table/my-table/index/my-table-index</code>.
+        /// </para>
         ///  </li> </ul>
         /// </summary>
         public string ResourceId
@@ -197,6 +208,26 @@ namespace Amazon.ApplicationAutoScaling.Model
         ///  <code>appstream:fleet:DesiredCapacity</code> - The desired capacity of an AppStream
         /// 2.0 fleet.
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>dynamodb:table:ReadCapacityUnits</code> - The provisioned read capacity for
+        /// a DynamoDB table.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>dynamodb:table:WriteCapacityUnits</code> - The provisioned write capacity for
+        /// a DynamoDB table.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>dynamodb:index:ReadCapacityUnits</code> - The provisioned read capacity for
+        /// a DynamoDB global secondary index.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>dynamodb:index:WriteCapacityUnits</code> - The provisioned write capacity for
+        /// a DynamoDB global secondary index.
+        /// </para>
         ///  </li> </ul>
         /// </summary>
         public ScalableDimension ScalableDimension
@@ -233,7 +264,7 @@ namespace Amazon.ApplicationAutoScaling.Model
         /// <summary>
         /// Gets and sets the property StepScalingPolicyConfiguration. 
         /// <para>
-        /// The configuration for the step scaling policy.
+        /// A step scaling policy.
         /// </para>
         /// </summary>
         public StepScalingPolicyConfiguration StepScalingPolicyConfiguration
@@ -246,6 +277,24 @@ namespace Amazon.ApplicationAutoScaling.Model
         internal bool IsSetStepScalingPolicyConfiguration()
         {
             return this._stepScalingPolicyConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TargetTrackingScalingPolicyConfiguration. 
+        /// <para>
+        /// A target tracking policy.
+        /// </para>
+        /// </summary>
+        public TargetTrackingScalingPolicyConfiguration TargetTrackingScalingPolicyConfiguration
+        {
+            get { return this._targetTrackingScalingPolicyConfiguration; }
+            set { this._targetTrackingScalingPolicyConfiguration = value; }
+        }
+
+        // Check to see if TargetTrackingScalingPolicyConfiguration property is set
+        internal bool IsSetTargetTrackingScalingPolicyConfiguration()
+        {
+            return this._targetTrackingScalingPolicyConfiguration != null;
         }
 
     }

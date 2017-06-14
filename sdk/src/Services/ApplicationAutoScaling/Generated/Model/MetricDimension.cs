@@ -28,47 +28,47 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ApplicationAutoScaling.Model
 {
     /// <summary>
-    /// This is the response object from the PutScalingPolicy operation.
+    /// Describes the dimension of a metric.
     /// </summary>
-    public partial class PutScalingPolicyResponse : AmazonWebServiceResponse
+    public partial class MetricDimension
     {
-        private List<Alarm> _alarms = new List<Alarm>();
-        private string _policyARN;
+        private string _name;
+        private string _value;
 
         /// <summary>
-        /// Gets and sets the property Alarms. 
+        /// Gets and sets the property Name. 
         /// <para>
-        /// The CloudWatch alarms created for the target tracking policy.
+        /// The name of the dimension.
         /// </para>
         /// </summary>
-        public List<Alarm> Alarms
+        public string Name
         {
-            get { return this._alarms; }
-            set { this._alarms = value; }
+            get { return this._name; }
+            set { this._name = value; }
         }
 
-        // Check to see if Alarms property is set
-        internal bool IsSetAlarms()
+        // Check to see if Name property is set
+        internal bool IsSetName()
         {
-            return this._alarms != null && this._alarms.Count > 0; 
+            return this._name != null;
         }
 
         /// <summary>
-        /// Gets and sets the property PolicyARN. 
+        /// Gets and sets the property Value. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the resulting scaling policy.
+        /// The value of the dimension.
         /// </para>
         /// </summary>
-        public string PolicyARN
+        public string Value
         {
-            get { return this._policyARN; }
-            set { this._policyARN = value; }
+            get { return this._value; }
+            set { this._value = value; }
         }
 
-        // Check to see if PolicyARN property is set
-        internal bool IsSetPolicyARN()
+        // Check to see if Value property is set
+        internal bool IsSetValue()
         {
-            return this._policyARN != null;
+            return this._value != null;
         }
 
     }

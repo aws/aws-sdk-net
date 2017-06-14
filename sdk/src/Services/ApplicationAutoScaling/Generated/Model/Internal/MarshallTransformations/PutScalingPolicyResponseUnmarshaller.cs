@@ -51,6 +51,12 @@ namespace Amazon.ApplicationAutoScaling.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("Alarms", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<Alarm, AlarmUnmarshaller>(AlarmUnmarshaller.Instance);
+                    response.Alarms = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("PolicyARN", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -75,6 +81,10 @@ namespace Amazon.ApplicationAutoScaling.Model.Internal.MarshallTransformations
             if (errorResponse.Code != null && errorResponse.Code.Equals("ConcurrentUpdateException"))
             {
                 return new ConcurrentUpdateException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("FailedResourceAccessException"))
+            {
+                return new FailedResourceAccessException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
             if (errorResponse.Code != null && errorResponse.Code.Equals("InternalServiceException"))
             {

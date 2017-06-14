@@ -118,6 +118,12 @@ namespace Amazon.ApplicationAutoScaling.Model.Internal.MarshallTransformations
                     unmarshalledObject.StepScalingPolicyConfiguration = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("TargetTrackingScalingPolicyConfiguration", targetDepth))
+                {
+                    var unmarshaller = TargetTrackingScalingPolicyConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.TargetTrackingScalingPolicyConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;

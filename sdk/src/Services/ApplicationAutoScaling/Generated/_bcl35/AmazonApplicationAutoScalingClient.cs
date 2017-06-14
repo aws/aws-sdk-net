@@ -70,8 +70,15 @@ namespace Amazon.ApplicationAutoScaling
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// AppStream 2.0 fleets. For more information, see <a href="http://docs.aws.amazon.com/appstream2/latest/developerguide/autoscaling.html">Autoscaling
-    /// Amazon AppStream 2.0 Resources</a> in the <i>Amazon AppStream 2.0 Developer Guide</i>.
+    /// AppStream 2.0 fleets. For more information, see <a href="http://docs.aws.amazon.com/appstream2/latest/developerguide/autoscaling.html">Fleet
+    /// Auto Scaling for Amazon AppStream 2.0</a> in the <i>Amazon AppStream 2.0 Developer
+    /// Guide</i>.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Provisioned read and write capacity for Amazon DynamoDB tables and global secondary
+    /// indexes. For more information, see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/TargetTracking.html">Auto
+    /// Scaling for DynamoDB</a> in the <i>Amazon DynamoDB Developer Guide</i>.
     /// </para>
     ///  </li> </ul> 
     /// <para>
@@ -613,11 +620,10 @@ namespace Amazon.ApplicationAutoScaling
         /// Application Auto Scaling resource that already has a pending update.
         /// </exception>
         /// <exception cref="Amazon.ApplicationAutoScaling.Model.FailedResourceAccessException">
-        /// Failed access to resources caused an exception. This exception currently only applies
-        /// to <a>DescribeScalingPolicies</a>. It is thrown when Application Auto Scaling is unable
-        /// to retrieve the alarms associated with a scaling policy due to a client error, for
-        /// example, if the role ARN specified for a scalable target does not have the proper
-        /// permissions to call the CloudWatch <a href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_DescribeAlarms.html">DescribeAlarms</a>
+        /// Failed access to resources caused an exception. This exception is thrown when Application
+        /// Auto Scaling is unable to retrieve the alarms associated with a scaling policy due
+        /// to a client error, for example, if the role ARN specified for a scalable target does
+        /// not have permission to call the CloudWatch <a href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_DescribeAlarms.html">DescribeAlarms</a>
         /// API operation on behalf of your account.
         /// </exception>
         /// <exception cref="Amazon.ApplicationAutoScaling.Model.InternalServiceException">
@@ -704,6 +710,13 @@ namespace Amazon.ApplicationAutoScaling
         /// <exception cref="Amazon.ApplicationAutoScaling.Model.ConcurrentUpdateException">
         /// Concurrent updates caused an exception, for example, if you request an update to an
         /// Application Auto Scaling resource that already has a pending update.
+        /// </exception>
+        /// <exception cref="Amazon.ApplicationAutoScaling.Model.FailedResourceAccessException">
+        /// Failed access to resources caused an exception. This exception is thrown when Application
+        /// Auto Scaling is unable to retrieve the alarms associated with a scaling policy due
+        /// to a client error, for example, if the role ARN specified for a scalable target does
+        /// not have permission to call the CloudWatch <a href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_DescribeAlarms.html">DescribeAlarms</a>
+        /// API operation on behalf of your account.
         /// </exception>
         /// <exception cref="Amazon.ApplicationAutoScaling.Model.InternalServiceException">
         /// The service encountered an internal error.

@@ -108,6 +108,17 @@ namespace Amazon.ApplicationAutoScaling.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetTargetTrackingScalingPolicyConfiguration())
+                {
+                    context.Writer.WritePropertyName("TargetTrackingScalingPolicyConfiguration");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = TargetTrackingScalingPolicyConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.TargetTrackingScalingPolicyConfiguration, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
         
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();

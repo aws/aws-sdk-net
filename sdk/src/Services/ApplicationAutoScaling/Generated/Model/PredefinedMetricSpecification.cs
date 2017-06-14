@@ -28,47 +28,47 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ApplicationAutoScaling.Model
 {
     /// <summary>
-    /// This is the response object from the PutScalingPolicy operation.
+    /// Configures a predefined metric for a target tracking policy.
     /// </summary>
-    public partial class PutScalingPolicyResponse : AmazonWebServiceResponse
+    public partial class PredefinedMetricSpecification
     {
-        private List<Alarm> _alarms = new List<Alarm>();
-        private string _policyARN;
+        private MetricType _predefinedMetricType;
+        private string _resourceLabel;
 
         /// <summary>
-        /// Gets and sets the property Alarms. 
+        /// Gets and sets the property PredefinedMetricType. 
         /// <para>
-        /// The CloudWatch alarms created for the target tracking policy.
+        /// The metric type.
         /// </para>
         /// </summary>
-        public List<Alarm> Alarms
+        public MetricType PredefinedMetricType
         {
-            get { return this._alarms; }
-            set { this._alarms = value; }
+            get { return this._predefinedMetricType; }
+            set { this._predefinedMetricType = value; }
         }
 
-        // Check to see if Alarms property is set
-        internal bool IsSetAlarms()
+        // Check to see if PredefinedMetricType property is set
+        internal bool IsSetPredefinedMetricType()
         {
-            return this._alarms != null && this._alarms.Count > 0; 
+            return this._predefinedMetricType != null;
         }
 
         /// <summary>
-        /// Gets and sets the property PolicyARN. 
+        /// Gets and sets the property ResourceLabel. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the resulting scaling policy.
+        /// Reserved for future use.
         /// </para>
         /// </summary>
-        public string PolicyARN
+        public string ResourceLabel
         {
-            get { return this._policyARN; }
-            set { this._policyARN = value; }
+            get { return this._resourceLabel; }
+            set { this._resourceLabel = value; }
         }
 
-        // Check to see if PolicyARN property is set
-        internal bool IsSetPolicyARN()
+        // Check to see if ResourceLabel property is set
+        internal bool IsSetResourceLabel()
         {
-            return this._policyARN != null;
+            return this._resourceLabel != null;
         }
 
     }

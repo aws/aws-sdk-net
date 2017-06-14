@@ -133,6 +133,118 @@ namespace Amazon.ApplicationAutoScaling
 
 
     /// <summary>
+    /// Constants used for properties of type MetricStatistic.
+    /// </summary>
+    public class MetricStatistic : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Average for MetricStatistic
+        /// </summary>
+        public static readonly MetricStatistic Average = new MetricStatistic("Average");
+        /// <summary>
+        /// Constant Maximum for MetricStatistic
+        /// </summary>
+        public static readonly MetricStatistic Maximum = new MetricStatistic("Maximum");
+        /// <summary>
+        /// Constant Minimum for MetricStatistic
+        /// </summary>
+        public static readonly MetricStatistic Minimum = new MetricStatistic("Minimum");
+        /// <summary>
+        /// Constant SampleCount for MetricStatistic
+        /// </summary>
+        public static readonly MetricStatistic SampleCount = new MetricStatistic("SampleCount");
+        /// <summary>
+        /// Constant Sum for MetricStatistic
+        /// </summary>
+        public static readonly MetricStatistic Sum = new MetricStatistic("Sum");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public MetricStatistic(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static MetricStatistic FindValue(string value)
+        {
+            return FindValue<MetricStatistic>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator MetricStatistic(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type MetricType.
+    /// </summary>
+    public class MetricType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DynamoDBReadCapacityUtilization for MetricType
+        /// </summary>
+        public static readonly MetricType DynamoDBReadCapacityUtilization = new MetricType("DynamoDBReadCapacityUtilization");
+        /// <summary>
+        /// Constant DynamoDBWriteCapacityUtilization for MetricType
+        /// </summary>
+        public static readonly MetricType DynamoDBWriteCapacityUtilization = new MetricType("DynamoDBWriteCapacityUtilization");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public MetricType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static MetricType FindValue(string value)
+        {
+            return FindValue<MetricType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator MetricType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type PolicyType.
     /// </summary>
     public class PolicyType : ConstantClass
@@ -142,6 +254,10 @@ namespace Amazon.ApplicationAutoScaling
         /// Constant StepScaling for PolicyType
         /// </summary>
         public static readonly PolicyType StepScaling = new PolicyType("StepScaling");
+        /// <summary>
+        /// Constant TargetTrackingScaling for PolicyType
+        /// </summary>
+        public static readonly PolicyType TargetTrackingScaling = new PolicyType("TargetTrackingScaling");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -188,6 +304,22 @@ namespace Amazon.ApplicationAutoScaling
         /// Constant AppstreamFleetDesiredCapacity for ScalableDimension
         /// </summary>
         public static readonly ScalableDimension AppstreamFleetDesiredCapacity = new ScalableDimension("appstream:fleet:DesiredCapacity");
+        /// <summary>
+        /// Constant DynamodbIndexReadCapacityUnits for ScalableDimension
+        /// </summary>
+        public static readonly ScalableDimension DynamodbIndexReadCapacityUnits = new ScalableDimension("dynamodb:index:ReadCapacityUnits");
+        /// <summary>
+        /// Constant DynamodbIndexWriteCapacityUnits for ScalableDimension
+        /// </summary>
+        public static readonly ScalableDimension DynamodbIndexWriteCapacityUnits = new ScalableDimension("dynamodb:index:WriteCapacityUnits");
+        /// <summary>
+        /// Constant DynamodbTableReadCapacityUnits for ScalableDimension
+        /// </summary>
+        public static readonly ScalableDimension DynamodbTableReadCapacityUnits = new ScalableDimension("dynamodb:table:ReadCapacityUnits");
+        /// <summary>
+        /// Constant DynamodbTableWriteCapacityUnits for ScalableDimension
+        /// </summary>
+        public static readonly ScalableDimension DynamodbTableWriteCapacityUnits = new ScalableDimension("dynamodb:table:WriteCapacityUnits");
         /// <summary>
         /// Constant Ec2SpotFleetRequestTargetCapacity for ScalableDimension
         /// </summary>
@@ -312,6 +444,10 @@ namespace Amazon.ApplicationAutoScaling
         /// Constant Appstream for ServiceNamespace
         /// </summary>
         public static readonly ServiceNamespace Appstream = new ServiceNamespace("appstream");
+        /// <summary>
+        /// Constant Dynamodb for ServiceNamespace
+        /// </summary>
+        public static readonly ServiceNamespace Dynamodb = new ServiceNamespace("dynamodb");
         /// <summary>
         /// Constant Ec2 for ServiceNamespace
         /// </summary>
