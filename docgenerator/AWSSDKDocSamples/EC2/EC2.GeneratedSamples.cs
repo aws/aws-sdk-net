@@ -1217,8 +1217,8 @@ namespace AWSSDKDocSamples.Amazon.EC2.Generated
             var response = client.DescribeScheduledInstanceAvailability(new DescribeScheduledInstanceAvailabilityRequest 
             {
                 FirstSlotStartTimeRange = new SlotDateTimeRangeRequest {
-                    EarliestTime = ,
-                    LatestTime = 
+                    EarliestTime = new DateTime(2016, 1, 30, 4, 0, 0),
+                    LatestTime = new DateTime(2016, 1, 30, 8, 0, 0)
                 },
                 Recurrence = new ScheduledInstanceRecurrenceRequest {
                     Frequency = "Weekly",
@@ -1343,7 +1343,7 @@ namespace AWSSDKDocSamples.Amazon.EC2.Generated
             var response = client.DescribeSpotFleetRequestHistory(new DescribeSpotFleetRequestHistoryRequest 
             {
                 SpotFleetRequestId = "sfr-73fbd2ce-aa30-494c-8788-1cee4EXAMPLE",
-                StartTime = 
+                StartTime = new DateTime(2015, 5, 25, 5, 0, 0)
             });
 
             List<HistoryRecord> historyRecords = response.HistoryRecords;
@@ -1392,14 +1392,14 @@ namespace AWSSDKDocSamples.Amazon.EC2.Generated
 
             var response = client.DescribeSpotPriceHistory(new DescribeSpotPriceHistoryRequest 
             {
-                EndTime = ,
+                EndTime = new DateTime(2014, 1, 6, 8, 9, 10),
                 InstanceTypes = new List<string> {
                     "m1.xlarge"
                 },
                 ProductDescriptions = new List<string> {
                     "Linux/UNIX (Amazon VPC)"
                 },
-                StartTime = 
+                StartTime = new DateTime(2014, 1, 6, 7, 8, 9)
             });
 
             List<SpotPrice> spotPriceHistory = response.SpotPriceHistory;
@@ -1739,7 +1739,7 @@ namespace AWSSDKDocSamples.Amazon.EC2.Generated
 
             var response = client.ModifyNetworkInterfaceAttribute(new ModifyNetworkInterfaceAttributeRequest 
             {
-                Description = ,
+                Description = <data>,
                 NetworkInterfaceId = "eni-686ea200"
             });
 

@@ -307,9 +307,34 @@ namespace ServiceClientGenerator
             {
                 cb.AppendFormat("new {0}({1})", ShapeType(shape), data.ToString());
             }
+
+            else if (shape.IsDateTime)
+            {
+                string exampleValue = null;
+
+                if (data.IsString)
+                {
+                    var textValue = data.ToString();
+                    DateTime parsedDateTime;
+                    if (DateTime.TryParse(textValue, out parsedDateTime))
+                    {
+                        exampleValue = string.Format("new DateTime({0})",
+                            parsedDateTime.ToString("yyyy, M, d, h, m, s"));
+                    }
+                }
+
+                if (string.IsNullOrEmpty(exampleValue))
+                {
+                    exampleValue = "DateTime.Now";
+                }
+
+                cb.Append(exampleValue);
+            }
+
             else
             {
-                throw new InvalidOperationException();
+                // default value
+                cb.Append("<data>");
             }
         }
 

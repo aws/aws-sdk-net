@@ -97,7 +97,7 @@ namespace AWSSDKDocSamples.Amazon.Polly.Generated
                 VoiceId = "Joanna"
             });
 
-            blob audioStream = response.AudioStream;
+            MemoryStream audioStream = response.AudioStream;
             string contentType = response.ContentType;
             integer requestCharacters = response.RequestCharacters;
 

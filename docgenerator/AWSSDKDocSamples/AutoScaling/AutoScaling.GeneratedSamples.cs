@@ -755,11 +755,11 @@ namespace AWSSDKDocSamples.Amazon.AutoScaling.Generated
             {
                 AutoScalingGroupName = "my-auto-scaling-group",
                 DesiredCapacity = 4,
-                EndTime = ,
+                EndTime = new DateTime(2014, 5, 12, 1, 0, 0),
                 MaxSize = 6,
                 MinSize = 2,
                 ScheduledActionName = "my-scheduled-action",
-                StartTime = 
+                StartTime = new DateTime(2014, 5, 12, 1, 0, 0)
             });
 
 

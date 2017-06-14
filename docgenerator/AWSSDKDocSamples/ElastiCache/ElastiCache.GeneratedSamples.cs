@@ -503,7 +503,7 @@ namespace AWSSDKDocSamples.Amazon.ElastiCache.Generated
 
             var response = client.DescribeEvents(new DescribeEventsRequest 
             {
-                StartTime = 
+                StartTime = new DateTime(2016, 12, 22, 7, 0, 0)
             });
 
             List<Event> events = response.Events;

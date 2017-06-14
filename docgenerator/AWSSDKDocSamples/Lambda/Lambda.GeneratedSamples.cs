@@ -243,7 +243,7 @@ namespace AWSSDKDocSamples.Amazon.Lambda.Generated
 
             string functionError = response.FunctionError;
             string logResult = response.LogResult;
-            blob payload = response.Payload;
+            MemoryStream payload = response.Payload;
             integer statusCode = response.StatusCode;
 
             #endregion
@@ -412,7 +412,7 @@ namespace AWSSDKDocSamples.Amazon.Lambda.Generated
                 S3Bucket = "myBucket",
                 S3Key = "myKey",
                 S3ObjectVersion = "1",
-                ZipFile = 
+                ZipFile = new MemoryStream(fileb://file-path/file.zip)
             });
 
             string codeSha256 = response.CodeSha256;
