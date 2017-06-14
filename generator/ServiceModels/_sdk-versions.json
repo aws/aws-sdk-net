@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.3.106.0",
+    "ProductVersion" : "3.3.107.0",
     "CoreVersion"    : "3.3.14.1",
     "DefaultToPreview" : false,
     "ServiceVersions"  : {
@@ -553,7 +553,7 @@
             "InPreview"               : false
         },
         "ApplicationAutoScaling"          : {
-            "Version" : "3.3.2.7",
+            "Version" : "3.3.3.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.14.0"
@@ -721,7 +721,7 @@
             "InPreview"               : false
         },
         "CloudDirectory"                  : {
-            "Version" : "3.3.3.0",
+            "Version" : "3.3.3.1",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.14.0"

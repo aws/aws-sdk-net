@@ -1,3 +1,9 @@
+### 3.3.107.0 (2017-06-14 20:31 UTC)
+* ApplicationAutoScaling (3.3.3.0)
+	* Application Auto Scaling now supports automatic scaling of read and write throughput capacity for DynamoDB tables and global secondary indexes.
+* CloudDirectory (3.3.3.1)
+	* Documentation update for Cloud Directory
+
 ### 3.3.106.0 (2017-06-13 19:03 UTC)
 * ConfigService (3.3.7.0)
 	* With this release AWS Config supports the Amazon CloudWatch alarm resource type.
