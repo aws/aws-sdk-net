@@ -44,7 +44,7 @@ namespace Amazon.CloudDirectory.Model
         /// <summary>
         /// Gets and sets the property Attributes. 
         /// <para>
-        /// An ordered set of attributes that are associated with the typed link.
+        /// A set of attributes that are associated with the typed link.
         /// </para>
         /// </summary>
         public List<AttributeNameAndValue> Attributes

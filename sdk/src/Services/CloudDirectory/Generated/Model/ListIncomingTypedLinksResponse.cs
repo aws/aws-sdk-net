@@ -38,7 +38,7 @@ namespace Amazon.CloudDirectory.Model
         /// <summary>
         /// Gets and sets the property LinkSpecifiers. 
         /// <para>
-        /// Returns a typed link specifier as output.
+        /// Returns one or more typed link specifiers as output.
         /// </para>
         /// </summary>
         public List<TypedLinkSpecifier> LinkSpecifiers
