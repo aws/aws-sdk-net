@@ -72,7 +72,8 @@ namespace AWSSDK.UnitTests
                 };
                 var config = new AmazonS3Config
                 {
-                    SignatureVersion = clientConfigSignatureVersion
+                    SignatureVersion = clientConfigSignatureVersion,
+                    RegionEndpoint = RegionEndpoint.USWest1
                 };
 
                 signer.Sign(iRequest, config, new RequestMetrics(), "ACCESS", "SECRET");
