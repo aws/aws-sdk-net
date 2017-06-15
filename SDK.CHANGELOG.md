@@ -1,3 +1,13 @@
+### 3.3.108.0 (2017-06-15 20:42 UTC)
+* EC2 (3.3.14.0)
+	* Adds API to describe Amazon FPGA Images (AFIs) available to customers, which includes public AFIs, private AFIs that you own, and AFIs owned by other AWS accounts for which you have load permissions.
+* ECS (3.3.5.0)
+	* Added support for cpu, memory, and memory reservation container overrides on the RunTask and StartTask APIs.
+* IoT (3.3.5.0)
+	* Revert the last release: remove CertificatePem from DescribeCertificate API.
+* ServiceCatalog (3.3.3.0)
+	* Added ProvisioningArtifactSummaries to DescribeProductAsAdmin's output to show the provisioning artifacts belong to the product. Allow filtering by SourceProductId in SearchProductsAsAdmin for AWS Marketplace products. Added a verbose option to DescribeProvisioningArtifact to display the CloudFormation template used to create the provisioning artifact.Added DescribeProvisionedProduct API. Changed the type of ProvisionedProduct's Status to be distinct from Record's Status. New ProvisionedProduct's Status are AVAILABLE, UNDER_CHANGE, TAINTED, ERROR. Changed Record's Status set of values to CREATED, IN_PROGRESS, IN_PROGRESS_IN_ERROR, SUCCEEDED, FAILED.
+
 ### 3.3.107.0 (2017-06-14 20:31 UTC)
 * ApplicationAutoScaling (3.3.3.0)
 	* Application Auto Scaling now supports automatic scaling of read and write throughput capacity for DynamoDB tables and global secondary indexes.
