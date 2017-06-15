@@ -73,15 +73,19 @@ namespace Amazon.ECS.Model
         /// </para>
         ///  
         /// <para>
-        /// The default ephemeral port range is 49153 to 65535, and this range is used for Docker
-        /// versions prior to 1.6.0. For Docker version 1.6.0 and later, the Docker daemon tries
-        /// to read the ephemeral port range from <code>/proc/sys/net/ipv4/ip_local_port_range</code>;
-        /// if this kernel parameter is unavailable, the default ephemeral port range is used.
-        /// You should not attempt to specify a host port in the ephemeral port range, because
-        /// these are reserved for automatic assignment. In general, ports below 32768 are outside
-        /// of the ephemeral port range.
+        /// The default ephemeral port range for Docker version 1.6.0 and later is listed on the
+        /// instance under <code>/proc/sys/net/ipv4/ip_local_port_range</code>; if this kernel
+        /// parameter is unavailable, the default ephemeral port range of 49153 to 65535 is used.
+        /// You should not attempt to specify a host port in the ephemeral port range as these
+        /// are reserved for automatic assignment. In general, ports below 32768 are outside of
+        /// the ephemeral port range.
         /// </para>
-        ///  
+        ///  <note> 
+        /// <para>
+        /// The default ephemeral port range of 49153 to 65535 will always be used for Docker
+        /// versions prior to 1.6.0.
+        /// </para>
+        ///  </note> 
         /// <para>
         /// The default reserved ports are 22 for SSH, the Docker ports 2375 and 2376, and the
         /// Amazon ECS container agent ports 51678 and 51679. Any host port that was previously

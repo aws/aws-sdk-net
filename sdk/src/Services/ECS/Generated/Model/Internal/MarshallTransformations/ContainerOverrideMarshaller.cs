@@ -56,6 +56,12 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
                 context.Writer.WriteArrayEnd();
             }
 
+            if(requestObject.IsSetCpu())
+            {
+                context.Writer.WritePropertyName("cpu");
+                context.Writer.Write(requestObject.Cpu);
+            }
+
             if(requestObject.IsSetEnvironment())
             {
                 context.Writer.WritePropertyName("environment");
@@ -70,6 +76,18 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
                 context.Writer.WriteArrayEnd();
+            }
+
+            if(requestObject.IsSetMemory())
+            {
+                context.Writer.WritePropertyName("memory");
+                context.Writer.Write(requestObject.Memory);
+            }
+
+            if(requestObject.IsSetMemoryReservation())
+            {
+                context.Writer.WritePropertyName("memoryReservation");
+                context.Writer.Write(requestObject.MemoryReservation);
             }
 
             if(requestObject.IsSetName())

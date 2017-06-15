@@ -33,7 +33,10 @@ namespace Amazon.ECS.Model
     public partial class ContainerOverride
     {
         private List<string> _command = new List<string>();
+        private int? _cpu;
         private List<KeyValuePair> _environment = new List<KeyValuePair>();
+        private int? _memory;
+        private int? _memoryReservation;
         private string _name;
 
         /// <summary>
@@ -53,6 +56,25 @@ namespace Amazon.ECS.Model
         internal bool IsSetCommand()
         {
             return this._command != null && this._command.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Cpu. 
+        /// <para>
+        /// The number of <code>cpu</code> units reserved for the container, instead of the default
+        /// value from the task definition. You must also specify a container name.
+        /// </para>
+        /// </summary>
+        public int Cpu
+        {
+            get { return this._cpu.GetValueOrDefault(); }
+            set { this._cpu = value; }
+        }
+
+        // Check to see if Cpu property is set
+        internal bool IsSetCpu()
+        {
+            return this._cpu.HasValue; 
         }
 
         /// <summary>
@@ -77,10 +99,49 @@ namespace Amazon.ECS.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Memory. 
+        /// <para>
+        /// The hard limit (in MiB) of memory to present to the container, instead of the default
+        /// value from the task definition. If your container attempts to exceed the memory specified
+        /// here, the container is killed. You must also specify a container name.
+        /// </para>
+        /// </summary>
+        public int Memory
+        {
+            get { return this._memory.GetValueOrDefault(); }
+            set { this._memory = value; }
+        }
+
+        // Check to see if Memory property is set
+        internal bool IsSetMemory()
+        {
+            return this._memory.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property MemoryReservation. 
+        /// <para>
+        /// The soft limit (in MiB) of memory to reserve for the container, instead of the default
+        /// value from the task definition. You must also specify a container name.
+        /// </para>
+        /// </summary>
+        public int MemoryReservation
+        {
+            get { return this._memoryReservation.GetValueOrDefault(); }
+            set { this._memoryReservation = value; }
+        }
+
+        // Check to see if MemoryReservation property is set
+        internal bool IsSetMemoryReservation()
+        {
+            return this._memoryReservation.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
         /// The name of the container that receives the override. This parameter is required if
-        /// a command or environment variable is specified.
+        /// any override is specified.
         /// </para>
         /// </summary>
         public string Name

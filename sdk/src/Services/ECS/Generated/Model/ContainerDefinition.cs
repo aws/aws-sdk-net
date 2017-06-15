@@ -410,12 +410,7 @@ namespace Amazon.ECS.Model
         /// Remote API</a> and the <code>IMAGE</code> parameter of <a href="https://docs.docker.com/engine/reference/run/">docker
         /// run</a>.
         /// </para>
-        ///  <note> 
-        /// <para>
-        /// Amazon ECS task definitions currently only support tags as image identifiers within
-        /// a specified repository (and not <code>sha256</code> digests).
-        /// </para>
-        ///  </note> <ul> <li> 
+        ///  <ul> <li> 
         /// <para>
         /// Images in Amazon ECR repositories use the full registry and repository URI (for example,
         /// <code>012345678910.dkr.ecr.&lt;region-name&gt;.amazonaws.com/&lt;repository-name&gt;</code>).

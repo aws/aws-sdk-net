@@ -70,10 +70,28 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
                     unmarshalledObject.Command = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("cpu", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.Cpu = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("environment", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<KeyValuePair, KeyValuePairUnmarshaller>(KeyValuePairUnmarshaller.Instance);
                     unmarshalledObject.Environment = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("memory", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.Memory = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("memoryReservation", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.MemoryReservation = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("name", targetDepth))
