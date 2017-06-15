@@ -200,7 +200,10 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the property LaunchSpecification.
+        /// Gets and sets the property LaunchSpecification. 
+        /// <para>
+        /// The launch specification.
+        /// </para>
         /// </summary>
         public LaunchSpecification LaunchSpecification
         {

@@ -2189,6 +2189,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("EC2")]
+        public void DescribeFpgaImagesMarshallTest()
+        {
+            var operation = service_model.FindOperation("DescribeFpgaImages");
+
+            var request = InstantiateClassGenerator.Execute<DescribeFpgaImagesRequest>();
+            var marshaller = new DescribeFpgaImagesRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
+            var response = DescribeFpgaImagesResponseUnmarshaller.Instance.Unmarshall(context)
+                as DescribeFpgaImagesResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("EC2")]
         public void DescribeHostReservationOfferingsMarshallTest()
         {
             var operation = service_model.FindOperation("DescribeHostReservationOfferings");

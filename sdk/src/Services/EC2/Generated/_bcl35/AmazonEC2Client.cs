@@ -2009,8 +2009,9 @@ namespace Amazon.EC2
         /// 
         ///  
         /// <para>
-        /// For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/CopyingAMIs.html">Copying
-        /// AMIs</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// For more information about the prerequisites and limits when copying an AMI, see <a
+        /// href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/CopyingAMIs.html">Copying
+        /// an AMI</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CopyImage service method.</param>
@@ -6517,6 +6518,61 @@ namespace Amazon.EC2
         public  DescribeFlowLogsResponse EndDescribeFlowLogs(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeFlowLogsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DescribeFpgaImages
+
+        /// <summary>
+        /// Describes one or more available Amazon FPGA Images (AFIs). These include public AFIs,
+        /// private AFIs that you own, and AFIs owned by other AWS accounts for which you have
+        /// load permissions.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeFpgaImages service method.</param>
+        /// 
+        /// <returns>The response from the DescribeFpgaImages service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeFpgaImages">REST API Reference for DescribeFpgaImages Operation</seealso>
+        public DescribeFpgaImagesResponse DescribeFpgaImages(DescribeFpgaImagesRequest request)
+        {
+            var marshaller = new DescribeFpgaImagesRequestMarshaller();
+            var unmarshaller = DescribeFpgaImagesResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeFpgaImagesRequest,DescribeFpgaImagesResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeFpgaImages operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeFpgaImages operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeFpgaImages
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeFpgaImages">REST API Reference for DescribeFpgaImages Operation</seealso>
+        public IAsyncResult BeginDescribeFpgaImages(DescribeFpgaImagesRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new DescribeFpgaImagesRequestMarshaller();
+            var unmarshaller = DescribeFpgaImagesResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DescribeFpgaImagesRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeFpgaImages operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeFpgaImages.</param>
+        /// 
+        /// <returns>Returns a  DescribeFpgaImagesResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeFpgaImages">REST API Reference for DescribeFpgaImages Operation</seealso>
+        public  DescribeFpgaImagesResponse EndDescribeFpgaImages(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeFpgaImagesResponse>(asyncResult);
         }
 
         #endregion

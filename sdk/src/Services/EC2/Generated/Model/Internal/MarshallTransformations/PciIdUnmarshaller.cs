@@ -32,18 +32,18 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for Placement Object
+    /// Response Unmarshaller for PciId Object
     /// </summary>  
-    public class PlacementUnmarshaller : IUnmarshaller<Placement, XmlUnmarshallerContext>, IUnmarshaller<Placement, JsonUnmarshallerContext>
+    public class PciIdUnmarshaller : IUnmarshaller<PciId, XmlUnmarshallerContext>, IUnmarshaller<PciId, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public Placement Unmarshall(XmlUnmarshallerContext context)
+        public PciId Unmarshall(XmlUnmarshallerContext context)
         {
-            Placement unmarshalledObject = new Placement();
+            PciId unmarshalledObject = new PciId();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
@@ -54,40 +54,28 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-                    if (context.TestExpression("affinity", targetDepth))
+                    if (context.TestExpression("deviceId", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.Affinity = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.DeviceId = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("availabilityZone", targetDepth))
+                    if (context.TestExpression("subsystemId", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.AvailabilityZone = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.SubsystemId = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("groupName", targetDepth))
+                    if (context.TestExpression("subsystemVendorId", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.GroupName = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.SubsystemVendorId = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("hostId", targetDepth))
+                    if (context.TestExpression("vendorId", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.HostId = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("spreadDomain", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.SpreadDomain = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("tenancy", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.Tenancy = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.VendorId = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
@@ -105,18 +93,18 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public Placement Unmarshall(JsonUnmarshallerContext context)
+        public PciId Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
 
-        private static PlacementUnmarshaller _instance = new PlacementUnmarshaller();        
+        private static PciIdUnmarshaller _instance = new PciIdUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static PlacementUnmarshaller Instance
+        public static PciIdUnmarshaller Instance
         {
             get
             {

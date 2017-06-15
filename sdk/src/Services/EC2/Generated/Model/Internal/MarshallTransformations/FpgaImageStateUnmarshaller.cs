@@ -32,18 +32,18 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for Placement Object
+    /// Response Unmarshaller for FpgaImageState Object
     /// </summary>  
-    public class PlacementUnmarshaller : IUnmarshaller<Placement, XmlUnmarshallerContext>, IUnmarshaller<Placement, JsonUnmarshallerContext>
+    public class FpgaImageStateUnmarshaller : IUnmarshaller<FpgaImageState, XmlUnmarshallerContext>, IUnmarshaller<FpgaImageState, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public Placement Unmarshall(XmlUnmarshallerContext context)
+        public FpgaImageState Unmarshall(XmlUnmarshallerContext context)
         {
-            Placement unmarshalledObject = new Placement();
+            FpgaImageState unmarshalledObject = new FpgaImageState();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
@@ -54,40 +54,16 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-                    if (context.TestExpression("affinity", targetDepth))
+                    if (context.TestExpression("code", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.Affinity = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.Code = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("availabilityZone", targetDepth))
+                    if (context.TestExpression("message", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.AvailabilityZone = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("groupName", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.GroupName = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("hostId", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.HostId = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("spreadDomain", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.SpreadDomain = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("tenancy", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.Tenancy = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.Message = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
@@ -105,18 +81,18 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public Placement Unmarshall(JsonUnmarshallerContext context)
+        public FpgaImageState Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
 
-        private static PlacementUnmarshaller _instance = new PlacementUnmarshaller();        
+        private static FpgaImageStateUnmarshaller _instance = new FpgaImageStateUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static PlacementUnmarshaller Instance
+        public static FpgaImageStateUnmarshaller Instance
         {
             get
             {

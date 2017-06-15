@@ -34,8 +34,9 @@ namespace Amazon.EC2.Model
     /// 
     ///  
     /// <para>
-    /// For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/CopyingAMIs.html">Copying
-    /// AMIs</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+    /// For more information about the prerequisites and limits when copying an AMI, see <a
+    /// href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/CopyingAMIs.html">Copying
+    /// an AMI</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
     /// </para>
     /// </summary>
     public partial class CopyImageRequest : AmazonEC2Request

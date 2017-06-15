@@ -1103,8 +1103,9 @@ namespace Amazon.EC2
         /// 
         ///  
         /// <para>
-        /// For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/CopyingAMIs.html">Copying
-        /// AMIs</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// For more information about the prerequisites and limits when copying an AMI, see <a
+        /// href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/CopyingAMIs.html">Copying
+        /// an AMI</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CopyImage service method.</param>
@@ -4027,6 +4028,35 @@ namespace Amazon.EC2
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeFlowLogs">REST API Reference for DescribeFlowLogs Operation</seealso>
         Task<DescribeFlowLogsResponse> DescribeFlowLogsAsync(DescribeFlowLogsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DescribeFpgaImages
+
+
+        /// <summary>
+        /// Describes one or more available Amazon FPGA Images (AFIs). These include public AFIs,
+        /// private AFIs that you own, and AFIs owned by other AWS accounts for which you have
+        /// load permissions.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeFpgaImages service method.</param>
+        /// 
+        /// <returns>The response from the DescribeFpgaImages service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeFpgaImages">REST API Reference for DescribeFpgaImages Operation</seealso>
+        DescribeFpgaImagesResponse DescribeFpgaImages(DescribeFpgaImagesRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeFpgaImages operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeFpgaImages operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeFpgaImages">REST API Reference for DescribeFpgaImages Operation</seealso>
+        Task<DescribeFpgaImagesResponse> DescribeFpgaImagesAsync(DescribeFpgaImagesRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         

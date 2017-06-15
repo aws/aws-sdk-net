@@ -1507,6 +1507,64 @@ namespace Amazon.EC2
 
 
     /// <summary>
+    /// Constants used for properties of type FpgaImageStateCode.
+    /// </summary>
+    public class FpgaImageStateCode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Available for FpgaImageStateCode
+        /// </summary>
+        public static readonly FpgaImageStateCode Available = new FpgaImageStateCode("available");
+        /// <summary>
+        /// Constant Failed for FpgaImageStateCode
+        /// </summary>
+        public static readonly FpgaImageStateCode Failed = new FpgaImageStateCode("failed");
+        /// <summary>
+        /// Constant Pending for FpgaImageStateCode
+        /// </summary>
+        public static readonly FpgaImageStateCode Pending = new FpgaImageStateCode("pending");
+        /// <summary>
+        /// Constant Unavailable for FpgaImageStateCode
+        /// </summary>
+        public static readonly FpgaImageStateCode Unavailable = new FpgaImageStateCode("unavailable");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public FpgaImageStateCode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static FpgaImageStateCode FindValue(string value)
+        {
+            return FindValue<FpgaImageStateCode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator FpgaImageStateCode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type GatewayType.
     /// </summary>
     public class GatewayType : ConstantClass

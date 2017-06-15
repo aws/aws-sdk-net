@@ -36,6 +36,7 @@ namespace Amazon.EC2.Model
         private string _availabilityZone;
         private string _groupName;
         private string _hostId;
+        private string _spreadDomain;
         private Tenancy _tenancy;
 
         /// <summary>
@@ -124,6 +125,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetHostId()
         {
             return this._hostId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SpreadDomain. 
+        /// <para>
+        /// Reserved for future use.
+        /// </para>
+        /// </summary>
+        public string SpreadDomain
+        {
+            get { return this._spreadDomain; }
+            set { this._spreadDomain = value; }
+        }
+
+        // Check to see if SpreadDomain property is set
+        internal bool IsSetSpreadDomain()
+        {
+            return this._spreadDomain != null;
         }
 
         /// <summary>

@@ -279,6 +279,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     {
                         request.Parameters.Add("Placement" + "." + "HostId", StringUtils.FromString(publicRequest.Placement.HostId));
                     }
+                    if(publicRequest.Placement.IsSetSpreadDomain())
+                    {
+                        request.Parameters.Add("Placement" + "." + "SpreadDomain", StringUtils.FromString(publicRequest.Placement.SpreadDomain));
+                    }
                     if(publicRequest.Placement.IsSetTenancy())
                     {
                         request.Parameters.Add("Placement" + "." + "Tenancy", StringUtils.FromString(publicRequest.Placement.Tenancy));
