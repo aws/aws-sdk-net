@@ -1715,8 +1715,7 @@ namespace Amazon.IoT
 
 
         /// <summary>
-        /// Gets information about the specified certificate. You may specify the certificate
-        /// using either its ID or PEM.
+        /// Gets information about the specified certificate.
         /// </summary>
         /// <param name="certificateId">The ID of the certificate.</param>
         /// <param name="cancellationToken">
