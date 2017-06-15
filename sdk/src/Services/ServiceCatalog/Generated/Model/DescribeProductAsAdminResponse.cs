@@ -33,6 +33,7 @@ namespace Amazon.ServiceCatalog.Model
     public partial class DescribeProductAsAdminResponse : AmazonWebServiceResponse
     {
         private ProductViewDetail _productViewDetail;
+        private List<ProvisioningArtifactSummary> _provisioningArtifactSummaries = new List<ProvisioningArtifactSummary>();
         private List<Tag> _tags = new List<Tag>();
 
         /// <summary>
@@ -51,6 +52,24 @@ namespace Amazon.ServiceCatalog.Model
         internal bool IsSetProductViewDetail()
         {
             return this._productViewDetail != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ProvisioningArtifactSummaries. 
+        /// <para>
+        /// A list of provisioning artifact summaries for the product.
+        /// </para>
+        /// </summary>
+        public List<ProvisioningArtifactSummary> ProvisioningArtifactSummaries
+        {
+            get { return this._provisioningArtifactSummaries; }
+            set { this._provisioningArtifactSummaries = value; }
+        }
+
+        // Check to see if ProvisioningArtifactSummaries property is set
+        internal bool IsSetProvisioningArtifactSummaries()
+        {
+            return this._provisioningArtifactSummaries != null && this._provisioningArtifactSummaries.Count > 0; 
         }
 
         /// <summary>

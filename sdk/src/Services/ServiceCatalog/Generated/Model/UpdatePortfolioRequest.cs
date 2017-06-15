@@ -29,7 +29,7 @@ namespace Amazon.ServiceCatalog.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdatePortfolio operation.
-    /// Updates the specified portfolio's details. This operation will not work with a product
+    /// Updates the specified portfolio's details. This operation does not work with a product
     /// that has been shared with you.
     /// </summary>
     public partial class UpdatePortfolioRequest : AmazonServiceCatalogRequest

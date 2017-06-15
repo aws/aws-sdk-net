@@ -29,7 +29,7 @@ namespace Amazon.ServiceCatalog.Model
 {
     /// <summary>
     /// Container for the parameters to the DeletePortfolio operation.
-    /// Deletes the specified portfolio. This operation will not work with a portfolio that
+    /// Deletes the specified portfolio. This operation does not work with a portfolio that
     /// has been shared with you or if it has products, users, constraints, or shared accounts
     /// associated with it.
     /// </summary>

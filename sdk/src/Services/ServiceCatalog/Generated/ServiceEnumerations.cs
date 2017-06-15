@@ -180,6 +180,10 @@ namespace Amazon.ServiceCatalog
         /// Constant CLOUD_FORMATION_TEMPLATE for ProductType
         /// </summary>
         public static readonly ProductType CLOUD_FORMATION_TEMPLATE = new ProductType("CLOUD_FORMATION_TEMPLATE");
+        /// <summary>
+        /// Constant MARKETPLACE for ProductType
+        /// </summary>
+        public static readonly ProductType MARKETPLACE = new ProductType("MARKETPLACE");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -234,6 +238,10 @@ namespace Amazon.ServiceCatalog
         /// Constant ProductType for ProductViewFilterBy
         /// </summary>
         public static readonly ProductViewFilterBy ProductType = new ProductViewFilterBy("ProductType");
+        /// <summary>
+        /// Constant SourceProductId for ProductViewFilterBy
+        /// </summary>
+        public static readonly ProductViewFilterBy SourceProductId = new ProductViewFilterBy("SourceProductId");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -325,6 +333,64 @@ namespace Amazon.ServiceCatalog
 
 
     /// <summary>
+    /// Constants used for properties of type ProvisionedProductStatus.
+    /// </summary>
+    public class ProvisionedProductStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AVAILABLE for ProvisionedProductStatus
+        /// </summary>
+        public static readonly ProvisionedProductStatus AVAILABLE = new ProvisionedProductStatus("AVAILABLE");
+        /// <summary>
+        /// Constant ERROR for ProvisionedProductStatus
+        /// </summary>
+        public static readonly ProvisionedProductStatus ERROR = new ProvisionedProductStatus("ERROR");
+        /// <summary>
+        /// Constant TAINTED for ProvisionedProductStatus
+        /// </summary>
+        public static readonly ProvisionedProductStatus TAINTED = new ProvisionedProductStatus("TAINTED");
+        /// <summary>
+        /// Constant UNDER_CHANGE for ProvisionedProductStatus
+        /// </summary>
+        public static readonly ProvisionedProductStatus UNDER_CHANGE = new ProvisionedProductStatus("UNDER_CHANGE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ProvisionedProductStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ProvisionedProductStatus FindValue(string value)
+        {
+            return FindValue<ProvisionedProductStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ProvisionedProductStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ProvisioningArtifactType.
     /// </summary>
     public class ProvisioningArtifactType : ConstantClass
@@ -334,6 +400,14 @@ namespace Amazon.ServiceCatalog
         /// Constant CLOUD_FORMATION_TEMPLATE for ProvisioningArtifactType
         /// </summary>
         public static readonly ProvisioningArtifactType CLOUD_FORMATION_TEMPLATE = new ProvisioningArtifactType("CLOUD_FORMATION_TEMPLATE");
+        /// <summary>
+        /// Constant MARKETPLACE_AMI for ProvisioningArtifactType
+        /// </summary>
+        public static readonly ProvisioningArtifactType MARKETPLACE_AMI = new ProvisioningArtifactType("MARKETPLACE_AMI");
+        /// <summary>
+        /// Constant MARKETPLACE_CAR for ProvisioningArtifactType
+        /// </summary>
+        public static readonly ProvisioningArtifactType MARKETPLACE_CAR = new ProvisioningArtifactType("MARKETPLACE_CAR");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -377,13 +451,21 @@ namespace Amazon.ServiceCatalog
     {
 
         /// <summary>
-        /// Constant ERROR for RecordStatus
+        /// Constant CREATED for RecordStatus
         /// </summary>
-        public static readonly RecordStatus ERROR = new RecordStatus("ERROR");
+        public static readonly RecordStatus CREATED = new RecordStatus("CREATED");
+        /// <summary>
+        /// Constant FAILED for RecordStatus
+        /// </summary>
+        public static readonly RecordStatus FAILED = new RecordStatus("FAILED");
         /// <summary>
         /// Constant IN_PROGRESS for RecordStatus
         /// </summary>
         public static readonly RecordStatus IN_PROGRESS = new RecordStatus("IN_PROGRESS");
+        /// <summary>
+        /// Constant IN_PROGRESS_IN_ERROR for RecordStatus
+        /// </summary>
+        public static readonly RecordStatus IN_PROGRESS_IN_ERROR = new RecordStatus("IN_PROGRESS_IN_ERROR");
         /// <summary>
         /// Constant SUCCEEDED for RecordStatus
         /// </summary>

@@ -29,8 +29,13 @@ namespace Amazon.ServiceCatalog.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateProvisioningArtifact operation.
-    /// Create a new provisioning artifact for the specified product. This operation will
+    /// Create a new provisioning artifact for the specified product. This operation does
     /// not work with a product that has been shared with you.
+    /// 
+    ///  
+    /// <para>
+    /// See the bottom of this topic for an example JSON request.
+    /// </para>
     /// </summary>
     public partial class CreateProvisioningArtifactRequest : AmazonServiceCatalogRequest
     {

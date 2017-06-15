@@ -161,6 +161,11 @@
     <max>100</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ServiceCatalog.Model.DescribeProvisionedProductRequest.Id</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ServiceCatalog.Model.DescribeProvisioningArtifactRequest.ProductId</property>
     <min>1</min>
     <max>100</max>
@@ -368,6 +373,12 @@
     <max>100</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ServiceCatalog.Model.ProvisionProductRequest.ProvisionedProductName</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[a-zA-Z0-9][a-zA-Z0-9._-]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ServiceCatalog.Model.ProvisionProductRequest.ProvisioningArtifactId</property>
     <min>1</min>
     <max>100</max>
@@ -436,7 +447,7 @@
     <property>Amazon.ServiceCatalog.Model.TerminateProvisionedProductRequest.ProvisionedProductName</property>
     <min>1</min>
     <max>1224</max>
-    <pattern>[a-zA-Z0-9][a-zA-Z0-9_-]{0,127}|arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}</pattern>
+    <pattern>[a-zA-Z0-9][a-zA-Z0-9._-]{0,127}|arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ServiceCatalog.Model.TerminateProvisionedProductRequest.TerminateToken</property>
@@ -496,7 +507,7 @@
     <property>Amazon.ServiceCatalog.Model.UpdateProvisionedProductRequest.ProvisionedProductName</property>
     <min>1</min>
     <max>1224</max>
-    <pattern>[a-zA-Z0-9][a-zA-Z0-9_-]{0,127}|arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}</pattern>
+    <pattern>[a-zA-Z0-9][a-zA-Z0-9._-]{0,127}|arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ServiceCatalog.Model.UpdateProvisionedProductRequest.ProvisioningArtifactId</property>
@@ -599,7 +610,7 @@
     <property>Amazon.ServiceCatalog.Model.ProvisionedProductDetail.Arn</property>
     <min>1</min>
     <max>1224</max>
-    <pattern>[a-zA-Z0-9][a-zA-Z0-9_-]{0,127}|arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}</pattern>
+    <pattern>[a-zA-Z0-9][a-zA-Z0-9._-]{0,127}|arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ServiceCatalog.Model.ProvisionedProductDetail.IdempotencyToken</property>
@@ -611,7 +622,7 @@
     <property>Amazon.ServiceCatalog.Model.ProvisionedProductDetail.Name</property>
     <min>1</min>
     <max>1224</max>
-    <pattern>[a-zA-Z0-9][a-zA-Z0-9_-]{0,127}|arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}</pattern>
+    <pattern>[a-zA-Z0-9][a-zA-Z0-9._-]{0,127}|arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ServiceCatalog.Model.ProvisioningArtifact.Id</property>
@@ -629,13 +640,18 @@
     <max>1000</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ServiceCatalog.Model.ProvisioningArtifactSummary.Id</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ServiceCatalog.Model.ProvisioningParameter.Key</property>
     <min>1</min>
     <max>1000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ServiceCatalog.Model.ProvisioningParameter.Value</property>
-    <max>1000</max>
+    <max>4096</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ServiceCatalog.Model.RecordDetail.PathId</property>
@@ -651,6 +667,12 @@
     <property>Amazon.ServiceCatalog.Model.RecordDetail.ProvisionedProductId</property>
     <min>1</min>
     <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ServiceCatalog.Model.RecordDetail.ProvisionedProductName</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[a-zA-Z0-9][a-zA-Z0-9._-]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ServiceCatalog.Model.RecordDetail.ProvisioningArtifactId</property>
@@ -693,6 +715,6 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ServiceCatalog.Model.UpdateProvisioningParameter.Value</property>
-    <max>1000</max>
+    <max>4096</max>
   </property-value-rule>
 </property-value-rules>

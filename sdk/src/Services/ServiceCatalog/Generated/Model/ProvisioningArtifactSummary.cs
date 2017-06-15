@@ -28,14 +28,15 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ServiceCatalog.Model
 {
     /// <summary>
-    /// Contains information indicating the ways in which a product can be provisioned.
+    /// Summary information about a provisioning artifact.
     /// </summary>
-    public partial class ProvisioningArtifact
+    public partial class ProvisioningArtifactSummary
     {
         private DateTime? _createdTime;
         private string _description;
         private string _id;
         private string _name;
+        private Dictionary<string, string> _provisioningArtifactMetadata = new Dictionary<string, string>();
 
         /// <summary>
         /// Gets and sets the property CreatedTime. 
@@ -58,7 +59,7 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// The text description of the artifact.
+        /// The provisioning artifact description.
         /// </para>
         /// </summary>
         public string Description
@@ -76,7 +77,7 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
-        /// The identifier for the artifact. This is sometimes referred to as the product version.
+        /// The provisioning artifact identifier.
         /// </para>
         /// </summary>
         public string Id
@@ -94,7 +95,7 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the artifact.
+        /// The provisioning artifact name.
         /// </para>
         /// </summary>
         public string Name
@@ -107,6 +108,25 @@ namespace Amazon.ServiceCatalog.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ProvisioningArtifactMetadata. 
+        /// <para>
+        /// The provisioning artifact metadata. This data is used with products created by AWS
+        /// Marketplace.
+        /// </para>
+        /// </summary>
+        public Dictionary<string, string> ProvisioningArtifactMetadata
+        {
+            get { return this._provisioningArtifactMetadata; }
+            set { this._provisioningArtifactMetadata = value; }
+        }
+
+        // Check to see if ProvisioningArtifactMetadata property is set
+        internal bool IsSetProvisioningArtifactMetadata()
+        {
+            return this._provisioningArtifactMetadata != null && this._provisioningArtifactMetadata.Count > 0; 
         }
 
     }

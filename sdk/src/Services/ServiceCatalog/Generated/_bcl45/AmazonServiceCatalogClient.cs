@@ -45,8 +45,8 @@ namespace Amazon.ServiceCatalog
     ///  <a href="https://aws.amazon.com/servicecatalog/">AWS Service Catalog</a> allows organizations
     /// to create and manage catalogs of IT services that are approved for use on AWS. This
     /// documentation provides reference material for the AWS Service Catalog end user API.
-    /// To get the most out of this documentation, you need to be familiar with the terminology
-    /// discussed in <a href="http://docs.aws.amazon.com/servicecatalog/latest/userguide/what-is_concepts.html">AWS
+    /// To get the most out of this documentation, be familiar with the terminology discussed
+    /// in <a href="http://docs.aws.amazon.com/servicecatalog/latest/adminguide/what-is_concepts.html">AWS
     /// Service Catalog Concepts</a>.
     /// </para>
     ///  
@@ -271,6 +271,7 @@ namespace Amazon.ServiceCatalog
         /// <exception cref="Amazon.ServiceCatalog.Model.ResourceNotFoundException">
         /// The specified resource was not found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/AcceptPortfolioShare">REST API Reference for AcceptPortfolioShare Operation</seealso>
         public AcceptPortfolioShareResponse AcceptPortfolioShare(AcceptPortfolioShareRequest request)
         {
             var marshaller = new AcceptPortfolioShareRequestMarshaller();
@@ -288,6 +289,7 @@ namespace Amazon.ServiceCatalog
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/AcceptPortfolioShare">REST API Reference for AcceptPortfolioShare Operation</seealso>
         public Task<AcceptPortfolioShareResponse> AcceptPortfolioShareAsync(AcceptPortfolioShareRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new AcceptPortfolioShareRequestMarshaller();
@@ -318,6 +320,7 @@ namespace Amazon.ServiceCatalog
         /// <exception cref="Amazon.ServiceCatalog.Model.ResourceNotFoundException">
         /// The specified resource was not found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/AssociatePrincipalWithPortfolio">REST API Reference for AssociatePrincipalWithPortfolio Operation</seealso>
         public AssociatePrincipalWithPortfolioResponse AssociatePrincipalWithPortfolio(AssociatePrincipalWithPortfolioRequest request)
         {
             var marshaller = new AssociatePrincipalWithPortfolioRequestMarshaller();
@@ -335,6 +338,7 @@ namespace Amazon.ServiceCatalog
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/AssociatePrincipalWithPortfolio">REST API Reference for AssociatePrincipalWithPortfolio Operation</seealso>
         public Task<AssociatePrincipalWithPortfolioResponse> AssociatePrincipalWithPortfolioAsync(AssociatePrincipalWithPortfolioRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new AssociatePrincipalWithPortfolioRequestMarshaller();
@@ -365,6 +369,7 @@ namespace Amazon.ServiceCatalog
         /// <exception cref="Amazon.ServiceCatalog.Model.ResourceNotFoundException">
         /// The specified resource was not found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/AssociateProductWithPortfolio">REST API Reference for AssociateProductWithPortfolio Operation</seealso>
         public AssociateProductWithPortfolioResponse AssociateProductWithPortfolio(AssociateProductWithPortfolioRequest request)
         {
             var marshaller = new AssociateProductWithPortfolioRequestMarshaller();
@@ -382,6 +387,7 @@ namespace Amazon.ServiceCatalog
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/AssociateProductWithPortfolio">REST API Reference for AssociateProductWithPortfolio Operation</seealso>
         public Task<AssociateProductWithPortfolioResponse> AssociateProductWithPortfolioAsync(AssociateProductWithPortfolioRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new AssociateProductWithPortfolioRequestMarshaller();
@@ -397,7 +403,8 @@ namespace Amazon.ServiceCatalog
 
 
         /// <summary>
-        /// Creates a new constraint.
+        /// Creates a new constraint. For more information, see <a href="http://docs.aws.amazon.com/servicecatalog/latest/adminguide/constraints.html">Using
+        /// Constraints</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateConstraint service method.</param>
         /// 
@@ -415,6 +422,7 @@ namespace Amazon.ServiceCatalog
         /// <exception cref="Amazon.ServiceCatalog.Model.ResourceNotFoundException">
         /// The specified resource was not found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/CreateConstraint">REST API Reference for CreateConstraint Operation</seealso>
         public CreateConstraintResponse CreateConstraint(CreateConstraintRequest request)
         {
             var marshaller = new CreateConstraintRequestMarshaller();
@@ -432,6 +440,7 @@ namespace Amazon.ServiceCatalog
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/CreateConstraint">REST API Reference for CreateConstraint Operation</seealso>
         public Task<CreateConstraintResponse> CreateConstraintAsync(CreateConstraintRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateConstraintRequestMarshaller();
@@ -459,6 +468,7 @@ namespace Amazon.ServiceCatalog
         /// The current limits of the service would have been exceeded by this operation. Reduce
         /// the resource use or increase the service limits and retry the operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/CreatePortfolio">REST API Reference for CreatePortfolio Operation</seealso>
         public CreatePortfolioResponse CreatePortfolio(CreatePortfolioRequest request)
         {
             var marshaller = new CreatePortfolioRequestMarshaller();
@@ -476,6 +486,7 @@ namespace Amazon.ServiceCatalog
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/CreatePortfolio">REST API Reference for CreatePortfolio Operation</seealso>
         public Task<CreatePortfolioResponse> CreatePortfolioAsync(CreatePortfolioRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreatePortfolioRequestMarshaller();
@@ -506,6 +517,7 @@ namespace Amazon.ServiceCatalog
         /// <exception cref="Amazon.ServiceCatalog.Model.ResourceNotFoundException">
         /// The specified resource was not found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/CreatePortfolioShare">REST API Reference for CreatePortfolioShare Operation</seealso>
         public CreatePortfolioShareResponse CreatePortfolioShare(CreatePortfolioShareRequest request)
         {
             var marshaller = new CreatePortfolioShareRequestMarshaller();
@@ -523,6 +535,7 @@ namespace Amazon.ServiceCatalog
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/CreatePortfolioShare">REST API Reference for CreatePortfolioShare Operation</seealso>
         public Task<CreatePortfolioShareResponse> CreatePortfolioShareAsync(CreatePortfolioShareRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreatePortfolioShareRequestMarshaller();
@@ -550,6 +563,7 @@ namespace Amazon.ServiceCatalog
         /// The current limits of the service would have been exceeded by this operation. Reduce
         /// the resource use or increase the service limits and retry the operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/CreateProduct">REST API Reference for CreateProduct Operation</seealso>
         public CreateProductResponse CreateProduct(CreateProductRequest request)
         {
             var marshaller = new CreateProductRequestMarshaller();
@@ -567,6 +581,7 @@ namespace Amazon.ServiceCatalog
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/CreateProduct">REST API Reference for CreateProduct Operation</seealso>
         public Task<CreateProductResponse> CreateProductAsync(CreateProductRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateProductRequestMarshaller();
@@ -582,8 +597,13 @@ namespace Amazon.ServiceCatalog
 
 
         /// <summary>
-        /// Create a new provisioning artifact for the specified product. This operation will
+        /// Create a new provisioning artifact for the specified product. This operation does
         /// not work with a product that has been shared with you.
+        /// 
+        ///  
+        /// <para>
+        /// See the bottom of this topic for an example JSON request.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateProvisioningArtifact service method.</param>
         /// 
@@ -598,6 +618,7 @@ namespace Amazon.ServiceCatalog
         /// <exception cref="Amazon.ServiceCatalog.Model.ResourceNotFoundException">
         /// The specified resource was not found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/CreateProvisioningArtifact">REST API Reference for CreateProvisioningArtifact Operation</seealso>
         public CreateProvisioningArtifactResponse CreateProvisioningArtifact(CreateProvisioningArtifactRequest request)
         {
             var marshaller = new CreateProvisioningArtifactRequestMarshaller();
@@ -615,6 +636,7 @@ namespace Amazon.ServiceCatalog
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/CreateProvisioningArtifact">REST API Reference for CreateProvisioningArtifact Operation</seealso>
         public Task<CreateProvisioningArtifactResponse> CreateProvisioningArtifactAsync(CreateProvisioningArtifactRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateProvisioningArtifactRequestMarshaller();
@@ -641,6 +663,7 @@ namespace Amazon.ServiceCatalog
         /// <exception cref="Amazon.ServiceCatalog.Model.ResourceNotFoundException">
         /// The specified resource was not found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DeleteConstraint">REST API Reference for DeleteConstraint Operation</seealso>
         public DeleteConstraintResponse DeleteConstraint(DeleteConstraintRequest request)
         {
             var marshaller = new DeleteConstraintRequestMarshaller();
@@ -658,6 +681,7 @@ namespace Amazon.ServiceCatalog
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DeleteConstraint">REST API Reference for DeleteConstraint Operation</seealso>
         public Task<DeleteConstraintResponse> DeleteConstraintAsync(DeleteConstraintRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteConstraintRequestMarshaller();
@@ -673,7 +697,7 @@ namespace Amazon.ServiceCatalog
 
 
         /// <summary>
-        /// Deletes the specified portfolio. This operation will not work with a portfolio that
+        /// Deletes the specified portfolio. This operation does not work with a portfolio that
         /// has been shared with you or if it has products, users, constraints, or shared accounts
         /// associated with it.
         /// </summary>
@@ -690,6 +714,7 @@ namespace Amazon.ServiceCatalog
         /// <exception cref="Amazon.ServiceCatalog.Model.ResourceNotFoundException">
         /// The specified resource was not found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DeletePortfolio">REST API Reference for DeletePortfolio Operation</seealso>
         public DeletePortfolioResponse DeletePortfolio(DeletePortfolioRequest request)
         {
             var marshaller = new DeletePortfolioRequestMarshaller();
@@ -707,6 +732,7 @@ namespace Amazon.ServiceCatalog
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DeletePortfolio">REST API Reference for DeletePortfolio Operation</seealso>
         public Task<DeletePortfolioResponse> DeletePortfolioAsync(DeletePortfolioRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeletePortfolioRequestMarshaller();
@@ -730,6 +756,7 @@ namespace Amazon.ServiceCatalog
         /// <exception cref="Amazon.ServiceCatalog.Model.ResourceNotFoundException">
         /// The specified resource was not found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DeletePortfolioShare">REST API Reference for DeletePortfolioShare Operation</seealso>
         public DeletePortfolioShareResponse DeletePortfolioShare(DeletePortfolioShareRequest request)
         {
             var marshaller = new DeletePortfolioShareRequestMarshaller();
@@ -747,6 +774,7 @@ namespace Amazon.ServiceCatalog
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DeletePortfolioShare">REST API Reference for DeletePortfolioShare Operation</seealso>
         public Task<DeletePortfolioShareResponse> DeletePortfolioShareAsync(DeletePortfolioShareRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeletePortfolioShareRequestMarshaller();
@@ -762,7 +790,7 @@ namespace Amazon.ServiceCatalog
 
 
         /// <summary>
-        /// Deletes the specified product. This operation will not work with a product that has
+        /// Deletes the specified product. This operation does not work with a product that has
         /// been shared with you or is associated with a portfolio.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteProduct service method.</param>
@@ -778,6 +806,7 @@ namespace Amazon.ServiceCatalog
         /// <exception cref="Amazon.ServiceCatalog.Model.ResourceNotFoundException">
         /// The specified resource was not found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DeleteProduct">REST API Reference for DeleteProduct Operation</seealso>
         public DeleteProductResponse DeleteProduct(DeleteProductRequest request)
         {
             var marshaller = new DeleteProductRequestMarshaller();
@@ -795,6 +824,7 @@ namespace Amazon.ServiceCatalog
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DeleteProduct">REST API Reference for DeleteProduct Operation</seealso>
         public Task<DeleteProductResponse> DeleteProductAsync(DeleteProductRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteProductRequestMarshaller();
@@ -810,7 +840,7 @@ namespace Amazon.ServiceCatalog
 
 
         /// <summary>
-        /// Deletes the specified provisioning artifact. This operation will not work on a provisioning
+        /// Deletes the specified provisioning artifact. This operation does not work on a provisioning
         /// artifact associated with a product that has been shared with you, or on the last provisioning
         /// artifact associated with a product (a product must have at least one provisioning
         /// artifact).
@@ -828,6 +858,7 @@ namespace Amazon.ServiceCatalog
         /// <exception cref="Amazon.ServiceCatalog.Model.ResourceNotFoundException">
         /// The specified resource was not found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DeleteProvisioningArtifact">REST API Reference for DeleteProvisioningArtifact Operation</seealso>
         public DeleteProvisioningArtifactResponse DeleteProvisioningArtifact(DeleteProvisioningArtifactRequest request)
         {
             var marshaller = new DeleteProvisioningArtifactRequestMarshaller();
@@ -845,6 +876,7 @@ namespace Amazon.ServiceCatalog
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DeleteProvisioningArtifact">REST API Reference for DeleteProvisioningArtifact Operation</seealso>
         public Task<DeleteProvisioningArtifactResponse> DeleteProvisioningArtifactAsync(DeleteProvisioningArtifactRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteProvisioningArtifactRequestMarshaller();
@@ -868,6 +900,7 @@ namespace Amazon.ServiceCatalog
         /// <exception cref="Amazon.ServiceCatalog.Model.ResourceNotFoundException">
         /// The specified resource was not found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DescribeConstraint">REST API Reference for DescribeConstraint Operation</seealso>
         public DescribeConstraintResponse DescribeConstraint(DescribeConstraintRequest request)
         {
             var marshaller = new DescribeConstraintRequestMarshaller();
@@ -885,6 +918,7 @@ namespace Amazon.ServiceCatalog
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DescribeConstraint">REST API Reference for DescribeConstraint Operation</seealso>
         public Task<DescribeConstraintResponse> DescribeConstraintAsync(DescribeConstraintRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeConstraintRequestMarshaller();
@@ -908,6 +942,7 @@ namespace Amazon.ServiceCatalog
         /// <exception cref="Amazon.ServiceCatalog.Model.ResourceNotFoundException">
         /// The specified resource was not found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DescribePortfolio">REST API Reference for DescribePortfolio Operation</seealso>
         public DescribePortfolioResponse DescribePortfolio(DescribePortfolioRequest request)
         {
             var marshaller = new DescribePortfolioRequestMarshaller();
@@ -925,6 +960,7 @@ namespace Amazon.ServiceCatalog
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DescribePortfolio">REST API Reference for DescribePortfolio Operation</seealso>
         public Task<DescribePortfolioResponse> DescribePortfolioAsync(DescribePortfolioRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribePortfolioRequestMarshaller();
@@ -957,6 +993,7 @@ namespace Amazon.ServiceCatalog
         /// <exception cref="Amazon.ServiceCatalog.Model.ResourceNotFoundException">
         /// The specified resource was not found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DescribeProduct">REST API Reference for DescribeProduct Operation</seealso>
         public DescribeProductResponse DescribeProduct(DescribeProductRequest request)
         {
             var marshaller = new DescribeProductRequestMarshaller();
@@ -974,6 +1011,7 @@ namespace Amazon.ServiceCatalog
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DescribeProduct">REST API Reference for DescribeProduct Operation</seealso>
         public Task<DescribeProductResponse> DescribeProductAsync(DescribeProductRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeProductRequestMarshaller();
@@ -997,6 +1035,7 @@ namespace Amazon.ServiceCatalog
         /// <exception cref="Amazon.ServiceCatalog.Model.ResourceNotFoundException">
         /// The specified resource was not found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DescribeProductAsAdmin">REST API Reference for DescribeProductAsAdmin Operation</seealso>
         public DescribeProductAsAdminResponse DescribeProductAsAdmin(DescribeProductAsAdminRequest request)
         {
             var marshaller = new DescribeProductAsAdminRequestMarshaller();
@@ -1014,6 +1053,7 @@ namespace Amazon.ServiceCatalog
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DescribeProductAsAdmin">REST API Reference for DescribeProductAsAdmin Operation</seealso>
         public Task<DescribeProductAsAdminResponse> DescribeProductAsAdminAsync(DescribeProductAsAdminRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeProductAsAdminRequestMarshaller();
@@ -1046,6 +1086,7 @@ namespace Amazon.ServiceCatalog
         /// <exception cref="Amazon.ServiceCatalog.Model.ResourceNotFoundException">
         /// The specified resource was not found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DescribeProductView">REST API Reference for DescribeProductView Operation</seealso>
         public DescribeProductViewResponse DescribeProductView(DescribeProductViewRequest request)
         {
             var marshaller = new DescribeProductViewRequestMarshaller();
@@ -1063,12 +1104,55 @@ namespace Amazon.ServiceCatalog
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DescribeProductView">REST API Reference for DescribeProductView Operation</seealso>
         public Task<DescribeProductViewResponse> DescribeProductViewAsync(DescribeProductViewRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeProductViewRequestMarshaller();
             var unmarshaller = DescribeProductViewResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeProductViewRequest,DescribeProductViewResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeProvisionedProduct
+
+
+        /// <summary>
+        /// Retrieve detailed information about the provisioned product.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeProvisionedProduct service method.</param>
+        /// 
+        /// <returns>The response from the DescribeProvisionedProduct service method, as returned by ServiceCatalog.</returns>
+        /// <exception cref="Amazon.ServiceCatalog.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DescribeProvisionedProduct">REST API Reference for DescribeProvisionedProduct Operation</seealso>
+        public DescribeProvisionedProductResponse DescribeProvisionedProduct(DescribeProvisionedProductRequest request)
+        {
+            var marshaller = new DescribeProvisionedProductRequestMarshaller();
+            var unmarshaller = DescribeProvisionedProductResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeProvisionedProductRequest,DescribeProvisionedProductResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeProvisionedProduct operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeProvisionedProduct operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DescribeProvisionedProduct">REST API Reference for DescribeProvisionedProduct Operation</seealso>
+        public Task<DescribeProvisionedProductResponse> DescribeProvisionedProductAsync(DescribeProvisionedProductRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DescribeProvisionedProductRequestMarshaller();
+            var unmarshaller = DescribeProvisionedProductResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeProvisionedProductRequest,DescribeProvisionedProductResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -1086,6 +1170,7 @@ namespace Amazon.ServiceCatalog
         /// <exception cref="Amazon.ServiceCatalog.Model.ResourceNotFoundException">
         /// The specified resource was not found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DescribeProvisioningArtifact">REST API Reference for DescribeProvisioningArtifact Operation</seealso>
         public DescribeProvisioningArtifactResponse DescribeProvisioningArtifact(DescribeProvisioningArtifactRequest request)
         {
             var marshaller = new DescribeProvisioningArtifactRequestMarshaller();
@@ -1103,6 +1188,7 @@ namespace Amazon.ServiceCatalog
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DescribeProvisioningArtifact">REST API Reference for DescribeProvisioningArtifact Operation</seealso>
         public Task<DescribeProvisioningArtifactResponse> DescribeProvisioningArtifactAsync(DescribeProvisioningArtifactRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeProvisioningArtifactRequestMarshaller();
@@ -1132,6 +1218,7 @@ namespace Amazon.ServiceCatalog
         /// <exception cref="Amazon.ServiceCatalog.Model.ResourceNotFoundException">
         /// The specified resource was not found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DescribeProvisioningParameters">REST API Reference for DescribeProvisioningParameters Operation</seealso>
         public DescribeProvisioningParametersResponse DescribeProvisioningParameters(DescribeProvisioningParametersRequest request)
         {
             var marshaller = new DescribeProvisioningParametersRequestMarshaller();
@@ -1149,6 +1236,7 @@ namespace Amazon.ServiceCatalog
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DescribeProvisioningParameters">REST API Reference for DescribeProvisioningParameters Operation</seealso>
         public Task<DescribeProvisioningParametersResponse> DescribeProvisioningParametersAsync(DescribeProvisioningParametersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeProvisioningParametersRequestMarshaller();
@@ -1174,6 +1262,7 @@ namespace Amazon.ServiceCatalog
         /// <exception cref="Amazon.ServiceCatalog.Model.ResourceNotFoundException">
         /// The specified resource was not found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DescribeRecord">REST API Reference for DescribeRecord Operation</seealso>
         public DescribeRecordResponse DescribeRecord(DescribeRecordRequest request)
         {
             var marshaller = new DescribeRecordRequestMarshaller();
@@ -1191,6 +1280,7 @@ namespace Amazon.ServiceCatalog
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DescribeRecord">REST API Reference for DescribeRecord Operation</seealso>
         public Task<DescribeRecordResponse> DescribeRecordAsync(DescribeRecordRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeRecordRequestMarshaller();
@@ -1217,6 +1307,7 @@ namespace Amazon.ServiceCatalog
         /// <exception cref="Amazon.ServiceCatalog.Model.ResourceNotFoundException">
         /// The specified resource was not found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DisassociatePrincipalFromPortfolio">REST API Reference for DisassociatePrincipalFromPortfolio Operation</seealso>
         public DisassociatePrincipalFromPortfolioResponse DisassociatePrincipalFromPortfolio(DisassociatePrincipalFromPortfolioRequest request)
         {
             var marshaller = new DisassociatePrincipalFromPortfolioRequestMarshaller();
@@ -1234,6 +1325,7 @@ namespace Amazon.ServiceCatalog
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DisassociatePrincipalFromPortfolio">REST API Reference for DisassociatePrincipalFromPortfolio Operation</seealso>
         public Task<DisassociatePrincipalFromPortfolioResponse> DisassociatePrincipalFromPortfolioAsync(DisassociatePrincipalFromPortfolioRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DisassociatePrincipalFromPortfolioRequestMarshaller();
@@ -1260,6 +1352,7 @@ namespace Amazon.ServiceCatalog
         /// <exception cref="Amazon.ServiceCatalog.Model.ResourceNotFoundException">
         /// The specified resource was not found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DisassociateProductFromPortfolio">REST API Reference for DisassociateProductFromPortfolio Operation</seealso>
         public DisassociateProductFromPortfolioResponse DisassociateProductFromPortfolio(DisassociateProductFromPortfolioRequest request)
         {
             var marshaller = new DisassociateProductFromPortfolioRequestMarshaller();
@@ -1277,6 +1370,7 @@ namespace Amazon.ServiceCatalog
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DisassociateProductFromPortfolio">REST API Reference for DisassociateProductFromPortfolio Operation</seealso>
         public Task<DisassociateProductFromPortfolioResponse> DisassociateProductFromPortfolioAsync(DisassociateProductFromPortfolioRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DisassociateProductFromPortfolioRequestMarshaller();
@@ -1300,6 +1394,7 @@ namespace Amazon.ServiceCatalog
         /// <exception cref="Amazon.ServiceCatalog.Model.InvalidParametersException">
         /// One or more parameters provided to the operation are invalid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListAcceptedPortfolioShares">REST API Reference for ListAcceptedPortfolioShares Operation</seealso>
         public ListAcceptedPortfolioSharesResponse ListAcceptedPortfolioShares(ListAcceptedPortfolioSharesRequest request)
         {
             var marshaller = new ListAcceptedPortfolioSharesRequestMarshaller();
@@ -1317,6 +1412,7 @@ namespace Amazon.ServiceCatalog
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListAcceptedPortfolioShares">REST API Reference for ListAcceptedPortfolioShares Operation</seealso>
         public Task<ListAcceptedPortfolioSharesResponse> ListAcceptedPortfolioSharesAsync(ListAcceptedPortfolioSharesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListAcceptedPortfolioSharesRequestMarshaller();
@@ -1343,6 +1439,7 @@ namespace Amazon.ServiceCatalog
         /// <exception cref="Amazon.ServiceCatalog.Model.ResourceNotFoundException">
         /// The specified resource was not found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListConstraintsForPortfolio">REST API Reference for ListConstraintsForPortfolio Operation</seealso>
         public ListConstraintsForPortfolioResponse ListConstraintsForPortfolio(ListConstraintsForPortfolioRequest request)
         {
             var marshaller = new ListConstraintsForPortfolioRequestMarshaller();
@@ -1360,6 +1457,7 @@ namespace Amazon.ServiceCatalog
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListConstraintsForPortfolio">REST API Reference for ListConstraintsForPortfolio Operation</seealso>
         public Task<ListConstraintsForPortfolioResponse> ListConstraintsForPortfolioAsync(ListConstraintsForPortfolioRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListConstraintsForPortfolioRequestMarshaller();
@@ -1388,6 +1486,7 @@ namespace Amazon.ServiceCatalog
         /// <exception cref="Amazon.ServiceCatalog.Model.ResourceNotFoundException">
         /// The specified resource was not found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListLaunchPaths">REST API Reference for ListLaunchPaths Operation</seealso>
         public ListLaunchPathsResponse ListLaunchPaths(ListLaunchPathsRequest request)
         {
             var marshaller = new ListLaunchPathsRequestMarshaller();
@@ -1405,6 +1504,7 @@ namespace Amazon.ServiceCatalog
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListLaunchPaths">REST API Reference for ListLaunchPaths Operation</seealso>
         public Task<ListLaunchPathsResponse> ListLaunchPathsAsync(ListLaunchPathsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListLaunchPathsRequestMarshaller();
@@ -1428,6 +1528,7 @@ namespace Amazon.ServiceCatalog
         /// <exception cref="Amazon.ServiceCatalog.Model.ResourceNotFoundException">
         /// The specified resource was not found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListPortfolioAccess">REST API Reference for ListPortfolioAccess Operation</seealso>
         public ListPortfolioAccessResponse ListPortfolioAccess(ListPortfolioAccessRequest request)
         {
             var marshaller = new ListPortfolioAccessRequestMarshaller();
@@ -1445,6 +1546,7 @@ namespace Amazon.ServiceCatalog
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListPortfolioAccess">REST API Reference for ListPortfolioAccess Operation</seealso>
         public Task<ListPortfolioAccessResponse> ListPortfolioAccessAsync(ListPortfolioAccessRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListPortfolioAccessRequestMarshaller();
@@ -1468,6 +1570,7 @@ namespace Amazon.ServiceCatalog
         /// <exception cref="Amazon.ServiceCatalog.Model.InvalidParametersException">
         /// One or more parameters provided to the operation are invalid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListPortfolios">REST API Reference for ListPortfolios Operation</seealso>
         public ListPortfoliosResponse ListPortfolios(ListPortfoliosRequest request)
         {
             var marshaller = new ListPortfoliosRequestMarshaller();
@@ -1485,6 +1588,7 @@ namespace Amazon.ServiceCatalog
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListPortfolios">REST API Reference for ListPortfolios Operation</seealso>
         public Task<ListPortfoliosResponse> ListPortfoliosAsync(ListPortfoliosRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListPortfoliosRequestMarshaller();
@@ -1511,6 +1615,7 @@ namespace Amazon.ServiceCatalog
         /// <exception cref="Amazon.ServiceCatalog.Model.ResourceNotFoundException">
         /// The specified resource was not found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListPortfoliosForProduct">REST API Reference for ListPortfoliosForProduct Operation</seealso>
         public ListPortfoliosForProductResponse ListPortfoliosForProduct(ListPortfoliosForProductRequest request)
         {
             var marshaller = new ListPortfoliosForProductRequestMarshaller();
@@ -1528,6 +1633,7 @@ namespace Amazon.ServiceCatalog
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListPortfoliosForProduct">REST API Reference for ListPortfoliosForProduct Operation</seealso>
         public Task<ListPortfoliosForProductResponse> ListPortfoliosForProductAsync(ListPortfoliosForProductRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListPortfoliosForProductRequestMarshaller();
@@ -1554,6 +1660,7 @@ namespace Amazon.ServiceCatalog
         /// <exception cref="Amazon.ServiceCatalog.Model.ResourceNotFoundException">
         /// The specified resource was not found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListPrincipalsForPortfolio">REST API Reference for ListPrincipalsForPortfolio Operation</seealso>
         public ListPrincipalsForPortfolioResponse ListPrincipalsForPortfolio(ListPrincipalsForPortfolioRequest request)
         {
             var marshaller = new ListPrincipalsForPortfolioRequestMarshaller();
@@ -1571,6 +1678,7 @@ namespace Amazon.ServiceCatalog
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListPrincipalsForPortfolio">REST API Reference for ListPrincipalsForPortfolio Operation</seealso>
         public Task<ListPrincipalsForPortfolioResponse> ListPrincipalsForPortfolioAsync(ListPrincipalsForPortfolioRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListPrincipalsForPortfolioRequestMarshaller();
@@ -1597,6 +1705,7 @@ namespace Amazon.ServiceCatalog
         /// <exception cref="Amazon.ServiceCatalog.Model.ResourceNotFoundException">
         /// The specified resource was not found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListProvisioningArtifacts">REST API Reference for ListProvisioningArtifacts Operation</seealso>
         public ListProvisioningArtifactsResponse ListProvisioningArtifacts(ListProvisioningArtifactsRequest request)
         {
             var marshaller = new ListProvisioningArtifactsRequestMarshaller();
@@ -1614,6 +1723,7 @@ namespace Amazon.ServiceCatalog
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListProvisioningArtifacts">REST API Reference for ListProvisioningArtifacts Operation</seealso>
         public Task<ListProvisioningArtifactsResponse> ListProvisioningArtifactsAsync(ListProvisioningArtifactsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListProvisioningArtifactsRequestMarshaller();
@@ -1638,6 +1748,7 @@ namespace Amazon.ServiceCatalog
         /// <exception cref="Amazon.ServiceCatalog.Model.InvalidParametersException">
         /// One or more parameters provided to the operation are invalid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListRecordHistory">REST API Reference for ListRecordHistory Operation</seealso>
         public ListRecordHistoryResponse ListRecordHistory(ListRecordHistoryRequest request)
         {
             var marshaller = new ListRecordHistoryRequestMarshaller();
@@ -1655,6 +1766,7 @@ namespace Amazon.ServiceCatalog
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListRecordHistory">REST API Reference for ListRecordHistory Operation</seealso>
         public Task<ListRecordHistoryResponse> ListRecordHistoryAsync(ListRecordHistoryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListRecordHistoryRequestMarshaller();
@@ -1670,7 +1782,7 @@ namespace Amazon.ServiceCatalog
 
 
         /// <summary>
-        /// Requests a <i>Provision</i> of a specified product. A <i>ProvisionedProduct</i> is
+        /// Requests a <i>provision</i> of a specified product. A <i>provisioned product</i> is
         /// a resourced instance for a product. For example, provisioning a CloudFormation-template-backed
         /// product results in launching a CloudFormation stack and all the underlying resources
         /// that come with it. 
@@ -1692,6 +1804,7 @@ namespace Amazon.ServiceCatalog
         /// <exception cref="Amazon.ServiceCatalog.Model.ResourceNotFoundException">
         /// The specified resource was not found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ProvisionProduct">REST API Reference for ProvisionProduct Operation</seealso>
         public ProvisionProductResponse ProvisionProduct(ProvisionProductRequest request)
         {
             var marshaller = new ProvisionProductRequestMarshaller();
@@ -1709,6 +1822,7 @@ namespace Amazon.ServiceCatalog
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ProvisionProduct">REST API Reference for ProvisionProduct Operation</seealso>
         public Task<ProvisionProductResponse> ProvisionProductAsync(ProvisionProductRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ProvisionProductRequestMarshaller();
@@ -1732,6 +1846,7 @@ namespace Amazon.ServiceCatalog
         /// <exception cref="Amazon.ServiceCatalog.Model.ResourceNotFoundException">
         /// The specified resource was not found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/RejectPortfolioShare">REST API Reference for RejectPortfolioShare Operation</seealso>
         public RejectPortfolioShareResponse RejectPortfolioShare(RejectPortfolioShareRequest request)
         {
             var marshaller = new RejectPortfolioShareRequestMarshaller();
@@ -1749,6 +1864,7 @@ namespace Amazon.ServiceCatalog
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/RejectPortfolioShare">REST API Reference for RejectPortfolioShare Operation</seealso>
         public Task<RejectPortfolioShareResponse> RejectPortfolioShareAsync(RejectPortfolioShareRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new RejectPortfolioShareRequestMarshaller();
@@ -1773,6 +1889,7 @@ namespace Amazon.ServiceCatalog
         /// <exception cref="Amazon.ServiceCatalog.Model.InvalidParametersException">
         /// One or more parameters provided to the operation are invalid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ScanProvisionedProducts">REST API Reference for ScanProvisionedProducts Operation</seealso>
         public ScanProvisionedProductsResponse ScanProvisionedProducts(ScanProvisionedProductsRequest request)
         {
             var marshaller = new ScanProvisionedProductsRequestMarshaller();
@@ -1790,6 +1907,7 @@ namespace Amazon.ServiceCatalog
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ScanProvisionedProducts">REST API Reference for ScanProvisionedProducts Operation</seealso>
         public Task<ScanProvisionedProductsResponse> ScanProvisionedProductsAsync(ScanProvisionedProductsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ScanProvisionedProductsRequestMarshaller();
@@ -1819,6 +1937,7 @@ namespace Amazon.ServiceCatalog
         /// <exception cref="Amazon.ServiceCatalog.Model.InvalidParametersException">
         /// One or more parameters provided to the operation are invalid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/SearchProducts">REST API Reference for SearchProducts Operation</seealso>
         public SearchProductsResponse SearchProducts(SearchProductsRequest request)
         {
             var marshaller = new SearchProductsRequestMarshaller();
@@ -1836,6 +1955,7 @@ namespace Amazon.ServiceCatalog
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/SearchProducts">REST API Reference for SearchProducts Operation</seealso>
         public Task<SearchProductsResponse> SearchProductsAsync(SearchProductsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new SearchProductsRequestMarshaller();
@@ -1864,6 +1984,7 @@ namespace Amazon.ServiceCatalog
         /// <exception cref="Amazon.ServiceCatalog.Model.ResourceNotFoundException">
         /// The specified resource was not found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/SearchProductsAsAdmin">REST API Reference for SearchProductsAsAdmin Operation</seealso>
         public SearchProductsAsAdminResponse SearchProductsAsAdmin(SearchProductsAsAdminRequest request)
         {
             var marshaller = new SearchProductsAsAdminRequestMarshaller();
@@ -1881,6 +2002,7 @@ namespace Amazon.ServiceCatalog
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/SearchProductsAsAdmin">REST API Reference for SearchProductsAsAdmin Operation</seealso>
         public Task<SearchProductsAsAdminResponse> SearchProductsAsAdminAsync(SearchProductsAsAdminRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new SearchProductsAsAdminRequestMarshaller();
@@ -1916,6 +2038,7 @@ namespace Amazon.ServiceCatalog
         /// <exception cref="Amazon.ServiceCatalog.Model.ResourceNotFoundException">
         /// The specified resource was not found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/TerminateProvisionedProduct">REST API Reference for TerminateProvisionedProduct Operation</seealso>
         public TerminateProvisionedProductResponse TerminateProvisionedProduct(TerminateProvisionedProductRequest request)
         {
             var marshaller = new TerminateProvisionedProductRequestMarshaller();
@@ -1933,6 +2056,7 @@ namespace Amazon.ServiceCatalog
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/TerminateProvisionedProduct">REST API Reference for TerminateProvisionedProduct Operation</seealso>
         public Task<TerminateProvisionedProductResponse> TerminateProvisionedProductAsync(TerminateProvisionedProductRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new TerminateProvisionedProductRequestMarshaller();
@@ -1959,6 +2083,7 @@ namespace Amazon.ServiceCatalog
         /// <exception cref="Amazon.ServiceCatalog.Model.ResourceNotFoundException">
         /// The specified resource was not found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/UpdateConstraint">REST API Reference for UpdateConstraint Operation</seealso>
         public UpdateConstraintResponse UpdateConstraint(UpdateConstraintRequest request)
         {
             var marshaller = new UpdateConstraintRequestMarshaller();
@@ -1976,6 +2101,7 @@ namespace Amazon.ServiceCatalog
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/UpdateConstraint">REST API Reference for UpdateConstraint Operation</seealso>
         public Task<UpdateConstraintResponse> UpdateConstraintAsync(UpdateConstraintRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new UpdateConstraintRequestMarshaller();
@@ -1991,7 +2117,7 @@ namespace Amazon.ServiceCatalog
 
 
         /// <summary>
-        /// Updates the specified portfolio's details. This operation will not work with a product
+        /// Updates the specified portfolio's details. This operation does not work with a product
         /// that has been shared with you.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdatePortfolio service method.</param>
@@ -2007,6 +2133,7 @@ namespace Amazon.ServiceCatalog
         /// <exception cref="Amazon.ServiceCatalog.Model.ResourceNotFoundException">
         /// The specified resource was not found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/UpdatePortfolio">REST API Reference for UpdatePortfolio Operation</seealso>
         public UpdatePortfolioResponse UpdatePortfolio(UpdatePortfolioRequest request)
         {
             var marshaller = new UpdatePortfolioRequestMarshaller();
@@ -2024,6 +2151,7 @@ namespace Amazon.ServiceCatalog
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/UpdatePortfolio">REST API Reference for UpdatePortfolio Operation</seealso>
         public Task<UpdatePortfolioResponse> UpdatePortfolioAsync(UpdatePortfolioRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new UpdatePortfolioRequestMarshaller();
@@ -2050,6 +2178,7 @@ namespace Amazon.ServiceCatalog
         /// <exception cref="Amazon.ServiceCatalog.Model.ResourceNotFoundException">
         /// The specified resource was not found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/UpdateProduct">REST API Reference for UpdateProduct Operation</seealso>
         public UpdateProductResponse UpdateProduct(UpdateProductRequest request)
         {
             var marshaller = new UpdateProductRequestMarshaller();
@@ -2067,6 +2196,7 @@ namespace Amazon.ServiceCatalog
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/UpdateProduct">REST API Reference for UpdateProduct Operation</seealso>
         public Task<UpdateProductResponse> UpdateProductAsync(UpdateProductRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new UpdateProductRequestMarshaller();
@@ -2102,6 +2232,7 @@ namespace Amazon.ServiceCatalog
         /// <exception cref="Amazon.ServiceCatalog.Model.ResourceNotFoundException">
         /// The specified resource was not found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/UpdateProvisionedProduct">REST API Reference for UpdateProvisionedProduct Operation</seealso>
         public UpdateProvisionedProductResponse UpdateProvisionedProduct(UpdateProvisionedProductRequest request)
         {
             var marshaller = new UpdateProvisionedProductRequestMarshaller();
@@ -2119,6 +2250,7 @@ namespace Amazon.ServiceCatalog
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/UpdateProvisionedProduct">REST API Reference for UpdateProvisionedProduct Operation</seealso>
         public Task<UpdateProvisionedProductResponse> UpdateProvisionedProductAsync(UpdateProvisionedProductRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new UpdateProvisionedProductRequestMarshaller();
@@ -2134,7 +2266,7 @@ namespace Amazon.ServiceCatalog
 
 
         /// <summary>
-        /// Updates an existing provisioning artifact's information. This operation will not work
+        /// Updates an existing provisioning artifact's information. This operation does not work
         /// on a provisioning artifact associated with a product that has been shared with you.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateProvisioningArtifact service method.</param>
@@ -2146,6 +2278,7 @@ namespace Amazon.ServiceCatalog
         /// <exception cref="Amazon.ServiceCatalog.Model.ResourceNotFoundException">
         /// The specified resource was not found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/UpdateProvisioningArtifact">REST API Reference for UpdateProvisioningArtifact Operation</seealso>
         public UpdateProvisioningArtifactResponse UpdateProvisioningArtifact(UpdateProvisioningArtifactRequest request)
         {
             var marshaller = new UpdateProvisioningArtifactRequestMarshaller();
@@ -2163,6 +2296,7 @@ namespace Amazon.ServiceCatalog
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/UpdateProvisioningArtifact">REST API Reference for UpdateProvisioningArtifact Operation</seealso>
         public Task<UpdateProvisioningArtifactResponse> UpdateProvisioningArtifactAsync(UpdateProvisioningArtifactRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new UpdateProvisioningArtifactRequestMarshaller();

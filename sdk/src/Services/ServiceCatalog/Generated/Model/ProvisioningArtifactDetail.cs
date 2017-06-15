@@ -77,7 +77,8 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
-        /// The identifier of the provisioning artifact.
+        /// The identifier of the provisioning artifact. This is sometimes referred to as the
+        /// product version.
         /// </para>
         /// </summary>
         public string Id
@@ -113,7 +114,16 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The type of the provisioning artifact.
+        /// The type of the provisioning artifact. The following provisioning artifact types are
+        /// used by AWS Marketplace products:
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>MARKETPLACE_AMI</code> - AMI products.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>MARKETPLACE_CAR</code> - CAR (Cluster and AWS Resources) products.
         /// </para>
         /// </summary>
         public ProvisioningArtifactType Type

@@ -39,7 +39,7 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property Info. 
         /// <para>
-        /// Additional information about the provisioning artifact create request.
+        /// Additional information about the creation request for the provisioning artifact.
         /// </para>
         /// </summary>
         public Dictionary<string, string> Info

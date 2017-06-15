@@ -29,7 +29,7 @@ namespace Amazon.ServiceCatalog.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateProvisioningArtifact operation.
-    /// Updates an existing provisioning artifact's information. This operation will not work
+    /// Updates an existing provisioning artifact's information. This operation does not work
     /// on a provisioning artifact associated with a product that has been shared with you.
     /// </summary>
     public partial class UpdateProvisioningArtifactRequest : AmazonServiceCatalogRequest
@@ -131,7 +131,8 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property ProvisioningArtifactId. 
         /// <para>
-        /// The identifier of the provisioning artifact for the update request.
+        /// The identifier of the provisioning artifact for the update request. This is sometimes
+        /// referred to as the product version.
         /// </para>
         /// </summary>
         public string ProvisioningArtifactId

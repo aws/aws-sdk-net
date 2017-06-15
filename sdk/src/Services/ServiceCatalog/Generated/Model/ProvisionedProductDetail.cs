@@ -38,7 +38,7 @@ namespace Amazon.ServiceCatalog.Model
         private string _idempotencyToken;
         private string _lastRecordId;
         private string _name;
-        private RecordStatus _status;
+        private ProvisionedProductStatus _status;
         private string _statusMessage;
         private string _type;
 
@@ -157,8 +157,31 @@ namespace Amazon.ServiceCatalog.Model
         /// <para>
         /// The current status of the ProvisionedProduct.
         /// </para>
+        ///  
+        /// <para>
+        ///  <code>AVAILABLE</code> - Stable state, ready to perform any operation. The most recent
+        /// action request succeeded and completed.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>UNDER_CHANGE</code> - Transitive state, operations performed may or may not
+        /// have valid results. Wait for an <code>AVAILABLE</code> status before performing operations.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>TAINTED</code> - Stable state, ready to perform any operation. The stack has
+        /// completed the requested operation but is not exactly what was requested. For example,
+        /// a request to update to a new version failed and the stack rolled back to the current
+        /// version. 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>ERROR</code> - Something unexpected happened such that the provisioned product
+        /// exists but the stack is not running. For example, CloudFormation received an invalid
+        /// parameter value and could not launch the stack.
+        /// </para>
         /// </summary>
-        public RecordStatus Status
+        public ProvisionedProductStatus Status
         {
             get { return this._status; }
             set { this._status = value; }

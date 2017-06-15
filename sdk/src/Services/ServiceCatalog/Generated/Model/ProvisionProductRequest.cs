@@ -29,7 +29,7 @@ namespace Amazon.ServiceCatalog.Model
 {
     /// <summary>
     /// Container for the parameters to the ProvisionProduct operation.
-    /// Requests a <i>Provision</i> of a specified product. A <i>ProvisionedProduct</i> is
+    /// Requests a <i>provision</i> of a specified product. A <i>provisioned product</i> is
     /// a resourced instance for a product. For example, provisioning a CloudFormation-template-backed
     /// product results in launching a CloudFormation stack and all the underlying resources
     /// that come with it. 
@@ -163,7 +163,8 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property ProvisioningArtifactId. 
         /// <para>
-        /// The provisioning artifact identifier for this product.
+        /// The provisioning artifact identifier for this product. This is sometimes referred
+        /// to as the product version.
         /// </para>
         /// </summary>
         public string ProvisioningArtifactId

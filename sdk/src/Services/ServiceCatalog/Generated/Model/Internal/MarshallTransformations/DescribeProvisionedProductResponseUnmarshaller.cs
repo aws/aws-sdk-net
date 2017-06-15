@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.ServiceCatalog.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for DescribeProductAsAdmin operation
+    /// Response Unmarshaller for DescribeProvisionedProduct operation
     /// </summary>  
-    public class DescribeProductAsAdminResponseUnmarshaller : JsonResponseUnmarshaller
+    public class DescribeProvisionedProductResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,28 +45,16 @@ namespace Amazon.ServiceCatalog.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            DescribeProductAsAdminResponse response = new DescribeProductAsAdminResponse();
+            DescribeProvisionedProductResponse response = new DescribeProvisionedProductResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("ProductViewDetail", targetDepth))
+                if (context.TestExpression("ProvisionedProductDetail", targetDepth))
                 {
-                    var unmarshaller = ProductViewDetailUnmarshaller.Instance;
-                    response.ProductViewDetail = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("ProvisioningArtifactSummaries", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<ProvisioningArtifactSummary, ProvisioningArtifactSummaryUnmarshaller>(ProvisioningArtifactSummaryUnmarshaller.Instance);
-                    response.ProvisioningArtifactSummaries = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Tags", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<Tag, TagUnmarshaller>(TagUnmarshaller.Instance);
-                    response.Tags = unmarshaller.Unmarshall(context);
+                    var unmarshaller = ProvisionedProductDetailUnmarshaller.Instance;
+                    response.ProvisionedProductDetail = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -91,9 +79,9 @@ namespace Amazon.ServiceCatalog.Model.Internal.MarshallTransformations
             return new AmazonServiceCatalogException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
 
-        private static DescribeProductAsAdminResponseUnmarshaller _instance = new DescribeProductAsAdminResponseUnmarshaller();        
+        private static DescribeProvisionedProductResponseUnmarshaller _instance = new DescribeProvisionedProductResponseUnmarshaller();        
 
-        internal static DescribeProductAsAdminResponseUnmarshaller GetInstance()
+        internal static DescribeProvisionedProductResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -101,7 +89,7 @@ namespace Amazon.ServiceCatalog.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static DescribeProductAsAdminResponseUnmarshaller Instance
+        public static DescribeProvisionedProductResponseUnmarshaller Instance
         {
             get
             {

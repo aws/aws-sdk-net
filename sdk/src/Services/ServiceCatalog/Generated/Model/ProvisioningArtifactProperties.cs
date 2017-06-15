@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ServiceCatalog.Model
 {
     /// <summary>
-    /// Provisioning artifact properties.
+    /// Provisioning artifact properties. For example request JSON, see <a>CreateProvisioningArtifact</a>.
     /// </summary>
     public partial class ProvisioningArtifactProperties
     {
@@ -58,7 +58,9 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property Info. 
         /// <para>
-        /// Additional information about the provisioning artifact properties.
+        /// Additional information about the provisioning artifact properties. When using this
+        /// element in a request, you must specify <code>LoadTemplateFromURL</code>. For more
+        /// information, see <a>CreateProvisioningArtifact</a>.
         /// </para>
         /// </summary>
         public Dictionary<string, string> Info
@@ -94,7 +96,16 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The type of the provisioning artifact properties.
+        /// The type of the provisioning artifact properties. The following provisioning artifact
+        /// property types are used by AWS Marketplace products:
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>MARKETPLACE_AMI</code> - AMI products.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>MARKETPLACE_CAR</code> - CAR (Cluster and AWS Resources) products.
         /// </para>
         /// </summary>
         public ProvisioningArtifactType Type

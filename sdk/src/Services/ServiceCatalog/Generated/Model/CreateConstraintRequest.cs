@@ -29,7 +29,8 @@ namespace Amazon.ServiceCatalog.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateConstraint operation.
-    /// Creates a new constraint.
+    /// Creates a new constraint. For more information, see <a href="http://docs.aws.amazon.com/servicecatalog/latest/adminguide/constraints.html">Using
+    /// Constraints</a>.
     /// </summary>
     public partial class CreateConstraintRequest : AmazonServiceCatalogRequest
     {
@@ -116,7 +117,21 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property Parameters. 
         /// <para>
-        /// The constraint parameters.
+        /// The constraint parameters. Expected values vary depending on which <b>Type</b> is
+        /// specified. For examples, see the bottom of this topic.
+        /// </para>
+        ///  
+        /// <para>
+        /// For Type <code>LAUNCH</code>, the <code>RoleArn</code> property is required. 
+        /// </para>
+        ///  
+        /// <para>
+        /// For Type <code>NOTIFICATION</code>, the <code>NotificationArns</code> property is
+        /// required.
+        /// </para>
+        ///  
+        /// <para>
+        /// For Type <code>TEMPLATE</code>, the <code>Rules</code> property is required.
         /// </para>
         /// </summary>
         public string Parameters
@@ -170,7 +185,8 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The type of the constraint.
+        /// The type of the constraint. Case-sensitive valid values are: <code>LAUNCH</code>,
+        /// <code>NOTIFICATION</code>, or <code>TEMPLATE</code>. 
         /// </para>
         /// </summary>
         public string Type

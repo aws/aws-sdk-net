@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ServiceCatalog.Model
 {
     /// <summary>
-    /// The arameter key/value pairs used to provision a product.
+    /// The parameter key-value pairs used to provision a product.
     /// </summary>
     public partial class ProvisioningParameter
     {

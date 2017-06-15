@@ -29,7 +29,7 @@ namespace Amazon.ServiceCatalog.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteProduct operation.
-    /// Deletes the specified product. This operation will not work with a product that has
+    /// Deletes the specified product. This operation does not work with a product that has
     /// been shared with you or is associated with a portfolio.
     /// </summary>
     public partial class DeleteProductRequest : AmazonServiceCatalogRequest

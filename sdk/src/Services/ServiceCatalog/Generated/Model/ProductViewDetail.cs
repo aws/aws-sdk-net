@@ -96,6 +96,18 @@ namespace Amazon.ServiceCatalog.Model
         /// <para>
         /// Current status of the product.
         /// </para>
+        ///  
+        /// <para>
+        ///  <code>AVAILABLE</code> - Product is available for use.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>CREATING</code> - Creation of product started, not ready for use.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>FAILED</code> - Action on product failed.
+        /// </para>
         /// </summary>
         public Status Status
         {

@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ServiceCatalog.Model
 {
     /// <summary>
-    /// The parameter key/value pair used to update a ProvisionedProduct object. If <code>UsePreviousValue</code>
+    /// The parameter key-value pair used to update a ProvisionedProduct object. If <code>UsePreviousValue</code>
     /// is set to true, <code>Value</code> is ignored and the value for <code>Key</code> is
     /// kept as previously set (current value).
     /// </summary>

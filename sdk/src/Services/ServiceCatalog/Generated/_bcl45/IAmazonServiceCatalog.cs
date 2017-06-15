@@ -40,8 +40,8 @@ namespace Amazon.ServiceCatalog
     ///  <a href="https://aws.amazon.com/servicecatalog/">AWS Service Catalog</a> allows organizations
     /// to create and manage catalogs of IT services that are approved for use on AWS. This
     /// documentation provides reference material for the AWS Service Catalog end user API.
-    /// To get the most out of this documentation, you need to be familiar with the terminology
-    /// discussed in <a href="http://docs.aws.amazon.com/servicecatalog/latest/userguide/what-is_concepts.html">AWS
+    /// To get the most out of this documentation, be familiar with the terminology discussed
+    /// in <a href="http://docs.aws.amazon.com/servicecatalog/latest/adminguide/what-is_concepts.html">AWS
     /// Service Catalog Concepts</a>.
     /// </para>
     ///  
@@ -83,6 +83,7 @@ namespace Amazon.ServiceCatalog
         /// <exception cref="Amazon.ServiceCatalog.Model.ResourceNotFoundException">
         /// The specified resource was not found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/AcceptPortfolioShare">REST API Reference for AcceptPortfolioShare Operation</seealso>
         AcceptPortfolioShareResponse AcceptPortfolioShare(AcceptPortfolioShareRequest request);
 
 
@@ -95,6 +96,7 @@ namespace Amazon.ServiceCatalog
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/AcceptPortfolioShare">REST API Reference for AcceptPortfolioShare Operation</seealso>
         Task<AcceptPortfolioShareResponse> AcceptPortfolioShareAsync(AcceptPortfolioShareRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -118,6 +120,7 @@ namespace Amazon.ServiceCatalog
         /// <exception cref="Amazon.ServiceCatalog.Model.ResourceNotFoundException">
         /// The specified resource was not found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/AssociatePrincipalWithPortfolio">REST API Reference for AssociatePrincipalWithPortfolio Operation</seealso>
         AssociatePrincipalWithPortfolioResponse AssociatePrincipalWithPortfolio(AssociatePrincipalWithPortfolioRequest request);
 
 
@@ -130,6 +133,7 @@ namespace Amazon.ServiceCatalog
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/AssociatePrincipalWithPortfolio">REST API Reference for AssociatePrincipalWithPortfolio Operation</seealso>
         Task<AssociatePrincipalWithPortfolioResponse> AssociatePrincipalWithPortfolioAsync(AssociatePrincipalWithPortfolioRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -153,6 +157,7 @@ namespace Amazon.ServiceCatalog
         /// <exception cref="Amazon.ServiceCatalog.Model.ResourceNotFoundException">
         /// The specified resource was not found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/AssociateProductWithPortfolio">REST API Reference for AssociateProductWithPortfolio Operation</seealso>
         AssociateProductWithPortfolioResponse AssociateProductWithPortfolio(AssociateProductWithPortfolioRequest request);
 
 
@@ -165,6 +170,7 @@ namespace Amazon.ServiceCatalog
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/AssociateProductWithPortfolio">REST API Reference for AssociateProductWithPortfolio Operation</seealso>
         Task<AssociateProductWithPortfolioResponse> AssociateProductWithPortfolioAsync(AssociateProductWithPortfolioRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -173,7 +179,8 @@ namespace Amazon.ServiceCatalog
 
 
         /// <summary>
-        /// Creates a new constraint.
+        /// Creates a new constraint. For more information, see <a href="http://docs.aws.amazon.com/servicecatalog/latest/adminguide/constraints.html">Using
+        /// Constraints</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateConstraint service method.</param>
         /// 
@@ -191,6 +198,7 @@ namespace Amazon.ServiceCatalog
         /// <exception cref="Amazon.ServiceCatalog.Model.ResourceNotFoundException">
         /// The specified resource was not found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/CreateConstraint">REST API Reference for CreateConstraint Operation</seealso>
         CreateConstraintResponse CreateConstraint(CreateConstraintRequest request);
 
 
@@ -203,6 +211,7 @@ namespace Amazon.ServiceCatalog
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/CreateConstraint">REST API Reference for CreateConstraint Operation</seealso>
         Task<CreateConstraintResponse> CreateConstraintAsync(CreateConstraintRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -223,6 +232,7 @@ namespace Amazon.ServiceCatalog
         /// The current limits of the service would have been exceeded by this operation. Reduce
         /// the resource use or increase the service limits and retry the operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/CreatePortfolio">REST API Reference for CreatePortfolio Operation</seealso>
         CreatePortfolioResponse CreatePortfolio(CreatePortfolioRequest request);
 
 
@@ -235,6 +245,7 @@ namespace Amazon.ServiceCatalog
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/CreatePortfolio">REST API Reference for CreatePortfolio Operation</seealso>
         Task<CreatePortfolioResponse> CreatePortfolioAsync(CreatePortfolioRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -258,6 +269,7 @@ namespace Amazon.ServiceCatalog
         /// <exception cref="Amazon.ServiceCatalog.Model.ResourceNotFoundException">
         /// The specified resource was not found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/CreatePortfolioShare">REST API Reference for CreatePortfolioShare Operation</seealso>
         CreatePortfolioShareResponse CreatePortfolioShare(CreatePortfolioShareRequest request);
 
 
@@ -270,6 +282,7 @@ namespace Amazon.ServiceCatalog
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/CreatePortfolioShare">REST API Reference for CreatePortfolioShare Operation</seealso>
         Task<CreatePortfolioShareResponse> CreatePortfolioShareAsync(CreatePortfolioShareRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -290,6 +303,7 @@ namespace Amazon.ServiceCatalog
         /// The current limits of the service would have been exceeded by this operation. Reduce
         /// the resource use or increase the service limits and retry the operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/CreateProduct">REST API Reference for CreateProduct Operation</seealso>
         CreateProductResponse CreateProduct(CreateProductRequest request);
 
 
@@ -302,6 +316,7 @@ namespace Amazon.ServiceCatalog
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/CreateProduct">REST API Reference for CreateProduct Operation</seealso>
         Task<CreateProductResponse> CreateProductAsync(CreateProductRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -310,8 +325,13 @@ namespace Amazon.ServiceCatalog
 
 
         /// <summary>
-        /// Create a new provisioning artifact for the specified product. This operation will
+        /// Create a new provisioning artifact for the specified product. This operation does
         /// not work with a product that has been shared with you.
+        /// 
+        ///  
+        /// <para>
+        /// See the bottom of this topic for an example JSON request.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateProvisioningArtifact service method.</param>
         /// 
@@ -326,6 +346,7 @@ namespace Amazon.ServiceCatalog
         /// <exception cref="Amazon.ServiceCatalog.Model.ResourceNotFoundException">
         /// The specified resource was not found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/CreateProvisioningArtifact">REST API Reference for CreateProvisioningArtifact Operation</seealso>
         CreateProvisioningArtifactResponse CreateProvisioningArtifact(CreateProvisioningArtifactRequest request);
 
 
@@ -338,6 +359,7 @@ namespace Amazon.ServiceCatalog
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/CreateProvisioningArtifact">REST API Reference for CreateProvisioningArtifact Operation</seealso>
         Task<CreateProvisioningArtifactResponse> CreateProvisioningArtifactAsync(CreateProvisioningArtifactRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -357,6 +379,7 @@ namespace Amazon.ServiceCatalog
         /// <exception cref="Amazon.ServiceCatalog.Model.ResourceNotFoundException">
         /// The specified resource was not found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DeleteConstraint">REST API Reference for DeleteConstraint Operation</seealso>
         DeleteConstraintResponse DeleteConstraint(DeleteConstraintRequest request);
 
 
@@ -369,6 +392,7 @@ namespace Amazon.ServiceCatalog
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DeleteConstraint">REST API Reference for DeleteConstraint Operation</seealso>
         Task<DeleteConstraintResponse> DeleteConstraintAsync(DeleteConstraintRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -377,7 +401,7 @@ namespace Amazon.ServiceCatalog
 
 
         /// <summary>
-        /// Deletes the specified portfolio. This operation will not work with a portfolio that
+        /// Deletes the specified portfolio. This operation does not work with a portfolio that
         /// has been shared with you or if it has products, users, constraints, or shared accounts
         /// associated with it.
         /// </summary>
@@ -394,6 +418,7 @@ namespace Amazon.ServiceCatalog
         /// <exception cref="Amazon.ServiceCatalog.Model.ResourceNotFoundException">
         /// The specified resource was not found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DeletePortfolio">REST API Reference for DeletePortfolio Operation</seealso>
         DeletePortfolioResponse DeletePortfolio(DeletePortfolioRequest request);
 
 
@@ -406,6 +431,7 @@ namespace Amazon.ServiceCatalog
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DeletePortfolio">REST API Reference for DeletePortfolio Operation</seealso>
         Task<DeletePortfolioResponse> DeletePortfolioAsync(DeletePortfolioRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -422,6 +448,7 @@ namespace Amazon.ServiceCatalog
         /// <exception cref="Amazon.ServiceCatalog.Model.ResourceNotFoundException">
         /// The specified resource was not found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DeletePortfolioShare">REST API Reference for DeletePortfolioShare Operation</seealso>
         DeletePortfolioShareResponse DeletePortfolioShare(DeletePortfolioShareRequest request);
 
 
@@ -434,6 +461,7 @@ namespace Amazon.ServiceCatalog
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DeletePortfolioShare">REST API Reference for DeletePortfolioShare Operation</seealso>
         Task<DeletePortfolioShareResponse> DeletePortfolioShareAsync(DeletePortfolioShareRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -442,7 +470,7 @@ namespace Amazon.ServiceCatalog
 
 
         /// <summary>
-        /// Deletes the specified product. This operation will not work with a product that has
+        /// Deletes the specified product. This operation does not work with a product that has
         /// been shared with you or is associated with a portfolio.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteProduct service method.</param>
@@ -458,6 +486,7 @@ namespace Amazon.ServiceCatalog
         /// <exception cref="Amazon.ServiceCatalog.Model.ResourceNotFoundException">
         /// The specified resource was not found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DeleteProduct">REST API Reference for DeleteProduct Operation</seealso>
         DeleteProductResponse DeleteProduct(DeleteProductRequest request);
 
 
@@ -470,6 +499,7 @@ namespace Amazon.ServiceCatalog
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DeleteProduct">REST API Reference for DeleteProduct Operation</seealso>
         Task<DeleteProductResponse> DeleteProductAsync(DeleteProductRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -478,7 +508,7 @@ namespace Amazon.ServiceCatalog
 
 
         /// <summary>
-        /// Deletes the specified provisioning artifact. This operation will not work on a provisioning
+        /// Deletes the specified provisioning artifact. This operation does not work on a provisioning
         /// artifact associated with a product that has been shared with you, or on the last provisioning
         /// artifact associated with a product (a product must have at least one provisioning
         /// artifact).
@@ -496,6 +526,7 @@ namespace Amazon.ServiceCatalog
         /// <exception cref="Amazon.ServiceCatalog.Model.ResourceNotFoundException">
         /// The specified resource was not found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DeleteProvisioningArtifact">REST API Reference for DeleteProvisioningArtifact Operation</seealso>
         DeleteProvisioningArtifactResponse DeleteProvisioningArtifact(DeleteProvisioningArtifactRequest request);
 
 
@@ -508,6 +539,7 @@ namespace Amazon.ServiceCatalog
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DeleteProvisioningArtifact">REST API Reference for DeleteProvisioningArtifact Operation</seealso>
         Task<DeleteProvisioningArtifactResponse> DeleteProvisioningArtifactAsync(DeleteProvisioningArtifactRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -524,6 +556,7 @@ namespace Amazon.ServiceCatalog
         /// <exception cref="Amazon.ServiceCatalog.Model.ResourceNotFoundException">
         /// The specified resource was not found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DescribeConstraint">REST API Reference for DescribeConstraint Operation</seealso>
         DescribeConstraintResponse DescribeConstraint(DescribeConstraintRequest request);
 
 
@@ -536,6 +569,7 @@ namespace Amazon.ServiceCatalog
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DescribeConstraint">REST API Reference for DescribeConstraint Operation</seealso>
         Task<DescribeConstraintResponse> DescribeConstraintAsync(DescribeConstraintRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -552,6 +586,7 @@ namespace Amazon.ServiceCatalog
         /// <exception cref="Amazon.ServiceCatalog.Model.ResourceNotFoundException">
         /// The specified resource was not found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DescribePortfolio">REST API Reference for DescribePortfolio Operation</seealso>
         DescribePortfolioResponse DescribePortfolio(DescribePortfolioRequest request);
 
 
@@ -564,6 +599,7 @@ namespace Amazon.ServiceCatalog
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DescribePortfolio">REST API Reference for DescribePortfolio Operation</seealso>
         Task<DescribePortfolioResponse> DescribePortfolioAsync(DescribePortfolioRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -589,6 +625,7 @@ namespace Amazon.ServiceCatalog
         /// <exception cref="Amazon.ServiceCatalog.Model.ResourceNotFoundException">
         /// The specified resource was not found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DescribeProduct">REST API Reference for DescribeProduct Operation</seealso>
         DescribeProductResponse DescribeProduct(DescribeProductRequest request);
 
 
@@ -601,6 +638,7 @@ namespace Amazon.ServiceCatalog
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DescribeProduct">REST API Reference for DescribeProduct Operation</seealso>
         Task<DescribeProductResponse> DescribeProductAsync(DescribeProductRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -617,6 +655,7 @@ namespace Amazon.ServiceCatalog
         /// <exception cref="Amazon.ServiceCatalog.Model.ResourceNotFoundException">
         /// The specified resource was not found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DescribeProductAsAdmin">REST API Reference for DescribeProductAsAdmin Operation</seealso>
         DescribeProductAsAdminResponse DescribeProductAsAdmin(DescribeProductAsAdminRequest request);
 
 
@@ -629,6 +668,7 @@ namespace Amazon.ServiceCatalog
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DescribeProductAsAdmin">REST API Reference for DescribeProductAsAdmin Operation</seealso>
         Task<DescribeProductAsAdminResponse> DescribeProductAsAdminAsync(DescribeProductAsAdminRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -654,6 +694,7 @@ namespace Amazon.ServiceCatalog
         /// <exception cref="Amazon.ServiceCatalog.Model.ResourceNotFoundException">
         /// The specified resource was not found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DescribeProductView">REST API Reference for DescribeProductView Operation</seealso>
         DescribeProductViewResponse DescribeProductView(DescribeProductViewRequest request);
 
 
@@ -666,7 +707,38 @@ namespace Amazon.ServiceCatalog
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DescribeProductView">REST API Reference for DescribeProductView Operation</seealso>
         Task<DescribeProductViewResponse> DescribeProductViewAsync(DescribeProductViewRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DescribeProvisionedProduct
+
+
+        /// <summary>
+        /// Retrieve detailed information about the provisioned product.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeProvisionedProduct service method.</param>
+        /// 
+        /// <returns>The response from the DescribeProvisionedProduct service method, as returned by ServiceCatalog.</returns>
+        /// <exception cref="Amazon.ServiceCatalog.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DescribeProvisionedProduct">REST API Reference for DescribeProvisionedProduct Operation</seealso>
+        DescribeProvisionedProductResponse DescribeProvisionedProduct(DescribeProvisionedProductRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeProvisionedProduct operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeProvisionedProduct operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DescribeProvisionedProduct">REST API Reference for DescribeProvisionedProduct Operation</seealso>
+        Task<DescribeProvisionedProductResponse> DescribeProvisionedProductAsync(DescribeProvisionedProductRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -682,6 +754,7 @@ namespace Amazon.ServiceCatalog
         /// <exception cref="Amazon.ServiceCatalog.Model.ResourceNotFoundException">
         /// The specified resource was not found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DescribeProvisioningArtifact">REST API Reference for DescribeProvisioningArtifact Operation</seealso>
         DescribeProvisioningArtifactResponse DescribeProvisioningArtifact(DescribeProvisioningArtifactRequest request);
 
 
@@ -694,6 +767,7 @@ namespace Amazon.ServiceCatalog
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DescribeProvisioningArtifact">REST API Reference for DescribeProvisioningArtifact Operation</seealso>
         Task<DescribeProvisioningArtifactResponse> DescribeProvisioningArtifactAsync(DescribeProvisioningArtifactRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -716,6 +790,7 @@ namespace Amazon.ServiceCatalog
         /// <exception cref="Amazon.ServiceCatalog.Model.ResourceNotFoundException">
         /// The specified resource was not found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DescribeProvisioningParameters">REST API Reference for DescribeProvisioningParameters Operation</seealso>
         DescribeProvisioningParametersResponse DescribeProvisioningParameters(DescribeProvisioningParametersRequest request);
 
 
@@ -728,6 +803,7 @@ namespace Amazon.ServiceCatalog
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DescribeProvisioningParameters">REST API Reference for DescribeProvisioningParameters Operation</seealso>
         Task<DescribeProvisioningParametersResponse> DescribeProvisioningParametersAsync(DescribeProvisioningParametersRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -746,6 +822,7 @@ namespace Amazon.ServiceCatalog
         /// <exception cref="Amazon.ServiceCatalog.Model.ResourceNotFoundException">
         /// The specified resource was not found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DescribeRecord">REST API Reference for DescribeRecord Operation</seealso>
         DescribeRecordResponse DescribeRecord(DescribeRecordRequest request);
 
 
@@ -758,6 +835,7 @@ namespace Amazon.ServiceCatalog
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DescribeRecord">REST API Reference for DescribeRecord Operation</seealso>
         Task<DescribeRecordResponse> DescribeRecordAsync(DescribeRecordRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -777,6 +855,7 @@ namespace Amazon.ServiceCatalog
         /// <exception cref="Amazon.ServiceCatalog.Model.ResourceNotFoundException">
         /// The specified resource was not found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DisassociatePrincipalFromPortfolio">REST API Reference for DisassociatePrincipalFromPortfolio Operation</seealso>
         DisassociatePrincipalFromPortfolioResponse DisassociatePrincipalFromPortfolio(DisassociatePrincipalFromPortfolioRequest request);
 
 
@@ -789,6 +868,7 @@ namespace Amazon.ServiceCatalog
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DisassociatePrincipalFromPortfolio">REST API Reference for DisassociatePrincipalFromPortfolio Operation</seealso>
         Task<DisassociatePrincipalFromPortfolioResponse> DisassociatePrincipalFromPortfolioAsync(DisassociatePrincipalFromPortfolioRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -808,6 +888,7 @@ namespace Amazon.ServiceCatalog
         /// <exception cref="Amazon.ServiceCatalog.Model.ResourceNotFoundException">
         /// The specified resource was not found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DisassociateProductFromPortfolio">REST API Reference for DisassociateProductFromPortfolio Operation</seealso>
         DisassociateProductFromPortfolioResponse DisassociateProductFromPortfolio(DisassociateProductFromPortfolioRequest request);
 
 
@@ -820,6 +901,7 @@ namespace Amazon.ServiceCatalog
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DisassociateProductFromPortfolio">REST API Reference for DisassociateProductFromPortfolio Operation</seealso>
         Task<DisassociateProductFromPortfolioResponse> DisassociateProductFromPortfolioAsync(DisassociateProductFromPortfolioRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -836,6 +918,7 @@ namespace Amazon.ServiceCatalog
         /// <exception cref="Amazon.ServiceCatalog.Model.InvalidParametersException">
         /// One or more parameters provided to the operation are invalid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListAcceptedPortfolioShares">REST API Reference for ListAcceptedPortfolioShares Operation</seealso>
         ListAcceptedPortfolioSharesResponse ListAcceptedPortfolioShares(ListAcceptedPortfolioSharesRequest request);
 
 
@@ -848,6 +931,7 @@ namespace Amazon.ServiceCatalog
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListAcceptedPortfolioShares">REST API Reference for ListAcceptedPortfolioShares Operation</seealso>
         Task<ListAcceptedPortfolioSharesResponse> ListAcceptedPortfolioSharesAsync(ListAcceptedPortfolioSharesRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -867,6 +951,7 @@ namespace Amazon.ServiceCatalog
         /// <exception cref="Amazon.ServiceCatalog.Model.ResourceNotFoundException">
         /// The specified resource was not found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListConstraintsForPortfolio">REST API Reference for ListConstraintsForPortfolio Operation</seealso>
         ListConstraintsForPortfolioResponse ListConstraintsForPortfolio(ListConstraintsForPortfolioRequest request);
 
 
@@ -879,6 +964,7 @@ namespace Amazon.ServiceCatalog
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListConstraintsForPortfolio">REST API Reference for ListConstraintsForPortfolio Operation</seealso>
         Task<ListConstraintsForPortfolioResponse> ListConstraintsForPortfolioAsync(ListConstraintsForPortfolioRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -900,6 +986,7 @@ namespace Amazon.ServiceCatalog
         /// <exception cref="Amazon.ServiceCatalog.Model.ResourceNotFoundException">
         /// The specified resource was not found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListLaunchPaths">REST API Reference for ListLaunchPaths Operation</seealso>
         ListLaunchPathsResponse ListLaunchPaths(ListLaunchPathsRequest request);
 
 
@@ -912,6 +999,7 @@ namespace Amazon.ServiceCatalog
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListLaunchPaths">REST API Reference for ListLaunchPaths Operation</seealso>
         Task<ListLaunchPathsResponse> ListLaunchPathsAsync(ListLaunchPathsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -928,6 +1016,7 @@ namespace Amazon.ServiceCatalog
         /// <exception cref="Amazon.ServiceCatalog.Model.ResourceNotFoundException">
         /// The specified resource was not found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListPortfolioAccess">REST API Reference for ListPortfolioAccess Operation</seealso>
         ListPortfolioAccessResponse ListPortfolioAccess(ListPortfolioAccessRequest request);
 
 
@@ -940,6 +1029,7 @@ namespace Amazon.ServiceCatalog
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListPortfolioAccess">REST API Reference for ListPortfolioAccess Operation</seealso>
         Task<ListPortfolioAccessResponse> ListPortfolioAccessAsync(ListPortfolioAccessRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -956,6 +1046,7 @@ namespace Amazon.ServiceCatalog
         /// <exception cref="Amazon.ServiceCatalog.Model.InvalidParametersException">
         /// One or more parameters provided to the operation are invalid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListPortfolios">REST API Reference for ListPortfolios Operation</seealso>
         ListPortfoliosResponse ListPortfolios(ListPortfoliosRequest request);
 
 
@@ -968,6 +1059,7 @@ namespace Amazon.ServiceCatalog
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListPortfolios">REST API Reference for ListPortfolios Operation</seealso>
         Task<ListPortfoliosResponse> ListPortfoliosAsync(ListPortfoliosRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -987,6 +1079,7 @@ namespace Amazon.ServiceCatalog
         /// <exception cref="Amazon.ServiceCatalog.Model.ResourceNotFoundException">
         /// The specified resource was not found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListPortfoliosForProduct">REST API Reference for ListPortfoliosForProduct Operation</seealso>
         ListPortfoliosForProductResponse ListPortfoliosForProduct(ListPortfoliosForProductRequest request);
 
 
@@ -999,6 +1092,7 @@ namespace Amazon.ServiceCatalog
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListPortfoliosForProduct">REST API Reference for ListPortfoliosForProduct Operation</seealso>
         Task<ListPortfoliosForProductResponse> ListPortfoliosForProductAsync(ListPortfoliosForProductRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1018,6 +1112,7 @@ namespace Amazon.ServiceCatalog
         /// <exception cref="Amazon.ServiceCatalog.Model.ResourceNotFoundException">
         /// The specified resource was not found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListPrincipalsForPortfolio">REST API Reference for ListPrincipalsForPortfolio Operation</seealso>
         ListPrincipalsForPortfolioResponse ListPrincipalsForPortfolio(ListPrincipalsForPortfolioRequest request);
 
 
@@ -1030,6 +1125,7 @@ namespace Amazon.ServiceCatalog
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListPrincipalsForPortfolio">REST API Reference for ListPrincipalsForPortfolio Operation</seealso>
         Task<ListPrincipalsForPortfolioResponse> ListPrincipalsForPortfolioAsync(ListPrincipalsForPortfolioRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1049,6 +1145,7 @@ namespace Amazon.ServiceCatalog
         /// <exception cref="Amazon.ServiceCatalog.Model.ResourceNotFoundException">
         /// The specified resource was not found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListProvisioningArtifacts">REST API Reference for ListProvisioningArtifacts Operation</seealso>
         ListProvisioningArtifactsResponse ListProvisioningArtifacts(ListProvisioningArtifactsRequest request);
 
 
@@ -1061,6 +1158,7 @@ namespace Amazon.ServiceCatalog
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListProvisioningArtifacts">REST API Reference for ListProvisioningArtifacts Operation</seealso>
         Task<ListProvisioningArtifactsResponse> ListProvisioningArtifactsAsync(ListProvisioningArtifactsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1078,6 +1176,7 @@ namespace Amazon.ServiceCatalog
         /// <exception cref="Amazon.ServiceCatalog.Model.InvalidParametersException">
         /// One or more parameters provided to the operation are invalid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListRecordHistory">REST API Reference for ListRecordHistory Operation</seealso>
         ListRecordHistoryResponse ListRecordHistory(ListRecordHistoryRequest request);
 
 
@@ -1090,6 +1189,7 @@ namespace Amazon.ServiceCatalog
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListRecordHistory">REST API Reference for ListRecordHistory Operation</seealso>
         Task<ListRecordHistoryResponse> ListRecordHistoryAsync(ListRecordHistoryRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1098,7 +1198,7 @@ namespace Amazon.ServiceCatalog
 
 
         /// <summary>
-        /// Requests a <i>Provision</i> of a specified product. A <i>ProvisionedProduct</i> is
+        /// Requests a <i>provision</i> of a specified product. A <i>provisioned product</i> is
         /// a resourced instance for a product. For example, provisioning a CloudFormation-template-backed
         /// product results in launching a CloudFormation stack and all the underlying resources
         /// that come with it. 
@@ -1120,6 +1220,7 @@ namespace Amazon.ServiceCatalog
         /// <exception cref="Amazon.ServiceCatalog.Model.ResourceNotFoundException">
         /// The specified resource was not found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ProvisionProduct">REST API Reference for ProvisionProduct Operation</seealso>
         ProvisionProductResponse ProvisionProduct(ProvisionProductRequest request);
 
 
@@ -1132,6 +1233,7 @@ namespace Amazon.ServiceCatalog
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ProvisionProduct">REST API Reference for ProvisionProduct Operation</seealso>
         Task<ProvisionProductResponse> ProvisionProductAsync(ProvisionProductRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1148,6 +1250,7 @@ namespace Amazon.ServiceCatalog
         /// <exception cref="Amazon.ServiceCatalog.Model.ResourceNotFoundException">
         /// The specified resource was not found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/RejectPortfolioShare">REST API Reference for RejectPortfolioShare Operation</seealso>
         RejectPortfolioShareResponse RejectPortfolioShare(RejectPortfolioShareRequest request);
 
 
@@ -1160,6 +1263,7 @@ namespace Amazon.ServiceCatalog
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/RejectPortfolioShare">REST API Reference for RejectPortfolioShare Operation</seealso>
         Task<RejectPortfolioShareResponse> RejectPortfolioShareAsync(RejectPortfolioShareRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1177,6 +1281,7 @@ namespace Amazon.ServiceCatalog
         /// <exception cref="Amazon.ServiceCatalog.Model.InvalidParametersException">
         /// One or more parameters provided to the operation are invalid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ScanProvisionedProducts">REST API Reference for ScanProvisionedProducts Operation</seealso>
         ScanProvisionedProductsResponse ScanProvisionedProducts(ScanProvisionedProductsRequest request);
 
 
@@ -1189,6 +1294,7 @@ namespace Amazon.ServiceCatalog
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ScanProvisionedProducts">REST API Reference for ScanProvisionedProducts Operation</seealso>
         Task<ScanProvisionedProductsResponse> ScanProvisionedProductsAsync(ScanProvisionedProductsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1211,6 +1317,7 @@ namespace Amazon.ServiceCatalog
         /// <exception cref="Amazon.ServiceCatalog.Model.InvalidParametersException">
         /// One or more parameters provided to the operation are invalid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/SearchProducts">REST API Reference for SearchProducts Operation</seealso>
         SearchProductsResponse SearchProducts(SearchProductsRequest request);
 
 
@@ -1223,6 +1330,7 @@ namespace Amazon.ServiceCatalog
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/SearchProducts">REST API Reference for SearchProducts Operation</seealso>
         Task<SearchProductsResponse> SearchProductsAsync(SearchProductsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1244,6 +1352,7 @@ namespace Amazon.ServiceCatalog
         /// <exception cref="Amazon.ServiceCatalog.Model.ResourceNotFoundException">
         /// The specified resource was not found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/SearchProductsAsAdmin">REST API Reference for SearchProductsAsAdmin Operation</seealso>
         SearchProductsAsAdminResponse SearchProductsAsAdmin(SearchProductsAsAdminRequest request);
 
 
@@ -1256,6 +1365,7 @@ namespace Amazon.ServiceCatalog
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/SearchProductsAsAdmin">REST API Reference for SearchProductsAsAdmin Operation</seealso>
         Task<SearchProductsAsAdminResponse> SearchProductsAsAdminAsync(SearchProductsAsAdminRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1284,6 +1394,7 @@ namespace Amazon.ServiceCatalog
         /// <exception cref="Amazon.ServiceCatalog.Model.ResourceNotFoundException">
         /// The specified resource was not found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/TerminateProvisionedProduct">REST API Reference for TerminateProvisionedProduct Operation</seealso>
         TerminateProvisionedProductResponse TerminateProvisionedProduct(TerminateProvisionedProductRequest request);
 
 
@@ -1296,6 +1407,7 @@ namespace Amazon.ServiceCatalog
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/TerminateProvisionedProduct">REST API Reference for TerminateProvisionedProduct Operation</seealso>
         Task<TerminateProvisionedProductResponse> TerminateProvisionedProductAsync(TerminateProvisionedProductRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1315,6 +1427,7 @@ namespace Amazon.ServiceCatalog
         /// <exception cref="Amazon.ServiceCatalog.Model.ResourceNotFoundException">
         /// The specified resource was not found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/UpdateConstraint">REST API Reference for UpdateConstraint Operation</seealso>
         UpdateConstraintResponse UpdateConstraint(UpdateConstraintRequest request);
 
 
@@ -1327,6 +1440,7 @@ namespace Amazon.ServiceCatalog
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/UpdateConstraint">REST API Reference for UpdateConstraint Operation</seealso>
         Task<UpdateConstraintResponse> UpdateConstraintAsync(UpdateConstraintRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1335,7 +1449,7 @@ namespace Amazon.ServiceCatalog
 
 
         /// <summary>
-        /// Updates the specified portfolio's details. This operation will not work with a product
+        /// Updates the specified portfolio's details. This operation does not work with a product
         /// that has been shared with you.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdatePortfolio service method.</param>
@@ -1351,6 +1465,7 @@ namespace Amazon.ServiceCatalog
         /// <exception cref="Amazon.ServiceCatalog.Model.ResourceNotFoundException">
         /// The specified resource was not found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/UpdatePortfolio">REST API Reference for UpdatePortfolio Operation</seealso>
         UpdatePortfolioResponse UpdatePortfolio(UpdatePortfolioRequest request);
 
 
@@ -1363,6 +1478,7 @@ namespace Amazon.ServiceCatalog
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/UpdatePortfolio">REST API Reference for UpdatePortfolio Operation</seealso>
         Task<UpdatePortfolioResponse> UpdatePortfolioAsync(UpdatePortfolioRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1382,6 +1498,7 @@ namespace Amazon.ServiceCatalog
         /// <exception cref="Amazon.ServiceCatalog.Model.ResourceNotFoundException">
         /// The specified resource was not found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/UpdateProduct">REST API Reference for UpdateProduct Operation</seealso>
         UpdateProductResponse UpdateProduct(UpdateProductRequest request);
 
 
@@ -1394,6 +1511,7 @@ namespace Amazon.ServiceCatalog
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/UpdateProduct">REST API Reference for UpdateProduct Operation</seealso>
         Task<UpdateProductResponse> UpdateProductAsync(UpdateProductRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1422,6 +1540,7 @@ namespace Amazon.ServiceCatalog
         /// <exception cref="Amazon.ServiceCatalog.Model.ResourceNotFoundException">
         /// The specified resource was not found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/UpdateProvisionedProduct">REST API Reference for UpdateProvisionedProduct Operation</seealso>
         UpdateProvisionedProductResponse UpdateProvisionedProduct(UpdateProvisionedProductRequest request);
 
 
@@ -1434,6 +1553,7 @@ namespace Amazon.ServiceCatalog
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/UpdateProvisionedProduct">REST API Reference for UpdateProvisionedProduct Operation</seealso>
         Task<UpdateProvisionedProductResponse> UpdateProvisionedProductAsync(UpdateProvisionedProductRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1442,7 +1562,7 @@ namespace Amazon.ServiceCatalog
 
 
         /// <summary>
-        /// Updates an existing provisioning artifact's information. This operation will not work
+        /// Updates an existing provisioning artifact's information. This operation does not work
         /// on a provisioning artifact associated with a product that has been shared with you.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateProvisioningArtifact service method.</param>
@@ -1454,6 +1574,7 @@ namespace Amazon.ServiceCatalog
         /// <exception cref="Amazon.ServiceCatalog.Model.ResourceNotFoundException">
         /// The specified resource was not found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/UpdateProvisioningArtifact">REST API Reference for UpdateProvisioningArtifact Operation</seealso>
         UpdateProvisioningArtifactResponse UpdateProvisioningArtifact(UpdateProvisioningArtifactRequest request);
 
 
@@ -1466,6 +1587,7 @@ namespace Amazon.ServiceCatalog
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/UpdateProvisioningArtifact">REST API Reference for UpdateProvisioningArtifact Operation</seealso>
         Task<UpdateProvisioningArtifactResponse> UpdateProvisioningArtifactAsync(UpdateProvisioningArtifactRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion

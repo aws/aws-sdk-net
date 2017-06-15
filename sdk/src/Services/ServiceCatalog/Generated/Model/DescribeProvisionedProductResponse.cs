@@ -28,48 +28,28 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ServiceCatalog.Model
 {
     /// <summary>
-    /// Key/value pairs to associate with this provisioning. These tags are entirely discretionary
-    /// and are propagated to the resources created in the provisioning.
+    /// This is the response object from the DescribeProvisionedProduct operation.
     /// </summary>
-    public partial class Tag
+    public partial class DescribeProvisionedProductResponse : AmazonWebServiceResponse
     {
-        private string _key;
-        private string _value;
+        private ProvisionedProductDetail _provisionedProductDetail;
 
         /// <summary>
-        /// Gets and sets the property Key. 
+        /// Gets and sets the property ProvisionedProductDetail. 
         /// <para>
-        /// The <code>ProvisioningArtifactParameter.TagKey</code> parameter from <a>DescribeProvisioningParameters</a>.
+        /// Detailed provisioned product information.
         /// </para>
         /// </summary>
-        public string Key
+        public ProvisionedProductDetail ProvisionedProductDetail
         {
-            get { return this._key; }
-            set { this._key = value; }
+            get { return this._provisionedProductDetail; }
+            set { this._provisionedProductDetail = value; }
         }
 
-        // Check to see if Key property is set
-        internal bool IsSetKey()
+        // Check to see if ProvisionedProductDetail property is set
+        internal bool IsSetProvisionedProductDetail()
         {
-            return this._key != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property Value. 
-        /// <para>
-        /// The desired value for this key.
-        /// </para>
-        /// </summary>
-        public string Value
-        {
-            get { return this._value; }
-            set { this._value = value; }
-        }
-
-        // Check to see if Value property is set
-        internal bool IsSetValue()
-        {
-            return this._value != null;
+            return this._provisionedProductDetail != null;
         }
 
     }

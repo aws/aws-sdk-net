@@ -157,7 +157,8 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property ProvisioningArtifactId. 
         /// <para>
-        /// The provisioning artifact identifier for this product.
+        /// The provisioning artifact identifier for this product. This is sometimes referred
+        /// to as the product version.
         /// </para>
         /// </summary>
         public string ProvisioningArtifactId
@@ -248,6 +249,28 @@ namespace Amazon.ServiceCatalog.Model
         /// Gets and sets the property Status. 
         /// <para>
         /// The status of the ProvisionedProduct object.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>CREATED</code> - Request created but the operation has not yet started.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>IN_PROGRESS</code> - The requested operation is in-progress.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>IN_PROGRESS_IN_ERROR</code> - The provisioned product is under change but the
+        /// requested operation failed and some remediation is occurring. For example, a roll-back.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>SUCCEEDED</code> - The requested operation has successfully completed.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>FAILED</code> - The requested operation has completed but has failed. Investigate
+        /// using the error messages returned.
         /// </para>
         /// </summary>
         public RecordStatus Status

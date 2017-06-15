@@ -126,9 +126,8 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property ProvisionedProductId. 
         /// <para>
-        /// The identifier of the ProvisionedProduct object to update. You must specify either
-        /// <code>ProvisionedProductName</code> or <code>ProvisionedProductId</code>, but not
-        /// both.
+        /// The identifier of the ProvisionedProduct object to update. Specify either <code>ProvisionedProductName</code>
+        /// or <code>ProvisionedProductId</code>, but not both.
         /// </para>
         /// </summary>
         public string ProvisionedProductId
@@ -146,7 +145,7 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property ProvisionedProductName. 
         /// <para>
-        /// The updated name of the ProvisionedProduct object . You must specify either <code>ProvisionedProductName</code>
+        /// The updated name of the ProvisionedProduct object. Specify either <code>ProvisionedProductName</code>
         /// or <code>ProvisionedProductId</code>, but not both.
         /// </para>
         /// </summary>
@@ -165,7 +164,8 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property ProvisioningArtifactId. 
         /// <para>
-        /// The provisioning artifact identifier for this product.
+        /// The provisioning artifact identifier for this product. This is sometimes referred
+        /// to as the product version.
         /// </para>
         /// </summary>
         public string ProvisioningArtifactId

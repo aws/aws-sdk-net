@@ -116,7 +116,8 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property ProvisioningArtifactId. 
         /// <para>
-        /// The provisioning artifact identifier for this product.
+        /// The provisioning artifact identifier for this product. This is sometimes referred
+        /// to as the product version.
         /// </para>
         /// </summary>
         public string ProvisioningArtifactId

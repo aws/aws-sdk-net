@@ -36,6 +36,7 @@ namespace Amazon.ServiceCatalog.Model
         private string _acceptLanguage;
         private string _productId;
         private string _provisioningArtifactId;
+        private bool? _verbose;
 
         /// <summary>
         /// Gets and sets the property AcceptLanguage. 
@@ -92,7 +93,8 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property ProvisioningArtifactId. 
         /// <para>
-        /// The identifier of the provisioning artifact.
+        /// The identifier of the provisioning artifact. This is sometimes referred to as the
+        /// product version.
         /// </para>
         /// </summary>
         public string ProvisioningArtifactId
@@ -105,6 +107,24 @@ namespace Amazon.ServiceCatalog.Model
         internal bool IsSetProvisioningArtifactId()
         {
             return this._provisioningArtifactId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Verbose. 
+        /// <para>
+        /// Selects verbose results. If set to true, the CloudFormation template is returned.
+        /// </para>
+        /// </summary>
+        public bool Verbose
+        {
+            get { return this._verbose.GetValueOrDefault(); }
+            set { this._verbose = value; }
+        }
+
+        // Check to see if Verbose property is set
+        internal bool IsSetVerbose()
+        {
+            return this._verbose.HasValue; 
         }
 
     }

@@ -28,17 +28,13 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ServiceCatalog.Model
 {
     /// <summary>
-    /// Container for the parameters to the DeleteProvisioningArtifact operation.
-    /// Deletes the specified provisioning artifact. This operation does not work on a provisioning
-    /// artifact associated with a product that has been shared with you, or on the last provisioning
-    /// artifact associated with a product (a product must have at least one provisioning
-    /// artifact).
+    /// Container for the parameters to the DescribeProvisionedProduct operation.
+    /// Retrieve detailed information about the provisioned product.
     /// </summary>
-    public partial class DeleteProvisioningArtifactRequest : AmazonServiceCatalogRequest
+    public partial class DescribeProvisionedProductRequest : AmazonServiceCatalogRequest
     {
         private string _acceptLanguage;
-        private string _productId;
-        private string _provisioningArtifactId;
+        private string _id;
 
         /// <summary>
         /// Gets and sets the property AcceptLanguage. 
@@ -75,40 +71,21 @@ namespace Amazon.ServiceCatalog.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ProductId. 
+        /// Gets and sets the property Id. 
         /// <para>
-        /// The product identifier.
+        /// The provisioned product identifier.
         /// </para>
         /// </summary>
-        public string ProductId
+        public string Id
         {
-            get { return this._productId; }
-            set { this._productId = value; }
+            get { return this._id; }
+            set { this._id = value; }
         }
 
-        // Check to see if ProductId property is set
-        internal bool IsSetProductId()
+        // Check to see if Id property is set
+        internal bool IsSetId()
         {
-            return this._productId != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property ProvisioningArtifactId. 
-        /// <para>
-        /// The identifier of the provisioning artifact for the delete request. This is sometimes
-        /// referred to as the product version.
-        /// </para>
-        /// </summary>
-        public string ProvisioningArtifactId
-        {
-            get { return this._provisioningArtifactId; }
-            set { this._provisioningArtifactId = value; }
-        }
-
-        // Check to see if ProvisioningArtifactId property is set
-        internal bool IsSetProvisioningArtifactId()
-        {
-            return this._provisioningArtifactId != null;
+            return this._id != null;
         }
 
     }

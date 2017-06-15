@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.ServiceCatalog.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// DescribeProvisioningArtifact Request Marshaller
+    /// DescribeProvisionedProduct Request Marshaller
     /// </summary>       
-    public class DescribeProvisioningArtifactRequestMarshaller : IMarshaller<IRequest, DescribeProvisioningArtifactRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class DescribeProvisionedProductRequestMarshaller : IMarshaller<IRequest, DescribeProvisionedProductRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.ServiceCatalog.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((DescribeProvisioningArtifactRequest)input);
+            return this.Marshall((DescribeProvisionedProductRequest)input);
         }
 
         /// <summary>
@@ -52,10 +52,10 @@ namespace Amazon.ServiceCatalog.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(DescribeProvisioningArtifactRequest publicRequest)
+        public IRequest Marshall(DescribeProvisionedProductRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.ServiceCatalog");
-            string target = "AWS242ServiceCatalogService.DescribeProvisioningArtifact";
+            string target = "AWS242ServiceCatalogService.DescribeProvisionedProduct";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
             request.HttpMethod = "POST";
@@ -73,22 +73,10 @@ namespace Amazon.ServiceCatalog.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.AcceptLanguage);
                 }
 
-                if(publicRequest.IsSetProductId())
+                if(publicRequest.IsSetId())
                 {
-                    context.Writer.WritePropertyName("ProductId");
-                    context.Writer.Write(publicRequest.ProductId);
-                }
-
-                if(publicRequest.IsSetProvisioningArtifactId())
-                {
-                    context.Writer.WritePropertyName("ProvisioningArtifactId");
-                    context.Writer.Write(publicRequest.ProvisioningArtifactId);
-                }
-
-                if(publicRequest.IsSetVerbose())
-                {
-                    context.Writer.WritePropertyName("Verbose");
-                    context.Writer.Write(publicRequest.Verbose);
+                    context.Writer.WritePropertyName("Id");
+                    context.Writer.Write(publicRequest.Id);
                 }
 
         

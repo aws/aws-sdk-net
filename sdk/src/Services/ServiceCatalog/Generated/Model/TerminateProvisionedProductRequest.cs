@@ -107,9 +107,8 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property ProvisionedProductId. 
         /// <para>
-        /// The identifier of the ProvisionedProduct object to terminate. You must specify either
-        /// <code>ProvisionedProductName</code> or <code>ProvisionedProductId</code>, but not
-        /// both.
+        /// The identifier of the ProvisionedProduct object to terminate. Specify either <code>ProvisionedProductName</code>
+        /// or <code>ProvisionedProductId</code>, but not both.
         /// </para>
         /// </summary>
         public string ProvisionedProductId
@@ -127,7 +126,7 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property ProvisionedProductName. 
         /// <para>
-        /// The name of the ProvisionedProduct object to terminate. You must specify either <code>ProvisionedProductName</code>
+        /// The name of the ProvisionedProduct object to terminate. Specify either <code>ProvisionedProductName</code>
         /// or <code>ProvisionedProductId</code>, but not both.
         /// </para>
         /// </summary>
