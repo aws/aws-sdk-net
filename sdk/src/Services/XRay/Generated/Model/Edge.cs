@@ -96,7 +96,7 @@ namespace Amazon.XRay.Model
         /// <summary>
         /// Gets and sets the property ResponseTimeHistogram. 
         /// <para>
-        /// Histogram describing the prominence of response times on the edge.
+        /// A histogram that maps the spread of client response times on an edge.
         /// </para>
         /// </summary>
         public List<HistogramEntry> ResponseTimeHistogram

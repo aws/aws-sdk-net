@@ -28,7 +28,10 @@ using Amazon.Runtime.Internal;
 namespace Amazon.XRay.Model
 {
     /// <summary>
-    /// Information about a segment
+    /// A segment from a trace that has been ingested by the X-Ray service. The segment can
+    /// be compiled from documents uploaded with <a>PutTraceSegments</a>, or an <code>inferred</code>
+    /// segment for a downstream service, generated from a subsegment sent by the service
+    /// that called it.
     /// </summary>
     public partial class Segment
     {
@@ -38,7 +41,7 @@ namespace Amazon.XRay.Model
         /// <summary>
         /// Gets and sets the property Document. 
         /// <para>
-        /// The segment document.
+        /// The segment document
         /// </para>
         /// </summary>
         public string Document

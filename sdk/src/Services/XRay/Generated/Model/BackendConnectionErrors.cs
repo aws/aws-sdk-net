@@ -40,10 +40,7 @@ namespace Amazon.XRay.Model
         private int? _unknownHostCount;
 
         /// <summary>
-        /// Gets and sets the property ConnectionRefusedCount. 
-        /// <para>
-        /// 
-        /// </para>
+        /// Gets and sets the property ConnectionRefusedCount.
         /// </summary>
         public int ConnectionRefusedCount
         {
@@ -58,10 +55,7 @@ namespace Amazon.XRay.Model
         }
 
         /// <summary>
-        /// Gets and sets the property HTTPCode4XXCount. 
-        /// <para>
-        /// 
-        /// </para>
+        /// Gets and sets the property HTTPCode4XXCount.
         /// </summary>
         public int HTTPCode4XXCount
         {
@@ -76,10 +70,7 @@ namespace Amazon.XRay.Model
         }
 
         /// <summary>
-        /// Gets and sets the property HTTPCode5XXCount. 
-        /// <para>
-        /// 
-        /// </para>
+        /// Gets and sets the property HTTPCode5XXCount.
         /// </summary>
         public int HTTPCode5XXCount
         {
@@ -94,10 +85,7 @@ namespace Amazon.XRay.Model
         }
 
         /// <summary>
-        /// Gets and sets the property OtherCount. 
-        /// <para>
-        /// 
-        /// </para>
+        /// Gets and sets the property OtherCount.
         /// </summary>
         public int OtherCount
         {
@@ -112,10 +100,7 @@ namespace Amazon.XRay.Model
         }
 
         /// <summary>
-        /// Gets and sets the property TimeoutCount. 
-        /// <para>
-        /// 
-        /// </para>
+        /// Gets and sets the property TimeoutCount.
         /// </summary>
         public int TimeoutCount
         {
@@ -130,10 +115,7 @@ namespace Amazon.XRay.Model
         }
 
         /// <summary>
-        /// Gets and sets the property UnknownHostCount. 
-        /// <para>
-        /// 
-        /// </para>
+        /// Gets and sets the property UnknownHostCount.
         /// </summary>
         public int UnknownHostCount
         {

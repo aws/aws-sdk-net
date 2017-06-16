@@ -40,6 +40,7 @@ namespace Amazon.XRay.Model
         private string _name;
         private List<string> _names = new List<string>();
         private int? _referenceId;
+        private List<HistogramEntry> _responseTimeHistogram = new List<HistogramEntry>();
         private bool? _root;
         private DateTime? _startTime;
         private string _state;
@@ -67,7 +68,7 @@ namespace Amazon.XRay.Model
         /// <summary>
         /// Gets and sets the property DurationHistogram. 
         /// <para>
-        /// Histogram mapping the spread of trace durations
+        /// A histogram that maps the spread of service durations.
         /// </para>
         /// </summary>
         public List<HistogramEntry> DurationHistogram
@@ -170,6 +171,24 @@ namespace Amazon.XRay.Model
         internal bool IsSetReferenceId()
         {
             return this._referenceId.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ResponseTimeHistogram. 
+        /// <para>
+        /// A histogram that maps the spread of service response times.
+        /// </para>
+        /// </summary>
+        public List<HistogramEntry> ResponseTimeHistogram
+        {
+            get { return this._responseTimeHistogram; }
+            set { this._responseTimeHistogram = value; }
+        }
+
+        // Check to see if ResponseTimeHistogram property is set
+        internal bool IsSetResponseTimeHistogram()
+        {
+            return this._responseTimeHistogram != null && this._responseTimeHistogram.Count > 0; 
         }
 
         /// <summary>

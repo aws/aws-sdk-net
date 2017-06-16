@@ -106,6 +106,12 @@ namespace Amazon.XRay.Model.Internal.MarshallTransformations
                     unmarshalledObject.ReferenceId = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ResponseTimeHistogram", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<HistogramEntry, HistogramEntryUnmarshaller>(HistogramEntryUnmarshaller.Instance);
+                    unmarshalledObject.ResponseTimeHistogram = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Root", targetDepth))
                 {
                     var unmarshaller = BoolUnmarshaller.Instance;

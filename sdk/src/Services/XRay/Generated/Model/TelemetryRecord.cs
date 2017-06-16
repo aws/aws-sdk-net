@@ -40,10 +40,7 @@ namespace Amazon.XRay.Model
         private DateTime? _timestamp;
 
         /// <summary>
-        /// Gets and sets the property BackendConnectionErrors. 
-        /// <para>
-        /// 
-        /// </para>
+        /// Gets and sets the property BackendConnectionErrors.
         /// </summary>
         public BackendConnectionErrors BackendConnectionErrors
         {
@@ -58,10 +55,7 @@ namespace Amazon.XRay.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SegmentsReceivedCount. 
-        /// <para>
-        /// 
-        /// </para>
+        /// Gets and sets the property SegmentsReceivedCount.
         /// </summary>
         public int SegmentsReceivedCount
         {
@@ -76,10 +70,7 @@ namespace Amazon.XRay.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SegmentsRejectedCount. 
-        /// <para>
-        /// 
-        /// </para>
+        /// Gets and sets the property SegmentsRejectedCount.
         /// </summary>
         public int SegmentsRejectedCount
         {
@@ -94,10 +85,7 @@ namespace Amazon.XRay.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SegmentsSentCount. 
-        /// <para>
-        /// 
-        /// </para>
+        /// Gets and sets the property SegmentsSentCount.
         /// </summary>
         public int SegmentsSentCount
         {
@@ -112,10 +100,7 @@ namespace Amazon.XRay.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SegmentsSpilloverCount. 
-        /// <para>
-        /// 
-        /// </para>
+        /// Gets and sets the property SegmentsSpilloverCount.
         /// </summary>
         public int SegmentsSpilloverCount
         {
@@ -130,10 +115,7 @@ namespace Amazon.XRay.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Timestamp. 
-        /// <para>
-        /// 
-        /// </para>
+        /// Gets and sets the property Timestamp.
         /// </summary>
         public DateTime Timestamp
         {

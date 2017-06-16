@@ -367,6 +367,32 @@ namespace Amazon.XRay
         /// <summary>
         /// Retrieves IDs and metadata for traces available for a specified time frame using an
         /// optional filter. To get the full traces, pass the trace IDs to <code>BatchGetTraces</code>.
+        /// 
+        ///  
+        /// <para>
+        /// A filter expression can target traced requests that hit specific service nodes or
+        /// edges, have errors, or come from a known user. For example, the following filter expression
+        /// targets traces that pass through <code>api.example.com</code>:
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>service("api.example.com")</code> 
+        /// </para>
+        ///  
+        /// <para>
+        /// This filter expression finds traces that have an annotation named <code>account</code>
+        /// with the value <code>12345</code>:
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>annotation.account = "12345"</code> 
+        /// </para>
+        ///  
+        /// <para>
+        /// For a full list of indexed fields and keywords that you can use in filter expressions,
+        /// see <a href="http://docs.aws.amazon.com/xray/latest/devguide/xray-console-filters.html">Using
+        /// Filter Expressions</a> in the <i>AWS X-Ray Developer Guide</i>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetTraceSummaries service method.</param>
         /// 
@@ -455,6 +481,70 @@ namespace Amazon.XRay
         /// Uploads segment documents to AWS X-Ray. The X-Ray SDK generates segment documents
         /// and sends them to the X-Ray daemon, which uploads them in batches. A segment document
         /// can be a completed segment, an in-progress segment, or an array of subsegments.
+        /// 
+        ///  
+        /// <para>
+        /// Segments must include the following fields. For the full segment document schema,
+        /// see <a href="http://docs.aws.amazon.com/xray/latest/devguide/xray-api-segmentdocuments.html">AWS
+        /// X-Ray Segment Documents</a> in the <i>AWS X-Ray Developer Guide</i>.
+        /// </para>
+        ///  <p class="title"> <b>Required Segment Document Fields</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>name</code> - The name of the service that handled the request.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>id</code> - A 64-bit identifier for the segment, unique among segments in the
+        /// same trace, in 16 hexadecimal digits.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>trace_id</code> - A unique identifier that connects all segments and subsegments
+        /// originating from a single client request.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>start_time</code> - Time the segment or subsegment was created, in floating
+        /// point seconds in epoch time, accurate to milliseconds. For example, <code>1480615200.010</code>
+        /// or <code>1.480615200010E9</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>end_time</code> - Time the segment or subsegment was closed. For example, <code>1480615200.090</code>
+        /// or <code>1.480615200090E9</code>. Specify either an <code>end_time</code> or <code>in_progress</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>in_progress</code> - Set to <code>true</code> instead of specifying an <code>end_time</code>
+        /// to record that a segment has been started, but is not complete. Send an in progress
+        /// segment when your application receives a request that will take a long time to serve,
+        /// to trace the fact that the request was received. When the response is sent, send the
+        /// complete segment to overwrite the in-progress segment.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// A <code>trace_id</code> consists of three numbers separated by hyphens. For example,
+        /// 1-58406520-a006649127e371903a2de979. This includes:
+        /// </para>
+        ///  <p class="title"> <b>Trace ID Format</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The version number, i.e. <code>1</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The time of the original request, in Unix epoch time, in 8 hexadecimal digits. For
+        /// example, 10:00AM December 2nd, 2016 PST in epoch time is <code>1480615200</code> seconds,
+        /// or <code>58406520</code> in hexadecimal.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// A 96-bit identifier for the trace, globally unique, in 24 hexadecimal digits.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutTraceSegments service method.</param>
         /// 

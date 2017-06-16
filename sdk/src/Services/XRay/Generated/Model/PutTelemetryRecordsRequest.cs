@@ -39,10 +39,7 @@ namespace Amazon.XRay.Model
         private List<TelemetryRecord> _telemetryRecords = new List<TelemetryRecord>();
 
         /// <summary>
-        /// Gets and sets the property EC2InstanceId. 
-        /// <para>
-        /// 
-        /// </para>
+        /// Gets and sets the property EC2InstanceId.
         /// </summary>
         public string EC2InstanceId
         {
@@ -57,10 +54,7 @@ namespace Amazon.XRay.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Hostname. 
-        /// <para>
-        /// 
-        /// </para>
+        /// Gets and sets the property Hostname.
         /// </summary>
         public string Hostname
         {
@@ -75,10 +69,7 @@ namespace Amazon.XRay.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ResourceARN. 
-        /// <para>
-        /// 
-        /// </para>
+        /// Gets and sets the property ResourceARN.
         /// </summary>
         public string ResourceARN
         {
@@ -93,10 +84,7 @@ namespace Amazon.XRay.Model
         }
 
         /// <summary>
-        /// Gets and sets the property TelemetryRecords. 
-        /// <para>
-        /// 
-        /// </para>
+        /// Gets and sets the property TelemetryRecords.
         /// </summary>
         public List<TelemetryRecord> TelemetryRecords
         {

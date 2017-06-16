@@ -38,10 +38,7 @@ namespace Amazon.XRay.Model
         private string _type;
 
         /// <summary>
-        /// Gets and sets the property AccountId. 
-        /// <para>
-        /// 
-        /// </para>
+        /// Gets and sets the property AccountId.
         /// </summary>
         public string AccountId
         {
@@ -56,10 +53,7 @@ namespace Amazon.XRay.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Name. 
-        /// <para>
-        /// 
-        /// </para>
+        /// Gets and sets the property Name.
         /// </summary>
         public string Name
         {
@@ -74,10 +68,7 @@ namespace Amazon.XRay.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Names. 
-        /// <para>
-        /// 
-        /// </para>
+        /// Gets and sets the property Names.
         /// </summary>
         public List<string> Names
         {
@@ -92,10 +83,7 @@ namespace Amazon.XRay.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Type. 
-        /// <para>
-        /// 
-        /// </para>
+        /// Gets and sets the property Type.
         /// </summary>
         public string Type
         {
