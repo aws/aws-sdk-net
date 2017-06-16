@@ -1,3 +1,7 @@
+### 3.3.109.0 (2017-06-16 17:00 UTC)
+* XRay (3.3.1.0)
+	* Add a response time histogram to the services in response of GetServiceGraph API.
+
 ### 3.3.108.0 (2017-06-15 20:42 UTC)
 * EC2 (3.3.14.0)
 	* Adds API to describe Amazon FPGA Images (AFIs) available to customers, which includes public AFIs, private AFIs that you own, and AFIs owned by other AWS accounts for which you have load permissions.
