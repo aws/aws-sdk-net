@@ -34,6 +34,12 @@ namespace Amazon.Organizations.Model
     /// 
     ///  
     /// <para>
+    /// Handshakes that are ACCEPTED, DECLINED, or CANCELED appear in the results of this
+    /// API for only 30 days after changing to that state. After that they are deleted and
+    /// no longer accessible.
+    /// </para>
+    ///  
+    /// <para>
     /// This operation can be called from any account in the organization.
     /// </para>
     /// </summary>

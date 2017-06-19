@@ -37,7 +37,12 @@ namespace Amazon.Organizations.Model
     /// This operation can be called only from the account that originated the handshake.
     /// The recipient of the handshake can't cancel it, but can use <a>DeclineHandshake</a>
     /// instead. After a handshake is canceled, the recipient can no longer respond to that
-    /// handshake. 
+    /// handshake.
+    /// </para>
+    ///  
+    /// <para>
+    /// After you cancel a handshake, it continues to appear in the results of relevant APIs
+    /// for only 30 days. After that it is deleted.
     /// </para>
     /// </summary>
     public partial class CancelHandshakeRequest : AmazonOrganizationsRequest

@@ -37,14 +37,26 @@ namespace Amazon.Organizations.Model
     /// <para>
     /// This operation can be called only from a member account in the organization.
     /// </para>
-    ///  <important> 
+    ///  <important> <ul> <li> 
     /// <para>
     /// The master account in an organization with all features enabled can set service control
     /// policies (SCPs) that can restrict what administrators of member accounts can do, including
     /// preventing them from successfully calling <code>LeaveOrganization</code> and leaving
     /// the organization. 
     /// </para>
-    ///  </important>
+    ///  </li> <li> 
+    /// <para>
+    /// If you created the account using the AWS Organizations console, the Organizations
+    /// API, or the Organizations CLI commands, then you cannot remove the account.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// You can leave an organization only after you enable IAM user access to billing in
+    /// your account. For more information, see <a href="http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/grantaccess.html#ControllingAccessWebsite-Activate">Activating
+    /// Access to the Billing and Cost Management Console</a> in the <i>AWS Billing and Cost
+    /// Management User Guide</i>.
+    /// </para>
+    ///  </li> </ul> </important>
     /// </summary>
     public partial class LeaveOrganizationRequest : AmazonOrganizationsRequest
     {

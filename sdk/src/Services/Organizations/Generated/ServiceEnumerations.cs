@@ -239,6 +239,14 @@ namespace Amazon.Organizations
         /// </summary>
         public static readonly ConstraintViolationExceptionReason ACCOUNT_CANNOT_LEAVE_ORGANIZATION = new ConstraintViolationExceptionReason("ACCOUNT_CANNOT_LEAVE_ORGANIZATION");
         /// <summary>
+        /// Constant ACCOUNT_CANNOT_LEAVE_WITHOUT_EULA for ConstraintViolationExceptionReason
+        /// </summary>
+        public static readonly ConstraintViolationExceptionReason ACCOUNT_CANNOT_LEAVE_WITHOUT_EULA = new ConstraintViolationExceptionReason("ACCOUNT_CANNOT_LEAVE_WITHOUT_EULA");
+        /// <summary>
+        /// Constant ACCOUNT_CANNOT_LEAVE_WITHOUT_PHONE_VERIFICATION for ConstraintViolationExceptionReason
+        /// </summary>
+        public static readonly ConstraintViolationExceptionReason ACCOUNT_CANNOT_LEAVE_WITHOUT_PHONE_VERIFICATION = new ConstraintViolationExceptionReason("ACCOUNT_CANNOT_LEAVE_WITHOUT_PHONE_VERIFICATION");
+        /// <summary>
         /// Constant ACCOUNT_CREATION_RATE_LIMIT_EXCEEDED for ConstraintViolationExceptionReason
         /// </summary>
         public static readonly ConstraintViolationExceptionReason ACCOUNT_CREATION_RATE_LIMIT_EXCEEDED = new ConstraintViolationExceptionReason("ACCOUNT_CREATION_RATE_LIMIT_EXCEEDED");
@@ -770,6 +778,10 @@ namespace Amazon.Organizations
         /// Constant INVALID_ENUM for InvalidInputExceptionReason
         /// </summary>
         public static readonly InvalidInputExceptionReason INVALID_ENUM = new InvalidInputExceptionReason("INVALID_ENUM");
+        /// <summary>
+        /// Constant INVALID_FULL_NAME_TARGET for InvalidInputExceptionReason
+        /// </summary>
+        public static readonly InvalidInputExceptionReason INVALID_FULL_NAME_TARGET = new InvalidInputExceptionReason("INVALID_FULL_NAME_TARGET");
         /// <summary>
         /// Constant INVALID_LIST_MEMBER for InvalidInputExceptionReason
         /// </summary>

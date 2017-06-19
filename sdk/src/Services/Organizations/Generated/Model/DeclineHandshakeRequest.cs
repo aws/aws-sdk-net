@@ -39,6 +39,11 @@ namespace Amazon.Organizations.Model
     /// can't reactivate a declined request, but can re-initiate the process with a new handshake
     /// request.
     /// </para>
+    ///  
+    /// <para>
+    /// After you decline a handshake, it continues to appear in the results of relevant APIs
+    /// for only 30 days. After that it is deleted.
+    /// </para>
     /// </summary>
     public partial class DeclineHandshakeRequest : AmazonOrganizationsRequest
     {

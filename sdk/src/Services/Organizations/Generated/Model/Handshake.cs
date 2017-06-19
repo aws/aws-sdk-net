@@ -32,6 +32,12 @@ namespace Amazon.Organizations.Model
     /// two accounts (an <i>originator</i> and a <i>recipient</i>). For example, when a master
     /// account (the originator) invites another account (the recipient) to join its organization,
     /// the two accounts exchange information as a series of handshake requests and responses.
+    /// 
+    ///  
+    /// <para>
+    ///  <b>Note:</b> Handshakes that are CANCELED, ACCEPTED, or DECLINED show up in lists
+    /// for only 30 days after entering that state After that they are deleted.
+    /// </para>
     /// </summary>
     public partial class Handshake
     {

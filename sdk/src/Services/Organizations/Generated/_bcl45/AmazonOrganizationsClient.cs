@@ -415,7 +415,11 @@ namespace Amazon.Organizations
         /// <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_org_support-all-features.html">Enabling
         /// All Features in Your Organization</a> in the <i>AWS Organizations User Guide</i>.
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> 
+        /// <para>
+        /// After you accept a handshake, it continues to appear in the results of relevant APIs
+        /// for only 30 days. After that it is deleted.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AcceptHandshake service method.</param>
         /// 
@@ -517,6 +521,10 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// INVALID_ENUM: You specified a value that is not valid for that parameter.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// INVALID_FULL_NAME_TARGET: You specified a full name that contains invalid characters.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -697,8 +705,18 @@ namespace Amazon.Organizations
         ///   <ul> <li> 
         /// <para>
         /// ACCOUNT_NUMBER_LIMIT_EXCEEDED: You attempted to exceed the limit on the number of
-        /// accounts in an organization. <b>Note</b>: deleted and closed accounts still count
-        /// toward your limit.
+        /// accounts in an organization. If you need more accounts, contact AWS Support to request
+        /// an increase in your limit. 
+        /// </para>
+        ///  
+        /// <para>
+        /// Or, The number of invitations that you tried to send would cause you to exceed the
+        /// limit of accounts in your organization. Send fewer invitations, or contact AWS Support
+        /// to request an increase in the number of accounts.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Note</b>: deleted and closed accounts still count toward your limit.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -733,8 +751,15 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// ACCOUNT_CANNOT_LEAVE_ORGANIZATION: You attempted to remove an account from an organization
-        /// that was created from within organizations.
+        /// ACCOUNT_CANNOT_LEAVE_WITHOUT_EULA: You attempted to remove an account from the organization
+        /// that does not yet have enough information to exist as a stand-alone account. This
+        /// account requires you to first agree to the End-User License Agreement (EULA).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// ACCOUNT_CANNOT_LEAVE_WITHOUT_PHONE_VERIFICATION: You attempted to remove an account
+        /// from the organization that does not yet have enough information to exist as a stand-alone
+        /// account. This account requires you to first complete phone verification.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -786,6 +811,10 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// INVALID_ENUM: You specified a value that is not valid for that parameter.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// INVALID_FULL_NAME_TARGET: You specified a full name that contains invalid characters.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -905,7 +934,12 @@ namespace Amazon.Organizations
         /// This operation can be called only from the account that originated the handshake.
         /// The recipient of the handshake can't cancel it, but can use <a>DeclineHandshake</a>
         /// instead. After a handshake is canceled, the recipient can no longer respond to that
-        /// handshake. 
+        /// handshake.
+        /// </para>
+        ///  
+        /// <para>
+        /// After you cancel a handshake, it continues to appear in the results of relevant APIs
+        /// for only 30 days. After that it is deleted.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CancelHandshake service method.</param>
@@ -916,6 +950,10 @@ namespace Amazon.Organizations
         /// is making the request must have at least one IAM permissions policy attached that
         /// grants the required permissions. For more information, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
         /// Management</a> in the <i>IAM User Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.Organizations.Model.ConcurrentModificationException">
+        /// The target of the operation is currently being modified by a different request. Try
+        /// again later.
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.HandshakeAlreadyInStateException">
         /// The specified handshake is already in the requested state. For example, you can't
@@ -950,6 +988,10 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// INVALID_ENUM: You specified a value that is not valid for that parameter.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// INVALID_FULL_NAME_TARGET: You specified a full name that contains invalid characters.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -1101,6 +1143,10 @@ namespace Amazon.Organizations
         /// Your account is not a member of an organization. To make this request, you must use
         /// the credentials of an account that belongs to an organization.
         /// </exception>
+        /// <exception cref="Amazon.Organizations.Model.ConcurrentModificationException">
+        /// The target of the operation is currently being modified by a different request. Try
+        /// again later.
+        /// </exception>
         /// <exception cref="Amazon.Organizations.Model.ConstraintViolationException">
         /// Performing this operation violates a minimum or maximum value limit. For example,
         /// attempting to removing the last SCP from an OU or root, inviting or creating too many
@@ -1111,8 +1157,18 @@ namespace Amazon.Organizations
         ///   <ul> <li> 
         /// <para>
         /// ACCOUNT_NUMBER_LIMIT_EXCEEDED: You attempted to exceed the limit on the number of
-        /// accounts in an organization. <b>Note</b>: deleted and closed accounts still count
-        /// toward your limit.
+        /// accounts in an organization. If you need more accounts, contact AWS Support to request
+        /// an increase in your limit. 
+        /// </para>
+        ///  
+        /// <para>
+        /// Or, The number of invitations that you tried to send would cause you to exceed the
+        /// limit of accounts in your organization. Send fewer invitations, or contact AWS Support
+        /// to request an increase in the number of accounts.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Note</b>: deleted and closed accounts still count toward your limit.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -1147,8 +1203,15 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// ACCOUNT_CANNOT_LEAVE_ORGANIZATION: You attempted to remove an account from an organization
-        /// that was created from within organizations.
+        /// ACCOUNT_CANNOT_LEAVE_WITHOUT_EULA: You attempted to remove an account from the organization
+        /// that does not yet have enough information to exist as a stand-alone account. This
+        /// account requires you to first agree to the End-User License Agreement (EULA).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// ACCOUNT_CANNOT_LEAVE_WITHOUT_PHONE_VERIFICATION: You attempted to remove an account
+        /// from the organization that does not yet have enough information to exist as a stand-alone
+        /// account. This account requires you to first complete phone verification.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -1201,6 +1264,10 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// INVALID_ENUM: You specified a value that is not valid for that parameter.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// INVALID_FULL_NAME_TARGET: You specified a full name that contains invalid characters.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -1347,8 +1414,18 @@ namespace Amazon.Organizations
         ///   <ul> <li> 
         /// <para>
         /// ACCOUNT_NUMBER_LIMIT_EXCEEDED: You attempted to exceed the limit on the number of
-        /// accounts in an organization. <b>Note</b>: deleted and closed accounts still count
-        /// toward your limit.
+        /// accounts in an organization. If you need more accounts, contact AWS Support to request
+        /// an increase in your limit. 
+        /// </para>
+        ///  
+        /// <para>
+        /// Or, The number of invitations that you tried to send would cause you to exceed the
+        /// limit of accounts in your organization. Send fewer invitations, or contact AWS Support
+        /// to request an increase in the number of accounts.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Note</b>: deleted and closed accounts still count toward your limit.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -1383,8 +1460,15 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// ACCOUNT_CANNOT_LEAVE_ORGANIZATION: You attempted to remove an account from an organization
-        /// that was created from within organizations.
+        /// ACCOUNT_CANNOT_LEAVE_WITHOUT_EULA: You attempted to remove an account from the organization
+        /// that does not yet have enough information to exist as a stand-alone account. This
+        /// account requires you to first agree to the End-User License Agreement (EULA).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// ACCOUNT_CANNOT_LEAVE_WITHOUT_PHONE_VERIFICATION: You attempted to remove an account
+        /// from the organization that does not yet have enough information to exist as a stand-alone
+        /// account. This account requires you to first complete phone verification.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -1433,6 +1517,10 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// INVALID_ENUM: You specified a value that is not valid for that parameter.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// INVALID_FULL_NAME_TARGET: You specified a full name that contains invalid characters.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -1561,6 +1649,10 @@ namespace Amazon.Organizations
         /// Your account is not a member of an organization. To make this request, you must use
         /// the credentials of an account that belongs to an organization.
         /// </exception>
+        /// <exception cref="Amazon.Organizations.Model.ConcurrentModificationException">
+        /// The target of the operation is currently being modified by a different request. Try
+        /// again later.
+        /// </exception>
         /// <exception cref="Amazon.Organizations.Model.ConstraintViolationException">
         /// Performing this operation violates a minimum or maximum value limit. For example,
         /// attempting to removing the last SCP from an OU or root, inviting or creating too many
@@ -1571,8 +1663,18 @@ namespace Amazon.Organizations
         ///   <ul> <li> 
         /// <para>
         /// ACCOUNT_NUMBER_LIMIT_EXCEEDED: You attempted to exceed the limit on the number of
-        /// accounts in an organization. <b>Note</b>: deleted and closed accounts still count
-        /// toward your limit.
+        /// accounts in an organization. If you need more accounts, contact AWS Support to request
+        /// an increase in your limit. 
+        /// </para>
+        ///  
+        /// <para>
+        /// Or, The number of invitations that you tried to send would cause you to exceed the
+        /// limit of accounts in your organization. Send fewer invitations, or contact AWS Support
+        /// to request an increase in the number of accounts.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Note</b>: deleted and closed accounts still count toward your limit.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -1607,8 +1709,15 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// ACCOUNT_CANNOT_LEAVE_ORGANIZATION: You attempted to remove an account from an organization
-        /// that was created from within organizations.
+        /// ACCOUNT_CANNOT_LEAVE_WITHOUT_EULA: You attempted to remove an account from the organization
+        /// that does not yet have enough information to exist as a stand-alone account. This
+        /// account requires you to first agree to the End-User License Agreement (EULA).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// ACCOUNT_CANNOT_LEAVE_WITHOUT_PHONE_VERIFICATION: You attempted to remove an account
+        /// from the organization that does not yet have enough information to exist as a stand-alone
+        /// account. This account requires you to first complete phone verification.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -1660,6 +1769,10 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// INVALID_ENUM: You specified a value that is not valid for that parameter.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// INVALID_FULL_NAME_TARGET: You specified a full name that contains invalid characters.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -1802,8 +1915,18 @@ namespace Amazon.Organizations
         ///   <ul> <li> 
         /// <para>
         /// ACCOUNT_NUMBER_LIMIT_EXCEEDED: You attempted to exceed the limit on the number of
-        /// accounts in an organization. <b>Note</b>: deleted and closed accounts still count
-        /// toward your limit.
+        /// accounts in an organization. If you need more accounts, contact AWS Support to request
+        /// an increase in your limit. 
+        /// </para>
+        ///  
+        /// <para>
+        /// Or, The number of invitations that you tried to send would cause you to exceed the
+        /// limit of accounts in your organization. Send fewer invitations, or contact AWS Support
+        /// to request an increase in the number of accounts.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Note</b>: deleted and closed accounts still count toward your limit.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -1838,8 +1961,15 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// ACCOUNT_CANNOT_LEAVE_ORGANIZATION: You attempted to remove an account from an organization
-        /// that was created from within organizations.
+        /// ACCOUNT_CANNOT_LEAVE_WITHOUT_EULA: You attempted to remove an account from the organization
+        /// that does not yet have enough information to exist as a stand-alone account. This
+        /// account requires you to first agree to the End-User License Agreement (EULA).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// ACCOUNT_CANNOT_LEAVE_WITHOUT_PHONE_VERIFICATION: You attempted to remove an account
+        /// from the organization that does not yet have enough information to exist as a stand-alone
+        /// account. This account requires you to first complete phone verification.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -1891,6 +2021,10 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// INVALID_ENUM: You specified a value that is not valid for that parameter.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// INVALID_FULL_NAME_TARGET: You specified a full name that contains invalid characters.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -2012,6 +2146,11 @@ namespace Amazon.Organizations
         /// can't reactivate a declined request, but can re-initiate the process with a new handshake
         /// request.
         /// </para>
+        ///  
+        /// <para>
+        /// After you decline a handshake, it continues to appear in the results of relevant APIs
+        /// for only 30 days. After that it is deleted.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeclineHandshake service method.</param>
         /// 
@@ -2021,6 +2160,10 @@ namespace Amazon.Organizations
         /// is making the request must have at least one IAM permissions policy attached that
         /// grants the required permissions. For more information, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
         /// Management</a> in the <i>IAM User Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.Organizations.Model.ConcurrentModificationException">
+        /// The target of the operation is currently being modified by a different request. Try
+        /// again later.
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.HandshakeAlreadyInStateException">
         /// The specified handshake is already in the requested state. For example, you can't
@@ -2055,6 +2198,10 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// INVALID_ENUM: You specified a value that is not valid for that parameter.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// INVALID_FULL_NAME_TARGET: You specified a full name that contains invalid characters.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -2207,6 +2354,10 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// INVALID_FULL_NAME_TARGET: You specified a full name that contains invalid characters.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// INVALID_LIST_MEMBER: You provided a list to a parameter that contains at least one
         /// invalid value.
         /// </para>
@@ -2354,6 +2505,10 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// INVALID_ENUM: You specified a value that is not valid for that parameter.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// INVALID_FULL_NAME_TARGET: You specified a full name that contains invalid characters.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -2509,6 +2664,10 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// INVALID_FULL_NAME_TARGET: You specified a full name that contains invalid characters.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// INVALID_LIST_MEMBER: You provided a list to a parameter that contains at least one
         /// invalid value.
         /// </para>
@@ -2660,6 +2819,10 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// INVALID_FULL_NAME_TARGET: You specified a full name that contains invalid characters.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// INVALID_LIST_MEMBER: You provided a list to a parameter that contains at least one
         /// invalid value.
         /// </para>
@@ -2803,6 +2966,10 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// INVALID_FULL_NAME_TARGET: You specified a full name that contains invalid characters.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// INVALID_LIST_MEMBER: You provided a list to a parameter that contains at least one
         /// invalid value.
         /// </para>
@@ -2905,6 +3072,11 @@ namespace Amazon.Organizations
         /// 
         ///  
         /// <para>
+        /// You can access handshakes that are ACCEPTED, DECLINED, or CANCELED for only 30 days
+        /// after they change to that state. They are then deleted and no longer accessible.
+        /// </para>
+        ///  
+        /// <para>
         /// This operation can be called from any account in the organization.
         /// </para>
         /// </summary>
@@ -2916,6 +3088,10 @@ namespace Amazon.Organizations
         /// is making the request must have at least one IAM permissions policy attached that
         /// grants the required permissions. For more information, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
         /// Management</a> in the <i>IAM User Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.Organizations.Model.ConcurrentModificationException">
+        /// The target of the operation is currently being modified by a different request. Try
+        /// again later.
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.HandshakeNotFoundException">
         /// We can't find a handshake with the HandshakeId that you specified.
@@ -2941,6 +3117,10 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// INVALID_ENUM: You specified a value that is not valid for that parameter.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// INVALID_FULL_NAME_TARGET: You specified a full name that contains invalid characters.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -3060,6 +3240,10 @@ namespace Amazon.Organizations
         /// Your account is not a member of an organization. To make this request, you must use
         /// the credentials of an account that belongs to an organization.
         /// </exception>
+        /// <exception cref="Amazon.Organizations.Model.ConcurrentModificationException">
+        /// The target of the operation is currently being modified by a different request. Try
+        /// again later.
+        /// </exception>
         /// <exception cref="Amazon.Organizations.Model.ServiceException">
         /// AWS Organizations can't complete your request because of an internal service error.
         /// Try again later.
@@ -3143,6 +3327,10 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// INVALID_ENUM: You specified a value that is not valid for that parameter.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// INVALID_FULL_NAME_TARGET: You specified a full name that contains invalid characters.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -3286,6 +3474,10 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// INVALID_ENUM: You specified a value that is not valid for that parameter.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// INVALID_FULL_NAME_TARGET: You specified a full name that contains invalid characters.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -3436,8 +3628,18 @@ namespace Amazon.Organizations
         ///   <ul> <li> 
         /// <para>
         /// ACCOUNT_NUMBER_LIMIT_EXCEEDED: You attempted to exceed the limit on the number of
-        /// accounts in an organization. <b>Note</b>: deleted and closed accounts still count
-        /// toward your limit.
+        /// accounts in an organization. If you need more accounts, contact AWS Support to request
+        /// an increase in your limit. 
+        /// </para>
+        ///  
+        /// <para>
+        /// Or, The number of invitations that you tried to send would cause you to exceed the
+        /// limit of accounts in your organization. Send fewer invitations, or contact AWS Support
+        /// to request an increase in the number of accounts.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Note</b>: deleted and closed accounts still count toward your limit.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -3472,8 +3674,15 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// ACCOUNT_CANNOT_LEAVE_ORGANIZATION: You attempted to remove an account from an organization
-        /// that was created from within organizations.
+        /// ACCOUNT_CANNOT_LEAVE_WITHOUT_EULA: You attempted to remove an account from the organization
+        /// that does not yet have enough information to exist as a stand-alone account. This
+        /// account requires you to first agree to the End-User License Agreement (EULA).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// ACCOUNT_CANNOT_LEAVE_WITHOUT_PHONE_VERIFICATION: You attempted to remove an account
+        /// from the organization that does not yet have enough information to exist as a stand-alone
+        /// account. This account requires you to first complete phone verification.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -3522,6 +3731,10 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// INVALID_ENUM: You specified a value that is not valid for that parameter.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// INVALID_FULL_NAME_TARGET: You specified a full name that contains invalid characters.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -3668,8 +3881,18 @@ namespace Amazon.Organizations
         ///   <ul> <li> 
         /// <para>
         /// ACCOUNT_NUMBER_LIMIT_EXCEEDED: You attempted to exceed the limit on the number of
-        /// accounts in an organization. <b>Note</b>: deleted and closed accounts still count
-        /// toward your limit.
+        /// accounts in an organization. If you need more accounts, contact AWS Support to request
+        /// an increase in your limit. 
+        /// </para>
+        ///  
+        /// <para>
+        /// Or, The number of invitations that you tried to send would cause you to exceed the
+        /// limit of accounts in your organization. Send fewer invitations, or contact AWS Support
+        /// to request an increase in the number of accounts.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Note</b>: deleted and closed accounts still count toward your limit.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -3704,8 +3927,15 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// ACCOUNT_CANNOT_LEAVE_ORGANIZATION: You attempted to remove an account from an organization
-        /// that was created from within organizations.
+        /// ACCOUNT_CANNOT_LEAVE_WITHOUT_EULA: You attempted to remove an account from the organization
+        /// that does not yet have enough information to exist as a stand-alone account. This
+        /// account requires you to first agree to the End-User License Agreement (EULA).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// ACCOUNT_CANNOT_LEAVE_WITHOUT_PHONE_VERIFICATION: You attempted to remove an account
+        /// from the organization that does not yet have enough information to exist as a stand-alone
+        /// account. This account requires you to first complete phone verification.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -3754,6 +3984,10 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// INVALID_ENUM: You specified a value that is not valid for that parameter.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// INVALID_FULL_NAME_TARGET: You specified a full name that contains invalid characters.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -3910,6 +4144,10 @@ namespace Amazon.Organizations
         /// Your account is not a member of an organization. To make this request, you must use
         /// the credentials of an account that belongs to an organization.
         /// </exception>
+        /// <exception cref="Amazon.Organizations.Model.ConcurrentModificationException">
+        /// The target of the operation is currently being modified by a different request. Try
+        /// again later.
+        /// </exception>
         /// <exception cref="Amazon.Organizations.Model.HandshakeConstraintViolationException">
         /// The requested operation would violate the constraint identified in the reason code.
         /// 
@@ -3981,6 +4219,10 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// INVALID_ENUM: You specified a value that is not valid for that parameter.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// INVALID_FULL_NAME_TARGET: You specified a full name that contains invalid characters.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -4116,8 +4358,18 @@ namespace Amazon.Organizations
         ///   <ul> <li> 
         /// <para>
         /// ACCOUNT_NUMBER_LIMIT_EXCEEDED: You attempted to exceed the limit on the number of
-        /// accounts in an organization. <b>Note</b>: deleted and closed accounts still count
-        /// toward your limit.
+        /// accounts in an organization. If you need more accounts, contact AWS Support to request
+        /// an increase in your limit. 
+        /// </para>
+        ///  
+        /// <para>
+        /// Or, The number of invitations that you tried to send would cause you to exceed the
+        /// limit of accounts in your organization. Send fewer invitations, or contact AWS Support
+        /// to request an increase in the number of accounts.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Note</b>: deleted and closed accounts still count toward your limit.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -4152,8 +4404,15 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// ACCOUNT_CANNOT_LEAVE_ORGANIZATION: You attempted to remove an account from an organization
-        /// that was created from within organizations.
+        /// ACCOUNT_CANNOT_LEAVE_WITHOUT_EULA: You attempted to remove an account from the organization
+        /// that does not yet have enough information to exist as a stand-alone account. This
+        /// account requires you to first agree to the End-User License Agreement (EULA).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// ACCOUNT_CANNOT_LEAVE_WITHOUT_PHONE_VERIFICATION: You attempted to remove an account
+        /// from the organization that does not yet have enough information to exist as a stand-alone
+        /// account. This account requires you to first complete phone verification.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -4202,6 +4461,10 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// INVALID_ENUM: You specified a value that is not valid for that parameter.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// INVALID_FULL_NAME_TARGET: You specified a full name that contains invalid characters.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -4318,7 +4581,16 @@ namespace Amazon.Organizations
         /// the other account's owner. The invitation is implemented as a <a>Handshake</a> whose
         /// details are in the response.
         /// 
-        ///  
+        ///  <important> 
+        /// <para>
+        /// You can invite AWS accounts only from the same reseller as the master account. For
+        /// example, if your organization's master account was created by Amazon Internet Services
+        /// Pvt. Ltd (AISPL), an AWS reseller in India, then you can only invite other AISPL accounts
+        /// to your organization. You can't combine accounts from AISPL and AWS. For more information,
+        /// see <a href="http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/useconsolidatedbilliing-India.html">Consolidated
+        /// Billing in India</a>.
+        /// </para>
+        ///  </important> 
         /// <para>
         /// This operation can be called only from the organization's master account.
         /// </para>
@@ -4335,6 +4607,10 @@ namespace Amazon.Organizations
         /// <exception cref="Amazon.Organizations.Model.AWSOrganizationsNotInUseException">
         /// Your account is not a member of an organization. To make this request, you must use
         /// the credentials of an account that belongs to an organization.
+        /// </exception>
+        /// <exception cref="Amazon.Organizations.Model.ConcurrentModificationException">
+        /// The target of the operation is currently being modified by a different request. Try
+        /// again later.
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.DuplicateHandshakeException">
         /// A handshake with the same action and target already exists. For example, if you invited
@@ -4418,6 +4694,10 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// INVALID_ENUM: You specified a value that is not valid for that parameter.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// INVALID_FULL_NAME_TARGET: You specified a full name that contains invalid characters.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -4525,14 +4805,26 @@ namespace Amazon.Organizations
         /// <para>
         /// This operation can be called only from a member account in the organization.
         /// </para>
-        ///  <important> 
+        ///  <important> <ul> <li> 
         /// <para>
         /// The master account in an organization with all features enabled can set service control
         /// policies (SCPs) that can restrict what administrators of member accounts can do, including
         /// preventing them from successfully calling <code>LeaveOrganization</code> and leaving
         /// the organization. 
         /// </para>
-        ///  </important>
+        ///  </li> <li> 
+        /// <para>
+        /// If you created the account using the AWS Organizations console, the Organizations
+        /// API, or the Organizations CLI commands, then you cannot remove the account.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You can leave an organization only after you enable IAM user access to billing in
+        /// your account. For more information, see <a href="http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/grantaccess.html#ControllingAccessWebsite-Activate">Activating
+        /// Access to the Billing and Cost Management Console</a> in the <i>AWS Billing and Cost
+        /// Management User Guide</i>.
+        /// </para>
+        ///  </li> </ul> </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the LeaveOrganization service method.</param>
         /// 
@@ -4565,8 +4857,18 @@ namespace Amazon.Organizations
         ///   <ul> <li> 
         /// <para>
         /// ACCOUNT_NUMBER_LIMIT_EXCEEDED: You attempted to exceed the limit on the number of
-        /// accounts in an organization. <b>Note</b>: deleted and closed accounts still count
-        /// toward your limit.
+        /// accounts in an organization. If you need more accounts, contact AWS Support to request
+        /// an increase in your limit. 
+        /// </para>
+        ///  
+        /// <para>
+        /// Or, The number of invitations that you tried to send would cause you to exceed the
+        /// limit of accounts in your organization. Send fewer invitations, or contact AWS Support
+        /// to request an increase in the number of accounts.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Note</b>: deleted and closed accounts still count toward your limit.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -4601,8 +4903,15 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// ACCOUNT_CANNOT_LEAVE_ORGANIZATION: You attempted to remove an account from an organization
-        /// that was created from within organizations.
+        /// ACCOUNT_CANNOT_LEAVE_WITHOUT_EULA: You attempted to remove an account from the organization
+        /// that does not yet have enough information to exist as a stand-alone account. This
+        /// account requires you to first agree to the End-User License Agreement (EULA).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// ACCOUNT_CANNOT_LEAVE_WITHOUT_PHONE_VERIFICATION: You attempted to remove an account
+        /// from the organization that does not yet have enough information to exist as a stand-alone
+        /// account. This account requires you to first complete phone verification.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -4651,6 +4960,10 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// INVALID_ENUM: You specified a value that is not valid for that parameter.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// INVALID_FULL_NAME_TARGET: You specified a full name that contains invalid characters.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -4800,6 +5113,10 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// INVALID_FULL_NAME_TARGET: You specified a full name that contains invalid characters.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// INVALID_LIST_MEMBER: You provided a list to a parameter that contains at least one
         /// invalid value.
         /// </para>
@@ -4936,6 +5253,10 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// INVALID_ENUM: You specified a value that is not valid for that parameter.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// INVALID_FULL_NAME_TARGET: You specified a full name that contains invalid characters.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -5076,6 +5397,10 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// INVALID_ENUM: You specified a value that is not valid for that parameter.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// INVALID_FULL_NAME_TARGET: You specified a full name that contains invalid characters.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -5223,6 +5548,10 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// INVALID_FULL_NAME_TARGET: You specified a full name that contains invalid characters.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// INVALID_LIST_MEMBER: You provided a list to a parameter that contains at least one
         /// invalid value.
         /// </para>
@@ -5324,6 +5653,12 @@ namespace Amazon.Organizations
         /// 
         ///  
         /// <para>
+        /// Handshakes that are ACCEPTED, DECLINED, or CANCELED appear in the results of this
+        /// API for only 30 days after changing to that state. After that they are deleted and
+        /// no longer accessible.
+        /// </para>
+        ///  
+        /// <para>
         /// This operation can be called from any account in the organization.
         /// </para>
         /// </summary>
@@ -5335,6 +5670,10 @@ namespace Amazon.Organizations
         /// is making the request must have at least one IAM permissions policy attached that
         /// grants the required permissions. For more information, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
         /// Management</a> in the <i>IAM User Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.Organizations.Model.ConcurrentModificationException">
+        /// The target of the operation is currently being modified by a different request. Try
+        /// again later.
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.InvalidInputException">
         /// The requested operation failed because you provided invalid values for one or more
@@ -5357,6 +5696,10 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// INVALID_ENUM: You specified a value that is not valid for that parameter.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// INVALID_FULL_NAME_TARGET: You specified a full name that contains invalid characters.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -5463,6 +5806,12 @@ namespace Amazon.Organizations
         /// 
         ///  
         /// <para>
+        /// Handshakes that are ACCEPTED, DECLINED, or CANCELED appear in the results of this
+        /// API for only 30 days after changing to that state. After that they are deleted and
+        /// no longer accessible.
+        /// </para>
+        ///  
+        /// <para>
         /// This operation can be called only from the organization's master account.
         /// </para>
         /// </summary>
@@ -5478,6 +5827,10 @@ namespace Amazon.Organizations
         /// <exception cref="Amazon.Organizations.Model.AWSOrganizationsNotInUseException">
         /// Your account is not a member of an organization. To make this request, you must use
         /// the credentials of an account that belongs to an organization.
+        /// </exception>
+        /// <exception cref="Amazon.Organizations.Model.ConcurrentModificationException">
+        /// The target of the operation is currently being modified by a different request. Try
+        /// again later.
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.InvalidInputException">
         /// The requested operation failed because you provided invalid values for one or more
@@ -5500,6 +5853,10 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// INVALID_ENUM: You specified a value that is not valid for that parameter.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// INVALID_FULL_NAME_TARGET: You specified a full name that contains invalid characters.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -5640,6 +5997,10 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// INVALID_ENUM: You specified a value that is not valid for that parameter.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// INVALID_FULL_NAME_TARGET: You specified a full name that contains invalid characters.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -5797,6 +6158,10 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// INVALID_FULL_NAME_TARGET: You specified a full name that contains invalid characters.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// INVALID_LIST_MEMBER: You provided a list to a parameter that contains at least one
         /// invalid value.
         /// </para>
@@ -5934,6 +6299,10 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// INVALID_ENUM: You specified a value that is not valid for that parameter.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// INVALID_FULL_NAME_TARGET: You specified a full name that contains invalid characters.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -6076,6 +6445,10 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// INVALID_ENUM: You specified a value that is not valid for that parameter.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// INVALID_FULL_NAME_TARGET: You specified a full name that contains invalid characters.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -6222,6 +6595,10 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// INVALID_FULL_NAME_TARGET: You specified a full name that contains invalid characters.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// INVALID_LIST_MEMBER: You provided a list to a parameter that contains at least one
         /// invalid value.
         /// </para>
@@ -6359,6 +6736,10 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// INVALID_ENUM: You specified a value that is not valid for that parameter.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// INVALID_FULL_NAME_TARGET: You specified a full name that contains invalid characters.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -6521,6 +6902,10 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// INVALID_FULL_NAME_TARGET: You specified a full name that contains invalid characters.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// INVALID_LIST_MEMBER: You provided a list to a parameter that contains at least one
         /// invalid value.
         /// </para>
@@ -6634,12 +7019,20 @@ namespace Amazon.Organizations
         /// This operation can be called only from the organization's master account. Member accounts
         /// can remove themselves with <a>LeaveOrganization</a> instead.
         /// </para>
-        ///  <important> 
+        ///  <important> <ul> <li> 
         /// <para>
-        /// You can remove only existing accounts that were invited to join the organization.
-        /// You cannot remove accounts that were created by AWS Organizations.
+        /// You can remove only accounts that were created outside your organization and invited
+        /// to join. If you created the account using the AWS Organizations console, the Organizations
+        /// API, or the Organizations CLI commands, then you cannot remove the account.
         /// </para>
-        ///  </important>
+        ///  </li> <li> 
+        /// <para>
+        /// You can remove a member account only after you enable IAM user access to billing in
+        /// the member account. For more information, see <a href="http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/grantaccess.html#ControllingAccessWebsite-Activate">Activating
+        /// Access to the Billing and Cost Management Console</a> in the <i>AWS Billing and Cost
+        /// Management User Guide</i>.
+        /// </para>
+        ///  </li> </ul> </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RemoveAccountFromOrganization service method.</param>
         /// 
@@ -6672,8 +7065,18 @@ namespace Amazon.Organizations
         ///   <ul> <li> 
         /// <para>
         /// ACCOUNT_NUMBER_LIMIT_EXCEEDED: You attempted to exceed the limit on the number of
-        /// accounts in an organization. <b>Note</b>: deleted and closed accounts still count
-        /// toward your limit.
+        /// accounts in an organization. If you need more accounts, contact AWS Support to request
+        /// an increase in your limit. 
+        /// </para>
+        ///  
+        /// <para>
+        /// Or, The number of invitations that you tried to send would cause you to exceed the
+        /// limit of accounts in your organization. Send fewer invitations, or contact AWS Support
+        /// to request an increase in the number of accounts.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Note</b>: deleted and closed accounts still count toward your limit.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -6708,8 +7111,15 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// ACCOUNT_CANNOT_LEAVE_ORGANIZATION: You attempted to remove an account from an organization
-        /// that was created from within organizations.
+        /// ACCOUNT_CANNOT_LEAVE_WITHOUT_EULA: You attempted to remove an account from the organization
+        /// that does not yet have enough information to exist as a stand-alone account. This
+        /// account requires you to first agree to the End-User License Agreement (EULA).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// ACCOUNT_CANNOT_LEAVE_WITHOUT_PHONE_VERIFICATION: You attempted to remove an account
+        /// from the organization that does not yet have enough information to exist as a stand-alone
+        /// account. This account requires you to first complete phone verification.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -6758,6 +7168,10 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// INVALID_ENUM: You specified a value that is not valid for that parameter.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// INVALID_FULL_NAME_TARGET: You specified a full name that contains invalid characters.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -6915,6 +7329,10 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// INVALID_FULL_NAME_TARGET: You specified a full name that contains invalid characters.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// INVALID_LIST_MEMBER: You provided a list to a parameter that contains at least one
         /// invalid value.
         /// </para>
@@ -7050,8 +7468,18 @@ namespace Amazon.Organizations
         ///   <ul> <li> 
         /// <para>
         /// ACCOUNT_NUMBER_LIMIT_EXCEEDED: You attempted to exceed the limit on the number of
-        /// accounts in an organization. <b>Note</b>: deleted and closed accounts still count
-        /// toward your limit.
+        /// accounts in an organization. If you need more accounts, contact AWS Support to request
+        /// an increase in your limit. 
+        /// </para>
+        ///  
+        /// <para>
+        /// Or, The number of invitations that you tried to send would cause you to exceed the
+        /// limit of accounts in your organization. Send fewer invitations, or contact AWS Support
+        /// to request an increase in the number of accounts.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Note</b>: deleted and closed accounts still count toward your limit.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -7086,8 +7514,15 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// ACCOUNT_CANNOT_LEAVE_ORGANIZATION: You attempted to remove an account from an organization
-        /// that was created from within organizations.
+        /// ACCOUNT_CANNOT_LEAVE_WITHOUT_EULA: You attempted to remove an account from the organization
+        /// that does not yet have enough information to exist as a stand-alone account. This
+        /// account requires you to first agree to the End-User License Agreement (EULA).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// ACCOUNT_CANNOT_LEAVE_WITHOUT_PHONE_VERIFICATION: You attempted to remove an account
+        /// from the organization that does not yet have enough information to exist as a stand-alone
+        /// account. This account requires you to first complete phone verification.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -7139,6 +7574,10 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// INVALID_ENUM: You specified a value that is not valid for that parameter.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// INVALID_FULL_NAME_TARGET: You specified a full name that contains invalid characters.
         /// </para>
         ///  </li> <li> 
         /// <para>

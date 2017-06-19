@@ -34,7 +34,16 @@ namespace Amazon.Organizations.Model
     /// the other account's owner. The invitation is implemented as a <a>Handshake</a> whose
     /// details are in the response.
     /// 
-    ///  
+    ///  <important> 
+    /// <para>
+    /// You can invite AWS accounts only from the same reseller as the master account. For
+    /// example, if your organization's master account was created by Amazon Internet Services
+    /// Pvt. Ltd (AISPL), an AWS reseller in India, then you can only invite other AISPL accounts
+    /// to your organization. You can't combine accounts from AISPL and AWS. For more information,
+    /// see <a href="http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/useconsolidatedbilliing-India.html">Consolidated
+    /// Billing in India</a>.
+    /// </para>
+    ///  </important> 
     /// <para>
     /// This operation can be called only from the organization's master account.
     /// </para>
