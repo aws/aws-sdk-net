@@ -1,3 +1,7 @@
+### 3.3.110.0 (2017-06-19 18:22 UTC)
+* Organizations (3.3.3.0)
+	* Improvements to Exception Modeling
+
 ### 3.3.109.0 (2017-06-16 17:00 UTC)
 * XRay (3.3.1.0)
 	* Add a response time histogram to the services in response of GetServiceGraph API.
