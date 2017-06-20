@@ -895,6 +895,49 @@ namespace Amazon.WorkDocs
 
         #endregion
         
+        #region  DescribeActivities
+
+
+        /// <summary>
+        /// Describes the user activities in a specified time period.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeActivities service method.</param>
+        /// 
+        /// <returns>The response from the DescribeActivities service method, as returned by WorkDocs.</returns>
+        /// <exception cref="Amazon.WorkDocs.Model.FailedDependencyException">
+        /// The AWS Directory Service cannot reach an on-premises instance. Or a dependency under
+        /// the control of the organization is failing, such as a connected active directory.
+        /// </exception>
+        /// <exception cref="Amazon.WorkDocs.Model.InvalidArgumentException">
+        /// The pagination marker and/or limit fields are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.WorkDocs.Model.ServiceUnavailableException">
+        /// One or more of the dependencies is unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.WorkDocs.Model.UnauthorizedOperationException">
+        /// The operation is not permitted.
+        /// </exception>
+        /// <exception cref="Amazon.WorkDocs.Model.UnauthorizedResourceAccessException">
+        /// The caller does not have access to perform the action on the resource.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/DescribeActivities">REST API Reference for DescribeActivities Operation</seealso>
+        DescribeActivitiesResponse DescribeActivities(DescribeActivitiesRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeActivities operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeActivities operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/DescribeActivities">REST API Reference for DescribeActivities Operation</seealso>
+        Task<DescribeActivitiesResponse> DescribeActivitiesAsync(DescribeActivitiesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  DescribeComments
 
 
@@ -1124,6 +1167,52 @@ namespace Amazon.WorkDocs
 
         #endregion
         
+        #region  DescribeRootFolders
+
+
+        /// <summary>
+        /// Describes the current user's special folders; the <code>RootFolder</code> and the
+        /// <code>RecyleBin</code>. <code>RootFolder</code> is the root of user's files and folders
+        /// and <code>RecyleBin</code> is the root of recycled items. This is not a valid action
+        /// for SigV4 (administrative API) clients.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeRootFolders service method.</param>
+        /// 
+        /// <returns>The response from the DescribeRootFolders service method, as returned by WorkDocs.</returns>
+        /// <exception cref="Amazon.WorkDocs.Model.FailedDependencyException">
+        /// The AWS Directory Service cannot reach an on-premises instance. Or a dependency under
+        /// the control of the organization is failing, such as a connected active directory.
+        /// </exception>
+        /// <exception cref="Amazon.WorkDocs.Model.InvalidArgumentException">
+        /// The pagination marker and/or limit fields are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.WorkDocs.Model.ServiceUnavailableException">
+        /// One or more of the dependencies is unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.WorkDocs.Model.UnauthorizedOperationException">
+        /// The operation is not permitted.
+        /// </exception>
+        /// <exception cref="Amazon.WorkDocs.Model.UnauthorizedResourceAccessException">
+        /// The caller does not have access to perform the action on the resource.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/DescribeRootFolders">REST API Reference for DescribeRootFolders Operation</seealso>
+        DescribeRootFoldersResponse DescribeRootFolders(DescribeRootFoldersRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeRootFolders operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeRootFolders operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/DescribeRootFolders">REST API Reference for DescribeRootFolders Operation</seealso>
+        Task<DescribeRootFoldersResponse> DescribeRootFoldersAsync(DescribeRootFoldersRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  DescribeUsers
 
 
@@ -1172,6 +1261,50 @@ namespace Amazon.WorkDocs
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/DescribeUsers">REST API Reference for DescribeUsers Operation</seealso>
         Task<DescribeUsersResponse> DescribeUsersAsync(DescribeUsersRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  GetCurrentUser
+
+
+        /// <summary>
+        /// Retrieves details of the current user for whom the authentication token was generated.
+        /// This is not a valid action for SigV4 (administrative API) clients.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetCurrentUser service method.</param>
+        /// 
+        /// <returns>The response from the GetCurrentUser service method, as returned by WorkDocs.</returns>
+        /// <exception cref="Amazon.WorkDocs.Model.EntityNotExistsException">
+        /// The resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.WorkDocs.Model.FailedDependencyException">
+        /// The AWS Directory Service cannot reach an on-premises instance. Or a dependency under
+        /// the control of the organization is failing, such as a connected active directory.
+        /// </exception>
+        /// <exception cref="Amazon.WorkDocs.Model.ServiceUnavailableException">
+        /// One or more of the dependencies is unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.WorkDocs.Model.UnauthorizedOperationException">
+        /// The operation is not permitted.
+        /// </exception>
+        /// <exception cref="Amazon.WorkDocs.Model.UnauthorizedResourceAccessException">
+        /// The caller does not have access to perform the action on the resource.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/GetCurrentUser">REST API Reference for GetCurrentUser Operation</seealso>
+        GetCurrentUserResponse GetCurrentUser(GetCurrentUserRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetCurrentUser operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetCurrentUser operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/GetCurrentUser">REST API Reference for GetCurrentUser Operation</seealso>
+        Task<GetCurrentUserResponse> GetCurrentUserAsync(GetCurrentUserRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -1457,7 +1590,7 @@ namespace Amazon.WorkDocs
         /// The specified document version is not in the INITIALIZED state.
         /// </exception>
         /// <exception cref="Amazon.WorkDocs.Model.ResourceAlreadyCheckedOutException">
-        /// 
+        /// The resource is already checked out.
         /// </exception>
         /// <exception cref="Amazon.WorkDocs.Model.ServiceUnavailableException">
         /// One or more of the dependencies is unavailable.

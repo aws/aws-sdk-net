@@ -25,6 +25,172 @@ namespace Amazon.WorkDocs
 {
 
     /// <summary>
+    /// Constants used for properties of type ActivityType.
+    /// </summary>
+    public class ActivityType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DOCUMENT_ANNOTATION_ADDED for ActivityType
+        /// </summary>
+        public static readonly ActivityType DOCUMENT_ANNOTATION_ADDED = new ActivityType("DOCUMENT_ANNOTATION_ADDED");
+        /// <summary>
+        /// Constant DOCUMENT_ANNOTATION_DELETED for ActivityType
+        /// </summary>
+        public static readonly ActivityType DOCUMENT_ANNOTATION_DELETED = new ActivityType("DOCUMENT_ANNOTATION_DELETED");
+        /// <summary>
+        /// Constant DOCUMENT_CHECKED_IN for ActivityType
+        /// </summary>
+        public static readonly ActivityType DOCUMENT_CHECKED_IN = new ActivityType("DOCUMENT_CHECKED_IN");
+        /// <summary>
+        /// Constant DOCUMENT_CHECKED_OUT for ActivityType
+        /// </summary>
+        public static readonly ActivityType DOCUMENT_CHECKED_OUT = new ActivityType("DOCUMENT_CHECKED_OUT");
+        /// <summary>
+        /// Constant DOCUMENT_COMMENT_ADDED for ActivityType
+        /// </summary>
+        public static readonly ActivityType DOCUMENT_COMMENT_ADDED = new ActivityType("DOCUMENT_COMMENT_ADDED");
+        /// <summary>
+        /// Constant DOCUMENT_COMMENT_DELETED for ActivityType
+        /// </summary>
+        public static readonly ActivityType DOCUMENT_COMMENT_DELETED = new ActivityType("DOCUMENT_COMMENT_DELETED");
+        /// <summary>
+        /// Constant DOCUMENT_MOVED for ActivityType
+        /// </summary>
+        public static readonly ActivityType DOCUMENT_MOVED = new ActivityType("DOCUMENT_MOVED");
+        /// <summary>
+        /// Constant DOCUMENT_RECYCLED for ActivityType
+        /// </summary>
+        public static readonly ActivityType DOCUMENT_RECYCLED = new ActivityType("DOCUMENT_RECYCLED");
+        /// <summary>
+        /// Constant DOCUMENT_RENAMED for ActivityType
+        /// </summary>
+        public static readonly ActivityType DOCUMENT_RENAMED = new ActivityType("DOCUMENT_RENAMED");
+        /// <summary>
+        /// Constant DOCUMENT_RESTORED for ActivityType
+        /// </summary>
+        public static readonly ActivityType DOCUMENT_RESTORED = new ActivityType("DOCUMENT_RESTORED");
+        /// <summary>
+        /// Constant DOCUMENT_REVERTED for ActivityType
+        /// </summary>
+        public static readonly ActivityType DOCUMENT_REVERTED = new ActivityType("DOCUMENT_REVERTED");
+        /// <summary>
+        /// Constant DOCUMENT_SHARE_PERMISSION_CHANGED for ActivityType
+        /// </summary>
+        public static readonly ActivityType DOCUMENT_SHARE_PERMISSION_CHANGED = new ActivityType("DOCUMENT_SHARE_PERMISSION_CHANGED");
+        /// <summary>
+        /// Constant DOCUMENT_SHAREABLE_LINK_CREATED for ActivityType
+        /// </summary>
+        public static readonly ActivityType DOCUMENT_SHAREABLE_LINK_CREATED = new ActivityType("DOCUMENT_SHAREABLE_LINK_CREATED");
+        /// <summary>
+        /// Constant DOCUMENT_SHAREABLE_LINK_PERMISSION_CHANGED for ActivityType
+        /// </summary>
+        public static readonly ActivityType DOCUMENT_SHAREABLE_LINK_PERMISSION_CHANGED = new ActivityType("DOCUMENT_SHAREABLE_LINK_PERMISSION_CHANGED");
+        /// <summary>
+        /// Constant DOCUMENT_SHAREABLE_LINK_REMOVED for ActivityType
+        /// </summary>
+        public static readonly ActivityType DOCUMENT_SHAREABLE_LINK_REMOVED = new ActivityType("DOCUMENT_SHAREABLE_LINK_REMOVED");
+        /// <summary>
+        /// Constant DOCUMENT_SHARED for ActivityType
+        /// </summary>
+        public static readonly ActivityType DOCUMENT_SHARED = new ActivityType("DOCUMENT_SHARED");
+        /// <summary>
+        /// Constant DOCUMENT_UNSHARED for ActivityType
+        /// </summary>
+        public static readonly ActivityType DOCUMENT_UNSHARED = new ActivityType("DOCUMENT_UNSHARED");
+        /// <summary>
+        /// Constant DOCUMENT_VERSION_DELETED for ActivityType
+        /// </summary>
+        public static readonly ActivityType DOCUMENT_VERSION_DELETED = new ActivityType("DOCUMENT_VERSION_DELETED");
+        /// <summary>
+        /// Constant DOCUMENT_VERSION_UPLOADED for ActivityType
+        /// </summary>
+        public static readonly ActivityType DOCUMENT_VERSION_UPLOADED = new ActivityType("DOCUMENT_VERSION_UPLOADED");
+        /// <summary>
+        /// Constant FOLDER_CREATED for ActivityType
+        /// </summary>
+        public static readonly ActivityType FOLDER_CREATED = new ActivityType("FOLDER_CREATED");
+        /// <summary>
+        /// Constant FOLDER_DELETED for ActivityType
+        /// </summary>
+        public static readonly ActivityType FOLDER_DELETED = new ActivityType("FOLDER_DELETED");
+        /// <summary>
+        /// Constant FOLDER_MOVED for ActivityType
+        /// </summary>
+        public static readonly ActivityType FOLDER_MOVED = new ActivityType("FOLDER_MOVED");
+        /// <summary>
+        /// Constant FOLDER_RECYCLED for ActivityType
+        /// </summary>
+        public static readonly ActivityType FOLDER_RECYCLED = new ActivityType("FOLDER_RECYCLED");
+        /// <summary>
+        /// Constant FOLDER_RENAMED for ActivityType
+        /// </summary>
+        public static readonly ActivityType FOLDER_RENAMED = new ActivityType("FOLDER_RENAMED");
+        /// <summary>
+        /// Constant FOLDER_RESTORED for ActivityType
+        /// </summary>
+        public static readonly ActivityType FOLDER_RESTORED = new ActivityType("FOLDER_RESTORED");
+        /// <summary>
+        /// Constant FOLDER_SHARE_PERMISSION_CHANGED for ActivityType
+        /// </summary>
+        public static readonly ActivityType FOLDER_SHARE_PERMISSION_CHANGED = new ActivityType("FOLDER_SHARE_PERMISSION_CHANGED");
+        /// <summary>
+        /// Constant FOLDER_SHAREABLE_LINK_CREATED for ActivityType
+        /// </summary>
+        public static readonly ActivityType FOLDER_SHAREABLE_LINK_CREATED = new ActivityType("FOLDER_SHAREABLE_LINK_CREATED");
+        /// <summary>
+        /// Constant FOLDER_SHAREABLE_LINK_PERMISSION_CHANGED for ActivityType
+        /// </summary>
+        public static readonly ActivityType FOLDER_SHAREABLE_LINK_PERMISSION_CHANGED = new ActivityType("FOLDER_SHAREABLE_LINK_PERMISSION_CHANGED");
+        /// <summary>
+        /// Constant FOLDER_SHAREABLE_LINK_REMOVED for ActivityType
+        /// </summary>
+        public static readonly ActivityType FOLDER_SHAREABLE_LINK_REMOVED = new ActivityType("FOLDER_SHAREABLE_LINK_REMOVED");
+        /// <summary>
+        /// Constant FOLDER_SHARED for ActivityType
+        /// </summary>
+        public static readonly ActivityType FOLDER_SHARED = new ActivityType("FOLDER_SHARED");
+        /// <summary>
+        /// Constant FOLDER_UNSHARED for ActivityType
+        /// </summary>
+        public static readonly ActivityType FOLDER_UNSHARED = new ActivityType("FOLDER_UNSHARED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ActivityType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ActivityType FindValue(string value)
+        {
+            return FindValue<ActivityType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ActivityType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type CommentStatusType.
     /// </summary>
     public class CommentStatusType : ConstantClass
@@ -682,6 +848,56 @@ namespace Amazon.WorkDocs
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ResourceStateType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ResourceType.
+    /// </summary>
+    public class ResourceType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DOCUMENT for ResourceType
+        /// </summary>
+        public static readonly ResourceType DOCUMENT = new ResourceType("DOCUMENT");
+        /// <summary>
+        /// Constant FOLDER for ResourceType
+        /// </summary>
+        public static readonly ResourceType FOLDER = new ResourceType("FOLDER");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ResourceType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ResourceType FindValue(string value)
+        {
+            return FindValue<ResourceType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ResourceType(string value)
         {
             return FindValue(value);
         }

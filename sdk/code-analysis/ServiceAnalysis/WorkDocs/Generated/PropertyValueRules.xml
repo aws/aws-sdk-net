@@ -292,6 +292,40 @@
     <pattern>[&amp;\w+-.@]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.WorkDocs.Model.DescribeActivitiesRequest.AuthenticationToken</property>
+    <min>1</min>
+    <max>8199</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkDocs.Model.DescribeActivitiesRequest.Limit</property>
+    <min>1</min>
+    <max>999</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkDocs.Model.DescribeActivitiesRequest.Marker</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>[\u0000-\u00FF]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkDocs.Model.DescribeActivitiesRequest.OrganizationId</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>[&amp;\w+-.@]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkDocs.Model.DescribeActivitiesRequest.UserId</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>[&amp;\w+-.@]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkDocs.Model.DescribeActivitiesResponse.Marker</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>[\u0000-\u00FF]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.WorkDocs.Model.DescribeCommentsRequest.AuthenticationToken</property>
     <min>1</min>
     <max>8199</max>
@@ -443,6 +477,26 @@
     <max>2048</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.WorkDocs.Model.DescribeRootFoldersRequest.AuthenticationToken</property>
+    <min>1</min>
+    <max>8199</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkDocs.Model.DescribeRootFoldersRequest.Limit</property>
+    <min>1</min>
+    <max>999</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkDocs.Model.DescribeRootFoldersRequest.Marker</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkDocs.Model.DescribeRootFoldersResponse.Marker</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.WorkDocs.Model.DescribeUsersRequest.AuthenticationToken</property>
     <min>1</min>
     <max>8199</max>
@@ -485,6 +539,11 @@
     <property>Amazon.WorkDocs.Model.DescribeUsersResponse.Marker</property>
     <min>1</min>
     <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkDocs.Model.GetCurrentUserRequest.AuthenticationToken</property>
+    <min>1</min>
+    <max>8199</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkDocs.Model.GetDocumentRequest.AuthenticationToken</property>
@@ -731,6 +790,12 @@
     <pattern>[&amp;\w+-.@]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.WorkDocs.Model.Activity.OrganizationId</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>[&amp;\w+-.@]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.WorkDocs.Model.Comment.CommentId</property>
     <min>1</min>
     <max>128</max>
@@ -758,6 +823,18 @@
     <min>1</min>
     <max>128</max>
     <pattern>[\w+-.@]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkDocs.Model.CommentMetadata.CommentId</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[\w+-.@]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkDocs.Model.CommentMetadata.RecipientId</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>[&amp;\w+-.@]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkDocs.Model.DocumentMetadata.CreatorId</property>
@@ -837,10 +914,46 @@
     <pattern>[&amp;\w+-.@]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.WorkDocs.Model.GroupMetadata.Id</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>[&amp;\w+-.@]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.WorkDocs.Model.Principal.Id</property>
     <min>1</min>
     <max>256</max>
     <pattern>[&amp;\w+-.@]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkDocs.Model.ResourceMetadata.Id</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[\w+-.@]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkDocs.Model.ResourceMetadata.Name</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>[\u0020-\u202D\u202F-\uFFFF]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkDocs.Model.ResourceMetadata.OriginalName</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>[\u0020-\u202D\u202F-\uFFFF]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkDocs.Model.ResourceMetadata.ParentId</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[\w+-.@]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkDocs.Model.ResourceMetadata.VersionId</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[\w+-.@]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkDocs.Model.ResourcePathComponent.Id</property>
@@ -944,6 +1057,34 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkDocs.Model.User.Username</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>[\w\-+.]+(@[a-zA-Z0-9.\-]+\.[a-zA-Z]+)?</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkDocs.Model.UserMetadata.EmailAddress</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkDocs.Model.UserMetadata.GivenName</property>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkDocs.Model.UserMetadata.Id</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>[&amp;\w+-.@]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkDocs.Model.UserMetadata.Surname</property>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkDocs.Model.UserMetadata.Username</property>
     <min>1</min>
     <max>256</max>
     <pattern>[\w\-+.]+(@[a-zA-Z0-9.\-]+\.[a-zA-Z]+)?</pattern>

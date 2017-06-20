@@ -842,6 +842,38 @@ namespace Amazon.WorkDocs
 
         #endregion
         
+        #region  DescribeActivities
+
+        internal DescribeActivitiesResponse DescribeActivities(DescribeActivitiesRequest request)
+        {
+            var marshaller = new DescribeActivitiesRequestMarshaller();
+            var unmarshaller = DescribeActivitiesResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeActivitiesRequest,DescribeActivitiesResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeActivities operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeActivities operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/DescribeActivities">REST API Reference for DescribeActivities Operation</seealso>
+        public Task<DescribeActivitiesResponse> DescribeActivitiesAsync(DescribeActivitiesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DescribeActivitiesRequestMarshaller();
+            var unmarshaller = DescribeActivitiesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeActivitiesRequest,DescribeActivitiesResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DescribeComments
 
         internal DescribeCommentsResponse DescribeComments(DescribeCommentsRequest request)
@@ -1002,6 +1034,38 @@ namespace Amazon.WorkDocs
 
         #endregion
         
+        #region  DescribeRootFolders
+
+        internal DescribeRootFoldersResponse DescribeRootFolders(DescribeRootFoldersRequest request)
+        {
+            var marshaller = new DescribeRootFoldersRequestMarshaller();
+            var unmarshaller = DescribeRootFoldersResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeRootFoldersRequest,DescribeRootFoldersResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeRootFolders operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeRootFolders operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/DescribeRootFolders">REST API Reference for DescribeRootFolders Operation</seealso>
+        public Task<DescribeRootFoldersResponse> DescribeRootFoldersAsync(DescribeRootFoldersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DescribeRootFoldersRequestMarshaller();
+            var unmarshaller = DescribeRootFoldersResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeRootFoldersRequest,DescribeRootFoldersResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DescribeUsers
 
         internal DescribeUsersResponse DescribeUsers(DescribeUsersRequest request)
@@ -1029,6 +1093,38 @@ namespace Amazon.WorkDocs
             var unmarshaller = DescribeUsersResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeUsersRequest,DescribeUsersResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetCurrentUser
+
+        internal GetCurrentUserResponse GetCurrentUser(GetCurrentUserRequest request)
+        {
+            var marshaller = new GetCurrentUserRequestMarshaller();
+            var unmarshaller = GetCurrentUserResponseUnmarshaller.Instance;
+
+            return Invoke<GetCurrentUserRequest,GetCurrentUserResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetCurrentUser operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetCurrentUser operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/GetCurrentUser">REST API Reference for GetCurrentUser Operation</seealso>
+        public Task<GetCurrentUserResponse> GetCurrentUserAsync(GetCurrentUserRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new GetCurrentUserRequestMarshaller();
+            var unmarshaller = GetCurrentUserResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetCurrentUserRequest,GetCurrentUserResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 

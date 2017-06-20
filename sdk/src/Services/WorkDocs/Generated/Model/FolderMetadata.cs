@@ -117,7 +117,10 @@ namespace Amazon.WorkDocs.Model
         }
 
         /// <summary>
-        /// Gets and sets the property LatestVersionSize.
+        /// Gets and sets the property LatestVersionSize. 
+        /// <para>
+        /// The size of the latest version of the folder metadata.
+        /// </para>
         /// </summary>
         public long LatestVersionSize
         {
@@ -222,7 +225,10 @@ namespace Amazon.WorkDocs.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Size.
+        /// Gets and sets the property Size. 
+        /// <para>
+        /// The size of the folder metadata.
+        /// </para>
         /// </summary>
         public long Size
         {

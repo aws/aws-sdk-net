@@ -1549,6 +1549,75 @@ namespace Amazon.WorkDocs
 
         #endregion
         
+        #region  DescribeActivities
+
+        /// <summary>
+        /// Describes the user activities in a specified time period.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeActivities service method.</param>
+        /// 
+        /// <returns>The response from the DescribeActivities service method, as returned by WorkDocs.</returns>
+        /// <exception cref="Amazon.WorkDocs.Model.FailedDependencyException">
+        /// The AWS Directory Service cannot reach an on-premises instance. Or a dependency under
+        /// the control of the organization is failing, such as a connected active directory.
+        /// </exception>
+        /// <exception cref="Amazon.WorkDocs.Model.InvalidArgumentException">
+        /// The pagination marker and/or limit fields are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.WorkDocs.Model.ServiceUnavailableException">
+        /// One or more of the dependencies is unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.WorkDocs.Model.UnauthorizedOperationException">
+        /// The operation is not permitted.
+        /// </exception>
+        /// <exception cref="Amazon.WorkDocs.Model.UnauthorizedResourceAccessException">
+        /// The caller does not have access to perform the action on the resource.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/DescribeActivities">REST API Reference for DescribeActivities Operation</seealso>
+        public DescribeActivitiesResponse DescribeActivities(DescribeActivitiesRequest request)
+        {
+            var marshaller = new DescribeActivitiesRequestMarshaller();
+            var unmarshaller = DescribeActivitiesResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeActivitiesRequest,DescribeActivitiesResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeActivities operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeActivities operation on AmazonWorkDocsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeActivities
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/DescribeActivities">REST API Reference for DescribeActivities Operation</seealso>
+        public IAsyncResult BeginDescribeActivities(DescribeActivitiesRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new DescribeActivitiesRequestMarshaller();
+            var unmarshaller = DescribeActivitiesResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DescribeActivitiesRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeActivities operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeActivities.</param>
+        /// 
+        /// <returns>Returns a  DescribeActivitiesResult from WorkDocs.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/DescribeActivities">REST API Reference for DescribeActivities Operation</seealso>
+        public  DescribeActivitiesResponse EndDescribeActivities(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeActivitiesResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DescribeComments
 
         /// <summary>
@@ -1908,6 +1977,78 @@ namespace Amazon.WorkDocs
 
         #endregion
         
+        #region  DescribeRootFolders
+
+        /// <summary>
+        /// Describes the current user's special folders; the <code>RootFolder</code> and the
+        /// <code>RecyleBin</code>. <code>RootFolder</code> is the root of user's files and folders
+        /// and <code>RecyleBin</code> is the root of recycled items. This is not a valid action
+        /// for SigV4 (administrative API) clients.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeRootFolders service method.</param>
+        /// 
+        /// <returns>The response from the DescribeRootFolders service method, as returned by WorkDocs.</returns>
+        /// <exception cref="Amazon.WorkDocs.Model.FailedDependencyException">
+        /// The AWS Directory Service cannot reach an on-premises instance. Or a dependency under
+        /// the control of the organization is failing, such as a connected active directory.
+        /// </exception>
+        /// <exception cref="Amazon.WorkDocs.Model.InvalidArgumentException">
+        /// The pagination marker and/or limit fields are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.WorkDocs.Model.ServiceUnavailableException">
+        /// One or more of the dependencies is unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.WorkDocs.Model.UnauthorizedOperationException">
+        /// The operation is not permitted.
+        /// </exception>
+        /// <exception cref="Amazon.WorkDocs.Model.UnauthorizedResourceAccessException">
+        /// The caller does not have access to perform the action on the resource.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/DescribeRootFolders">REST API Reference for DescribeRootFolders Operation</seealso>
+        public DescribeRootFoldersResponse DescribeRootFolders(DescribeRootFoldersRequest request)
+        {
+            var marshaller = new DescribeRootFoldersRequestMarshaller();
+            var unmarshaller = DescribeRootFoldersResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeRootFoldersRequest,DescribeRootFoldersResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeRootFolders operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeRootFolders operation on AmazonWorkDocsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeRootFolders
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/DescribeRootFolders">REST API Reference for DescribeRootFolders Operation</seealso>
+        public IAsyncResult BeginDescribeRootFolders(DescribeRootFoldersRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new DescribeRootFoldersRequestMarshaller();
+            var unmarshaller = DescribeRootFoldersResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DescribeRootFoldersRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeRootFolders operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeRootFolders.</param>
+        /// 
+        /// <returns>Returns a  DescribeRootFoldersResult from WorkDocs.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/DescribeRootFolders">REST API Reference for DescribeRootFolders Operation</seealso>
+        public  DescribeRootFoldersResponse EndDescribeRootFolders(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeRootFoldersResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DescribeUsers
 
         /// <summary>
@@ -1981,6 +2122,76 @@ namespace Amazon.WorkDocs
         public  DescribeUsersResponse EndDescribeUsers(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeUsersResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetCurrentUser
+
+        /// <summary>
+        /// Retrieves details of the current user for whom the authentication token was generated.
+        /// This is not a valid action for SigV4 (administrative API) clients.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetCurrentUser service method.</param>
+        /// 
+        /// <returns>The response from the GetCurrentUser service method, as returned by WorkDocs.</returns>
+        /// <exception cref="Amazon.WorkDocs.Model.EntityNotExistsException">
+        /// The resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.WorkDocs.Model.FailedDependencyException">
+        /// The AWS Directory Service cannot reach an on-premises instance. Or a dependency under
+        /// the control of the organization is failing, such as a connected active directory.
+        /// </exception>
+        /// <exception cref="Amazon.WorkDocs.Model.ServiceUnavailableException">
+        /// One or more of the dependencies is unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.WorkDocs.Model.UnauthorizedOperationException">
+        /// The operation is not permitted.
+        /// </exception>
+        /// <exception cref="Amazon.WorkDocs.Model.UnauthorizedResourceAccessException">
+        /// The caller does not have access to perform the action on the resource.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/GetCurrentUser">REST API Reference for GetCurrentUser Operation</seealso>
+        public GetCurrentUserResponse GetCurrentUser(GetCurrentUserRequest request)
+        {
+            var marshaller = new GetCurrentUserRequestMarshaller();
+            var unmarshaller = GetCurrentUserResponseUnmarshaller.Instance;
+
+            return Invoke<GetCurrentUserRequest,GetCurrentUserResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetCurrentUser operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetCurrentUser operation on AmazonWorkDocsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetCurrentUser
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/GetCurrentUser">REST API Reference for GetCurrentUser Operation</seealso>
+        public IAsyncResult BeginGetCurrentUser(GetCurrentUserRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new GetCurrentUserRequestMarshaller();
+            var unmarshaller = GetCurrentUserResponseUnmarshaller.Instance;
+
+            return BeginInvoke<GetCurrentUserRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetCurrentUser operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetCurrentUser.</param>
+        /// 
+        /// <returns>Returns a  GetCurrentUserResult from WorkDocs.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/GetCurrentUser">REST API Reference for GetCurrentUser Operation</seealso>
+        public  GetCurrentUserResponse EndGetCurrentUser(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetCurrentUserResponse>(asyncResult);
         }
 
         #endregion
@@ -2396,7 +2607,7 @@ namespace Amazon.WorkDocs
         /// The specified document version is not in the INITIALIZED state.
         /// </exception>
         /// <exception cref="Amazon.WorkDocs.Model.ResourceAlreadyCheckedOutException">
-        /// 
+        /// The resource is already checked out.
         /// </exception>
         /// <exception cref="Amazon.WorkDocs.Model.ServiceUnavailableException">
         /// One or more of the dependencies is unavailable.
