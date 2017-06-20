@@ -1,3 +1,7 @@
+### 3.3.111.0 (2017-06-20 19:13 UTC)
+* WorkDocs (3.3.2.0)
+	* This release provides a new API to retrieve the activities performed by WorkDocs users.
+
 ### 3.3.110.0 (2017-06-19 18:22 UTC)
 * Organizations (3.3.3.0)
 	* Improvements to Exception Modeling
