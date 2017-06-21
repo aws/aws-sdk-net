@@ -1,3 +1,13 @@
+### 3.3.112.0 (2017-06-21 21:55 UTC)
+* DAX (3.3.0.0)
+	* Amazon DynamoDB Accelerator (DAX) is a fully managed, highly available, in-memory cache for DynamoDB that delivers up to a 10x performance improvement - from milliseconds to microseconds - even at millions of requests per second. DAX does all the heavy lifting required to add in-memory acceleration to your DynamoDB tables, without requiring developers to manage cache invalidation, data population, or cluster management.
+* SimpleSystemsManagement (3.3.5.0)
+	* Adding hierarchy support to the SSM Parameter Store API. Added support tor tagging. New APIs: GetParameter - retrieves one parameter, DeleteParameters - deletes multiple parameters (max number 10), GetParametersByPath - retrieves parameters located in the hierarchy. Updated APIs: PutParameter - added ability to enforce parameter value by applying regex (AllowedPattern), DescribeParameters - modified to support Tag filtering.
+* WAF (3.3.2.0)
+	* You can now create, edit, update, and delete a new type of WAF rule with a rate tracking component.
+* WAFRegional (3.3.1.0)
+	* You can now create, edit, update, and delete a new type of WAF rule with a rate tracking component.
+
 ### 3.3.111.0 (2017-06-20 19:13 UTC)
 * WorkDocs (3.3.2.0)
 	* This release provides a new API to retrieve the activities performed by WorkDocs users.

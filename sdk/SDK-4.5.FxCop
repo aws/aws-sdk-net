@@ -57,6 +57,7 @@
       <Directory>$(ProjectDir)/src/Services/costandusagereport/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/databasemigrationservice/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/datapipeline/bin/Release/net45/</Directory>
+      <Directory>$(ProjectDir)/src/Services/dax/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/devicefarm/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/directconnect/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/directoryservice/bin/Release/net45/</Directory>
@@ -159,6 +160,7 @@
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.CostAndUsageReport.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.DatabaseMigrationService.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.DataPipeline.dll" Analyze="True" AnalyzeAllChildren="True" />
+    <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.DAX.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.DeviceFarm.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.DirectConnect.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.DirectoryService.dll" Analyze="True" AnalyzeAllChildren="True" />
