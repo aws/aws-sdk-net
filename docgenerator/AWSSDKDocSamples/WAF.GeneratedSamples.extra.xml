@@ -1,0 +1,687 @@
+<?xml version="1.0" encoding="utf-8"?>
+<docs>
+    <doc>
+        <members>
+            <member name="M:Amazon.WAF.IAmazonWAF.CreateIPSet(Amazon.WAF.Model.CreateIPSetRequest)" />
+            <member name="M:Amazon.WAF.AmazonWAFClient.CreateIPSet(Amazon.WAF.Model.CreateIPSetRequest)" />
+            <member name="T:Amazon.WAF.Model.CreateIPSetRequest" />
+            <member name="T:Amazon.WAF.Model.CreateIPSetResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example creates an IP match set named MyIPSetFriendlyName.
+                </para>
+                <code
+                    title="To create an IP set"
+                    source=".\AWSSDKDocSamples\WAF\WAF.GeneratedSamples.cs"
+                    region="createipset-1472501003122" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.WAF.IAmazonWAF.CreateRule(Amazon.WAF.Model.CreateRuleRequest)" />
+            <member name="M:Amazon.WAF.AmazonWAFClient.CreateRule(Amazon.WAF.Model.CreateRuleRequest)" />
+            <member name="T:Amazon.WAF.Model.CreateRuleRequest" />
+            <member name="T:Amazon.WAF.Model.CreateRuleResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example creates a rule named WAFByteHeaderRule.
+                </para>
+                <code
+                    title="To create a rule"
+                    source=".\AWSSDKDocSamples\WAF\WAF.GeneratedSamples.cs"
+                    region="createrule-1474072675555" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.WAF.IAmazonWAF.CreateSizeConstraintSet(Amazon.WAF.Model.CreateSizeConstraintSetRequest)" />
+            <member name="M:Amazon.WAF.AmazonWAFClient.CreateSizeConstraintSet(Amazon.WAF.Model.CreateSizeConstraintSetRequest)" />
+            <member name="T:Amazon.WAF.Model.CreateSizeConstraintSetRequest" />
+            <member name="T:Amazon.WAF.Model.CreateSizeConstraintSetResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example creates size constraint set named MySampleSizeConstraintSet.
+                </para>
+                <code
+                    title="To create a size constraint"
+                    source=".\AWSSDKDocSamples\WAF\WAF.GeneratedSamples.cs"
+                    region="createsizeconstraint-1474299140754" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.WAF.IAmazonWAF.CreateSqlInjectionMatchSet(Amazon.WAF.Model.CreateSqlInjectionMatchSetRequest)" />
+            <member name="M:Amazon.WAF.AmazonWAFClient.CreateSqlInjectionMatchSet(Amazon.WAF.Model.CreateSqlInjectionMatchSetRequest)" />
+            <member name="T:Amazon.WAF.Model.CreateSqlInjectionMatchSetRequest" />
+            <member name="T:Amazon.WAF.Model.CreateSqlInjectionMatchSetResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example creates a SQL injection match set named MySQLInjectionMatchSet.
+                </para>
+                <code
+                    title="To create a SQL injection match set"
+                    source=".\AWSSDKDocSamples\WAF\WAF.GeneratedSamples.cs"
+                    region="createsqlinjectionmatchset-1474492796105" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.WAF.IAmazonWAF.CreateWebACL(Amazon.WAF.Model.CreateWebACLRequest)" />
+            <member name="M:Amazon.WAF.AmazonWAFClient.CreateWebACL(Amazon.WAF.Model.CreateWebACLRequest)" />
+            <member name="T:Amazon.WAF.Model.CreateWebACLRequest" />
+            <member name="T:Amazon.WAF.Model.CreateWebACLResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example creates a web ACL named CreateExample.
+                </para>
+                <code
+                    title="To create a web ACL"
+                    source=".\AWSSDKDocSamples\WAF\WAF.GeneratedSamples.cs"
+                    region="createwebacl-1472061481310" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.WAF.IAmazonWAF.CreateXssMatchSet(Amazon.WAF.Model.CreateXssMatchSetRequest)" />
+            <member name="M:Amazon.WAF.AmazonWAFClient.CreateXssMatchSet(Amazon.WAF.Model.CreateXssMatchSetRequest)" />
+            <member name="T:Amazon.WAF.Model.CreateXssMatchSetRequest" />
+            <member name="T:Amazon.WAF.Model.CreateXssMatchSetResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example creates an XSS match set named MySampleXssMatchSet.
+                </para>
+                <code
+                    title="To create an XSS match set"
+                    source=".\AWSSDKDocSamples\WAF\WAF.GeneratedSamples.cs"
+                    region="createxssmatchset-1474560868500" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.WAF.IAmazonWAF.DeleteByteMatchSet(Amazon.WAF.Model.DeleteByteMatchSetRequest)" />
+            <member name="M:Amazon.WAF.AmazonWAFClient.DeleteByteMatchSet(Amazon.WAF.Model.DeleteByteMatchSetRequest)" />
+            <member name="T:Amazon.WAF.Model.DeleteByteMatchSetRequest" />
+            <member name="T:Amazon.WAF.Model.DeleteByteMatchSetResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example deletes a byte match set with the ID exampleIDs3t-46da-4fdb-b8d5-abc321j569j5.
+                </para>
+                <code
+                    title="To delete a byte match set"
+                    source=".\AWSSDKDocSamples\WAF\WAF.GeneratedSamples.cs"
+                    region="deletebytematchset-1473367566229" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.WAF.IAmazonWAF.DeleteIPSet(Amazon.WAF.Model.DeleteIPSetRequest)" />
+            <member name="M:Amazon.WAF.AmazonWAFClient.DeleteIPSet(Amazon.WAF.Model.DeleteIPSetRequest)" />
+            <member name="T:Amazon.WAF.Model.DeleteIPSetRequest" />
+            <member name="T:Amazon.WAF.Model.DeleteIPSetResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example deletes an IP match set  with the ID example1ds3t-46da-4fdb-b8d5-abc321j569j5.
+                </para>
+                <code
+                    title="To delete an IP set"
+                    source=".\AWSSDKDocSamples\WAF\WAF.GeneratedSamples.cs"
+                    region="deleteipset-1472767434306" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.WAF.IAmazonWAF.DeleteRule(Amazon.WAF.Model.DeleteRuleRequest)" />
+            <member name="M:Amazon.WAF.AmazonWAFClient.DeleteRule(Amazon.WAF.Model.DeleteRuleRequest)" />
+            <member name="T:Amazon.WAF.Model.DeleteRuleRequest" />
+            <member name="T:Amazon.WAF.Model.DeleteRuleResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example deletes a rule with the ID WAFRule-1-Example.
+                </para>
+                <code
+                    title="To delete a rule"
+                    source=".\AWSSDKDocSamples\WAF\WAF.GeneratedSamples.cs"
+                    region="deleterule-1474073108749" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.WAF.IAmazonWAF.DeleteSizeConstraintSet(Amazon.WAF.Model.DeleteSizeConstraintSetRequest)" />
+            <member name="M:Amazon.WAF.AmazonWAFClient.DeleteSizeConstraintSet(Amazon.WAF.Model.DeleteSizeConstraintSetRequest)" />
+            <member name="T:Amazon.WAF.Model.DeleteSizeConstraintSetRequest" />
+            <member name="T:Amazon.WAF.Model.DeleteSizeConstraintSetResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example deletes a size constraint set  with the ID example1ds3t-46da-4fdb-b8d5-abc321j569j5.
+                </para>
+                <code
+                    title="To delete a size constraint set"
+                    source=".\AWSSDKDocSamples\WAF\WAF.GeneratedSamples.cs"
+                    region="deletesizeconstraintset-1474299857905" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.WAF.IAmazonWAF.DeleteSqlInjectionMatchSet(Amazon.WAF.Model.DeleteSqlInjectionMatchSetRequest)" />
+            <member name="M:Amazon.WAF.AmazonWAFClient.DeleteSqlInjectionMatchSet(Amazon.WAF.Model.DeleteSqlInjectionMatchSetRequest)" />
+            <member name="T:Amazon.WAF.Model.DeleteSqlInjectionMatchSetRequest" />
+            <member name="T:Amazon.WAF.Model.DeleteSqlInjectionMatchSetResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example deletes a SQL injection match set  with the ID example1ds3t-46da-4fdb-b8d5-abc321j569j5.
+                </para>
+                <code
+                    title="To delete a SQL injection match set"
+                    source=".\AWSSDKDocSamples\WAF\WAF.GeneratedSamples.cs"
+                    region="deletesqlinjectionmatchset-1474493373197" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.WAF.IAmazonWAF.DeleteWebACL(Amazon.WAF.Model.DeleteWebACLRequest)" />
+            <member name="M:Amazon.WAF.AmazonWAFClient.DeleteWebACL(Amazon.WAF.Model.DeleteWebACLRequest)" />
+            <member name="T:Amazon.WAF.Model.DeleteWebACLRequest" />
+            <member name="T:Amazon.WAF.Model.DeleteWebACLResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example deletes a web ACL with the ID example-46da-4444-5555-example.
+                </para>
+                <code
+                    title="To delete a web ACL"
+                    source=".\AWSSDKDocSamples\WAF\WAF.GeneratedSamples.cs"
+                    region="deletewebacl-1472767755931" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.WAF.IAmazonWAF.DeleteXssMatchSet(Amazon.WAF.Model.DeleteXssMatchSetRequest)" />
+            <member name="M:Amazon.WAF.AmazonWAFClient.DeleteXssMatchSet(Amazon.WAF.Model.DeleteXssMatchSetRequest)" />
+            <member name="T:Amazon.WAF.Model.DeleteXssMatchSetRequest" />
+            <member name="T:Amazon.WAF.Model.DeleteXssMatchSetResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example deletes an XSS match set with the ID example1ds3t-46da-4fdb-b8d5-abc321j569j5.
+                </para>
+                <code
+                    title="To delete an XSS match set"
+                    source=".\AWSSDKDocSamples\WAF\WAF.GeneratedSamples.cs"
+                    region="deletexssmatchset-1474561302618" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.WAF.IAmazonWAF.GetByteMatchSet(Amazon.WAF.Model.GetByteMatchSetRequest)" />
+            <member name="M:Amazon.WAF.AmazonWAFClient.GetByteMatchSet(Amazon.WAF.Model.GetByteMatchSetRequest)" />
+            <member name="T:Amazon.WAF.Model.GetByteMatchSetRequest" />
+            <member name="T:Amazon.WAF.Model.GetByteMatchSetResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example returns the details of a byte match set with the ID exampleIDs3t-46da-4fdb-b8d5-abc321j569j5.
+                </para>
+                <code
+                    title="To get a byte match set"
+                    source=".\AWSSDKDocSamples\WAF\WAF.GeneratedSamples.cs"
+                    region="getbytematchset-1473273311532" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.WAF.IAmazonWAF.GetChangeToken(Amazon.WAF.Model.GetChangeTokenRequest)" />
+            <member name="M:Amazon.WAF.AmazonWAFClient.GetChangeToken(Amazon.WAF.Model.GetChangeTokenRequest)" />
+            <member name="T:Amazon.WAF.Model.GetChangeTokenRequest" />
+            <member name="T:Amazon.WAF.Model.GetChangeTokenResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example returns a change token to use for a create, update or delete operation.
+                </para>
+                <code
+                    title="To get a change token"
+                    source=".\AWSSDKDocSamples\WAF\WAF.GeneratedSamples.cs"
+                    region="get-change-token-example-1471635120794" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.WAF.IAmazonWAF.GetChangeTokenStatus(Amazon.WAF.Model.GetChangeTokenStatusRequest)" />
+            <member name="M:Amazon.WAF.AmazonWAFClient.GetChangeTokenStatus(Amazon.WAF.Model.GetChangeTokenStatusRequest)" />
+            <member name="T:Amazon.WAF.Model.GetChangeTokenStatusRequest" />
+            <member name="T:Amazon.WAF.Model.GetChangeTokenStatusResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example returns the status of a change token with the ID abcd12f2-46da-4fdb-b8d5-fbd4c466928f.
+                </para>
+                <code
+                    title="To get the change token status"
+                    source=".\AWSSDKDocSamples\WAF\WAF.GeneratedSamples.cs"
+                    region="getchangetokenstatus-1474658417107" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.WAF.IAmazonWAF.GetIPSet(Amazon.WAF.Model.GetIPSetRequest)" />
+            <member name="M:Amazon.WAF.AmazonWAFClient.GetIPSet(Amazon.WAF.Model.GetIPSetRequest)" />
+            <member name="T:Amazon.WAF.Model.GetIPSetRequest" />
+            <member name="T:Amazon.WAF.Model.GetIPSetResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example returns the details of an IP match set with the ID example1ds3t-46da-4fdb-b8d5-abc321j569j5.
+                </para>
+                <code
+                    title="To get an IP set"
+                    source=".\AWSSDKDocSamples\WAF\WAF.GeneratedSamples.cs"
+                    region="getipset-1474658688675" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.WAF.IAmazonWAF.GetRule(Amazon.WAF.Model.GetRuleRequest)" />
+            <member name="M:Amazon.WAF.AmazonWAFClient.GetRule(Amazon.WAF.Model.GetRuleRequest)" />
+            <member name="T:Amazon.WAF.Model.GetRuleRequest" />
+            <member name="T:Amazon.WAF.Model.GetRuleResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example returns the details of a rule with the ID example1ds3t-46da-4fdb-b8d5-abc321j569j5.
+                </para>
+                <code
+                    title="To get a rule"
+                    source=".\AWSSDKDocSamples\WAF\WAF.GeneratedSamples.cs"
+                    region="getrule-1474659238790" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.WAF.IAmazonWAF.GetSampledRequests(Amazon.WAF.Model.GetSampledRequestsRequest)" />
+            <member name="M:Amazon.WAF.AmazonWAFClient.GetSampledRequests(Amazon.WAF.Model.GetSampledRequestsRequest)" />
+            <member name="T:Amazon.WAF.Model.GetSampledRequestsRequest" />
+            <member name="T:Amazon.WAF.Model.GetSampledRequestsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example returns detailed information about 100 requests --a sample-- that AWS WAF randomly selects from among the first 5,000 requests that your AWS resource received between the time period 2016-09-27T15:50Z to 2016-09-27T15:50Z.
+                </para>
+                <code
+                    title="To get a sampled requests"
+                    source=".\AWSSDKDocSamples\WAF\WAF.GeneratedSamples.cs"
+                    region="getsampledrequests-1474927997195" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.WAF.IAmazonWAF.GetSizeConstraintSet(Amazon.WAF.Model.GetSizeConstraintSetRequest)" />
+            <member name="M:Amazon.WAF.AmazonWAFClient.GetSizeConstraintSet(Amazon.WAF.Model.GetSizeConstraintSetRequest)" />
+            <member name="T:Amazon.WAF.Model.GetSizeConstraintSetRequest" />
+            <member name="T:Amazon.WAF.Model.GetSizeConstraintSetResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example returns the details of a size constraint match set with the ID example1ds3t-46da-4fdb-b8d5-abc321j569j5.
+                </para>
+                <code
+                    title="To get a size constraint set"
+                    source=".\AWSSDKDocSamples\WAF\WAF.GeneratedSamples.cs"
+                    region="getsizeconstraintset-1475005422493" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.WAF.IAmazonWAF.GetSqlInjectionMatchSet(Amazon.WAF.Model.GetSqlInjectionMatchSetRequest)" />
+            <member name="M:Amazon.WAF.AmazonWAFClient.GetSqlInjectionMatchSet(Amazon.WAF.Model.GetSqlInjectionMatchSetRequest)" />
+            <member name="T:Amazon.WAF.Model.GetSqlInjectionMatchSetRequest" />
+            <member name="T:Amazon.WAF.Model.GetSqlInjectionMatchSetResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example returns the details of a SQL injection match set with the ID example1ds3t-46da-4fdb-b8d5-abc321j569j5.
+                </para>
+                <code
+                    title="To get a SQL injection match set"
+                    source=".\AWSSDKDocSamples\WAF\WAF.GeneratedSamples.cs"
+                    region="getsqlinjectionmatchset-1475005940137" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.WAF.IAmazonWAF.GetWebACL(Amazon.WAF.Model.GetWebACLRequest)" />
+            <member name="M:Amazon.WAF.AmazonWAFClient.GetWebACL(Amazon.WAF.Model.GetWebACLRequest)" />
+            <member name="T:Amazon.WAF.Model.GetWebACLRequest" />
+            <member name="T:Amazon.WAF.Model.GetWebACLResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example returns the details of a web ACL with the ID createwebacl-1472061481310.
+                </para>
+                <code
+                    title="To get a web ACL"
+                    source=".\AWSSDKDocSamples\WAF\WAF.GeneratedSamples.cs"
+                    region="getwebacl-1475006348525" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.WAF.IAmazonWAF.GetXssMatchSet(Amazon.WAF.Model.GetXssMatchSetRequest)" />
+            <member name="M:Amazon.WAF.AmazonWAFClient.GetXssMatchSet(Amazon.WAF.Model.GetXssMatchSetRequest)" />
+            <member name="T:Amazon.WAF.Model.GetXssMatchSetRequest" />
+            <member name="T:Amazon.WAF.Model.GetXssMatchSetResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example returns the details of an XSS match set with the ID example1ds3t-46da-4fdb-b8d5-abc321j569j5.
+                </para>
+                <code
+                    title="To get an XSS match set"
+                    source=".\AWSSDKDocSamples\WAF\WAF.GeneratedSamples.cs"
+                    region="getxssmatchset-1475187879017" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.WAF.IAmazonWAF.ListIPSets(Amazon.WAF.Model.ListIPSetsRequest)" />
+            <member name="M:Amazon.WAF.AmazonWAFClient.ListIPSets(Amazon.WAF.Model.ListIPSetsRequest)" />
+            <member name="T:Amazon.WAF.Model.ListIPSetsRequest" />
+            <member name="T:Amazon.WAF.Model.ListIPSetsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example returns an array of up to 100 IP match sets.
+                </para>
+                <code
+                    title="To list IP sets"
+                    source=".\AWSSDKDocSamples\WAF\WAF.GeneratedSamples.cs"
+                    region="listipsets-1472235676229" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.WAF.IAmazonWAF.ListRules(Amazon.WAF.Model.ListRulesRequest)" />
+            <member name="M:Amazon.WAF.AmazonWAFClient.ListRules(Amazon.WAF.Model.ListRulesRequest)" />
+            <member name="T:Amazon.WAF.Model.ListRulesRequest" />
+            <member name="T:Amazon.WAF.Model.ListRulesResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example returns an array of up to 100 rules.
+                </para>
+                <code
+                    title="To list rules"
+                    source=".\AWSSDKDocSamples\WAF\WAF.GeneratedSamples.cs"
+                    region="listrules-1475258406433" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.WAF.IAmazonWAF.ListSizeConstraintSets(Amazon.WAF.Model.ListSizeConstraintSetsRequest)" />
+            <member name="M:Amazon.WAF.AmazonWAFClient.ListSizeConstraintSets(Amazon.WAF.Model.ListSizeConstraintSetsRequest)" />
+            <member name="T:Amazon.WAF.Model.ListSizeConstraintSetsRequest" />
+            <member name="T:Amazon.WAF.Model.ListSizeConstraintSetsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example returns an array of up to 100 size contraint match sets.
+                </para>
+                <code
+                    title="To list a size constraint sets"
+                    source=".\AWSSDKDocSamples\WAF\WAF.GeneratedSamples.cs"
+                    region="listsizeconstraintsets-1474300067597" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.WAF.IAmazonWAF.ListSqlInjectionMatchSets(Amazon.WAF.Model.ListSqlInjectionMatchSetsRequest)" />
+            <member name="M:Amazon.WAF.AmazonWAFClient.ListSqlInjectionMatchSets(Amazon.WAF.Model.ListSqlInjectionMatchSetsRequest)" />
+            <member name="T:Amazon.WAF.Model.ListSqlInjectionMatchSetsRequest" />
+            <member name="T:Amazon.WAF.Model.ListSqlInjectionMatchSetsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example returns an array of up to 100 SQL injection match sets.
+                </para>
+                <code
+                    title="To list SQL injection match sets"
+                    source=".\AWSSDKDocSamples\WAF\WAF.GeneratedSamples.cs"
+                    region="listsqlinjectionmatchset-1474493560103" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.WAF.IAmazonWAF.ListWebACLs(Amazon.WAF.Model.ListWebACLsRequest)" />
+            <member name="M:Amazon.WAF.AmazonWAFClient.ListWebACLs(Amazon.WAF.Model.ListWebACLsRequest)" />
+            <member name="T:Amazon.WAF.Model.ListWebACLsRequest" />
+            <member name="T:Amazon.WAF.Model.ListWebACLsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example returns an array of up to 100 web ACLs.
+                </para>
+                <code
+                    title="To list Web ACLs"
+                    source=".\AWSSDKDocSamples\WAF\WAF.GeneratedSamples.cs"
+                    region="listwebacls-1475258732691" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.WAF.IAmazonWAF.ListXssMatchSets(Amazon.WAF.Model.ListXssMatchSetsRequest)" />
+            <member name="M:Amazon.WAF.AmazonWAFClient.ListXssMatchSets(Amazon.WAF.Model.ListXssMatchSetsRequest)" />
+            <member name="T:Amazon.WAF.Model.ListXssMatchSetsRequest" />
+            <member name="T:Amazon.WAF.Model.ListXssMatchSetsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example returns an array of up to 100 XSS match sets.
+                </para>
+                <code
+                    title="To list XSS match sets"
+                    source=".\AWSSDKDocSamples\WAF\WAF.GeneratedSamples.cs"
+                    region="listxssmatchsets-1474561481168" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.WAF.IAmazonWAF.UpdateByteMatchSet(Amazon.WAF.Model.UpdateByteMatchSetRequest)" />
+            <member name="M:Amazon.WAF.AmazonWAFClient.UpdateByteMatchSet(Amazon.WAF.Model.UpdateByteMatchSetRequest)" />
+            <member name="T:Amazon.WAF.Model.UpdateByteMatchSetRequest" />
+            <member name="T:Amazon.WAF.Model.UpdateByteMatchSetResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example deletes a ByteMatchTuple object (filters) in an byte match set with the ID exampleIDs3t-46da-4fdb-b8d5-abc321j569j5.
+                </para>
+                <code
+                    title="To update a byte match set"
+                    source=".\AWSSDKDocSamples\WAF\WAF.GeneratedSamples.cs"
+                    region="updatebytematchset-1475259074558" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.WAF.IAmazonWAF.UpdateIPSet(Amazon.WAF.Model.UpdateIPSetRequest)" />
+            <member name="M:Amazon.WAF.AmazonWAFClient.UpdateIPSet(Amazon.WAF.Model.UpdateIPSetRequest)" />
+            <member name="T:Amazon.WAF.Model.UpdateIPSetRequest" />
+            <member name="T:Amazon.WAF.Model.UpdateIPSetResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example deletes an IPSetDescriptor object in an IP match set with the ID example1ds3t-46da-4fdb-b8d5-abc321j569j5.
+                </para>
+                <code
+                    title="To update an IP set"
+                    source=".\AWSSDKDocSamples\WAF\WAF.GeneratedSamples.cs"
+                    region="updateipset-1475259733625" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.WAF.IAmazonWAF.UpdateRule(Amazon.WAF.Model.UpdateRuleRequest)" />
+            <member name="M:Amazon.WAF.AmazonWAFClient.UpdateRule(Amazon.WAF.Model.UpdateRuleRequest)" />
+            <member name="T:Amazon.WAF.Model.UpdateRuleRequest" />
+            <member name="T:Amazon.WAF.Model.UpdateRuleResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example deletes a Predicate object in a rule with the ID example1ds3t-46da-4fdb-b8d5-abc321j569j5.
+                </para>
+                <code
+                    title="To update a rule"
+                    source=".\AWSSDKDocSamples\WAF\WAF.GeneratedSamples.cs"
+                    region="updaterule-1475260064720" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.WAF.IAmazonWAF.UpdateSizeConstraintSet(Amazon.WAF.Model.UpdateSizeConstraintSetRequest)" />
+            <member name="M:Amazon.WAF.AmazonWAFClient.UpdateSizeConstraintSet(Amazon.WAF.Model.UpdateSizeConstraintSetRequest)" />
+            <member name="T:Amazon.WAF.Model.UpdateSizeConstraintSetRequest" />
+            <member name="T:Amazon.WAF.Model.UpdateSizeConstraintSetResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example deletes a SizeConstraint object (filters) in a size constraint set with the ID example1ds3t-46da-4fdb-b8d5-abc321j569j5.
+                </para>
+                <code
+                    title="To update a size constraint set"
+                    source=".\AWSSDKDocSamples\WAF\WAF.GeneratedSamples.cs"
+                    region="updatesizeconstraintset-1475531697891" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.WAF.IAmazonWAF.UpdateSqlInjectionMatchSet(Amazon.WAF.Model.UpdateSqlInjectionMatchSetRequest)" />
+            <member name="M:Amazon.WAF.AmazonWAFClient.UpdateSqlInjectionMatchSet(Amazon.WAF.Model.UpdateSqlInjectionMatchSetRequest)" />
+            <member name="T:Amazon.WAF.Model.UpdateSqlInjectionMatchSetRequest" />
+            <member name="T:Amazon.WAF.Model.UpdateSqlInjectionMatchSetResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example deletes a SqlInjectionMatchTuple object (filters) in a SQL injection match set with the ID example1ds3t-46da-4fdb-b8d5-abc321j569j5.
+                </para>
+                <code
+                    title="To update a SQL injection match set"
+                    source=".\AWSSDKDocSamples\WAF\WAF.GeneratedSamples.cs"
+                    region="updatesqlinjectionmatchset-1475532094686" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.WAF.IAmazonWAF.UpdateWebACL(Amazon.WAF.Model.UpdateWebACLRequest)" />
+            <member name="M:Amazon.WAF.AmazonWAFClient.UpdateWebACL(Amazon.WAF.Model.UpdateWebACLRequest)" />
+            <member name="T:Amazon.WAF.Model.UpdateWebACLRequest" />
+            <member name="T:Amazon.WAF.Model.UpdateWebACLResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example deletes an ActivatedRule object in a WebACL with the ID webacl-1472061481310.
+                </para>
+                <code
+                    title="To update a Web ACL"
+                    source=".\AWSSDKDocSamples\WAF\WAF.GeneratedSamples.cs"
+                    region="updatewebacl-1475533627385" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.WAF.IAmazonWAF.UpdateXssMatchSet(Amazon.WAF.Model.UpdateXssMatchSetRequest)" />
+            <member name="M:Amazon.WAF.AmazonWAFClient.UpdateXssMatchSet(Amazon.WAF.Model.UpdateXssMatchSetRequest)" />
+            <member name="T:Amazon.WAF.Model.UpdateXssMatchSetRequest" />
+            <member name="T:Amazon.WAF.Model.UpdateXssMatchSetResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example deletes an XssMatchTuple object (filters) in an XssMatchSet with the ID example1ds3t-46da-4fdb-b8d5-abc321j569j5.
+                </para>
+                <code
+                    title="To update an XSS match set"
+                    source=".\AWSSDKDocSamples\WAF\WAF.GeneratedSamples.cs"
+                    region="updatexssmatchset-1475534098881" />
+            </example>
+        </value>
+    </doc>
+</docs>

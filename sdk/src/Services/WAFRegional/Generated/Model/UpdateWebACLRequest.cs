@@ -61,10 +61,6 @@ namespace Amazon.WAFRegional.Model
     /// action, allow or block, and doesn't evaluate the request against the remaining <code>Rules</code>
     /// in the <code>WebACL</code>, if any. 
     /// </para>
-    ///  </li> <li> 
-    /// <para>
-    /// The CloudFront distribution that you want to associate with the <code>WebACL</code>.
-    /// </para>
     ///  </li> </ul> 
     /// <para>
     /// To create and configure a <code>WebACL</code>, perform the following steps:
@@ -96,6 +92,13 @@ namespace Amazon.WAFRegional.Model
     /// to associate the <code>WebACL</code> with a CloudFront distribution. 
     /// </para>
     ///  </li> </ol> 
+    /// <para>
+    /// Be aware that if you try to add a RATE_BASED rule to a web ACL without setting the
+    /// rule type when first creating the rule, the <a>UpdateWebACL</a> request will fail
+    /// because the request tries to add a REGULAR rule (the default rule type) with the specified
+    /// ID, which does not exist. 
+    /// </para>
+    ///  
     /// <para>
     /// For more information about how to use the AWS WAF API to allow or block HTTP requests,
     /// see the <a href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer
@@ -163,8 +166,8 @@ namespace Amazon.WAFRegional.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>ActivatedRule</a>: Contains <code>Action</code>, <code>Priority</code>, and <code>RuleId</code>
-        /// 
+        ///  <a>ActivatedRule</a>: Contains <code>Action</code>, <code>Priority</code>, <code>RuleId</code>,
+        /// and <code>Type</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>

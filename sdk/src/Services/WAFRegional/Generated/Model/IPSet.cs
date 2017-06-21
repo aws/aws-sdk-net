@@ -53,20 +53,10 @@ namespace Amazon.WAFRegional.Model
         /// <para>
         /// The IP address type (<code>IPV4</code> or <code>IPV6</code>) and the IP address range
         /// (in CIDR notation) that web requests originate from. If the <code>WebACL</code> is
-        /// associated with a CloudFront distribution, this is the value of one of the following
-        /// fields in CloudFront access logs:
+        /// associated with a CloudFront distribution and the viewer did not use an HTTP proxy
+        /// or a load balancer to send the request, this is the value of the c-ip field in the
+        /// CloudFront access logs.
         /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        ///  <code>c-ip</code>, if the viewer did not use an HTTP proxy or a load balancer to
-        /// send the request
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>x-forwarded-for</code>, if the viewer did use an HTTP proxy or a load balancer
-        /// to send the request
-        /// </para>
-        ///  </li> </ul>
         /// </summary>
         public List<IPSetDescriptor> IPSetDescriptors
         {

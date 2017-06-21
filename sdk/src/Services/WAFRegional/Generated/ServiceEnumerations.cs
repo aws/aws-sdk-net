@@ -333,9 +333,21 @@ namespace Amazon.WAFRegional
         /// </summary>
         public static readonly ParameterExceptionField IPSET_TYPE = new ParameterExceptionField("IPSET_TYPE");
         /// <summary>
+        /// Constant NEXT_MARKER for ParameterExceptionField
+        /// </summary>
+        public static readonly ParameterExceptionField NEXT_MARKER = new ParameterExceptionField("NEXT_MARKER");
+        /// <summary>
         /// Constant PREDICATE_TYPE for ParameterExceptionField
         /// </summary>
         public static readonly ParameterExceptionField PREDICATE_TYPE = new ParameterExceptionField("PREDICATE_TYPE");
+        /// <summary>
+        /// Constant RATE_KEY for ParameterExceptionField
+        /// </summary>
+        public static readonly ParameterExceptionField RATE_KEY = new ParameterExceptionField("RATE_KEY");
+        /// <summary>
+        /// Constant RULE_TYPE for ParameterExceptionField
+        /// </summary>
+        public static readonly ParameterExceptionField RULE_TYPE = new ParameterExceptionField("RULE_TYPE");
         /// <summary>
         /// Constant SIZE_CONSTRAINT_COMPARISON_OPERATOR for ParameterExceptionField
         /// </summary>
@@ -559,6 +571,52 @@ namespace Amazon.WAFRegional
 
 
     /// <summary>
+    /// Constants used for properties of type RateKey.
+    /// </summary>
+    public class RateKey : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant IP for RateKey
+        /// </summary>
+        public static readonly RateKey IP = new RateKey("IP");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public RateKey(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RateKey FindValue(string value)
+        {
+            return FindValue<RateKey>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RateKey(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type TextTransformation.
     /// </summary>
     public class TextTransformation : ConstantClass
@@ -672,6 +730,56 @@ namespace Amazon.WAFRegional
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator WafActionType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type WafRuleType.
+    /// </summary>
+    public class WafRuleType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant RATE_BASED for WafRuleType
+        /// </summary>
+        public static readonly WafRuleType RATE_BASED = new WafRuleType("RATE_BASED");
+        /// <summary>
+        /// Constant REGULAR for WafRuleType
+        /// </summary>
+        public static readonly WafRuleType REGULAR = new WafRuleType("REGULAR");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public WafRuleType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static WafRuleType FindValue(string value)
+        {
+            return FindValue<WafRuleType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator WafRuleType(string value)
         {
             return FindValue(value);
         }

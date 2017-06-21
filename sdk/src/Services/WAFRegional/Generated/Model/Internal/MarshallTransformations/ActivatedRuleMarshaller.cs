@@ -68,6 +68,12 @@ namespace Amazon.WAFRegional.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.RuleId);
             }
 
+            if(requestObject.IsSetType())
+            {
+                context.Writer.WritePropertyName("Type");
+                context.Writer.Write(requestObject.Type);
+            }
+
         }
 
         /// <summary>

@@ -27,6 +27,23 @@
     <min>1</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.WAF.Model.CreateRateBasedRuleRequest.ChangeToken</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAF.Model.CreateRateBasedRuleRequest.Name</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAF.Model.CreateRateBasedRuleRequest.RateLimit</property>
+    <min>2000</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAF.Model.CreateRateBasedRuleResponse.ChangeToken</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.WAF.Model.CreateRuleRequest.ChangeToken</property>
     <min>1</min>
   </property-value-rule>
@@ -118,6 +135,19 @@
     <min>1</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.WAF.Model.DeleteRateBasedRuleRequest.ChangeToken</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAF.Model.DeleteRateBasedRuleRequest.RuleId</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAF.Model.DeleteRateBasedRuleResponse.ChangeToken</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.WAF.Model.DeleteRuleRequest.ChangeToken</property>
     <min>1</min>
   </property-value-rule>
@@ -201,6 +231,24 @@
     <max>128</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.WAF.Model.GetRateBasedRuleRequest.RuleId</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAF.Model.GetRateBasedRuleManagedKeysRequest.NextMarker</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAF.Model.GetRateBasedRuleManagedKeysRequest.RuleId</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAF.Model.GetRateBasedRuleManagedKeysResponse.NextMarker</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.WAF.Model.GetRuleRequest.RuleId</property>
     <min>1</min>
     <max>128</max>
@@ -264,6 +312,19 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WAF.Model.ListIPSetsResponse.NextMarker</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAF.Model.ListRateBasedRulesRequest.Limit</property>
+    <min>0</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAF.Model.ListRateBasedRulesRequest.NextMarker</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAF.Model.ListRateBasedRulesResponse.NextMarker</property>
     <min>1</min>
   </property-value-rule>
   <property-value-rule>
@@ -355,6 +416,23 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WAF.Model.UpdateIPSetResponse.ChangeToken</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAF.Model.UpdateRateBasedRuleRequest.ChangeToken</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAF.Model.UpdateRateBasedRuleRequest.RateLimit</property>
+    <min>2000</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAF.Model.UpdateRateBasedRuleRequest.RuleId</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAF.Model.UpdateRateBasedRuleResponse.ChangeToken</property>
     <min>1</min>
   </property-value-rule>
   <property-value-rule>
@@ -469,6 +547,20 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WAF.Model.Predicate.DataId</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAF.Model.RateBasedRule.Name</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAF.Model.RateBasedRule.RateLimit</property>
+    <min>2000</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAF.Model.RateBasedRule.RuleId</property>
     <min>1</min>
     <max>128</max>
   </property-value-rule>

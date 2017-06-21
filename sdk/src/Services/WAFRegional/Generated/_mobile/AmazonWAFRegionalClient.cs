@@ -361,6 +361,11 @@ namespace Amazon.WAFRegional
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// You tried to create a <code>RateBasedRule</code> with a <code>RateKey</code> value
+        /// other than <code>IP</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// You tried to update a <code>WebACL</code> with a <code>WafAction</code> <code>Type</code>
         /// other than <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.
         /// </para>
@@ -512,6 +517,11 @@ namespace Amazon.WAFRegional
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// You tried to create a <code>RateBasedRule</code> with a <code>RateKey</code> value
+        /// other than <code>IP</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// You tried to update a <code>WebACL</code> with a <code>WafAction</code> <code>Type</code>
         /// other than <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.
         /// </para>
@@ -567,6 +577,38 @@ namespace Amazon.WAFRegional
             var unmarshaller = CreateIPSetResponseUnmarshaller.Instance;
 
             return InvokeAsync<CreateIPSetRequest,CreateIPSetResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CreateRateBasedRule
+
+        internal CreateRateBasedRuleResponse CreateRateBasedRule(CreateRateBasedRuleRequest request)
+        {
+            var marshaller = new CreateRateBasedRuleRequestMarshaller();
+            var unmarshaller = CreateRateBasedRuleResponseUnmarshaller.Instance;
+
+            return Invoke<CreateRateBasedRuleRequest,CreateRateBasedRuleResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateRateBasedRule operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateRateBasedRule operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/CreateRateBasedRule">REST API Reference for CreateRateBasedRule Operation</seealso>
+        public Task<CreateRateBasedRuleResponse> CreateRateBasedRuleAsync(CreateRateBasedRuleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new CreateRateBasedRuleRequestMarshaller();
+            var unmarshaller = CreateRateBasedRuleResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateRateBasedRuleRequest,CreateRateBasedRuleResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -682,6 +724,11 @@ namespace Amazon.WAFRegional
         /// <para>
         /// You tried to create a <code>WebACL</code> with a <code>DefaultAction</code> <code>Type</code>
         /// other than <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to create a <code>RateBasedRule</code> with a <code>RateKey</code> value
+        /// other than <code>IP</code>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -864,6 +911,11 @@ namespace Amazon.WAFRegional
         /// <para>
         /// You tried to create a <code>WebACL</code> with a <code>DefaultAction</code> <code>Type</code>
         /// other than <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to create a <code>RateBasedRule</code> with a <code>RateKey</code> value
+        /// other than <code>IP</code>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -1248,6 +1300,38 @@ namespace Amazon.WAFRegional
             var unmarshaller = DeleteIPSetResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteIPSetRequest,DeleteIPSetResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteRateBasedRule
+
+        internal DeleteRateBasedRuleResponse DeleteRateBasedRule(DeleteRateBasedRuleRequest request)
+        {
+            var marshaller = new DeleteRateBasedRuleRequestMarshaller();
+            var unmarshaller = DeleteRateBasedRuleResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteRateBasedRuleRequest,DeleteRateBasedRuleResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteRateBasedRule operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteRateBasedRule operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/DeleteRateBasedRule">REST API Reference for DeleteRateBasedRule Operation</seealso>
+        public Task<DeleteRateBasedRuleResponse> DeleteRateBasedRuleAsync(DeleteRateBasedRuleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DeleteRateBasedRuleRequestMarshaller();
+            var unmarshaller = DeleteRateBasedRuleResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteRateBasedRuleRequest,DeleteRateBasedRuleResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -2007,6 +2091,70 @@ namespace Amazon.WAFRegional
 
         #endregion
         
+        #region  GetRateBasedRule
+
+        internal GetRateBasedRuleResponse GetRateBasedRule(GetRateBasedRuleRequest request)
+        {
+            var marshaller = new GetRateBasedRuleRequestMarshaller();
+            var unmarshaller = GetRateBasedRuleResponseUnmarshaller.Instance;
+
+            return Invoke<GetRateBasedRuleRequest,GetRateBasedRuleResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetRateBasedRule operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetRateBasedRule operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/GetRateBasedRule">REST API Reference for GetRateBasedRule Operation</seealso>
+        public Task<GetRateBasedRuleResponse> GetRateBasedRuleAsync(GetRateBasedRuleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new GetRateBasedRuleRequestMarshaller();
+            var unmarshaller = GetRateBasedRuleResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetRateBasedRuleRequest,GetRateBasedRuleResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetRateBasedRuleManagedKeys
+
+        internal GetRateBasedRuleManagedKeysResponse GetRateBasedRuleManagedKeys(GetRateBasedRuleManagedKeysRequest request)
+        {
+            var marshaller = new GetRateBasedRuleManagedKeysRequestMarshaller();
+            var unmarshaller = GetRateBasedRuleManagedKeysResponseUnmarshaller.Instance;
+
+            return Invoke<GetRateBasedRuleManagedKeysRequest,GetRateBasedRuleManagedKeysResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetRateBasedRuleManagedKeys operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetRateBasedRuleManagedKeys operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/GetRateBasedRuleManagedKeys">REST API Reference for GetRateBasedRuleManagedKeys Operation</seealso>
+        public Task<GetRateBasedRuleManagedKeysResponse> GetRateBasedRuleManagedKeysAsync(GetRateBasedRuleManagedKeysRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new GetRateBasedRuleManagedKeysRequestMarshaller();
+            var unmarshaller = GetRateBasedRuleManagedKeysResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetRateBasedRuleManagedKeysRequest,GetRateBasedRuleManagedKeysResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetRule
 
         internal GetRuleResponse GetRule(GetRuleRequest request)
@@ -2383,6 +2531,38 @@ namespace Amazon.WAFRegional
 
         #endregion
         
+        #region  ListRateBasedRules
+
+        internal ListRateBasedRulesResponse ListRateBasedRules(ListRateBasedRulesRequest request)
+        {
+            var marshaller = new ListRateBasedRulesRequestMarshaller();
+            var unmarshaller = ListRateBasedRulesResponseUnmarshaller.Instance;
+
+            return Invoke<ListRateBasedRulesRequest,ListRateBasedRulesResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListRateBasedRules operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListRateBasedRules operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/ListRateBasedRules">REST API Reference for ListRateBasedRules Operation</seealso>
+        public Task<ListRateBasedRulesResponse> ListRateBasedRulesAsync(ListRateBasedRulesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new ListRateBasedRulesRequestMarshaller();
+            var unmarshaller = ListRateBasedRulesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListRateBasedRulesRequest,ListRateBasedRulesResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListResourcesForWebACL
 
         internal ListResourcesForWebACLResponse ListResourcesForWebACL(ListResourcesForWebACLRequest request)
@@ -2723,6 +2903,11 @@ namespace Amazon.WAFRegional
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// You tried to create a <code>RateBasedRule</code> with a <code>RateKey</code> value
+        /// other than <code>IP</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// You tried to update a <code>WebACL</code> with a <code>WafAction</code> <code>Type</code>
         /// other than <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.
         /// </para>
@@ -2984,6 +3169,11 @@ namespace Amazon.WAFRegional
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// You tried to create a <code>RateBasedRule</code> with a <code>RateKey</code> value
+        /// other than <code>IP</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// You tried to update a <code>WebACL</code> with a <code>WafAction</code> <code>Type</code>
         /// other than <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.
         /// </para>
@@ -3083,6 +3273,38 @@ namespace Amazon.WAFRegional
             var unmarshaller = UpdateIPSetResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdateIPSetRequest,UpdateIPSetResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateRateBasedRule
+
+        internal UpdateRateBasedRuleResponse UpdateRateBasedRule(UpdateRateBasedRuleRequest request)
+        {
+            var marshaller = new UpdateRateBasedRuleRequestMarshaller();
+            var unmarshaller = UpdateRateBasedRuleResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateRateBasedRuleRequest,UpdateRateBasedRuleResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateRateBasedRule operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateRateBasedRule operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/UpdateRateBasedRule">REST API Reference for UpdateRateBasedRule Operation</seealso>
+        public Task<UpdateRateBasedRuleResponse> UpdateRateBasedRuleAsync(UpdateRateBasedRuleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new UpdateRateBasedRuleRequestMarshaller();
+            var unmarshaller = UpdateRateBasedRuleResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateRateBasedRuleRequest,UpdateRateBasedRuleResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -3232,6 +3454,11 @@ namespace Amazon.WAFRegional
         /// <para>
         /// You tried to create a <code>WebACL</code> with a <code>DefaultAction</code> <code>Type</code>
         /// other than <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to create a <code>RateBasedRule</code> with a <code>RateKey</code> value
+        /// other than <code>IP</code>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -3508,6 +3735,11 @@ namespace Amazon.WAFRegional
         /// <para>
         /// You tried to create a <code>WebACL</code> with a <code>DefaultAction</code> <code>Type</code>
         /// other than <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to create a <code>RateBasedRule</code> with a <code>RateKey</code> value
+        /// other than <code>IP</code>.
         /// </para>
         ///  </li> <li> 
         /// <para>

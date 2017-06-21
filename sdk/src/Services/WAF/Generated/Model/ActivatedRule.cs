@@ -45,6 +45,7 @@ namespace Amazon.WAF.Model
         private WafAction _action;
         private int? _priority;
         private string _ruleId;
+        private WafRuleType _type;
 
         /// <summary>
         /// Gets and sets the property Action. 
@@ -126,6 +127,28 @@ namespace Amazon.WAF.Model
         internal bool IsSetRuleId()
         {
             return this._ruleId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Type. 
+        /// <para>
+        /// The rule type, either <code>REGULAR</code>, as defined by <a>Rule</a>, or <code>RATE_BASED</code>,
+        /// as defined by <a>RateBasedRule</a>. The default is REGULAR. Although this field is
+        /// optional, be aware that if you try to add a RATE_BASED rule to a web ACL without setting
+        /// the type, the <a>UpdateWebACL</a> request will fail because the request tries to add
+        /// a REGULAR rule with the specified ID, which does not exist. 
+        /// </para>
+        /// </summary>
+        public WafRuleType Type
+        {
+            get { return this._type; }
+            set { this._type = value; }
+        }
+
+        // Check to see if Type property is set
+        internal bool IsSetType()
+        {
+            return this._type != null;
         }
 
     }
