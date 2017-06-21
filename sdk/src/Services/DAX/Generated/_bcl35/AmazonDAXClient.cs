@@ -1,0 +1,1692 @@
+/*
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the dax-2017-04-19.normal.json service model.
+ */
+
+
+using System;
+using System.Collections.Generic;
+
+using Amazon.DAX.Model;
+using Amazon.DAX.Model.Internal.MarshallTransformations;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+using Amazon.Runtime.Internal.Auth;
+using Amazon.Runtime.Internal.Transform;
+
+namespace Amazon.DAX
+{
+    /// <summary>
+    /// Implementation for accessing DAX
+    ///
+    /// DAX is a managed caching service engineered for Amazon DynamoDB. DAX dramatically
+    /// speeds up database reads by caching frequently-accessed data from DynamoDB, so applications
+    /// can access that data with sub-millisecond latency. You can create a DAX cluster easily,
+    /// using the AWS Management Console. With a few simple modifications to your code, your
+    /// application can begin taking advantage of the DAX cluster and realize significant
+    /// improvements in read performance.
+    /// </summary>
+    public partial class AmazonDAXClient : AmazonServiceClient, IAmazonDAX
+    {
+        #region Constructors
+
+        /// <summary>
+        /// Constructs AmazonDAXClient with the credentials loaded from the application's
+        /// default configuration, and if unsuccessful from the Instance Profile service on an EC2 instance.
+        /// 
+        /// Example App.config with credentials set. 
+        /// <code>
+        /// &lt;?xml version="1.0" encoding="utf-8" ?&gt;
+        /// &lt;configuration&gt;
+        ///     &lt;appSettings&gt;
+        ///         &lt;add key="AWSProfileName" value="AWS Default"/&gt;
+        ///     &lt;/appSettings&gt;
+        /// &lt;/configuration&gt;
+        /// </code>
+        ///
+        /// </summary>
+        public AmazonDAXClient()
+            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonDAXConfig()) { }
+
+        /// <summary>
+        /// Constructs AmazonDAXClient with the credentials loaded from the application's
+        /// default configuration, and if unsuccessful from the Instance Profile service on an EC2 instance.
+        /// 
+        /// Example App.config with credentials set. 
+        /// <code>
+        /// &lt;?xml version="1.0" encoding="utf-8" ?&gt;
+        /// &lt;configuration&gt;
+        ///     &lt;appSettings&gt;
+        ///         &lt;add key="AWSProfileName" value="AWS Default"/&gt;
+        ///     &lt;/appSettings&gt;
+        /// &lt;/configuration&gt;
+        /// </code>
+        ///
+        /// </summary>
+        /// <param name="region">The region to connect.</param>
+        public AmazonDAXClient(RegionEndpoint region)
+            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonDAXConfig{RegionEndpoint = region}) { }
+
+        /// <summary>
+        /// Constructs AmazonDAXClient with the credentials loaded from the application's
+        /// default configuration, and if unsuccessful from the Instance Profile service on an EC2 instance.
+        /// 
+        /// Example App.config with credentials set. 
+        /// <code>
+        /// &lt;?xml version="1.0" encoding="utf-8" ?&gt;
+        /// &lt;configuration&gt;
+        ///     &lt;appSettings&gt;
+        ///         &lt;add key="AWSProfileName" value="AWS Default"/&gt;
+        ///     &lt;/appSettings&gt;
+        /// &lt;/configuration&gt;
+        /// </code>
+        ///
+        /// </summary>
+        /// <param name="config">The AmazonDAXClient Configuration Object</param>
+        public AmazonDAXClient(AmazonDAXConfig config)
+            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
+
+        /// <summary>
+        /// Constructs AmazonDAXClient with AWS Credentials
+        /// </summary>
+        /// <param name="credentials">AWS Credentials</param>
+        public AmazonDAXClient(AWSCredentials credentials)
+            : this(credentials, new AmazonDAXConfig())
+        {
+        }
+
+        /// <summary>
+        /// Constructs AmazonDAXClient with AWS Credentials
+        /// </summary>
+        /// <param name="credentials">AWS Credentials</param>
+        /// <param name="region">The region to connect.</param>
+        public AmazonDAXClient(AWSCredentials credentials, RegionEndpoint region)
+            : this(credentials, new AmazonDAXConfig{RegionEndpoint = region})
+        {
+        }
+
+        /// <summary>
+        /// Constructs AmazonDAXClient with AWS Credentials and an
+        /// AmazonDAXClient Configuration object.
+        /// </summary>
+        /// <param name="credentials">AWS Credentials</param>
+        /// <param name="clientConfig">The AmazonDAXClient Configuration Object</param>
+        public AmazonDAXClient(AWSCredentials credentials, AmazonDAXConfig clientConfig)
+            : base(credentials, clientConfig)
+        {
+        }
+
+        /// <summary>
+        /// Constructs AmazonDAXClient with AWS Access Key ID and AWS Secret Key
+        /// </summary>
+        /// <param name="awsAccessKeyId">AWS Access Key ID</param>
+        /// <param name="awsSecretAccessKey">AWS Secret Access Key</param>
+        public AmazonDAXClient(string awsAccessKeyId, string awsSecretAccessKey)
+            : this(awsAccessKeyId, awsSecretAccessKey, new AmazonDAXConfig())
+        {
+        }
+
+        /// <summary>
+        /// Constructs AmazonDAXClient with AWS Access Key ID and AWS Secret Key
+        /// </summary>
+        /// <param name="awsAccessKeyId">AWS Access Key ID</param>
+        /// <param name="awsSecretAccessKey">AWS Secret Access Key</param>
+        /// <param name="region">The region to connect.</param>
+        public AmazonDAXClient(string awsAccessKeyId, string awsSecretAccessKey, RegionEndpoint region)
+            : this(awsAccessKeyId, awsSecretAccessKey, new AmazonDAXConfig() {RegionEndpoint=region})
+        {
+        }
+
+        /// <summary>
+        /// Constructs AmazonDAXClient with AWS Access Key ID, AWS Secret Key and an
+        /// AmazonDAXClient Configuration object. 
+        /// </summary>
+        /// <param name="awsAccessKeyId">AWS Access Key ID</param>
+        /// <param name="awsSecretAccessKey">AWS Secret Access Key</param>
+        /// <param name="clientConfig">The AmazonDAXClient Configuration Object</param>
+        public AmazonDAXClient(string awsAccessKeyId, string awsSecretAccessKey, AmazonDAXConfig clientConfig)
+            : base(awsAccessKeyId, awsSecretAccessKey, clientConfig)
+        {
+        }
+
+        /// <summary>
+        /// Constructs AmazonDAXClient with AWS Access Key ID and AWS Secret Key
+        /// </summary>
+        /// <param name="awsAccessKeyId">AWS Access Key ID</param>
+        /// <param name="awsSecretAccessKey">AWS Secret Access Key</param>
+        /// <param name="awsSessionToken">AWS Session Token</param>
+        public AmazonDAXClient(string awsAccessKeyId, string awsSecretAccessKey, string awsSessionToken)
+            : this(awsAccessKeyId, awsSecretAccessKey, awsSessionToken, new AmazonDAXConfig())
+        {
+        }
+
+        /// <summary>
+        /// Constructs AmazonDAXClient with AWS Access Key ID and AWS Secret Key
+        /// </summary>
+        /// <param name="awsAccessKeyId">AWS Access Key ID</param>
+        /// <param name="awsSecretAccessKey">AWS Secret Access Key</param>
+        /// <param name="awsSessionToken">AWS Session Token</param>
+        /// <param name="region">The region to connect.</param>
+        public AmazonDAXClient(string awsAccessKeyId, string awsSecretAccessKey, string awsSessionToken, RegionEndpoint region)
+            : this(awsAccessKeyId, awsSecretAccessKey, awsSessionToken, new AmazonDAXConfig{RegionEndpoint = region})
+        {
+        }
+
+        /// <summary>
+        /// Constructs AmazonDAXClient with AWS Access Key ID, AWS Secret Key and an
+        /// AmazonDAXClient Configuration object. 
+        /// </summary>
+        /// <param name="awsAccessKeyId">AWS Access Key ID</param>
+        /// <param name="awsSecretAccessKey">AWS Secret Access Key</param>
+        /// <param name="awsSessionToken">AWS Session Token</param>
+        /// <param name="clientConfig">The AmazonDAXClient Configuration Object</param>
+        public AmazonDAXClient(string awsAccessKeyId, string awsSecretAccessKey, string awsSessionToken, AmazonDAXConfig clientConfig)
+            : base(awsAccessKeyId, awsSecretAccessKey, awsSessionToken, clientConfig)
+        {
+        }
+
+        #endregion
+
+        #region Overrides
+
+        
+        /// <summary>
+        /// Creates the signer for the service.
+        /// </summary>
+        protected override AbstractAWSSigner CreateSigner()
+        {
+            return new AWS4Signer();
+        }
+
+
+        #endregion
+
+        #region Dispose
+
+        /// <summary>
+        /// Disposes the service client.
+        /// </summary>
+        protected override void Dispose(bool disposing)
+        {
+            base.Dispose(disposing);
+        }
+
+        #endregion
+
+        
+        #region  CreateCluster
+
+        /// <summary>
+        /// Creates a DAX cluster. All nodes in the cluster run the same DAX caching software.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateCluster service method.</param>
+        /// 
+        /// <returns>The response from the CreateCluster service method, as returned by DAX.</returns>
+        /// <exception cref="Amazon.DAX.Model.ClusterAlreadyExistsException">
+        /// You already have a DAX cluster with the given identifier.
+        /// </exception>
+        /// <exception cref="Amazon.DAX.Model.ClusterQuotaForCustomerExceededException">
+        /// You have attempted to exceed the maximum number of DAX clusters for your AWS account.
+        /// </exception>
+        /// <exception cref="Amazon.DAX.Model.InsufficientClusterCapacityException">
+        /// There are not enough system resources to create the cluster you requested (or to resize
+        /// an already-existing cluster).
+        /// </exception>
+        /// <exception cref="Amazon.DAX.Model.InvalidClusterStateException">
+        /// The requested DAX cluster is not in the <i>available</i> state.
+        /// </exception>
+        /// <exception cref="Amazon.DAX.Model.InvalidParameterCombinationException">
+        /// Two or more incompatible parameters were specified.
+        /// </exception>
+        /// <exception cref="Amazon.DAX.Model.InvalidParameterGroupStateException">
+        /// One or more parameters in a parameter group are in an invalid state.
+        /// </exception>
+        /// <exception cref="Amazon.DAX.Model.InvalidParameterValueException">
+        /// The value for a parameter is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.DAX.Model.InvalidVPCNetworkStateException">
+        /// The VPC network is in an invalid state.
+        /// </exception>
+        /// <exception cref="Amazon.DAX.Model.NodeQuotaForClusterExceededException">
+        /// You have attempted to exceed the maximum number of nodes for a DAX cluster.
+        /// </exception>
+        /// <exception cref="Amazon.DAX.Model.NodeQuotaForCustomerExceededException">
+        /// You have attempted to exceed the maximum number of nodes for your AWS account.
+        /// </exception>
+        /// <exception cref="Amazon.DAX.Model.ParameterGroupNotFoundException">
+        /// The specified parameter group does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.DAX.Model.SubnetGroupNotFoundException">
+        /// The requested subnet group name does not refer to an existing subnet group.
+        /// </exception>
+        /// <exception cref="Amazon.DAX.Model.TagQuotaPerResourceExceededException">
+        /// You have exceeded the maximum number of tags for this DAX cluster.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dax-2017-04-19/CreateCluster">REST API Reference for CreateCluster Operation</seealso>
+        public CreateClusterResponse CreateCluster(CreateClusterRequest request)
+        {
+            var marshaller = new CreateClusterRequestMarshaller();
+            var unmarshaller = CreateClusterResponseUnmarshaller.Instance;
+
+            return Invoke<CreateClusterRequest,CreateClusterResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateCluster operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateCluster operation on AmazonDAXClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateCluster
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dax-2017-04-19/CreateCluster">REST API Reference for CreateCluster Operation</seealso>
+        public IAsyncResult BeginCreateCluster(CreateClusterRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new CreateClusterRequestMarshaller();
+            var unmarshaller = CreateClusterResponseUnmarshaller.Instance;
+
+            return BeginInvoke<CreateClusterRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateCluster operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateCluster.</param>
+        /// 
+        /// <returns>Returns a  CreateClusterResult from DAX.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dax-2017-04-19/CreateCluster">REST API Reference for CreateCluster Operation</seealso>
+        public  CreateClusterResponse EndCreateCluster(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateClusterResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  CreateParameterGroup
+
+        /// <summary>
+        /// Creates a new parameter group. A parameter group is a collection of parameters that
+        /// you apply to all of the nodes in a DAX cluster.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateParameterGroup service method.</param>
+        /// 
+        /// <returns>The response from the CreateParameterGroup service method, as returned by DAX.</returns>
+        /// <exception cref="Amazon.DAX.Model.InvalidParameterCombinationException">
+        /// Two or more incompatible parameters were specified.
+        /// </exception>
+        /// <exception cref="Amazon.DAX.Model.InvalidParameterGroupStateException">
+        /// One or more parameters in a parameter group are in an invalid state.
+        /// </exception>
+        /// <exception cref="Amazon.DAX.Model.InvalidParameterValueException">
+        /// The value for a parameter is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.DAX.Model.ParameterGroupAlreadyExistsException">
+        /// The specified parameter group already exists.
+        /// </exception>
+        /// <exception cref="Amazon.DAX.Model.ParameterGroupQuotaExceededException">
+        /// You have attempted to exceed the maximum number of parameter groups.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dax-2017-04-19/CreateParameterGroup">REST API Reference for CreateParameterGroup Operation</seealso>
+        public CreateParameterGroupResponse CreateParameterGroup(CreateParameterGroupRequest request)
+        {
+            var marshaller = new CreateParameterGroupRequestMarshaller();
+            var unmarshaller = CreateParameterGroupResponseUnmarshaller.Instance;
+
+            return Invoke<CreateParameterGroupRequest,CreateParameterGroupResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateParameterGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateParameterGroup operation on AmazonDAXClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateParameterGroup
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dax-2017-04-19/CreateParameterGroup">REST API Reference for CreateParameterGroup Operation</seealso>
+        public IAsyncResult BeginCreateParameterGroup(CreateParameterGroupRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new CreateParameterGroupRequestMarshaller();
+            var unmarshaller = CreateParameterGroupResponseUnmarshaller.Instance;
+
+            return BeginInvoke<CreateParameterGroupRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateParameterGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateParameterGroup.</param>
+        /// 
+        /// <returns>Returns a  CreateParameterGroupResult from DAX.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dax-2017-04-19/CreateParameterGroup">REST API Reference for CreateParameterGroup Operation</seealso>
+        public  CreateParameterGroupResponse EndCreateParameterGroup(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateParameterGroupResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  CreateSubnetGroup
+
+        /// <summary>
+        /// Creates a new subnet group.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateSubnetGroup service method.</param>
+        /// 
+        /// <returns>The response from the CreateSubnetGroup service method, as returned by DAX.</returns>
+        /// <exception cref="Amazon.DAX.Model.InvalidSubnetException">
+        /// An invalid subnet identifier was specified.
+        /// </exception>
+        /// <exception cref="Amazon.DAX.Model.SubnetGroupAlreadyExistsException">
+        /// The specified subnet group already exists.
+        /// </exception>
+        /// <exception cref="Amazon.DAX.Model.SubnetGroupQuotaExceededException">
+        /// The request cannot be processed because it would exceed the allowed number of subnets
+        /// in a subnet group.
+        /// </exception>
+        /// <exception cref="Amazon.DAX.Model.SubnetQuotaExceededException">
+        /// The request cannot be processed because it would exceed the allowed number of subnets
+        /// in a subnet group.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dax-2017-04-19/CreateSubnetGroup">REST API Reference for CreateSubnetGroup Operation</seealso>
+        public CreateSubnetGroupResponse CreateSubnetGroup(CreateSubnetGroupRequest request)
+        {
+            var marshaller = new CreateSubnetGroupRequestMarshaller();
+            var unmarshaller = CreateSubnetGroupResponseUnmarshaller.Instance;
+
+            return Invoke<CreateSubnetGroupRequest,CreateSubnetGroupResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateSubnetGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateSubnetGroup operation on AmazonDAXClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateSubnetGroup
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dax-2017-04-19/CreateSubnetGroup">REST API Reference for CreateSubnetGroup Operation</seealso>
+        public IAsyncResult BeginCreateSubnetGroup(CreateSubnetGroupRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new CreateSubnetGroupRequestMarshaller();
+            var unmarshaller = CreateSubnetGroupResponseUnmarshaller.Instance;
+
+            return BeginInvoke<CreateSubnetGroupRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateSubnetGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateSubnetGroup.</param>
+        /// 
+        /// <returns>Returns a  CreateSubnetGroupResult from DAX.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dax-2017-04-19/CreateSubnetGroup">REST API Reference for CreateSubnetGroup Operation</seealso>
+        public  CreateSubnetGroupResponse EndCreateSubnetGroup(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateSubnetGroupResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DecreaseReplicationFactor
+
+        /// <summary>
+        /// Removes one or more nodes from a DAX cluster.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// You cannot use <code>DecreaseReplicationFactor</code> to remove the last node in a
+        /// DAX cluster. If you need to do this, use <code>DeleteCluster</code> instead.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DecreaseReplicationFactor service method.</param>
+        /// 
+        /// <returns>The response from the DecreaseReplicationFactor service method, as returned by DAX.</returns>
+        /// <exception cref="Amazon.DAX.Model.ClusterNotFoundException">
+        /// The requested cluster ID does not refer to an existing DAX cluster.
+        /// </exception>
+        /// <exception cref="Amazon.DAX.Model.InvalidClusterStateException">
+        /// The requested DAX cluster is not in the <i>available</i> state.
+        /// </exception>
+        /// <exception cref="Amazon.DAX.Model.InvalidParameterCombinationException">
+        /// Two or more incompatible parameters were specified.
+        /// </exception>
+        /// <exception cref="Amazon.DAX.Model.InvalidParameterValueException">
+        /// The value for a parameter is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.DAX.Model.NodeNotFoundException">
+        /// None of the nodes in the cluster have the given node ID.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dax-2017-04-19/DecreaseReplicationFactor">REST API Reference for DecreaseReplicationFactor Operation</seealso>
+        public DecreaseReplicationFactorResponse DecreaseReplicationFactor(DecreaseReplicationFactorRequest request)
+        {
+            var marshaller = new DecreaseReplicationFactorRequestMarshaller();
+            var unmarshaller = DecreaseReplicationFactorResponseUnmarshaller.Instance;
+
+            return Invoke<DecreaseReplicationFactorRequest,DecreaseReplicationFactorResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DecreaseReplicationFactor operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DecreaseReplicationFactor operation on AmazonDAXClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDecreaseReplicationFactor
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dax-2017-04-19/DecreaseReplicationFactor">REST API Reference for DecreaseReplicationFactor Operation</seealso>
+        public IAsyncResult BeginDecreaseReplicationFactor(DecreaseReplicationFactorRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new DecreaseReplicationFactorRequestMarshaller();
+            var unmarshaller = DecreaseReplicationFactorResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DecreaseReplicationFactorRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DecreaseReplicationFactor operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDecreaseReplicationFactor.</param>
+        /// 
+        /// <returns>Returns a  DecreaseReplicationFactorResult from DAX.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dax-2017-04-19/DecreaseReplicationFactor">REST API Reference for DecreaseReplicationFactor Operation</seealso>
+        public  DecreaseReplicationFactorResponse EndDecreaseReplicationFactor(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DecreaseReplicationFactorResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeleteCluster
+
+        /// <summary>
+        /// Deletes a previously provisioned DAX cluster. <i>DeleteCluster</i> deletes all associated
+        /// nodes, node endpoints and the DAX cluster itself. When you receive a successful response
+        /// from this action, DAX immediately begins deleting the cluster; you cannot cancel or
+        /// revert this action.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteCluster service method.</param>
+        /// 
+        /// <returns>The response from the DeleteCluster service method, as returned by DAX.</returns>
+        /// <exception cref="Amazon.DAX.Model.ClusterNotFoundException">
+        /// The requested cluster ID does not refer to an existing DAX cluster.
+        /// </exception>
+        /// <exception cref="Amazon.DAX.Model.InvalidClusterStateException">
+        /// The requested DAX cluster is not in the <i>available</i> state.
+        /// </exception>
+        /// <exception cref="Amazon.DAX.Model.InvalidParameterCombinationException">
+        /// Two or more incompatible parameters were specified.
+        /// </exception>
+        /// <exception cref="Amazon.DAX.Model.InvalidParameterValueException">
+        /// The value for a parameter is invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dax-2017-04-19/DeleteCluster">REST API Reference for DeleteCluster Operation</seealso>
+        public DeleteClusterResponse DeleteCluster(DeleteClusterRequest request)
+        {
+            var marshaller = new DeleteClusterRequestMarshaller();
+            var unmarshaller = DeleteClusterResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteClusterRequest,DeleteClusterResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteCluster operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteCluster operation on AmazonDAXClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteCluster
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dax-2017-04-19/DeleteCluster">REST API Reference for DeleteCluster Operation</seealso>
+        public IAsyncResult BeginDeleteCluster(DeleteClusterRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new DeleteClusterRequestMarshaller();
+            var unmarshaller = DeleteClusterResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DeleteClusterRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteCluster operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteCluster.</param>
+        /// 
+        /// <returns>Returns a  DeleteClusterResult from DAX.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dax-2017-04-19/DeleteCluster">REST API Reference for DeleteCluster Operation</seealso>
+        public  DeleteClusterResponse EndDeleteCluster(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteClusterResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeleteParameterGroup
+
+        /// <summary>
+        /// Deletes the specified parameter group. You cannot delete a parameter group if it is
+        /// associated with any DAX clusters.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteParameterGroup service method.</param>
+        /// 
+        /// <returns>The response from the DeleteParameterGroup service method, as returned by DAX.</returns>
+        /// <exception cref="Amazon.DAX.Model.InvalidParameterCombinationException">
+        /// Two or more incompatible parameters were specified.
+        /// </exception>
+        /// <exception cref="Amazon.DAX.Model.InvalidParameterGroupStateException">
+        /// One or more parameters in a parameter group are in an invalid state.
+        /// </exception>
+        /// <exception cref="Amazon.DAX.Model.InvalidParameterValueException">
+        /// The value for a parameter is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.DAX.Model.ParameterGroupNotFoundException">
+        /// The specified parameter group does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dax-2017-04-19/DeleteParameterGroup">REST API Reference for DeleteParameterGroup Operation</seealso>
+        public DeleteParameterGroupResponse DeleteParameterGroup(DeleteParameterGroupRequest request)
+        {
+            var marshaller = new DeleteParameterGroupRequestMarshaller();
+            var unmarshaller = DeleteParameterGroupResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteParameterGroupRequest,DeleteParameterGroupResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteParameterGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteParameterGroup operation on AmazonDAXClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteParameterGroup
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dax-2017-04-19/DeleteParameterGroup">REST API Reference for DeleteParameterGroup Operation</seealso>
+        public IAsyncResult BeginDeleteParameterGroup(DeleteParameterGroupRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new DeleteParameterGroupRequestMarshaller();
+            var unmarshaller = DeleteParameterGroupResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DeleteParameterGroupRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteParameterGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteParameterGroup.</param>
+        /// 
+        /// <returns>Returns a  DeleteParameterGroupResult from DAX.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dax-2017-04-19/DeleteParameterGroup">REST API Reference for DeleteParameterGroup Operation</seealso>
+        public  DeleteParameterGroupResponse EndDeleteParameterGroup(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteParameterGroupResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeleteSubnetGroup
+
+        /// <summary>
+        /// Deletes a subnet group.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// You cannot delete a subnet group if it is associated with any DAX clusters.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteSubnetGroup service method.</param>
+        /// 
+        /// <returns>The response from the DeleteSubnetGroup service method, as returned by DAX.</returns>
+        /// <exception cref="Amazon.DAX.Model.SubnetGroupInUseException">
+        /// The specified subnet group is currently in use.
+        /// </exception>
+        /// <exception cref="Amazon.DAX.Model.SubnetGroupNotFoundException">
+        /// The requested subnet group name does not refer to an existing subnet group.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dax-2017-04-19/DeleteSubnetGroup">REST API Reference for DeleteSubnetGroup Operation</seealso>
+        public DeleteSubnetGroupResponse DeleteSubnetGroup(DeleteSubnetGroupRequest request)
+        {
+            var marshaller = new DeleteSubnetGroupRequestMarshaller();
+            var unmarshaller = DeleteSubnetGroupResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteSubnetGroupRequest,DeleteSubnetGroupResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteSubnetGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteSubnetGroup operation on AmazonDAXClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteSubnetGroup
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dax-2017-04-19/DeleteSubnetGroup">REST API Reference for DeleteSubnetGroup Operation</seealso>
+        public IAsyncResult BeginDeleteSubnetGroup(DeleteSubnetGroupRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new DeleteSubnetGroupRequestMarshaller();
+            var unmarshaller = DeleteSubnetGroupResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DeleteSubnetGroupRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteSubnetGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteSubnetGroup.</param>
+        /// 
+        /// <returns>Returns a  DeleteSubnetGroupResult from DAX.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dax-2017-04-19/DeleteSubnetGroup">REST API Reference for DeleteSubnetGroup Operation</seealso>
+        public  DeleteSubnetGroupResponse EndDeleteSubnetGroup(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteSubnetGroupResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DescribeClusters
+
+        /// <summary>
+        /// Returns information about all provisioned DAX clusters if no cluster identifier is
+        /// specified, or about a specific DAX cluster if a cluster identifier is supplied.
+        /// 
+        ///  
+        /// <para>
+        /// If the cluster is in the CREATING state, only cluster level information will be displayed
+        /// until all of the nodes are successfully provisioned.
+        /// </para>
+        ///  
+        /// <para>
+        /// If the cluster is in the DELETING state, only cluster level information will be displayed.
+        /// </para>
+        ///  
+        /// <para>
+        /// If nodes are currently being added to the DAX cluster, node endpoint information and
+        /// creation time for the additional nodes will not be displayed until they are completely
+        /// provisioned. When the DAX cluster state is <i>available</i>, the cluster is ready
+        /// for use.
+        /// </para>
+        ///  
+        /// <para>
+        /// If nodes are currently being removed from the DAX cluster, no endpoint information
+        /// for the removed nodes is displayed.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeClusters service method.</param>
+        /// 
+        /// <returns>The response from the DescribeClusters service method, as returned by DAX.</returns>
+        /// <exception cref="Amazon.DAX.Model.ClusterNotFoundException">
+        /// The requested cluster ID does not refer to an existing DAX cluster.
+        /// </exception>
+        /// <exception cref="Amazon.DAX.Model.InvalidParameterCombinationException">
+        /// Two or more incompatible parameters were specified.
+        /// </exception>
+        /// <exception cref="Amazon.DAX.Model.InvalidParameterValueException">
+        /// The value for a parameter is invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dax-2017-04-19/DescribeClusters">REST API Reference for DescribeClusters Operation</seealso>
+        public DescribeClustersResponse DescribeClusters(DescribeClustersRequest request)
+        {
+            var marshaller = new DescribeClustersRequestMarshaller();
+            var unmarshaller = DescribeClustersResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeClustersRequest,DescribeClustersResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeClusters operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeClusters operation on AmazonDAXClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeClusters
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dax-2017-04-19/DescribeClusters">REST API Reference for DescribeClusters Operation</seealso>
+        public IAsyncResult BeginDescribeClusters(DescribeClustersRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new DescribeClustersRequestMarshaller();
+            var unmarshaller = DescribeClustersResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DescribeClustersRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeClusters operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeClusters.</param>
+        /// 
+        /// <returns>Returns a  DescribeClustersResult from DAX.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dax-2017-04-19/DescribeClusters">REST API Reference for DescribeClusters Operation</seealso>
+        public  DescribeClustersResponse EndDescribeClusters(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeClustersResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DescribeDefaultParameters
+
+        /// <summary>
+        /// Returns the default system parameter information for the DAX caching software.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeDefaultParameters service method.</param>
+        /// 
+        /// <returns>The response from the DescribeDefaultParameters service method, as returned by DAX.</returns>
+        /// <exception cref="Amazon.DAX.Model.InvalidParameterCombinationException">
+        /// Two or more incompatible parameters were specified.
+        /// </exception>
+        /// <exception cref="Amazon.DAX.Model.InvalidParameterValueException">
+        /// The value for a parameter is invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dax-2017-04-19/DescribeDefaultParameters">REST API Reference for DescribeDefaultParameters Operation</seealso>
+        public DescribeDefaultParametersResponse DescribeDefaultParameters(DescribeDefaultParametersRequest request)
+        {
+            var marshaller = new DescribeDefaultParametersRequestMarshaller();
+            var unmarshaller = DescribeDefaultParametersResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeDefaultParametersRequest,DescribeDefaultParametersResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeDefaultParameters operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeDefaultParameters operation on AmazonDAXClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeDefaultParameters
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dax-2017-04-19/DescribeDefaultParameters">REST API Reference for DescribeDefaultParameters Operation</seealso>
+        public IAsyncResult BeginDescribeDefaultParameters(DescribeDefaultParametersRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new DescribeDefaultParametersRequestMarshaller();
+            var unmarshaller = DescribeDefaultParametersResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DescribeDefaultParametersRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeDefaultParameters operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeDefaultParameters.</param>
+        /// 
+        /// <returns>Returns a  DescribeDefaultParametersResult from DAX.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dax-2017-04-19/DescribeDefaultParameters">REST API Reference for DescribeDefaultParameters Operation</seealso>
+        public  DescribeDefaultParametersResponse EndDescribeDefaultParameters(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeDefaultParametersResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DescribeEvents
+
+        /// <summary>
+        /// Returns events related to DAX clusters and parameter groups. You can obtain events
+        /// specific to a particular DAX cluster or parameter group by providing the name as a
+        /// parameter.
+        /// 
+        ///  
+        /// <para>
+        /// By default, only the events occurring within the last hour are returned; however,
+        /// you can retrieve up to 14 days' worth of events if necessary.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeEvents service method.</param>
+        /// 
+        /// <returns>The response from the DescribeEvents service method, as returned by DAX.</returns>
+        /// <exception cref="Amazon.DAX.Model.InvalidParameterCombinationException">
+        /// Two or more incompatible parameters were specified.
+        /// </exception>
+        /// <exception cref="Amazon.DAX.Model.InvalidParameterValueException">
+        /// The value for a parameter is invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dax-2017-04-19/DescribeEvents">REST API Reference for DescribeEvents Operation</seealso>
+        public DescribeEventsResponse DescribeEvents(DescribeEventsRequest request)
+        {
+            var marshaller = new DescribeEventsRequestMarshaller();
+            var unmarshaller = DescribeEventsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeEventsRequest,DescribeEventsResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeEvents operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeEvents operation on AmazonDAXClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeEvents
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dax-2017-04-19/DescribeEvents">REST API Reference for DescribeEvents Operation</seealso>
+        public IAsyncResult BeginDescribeEvents(DescribeEventsRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new DescribeEventsRequestMarshaller();
+            var unmarshaller = DescribeEventsResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DescribeEventsRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeEvents operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeEvents.</param>
+        /// 
+        /// <returns>Returns a  DescribeEventsResult from DAX.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dax-2017-04-19/DescribeEvents">REST API Reference for DescribeEvents Operation</seealso>
+        public  DescribeEventsResponse EndDescribeEvents(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeEventsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DescribeParameterGroups
+
+        /// <summary>
+        /// Returns a list of parameter group descriptions. If a parameter group name is specified,
+        /// the list will contain only the descriptions for that group.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeParameterGroups service method.</param>
+        /// 
+        /// <returns>The response from the DescribeParameterGroups service method, as returned by DAX.</returns>
+        /// <exception cref="Amazon.DAX.Model.InvalidParameterCombinationException">
+        /// Two or more incompatible parameters were specified.
+        /// </exception>
+        /// <exception cref="Amazon.DAX.Model.InvalidParameterValueException">
+        /// The value for a parameter is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.DAX.Model.ParameterGroupNotFoundException">
+        /// The specified parameter group does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dax-2017-04-19/DescribeParameterGroups">REST API Reference for DescribeParameterGroups Operation</seealso>
+        public DescribeParameterGroupsResponse DescribeParameterGroups(DescribeParameterGroupsRequest request)
+        {
+            var marshaller = new DescribeParameterGroupsRequestMarshaller();
+            var unmarshaller = DescribeParameterGroupsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeParameterGroupsRequest,DescribeParameterGroupsResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeParameterGroups operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeParameterGroups operation on AmazonDAXClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeParameterGroups
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dax-2017-04-19/DescribeParameterGroups">REST API Reference for DescribeParameterGroups Operation</seealso>
+        public IAsyncResult BeginDescribeParameterGroups(DescribeParameterGroupsRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new DescribeParameterGroupsRequestMarshaller();
+            var unmarshaller = DescribeParameterGroupsResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DescribeParameterGroupsRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeParameterGroups operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeParameterGroups.</param>
+        /// 
+        /// <returns>Returns a  DescribeParameterGroupsResult from DAX.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dax-2017-04-19/DescribeParameterGroups">REST API Reference for DescribeParameterGroups Operation</seealso>
+        public  DescribeParameterGroupsResponse EndDescribeParameterGroups(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeParameterGroupsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DescribeParameters
+
+        /// <summary>
+        /// Returns the detailed parameter list for a particular parameter group.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeParameters service method.</param>
+        /// 
+        /// <returns>The response from the DescribeParameters service method, as returned by DAX.</returns>
+        /// <exception cref="Amazon.DAX.Model.InvalidParameterCombinationException">
+        /// Two or more incompatible parameters were specified.
+        /// </exception>
+        /// <exception cref="Amazon.DAX.Model.InvalidParameterValueException">
+        /// The value for a parameter is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.DAX.Model.ParameterGroupNotFoundException">
+        /// The specified parameter group does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dax-2017-04-19/DescribeParameters">REST API Reference for DescribeParameters Operation</seealso>
+        public DescribeParametersResponse DescribeParameters(DescribeParametersRequest request)
+        {
+            var marshaller = new DescribeParametersRequestMarshaller();
+            var unmarshaller = DescribeParametersResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeParametersRequest,DescribeParametersResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeParameters operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeParameters operation on AmazonDAXClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeParameters
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dax-2017-04-19/DescribeParameters">REST API Reference for DescribeParameters Operation</seealso>
+        public IAsyncResult BeginDescribeParameters(DescribeParametersRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new DescribeParametersRequestMarshaller();
+            var unmarshaller = DescribeParametersResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DescribeParametersRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeParameters operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeParameters.</param>
+        /// 
+        /// <returns>Returns a  DescribeParametersResult from DAX.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dax-2017-04-19/DescribeParameters">REST API Reference for DescribeParameters Operation</seealso>
+        public  DescribeParametersResponse EndDescribeParameters(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeParametersResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DescribeSubnetGroups
+
+        /// <summary>
+        /// Returns a list of subnet group descriptions. If a subnet group name is specified,
+        /// the list will contain only the description of that group.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeSubnetGroups service method.</param>
+        /// 
+        /// <returns>The response from the DescribeSubnetGroups service method, as returned by DAX.</returns>
+        /// <exception cref="Amazon.DAX.Model.SubnetGroupNotFoundException">
+        /// The requested subnet group name does not refer to an existing subnet group.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dax-2017-04-19/DescribeSubnetGroups">REST API Reference for DescribeSubnetGroups Operation</seealso>
+        public DescribeSubnetGroupsResponse DescribeSubnetGroups(DescribeSubnetGroupsRequest request)
+        {
+            var marshaller = new DescribeSubnetGroupsRequestMarshaller();
+            var unmarshaller = DescribeSubnetGroupsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeSubnetGroupsRequest,DescribeSubnetGroupsResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeSubnetGroups operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeSubnetGroups operation on AmazonDAXClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeSubnetGroups
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dax-2017-04-19/DescribeSubnetGroups">REST API Reference for DescribeSubnetGroups Operation</seealso>
+        public IAsyncResult BeginDescribeSubnetGroups(DescribeSubnetGroupsRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new DescribeSubnetGroupsRequestMarshaller();
+            var unmarshaller = DescribeSubnetGroupsResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DescribeSubnetGroupsRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeSubnetGroups operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeSubnetGroups.</param>
+        /// 
+        /// <returns>Returns a  DescribeSubnetGroupsResult from DAX.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dax-2017-04-19/DescribeSubnetGroups">REST API Reference for DescribeSubnetGroups Operation</seealso>
+        public  DescribeSubnetGroupsResponse EndDescribeSubnetGroups(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeSubnetGroupsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  IncreaseReplicationFactor
+
+        /// <summary>
+        /// Adds one or more nodes to a DAX cluster.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the IncreaseReplicationFactor service method.</param>
+        /// 
+        /// <returns>The response from the IncreaseReplicationFactor service method, as returned by DAX.</returns>
+        /// <exception cref="Amazon.DAX.Model.ClusterNotFoundException">
+        /// The requested cluster ID does not refer to an existing DAX cluster.
+        /// </exception>
+        /// <exception cref="Amazon.DAX.Model.InsufficientClusterCapacityException">
+        /// There are not enough system resources to create the cluster you requested (or to resize
+        /// an already-existing cluster).
+        /// </exception>
+        /// <exception cref="Amazon.DAX.Model.InvalidClusterStateException">
+        /// The requested DAX cluster is not in the <i>available</i> state.
+        /// </exception>
+        /// <exception cref="Amazon.DAX.Model.InvalidParameterCombinationException">
+        /// Two or more incompatible parameters were specified.
+        /// </exception>
+        /// <exception cref="Amazon.DAX.Model.InvalidParameterValueException">
+        /// The value for a parameter is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.DAX.Model.InvalidVPCNetworkStateException">
+        /// The VPC network is in an invalid state.
+        /// </exception>
+        /// <exception cref="Amazon.DAX.Model.NodeQuotaForClusterExceededException">
+        /// You have attempted to exceed the maximum number of nodes for a DAX cluster.
+        /// </exception>
+        /// <exception cref="Amazon.DAX.Model.NodeQuotaForCustomerExceededException">
+        /// You have attempted to exceed the maximum number of nodes for your AWS account.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dax-2017-04-19/IncreaseReplicationFactor">REST API Reference for IncreaseReplicationFactor Operation</seealso>
+        public IncreaseReplicationFactorResponse IncreaseReplicationFactor(IncreaseReplicationFactorRequest request)
+        {
+            var marshaller = new IncreaseReplicationFactorRequestMarshaller();
+            var unmarshaller = IncreaseReplicationFactorResponseUnmarshaller.Instance;
+
+            return Invoke<IncreaseReplicationFactorRequest,IncreaseReplicationFactorResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the IncreaseReplicationFactor operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the IncreaseReplicationFactor operation on AmazonDAXClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndIncreaseReplicationFactor
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dax-2017-04-19/IncreaseReplicationFactor">REST API Reference for IncreaseReplicationFactor Operation</seealso>
+        public IAsyncResult BeginIncreaseReplicationFactor(IncreaseReplicationFactorRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new IncreaseReplicationFactorRequestMarshaller();
+            var unmarshaller = IncreaseReplicationFactorResponseUnmarshaller.Instance;
+
+            return BeginInvoke<IncreaseReplicationFactorRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  IncreaseReplicationFactor operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginIncreaseReplicationFactor.</param>
+        /// 
+        /// <returns>Returns a  IncreaseReplicationFactorResult from DAX.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dax-2017-04-19/IncreaseReplicationFactor">REST API Reference for IncreaseReplicationFactor Operation</seealso>
+        public  IncreaseReplicationFactorResponse EndIncreaseReplicationFactor(IAsyncResult asyncResult)
+        {
+            return EndInvoke<IncreaseReplicationFactorResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListTags
+
+        /// <summary>
+        /// List all of the tags for a DAX cluster. You can call <code>ListTags</code> up to 10
+        /// times per second, per account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTags service method.</param>
+        /// 
+        /// <returns>The response from the ListTags service method, as returned by DAX.</returns>
+        /// <exception cref="Amazon.DAX.Model.ClusterNotFoundException">
+        /// The requested cluster ID does not refer to an existing DAX cluster.
+        /// </exception>
+        /// <exception cref="Amazon.DAX.Model.InvalidARNException">
+        /// The Amazon Resource Name (ARN) supplied in the request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.DAX.Model.InvalidClusterStateException">
+        /// The requested DAX cluster is not in the <i>available</i> state.
+        /// </exception>
+        /// <exception cref="Amazon.DAX.Model.InvalidParameterCombinationException">
+        /// Two or more incompatible parameters were specified.
+        /// </exception>
+        /// <exception cref="Amazon.DAX.Model.InvalidParameterValueException">
+        /// The value for a parameter is invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dax-2017-04-19/ListTags">REST API Reference for ListTags Operation</seealso>
+        public ListTagsResponse ListTags(ListTagsRequest request)
+        {
+            var marshaller = new ListTagsRequestMarshaller();
+            var unmarshaller = ListTagsResponseUnmarshaller.Instance;
+
+            return Invoke<ListTagsRequest,ListTagsResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListTags operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListTags operation on AmazonDAXClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListTags
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dax-2017-04-19/ListTags">REST API Reference for ListTags Operation</seealso>
+        public IAsyncResult BeginListTags(ListTagsRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new ListTagsRequestMarshaller();
+            var unmarshaller = ListTagsResponseUnmarshaller.Instance;
+
+            return BeginInvoke<ListTagsRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListTags operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListTags.</param>
+        /// 
+        /// <returns>Returns a  ListTagsResult from DAX.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dax-2017-04-19/ListTags">REST API Reference for ListTags Operation</seealso>
+        public  ListTagsResponse EndListTags(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListTagsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  RebootNode
+
+        /// <summary>
+        /// Reboots a single node of a DAX cluster. The reboot action takes place as soon as possible.
+        /// During the reboot, the node status is set to REBOOTING.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RebootNode service method.</param>
+        /// 
+        /// <returns>The response from the RebootNode service method, as returned by DAX.</returns>
+        /// <exception cref="Amazon.DAX.Model.ClusterNotFoundException">
+        /// The requested cluster ID does not refer to an existing DAX cluster.
+        /// </exception>
+        /// <exception cref="Amazon.DAX.Model.InvalidClusterStateException">
+        /// The requested DAX cluster is not in the <i>available</i> state.
+        /// </exception>
+        /// <exception cref="Amazon.DAX.Model.InvalidParameterCombinationException">
+        /// Two or more incompatible parameters were specified.
+        /// </exception>
+        /// <exception cref="Amazon.DAX.Model.InvalidParameterValueException">
+        /// The value for a parameter is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.DAX.Model.NodeNotFoundException">
+        /// None of the nodes in the cluster have the given node ID.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dax-2017-04-19/RebootNode">REST API Reference for RebootNode Operation</seealso>
+        public RebootNodeResponse RebootNode(RebootNodeRequest request)
+        {
+            var marshaller = new RebootNodeRequestMarshaller();
+            var unmarshaller = RebootNodeResponseUnmarshaller.Instance;
+
+            return Invoke<RebootNodeRequest,RebootNodeResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the RebootNode operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the RebootNode operation on AmazonDAXClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndRebootNode
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dax-2017-04-19/RebootNode">REST API Reference for RebootNode Operation</seealso>
+        public IAsyncResult BeginRebootNode(RebootNodeRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new RebootNodeRequestMarshaller();
+            var unmarshaller = RebootNodeResponseUnmarshaller.Instance;
+
+            return BeginInvoke<RebootNodeRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  RebootNode operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginRebootNode.</param>
+        /// 
+        /// <returns>Returns a  RebootNodeResult from DAX.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dax-2017-04-19/RebootNode">REST API Reference for RebootNode Operation</seealso>
+        public  RebootNodeResponse EndRebootNode(IAsyncResult asyncResult)
+        {
+            return EndInvoke<RebootNodeResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  TagResource
+
+        /// <summary>
+        /// Associates a set of tags with a DAX resource. You can call <code>TagResource</code>
+        /// up to 5 times per second, per account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
+        /// 
+        /// <returns>The response from the TagResource service method, as returned by DAX.</returns>
+        /// <exception cref="Amazon.DAX.Model.ClusterNotFoundException">
+        /// The requested cluster ID does not refer to an existing DAX cluster.
+        /// </exception>
+        /// <exception cref="Amazon.DAX.Model.InvalidARNException">
+        /// The Amazon Resource Name (ARN) supplied in the request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.DAX.Model.InvalidClusterStateException">
+        /// The requested DAX cluster is not in the <i>available</i> state.
+        /// </exception>
+        /// <exception cref="Amazon.DAX.Model.InvalidParameterCombinationException">
+        /// Two or more incompatible parameters were specified.
+        /// </exception>
+        /// <exception cref="Amazon.DAX.Model.InvalidParameterValueException">
+        /// The value for a parameter is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.DAX.Model.TagQuotaPerResourceExceededException">
+        /// You have exceeded the maximum number of tags for this DAX cluster.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dax-2017-04-19/TagResource">REST API Reference for TagResource Operation</seealso>
+        public TagResourceResponse TagResource(TagResourceRequest request)
+        {
+            var marshaller = new TagResourceRequestMarshaller();
+            var unmarshaller = TagResourceResponseUnmarshaller.Instance;
+
+            return Invoke<TagResourceRequest,TagResourceResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the TagResource operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the TagResource operation on AmazonDAXClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndTagResource
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dax-2017-04-19/TagResource">REST API Reference for TagResource Operation</seealso>
+        public IAsyncResult BeginTagResource(TagResourceRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new TagResourceRequestMarshaller();
+            var unmarshaller = TagResourceResponseUnmarshaller.Instance;
+
+            return BeginInvoke<TagResourceRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  TagResource operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginTagResource.</param>
+        /// 
+        /// <returns>Returns a  TagResourceResult from DAX.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dax-2017-04-19/TagResource">REST API Reference for TagResource Operation</seealso>
+        public  TagResourceResponse EndTagResource(IAsyncResult asyncResult)
+        {
+            return EndInvoke<TagResourceResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UntagResource
+
+        /// <summary>
+        /// Removes the association of tags from a DAX resource. You can call <code>UntagResource</code>
+        /// up to 5 times per second, per account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
+        /// 
+        /// <returns>The response from the UntagResource service method, as returned by DAX.</returns>
+        /// <exception cref="Amazon.DAX.Model.ClusterNotFoundException">
+        /// The requested cluster ID does not refer to an existing DAX cluster.
+        /// </exception>
+        /// <exception cref="Amazon.DAX.Model.InvalidARNException">
+        /// The Amazon Resource Name (ARN) supplied in the request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.DAX.Model.InvalidClusterStateException">
+        /// The requested DAX cluster is not in the <i>available</i> state.
+        /// </exception>
+        /// <exception cref="Amazon.DAX.Model.InvalidParameterCombinationException">
+        /// Two or more incompatible parameters were specified.
+        /// </exception>
+        /// <exception cref="Amazon.DAX.Model.InvalidParameterValueException">
+        /// The value for a parameter is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.DAX.Model.TagNotFoundException">
+        /// The tag does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dax-2017-04-19/UntagResource">REST API Reference for UntagResource Operation</seealso>
+        public UntagResourceResponse UntagResource(UntagResourceRequest request)
+        {
+            var marshaller = new UntagResourceRequestMarshaller();
+            var unmarshaller = UntagResourceResponseUnmarshaller.Instance;
+
+            return Invoke<UntagResourceRequest,UntagResourceResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UntagResource operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UntagResource operation on AmazonDAXClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUntagResource
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dax-2017-04-19/UntagResource">REST API Reference for UntagResource Operation</seealso>
+        public IAsyncResult BeginUntagResource(UntagResourceRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new UntagResourceRequestMarshaller();
+            var unmarshaller = UntagResourceResponseUnmarshaller.Instance;
+
+            return BeginInvoke<UntagResourceRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UntagResource operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUntagResource.</param>
+        /// 
+        /// <returns>Returns a  UntagResourceResult from DAX.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dax-2017-04-19/UntagResource">REST API Reference for UntagResource Operation</seealso>
+        public  UntagResourceResponse EndUntagResource(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UntagResourceResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpdateCluster
+
+        /// <summary>
+        /// Modifies the settings for a DAX cluster. You can use this action to change one or
+        /// more cluster configuration parameters by specifying the parameters and the new values.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateCluster service method.</param>
+        /// 
+        /// <returns>The response from the UpdateCluster service method, as returned by DAX.</returns>
+        /// <exception cref="Amazon.DAX.Model.ClusterNotFoundException">
+        /// The requested cluster ID does not refer to an existing DAX cluster.
+        /// </exception>
+        /// <exception cref="Amazon.DAX.Model.InvalidClusterStateException">
+        /// The requested DAX cluster is not in the <i>available</i> state.
+        /// </exception>
+        /// <exception cref="Amazon.DAX.Model.InvalidParameterCombinationException">
+        /// Two or more incompatible parameters were specified.
+        /// </exception>
+        /// <exception cref="Amazon.DAX.Model.InvalidParameterGroupStateException">
+        /// One or more parameters in a parameter group are in an invalid state.
+        /// </exception>
+        /// <exception cref="Amazon.DAX.Model.InvalidParameterValueException">
+        /// The value for a parameter is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.DAX.Model.ParameterGroupNotFoundException">
+        /// The specified parameter group does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dax-2017-04-19/UpdateCluster">REST API Reference for UpdateCluster Operation</seealso>
+        public UpdateClusterResponse UpdateCluster(UpdateClusterRequest request)
+        {
+            var marshaller = new UpdateClusterRequestMarshaller();
+            var unmarshaller = UpdateClusterResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateClusterRequest,UpdateClusterResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateCluster operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateCluster operation on AmazonDAXClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateCluster
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dax-2017-04-19/UpdateCluster">REST API Reference for UpdateCluster Operation</seealso>
+        public IAsyncResult BeginUpdateCluster(UpdateClusterRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new UpdateClusterRequestMarshaller();
+            var unmarshaller = UpdateClusterResponseUnmarshaller.Instance;
+
+            return BeginInvoke<UpdateClusterRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateCluster operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateCluster.</param>
+        /// 
+        /// <returns>Returns a  UpdateClusterResult from DAX.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dax-2017-04-19/UpdateCluster">REST API Reference for UpdateCluster Operation</seealso>
+        public  UpdateClusterResponse EndUpdateCluster(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateClusterResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpdateParameterGroup
+
+        /// <summary>
+        /// Modifies the parameters of a parameter group. You can modify up to 20 parameters in
+        /// a single request by submitting a list parameter name and value pairs.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateParameterGroup service method.</param>
+        /// 
+        /// <returns>The response from the UpdateParameterGroup service method, as returned by DAX.</returns>
+        /// <exception cref="Amazon.DAX.Model.InvalidParameterCombinationException">
+        /// Two or more incompatible parameters were specified.
+        /// </exception>
+        /// <exception cref="Amazon.DAX.Model.InvalidParameterGroupStateException">
+        /// One or more parameters in a parameter group are in an invalid state.
+        /// </exception>
+        /// <exception cref="Amazon.DAX.Model.InvalidParameterValueException">
+        /// The value for a parameter is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.DAX.Model.ParameterGroupNotFoundException">
+        /// The specified parameter group does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dax-2017-04-19/UpdateParameterGroup">REST API Reference for UpdateParameterGroup Operation</seealso>
+        public UpdateParameterGroupResponse UpdateParameterGroup(UpdateParameterGroupRequest request)
+        {
+            var marshaller = new UpdateParameterGroupRequestMarshaller();
+            var unmarshaller = UpdateParameterGroupResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateParameterGroupRequest,UpdateParameterGroupResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateParameterGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateParameterGroup operation on AmazonDAXClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateParameterGroup
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dax-2017-04-19/UpdateParameterGroup">REST API Reference for UpdateParameterGroup Operation</seealso>
+        public IAsyncResult BeginUpdateParameterGroup(UpdateParameterGroupRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new UpdateParameterGroupRequestMarshaller();
+            var unmarshaller = UpdateParameterGroupResponseUnmarshaller.Instance;
+
+            return BeginInvoke<UpdateParameterGroupRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateParameterGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateParameterGroup.</param>
+        /// 
+        /// <returns>Returns a  UpdateParameterGroupResult from DAX.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dax-2017-04-19/UpdateParameterGroup">REST API Reference for UpdateParameterGroup Operation</seealso>
+        public  UpdateParameterGroupResponse EndUpdateParameterGroup(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateParameterGroupResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpdateSubnetGroup
+
+        /// <summary>
+        /// Modifies an existing subnet group.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateSubnetGroup service method.</param>
+        /// 
+        /// <returns>The response from the UpdateSubnetGroup service method, as returned by DAX.</returns>
+        /// <exception cref="Amazon.DAX.Model.InvalidSubnetException">
+        /// An invalid subnet identifier was specified.
+        /// </exception>
+        /// <exception cref="Amazon.DAX.Model.SubnetGroupNotFoundException">
+        /// The requested subnet group name does not refer to an existing subnet group.
+        /// </exception>
+        /// <exception cref="Amazon.DAX.Model.SubnetInUseException">
+        /// The requested subnet is being used by another subnet group.
+        /// </exception>
+        /// <exception cref="Amazon.DAX.Model.SubnetQuotaExceededException">
+        /// The request cannot be processed because it would exceed the allowed number of subnets
+        /// in a subnet group.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dax-2017-04-19/UpdateSubnetGroup">REST API Reference for UpdateSubnetGroup Operation</seealso>
+        public UpdateSubnetGroupResponse UpdateSubnetGroup(UpdateSubnetGroupRequest request)
+        {
+            var marshaller = new UpdateSubnetGroupRequestMarshaller();
+            var unmarshaller = UpdateSubnetGroupResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateSubnetGroupRequest,UpdateSubnetGroupResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateSubnetGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateSubnetGroup operation on AmazonDAXClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateSubnetGroup
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dax-2017-04-19/UpdateSubnetGroup">REST API Reference for UpdateSubnetGroup Operation</seealso>
+        public IAsyncResult BeginUpdateSubnetGroup(UpdateSubnetGroupRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new UpdateSubnetGroupRequestMarshaller();
+            var unmarshaller = UpdateSubnetGroupResponseUnmarshaller.Instance;
+
+            return BeginInvoke<UpdateSubnetGroupRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateSubnetGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateSubnetGroup.</param>
+        /// 
+        /// <returns>Returns a  UpdateSubnetGroupResult from DAX.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dax-2017-04-19/UpdateSubnetGroup">REST API Reference for UpdateSubnetGroup Operation</seealso>
+        public  UpdateSubnetGroupResponse EndUpdateSubnetGroup(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateSubnetGroupResponse>(asyncResult);
+        }
+
+        #endregion
+        
+    }
+}

@@ -47,6 +47,7 @@
         "CostAndUsageReport"              : "1.0.0-*",
         "DatabaseMigrationService"        : "1.0.0-*",
         "DataPipeline"                    : "1.0.0-*",
+        "DAX"                             : "1.0.0-*",
         "DeviceFarm"                      : "1.0.0-*",
         "DirectConnect"                   : "1.0.0-*",
         "DirectoryService"                : "1.0.0-*",

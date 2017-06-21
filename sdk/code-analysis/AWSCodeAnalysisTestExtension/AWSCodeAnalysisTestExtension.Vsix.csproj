@@ -192,6 +192,10 @@
       <Project>{CA4F8900-EA2E-44CD-AFCC-B4BE1F7AF3EA}</Project>
       <Name>AWSSDK.DataPipeline.CodeAnalysis</Name>
     </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/DAX/AWSSDK.DAX.CodeAnalysis.csproj">
+      <Project>{058AC9AA-575E-41B0-BB07-ACB97F16D056}</Project>
+      <Name>AWSSDK.DAX.CodeAnalysis</Name>
+    </ProjectReference>
     <ProjectReference Include="../ServiceAnalysis/DeviceFarm/AWSSDK.DeviceFarm.CodeAnalysis.csproj">
       <Project>{5243BCF3-1EF1-4878-BFC0-6ED9CAF57881}</Project>
       <Name>AWSSDK.DeviceFarm.CodeAnalysis</Name>

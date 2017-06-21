@@ -205,6 +205,10 @@
       <Project>{DA8B7290-B3D2-4440-AE91-32C946BF86F1}</Project>
       <Name>AWSSDK.DataPipeline.Net35</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\src\Services\DAX\AWSSDK.DAX.Net35.csproj">
+      <Project>{CBA09C61-7211-4495-9954-1C6E5DC9346D}</Project>
+      <Name>AWSSDK.DAX.Net35</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\src\Services\DeviceFarm\AWSSDK.DeviceFarm.Net35.csproj">
       <Project>{24F0A0C5-C22E-425E-8C9D-91694AA36190}</Project>
       <Name>AWSSDK.DeviceFarm.Net35</Name>
