@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for DescribeParameters operation
+    /// Response Unmarshaller for DeleteParameters operation
     /// </summary>  
-    public class DescribeParametersResponseUnmarshaller : JsonResponseUnmarshaller
+    public class DeleteParametersResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,22 +45,22 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            DescribeParametersResponse response = new DescribeParametersResponse();
+            DeleteParametersResponse response = new DeleteParametersResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("NextToken", targetDepth))
+                if (context.TestExpression("DeletedParameters", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.NextToken = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    response.DeletedParameters = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("Parameters", targetDepth))
+                if (context.TestExpression("InvalidParameters", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<ParameterMetadata, ParameterMetadataUnmarshaller>(ParameterMetadataUnmarshaller.Instance);
-                    response.Parameters = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    response.InvalidParameters = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -82,28 +82,12 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
             {
                 return new InternalServerErrorException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidFilterKey"))
-            {
-                return new InvalidFilterKeyException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidFilterOption"))
-            {
-                return new InvalidFilterOptionException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidFilterValue"))
-            {
-                return new InvalidFilterValueException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidNextToken"))
-            {
-                return new InvalidNextTokenException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
             return new AmazonSimpleSystemsManagementException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
 
-        private static DescribeParametersResponseUnmarshaller _instance = new DescribeParametersResponseUnmarshaller();        
+        private static DeleteParametersResponseUnmarshaller _instance = new DeleteParametersResponseUnmarshaller();        
 
-        internal static DescribeParametersResponseUnmarshaller GetInstance()
+        internal static DeleteParametersResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -111,7 +95,7 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static DescribeParametersResponseUnmarshaller Instance
+        public static DeleteParametersResponseUnmarshaller Instance
         {
             get
             {

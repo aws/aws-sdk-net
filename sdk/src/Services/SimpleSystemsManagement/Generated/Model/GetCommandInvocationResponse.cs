@@ -124,8 +124,17 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Gets and sets the property ExecutionEndDateTime. 
         /// <para>
         /// The date and time the plugin was finished executing. Date and time are written in
-        /// ISO 8601 format. For example, August 28, 2016 is represented as 2016-08-28. If the
-        /// plugin has not started to execute, the string is empty.
+        /// ISO 8601 format. For example, June 7, 2017 is represented as 2017-06-7. The following
+        /// sample AWS CLI command uses the <code>InvokedAfter</code> filter.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>aws ssm list-commands --filters key=InvokedAfter,value=2017-06-07T00:00:00Z</code>
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        /// If the plugin has not started to execute, the string is empty.
         /// </para>
         /// </summary>
         public string ExecutionEndDateTime
@@ -144,8 +153,17 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Gets and sets the property ExecutionStartDateTime. 
         /// <para>
         /// The date and time the plugin started executing. Date and time are written in ISO 8601
-        /// format. For example, August 28, 2016 is represented as 2016-08-28. If the plugin has
-        /// not started to execute, the string is empty.
+        /// format. For example, June 7, 2017 is represented as 2017-06-7. The following sample
+        /// AWS CLI command uses the <code>InvokedBefore</code> filter.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>aws ssm list-commands --filters key=InvokedBefore,value=2017-06-07T00:00:00Z</code>
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        /// If the plugin has not started to execute, the string is empty.
         /// </para>
         /// </summary>
         public string ExecutionStartDateTime

@@ -95,6 +95,22 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.NextToken);
                 }
 
+                if(publicRequest.IsSetParameterFilters())
+                {
+                    context.Writer.WritePropertyName("ParameterFilters");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestParameterFiltersListValue in publicRequest.ParameterFilters)
+                    {
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = ParameterStringFilterMarshaller.Instance;
+                        marshaller.Marshall(publicRequestParameterFiltersListValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
         
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();

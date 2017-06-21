@@ -28,48 +28,49 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
-    /// This is the response object from the DescribeActivations operation.
+    /// Container for the parameters to the GetParameter operation.
+    /// Get information about a parameter by using the parameter name.
     /// </summary>
-    public partial class DescribeActivationsResponse : AmazonWebServiceResponse
+    public partial class GetParameterRequest : AmazonSimpleSystemsManagementRequest
     {
-        private List<Activation> _activationList = new List<Activation>();
-        private string _nextToken;
+        private string _name;
+        private bool? _withDecryption;
 
         /// <summary>
-        /// Gets and sets the property ActivationList. 
+        /// Gets and sets the property Name. 
         /// <para>
-        /// A list of activations for your AWS account.
+        /// The name of the parameter you want to query.
         /// </para>
         /// </summary>
-        public List<Activation> ActivationList
+        public string Name
         {
-            get { return this._activationList; }
-            set { this._activationList = value; }
+            get { return this._name; }
+            set { this._name = value; }
         }
 
-        // Check to see if ActivationList property is set
-        internal bool IsSetActivationList()
+        // Check to see if Name property is set
+        internal bool IsSetName()
         {
-            return this._activationList != null && this._activationList.Count > 0; 
+            return this._name != null;
         }
 
         /// <summary>
-        /// Gets and sets the property NextToken. 
+        /// Gets and sets the property WithDecryption. 
         /// <para>
-        /// The token for the next set of items to return. Use this token to get the next set
-        /// of results. 
+        /// Return decrypted values for secure string parameters. This flag is ignored for String
+        /// and StringList parameter types.
         /// </para>
         /// </summary>
-        public string NextToken
+        public bool WithDecryption
         {
-            get { return this._nextToken; }
-            set { this._nextToken = value; }
+            get { return this._withDecryption.GetValueOrDefault(); }
+            set { this._withDecryption = value; }
         }
 
-        // Check to see if NextToken property is set
-        internal bool IsSetNextToken()
+        // Check to see if WithDecryption property is set
+        internal bool IsSetWithDecryption()
         {
-            return this._nextToken != null;
+            return this._withDecryption.HasValue; 
         }
 
     }

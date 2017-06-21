@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// PutParameter Request Marshaller
+    /// DeleteParameters Request Marshaller
     /// </summary>       
-    public class PutParameterRequestMarshaller : IMarshaller<IRequest, PutParameterRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class DeleteParametersRequestMarshaller : IMarshaller<IRequest, DeleteParametersRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((PutParameterRequest)input);
+            return this.Marshall((DeleteParametersRequest)input);
         }
 
         /// <summary>
@@ -52,10 +52,10 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(PutParameterRequest publicRequest)
+        public IRequest Marshall(DeleteParametersRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.SimpleSystemsManagement");
-            string target = "AmazonSSM.PutParameter";
+            string target = "AmazonSSM.DeleteParameters";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
             request.HttpMethod = "POST";
@@ -67,46 +67,15 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAllowedPattern())
+                if(publicRequest.IsSetNames())
                 {
-                    context.Writer.WritePropertyName("AllowedPattern");
-                    context.Writer.Write(publicRequest.AllowedPattern);
-                }
-
-                if(publicRequest.IsSetDescription())
-                {
-                    context.Writer.WritePropertyName("Description");
-                    context.Writer.Write(publicRequest.Description);
-                }
-
-                if(publicRequest.IsSetKeyId())
-                {
-                    context.Writer.WritePropertyName("KeyId");
-                    context.Writer.Write(publicRequest.KeyId);
-                }
-
-                if(publicRequest.IsSetName())
-                {
-                    context.Writer.WritePropertyName("Name");
-                    context.Writer.Write(publicRequest.Name);
-                }
-
-                if(publicRequest.IsSetOverwrite())
-                {
-                    context.Writer.WritePropertyName("Overwrite");
-                    context.Writer.Write(publicRequest.Overwrite);
-                }
-
-                if(publicRequest.IsSetType())
-                {
-                    context.Writer.WritePropertyName("Type");
-                    context.Writer.Write(publicRequest.Type);
-                }
-
-                if(publicRequest.IsSetValue())
-                {
-                    context.Writer.WritePropertyName("Value");
-                    context.Writer.Write(publicRequest.Value);
+                    context.Writer.WritePropertyName("Names");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestNamesListValue in publicRequest.Names)
+                    {
+                            context.Writer.Write(publicRequestNamesListValue);
+                    }
+                    context.Writer.WriteArrayEnd();
                 }
 
         

@@ -29,16 +29,37 @@ namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
     /// Container for the parameters to the PutParameter operation.
-    /// Add one or more paramaters to the system.
+    /// Add one or more parameters to the system.
     /// </summary>
     public partial class PutParameterRequest : AmazonSimpleSystemsManagementRequest
     {
+        private string _allowedPattern;
         private string _description;
         private string _keyId;
         private string _name;
         private bool? _overwrite;
         private ParameterType _type;
         private string _value;
+
+        /// <summary>
+        /// Gets and sets the property AllowedPattern. 
+        /// <para>
+        /// A regular expression used to validate the parameter value. For example, for String
+        /// types with values restricted to numbers, you can specify the following: AllowedPattern=^\d+$
+        /// 
+        /// </para>
+        /// </summary>
+        public string AllowedPattern
+        {
+            get { return this._allowedPattern; }
+            set { this._allowedPattern = value; }
+        }
+
+        // Check to see if AllowedPattern property is set
+        internal bool IsSetAllowedPattern()
+        {
+            return this._allowedPattern != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Description. 
@@ -61,7 +82,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property KeyId. 
         /// <para>
-        /// The parameter key ID that you want to add to the system.
+        /// The KMS Key ID that you want to use to encrypt a parameter when you choose the SecureString
+        /// data type. If you don't specify a key ID, the system uses the default key associated
+        /// with your AWS account.
         /// </para>
         /// </summary>
         public string KeyId

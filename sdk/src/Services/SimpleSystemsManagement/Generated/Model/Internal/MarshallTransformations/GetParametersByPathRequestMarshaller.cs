@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// PutParameter Request Marshaller
+    /// GetParametersByPath Request Marshaller
     /// </summary>       
-    public class PutParameterRequestMarshaller : IMarshaller<IRequest, PutParameterRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class GetParametersByPathRequestMarshaller : IMarshaller<IRequest, GetParametersByPathRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((PutParameterRequest)input);
+            return this.Marshall((GetParametersByPathRequest)input);
         }
 
         /// <summary>
@@ -52,10 +52,10 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(PutParameterRequest publicRequest)
+        public IRequest Marshall(GetParametersByPathRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.SimpleSystemsManagement");
-            string target = "AmazonSSM.PutParameter";
+            string target = "AmazonSSM.GetParametersByPath";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
             request.HttpMethod = "POST";
@@ -67,46 +67,50 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAllowedPattern())
+                if(publicRequest.IsSetMaxResults())
                 {
-                    context.Writer.WritePropertyName("AllowedPattern");
-                    context.Writer.Write(publicRequest.AllowedPattern);
+                    context.Writer.WritePropertyName("MaxResults");
+                    context.Writer.Write(publicRequest.MaxResults);
                 }
 
-                if(publicRequest.IsSetDescription())
+                if(publicRequest.IsSetNextToken())
                 {
-                    context.Writer.WritePropertyName("Description");
-                    context.Writer.Write(publicRequest.Description);
+                    context.Writer.WritePropertyName("NextToken");
+                    context.Writer.Write(publicRequest.NextToken);
                 }
 
-                if(publicRequest.IsSetKeyId())
+                if(publicRequest.IsSetParameterFilters())
                 {
-                    context.Writer.WritePropertyName("KeyId");
-                    context.Writer.Write(publicRequest.KeyId);
+                    context.Writer.WritePropertyName("ParameterFilters");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestParameterFiltersListValue in publicRequest.ParameterFilters)
+                    {
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = ParameterStringFilterMarshaller.Instance;
+                        marshaller.Marshall(publicRequestParameterFiltersListValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteArrayEnd();
                 }
 
-                if(publicRequest.IsSetName())
+                if(publicRequest.IsSetPath())
                 {
-                    context.Writer.WritePropertyName("Name");
-                    context.Writer.Write(publicRequest.Name);
+                    context.Writer.WritePropertyName("Path");
+                    context.Writer.Write(publicRequest.Path);
                 }
 
-                if(publicRequest.IsSetOverwrite())
+                if(publicRequest.IsSetRecursive())
                 {
-                    context.Writer.WritePropertyName("Overwrite");
-                    context.Writer.Write(publicRequest.Overwrite);
+                    context.Writer.WritePropertyName("Recursive");
+                    context.Writer.Write(publicRequest.Recursive);
                 }
 
-                if(publicRequest.IsSetType())
+                if(publicRequest.IsSetWithDecryption())
                 {
-                    context.Writer.WritePropertyName("Type");
-                    context.Writer.Write(publicRequest.Type);
-                }
-
-                if(publicRequest.IsSetValue())
-                {
-                    context.Writer.WritePropertyName("Value");
-                    context.Writer.Write(publicRequest.Value);
+                    context.Writer.WritePropertyName("WithDecryption");
+                    context.Writer.Write(publicRequest.WithDecryption);
                 }
 
         

@@ -287,8 +287,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property OutputS3Region. 
         /// <para>
-        /// The region where the Amazon Simple Storage Service (Amazon S3) output bucket is located.
-        /// The default value is the region where Run Command is being called.
+        /// (Deprecated) You can no longer specify this parameter. The system ignores it. Instead,
+        /// Systems Manager automatically determines the Amazon S3 bucket region.
         /// </para>
         /// </summary>
         public string OutputS3Region

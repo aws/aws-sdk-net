@@ -47,7 +47,7 @@ namespace Amazon.SimpleSystemsManagement
     ///  
     /// <para>
     /// To get started, verify prerequisites and configure managed instances. For more information,
-    /// see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-prereqs.html">Systems
+    /// see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-setting-up.html">Systems
     /// Manager Prerequisites</a>.
     /// </para>
     /// </summary>
@@ -1207,6 +1207,49 @@ namespace Amazon.SimpleSystemsManagement
         /// <returns>Returns a  DeleteParameterResult from SimpleSystemsManagement.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeleteParameter">REST API Reference for DeleteParameter Operation</seealso>
         DeleteParameterResponse EndDeleteParameter(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DeleteParameters
+
+
+        /// <summary>
+        /// Delete a list of parameters.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteParameters service method.</param>
+        /// 
+        /// <returns>The response from the DeleteParameters service method, as returned by SimpleSystemsManagement.</returns>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeleteParameters">REST API Reference for DeleteParameters Operation</seealso>
+        DeleteParametersResponse DeleteParameters(DeleteParametersRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteParameters operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteParameters operation on AmazonSimpleSystemsManagementClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteParameters
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeleteParameters">REST API Reference for DeleteParameters Operation</seealso>
+        IAsyncResult BeginDeleteParameters(DeleteParametersRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteParameters operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteParameters.</param>
+        /// 
+        /// <returns>Returns a  DeleteParametersResult from SimpleSystemsManagement.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeleteParameters">REST API Reference for DeleteParameters Operation</seealso>
+        DeleteParametersResponse EndDeleteParameters(IAsyncResult asyncResult);
 
         #endregion
         
@@ -2620,6 +2663,13 @@ namespace Amazon.SimpleSystemsManagement
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
         /// An error occurred on the server side.
         /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidFilterKeyException">
+        /// The specified key is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidFilterOptionException">
+        /// The specified filter option is not valid. Valid options are Equals and BeginsWith.
+        /// For Path filter, valid options are Recursive and OneLevel.
+        /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidFilterValueException">
         /// The filter value is not valid. Verify the value and try again.
         /// </exception>
@@ -3314,6 +3364,55 @@ namespace Amazon.SimpleSystemsManagement
 
         #endregion
         
+        #region  GetParameter
+
+
+        /// <summary>
+        /// Get information about a parameter by using the parameter name.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetParameter service method.</param>
+        /// 
+        /// <returns>The response from the GetParameter service method, as returned by SimpleSystemsManagement.</returns>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidKeyIdException">
+        /// The query key ID is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.ParameterNotFoundException">
+        /// The parameter could not be found. Verify the name and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetParameter">REST API Reference for GetParameter Operation</seealso>
+        GetParameterResponse GetParameter(GetParameterRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetParameter operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetParameter operation on AmazonSimpleSystemsManagementClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetParameter
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetParameter">REST API Reference for GetParameter Operation</seealso>
+        IAsyncResult BeginGetParameter(GetParameterRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetParameter operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetParameter.</param>
+        /// 
+        /// <returns>Returns a  GetParameterResult from SimpleSystemsManagement.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetParameter">REST API Reference for GetParameter Operation</seealso>
+        GetParameterResponse EndGetParameter(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  GetParameterHistory
 
 
@@ -3325,6 +3424,9 @@ namespace Amazon.SimpleSystemsManagement
         /// <returns>The response from the GetParameterHistory service method, as returned by SimpleSystemsManagement.</returns>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
         /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidKeyIdException">
+        /// The query key ID is not valid.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidNextTokenException">
         /// The specified token is not valid.
@@ -3375,6 +3477,9 @@ namespace Amazon.SimpleSystemsManagement
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
         /// An error occurred on the server side.
         /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidKeyIdException">
+        /// The query key ID is not valid.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetParameters">REST API Reference for GetParameters Operation</seealso>
         GetParametersResponse GetParameters(GetParametersRequest request);
 
@@ -3403,6 +3508,66 @@ namespace Amazon.SimpleSystemsManagement
         /// <returns>Returns a  GetParametersResult from SimpleSystemsManagement.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetParameters">REST API Reference for GetParameters Operation</seealso>
         GetParametersResponse EndGetParameters(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  GetParametersByPath
+
+
+        /// <summary>
+        /// Retrieve parameters in a specific hierarchy. For more information, see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-working-path.html">Using
+        /// Parameter Hierarchies</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetParametersByPath service method.</param>
+        /// 
+        /// <returns>The response from the GetParametersByPath service method, as returned by SimpleSystemsManagement.</returns>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidFilterKeyException">
+        /// The specified key is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidFilterOptionException">
+        /// The specified filter option is not valid. Valid options are Equals and BeginsWith.
+        /// For Path filter, valid options are Recursive and OneLevel.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidFilterValueException">
+        /// The filter value is not valid. Verify the value and try again.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidKeyIdException">
+        /// The query key ID is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidNextTokenException">
+        /// The specified token is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetParametersByPath">REST API Reference for GetParametersByPath Operation</seealso>
+        GetParametersByPathResponse GetParametersByPath(GetParametersByPathRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetParametersByPath operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetParametersByPath operation on AmazonSimpleSystemsManagementClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetParametersByPath
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetParametersByPath">REST API Reference for GetParametersByPath Operation</seealso>
+        IAsyncResult BeginGetParametersByPath(GetParametersByPathRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetParametersByPath operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetParametersByPath.</param>
+        /// 
+        /// <returns>Returns a  GetParametersByPathResult from SimpleSystemsManagement.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetParametersByPath">REST API Reference for GetParametersByPath Operation</seealso>
+        GetParametersByPathResponse EndGetParametersByPath(IAsyncResult asyncResult);
 
         #endregion
         
@@ -4283,13 +4448,34 @@ namespace Amazon.SimpleSystemsManagement
 
 
         /// <summary>
-        /// Add one or more paramaters to the system.
+        /// Add one or more parameters to the system.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutParameter service method.</param>
         /// 
         /// <returns>The response from the PutParameter service method, as returned by SimpleSystemsManagement.</returns>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.HierarchyLevelLimitExceededException">
+        /// A hierarchy can have a maximum of five levels. For example:
+        /// 
+        ///  
+        /// <para>
+        /// /Finance/Prod/IAD/OS/WinServ2016/license15
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-working-path.html">Develop
+        /// a Parameter Hierarchy</a>. 
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.HierarchyTypeMismatchException">
+        /// Parameter Store does not support changing a parameter type in a hierarchy. For example,
+        /// you can't change a parameter from a String type to a SecureString type. You must create
+        /// a new, unique parameter.
+        /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
         /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidAllowedPatternException">
+        /// The request does not meet the regular expression requirement.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidKeyIdException">
         /// The query key ID is not valid.
@@ -4300,6 +4486,9 @@ namespace Amazon.SimpleSystemsManagement
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.ParameterLimitExceededException">
         /// You have exceeded the number of parameters for this AWS account. Delete one or more
         /// parameters and try again.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.ParameterPatternMismatchException">
+        /// The parameter name is not valid.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.TooManyUpdatesException">
         /// There are concurrent updates for a resource that supports one update at a time.
@@ -4610,10 +4799,10 @@ namespace Amazon.SimpleSystemsManagement
 
 
         /// <summary>
-        /// Executes commands on one or more remote instances.
+        /// Executes commands on one or more managed instances.
         /// </summary>
         /// <param name="documentName">Required. The name of the Systems Manager document to execute. This can be a public document or a custom document.</param>
-        /// <param name="instanceIds">The instance IDs where the command should execute. You can specify a maximum of 50 IDs. If you prefer not to list individual instance IDs, you can instead send commands to a fleet of instances using the Targets parameter, which accepts EC2 tags.</param>
+        /// <param name="instanceIds">The instance IDs where the command should execute. You can specify a maximum of 50 IDs. If you prefer not to list individual instance IDs, you can instead send commands to a fleet of instances using the Targets parameter, which accepts EC2 tags. For more information about how to use Targets, see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Sending Commands to a Fleet</a>.</param>
         /// 
         /// <returns>The response from the SendCommand service method, as returned by SimpleSystemsManagement.</returns>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.DuplicateInstanceIdException">
@@ -4678,7 +4867,7 @@ namespace Amazon.SimpleSystemsManagement
         SendCommandResponse SendCommand(string documentName, List<string> instanceIds);
 
         /// <summary>
-        /// Executes commands on one or more remote instances.
+        /// Executes commands on one or more managed instances.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SendCommand service method.</param>
         /// 

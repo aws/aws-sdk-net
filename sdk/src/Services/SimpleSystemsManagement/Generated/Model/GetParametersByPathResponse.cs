@@ -28,36 +28,18 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
-    /// This is the response object from the DescribeActivations operation.
+    /// This is the response object from the GetParametersByPath operation.
     /// </summary>
-    public partial class DescribeActivationsResponse : AmazonWebServiceResponse
+    public partial class GetParametersByPathResponse : AmazonWebServiceResponse
     {
-        private List<Activation> _activationList = new List<Activation>();
         private string _nextToken;
-
-        /// <summary>
-        /// Gets and sets the property ActivationList. 
-        /// <para>
-        /// A list of activations for your AWS account.
-        /// </para>
-        /// </summary>
-        public List<Activation> ActivationList
-        {
-            get { return this._activationList; }
-            set { this._activationList = value; }
-        }
-
-        // Check to see if ActivationList property is set
-        internal bool IsSetActivationList()
-        {
-            return this._activationList != null && this._activationList.Count > 0; 
-        }
+        private List<Parameter> _parameters = new List<Parameter>();
 
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
         /// The token for the next set of items to return. Use this token to get the next set
-        /// of results. 
+        /// of results.
         /// </para>
         /// </summary>
         public string NextToken
@@ -70,6 +52,24 @@ namespace Amazon.SimpleSystemsManagement.Model
         internal bool IsSetNextToken()
         {
             return this._nextToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Parameters. 
+        /// <para>
+        /// A list of parameters found in the specified hierarchy.
+        /// </para>
+        /// </summary>
+        public List<Parameter> Parameters
+        {
+            get { return this._parameters; }
+            set { this._parameters = value; }
+        }
+
+        // Check to see if Parameters property is set
+        internal bool IsSetParameters()
+        {
+            return this._parameters != null && this._parameters.Count > 0; 
         }
 
     }

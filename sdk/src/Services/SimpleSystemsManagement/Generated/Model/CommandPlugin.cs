@@ -167,7 +167,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property OutputS3Region. 
         /// <para>
-        /// The name of the region where the output is stored in Amazon S3.
+        /// (Deprecated) You can no longer specify this parameter. The system ignores it. Instead,
+        /// Systems Manager automatically determines the Amazon S3 bucket region.
         /// </para>
         /// </summary>
         public string OutputS3Region

@@ -28,47 +28,28 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
-    /// Describes a command filter.
+    /// This is the response object from the GetParameter operation.
     /// </summary>
-    public partial class CommandFilter
+    public partial class GetParameterResponse : AmazonWebServiceResponse
     {
-        private CommandFilterKey _key;
-        private string _value;
+        private Parameter _parameter;
 
         /// <summary>
-        /// Gets and sets the property Key. 
+        /// Gets and sets the property Parameter. 
         /// <para>
-        /// The name of the filter.
+        /// Information about a parameter.
         /// </para>
         /// </summary>
-        public CommandFilterKey Key
+        public Parameter Parameter
         {
-            get { return this._key; }
-            set { this._key = value; }
+            get { return this._parameter; }
+            set { this._parameter = value; }
         }
 
-        // Check to see if Key property is set
-        internal bool IsSetKey()
+        // Check to see if Parameter property is set
+        internal bool IsSetParameter()
         {
-            return this._key != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property Value. 
-        /// <para>
-        /// The filter value. 
-        /// </para>
-        /// </summary>
-        public string Value
-        {
-            get { return this._value; }
-            set { this._value = value; }
-        }
-
-        // Check to see if Value property is set
-        internal bool IsSetValue()
-        {
-            return this._value != null;
+            return this._parameter != null;
         }
 
     }

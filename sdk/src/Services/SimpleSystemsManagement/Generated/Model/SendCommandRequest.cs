@@ -29,7 +29,7 @@ namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
     /// Container for the parameters to the SendCommand operation.
-    /// Executes commands on one or more remote instances.
+    /// Executes commands on one or more managed instances.
     /// </summary>
     public partial class SendCommandRequest : AmazonSimpleSystemsManagementRequest
     {
@@ -58,7 +58,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Instantiates SendCommandRequest with the parameterized properties
         /// </summary>
         /// <param name="documentName">Required. The name of the Systems Manager document to execute. This can be a public document or a custom document.</param>
-        /// <param name="instanceIds">The instance IDs where the command should execute. You can specify a maximum of 50 IDs. If you prefer not to list individual instance IDs, you can instead send commands to a fleet of instances using the Targets parameter, which accepts EC2 tags.</param>
+        /// <param name="instanceIds">The instance IDs where the command should execute. You can specify a maximum of 50 IDs. If you prefer not to list individual instance IDs, you can instead send commands to a fleet of instances using the Targets parameter, which accepts EC2 tags. For more information about how to use Targets, see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Sending Commands to a Fleet</a>.</param>
         public SendCommandRequest(string documentName, List<string> instanceIds)
         {
             _documentName = documentName;
@@ -154,7 +154,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <para>
         /// The instance IDs where the command should execute. You can specify a maximum of 50
         /// IDs. If you prefer not to list individual instance IDs, you can instead send commands
-        /// to a fleet of instances using the Targets parameter, which accepts EC2 tags.
+        /// to a fleet of instances using the Targets parameter, which accepts EC2 tags. For more
+        /// information about how to use Targets, see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Sending
+        /// Commands to a Fleet</a>.
         /// </para>
         /// </summary>
         public List<string> InstanceIds
@@ -175,8 +177,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// (Optional) The maximum number of instances that are allowed to execute the command
         /// at the same time. You can specify a number such as 10 or a percentage such as 10%.
         /// The default value is 50. For more information about how to use MaxConcurrency, see
-        /// <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Executing
-        /// a Command Using Systems Manager Run Command</a>.
+        /// <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-velocity.html">Using
+        /// Concurrency Controls</a>.
         /// </para>
         /// </summary>
         public string MaxConcurrency
@@ -197,8 +199,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The maximum number of errors allowed without the command failing. When the command
         /// fails one more time beyond the value of MaxErrors, the systems stops sending the command
         /// to additional targets. You can specify a number like 10 or a percentage like 10%.
-        /// The default value is 50. For more information about how to use MaxErrors, see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Executing
-        /// a Command Using Systems Manager Run Command</a>.
+        /// The default value is 50. For more information about how to use MaxErrors, see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-maxerrors.html">Using
+        /// Error Controls</a>.
         /// </para>
         /// </summary>
         public string MaxErrors
@@ -270,8 +272,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property OutputS3Region. 
         /// <para>
-        /// (Optional) The region where the Amazon Simple Storage Service (Amazon S3) output bucket
-        /// is located. The default value is the region where Run Command is being called.
+        /// (Deprecated) You can no longer specify this parameter. The system ignores it. Instead,
+        /// Systems Manager automatically determines the Amazon S3 bucket region.
         /// </para>
         /// </summary>
         public string OutputS3Region
@@ -327,8 +329,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <para>
         /// (Optional) An array of search criteria that targets instances using a Key,Value combination
         /// that you specify. Targets is required if you don't provide one or more instance IDs
-        /// in the call. For more information about how to use Targets, see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Executing
-        /// a Command Using Systems Manager Run Command</a>.
+        /// in the call. For more information about how to use Targets, see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Sending
+        /// Commands to a Fleet</a>.
         /// </para>
         /// </summary>
         public List<Target> Targets

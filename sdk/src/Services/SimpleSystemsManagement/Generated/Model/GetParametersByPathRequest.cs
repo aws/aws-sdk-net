@@ -28,33 +28,18 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
-    /// Container for the parameters to the DescribeParameters operation.
-    /// Get information about a parameter.
+    /// Container for the parameters to the GetParametersByPath operation.
+    /// Retrieve parameters in a specific hierarchy. For more information, see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-working-path.html">Using
+    /// Parameter Hierarchies</a>.
     /// </summary>
-    public partial class DescribeParametersRequest : AmazonSimpleSystemsManagementRequest
+    public partial class GetParametersByPathRequest : AmazonSimpleSystemsManagementRequest
     {
-        private List<ParametersFilter> _filters = new List<ParametersFilter>();
         private int? _maxResults;
         private string _nextToken;
         private List<ParameterStringFilter> _parameterFilters = new List<ParameterStringFilter>();
-
-        /// <summary>
-        /// Gets and sets the property Filters. 
-        /// <para>
-        /// One or more filters. Use a filter to return a more specific list of results.
-        /// </para>
-        /// </summary>
-        public List<ParametersFilter> Filters
-        {
-            get { return this._filters; }
-            set { this._filters = value; }
-        }
-
-        // Check to see if Filters property is set
-        internal bool IsSetFilters()
-        {
-            return this._filters != null && this._filters.Count > 0; 
-        }
+        private string _path;
+        private bool? _recursive;
+        private bool? _withDecryption;
 
         /// <summary>
         /// Gets and sets the property MaxResults. 
@@ -78,8 +63,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// The token for the next set of items to return. (You received this token from a previous
-        /// call.)
+        /// A token to start the list. Use this token to get the next set of results. 
         /// </para>
         /// </summary>
         public string NextToken
@@ -110,6 +94,66 @@ namespace Amazon.SimpleSystemsManagement.Model
         internal bool IsSetParameterFilters()
         {
             return this._parameterFilters != null && this._parameterFilters.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Path. 
+        /// <para>
+        /// The hierarchy for the parameter. Hierarchies start with a forward slash (/) and end
+        /// with the parameter name. A hierarchy can have a maximum of five levels. Examples:
+        /// /Environment/Test/DBString003
+        /// </para>
+        ///  
+        /// <para>
+        /// /Finance/Prod/IAD/OS/WinServ2016/license15
+        /// </para>
+        /// </summary>
+        public string Path
+        {
+            get { return this._path; }
+            set { this._path = value; }
+        }
+
+        // Check to see if Path property is set
+        internal bool IsSetPath()
+        {
+            return this._path != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Recursive. 
+        /// <para>
+        /// Retrieve all parameters within a hierarchy.
+        /// </para>
+        /// </summary>
+        public bool Recursive
+        {
+            get { return this._recursive.GetValueOrDefault(); }
+            set { this._recursive = value; }
+        }
+
+        // Check to see if Recursive property is set
+        internal bool IsSetRecursive()
+        {
+            return this._recursive.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property WithDecryption. 
+        /// <para>
+        /// Retrieve all parameters in a hierarchy with their value decrypted.
+        /// </para>
+        /// </summary>
+        public bool WithDecryption
+        {
+            get { return this._withDecryption.GetValueOrDefault(); }
+            set { this._withDecryption = value; }
+        }
+
+        // Check to see if WithDecryption property is set
+        internal bool IsSetWithDecryption()
+        {
+            return this._withDecryption.HasValue; 
         }
 
     }

@@ -32,6 +32,7 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// </summary>
     public partial class ParameterHistory
     {
+        private string _allowedPattern;
         private string _description;
         private string _keyId;
         private DateTime? _lastModifiedDate;
@@ -39,6 +40,28 @@ namespace Amazon.SimpleSystemsManagement.Model
         private string _name;
         private ParameterType _type;
         private string _value;
+
+        /// <summary>
+        /// Gets and sets the property AllowedPattern. 
+        /// <para>
+        /// Parameter names can include the following letters and symbols.
+        /// </para>
+        ///  
+        /// <para>
+        /// a-zA-Z0-9_.-
+        /// </para>
+        /// </summary>
+        public string AllowedPattern
+        {
+            get { return this._allowedPattern; }
+            set { this._allowedPattern = value; }
+        }
+
+        // Check to see if AllowedPattern property is set
+        internal bool IsSetAllowedPattern()
+        {
+            return this._allowedPattern != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Description. 

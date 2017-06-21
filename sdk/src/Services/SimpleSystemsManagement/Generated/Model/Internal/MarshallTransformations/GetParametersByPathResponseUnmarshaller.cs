@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for DescribeParameters operation
+    /// Response Unmarshaller for GetParametersByPath operation
     /// </summary>  
-    public class DescribeParametersResponseUnmarshaller : JsonResponseUnmarshaller
+    public class GetParametersByPathResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,7 +45,7 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            DescribeParametersResponse response = new DescribeParametersResponse();
+            GetParametersByPathResponse response = new GetParametersByPathResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
@@ -59,7 +59,7 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("Parameters", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<ParameterMetadata, ParameterMetadataUnmarshaller>(ParameterMetadataUnmarshaller.Instance);
+                    var unmarshaller = new ListUnmarshaller<Parameter, ParameterUnmarshaller>(ParameterUnmarshaller.Instance);
                     response.Parameters = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -94,6 +94,10 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
             {
                 return new InvalidFilterValueException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidKeyId"))
+            {
+                return new InvalidKeyIdException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
             if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidNextToken"))
             {
                 return new InvalidNextTokenException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
@@ -101,9 +105,9 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
             return new AmazonSimpleSystemsManagementException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
 
-        private static DescribeParametersResponseUnmarshaller _instance = new DescribeParametersResponseUnmarshaller();        
+        private static GetParametersByPathResponseUnmarshaller _instance = new GetParametersByPathResponseUnmarshaller();        
 
-        internal static DescribeParametersResponseUnmarshaller GetInstance()
+        internal static GetParametersByPathResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -111,7 +115,7 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static DescribeParametersResponseUnmarshaller Instance
+        public static GetParametersByPathResponseUnmarshaller Instance
         {
             get
             {

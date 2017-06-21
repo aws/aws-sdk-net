@@ -54,7 +54,7 @@ namespace Amazon.SimpleSystemsManagement
     ///  
     /// <para>
     /// To get started, verify prerequisites and configure managed instances. For more information,
-    /// see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-prereqs.html">Systems
+    /// see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-setting-up.html">Systems
     /// Manager Prerequisites</a>.
     /// </para>
     /// </summary>
@@ -1002,6 +1002,38 @@ namespace Amazon.SimpleSystemsManagement
             var unmarshaller = DeleteParameterResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteParameterRequest,DeleteParameterResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteParameters
+
+        internal DeleteParametersResponse DeleteParameters(DeleteParametersRequest request)
+        {
+            var marshaller = new DeleteParametersRequestMarshaller();
+            var unmarshaller = DeleteParametersResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteParametersRequest,DeleteParametersResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteParameters operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteParameters operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeleteParameters">REST API Reference for DeleteParameters Operation</seealso>
+        public Task<DeleteParametersResponse> DeleteParametersAsync(DeleteParametersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DeleteParametersRequestMarshaller();
+            var unmarshaller = DeleteParametersResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteParametersRequest,DeleteParametersResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -2390,6 +2422,38 @@ namespace Amazon.SimpleSystemsManagement
 
         #endregion
         
+        #region  GetParameter
+
+        internal GetParameterResponse GetParameter(GetParameterRequest request)
+        {
+            var marshaller = new GetParameterRequestMarshaller();
+            var unmarshaller = GetParameterResponseUnmarshaller.Instance;
+
+            return Invoke<GetParameterRequest,GetParameterResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetParameter operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetParameter operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetParameter">REST API Reference for GetParameter Operation</seealso>
+        public Task<GetParameterResponse> GetParameterAsync(GetParameterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new GetParameterRequestMarshaller();
+            var unmarshaller = GetParameterResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetParameterRequest,GetParameterResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetParameterHistory
 
         internal GetParameterHistoryResponse GetParameterHistory(GetParameterHistoryRequest request)
@@ -2449,6 +2513,38 @@ namespace Amazon.SimpleSystemsManagement
             var unmarshaller = GetParametersResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetParametersRequest,GetParametersResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetParametersByPath
+
+        internal GetParametersByPathResponse GetParametersByPath(GetParametersByPathRequest request)
+        {
+            var marshaller = new GetParametersByPathRequestMarshaller();
+            var unmarshaller = GetParametersByPathResponseUnmarshaller.Instance;
+
+            return Invoke<GetParametersByPathRequest,GetParametersByPathResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetParametersByPath operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetParametersByPath operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetParametersByPath">REST API Reference for GetParametersByPath Operation</seealso>
+        public Task<GetParametersByPathResponse> GetParametersByPathAsync(GetParametersByPathRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new GetParametersByPathRequestMarshaller();
+            var unmarshaller = GetParametersByPathResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetParametersByPathRequest,GetParametersByPathResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -3264,10 +3360,10 @@ namespace Amazon.SimpleSystemsManagement
 
 
         /// <summary>
-        /// Executes commands on one or more remote instances.
+        /// Executes commands on one or more managed instances.
         /// </summary>
         /// <param name="documentName">Required. The name of the Systems Manager document to execute. This can be a public document or a custom document.</param>
-        /// <param name="instanceIds">The instance IDs where the command should execute. You can specify a maximum of 50 IDs. If you prefer not to list individual instance IDs, you can instead send commands to a fleet of instances using the Targets parameter, which accepts EC2 tags.</param>
+        /// <param name="instanceIds">The instance IDs where the command should execute. You can specify a maximum of 50 IDs. If you prefer not to list individual instance IDs, you can instead send commands to a fleet of instances using the Targets parameter, which accepts EC2 tags. For more information about how to use Targets, see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Sending Commands to a Fleet</a>.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>

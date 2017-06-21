@@ -28,47 +28,29 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
-    /// Describes a command filter.
+    /// Container for the parameters to the DeleteParameters operation.
+    /// Delete a list of parameters.
     /// </summary>
-    public partial class CommandFilter
+    public partial class DeleteParametersRequest : AmazonSimpleSystemsManagementRequest
     {
-        private CommandFilterKey _key;
-        private string _value;
+        private List<string> _names = new List<string>();
 
         /// <summary>
-        /// Gets and sets the property Key. 
+        /// Gets and sets the property Names. 
         /// <para>
-        /// The name of the filter.
+        /// The names of the parameters to delete.
         /// </para>
         /// </summary>
-        public CommandFilterKey Key
+        public List<string> Names
         {
-            get { return this._key; }
-            set { this._key = value; }
+            get { return this._names; }
+            set { this._names = value; }
         }
 
-        // Check to see if Key property is set
-        internal bool IsSetKey()
+        // Check to see if Names property is set
+        internal bool IsSetNames()
         {
-            return this._key != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property Value. 
-        /// <para>
-        /// The filter value. 
-        /// </para>
-        /// </summary>
-        public string Value
-        {
-            get { return this._value; }
-            set { this._value = value; }
-        }
-
-        // Check to see if Value property is set
-        internal bool IsSetValue()
-        {
-            return this._value != null;
+            return this._names != null && this._names.Count > 0; 
         }
 
     }
