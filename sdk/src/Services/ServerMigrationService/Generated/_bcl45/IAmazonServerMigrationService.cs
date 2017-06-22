@@ -77,6 +77,7 @@ namespace Amazon.ServerMigrationService
         /// <exception cref="Amazon.ServerMigrationService.Model.UnauthorizedOperationException">
         /// This user does not have permissions to perform this operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/CreateReplicationJob">REST API Reference for CreateReplicationJob Operation</seealso>
         CreateReplicationJobResponse CreateReplicationJob(CreateReplicationJobRequest request);
 
 
@@ -89,6 +90,7 @@ namespace Amazon.ServerMigrationService
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/CreateReplicationJob">REST API Reference for CreateReplicationJob Operation</seealso>
         Task<CreateReplicationJobResponse> CreateReplicationJobAsync(CreateReplicationJobRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -122,6 +124,7 @@ namespace Amazon.ServerMigrationService
         /// <exception cref="Amazon.ServerMigrationService.Model.UnauthorizedOperationException">
         /// This user does not have permissions to perform this operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/DeleteReplicationJob">REST API Reference for DeleteReplicationJob Operation</seealso>
         DeleteReplicationJobResponse DeleteReplicationJob(DeleteReplicationJobRequest request);
 
 
@@ -134,6 +137,7 @@ namespace Amazon.ServerMigrationService
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/DeleteReplicationJob">REST API Reference for DeleteReplicationJob Operation</seealso>
         Task<DeleteReplicationJobResponse> DeleteReplicationJobAsync(DeleteReplicationJobRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -163,6 +167,7 @@ namespace Amazon.ServerMigrationService
         /// <exception cref="Amazon.ServerMigrationService.Model.UnauthorizedOperationException">
         /// This user does not have permissions to perform this operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/DeleteServerCatalog">REST API Reference for DeleteServerCatalog Operation</seealso>
         DeleteServerCatalogResponse DeleteServerCatalog(DeleteServerCatalogRequest request);
 
 
@@ -175,6 +180,7 @@ namespace Amazon.ServerMigrationService
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/DeleteServerCatalog">REST API Reference for DeleteServerCatalog Operation</seealso>
         Task<DeleteServerCatalogResponse> DeleteServerCatalogAsync(DeleteServerCatalogRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -204,6 +210,7 @@ namespace Amazon.ServerMigrationService
         /// <exception cref="Amazon.ServerMigrationService.Model.UnauthorizedOperationException">
         /// This user does not have permissions to perform this operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/DisassociateConnector">REST API Reference for DisassociateConnector Operation</seealso>
         DisassociateConnectorResponse DisassociateConnector(DisassociateConnectorRequest request);
 
 
@@ -216,6 +223,7 @@ namespace Amazon.ServerMigrationService
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/DisassociateConnector">REST API Reference for DisassociateConnector Operation</seealso>
         Task<DisassociateConnectorResponse> DisassociateConnectorAsync(DisassociateConnectorRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -233,6 +241,7 @@ namespace Amazon.ServerMigrationService
         /// <exception cref="Amazon.ServerMigrationService.Model.UnauthorizedOperationException">
         /// This user does not have permissions to perform this operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/GetConnectors">REST API Reference for GetConnectors Operation</seealso>
         GetConnectorsResponse GetConnectors(GetConnectorsRequest request);
 
 
@@ -245,6 +254,7 @@ namespace Amazon.ServerMigrationService
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/GetConnectors">REST API Reference for GetConnectors Operation</seealso>
         Task<GetConnectorsResponse> GetConnectorsAsync(GetConnectorsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -270,6 +280,7 @@ namespace Amazon.ServerMigrationService
         /// <exception cref="Amazon.ServerMigrationService.Model.UnauthorizedOperationException">
         /// This user does not have permissions to perform this operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/GetReplicationJobs">REST API Reference for GetReplicationJobs Operation</seealso>
         GetReplicationJobsResponse GetReplicationJobs(GetReplicationJobsRequest request);
 
 
@@ -282,6 +293,7 @@ namespace Amazon.ServerMigrationService
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/GetReplicationJobs">REST API Reference for GetReplicationJobs Operation</seealso>
         Task<GetReplicationJobsResponse> GetReplicationJobsAsync(GetReplicationJobsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -307,6 +319,7 @@ namespace Amazon.ServerMigrationService
         /// <exception cref="Amazon.ServerMigrationService.Model.UnauthorizedOperationException">
         /// This user does not have permissions to perform this operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/GetReplicationRuns">REST API Reference for GetReplicationRuns Operation</seealso>
         GetReplicationRunsResponse GetReplicationRuns(GetReplicationRunsRequest request);
 
 
@@ -319,6 +332,7 @@ namespace Amazon.ServerMigrationService
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/GetReplicationRuns">REST API Reference for GetReplicationRuns Operation</seealso>
         Task<GetReplicationRunsResponse> GetReplicationRunsAsync(GetReplicationRunsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -336,6 +350,7 @@ namespace Amazon.ServerMigrationService
         /// <exception cref="Amazon.ServerMigrationService.Model.UnauthorizedOperationException">
         /// This user does not have permissions to perform this operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/GetServers">REST API Reference for GetServers Operation</seealso>
         GetServersResponse GetServers(GetServersRequest request);
 
 
@@ -348,6 +363,7 @@ namespace Amazon.ServerMigrationService
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/GetServers">REST API Reference for GetServers Operation</seealso>
         Task<GetServersResponse> GetServersAsync(GetServersRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -383,6 +399,7 @@ namespace Amazon.ServerMigrationService
         /// <exception cref="Amazon.ServerMigrationService.Model.UnauthorizedOperationException">
         /// This user does not have permissions to perform this operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/ImportServerCatalog">REST API Reference for ImportServerCatalog Operation</seealso>
         ImportServerCatalogResponse ImportServerCatalog(ImportServerCatalogRequest request);
 
 
@@ -395,6 +412,7 @@ namespace Amazon.ServerMigrationService
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/ImportServerCatalog">REST API Reference for ImportServerCatalog Operation</seealso>
         Task<ImportServerCatalogResponse> ImportServerCatalogAsync(ImportServerCatalogRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -429,6 +447,7 @@ namespace Amazon.ServerMigrationService
         /// <exception cref="Amazon.ServerMigrationService.Model.UnauthorizedOperationException">
         /// This user does not have permissions to perform this operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/StartOnDemandReplicationRun">REST API Reference for StartOnDemandReplicationRun Operation</seealso>
         StartOnDemandReplicationRunResponse StartOnDemandReplicationRun(StartOnDemandReplicationRunRequest request);
 
 
@@ -441,6 +460,7 @@ namespace Amazon.ServerMigrationService
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/StartOnDemandReplicationRun">REST API Reference for StartOnDemandReplicationRun Operation</seealso>
         Task<StartOnDemandReplicationRunResponse> StartOnDemandReplicationRunAsync(StartOnDemandReplicationRunRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -480,6 +500,7 @@ namespace Amazon.ServerMigrationService
         /// <exception cref="Amazon.ServerMigrationService.Model.UnauthorizedOperationException">
         /// This user does not have permissions to perform this operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/UpdateReplicationJob">REST API Reference for UpdateReplicationJob Operation</seealso>
         UpdateReplicationJobResponse UpdateReplicationJob(UpdateReplicationJobRequest request);
 
 
@@ -492,6 +513,7 @@ namespace Amazon.ServerMigrationService
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/UpdateReplicationJob">REST API Reference for UpdateReplicationJob Operation</seealso>
         Task<UpdateReplicationJobResponse> UpdateReplicationJobAsync(UpdateReplicationJobRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion

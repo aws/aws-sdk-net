@@ -77,6 +77,7 @@ namespace Amazon.SimpleNotificationService
         /// <exception cref="Amazon.SimpleNotificationService.Model.NotFoundException">
         /// Indicates that the requested resource does not exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/AddPermission">REST API Reference for AddPermission Operation</seealso>
         AddPermissionResponse AddPermission(string topicArn, string label, List<string> awsAccountId, List<string> actionName);
 
         /// <summary>
@@ -98,6 +99,7 @@ namespace Amazon.SimpleNotificationService
         /// <exception cref="Amazon.SimpleNotificationService.Model.NotFoundException">
         /// Indicates that the requested resource does not exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/AddPermission">REST API Reference for AddPermission Operation</seealso>
         AddPermissionResponse AddPermission(AddPermissionRequest request);
 
         /// <summary>
@@ -111,6 +113,7 @@ namespace Amazon.SimpleNotificationService
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAddPermission
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/AddPermission">REST API Reference for AddPermission Operation</seealso>
         IAsyncResult BeginAddPermission(AddPermissionRequest request, AsyncCallback callback, object state);
 
 
@@ -122,6 +125,7 @@ namespace Amazon.SimpleNotificationService
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAddPermission.</param>
         /// 
         /// <returns>Returns a  AddPermissionResult from SimpleNotificationService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/AddPermission">REST API Reference for AddPermission Operation</seealso>
         AddPermissionResponse EndAddPermission(IAsyncResult asyncResult);
 
         #endregion
@@ -156,6 +160,7 @@ namespace Amazon.SimpleNotificationService
         /// Indicates that the rate at which requests have been submitted for this action exceeds
         /// the limit for your account.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/CheckIfPhoneNumberIsOptedOut">REST API Reference for CheckIfPhoneNumberIsOptedOut Operation</seealso>
         CheckIfPhoneNumberIsOptedOutResponse CheckIfPhoneNumberIsOptedOut(CheckIfPhoneNumberIsOptedOutRequest request);
 
         /// <summary>
@@ -169,6 +174,7 @@ namespace Amazon.SimpleNotificationService
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCheckIfPhoneNumberIsOptedOut
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/CheckIfPhoneNumberIsOptedOut">REST API Reference for CheckIfPhoneNumberIsOptedOut Operation</seealso>
         IAsyncResult BeginCheckIfPhoneNumberIsOptedOut(CheckIfPhoneNumberIsOptedOutRequest request, AsyncCallback callback, object state);
 
 
@@ -180,6 +186,7 @@ namespace Amazon.SimpleNotificationService
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCheckIfPhoneNumberIsOptedOut.</param>
         /// 
         /// <returns>Returns a  CheckIfPhoneNumberIsOptedOutResult from SimpleNotificationService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/CheckIfPhoneNumberIsOptedOut">REST API Reference for CheckIfPhoneNumberIsOptedOut Operation</seealso>
         CheckIfPhoneNumberIsOptedOutResponse EndCheckIfPhoneNumberIsOptedOut(IAsyncResult asyncResult);
 
         #endregion
@@ -214,6 +221,7 @@ namespace Amazon.SimpleNotificationService
         /// <exception cref="Amazon.SimpleNotificationService.Model.SubscriptionLimitExceededException">
         /// Indicates that the customer already owns the maximum allowed number of subscriptions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/ConfirmSubscription">REST API Reference for ConfirmSubscription Operation</seealso>
         ConfirmSubscriptionResponse ConfirmSubscription(string topicArn, string token, string authenticateOnUnsubscribe);
 
         /// <summary>
@@ -242,6 +250,7 @@ namespace Amazon.SimpleNotificationService
         /// <exception cref="Amazon.SimpleNotificationService.Model.SubscriptionLimitExceededException">
         /// Indicates that the customer already owns the maximum allowed number of subscriptions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/ConfirmSubscription">REST API Reference for ConfirmSubscription Operation</seealso>
         ConfirmSubscriptionResponse ConfirmSubscription(string topicArn, string token);
 
         /// <summary>
@@ -269,6 +278,7 @@ namespace Amazon.SimpleNotificationService
         /// <exception cref="Amazon.SimpleNotificationService.Model.SubscriptionLimitExceededException">
         /// Indicates that the customer already owns the maximum allowed number of subscriptions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/ConfirmSubscription">REST API Reference for ConfirmSubscription Operation</seealso>
         ConfirmSubscriptionResponse ConfirmSubscription(ConfirmSubscriptionRequest request);
 
         /// <summary>
@@ -282,6 +292,7 @@ namespace Amazon.SimpleNotificationService
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndConfirmSubscription
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/ConfirmSubscription">REST API Reference for ConfirmSubscription Operation</seealso>
         IAsyncResult BeginConfirmSubscription(ConfirmSubscriptionRequest request, AsyncCallback callback, object state);
 
 
@@ -293,6 +304,7 @@ namespace Amazon.SimpleNotificationService
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginConfirmSubscription.</param>
         /// 
         /// <returns>Returns a  ConfirmSubscriptionResult from SimpleNotificationService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/ConfirmSubscription">REST API Reference for ConfirmSubscription Operation</seealso>
         ConfirmSubscriptionResponse EndConfirmSubscription(IAsyncResult asyncResult);
 
         #endregion
@@ -342,6 +354,7 @@ namespace Amazon.SimpleNotificationService
         /// <exception cref="Amazon.SimpleNotificationService.Model.InvalidParameterException">
         /// Indicates that a request parameter does not comply with the associated constraints.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/CreatePlatformApplication">REST API Reference for CreatePlatformApplication Operation</seealso>
         CreatePlatformApplicationResponse CreatePlatformApplication(CreatePlatformApplicationRequest request);
 
         /// <summary>
@@ -355,6 +368,7 @@ namespace Amazon.SimpleNotificationService
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreatePlatformApplication
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/CreatePlatformApplication">REST API Reference for CreatePlatformApplication Operation</seealso>
         IAsyncResult BeginCreatePlatformApplication(CreatePlatformApplicationRequest request, AsyncCallback callback, object state);
 
 
@@ -366,6 +380,7 @@ namespace Amazon.SimpleNotificationService
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreatePlatformApplication.</param>
         /// 
         /// <returns>Returns a  CreatePlatformApplicationResult from SimpleNotificationService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/CreatePlatformApplication">REST API Reference for CreatePlatformApplication Operation</seealso>
         CreatePlatformApplicationResponse EndCreatePlatformApplication(IAsyncResult asyncResult);
 
         #endregion
@@ -408,6 +423,7 @@ namespace Amazon.SimpleNotificationService
         /// <exception cref="Amazon.SimpleNotificationService.Model.NotFoundException">
         /// Indicates that the requested resource does not exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/CreatePlatformEndpoint">REST API Reference for CreatePlatformEndpoint Operation</seealso>
         CreatePlatformEndpointResponse CreatePlatformEndpoint(CreatePlatformEndpointRequest request);
 
         /// <summary>
@@ -421,6 +437,7 @@ namespace Amazon.SimpleNotificationService
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreatePlatformEndpoint
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/CreatePlatformEndpoint">REST API Reference for CreatePlatformEndpoint Operation</seealso>
         IAsyncResult BeginCreatePlatformEndpoint(CreatePlatformEndpointRequest request, AsyncCallback callback, object state);
 
 
@@ -432,6 +449,7 @@ namespace Amazon.SimpleNotificationService
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreatePlatformEndpoint.</param>
         /// 
         /// <returns>Returns a  CreatePlatformEndpointResult from SimpleNotificationService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/CreatePlatformEndpoint">REST API Reference for CreatePlatformEndpoint Operation</seealso>
         CreatePlatformEndpointResponse EndCreatePlatformEndpoint(IAsyncResult asyncResult);
 
         #endregion
@@ -460,6 +478,7 @@ namespace Amazon.SimpleNotificationService
         /// <exception cref="Amazon.SimpleNotificationService.Model.TopicLimitExceededException">
         /// Indicates that the customer already owns the maximum allowed number of topics.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/CreateTopic">REST API Reference for CreateTopic Operation</seealso>
         CreateTopicResponse CreateTopic(string name);
 
         /// <summary>
@@ -483,6 +502,7 @@ namespace Amazon.SimpleNotificationService
         /// <exception cref="Amazon.SimpleNotificationService.Model.TopicLimitExceededException">
         /// Indicates that the customer already owns the maximum allowed number of topics.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/CreateTopic">REST API Reference for CreateTopic Operation</seealso>
         CreateTopicResponse CreateTopic(CreateTopicRequest request);
 
         /// <summary>
@@ -496,6 +516,7 @@ namespace Amazon.SimpleNotificationService
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateTopic
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/CreateTopic">REST API Reference for CreateTopic Operation</seealso>
         IAsyncResult BeginCreateTopic(CreateTopicRequest request, AsyncCallback callback, object state);
 
 
@@ -507,6 +528,7 @@ namespace Amazon.SimpleNotificationService
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateTopic.</param>
         /// 
         /// <returns>Returns a  CreateTopicResult from SimpleNotificationService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/CreateTopic">REST API Reference for CreateTopic Operation</seealso>
         CreateTopicResponse EndCreateTopic(IAsyncResult asyncResult);
 
         #endregion
@@ -537,6 +559,7 @@ namespace Amazon.SimpleNotificationService
         /// <exception cref="Amazon.SimpleNotificationService.Model.InvalidParameterException">
         /// Indicates that a request parameter does not comply with the associated constraints.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/DeleteEndpoint">REST API Reference for DeleteEndpoint Operation</seealso>
         DeleteEndpointResponse DeleteEndpoint(DeleteEndpointRequest request);
 
         /// <summary>
@@ -550,6 +573,7 @@ namespace Amazon.SimpleNotificationService
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteEndpoint
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/DeleteEndpoint">REST API Reference for DeleteEndpoint Operation</seealso>
         IAsyncResult BeginDeleteEndpoint(DeleteEndpointRequest request, AsyncCallback callback, object state);
 
 
@@ -561,6 +585,7 @@ namespace Amazon.SimpleNotificationService
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteEndpoint.</param>
         /// 
         /// <returns>Returns a  DeleteEndpointResult from SimpleNotificationService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/DeleteEndpoint">REST API Reference for DeleteEndpoint Operation</seealso>
         DeleteEndpointResponse EndDeleteEndpoint(IAsyncResult asyncResult);
 
         #endregion
@@ -585,6 +610,7 @@ namespace Amazon.SimpleNotificationService
         /// <exception cref="Amazon.SimpleNotificationService.Model.InvalidParameterException">
         /// Indicates that a request parameter does not comply with the associated constraints.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/DeletePlatformApplication">REST API Reference for DeletePlatformApplication Operation</seealso>
         DeletePlatformApplicationResponse DeletePlatformApplication(DeletePlatformApplicationRequest request);
 
         /// <summary>
@@ -598,6 +624,7 @@ namespace Amazon.SimpleNotificationService
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeletePlatformApplication
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/DeletePlatformApplication">REST API Reference for DeletePlatformApplication Operation</seealso>
         IAsyncResult BeginDeletePlatformApplication(DeletePlatformApplicationRequest request, AsyncCallback callback, object state);
 
 
@@ -609,6 +636,7 @@ namespace Amazon.SimpleNotificationService
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeletePlatformApplication.</param>
         /// 
         /// <returns>Returns a  DeletePlatformApplicationResult from SimpleNotificationService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/DeletePlatformApplication">REST API Reference for DeletePlatformApplication Operation</seealso>
         DeletePlatformApplicationResponse EndDeletePlatformApplication(IAsyncResult asyncResult);
 
         #endregion
@@ -636,6 +664,7 @@ namespace Amazon.SimpleNotificationService
         /// <exception cref="Amazon.SimpleNotificationService.Model.NotFoundException">
         /// Indicates that the requested resource does not exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/DeleteTopic">REST API Reference for DeleteTopic Operation</seealso>
         DeleteTopicResponse DeleteTopic(string topicArn);
 
         /// <summary>
@@ -658,6 +687,7 @@ namespace Amazon.SimpleNotificationService
         /// <exception cref="Amazon.SimpleNotificationService.Model.NotFoundException">
         /// Indicates that the requested resource does not exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/DeleteTopic">REST API Reference for DeleteTopic Operation</seealso>
         DeleteTopicResponse DeleteTopic(DeleteTopicRequest request);
 
         /// <summary>
@@ -671,6 +701,7 @@ namespace Amazon.SimpleNotificationService
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteTopic
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/DeleteTopic">REST API Reference for DeleteTopic Operation</seealso>
         IAsyncResult BeginDeleteTopic(DeleteTopicRequest request, AsyncCallback callback, object state);
 
 
@@ -682,6 +713,7 @@ namespace Amazon.SimpleNotificationService
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteTopic.</param>
         /// 
         /// <returns>Returns a  DeleteTopicResult from SimpleNotificationService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/DeleteTopic">REST API Reference for DeleteTopic Operation</seealso>
         DeleteTopicResponse EndDeleteTopic(IAsyncResult asyncResult);
 
         #endregion
@@ -709,6 +741,7 @@ namespace Amazon.SimpleNotificationService
         /// <exception cref="Amazon.SimpleNotificationService.Model.NotFoundException">
         /// Indicates that the requested resource does not exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/GetEndpointAttributes">REST API Reference for GetEndpointAttributes Operation</seealso>
         GetEndpointAttributesResponse GetEndpointAttributes(GetEndpointAttributesRequest request);
 
         /// <summary>
@@ -722,6 +755,7 @@ namespace Amazon.SimpleNotificationService
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetEndpointAttributes
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/GetEndpointAttributes">REST API Reference for GetEndpointAttributes Operation</seealso>
         IAsyncResult BeginGetEndpointAttributes(GetEndpointAttributesRequest request, AsyncCallback callback, object state);
 
 
@@ -733,6 +767,7 @@ namespace Amazon.SimpleNotificationService
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetEndpointAttributes.</param>
         /// 
         /// <returns>Returns a  GetEndpointAttributesResult from SimpleNotificationService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/GetEndpointAttributes">REST API Reference for GetEndpointAttributes Operation</seealso>
         GetEndpointAttributesResponse EndGetEndpointAttributes(IAsyncResult asyncResult);
 
         #endregion
@@ -760,6 +795,7 @@ namespace Amazon.SimpleNotificationService
         /// <exception cref="Amazon.SimpleNotificationService.Model.NotFoundException">
         /// Indicates that the requested resource does not exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/GetPlatformApplicationAttributes">REST API Reference for GetPlatformApplicationAttributes Operation</seealso>
         GetPlatformApplicationAttributesResponse GetPlatformApplicationAttributes(GetPlatformApplicationAttributesRequest request);
 
         /// <summary>
@@ -773,6 +809,7 @@ namespace Amazon.SimpleNotificationService
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetPlatformApplicationAttributes
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/GetPlatformApplicationAttributes">REST API Reference for GetPlatformApplicationAttributes Operation</seealso>
         IAsyncResult BeginGetPlatformApplicationAttributes(GetPlatformApplicationAttributesRequest request, AsyncCallback callback, object state);
 
 
@@ -784,6 +821,7 @@ namespace Amazon.SimpleNotificationService
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetPlatformApplicationAttributes.</param>
         /// 
         /// <returns>Returns a  GetPlatformApplicationAttributesResult from SimpleNotificationService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/GetPlatformApplicationAttributes">REST API Reference for GetPlatformApplicationAttributes Operation</seealso>
         GetPlatformApplicationAttributesResponse EndGetPlatformApplicationAttributes(IAsyncResult asyncResult);
 
         #endregion
@@ -815,6 +853,7 @@ namespace Amazon.SimpleNotificationService
         /// Indicates that the rate at which requests have been submitted for this action exceeds
         /// the limit for your account.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/GetSMSAttributes">REST API Reference for GetSMSAttributes Operation</seealso>
         GetSMSAttributesResponse GetSMSAttributes(GetSMSAttributesRequest request);
 
         /// <summary>
@@ -828,6 +867,7 @@ namespace Amazon.SimpleNotificationService
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetSMSAttributes
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/GetSMSAttributes">REST API Reference for GetSMSAttributes Operation</seealso>
         IAsyncResult BeginGetSMSAttributes(GetSMSAttributesRequest request, AsyncCallback callback, object state);
 
 
@@ -839,6 +879,7 @@ namespace Amazon.SimpleNotificationService
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetSMSAttributes.</param>
         /// 
         /// <returns>Returns a  GetSMSAttributesResult from SimpleNotificationService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/GetSMSAttributes">REST API Reference for GetSMSAttributes Operation</seealso>
         GetSMSAttributesResponse EndGetSMSAttributes(IAsyncResult asyncResult);
 
         #endregion
@@ -864,6 +905,7 @@ namespace Amazon.SimpleNotificationService
         /// <exception cref="Amazon.SimpleNotificationService.Model.NotFoundException">
         /// Indicates that the requested resource does not exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/GetSubscriptionAttributes">REST API Reference for GetSubscriptionAttributes Operation</seealso>
         GetSubscriptionAttributesResponse GetSubscriptionAttributes(string subscriptionArn);
 
         /// <summary>
@@ -884,6 +926,7 @@ namespace Amazon.SimpleNotificationService
         /// <exception cref="Amazon.SimpleNotificationService.Model.NotFoundException">
         /// Indicates that the requested resource does not exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/GetSubscriptionAttributes">REST API Reference for GetSubscriptionAttributes Operation</seealso>
         GetSubscriptionAttributesResponse GetSubscriptionAttributes(GetSubscriptionAttributesRequest request);
 
         /// <summary>
@@ -897,6 +940,7 @@ namespace Amazon.SimpleNotificationService
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetSubscriptionAttributes
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/GetSubscriptionAttributes">REST API Reference for GetSubscriptionAttributes Operation</seealso>
         IAsyncResult BeginGetSubscriptionAttributes(GetSubscriptionAttributesRequest request, AsyncCallback callback, object state);
 
 
@@ -908,6 +952,7 @@ namespace Amazon.SimpleNotificationService
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetSubscriptionAttributes.</param>
         /// 
         /// <returns>Returns a  GetSubscriptionAttributesResult from SimpleNotificationService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/GetSubscriptionAttributes">REST API Reference for GetSubscriptionAttributes Operation</seealso>
         GetSubscriptionAttributesResponse EndGetSubscriptionAttributes(IAsyncResult asyncResult);
 
         #endregion
@@ -934,6 +979,7 @@ namespace Amazon.SimpleNotificationService
         /// <exception cref="Amazon.SimpleNotificationService.Model.NotFoundException">
         /// Indicates that the requested resource does not exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/GetTopicAttributes">REST API Reference for GetTopicAttributes Operation</seealso>
         GetTopicAttributesResponse GetTopicAttributes(string topicArn);
 
         /// <summary>
@@ -955,6 +1001,7 @@ namespace Amazon.SimpleNotificationService
         /// <exception cref="Amazon.SimpleNotificationService.Model.NotFoundException">
         /// Indicates that the requested resource does not exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/GetTopicAttributes">REST API Reference for GetTopicAttributes Operation</seealso>
         GetTopicAttributesResponse GetTopicAttributes(GetTopicAttributesRequest request);
 
         /// <summary>
@@ -968,6 +1015,7 @@ namespace Amazon.SimpleNotificationService
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetTopicAttributes
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/GetTopicAttributes">REST API Reference for GetTopicAttributes Operation</seealso>
         IAsyncResult BeginGetTopicAttributes(GetTopicAttributesRequest request, AsyncCallback callback, object state);
 
 
@@ -979,6 +1027,7 @@ namespace Amazon.SimpleNotificationService
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetTopicAttributes.</param>
         /// 
         /// <returns>Returns a  GetTopicAttributesResult from SimpleNotificationService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/GetTopicAttributes">REST API Reference for GetTopicAttributes Operation</seealso>
         GetTopicAttributesResponse EndGetTopicAttributes(IAsyncResult asyncResult);
 
         #endregion
@@ -1011,6 +1060,7 @@ namespace Amazon.SimpleNotificationService
         /// <exception cref="Amazon.SimpleNotificationService.Model.NotFoundException">
         /// Indicates that the requested resource does not exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/ListEndpointsByPlatformApplication">REST API Reference for ListEndpointsByPlatformApplication Operation</seealso>
         ListEndpointsByPlatformApplicationResponse ListEndpointsByPlatformApplication(ListEndpointsByPlatformApplicationRequest request);
 
         /// <summary>
@@ -1024,6 +1074,7 @@ namespace Amazon.SimpleNotificationService
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListEndpointsByPlatformApplication
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/ListEndpointsByPlatformApplication">REST API Reference for ListEndpointsByPlatformApplication Operation</seealso>
         IAsyncResult BeginListEndpointsByPlatformApplication(ListEndpointsByPlatformApplicationRequest request, AsyncCallback callback, object state);
 
 
@@ -1035,6 +1086,7 @@ namespace Amazon.SimpleNotificationService
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListEndpointsByPlatformApplication.</param>
         /// 
         /// <returns>Returns a  ListEndpointsByPlatformApplicationResult from SimpleNotificationService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/ListEndpointsByPlatformApplication">REST API Reference for ListEndpointsByPlatformApplication Operation</seealso>
         ListEndpointsByPlatformApplicationResponse EndListEndpointsByPlatformApplication(IAsyncResult asyncResult);
 
         #endregion
@@ -1072,6 +1124,7 @@ namespace Amazon.SimpleNotificationService
         /// Indicates that the rate at which requests have been submitted for this action exceeds
         /// the limit for your account.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/ListPhoneNumbersOptedOut">REST API Reference for ListPhoneNumbersOptedOut Operation</seealso>
         ListPhoneNumbersOptedOutResponse ListPhoneNumbersOptedOut(ListPhoneNumbersOptedOutRequest request);
 
         /// <summary>
@@ -1085,6 +1138,7 @@ namespace Amazon.SimpleNotificationService
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListPhoneNumbersOptedOut
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/ListPhoneNumbersOptedOut">REST API Reference for ListPhoneNumbersOptedOut Operation</seealso>
         IAsyncResult BeginListPhoneNumbersOptedOut(ListPhoneNumbersOptedOutRequest request, AsyncCallback callback, object state);
 
 
@@ -1096,6 +1150,7 @@ namespace Amazon.SimpleNotificationService
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListPhoneNumbersOptedOut.</param>
         /// 
         /// <returns>Returns a  ListPhoneNumbersOptedOutResult from SimpleNotificationService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/ListPhoneNumbersOptedOut">REST API Reference for ListPhoneNumbersOptedOut Operation</seealso>
         ListPhoneNumbersOptedOutResponse EndListPhoneNumbersOptedOut(IAsyncResult asyncResult);
 
         #endregion
@@ -1124,6 +1179,7 @@ namespace Amazon.SimpleNotificationService
         /// <exception cref="Amazon.SimpleNotificationService.Model.InvalidParameterException">
         /// Indicates that a request parameter does not comply with the associated constraints.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/ListPlatformApplications">REST API Reference for ListPlatformApplications Operation</seealso>
         ListPlatformApplicationsResponse ListPlatformApplications();
 
         /// <summary>
@@ -1148,6 +1204,7 @@ namespace Amazon.SimpleNotificationService
         /// <exception cref="Amazon.SimpleNotificationService.Model.InvalidParameterException">
         /// Indicates that a request parameter does not comply with the associated constraints.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/ListPlatformApplications">REST API Reference for ListPlatformApplications Operation</seealso>
         ListPlatformApplicationsResponse ListPlatformApplications(ListPlatformApplicationsRequest request);
 
         /// <summary>
@@ -1161,6 +1218,7 @@ namespace Amazon.SimpleNotificationService
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListPlatformApplications
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/ListPlatformApplications">REST API Reference for ListPlatformApplications Operation</seealso>
         IAsyncResult BeginListPlatformApplications(ListPlatformApplicationsRequest request, AsyncCallback callback, object state);
 
 
@@ -1172,6 +1230,7 @@ namespace Amazon.SimpleNotificationService
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListPlatformApplications.</param>
         /// 
         /// <returns>Returns a  ListPlatformApplicationsResult from SimpleNotificationService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/ListPlatformApplications">REST API Reference for ListPlatformApplications Operation</seealso>
         ListPlatformApplicationsResponse EndListPlatformApplications(IAsyncResult asyncResult);
 
         #endregion
@@ -1196,6 +1255,7 @@ namespace Amazon.SimpleNotificationService
         /// <exception cref="Amazon.SimpleNotificationService.Model.InvalidParameterException">
         /// Indicates that a request parameter does not comply with the associated constraints.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/ListSubscriptions">REST API Reference for ListSubscriptions Operation</seealso>
         ListSubscriptionsResponse ListSubscriptions();
 
         /// <summary>
@@ -1216,6 +1276,7 @@ namespace Amazon.SimpleNotificationService
         /// <exception cref="Amazon.SimpleNotificationService.Model.InvalidParameterException">
         /// Indicates that a request parameter does not comply with the associated constraints.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/ListSubscriptions">REST API Reference for ListSubscriptions Operation</seealso>
         ListSubscriptionsResponse ListSubscriptions(string nextToken);
 
         /// <summary>
@@ -1236,6 +1297,7 @@ namespace Amazon.SimpleNotificationService
         /// <exception cref="Amazon.SimpleNotificationService.Model.InvalidParameterException">
         /// Indicates that a request parameter does not comply with the associated constraints.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/ListSubscriptions">REST API Reference for ListSubscriptions Operation</seealso>
         ListSubscriptionsResponse ListSubscriptions(ListSubscriptionsRequest request);
 
         /// <summary>
@@ -1249,6 +1311,7 @@ namespace Amazon.SimpleNotificationService
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListSubscriptions
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/ListSubscriptions">REST API Reference for ListSubscriptions Operation</seealso>
         IAsyncResult BeginListSubscriptions(ListSubscriptionsRequest request, AsyncCallback callback, object state);
 
 
@@ -1260,6 +1323,7 @@ namespace Amazon.SimpleNotificationService
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListSubscriptions.</param>
         /// 
         /// <returns>Returns a  ListSubscriptionsResult from SimpleNotificationService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/ListSubscriptions">REST API Reference for ListSubscriptions Operation</seealso>
         ListSubscriptionsResponse EndListSubscriptions(IAsyncResult asyncResult);
 
         #endregion
@@ -1289,6 +1353,7 @@ namespace Amazon.SimpleNotificationService
         /// <exception cref="Amazon.SimpleNotificationService.Model.NotFoundException">
         /// Indicates that the requested resource does not exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/ListSubscriptionsByTopic">REST API Reference for ListSubscriptionsByTopic Operation</seealso>
         ListSubscriptionsByTopicResponse ListSubscriptionsByTopic(string topicArn, string nextToken);
 
         /// <summary>
@@ -1312,6 +1377,7 @@ namespace Amazon.SimpleNotificationService
         /// <exception cref="Amazon.SimpleNotificationService.Model.NotFoundException">
         /// Indicates that the requested resource does not exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/ListSubscriptionsByTopic">REST API Reference for ListSubscriptionsByTopic Operation</seealso>
         ListSubscriptionsByTopicResponse ListSubscriptionsByTopic(string topicArn);
 
         /// <summary>
@@ -1335,6 +1401,7 @@ namespace Amazon.SimpleNotificationService
         /// <exception cref="Amazon.SimpleNotificationService.Model.NotFoundException">
         /// Indicates that the requested resource does not exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/ListSubscriptionsByTopic">REST API Reference for ListSubscriptionsByTopic Operation</seealso>
         ListSubscriptionsByTopicResponse ListSubscriptionsByTopic(ListSubscriptionsByTopicRequest request);
 
         /// <summary>
@@ -1348,6 +1415,7 @@ namespace Amazon.SimpleNotificationService
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListSubscriptionsByTopic
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/ListSubscriptionsByTopic">REST API Reference for ListSubscriptionsByTopic Operation</seealso>
         IAsyncResult BeginListSubscriptionsByTopic(ListSubscriptionsByTopicRequest request, AsyncCallback callback, object state);
 
 
@@ -1359,6 +1427,7 @@ namespace Amazon.SimpleNotificationService
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListSubscriptionsByTopic.</param>
         /// 
         /// <returns>Returns a  ListSubscriptionsByTopicResult from SimpleNotificationService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/ListSubscriptionsByTopic">REST API Reference for ListSubscriptionsByTopic Operation</seealso>
         ListSubscriptionsByTopicResponse EndListSubscriptionsByTopic(IAsyncResult asyncResult);
 
         #endregion
@@ -1383,6 +1452,7 @@ namespace Amazon.SimpleNotificationService
         /// <exception cref="Amazon.SimpleNotificationService.Model.InvalidParameterException">
         /// Indicates that a request parameter does not comply with the associated constraints.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/ListTopics">REST API Reference for ListTopics Operation</seealso>
         ListTopicsResponse ListTopics();
 
         /// <summary>
@@ -1403,6 +1473,7 @@ namespace Amazon.SimpleNotificationService
         /// <exception cref="Amazon.SimpleNotificationService.Model.InvalidParameterException">
         /// Indicates that a request parameter does not comply with the associated constraints.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/ListTopics">REST API Reference for ListTopics Operation</seealso>
         ListTopicsResponse ListTopics(string nextToken);
 
         /// <summary>
@@ -1423,6 +1494,7 @@ namespace Amazon.SimpleNotificationService
         /// <exception cref="Amazon.SimpleNotificationService.Model.InvalidParameterException">
         /// Indicates that a request parameter does not comply with the associated constraints.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/ListTopics">REST API Reference for ListTopics Operation</seealso>
         ListTopicsResponse ListTopics(ListTopicsRequest request);
 
         /// <summary>
@@ -1436,6 +1508,7 @@ namespace Amazon.SimpleNotificationService
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListTopics
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/ListTopics">REST API Reference for ListTopics Operation</seealso>
         IAsyncResult BeginListTopics(ListTopicsRequest request, AsyncCallback callback, object state);
 
 
@@ -1447,6 +1520,7 @@ namespace Amazon.SimpleNotificationService
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListTopics.</param>
         /// 
         /// <returns>Returns a  ListTopicsResult from SimpleNotificationService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/ListTopics">REST API Reference for ListTopics Operation</seealso>
         ListTopicsResponse EndListTopics(IAsyncResult asyncResult);
 
         #endregion
@@ -1479,6 +1553,7 @@ namespace Amazon.SimpleNotificationService
         /// Indicates that the rate at which requests have been submitted for this action exceeds
         /// the limit for your account.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/OptInPhoneNumber">REST API Reference for OptInPhoneNumber Operation</seealso>
         OptInPhoneNumberResponse OptInPhoneNumber(OptInPhoneNumberRequest request);
 
         /// <summary>
@@ -1492,6 +1567,7 @@ namespace Amazon.SimpleNotificationService
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndOptInPhoneNumber
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/OptInPhoneNumber">REST API Reference for OptInPhoneNumber Operation</seealso>
         IAsyncResult BeginOptInPhoneNumber(OptInPhoneNumberRequest request, AsyncCallback callback, object state);
 
 
@@ -1503,6 +1579,7 @@ namespace Amazon.SimpleNotificationService
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginOptInPhoneNumber.</param>
         /// 
         /// <returns>Returns a  OptInPhoneNumberResult from SimpleNotificationService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/OptInPhoneNumber">REST API Reference for OptInPhoneNumber Operation</seealso>
         OptInPhoneNumberResponse EndOptInPhoneNumber(IAsyncResult asyncResult);
 
         #endregion
@@ -1554,6 +1631,7 @@ namespace Amazon.SimpleNotificationService
         /// <exception cref="Amazon.SimpleNotificationService.Model.PlatformApplicationDisabledException">
         /// Exception error indicating platform application disabled.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/Publish">REST API Reference for Publish Operation</seealso>
         PublishResponse Publish(string topicArn, string message);
 
         /// <summary>
@@ -1601,6 +1679,7 @@ namespace Amazon.SimpleNotificationService
         /// <exception cref="Amazon.SimpleNotificationService.Model.PlatformApplicationDisabledException">
         /// Exception error indicating platform application disabled.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/Publish">REST API Reference for Publish Operation</seealso>
         PublishResponse Publish(string topicArn, string message, string subject);
 
         /// <summary>
@@ -1646,6 +1725,7 @@ namespace Amazon.SimpleNotificationService
         /// <exception cref="Amazon.SimpleNotificationService.Model.PlatformApplicationDisabledException">
         /// Exception error indicating platform application disabled.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/Publish">REST API Reference for Publish Operation</seealso>
         PublishResponse Publish(PublishRequest request);
 
         /// <summary>
@@ -1659,6 +1739,7 @@ namespace Amazon.SimpleNotificationService
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPublish
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/Publish">REST API Reference for Publish Operation</seealso>
         IAsyncResult BeginPublish(PublishRequest request, AsyncCallback callback, object state);
 
 
@@ -1670,6 +1751,7 @@ namespace Amazon.SimpleNotificationService
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPublish.</param>
         /// 
         /// <returns>Returns a  PublishResult from SimpleNotificationService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/Publish">REST API Reference for Publish Operation</seealso>
         PublishResponse EndPublish(IAsyncResult asyncResult);
 
         #endregion
@@ -1696,6 +1778,7 @@ namespace Amazon.SimpleNotificationService
         /// <exception cref="Amazon.SimpleNotificationService.Model.NotFoundException">
         /// Indicates that the requested resource does not exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/RemovePermission">REST API Reference for RemovePermission Operation</seealso>
         RemovePermissionResponse RemovePermission(string topicArn, string label);
 
         /// <summary>
@@ -1716,6 +1799,7 @@ namespace Amazon.SimpleNotificationService
         /// <exception cref="Amazon.SimpleNotificationService.Model.NotFoundException">
         /// Indicates that the requested resource does not exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/RemovePermission">REST API Reference for RemovePermission Operation</seealso>
         RemovePermissionResponse RemovePermission(RemovePermissionRequest request);
 
         /// <summary>
@@ -1729,6 +1813,7 @@ namespace Amazon.SimpleNotificationService
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndRemovePermission
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/RemovePermission">REST API Reference for RemovePermission Operation</seealso>
         IAsyncResult BeginRemovePermission(RemovePermissionRequest request, AsyncCallback callback, object state);
 
 
@@ -1740,6 +1825,7 @@ namespace Amazon.SimpleNotificationService
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginRemovePermission.</param>
         /// 
         /// <returns>Returns a  RemovePermissionResult from SimpleNotificationService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/RemovePermission">REST API Reference for RemovePermission Operation</seealso>
         RemovePermissionResponse EndRemovePermission(IAsyncResult asyncResult);
 
         #endregion
@@ -1767,6 +1853,7 @@ namespace Amazon.SimpleNotificationService
         /// <exception cref="Amazon.SimpleNotificationService.Model.NotFoundException">
         /// Indicates that the requested resource does not exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/SetEndpointAttributes">REST API Reference for SetEndpointAttributes Operation</seealso>
         SetEndpointAttributesResponse SetEndpointAttributes(SetEndpointAttributesRequest request);
 
         /// <summary>
@@ -1780,6 +1867,7 @@ namespace Amazon.SimpleNotificationService
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndSetEndpointAttributes
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/SetEndpointAttributes">REST API Reference for SetEndpointAttributes Operation</seealso>
         IAsyncResult BeginSetEndpointAttributes(SetEndpointAttributesRequest request, AsyncCallback callback, object state);
 
 
@@ -1791,6 +1879,7 @@ namespace Amazon.SimpleNotificationService
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginSetEndpointAttributes.</param>
         /// 
         /// <returns>Returns a  SetEndpointAttributesResult from SimpleNotificationService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/SetEndpointAttributes">REST API Reference for SetEndpointAttributes Operation</seealso>
         SetEndpointAttributesResponse EndSetEndpointAttributes(IAsyncResult asyncResult);
 
         #endregion
@@ -1820,6 +1909,7 @@ namespace Amazon.SimpleNotificationService
         /// <exception cref="Amazon.SimpleNotificationService.Model.NotFoundException">
         /// Indicates that the requested resource does not exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/SetPlatformApplicationAttributes">REST API Reference for SetPlatformApplicationAttributes Operation</seealso>
         SetPlatformApplicationAttributesResponse SetPlatformApplicationAttributes(SetPlatformApplicationAttributesRequest request);
 
         /// <summary>
@@ -1833,6 +1923,7 @@ namespace Amazon.SimpleNotificationService
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndSetPlatformApplicationAttributes
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/SetPlatformApplicationAttributes">REST API Reference for SetPlatformApplicationAttributes Operation</seealso>
         IAsyncResult BeginSetPlatformApplicationAttributes(SetPlatformApplicationAttributesRequest request, AsyncCallback callback, object state);
 
 
@@ -1844,6 +1935,7 @@ namespace Amazon.SimpleNotificationService
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginSetPlatformApplicationAttributes.</param>
         /// 
         /// <returns>Returns a  SetPlatformApplicationAttributesResult from SimpleNotificationService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/SetPlatformApplicationAttributes">REST API Reference for SetPlatformApplicationAttributes Operation</seealso>
         SetPlatformApplicationAttributesResponse EndSetPlatformApplicationAttributes(IAsyncResult asyncResult);
 
         #endregion
@@ -1879,6 +1971,7 @@ namespace Amazon.SimpleNotificationService
         /// Indicates that the rate at which requests have been submitted for this action exceeds
         /// the limit for your account.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/SetSMSAttributes">REST API Reference for SetSMSAttributes Operation</seealso>
         SetSMSAttributesResponse SetSMSAttributes(SetSMSAttributesRequest request);
 
         /// <summary>
@@ -1892,6 +1985,7 @@ namespace Amazon.SimpleNotificationService
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndSetSMSAttributes
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/SetSMSAttributes">REST API Reference for SetSMSAttributes Operation</seealso>
         IAsyncResult BeginSetSMSAttributes(SetSMSAttributesRequest request, AsyncCallback callback, object state);
 
 
@@ -1903,6 +1997,7 @@ namespace Amazon.SimpleNotificationService
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginSetSMSAttributes.</param>
         /// 
         /// <returns>Returns a  SetSMSAttributesResult from SimpleNotificationService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/SetSMSAttributes">REST API Reference for SetSMSAttributes Operation</seealso>
         SetSMSAttributesResponse EndSetSMSAttributes(IAsyncResult asyncResult);
 
         #endregion
@@ -1930,6 +2025,7 @@ namespace Amazon.SimpleNotificationService
         /// <exception cref="Amazon.SimpleNotificationService.Model.NotFoundException">
         /// Indicates that the requested resource does not exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/SetSubscriptionAttributes">REST API Reference for SetSubscriptionAttributes Operation</seealso>
         SetSubscriptionAttributesResponse SetSubscriptionAttributes(string subscriptionArn, string attributeName, string attributeValue);
 
         /// <summary>
@@ -1950,6 +2046,7 @@ namespace Amazon.SimpleNotificationService
         /// <exception cref="Amazon.SimpleNotificationService.Model.NotFoundException">
         /// Indicates that the requested resource does not exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/SetSubscriptionAttributes">REST API Reference for SetSubscriptionAttributes Operation</seealso>
         SetSubscriptionAttributesResponse SetSubscriptionAttributes(SetSubscriptionAttributesRequest request);
 
         /// <summary>
@@ -1963,6 +2060,7 @@ namespace Amazon.SimpleNotificationService
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndSetSubscriptionAttributes
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/SetSubscriptionAttributes">REST API Reference for SetSubscriptionAttributes Operation</seealso>
         IAsyncResult BeginSetSubscriptionAttributes(SetSubscriptionAttributesRequest request, AsyncCallback callback, object state);
 
 
@@ -1974,6 +2072,7 @@ namespace Amazon.SimpleNotificationService
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginSetSubscriptionAttributes.</param>
         /// 
         /// <returns>Returns a  SetSubscriptionAttributesResult from SimpleNotificationService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/SetSubscriptionAttributes">REST API Reference for SetSubscriptionAttributes Operation</seealso>
         SetSubscriptionAttributesResponse EndSetSubscriptionAttributes(IAsyncResult asyncResult);
 
         #endregion
@@ -2001,6 +2100,7 @@ namespace Amazon.SimpleNotificationService
         /// <exception cref="Amazon.SimpleNotificationService.Model.NotFoundException">
         /// Indicates that the requested resource does not exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/SetTopicAttributes">REST API Reference for SetTopicAttributes Operation</seealso>
         SetTopicAttributesResponse SetTopicAttributes(string topicArn, string attributeName, string attributeValue);
 
         /// <summary>
@@ -2021,6 +2121,7 @@ namespace Amazon.SimpleNotificationService
         /// <exception cref="Amazon.SimpleNotificationService.Model.NotFoundException">
         /// Indicates that the requested resource does not exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/SetTopicAttributes">REST API Reference for SetTopicAttributes Operation</seealso>
         SetTopicAttributesResponse SetTopicAttributes(SetTopicAttributesRequest request);
 
         /// <summary>
@@ -2034,6 +2135,7 @@ namespace Amazon.SimpleNotificationService
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndSetTopicAttributes
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/SetTopicAttributes">REST API Reference for SetTopicAttributes Operation</seealso>
         IAsyncResult BeginSetTopicAttributes(SetTopicAttributesRequest request, AsyncCallback callback, object state);
 
 
@@ -2045,6 +2147,7 @@ namespace Amazon.SimpleNotificationService
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginSetTopicAttributes.</param>
         /// 
         /// <returns>Returns a  SetTopicAttributesResult from SimpleNotificationService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/SetTopicAttributes">REST API Reference for SetTopicAttributes Operation</seealso>
         SetTopicAttributesResponse EndSetTopicAttributes(IAsyncResult asyncResult);
 
         #endregion
@@ -2078,6 +2181,7 @@ namespace Amazon.SimpleNotificationService
         /// <exception cref="Amazon.SimpleNotificationService.Model.SubscriptionLimitExceededException">
         /// Indicates that the customer already owns the maximum allowed number of subscriptions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/Subscribe">REST API Reference for Subscribe Operation</seealso>
         SubscribeResponse Subscribe(string topicArn, string protocol, string endpoint);
 
         /// <summary>
@@ -2104,6 +2208,7 @@ namespace Amazon.SimpleNotificationService
         /// <exception cref="Amazon.SimpleNotificationService.Model.SubscriptionLimitExceededException">
         /// Indicates that the customer already owns the maximum allowed number of subscriptions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/Subscribe">REST API Reference for Subscribe Operation</seealso>
         SubscribeResponse Subscribe(SubscribeRequest request);
 
         /// <summary>
@@ -2117,6 +2222,7 @@ namespace Amazon.SimpleNotificationService
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndSubscribe
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/Subscribe">REST API Reference for Subscribe Operation</seealso>
         IAsyncResult BeginSubscribe(SubscribeRequest request, AsyncCallback callback, object state);
 
 
@@ -2128,6 +2234,7 @@ namespace Amazon.SimpleNotificationService
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginSubscribe.</param>
         /// 
         /// <returns>Returns a  SubscribeResult from SimpleNotificationService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/Subscribe">REST API Reference for Subscribe Operation</seealso>
         SubscribeResponse EndSubscribe(IAsyncResult asyncResult);
 
         #endregion
@@ -2158,6 +2265,7 @@ namespace Amazon.SimpleNotificationService
         /// <exception cref="Amazon.SimpleNotificationService.Model.NotFoundException">
         /// Indicates that the requested resource does not exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/Unsubscribe">REST API Reference for Unsubscribe Operation</seealso>
         UnsubscribeResponse Unsubscribe(string subscriptionArn);
 
         /// <summary>
@@ -2183,6 +2291,7 @@ namespace Amazon.SimpleNotificationService
         /// <exception cref="Amazon.SimpleNotificationService.Model.NotFoundException">
         /// Indicates that the requested resource does not exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/Unsubscribe">REST API Reference for Unsubscribe Operation</seealso>
         UnsubscribeResponse Unsubscribe(UnsubscribeRequest request);
 
         /// <summary>
@@ -2196,6 +2305,7 @@ namespace Amazon.SimpleNotificationService
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUnsubscribe
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/Unsubscribe">REST API Reference for Unsubscribe Operation</seealso>
         IAsyncResult BeginUnsubscribe(UnsubscribeRequest request, AsyncCallback callback, object state);
 
 
@@ -2207,6 +2317,7 @@ namespace Amazon.SimpleNotificationService
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUnsubscribe.</param>
         /// 
         /// <returns>Returns a  UnsubscribeResult from SimpleNotificationService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/Unsubscribe">REST API Reference for Unsubscribe Operation</seealso>
         UnsubscribeResponse EndUnsubscribe(IAsyncResult asyncResult);
 
         #endregion

@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AWSMarketplaceMetering.Model
 {
     /// <summary>
-    /// 
+    /// A UsageRecordResult indicates the status of a given UsageRecord processed by BatchMeterUsage.
     /// </summary>
     public partial class UsageRecordResult
     {
@@ -37,7 +37,10 @@ namespace Amazon.AWSMarketplaceMetering.Model
         private UsageRecord _usageRecord;
 
         /// <summary>
-        /// Gets and sets the property MeteringRecordId.
+        /// Gets and sets the property MeteringRecordId. 
+        /// <para>
+        /// The MeteringRecordId is a unique identifier for this metering event.
+        /// </para>
         /// </summary>
         public string MeteringRecordId
         {
@@ -52,7 +55,28 @@ namespace Amazon.AWSMarketplaceMetering.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Status.
+        /// Gets and sets the property Status. 
+        /// <para>
+        /// The UsageRecordResult Status indicates the status of an individual UsageRecord processed
+        /// by BatchMeterUsage.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <i>Success</i>- The UsageRecord was accepted and honored by BatchMeterUsage.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <i>CustomerNotSubscribed</i>- The CustomerIdentifier specified is not subscribed
+        /// to your product. The UsageRecord was not honored. Future UsageRecords for this customer
+        /// will fail until the customer subscribes to your product.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <i>DuplicateRecord</i>- Indicates that the UsageRecord was invalid and not honored.
+        /// A previously metered UsageRecord had the same customer, dimension, and time, but a
+        /// different quantity.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public UsageRecordResultStatus Status
         {
@@ -67,7 +91,10 @@ namespace Amazon.AWSMarketplaceMetering.Model
         }
 
         /// <summary>
-        /// Gets and sets the property UsageRecord.
+        /// Gets and sets the property UsageRecord. 
+        /// <para>
+        /// The UsageRecord that was part of the BatchMeterUsage request.
+        /// </para>
         /// </summary>
         public UsageRecord UsageRecord
         {

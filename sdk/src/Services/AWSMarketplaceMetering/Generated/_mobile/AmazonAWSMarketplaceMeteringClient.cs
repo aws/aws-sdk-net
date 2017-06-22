@@ -51,7 +51,24 @@ namespace Amazon.AWSMarketplaceMetering
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <i>MeterUsage</i>- Submits the metering record for a Marketplace product. 
+    ///  <i>MeterUsage</i>- Submits the metering record for a Marketplace product. MeterUsage
+    /// is called from an EC2 instance.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <i>BatchMeterUsage</i>- Submits the metering record for a set of customers. BatchMeterUsage
+    /// is called from a software-as-a-service (SaaS) application.
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    ///  <b>Accepting New Customers</b> 
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <i>ResolveCustomer</i>- Called by a SaaS application during the registration process.
+    /// When a buyer visits your website during the registration process, the buyer submits
+    /// a Registration Token through the browser. The Registration Token is resolved through
+    /// this API to obtain a CustomerIdentifier and Product Code.
     /// </para>
     ///  </li> </ul>
     /// </summary>
@@ -267,6 +284,7 @@ namespace Amazon.AWSMarketplaceMetering
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/meteringmarketplace-2016-01-14/BatchMeterUsage">REST API Reference for BatchMeterUsage Operation</seealso>
         public Task<BatchMeterUsageResponse> BatchMeterUsageAsync(BatchMeterUsageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new BatchMeterUsageRequestMarshaller();
@@ -298,6 +316,7 @@ namespace Amazon.AWSMarketplaceMetering
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/meteringmarketplace-2016-01-14/MeterUsage">REST API Reference for MeterUsage Operation</seealso>
         public Task<MeterUsageResponse> MeterUsageAsync(MeterUsageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new MeterUsageRequestMarshaller();
@@ -329,6 +348,7 @@ namespace Amazon.AWSMarketplaceMetering
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/meteringmarketplace-2016-01-14/ResolveCustomer">REST API Reference for ResolveCustomer Operation</seealso>
         public Task<ResolveCustomerResponse> ResolveCustomerAsync(ResolveCustomerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ResolveCustomerRequestMarshaller();

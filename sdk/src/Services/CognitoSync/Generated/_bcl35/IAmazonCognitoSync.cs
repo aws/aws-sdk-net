@@ -97,6 +97,7 @@ namespace Amazon.CognitoSync
         /// <exception cref="Amazon.CognitoSync.Model.ResourceNotFoundException">
         /// Thrown if the resource doesn't exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-sync-2014-06-30/BulkPublish">REST API Reference for BulkPublish Operation</seealso>
         BulkPublishResponse BulkPublish(BulkPublishRequest request);
 
         /// <summary>
@@ -110,6 +111,7 @@ namespace Amazon.CognitoSync
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndBulkPublish
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-sync-2014-06-30/BulkPublish">REST API Reference for BulkPublish Operation</seealso>
         IAsyncResult BeginBulkPublish(BulkPublishRequest request, AsyncCallback callback, object state);
 
 
@@ -121,6 +123,7 @@ namespace Amazon.CognitoSync
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginBulkPublish.</param>
         /// 
         /// <returns>Returns a  BulkPublishResult from CognitoSync.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-sync-2014-06-30/BulkPublish">REST API Reference for BulkPublish Operation</seealso>
         BulkPublishResponse EndBulkPublish(IAsyncResult asyncResult);
 
         #endregion
@@ -161,6 +164,7 @@ namespace Amazon.CognitoSync
         /// <exception cref="Amazon.CognitoSync.Model.TooManyRequestsException">
         /// Thrown if the request is throttled.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-sync-2014-06-30/DeleteDataset">REST API Reference for DeleteDataset Operation</seealso>
         DeleteDatasetResponse DeleteDataset(DeleteDatasetRequest request);
 
         /// <summary>
@@ -174,6 +178,7 @@ namespace Amazon.CognitoSync
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteDataset
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-sync-2014-06-30/DeleteDataset">REST API Reference for DeleteDataset Operation</seealso>
         IAsyncResult BeginDeleteDataset(DeleteDatasetRequest request, AsyncCallback callback, object state);
 
 
@@ -185,6 +190,7 @@ namespace Amazon.CognitoSync
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteDataset.</param>
         /// 
         /// <returns>Returns a  DeleteDatasetResult from CognitoSync.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-sync-2014-06-30/DeleteDataset">REST API Reference for DeleteDataset Operation</seealso>
         DeleteDatasetResponse EndDeleteDataset(IAsyncResult asyncResult);
 
         #endregion
@@ -222,6 +228,7 @@ namespace Amazon.CognitoSync
         /// <exception cref="Amazon.CognitoSync.Model.TooManyRequestsException">
         /// Thrown if the request is throttled.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-sync-2014-06-30/DescribeDataset">REST API Reference for DescribeDataset Operation</seealso>
         DescribeDatasetResponse DescribeDataset(DescribeDatasetRequest request);
 
         /// <summary>
@@ -235,6 +242,7 @@ namespace Amazon.CognitoSync
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeDataset
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-sync-2014-06-30/DescribeDataset">REST API Reference for DescribeDataset Operation</seealso>
         IAsyncResult BeginDescribeDataset(DescribeDatasetRequest request, AsyncCallback callback, object state);
 
 
@@ -246,6 +254,7 @@ namespace Amazon.CognitoSync
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeDataset.</param>
         /// 
         /// <returns>Returns a  DescribeDatasetResult from CognitoSync.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-sync-2014-06-30/DescribeDataset">REST API Reference for DescribeDataset Operation</seealso>
         DescribeDatasetResponse EndDescribeDataset(IAsyncResult asyncResult);
 
         #endregion
@@ -280,6 +289,7 @@ namespace Amazon.CognitoSync
         /// <exception cref="Amazon.CognitoSync.Model.TooManyRequestsException">
         /// Thrown if the request is throttled.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-sync-2014-06-30/DescribeIdentityPoolUsage">REST API Reference for DescribeIdentityPoolUsage Operation</seealso>
         DescribeIdentityPoolUsageResponse DescribeIdentityPoolUsage(string identityPoolId);
 
         /// <summary>
@@ -309,6 +319,7 @@ namespace Amazon.CognitoSync
         /// <exception cref="Amazon.CognitoSync.Model.TooManyRequestsException">
         /// Thrown if the request is throttled.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-sync-2014-06-30/DescribeIdentityPoolUsage">REST API Reference for DescribeIdentityPoolUsage Operation</seealso>
         DescribeIdentityPoolUsageResponse DescribeIdentityPoolUsage(DescribeIdentityPoolUsageRequest request);
 
         /// <summary>
@@ -322,6 +333,7 @@ namespace Amazon.CognitoSync
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeIdentityPoolUsage
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-sync-2014-06-30/DescribeIdentityPoolUsage">REST API Reference for DescribeIdentityPoolUsage Operation</seealso>
         IAsyncResult BeginDescribeIdentityPoolUsage(DescribeIdentityPoolUsageRequest request, AsyncCallback callback, object state);
 
 
@@ -333,6 +345,7 @@ namespace Amazon.CognitoSync
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeIdentityPoolUsage.</param>
         /// 
         /// <returns>Returns a  DescribeIdentityPoolUsageResult from CognitoSync.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-sync-2014-06-30/DescribeIdentityPoolUsage">REST API Reference for DescribeIdentityPoolUsage Operation</seealso>
         DescribeIdentityPoolUsageResponse EndDescribeIdentityPoolUsage(IAsyncResult asyncResult);
 
         #endregion
@@ -367,6 +380,7 @@ namespace Amazon.CognitoSync
         /// <exception cref="Amazon.CognitoSync.Model.TooManyRequestsException">
         /// Thrown if the request is throttled.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-sync-2014-06-30/DescribeIdentityUsage">REST API Reference for DescribeIdentityUsage Operation</seealso>
         DescribeIdentityUsageResponse DescribeIdentityUsage(DescribeIdentityUsageRequest request);
 
         /// <summary>
@@ -380,6 +394,7 @@ namespace Amazon.CognitoSync
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeIdentityUsage
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-sync-2014-06-30/DescribeIdentityUsage">REST API Reference for DescribeIdentityUsage Operation</seealso>
         IAsyncResult BeginDescribeIdentityUsage(DescribeIdentityUsageRequest request, AsyncCallback callback, object state);
 
 
@@ -391,6 +406,7 @@ namespace Amazon.CognitoSync
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeIdentityUsage.</param>
         /// 
         /// <returns>Returns a  DescribeIdentityUsageResult from CognitoSync.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-sync-2014-06-30/DescribeIdentityUsage">REST API Reference for DescribeIdentityUsage Operation</seealso>
         DescribeIdentityUsageResponse EndDescribeIdentityUsage(IAsyncResult asyncResult);
 
         #endregion
@@ -422,6 +438,7 @@ namespace Amazon.CognitoSync
         /// <exception cref="Amazon.CognitoSync.Model.ResourceNotFoundException">
         /// Thrown if the resource doesn't exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-sync-2014-06-30/GetBulkPublishDetails">REST API Reference for GetBulkPublishDetails Operation</seealso>
         GetBulkPublishDetailsResponse GetBulkPublishDetails(GetBulkPublishDetailsRequest request);
 
         /// <summary>
@@ -435,6 +452,7 @@ namespace Amazon.CognitoSync
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetBulkPublishDetails
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-sync-2014-06-30/GetBulkPublishDetails">REST API Reference for GetBulkPublishDetails Operation</seealso>
         IAsyncResult BeginGetBulkPublishDetails(GetBulkPublishDetailsRequest request, AsyncCallback callback, object state);
 
 
@@ -446,6 +464,7 @@ namespace Amazon.CognitoSync
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetBulkPublishDetails.</param>
         /// 
         /// <returns>Returns a  GetBulkPublishDetailsResult from CognitoSync.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-sync-2014-06-30/GetBulkPublishDetails">REST API Reference for GetBulkPublishDetails Operation</seealso>
         GetBulkPublishDetailsResponse EndGetBulkPublishDetails(IAsyncResult asyncResult);
 
         #endregion
@@ -481,6 +500,7 @@ namespace Amazon.CognitoSync
         /// <exception cref="Amazon.CognitoSync.Model.TooManyRequestsException">
         /// Thrown if the request is throttled.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-sync-2014-06-30/GetCognitoEvents">REST API Reference for GetCognitoEvents Operation</seealso>
         GetCognitoEventsResponse GetCognitoEvents(GetCognitoEventsRequest request);
 
         /// <summary>
@@ -494,6 +514,7 @@ namespace Amazon.CognitoSync
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetCognitoEvents
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-sync-2014-06-30/GetCognitoEvents">REST API Reference for GetCognitoEvents Operation</seealso>
         IAsyncResult BeginGetCognitoEvents(GetCognitoEventsRequest request, AsyncCallback callback, object state);
 
 
@@ -505,6 +526,7 @@ namespace Amazon.CognitoSync
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetCognitoEvents.</param>
         /// 
         /// <returns>Returns a  GetCognitoEventsResult from CognitoSync.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-sync-2014-06-30/GetCognitoEvents">REST API Reference for GetCognitoEvents Operation</seealso>
         GetCognitoEventsResponse EndGetCognitoEvents(IAsyncResult asyncResult);
 
         #endregion
@@ -539,6 +561,7 @@ namespace Amazon.CognitoSync
         /// <exception cref="Amazon.CognitoSync.Model.TooManyRequestsException">
         /// Thrown if the request is throttled.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-sync-2014-06-30/GetIdentityPoolConfiguration">REST API Reference for GetIdentityPoolConfiguration Operation</seealso>
         GetIdentityPoolConfigurationResponse GetIdentityPoolConfiguration(string identityPoolId);
 
         /// <summary>
@@ -568,6 +591,7 @@ namespace Amazon.CognitoSync
         /// <exception cref="Amazon.CognitoSync.Model.TooManyRequestsException">
         /// Thrown if the request is throttled.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-sync-2014-06-30/GetIdentityPoolConfiguration">REST API Reference for GetIdentityPoolConfiguration Operation</seealso>
         GetIdentityPoolConfigurationResponse GetIdentityPoolConfiguration(GetIdentityPoolConfigurationRequest request);
 
         /// <summary>
@@ -581,6 +605,7 @@ namespace Amazon.CognitoSync
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetIdentityPoolConfiguration
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-sync-2014-06-30/GetIdentityPoolConfiguration">REST API Reference for GetIdentityPoolConfiguration Operation</seealso>
         IAsyncResult BeginGetIdentityPoolConfiguration(GetIdentityPoolConfigurationRequest request, AsyncCallback callback, object state);
 
 
@@ -592,6 +617,7 @@ namespace Amazon.CognitoSync
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetIdentityPoolConfiguration.</param>
         /// 
         /// <returns>Returns a  GetIdentityPoolConfigurationResult from CognitoSync.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-sync-2014-06-30/GetIdentityPoolConfiguration">REST API Reference for GetIdentityPoolConfiguration Operation</seealso>
         GetIdentityPoolConfigurationResponse EndGetIdentityPoolConfiguration(IAsyncResult asyncResult);
 
         #endregion
@@ -626,6 +652,7 @@ namespace Amazon.CognitoSync
         /// <exception cref="Amazon.CognitoSync.Model.TooManyRequestsException">
         /// Thrown if the request is throttled.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-sync-2014-06-30/ListDatasets">REST API Reference for ListDatasets Operation</seealso>
         ListDatasetsResponse ListDatasets(ListDatasetsRequest request);
 
         /// <summary>
@@ -639,6 +666,7 @@ namespace Amazon.CognitoSync
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListDatasets
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-sync-2014-06-30/ListDatasets">REST API Reference for ListDatasets Operation</seealso>
         IAsyncResult BeginListDatasets(ListDatasetsRequest request, AsyncCallback callback, object state);
 
 
@@ -650,6 +678,7 @@ namespace Amazon.CognitoSync
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListDatasets.</param>
         /// 
         /// <returns>Returns a  ListDatasetsResult from CognitoSync.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-sync-2014-06-30/ListDatasets">REST API Reference for ListDatasets Operation</seealso>
         ListDatasetsResponse EndListDatasets(IAsyncResult asyncResult);
 
         #endregion
@@ -681,6 +710,7 @@ namespace Amazon.CognitoSync
         /// <exception cref="Amazon.CognitoSync.Model.TooManyRequestsException">
         /// Thrown if the request is throttled.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-sync-2014-06-30/ListIdentityPoolUsage">REST API Reference for ListIdentityPoolUsage Operation</seealso>
         ListIdentityPoolUsageResponse ListIdentityPoolUsage(ListIdentityPoolUsageRequest request);
 
         /// <summary>
@@ -694,6 +724,7 @@ namespace Amazon.CognitoSync
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListIdentityPoolUsage
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-sync-2014-06-30/ListIdentityPoolUsage">REST API Reference for ListIdentityPoolUsage Operation</seealso>
         IAsyncResult BeginListIdentityPoolUsage(ListIdentityPoolUsageRequest request, AsyncCallback callback, object state);
 
 
@@ -705,6 +736,7 @@ namespace Amazon.CognitoSync
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListIdentityPoolUsage.</param>
         /// 
         /// <returns>Returns a  ListIdentityPoolUsageResult from CognitoSync.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-sync-2014-06-30/ListIdentityPoolUsage">REST API Reference for ListIdentityPoolUsage Operation</seealso>
         ListIdentityPoolUsageResponse EndListIdentityPoolUsage(IAsyncResult asyncResult);
 
         #endregion
@@ -740,6 +772,7 @@ namespace Amazon.CognitoSync
         /// <exception cref="Amazon.CognitoSync.Model.TooManyRequestsException">
         /// Thrown if the request is throttled.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-sync-2014-06-30/ListRecords">REST API Reference for ListRecords Operation</seealso>
         ListRecordsResponse ListRecords(ListRecordsRequest request);
 
         /// <summary>
@@ -753,6 +786,7 @@ namespace Amazon.CognitoSync
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListRecords
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-sync-2014-06-30/ListRecords">REST API Reference for ListRecords Operation</seealso>
         IAsyncResult BeginListRecords(ListRecordsRequest request, AsyncCallback callback, object state);
 
 
@@ -764,6 +798,7 @@ namespace Amazon.CognitoSync
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListRecords.</param>
         /// 
         /// <returns>Returns a  ListRecordsResult from CognitoSync.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-sync-2014-06-30/ListRecords">REST API Reference for ListRecords Operation</seealso>
         ListRecordsResponse EndListRecords(IAsyncResult asyncResult);
 
         #endregion
@@ -801,6 +836,7 @@ namespace Amazon.CognitoSync
         /// <exception cref="Amazon.CognitoSync.Model.TooManyRequestsException">
         /// Thrown if the request is throttled.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-sync-2014-06-30/RegisterDevice">REST API Reference for RegisterDevice Operation</seealso>
         RegisterDeviceResponse RegisterDevice(RegisterDeviceRequest request);
 
         /// <summary>
@@ -814,6 +850,7 @@ namespace Amazon.CognitoSync
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndRegisterDevice
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-sync-2014-06-30/RegisterDevice">REST API Reference for RegisterDevice Operation</seealso>
         IAsyncResult BeginRegisterDevice(RegisterDeviceRequest request, AsyncCallback callback, object state);
 
 
@@ -825,6 +862,7 @@ namespace Amazon.CognitoSync
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginRegisterDevice.</param>
         /// 
         /// <returns>Returns a  RegisterDeviceResult from CognitoSync.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-sync-2014-06-30/RegisterDevice">REST API Reference for RegisterDevice Operation</seealso>
         RegisterDeviceResponse EndRegisterDevice(IAsyncResult asyncResult);
 
         #endregion
@@ -861,6 +899,7 @@ namespace Amazon.CognitoSync
         /// <exception cref="Amazon.CognitoSync.Model.TooManyRequestsException">
         /// Thrown if the request is throttled.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-sync-2014-06-30/SetCognitoEvents">REST API Reference for SetCognitoEvents Operation</seealso>
         SetCognitoEventsResponse SetCognitoEvents(SetCognitoEventsRequest request);
 
         /// <summary>
@@ -874,6 +913,7 @@ namespace Amazon.CognitoSync
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndSetCognitoEvents
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-sync-2014-06-30/SetCognitoEvents">REST API Reference for SetCognitoEvents Operation</seealso>
         IAsyncResult BeginSetCognitoEvents(SetCognitoEventsRequest request, AsyncCallback callback, object state);
 
 
@@ -885,6 +925,7 @@ namespace Amazon.CognitoSync
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginSetCognitoEvents.</param>
         /// 
         /// <returns>Returns a  SetCognitoEventsResult from CognitoSync.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-sync-2014-06-30/SetCognitoEvents">REST API Reference for SetCognitoEvents Operation</seealso>
         SetCognitoEventsResponse EndSetCognitoEvents(IAsyncResult asyncResult);
 
         #endregion
@@ -922,6 +963,7 @@ namespace Amazon.CognitoSync
         /// <exception cref="Amazon.CognitoSync.Model.TooManyRequestsException">
         /// Thrown if the request is throttled.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-sync-2014-06-30/SetIdentityPoolConfiguration">REST API Reference for SetIdentityPoolConfiguration Operation</seealso>
         SetIdentityPoolConfigurationResponse SetIdentityPoolConfiguration(SetIdentityPoolConfigurationRequest request);
 
         /// <summary>
@@ -935,6 +977,7 @@ namespace Amazon.CognitoSync
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndSetIdentityPoolConfiguration
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-sync-2014-06-30/SetIdentityPoolConfiguration">REST API Reference for SetIdentityPoolConfiguration Operation</seealso>
         IAsyncResult BeginSetIdentityPoolConfiguration(SetIdentityPoolConfigurationRequest request, AsyncCallback callback, object state);
 
 
@@ -946,6 +989,7 @@ namespace Amazon.CognitoSync
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginSetIdentityPoolConfiguration.</param>
         /// 
         /// <returns>Returns a  SetIdentityPoolConfigurationResult from CognitoSync.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-sync-2014-06-30/SetIdentityPoolConfiguration">REST API Reference for SetIdentityPoolConfiguration Operation</seealso>
         SetIdentityPoolConfigurationResponse EndSetIdentityPoolConfiguration(IAsyncResult asyncResult);
 
         #endregion
@@ -983,6 +1027,7 @@ namespace Amazon.CognitoSync
         /// <exception cref="Amazon.CognitoSync.Model.TooManyRequestsException">
         /// Thrown if the request is throttled.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-sync-2014-06-30/SubscribeToDataset">REST API Reference for SubscribeToDataset Operation</seealso>
         SubscribeToDatasetResponse SubscribeToDataset(SubscribeToDatasetRequest request);
 
         /// <summary>
@@ -996,6 +1041,7 @@ namespace Amazon.CognitoSync
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndSubscribeToDataset
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-sync-2014-06-30/SubscribeToDataset">REST API Reference for SubscribeToDataset Operation</seealso>
         IAsyncResult BeginSubscribeToDataset(SubscribeToDatasetRequest request, AsyncCallback callback, object state);
 
 
@@ -1007,6 +1053,7 @@ namespace Amazon.CognitoSync
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginSubscribeToDataset.</param>
         /// 
         /// <returns>Returns a  SubscribeToDatasetResult from CognitoSync.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-sync-2014-06-30/SubscribeToDataset">REST API Reference for SubscribeToDataset Operation</seealso>
         SubscribeToDatasetResponse EndSubscribeToDataset(IAsyncResult asyncResult);
 
         #endregion
@@ -1044,6 +1091,7 @@ namespace Amazon.CognitoSync
         /// <exception cref="Amazon.CognitoSync.Model.TooManyRequestsException">
         /// Thrown if the request is throttled.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-sync-2014-06-30/UnsubscribeFromDataset">REST API Reference for UnsubscribeFromDataset Operation</seealso>
         UnsubscribeFromDatasetResponse UnsubscribeFromDataset(UnsubscribeFromDatasetRequest request);
 
         /// <summary>
@@ -1057,6 +1105,7 @@ namespace Amazon.CognitoSync
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUnsubscribeFromDataset
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-sync-2014-06-30/UnsubscribeFromDataset">REST API Reference for UnsubscribeFromDataset Operation</seealso>
         IAsyncResult BeginUnsubscribeFromDataset(UnsubscribeFromDatasetRequest request, AsyncCallback callback, object state);
 
 
@@ -1068,6 +1117,7 @@ namespace Amazon.CognitoSync
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUnsubscribeFromDataset.</param>
         /// 
         /// <returns>Returns a  UnsubscribeFromDatasetResult from CognitoSync.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-sync-2014-06-30/UnsubscribeFromDataset">REST API Reference for UnsubscribeFromDataset Operation</seealso>
         UnsubscribeFromDatasetResponse EndUnsubscribeFromDataset(IAsyncResult asyncResult);
 
         #endregion
@@ -1130,6 +1180,7 @@ namespace Amazon.CognitoSync
         /// <exception cref="Amazon.CognitoSync.Model.TooManyRequestsException">
         /// Thrown if the request is throttled.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-sync-2014-06-30/UpdateRecords">REST API Reference for UpdateRecords Operation</seealso>
         UpdateRecordsResponse UpdateRecords(UpdateRecordsRequest request);
 
         /// <summary>
@@ -1143,6 +1194,7 @@ namespace Amazon.CognitoSync
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateRecords
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-sync-2014-06-30/UpdateRecords">REST API Reference for UpdateRecords Operation</seealso>
         IAsyncResult BeginUpdateRecords(UpdateRecordsRequest request, AsyncCallback callback, object state);
 
 
@@ -1154,6 +1206,7 @@ namespace Amazon.CognitoSync
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateRecords.</param>
         /// 
         /// <returns>Returns a  UpdateRecordsResult from CognitoSync.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-sync-2014-06-30/UpdateRecords">REST API Reference for UpdateRecords Operation</seealso>
         UpdateRecordsResponse EndUpdateRecords(IAsyncResult asyncResult);
 
         #endregion

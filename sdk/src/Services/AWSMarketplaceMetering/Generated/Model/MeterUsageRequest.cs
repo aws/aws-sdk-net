@@ -31,6 +31,12 @@ namespace Amazon.AWSMarketplaceMetering.Model
     /// Container for the parameters to the MeterUsage operation.
     /// API to emit metering records. For identical requests, the API is idempotent. It simply
     /// returns the metering record ID.
+    /// 
+    ///  
+    /// <para>
+    /// MeterUsage is authenticated on the buyer's AWS account, generally when running from
+    /// an EC2 instance on the AWS Marketplace.
+    /// </para>
     /// </summary>
     public partial class MeterUsageRequest : AmazonAWSMarketplaceMeteringRequest
     {
@@ -101,7 +107,7 @@ namespace Amazon.AWSMarketplaceMetering.Model
         /// <summary>
         /// Gets and sets the property UsageDimension. 
         /// <para>
-        /// It will be one of the 'fcp dimension name' provided during the publishing of the product.
+        /// It will be one of the fcp dimension name provided during the publishing of the product.
         /// </para>
         /// </summary>
         public string UsageDimension

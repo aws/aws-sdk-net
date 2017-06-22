@@ -63,6 +63,7 @@ namespace Amazon.MachineLearning
         /// <exception cref="Amazon.MachineLearning.Model.TagLimitExceededException">
         /// 
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/AddTags">REST API Reference for AddTags Operation</seealso>
         AddTagsResponse AddTags(AddTagsRequest request);
 
 
@@ -75,6 +76,7 @@ namespace Amazon.MachineLearning
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/AddTags">REST API Reference for AddTags Operation</seealso>
         Task<AddTagsResponse> AddTagsAsync(AddTagsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -116,6 +118,7 @@ namespace Amazon.MachineLearning
         /// <exception cref="Amazon.MachineLearning.Model.InvalidInputException">
         /// An error on the client occurred. Typically, the cause is an invalid input value.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/CreateBatchPrediction">REST API Reference for CreateBatchPrediction Operation</seealso>
         CreateBatchPredictionResponse CreateBatchPrediction(CreateBatchPredictionRequest request);
 
 
@@ -128,6 +131,7 @@ namespace Amazon.MachineLearning
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/CreateBatchPrediction">REST API Reference for CreateBatchPrediction Operation</seealso>
         Task<CreateBatchPredictionResponse> CreateBatchPredictionAsync(CreateBatchPredictionRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -171,6 +175,7 @@ namespace Amazon.MachineLearning
         /// <exception cref="Amazon.MachineLearning.Model.InvalidInputException">
         /// An error on the client occurred. Typically, the cause is an invalid input value.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/CreateDataSourceFromRDS">REST API Reference for CreateDataSourceFromRDS Operation</seealso>
         CreateDataSourceFromRDSResponse CreateDataSourceFromRDS(CreateDataSourceFromRDSRequest request);
 
 
@@ -183,6 +188,7 @@ namespace Amazon.MachineLearning
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/CreateDataSourceFromRDS">REST API Reference for CreateDataSourceFromRDS Operation</seealso>
         Task<CreateDataSourceFromRDSResponse> CreateDataSourceFromRDSAsync(CreateDataSourceFromRDSRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -251,6 +257,7 @@ namespace Amazon.MachineLearning
         /// <exception cref="Amazon.MachineLearning.Model.InvalidInputException">
         /// An error on the client occurred. Typically, the cause is an invalid input value.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/CreateDataSourceFromRedshift">REST API Reference for CreateDataSourceFromRedshift Operation</seealso>
         CreateDataSourceFromRedshiftResponse CreateDataSourceFromRedshift(CreateDataSourceFromRedshiftRequest request);
 
 
@@ -263,6 +270,7 @@ namespace Amazon.MachineLearning
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/CreateDataSourceFromRedshift">REST API Reference for CreateDataSourceFromRedshift Operation</seealso>
         Task<CreateDataSourceFromRedshiftResponse> CreateDataSourceFromRedshiftAsync(CreateDataSourceFromRedshiftRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -324,6 +332,7 @@ namespace Amazon.MachineLearning
         /// <exception cref="Amazon.MachineLearning.Model.InvalidInputException">
         /// An error on the client occurred. Typically, the cause is an invalid input value.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/CreateDataSourceFromS3">REST API Reference for CreateDataSourceFromS3 Operation</seealso>
         CreateDataSourceFromS3Response CreateDataSourceFromS3(CreateDataSourceFromS3Request request);
 
 
@@ -336,6 +345,7 @@ namespace Amazon.MachineLearning
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/CreateDataSourceFromS3">REST API Reference for CreateDataSourceFromS3 Operation</seealso>
         Task<CreateDataSourceFromS3Response> CreateDataSourceFromS3Async(CreateDataSourceFromS3Request request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -380,6 +390,7 @@ namespace Amazon.MachineLearning
         /// <exception cref="Amazon.MachineLearning.Model.InvalidInputException">
         /// An error on the client occurred. Typically, the cause is an invalid input value.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/CreateEvaluation">REST API Reference for CreateEvaluation Operation</seealso>
         CreateEvaluationResponse CreateEvaluation(CreateEvaluationRequest request);
 
 
@@ -392,6 +403,7 @@ namespace Amazon.MachineLearning
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/CreateEvaluation">REST API Reference for CreateEvaluation Operation</seealso>
         Task<CreateEvaluationResponse> CreateEvaluationAsync(CreateEvaluationRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -442,6 +454,7 @@ namespace Amazon.MachineLearning
         /// <exception cref="Amazon.MachineLearning.Model.InvalidInputException">
         /// An error on the client occurred. Typically, the cause is an invalid input value.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/CreateMLModel">REST API Reference for CreateMLModel Operation</seealso>
         CreateMLModelResponse CreateMLModel(CreateMLModelRequest request);
 
 
@@ -454,6 +467,7 @@ namespace Amazon.MachineLearning
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/CreateMLModel">REST API Reference for CreateMLModel Operation</seealso>
         Task<CreateMLModelResponse> CreateMLModelAsync(CreateMLModelRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -478,6 +492,7 @@ namespace Amazon.MachineLearning
         /// <exception cref="Amazon.MachineLearning.Model.ResourceNotFoundException">
         /// A specified resource cannot be located.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/CreateRealtimeEndpoint">REST API Reference for CreateRealtimeEndpoint Operation</seealso>
         CreateRealtimeEndpointResponse CreateRealtimeEndpoint(string mlModelId);
 
         /// <summary>
@@ -497,6 +512,7 @@ namespace Amazon.MachineLearning
         /// <exception cref="Amazon.MachineLearning.Model.ResourceNotFoundException">
         /// A specified resource cannot be located.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/CreateRealtimeEndpoint">REST API Reference for CreateRealtimeEndpoint Operation</seealso>
         CreateRealtimeEndpointResponse CreateRealtimeEndpoint(CreateRealtimeEndpointRequest request);
 
 
@@ -520,6 +536,7 @@ namespace Amazon.MachineLearning
         /// <exception cref="Amazon.MachineLearning.Model.ResourceNotFoundException">
         /// A specified resource cannot be located.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/CreateRealtimeEndpoint">REST API Reference for CreateRealtimeEndpoint Operation</seealso>
         Task<CreateRealtimeEndpointResponse> CreateRealtimeEndpointAsync(string mlModelId, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
@@ -531,6 +548,7 @@ namespace Amazon.MachineLearning
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/CreateRealtimeEndpoint">REST API Reference for CreateRealtimeEndpoint Operation</seealso>
         Task<CreateRealtimeEndpointResponse> CreateRealtimeEndpointAsync(CreateRealtimeEndpointRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -565,6 +583,7 @@ namespace Amazon.MachineLearning
         /// <exception cref="Amazon.MachineLearning.Model.ResourceNotFoundException">
         /// A specified resource cannot be located.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/DeleteBatchPrediction">REST API Reference for DeleteBatchPrediction Operation</seealso>
         DeleteBatchPredictionResponse DeleteBatchPrediction(string batchPredictionId);
 
         /// <summary>
@@ -594,6 +613,7 @@ namespace Amazon.MachineLearning
         /// <exception cref="Amazon.MachineLearning.Model.ResourceNotFoundException">
         /// A specified resource cannot be located.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/DeleteBatchPrediction">REST API Reference for DeleteBatchPrediction Operation</seealso>
         DeleteBatchPredictionResponse DeleteBatchPrediction(DeleteBatchPredictionRequest request);
 
 
@@ -627,6 +647,7 @@ namespace Amazon.MachineLearning
         /// <exception cref="Amazon.MachineLearning.Model.ResourceNotFoundException">
         /// A specified resource cannot be located.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/DeleteBatchPrediction">REST API Reference for DeleteBatchPrediction Operation</seealso>
         Task<DeleteBatchPredictionResponse> DeleteBatchPredictionAsync(string batchPredictionId, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
@@ -638,6 +659,7 @@ namespace Amazon.MachineLearning
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/DeleteBatchPrediction">REST API Reference for DeleteBatchPrediction Operation</seealso>
         Task<DeleteBatchPredictionResponse> DeleteBatchPredictionAsync(DeleteBatchPredictionRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -670,6 +692,7 @@ namespace Amazon.MachineLearning
         /// <exception cref="Amazon.MachineLearning.Model.ResourceNotFoundException">
         /// A specified resource cannot be located.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/DeleteDataSource">REST API Reference for DeleteDataSource Operation</seealso>
         DeleteDataSourceResponse DeleteDataSource(string dataSourceId);
 
         /// <summary>
@@ -697,6 +720,7 @@ namespace Amazon.MachineLearning
         /// <exception cref="Amazon.MachineLearning.Model.ResourceNotFoundException">
         /// A specified resource cannot be located.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/DeleteDataSource">REST API Reference for DeleteDataSource Operation</seealso>
         DeleteDataSourceResponse DeleteDataSource(DeleteDataSourceRequest request);
 
 
@@ -728,6 +752,7 @@ namespace Amazon.MachineLearning
         /// <exception cref="Amazon.MachineLearning.Model.ResourceNotFoundException">
         /// A specified resource cannot be located.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/DeleteDataSource">REST API Reference for DeleteDataSource Operation</seealso>
         Task<DeleteDataSourceResponse> DeleteDataSourceAsync(string dataSourceId, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
@@ -739,6 +764,7 @@ namespace Amazon.MachineLearning
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/DeleteDataSource">REST API Reference for DeleteDataSource Operation</seealso>
         Task<DeleteDataSourceResponse> DeleteDataSourceAsync(DeleteDataSourceRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -773,6 +799,7 @@ namespace Amazon.MachineLearning
         /// <exception cref="Amazon.MachineLearning.Model.ResourceNotFoundException">
         /// A specified resource cannot be located.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/DeleteEvaluation">REST API Reference for DeleteEvaluation Operation</seealso>
         DeleteEvaluationResponse DeleteEvaluation(string evaluationId);
 
         /// <summary>
@@ -802,6 +829,7 @@ namespace Amazon.MachineLearning
         /// <exception cref="Amazon.MachineLearning.Model.ResourceNotFoundException">
         /// A specified resource cannot be located.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/DeleteEvaluation">REST API Reference for DeleteEvaluation Operation</seealso>
         DeleteEvaluationResponse DeleteEvaluation(DeleteEvaluationRequest request);
 
 
@@ -835,6 +863,7 @@ namespace Amazon.MachineLearning
         /// <exception cref="Amazon.MachineLearning.Model.ResourceNotFoundException">
         /// A specified resource cannot be located.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/DeleteEvaluation">REST API Reference for DeleteEvaluation Operation</seealso>
         Task<DeleteEvaluationResponse> DeleteEvaluationAsync(string evaluationId, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
@@ -846,6 +875,7 @@ namespace Amazon.MachineLearning
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/DeleteEvaluation">REST API Reference for DeleteEvaluation Operation</seealso>
         Task<DeleteEvaluationResponse> DeleteEvaluationAsync(DeleteEvaluationRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -878,6 +908,7 @@ namespace Amazon.MachineLearning
         /// <exception cref="Amazon.MachineLearning.Model.ResourceNotFoundException">
         /// A specified resource cannot be located.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/DeleteMLModel">REST API Reference for DeleteMLModel Operation</seealso>
         DeleteMLModelResponse DeleteMLModel(string mlModelId);
 
         /// <summary>
@@ -905,6 +936,7 @@ namespace Amazon.MachineLearning
         /// <exception cref="Amazon.MachineLearning.Model.ResourceNotFoundException">
         /// A specified resource cannot be located.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/DeleteMLModel">REST API Reference for DeleteMLModel Operation</seealso>
         DeleteMLModelResponse DeleteMLModel(DeleteMLModelRequest request);
 
 
@@ -936,6 +968,7 @@ namespace Amazon.MachineLearning
         /// <exception cref="Amazon.MachineLearning.Model.ResourceNotFoundException">
         /// A specified resource cannot be located.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/DeleteMLModel">REST API Reference for DeleteMLModel Operation</seealso>
         Task<DeleteMLModelResponse> DeleteMLModelAsync(string mlModelId, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
@@ -947,6 +980,7 @@ namespace Amazon.MachineLearning
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/DeleteMLModel">REST API Reference for DeleteMLModel Operation</seealso>
         Task<DeleteMLModelResponse> DeleteMLModelAsync(DeleteMLModelRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -969,6 +1003,7 @@ namespace Amazon.MachineLearning
         /// <exception cref="Amazon.MachineLearning.Model.ResourceNotFoundException">
         /// A specified resource cannot be located.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/DeleteRealtimeEndpoint">REST API Reference for DeleteRealtimeEndpoint Operation</seealso>
         DeleteRealtimeEndpointResponse DeleteRealtimeEndpoint(string mlModelId);
 
         /// <summary>
@@ -986,6 +1021,7 @@ namespace Amazon.MachineLearning
         /// <exception cref="Amazon.MachineLearning.Model.ResourceNotFoundException">
         /// A specified resource cannot be located.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/DeleteRealtimeEndpoint">REST API Reference for DeleteRealtimeEndpoint Operation</seealso>
         DeleteRealtimeEndpointResponse DeleteRealtimeEndpoint(DeleteRealtimeEndpointRequest request);
 
 
@@ -1007,6 +1043,7 @@ namespace Amazon.MachineLearning
         /// <exception cref="Amazon.MachineLearning.Model.ResourceNotFoundException">
         /// A specified resource cannot be located.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/DeleteRealtimeEndpoint">REST API Reference for DeleteRealtimeEndpoint Operation</seealso>
         Task<DeleteRealtimeEndpointResponse> DeleteRealtimeEndpointAsync(string mlModelId, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
@@ -1018,6 +1055,7 @@ namespace Amazon.MachineLearning
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/DeleteRealtimeEndpoint">REST API Reference for DeleteRealtimeEndpoint Operation</seealso>
         Task<DeleteRealtimeEndpointResponse> DeleteRealtimeEndpointAsync(DeleteRealtimeEndpointRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1049,6 +1087,7 @@ namespace Amazon.MachineLearning
         /// <exception cref="Amazon.MachineLearning.Model.ResourceNotFoundException">
         /// A specified resource cannot be located.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/DeleteTags">REST API Reference for DeleteTags Operation</seealso>
         DeleteTagsResponse DeleteTags(DeleteTagsRequest request);
 
 
@@ -1061,6 +1100,7 @@ namespace Amazon.MachineLearning
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/DeleteTags">REST API Reference for DeleteTags Operation</seealso>
         Task<DeleteTagsResponse> DeleteTagsAsync(DeleteTagsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1081,6 +1121,7 @@ namespace Amazon.MachineLearning
         /// <exception cref="Amazon.MachineLearning.Model.InvalidInputException">
         /// An error on the client occurred. Typically, the cause is an invalid input value.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/DescribeBatchPredictions">REST API Reference for DescribeBatchPredictions Operation</seealso>
         DescribeBatchPredictionsResponse DescribeBatchPredictions(DescribeBatchPredictionsRequest request);
 
 
@@ -1093,6 +1134,7 @@ namespace Amazon.MachineLearning
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/DescribeBatchPredictions">REST API Reference for DescribeBatchPredictions Operation</seealso>
         Task<DescribeBatchPredictionsResponse> DescribeBatchPredictionsAsync(DescribeBatchPredictionsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1112,6 +1154,7 @@ namespace Amazon.MachineLearning
         /// <exception cref="Amazon.MachineLearning.Model.InvalidInputException">
         /// An error on the client occurred. Typically, the cause is an invalid input value.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/DescribeDataSources">REST API Reference for DescribeDataSources Operation</seealso>
         DescribeDataSourcesResponse DescribeDataSources(DescribeDataSourcesRequest request);
 
 
@@ -1124,6 +1167,7 @@ namespace Amazon.MachineLearning
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/DescribeDataSources">REST API Reference for DescribeDataSources Operation</seealso>
         Task<DescribeDataSourcesResponse> DescribeDataSourcesAsync(DescribeDataSourcesRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1144,6 +1188,7 @@ namespace Amazon.MachineLearning
         /// <exception cref="Amazon.MachineLearning.Model.InvalidInputException">
         /// An error on the client occurred. Typically, the cause is an invalid input value.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/DescribeEvaluations">REST API Reference for DescribeEvaluations Operation</seealso>
         DescribeEvaluationsResponse DescribeEvaluations(DescribeEvaluationsRequest request);
 
 
@@ -1156,6 +1201,7 @@ namespace Amazon.MachineLearning
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/DescribeEvaluations">REST API Reference for DescribeEvaluations Operation</seealso>
         Task<DescribeEvaluationsResponse> DescribeEvaluationsAsync(DescribeEvaluationsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1175,6 +1221,7 @@ namespace Amazon.MachineLearning
         /// <exception cref="Amazon.MachineLearning.Model.InvalidInputException">
         /// An error on the client occurred. Typically, the cause is an invalid input value.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/DescribeMLModels">REST API Reference for DescribeMLModels Operation</seealso>
         DescribeMLModelsResponse DescribeMLModels(DescribeMLModelsRequest request);
 
 
@@ -1187,6 +1234,7 @@ namespace Amazon.MachineLearning
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/DescribeMLModels">REST API Reference for DescribeMLModels Operation</seealso>
         Task<DescribeMLModelsResponse> DescribeMLModelsAsync(DescribeMLModelsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1209,6 +1257,7 @@ namespace Amazon.MachineLearning
         /// <exception cref="Amazon.MachineLearning.Model.ResourceNotFoundException">
         /// A specified resource cannot be located.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/DescribeTags">REST API Reference for DescribeTags Operation</seealso>
         DescribeTagsResponse DescribeTags(DescribeTagsRequest request);
 
 
@@ -1221,6 +1270,7 @@ namespace Amazon.MachineLearning
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/DescribeTags">REST API Reference for DescribeTags Operation</seealso>
         Task<DescribeTagsResponse> DescribeTagsAsync(DescribeTagsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1244,6 +1294,7 @@ namespace Amazon.MachineLearning
         /// <exception cref="Amazon.MachineLearning.Model.ResourceNotFoundException">
         /// A specified resource cannot be located.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/GetBatchPrediction">REST API Reference for GetBatchPrediction Operation</seealso>
         GetBatchPredictionResponse GetBatchPrediction(string batchPredictionId);
 
         /// <summary>
@@ -1262,6 +1313,7 @@ namespace Amazon.MachineLearning
         /// <exception cref="Amazon.MachineLearning.Model.ResourceNotFoundException">
         /// A specified resource cannot be located.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/GetBatchPrediction">REST API Reference for GetBatchPrediction Operation</seealso>
         GetBatchPredictionResponse GetBatchPrediction(GetBatchPredictionRequest request);
 
 
@@ -1284,6 +1336,7 @@ namespace Amazon.MachineLearning
         /// <exception cref="Amazon.MachineLearning.Model.ResourceNotFoundException">
         /// A specified resource cannot be located.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/GetBatchPrediction">REST API Reference for GetBatchPrediction Operation</seealso>
         Task<GetBatchPredictionResponse> GetBatchPredictionAsync(string batchPredictionId, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
@@ -1295,6 +1348,7 @@ namespace Amazon.MachineLearning
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/GetBatchPrediction">REST API Reference for GetBatchPrediction Operation</seealso>
         Task<GetBatchPredictionResponse> GetBatchPredictionAsync(GetBatchPredictionRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1325,6 +1379,7 @@ namespace Amazon.MachineLearning
         /// <exception cref="Amazon.MachineLearning.Model.ResourceNotFoundException">
         /// A specified resource cannot be located.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/GetDataSource">REST API Reference for GetDataSource Operation</seealso>
         GetDataSourceResponse GetDataSource(string dataSourceId);
 
         /// <summary>
@@ -1351,6 +1406,7 @@ namespace Amazon.MachineLearning
         /// <exception cref="Amazon.MachineLearning.Model.ResourceNotFoundException">
         /// A specified resource cannot be located.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/GetDataSource">REST API Reference for GetDataSource Operation</seealso>
         GetDataSourceResponse GetDataSource(string dataSourceId, bool verbose);
 
         /// <summary>
@@ -1376,6 +1432,7 @@ namespace Amazon.MachineLearning
         /// <exception cref="Amazon.MachineLearning.Model.ResourceNotFoundException">
         /// A specified resource cannot be located.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/GetDataSource">REST API Reference for GetDataSource Operation</seealso>
         GetDataSourceResponse GetDataSource(GetDataSourceRequest request);
 
 
@@ -1405,6 +1462,7 @@ namespace Amazon.MachineLearning
         /// <exception cref="Amazon.MachineLearning.Model.ResourceNotFoundException">
         /// A specified resource cannot be located.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/GetDataSource">REST API Reference for GetDataSource Operation</seealso>
         Task<GetDataSourceResponse> GetDataSourceAsync(string dataSourceId, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
@@ -1434,6 +1492,7 @@ namespace Amazon.MachineLearning
         /// <exception cref="Amazon.MachineLearning.Model.ResourceNotFoundException">
         /// A specified resource cannot be located.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/GetDataSource">REST API Reference for GetDataSource Operation</seealso>
         Task<GetDataSourceResponse> GetDataSourceAsync(string dataSourceId, bool verbose, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
@@ -1445,6 +1504,7 @@ namespace Amazon.MachineLearning
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/GetDataSource">REST API Reference for GetDataSource Operation</seealso>
         Task<GetDataSourceResponse> GetDataSourceAsync(GetDataSourceRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1468,6 +1528,7 @@ namespace Amazon.MachineLearning
         /// <exception cref="Amazon.MachineLearning.Model.ResourceNotFoundException">
         /// A specified resource cannot be located.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/GetEvaluation">REST API Reference for GetEvaluation Operation</seealso>
         GetEvaluationResponse GetEvaluation(string evaluationId);
 
         /// <summary>
@@ -1486,6 +1547,7 @@ namespace Amazon.MachineLearning
         /// <exception cref="Amazon.MachineLearning.Model.ResourceNotFoundException">
         /// A specified resource cannot be located.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/GetEvaluation">REST API Reference for GetEvaluation Operation</seealso>
         GetEvaluationResponse GetEvaluation(GetEvaluationRequest request);
 
 
@@ -1508,6 +1570,7 @@ namespace Amazon.MachineLearning
         /// <exception cref="Amazon.MachineLearning.Model.ResourceNotFoundException">
         /// A specified resource cannot be located.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/GetEvaluation">REST API Reference for GetEvaluation Operation</seealso>
         Task<GetEvaluationResponse> GetEvaluationAsync(string evaluationId, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
@@ -1519,6 +1582,7 @@ namespace Amazon.MachineLearning
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/GetEvaluation">REST API Reference for GetEvaluation Operation</seealso>
         Task<GetEvaluationResponse> GetEvaluationAsync(GetEvaluationRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1547,6 +1611,7 @@ namespace Amazon.MachineLearning
         /// <exception cref="Amazon.MachineLearning.Model.ResourceNotFoundException">
         /// A specified resource cannot be located.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/GetMLModel">REST API Reference for GetMLModel Operation</seealso>
         GetMLModelResponse GetMLModel(string mlModelId);
 
         /// <summary>
@@ -1571,6 +1636,7 @@ namespace Amazon.MachineLearning
         /// <exception cref="Amazon.MachineLearning.Model.ResourceNotFoundException">
         /// A specified resource cannot be located.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/GetMLModel">REST API Reference for GetMLModel Operation</seealso>
         GetMLModelResponse GetMLModel(string mlModelId, bool verbose);
 
         /// <summary>
@@ -1594,6 +1660,7 @@ namespace Amazon.MachineLearning
         /// <exception cref="Amazon.MachineLearning.Model.ResourceNotFoundException">
         /// A specified resource cannot be located.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/GetMLModel">REST API Reference for GetMLModel Operation</seealso>
         GetMLModelResponse GetMLModel(GetMLModelRequest request);
 
 
@@ -1621,6 +1688,7 @@ namespace Amazon.MachineLearning
         /// <exception cref="Amazon.MachineLearning.Model.ResourceNotFoundException">
         /// A specified resource cannot be located.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/GetMLModel">REST API Reference for GetMLModel Operation</seealso>
         Task<GetMLModelResponse> GetMLModelAsync(string mlModelId, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
@@ -1648,6 +1716,7 @@ namespace Amazon.MachineLearning
         /// <exception cref="Amazon.MachineLearning.Model.ResourceNotFoundException">
         /// A specified resource cannot be located.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/GetMLModel">REST API Reference for GetMLModel Operation</seealso>
         Task<GetMLModelResponse> GetMLModelAsync(string mlModelId, bool verbose, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
@@ -1659,6 +1728,7 @@ namespace Amazon.MachineLearning
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/GetMLModel">REST API Reference for GetMLModel Operation</seealso>
         Task<GetMLModelResponse> GetMLModelAsync(GetMLModelRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1697,6 +1767,7 @@ namespace Amazon.MachineLearning
         /// <exception cref="Amazon.MachineLearning.Model.ResourceNotFoundException">
         /// A specified resource cannot be located.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/Predict">REST API Reference for Predict Operation</seealso>
         PredictResponse Predict(string mlModelId, string predictEndpoint, Dictionary<string, string> record);
 
         /// <summary>
@@ -1728,6 +1799,7 @@ namespace Amazon.MachineLearning
         /// <exception cref="Amazon.MachineLearning.Model.ResourceNotFoundException">
         /// A specified resource cannot be located.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/Predict">REST API Reference for Predict Operation</seealso>
         PredictResponse Predict(PredictRequest request);
 
 
@@ -1765,6 +1837,7 @@ namespace Amazon.MachineLearning
         /// <exception cref="Amazon.MachineLearning.Model.ResourceNotFoundException">
         /// A specified resource cannot be located.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/Predict">REST API Reference for Predict Operation</seealso>
         Task<PredictResponse> PredictAsync(string mlModelId, string predictEndpoint, Dictionary<string, string> record, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
@@ -1776,6 +1849,7 @@ namespace Amazon.MachineLearning
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/Predict">REST API Reference for Predict Operation</seealso>
         Task<PredictResponse> PredictAsync(PredictRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1805,6 +1879,7 @@ namespace Amazon.MachineLearning
         /// <exception cref="Amazon.MachineLearning.Model.ResourceNotFoundException">
         /// A specified resource cannot be located.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/UpdateBatchPrediction">REST API Reference for UpdateBatchPrediction Operation</seealso>
         UpdateBatchPredictionResponse UpdateBatchPrediction(string batchPredictionId, string batchPredictionName);
 
         /// <summary>
@@ -1828,6 +1903,7 @@ namespace Amazon.MachineLearning
         /// <exception cref="Amazon.MachineLearning.Model.ResourceNotFoundException">
         /// A specified resource cannot be located.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/UpdateBatchPrediction">REST API Reference for UpdateBatchPrediction Operation</seealso>
         UpdateBatchPredictionResponse UpdateBatchPrediction(UpdateBatchPredictionRequest request);
 
 
@@ -1856,6 +1932,7 @@ namespace Amazon.MachineLearning
         /// <exception cref="Amazon.MachineLearning.Model.ResourceNotFoundException">
         /// A specified resource cannot be located.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/UpdateBatchPrediction">REST API Reference for UpdateBatchPrediction Operation</seealso>
         Task<UpdateBatchPredictionResponse> UpdateBatchPredictionAsync(string batchPredictionId, string batchPredictionName, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
@@ -1867,6 +1944,7 @@ namespace Amazon.MachineLearning
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/UpdateBatchPrediction">REST API Reference for UpdateBatchPrediction Operation</seealso>
         Task<UpdateBatchPredictionResponse> UpdateBatchPredictionAsync(UpdateBatchPredictionRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1896,6 +1974,7 @@ namespace Amazon.MachineLearning
         /// <exception cref="Amazon.MachineLearning.Model.ResourceNotFoundException">
         /// A specified resource cannot be located.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/UpdateDataSource">REST API Reference for UpdateDataSource Operation</seealso>
         UpdateDataSourceResponse UpdateDataSource(string dataSourceId, string dataSourceName);
 
         /// <summary>
@@ -1919,6 +1998,7 @@ namespace Amazon.MachineLearning
         /// <exception cref="Amazon.MachineLearning.Model.ResourceNotFoundException">
         /// A specified resource cannot be located.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/UpdateDataSource">REST API Reference for UpdateDataSource Operation</seealso>
         UpdateDataSourceResponse UpdateDataSource(UpdateDataSourceRequest request);
 
 
@@ -1947,6 +2027,7 @@ namespace Amazon.MachineLearning
         /// <exception cref="Amazon.MachineLearning.Model.ResourceNotFoundException">
         /// A specified resource cannot be located.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/UpdateDataSource">REST API Reference for UpdateDataSource Operation</seealso>
         Task<UpdateDataSourceResponse> UpdateDataSourceAsync(string dataSourceId, string dataSourceName, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
@@ -1958,6 +2039,7 @@ namespace Amazon.MachineLearning
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/UpdateDataSource">REST API Reference for UpdateDataSource Operation</seealso>
         Task<UpdateDataSourceResponse> UpdateDataSourceAsync(UpdateDataSourceRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1987,6 +2069,7 @@ namespace Amazon.MachineLearning
         /// <exception cref="Amazon.MachineLearning.Model.ResourceNotFoundException">
         /// A specified resource cannot be located.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/UpdateEvaluation">REST API Reference for UpdateEvaluation Operation</seealso>
         UpdateEvaluationResponse UpdateEvaluation(string evaluationId, string evaluationName);
 
         /// <summary>
@@ -2010,6 +2093,7 @@ namespace Amazon.MachineLearning
         /// <exception cref="Amazon.MachineLearning.Model.ResourceNotFoundException">
         /// A specified resource cannot be located.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/UpdateEvaluation">REST API Reference for UpdateEvaluation Operation</seealso>
         UpdateEvaluationResponse UpdateEvaluation(UpdateEvaluationRequest request);
 
 
@@ -2038,6 +2122,7 @@ namespace Amazon.MachineLearning
         /// <exception cref="Amazon.MachineLearning.Model.ResourceNotFoundException">
         /// A specified resource cannot be located.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/UpdateEvaluation">REST API Reference for UpdateEvaluation Operation</seealso>
         Task<UpdateEvaluationResponse> UpdateEvaluationAsync(string evaluationId, string evaluationName, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
@@ -2049,6 +2134,7 @@ namespace Amazon.MachineLearning
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/UpdateEvaluation">REST API Reference for UpdateEvaluation Operation</seealso>
         Task<UpdateEvaluationResponse> UpdateEvaluationAsync(UpdateEvaluationRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -2079,6 +2165,7 @@ namespace Amazon.MachineLearning
         /// <exception cref="Amazon.MachineLearning.Model.ResourceNotFoundException">
         /// A specified resource cannot be located.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/UpdateMLModel">REST API Reference for UpdateMLModel Operation</seealso>
         UpdateMLModelResponse UpdateMLModel(string mlModelId, string mlModelName, float scoreThreshold);
 
         /// <summary>
@@ -2102,6 +2189,7 @@ namespace Amazon.MachineLearning
         /// <exception cref="Amazon.MachineLearning.Model.ResourceNotFoundException">
         /// A specified resource cannot be located.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/UpdateMLModel">REST API Reference for UpdateMLModel Operation</seealso>
         UpdateMLModelResponse UpdateMLModel(UpdateMLModelRequest request);
 
 
@@ -2131,6 +2219,7 @@ namespace Amazon.MachineLearning
         /// <exception cref="Amazon.MachineLearning.Model.ResourceNotFoundException">
         /// A specified resource cannot be located.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/UpdateMLModel">REST API Reference for UpdateMLModel Operation</seealso>
         Task<UpdateMLModelResponse> UpdateMLModelAsync(string mlModelId, string mlModelName, float scoreThreshold, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
@@ -2142,6 +2231,7 @@ namespace Amazon.MachineLearning
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/UpdateMLModel">REST API Reference for UpdateMLModel Operation</seealso>
         Task<UpdateMLModelResponse> UpdateMLModelAsync(UpdateMLModelRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion

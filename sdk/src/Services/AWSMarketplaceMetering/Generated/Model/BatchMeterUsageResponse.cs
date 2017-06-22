@@ -28,7 +28,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AWSMarketplaceMetering.Model
 {
     /// <summary>
-    /// This is the response object from the BatchMeterUsage operation.
+    /// Contains the UsageRecords processed by BatchMeterUsage and any records that have failed
+    /// due to transient error.
     /// </summary>
     public partial class BatchMeterUsageResponse : AmazonWebServiceResponse
     {
@@ -36,7 +37,11 @@ namespace Amazon.AWSMarketplaceMetering.Model
         private List<UsageRecord> _unprocessedRecords = new List<UsageRecord>();
 
         /// <summary>
-        /// Gets and sets the property Results.
+        /// Gets and sets the property Results. 
+        /// <para>
+        /// Contains all UsageRecords processed by BatchMeterUsage. These records were either
+        /// honored by AWS Marketplace Metering Service or were invalid.
+        /// </para>
         /// </summary>
         public List<UsageRecordResult> Results
         {
@@ -51,7 +56,12 @@ namespace Amazon.AWSMarketplaceMetering.Model
         }
 
         /// <summary>
-        /// Gets and sets the property UnprocessedRecords.
+        /// Gets and sets the property UnprocessedRecords. 
+        /// <para>
+        /// Contains all UsageRecords that were not processed by BatchMeterUsage. This is a list
+        /// of UsageRecords. You can retry the failed request by making another BatchMeterUsage
+        /// call with this list as input in the BatchMeterUsageRequest.
+        /// </para>
         /// </summary>
         public List<UsageRecord> UnprocessedRecords
         {

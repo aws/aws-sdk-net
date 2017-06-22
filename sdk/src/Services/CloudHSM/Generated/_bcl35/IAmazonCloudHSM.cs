@@ -58,6 +58,7 @@ namespace Amazon.CloudHSM
         /// <exception cref="Amazon.CloudHSM.Model.InvalidRequestException">
         /// Indicates that one or more of the request parameters are not valid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/AddTagsToResource">REST API Reference for AddTagsToResource Operation</seealso>
         AddTagsToResourceResponse AddTagsToResource(AddTagsToResourceRequest request);
 
         /// <summary>
@@ -71,6 +72,7 @@ namespace Amazon.CloudHSM
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAddTagsToResource
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/AddTagsToResource">REST API Reference for AddTagsToResource Operation</seealso>
         IAsyncResult BeginAddTagsToResource(AddTagsToResourceRequest request, AsyncCallback callback, object state);
 
 
@@ -82,6 +84,7 @@ namespace Amazon.CloudHSM
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAddTagsToResource.</param>
         /// 
         /// <returns>Returns a  AddTagsToResourceResult from CloudHSM.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/AddTagsToResource">REST API Reference for AddTagsToResource Operation</seealso>
         AddTagsToResourceResponse EndAddTagsToResource(IAsyncResult asyncResult);
 
         #endregion
@@ -105,6 +108,7 @@ namespace Amazon.CloudHSM
         /// <exception cref="Amazon.CloudHSM.Model.InvalidRequestException">
         /// Indicates that one or more of the request parameters are not valid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/CreateHapg">REST API Reference for CreateHapg Operation</seealso>
         CreateHapgResponse CreateHapg(string label);
 
         /// <summary>
@@ -123,6 +127,7 @@ namespace Amazon.CloudHSM
         /// <exception cref="Amazon.CloudHSM.Model.InvalidRequestException">
         /// Indicates that one or more of the request parameters are not valid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/CreateHapg">REST API Reference for CreateHapg Operation</seealso>
         CreateHapgResponse CreateHapg(CreateHapgRequest request);
 
         /// <summary>
@@ -136,6 +141,7 @@ namespace Amazon.CloudHSM
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateHapg
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/CreateHapg">REST API Reference for CreateHapg Operation</seealso>
         IAsyncResult BeginCreateHapg(CreateHapgRequest request, AsyncCallback callback, object state);
 
 
@@ -147,6 +153,7 @@ namespace Amazon.CloudHSM
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateHapg.</param>
         /// 
         /// <returns>Returns a  CreateHapgResult from CloudHSM.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/CreateHapg">REST API Reference for CreateHapg Operation</seealso>
         CreateHapgResponse EndCreateHapg(IAsyncResult asyncResult);
 
         #endregion
@@ -184,6 +191,7 @@ namespace Amazon.CloudHSM
         /// <exception cref="Amazon.CloudHSM.Model.InvalidRequestException">
         /// Indicates that one or more of the request parameters are not valid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/CreateHsm">REST API Reference for CreateHsm Operation</seealso>
         CreateHsmResponse CreateHsm(CreateHsmRequest request);
 
         /// <summary>
@@ -197,6 +205,7 @@ namespace Amazon.CloudHSM
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateHsm
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/CreateHsm">REST API Reference for CreateHsm Operation</seealso>
         IAsyncResult BeginCreateHsm(CreateHsmRequest request, AsyncCallback callback, object state);
 
 
@@ -208,6 +217,7 @@ namespace Amazon.CloudHSM
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateHsm.</param>
         /// 
         /// <returns>Returns a  CreateHsmResult from CloudHSM.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/CreateHsm">REST API Reference for CreateHsm Operation</seealso>
         CreateHsmResponse EndCreateHsm(IAsyncResult asyncResult);
 
         #endregion
@@ -230,6 +240,7 @@ namespace Amazon.CloudHSM
         /// <exception cref="Amazon.CloudHSM.Model.InvalidRequestException">
         /// Indicates that one or more of the request parameters are not valid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/CreateLunaClient">REST API Reference for CreateLunaClient Operation</seealso>
         CreateLunaClientResponse CreateLunaClient(CreateLunaClientRequest request);
 
         /// <summary>
@@ -243,6 +254,7 @@ namespace Amazon.CloudHSM
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateLunaClient
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/CreateLunaClient">REST API Reference for CreateLunaClient Operation</seealso>
         IAsyncResult BeginCreateLunaClient(CreateLunaClientRequest request, AsyncCallback callback, object state);
 
 
@@ -254,6 +266,7 @@ namespace Amazon.CloudHSM
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateLunaClient.</param>
         /// 
         /// <returns>Returns a  CreateLunaClientResult from CloudHSM.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/CreateLunaClient">REST API Reference for CreateLunaClient Operation</seealso>
         CreateLunaClientResponse EndCreateLunaClient(IAsyncResult asyncResult);
 
         #endregion
@@ -276,6 +289,7 @@ namespace Amazon.CloudHSM
         /// <exception cref="Amazon.CloudHSM.Model.InvalidRequestException">
         /// Indicates that one or more of the request parameters are not valid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/DeleteHapg">REST API Reference for DeleteHapg Operation</seealso>
         DeleteHapgResponse DeleteHapg(string hapgArn);
 
         /// <summary>
@@ -293,6 +307,7 @@ namespace Amazon.CloudHSM
         /// <exception cref="Amazon.CloudHSM.Model.InvalidRequestException">
         /// Indicates that one or more of the request parameters are not valid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/DeleteHapg">REST API Reference for DeleteHapg Operation</seealso>
         DeleteHapgResponse DeleteHapg(DeleteHapgRequest request);
 
         /// <summary>
@@ -306,6 +321,7 @@ namespace Amazon.CloudHSM
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteHapg
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/DeleteHapg">REST API Reference for DeleteHapg Operation</seealso>
         IAsyncResult BeginDeleteHapg(DeleteHapgRequest request, AsyncCallback callback, object state);
 
 
@@ -317,6 +333,7 @@ namespace Amazon.CloudHSM
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteHapg.</param>
         /// 
         /// <returns>Returns a  DeleteHapgResult from CloudHSM.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/DeleteHapg">REST API Reference for DeleteHapg Operation</seealso>
         DeleteHapgResponse EndDeleteHapg(IAsyncResult asyncResult);
 
         #endregion
@@ -340,6 +357,7 @@ namespace Amazon.CloudHSM
         /// <exception cref="Amazon.CloudHSM.Model.InvalidRequestException">
         /// Indicates that one or more of the request parameters are not valid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/DeleteHsm">REST API Reference for DeleteHsm Operation</seealso>
         DeleteHsmResponse DeleteHsm(string hsmArn);
 
         /// <summary>
@@ -358,6 +376,7 @@ namespace Amazon.CloudHSM
         /// <exception cref="Amazon.CloudHSM.Model.InvalidRequestException">
         /// Indicates that one or more of the request parameters are not valid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/DeleteHsm">REST API Reference for DeleteHsm Operation</seealso>
         DeleteHsmResponse DeleteHsm(DeleteHsmRequest request);
 
         /// <summary>
@@ -371,6 +390,7 @@ namespace Amazon.CloudHSM
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteHsm
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/DeleteHsm">REST API Reference for DeleteHsm Operation</seealso>
         IAsyncResult BeginDeleteHsm(DeleteHsmRequest request, AsyncCallback callback, object state);
 
 
@@ -382,6 +402,7 @@ namespace Amazon.CloudHSM
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteHsm.</param>
         /// 
         /// <returns>Returns a  DeleteHsmResult from CloudHSM.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/DeleteHsm">REST API Reference for DeleteHsm Operation</seealso>
         DeleteHsmResponse EndDeleteHsm(IAsyncResult asyncResult);
 
         #endregion
@@ -404,6 +425,7 @@ namespace Amazon.CloudHSM
         /// <exception cref="Amazon.CloudHSM.Model.InvalidRequestException">
         /// Indicates that one or more of the request parameters are not valid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/DeleteLunaClient">REST API Reference for DeleteLunaClient Operation</seealso>
         DeleteLunaClientResponse DeleteLunaClient(string clientArn);
 
         /// <summary>
@@ -421,6 +443,7 @@ namespace Amazon.CloudHSM
         /// <exception cref="Amazon.CloudHSM.Model.InvalidRequestException">
         /// Indicates that one or more of the request parameters are not valid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/DeleteLunaClient">REST API Reference for DeleteLunaClient Operation</seealso>
         DeleteLunaClientResponse DeleteLunaClient(DeleteLunaClientRequest request);
 
         /// <summary>
@@ -434,6 +457,7 @@ namespace Amazon.CloudHSM
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteLunaClient
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/DeleteLunaClient">REST API Reference for DeleteLunaClient Operation</seealso>
         IAsyncResult BeginDeleteLunaClient(DeleteLunaClientRequest request, AsyncCallback callback, object state);
 
 
@@ -445,6 +469,7 @@ namespace Amazon.CloudHSM
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteLunaClient.</param>
         /// 
         /// <returns>Returns a  DeleteLunaClientResult from CloudHSM.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/DeleteLunaClient">REST API Reference for DeleteLunaClient Operation</seealso>
         DeleteLunaClientResponse EndDeleteLunaClient(IAsyncResult asyncResult);
 
         #endregion
@@ -467,6 +492,7 @@ namespace Amazon.CloudHSM
         /// <exception cref="Amazon.CloudHSM.Model.InvalidRequestException">
         /// Indicates that one or more of the request parameters are not valid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/DescribeHapg">REST API Reference for DescribeHapg Operation</seealso>
         DescribeHapgResponse DescribeHapg(string hapgArn);
 
         /// <summary>
@@ -484,6 +510,7 @@ namespace Amazon.CloudHSM
         /// <exception cref="Amazon.CloudHSM.Model.InvalidRequestException">
         /// Indicates that one or more of the request parameters are not valid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/DescribeHapg">REST API Reference for DescribeHapg Operation</seealso>
         DescribeHapgResponse DescribeHapg(DescribeHapgRequest request);
 
         /// <summary>
@@ -497,6 +524,7 @@ namespace Amazon.CloudHSM
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeHapg
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/DescribeHapg">REST API Reference for DescribeHapg Operation</seealso>
         IAsyncResult BeginDescribeHapg(DescribeHapgRequest request, AsyncCallback callback, object state);
 
 
@@ -508,6 +536,7 @@ namespace Amazon.CloudHSM
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeHapg.</param>
         /// 
         /// <returns>Returns a  DescribeHapgResult from CloudHSM.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/DescribeHapg">REST API Reference for DescribeHapg Operation</seealso>
         DescribeHapgResponse EndDescribeHapg(IAsyncResult asyncResult);
 
         #endregion
@@ -531,6 +560,7 @@ namespace Amazon.CloudHSM
         /// <exception cref="Amazon.CloudHSM.Model.InvalidRequestException">
         /// Indicates that one or more of the request parameters are not valid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/DescribeHsm">REST API Reference for DescribeHsm Operation</seealso>
         DescribeHsmResponse DescribeHsm(string hsmArn);
 
         /// <summary>
@@ -549,6 +579,7 @@ namespace Amazon.CloudHSM
         /// <exception cref="Amazon.CloudHSM.Model.InvalidRequestException">
         /// Indicates that one or more of the request parameters are not valid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/DescribeHsm">REST API Reference for DescribeHsm Operation</seealso>
         DescribeHsmResponse DescribeHsm(DescribeHsmRequest request);
 
         /// <summary>
@@ -562,6 +593,7 @@ namespace Amazon.CloudHSM
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeHsm
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/DescribeHsm">REST API Reference for DescribeHsm Operation</seealso>
         IAsyncResult BeginDescribeHsm(DescribeHsmRequest request, AsyncCallback callback, object state);
 
 
@@ -573,6 +605,7 @@ namespace Amazon.CloudHSM
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeHsm.</param>
         /// 
         /// <returns>Returns a  DescribeHsmResult from CloudHSM.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/DescribeHsm">REST API Reference for DescribeHsm Operation</seealso>
         DescribeHsmResponse EndDescribeHsm(IAsyncResult asyncResult);
 
         #endregion
@@ -595,6 +628,7 @@ namespace Amazon.CloudHSM
         /// <exception cref="Amazon.CloudHSM.Model.InvalidRequestException">
         /// Indicates that one or more of the request parameters are not valid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/DescribeLunaClient">REST API Reference for DescribeLunaClient Operation</seealso>
         DescribeLunaClientResponse DescribeLunaClient(DescribeLunaClientRequest request);
 
         /// <summary>
@@ -608,6 +642,7 @@ namespace Amazon.CloudHSM
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeLunaClient
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/DescribeLunaClient">REST API Reference for DescribeLunaClient Operation</seealso>
         IAsyncResult BeginDescribeLunaClient(DescribeLunaClientRequest request, AsyncCallback callback, object state);
 
 
@@ -619,6 +654,7 @@ namespace Amazon.CloudHSM
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeLunaClient.</param>
         /// 
         /// <returns>Returns a  DescribeLunaClientResult from CloudHSM.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/DescribeLunaClient">REST API Reference for DescribeLunaClient Operation</seealso>
         DescribeLunaClientResponse EndDescribeLunaClient(IAsyncResult asyncResult);
 
         #endregion
@@ -642,6 +678,7 @@ namespace Amazon.CloudHSM
         /// <exception cref="Amazon.CloudHSM.Model.InvalidRequestException">
         /// Indicates that one or more of the request parameters are not valid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/GetConfig">REST API Reference for GetConfig Operation</seealso>
         GetConfigResponse GetConfig(GetConfigRequest request);
 
         /// <summary>
@@ -655,6 +692,7 @@ namespace Amazon.CloudHSM
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetConfig
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/GetConfig">REST API Reference for GetConfig Operation</seealso>
         IAsyncResult BeginGetConfig(GetConfigRequest request, AsyncCallback callback, object state);
 
 
@@ -666,6 +704,7 @@ namespace Amazon.CloudHSM
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetConfig.</param>
         /// 
         /// <returns>Returns a  GetConfigResult from CloudHSM.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/GetConfig">REST API Reference for GetConfig Operation</seealso>
         GetConfigResponse EndGetConfig(IAsyncResult asyncResult);
 
         #endregion
@@ -687,6 +726,7 @@ namespace Amazon.CloudHSM
         /// <exception cref="Amazon.CloudHSM.Model.InvalidRequestException">
         /// Indicates that one or more of the request parameters are not valid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/ListAvailableZones">REST API Reference for ListAvailableZones Operation</seealso>
         ListAvailableZonesResponse ListAvailableZones();
 
         /// <summary>
@@ -704,6 +744,7 @@ namespace Amazon.CloudHSM
         /// <exception cref="Amazon.CloudHSM.Model.InvalidRequestException">
         /// Indicates that one or more of the request parameters are not valid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/ListAvailableZones">REST API Reference for ListAvailableZones Operation</seealso>
         ListAvailableZonesResponse ListAvailableZones(ListAvailableZonesRequest request);
 
         /// <summary>
@@ -717,6 +758,7 @@ namespace Amazon.CloudHSM
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListAvailableZones
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/ListAvailableZones">REST API Reference for ListAvailableZones Operation</seealso>
         IAsyncResult BeginListAvailableZones(ListAvailableZonesRequest request, AsyncCallback callback, object state);
 
 
@@ -728,6 +770,7 @@ namespace Amazon.CloudHSM
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListAvailableZones.</param>
         /// 
         /// <returns>Returns a  ListAvailableZonesResult from CloudHSM.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/ListAvailableZones">REST API Reference for ListAvailableZones Operation</seealso>
         ListAvailableZonesResponse EndListAvailableZones(IAsyncResult asyncResult);
 
         #endregion
@@ -757,6 +800,7 @@ namespace Amazon.CloudHSM
         /// <exception cref="Amazon.CloudHSM.Model.InvalidRequestException">
         /// Indicates that one or more of the request parameters are not valid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/ListHapgs">REST API Reference for ListHapgs Operation</seealso>
         ListHapgsResponse ListHapgs();
 
         /// <summary>
@@ -782,6 +826,7 @@ namespace Amazon.CloudHSM
         /// <exception cref="Amazon.CloudHSM.Model.InvalidRequestException">
         /// Indicates that one or more of the request parameters are not valid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/ListHapgs">REST API Reference for ListHapgs Operation</seealso>
         ListHapgsResponse ListHapgs(ListHapgsRequest request);
 
         /// <summary>
@@ -795,6 +840,7 @@ namespace Amazon.CloudHSM
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListHapgs
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/ListHapgs">REST API Reference for ListHapgs Operation</seealso>
         IAsyncResult BeginListHapgs(ListHapgsRequest request, AsyncCallback callback, object state);
 
 
@@ -806,6 +852,7 @@ namespace Amazon.CloudHSM
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListHapgs.</param>
         /// 
         /// <returns>Returns a  ListHapgsResult from CloudHSM.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/ListHapgs">REST API Reference for ListHapgs Operation</seealso>
         ListHapgsResponse EndListHapgs(IAsyncResult asyncResult);
 
         #endregion
@@ -835,6 +882,7 @@ namespace Amazon.CloudHSM
         /// <exception cref="Amazon.CloudHSM.Model.InvalidRequestException">
         /// Indicates that one or more of the request parameters are not valid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/ListHsms">REST API Reference for ListHsms Operation</seealso>
         ListHsmsResponse ListHsms();
 
         /// <summary>
@@ -860,6 +908,7 @@ namespace Amazon.CloudHSM
         /// <exception cref="Amazon.CloudHSM.Model.InvalidRequestException">
         /// Indicates that one or more of the request parameters are not valid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/ListHsms">REST API Reference for ListHsms Operation</seealso>
         ListHsmsResponse ListHsms(ListHsmsRequest request);
 
         /// <summary>
@@ -873,6 +922,7 @@ namespace Amazon.CloudHSM
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListHsms
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/ListHsms">REST API Reference for ListHsms Operation</seealso>
         IAsyncResult BeginListHsms(ListHsmsRequest request, AsyncCallback callback, object state);
 
 
@@ -884,6 +934,7 @@ namespace Amazon.CloudHSM
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListHsms.</param>
         /// 
         /// <returns>Returns a  ListHsmsResult from CloudHSM.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/ListHsms">REST API Reference for ListHsms Operation</seealso>
         ListHsmsResponse EndListHsms(IAsyncResult asyncResult);
 
         #endregion
@@ -913,6 +964,7 @@ namespace Amazon.CloudHSM
         /// <exception cref="Amazon.CloudHSM.Model.InvalidRequestException">
         /// Indicates that one or more of the request parameters are not valid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/ListLunaClients">REST API Reference for ListLunaClients Operation</seealso>
         ListLunaClientsResponse ListLunaClients();
 
         /// <summary>
@@ -938,6 +990,7 @@ namespace Amazon.CloudHSM
         /// <exception cref="Amazon.CloudHSM.Model.InvalidRequestException">
         /// Indicates that one or more of the request parameters are not valid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/ListLunaClients">REST API Reference for ListLunaClients Operation</seealso>
         ListLunaClientsResponse ListLunaClients(ListLunaClientsRequest request);
 
         /// <summary>
@@ -951,6 +1004,7 @@ namespace Amazon.CloudHSM
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListLunaClients
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/ListLunaClients">REST API Reference for ListLunaClients Operation</seealso>
         IAsyncResult BeginListLunaClients(ListLunaClientsRequest request, AsyncCallback callback, object state);
 
 
@@ -962,6 +1016,7 @@ namespace Amazon.CloudHSM
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListLunaClients.</param>
         /// 
         /// <returns>Returns a  ListLunaClientsResult from CloudHSM.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/ListLunaClients">REST API Reference for ListLunaClients Operation</seealso>
         ListLunaClientsResponse EndListLunaClients(IAsyncResult asyncResult);
 
         #endregion
@@ -984,6 +1039,7 @@ namespace Amazon.CloudHSM
         /// <exception cref="Amazon.CloudHSM.Model.InvalidRequestException">
         /// Indicates that one or more of the request parameters are not valid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request);
 
         /// <summary>
@@ -997,6 +1053,7 @@ namespace Amazon.CloudHSM
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListTagsForResource
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         IAsyncResult BeginListTagsForResource(ListTagsForResourceRequest request, AsyncCallback callback, object state);
 
 
@@ -1008,6 +1065,7 @@ namespace Amazon.CloudHSM
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListTagsForResource.</param>
         /// 
         /// <returns>Returns a  ListTagsForResourceResult from CloudHSM.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         ListTagsForResourceResponse EndListTagsForResource(IAsyncResult asyncResult);
 
         #endregion
@@ -1030,6 +1088,7 @@ namespace Amazon.CloudHSM
         /// <exception cref="Amazon.CloudHSM.Model.InvalidRequestException">
         /// Indicates that one or more of the request parameters are not valid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/ModifyHapg">REST API Reference for ModifyHapg Operation</seealso>
         ModifyHapgResponse ModifyHapg(ModifyHapgRequest request);
 
         /// <summary>
@@ -1043,6 +1102,7 @@ namespace Amazon.CloudHSM
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndModifyHapg
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/ModifyHapg">REST API Reference for ModifyHapg Operation</seealso>
         IAsyncResult BeginModifyHapg(ModifyHapgRequest request, AsyncCallback callback, object state);
 
 
@@ -1054,6 +1114,7 @@ namespace Amazon.CloudHSM
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginModifyHapg.</param>
         /// 
         /// <returns>Returns a  ModifyHapgResult from CloudHSM.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/ModifyHapg">REST API Reference for ModifyHapg Operation</seealso>
         ModifyHapgResponse EndModifyHapg(IAsyncResult asyncResult);
 
         #endregion
@@ -1085,6 +1146,7 @@ namespace Amazon.CloudHSM
         /// <exception cref="Amazon.CloudHSM.Model.InvalidRequestException">
         /// Indicates that one or more of the request parameters are not valid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/ModifyHsm">REST API Reference for ModifyHsm Operation</seealso>
         ModifyHsmResponse ModifyHsm(ModifyHsmRequest request);
 
         /// <summary>
@@ -1098,6 +1160,7 @@ namespace Amazon.CloudHSM
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndModifyHsm
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/ModifyHsm">REST API Reference for ModifyHsm Operation</seealso>
         IAsyncResult BeginModifyHsm(ModifyHsmRequest request, AsyncCallback callback, object state);
 
 
@@ -1109,6 +1172,7 @@ namespace Amazon.CloudHSM
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginModifyHsm.</param>
         /// 
         /// <returns>Returns a  ModifyHsmResult from CloudHSM.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/ModifyHsm">REST API Reference for ModifyHsm Operation</seealso>
         ModifyHsmResponse EndModifyHsm(IAsyncResult asyncResult);
 
         #endregion
@@ -1131,6 +1195,7 @@ namespace Amazon.CloudHSM
         /// <exception cref="Amazon.CloudHSM.Model.CloudHsmServiceException">
         /// Indicates that an exception occurred in the AWS CloudHSM service.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/ModifyLunaClient">REST API Reference for ModifyLunaClient Operation</seealso>
         ModifyLunaClientResponse ModifyLunaClient(ModifyLunaClientRequest request);
 
         /// <summary>
@@ -1144,6 +1209,7 @@ namespace Amazon.CloudHSM
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndModifyLunaClient
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/ModifyLunaClient">REST API Reference for ModifyLunaClient Operation</seealso>
         IAsyncResult BeginModifyLunaClient(ModifyLunaClientRequest request, AsyncCallback callback, object state);
 
 
@@ -1155,6 +1221,7 @@ namespace Amazon.CloudHSM
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginModifyLunaClient.</param>
         /// 
         /// <returns>Returns a  ModifyLunaClientResult from CloudHSM.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/ModifyLunaClient">REST API Reference for ModifyLunaClient Operation</seealso>
         ModifyLunaClientResponse EndModifyLunaClient(IAsyncResult asyncResult);
 
         #endregion
@@ -1183,6 +1250,7 @@ namespace Amazon.CloudHSM
         /// <exception cref="Amazon.CloudHSM.Model.InvalidRequestException">
         /// Indicates that one or more of the request parameters are not valid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/RemoveTagsFromResource">REST API Reference for RemoveTagsFromResource Operation</seealso>
         RemoveTagsFromResourceResponse RemoveTagsFromResource(RemoveTagsFromResourceRequest request);
 
         /// <summary>
@@ -1196,6 +1264,7 @@ namespace Amazon.CloudHSM
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndRemoveTagsFromResource
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/RemoveTagsFromResource">REST API Reference for RemoveTagsFromResource Operation</seealso>
         IAsyncResult BeginRemoveTagsFromResource(RemoveTagsFromResourceRequest request, AsyncCallback callback, object state);
 
 
@@ -1207,6 +1276,7 @@ namespace Amazon.CloudHSM
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginRemoveTagsFromResource.</param>
         /// 
         /// <returns>Returns a  RemoveTagsFromResourceResult from CloudHSM.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/RemoveTagsFromResource">REST API Reference for RemoveTagsFromResource Operation</seealso>
         RemoveTagsFromResourceResponse EndRemoveTagsFromResource(IAsyncResult asyncResult);
 
         #endregion

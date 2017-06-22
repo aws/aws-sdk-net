@@ -28,7 +28,14 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AWSMarketplaceMetering.Model
 {
     /// <summary>
+    /// A UsageRecord indicates a quantity of usage for a given product, customer, dimension
+    /// and time.
     /// 
+    ///  
+    /// <para>
+    /// Multiple requests with the same UsageRecords as input will be deduplicated to prevent
+    /// double charges.
+    /// </para>
     /// </summary>
     public partial class UsageRecord
     {
@@ -38,7 +45,11 @@ namespace Amazon.AWSMarketplaceMetering.Model
         private DateTime? _timestamp;
 
         /// <summary>
-        /// Gets and sets the property CustomerIdentifier.
+        /// Gets and sets the property CustomerIdentifier. 
+        /// <para>
+        /// The CustomerIdentifier is obtained through the ResolveCustomer operation and represents
+        /// an individual buyer in your application.
+        /// </para>
         /// </summary>
         public string CustomerIdentifier
         {
@@ -53,7 +64,11 @@ namespace Amazon.AWSMarketplaceMetering.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Dimension.
+        /// Gets and sets the property Dimension. 
+        /// <para>
+        /// During the process of registering a product on AWS Marketplace, up to eight dimensions
+        /// are specified. These represent different units of value in your application.
+        /// </para>
         /// </summary>
         public string Dimension
         {
@@ -68,7 +83,10 @@ namespace Amazon.AWSMarketplaceMetering.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Quantity.
+        /// Gets and sets the property Quantity. 
+        /// <para>
+        /// The quantity of usage consumed by the customer for the given dimension and time.
+        /// </para>
         /// </summary>
         public int Quantity
         {
@@ -83,7 +101,15 @@ namespace Amazon.AWSMarketplaceMetering.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Timestamp.
+        /// Gets and sets the property Timestamp. 
+        /// <para>
+        /// Timestamp of the hour, recorded in UTC. The seconds and milliseconds portions of the
+        /// timestamp will be ignored.
+        /// </para>
+        ///  
+        /// <para>
+        /// Your application can meter usage for up to one hour in the past.
+        /// </para>
         /// </summary>
         public DateTime Timestamp
         {

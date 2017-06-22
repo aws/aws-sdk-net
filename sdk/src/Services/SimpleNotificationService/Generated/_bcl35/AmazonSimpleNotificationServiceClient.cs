@@ -264,6 +264,7 @@ namespace Amazon.SimpleNotificationService
         /// <exception cref="Amazon.SimpleNotificationService.Model.NotFoundException">
         /// Indicates that the requested resource does not exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/AddPermission">REST API Reference for AddPermission Operation</seealso>
         public AddPermissionResponse AddPermission(string topicArn, string label, List<string> awsAccountId, List<string> actionName)
         {
             var request = new AddPermissionRequest();
@@ -294,6 +295,7 @@ namespace Amazon.SimpleNotificationService
         /// <exception cref="Amazon.SimpleNotificationService.Model.NotFoundException">
         /// Indicates that the requested resource does not exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/AddPermission">REST API Reference for AddPermission Operation</seealso>
         public AddPermissionResponse AddPermission(AddPermissionRequest request)
         {
             var marshaller = new AddPermissionRequestMarshaller();
@@ -313,6 +315,7 @@ namespace Amazon.SimpleNotificationService
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAddPermission
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/AddPermission">REST API Reference for AddPermission Operation</seealso>
         public IAsyncResult BeginAddPermission(AddPermissionRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new AddPermissionRequestMarshaller();
@@ -329,6 +332,7 @@ namespace Amazon.SimpleNotificationService
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAddPermission.</param>
         /// 
         /// <returns>Returns a  AddPermissionResult from SimpleNotificationService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/AddPermission">REST API Reference for AddPermission Operation</seealso>
         public  AddPermissionResponse EndAddPermission(IAsyncResult asyncResult)
         {
             return EndInvoke<AddPermissionResponse>(asyncResult);
@@ -365,6 +369,7 @@ namespace Amazon.SimpleNotificationService
         /// Indicates that the rate at which requests have been submitted for this action exceeds
         /// the limit for your account.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/CheckIfPhoneNumberIsOptedOut">REST API Reference for CheckIfPhoneNumberIsOptedOut Operation</seealso>
         public CheckIfPhoneNumberIsOptedOutResponse CheckIfPhoneNumberIsOptedOut(CheckIfPhoneNumberIsOptedOutRequest request)
         {
             var marshaller = new CheckIfPhoneNumberIsOptedOutRequestMarshaller();
@@ -384,6 +389,7 @@ namespace Amazon.SimpleNotificationService
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCheckIfPhoneNumberIsOptedOut
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/CheckIfPhoneNumberIsOptedOut">REST API Reference for CheckIfPhoneNumberIsOptedOut Operation</seealso>
         public IAsyncResult BeginCheckIfPhoneNumberIsOptedOut(CheckIfPhoneNumberIsOptedOutRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CheckIfPhoneNumberIsOptedOutRequestMarshaller();
@@ -400,6 +406,7 @@ namespace Amazon.SimpleNotificationService
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCheckIfPhoneNumberIsOptedOut.</param>
         /// 
         /// <returns>Returns a  CheckIfPhoneNumberIsOptedOutResult from SimpleNotificationService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/CheckIfPhoneNumberIsOptedOut">REST API Reference for CheckIfPhoneNumberIsOptedOut Operation</seealso>
         public  CheckIfPhoneNumberIsOptedOutResponse EndCheckIfPhoneNumberIsOptedOut(IAsyncResult asyncResult)
         {
             return EndInvoke<CheckIfPhoneNumberIsOptedOutResponse>(asyncResult);
@@ -436,6 +443,7 @@ namespace Amazon.SimpleNotificationService
         /// <exception cref="Amazon.SimpleNotificationService.Model.SubscriptionLimitExceededException">
         /// Indicates that the customer already owns the maximum allowed number of subscriptions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/ConfirmSubscription">REST API Reference for ConfirmSubscription Operation</seealso>
         public ConfirmSubscriptionResponse ConfirmSubscription(string topicArn, string token, string authenticateOnUnsubscribe)
         {
             var request = new ConfirmSubscriptionRequest();
@@ -472,6 +480,7 @@ namespace Amazon.SimpleNotificationService
         /// <exception cref="Amazon.SimpleNotificationService.Model.SubscriptionLimitExceededException">
         /// Indicates that the customer already owns the maximum allowed number of subscriptions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/ConfirmSubscription">REST API Reference for ConfirmSubscription Operation</seealso>
         public ConfirmSubscriptionResponse ConfirmSubscription(string topicArn, string token)
         {
             var request = new ConfirmSubscriptionRequest();
@@ -506,6 +515,7 @@ namespace Amazon.SimpleNotificationService
         /// <exception cref="Amazon.SimpleNotificationService.Model.SubscriptionLimitExceededException">
         /// Indicates that the customer already owns the maximum allowed number of subscriptions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/ConfirmSubscription">REST API Reference for ConfirmSubscription Operation</seealso>
         public ConfirmSubscriptionResponse ConfirmSubscription(ConfirmSubscriptionRequest request)
         {
             var marshaller = new ConfirmSubscriptionRequestMarshaller();
@@ -525,6 +535,7 @@ namespace Amazon.SimpleNotificationService
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndConfirmSubscription
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/ConfirmSubscription">REST API Reference for ConfirmSubscription Operation</seealso>
         public IAsyncResult BeginConfirmSubscription(ConfirmSubscriptionRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ConfirmSubscriptionRequestMarshaller();
@@ -541,6 +552,7 @@ namespace Amazon.SimpleNotificationService
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginConfirmSubscription.</param>
         /// 
         /// <returns>Returns a  ConfirmSubscriptionResult from SimpleNotificationService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/ConfirmSubscription">REST API Reference for ConfirmSubscription Operation</seealso>
         public  ConfirmSubscriptionResponse EndConfirmSubscription(IAsyncResult asyncResult)
         {
             return EndInvoke<ConfirmSubscriptionResponse>(asyncResult);
@@ -592,6 +604,7 @@ namespace Amazon.SimpleNotificationService
         /// <exception cref="Amazon.SimpleNotificationService.Model.InvalidParameterException">
         /// Indicates that a request parameter does not comply with the associated constraints.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/CreatePlatformApplication">REST API Reference for CreatePlatformApplication Operation</seealso>
         public CreatePlatformApplicationResponse CreatePlatformApplication(CreatePlatformApplicationRequest request)
         {
             var marshaller = new CreatePlatformApplicationRequestMarshaller();
@@ -611,6 +624,7 @@ namespace Amazon.SimpleNotificationService
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreatePlatformApplication
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/CreatePlatformApplication">REST API Reference for CreatePlatformApplication Operation</seealso>
         public IAsyncResult BeginCreatePlatformApplication(CreatePlatformApplicationRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CreatePlatformApplicationRequestMarshaller();
@@ -627,6 +641,7 @@ namespace Amazon.SimpleNotificationService
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreatePlatformApplication.</param>
         /// 
         /// <returns>Returns a  CreatePlatformApplicationResult from SimpleNotificationService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/CreatePlatformApplication">REST API Reference for CreatePlatformApplication Operation</seealso>
         public  CreatePlatformApplicationResponse EndCreatePlatformApplication(IAsyncResult asyncResult)
         {
             return EndInvoke<CreatePlatformApplicationResponse>(asyncResult);
@@ -671,6 +686,7 @@ namespace Amazon.SimpleNotificationService
         /// <exception cref="Amazon.SimpleNotificationService.Model.NotFoundException">
         /// Indicates that the requested resource does not exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/CreatePlatformEndpoint">REST API Reference for CreatePlatformEndpoint Operation</seealso>
         public CreatePlatformEndpointResponse CreatePlatformEndpoint(CreatePlatformEndpointRequest request)
         {
             var marshaller = new CreatePlatformEndpointRequestMarshaller();
@@ -690,6 +706,7 @@ namespace Amazon.SimpleNotificationService
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreatePlatformEndpoint
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/CreatePlatformEndpoint">REST API Reference for CreatePlatformEndpoint Operation</seealso>
         public IAsyncResult BeginCreatePlatformEndpoint(CreatePlatformEndpointRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CreatePlatformEndpointRequestMarshaller();
@@ -706,6 +723,7 @@ namespace Amazon.SimpleNotificationService
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreatePlatformEndpoint.</param>
         /// 
         /// <returns>Returns a  CreatePlatformEndpointResult from SimpleNotificationService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/CreatePlatformEndpoint">REST API Reference for CreatePlatformEndpoint Operation</seealso>
         public  CreatePlatformEndpointResponse EndCreatePlatformEndpoint(IAsyncResult asyncResult)
         {
             return EndInvoke<CreatePlatformEndpointResponse>(asyncResult);
@@ -736,6 +754,7 @@ namespace Amazon.SimpleNotificationService
         /// <exception cref="Amazon.SimpleNotificationService.Model.TopicLimitExceededException">
         /// Indicates that the customer already owns the maximum allowed number of topics.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/CreateTopic">REST API Reference for CreateTopic Operation</seealso>
         public CreateTopicResponse CreateTopic(string name)
         {
             var request = new CreateTopicRequest();
@@ -765,6 +784,7 @@ namespace Amazon.SimpleNotificationService
         /// <exception cref="Amazon.SimpleNotificationService.Model.TopicLimitExceededException">
         /// Indicates that the customer already owns the maximum allowed number of topics.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/CreateTopic">REST API Reference for CreateTopic Operation</seealso>
         public CreateTopicResponse CreateTopic(CreateTopicRequest request)
         {
             var marshaller = new CreateTopicRequestMarshaller();
@@ -784,6 +804,7 @@ namespace Amazon.SimpleNotificationService
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateTopic
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/CreateTopic">REST API Reference for CreateTopic Operation</seealso>
         public IAsyncResult BeginCreateTopic(CreateTopicRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CreateTopicRequestMarshaller();
@@ -800,6 +821,7 @@ namespace Amazon.SimpleNotificationService
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateTopic.</param>
         /// 
         /// <returns>Returns a  CreateTopicResult from SimpleNotificationService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/CreateTopic">REST API Reference for CreateTopic Operation</seealso>
         public  CreateTopicResponse EndCreateTopic(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateTopicResponse>(asyncResult);
@@ -832,6 +854,7 @@ namespace Amazon.SimpleNotificationService
         /// <exception cref="Amazon.SimpleNotificationService.Model.InvalidParameterException">
         /// Indicates that a request parameter does not comply with the associated constraints.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/DeleteEndpoint">REST API Reference for DeleteEndpoint Operation</seealso>
         public DeleteEndpointResponse DeleteEndpoint(DeleteEndpointRequest request)
         {
             var marshaller = new DeleteEndpointRequestMarshaller();
@@ -851,6 +874,7 @@ namespace Amazon.SimpleNotificationService
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteEndpoint
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/DeleteEndpoint">REST API Reference for DeleteEndpoint Operation</seealso>
         public IAsyncResult BeginDeleteEndpoint(DeleteEndpointRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeleteEndpointRequestMarshaller();
@@ -867,6 +891,7 @@ namespace Amazon.SimpleNotificationService
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteEndpoint.</param>
         /// 
         /// <returns>Returns a  DeleteEndpointResult from SimpleNotificationService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/DeleteEndpoint">REST API Reference for DeleteEndpoint Operation</seealso>
         public  DeleteEndpointResponse EndDeleteEndpoint(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteEndpointResponse>(asyncResult);
@@ -893,6 +918,7 @@ namespace Amazon.SimpleNotificationService
         /// <exception cref="Amazon.SimpleNotificationService.Model.InvalidParameterException">
         /// Indicates that a request parameter does not comply with the associated constraints.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/DeletePlatformApplication">REST API Reference for DeletePlatformApplication Operation</seealso>
         public DeletePlatformApplicationResponse DeletePlatformApplication(DeletePlatformApplicationRequest request)
         {
             var marshaller = new DeletePlatformApplicationRequestMarshaller();
@@ -912,6 +938,7 @@ namespace Amazon.SimpleNotificationService
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeletePlatformApplication
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/DeletePlatformApplication">REST API Reference for DeletePlatformApplication Operation</seealso>
         public IAsyncResult BeginDeletePlatformApplication(DeletePlatformApplicationRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeletePlatformApplicationRequestMarshaller();
@@ -928,6 +955,7 @@ namespace Amazon.SimpleNotificationService
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeletePlatformApplication.</param>
         /// 
         /// <returns>Returns a  DeletePlatformApplicationResult from SimpleNotificationService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/DeletePlatformApplication">REST API Reference for DeletePlatformApplication Operation</seealso>
         public  DeletePlatformApplicationResponse EndDeletePlatformApplication(IAsyncResult asyncResult)
         {
             return EndInvoke<DeletePlatformApplicationResponse>(asyncResult);
@@ -957,6 +985,7 @@ namespace Amazon.SimpleNotificationService
         /// <exception cref="Amazon.SimpleNotificationService.Model.NotFoundException">
         /// Indicates that the requested resource does not exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/DeleteTopic">REST API Reference for DeleteTopic Operation</seealso>
         public DeleteTopicResponse DeleteTopic(string topicArn)
         {
             var request = new DeleteTopicRequest();
@@ -985,6 +1014,7 @@ namespace Amazon.SimpleNotificationService
         /// <exception cref="Amazon.SimpleNotificationService.Model.NotFoundException">
         /// Indicates that the requested resource does not exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/DeleteTopic">REST API Reference for DeleteTopic Operation</seealso>
         public DeleteTopicResponse DeleteTopic(DeleteTopicRequest request)
         {
             var marshaller = new DeleteTopicRequestMarshaller();
@@ -1004,6 +1034,7 @@ namespace Amazon.SimpleNotificationService
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteTopic
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/DeleteTopic">REST API Reference for DeleteTopic Operation</seealso>
         public IAsyncResult BeginDeleteTopic(DeleteTopicRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeleteTopicRequestMarshaller();
@@ -1020,6 +1051,7 @@ namespace Amazon.SimpleNotificationService
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteTopic.</param>
         /// 
         /// <returns>Returns a  DeleteTopicResult from SimpleNotificationService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/DeleteTopic">REST API Reference for DeleteTopic Operation</seealso>
         public  DeleteTopicResponse EndDeleteTopic(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteTopicResponse>(asyncResult);
@@ -1049,6 +1081,7 @@ namespace Amazon.SimpleNotificationService
         /// <exception cref="Amazon.SimpleNotificationService.Model.NotFoundException">
         /// Indicates that the requested resource does not exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/GetEndpointAttributes">REST API Reference for GetEndpointAttributes Operation</seealso>
         public GetEndpointAttributesResponse GetEndpointAttributes(GetEndpointAttributesRequest request)
         {
             var marshaller = new GetEndpointAttributesRequestMarshaller();
@@ -1068,6 +1101,7 @@ namespace Amazon.SimpleNotificationService
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetEndpointAttributes
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/GetEndpointAttributes">REST API Reference for GetEndpointAttributes Operation</seealso>
         public IAsyncResult BeginGetEndpointAttributes(GetEndpointAttributesRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetEndpointAttributesRequestMarshaller();
@@ -1084,6 +1118,7 @@ namespace Amazon.SimpleNotificationService
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetEndpointAttributes.</param>
         /// 
         /// <returns>Returns a  GetEndpointAttributesResult from SimpleNotificationService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/GetEndpointAttributes">REST API Reference for GetEndpointAttributes Operation</seealso>
         public  GetEndpointAttributesResponse EndGetEndpointAttributes(IAsyncResult asyncResult)
         {
             return EndInvoke<GetEndpointAttributesResponse>(asyncResult);
@@ -1113,6 +1148,7 @@ namespace Amazon.SimpleNotificationService
         /// <exception cref="Amazon.SimpleNotificationService.Model.NotFoundException">
         /// Indicates that the requested resource does not exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/GetPlatformApplicationAttributes">REST API Reference for GetPlatformApplicationAttributes Operation</seealso>
         public GetPlatformApplicationAttributesResponse GetPlatformApplicationAttributes(GetPlatformApplicationAttributesRequest request)
         {
             var marshaller = new GetPlatformApplicationAttributesRequestMarshaller();
@@ -1132,6 +1168,7 @@ namespace Amazon.SimpleNotificationService
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetPlatformApplicationAttributes
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/GetPlatformApplicationAttributes">REST API Reference for GetPlatformApplicationAttributes Operation</seealso>
         public IAsyncResult BeginGetPlatformApplicationAttributes(GetPlatformApplicationAttributesRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetPlatformApplicationAttributesRequestMarshaller();
@@ -1148,6 +1185,7 @@ namespace Amazon.SimpleNotificationService
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetPlatformApplicationAttributes.</param>
         /// 
         /// <returns>Returns a  GetPlatformApplicationAttributesResult from SimpleNotificationService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/GetPlatformApplicationAttributes">REST API Reference for GetPlatformApplicationAttributes Operation</seealso>
         public  GetPlatformApplicationAttributesResponse EndGetPlatformApplicationAttributes(IAsyncResult asyncResult)
         {
             return EndInvoke<GetPlatformApplicationAttributesResponse>(asyncResult);
@@ -1181,6 +1219,7 @@ namespace Amazon.SimpleNotificationService
         /// Indicates that the rate at which requests have been submitted for this action exceeds
         /// the limit for your account.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/GetSMSAttributes">REST API Reference for GetSMSAttributes Operation</seealso>
         public GetSMSAttributesResponse GetSMSAttributes(GetSMSAttributesRequest request)
         {
             var marshaller = new GetSMSAttributesRequestMarshaller();
@@ -1200,6 +1239,7 @@ namespace Amazon.SimpleNotificationService
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetSMSAttributes
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/GetSMSAttributes">REST API Reference for GetSMSAttributes Operation</seealso>
         public IAsyncResult BeginGetSMSAttributes(GetSMSAttributesRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetSMSAttributesRequestMarshaller();
@@ -1216,6 +1256,7 @@ namespace Amazon.SimpleNotificationService
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetSMSAttributes.</param>
         /// 
         /// <returns>Returns a  GetSMSAttributesResult from SimpleNotificationService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/GetSMSAttributes">REST API Reference for GetSMSAttributes Operation</seealso>
         public  GetSMSAttributesResponse EndGetSMSAttributes(IAsyncResult asyncResult)
         {
             return EndInvoke<GetSMSAttributesResponse>(asyncResult);
@@ -1243,6 +1284,7 @@ namespace Amazon.SimpleNotificationService
         /// <exception cref="Amazon.SimpleNotificationService.Model.NotFoundException">
         /// Indicates that the requested resource does not exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/GetSubscriptionAttributes">REST API Reference for GetSubscriptionAttributes Operation</seealso>
         public GetSubscriptionAttributesResponse GetSubscriptionAttributes(string subscriptionArn)
         {
             var request = new GetSubscriptionAttributesRequest();
@@ -1269,6 +1311,7 @@ namespace Amazon.SimpleNotificationService
         /// <exception cref="Amazon.SimpleNotificationService.Model.NotFoundException">
         /// Indicates that the requested resource does not exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/GetSubscriptionAttributes">REST API Reference for GetSubscriptionAttributes Operation</seealso>
         public GetSubscriptionAttributesResponse GetSubscriptionAttributes(GetSubscriptionAttributesRequest request)
         {
             var marshaller = new GetSubscriptionAttributesRequestMarshaller();
@@ -1288,6 +1331,7 @@ namespace Amazon.SimpleNotificationService
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetSubscriptionAttributes
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/GetSubscriptionAttributes">REST API Reference for GetSubscriptionAttributes Operation</seealso>
         public IAsyncResult BeginGetSubscriptionAttributes(GetSubscriptionAttributesRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetSubscriptionAttributesRequestMarshaller();
@@ -1304,6 +1348,7 @@ namespace Amazon.SimpleNotificationService
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetSubscriptionAttributes.</param>
         /// 
         /// <returns>Returns a  GetSubscriptionAttributesResult from SimpleNotificationService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/GetSubscriptionAttributes">REST API Reference for GetSubscriptionAttributes Operation</seealso>
         public  GetSubscriptionAttributesResponse EndGetSubscriptionAttributes(IAsyncResult asyncResult)
         {
             return EndInvoke<GetSubscriptionAttributesResponse>(asyncResult);
@@ -1332,6 +1377,7 @@ namespace Amazon.SimpleNotificationService
         /// <exception cref="Amazon.SimpleNotificationService.Model.NotFoundException">
         /// Indicates that the requested resource does not exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/GetTopicAttributes">REST API Reference for GetTopicAttributes Operation</seealso>
         public GetTopicAttributesResponse GetTopicAttributes(string topicArn)
         {
             var request = new GetTopicAttributesRequest();
@@ -1359,6 +1405,7 @@ namespace Amazon.SimpleNotificationService
         /// <exception cref="Amazon.SimpleNotificationService.Model.NotFoundException">
         /// Indicates that the requested resource does not exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/GetTopicAttributes">REST API Reference for GetTopicAttributes Operation</seealso>
         public GetTopicAttributesResponse GetTopicAttributes(GetTopicAttributesRequest request)
         {
             var marshaller = new GetTopicAttributesRequestMarshaller();
@@ -1378,6 +1425,7 @@ namespace Amazon.SimpleNotificationService
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetTopicAttributes
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/GetTopicAttributes">REST API Reference for GetTopicAttributes Operation</seealso>
         public IAsyncResult BeginGetTopicAttributes(GetTopicAttributesRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetTopicAttributesRequestMarshaller();
@@ -1394,6 +1442,7 @@ namespace Amazon.SimpleNotificationService
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetTopicAttributes.</param>
         /// 
         /// <returns>Returns a  GetTopicAttributesResult from SimpleNotificationService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/GetTopicAttributes">REST API Reference for GetTopicAttributes Operation</seealso>
         public  GetTopicAttributesResponse EndGetTopicAttributes(IAsyncResult asyncResult)
         {
             return EndInvoke<GetTopicAttributesResponse>(asyncResult);
@@ -1428,6 +1477,7 @@ namespace Amazon.SimpleNotificationService
         /// <exception cref="Amazon.SimpleNotificationService.Model.NotFoundException">
         /// Indicates that the requested resource does not exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/ListEndpointsByPlatformApplication">REST API Reference for ListEndpointsByPlatformApplication Operation</seealso>
         public ListEndpointsByPlatformApplicationResponse ListEndpointsByPlatformApplication(ListEndpointsByPlatformApplicationRequest request)
         {
             var marshaller = new ListEndpointsByPlatformApplicationRequestMarshaller();
@@ -1447,6 +1497,7 @@ namespace Amazon.SimpleNotificationService
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListEndpointsByPlatformApplication
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/ListEndpointsByPlatformApplication">REST API Reference for ListEndpointsByPlatformApplication Operation</seealso>
         public IAsyncResult BeginListEndpointsByPlatformApplication(ListEndpointsByPlatformApplicationRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ListEndpointsByPlatformApplicationRequestMarshaller();
@@ -1463,6 +1514,7 @@ namespace Amazon.SimpleNotificationService
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListEndpointsByPlatformApplication.</param>
         /// 
         /// <returns>Returns a  ListEndpointsByPlatformApplicationResult from SimpleNotificationService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/ListEndpointsByPlatformApplication">REST API Reference for ListEndpointsByPlatformApplication Operation</seealso>
         public  ListEndpointsByPlatformApplicationResponse EndListEndpointsByPlatformApplication(IAsyncResult asyncResult)
         {
             return EndInvoke<ListEndpointsByPlatformApplicationResponse>(asyncResult);
@@ -1502,6 +1554,7 @@ namespace Amazon.SimpleNotificationService
         /// Indicates that the rate at which requests have been submitted for this action exceeds
         /// the limit for your account.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/ListPhoneNumbersOptedOut">REST API Reference for ListPhoneNumbersOptedOut Operation</seealso>
         public ListPhoneNumbersOptedOutResponse ListPhoneNumbersOptedOut(ListPhoneNumbersOptedOutRequest request)
         {
             var marshaller = new ListPhoneNumbersOptedOutRequestMarshaller();
@@ -1521,6 +1574,7 @@ namespace Amazon.SimpleNotificationService
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListPhoneNumbersOptedOut
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/ListPhoneNumbersOptedOut">REST API Reference for ListPhoneNumbersOptedOut Operation</seealso>
         public IAsyncResult BeginListPhoneNumbersOptedOut(ListPhoneNumbersOptedOutRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ListPhoneNumbersOptedOutRequestMarshaller();
@@ -1537,6 +1591,7 @@ namespace Amazon.SimpleNotificationService
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListPhoneNumbersOptedOut.</param>
         /// 
         /// <returns>Returns a  ListPhoneNumbersOptedOutResult from SimpleNotificationService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/ListPhoneNumbersOptedOut">REST API Reference for ListPhoneNumbersOptedOut Operation</seealso>
         public  ListPhoneNumbersOptedOutResponse EndListPhoneNumbersOptedOut(IAsyncResult asyncResult)
         {
             return EndInvoke<ListPhoneNumbersOptedOutResponse>(asyncResult);
@@ -1567,6 +1622,7 @@ namespace Amazon.SimpleNotificationService
         /// <exception cref="Amazon.SimpleNotificationService.Model.InvalidParameterException">
         /// Indicates that a request parameter does not comply with the associated constraints.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/ListPlatformApplications">REST API Reference for ListPlatformApplications Operation</seealso>
         public ListPlatformApplicationsResponse ListPlatformApplications()
         {
             return ListPlatformApplications(new ListPlatformApplicationsRequest());
@@ -1594,6 +1650,7 @@ namespace Amazon.SimpleNotificationService
         /// <exception cref="Amazon.SimpleNotificationService.Model.InvalidParameterException">
         /// Indicates that a request parameter does not comply with the associated constraints.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/ListPlatformApplications">REST API Reference for ListPlatformApplications Operation</seealso>
         public ListPlatformApplicationsResponse ListPlatformApplications(ListPlatformApplicationsRequest request)
         {
             var marshaller = new ListPlatformApplicationsRequestMarshaller();
@@ -1613,6 +1670,7 @@ namespace Amazon.SimpleNotificationService
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListPlatformApplications
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/ListPlatformApplications">REST API Reference for ListPlatformApplications Operation</seealso>
         public IAsyncResult BeginListPlatformApplications(ListPlatformApplicationsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ListPlatformApplicationsRequestMarshaller();
@@ -1629,6 +1687,7 @@ namespace Amazon.SimpleNotificationService
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListPlatformApplications.</param>
         /// 
         /// <returns>Returns a  ListPlatformApplicationsResult from SimpleNotificationService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/ListPlatformApplications">REST API Reference for ListPlatformApplications Operation</seealso>
         public  ListPlatformApplicationsResponse EndListPlatformApplications(IAsyncResult asyncResult)
         {
             return EndInvoke<ListPlatformApplicationsResponse>(asyncResult);
@@ -1655,6 +1714,7 @@ namespace Amazon.SimpleNotificationService
         /// <exception cref="Amazon.SimpleNotificationService.Model.InvalidParameterException">
         /// Indicates that a request parameter does not comply with the associated constraints.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/ListSubscriptions">REST API Reference for ListSubscriptions Operation</seealso>
         public ListSubscriptionsResponse ListSubscriptions()
         {
             return ListSubscriptions(new ListSubscriptionsRequest());
@@ -1678,6 +1738,7 @@ namespace Amazon.SimpleNotificationService
         /// <exception cref="Amazon.SimpleNotificationService.Model.InvalidParameterException">
         /// Indicates that a request parameter does not comply with the associated constraints.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/ListSubscriptions">REST API Reference for ListSubscriptions Operation</seealso>
         public ListSubscriptionsResponse ListSubscriptions(string nextToken)
         {
             var request = new ListSubscriptionsRequest();
@@ -1704,6 +1765,7 @@ namespace Amazon.SimpleNotificationService
         /// <exception cref="Amazon.SimpleNotificationService.Model.InvalidParameterException">
         /// Indicates that a request parameter does not comply with the associated constraints.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/ListSubscriptions">REST API Reference for ListSubscriptions Operation</seealso>
         public ListSubscriptionsResponse ListSubscriptions(ListSubscriptionsRequest request)
         {
             var marshaller = new ListSubscriptionsRequestMarshaller();
@@ -1723,6 +1785,7 @@ namespace Amazon.SimpleNotificationService
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListSubscriptions
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/ListSubscriptions">REST API Reference for ListSubscriptions Operation</seealso>
         public IAsyncResult BeginListSubscriptions(ListSubscriptionsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ListSubscriptionsRequestMarshaller();
@@ -1739,6 +1802,7 @@ namespace Amazon.SimpleNotificationService
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListSubscriptions.</param>
         /// 
         /// <returns>Returns a  ListSubscriptionsResult from SimpleNotificationService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/ListSubscriptions">REST API Reference for ListSubscriptions Operation</seealso>
         public  ListSubscriptionsResponse EndListSubscriptions(IAsyncResult asyncResult)
         {
             return EndInvoke<ListSubscriptionsResponse>(asyncResult);
@@ -1770,6 +1834,7 @@ namespace Amazon.SimpleNotificationService
         /// <exception cref="Amazon.SimpleNotificationService.Model.NotFoundException">
         /// Indicates that the requested resource does not exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/ListSubscriptionsByTopic">REST API Reference for ListSubscriptionsByTopic Operation</seealso>
         public ListSubscriptionsByTopicResponse ListSubscriptionsByTopic(string topicArn, string nextToken)
         {
             var request = new ListSubscriptionsByTopicRequest();
@@ -1800,6 +1865,7 @@ namespace Amazon.SimpleNotificationService
         /// <exception cref="Amazon.SimpleNotificationService.Model.NotFoundException">
         /// Indicates that the requested resource does not exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/ListSubscriptionsByTopic">REST API Reference for ListSubscriptionsByTopic Operation</seealso>
         public ListSubscriptionsByTopicResponse ListSubscriptionsByTopic(string topicArn)
         {
             var request = new ListSubscriptionsByTopicRequest();
@@ -1829,6 +1895,7 @@ namespace Amazon.SimpleNotificationService
         /// <exception cref="Amazon.SimpleNotificationService.Model.NotFoundException">
         /// Indicates that the requested resource does not exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/ListSubscriptionsByTopic">REST API Reference for ListSubscriptionsByTopic Operation</seealso>
         public ListSubscriptionsByTopicResponse ListSubscriptionsByTopic(ListSubscriptionsByTopicRequest request)
         {
             var marshaller = new ListSubscriptionsByTopicRequestMarshaller();
@@ -1848,6 +1915,7 @@ namespace Amazon.SimpleNotificationService
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListSubscriptionsByTopic
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/ListSubscriptionsByTopic">REST API Reference for ListSubscriptionsByTopic Operation</seealso>
         public IAsyncResult BeginListSubscriptionsByTopic(ListSubscriptionsByTopicRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ListSubscriptionsByTopicRequestMarshaller();
@@ -1864,6 +1932,7 @@ namespace Amazon.SimpleNotificationService
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListSubscriptionsByTopic.</param>
         /// 
         /// <returns>Returns a  ListSubscriptionsByTopicResult from SimpleNotificationService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/ListSubscriptionsByTopic">REST API Reference for ListSubscriptionsByTopic Operation</seealso>
         public  ListSubscriptionsByTopicResponse EndListSubscriptionsByTopic(IAsyncResult asyncResult)
         {
             return EndInvoke<ListSubscriptionsByTopicResponse>(asyncResult);
@@ -1890,6 +1959,7 @@ namespace Amazon.SimpleNotificationService
         /// <exception cref="Amazon.SimpleNotificationService.Model.InvalidParameterException">
         /// Indicates that a request parameter does not comply with the associated constraints.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/ListTopics">REST API Reference for ListTopics Operation</seealso>
         public ListTopicsResponse ListTopics()
         {
             return ListTopics(new ListTopicsRequest());
@@ -1913,6 +1983,7 @@ namespace Amazon.SimpleNotificationService
         /// <exception cref="Amazon.SimpleNotificationService.Model.InvalidParameterException">
         /// Indicates that a request parameter does not comply with the associated constraints.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/ListTopics">REST API Reference for ListTopics Operation</seealso>
         public ListTopicsResponse ListTopics(string nextToken)
         {
             var request = new ListTopicsRequest();
@@ -1939,6 +2010,7 @@ namespace Amazon.SimpleNotificationService
         /// <exception cref="Amazon.SimpleNotificationService.Model.InvalidParameterException">
         /// Indicates that a request parameter does not comply with the associated constraints.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/ListTopics">REST API Reference for ListTopics Operation</seealso>
         public ListTopicsResponse ListTopics(ListTopicsRequest request)
         {
             var marshaller = new ListTopicsRequestMarshaller();
@@ -1958,6 +2030,7 @@ namespace Amazon.SimpleNotificationService
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListTopics
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/ListTopics">REST API Reference for ListTopics Operation</seealso>
         public IAsyncResult BeginListTopics(ListTopicsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ListTopicsRequestMarshaller();
@@ -1974,6 +2047,7 @@ namespace Amazon.SimpleNotificationService
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListTopics.</param>
         /// 
         /// <returns>Returns a  ListTopicsResult from SimpleNotificationService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/ListTopics">REST API Reference for ListTopics Operation</seealso>
         public  ListTopicsResponse EndListTopics(IAsyncResult asyncResult)
         {
             return EndInvoke<ListTopicsResponse>(asyncResult);
@@ -2008,6 +2082,7 @@ namespace Amazon.SimpleNotificationService
         /// Indicates that the rate at which requests have been submitted for this action exceeds
         /// the limit for your account.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/OptInPhoneNumber">REST API Reference for OptInPhoneNumber Operation</seealso>
         public OptInPhoneNumberResponse OptInPhoneNumber(OptInPhoneNumberRequest request)
         {
             var marshaller = new OptInPhoneNumberRequestMarshaller();
@@ -2027,6 +2102,7 @@ namespace Amazon.SimpleNotificationService
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndOptInPhoneNumber
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/OptInPhoneNumber">REST API Reference for OptInPhoneNumber Operation</seealso>
         public IAsyncResult BeginOptInPhoneNumber(OptInPhoneNumberRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new OptInPhoneNumberRequestMarshaller();
@@ -2043,6 +2119,7 @@ namespace Amazon.SimpleNotificationService
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginOptInPhoneNumber.</param>
         /// 
         /// <returns>Returns a  OptInPhoneNumberResult from SimpleNotificationService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/OptInPhoneNumber">REST API Reference for OptInPhoneNumber Operation</seealso>
         public  OptInPhoneNumberResponse EndOptInPhoneNumber(IAsyncResult asyncResult)
         {
             return EndInvoke<OptInPhoneNumberResponse>(asyncResult);
@@ -2096,6 +2173,7 @@ namespace Amazon.SimpleNotificationService
         /// <exception cref="Amazon.SimpleNotificationService.Model.PlatformApplicationDisabledException">
         /// Exception error indicating platform application disabled.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/Publish">REST API Reference for Publish Operation</seealso>
         public PublishResponse Publish(string topicArn, string message)
         {
             var request = new PublishRequest();
@@ -2150,6 +2228,7 @@ namespace Amazon.SimpleNotificationService
         /// <exception cref="Amazon.SimpleNotificationService.Model.PlatformApplicationDisabledException">
         /// Exception error indicating platform application disabled.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/Publish">REST API Reference for Publish Operation</seealso>
         public PublishResponse Publish(string topicArn, string message, string subject)
         {
             var request = new PublishRequest();
@@ -2203,6 +2282,7 @@ namespace Amazon.SimpleNotificationService
         /// <exception cref="Amazon.SimpleNotificationService.Model.PlatformApplicationDisabledException">
         /// Exception error indicating platform application disabled.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/Publish">REST API Reference for Publish Operation</seealso>
         public PublishResponse Publish(PublishRequest request)
         {
             var marshaller = new PublishRequestMarshaller();
@@ -2222,6 +2302,7 @@ namespace Amazon.SimpleNotificationService
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPublish
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/Publish">REST API Reference for Publish Operation</seealso>
         public IAsyncResult BeginPublish(PublishRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new PublishRequestMarshaller();
@@ -2238,6 +2319,7 @@ namespace Amazon.SimpleNotificationService
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPublish.</param>
         /// 
         /// <returns>Returns a  PublishResult from SimpleNotificationService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/Publish">REST API Reference for Publish Operation</seealso>
         public  PublishResponse EndPublish(IAsyncResult asyncResult)
         {
             return EndInvoke<PublishResponse>(asyncResult);
@@ -2266,6 +2348,7 @@ namespace Amazon.SimpleNotificationService
         /// <exception cref="Amazon.SimpleNotificationService.Model.NotFoundException">
         /// Indicates that the requested resource does not exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/RemovePermission">REST API Reference for RemovePermission Operation</seealso>
         public RemovePermissionResponse RemovePermission(string topicArn, string label)
         {
             var request = new RemovePermissionRequest();
@@ -2293,6 +2376,7 @@ namespace Amazon.SimpleNotificationService
         /// <exception cref="Amazon.SimpleNotificationService.Model.NotFoundException">
         /// Indicates that the requested resource does not exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/RemovePermission">REST API Reference for RemovePermission Operation</seealso>
         public RemovePermissionResponse RemovePermission(RemovePermissionRequest request)
         {
             var marshaller = new RemovePermissionRequestMarshaller();
@@ -2312,6 +2396,7 @@ namespace Amazon.SimpleNotificationService
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndRemovePermission
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/RemovePermission">REST API Reference for RemovePermission Operation</seealso>
         public IAsyncResult BeginRemovePermission(RemovePermissionRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new RemovePermissionRequestMarshaller();
@@ -2328,6 +2413,7 @@ namespace Amazon.SimpleNotificationService
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginRemovePermission.</param>
         /// 
         /// <returns>Returns a  RemovePermissionResult from SimpleNotificationService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/RemovePermission">REST API Reference for RemovePermission Operation</seealso>
         public  RemovePermissionResponse EndRemovePermission(IAsyncResult asyncResult)
         {
             return EndInvoke<RemovePermissionResponse>(asyncResult);
@@ -2357,6 +2443,7 @@ namespace Amazon.SimpleNotificationService
         /// <exception cref="Amazon.SimpleNotificationService.Model.NotFoundException">
         /// Indicates that the requested resource does not exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/SetEndpointAttributes">REST API Reference for SetEndpointAttributes Operation</seealso>
         public SetEndpointAttributesResponse SetEndpointAttributes(SetEndpointAttributesRequest request)
         {
             var marshaller = new SetEndpointAttributesRequestMarshaller();
@@ -2376,6 +2463,7 @@ namespace Amazon.SimpleNotificationService
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndSetEndpointAttributes
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/SetEndpointAttributes">REST API Reference for SetEndpointAttributes Operation</seealso>
         public IAsyncResult BeginSetEndpointAttributes(SetEndpointAttributesRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new SetEndpointAttributesRequestMarshaller();
@@ -2392,6 +2480,7 @@ namespace Amazon.SimpleNotificationService
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginSetEndpointAttributes.</param>
         /// 
         /// <returns>Returns a  SetEndpointAttributesResult from SimpleNotificationService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/SetEndpointAttributes">REST API Reference for SetEndpointAttributes Operation</seealso>
         public  SetEndpointAttributesResponse EndSetEndpointAttributes(IAsyncResult asyncResult)
         {
             return EndInvoke<SetEndpointAttributesResponse>(asyncResult);
@@ -2423,6 +2512,7 @@ namespace Amazon.SimpleNotificationService
         /// <exception cref="Amazon.SimpleNotificationService.Model.NotFoundException">
         /// Indicates that the requested resource does not exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/SetPlatformApplicationAttributes">REST API Reference for SetPlatformApplicationAttributes Operation</seealso>
         public SetPlatformApplicationAttributesResponse SetPlatformApplicationAttributes(SetPlatformApplicationAttributesRequest request)
         {
             var marshaller = new SetPlatformApplicationAttributesRequestMarshaller();
@@ -2442,6 +2532,7 @@ namespace Amazon.SimpleNotificationService
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndSetPlatformApplicationAttributes
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/SetPlatformApplicationAttributes">REST API Reference for SetPlatformApplicationAttributes Operation</seealso>
         public IAsyncResult BeginSetPlatformApplicationAttributes(SetPlatformApplicationAttributesRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new SetPlatformApplicationAttributesRequestMarshaller();
@@ -2458,6 +2549,7 @@ namespace Amazon.SimpleNotificationService
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginSetPlatformApplicationAttributes.</param>
         /// 
         /// <returns>Returns a  SetPlatformApplicationAttributesResult from SimpleNotificationService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/SetPlatformApplicationAttributes">REST API Reference for SetPlatformApplicationAttributes Operation</seealso>
         public  SetPlatformApplicationAttributesResponse EndSetPlatformApplicationAttributes(IAsyncResult asyncResult)
         {
             return EndInvoke<SetPlatformApplicationAttributesResponse>(asyncResult);
@@ -2495,6 +2587,7 @@ namespace Amazon.SimpleNotificationService
         /// Indicates that the rate at which requests have been submitted for this action exceeds
         /// the limit for your account.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/SetSMSAttributes">REST API Reference for SetSMSAttributes Operation</seealso>
         public SetSMSAttributesResponse SetSMSAttributes(SetSMSAttributesRequest request)
         {
             var marshaller = new SetSMSAttributesRequestMarshaller();
@@ -2514,6 +2607,7 @@ namespace Amazon.SimpleNotificationService
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndSetSMSAttributes
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/SetSMSAttributes">REST API Reference for SetSMSAttributes Operation</seealso>
         public IAsyncResult BeginSetSMSAttributes(SetSMSAttributesRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new SetSMSAttributesRequestMarshaller();
@@ -2530,6 +2624,7 @@ namespace Amazon.SimpleNotificationService
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginSetSMSAttributes.</param>
         /// 
         /// <returns>Returns a  SetSMSAttributesResult from SimpleNotificationService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/SetSMSAttributes">REST API Reference for SetSMSAttributes Operation</seealso>
         public  SetSMSAttributesResponse EndSetSMSAttributes(IAsyncResult asyncResult)
         {
             return EndInvoke<SetSMSAttributesResponse>(asyncResult);
@@ -2559,6 +2654,7 @@ namespace Amazon.SimpleNotificationService
         /// <exception cref="Amazon.SimpleNotificationService.Model.NotFoundException">
         /// Indicates that the requested resource does not exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/SetSubscriptionAttributes">REST API Reference for SetSubscriptionAttributes Operation</seealso>
         public SetSubscriptionAttributesResponse SetSubscriptionAttributes(string subscriptionArn, string attributeName, string attributeValue)
         {
             var request = new SetSubscriptionAttributesRequest();
@@ -2587,6 +2683,7 @@ namespace Amazon.SimpleNotificationService
         /// <exception cref="Amazon.SimpleNotificationService.Model.NotFoundException">
         /// Indicates that the requested resource does not exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/SetSubscriptionAttributes">REST API Reference for SetSubscriptionAttributes Operation</seealso>
         public SetSubscriptionAttributesResponse SetSubscriptionAttributes(SetSubscriptionAttributesRequest request)
         {
             var marshaller = new SetSubscriptionAttributesRequestMarshaller();
@@ -2606,6 +2703,7 @@ namespace Amazon.SimpleNotificationService
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndSetSubscriptionAttributes
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/SetSubscriptionAttributes">REST API Reference for SetSubscriptionAttributes Operation</seealso>
         public IAsyncResult BeginSetSubscriptionAttributes(SetSubscriptionAttributesRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new SetSubscriptionAttributesRequestMarshaller();
@@ -2622,6 +2720,7 @@ namespace Amazon.SimpleNotificationService
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginSetSubscriptionAttributes.</param>
         /// 
         /// <returns>Returns a  SetSubscriptionAttributesResult from SimpleNotificationService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/SetSubscriptionAttributes">REST API Reference for SetSubscriptionAttributes Operation</seealso>
         public  SetSubscriptionAttributesResponse EndSetSubscriptionAttributes(IAsyncResult asyncResult)
         {
             return EndInvoke<SetSubscriptionAttributesResponse>(asyncResult);
@@ -2651,6 +2750,7 @@ namespace Amazon.SimpleNotificationService
         /// <exception cref="Amazon.SimpleNotificationService.Model.NotFoundException">
         /// Indicates that the requested resource does not exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/SetTopicAttributes">REST API Reference for SetTopicAttributes Operation</seealso>
         public SetTopicAttributesResponse SetTopicAttributes(string topicArn, string attributeName, string attributeValue)
         {
             var request = new SetTopicAttributesRequest();
@@ -2679,6 +2779,7 @@ namespace Amazon.SimpleNotificationService
         /// <exception cref="Amazon.SimpleNotificationService.Model.NotFoundException">
         /// Indicates that the requested resource does not exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/SetTopicAttributes">REST API Reference for SetTopicAttributes Operation</seealso>
         public SetTopicAttributesResponse SetTopicAttributes(SetTopicAttributesRequest request)
         {
             var marshaller = new SetTopicAttributesRequestMarshaller();
@@ -2698,6 +2799,7 @@ namespace Amazon.SimpleNotificationService
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndSetTopicAttributes
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/SetTopicAttributes">REST API Reference for SetTopicAttributes Operation</seealso>
         public IAsyncResult BeginSetTopicAttributes(SetTopicAttributesRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new SetTopicAttributesRequestMarshaller();
@@ -2714,6 +2816,7 @@ namespace Amazon.SimpleNotificationService
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginSetTopicAttributes.</param>
         /// 
         /// <returns>Returns a  SetTopicAttributesResult from SimpleNotificationService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/SetTopicAttributes">REST API Reference for SetTopicAttributes Operation</seealso>
         public  SetTopicAttributesResponse EndSetTopicAttributes(IAsyncResult asyncResult)
         {
             return EndInvoke<SetTopicAttributesResponse>(asyncResult);
@@ -2749,6 +2852,7 @@ namespace Amazon.SimpleNotificationService
         /// <exception cref="Amazon.SimpleNotificationService.Model.SubscriptionLimitExceededException">
         /// Indicates that the customer already owns the maximum allowed number of subscriptions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/Subscribe">REST API Reference for Subscribe Operation</seealso>
         public SubscribeResponse Subscribe(string topicArn, string protocol, string endpoint)
         {
             var request = new SubscribeRequest();
@@ -2783,6 +2887,7 @@ namespace Amazon.SimpleNotificationService
         /// <exception cref="Amazon.SimpleNotificationService.Model.SubscriptionLimitExceededException">
         /// Indicates that the customer already owns the maximum allowed number of subscriptions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/Subscribe">REST API Reference for Subscribe Operation</seealso>
         public SubscribeResponse Subscribe(SubscribeRequest request)
         {
             var marshaller = new SubscribeRequestMarshaller();
@@ -2802,6 +2907,7 @@ namespace Amazon.SimpleNotificationService
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndSubscribe
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/Subscribe">REST API Reference for Subscribe Operation</seealso>
         public IAsyncResult BeginSubscribe(SubscribeRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new SubscribeRequestMarshaller();
@@ -2818,6 +2924,7 @@ namespace Amazon.SimpleNotificationService
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginSubscribe.</param>
         /// 
         /// <returns>Returns a  SubscribeResult from SimpleNotificationService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/Subscribe">REST API Reference for Subscribe Operation</seealso>
         public  SubscribeResponse EndSubscribe(IAsyncResult asyncResult)
         {
             return EndInvoke<SubscribeResponse>(asyncResult);
@@ -2850,6 +2957,7 @@ namespace Amazon.SimpleNotificationService
         /// <exception cref="Amazon.SimpleNotificationService.Model.NotFoundException">
         /// Indicates that the requested resource does not exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/Unsubscribe">REST API Reference for Unsubscribe Operation</seealso>
         public UnsubscribeResponse Unsubscribe(string subscriptionArn)
         {
             var request = new UnsubscribeRequest();
@@ -2881,6 +2989,7 @@ namespace Amazon.SimpleNotificationService
         /// <exception cref="Amazon.SimpleNotificationService.Model.NotFoundException">
         /// Indicates that the requested resource does not exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/Unsubscribe">REST API Reference for Unsubscribe Operation</seealso>
         public UnsubscribeResponse Unsubscribe(UnsubscribeRequest request)
         {
             var marshaller = new UnsubscribeRequestMarshaller();
@@ -2900,6 +3009,7 @@ namespace Amazon.SimpleNotificationService
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUnsubscribe
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/Unsubscribe">REST API Reference for Unsubscribe Operation</seealso>
         public IAsyncResult BeginUnsubscribe(UnsubscribeRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new UnsubscribeRequestMarshaller();
@@ -2916,6 +3026,7 @@ namespace Amazon.SimpleNotificationService
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUnsubscribe.</param>
         /// 
         /// <returns>Returns a  UnsubscribeResult from SimpleNotificationService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/Unsubscribe">REST API Reference for Unsubscribe Operation</seealso>
         public  UnsubscribeResponse EndUnsubscribe(IAsyncResult asyncResult)
         {
             return EndInvoke<UnsubscribeResponse>(asyncResult);

@@ -28,7 +28,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AWSMarketplaceMetering.Model
 {
     /// <summary>
-    /// This is the response object from the ResolveCustomer operation.
+    /// The result of the ResolveCustomer operation. Contains the CustomerIdentifier and product
+    /// code.
     /// </summary>
     public partial class ResolveCustomerResponse : AmazonWebServiceResponse
     {
@@ -36,7 +37,11 @@ namespace Amazon.AWSMarketplaceMetering.Model
         private string _productCode;
 
         /// <summary>
-        /// Gets and sets the property CustomerIdentifier.
+        /// Gets and sets the property CustomerIdentifier. 
+        /// <para>
+        /// The CustomerIdentifier is used to identify an individual customer in your application.
+        /// Calls to BatchMeterUsage require CustomerIdentifiers for each UsageRecord.
+        /// </para>
         /// </summary>
         public string CustomerIdentifier
         {
@@ -51,7 +56,11 @@ namespace Amazon.AWSMarketplaceMetering.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ProductCode.
+        /// Gets and sets the property ProductCode. 
+        /// <para>
+        /// The product code is returned to confirm that the buyer is registering for your product.
+        /// Subsequent BatchMeterUsage calls should be made using this product code.
+        /// </para>
         /// </summary>
         public string ProductCode
         {

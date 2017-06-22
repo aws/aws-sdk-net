@@ -94,6 +94,7 @@ namespace Amazon.DataPipeline
         /// The specified pipeline was not found. Verify that you used the correct user and account
         /// identifiers.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/ActivatePipeline">REST API Reference for ActivatePipeline Operation</seealso>
         ActivatePipelineResponse ActivatePipeline(ActivatePipelineRequest request);
 
         /// <summary>
@@ -107,6 +108,7 @@ namespace Amazon.DataPipeline
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndActivatePipeline
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/ActivatePipeline">REST API Reference for ActivatePipeline Operation</seealso>
         IAsyncResult BeginActivatePipeline(ActivatePipelineRequest request, AsyncCallback callback, object state);
 
 
@@ -118,6 +120,7 @@ namespace Amazon.DataPipeline
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginActivatePipeline.</param>
         /// 
         /// <returns>Returns a  ActivatePipelineResult from DataPipeline.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/ActivatePipeline">REST API Reference for ActivatePipeline Operation</seealso>
         ActivatePipelineResponse EndActivatePipeline(IAsyncResult asyncResult);
 
         #endregion
@@ -147,6 +150,7 @@ namespace Amazon.DataPipeline
         /// The specified pipeline was not found. Verify that you used the correct user and account
         /// identifiers.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/AddTags">REST API Reference for AddTags Operation</seealso>
         AddTagsResponse AddTags(string pipelineId, List<Tag> tags);
 
         /// <summary>
@@ -170,6 +174,7 @@ namespace Amazon.DataPipeline
         /// The specified pipeline was not found. Verify that you used the correct user and account
         /// identifiers.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/AddTags">REST API Reference for AddTags Operation</seealso>
         AddTagsResponse AddTags(AddTagsRequest request);
 
         /// <summary>
@@ -183,6 +188,7 @@ namespace Amazon.DataPipeline
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAddTags
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/AddTags">REST API Reference for AddTags Operation</seealso>
         IAsyncResult BeginAddTags(AddTagsRequest request, AsyncCallback callback, object state);
 
 
@@ -194,6 +200,7 @@ namespace Amazon.DataPipeline
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAddTags.</param>
         /// 
         /// <returns>Returns a  AddTagsResult from DataPipeline.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/AddTags">REST API Reference for AddTags Operation</seealso>
         AddTagsResponse EndAddTags(IAsyncResult asyncResult);
 
         #endregion
@@ -215,6 +222,7 @@ namespace Amazon.DataPipeline
         /// signature was generated with the correct credentials, and that you haven't exceeded
         /// any of the service limits for your account.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/CreatePipeline">REST API Reference for CreatePipeline Operation</seealso>
         CreatePipelineResponse CreatePipeline(CreatePipelineRequest request);
 
         /// <summary>
@@ -228,6 +236,7 @@ namespace Amazon.DataPipeline
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreatePipeline
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/CreatePipeline">REST API Reference for CreatePipeline Operation</seealso>
         IAsyncResult BeginCreatePipeline(CreatePipelineRequest request, AsyncCallback callback, object state);
 
 
@@ -239,6 +248,7 @@ namespace Amazon.DataPipeline
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreatePipeline.</param>
         /// 
         /// <returns>Returns a  CreatePipelineResult from DataPipeline.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/CreatePipeline">REST API Reference for CreatePipeline Operation</seealso>
         CreatePipelineResponse EndCreatePipeline(IAsyncResult asyncResult);
 
         #endregion
@@ -275,6 +285,7 @@ namespace Amazon.DataPipeline
         /// The specified pipeline was not found. Verify that you used the correct user and account
         /// identifiers.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/DeactivatePipeline">REST API Reference for DeactivatePipeline Operation</seealso>
         DeactivatePipelineResponse DeactivatePipeline(DeactivatePipelineRequest request);
 
         /// <summary>
@@ -288,6 +299,7 @@ namespace Amazon.DataPipeline
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeactivatePipeline
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/DeactivatePipeline">REST API Reference for DeactivatePipeline Operation</seealso>
         IAsyncResult BeginDeactivatePipeline(DeactivatePipelineRequest request, AsyncCallback callback, object state);
 
 
@@ -299,6 +311,7 @@ namespace Amazon.DataPipeline
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeactivatePipeline.</param>
         /// 
         /// <returns>Returns a  DeactivatePipelineResult from DataPipeline.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/DeactivatePipeline">REST API Reference for DeactivatePipeline Operation</seealso>
         DeactivatePipelineResponse EndDeactivatePipeline(IAsyncResult asyncResult);
 
         #endregion
@@ -334,6 +347,7 @@ namespace Amazon.DataPipeline
         /// The specified pipeline was not found. Verify that you used the correct user and account
         /// identifiers.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/DeletePipeline">REST API Reference for DeletePipeline Operation</seealso>
         DeletePipelineResponse DeletePipeline(DeletePipelineRequest request);
 
         /// <summary>
@@ -347,6 +361,7 @@ namespace Amazon.DataPipeline
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeletePipeline
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/DeletePipeline">REST API Reference for DeletePipeline Operation</seealso>
         IAsyncResult BeginDeletePipeline(DeletePipelineRequest request, AsyncCallback callback, object state);
 
 
@@ -358,6 +373,7 @@ namespace Amazon.DataPipeline
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeletePipeline.</param>
         /// 
         /// <returns>Returns a  DeletePipelineResult from DataPipeline.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/DeletePipeline">REST API Reference for DeletePipeline Operation</seealso>
         DeletePipelineResponse EndDeletePipeline(IAsyncResult asyncResult);
 
         #endregion
@@ -387,6 +403,7 @@ namespace Amazon.DataPipeline
         /// The specified pipeline was not found. Verify that you used the correct user and account
         /// identifiers.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/DescribeObjects">REST API Reference for DescribeObjects Operation</seealso>
         DescribeObjectsResponse DescribeObjects(DescribeObjectsRequest request);
 
         /// <summary>
@@ -400,6 +417,7 @@ namespace Amazon.DataPipeline
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeObjects
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/DescribeObjects">REST API Reference for DescribeObjects Operation</seealso>
         IAsyncResult BeginDescribeObjects(DescribeObjectsRequest request, AsyncCallback callback, object state);
 
 
@@ -411,6 +429,7 @@ namespace Amazon.DataPipeline
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeObjects.</param>
         /// 
         /// <returns>Returns a  DescribeObjectsResult from DataPipeline.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/DescribeObjects">REST API Reference for DescribeObjects Operation</seealso>
         DescribeObjectsResponse EndDescribeObjects(IAsyncResult asyncResult);
 
         #endregion
@@ -450,6 +469,7 @@ namespace Amazon.DataPipeline
         /// The specified pipeline was not found. Verify that you used the correct user and account
         /// identifiers.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/DescribePipelines">REST API Reference for DescribePipelines Operation</seealso>
         DescribePipelinesResponse DescribePipelines(List<string> pipelineIds);
 
         /// <summary>
@@ -484,6 +504,7 @@ namespace Amazon.DataPipeline
         /// The specified pipeline was not found. Verify that you used the correct user and account
         /// identifiers.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/DescribePipelines">REST API Reference for DescribePipelines Operation</seealso>
         DescribePipelinesResponse DescribePipelines(DescribePipelinesRequest request);
 
         /// <summary>
@@ -497,6 +518,7 @@ namespace Amazon.DataPipeline
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribePipelines
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/DescribePipelines">REST API Reference for DescribePipelines Operation</seealso>
         IAsyncResult BeginDescribePipelines(DescribePipelinesRequest request, AsyncCallback callback, object state);
 
 
@@ -508,6 +530,7 @@ namespace Amazon.DataPipeline
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribePipelines.</param>
         /// 
         /// <returns>Returns a  DescribePipelinesResult from DataPipeline.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/DescribePipelines">REST API Reference for DescribePipelines Operation</seealso>
         DescribePipelinesResponse EndDescribePipelines(IAsyncResult asyncResult);
 
         #endregion
@@ -541,6 +564,7 @@ namespace Amazon.DataPipeline
         /// <exception cref="Amazon.DataPipeline.Model.TaskNotFoundException">
         /// The specified task was not found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/EvaluateExpression">REST API Reference for EvaluateExpression Operation</seealso>
         EvaluateExpressionResponse EvaluateExpression(EvaluateExpressionRequest request);
 
         /// <summary>
@@ -554,6 +578,7 @@ namespace Amazon.DataPipeline
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndEvaluateExpression
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/EvaluateExpression">REST API Reference for EvaluateExpression Operation</seealso>
         IAsyncResult BeginEvaluateExpression(EvaluateExpressionRequest request, AsyncCallback callback, object state);
 
 
@@ -565,6 +590,7 @@ namespace Amazon.DataPipeline
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginEvaluateExpression.</param>
         /// 
         /// <returns>Returns a  EvaluateExpressionResult from DataPipeline.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/EvaluateExpression">REST API Reference for EvaluateExpression Operation</seealso>
         EvaluateExpressionResponse EndEvaluateExpression(IAsyncResult asyncResult);
 
         #endregion
@@ -594,6 +620,7 @@ namespace Amazon.DataPipeline
         /// The specified pipeline was not found. Verify that you used the correct user and account
         /// identifiers.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/GetPipelineDefinition">REST API Reference for GetPipelineDefinition Operation</seealso>
         GetPipelineDefinitionResponse GetPipelineDefinition(GetPipelineDefinitionRequest request);
 
         /// <summary>
@@ -607,6 +634,7 @@ namespace Amazon.DataPipeline
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetPipelineDefinition
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/GetPipelineDefinition">REST API Reference for GetPipelineDefinition Operation</seealso>
         IAsyncResult BeginGetPipelineDefinition(GetPipelineDefinitionRequest request, AsyncCallback callback, object state);
 
 
@@ -618,6 +646,7 @@ namespace Amazon.DataPipeline
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetPipelineDefinition.</param>
         /// 
         /// <returns>Returns a  GetPipelineDefinitionResult from DataPipeline.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/GetPipelineDefinition">REST API Reference for GetPipelineDefinition Operation</seealso>
         GetPipelineDefinitionResponse EndGetPipelineDefinition(IAsyncResult asyncResult);
 
         #endregion
@@ -639,6 +668,7 @@ namespace Amazon.DataPipeline
         /// signature was generated with the correct credentials, and that you haven't exceeded
         /// any of the service limits for your account.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/ListPipelines">REST API Reference for ListPipelines Operation</seealso>
         ListPipelinesResponse ListPipelines();
 
         /// <summary>
@@ -656,6 +686,7 @@ namespace Amazon.DataPipeline
         /// signature was generated with the correct credentials, and that you haven't exceeded
         /// any of the service limits for your account.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/ListPipelines">REST API Reference for ListPipelines Operation</seealso>
         ListPipelinesResponse ListPipelines(ListPipelinesRequest request);
 
         /// <summary>
@@ -669,6 +700,7 @@ namespace Amazon.DataPipeline
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListPipelines
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/ListPipelines">REST API Reference for ListPipelines Operation</seealso>
         IAsyncResult BeginListPipelines(ListPipelinesRequest request, AsyncCallback callback, object state);
 
 
@@ -680,6 +712,7 @@ namespace Amazon.DataPipeline
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListPipelines.</param>
         /// 
         /// <returns>Returns a  ListPipelinesResult from DataPipeline.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/ListPipelines">REST API Reference for ListPipelines Operation</seealso>
         ListPipelinesResponse EndListPipelines(IAsyncResult asyncResult);
 
         #endregion
@@ -720,6 +753,7 @@ namespace Amazon.DataPipeline
         /// <exception cref="Amazon.DataPipeline.Model.TaskNotFoundException">
         /// The specified task was not found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/PollForTask">REST API Reference for PollForTask Operation</seealso>
         PollForTaskResponse PollForTask(PollForTaskRequest request);
 
         /// <summary>
@@ -733,6 +767,7 @@ namespace Amazon.DataPipeline
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPollForTask
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/PollForTask">REST API Reference for PollForTask Operation</seealso>
         IAsyncResult BeginPollForTask(PollForTaskRequest request, AsyncCallback callback, object state);
 
 
@@ -744,6 +779,7 @@ namespace Amazon.DataPipeline
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPollForTask.</param>
         /// 
         /// <returns>Returns a  PollForTaskResult from DataPipeline.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/PollForTask">REST API Reference for PollForTask Operation</seealso>
         PollForTaskResponse EndPollForTask(IAsyncResult asyncResult);
 
         #endregion
@@ -787,6 +823,7 @@ namespace Amazon.DataPipeline
         /// The specified pipeline was not found. Verify that you used the correct user and account
         /// identifiers.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/PutPipelineDefinition">REST API Reference for PutPipelineDefinition Operation</seealso>
         PutPipelineDefinitionResponse PutPipelineDefinition(PutPipelineDefinitionRequest request);
 
         /// <summary>
@@ -800,6 +837,7 @@ namespace Amazon.DataPipeline
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutPipelineDefinition
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/PutPipelineDefinition">REST API Reference for PutPipelineDefinition Operation</seealso>
         IAsyncResult BeginPutPipelineDefinition(PutPipelineDefinitionRequest request, AsyncCallback callback, object state);
 
 
@@ -811,6 +849,7 @@ namespace Amazon.DataPipeline
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutPipelineDefinition.</param>
         /// 
         /// <returns>Returns a  PutPipelineDefinitionResult from DataPipeline.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/PutPipelineDefinition">REST API Reference for PutPipelineDefinition Operation</seealso>
         PutPipelineDefinitionResponse EndPutPipelineDefinition(IAsyncResult asyncResult);
 
         #endregion
@@ -840,6 +879,7 @@ namespace Amazon.DataPipeline
         /// The specified pipeline was not found. Verify that you used the correct user and account
         /// identifiers.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/QueryObjects">REST API Reference for QueryObjects Operation</seealso>
         QueryObjectsResponse QueryObjects(QueryObjectsRequest request);
 
         /// <summary>
@@ -853,6 +893,7 @@ namespace Amazon.DataPipeline
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndQueryObjects
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/QueryObjects">REST API Reference for QueryObjects Operation</seealso>
         IAsyncResult BeginQueryObjects(QueryObjectsRequest request, AsyncCallback callback, object state);
 
 
@@ -864,6 +905,7 @@ namespace Amazon.DataPipeline
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginQueryObjects.</param>
         /// 
         /// <returns>Returns a  QueryObjectsResult from DataPipeline.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/QueryObjects">REST API Reference for QueryObjects Operation</seealso>
         QueryObjectsResponse EndQueryObjects(IAsyncResult asyncResult);
 
         #endregion
@@ -893,6 +935,7 @@ namespace Amazon.DataPipeline
         /// The specified pipeline was not found. Verify that you used the correct user and account
         /// identifiers.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/RemoveTags">REST API Reference for RemoveTags Operation</seealso>
         RemoveTagsResponse RemoveTags(string pipelineId, List<string> tagKeys);
 
         /// <summary>
@@ -916,6 +959,7 @@ namespace Amazon.DataPipeline
         /// The specified pipeline was not found. Verify that you used the correct user and account
         /// identifiers.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/RemoveTags">REST API Reference for RemoveTags Operation</seealso>
         RemoveTagsResponse RemoveTags(RemoveTagsRequest request);
 
         /// <summary>
@@ -929,6 +973,7 @@ namespace Amazon.DataPipeline
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndRemoveTags
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/RemoveTags">REST API Reference for RemoveTags Operation</seealso>
         IAsyncResult BeginRemoveTags(RemoveTagsRequest request, AsyncCallback callback, object state);
 
 
@@ -940,6 +985,7 @@ namespace Amazon.DataPipeline
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginRemoveTags.</param>
         /// 
         /// <returns>Returns a  RemoveTagsResult from DataPipeline.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/RemoveTags">REST API Reference for RemoveTags Operation</seealso>
         RemoveTagsResponse EndRemoveTags(IAsyncResult asyncResult);
 
         #endregion
@@ -984,6 +1030,7 @@ namespace Amazon.DataPipeline
         /// <exception cref="Amazon.DataPipeline.Model.TaskNotFoundException">
         /// The specified task was not found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/ReportTaskProgress">REST API Reference for ReportTaskProgress Operation</seealso>
         ReportTaskProgressResponse ReportTaskProgress(ReportTaskProgressRequest request);
 
         /// <summary>
@@ -997,6 +1044,7 @@ namespace Amazon.DataPipeline
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndReportTaskProgress
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/ReportTaskProgress">REST API Reference for ReportTaskProgress Operation</seealso>
         IAsyncResult BeginReportTaskProgress(ReportTaskProgressRequest request, AsyncCallback callback, object state);
 
 
@@ -1008,6 +1056,7 @@ namespace Amazon.DataPipeline
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginReportTaskProgress.</param>
         /// 
         /// <returns>Returns a  ReportTaskProgressResult from DataPipeline.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/ReportTaskProgress">REST API Reference for ReportTaskProgress Operation</seealso>
         ReportTaskProgressResponse EndReportTaskProgress(IAsyncResult asyncResult);
 
         #endregion
@@ -1032,6 +1081,7 @@ namespace Amazon.DataPipeline
         /// signature was generated with the correct credentials, and that you haven't exceeded
         /// any of the service limits for your account.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/ReportTaskRunnerHeartbeat">REST API Reference for ReportTaskRunnerHeartbeat Operation</seealso>
         ReportTaskRunnerHeartbeatResponse ReportTaskRunnerHeartbeat(ReportTaskRunnerHeartbeatRequest request);
 
         /// <summary>
@@ -1045,6 +1095,7 @@ namespace Amazon.DataPipeline
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndReportTaskRunnerHeartbeat
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/ReportTaskRunnerHeartbeat">REST API Reference for ReportTaskRunnerHeartbeat Operation</seealso>
         IAsyncResult BeginReportTaskRunnerHeartbeat(ReportTaskRunnerHeartbeatRequest request, AsyncCallback callback, object state);
 
 
@@ -1056,6 +1107,7 @@ namespace Amazon.DataPipeline
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginReportTaskRunnerHeartbeat.</param>
         /// 
         /// <returns>Returns a  ReportTaskRunnerHeartbeatResult from DataPipeline.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/ReportTaskRunnerHeartbeat">REST API Reference for ReportTaskRunnerHeartbeat Operation</seealso>
         ReportTaskRunnerHeartbeatResponse EndReportTaskRunnerHeartbeat(IAsyncResult asyncResult);
 
         #endregion
@@ -1088,6 +1140,7 @@ namespace Amazon.DataPipeline
         /// The specified pipeline was not found. Verify that you used the correct user and account
         /// identifiers.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/SetStatus">REST API Reference for SetStatus Operation</seealso>
         SetStatusResponse SetStatus(SetStatusRequest request);
 
         /// <summary>
@@ -1101,6 +1154,7 @@ namespace Amazon.DataPipeline
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndSetStatus
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/SetStatus">REST API Reference for SetStatus Operation</seealso>
         IAsyncResult BeginSetStatus(SetStatusRequest request, AsyncCallback callback, object state);
 
 
@@ -1112,6 +1166,7 @@ namespace Amazon.DataPipeline
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginSetStatus.</param>
         /// 
         /// <returns>Returns a  SetStatusResult from DataPipeline.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/SetStatus">REST API Reference for SetStatus Operation</seealso>
         SetStatusResponse EndSetStatus(IAsyncResult asyncResult);
 
         #endregion
@@ -1147,6 +1202,7 @@ namespace Amazon.DataPipeline
         /// <exception cref="Amazon.DataPipeline.Model.TaskNotFoundException">
         /// The specified task was not found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/SetTaskStatus">REST API Reference for SetTaskStatus Operation</seealso>
         SetTaskStatusResponse SetTaskStatus(SetTaskStatusRequest request);
 
         /// <summary>
@@ -1160,6 +1216,7 @@ namespace Amazon.DataPipeline
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndSetTaskStatus
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/SetTaskStatus">REST API Reference for SetTaskStatus Operation</seealso>
         IAsyncResult BeginSetTaskStatus(SetTaskStatusRequest request, AsyncCallback callback, object state);
 
 
@@ -1171,6 +1228,7 @@ namespace Amazon.DataPipeline
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginSetTaskStatus.</param>
         /// 
         /// <returns>Returns a  SetTaskStatusResult from DataPipeline.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/SetTaskStatus">REST API Reference for SetTaskStatus Operation</seealso>
         SetTaskStatusResponse EndSetTaskStatus(IAsyncResult asyncResult);
 
         #endregion
@@ -1200,6 +1258,7 @@ namespace Amazon.DataPipeline
         /// The specified pipeline was not found. Verify that you used the correct user and account
         /// identifiers.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/ValidatePipelineDefinition">REST API Reference for ValidatePipelineDefinition Operation</seealso>
         ValidatePipelineDefinitionResponse ValidatePipelineDefinition(ValidatePipelineDefinitionRequest request);
 
         /// <summary>
@@ -1213,6 +1272,7 @@ namespace Amazon.DataPipeline
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndValidatePipelineDefinition
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/ValidatePipelineDefinition">REST API Reference for ValidatePipelineDefinition Operation</seealso>
         IAsyncResult BeginValidatePipelineDefinition(ValidatePipelineDefinitionRequest request, AsyncCallback callback, object state);
 
 
@@ -1224,6 +1284,7 @@ namespace Amazon.DataPipeline
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginValidatePipelineDefinition.</param>
         /// 
         /// <returns>Returns a  ValidatePipelineDefinitionResult from DataPipeline.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/ValidatePipelineDefinition">REST API Reference for ValidatePipelineDefinition Operation</seealso>
         ValidatePipelineDefinitionResponse EndValidatePipelineDefinition(IAsyncResult asyncResult);
 
         #endregion

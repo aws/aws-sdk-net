@@ -75,6 +75,7 @@ namespace Amazon.ServerMigrationService
         /// <exception cref="Amazon.ServerMigrationService.Model.UnauthorizedOperationException">
         /// This user does not have permissions to perform this operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/CreateReplicationJob">REST API Reference for CreateReplicationJob Operation</seealso>
         CreateReplicationJobResponse CreateReplicationJob(CreateReplicationJobRequest request);
 
         /// <summary>
@@ -88,6 +89,7 @@ namespace Amazon.ServerMigrationService
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateReplicationJob
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/CreateReplicationJob">REST API Reference for CreateReplicationJob Operation</seealso>
         IAsyncResult BeginCreateReplicationJob(CreateReplicationJobRequest request, AsyncCallback callback, object state);
 
 
@@ -99,6 +101,7 @@ namespace Amazon.ServerMigrationService
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateReplicationJob.</param>
         /// 
         /// <returns>Returns a  CreateReplicationJobResult from ServerMigrationService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/CreateReplicationJob">REST API Reference for CreateReplicationJob Operation</seealso>
         CreateReplicationJobResponse EndCreateReplicationJob(IAsyncResult asyncResult);
 
         #endregion
@@ -132,6 +135,7 @@ namespace Amazon.ServerMigrationService
         /// <exception cref="Amazon.ServerMigrationService.Model.UnauthorizedOperationException">
         /// This user does not have permissions to perform this operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/DeleteReplicationJob">REST API Reference for DeleteReplicationJob Operation</seealso>
         DeleteReplicationJobResponse DeleteReplicationJob(DeleteReplicationJobRequest request);
 
         /// <summary>
@@ -145,6 +149,7 @@ namespace Amazon.ServerMigrationService
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteReplicationJob
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/DeleteReplicationJob">REST API Reference for DeleteReplicationJob Operation</seealso>
         IAsyncResult BeginDeleteReplicationJob(DeleteReplicationJobRequest request, AsyncCallback callback, object state);
 
 
@@ -156,6 +161,7 @@ namespace Amazon.ServerMigrationService
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteReplicationJob.</param>
         /// 
         /// <returns>Returns a  DeleteReplicationJobResult from ServerMigrationService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/DeleteReplicationJob">REST API Reference for DeleteReplicationJob Operation</seealso>
         DeleteReplicationJobResponse EndDeleteReplicationJob(IAsyncResult asyncResult);
 
         #endregion
@@ -185,6 +191,7 @@ namespace Amazon.ServerMigrationService
         /// <exception cref="Amazon.ServerMigrationService.Model.UnauthorizedOperationException">
         /// This user does not have permissions to perform this operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/DeleteServerCatalog">REST API Reference for DeleteServerCatalog Operation</seealso>
         DeleteServerCatalogResponse DeleteServerCatalog(DeleteServerCatalogRequest request);
 
         /// <summary>
@@ -198,6 +205,7 @@ namespace Amazon.ServerMigrationService
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteServerCatalog
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/DeleteServerCatalog">REST API Reference for DeleteServerCatalog Operation</seealso>
         IAsyncResult BeginDeleteServerCatalog(DeleteServerCatalogRequest request, AsyncCallback callback, object state);
 
 
@@ -209,6 +217,7 @@ namespace Amazon.ServerMigrationService
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteServerCatalog.</param>
         /// 
         /// <returns>Returns a  DeleteServerCatalogResult from ServerMigrationService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/DeleteServerCatalog">REST API Reference for DeleteServerCatalog Operation</seealso>
         DeleteServerCatalogResponse EndDeleteServerCatalog(IAsyncResult asyncResult);
 
         #endregion
@@ -238,6 +247,7 @@ namespace Amazon.ServerMigrationService
         /// <exception cref="Amazon.ServerMigrationService.Model.UnauthorizedOperationException">
         /// This user does not have permissions to perform this operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/DisassociateConnector">REST API Reference for DisassociateConnector Operation</seealso>
         DisassociateConnectorResponse DisassociateConnector(DisassociateConnectorRequest request);
 
         /// <summary>
@@ -251,6 +261,7 @@ namespace Amazon.ServerMigrationService
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDisassociateConnector
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/DisassociateConnector">REST API Reference for DisassociateConnector Operation</seealso>
         IAsyncResult BeginDisassociateConnector(DisassociateConnectorRequest request, AsyncCallback callback, object state);
 
 
@@ -262,6 +273,7 @@ namespace Amazon.ServerMigrationService
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDisassociateConnector.</param>
         /// 
         /// <returns>Returns a  DisassociateConnectorResult from ServerMigrationService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/DisassociateConnector">REST API Reference for DisassociateConnector Operation</seealso>
         DisassociateConnectorResponse EndDisassociateConnector(IAsyncResult asyncResult);
 
         #endregion
@@ -279,6 +291,7 @@ namespace Amazon.ServerMigrationService
         /// <exception cref="Amazon.ServerMigrationService.Model.UnauthorizedOperationException">
         /// This user does not have permissions to perform this operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/GetConnectors">REST API Reference for GetConnectors Operation</seealso>
         GetConnectorsResponse GetConnectors(GetConnectorsRequest request);
 
         /// <summary>
@@ -292,6 +305,7 @@ namespace Amazon.ServerMigrationService
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetConnectors
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/GetConnectors">REST API Reference for GetConnectors Operation</seealso>
         IAsyncResult BeginGetConnectors(GetConnectorsRequest request, AsyncCallback callback, object state);
 
 
@@ -303,6 +317,7 @@ namespace Amazon.ServerMigrationService
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetConnectors.</param>
         /// 
         /// <returns>Returns a  GetConnectorsResult from ServerMigrationService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/GetConnectors">REST API Reference for GetConnectors Operation</seealso>
         GetConnectorsResponse EndGetConnectors(IAsyncResult asyncResult);
 
         #endregion
@@ -328,6 +343,7 @@ namespace Amazon.ServerMigrationService
         /// <exception cref="Amazon.ServerMigrationService.Model.UnauthorizedOperationException">
         /// This user does not have permissions to perform this operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/GetReplicationJobs">REST API Reference for GetReplicationJobs Operation</seealso>
         GetReplicationJobsResponse GetReplicationJobs(GetReplicationJobsRequest request);
 
         /// <summary>
@@ -341,6 +357,7 @@ namespace Amazon.ServerMigrationService
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetReplicationJobs
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/GetReplicationJobs">REST API Reference for GetReplicationJobs Operation</seealso>
         IAsyncResult BeginGetReplicationJobs(GetReplicationJobsRequest request, AsyncCallback callback, object state);
 
 
@@ -352,6 +369,7 @@ namespace Amazon.ServerMigrationService
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetReplicationJobs.</param>
         /// 
         /// <returns>Returns a  GetReplicationJobsResult from ServerMigrationService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/GetReplicationJobs">REST API Reference for GetReplicationJobs Operation</seealso>
         GetReplicationJobsResponse EndGetReplicationJobs(IAsyncResult asyncResult);
 
         #endregion
@@ -377,6 +395,7 @@ namespace Amazon.ServerMigrationService
         /// <exception cref="Amazon.ServerMigrationService.Model.UnauthorizedOperationException">
         /// This user does not have permissions to perform this operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/GetReplicationRuns">REST API Reference for GetReplicationRuns Operation</seealso>
         GetReplicationRunsResponse GetReplicationRuns(GetReplicationRunsRequest request);
 
         /// <summary>
@@ -390,6 +409,7 @@ namespace Amazon.ServerMigrationService
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetReplicationRuns
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/GetReplicationRuns">REST API Reference for GetReplicationRuns Operation</seealso>
         IAsyncResult BeginGetReplicationRuns(GetReplicationRunsRequest request, AsyncCallback callback, object state);
 
 
@@ -401,6 +421,7 @@ namespace Amazon.ServerMigrationService
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetReplicationRuns.</param>
         /// 
         /// <returns>Returns a  GetReplicationRunsResult from ServerMigrationService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/GetReplicationRuns">REST API Reference for GetReplicationRuns Operation</seealso>
         GetReplicationRunsResponse EndGetReplicationRuns(IAsyncResult asyncResult);
 
         #endregion
@@ -418,6 +439,7 @@ namespace Amazon.ServerMigrationService
         /// <exception cref="Amazon.ServerMigrationService.Model.UnauthorizedOperationException">
         /// This user does not have permissions to perform this operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/GetServers">REST API Reference for GetServers Operation</seealso>
         GetServersResponse GetServers(GetServersRequest request);
 
         /// <summary>
@@ -431,6 +453,7 @@ namespace Amazon.ServerMigrationService
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetServers
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/GetServers">REST API Reference for GetServers Operation</seealso>
         IAsyncResult BeginGetServers(GetServersRequest request, AsyncCallback callback, object state);
 
 
@@ -442,6 +465,7 @@ namespace Amazon.ServerMigrationService
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetServers.</param>
         /// 
         /// <returns>Returns a  GetServersResult from ServerMigrationService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/GetServers">REST API Reference for GetServers Operation</seealso>
         GetServersResponse EndGetServers(IAsyncResult asyncResult);
 
         #endregion
@@ -477,6 +501,7 @@ namespace Amazon.ServerMigrationService
         /// <exception cref="Amazon.ServerMigrationService.Model.UnauthorizedOperationException">
         /// This user does not have permissions to perform this operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/ImportServerCatalog">REST API Reference for ImportServerCatalog Operation</seealso>
         ImportServerCatalogResponse ImportServerCatalog(ImportServerCatalogRequest request);
 
         /// <summary>
@@ -490,6 +515,7 @@ namespace Amazon.ServerMigrationService
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndImportServerCatalog
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/ImportServerCatalog">REST API Reference for ImportServerCatalog Operation</seealso>
         IAsyncResult BeginImportServerCatalog(ImportServerCatalogRequest request, AsyncCallback callback, object state);
 
 
@@ -501,6 +527,7 @@ namespace Amazon.ServerMigrationService
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginImportServerCatalog.</param>
         /// 
         /// <returns>Returns a  ImportServerCatalogResult from ServerMigrationService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/ImportServerCatalog">REST API Reference for ImportServerCatalog Operation</seealso>
         ImportServerCatalogResponse EndImportServerCatalog(IAsyncResult asyncResult);
 
         #endregion
@@ -535,6 +562,7 @@ namespace Amazon.ServerMigrationService
         /// <exception cref="Amazon.ServerMigrationService.Model.UnauthorizedOperationException">
         /// This user does not have permissions to perform this operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/StartOnDemandReplicationRun">REST API Reference for StartOnDemandReplicationRun Operation</seealso>
         StartOnDemandReplicationRunResponse StartOnDemandReplicationRun(StartOnDemandReplicationRunRequest request);
 
         /// <summary>
@@ -548,6 +576,7 @@ namespace Amazon.ServerMigrationService
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStartOnDemandReplicationRun
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/StartOnDemandReplicationRun">REST API Reference for StartOnDemandReplicationRun Operation</seealso>
         IAsyncResult BeginStartOnDemandReplicationRun(StartOnDemandReplicationRunRequest request, AsyncCallback callback, object state);
 
 
@@ -559,6 +588,7 @@ namespace Amazon.ServerMigrationService
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStartOnDemandReplicationRun.</param>
         /// 
         /// <returns>Returns a  StartOnDemandReplicationRunResult from ServerMigrationService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/StartOnDemandReplicationRun">REST API Reference for StartOnDemandReplicationRun Operation</seealso>
         StartOnDemandReplicationRunResponse EndStartOnDemandReplicationRun(IAsyncResult asyncResult);
 
         #endregion
@@ -598,6 +628,7 @@ namespace Amazon.ServerMigrationService
         /// <exception cref="Amazon.ServerMigrationService.Model.UnauthorizedOperationException">
         /// This user does not have permissions to perform this operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/UpdateReplicationJob">REST API Reference for UpdateReplicationJob Operation</seealso>
         UpdateReplicationJobResponse UpdateReplicationJob(UpdateReplicationJobRequest request);
 
         /// <summary>
@@ -611,6 +642,7 @@ namespace Amazon.ServerMigrationService
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateReplicationJob
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/UpdateReplicationJob">REST API Reference for UpdateReplicationJob Operation</seealso>
         IAsyncResult BeginUpdateReplicationJob(UpdateReplicationJobRequest request, AsyncCallback callback, object state);
 
 
@@ -622,6 +654,7 @@ namespace Amazon.ServerMigrationService
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateReplicationJob.</param>
         /// 
         /// <returns>Returns a  UpdateReplicationJobResult from ServerMigrationService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/UpdateReplicationJob">REST API Reference for UpdateReplicationJob Operation</seealso>
         UpdateReplicationJobResponse EndUpdateReplicationJob(IAsyncResult asyncResult);
 
         #endregion

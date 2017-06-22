@@ -265,6 +265,7 @@ namespace Amazon.SimpleEmail
         /// <exception cref="Amazon.SimpleEmail.Model.RuleSetDoesNotExistException">
         /// Indicates that the provided receipt rule set does not exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/CloneReceiptRuleSet">REST API Reference for CloneReceiptRuleSet Operation</seealso>
         public CloneReceiptRuleSetResponse CloneReceiptRuleSet(CloneReceiptRuleSetRequest request)
         {
             var marshaller = new CloneReceiptRuleSetRequestMarshaller();
@@ -284,6 +285,7 @@ namespace Amazon.SimpleEmail
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCloneReceiptRuleSet
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/CloneReceiptRuleSet">REST API Reference for CloneReceiptRuleSet Operation</seealso>
         public IAsyncResult BeginCloneReceiptRuleSet(CloneReceiptRuleSetRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CloneReceiptRuleSetRequestMarshaller();
@@ -300,6 +302,7 @@ namespace Amazon.SimpleEmail
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCloneReceiptRuleSet.</param>
         /// 
         /// <returns>Returns a  CloneReceiptRuleSetResult from SimpleEmailService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/CloneReceiptRuleSet">REST API Reference for CloneReceiptRuleSet Operation</seealso>
         public  CloneReceiptRuleSetResponse EndCloneReceiptRuleSet(IAsyncResult asyncResult)
         {
             return EndInvoke<CloneReceiptRuleSetResponse>(asyncResult);
@@ -337,6 +340,7 @@ namespace Amazon.SimpleEmail
         /// of Amazon SES limits, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/limits.html">Amazon
         /// SES Developer Guide</a>.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/CreateConfigurationSet">REST API Reference for CreateConfigurationSet Operation</seealso>
         public CreateConfigurationSetResponse CreateConfigurationSet(CreateConfigurationSetRequest request)
         {
             var marshaller = new CreateConfigurationSetRequestMarshaller();
@@ -356,6 +360,7 @@ namespace Amazon.SimpleEmail
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateConfigurationSet
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/CreateConfigurationSet">REST API Reference for CreateConfigurationSet Operation</seealso>
         public IAsyncResult BeginCreateConfigurationSet(CreateConfigurationSetRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CreateConfigurationSetRequestMarshaller();
@@ -372,6 +377,7 @@ namespace Amazon.SimpleEmail
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateConfigurationSet.</param>
         /// 
         /// <returns>Returns a  CreateConfigurationSetResult from SimpleEmailService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/CreateConfigurationSet">REST API Reference for CreateConfigurationSet Operation</seealso>
         public  CreateConfigurationSetResponse EndCreateConfigurationSet(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateConfigurationSetResponse>(asyncResult);
@@ -423,6 +429,7 @@ namespace Amazon.SimpleEmail
         /// of Amazon SES limits, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/limits.html">Amazon
         /// SES Developer Guide</a>.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/CreateConfigurationSetEventDestination">REST API Reference for CreateConfigurationSetEventDestination Operation</seealso>
         public CreateConfigurationSetEventDestinationResponse CreateConfigurationSetEventDestination(CreateConfigurationSetEventDestinationRequest request)
         {
             var marshaller = new CreateConfigurationSetEventDestinationRequestMarshaller();
@@ -442,6 +449,7 @@ namespace Amazon.SimpleEmail
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateConfigurationSetEventDestination
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/CreateConfigurationSetEventDestination">REST API Reference for CreateConfigurationSetEventDestination Operation</seealso>
         public IAsyncResult BeginCreateConfigurationSetEventDestination(CreateConfigurationSetEventDestinationRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CreateConfigurationSetEventDestinationRequestMarshaller();
@@ -458,6 +466,7 @@ namespace Amazon.SimpleEmail
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateConfigurationSetEventDestination.</param>
         /// 
         /// <returns>Returns a  CreateConfigurationSetEventDestinationResult from SimpleEmailService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/CreateConfigurationSetEventDestination">REST API Reference for CreateConfigurationSetEventDestination Operation</seealso>
         public  CreateConfigurationSetEventDestinationResponse EndCreateConfigurationSetEventDestination(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateConfigurationSetEventDestinationResponse>(asyncResult);
@@ -491,6 +500,7 @@ namespace Amazon.SimpleEmail
         /// of Amazon SES limits, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/limits.html">Amazon
         /// SES Developer Guide</a>.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/CreateReceiptFilter">REST API Reference for CreateReceiptFilter Operation</seealso>
         public CreateReceiptFilterResponse CreateReceiptFilter(CreateReceiptFilterRequest request)
         {
             var marshaller = new CreateReceiptFilterRequestMarshaller();
@@ -510,6 +520,7 @@ namespace Amazon.SimpleEmail
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateReceiptFilter
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/CreateReceiptFilter">REST API Reference for CreateReceiptFilter Operation</seealso>
         public IAsyncResult BeginCreateReceiptFilter(CreateReceiptFilterRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CreateReceiptFilterRequestMarshaller();
@@ -526,6 +537,7 @@ namespace Amazon.SimpleEmail
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateReceiptFilter.</param>
         /// 
         /// <returns>Returns a  CreateReceiptFilterResult from SimpleEmailService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/CreateReceiptFilter">REST API Reference for CreateReceiptFilter Operation</seealso>
         public  CreateReceiptFilterResponse EndCreateReceiptFilter(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateReceiptFilterResponse>(asyncResult);
@@ -583,6 +595,7 @@ namespace Amazon.SimpleEmail
         /// <exception cref="Amazon.SimpleEmail.Model.RuleSetDoesNotExistException">
         /// Indicates that the provided receipt rule set does not exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/CreateReceiptRule">REST API Reference for CreateReceiptRule Operation</seealso>
         public CreateReceiptRuleResponse CreateReceiptRule(CreateReceiptRuleRequest request)
         {
             var marshaller = new CreateReceiptRuleRequestMarshaller();
@@ -602,6 +615,7 @@ namespace Amazon.SimpleEmail
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateReceiptRule
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/CreateReceiptRule">REST API Reference for CreateReceiptRule Operation</seealso>
         public IAsyncResult BeginCreateReceiptRule(CreateReceiptRuleRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CreateReceiptRuleRequestMarshaller();
@@ -618,6 +632,7 @@ namespace Amazon.SimpleEmail
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateReceiptRule.</param>
         /// 
         /// <returns>Returns a  CreateReceiptRuleResult from SimpleEmailService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/CreateReceiptRule">REST API Reference for CreateReceiptRule Operation</seealso>
         public  CreateReceiptRuleResponse EndCreateReceiptRule(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateReceiptRuleResponse>(asyncResult);
@@ -651,6 +666,7 @@ namespace Amazon.SimpleEmail
         /// of Amazon SES limits, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/limits.html">Amazon
         /// SES Developer Guide</a>.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/CreateReceiptRuleSet">REST API Reference for CreateReceiptRuleSet Operation</seealso>
         public CreateReceiptRuleSetResponse CreateReceiptRuleSet(CreateReceiptRuleSetRequest request)
         {
             var marshaller = new CreateReceiptRuleSetRequestMarshaller();
@@ -670,6 +686,7 @@ namespace Amazon.SimpleEmail
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateReceiptRuleSet
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/CreateReceiptRuleSet">REST API Reference for CreateReceiptRuleSet Operation</seealso>
         public IAsyncResult BeginCreateReceiptRuleSet(CreateReceiptRuleSetRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CreateReceiptRuleSetRequestMarshaller();
@@ -686,6 +703,7 @@ namespace Amazon.SimpleEmail
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateReceiptRuleSet.</param>
         /// 
         /// <returns>Returns a  CreateReceiptRuleSetResult from SimpleEmailService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/CreateReceiptRuleSet">REST API Reference for CreateReceiptRuleSet Operation</seealso>
         public  CreateReceiptRuleSetResponse EndCreateReceiptRuleSet(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateReceiptRuleSetResponse>(asyncResult);
@@ -715,6 +733,7 @@ namespace Amazon.SimpleEmail
         /// <exception cref="Amazon.SimpleEmail.Model.ConfigurationSetDoesNotExistException">
         /// Indicates that the configuration set does not exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/DeleteConfigurationSet">REST API Reference for DeleteConfigurationSet Operation</seealso>
         public DeleteConfigurationSetResponse DeleteConfigurationSet(DeleteConfigurationSetRequest request)
         {
             var marshaller = new DeleteConfigurationSetRequestMarshaller();
@@ -734,6 +753,7 @@ namespace Amazon.SimpleEmail
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteConfigurationSet
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/DeleteConfigurationSet">REST API Reference for DeleteConfigurationSet Operation</seealso>
         public IAsyncResult BeginDeleteConfigurationSet(DeleteConfigurationSetRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeleteConfigurationSetRequestMarshaller();
@@ -750,6 +770,7 @@ namespace Amazon.SimpleEmail
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteConfigurationSet.</param>
         /// 
         /// <returns>Returns a  DeleteConfigurationSetResult from SimpleEmailService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/DeleteConfigurationSet">REST API Reference for DeleteConfigurationSet Operation</seealso>
         public  DeleteConfigurationSetResponse EndDeleteConfigurationSet(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteConfigurationSetResponse>(asyncResult);
@@ -783,6 +804,7 @@ namespace Amazon.SimpleEmail
         /// <exception cref="Amazon.SimpleEmail.Model.EventDestinationDoesNotExistException">
         /// Indicates that the event destination does not exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/DeleteConfigurationSetEventDestination">REST API Reference for DeleteConfigurationSetEventDestination Operation</seealso>
         public DeleteConfigurationSetEventDestinationResponse DeleteConfigurationSetEventDestination(DeleteConfigurationSetEventDestinationRequest request)
         {
             var marshaller = new DeleteConfigurationSetEventDestinationRequestMarshaller();
@@ -802,6 +824,7 @@ namespace Amazon.SimpleEmail
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteConfigurationSetEventDestination
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/DeleteConfigurationSetEventDestination">REST API Reference for DeleteConfigurationSetEventDestination Operation</seealso>
         public IAsyncResult BeginDeleteConfigurationSetEventDestination(DeleteConfigurationSetEventDestinationRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeleteConfigurationSetEventDestinationRequestMarshaller();
@@ -818,6 +841,7 @@ namespace Amazon.SimpleEmail
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteConfigurationSetEventDestination.</param>
         /// 
         /// <returns>Returns a  DeleteConfigurationSetEventDestinationResult from SimpleEmailService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/DeleteConfigurationSetEventDestination">REST API Reference for DeleteConfigurationSetEventDestination Operation</seealso>
         public  DeleteConfigurationSetEventDestinationResponse EndDeleteConfigurationSetEventDestination(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteConfigurationSetEventDestinationResponse>(asyncResult);
@@ -839,6 +863,7 @@ namespace Amazon.SimpleEmail
         /// <param name="request">Container for the necessary parameters to execute the DeleteIdentity service method.</param>
         /// 
         /// <returns>The response from the DeleteIdentity service method, as returned by SimpleEmailService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/DeleteIdentity">REST API Reference for DeleteIdentity Operation</seealso>
         public DeleteIdentityResponse DeleteIdentity(DeleteIdentityRequest request)
         {
             var marshaller = new DeleteIdentityRequestMarshaller();
@@ -858,6 +883,7 @@ namespace Amazon.SimpleEmail
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteIdentity
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/DeleteIdentity">REST API Reference for DeleteIdentity Operation</seealso>
         public IAsyncResult BeginDeleteIdentity(DeleteIdentityRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeleteIdentityRequestMarshaller();
@@ -874,6 +900,7 @@ namespace Amazon.SimpleEmail
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteIdentity.</param>
         /// 
         /// <returns>Returns a  DeleteIdentityResult from SimpleEmailService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/DeleteIdentity">REST API Reference for DeleteIdentity Operation</seealso>
         public  DeleteIdentityResponse EndDeleteIdentity(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteIdentityResponse>(asyncResult);
@@ -908,6 +935,7 @@ namespace Amazon.SimpleEmail
         /// <param name="request">Container for the necessary parameters to execute the DeleteIdentityPolicy service method.</param>
         /// 
         /// <returns>The response from the DeleteIdentityPolicy service method, as returned by SimpleEmailService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/DeleteIdentityPolicy">REST API Reference for DeleteIdentityPolicy Operation</seealso>
         public DeleteIdentityPolicyResponse DeleteIdentityPolicy(DeleteIdentityPolicyRequest request)
         {
             var marshaller = new DeleteIdentityPolicyRequestMarshaller();
@@ -927,6 +955,7 @@ namespace Amazon.SimpleEmail
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteIdentityPolicy
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/DeleteIdentityPolicy">REST API Reference for DeleteIdentityPolicy Operation</seealso>
         public IAsyncResult BeginDeleteIdentityPolicy(DeleteIdentityPolicyRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeleteIdentityPolicyRequestMarshaller();
@@ -943,6 +972,7 @@ namespace Amazon.SimpleEmail
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteIdentityPolicy.</param>
         /// 
         /// <returns>Returns a  DeleteIdentityPolicyResult from SimpleEmailService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/DeleteIdentityPolicy">REST API Reference for DeleteIdentityPolicy Operation</seealso>
         public  DeleteIdentityPolicyResponse EndDeleteIdentityPolicy(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteIdentityPolicyResponse>(asyncResult);
@@ -968,6 +998,7 @@ namespace Amazon.SimpleEmail
         /// <param name="request">Container for the necessary parameters to execute the DeleteReceiptFilter service method.</param>
         /// 
         /// <returns>The response from the DeleteReceiptFilter service method, as returned by SimpleEmailService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/DeleteReceiptFilter">REST API Reference for DeleteReceiptFilter Operation</seealso>
         public DeleteReceiptFilterResponse DeleteReceiptFilter(DeleteReceiptFilterRequest request)
         {
             var marshaller = new DeleteReceiptFilterRequestMarshaller();
@@ -987,6 +1018,7 @@ namespace Amazon.SimpleEmail
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteReceiptFilter
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/DeleteReceiptFilter">REST API Reference for DeleteReceiptFilter Operation</seealso>
         public IAsyncResult BeginDeleteReceiptFilter(DeleteReceiptFilterRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeleteReceiptFilterRequestMarshaller();
@@ -1003,6 +1035,7 @@ namespace Amazon.SimpleEmail
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteReceiptFilter.</param>
         /// 
         /// <returns>Returns a  DeleteReceiptFilterResult from SimpleEmailService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/DeleteReceiptFilter">REST API Reference for DeleteReceiptFilter Operation</seealso>
         public  DeleteReceiptFilterResponse EndDeleteReceiptFilter(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteReceiptFilterResponse>(asyncResult);
@@ -1031,6 +1064,7 @@ namespace Amazon.SimpleEmail
         /// <exception cref="Amazon.SimpleEmail.Model.RuleSetDoesNotExistException">
         /// Indicates that the provided receipt rule set does not exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/DeleteReceiptRule">REST API Reference for DeleteReceiptRule Operation</seealso>
         public DeleteReceiptRuleResponse DeleteReceiptRule(DeleteReceiptRuleRequest request)
         {
             var marshaller = new DeleteReceiptRuleRequestMarshaller();
@@ -1050,6 +1084,7 @@ namespace Amazon.SimpleEmail
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteReceiptRule
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/DeleteReceiptRule">REST API Reference for DeleteReceiptRule Operation</seealso>
         public IAsyncResult BeginDeleteReceiptRule(DeleteReceiptRuleRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeleteReceiptRuleRequestMarshaller();
@@ -1066,6 +1101,7 @@ namespace Amazon.SimpleEmail
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteReceiptRule.</param>
         /// 
         /// <returns>Returns a  DeleteReceiptRuleResult from SimpleEmailService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/DeleteReceiptRule">REST API Reference for DeleteReceiptRule Operation</seealso>
         public  DeleteReceiptRuleResponse EndDeleteReceiptRule(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteReceiptRuleResponse>(asyncResult);
@@ -1098,6 +1134,7 @@ namespace Amazon.SimpleEmail
         /// <exception cref="Amazon.SimpleEmail.Model.CannotDeleteException">
         /// Indicates that the delete operation could not be completed.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/DeleteReceiptRuleSet">REST API Reference for DeleteReceiptRuleSet Operation</seealso>
         public DeleteReceiptRuleSetResponse DeleteReceiptRuleSet(DeleteReceiptRuleSetRequest request)
         {
             var marshaller = new DeleteReceiptRuleSetRequestMarshaller();
@@ -1117,6 +1154,7 @@ namespace Amazon.SimpleEmail
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteReceiptRuleSet
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/DeleteReceiptRuleSet">REST API Reference for DeleteReceiptRuleSet Operation</seealso>
         public IAsyncResult BeginDeleteReceiptRuleSet(DeleteReceiptRuleSetRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeleteReceiptRuleSetRequestMarshaller();
@@ -1133,6 +1171,7 @@ namespace Amazon.SimpleEmail
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteReceiptRuleSet.</param>
         /// 
         /// <returns>Returns a  DeleteReceiptRuleSetResult from SimpleEmailService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/DeleteReceiptRuleSet">REST API Reference for DeleteReceiptRuleSet Operation</seealso>
         public  DeleteReceiptRuleSetResponse EndDeleteReceiptRuleSet(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteReceiptRuleSetResponse>(asyncResult);
@@ -1158,6 +1197,7 @@ namespace Amazon.SimpleEmail
         /// <param name="request">Container for the necessary parameters to execute the DeleteVerifiedEmailAddress service method.</param>
         /// 
         /// <returns>The response from the DeleteVerifiedEmailAddress service method, as returned by SimpleEmailService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/DeleteVerifiedEmailAddress">REST API Reference for DeleteVerifiedEmailAddress Operation</seealso>
         public DeleteVerifiedEmailAddressResponse DeleteVerifiedEmailAddress(DeleteVerifiedEmailAddressRequest request)
         {
             var marshaller = new DeleteVerifiedEmailAddressRequestMarshaller();
@@ -1177,6 +1217,7 @@ namespace Amazon.SimpleEmail
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteVerifiedEmailAddress
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/DeleteVerifiedEmailAddress">REST API Reference for DeleteVerifiedEmailAddress Operation</seealso>
         public IAsyncResult BeginDeleteVerifiedEmailAddress(DeleteVerifiedEmailAddressRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeleteVerifiedEmailAddressRequestMarshaller();
@@ -1193,6 +1234,7 @@ namespace Amazon.SimpleEmail
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteVerifiedEmailAddress.</param>
         /// 
         /// <returns>Returns a  DeleteVerifiedEmailAddressResult from SimpleEmailService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/DeleteVerifiedEmailAddress">REST API Reference for DeleteVerifiedEmailAddress Operation</seealso>
         public  DeleteVerifiedEmailAddressResponse EndDeleteVerifiedEmailAddress(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteVerifiedEmailAddressResponse>(asyncResult);
@@ -1219,6 +1261,7 @@ namespace Amazon.SimpleEmail
         /// <param name="request">Container for the necessary parameters to execute the DescribeActiveReceiptRuleSet service method.</param>
         /// 
         /// <returns>The response from the DescribeActiveReceiptRuleSet service method, as returned by SimpleEmailService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/DescribeActiveReceiptRuleSet">REST API Reference for DescribeActiveReceiptRuleSet Operation</seealso>
         public DescribeActiveReceiptRuleSetResponse DescribeActiveReceiptRuleSet(DescribeActiveReceiptRuleSetRequest request)
         {
             var marshaller = new DescribeActiveReceiptRuleSetRequestMarshaller();
@@ -1238,6 +1281,7 @@ namespace Amazon.SimpleEmail
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeActiveReceiptRuleSet
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/DescribeActiveReceiptRuleSet">REST API Reference for DescribeActiveReceiptRuleSet Operation</seealso>
         public IAsyncResult BeginDescribeActiveReceiptRuleSet(DescribeActiveReceiptRuleSetRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeActiveReceiptRuleSetRequestMarshaller();
@@ -1254,6 +1298,7 @@ namespace Amazon.SimpleEmail
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeActiveReceiptRuleSet.</param>
         /// 
         /// <returns>Returns a  DescribeActiveReceiptRuleSetResult from SimpleEmailService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/DescribeActiveReceiptRuleSet">REST API Reference for DescribeActiveReceiptRuleSet Operation</seealso>
         public  DescribeActiveReceiptRuleSetResponse EndDescribeActiveReceiptRuleSet(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeActiveReceiptRuleSetResponse>(asyncResult);
@@ -1283,6 +1328,7 @@ namespace Amazon.SimpleEmail
         /// <exception cref="Amazon.SimpleEmail.Model.ConfigurationSetDoesNotExistException">
         /// Indicates that the configuration set does not exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/DescribeConfigurationSet">REST API Reference for DescribeConfigurationSet Operation</seealso>
         public DescribeConfigurationSetResponse DescribeConfigurationSet(DescribeConfigurationSetRequest request)
         {
             var marshaller = new DescribeConfigurationSetRequestMarshaller();
@@ -1302,6 +1348,7 @@ namespace Amazon.SimpleEmail
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeConfigurationSet
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/DescribeConfigurationSet">REST API Reference for DescribeConfigurationSet Operation</seealso>
         public IAsyncResult BeginDescribeConfigurationSet(DescribeConfigurationSetRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeConfigurationSetRequestMarshaller();
@@ -1318,6 +1365,7 @@ namespace Amazon.SimpleEmail
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeConfigurationSet.</param>
         /// 
         /// <returns>Returns a  DescribeConfigurationSetResult from SimpleEmailService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/DescribeConfigurationSet">REST API Reference for DescribeConfigurationSet Operation</seealso>
         public  DescribeConfigurationSetResponse EndDescribeConfigurationSet(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeConfigurationSetResponse>(asyncResult);
@@ -1349,6 +1397,7 @@ namespace Amazon.SimpleEmail
         /// <exception cref="Amazon.SimpleEmail.Model.RuleSetDoesNotExistException">
         /// Indicates that the provided receipt rule set does not exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/DescribeReceiptRule">REST API Reference for DescribeReceiptRule Operation</seealso>
         public DescribeReceiptRuleResponse DescribeReceiptRule(DescribeReceiptRuleRequest request)
         {
             var marshaller = new DescribeReceiptRuleRequestMarshaller();
@@ -1368,6 +1417,7 @@ namespace Amazon.SimpleEmail
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeReceiptRule
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/DescribeReceiptRule">REST API Reference for DescribeReceiptRule Operation</seealso>
         public IAsyncResult BeginDescribeReceiptRule(DescribeReceiptRuleRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeReceiptRuleRequestMarshaller();
@@ -1384,6 +1434,7 @@ namespace Amazon.SimpleEmail
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeReceiptRule.</param>
         /// 
         /// <returns>Returns a  DescribeReceiptRuleResult from SimpleEmailService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/DescribeReceiptRule">REST API Reference for DescribeReceiptRule Operation</seealso>
         public  DescribeReceiptRuleResponse EndDescribeReceiptRule(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeReceiptRuleResponse>(asyncResult);
@@ -1412,6 +1463,7 @@ namespace Amazon.SimpleEmail
         /// <exception cref="Amazon.SimpleEmail.Model.RuleSetDoesNotExistException">
         /// Indicates that the provided receipt rule set does not exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/DescribeReceiptRuleSet">REST API Reference for DescribeReceiptRuleSet Operation</seealso>
         public DescribeReceiptRuleSetResponse DescribeReceiptRuleSet(DescribeReceiptRuleSetRequest request)
         {
             var marshaller = new DescribeReceiptRuleSetRequestMarshaller();
@@ -1431,6 +1483,7 @@ namespace Amazon.SimpleEmail
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeReceiptRuleSet
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/DescribeReceiptRuleSet">REST API Reference for DescribeReceiptRuleSet Operation</seealso>
         public IAsyncResult BeginDescribeReceiptRuleSet(DescribeReceiptRuleSetRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeReceiptRuleSetRequestMarshaller();
@@ -1447,6 +1500,7 @@ namespace Amazon.SimpleEmail
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeReceiptRuleSet.</param>
         /// 
         /// <returns>Returns a  DescribeReceiptRuleSetResult from SimpleEmailService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/DescribeReceiptRuleSet">REST API Reference for DescribeReceiptRuleSet Operation</seealso>
         public  DescribeReceiptRuleSetResponse EndDescribeReceiptRuleSet(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeReceiptRuleSetResponse>(asyncResult);
@@ -1494,6 +1548,7 @@ namespace Amazon.SimpleEmail
         /// <param name="request">Container for the necessary parameters to execute the GetIdentityDkimAttributes service method.</param>
         /// 
         /// <returns>The response from the GetIdentityDkimAttributes service method, as returned by SimpleEmailService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/GetIdentityDkimAttributes">REST API Reference for GetIdentityDkimAttributes Operation</seealso>
         public GetIdentityDkimAttributesResponse GetIdentityDkimAttributes(GetIdentityDkimAttributesRequest request)
         {
             var marshaller = new GetIdentityDkimAttributesRequestMarshaller();
@@ -1513,6 +1568,7 @@ namespace Amazon.SimpleEmail
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetIdentityDkimAttributes
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/GetIdentityDkimAttributes">REST API Reference for GetIdentityDkimAttributes Operation</seealso>
         public IAsyncResult BeginGetIdentityDkimAttributes(GetIdentityDkimAttributesRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetIdentityDkimAttributesRequestMarshaller();
@@ -1529,6 +1585,7 @@ namespace Amazon.SimpleEmail
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetIdentityDkimAttributes.</param>
         /// 
         /// <returns>Returns a  GetIdentityDkimAttributesResult from SimpleEmailService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/GetIdentityDkimAttributes">REST API Reference for GetIdentityDkimAttributes Operation</seealso>
         public  GetIdentityDkimAttributesResponse EndGetIdentityDkimAttributes(IAsyncResult asyncResult)
         {
             return EndInvoke<GetIdentityDkimAttributesResponse>(asyncResult);
@@ -1551,6 +1608,7 @@ namespace Amazon.SimpleEmail
         /// <param name="request">Container for the necessary parameters to execute the GetIdentityMailFromDomainAttributes service method.</param>
         /// 
         /// <returns>The response from the GetIdentityMailFromDomainAttributes service method, as returned by SimpleEmailService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/GetIdentityMailFromDomainAttributes">REST API Reference for GetIdentityMailFromDomainAttributes Operation</seealso>
         public GetIdentityMailFromDomainAttributesResponse GetIdentityMailFromDomainAttributes(GetIdentityMailFromDomainAttributesRequest request)
         {
             var marshaller = new GetIdentityMailFromDomainAttributesRequestMarshaller();
@@ -1570,6 +1628,7 @@ namespace Amazon.SimpleEmail
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetIdentityMailFromDomainAttributes
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/GetIdentityMailFromDomainAttributes">REST API Reference for GetIdentityMailFromDomainAttributes Operation</seealso>
         public IAsyncResult BeginGetIdentityMailFromDomainAttributes(GetIdentityMailFromDomainAttributesRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetIdentityMailFromDomainAttributesRequestMarshaller();
@@ -1586,6 +1645,7 @@ namespace Amazon.SimpleEmail
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetIdentityMailFromDomainAttributes.</param>
         /// 
         /// <returns>Returns a  GetIdentityMailFromDomainAttributesResult from SimpleEmailService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/GetIdentityMailFromDomainAttributes">REST API Reference for GetIdentityMailFromDomainAttributes Operation</seealso>
         public  GetIdentityMailFromDomainAttributesResponse EndGetIdentityMailFromDomainAttributes(IAsyncResult asyncResult)
         {
             return EndInvoke<GetIdentityMailFromDomainAttributesResponse>(asyncResult);
@@ -1613,6 +1673,7 @@ namespace Amazon.SimpleEmail
         /// <param name="request">Container for the necessary parameters to execute the GetIdentityNotificationAttributes service method.</param>
         /// 
         /// <returns>The response from the GetIdentityNotificationAttributes service method, as returned by SimpleEmailService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/GetIdentityNotificationAttributes">REST API Reference for GetIdentityNotificationAttributes Operation</seealso>
         public GetIdentityNotificationAttributesResponse GetIdentityNotificationAttributes(GetIdentityNotificationAttributesRequest request)
         {
             var marshaller = new GetIdentityNotificationAttributesRequestMarshaller();
@@ -1632,6 +1693,7 @@ namespace Amazon.SimpleEmail
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetIdentityNotificationAttributes
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/GetIdentityNotificationAttributes">REST API Reference for GetIdentityNotificationAttributes Operation</seealso>
         public IAsyncResult BeginGetIdentityNotificationAttributes(GetIdentityNotificationAttributesRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetIdentityNotificationAttributesRequestMarshaller();
@@ -1648,6 +1710,7 @@ namespace Amazon.SimpleEmail
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetIdentityNotificationAttributes.</param>
         /// 
         /// <returns>Returns a  GetIdentityNotificationAttributesResult from SimpleEmailService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/GetIdentityNotificationAttributes">REST API Reference for GetIdentityNotificationAttributes Operation</seealso>
         public  GetIdentityNotificationAttributesResponse EndGetIdentityNotificationAttributes(IAsyncResult asyncResult)
         {
             return EndInvoke<GetIdentityNotificationAttributesResponse>(asyncResult);
@@ -1682,6 +1745,7 @@ namespace Amazon.SimpleEmail
         /// <param name="request">Container for the necessary parameters to execute the GetIdentityPolicies service method.</param>
         /// 
         /// <returns>The response from the GetIdentityPolicies service method, as returned by SimpleEmailService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/GetIdentityPolicies">REST API Reference for GetIdentityPolicies Operation</seealso>
         public GetIdentityPoliciesResponse GetIdentityPolicies(GetIdentityPoliciesRequest request)
         {
             var marshaller = new GetIdentityPoliciesRequestMarshaller();
@@ -1701,6 +1765,7 @@ namespace Amazon.SimpleEmail
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetIdentityPolicies
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/GetIdentityPolicies">REST API Reference for GetIdentityPolicies Operation</seealso>
         public IAsyncResult BeginGetIdentityPolicies(GetIdentityPoliciesRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetIdentityPoliciesRequestMarshaller();
@@ -1717,6 +1782,7 @@ namespace Amazon.SimpleEmail
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetIdentityPolicies.</param>
         /// 
         /// <returns>Returns a  GetIdentityPoliciesResult from SimpleEmailService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/GetIdentityPolicies">REST API Reference for GetIdentityPolicies Operation</seealso>
         public  GetIdentityPoliciesResponse EndGetIdentityPolicies(IAsyncResult asyncResult)
         {
             return EndInvoke<GetIdentityPoliciesResponse>(asyncResult);
@@ -1739,6 +1805,7 @@ namespace Amazon.SimpleEmail
         /// <param name="request">Container for the necessary parameters to execute the GetIdentityVerificationAttributes service method.</param>
         /// 
         /// <returns>The response from the GetIdentityVerificationAttributes service method, as returned by SimpleEmailService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/GetIdentityVerificationAttributes">REST API Reference for GetIdentityVerificationAttributes Operation</seealso>
         public GetIdentityVerificationAttributesResponse GetIdentityVerificationAttributes(GetIdentityVerificationAttributesRequest request)
         {
             var marshaller = new GetIdentityVerificationAttributesRequestMarshaller();
@@ -1758,6 +1825,7 @@ namespace Amazon.SimpleEmail
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetIdentityVerificationAttributes
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/GetIdentityVerificationAttributes">REST API Reference for GetIdentityVerificationAttributes Operation</seealso>
         public IAsyncResult BeginGetIdentityVerificationAttributes(GetIdentityVerificationAttributesRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetIdentityVerificationAttributesRequestMarshaller();
@@ -1774,6 +1842,7 @@ namespace Amazon.SimpleEmail
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetIdentityVerificationAttributes.</param>
         /// 
         /// <returns>Returns a  GetIdentityVerificationAttributesResult from SimpleEmailService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/GetIdentityVerificationAttributes">REST API Reference for GetIdentityVerificationAttributes Operation</seealso>
         public  GetIdentityVerificationAttributesResponse EndGetIdentityVerificationAttributes(IAsyncResult asyncResult)
         {
             return EndInvoke<GetIdentityVerificationAttributesResponse>(asyncResult);
@@ -1793,6 +1862,7 @@ namespace Amazon.SimpleEmail
         /// </summary>
         /// 
         /// <returns>The response from the GetSendQuota service method, as returned by SimpleEmailService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/GetSendQuota">REST API Reference for GetSendQuota Operation</seealso>
         public GetSendQuotaResponse GetSendQuota()
         {
             return GetSendQuota(new GetSendQuotaRequest());
@@ -1809,6 +1879,7 @@ namespace Amazon.SimpleEmail
         /// <param name="request">Container for the necessary parameters to execute the GetSendQuota service method.</param>
         /// 
         /// <returns>The response from the GetSendQuota service method, as returned by SimpleEmailService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/GetSendQuota">REST API Reference for GetSendQuota Operation</seealso>
         public GetSendQuotaResponse GetSendQuota(GetSendQuotaRequest request)
         {
             var marshaller = new GetSendQuotaRequestMarshaller();
@@ -1828,6 +1899,7 @@ namespace Amazon.SimpleEmail
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetSendQuota
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/GetSendQuota">REST API Reference for GetSendQuota Operation</seealso>
         public IAsyncResult BeginGetSendQuota(GetSendQuotaRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetSendQuotaRequestMarshaller();
@@ -1844,6 +1916,7 @@ namespace Amazon.SimpleEmail
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetSendQuota.</param>
         /// 
         /// <returns>Returns a  GetSendQuotaResult from SimpleEmailService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/GetSendQuota">REST API Reference for GetSendQuota Operation</seealso>
         public  GetSendQuotaResponse EndGetSendQuota(IAsyncResult asyncResult)
         {
             return EndInvoke<GetSendQuotaResponse>(asyncResult);
@@ -1868,6 +1941,7 @@ namespace Amazon.SimpleEmail
         /// </summary>
         /// 
         /// <returns>The response from the GetSendStatistics service method, as returned by SimpleEmailService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/GetSendStatistics">REST API Reference for GetSendStatistics Operation</seealso>
         public GetSendStatisticsResponse GetSendStatistics()
         {
             return GetSendStatistics(new GetSendStatisticsRequest());
@@ -1889,6 +1963,7 @@ namespace Amazon.SimpleEmail
         /// <param name="request">Container for the necessary parameters to execute the GetSendStatistics service method.</param>
         /// 
         /// <returns>The response from the GetSendStatistics service method, as returned by SimpleEmailService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/GetSendStatistics">REST API Reference for GetSendStatistics Operation</seealso>
         public GetSendStatisticsResponse GetSendStatistics(GetSendStatisticsRequest request)
         {
             var marshaller = new GetSendStatisticsRequestMarshaller();
@@ -1908,6 +1983,7 @@ namespace Amazon.SimpleEmail
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetSendStatistics
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/GetSendStatistics">REST API Reference for GetSendStatistics Operation</seealso>
         public IAsyncResult BeginGetSendStatistics(GetSendStatisticsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetSendStatisticsRequestMarshaller();
@@ -1924,6 +2000,7 @@ namespace Amazon.SimpleEmail
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetSendStatistics.</param>
         /// 
         /// <returns>Returns a  GetSendStatisticsResult from SimpleEmailService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/GetSendStatistics">REST API Reference for GetSendStatistics Operation</seealso>
         public  GetSendStatisticsResponse EndGetSendStatistics(IAsyncResult asyncResult)
         {
             return EndInvoke<GetSendStatisticsResponse>(asyncResult);
@@ -1951,6 +2028,7 @@ namespace Amazon.SimpleEmail
         /// <param name="request">Container for the necessary parameters to execute the ListConfigurationSets service method.</param>
         /// 
         /// <returns>The response from the ListConfigurationSets service method, as returned by SimpleEmailService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/ListConfigurationSets">REST API Reference for ListConfigurationSets Operation</seealso>
         public ListConfigurationSetsResponse ListConfigurationSets(ListConfigurationSetsRequest request)
         {
             var marshaller = new ListConfigurationSetsRequestMarshaller();
@@ -1970,6 +2048,7 @@ namespace Amazon.SimpleEmail
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListConfigurationSets
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/ListConfigurationSets">REST API Reference for ListConfigurationSets Operation</seealso>
         public IAsyncResult BeginListConfigurationSets(ListConfigurationSetsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ListConfigurationSetsRequestMarshaller();
@@ -1986,6 +2065,7 @@ namespace Amazon.SimpleEmail
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListConfigurationSets.</param>
         /// 
         /// <returns>Returns a  ListConfigurationSetsResult from SimpleEmailService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/ListConfigurationSets">REST API Reference for ListConfigurationSets Operation</seealso>
         public  ListConfigurationSetsResponse EndListConfigurationSets(IAsyncResult asyncResult)
         {
             return EndInvoke<ListConfigurationSetsResponse>(asyncResult);
@@ -2006,6 +2086,7 @@ namespace Amazon.SimpleEmail
         /// </summary>
         /// 
         /// <returns>The response from the ListIdentities service method, as returned by SimpleEmailService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/ListIdentities">REST API Reference for ListIdentities Operation</seealso>
         public ListIdentitiesResponse ListIdentities()
         {
             return ListIdentities(new ListIdentitiesRequest());
@@ -2023,6 +2104,7 @@ namespace Amazon.SimpleEmail
         /// <param name="request">Container for the necessary parameters to execute the ListIdentities service method.</param>
         /// 
         /// <returns>The response from the ListIdentities service method, as returned by SimpleEmailService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/ListIdentities">REST API Reference for ListIdentities Operation</seealso>
         public ListIdentitiesResponse ListIdentities(ListIdentitiesRequest request)
         {
             var marshaller = new ListIdentitiesRequestMarshaller();
@@ -2042,6 +2124,7 @@ namespace Amazon.SimpleEmail
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListIdentities
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/ListIdentities">REST API Reference for ListIdentities Operation</seealso>
         public IAsyncResult BeginListIdentities(ListIdentitiesRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ListIdentitiesRequestMarshaller();
@@ -2058,6 +2141,7 @@ namespace Amazon.SimpleEmail
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListIdentities.</param>
         /// 
         /// <returns>Returns a  ListIdentitiesResult from SimpleEmailService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/ListIdentities">REST API Reference for ListIdentities Operation</seealso>
         public  ListIdentitiesResponse EndListIdentities(IAsyncResult asyncResult)
         {
             return EndInvoke<ListIdentitiesResponse>(asyncResult);
@@ -2092,6 +2176,7 @@ namespace Amazon.SimpleEmail
         /// <param name="request">Container for the necessary parameters to execute the ListIdentityPolicies service method.</param>
         /// 
         /// <returns>The response from the ListIdentityPolicies service method, as returned by SimpleEmailService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/ListIdentityPolicies">REST API Reference for ListIdentityPolicies Operation</seealso>
         public ListIdentityPoliciesResponse ListIdentityPolicies(ListIdentityPoliciesRequest request)
         {
             var marshaller = new ListIdentityPoliciesRequestMarshaller();
@@ -2111,6 +2196,7 @@ namespace Amazon.SimpleEmail
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListIdentityPolicies
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/ListIdentityPolicies">REST API Reference for ListIdentityPolicies Operation</seealso>
         public IAsyncResult BeginListIdentityPolicies(ListIdentityPoliciesRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ListIdentityPoliciesRequestMarshaller();
@@ -2127,6 +2213,7 @@ namespace Amazon.SimpleEmail
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListIdentityPolicies.</param>
         /// 
         /// <returns>Returns a  ListIdentityPoliciesResult from SimpleEmailService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/ListIdentityPolicies">REST API Reference for ListIdentityPolicies Operation</seealso>
         public  ListIdentityPoliciesResponse EndListIdentityPolicies(IAsyncResult asyncResult)
         {
             return EndInvoke<ListIdentityPoliciesResponse>(asyncResult);
@@ -2152,6 +2239,7 @@ namespace Amazon.SimpleEmail
         /// <param name="request">Container for the necessary parameters to execute the ListReceiptFilters service method.</param>
         /// 
         /// <returns>The response from the ListReceiptFilters service method, as returned by SimpleEmailService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/ListReceiptFilters">REST API Reference for ListReceiptFilters Operation</seealso>
         public ListReceiptFiltersResponse ListReceiptFilters(ListReceiptFiltersRequest request)
         {
             var marshaller = new ListReceiptFiltersRequestMarshaller();
@@ -2171,6 +2259,7 @@ namespace Amazon.SimpleEmail
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListReceiptFilters
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/ListReceiptFilters">REST API Reference for ListReceiptFilters Operation</seealso>
         public IAsyncResult BeginListReceiptFilters(ListReceiptFiltersRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ListReceiptFiltersRequestMarshaller();
@@ -2187,6 +2276,7 @@ namespace Amazon.SimpleEmail
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListReceiptFilters.</param>
         /// 
         /// <returns>Returns a  ListReceiptFiltersResult from SimpleEmailService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/ListReceiptFilters">REST API Reference for ListReceiptFilters Operation</seealso>
         public  ListReceiptFiltersResponse EndListReceiptFilters(IAsyncResult asyncResult)
         {
             return EndInvoke<ListReceiptFiltersResponse>(asyncResult);
@@ -2215,6 +2305,7 @@ namespace Amazon.SimpleEmail
         /// <param name="request">Container for the necessary parameters to execute the ListReceiptRuleSets service method.</param>
         /// 
         /// <returns>The response from the ListReceiptRuleSets service method, as returned by SimpleEmailService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/ListReceiptRuleSets">REST API Reference for ListReceiptRuleSets Operation</seealso>
         public ListReceiptRuleSetsResponse ListReceiptRuleSets(ListReceiptRuleSetsRequest request)
         {
             var marshaller = new ListReceiptRuleSetsRequestMarshaller();
@@ -2234,6 +2325,7 @@ namespace Amazon.SimpleEmail
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListReceiptRuleSets
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/ListReceiptRuleSets">REST API Reference for ListReceiptRuleSets Operation</seealso>
         public IAsyncResult BeginListReceiptRuleSets(ListReceiptRuleSetsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ListReceiptRuleSetsRequestMarshaller();
@@ -2250,6 +2342,7 @@ namespace Amazon.SimpleEmail
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListReceiptRuleSets.</param>
         /// 
         /// <returns>Returns a  ListReceiptRuleSetsResult from SimpleEmailService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/ListReceiptRuleSets">REST API Reference for ListReceiptRuleSets Operation</seealso>
         public  ListReceiptRuleSetsResponse EndListReceiptRuleSets(IAsyncResult asyncResult)
         {
             return EndInvoke<ListReceiptRuleSetsResponse>(asyncResult);
@@ -2274,6 +2367,7 @@ namespace Amazon.SimpleEmail
         /// </summary>
         /// 
         /// <returns>The response from the ListVerifiedEmailAddresses service method, as returned by SimpleEmailService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/ListVerifiedEmailAddresses">REST API Reference for ListVerifiedEmailAddresses Operation</seealso>
         public ListVerifiedEmailAddressesResponse ListVerifiedEmailAddresses()
         {
             return ListVerifiedEmailAddresses(new ListVerifiedEmailAddressesRequest());
@@ -2295,6 +2389,7 @@ namespace Amazon.SimpleEmail
         /// <param name="request">Container for the necessary parameters to execute the ListVerifiedEmailAddresses service method.</param>
         /// 
         /// <returns>The response from the ListVerifiedEmailAddresses service method, as returned by SimpleEmailService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/ListVerifiedEmailAddresses">REST API Reference for ListVerifiedEmailAddresses Operation</seealso>
         public ListVerifiedEmailAddressesResponse ListVerifiedEmailAddresses(ListVerifiedEmailAddressesRequest request)
         {
             var marshaller = new ListVerifiedEmailAddressesRequestMarshaller();
@@ -2314,6 +2409,7 @@ namespace Amazon.SimpleEmail
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListVerifiedEmailAddresses
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/ListVerifiedEmailAddresses">REST API Reference for ListVerifiedEmailAddresses Operation</seealso>
         public IAsyncResult BeginListVerifiedEmailAddresses(ListVerifiedEmailAddressesRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ListVerifiedEmailAddressesRequestMarshaller();
@@ -2330,6 +2426,7 @@ namespace Amazon.SimpleEmail
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListVerifiedEmailAddresses.</param>
         /// 
         /// <returns>Returns a  ListVerifiedEmailAddressesResult from SimpleEmailService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/ListVerifiedEmailAddresses">REST API Reference for ListVerifiedEmailAddresses Operation</seealso>
         public  ListVerifiedEmailAddressesResponse EndListVerifiedEmailAddresses(IAsyncResult asyncResult)
         {
             return EndInvoke<ListVerifiedEmailAddressesResponse>(asyncResult);
@@ -2367,6 +2464,7 @@ namespace Amazon.SimpleEmail
         /// Indicates that the provided policy is invalid. Check the error stack for more information
         /// about what caused the error.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/PutIdentityPolicy">REST API Reference for PutIdentityPolicy Operation</seealso>
         public PutIdentityPolicyResponse PutIdentityPolicy(PutIdentityPolicyRequest request)
         {
             var marshaller = new PutIdentityPolicyRequestMarshaller();
@@ -2386,6 +2484,7 @@ namespace Amazon.SimpleEmail
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutIdentityPolicy
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/PutIdentityPolicy">REST API Reference for PutIdentityPolicy Operation</seealso>
         public IAsyncResult BeginPutIdentityPolicy(PutIdentityPolicyRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new PutIdentityPolicyRequestMarshaller();
@@ -2402,6 +2501,7 @@ namespace Amazon.SimpleEmail
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutIdentityPolicy.</param>
         /// 
         /// <returns>Returns a  PutIdentityPolicyResult from SimpleEmailService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/PutIdentityPolicy">REST API Reference for PutIdentityPolicy Operation</seealso>
         public  PutIdentityPolicyResponse EndPutIdentityPolicy(IAsyncResult asyncResult)
         {
             return EndInvoke<PutIdentityPolicyResponse>(asyncResult);
@@ -2439,6 +2539,7 @@ namespace Amazon.SimpleEmail
         /// <exception cref="Amazon.SimpleEmail.Model.RuleSetDoesNotExistException">
         /// Indicates that the provided receipt rule set does not exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/ReorderReceiptRuleSet">REST API Reference for ReorderReceiptRuleSet Operation</seealso>
         public ReorderReceiptRuleSetResponse ReorderReceiptRuleSet(ReorderReceiptRuleSetRequest request)
         {
             var marshaller = new ReorderReceiptRuleSetRequestMarshaller();
@@ -2458,6 +2559,7 @@ namespace Amazon.SimpleEmail
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndReorderReceiptRuleSet
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/ReorderReceiptRuleSet">REST API Reference for ReorderReceiptRuleSet Operation</seealso>
         public IAsyncResult BeginReorderReceiptRuleSet(ReorderReceiptRuleSetRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ReorderReceiptRuleSetRequestMarshaller();
@@ -2474,6 +2576,7 @@ namespace Amazon.SimpleEmail
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginReorderReceiptRuleSet.</param>
         /// 
         /// <returns>Returns a  ReorderReceiptRuleSetResult from SimpleEmailService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/ReorderReceiptRuleSet">REST API Reference for ReorderReceiptRuleSet Operation</seealso>
         public  ReorderReceiptRuleSetResponse EndReorderReceiptRuleSet(IAsyncResult asyncResult)
         {
             return EndInvoke<ReorderReceiptRuleSetResponse>(asyncResult);
@@ -2510,6 +2613,7 @@ namespace Amazon.SimpleEmail
         /// Indicates that the action failed, and the message could not be sent. Check the error
         /// stack for more information about what caused the error.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/SendBounce">REST API Reference for SendBounce Operation</seealso>
         public SendBounceResponse SendBounce(SendBounceRequest request)
         {
             var marshaller = new SendBounceRequestMarshaller();
@@ -2529,6 +2633,7 @@ namespace Amazon.SimpleEmail
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndSendBounce
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/SendBounce">REST API Reference for SendBounce Operation</seealso>
         public IAsyncResult BeginSendBounce(SendBounceRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new SendBounceRequestMarshaller();
@@ -2545,6 +2650,7 @@ namespace Amazon.SimpleEmail
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginSendBounce.</param>
         /// 
         /// <returns>Returns a  SendBounceResult from SimpleEmailService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/SendBounce">REST API Reference for SendBounce Operation</seealso>
         public  SendBounceResponse EndSendBounce(IAsyncResult asyncResult)
         {
             return EndInvoke<SendBounceResponse>(asyncResult);
@@ -2607,6 +2713,7 @@ namespace Amazon.SimpleEmail
         /// Indicates that the action failed, and the message could not be sent. Check the error
         /// stack for more information about what caused the error.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/SendEmail">REST API Reference for SendEmail Operation</seealso>
         public SendEmailResponse SendEmail(SendEmailRequest request)
         {
             var marshaller = new SendEmailRequestMarshaller();
@@ -2626,6 +2733,7 @@ namespace Amazon.SimpleEmail
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndSendEmail
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/SendEmail">REST API Reference for SendEmail Operation</seealso>
         public IAsyncResult BeginSendEmail(SendEmailRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new SendEmailRequestMarshaller();
@@ -2642,6 +2750,7 @@ namespace Amazon.SimpleEmail
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginSendEmail.</param>
         /// 
         /// <returns>Returns a  SendEmailResult from SimpleEmailService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/SendEmail">REST API Reference for SendEmail Operation</seealso>
         public  SendEmailResponse EndSendEmail(IAsyncResult asyncResult)
         {
             return EndInvoke<SendEmailResponse>(asyncResult);
@@ -2750,6 +2859,7 @@ namespace Amazon.SimpleEmail
         /// Indicates that the action failed, and the message could not be sent. Check the error
         /// stack for more information about what caused the error.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/SendRawEmail">REST API Reference for SendRawEmail Operation</seealso>
         public SendRawEmailResponse SendRawEmail(SendRawEmailRequest request)
         {
             var marshaller = new SendRawEmailRequestMarshaller();
@@ -2769,6 +2879,7 @@ namespace Amazon.SimpleEmail
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndSendRawEmail
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/SendRawEmail">REST API Reference for SendRawEmail Operation</seealso>
         public IAsyncResult BeginSendRawEmail(SendRawEmailRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new SendRawEmailRequestMarshaller();
@@ -2785,6 +2896,7 @@ namespace Amazon.SimpleEmail
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginSendRawEmail.</param>
         /// 
         /// <returns>Returns a  SendRawEmailResult from SimpleEmailService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/SendRawEmail">REST API Reference for SendRawEmail Operation</seealso>
         public  SendRawEmailResponse EndSendRawEmail(IAsyncResult asyncResult)
         {
             return EndInvoke<SendRawEmailResponse>(asyncResult);
@@ -2818,6 +2930,7 @@ namespace Amazon.SimpleEmail
         /// <exception cref="Amazon.SimpleEmail.Model.RuleSetDoesNotExistException">
         /// Indicates that the provided receipt rule set does not exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/SetActiveReceiptRuleSet">REST API Reference for SetActiveReceiptRuleSet Operation</seealso>
         public SetActiveReceiptRuleSetResponse SetActiveReceiptRuleSet(SetActiveReceiptRuleSetRequest request)
         {
             var marshaller = new SetActiveReceiptRuleSetRequestMarshaller();
@@ -2837,6 +2950,7 @@ namespace Amazon.SimpleEmail
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndSetActiveReceiptRuleSet
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/SetActiveReceiptRuleSet">REST API Reference for SetActiveReceiptRuleSet Operation</seealso>
         public IAsyncResult BeginSetActiveReceiptRuleSet(SetActiveReceiptRuleSetRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new SetActiveReceiptRuleSetRequestMarshaller();
@@ -2853,6 +2967,7 @@ namespace Amazon.SimpleEmail
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginSetActiveReceiptRuleSet.</param>
         /// 
         /// <returns>Returns a  SetActiveReceiptRuleSetResult from SimpleEmailService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/SetActiveReceiptRuleSet">REST API Reference for SetActiveReceiptRuleSet Operation</seealso>
         public  SetActiveReceiptRuleSetResponse EndSetActiveReceiptRuleSet(IAsyncResult asyncResult)
         {
             return EndInvoke<SetActiveReceiptRuleSetResponse>(asyncResult);
@@ -2895,6 +3010,7 @@ namespace Amazon.SimpleEmail
         /// <param name="request">Container for the necessary parameters to execute the SetIdentityDkimEnabled service method.</param>
         /// 
         /// <returns>The response from the SetIdentityDkimEnabled service method, as returned by SimpleEmailService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/SetIdentityDkimEnabled">REST API Reference for SetIdentityDkimEnabled Operation</seealso>
         public SetIdentityDkimEnabledResponse SetIdentityDkimEnabled(SetIdentityDkimEnabledRequest request)
         {
             var marshaller = new SetIdentityDkimEnabledRequestMarshaller();
@@ -2914,6 +3030,7 @@ namespace Amazon.SimpleEmail
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndSetIdentityDkimEnabled
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/SetIdentityDkimEnabled">REST API Reference for SetIdentityDkimEnabled Operation</seealso>
         public IAsyncResult BeginSetIdentityDkimEnabled(SetIdentityDkimEnabledRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new SetIdentityDkimEnabledRequestMarshaller();
@@ -2930,6 +3047,7 @@ namespace Amazon.SimpleEmail
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginSetIdentityDkimEnabled.</param>
         /// 
         /// <returns>Returns a  SetIdentityDkimEnabledResult from SimpleEmailService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/SetIdentityDkimEnabled">REST API Reference for SetIdentityDkimEnabled Operation</seealso>
         public  SetIdentityDkimEnabledResponse EndSetIdentityDkimEnabled(IAsyncResult asyncResult)
         {
             return EndInvoke<SetIdentityDkimEnabledResponse>(asyncResult);
@@ -2963,6 +3081,7 @@ namespace Amazon.SimpleEmail
         /// <param name="request">Container for the necessary parameters to execute the SetIdentityFeedbackForwardingEnabled service method.</param>
         /// 
         /// <returns>The response from the SetIdentityFeedbackForwardingEnabled service method, as returned by SimpleEmailService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/SetIdentityFeedbackForwardingEnabled">REST API Reference for SetIdentityFeedbackForwardingEnabled Operation</seealso>
         public SetIdentityFeedbackForwardingEnabledResponse SetIdentityFeedbackForwardingEnabled(SetIdentityFeedbackForwardingEnabledRequest request)
         {
             var marshaller = new SetIdentityFeedbackForwardingEnabledRequestMarshaller();
@@ -2982,6 +3101,7 @@ namespace Amazon.SimpleEmail
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndSetIdentityFeedbackForwardingEnabled
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/SetIdentityFeedbackForwardingEnabled">REST API Reference for SetIdentityFeedbackForwardingEnabled Operation</seealso>
         public IAsyncResult BeginSetIdentityFeedbackForwardingEnabled(SetIdentityFeedbackForwardingEnabledRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new SetIdentityFeedbackForwardingEnabledRequestMarshaller();
@@ -2998,6 +3118,7 @@ namespace Amazon.SimpleEmail
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginSetIdentityFeedbackForwardingEnabled.</param>
         /// 
         /// <returns>Returns a  SetIdentityFeedbackForwardingEnabledResult from SimpleEmailService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/SetIdentityFeedbackForwardingEnabled">REST API Reference for SetIdentityFeedbackForwardingEnabled Operation</seealso>
         public  SetIdentityFeedbackForwardingEnabledResponse EndSetIdentityFeedbackForwardingEnabled(IAsyncResult asyncResult)
         {
             return EndInvoke<SetIdentityFeedbackForwardingEnabledResponse>(asyncResult);
@@ -3025,6 +3146,7 @@ namespace Amazon.SimpleEmail
         /// <param name="request">Container for the necessary parameters to execute the SetIdentityHeadersInNotificationsEnabled service method.</param>
         /// 
         /// <returns>The response from the SetIdentityHeadersInNotificationsEnabled service method, as returned by SimpleEmailService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/SetIdentityHeadersInNotificationsEnabled">REST API Reference for SetIdentityHeadersInNotificationsEnabled Operation</seealso>
         public SetIdentityHeadersInNotificationsEnabledResponse SetIdentityHeadersInNotificationsEnabled(SetIdentityHeadersInNotificationsEnabledRequest request)
         {
             var marshaller = new SetIdentityHeadersInNotificationsEnabledRequestMarshaller();
@@ -3044,6 +3166,7 @@ namespace Amazon.SimpleEmail
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndSetIdentityHeadersInNotificationsEnabled
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/SetIdentityHeadersInNotificationsEnabled">REST API Reference for SetIdentityHeadersInNotificationsEnabled Operation</seealso>
         public IAsyncResult BeginSetIdentityHeadersInNotificationsEnabled(SetIdentityHeadersInNotificationsEnabledRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new SetIdentityHeadersInNotificationsEnabledRequestMarshaller();
@@ -3060,6 +3183,7 @@ namespace Amazon.SimpleEmail
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginSetIdentityHeadersInNotificationsEnabled.</param>
         /// 
         /// <returns>Returns a  SetIdentityHeadersInNotificationsEnabledResult from SimpleEmailService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/SetIdentityHeadersInNotificationsEnabled">REST API Reference for SetIdentityHeadersInNotificationsEnabled Operation</seealso>
         public  SetIdentityHeadersInNotificationsEnabledResponse EndSetIdentityHeadersInNotificationsEnabled(IAsyncResult asyncResult)
         {
             return EndInvoke<SetIdentityHeadersInNotificationsEnabledResponse>(asyncResult);
@@ -3089,6 +3213,7 @@ namespace Amazon.SimpleEmail
         /// <param name="request">Container for the necessary parameters to execute the SetIdentityMailFromDomain service method.</param>
         /// 
         /// <returns>The response from the SetIdentityMailFromDomain service method, as returned by SimpleEmailService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/SetIdentityMailFromDomain">REST API Reference for SetIdentityMailFromDomain Operation</seealso>
         public SetIdentityMailFromDomainResponse SetIdentityMailFromDomain(SetIdentityMailFromDomainRequest request)
         {
             var marshaller = new SetIdentityMailFromDomainRequestMarshaller();
@@ -3108,6 +3233,7 @@ namespace Amazon.SimpleEmail
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndSetIdentityMailFromDomain
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/SetIdentityMailFromDomain">REST API Reference for SetIdentityMailFromDomain Operation</seealso>
         public IAsyncResult BeginSetIdentityMailFromDomain(SetIdentityMailFromDomainRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new SetIdentityMailFromDomainRequestMarshaller();
@@ -3124,6 +3250,7 @@ namespace Amazon.SimpleEmail
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginSetIdentityMailFromDomain.</param>
         /// 
         /// <returns>Returns a  SetIdentityMailFromDomainResult from SimpleEmailService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/SetIdentityMailFromDomain">REST API Reference for SetIdentityMailFromDomain Operation</seealso>
         public  SetIdentityMailFromDomainResponse EndSetIdentityMailFromDomain(IAsyncResult asyncResult)
         {
             return EndInvoke<SetIdentityMailFromDomainResponse>(asyncResult);
@@ -3156,6 +3283,7 @@ namespace Amazon.SimpleEmail
         /// <param name="request">Container for the necessary parameters to execute the SetIdentityNotificationTopic service method.</param>
         /// 
         /// <returns>The response from the SetIdentityNotificationTopic service method, as returned by SimpleEmailService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/SetIdentityNotificationTopic">REST API Reference for SetIdentityNotificationTopic Operation</seealso>
         public SetIdentityNotificationTopicResponse SetIdentityNotificationTopic(SetIdentityNotificationTopicRequest request)
         {
             var marshaller = new SetIdentityNotificationTopicRequestMarshaller();
@@ -3175,6 +3303,7 @@ namespace Amazon.SimpleEmail
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndSetIdentityNotificationTopic
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/SetIdentityNotificationTopic">REST API Reference for SetIdentityNotificationTopic Operation</seealso>
         public IAsyncResult BeginSetIdentityNotificationTopic(SetIdentityNotificationTopicRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new SetIdentityNotificationTopicRequestMarshaller();
@@ -3191,6 +3320,7 @@ namespace Amazon.SimpleEmail
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginSetIdentityNotificationTopic.</param>
         /// 
         /// <returns>Returns a  SetIdentityNotificationTopicResult from SimpleEmailService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/SetIdentityNotificationTopic">REST API Reference for SetIdentityNotificationTopic Operation</seealso>
         public  SetIdentityNotificationTopicResponse EndSetIdentityNotificationTopic(IAsyncResult asyncResult)
         {
             return EndInvoke<SetIdentityNotificationTopicResponse>(asyncResult);
@@ -3222,6 +3352,7 @@ namespace Amazon.SimpleEmail
         /// <exception cref="Amazon.SimpleEmail.Model.RuleSetDoesNotExistException">
         /// Indicates that the provided receipt rule set does not exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/SetReceiptRulePosition">REST API Reference for SetReceiptRulePosition Operation</seealso>
         public SetReceiptRulePositionResponse SetReceiptRulePosition(SetReceiptRulePositionRequest request)
         {
             var marshaller = new SetReceiptRulePositionRequestMarshaller();
@@ -3241,6 +3372,7 @@ namespace Amazon.SimpleEmail
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndSetReceiptRulePosition
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/SetReceiptRulePosition">REST API Reference for SetReceiptRulePosition Operation</seealso>
         public IAsyncResult BeginSetReceiptRulePosition(SetReceiptRulePositionRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new SetReceiptRulePositionRequestMarshaller();
@@ -3257,6 +3389,7 @@ namespace Amazon.SimpleEmail
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginSetReceiptRulePosition.</param>
         /// 
         /// <returns>Returns a  SetReceiptRulePositionResult from SimpleEmailService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/SetReceiptRulePosition">REST API Reference for SetReceiptRulePosition Operation</seealso>
         public  SetReceiptRulePositionResponse EndSetReceiptRulePosition(IAsyncResult asyncResult)
         {
             return EndInvoke<SetReceiptRulePositionResponse>(asyncResult);
@@ -3303,6 +3436,7 @@ namespace Amazon.SimpleEmail
         /// Indicates that the Amazon Kinesis Firehose destination is invalid. See the error message
         /// for details.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/UpdateConfigurationSetEventDestination">REST API Reference for UpdateConfigurationSetEventDestination Operation</seealso>
         public UpdateConfigurationSetEventDestinationResponse UpdateConfigurationSetEventDestination(UpdateConfigurationSetEventDestinationRequest request)
         {
             var marshaller = new UpdateConfigurationSetEventDestinationRequestMarshaller();
@@ -3322,6 +3456,7 @@ namespace Amazon.SimpleEmail
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateConfigurationSetEventDestination
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/UpdateConfigurationSetEventDestination">REST API Reference for UpdateConfigurationSetEventDestination Operation</seealso>
         public IAsyncResult BeginUpdateConfigurationSetEventDestination(UpdateConfigurationSetEventDestinationRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new UpdateConfigurationSetEventDestinationRequestMarshaller();
@@ -3338,6 +3473,7 @@ namespace Amazon.SimpleEmail
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateConfigurationSetEventDestination.</param>
         /// 
         /// <returns>Returns a  UpdateConfigurationSetEventDestinationResult from SimpleEmailService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/UpdateConfigurationSetEventDestination">REST API Reference for UpdateConfigurationSetEventDestination Operation</seealso>
         public  UpdateConfigurationSetEventDestinationResponse EndUpdateConfigurationSetEventDestination(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateConfigurationSetEventDestinationResponse>(asyncResult);
@@ -3392,6 +3528,7 @@ namespace Amazon.SimpleEmail
         /// <exception cref="Amazon.SimpleEmail.Model.RuleSetDoesNotExistException">
         /// Indicates that the provided receipt rule set does not exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/UpdateReceiptRule">REST API Reference for UpdateReceiptRule Operation</seealso>
         public UpdateReceiptRuleResponse UpdateReceiptRule(UpdateReceiptRuleRequest request)
         {
             var marshaller = new UpdateReceiptRuleRequestMarshaller();
@@ -3411,6 +3548,7 @@ namespace Amazon.SimpleEmail
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateReceiptRule
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/UpdateReceiptRule">REST API Reference for UpdateReceiptRule Operation</seealso>
         public IAsyncResult BeginUpdateReceiptRule(UpdateReceiptRuleRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new UpdateReceiptRuleRequestMarshaller();
@@ -3427,6 +3565,7 @@ namespace Amazon.SimpleEmail
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateReceiptRule.</param>
         /// 
         /// <returns>Returns a  UpdateReceiptRuleResult from SimpleEmailService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/UpdateReceiptRule">REST API Reference for UpdateReceiptRule Operation</seealso>
         public  UpdateReceiptRuleResponse EndUpdateReceiptRule(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateReceiptRuleResponse>(asyncResult);
@@ -3462,6 +3601,7 @@ namespace Amazon.SimpleEmail
         /// <param name="request">Container for the necessary parameters to execute the VerifyDomainDkim service method.</param>
         /// 
         /// <returns>The response from the VerifyDomainDkim service method, as returned by SimpleEmailService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/VerifyDomainDkim">REST API Reference for VerifyDomainDkim Operation</seealso>
         public VerifyDomainDkimResponse VerifyDomainDkim(VerifyDomainDkimRequest request)
         {
             var marshaller = new VerifyDomainDkimRequestMarshaller();
@@ -3481,6 +3621,7 @@ namespace Amazon.SimpleEmail
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndVerifyDomainDkim
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/VerifyDomainDkim">REST API Reference for VerifyDomainDkim Operation</seealso>
         public IAsyncResult BeginVerifyDomainDkim(VerifyDomainDkimRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new VerifyDomainDkimRequestMarshaller();
@@ -3497,6 +3638,7 @@ namespace Amazon.SimpleEmail
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginVerifyDomainDkim.</param>
         /// 
         /// <returns>Returns a  VerifyDomainDkimResult from SimpleEmailService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/VerifyDomainDkim">REST API Reference for VerifyDomainDkim Operation</seealso>
         public  VerifyDomainDkimResponse EndVerifyDomainDkim(IAsyncResult asyncResult)
         {
             return EndInvoke<VerifyDomainDkimResponse>(asyncResult);
@@ -3517,6 +3659,7 @@ namespace Amazon.SimpleEmail
         /// <param name="request">Container for the necessary parameters to execute the VerifyDomainIdentity service method.</param>
         /// 
         /// <returns>The response from the VerifyDomainIdentity service method, as returned by SimpleEmailService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/VerifyDomainIdentity">REST API Reference for VerifyDomainIdentity Operation</seealso>
         public VerifyDomainIdentityResponse VerifyDomainIdentity(VerifyDomainIdentityRequest request)
         {
             var marshaller = new VerifyDomainIdentityRequestMarshaller();
@@ -3536,6 +3679,7 @@ namespace Amazon.SimpleEmail
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndVerifyDomainIdentity
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/VerifyDomainIdentity">REST API Reference for VerifyDomainIdentity Operation</seealso>
         public IAsyncResult BeginVerifyDomainIdentity(VerifyDomainIdentityRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new VerifyDomainIdentityRequestMarshaller();
@@ -3552,6 +3696,7 @@ namespace Amazon.SimpleEmail
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginVerifyDomainIdentity.</param>
         /// 
         /// <returns>Returns a  VerifyDomainIdentityResult from SimpleEmailService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/VerifyDomainIdentity">REST API Reference for VerifyDomainIdentity Operation</seealso>
         public  VerifyDomainIdentityResponse EndVerifyDomainIdentity(IAsyncResult asyncResult)
         {
             return EndInvoke<VerifyDomainIdentityResponse>(asyncResult);
@@ -3578,6 +3723,7 @@ namespace Amazon.SimpleEmail
         /// <param name="request">Container for the necessary parameters to execute the VerifyEmailAddress service method.</param>
         /// 
         /// <returns>The response from the VerifyEmailAddress service method, as returned by SimpleEmailService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/VerifyEmailAddress">REST API Reference for VerifyEmailAddress Operation</seealso>
         public VerifyEmailAddressResponse VerifyEmailAddress(VerifyEmailAddressRequest request)
         {
             var marshaller = new VerifyEmailAddressRequestMarshaller();
@@ -3597,6 +3743,7 @@ namespace Amazon.SimpleEmail
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndVerifyEmailAddress
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/VerifyEmailAddress">REST API Reference for VerifyEmailAddress Operation</seealso>
         public IAsyncResult BeginVerifyEmailAddress(VerifyEmailAddressRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new VerifyEmailAddressRequestMarshaller();
@@ -3613,6 +3760,7 @@ namespace Amazon.SimpleEmail
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginVerifyEmailAddress.</param>
         /// 
         /// <returns>Returns a  VerifyEmailAddressResult from SimpleEmailService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/VerifyEmailAddress">REST API Reference for VerifyEmailAddress Operation</seealso>
         public  VerifyEmailAddressResponse EndVerifyEmailAddress(IAsyncResult asyncResult)
         {
             return EndInvoke<VerifyEmailAddressResponse>(asyncResult);
@@ -3634,6 +3782,7 @@ namespace Amazon.SimpleEmail
         /// <param name="request">Container for the necessary parameters to execute the VerifyEmailIdentity service method.</param>
         /// 
         /// <returns>The response from the VerifyEmailIdentity service method, as returned by SimpleEmailService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/VerifyEmailIdentity">REST API Reference for VerifyEmailIdentity Operation</seealso>
         public VerifyEmailIdentityResponse VerifyEmailIdentity(VerifyEmailIdentityRequest request)
         {
             var marshaller = new VerifyEmailIdentityRequestMarshaller();
@@ -3653,6 +3802,7 @@ namespace Amazon.SimpleEmail
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndVerifyEmailIdentity
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/VerifyEmailIdentity">REST API Reference for VerifyEmailIdentity Operation</seealso>
         public IAsyncResult BeginVerifyEmailIdentity(VerifyEmailIdentityRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new VerifyEmailIdentityRequestMarshaller();
@@ -3669,6 +3819,7 @@ namespace Amazon.SimpleEmail
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginVerifyEmailIdentity.</param>
         /// 
         /// <returns>Returns a  VerifyEmailIdentityResult from SimpleEmailService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/VerifyEmailIdentity">REST API Reference for VerifyEmailIdentity Operation</seealso>
         public  VerifyEmailIdentityResponse EndVerifyEmailIdentity(IAsyncResult asyncResult)
         {
             return EndInvoke<VerifyEmailIdentityResponse>(asyncResult);

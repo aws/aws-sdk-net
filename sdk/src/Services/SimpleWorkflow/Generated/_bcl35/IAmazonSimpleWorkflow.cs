@@ -98,6 +98,7 @@ namespace Amazon.SimpleWorkflow
         /// (region or domain). This could happen if the named resource was never created or is
         /// no longer available for this operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/CountClosedWorkflowExecutions">REST API Reference for CountClosedWorkflowExecutions Operation</seealso>
         CountClosedWorkflowExecutionsResponse CountClosedWorkflowExecutions(CountClosedWorkflowExecutionsRequest request);
 
         /// <summary>
@@ -111,6 +112,7 @@ namespace Amazon.SimpleWorkflow
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCountClosedWorkflowExecutions
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/CountClosedWorkflowExecutions">REST API Reference for CountClosedWorkflowExecutions Operation</seealso>
         IAsyncResult BeginCountClosedWorkflowExecutions(CountClosedWorkflowExecutionsRequest request, AsyncCallback callback, object state);
 
 
@@ -122,6 +124,7 @@ namespace Amazon.SimpleWorkflow
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCountClosedWorkflowExecutions.</param>
         /// 
         /// <returns>Returns a  CountClosedWorkflowExecutionsResult from SimpleWorkflow.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/CountClosedWorkflowExecutions">REST API Reference for CountClosedWorkflowExecutions Operation</seealso>
         CountClosedWorkflowExecutionsResponse EndCountClosedWorkflowExecutions(IAsyncResult asyncResult);
 
         #endregion
@@ -170,6 +173,7 @@ namespace Amazon.SimpleWorkflow
         /// (region or domain). This could happen if the named resource was never created or is
         /// no longer available for this operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/CountOpenWorkflowExecutions">REST API Reference for CountOpenWorkflowExecutions Operation</seealso>
         CountOpenWorkflowExecutionsResponse CountOpenWorkflowExecutions(CountOpenWorkflowExecutionsRequest request);
 
         /// <summary>
@@ -183,6 +187,7 @@ namespace Amazon.SimpleWorkflow
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCountOpenWorkflowExecutions
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/CountOpenWorkflowExecutions">REST API Reference for CountOpenWorkflowExecutions Operation</seealso>
         IAsyncResult BeginCountOpenWorkflowExecutions(CountOpenWorkflowExecutionsRequest request, AsyncCallback callback, object state);
 
 
@@ -194,6 +199,7 @@ namespace Amazon.SimpleWorkflow
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCountOpenWorkflowExecutions.</param>
         /// 
         /// <returns>Returns a  CountOpenWorkflowExecutionsResult from SimpleWorkflow.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/CountOpenWorkflowExecutions">REST API Reference for CountOpenWorkflowExecutions Operation</seealso>
         CountOpenWorkflowExecutionsResponse EndCountOpenWorkflowExecutions(IAsyncResult asyncResult);
 
         #endregion
@@ -239,6 +245,7 @@ namespace Amazon.SimpleWorkflow
         /// (region or domain). This could happen if the named resource was never created or is
         /// no longer available for this operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/CountPendingActivityTasks">REST API Reference for CountPendingActivityTasks Operation</seealso>
         CountPendingActivityTasksResponse CountPendingActivityTasks(CountPendingActivityTasksRequest request);
 
         /// <summary>
@@ -252,6 +259,7 @@ namespace Amazon.SimpleWorkflow
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCountPendingActivityTasks
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/CountPendingActivityTasks">REST API Reference for CountPendingActivityTasks Operation</seealso>
         IAsyncResult BeginCountPendingActivityTasks(CountPendingActivityTasksRequest request, AsyncCallback callback, object state);
 
 
@@ -263,6 +271,7 @@ namespace Amazon.SimpleWorkflow
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCountPendingActivityTasks.</param>
         /// 
         /// <returns>Returns a  CountPendingActivityTasksResult from SimpleWorkflow.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/CountPendingActivityTasks">REST API Reference for CountPendingActivityTasks Operation</seealso>
         CountPendingActivityTasksResponse EndCountPendingActivityTasks(IAsyncResult asyncResult);
 
         #endregion
@@ -308,6 +317,7 @@ namespace Amazon.SimpleWorkflow
         /// (region or domain). This could happen if the named resource was never created or is
         /// no longer available for this operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/CountPendingDecisionTasks">REST API Reference for CountPendingDecisionTasks Operation</seealso>
         CountPendingDecisionTasksResponse CountPendingDecisionTasks(CountPendingDecisionTasksRequest request);
 
         /// <summary>
@@ -321,6 +331,7 @@ namespace Amazon.SimpleWorkflow
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCountPendingDecisionTasks
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/CountPendingDecisionTasks">REST API Reference for CountPendingDecisionTasks Operation</seealso>
         IAsyncResult BeginCountPendingDecisionTasks(CountPendingDecisionTasksRequest request, AsyncCallback callback, object state);
 
 
@@ -332,6 +343,7 @@ namespace Amazon.SimpleWorkflow
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCountPendingDecisionTasks.</param>
         /// 
         /// <returns>Returns a  CountPendingDecisionTasksResult from SimpleWorkflow.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/CountPendingDecisionTasks">REST API Reference for CountPendingDecisionTasks Operation</seealso>
         CountPendingDecisionTasksResponse EndCountPendingDecisionTasks(IAsyncResult asyncResult);
 
         #endregion
@@ -383,6 +395,7 @@ namespace Amazon.SimpleWorkflow
         /// (region or domain). This could happen if the named resource was never created or is
         /// no longer available for this operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/DeprecateActivityType">REST API Reference for DeprecateActivityType Operation</seealso>
         DeprecateActivityTypeResponse DeprecateActivityType(DeprecateActivityTypeRequest request);
 
         /// <summary>
@@ -396,6 +409,7 @@ namespace Amazon.SimpleWorkflow
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeprecateActivityType
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/DeprecateActivityType">REST API Reference for DeprecateActivityType Operation</seealso>
         IAsyncResult BeginDeprecateActivityType(DeprecateActivityTypeRequest request, AsyncCallback callback, object state);
 
 
@@ -407,6 +421,7 @@ namespace Amazon.SimpleWorkflow
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeprecateActivityType.</param>
         /// 
         /// <returns>Returns a  DeprecateActivityTypeResult from SimpleWorkflow.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/DeprecateActivityType">REST API Reference for DeprecateActivityType Operation</seealso>
         DeprecateActivityTypeResponse EndDeprecateActivityType(IAsyncResult asyncResult);
 
         #endregion
@@ -457,6 +472,7 @@ namespace Amazon.SimpleWorkflow
         /// (region or domain). This could happen if the named resource was never created or is
         /// no longer available for this operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/DeprecateDomain">REST API Reference for DeprecateDomain Operation</seealso>
         DeprecateDomainResponse DeprecateDomain(DeprecateDomainRequest request);
 
         /// <summary>
@@ -470,6 +486,7 @@ namespace Amazon.SimpleWorkflow
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeprecateDomain
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/DeprecateDomain">REST API Reference for DeprecateDomain Operation</seealso>
         IAsyncResult BeginDeprecateDomain(DeprecateDomainRequest request, AsyncCallback callback, object state);
 
 
@@ -481,6 +498,7 @@ namespace Amazon.SimpleWorkflow
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeprecateDomain.</param>
         /// 
         /// <returns>Returns a  DeprecateDomainResult from SimpleWorkflow.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/DeprecateDomain">REST API Reference for DeprecateDomain Operation</seealso>
         DeprecateDomainResponse EndDeprecateDomain(IAsyncResult asyncResult);
 
         #endregion
@@ -533,6 +551,7 @@ namespace Amazon.SimpleWorkflow
         /// (region or domain). This could happen if the named resource was never created or is
         /// no longer available for this operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/DeprecateWorkflowType">REST API Reference for DeprecateWorkflowType Operation</seealso>
         DeprecateWorkflowTypeResponse DeprecateWorkflowType(DeprecateWorkflowTypeRequest request);
 
         /// <summary>
@@ -546,6 +565,7 @@ namespace Amazon.SimpleWorkflow
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeprecateWorkflowType
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/DeprecateWorkflowType">REST API Reference for DeprecateWorkflowType Operation</seealso>
         IAsyncResult BeginDeprecateWorkflowType(DeprecateWorkflowTypeRequest request, AsyncCallback callback, object state);
 
 
@@ -557,6 +577,7 @@ namespace Amazon.SimpleWorkflow
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeprecateWorkflowType.</param>
         /// 
         /// <returns>Returns a  DeprecateWorkflowTypeResult from SimpleWorkflow.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/DeprecateWorkflowType">REST API Reference for DeprecateWorkflowType Operation</seealso>
         DeprecateWorkflowTypeResponse EndDeprecateWorkflowType(IAsyncResult asyncResult);
 
         #endregion
@@ -604,6 +625,7 @@ namespace Amazon.SimpleWorkflow
         /// (region or domain). This could happen if the named resource was never created or is
         /// no longer available for this operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/DescribeActivityType">REST API Reference for DescribeActivityType Operation</seealso>
         DescribeActivityTypeResponse DescribeActivityType(DescribeActivityTypeRequest request);
 
         /// <summary>
@@ -617,6 +639,7 @@ namespace Amazon.SimpleWorkflow
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeActivityType
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/DescribeActivityType">REST API Reference for DescribeActivityType Operation</seealso>
         IAsyncResult BeginDescribeActivityType(DescribeActivityTypeRequest request, AsyncCallback callback, object state);
 
 
@@ -628,6 +651,7 @@ namespace Amazon.SimpleWorkflow
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeActivityType.</param>
         /// 
         /// <returns>Returns a  DescribeActivityTypeResult from SimpleWorkflow.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/DescribeActivityType">REST API Reference for DescribeActivityType Operation</seealso>
         DescribeActivityTypeResponse EndDescribeActivityType(IAsyncResult asyncResult);
 
         #endregion
@@ -670,6 +694,7 @@ namespace Amazon.SimpleWorkflow
         /// (region or domain). This could happen if the named resource was never created or is
         /// no longer available for this operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/DescribeDomain">REST API Reference for DescribeDomain Operation</seealso>
         DescribeDomainResponse DescribeDomain(DescribeDomainRequest request);
 
         /// <summary>
@@ -683,6 +708,7 @@ namespace Amazon.SimpleWorkflow
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeDomain
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/DescribeDomain">REST API Reference for DescribeDomain Operation</seealso>
         IAsyncResult BeginDescribeDomain(DescribeDomainRequest request, AsyncCallback callback, object state);
 
 
@@ -694,6 +720,7 @@ namespace Amazon.SimpleWorkflow
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeDomain.</param>
         /// 
         /// <returns>Returns a  DescribeDomainResult from SimpleWorkflow.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/DescribeDomain">REST API Reference for DescribeDomain Operation</seealso>
         DescribeDomainResponse EndDescribeDomain(IAsyncResult asyncResult);
 
         #endregion
@@ -738,6 +765,7 @@ namespace Amazon.SimpleWorkflow
         /// (region or domain). This could happen if the named resource was never created or is
         /// no longer available for this operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/DescribeWorkflowExecution">REST API Reference for DescribeWorkflowExecution Operation</seealso>
         DescribeWorkflowExecutionResponse DescribeWorkflowExecution(DescribeWorkflowExecutionRequest request);
 
         /// <summary>
@@ -751,6 +779,7 @@ namespace Amazon.SimpleWorkflow
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeWorkflowExecution
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/DescribeWorkflowExecution">REST API Reference for DescribeWorkflowExecution Operation</seealso>
         IAsyncResult BeginDescribeWorkflowExecution(DescribeWorkflowExecutionRequest request, AsyncCallback callback, object state);
 
 
@@ -762,6 +791,7 @@ namespace Amazon.SimpleWorkflow
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeWorkflowExecution.</param>
         /// 
         /// <returns>Returns a  DescribeWorkflowExecutionResult from SimpleWorkflow.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/DescribeWorkflowExecution">REST API Reference for DescribeWorkflowExecution Operation</seealso>
         DescribeWorkflowExecutionResponse EndDescribeWorkflowExecution(IAsyncResult asyncResult);
 
         #endregion
@@ -809,6 +839,7 @@ namespace Amazon.SimpleWorkflow
         /// (region or domain). This could happen if the named resource was never created or is
         /// no longer available for this operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/DescribeWorkflowType">REST API Reference for DescribeWorkflowType Operation</seealso>
         DescribeWorkflowTypeResponse DescribeWorkflowType(DescribeWorkflowTypeRequest request);
 
         /// <summary>
@@ -822,6 +853,7 @@ namespace Amazon.SimpleWorkflow
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeWorkflowType
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/DescribeWorkflowType">REST API Reference for DescribeWorkflowType Operation</seealso>
         IAsyncResult BeginDescribeWorkflowType(DescribeWorkflowTypeRequest request, AsyncCallback callback, object state);
 
 
@@ -833,6 +865,7 @@ namespace Amazon.SimpleWorkflow
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeWorkflowType.</param>
         /// 
         /// <returns>Returns a  DescribeWorkflowTypeResult from SimpleWorkflow.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/DescribeWorkflowType">REST API Reference for DescribeWorkflowType Operation</seealso>
         DescribeWorkflowTypeResponse EndDescribeWorkflowType(IAsyncResult asyncResult);
 
         #endregion
@@ -878,6 +911,7 @@ namespace Amazon.SimpleWorkflow
         /// (region or domain). This could happen if the named resource was never created or is
         /// no longer available for this operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/GetWorkflowExecutionHistory">REST API Reference for GetWorkflowExecutionHistory Operation</seealso>
         GetWorkflowExecutionHistoryResponse GetWorkflowExecutionHistory(GetWorkflowExecutionHistoryRequest request);
 
         /// <summary>
@@ -891,6 +925,7 @@ namespace Amazon.SimpleWorkflow
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetWorkflowExecutionHistory
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/GetWorkflowExecutionHistory">REST API Reference for GetWorkflowExecutionHistory Operation</seealso>
         IAsyncResult BeginGetWorkflowExecutionHistory(GetWorkflowExecutionHistoryRequest request, AsyncCallback callback, object state);
 
 
@@ -902,6 +937,7 @@ namespace Amazon.SimpleWorkflow
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetWorkflowExecutionHistory.</param>
         /// 
         /// <returns>Returns a  GetWorkflowExecutionHistoryResult from SimpleWorkflow.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/GetWorkflowExecutionHistory">REST API Reference for GetWorkflowExecutionHistory Operation</seealso>
         GetWorkflowExecutionHistoryResponse EndGetWorkflowExecutionHistory(IAsyncResult asyncResult);
 
         #endregion
@@ -948,6 +984,7 @@ namespace Amazon.SimpleWorkflow
         /// (region or domain). This could happen if the named resource was never created or is
         /// no longer available for this operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/ListActivityTypes">REST API Reference for ListActivityTypes Operation</seealso>
         ListActivityTypesResponse ListActivityTypes(ListActivityTypesRequest request);
 
         /// <summary>
@@ -961,6 +998,7 @@ namespace Amazon.SimpleWorkflow
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListActivityTypes
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/ListActivityTypes">REST API Reference for ListActivityTypes Operation</seealso>
         IAsyncResult BeginListActivityTypes(ListActivityTypesRequest request, AsyncCallback callback, object state);
 
 
@@ -972,6 +1010,7 @@ namespace Amazon.SimpleWorkflow
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListActivityTypes.</param>
         /// 
         /// <returns>Returns a  ListActivityTypesResult from SimpleWorkflow.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/ListActivityTypes">REST API Reference for ListActivityTypes Operation</seealso>
         ListActivityTypesResponse EndListActivityTypes(IAsyncResult asyncResult);
 
         #endregion
@@ -1021,6 +1060,7 @@ namespace Amazon.SimpleWorkflow
         /// (region or domain). This could happen if the named resource was never created or is
         /// no longer available for this operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/ListClosedWorkflowExecutions">REST API Reference for ListClosedWorkflowExecutions Operation</seealso>
         ListClosedWorkflowExecutionsResponse ListClosedWorkflowExecutions(ListClosedWorkflowExecutionsRequest request);
 
         /// <summary>
@@ -1034,6 +1074,7 @@ namespace Amazon.SimpleWorkflow
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListClosedWorkflowExecutions
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/ListClosedWorkflowExecutions">REST API Reference for ListClosedWorkflowExecutions Operation</seealso>
         IAsyncResult BeginListClosedWorkflowExecutions(ListClosedWorkflowExecutionsRequest request, AsyncCallback callback, object state);
 
 
@@ -1045,6 +1086,7 @@ namespace Amazon.SimpleWorkflow
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListClosedWorkflowExecutions.</param>
         /// 
         /// <returns>Returns a  ListClosedWorkflowExecutionsResult from SimpleWorkflow.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/ListClosedWorkflowExecutions">REST API Reference for ListClosedWorkflowExecutions Operation</seealso>
         ListClosedWorkflowExecutionsResponse EndListClosedWorkflowExecutions(IAsyncResult asyncResult);
 
         #endregion
@@ -1086,6 +1128,7 @@ namespace Amazon.SimpleWorkflow
         /// <exception cref="Amazon.SimpleWorkflow.Model.OperationNotPermittedException">
         /// Returned when the caller does not have sufficient permissions to invoke the action.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/ListDomains">REST API Reference for ListDomains Operation</seealso>
         ListDomainsResponse ListDomains(ListDomainsRequest request);
 
         /// <summary>
@@ -1099,6 +1142,7 @@ namespace Amazon.SimpleWorkflow
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListDomains
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/ListDomains">REST API Reference for ListDomains Operation</seealso>
         IAsyncResult BeginListDomains(ListDomainsRequest request, AsyncCallback callback, object state);
 
 
@@ -1110,6 +1154,7 @@ namespace Amazon.SimpleWorkflow
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListDomains.</param>
         /// 
         /// <returns>Returns a  ListDomainsResult from SimpleWorkflow.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/ListDomains">REST API Reference for ListDomains Operation</seealso>
         ListDomainsResponse EndListDomains(IAsyncResult asyncResult);
 
         #endregion
@@ -1159,6 +1204,7 @@ namespace Amazon.SimpleWorkflow
         /// (region or domain). This could happen if the named resource was never created or is
         /// no longer available for this operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/ListOpenWorkflowExecutions">REST API Reference for ListOpenWorkflowExecutions Operation</seealso>
         ListOpenWorkflowExecutionsResponse ListOpenWorkflowExecutions(ListOpenWorkflowExecutionsRequest request);
 
         /// <summary>
@@ -1172,6 +1218,7 @@ namespace Amazon.SimpleWorkflow
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListOpenWorkflowExecutions
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/ListOpenWorkflowExecutions">REST API Reference for ListOpenWorkflowExecutions Operation</seealso>
         IAsyncResult BeginListOpenWorkflowExecutions(ListOpenWorkflowExecutionsRequest request, AsyncCallback callback, object state);
 
 
@@ -1183,6 +1230,7 @@ namespace Amazon.SimpleWorkflow
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListOpenWorkflowExecutions.</param>
         /// 
         /// <returns>Returns a  ListOpenWorkflowExecutionsResult from SimpleWorkflow.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/ListOpenWorkflowExecutions">REST API Reference for ListOpenWorkflowExecutions Operation</seealso>
         ListOpenWorkflowExecutionsResponse EndListOpenWorkflowExecutions(IAsyncResult asyncResult);
 
         #endregion
@@ -1226,6 +1274,7 @@ namespace Amazon.SimpleWorkflow
         /// (region or domain). This could happen if the named resource was never created or is
         /// no longer available for this operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/ListWorkflowTypes">REST API Reference for ListWorkflowTypes Operation</seealso>
         ListWorkflowTypesResponse ListWorkflowTypes(ListWorkflowTypesRequest request);
 
         /// <summary>
@@ -1239,6 +1288,7 @@ namespace Amazon.SimpleWorkflow
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListWorkflowTypes
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/ListWorkflowTypes">REST API Reference for ListWorkflowTypes Operation</seealso>
         IAsyncResult BeginListWorkflowTypes(ListWorkflowTypesRequest request, AsyncCallback callback, object state);
 
 
@@ -1250,6 +1300,7 @@ namespace Amazon.SimpleWorkflow
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListWorkflowTypes.</param>
         /// 
         /// <returns>Returns a  ListWorkflowTypesResult from SimpleWorkflow.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/ListWorkflowTypes">REST API Reference for ListWorkflowTypes Operation</seealso>
         ListWorkflowTypesResponse EndListWorkflowTypes(IAsyncResult asyncResult);
 
         #endregion
@@ -1306,6 +1357,7 @@ namespace Amazon.SimpleWorkflow
         /// (region or domain). This could happen if the named resource was never created or is
         /// no longer available for this operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/PollForActivityTask">REST API Reference for PollForActivityTask Operation</seealso>
         PollForActivityTaskResponse PollForActivityTask(PollForActivityTaskRequest request);
 
         /// <summary>
@@ -1319,6 +1371,7 @@ namespace Amazon.SimpleWorkflow
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPollForActivityTask
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/PollForActivityTask">REST API Reference for PollForActivityTask Operation</seealso>
         IAsyncResult BeginPollForActivityTask(PollForActivityTaskRequest request, AsyncCallback callback, object state);
 
 
@@ -1330,6 +1383,7 @@ namespace Amazon.SimpleWorkflow
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPollForActivityTask.</param>
         /// 
         /// <returns>Returns a  PollForActivityTaskResult from SimpleWorkflow.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/PollForActivityTask">REST API Reference for PollForActivityTask Operation</seealso>
         PollForActivityTaskResponse EndPollForActivityTask(IAsyncResult asyncResult);
 
         #endregion
@@ -1397,6 +1451,7 @@ namespace Amazon.SimpleWorkflow
         /// (region or domain). This could happen if the named resource was never created or is
         /// no longer available for this operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/PollForDecisionTask">REST API Reference for PollForDecisionTask Operation</seealso>
         PollForDecisionTaskResponse PollForDecisionTask(PollForDecisionTaskRequest request);
 
         /// <summary>
@@ -1410,6 +1465,7 @@ namespace Amazon.SimpleWorkflow
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPollForDecisionTask
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/PollForDecisionTask">REST API Reference for PollForDecisionTask Operation</seealso>
         IAsyncResult BeginPollForDecisionTask(PollForDecisionTaskRequest request, AsyncCallback callback, object state);
 
 
@@ -1421,6 +1477,7 @@ namespace Amazon.SimpleWorkflow
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPollForDecisionTask.</param>
         /// 
         /// <returns>Returns a  PollForDecisionTaskResult from SimpleWorkflow.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/PollForDecisionTask">REST API Reference for PollForDecisionTask Operation</seealso>
         PollForDecisionTaskResponse EndPollForDecisionTask(IAsyncResult asyncResult);
 
         #endregion
@@ -1488,6 +1545,7 @@ namespace Amazon.SimpleWorkflow
         /// (region or domain). This could happen if the named resource was never created or is
         /// no longer available for this operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/RecordActivityTaskHeartbeat">REST API Reference for RecordActivityTaskHeartbeat Operation</seealso>
         RecordActivityTaskHeartbeatResponse RecordActivityTaskHeartbeat(RecordActivityTaskHeartbeatRequest request);
 
         /// <summary>
@@ -1501,6 +1559,7 @@ namespace Amazon.SimpleWorkflow
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndRecordActivityTaskHeartbeat
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/RecordActivityTaskHeartbeat">REST API Reference for RecordActivityTaskHeartbeat Operation</seealso>
         IAsyncResult BeginRecordActivityTaskHeartbeat(RecordActivityTaskHeartbeatRequest request, AsyncCallback callback, object state);
 
 
@@ -1512,6 +1571,7 @@ namespace Amazon.SimpleWorkflow
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginRecordActivityTaskHeartbeat.</param>
         /// 
         /// <returns>Returns a  RecordActivityTaskHeartbeatResult from SimpleWorkflow.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/RecordActivityTaskHeartbeat">REST API Reference for RecordActivityTaskHeartbeat Operation</seealso>
         RecordActivityTaskHeartbeatResponse EndRecordActivityTaskHeartbeat(IAsyncResult asyncResult);
 
         #endregion
@@ -1570,6 +1630,7 @@ namespace Amazon.SimpleWorkflow
         /// (region or domain). This could happen if the named resource was never created or is
         /// no longer available for this operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/RegisterActivityType">REST API Reference for RegisterActivityType Operation</seealso>
         RegisterActivityTypeResponse RegisterActivityType(RegisterActivityTypeRequest request);
 
         /// <summary>
@@ -1583,6 +1644,7 @@ namespace Amazon.SimpleWorkflow
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndRegisterActivityType
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/RegisterActivityType">REST API Reference for RegisterActivityType Operation</seealso>
         IAsyncResult BeginRegisterActivityType(RegisterActivityTypeRequest request, AsyncCallback callback, object state);
 
 
@@ -1594,6 +1656,7 @@ namespace Amazon.SimpleWorkflow
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginRegisterActivityType.</param>
         /// 
         /// <returns>Returns a  RegisterActivityTypeResult from SimpleWorkflow.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/RegisterActivityType">REST API Reference for RegisterActivityType Operation</seealso>
         RegisterActivityTypeResponse EndRegisterActivityType(IAsyncResult asyncResult);
 
         #endregion
@@ -1641,6 +1704,7 @@ namespace Amazon.SimpleWorkflow
         /// <exception cref="Amazon.SimpleWorkflow.Model.OperationNotPermittedException">
         /// Returned when the caller does not have sufficient permissions to invoke the action.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/RegisterDomain">REST API Reference for RegisterDomain Operation</seealso>
         RegisterDomainResponse RegisterDomain(RegisterDomainRequest request);
 
         /// <summary>
@@ -1654,6 +1718,7 @@ namespace Amazon.SimpleWorkflow
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndRegisterDomain
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/RegisterDomain">REST API Reference for RegisterDomain Operation</seealso>
         IAsyncResult BeginRegisterDomain(RegisterDomainRequest request, AsyncCallback callback, object state);
 
 
@@ -1665,6 +1730,7 @@ namespace Amazon.SimpleWorkflow
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginRegisterDomain.</param>
         /// 
         /// <returns>Returns a  RegisterDomainResult from SimpleWorkflow.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/RegisterDomain">REST API Reference for RegisterDomain Operation</seealso>
         RegisterDomainResponse EndRegisterDomain(IAsyncResult asyncResult);
 
         #endregion
@@ -1728,6 +1794,7 @@ namespace Amazon.SimpleWorkflow
         /// (region or domain). This could happen if the named resource was never created or is
         /// no longer available for this operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/RegisterWorkflowType">REST API Reference for RegisterWorkflowType Operation</seealso>
         RegisterWorkflowTypeResponse RegisterWorkflowType(RegisterWorkflowTypeRequest request);
 
         /// <summary>
@@ -1741,6 +1808,7 @@ namespace Amazon.SimpleWorkflow
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndRegisterWorkflowType
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/RegisterWorkflowType">REST API Reference for RegisterWorkflowType Operation</seealso>
         IAsyncResult BeginRegisterWorkflowType(RegisterWorkflowTypeRequest request, AsyncCallback callback, object state);
 
 
@@ -1752,6 +1820,7 @@ namespace Amazon.SimpleWorkflow
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginRegisterWorkflowType.</param>
         /// 
         /// <returns>Returns a  RegisterWorkflowTypeResult from SimpleWorkflow.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/RegisterWorkflowType">REST API Reference for RegisterWorkflowType Operation</seealso>
         RegisterWorkflowTypeResponse EndRegisterWorkflowType(IAsyncResult asyncResult);
 
         #endregion
@@ -1801,6 +1870,7 @@ namespace Amazon.SimpleWorkflow
         /// (region or domain). This could happen if the named resource was never created or is
         /// no longer available for this operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/RequestCancelWorkflowExecution">REST API Reference for RequestCancelWorkflowExecution Operation</seealso>
         RequestCancelWorkflowExecutionResponse RequestCancelWorkflowExecution(RequestCancelWorkflowExecutionRequest request);
 
         /// <summary>
@@ -1814,6 +1884,7 @@ namespace Amazon.SimpleWorkflow
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndRequestCancelWorkflowExecution
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/RequestCancelWorkflowExecution">REST API Reference for RequestCancelWorkflowExecution Operation</seealso>
         IAsyncResult BeginRequestCancelWorkflowExecution(RequestCancelWorkflowExecutionRequest request, AsyncCallback callback, object state);
 
 
@@ -1825,6 +1896,7 @@ namespace Amazon.SimpleWorkflow
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginRequestCancelWorkflowExecution.</param>
         /// 
         /// <returns>Returns a  RequestCancelWorkflowExecutionResult from SimpleWorkflow.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/RequestCancelWorkflowExecution">REST API Reference for RequestCancelWorkflowExecution Operation</seealso>
         RequestCancelWorkflowExecutionResponse EndRequestCancelWorkflowExecution(IAsyncResult asyncResult);
 
         #endregion
@@ -1884,6 +1956,7 @@ namespace Amazon.SimpleWorkflow
         /// (region or domain). This could happen if the named resource was never created or is
         /// no longer available for this operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/RespondActivityTaskCanceled">REST API Reference for RespondActivityTaskCanceled Operation</seealso>
         RespondActivityTaskCanceledResponse RespondActivityTaskCanceled(RespondActivityTaskCanceledRequest request);
 
         /// <summary>
@@ -1897,6 +1970,7 @@ namespace Amazon.SimpleWorkflow
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndRespondActivityTaskCanceled
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/RespondActivityTaskCanceled">REST API Reference for RespondActivityTaskCanceled Operation</seealso>
         IAsyncResult BeginRespondActivityTaskCanceled(RespondActivityTaskCanceledRequest request, AsyncCallback callback, object state);
 
 
@@ -1908,6 +1982,7 @@ namespace Amazon.SimpleWorkflow
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginRespondActivityTaskCanceled.</param>
         /// 
         /// <returns>Returns a  RespondActivityTaskCanceledResult from SimpleWorkflow.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/RespondActivityTaskCanceled">REST API Reference for RespondActivityTaskCanceled Operation</seealso>
         RespondActivityTaskCanceledResponse EndRespondActivityTaskCanceled(IAsyncResult asyncResult);
 
         #endregion
@@ -1964,6 +2039,7 @@ namespace Amazon.SimpleWorkflow
         /// (region or domain). This could happen if the named resource was never created or is
         /// no longer available for this operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/RespondActivityTaskCompleted">REST API Reference for RespondActivityTaskCompleted Operation</seealso>
         RespondActivityTaskCompletedResponse RespondActivityTaskCompleted(RespondActivityTaskCompletedRequest request);
 
         /// <summary>
@@ -1977,6 +2053,7 @@ namespace Amazon.SimpleWorkflow
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndRespondActivityTaskCompleted
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/RespondActivityTaskCompleted">REST API Reference for RespondActivityTaskCompleted Operation</seealso>
         IAsyncResult BeginRespondActivityTaskCompleted(RespondActivityTaskCompletedRequest request, AsyncCallback callback, object state);
 
 
@@ -1988,6 +2065,7 @@ namespace Amazon.SimpleWorkflow
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginRespondActivityTaskCompleted.</param>
         /// 
         /// <returns>Returns a  RespondActivityTaskCompletedResult from SimpleWorkflow.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/RespondActivityTaskCompleted">REST API Reference for RespondActivityTaskCompleted Operation</seealso>
         RespondActivityTaskCompletedResponse EndRespondActivityTaskCompleted(IAsyncResult asyncResult);
 
         #endregion
@@ -2041,6 +2119,7 @@ namespace Amazon.SimpleWorkflow
         /// (region or domain). This could happen if the named resource was never created or is
         /// no longer available for this operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/RespondActivityTaskFailed">REST API Reference for RespondActivityTaskFailed Operation</seealso>
         RespondActivityTaskFailedResponse RespondActivityTaskFailed(RespondActivityTaskFailedRequest request);
 
         /// <summary>
@@ -2054,6 +2133,7 @@ namespace Amazon.SimpleWorkflow
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndRespondActivityTaskFailed
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/RespondActivityTaskFailed">REST API Reference for RespondActivityTaskFailed Operation</seealso>
         IAsyncResult BeginRespondActivityTaskFailed(RespondActivityTaskFailedRequest request, AsyncCallback callback, object state);
 
 
@@ -2065,6 +2145,7 @@ namespace Amazon.SimpleWorkflow
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginRespondActivityTaskFailed.</param>
         /// 
         /// <returns>Returns a  RespondActivityTaskFailedResult from SimpleWorkflow.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/RespondActivityTaskFailed">REST API Reference for RespondActivityTaskFailed Operation</seealso>
         RespondActivityTaskFailedResponse EndRespondActivityTaskFailed(IAsyncResult asyncResult);
 
         #endregion
@@ -2108,6 +2189,7 @@ namespace Amazon.SimpleWorkflow
         /// (region or domain). This could happen if the named resource was never created or is
         /// no longer available for this operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/RespondDecisionTaskCompleted">REST API Reference for RespondDecisionTaskCompleted Operation</seealso>
         RespondDecisionTaskCompletedResponse RespondDecisionTaskCompleted(RespondDecisionTaskCompletedRequest request);
 
         /// <summary>
@@ -2121,6 +2203,7 @@ namespace Amazon.SimpleWorkflow
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndRespondDecisionTaskCompleted
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/RespondDecisionTaskCompleted">REST API Reference for RespondDecisionTaskCompleted Operation</seealso>
         IAsyncResult BeginRespondDecisionTaskCompleted(RespondDecisionTaskCompletedRequest request, AsyncCallback callback, object state);
 
 
@@ -2132,6 +2215,7 @@ namespace Amazon.SimpleWorkflow
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginRespondDecisionTaskCompleted.</param>
         /// 
         /// <returns>Returns a  RespondDecisionTaskCompletedResult from SimpleWorkflow.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/RespondDecisionTaskCompleted">REST API Reference for RespondDecisionTaskCompleted Operation</seealso>
         RespondDecisionTaskCompletedResponse EndRespondDecisionTaskCompleted(IAsyncResult asyncResult);
 
         #endregion
@@ -2180,6 +2264,7 @@ namespace Amazon.SimpleWorkflow
         /// (region or domain). This could happen if the named resource was never created or is
         /// no longer available for this operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/SignalWorkflowExecution">REST API Reference for SignalWorkflowExecution Operation</seealso>
         SignalWorkflowExecutionResponse SignalWorkflowExecution(SignalWorkflowExecutionRequest request);
 
         /// <summary>
@@ -2193,6 +2278,7 @@ namespace Amazon.SimpleWorkflow
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndSignalWorkflowExecution
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/SignalWorkflowExecution">REST API Reference for SignalWorkflowExecution Operation</seealso>
         IAsyncResult BeginSignalWorkflowExecution(SignalWorkflowExecutionRequest request, AsyncCallback callback, object state);
 
 
@@ -2204,6 +2290,7 @@ namespace Amazon.SimpleWorkflow
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginSignalWorkflowExecution.</param>
         /// 
         /// <returns>Returns a  SignalWorkflowExecutionResult from SimpleWorkflow.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/SignalWorkflowExecution">REST API Reference for SignalWorkflowExecution Operation</seealso>
         SignalWorkflowExecutionResponse EndSignalWorkflowExecution(IAsyncResult asyncResult);
 
         #endregion
@@ -2275,6 +2362,7 @@ namespace Amazon.SimpleWorkflow
         /// Returned by <a>StartWorkflowExecution</a> when an open execution with the same workflowId
         /// is already running in the specified domain.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/StartWorkflowExecution">REST API Reference for StartWorkflowExecution Operation</seealso>
         StartWorkflowExecutionResponse StartWorkflowExecution(StartWorkflowExecutionRequest request);
 
         /// <summary>
@@ -2288,6 +2376,7 @@ namespace Amazon.SimpleWorkflow
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStartWorkflowExecution
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/StartWorkflowExecution">REST API Reference for StartWorkflowExecution Operation</seealso>
         IAsyncResult BeginStartWorkflowExecution(StartWorkflowExecutionRequest request, AsyncCallback callback, object state);
 
 
@@ -2299,6 +2388,7 @@ namespace Amazon.SimpleWorkflow
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStartWorkflowExecution.</param>
         /// 
         /// <returns>Returns a  StartWorkflowExecutionResult from SimpleWorkflow.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/StartWorkflowExecution">REST API Reference for StartWorkflowExecution Operation</seealso>
         StartWorkflowExecutionResponse EndStartWorkflowExecution(IAsyncResult asyncResult);
 
         #endregion
@@ -2349,6 +2439,7 @@ namespace Amazon.SimpleWorkflow
         /// (region or domain). This could happen if the named resource was never created or is
         /// no longer available for this operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/TerminateWorkflowExecution">REST API Reference for TerminateWorkflowExecution Operation</seealso>
         TerminateWorkflowExecutionResponse TerminateWorkflowExecution(TerminateWorkflowExecutionRequest request);
 
         /// <summary>
@@ -2362,6 +2453,7 @@ namespace Amazon.SimpleWorkflow
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndTerminateWorkflowExecution
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/TerminateWorkflowExecution">REST API Reference for TerminateWorkflowExecution Operation</seealso>
         IAsyncResult BeginTerminateWorkflowExecution(TerminateWorkflowExecutionRequest request, AsyncCallback callback, object state);
 
 
@@ -2373,6 +2465,7 @@ namespace Amazon.SimpleWorkflow
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginTerminateWorkflowExecution.</param>
         /// 
         /// <returns>Returns a  TerminateWorkflowExecutionResult from SimpleWorkflow.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/TerminateWorkflowExecution">REST API Reference for TerminateWorkflowExecution Operation</seealso>
         TerminateWorkflowExecutionResponse EndTerminateWorkflowExecution(IAsyncResult asyncResult);
 
         #endregion

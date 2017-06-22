@@ -152,6 +152,7 @@ namespace Amazon.AWSSupport
         /// <exception cref="Amazon.AWSSupport.Model.InternalServerErrorException">
         /// An internal server error occurred.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/AddAttachmentsToSet">REST API Reference for AddAttachmentsToSet Operation</seealso>
         AddAttachmentsToSetResponse AddAttachmentsToSet(AddAttachmentsToSetRequest request);
 
         /// <summary>
@@ -165,6 +166,7 @@ namespace Amazon.AWSSupport
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAddAttachmentsToSet
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/AddAttachmentsToSet">REST API Reference for AddAttachmentsToSet Operation</seealso>
         IAsyncResult BeginAddAttachmentsToSet(AddAttachmentsToSetRequest request, AsyncCallback callback, object state);
 
 
@@ -176,6 +178,7 @@ namespace Amazon.AWSSupport
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAddAttachmentsToSet.</param>
         /// 
         /// <returns>Returns a  AddAttachmentsToSetResult from AWSSupport.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/AddAttachmentsToSet">REST API Reference for AddAttachmentsToSet Operation</seealso>
         AddAttachmentsToSetResponse EndAddAttachmentsToSet(IAsyncResult asyncResult);
 
         #endregion
@@ -214,6 +217,7 @@ namespace Amazon.AWSSupport
         /// <exception cref="Amazon.AWSSupport.Model.InternalServerErrorException">
         /// An internal server error occurred.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/AddCommunicationToCase">REST API Reference for AddCommunicationToCase Operation</seealso>
         AddCommunicationToCaseResponse AddCommunicationToCase(AddCommunicationToCaseRequest request);
 
         /// <summary>
@@ -227,6 +231,7 @@ namespace Amazon.AWSSupport
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAddCommunicationToCase
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/AddCommunicationToCase">REST API Reference for AddCommunicationToCase Operation</seealso>
         IAsyncResult BeginAddCommunicationToCase(AddCommunicationToCaseRequest request, AsyncCallback callback, object state);
 
 
@@ -238,6 +243,7 @@ namespace Amazon.AWSSupport
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAddCommunicationToCase.</param>
         /// 
         /// <returns>Returns a  AddCommunicationToCaseResult from AWSSupport.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/AddCommunicationToCase">REST API Reference for AddCommunicationToCase Operation</seealso>
         AddCommunicationToCaseResponse EndAddCommunicationToCase(IAsyncResult asyncResult);
 
         #endregion
@@ -329,6 +335,7 @@ namespace Amazon.AWSSupport
         /// <exception cref="Amazon.AWSSupport.Model.InternalServerErrorException">
         /// An internal server error occurred.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/CreateCase">REST API Reference for CreateCase Operation</seealso>
         CreateCaseResponse CreateCase(CreateCaseRequest request);
 
         /// <summary>
@@ -342,6 +349,7 @@ namespace Amazon.AWSSupport
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateCase
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/CreateCase">REST API Reference for CreateCase Operation</seealso>
         IAsyncResult BeginCreateCase(CreateCaseRequest request, AsyncCallback callback, object state);
 
 
@@ -353,6 +361,7 @@ namespace Amazon.AWSSupport
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateCase.</param>
         /// 
         /// <returns>Returns a  CreateCaseResult from AWSSupport.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/CreateCase">REST API Reference for CreateCase Operation</seealso>
         CreateCaseResponse EndCreateCase(IAsyncResult asyncResult);
 
         #endregion
@@ -379,6 +388,7 @@ namespace Amazon.AWSSupport
         /// <exception cref="Amazon.AWSSupport.Model.InternalServerErrorException">
         /// An internal server error occurred.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/DescribeAttachment">REST API Reference for DescribeAttachment Operation</seealso>
         DescribeAttachmentResponse DescribeAttachment(DescribeAttachmentRequest request);
 
         /// <summary>
@@ -392,6 +402,7 @@ namespace Amazon.AWSSupport
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeAttachment
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/DescribeAttachment">REST API Reference for DescribeAttachment Operation</seealso>
         IAsyncResult BeginDescribeAttachment(DescribeAttachmentRequest request, AsyncCallback callback, object state);
 
 
@@ -403,6 +414,7 @@ namespace Amazon.AWSSupport
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeAttachment.</param>
         /// 
         /// <returns>Returns a  DescribeAttachmentResult from AWSSupport.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/DescribeAttachment">REST API Reference for DescribeAttachment Operation</seealso>
         DescribeAttachmentResponse EndDescribeAttachment(IAsyncResult asyncResult);
 
         #endregion
@@ -446,6 +458,7 @@ namespace Amazon.AWSSupport
         /// <exception cref="Amazon.AWSSupport.Model.InternalServerErrorException">
         /// An internal server error occurred.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/DescribeCases">REST API Reference for DescribeCases Operation</seealso>
         DescribeCasesResponse DescribeCases(DescribeCasesRequest request);
 
         /// <summary>
@@ -459,6 +472,7 @@ namespace Amazon.AWSSupport
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeCases
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/DescribeCases">REST API Reference for DescribeCases Operation</seealso>
         IAsyncResult BeginDescribeCases(DescribeCasesRequest request, AsyncCallback callback, object state);
 
 
@@ -470,6 +484,7 @@ namespace Amazon.AWSSupport
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeCases.</param>
         /// 
         /// <returns>Returns a  DescribeCasesResult from AWSSupport.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/DescribeCases">REST API Reference for DescribeCases Operation</seealso>
         DescribeCasesResponse EndDescribeCases(IAsyncResult asyncResult);
 
         #endregion
@@ -505,6 +520,7 @@ namespace Amazon.AWSSupport
         /// <exception cref="Amazon.AWSSupport.Model.InternalServerErrorException">
         /// An internal server error occurred.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/DescribeCommunications">REST API Reference for DescribeCommunications Operation</seealso>
         DescribeCommunicationsResponse DescribeCommunications(DescribeCommunicationsRequest request);
 
         /// <summary>
@@ -518,6 +534,7 @@ namespace Amazon.AWSSupport
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeCommunications
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/DescribeCommunications">REST API Reference for DescribeCommunications Operation</seealso>
         IAsyncResult BeginDescribeCommunications(DescribeCommunicationsRequest request, AsyncCallback callback, object state);
 
 
@@ -529,6 +546,7 @@ namespace Amazon.AWSSupport
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeCommunications.</param>
         /// 
         /// <returns>Returns a  DescribeCommunicationsResult from AWSSupport.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/DescribeCommunications">REST API Reference for DescribeCommunications Operation</seealso>
         DescribeCommunicationsResponse EndDescribeCommunications(IAsyncResult asyncResult);
 
         #endregion
@@ -557,6 +575,7 @@ namespace Amazon.AWSSupport
         /// <exception cref="Amazon.AWSSupport.Model.InternalServerErrorException">
         /// An internal server error occurred.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/DescribeServices">REST API Reference for DescribeServices Operation</seealso>
         DescribeServicesResponse DescribeServices();
 
         /// <summary>
@@ -581,6 +600,7 @@ namespace Amazon.AWSSupport
         /// <exception cref="Amazon.AWSSupport.Model.InternalServerErrorException">
         /// An internal server error occurred.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/DescribeServices">REST API Reference for DescribeServices Operation</seealso>
         DescribeServicesResponse DescribeServices(DescribeServicesRequest request);
 
         /// <summary>
@@ -594,6 +614,7 @@ namespace Amazon.AWSSupport
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeServices
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/DescribeServices">REST API Reference for DescribeServices Operation</seealso>
         IAsyncResult BeginDescribeServices(DescribeServicesRequest request, AsyncCallback callback, object state);
 
 
@@ -605,6 +626,7 @@ namespace Amazon.AWSSupport
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeServices.</param>
         /// 
         /// <returns>Returns a  DescribeServicesResult from AWSSupport.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/DescribeServices">REST API Reference for DescribeServices Operation</seealso>
         DescribeServicesResponse EndDescribeServices(IAsyncResult asyncResult);
 
         #endregion
@@ -622,6 +644,7 @@ namespace Amazon.AWSSupport
         /// <exception cref="Amazon.AWSSupport.Model.InternalServerErrorException">
         /// An internal server error occurred.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/DescribeSeverityLevels">REST API Reference for DescribeSeverityLevels Operation</seealso>
         DescribeSeverityLevelsResponse DescribeSeverityLevels();
 
         /// <summary>
@@ -635,6 +658,7 @@ namespace Amazon.AWSSupport
         /// <exception cref="Amazon.AWSSupport.Model.InternalServerErrorException">
         /// An internal server error occurred.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/DescribeSeverityLevels">REST API Reference for DescribeSeverityLevels Operation</seealso>
         DescribeSeverityLevelsResponse DescribeSeverityLevels(DescribeSeverityLevelsRequest request);
 
         /// <summary>
@@ -648,6 +672,7 @@ namespace Amazon.AWSSupport
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeSeverityLevels
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/DescribeSeverityLevels">REST API Reference for DescribeSeverityLevels Operation</seealso>
         IAsyncResult BeginDescribeSeverityLevels(DescribeSeverityLevelsRequest request, AsyncCallback callback, object state);
 
 
@@ -659,6 +684,7 @@ namespace Amazon.AWSSupport
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeSeverityLevels.</param>
         /// 
         /// <returns>Returns a  DescribeSeverityLevelsResult from AWSSupport.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/DescribeSeverityLevels">REST API Reference for DescribeSeverityLevels Operation</seealso>
         DescribeSeverityLevelsResponse EndDescribeSeverityLevels(IAsyncResult asyncResult);
 
         #endregion
@@ -684,6 +710,7 @@ namespace Amazon.AWSSupport
         /// <exception cref="Amazon.AWSSupport.Model.InternalServerErrorException">
         /// An internal server error occurred.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/DescribeTrustedAdvisorCheckRefreshStatuses">REST API Reference for DescribeTrustedAdvisorCheckRefreshStatuses Operation</seealso>
         DescribeTrustedAdvisorCheckRefreshStatusesResponse DescribeTrustedAdvisorCheckRefreshStatuses(DescribeTrustedAdvisorCheckRefreshStatusesRequest request);
 
         /// <summary>
@@ -697,6 +724,7 @@ namespace Amazon.AWSSupport
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeTrustedAdvisorCheckRefreshStatuses
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/DescribeTrustedAdvisorCheckRefreshStatuses">REST API Reference for DescribeTrustedAdvisorCheckRefreshStatuses Operation</seealso>
         IAsyncResult BeginDescribeTrustedAdvisorCheckRefreshStatuses(DescribeTrustedAdvisorCheckRefreshStatusesRequest request, AsyncCallback callback, object state);
 
 
@@ -708,6 +736,7 @@ namespace Amazon.AWSSupport
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeTrustedAdvisorCheckRefreshStatuses.</param>
         /// 
         /// <returns>Returns a  DescribeTrustedAdvisorCheckRefreshStatusesResult from AWSSupport.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/DescribeTrustedAdvisorCheckRefreshStatuses">REST API Reference for DescribeTrustedAdvisorCheckRefreshStatuses Operation</seealso>
         DescribeTrustedAdvisorCheckRefreshStatusesResponse EndDescribeTrustedAdvisorCheckRefreshStatuses(IAsyncResult asyncResult);
 
         #endregion
@@ -761,6 +790,7 @@ namespace Amazon.AWSSupport
         /// <exception cref="Amazon.AWSSupport.Model.InternalServerErrorException">
         /// An internal server error occurred.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/DescribeTrustedAdvisorCheckResult">REST API Reference for DescribeTrustedAdvisorCheckResult Operation</seealso>
         DescribeTrustedAdvisorCheckResultResponse DescribeTrustedAdvisorCheckResult(DescribeTrustedAdvisorCheckResultRequest request);
 
         /// <summary>
@@ -774,6 +804,7 @@ namespace Amazon.AWSSupport
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeTrustedAdvisorCheckResult
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/DescribeTrustedAdvisorCheckResult">REST API Reference for DescribeTrustedAdvisorCheckResult Operation</seealso>
         IAsyncResult BeginDescribeTrustedAdvisorCheckResult(DescribeTrustedAdvisorCheckResultRequest request, AsyncCallback callback, object state);
 
 
@@ -785,6 +816,7 @@ namespace Amazon.AWSSupport
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeTrustedAdvisorCheckResult.</param>
         /// 
         /// <returns>Returns a  DescribeTrustedAdvisorCheckResultResult from AWSSupport.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/DescribeTrustedAdvisorCheckResult">REST API Reference for DescribeTrustedAdvisorCheckResult Operation</seealso>
         DescribeTrustedAdvisorCheckResultResponse EndDescribeTrustedAdvisorCheckResult(IAsyncResult asyncResult);
 
         #endregion
@@ -804,6 +836,7 @@ namespace Amazon.AWSSupport
         /// <exception cref="Amazon.AWSSupport.Model.InternalServerErrorException">
         /// An internal server error occurred.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/DescribeTrustedAdvisorChecks">REST API Reference for DescribeTrustedAdvisorChecks Operation</seealso>
         DescribeTrustedAdvisorChecksResponse DescribeTrustedAdvisorChecks(DescribeTrustedAdvisorChecksRequest request);
 
         /// <summary>
@@ -817,6 +850,7 @@ namespace Amazon.AWSSupport
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeTrustedAdvisorChecks
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/DescribeTrustedAdvisorChecks">REST API Reference for DescribeTrustedAdvisorChecks Operation</seealso>
         IAsyncResult BeginDescribeTrustedAdvisorChecks(DescribeTrustedAdvisorChecksRequest request, AsyncCallback callback, object state);
 
 
@@ -828,6 +862,7 @@ namespace Amazon.AWSSupport
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeTrustedAdvisorChecks.</param>
         /// 
         /// <returns>Returns a  DescribeTrustedAdvisorChecksResult from AWSSupport.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/DescribeTrustedAdvisorChecks">REST API Reference for DescribeTrustedAdvisorChecks Operation</seealso>
         DescribeTrustedAdvisorChecksResponse EndDescribeTrustedAdvisorChecks(IAsyncResult asyncResult);
 
         #endregion
@@ -850,6 +885,7 @@ namespace Amazon.AWSSupport
         /// <exception cref="Amazon.AWSSupport.Model.InternalServerErrorException">
         /// An internal server error occurred.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/DescribeTrustedAdvisorCheckSummaries">REST API Reference for DescribeTrustedAdvisorCheckSummaries Operation</seealso>
         DescribeTrustedAdvisorCheckSummariesResponse DescribeTrustedAdvisorCheckSummaries(DescribeTrustedAdvisorCheckSummariesRequest request);
 
         /// <summary>
@@ -863,6 +899,7 @@ namespace Amazon.AWSSupport
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeTrustedAdvisorCheckSummaries
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/DescribeTrustedAdvisorCheckSummaries">REST API Reference for DescribeTrustedAdvisorCheckSummaries Operation</seealso>
         IAsyncResult BeginDescribeTrustedAdvisorCheckSummaries(DescribeTrustedAdvisorCheckSummariesRequest request, AsyncCallback callback, object state);
 
 
@@ -874,6 +911,7 @@ namespace Amazon.AWSSupport
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeTrustedAdvisorCheckSummaries.</param>
         /// 
         /// <returns>Returns a  DescribeTrustedAdvisorCheckSummariesResult from AWSSupport.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/DescribeTrustedAdvisorCheckSummaries">REST API Reference for DescribeTrustedAdvisorCheckSummaries Operation</seealso>
         DescribeTrustedAdvisorCheckSummariesResponse EndDescribeTrustedAdvisorCheckSummaries(IAsyncResult asyncResult);
 
         #endregion
@@ -918,6 +956,7 @@ namespace Amazon.AWSSupport
         /// <exception cref="Amazon.AWSSupport.Model.InternalServerErrorException">
         /// An internal server error occurred.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/RefreshTrustedAdvisorCheck">REST API Reference for RefreshTrustedAdvisorCheck Operation</seealso>
         RefreshTrustedAdvisorCheckResponse RefreshTrustedAdvisorCheck(RefreshTrustedAdvisorCheckRequest request);
 
         /// <summary>
@@ -931,6 +970,7 @@ namespace Amazon.AWSSupport
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndRefreshTrustedAdvisorCheck
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/RefreshTrustedAdvisorCheck">REST API Reference for RefreshTrustedAdvisorCheck Operation</seealso>
         IAsyncResult BeginRefreshTrustedAdvisorCheck(RefreshTrustedAdvisorCheckRequest request, AsyncCallback callback, object state);
 
 
@@ -942,6 +982,7 @@ namespace Amazon.AWSSupport
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginRefreshTrustedAdvisorCheck.</param>
         /// 
         /// <returns>Returns a  RefreshTrustedAdvisorCheckResult from AWSSupport.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/RefreshTrustedAdvisorCheck">REST API Reference for RefreshTrustedAdvisorCheck Operation</seealso>
         RefreshTrustedAdvisorCheckResponse EndRefreshTrustedAdvisorCheck(IAsyncResult asyncResult);
 
         #endregion
@@ -962,6 +1003,7 @@ namespace Amazon.AWSSupport
         /// <exception cref="Amazon.AWSSupport.Model.InternalServerErrorException">
         /// An internal server error occurred.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/ResolveCase">REST API Reference for ResolveCase Operation</seealso>
         ResolveCaseResponse ResolveCase(ResolveCaseRequest request);
 
         /// <summary>
@@ -975,6 +1017,7 @@ namespace Amazon.AWSSupport
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndResolveCase
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/ResolveCase">REST API Reference for ResolveCase Operation</seealso>
         IAsyncResult BeginResolveCase(ResolveCaseRequest request, AsyncCallback callback, object state);
 
 
@@ -986,6 +1029,7 @@ namespace Amazon.AWSSupport
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginResolveCase.</param>
         /// 
         /// <returns>Returns a  ResolveCaseResult from AWSSupport.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/ResolveCase">REST API Reference for ResolveCase Operation</seealso>
         ResolveCaseResponse EndResolveCase(IAsyncResult asyncResult);
 
         #endregion

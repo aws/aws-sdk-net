@@ -69,6 +69,7 @@ namespace Amazon.CognitoSync
         /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
         /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-sync-2014-06-30/BulkPublish">REST API Reference for BulkPublish Operation</seealso>
         void BulkPublishAsync(BulkPublishRequest request, AmazonServiceCallback<BulkPublishRequest, BulkPublishResponse> callback, AsyncOptions options = null);
 
 
@@ -85,6 +86,7 @@ namespace Amazon.CognitoSync
         /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
         /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-sync-2014-06-30/DeleteDataset">REST API Reference for DeleteDataset Operation</seealso>
         void DeleteDatasetAsync(DeleteDatasetRequest request, AmazonServiceCallback<DeleteDatasetRequest, DeleteDatasetResponse> callback, AsyncOptions options = null);
 
 
@@ -101,6 +103,7 @@ namespace Amazon.CognitoSync
         /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
         /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-sync-2014-06-30/DescribeDataset">REST API Reference for DescribeDataset Operation</seealso>
         void DescribeDatasetAsync(DescribeDatasetRequest request, AmazonServiceCallback<DescribeDatasetRequest, DescribeDatasetResponse> callback, AsyncOptions options = null);
 
 
@@ -141,6 +144,7 @@ namespace Amazon.CognitoSync
         /// <exception cref="Amazon.CognitoSync.Model.TooManyRequestsException">
         /// Thrown if the request is throttled.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-sync-2014-06-30/DescribeIdentityPoolUsage">REST API Reference for DescribeIdentityPoolUsage Operation</seealso>
         void DescribeIdentityPoolUsageAsync(string identityPoolId,  AmazonServiceCallback<DescribeIdentityPoolUsageRequest, DescribeIdentityPoolUsageResponse> callback, AsyncOptions options = null);
 
         /// <summary>
@@ -151,6 +155,7 @@ namespace Amazon.CognitoSync
         /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
         /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-sync-2014-06-30/DescribeIdentityPoolUsage">REST API Reference for DescribeIdentityPoolUsage Operation</seealso>
         void DescribeIdentityPoolUsageAsync(DescribeIdentityPoolUsageRequest request, AmazonServiceCallback<DescribeIdentityPoolUsageRequest, DescribeIdentityPoolUsageResponse> callback, AsyncOptions options = null);
 
 
@@ -167,6 +172,7 @@ namespace Amazon.CognitoSync
         /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
         /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-sync-2014-06-30/DescribeIdentityUsage">REST API Reference for DescribeIdentityUsage Operation</seealso>
         void DescribeIdentityUsageAsync(DescribeIdentityUsageRequest request, AmazonServiceCallback<DescribeIdentityUsageRequest, DescribeIdentityUsageResponse> callback, AsyncOptions options = null);
 
 
@@ -183,6 +189,7 @@ namespace Amazon.CognitoSync
         /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
         /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-sync-2014-06-30/GetBulkPublishDetails">REST API Reference for GetBulkPublishDetails Operation</seealso>
         void GetBulkPublishDetailsAsync(GetBulkPublishDetailsRequest request, AmazonServiceCallback<GetBulkPublishDetailsRequest, GetBulkPublishDetailsResponse> callback, AsyncOptions options = null);
 
 
@@ -199,6 +206,7 @@ namespace Amazon.CognitoSync
         /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
         /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-sync-2014-06-30/GetCognitoEvents">REST API Reference for GetCognitoEvents Operation</seealso>
         void GetCognitoEventsAsync(GetCognitoEventsRequest request, AmazonServiceCallback<GetCognitoEventsRequest, GetCognitoEventsResponse> callback, AsyncOptions options = null);
 
 
@@ -239,6 +247,7 @@ namespace Amazon.CognitoSync
         /// <exception cref="Amazon.CognitoSync.Model.TooManyRequestsException">
         /// Thrown if the request is throttled.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-sync-2014-06-30/GetIdentityPoolConfiguration">REST API Reference for GetIdentityPoolConfiguration Operation</seealso>
         void GetIdentityPoolConfigurationAsync(string identityPoolId,  AmazonServiceCallback<GetIdentityPoolConfigurationRequest, GetIdentityPoolConfigurationResponse> callback, AsyncOptions options = null);
 
         /// <summary>
@@ -249,6 +258,7 @@ namespace Amazon.CognitoSync
         /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
         /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-sync-2014-06-30/GetIdentityPoolConfiguration">REST API Reference for GetIdentityPoolConfiguration Operation</seealso>
         void GetIdentityPoolConfigurationAsync(GetIdentityPoolConfigurationRequest request, AmazonServiceCallback<GetIdentityPoolConfigurationRequest, GetIdentityPoolConfigurationResponse> callback, AsyncOptions options = null);
 
 
@@ -265,6 +275,7 @@ namespace Amazon.CognitoSync
         /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
         /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-sync-2014-06-30/ListDatasets">REST API Reference for ListDatasets Operation</seealso>
         void ListDatasetsAsync(ListDatasetsRequest request, AmazonServiceCallback<ListDatasetsRequest, ListDatasetsResponse> callback, AsyncOptions options = null);
 
 
@@ -281,6 +292,7 @@ namespace Amazon.CognitoSync
         /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
         /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-sync-2014-06-30/ListIdentityPoolUsage">REST API Reference for ListIdentityPoolUsage Operation</seealso>
         void ListIdentityPoolUsageAsync(ListIdentityPoolUsageRequest request, AmazonServiceCallback<ListIdentityPoolUsageRequest, ListIdentityPoolUsageResponse> callback, AsyncOptions options = null);
 
 
@@ -297,6 +309,7 @@ namespace Amazon.CognitoSync
         /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
         /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-sync-2014-06-30/ListRecords">REST API Reference for ListRecords Operation</seealso>
         void ListRecordsAsync(ListRecordsRequest request, AmazonServiceCallback<ListRecordsRequest, ListRecordsResponse> callback, AsyncOptions options = null);
 
 
@@ -313,6 +326,7 @@ namespace Amazon.CognitoSync
         /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
         /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-sync-2014-06-30/RegisterDevice">REST API Reference for RegisterDevice Operation</seealso>
         void RegisterDeviceAsync(RegisterDeviceRequest request, AmazonServiceCallback<RegisterDeviceRequest, RegisterDeviceResponse> callback, AsyncOptions options = null);
 
 
@@ -329,6 +343,7 @@ namespace Amazon.CognitoSync
         /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
         /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-sync-2014-06-30/SetCognitoEvents">REST API Reference for SetCognitoEvents Operation</seealso>
         void SetCognitoEventsAsync(SetCognitoEventsRequest request, AmazonServiceCallback<SetCognitoEventsRequest, SetCognitoEventsResponse> callback, AsyncOptions options = null);
 
 
@@ -345,6 +360,7 @@ namespace Amazon.CognitoSync
         /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
         /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-sync-2014-06-30/SetIdentityPoolConfiguration">REST API Reference for SetIdentityPoolConfiguration Operation</seealso>
         void SetIdentityPoolConfigurationAsync(SetIdentityPoolConfigurationRequest request, AmazonServiceCallback<SetIdentityPoolConfigurationRequest, SetIdentityPoolConfigurationResponse> callback, AsyncOptions options = null);
 
 
@@ -361,6 +377,7 @@ namespace Amazon.CognitoSync
         /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
         /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-sync-2014-06-30/SubscribeToDataset">REST API Reference for SubscribeToDataset Operation</seealso>
         void SubscribeToDatasetAsync(SubscribeToDatasetRequest request, AmazonServiceCallback<SubscribeToDatasetRequest, SubscribeToDatasetResponse> callback, AsyncOptions options = null);
 
 
@@ -377,6 +394,7 @@ namespace Amazon.CognitoSync
         /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
         /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-sync-2014-06-30/UnsubscribeFromDataset">REST API Reference for UnsubscribeFromDataset Operation</seealso>
         void UnsubscribeFromDatasetAsync(UnsubscribeFromDatasetRequest request, AmazonServiceCallback<UnsubscribeFromDatasetRequest, UnsubscribeFromDatasetResponse> callback, AsyncOptions options = null);
 
 
@@ -393,6 +411,7 @@ namespace Amazon.CognitoSync
         /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
         /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-sync-2014-06-30/UpdateRecords">REST API Reference for UpdateRecords Operation</seealso>
         void UpdateRecordsAsync(UpdateRecordsRequest request, AmazonServiceCallback<UpdateRecordsRequest, UpdateRecordsResponse> callback, AsyncOptions options = null);
 
 

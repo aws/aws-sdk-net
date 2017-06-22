@@ -652,6 +652,8 @@ namespace ServiceClientGenerator
             "glacier",
             "importexport",
             "iot-data",
+            "mobileanalytics",
+            "pinpoint",
             "s3",
             "sdb",
             "xray",

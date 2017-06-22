@@ -81,6 +81,7 @@ namespace Amazon.SimpleNotificationService
         /// <exception cref="Amazon.SimpleNotificationService.Model.NotFoundException">
         /// Indicates that the requested resource does not exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/AddPermission">REST API Reference for AddPermission Operation</seealso>
         void AddPermissionAsync(string topicArn, string label, List<string> awsAccountId, List<string> actionName,  AmazonServiceCallback<AddPermissionRequest, AddPermissionResponse> callback, AsyncOptions options = null);
 
         /// <summary>
@@ -91,6 +92,7 @@ namespace Amazon.SimpleNotificationService
         /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
         /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/AddPermission">REST API Reference for AddPermission Operation</seealso>
         void AddPermissionAsync(AddPermissionRequest request, AmazonServiceCallback<AddPermissionRequest, AddPermissionResponse> callback, AsyncOptions options = null);
 
 
@@ -107,6 +109,7 @@ namespace Amazon.SimpleNotificationService
         /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
         /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/CheckIfPhoneNumberIsOptedOut">REST API Reference for CheckIfPhoneNumberIsOptedOut Operation</seealso>
         void CheckIfPhoneNumberIsOptedOutAsync(CheckIfPhoneNumberIsOptedOutRequest request, AmazonServiceCallback<CheckIfPhoneNumberIsOptedOutRequest, CheckIfPhoneNumberIsOptedOutResponse> callback, AsyncOptions options = null);
 
 
@@ -147,6 +150,7 @@ namespace Amazon.SimpleNotificationService
         /// <exception cref="Amazon.SimpleNotificationService.Model.SubscriptionLimitExceededException">
         /// Indicates that the customer already owns the maximum allowed number of subscriptions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/ConfirmSubscription">REST API Reference for ConfirmSubscription Operation</seealso>
         void ConfirmSubscriptionAsync(string topicArn, string token, string authenticateOnUnsubscribe,  AmazonServiceCallback<ConfirmSubscriptionRequest, ConfirmSubscriptionResponse> callback, AsyncOptions options = null);
 
         /// <summary>
@@ -180,6 +184,7 @@ namespace Amazon.SimpleNotificationService
         /// <exception cref="Amazon.SimpleNotificationService.Model.SubscriptionLimitExceededException">
         /// Indicates that the customer already owns the maximum allowed number of subscriptions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/ConfirmSubscription">REST API Reference for ConfirmSubscription Operation</seealso>
         void ConfirmSubscriptionAsync(string topicArn, string token,  AmazonServiceCallback<ConfirmSubscriptionRequest, ConfirmSubscriptionResponse> callback, AsyncOptions options = null);
 
         /// <summary>
@@ -190,6 +195,7 @@ namespace Amazon.SimpleNotificationService
         /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
         /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/ConfirmSubscription">REST API Reference for ConfirmSubscription Operation</seealso>
         void ConfirmSubscriptionAsync(ConfirmSubscriptionRequest request, AmazonServiceCallback<ConfirmSubscriptionRequest, ConfirmSubscriptionResponse> callback, AsyncOptions options = null);
 
 
@@ -206,6 +212,7 @@ namespace Amazon.SimpleNotificationService
         /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
         /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/CreatePlatformApplication">REST API Reference for CreatePlatformApplication Operation</seealso>
         void CreatePlatformApplicationAsync(CreatePlatformApplicationRequest request, AmazonServiceCallback<CreatePlatformApplicationRequest, CreatePlatformApplicationResponse> callback, AsyncOptions options = null);
 
 
@@ -222,6 +229,7 @@ namespace Amazon.SimpleNotificationService
         /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
         /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/CreatePlatformEndpoint">REST API Reference for CreatePlatformEndpoint Operation</seealso>
         void CreatePlatformEndpointAsync(CreatePlatformEndpointRequest request, AmazonServiceCallback<CreatePlatformEndpointRequest, CreatePlatformEndpointResponse> callback, AsyncOptions options = null);
 
 
@@ -256,6 +264,7 @@ namespace Amazon.SimpleNotificationService
         /// <exception cref="Amazon.SimpleNotificationService.Model.TopicLimitExceededException">
         /// Indicates that the customer already owns the maximum allowed number of topics.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/CreateTopic">REST API Reference for CreateTopic Operation</seealso>
         void CreateTopicAsync(string name,  AmazonServiceCallback<CreateTopicRequest, CreateTopicResponse> callback, AsyncOptions options = null);
 
         /// <summary>
@@ -266,6 +275,7 @@ namespace Amazon.SimpleNotificationService
         /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
         /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/CreateTopic">REST API Reference for CreateTopic Operation</seealso>
         void CreateTopicAsync(CreateTopicRequest request, AmazonServiceCallback<CreateTopicRequest, CreateTopicResponse> callback, AsyncOptions options = null);
 
 
@@ -282,6 +292,7 @@ namespace Amazon.SimpleNotificationService
         /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
         /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/DeleteEndpoint">REST API Reference for DeleteEndpoint Operation</seealso>
         void DeleteEndpointAsync(DeleteEndpointRequest request, AmazonServiceCallback<DeleteEndpointRequest, DeleteEndpointResponse> callback, AsyncOptions options = null);
 
 
@@ -298,6 +309,7 @@ namespace Amazon.SimpleNotificationService
         /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
         /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/DeletePlatformApplication">REST API Reference for DeletePlatformApplication Operation</seealso>
         void DeletePlatformApplicationAsync(DeletePlatformApplicationRequest request, AmazonServiceCallback<DeletePlatformApplicationRequest, DeletePlatformApplicationResponse> callback, AsyncOptions options = null);
 
 
@@ -331,6 +343,7 @@ namespace Amazon.SimpleNotificationService
         /// <exception cref="Amazon.SimpleNotificationService.Model.NotFoundException">
         /// Indicates that the requested resource does not exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/DeleteTopic">REST API Reference for DeleteTopic Operation</seealso>
         void DeleteTopicAsync(string topicArn,  AmazonServiceCallback<DeleteTopicRequest, DeleteTopicResponse> callback, AsyncOptions options = null);
 
         /// <summary>
@@ -341,6 +354,7 @@ namespace Amazon.SimpleNotificationService
         /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
         /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/DeleteTopic">REST API Reference for DeleteTopic Operation</seealso>
         void DeleteTopicAsync(DeleteTopicRequest request, AmazonServiceCallback<DeleteTopicRequest, DeleteTopicResponse> callback, AsyncOptions options = null);
 
 
@@ -357,6 +371,7 @@ namespace Amazon.SimpleNotificationService
         /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
         /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/GetEndpointAttributes">REST API Reference for GetEndpointAttributes Operation</seealso>
         void GetEndpointAttributesAsync(GetEndpointAttributesRequest request, AmazonServiceCallback<GetEndpointAttributesRequest, GetEndpointAttributesResponse> callback, AsyncOptions options = null);
 
 
@@ -373,6 +388,7 @@ namespace Amazon.SimpleNotificationService
         /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
         /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/GetPlatformApplicationAttributes">REST API Reference for GetPlatformApplicationAttributes Operation</seealso>
         void GetPlatformApplicationAttributesAsync(GetPlatformApplicationAttributesRequest request, AmazonServiceCallback<GetPlatformApplicationAttributesRequest, GetPlatformApplicationAttributesResponse> callback, AsyncOptions options = null);
 
 
@@ -389,6 +405,7 @@ namespace Amazon.SimpleNotificationService
         /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
         /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/GetSMSAttributes">REST API Reference for GetSMSAttributes Operation</seealso>
         void GetSMSAttributesAsync(GetSMSAttributesRequest request, AmazonServiceCallback<GetSMSAttributesRequest, GetSMSAttributesResponse> callback, AsyncOptions options = null);
 
 
@@ -420,6 +437,7 @@ namespace Amazon.SimpleNotificationService
         /// <exception cref="Amazon.SimpleNotificationService.Model.NotFoundException">
         /// Indicates that the requested resource does not exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/GetSubscriptionAttributes">REST API Reference for GetSubscriptionAttributes Operation</seealso>
         void GetSubscriptionAttributesAsync(string subscriptionArn,  AmazonServiceCallback<GetSubscriptionAttributesRequest, GetSubscriptionAttributesResponse> callback, AsyncOptions options = null);
 
         /// <summary>
@@ -430,6 +448,7 @@ namespace Amazon.SimpleNotificationService
         /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
         /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/GetSubscriptionAttributes">REST API Reference for GetSubscriptionAttributes Operation</seealso>
         void GetSubscriptionAttributesAsync(GetSubscriptionAttributesRequest request, AmazonServiceCallback<GetSubscriptionAttributesRequest, GetSubscriptionAttributesResponse> callback, AsyncOptions options = null);
 
 
@@ -462,6 +481,7 @@ namespace Amazon.SimpleNotificationService
         /// <exception cref="Amazon.SimpleNotificationService.Model.NotFoundException">
         /// Indicates that the requested resource does not exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/GetTopicAttributes">REST API Reference for GetTopicAttributes Operation</seealso>
         void GetTopicAttributesAsync(string topicArn,  AmazonServiceCallback<GetTopicAttributesRequest, GetTopicAttributesResponse> callback, AsyncOptions options = null);
 
         /// <summary>
@@ -472,6 +492,7 @@ namespace Amazon.SimpleNotificationService
         /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
         /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/GetTopicAttributes">REST API Reference for GetTopicAttributes Operation</seealso>
         void GetTopicAttributesAsync(GetTopicAttributesRequest request, AmazonServiceCallback<GetTopicAttributesRequest, GetTopicAttributesResponse> callback, AsyncOptions options = null);
 
 
@@ -488,6 +509,7 @@ namespace Amazon.SimpleNotificationService
         /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
         /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/ListEndpointsByPlatformApplication">REST API Reference for ListEndpointsByPlatformApplication Operation</seealso>
         void ListEndpointsByPlatformApplicationAsync(ListEndpointsByPlatformApplicationRequest request, AmazonServiceCallback<ListEndpointsByPlatformApplicationRequest, ListEndpointsByPlatformApplicationResponse> callback, AsyncOptions options = null);
 
 
@@ -504,6 +526,7 @@ namespace Amazon.SimpleNotificationService
         /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
         /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/ListPhoneNumbersOptedOut">REST API Reference for ListPhoneNumbersOptedOut Operation</seealso>
         void ListPhoneNumbersOptedOutAsync(ListPhoneNumbersOptedOutRequest request, AmazonServiceCallback<ListPhoneNumbersOptedOutRequest, ListPhoneNumbersOptedOutResponse> callback, AsyncOptions options = null);
 
 
@@ -520,6 +543,7 @@ namespace Amazon.SimpleNotificationService
         /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
         /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/ListPlatformApplications">REST API Reference for ListPlatformApplications Operation</seealso>
         void ListPlatformApplicationsAsync(ListPlatformApplicationsRequest request, AmazonServiceCallback<ListPlatformApplicationsRequest, ListPlatformApplicationsResponse> callback, AsyncOptions options = null);
 
 
@@ -551,6 +575,7 @@ namespace Amazon.SimpleNotificationService
         /// <exception cref="Amazon.SimpleNotificationService.Model.InvalidParameterException">
         /// Indicates that a request parameter does not comply with the associated constraints.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/ListSubscriptions">REST API Reference for ListSubscriptions Operation</seealso>
         void ListSubscriptionsAsync(string nextToken,  AmazonServiceCallback<ListSubscriptionsRequest, ListSubscriptionsResponse> callback, AsyncOptions options = null);
 
         /// <summary>
@@ -561,6 +586,7 @@ namespace Amazon.SimpleNotificationService
         /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
         /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/ListSubscriptions">REST API Reference for ListSubscriptions Operation</seealso>
         void ListSubscriptionsAsync(ListSubscriptionsRequest request, AmazonServiceCallback<ListSubscriptionsRequest, ListSubscriptionsResponse> callback, AsyncOptions options = null);
 
 
@@ -596,6 +622,7 @@ namespace Amazon.SimpleNotificationService
         /// <exception cref="Amazon.SimpleNotificationService.Model.NotFoundException">
         /// Indicates that the requested resource does not exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/ListSubscriptionsByTopic">REST API Reference for ListSubscriptionsByTopic Operation</seealso>
         void ListSubscriptionsByTopicAsync(string topicArn, string nextToken,  AmazonServiceCallback<ListSubscriptionsByTopicRequest, ListSubscriptionsByTopicResponse> callback, AsyncOptions options = null);
 
         /// <summary>
@@ -624,6 +651,7 @@ namespace Amazon.SimpleNotificationService
         /// <exception cref="Amazon.SimpleNotificationService.Model.NotFoundException">
         /// Indicates that the requested resource does not exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/ListSubscriptionsByTopic">REST API Reference for ListSubscriptionsByTopic Operation</seealso>
         void ListSubscriptionsByTopicAsync(string topicArn,  AmazonServiceCallback<ListSubscriptionsByTopicRequest, ListSubscriptionsByTopicResponse> callback, AsyncOptions options = null);
 
         /// <summary>
@@ -634,6 +662,7 @@ namespace Amazon.SimpleNotificationService
         /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
         /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/ListSubscriptionsByTopic">REST API Reference for ListSubscriptionsByTopic Operation</seealso>
         void ListSubscriptionsByTopicAsync(ListSubscriptionsByTopicRequest request, AmazonServiceCallback<ListSubscriptionsByTopicRequest, ListSubscriptionsByTopicResponse> callback, AsyncOptions options = null);
 
 
@@ -665,6 +694,7 @@ namespace Amazon.SimpleNotificationService
         /// <exception cref="Amazon.SimpleNotificationService.Model.InvalidParameterException">
         /// Indicates that a request parameter does not comply with the associated constraints.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/ListTopics">REST API Reference for ListTopics Operation</seealso>
         void ListTopicsAsync(string nextToken,  AmazonServiceCallback<ListTopicsRequest, ListTopicsResponse> callback, AsyncOptions options = null);
 
         /// <summary>
@@ -675,6 +705,7 @@ namespace Amazon.SimpleNotificationService
         /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
         /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/ListTopics">REST API Reference for ListTopics Operation</seealso>
         void ListTopicsAsync(ListTopicsRequest request, AmazonServiceCallback<ListTopicsRequest, ListTopicsResponse> callback, AsyncOptions options = null);
 
 
@@ -691,6 +722,7 @@ namespace Amazon.SimpleNotificationService
         /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
         /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/OptInPhoneNumber">REST API Reference for OptInPhoneNumber Operation</seealso>
         void OptInPhoneNumberAsync(OptInPhoneNumberRequest request, AmazonServiceCallback<OptInPhoneNumberRequest, OptInPhoneNumberResponse> callback, AsyncOptions options = null);
 
 
@@ -748,6 +780,7 @@ namespace Amazon.SimpleNotificationService
         /// <exception cref="Amazon.SimpleNotificationService.Model.PlatformApplicationDisabledException">
         /// Exception error indicating platform application disabled.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/Publish">REST API Reference for Publish Operation</seealso>
         void PublishAsync(string topicArn, string message,  AmazonServiceCallback<PublishRequest, PublishResponse> callback, AsyncOptions options = null);
 
         /// <summary>
@@ -800,6 +833,7 @@ namespace Amazon.SimpleNotificationService
         /// <exception cref="Amazon.SimpleNotificationService.Model.PlatformApplicationDisabledException">
         /// Exception error indicating platform application disabled.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/Publish">REST API Reference for Publish Operation</seealso>
         void PublishAsync(string topicArn, string message, string subject,  AmazonServiceCallback<PublishRequest, PublishResponse> callback, AsyncOptions options = null);
 
         /// <summary>
@@ -810,6 +844,7 @@ namespace Amazon.SimpleNotificationService
         /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
         /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/Publish">REST API Reference for Publish Operation</seealso>
         void PublishAsync(PublishRequest request, AmazonServiceCallback<PublishRequest, PublishResponse> callback, AsyncOptions options = null);
 
 
@@ -842,6 +877,7 @@ namespace Amazon.SimpleNotificationService
         /// <exception cref="Amazon.SimpleNotificationService.Model.NotFoundException">
         /// Indicates that the requested resource does not exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/RemovePermission">REST API Reference for RemovePermission Operation</seealso>
         void RemovePermissionAsync(string topicArn, string label,  AmazonServiceCallback<RemovePermissionRequest, RemovePermissionResponse> callback, AsyncOptions options = null);
 
         /// <summary>
@@ -852,6 +888,7 @@ namespace Amazon.SimpleNotificationService
         /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
         /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/RemovePermission">REST API Reference for RemovePermission Operation</seealso>
         void RemovePermissionAsync(RemovePermissionRequest request, AmazonServiceCallback<RemovePermissionRequest, RemovePermissionResponse> callback, AsyncOptions options = null);
 
 
@@ -868,6 +905,7 @@ namespace Amazon.SimpleNotificationService
         /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
         /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/SetEndpointAttributes">REST API Reference for SetEndpointAttributes Operation</seealso>
         void SetEndpointAttributesAsync(SetEndpointAttributesRequest request, AmazonServiceCallback<SetEndpointAttributesRequest, SetEndpointAttributesResponse> callback, AsyncOptions options = null);
 
 
@@ -884,6 +922,7 @@ namespace Amazon.SimpleNotificationService
         /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
         /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/SetPlatformApplicationAttributes">REST API Reference for SetPlatformApplicationAttributes Operation</seealso>
         void SetPlatformApplicationAttributesAsync(SetPlatformApplicationAttributesRequest request, AmazonServiceCallback<SetPlatformApplicationAttributesRequest, SetPlatformApplicationAttributesResponse> callback, AsyncOptions options = null);
 
 
@@ -900,6 +939,7 @@ namespace Amazon.SimpleNotificationService
         /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
         /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/SetSMSAttributes">REST API Reference for SetSMSAttributes Operation</seealso>
         void SetSMSAttributesAsync(SetSMSAttributesRequest request, AmazonServiceCallback<SetSMSAttributesRequest, SetSMSAttributesResponse> callback, AsyncOptions options = null);
 
 
@@ -933,6 +973,7 @@ namespace Amazon.SimpleNotificationService
         /// <exception cref="Amazon.SimpleNotificationService.Model.NotFoundException">
         /// Indicates that the requested resource does not exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/SetSubscriptionAttributes">REST API Reference for SetSubscriptionAttributes Operation</seealso>
         void SetSubscriptionAttributesAsync(string subscriptionArn, string attributeName, string attributeValue,  AmazonServiceCallback<SetSubscriptionAttributesRequest, SetSubscriptionAttributesResponse> callback, AsyncOptions options = null);
 
         /// <summary>
@@ -943,6 +984,7 @@ namespace Amazon.SimpleNotificationService
         /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
         /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/SetSubscriptionAttributes">REST API Reference for SetSubscriptionAttributes Operation</seealso>
         void SetSubscriptionAttributesAsync(SetSubscriptionAttributesRequest request, AmazonServiceCallback<SetSubscriptionAttributesRequest, SetSubscriptionAttributesResponse> callback, AsyncOptions options = null);
 
 
@@ -976,6 +1018,7 @@ namespace Amazon.SimpleNotificationService
         /// <exception cref="Amazon.SimpleNotificationService.Model.NotFoundException">
         /// Indicates that the requested resource does not exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/SetTopicAttributes">REST API Reference for SetTopicAttributes Operation</seealso>
         void SetTopicAttributesAsync(string topicArn, string attributeName, string attributeValue,  AmazonServiceCallback<SetTopicAttributesRequest, SetTopicAttributesResponse> callback, AsyncOptions options = null);
 
         /// <summary>
@@ -986,6 +1029,7 @@ namespace Amazon.SimpleNotificationService
         /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
         /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/SetTopicAttributes">REST API Reference for SetTopicAttributes Operation</seealso>
         void SetTopicAttributesAsync(SetTopicAttributesRequest request, AmazonServiceCallback<SetTopicAttributesRequest, SetTopicAttributesResponse> callback, AsyncOptions options = null);
 
 
@@ -1025,6 +1069,7 @@ namespace Amazon.SimpleNotificationService
         /// <exception cref="Amazon.SimpleNotificationService.Model.SubscriptionLimitExceededException">
         /// Indicates that the customer already owns the maximum allowed number of subscriptions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/Subscribe">REST API Reference for Subscribe Operation</seealso>
         void SubscribeAsync(string topicArn, string protocol, string endpoint,  AmazonServiceCallback<SubscribeRequest, SubscribeResponse> callback, AsyncOptions options = null);
 
         /// <summary>
@@ -1035,6 +1080,7 @@ namespace Amazon.SimpleNotificationService
         /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
         /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/Subscribe">REST API Reference for Subscribe Operation</seealso>
         void SubscribeAsync(SubscribeRequest request, AmazonServiceCallback<SubscribeRequest, SubscribeResponse> callback, AsyncOptions options = null);
 
 
@@ -1071,6 +1117,7 @@ namespace Amazon.SimpleNotificationService
         /// <exception cref="Amazon.SimpleNotificationService.Model.NotFoundException">
         /// Indicates that the requested resource does not exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/Unsubscribe">REST API Reference for Unsubscribe Operation</seealso>
         void UnsubscribeAsync(string subscriptionArn,  AmazonServiceCallback<UnsubscribeRequest, UnsubscribeResponse> callback, AsyncOptions options = null);
 
         /// <summary>
@@ -1081,6 +1128,7 @@ namespace Amazon.SimpleNotificationService
         /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
         /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/Unsubscribe">REST API Reference for Unsubscribe Operation</seealso>
         void UnsubscribeAsync(UnsubscribeRequest request, AmazonServiceCallback<UnsubscribeRequest, UnsubscribeResponse> callback, AsyncOptions options = null);
 
 

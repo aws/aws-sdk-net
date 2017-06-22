@@ -29,7 +29,23 @@ namespace Amazon.AWSMarketplaceMetering.Model
 {
     /// <summary>
     /// Container for the parameters to the BatchMeterUsage operation.
+    /// BatchMeterUsage is called from a SaaS application listed on the AWS Marketplace to
+    /// post metering records for a set of customers.
     /// 
+    ///  
+    /// <para>
+    /// For identical requests, the API is idempotent; requests can be retried with the same
+    /// records or a subset of the input records.
+    /// </para>
+    ///  
+    /// <para>
+    /// Every request to BatchMeterUsage is for one product. If you need to meter usage for
+    /// multiple products, you must make multiple calls to BatchMeterUsage.
+    /// </para>
+    ///  
+    /// <para>
+    /// BatchMeterUsage can process up to 25 UsageRecords at a time.
+    /// </para>
     /// </summary>
     public partial class BatchMeterUsageRequest : AmazonAWSMarketplaceMeteringRequest
     {
@@ -37,7 +53,11 @@ namespace Amazon.AWSMarketplaceMetering.Model
         private List<UsageRecord> _usageRecords = new List<UsageRecord>();
 
         /// <summary>
-        /// Gets and sets the property ProductCode.
+        /// Gets and sets the property ProductCode. 
+        /// <para>
+        /// Product code is used to uniquely identify a product in AWS Marketplace. The product
+        /// code should be the same as the one used during the publishing of a new product.
+        /// </para>
         /// </summary>
         public string ProductCode
         {
@@ -52,7 +72,11 @@ namespace Amazon.AWSMarketplaceMetering.Model
         }
 
         /// <summary>
-        /// Gets and sets the property UsageRecords.
+        /// Gets and sets the property UsageRecords. 
+        /// <para>
+        /// The set of UsageRecords to submit. BatchMeterUsage accepts up to 25 UsageRecords at
+        /// a time.
+        /// </para>
         /// </summary>
         public List<UsageRecord> UsageRecords
         {

@@ -60,6 +60,7 @@ namespace Amazon.CloudHSM
         /// <exception cref="Amazon.CloudHSM.Model.InvalidRequestException">
         /// Indicates that one or more of the request parameters are not valid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/AddTagsToResource">REST API Reference for AddTagsToResource Operation</seealso>
         AddTagsToResourceResponse AddTagsToResource(AddTagsToResourceRequest request);
 
 
@@ -72,6 +73,7 @@ namespace Amazon.CloudHSM
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/AddTagsToResource">REST API Reference for AddTagsToResource Operation</seealso>
         Task<AddTagsToResourceResponse> AddTagsToResourceAsync(AddTagsToResourceRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -95,6 +97,7 @@ namespace Amazon.CloudHSM
         /// <exception cref="Amazon.CloudHSM.Model.InvalidRequestException">
         /// Indicates that one or more of the request parameters are not valid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/CreateHapg">REST API Reference for CreateHapg Operation</seealso>
         CreateHapgResponse CreateHapg(string label);
 
         /// <summary>
@@ -113,6 +116,7 @@ namespace Amazon.CloudHSM
         /// <exception cref="Amazon.CloudHSM.Model.InvalidRequestException">
         /// Indicates that one or more of the request parameters are not valid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/CreateHapg">REST API Reference for CreateHapg Operation</seealso>
         CreateHapgResponse CreateHapg(CreateHapgRequest request);
 
 
@@ -135,6 +139,7 @@ namespace Amazon.CloudHSM
         /// <exception cref="Amazon.CloudHSM.Model.InvalidRequestException">
         /// Indicates that one or more of the request parameters are not valid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/CreateHapg">REST API Reference for CreateHapg Operation</seealso>
         Task<CreateHapgResponse> CreateHapgAsync(string label, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
@@ -146,6 +151,7 @@ namespace Amazon.CloudHSM
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/CreateHapg">REST API Reference for CreateHapg Operation</seealso>
         Task<CreateHapgResponse> CreateHapgAsync(CreateHapgRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -183,6 +189,7 @@ namespace Amazon.CloudHSM
         /// <exception cref="Amazon.CloudHSM.Model.InvalidRequestException">
         /// Indicates that one or more of the request parameters are not valid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/CreateHsm">REST API Reference for CreateHsm Operation</seealso>
         CreateHsmResponse CreateHsm(CreateHsmRequest request);
 
 
@@ -195,6 +202,7 @@ namespace Amazon.CloudHSM
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/CreateHsm">REST API Reference for CreateHsm Operation</seealso>
         Task<CreateHsmResponse> CreateHsmAsync(CreateHsmRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -217,6 +225,7 @@ namespace Amazon.CloudHSM
         /// <exception cref="Amazon.CloudHSM.Model.InvalidRequestException">
         /// Indicates that one or more of the request parameters are not valid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/CreateLunaClient">REST API Reference for CreateLunaClient Operation</seealso>
         CreateLunaClientResponse CreateLunaClient(CreateLunaClientRequest request);
 
 
@@ -229,6 +238,7 @@ namespace Amazon.CloudHSM
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/CreateLunaClient">REST API Reference for CreateLunaClient Operation</seealso>
         Task<CreateLunaClientResponse> CreateLunaClientAsync(CreateLunaClientRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -251,6 +261,7 @@ namespace Amazon.CloudHSM
         /// <exception cref="Amazon.CloudHSM.Model.InvalidRequestException">
         /// Indicates that one or more of the request parameters are not valid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/DeleteHapg">REST API Reference for DeleteHapg Operation</seealso>
         DeleteHapgResponse DeleteHapg(string hapgArn);
 
         /// <summary>
@@ -268,6 +279,7 @@ namespace Amazon.CloudHSM
         /// <exception cref="Amazon.CloudHSM.Model.InvalidRequestException">
         /// Indicates that one or more of the request parameters are not valid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/DeleteHapg">REST API Reference for DeleteHapg Operation</seealso>
         DeleteHapgResponse DeleteHapg(DeleteHapgRequest request);
 
 
@@ -289,6 +301,7 @@ namespace Amazon.CloudHSM
         /// <exception cref="Amazon.CloudHSM.Model.InvalidRequestException">
         /// Indicates that one or more of the request parameters are not valid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/DeleteHapg">REST API Reference for DeleteHapg Operation</seealso>
         Task<DeleteHapgResponse> DeleteHapgAsync(string hapgArn, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
@@ -300,6 +313,7 @@ namespace Amazon.CloudHSM
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/DeleteHapg">REST API Reference for DeleteHapg Operation</seealso>
         Task<DeleteHapgResponse> DeleteHapgAsync(DeleteHapgRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -323,6 +337,7 @@ namespace Amazon.CloudHSM
         /// <exception cref="Amazon.CloudHSM.Model.InvalidRequestException">
         /// Indicates that one or more of the request parameters are not valid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/DeleteHsm">REST API Reference for DeleteHsm Operation</seealso>
         DeleteHsmResponse DeleteHsm(string hsmArn);
 
         /// <summary>
@@ -341,6 +356,7 @@ namespace Amazon.CloudHSM
         /// <exception cref="Amazon.CloudHSM.Model.InvalidRequestException">
         /// Indicates that one or more of the request parameters are not valid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/DeleteHsm">REST API Reference for DeleteHsm Operation</seealso>
         DeleteHsmResponse DeleteHsm(DeleteHsmRequest request);
 
 
@@ -363,6 +379,7 @@ namespace Amazon.CloudHSM
         /// <exception cref="Amazon.CloudHSM.Model.InvalidRequestException">
         /// Indicates that one or more of the request parameters are not valid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/DeleteHsm">REST API Reference for DeleteHsm Operation</seealso>
         Task<DeleteHsmResponse> DeleteHsmAsync(string hsmArn, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
@@ -374,6 +391,7 @@ namespace Amazon.CloudHSM
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/DeleteHsm">REST API Reference for DeleteHsm Operation</seealso>
         Task<DeleteHsmResponse> DeleteHsmAsync(DeleteHsmRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -396,6 +414,7 @@ namespace Amazon.CloudHSM
         /// <exception cref="Amazon.CloudHSM.Model.InvalidRequestException">
         /// Indicates that one or more of the request parameters are not valid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/DeleteLunaClient">REST API Reference for DeleteLunaClient Operation</seealso>
         DeleteLunaClientResponse DeleteLunaClient(string clientArn);
 
         /// <summary>
@@ -413,6 +432,7 @@ namespace Amazon.CloudHSM
         /// <exception cref="Amazon.CloudHSM.Model.InvalidRequestException">
         /// Indicates that one or more of the request parameters are not valid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/DeleteLunaClient">REST API Reference for DeleteLunaClient Operation</seealso>
         DeleteLunaClientResponse DeleteLunaClient(DeleteLunaClientRequest request);
 
 
@@ -434,6 +454,7 @@ namespace Amazon.CloudHSM
         /// <exception cref="Amazon.CloudHSM.Model.InvalidRequestException">
         /// Indicates that one or more of the request parameters are not valid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/DeleteLunaClient">REST API Reference for DeleteLunaClient Operation</seealso>
         Task<DeleteLunaClientResponse> DeleteLunaClientAsync(string clientArn, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
@@ -445,6 +466,7 @@ namespace Amazon.CloudHSM
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/DeleteLunaClient">REST API Reference for DeleteLunaClient Operation</seealso>
         Task<DeleteLunaClientResponse> DeleteLunaClientAsync(DeleteLunaClientRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -467,6 +489,7 @@ namespace Amazon.CloudHSM
         /// <exception cref="Amazon.CloudHSM.Model.InvalidRequestException">
         /// Indicates that one or more of the request parameters are not valid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/DescribeHapg">REST API Reference for DescribeHapg Operation</seealso>
         DescribeHapgResponse DescribeHapg(string hapgArn);
 
         /// <summary>
@@ -484,6 +507,7 @@ namespace Amazon.CloudHSM
         /// <exception cref="Amazon.CloudHSM.Model.InvalidRequestException">
         /// Indicates that one or more of the request parameters are not valid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/DescribeHapg">REST API Reference for DescribeHapg Operation</seealso>
         DescribeHapgResponse DescribeHapg(DescribeHapgRequest request);
 
 
@@ -505,6 +529,7 @@ namespace Amazon.CloudHSM
         /// <exception cref="Amazon.CloudHSM.Model.InvalidRequestException">
         /// Indicates that one or more of the request parameters are not valid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/DescribeHapg">REST API Reference for DescribeHapg Operation</seealso>
         Task<DescribeHapgResponse> DescribeHapgAsync(string hapgArn, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
@@ -516,6 +541,7 @@ namespace Amazon.CloudHSM
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/DescribeHapg">REST API Reference for DescribeHapg Operation</seealso>
         Task<DescribeHapgResponse> DescribeHapgAsync(DescribeHapgRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -539,6 +565,7 @@ namespace Amazon.CloudHSM
         /// <exception cref="Amazon.CloudHSM.Model.InvalidRequestException">
         /// Indicates that one or more of the request parameters are not valid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/DescribeHsm">REST API Reference for DescribeHsm Operation</seealso>
         DescribeHsmResponse DescribeHsm(string hsmArn);
 
         /// <summary>
@@ -557,6 +584,7 @@ namespace Amazon.CloudHSM
         /// <exception cref="Amazon.CloudHSM.Model.InvalidRequestException">
         /// Indicates that one or more of the request parameters are not valid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/DescribeHsm">REST API Reference for DescribeHsm Operation</seealso>
         DescribeHsmResponse DescribeHsm(DescribeHsmRequest request);
 
 
@@ -579,6 +607,7 @@ namespace Amazon.CloudHSM
         /// <exception cref="Amazon.CloudHSM.Model.InvalidRequestException">
         /// Indicates that one or more of the request parameters are not valid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/DescribeHsm">REST API Reference for DescribeHsm Operation</seealso>
         Task<DescribeHsmResponse> DescribeHsmAsync(string hsmArn, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
@@ -590,6 +619,7 @@ namespace Amazon.CloudHSM
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/DescribeHsm">REST API Reference for DescribeHsm Operation</seealso>
         Task<DescribeHsmResponse> DescribeHsmAsync(DescribeHsmRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -612,6 +642,7 @@ namespace Amazon.CloudHSM
         /// <exception cref="Amazon.CloudHSM.Model.InvalidRequestException">
         /// Indicates that one or more of the request parameters are not valid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/DescribeLunaClient">REST API Reference for DescribeLunaClient Operation</seealso>
         DescribeLunaClientResponse DescribeLunaClient(DescribeLunaClientRequest request);
 
 
@@ -624,6 +655,7 @@ namespace Amazon.CloudHSM
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/DescribeLunaClient">REST API Reference for DescribeLunaClient Operation</seealso>
         Task<DescribeLunaClientResponse> DescribeLunaClientAsync(DescribeLunaClientRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -647,6 +679,7 @@ namespace Amazon.CloudHSM
         /// <exception cref="Amazon.CloudHSM.Model.InvalidRequestException">
         /// Indicates that one or more of the request parameters are not valid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/GetConfig">REST API Reference for GetConfig Operation</seealso>
         GetConfigResponse GetConfig(GetConfigRequest request);
 
 
@@ -659,6 +692,7 @@ namespace Amazon.CloudHSM
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/GetConfig">REST API Reference for GetConfig Operation</seealso>
         Task<GetConfigResponse> GetConfigAsync(GetConfigRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -680,6 +714,7 @@ namespace Amazon.CloudHSM
         /// <exception cref="Amazon.CloudHSM.Model.InvalidRequestException">
         /// Indicates that one or more of the request parameters are not valid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/ListAvailableZones">REST API Reference for ListAvailableZones Operation</seealso>
         ListAvailableZonesResponse ListAvailableZones();
 
         /// <summary>
@@ -697,6 +732,7 @@ namespace Amazon.CloudHSM
         /// <exception cref="Amazon.CloudHSM.Model.InvalidRequestException">
         /// Indicates that one or more of the request parameters are not valid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/ListAvailableZones">REST API Reference for ListAvailableZones Operation</seealso>
         ListAvailableZonesResponse ListAvailableZones(ListAvailableZonesRequest request);
 
 
@@ -717,6 +753,7 @@ namespace Amazon.CloudHSM
         /// <exception cref="Amazon.CloudHSM.Model.InvalidRequestException">
         /// Indicates that one or more of the request parameters are not valid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/ListAvailableZones">REST API Reference for ListAvailableZones Operation</seealso>
         Task<ListAvailableZonesResponse> ListAvailableZonesAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
@@ -728,6 +765,7 @@ namespace Amazon.CloudHSM
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/ListAvailableZones">REST API Reference for ListAvailableZones Operation</seealso>
         Task<ListAvailableZonesResponse> ListAvailableZonesAsync(ListAvailableZonesRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -757,6 +795,7 @@ namespace Amazon.CloudHSM
         /// <exception cref="Amazon.CloudHSM.Model.InvalidRequestException">
         /// Indicates that one or more of the request parameters are not valid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/ListHapgs">REST API Reference for ListHapgs Operation</seealso>
         ListHapgsResponse ListHapgs();
 
         /// <summary>
@@ -782,6 +821,7 @@ namespace Amazon.CloudHSM
         /// <exception cref="Amazon.CloudHSM.Model.InvalidRequestException">
         /// Indicates that one or more of the request parameters are not valid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/ListHapgs">REST API Reference for ListHapgs Operation</seealso>
         ListHapgsResponse ListHapgs(ListHapgsRequest request);
 
 
@@ -810,6 +850,7 @@ namespace Amazon.CloudHSM
         /// <exception cref="Amazon.CloudHSM.Model.InvalidRequestException">
         /// Indicates that one or more of the request parameters are not valid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/ListHapgs">REST API Reference for ListHapgs Operation</seealso>
         Task<ListHapgsResponse> ListHapgsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
@@ -821,6 +862,7 @@ namespace Amazon.CloudHSM
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/ListHapgs">REST API Reference for ListHapgs Operation</seealso>
         Task<ListHapgsResponse> ListHapgsAsync(ListHapgsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -850,6 +892,7 @@ namespace Amazon.CloudHSM
         /// <exception cref="Amazon.CloudHSM.Model.InvalidRequestException">
         /// Indicates that one or more of the request parameters are not valid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/ListHsms">REST API Reference for ListHsms Operation</seealso>
         ListHsmsResponse ListHsms();
 
         /// <summary>
@@ -875,6 +918,7 @@ namespace Amazon.CloudHSM
         /// <exception cref="Amazon.CloudHSM.Model.InvalidRequestException">
         /// Indicates that one or more of the request parameters are not valid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/ListHsms">REST API Reference for ListHsms Operation</seealso>
         ListHsmsResponse ListHsms(ListHsmsRequest request);
 
 
@@ -903,6 +947,7 @@ namespace Amazon.CloudHSM
         /// <exception cref="Amazon.CloudHSM.Model.InvalidRequestException">
         /// Indicates that one or more of the request parameters are not valid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/ListHsms">REST API Reference for ListHsms Operation</seealso>
         Task<ListHsmsResponse> ListHsmsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
@@ -914,6 +959,7 @@ namespace Amazon.CloudHSM
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/ListHsms">REST API Reference for ListHsms Operation</seealso>
         Task<ListHsmsResponse> ListHsmsAsync(ListHsmsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -943,6 +989,7 @@ namespace Amazon.CloudHSM
         /// <exception cref="Amazon.CloudHSM.Model.InvalidRequestException">
         /// Indicates that one or more of the request parameters are not valid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/ListLunaClients">REST API Reference for ListLunaClients Operation</seealso>
         ListLunaClientsResponse ListLunaClients();
 
         /// <summary>
@@ -968,6 +1015,7 @@ namespace Amazon.CloudHSM
         /// <exception cref="Amazon.CloudHSM.Model.InvalidRequestException">
         /// Indicates that one or more of the request parameters are not valid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/ListLunaClients">REST API Reference for ListLunaClients Operation</seealso>
         ListLunaClientsResponse ListLunaClients(ListLunaClientsRequest request);
 
 
@@ -996,6 +1044,7 @@ namespace Amazon.CloudHSM
         /// <exception cref="Amazon.CloudHSM.Model.InvalidRequestException">
         /// Indicates that one or more of the request parameters are not valid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/ListLunaClients">REST API Reference for ListLunaClients Operation</seealso>
         Task<ListLunaClientsResponse> ListLunaClientsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
@@ -1007,6 +1056,7 @@ namespace Amazon.CloudHSM
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/ListLunaClients">REST API Reference for ListLunaClients Operation</seealso>
         Task<ListLunaClientsResponse> ListLunaClientsAsync(ListLunaClientsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1029,6 +1079,7 @@ namespace Amazon.CloudHSM
         /// <exception cref="Amazon.CloudHSM.Model.InvalidRequestException">
         /// Indicates that one or more of the request parameters are not valid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request);
 
 
@@ -1041,6 +1092,7 @@ namespace Amazon.CloudHSM
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1063,6 +1115,7 @@ namespace Amazon.CloudHSM
         /// <exception cref="Amazon.CloudHSM.Model.InvalidRequestException">
         /// Indicates that one or more of the request parameters are not valid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/ModifyHapg">REST API Reference for ModifyHapg Operation</seealso>
         ModifyHapgResponse ModifyHapg(ModifyHapgRequest request);
 
 
@@ -1075,6 +1128,7 @@ namespace Amazon.CloudHSM
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/ModifyHapg">REST API Reference for ModifyHapg Operation</seealso>
         Task<ModifyHapgResponse> ModifyHapgAsync(ModifyHapgRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1106,6 +1160,7 @@ namespace Amazon.CloudHSM
         /// <exception cref="Amazon.CloudHSM.Model.InvalidRequestException">
         /// Indicates that one or more of the request parameters are not valid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/ModifyHsm">REST API Reference for ModifyHsm Operation</seealso>
         ModifyHsmResponse ModifyHsm(ModifyHsmRequest request);
 
 
@@ -1118,6 +1173,7 @@ namespace Amazon.CloudHSM
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/ModifyHsm">REST API Reference for ModifyHsm Operation</seealso>
         Task<ModifyHsmResponse> ModifyHsmAsync(ModifyHsmRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1140,6 +1196,7 @@ namespace Amazon.CloudHSM
         /// <exception cref="Amazon.CloudHSM.Model.CloudHsmServiceException">
         /// Indicates that an exception occurred in the AWS CloudHSM service.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/ModifyLunaClient">REST API Reference for ModifyLunaClient Operation</seealso>
         ModifyLunaClientResponse ModifyLunaClient(ModifyLunaClientRequest request);
 
 
@@ -1152,6 +1209,7 @@ namespace Amazon.CloudHSM
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/ModifyLunaClient">REST API Reference for ModifyLunaClient Operation</seealso>
         Task<ModifyLunaClientResponse> ModifyLunaClientAsync(ModifyLunaClientRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1180,6 +1238,7 @@ namespace Amazon.CloudHSM
         /// <exception cref="Amazon.CloudHSM.Model.InvalidRequestException">
         /// Indicates that one or more of the request parameters are not valid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/RemoveTagsFromResource">REST API Reference for RemoveTagsFromResource Operation</seealso>
         RemoveTagsFromResourceResponse RemoveTagsFromResource(RemoveTagsFromResourceRequest request);
 
 
@@ -1192,6 +1251,7 @@ namespace Amazon.CloudHSM
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/RemoveTagsFromResource">REST API Reference for RemoveTagsFromResource Operation</seealso>
         Task<RemoveTagsFromResourceResponse> RemoveTagsFromResourceAsync(RemoveTagsFromResourceRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion

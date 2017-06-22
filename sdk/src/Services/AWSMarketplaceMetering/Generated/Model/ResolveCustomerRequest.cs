@@ -29,14 +29,22 @@ namespace Amazon.AWSMarketplaceMetering.Model
 {
     /// <summary>
     /// Container for the parameters to the ResolveCustomer operation.
-    /// 
+    /// ResolveCustomer is called by a SaaS application during the registration process. When
+    /// a buyer visits your website during the registration process, the buyer submits a registration
+    /// token through their browser. The registration token is resolved through this API to
+    /// obtain a CustomerIdentifier and product code.
     /// </summary>
     public partial class ResolveCustomerRequest : AmazonAWSMarketplaceMeteringRequest
     {
         private string _registrationToken;
 
         /// <summary>
-        /// Gets and sets the property RegistrationToken.
+        /// Gets and sets the property RegistrationToken. 
+        /// <para>
+        /// When a buyer visits your website during the registration process, the buyer submits
+        /// a registration token through the browser. The registration token is resolved to obtain
+        /// a CustomerIdentifier and product code.
+        /// </para>
         /// </summary>
         public string RegistrationToken
         {
