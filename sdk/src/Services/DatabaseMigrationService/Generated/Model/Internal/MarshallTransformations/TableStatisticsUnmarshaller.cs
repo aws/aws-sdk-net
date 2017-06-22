@@ -76,6 +76,18 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
                     unmarshalledObject.Deletes = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("FullLoadCondtnlChkFailedRows", targetDepth))
+                {
+                    var unmarshaller = LongUnmarshaller.Instance;
+                    unmarshalledObject.FullLoadCondtnlChkFailedRows = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("FullLoadErrorRows", targetDepth))
+                {
+                    var unmarshaller = LongUnmarshaller.Instance;
+                    unmarshalledObject.FullLoadErrorRows = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("FullLoadRows", targetDepth))
                 {
                     var unmarshaller = LongUnmarshaller.Instance;

@@ -34,6 +34,8 @@ namespace Amazon.DatabaseMigrationService.Model
     {
         private long? _ddls;
         private long? _deletes;
+        private long? _fullLoadCondtnlChkFailedRows;
+        private long? _fullLoadErrorRows;
         private long? _fullLoadRows;
         private long? _inserts;
         private DateTime? _lastUpdateTime;
@@ -77,6 +79,44 @@ namespace Amazon.DatabaseMigrationService.Model
         internal bool IsSetDeletes()
         {
             return this._deletes.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property FullLoadCondtnlChkFailedRows. 
+        /// <para>
+        /// The number of rows that failed conditional checks during the Full Load operation (valid
+        /// only for DynamoDB as a target migrations).
+        /// </para>
+        /// </summary>
+        public long FullLoadCondtnlChkFailedRows
+        {
+            get { return this._fullLoadCondtnlChkFailedRows.GetValueOrDefault(); }
+            set { this._fullLoadCondtnlChkFailedRows = value; }
+        }
+
+        // Check to see if FullLoadCondtnlChkFailedRows property is set
+        internal bool IsSetFullLoadCondtnlChkFailedRows()
+        {
+            return this._fullLoadCondtnlChkFailedRows.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property FullLoadErrorRows. 
+        /// <para>
+        /// The number of rows that failed to load during the Full Load operation (valid only
+        /// for DynamoDB as a target migrations).
+        /// </para>
+        /// </summary>
+        public long FullLoadErrorRows
+        {
+            get { return this._fullLoadErrorRows.GetValueOrDefault(); }
+            set { this._fullLoadErrorRows = value; }
+        }
+
+        // Check to see if FullLoadErrorRows property is set
+        internal bool IsSetFullLoadErrorRows()
+        {
+            return this._fullLoadErrorRows.HasValue; 
         }
 
         /// <summary>
