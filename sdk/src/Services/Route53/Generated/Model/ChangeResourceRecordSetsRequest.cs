@@ -130,9 +130,8 @@ namespace Amazon.Route53.Model
     /// your changes to all of the Amazon Route 53 authoritative DNS servers. While your changes
     /// are propagating, <code>GetChange</code> returns a status of <code>PENDING</code>.
     /// When propagation is complete, <code>GetChange</code> returns a status of <code>INSYNC</code>.
-    /// Changes generally propagate to all Amazon Route 53 name servers in a few minutes.
-    /// In rare circumstances, propagation can take up to 30 minutes. For more information,
-    /// see <a>GetChange</a>.
+    /// Changes generally propagate to all Amazon Route 53 name servers within 60 seconds.
+    /// For more information, see <a>GetChange</a>.
     /// </para>
     ///  
     /// <para>

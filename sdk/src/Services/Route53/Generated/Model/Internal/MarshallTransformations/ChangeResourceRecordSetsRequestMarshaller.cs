@@ -123,6 +123,9 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
                                 if(publicRequestChangeBatchChangesValue.ResourceRecordSet.IsSetFailover())
                                     xmlWriter.WriteElementString("Failover", "https://route53.amazonaws.com/doc/2013-04-01/", StringUtils.FromString(publicRequestChangeBatchChangesValue.ResourceRecordSet.Failover));                 
                 
+                                if(publicRequestChangeBatchChangesValue.ResourceRecordSet.IsSetMultiValueAnswer())
+                                    xmlWriter.WriteElementString("MultiValueAnswer", "https://route53.amazonaws.com/doc/2013-04-01/", StringUtils.FromBool(publicRequestChangeBatchChangesValue.ResourceRecordSet.MultiValueAnswer));                 
+                
                                 if(publicRequestChangeBatchChangesValue.ResourceRecordSet.IsSetTTL())
                                     xmlWriter.WriteElementString("TTL", "https://route53.amazonaws.com/doc/2013-04-01/", StringUtils.FromLong(publicRequestChangeBatchChangesValue.ResourceRecordSet.TTL));                 
                 

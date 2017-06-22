@@ -39,6 +39,7 @@ namespace Amazon.Route53.Model
         private ResourceRecordSetRegion _region;
         private GeoLocation _geoLocation;
         private ResourceRecordSetFailover _failover;
+        private bool? _multiValueAnswer;
         private long? _ttl;
         private List<ResourceRecord> _resourceRecords = new List<ResourceRecord>();
         private AliasTarget _aliasTarget;
@@ -54,7 +55,7 @@ namespace Amazon.Route53.Model
         /// Instantiates ResourceRecordSet with the parameterized properties
         /// </summary>
         /// <param name="name">The name of the domain you want to perform the action on. Enter a fully qualified domain name, for example, <code>www.example.com</code>. You can optionally include a trailing dot. If you omit the trailing dot, Amazon Route 53 still assumes that the domain name that you specify is fully qualified. This means that Amazon Route 53 treats <code>www.example.com</code> (without a trailing dot) and <code>www.example.com.</code> (with a trailing dot) as identical. For information about how to specify characters other than <code>a-z</code>, <code>0-9</code>, and <code>-</code> (hyphen) and how to specify internationalized domain names, see <a href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DomainNameFormat.html">DNS Domain Name Format</a> in the <i>Amazon Route 53 Developer Guide</i>. You can use the asterisk (*) wildcard to replace the leftmost label in a domain name, for example, <code>*.example.com</code>. Note the following: <ul> <li> The * must replace the entire label. For example, you can't specify <code>*prod.example.com</code> or <code>prod*.example.com</code>. </li> <li> The * can't replace any of the middle labels, for example, marketing.*.example.com. </li> <li> If you include * in any position other than the leftmost label in a domain name, DNS treats it as an * character (ASCII 42), not as a wildcard. <important> You can't use the * wildcard for resource records sets that have a type of NS. </important> </li> </ul> You can use the * wildcard as the leftmost label in a domain name, for example, <code>*.example.com</code>. You can't use an * for one of the middle labels, for example, <code>marketing.*.example.com</code>. In addition, the * must replace the entire label; for example, you can't specify <code>prod*.example.com</code>.</param>
-        /// <param name="type">The DNS record type. For information about different record types and how data is encoded for them, see <a href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/ResourceRecordTypes.html">Supported DNS Resource Record Types</a> in the <i>Amazon Route 53 Developer Guide</i>. Valid values for basic resource record sets: <code>A</code> | <code>AAAA</code> | <code>CNAME</code> | <code>MX</code> | <code>NAPTR</code> | <code>NS</code> | <code>PTR</code> | <code>SOA</code> | <code>SPF</code> | <code>SRV</code> | <code>TXT</code>  Values for weighted, latency, geolocation, and failover resource record sets: <code>A</code> | <code>AAAA</code> | <code>CNAME</code> | <code>MX</code> | <code>NAPTR</code> | <code>PTR</code> | <code>SPF</code> | <code>SRV</code> | <code>TXT</code>. When creating a group of weighted, latency, geolocation, or failover resource record sets, specify the same value for all of the resource record sets in the group. <note> SPF records were formerly used to verify the identity of the sender of email messages. However, we no longer recommend that you create resource record sets for which the value of <code>Type</code> is <code>SPF</code>. RFC 7208, <i>Sender Policy Framework (SPF) for Authorizing Use of Domains in Email, Version 1</i>, has been updated to say, "...[I]ts existence and mechanism defined in [RFC4408] have led to some interoperability issues. Accordingly, its use is no longer appropriate for SPF version 1; implementations are not to use it." In RFC 7208, see section 14.1, <a href="http://tools.ietf.org/html/rfc7208#section-14.1">The SPF DNS Record Type</a>. </note> Values for alias resource record sets: <ul> <li>  <b>CloudFront distributions:</b> <code>A</code>  If IPv6 is enabled for the distribution, create two resource record sets to route traffic to your distribution, one with a value of <code>A</code> and one with a value of <code>AAAA</code>.  </li> <li>  <b>AWS Elastic Beanstalk environment that has a regionalized subdomain</b>: <code>A</code>  </li> <li>  <b>ELB load balancers:</b> <code>A</code> | <code>AAAA</code>  </li> <li>  <b>Amazon S3 buckets:</b> <code>A</code>  </li> <li>  <b>Another resource record set in this hosted zone:</b> Specify the type of the resource record set for which you're creating the alias. Specify any value except <code>NS</code> or <code>SOA</code>. </li> </ul></param>
+        /// <param name="type">The DNS record type. For information about different record types and how data is encoded for them, see <a href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/ResourceRecordTypes.html">Supported DNS Resource Record Types</a> in the <i>Amazon Route 53 Developer Guide</i>. Valid values for basic resource record sets: <code>A</code> | <code>AAAA</code> | <code>CNAME</code> | <code>MX</code> | <code>NAPTR</code> | <code>NS</code> | <code>PTR</code> | <code>SOA</code> | <code>SPF</code> | <code>SRV</code> | <code>TXT</code>  Values for weighted, latency, geolocation, and failover resource record sets: <code>A</code> | <code>AAAA</code> | <code>CNAME</code> | <code>MX</code> | <code>NAPTR</code> | <code>PTR</code> | <code>SPF</code> | <code>SRV</code> | <code>TXT</code>. When creating a group of weighted, latency, geolocation, or failover resource record sets, specify the same value for all of the resource record sets in the group. Valid values for multivalue answer resource record sets: <code>A</code> | <code>AAAA</code> | <code>MX</code> | <code>NAPTR</code> | <code>PTR</code> | <code>SPF</code> | <code>SRV</code> | <code>TXT</code>  <note> SPF records were formerly used to verify the identity of the sender of email messages. However, we no longer recommend that you create resource record sets for which the value of <code>Type</code> is <code>SPF</code>. RFC 7208, <i>Sender Policy Framework (SPF) for Authorizing Use of Domains in Email, Version 1</i>, has been updated to say, "...[I]ts existence and mechanism defined in [RFC4408] have led to some interoperability issues. Accordingly, its use is no longer appropriate for SPF version 1; implementations are not to use it." In RFC 7208, see section 14.1, <a href="http://tools.ietf.org/html/rfc7208#section-14.1">The SPF DNS Record Type</a>. </note> Values for alias resource record sets: <ul> <li>  <b>CloudFront distributions:</b> <code>A</code>  If IPv6 is enabled for the distribution, create two resource record sets to route traffic to your distribution, one with a value of <code>A</code> and one with a value of <code>AAAA</code>.  </li> <li>  <b>AWS Elastic Beanstalk environment that has a regionalized subdomain</b>: <code>A</code>  </li> <li>  <b>ELB load balancers:</b> <code>A</code> | <code>AAAA</code>  </li> <li>  <b>Amazon S3 buckets:</b> <code>A</code>  </li> <li>  <b>Another resource record set in this hosted zone:</b> Specify the type of the resource record set that you're creating the alias for. All values are supported except <code>NS</code> and <code>SOA</code>. </li> </ul></param>
         public ResourceRecordSet(string name, RRType type)
         {
             _name = name;
@@ -144,6 +145,12 @@ namespace Amazon.Route53.Model
         /// a group of weighted, latency, geolocation, or failover resource record sets, specify
         /// the same value for all of the resource record sets in the group.
         /// </para>
+        ///  
+        /// <para>
+        /// Valid values for multivalue answer resource record sets: <code>A</code> | <code>AAAA</code>
+        /// | <code>MX</code> | <code>NAPTR</code> | <code>PTR</code> | <code>SPF</code> | <code>SRV</code>
+        /// | <code>TXT</code> 
+        /// </para>
         ///  <note> 
         /// <para>
         /// SPF records were formerly used to verify the identity of the sender of email messages.
@@ -185,8 +192,8 @@ namespace Amazon.Route53.Model
         ///  </li> <li> 
         /// <para>
         ///  <b>Another resource record set in this hosted zone:</b> Specify the type of the resource
-        /// record set for which you're creating the alias. Specify any value except <code>NS</code>
-        /// or <code>SOA</code>.
+        /// record set that you're creating the alias for. All values are supported except <code>NS</code>
+        /// and <code>SOA</code>.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -487,14 +494,71 @@ namespace Amazon.Route53.Model
         }
 
         /// <summary>
+        /// Gets and sets the property MultiValueAnswer. 
+        /// <para>
+        ///  <i>Multivalue answer resource record sets only</i>: To route traffic approximately
+        /// randomly to multiple resources, such as web servers, create one multivalue answer
+        /// record for each resource and specify <code>true</code> for <code>MultiValueAnswer</code>.
+        /// Note the following:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// If you associate a health check with a multivalue answer resource record set, Amazon
+        /// Route 53 responds to DNS queries with the corresponding IP address only when the health
+        /// check is healthy.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If you don't associate a health check with a multivalue answer record, Amazon Route
+        /// 53 always considers the record to be healthy.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Amazon Route 53 responds to DNS queries with up to eight healthy records; if you have
+        /// eight or fewer healthy records, Amazon Route 53 responds to all DNS queries with all
+        /// the healthy records.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If you have more than eight healthy records, Amazon Route 53 responds to different
+        /// DNS resolvers with different combinations of healthy records.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// When all records are unhealthy, Amazon Route 53 responds to DNS queries with up to
+        /// eight unhealthy records.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If a resource becomes unavailable after a resolver caches a response, client software
+        /// typically tries another of the IP addresses in the response.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// You can't create multivalue answer alias records.
+        /// </para>
+        /// </summary>
+        public bool MultiValueAnswer
+        {
+            get { return this._multiValueAnswer.GetValueOrDefault(); }
+            set { this._multiValueAnswer = value; }
+        }
+
+        // Check to see if MultiValueAnswer property is set
+        internal bool IsSetMultiValueAnswer()
+        {
+            return this._multiValueAnswer.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property TTL. 
         /// <para>
         /// The resource record cache time to live (TTL), in seconds. Note the following:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// If you're creating an alias resource record set, omit <code>TTL</code>. Amazon Route
-        /// 53 uses the value of <code>TTL</code> for the alias target. 
+        /// If you're creating or updating an alias resource record set, omit <code>TTL</code>.
+        /// Amazon Route 53 uses the value of <code>TTL</code> for the alias target. 
         /// </para>
         ///  </li> <li> 
         /// <para>

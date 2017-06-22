@@ -97,6 +97,12 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
                         unmarshalledObject.Failover = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("MultiValueAnswer", targetDepth))
+                    {
+                        var unmarshaller = BoolUnmarshaller.Instance;
+                        unmarshalledObject.MultiValueAnswer = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("TTL", targetDepth))
                     {
                         var unmarshaller = LongUnmarshaller.Instance;
