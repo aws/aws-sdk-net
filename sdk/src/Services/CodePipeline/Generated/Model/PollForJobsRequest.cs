@@ -47,7 +47,10 @@ namespace Amazon.CodePipeline.Model
         private Dictionary<string, string> _queryParam = new Dictionary<string, string>();
 
         /// <summary>
-        /// Gets and sets the property ActionTypeId.
+        /// Gets and sets the property ActionTypeId. 
+        /// <para>
+        /// Represents information about an action type.
+        /// </para>
         /// </summary>
         public ActionTypeId ActionTypeId
         {

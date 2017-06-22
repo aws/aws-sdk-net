@@ -28,32 +28,31 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CodePipeline.Model
 {
     /// <summary>
-    /// Represents information about an execution of a pipeline.
+    /// Summary information about a pipeline execution.
     /// </summary>
-    public partial class PipelineExecution
+    public partial class PipelineExecutionSummary
     {
-        private List<ArtifactRevision> _artifactRevisions = new List<ArtifactRevision>();
+        private DateTime? _lastUpdateTime;
         private string _pipelineExecutionId;
-        private string _pipelineName;
-        private int? _pipelineVersion;
+        private DateTime? _startTime;
         private PipelineExecutionStatus _status;
 
         /// <summary>
-        /// Gets and sets the property ArtifactRevisions. 
+        /// Gets and sets the property LastUpdateTime. 
         /// <para>
-        /// A list of ArtifactRevision objects included in a pipeline execution.
+        /// The date and time of the last change to the pipeline execution, in timestamp format.
         /// </para>
         /// </summary>
-        public List<ArtifactRevision> ArtifactRevisions
+        public DateTime LastUpdateTime
         {
-            get { return this._artifactRevisions; }
-            set { this._artifactRevisions = value; }
+            get { return this._lastUpdateTime.GetValueOrDefault(); }
+            set { this._lastUpdateTime = value; }
         }
 
-        // Check to see if ArtifactRevisions property is set
-        internal bool IsSetArtifactRevisions()
+        // Check to see if LastUpdateTime property is set
+        internal bool IsSetLastUpdateTime()
         {
-            return this._artifactRevisions != null && this._artifactRevisions.Count > 0; 
+            return this._lastUpdateTime.HasValue; 
         }
 
         /// <summary>
@@ -75,39 +74,21 @@ namespace Amazon.CodePipeline.Model
         }
 
         /// <summary>
-        /// Gets and sets the property PipelineName. 
+        /// Gets and sets the property StartTime. 
         /// <para>
-        /// The name of the pipeline that was executed.
+        /// The date and time when the pipeline execution began, in timestamp format.
         /// </para>
         /// </summary>
-        public string PipelineName
+        public DateTime StartTime
         {
-            get { return this._pipelineName; }
-            set { this._pipelineName = value; }
+            get { return this._startTime.GetValueOrDefault(); }
+            set { this._startTime = value; }
         }
 
-        // Check to see if PipelineName property is set
-        internal bool IsSetPipelineName()
+        // Check to see if StartTime property is set
+        internal bool IsSetStartTime()
         {
-            return this._pipelineName != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property PipelineVersion. 
-        /// <para>
-        /// The version number of the pipeline that was executed.
-        /// </para>
-        /// </summary>
-        public int PipelineVersion
-        {
-            get { return this._pipelineVersion.GetValueOrDefault(); }
-            set { this._pipelineVersion = value; }
-        }
-
-        // Check to see if PipelineVersion property is set
-        internal bool IsSetPipelineVersion()
-        {
-            return this._pipelineVersion.HasValue; 
+            return this._startTime.HasValue; 
         }
 
         /// <summary>

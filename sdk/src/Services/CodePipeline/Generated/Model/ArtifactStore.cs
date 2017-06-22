@@ -28,9 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CodePipeline.Model
 {
     /// <summary>
-    /// The Amazon S3 location where artifacts are stored for the pipeline. If this Amazon
-    /// S3 bucket is created manually, it must meet the requirements for AWS CodePipeline.
-    /// For more information, see the <a href="http://docs.aws.amazon.com/codepipeline/latest/userguide/concepts.html#CPS3Bucket">Concepts</a>.
+    /// The Amazon S3 bucket where artifacts are stored for the pipeline.
     /// </summary>
     public partial class ArtifactStore
     {
@@ -61,7 +59,11 @@ namespace Amazon.CodePipeline.Model
         /// <summary>
         /// Gets and sets the property Location. 
         /// <para>
-        /// The location for storing the artifacts for a pipeline, such as an S3 bucket or folder.
+        /// The Amazon S3 bucket used for storing the artifacts for a pipeline. You can specify
+        /// the name of an S3 bucket but not a folder within the bucket. A folder to contain the
+        /// pipeline artifacts is created for you based on the name of the pipeline. You can use
+        /// any Amazon S3 bucket in the same AWS Region as the pipeline to store your pipeline
+        /// artifacts.
         /// </para>
         /// </summary>
         public string Location

@@ -82,7 +82,10 @@ namespace Amazon.CodePipeline.Model
         }
 
         /// <summary>
-        /// Gets and sets the property CurrentRevision.
+        /// Gets and sets the property CurrentRevision. 
+        /// <para>
+        /// Represents information about a current revision.
+        /// </para>
         /// </summary>
         public CurrentRevision CurrentRevision
         {
@@ -97,7 +100,11 @@ namespace Amazon.CodePipeline.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ExecutionDetails.
+        /// Gets and sets the property ExecutionDetails. 
+        /// <para>
+        /// The details of the actions taken and results produced on an artifact as it passes
+        /// through stages in the pipeline. 
+        /// </para>
         /// </summary>
         public ExecutionDetails ExecutionDetails
         {

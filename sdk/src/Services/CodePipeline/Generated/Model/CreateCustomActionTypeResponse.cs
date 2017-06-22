@@ -35,7 +35,10 @@ namespace Amazon.CodePipeline.Model
         private ActionType _actionType;
 
         /// <summary>
-        /// Gets and sets the property ActionType.
+        /// Gets and sets the property ActionType. 
+        /// <para>
+        /// Returns information about the details of an action type.
+        /// </para>
         /// </summary>
         public ActionType ActionType
         {

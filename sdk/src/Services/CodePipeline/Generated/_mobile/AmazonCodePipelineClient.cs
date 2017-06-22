@@ -582,7 +582,7 @@ namespace Amazon.CodePipeline
         /// <summary>
         /// Creates a pipeline.
         /// </summary>
-        /// <param name="pipeline">A property of CreatePipelineRequest used to execute the CreatePipeline service method.</param>
+        /// <param name="pipeline">Represents the structure of actions and stages to be performed in the pipeline. </param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
@@ -1187,6 +1187,38 @@ namespace Amazon.CodePipeline
 
         #endregion
         
+        #region  ListPipelineExecutions
+
+        internal ListPipelineExecutionsResponse ListPipelineExecutions(ListPipelineExecutionsRequest request)
+        {
+            var marshaller = new ListPipelineExecutionsRequestMarshaller();
+            var unmarshaller = ListPipelineExecutionsResponseUnmarshaller.Instance;
+
+            return Invoke<ListPipelineExecutionsRequest,ListPipelineExecutionsResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListPipelineExecutions operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListPipelineExecutions operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/ListPipelineExecutions">REST API Reference for ListPipelineExecutions Operation</seealso>
+        public Task<ListPipelineExecutionsResponse> ListPipelineExecutionsAsync(ListPipelineExecutionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new ListPipelineExecutionsRequestMarshaller();
+            var unmarshaller = ListPipelineExecutionsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListPipelineExecutionsRequest,ListPipelineExecutionsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListPipelines
 
         internal ListPipelinesResponse ListPipelines(ListPipelinesRequest request)
@@ -1478,7 +1510,7 @@ namespace Amazon.CodePipeline
         /// </summary>
         /// <param name="jobId">The ID of the job that failed. This is the same ID returned from PollForThirdPartyJobs.</param>
         /// <param name="clientToken">The clientToken portion of the clientId and clientToken pair used to verify that the calling entity is allowed access to the job and its details.</param>
-        /// <param name="failureDetails">A property of PutThirdPartyJobFailureResultRequest used to execute the PutThirdPartyJobFailureResult service method.</param>
+        /// <param name="failureDetails">Represents information about failure details.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>

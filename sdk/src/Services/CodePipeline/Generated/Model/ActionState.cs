@@ -57,7 +57,10 @@ namespace Amazon.CodePipeline.Model
         }
 
         /// <summary>
-        /// Gets and sets the property CurrentRevision.
+        /// Gets and sets the property CurrentRevision. 
+        /// <para>
+        /// Represents information about the version (or revision) of an action.
+        /// </para>
         /// </summary>
         public ActionRevision CurrentRevision
         {
@@ -91,7 +94,10 @@ namespace Amazon.CodePipeline.Model
         }
 
         /// <summary>
-        /// Gets and sets the property LatestExecution.
+        /// Gets and sets the property LatestExecution. 
+        /// <para>
+        /// Represents information about the run of an action.
+        /// </para>
         /// </summary>
         public ActionExecution LatestExecution
         {

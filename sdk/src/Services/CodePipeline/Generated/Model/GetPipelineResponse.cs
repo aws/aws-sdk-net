@@ -35,7 +35,10 @@ namespace Amazon.CodePipeline.Model
         private PipelineDeclaration _pipeline;
 
         /// <summary>
-        /// Gets and sets the property Pipeline.
+        /// Gets and sets the property Pipeline. 
+        /// <para>
+        /// Represents the structure of actions and stages to be performed in the pipeline. 
+        /// </para>
         /// </summary>
         public PipelineDeclaration Pipeline
         {

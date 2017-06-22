@@ -58,7 +58,10 @@ namespace Amazon.CodePipeline.Model
         }
 
         /// <summary>
-        /// Gets and sets the property FailureDetails.
+        /// Gets and sets the property FailureDetails. 
+        /// <para>
+        /// Represents information about failure details.
+        /// </para>
         /// </summary>
         public FailureDetails FailureDetails
         {

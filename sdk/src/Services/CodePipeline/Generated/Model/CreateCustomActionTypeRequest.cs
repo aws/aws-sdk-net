@@ -93,7 +93,10 @@ namespace Amazon.CodePipeline.Model
         }
 
         /// <summary>
-        /// Gets and sets the property InputArtifactDetails.
+        /// Gets and sets the property InputArtifactDetails. 
+        /// <para>
+        /// The details of the input artifact for the action, such as its commit ID.
+        /// </para>
         /// </summary>
         public ArtifactDetails InputArtifactDetails
         {
@@ -108,7 +111,10 @@ namespace Amazon.CodePipeline.Model
         }
 
         /// <summary>
-        /// Gets and sets the property OutputArtifactDetails.
+        /// Gets and sets the property OutputArtifactDetails. 
+        /// <para>
+        /// The details of the output artifact of the action, such as its commit ID.
+        /// </para>
         /// </summary>
         public ArtifactDetails OutputArtifactDetails
         {
@@ -141,7 +147,10 @@ namespace Amazon.CodePipeline.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Settings.
+        /// Gets and sets the property Settings. 
+        /// <para>
+        /// Returns information about the settings for an action type.
+        /// </para>
         /// </summary>
         public ActionTypeSettings Settings
         {

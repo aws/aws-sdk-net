@@ -39,7 +39,11 @@ namespace Amazon.CodePipeline.Model
         private int? _version;
 
         /// <summary>
-        /// Gets and sets the property ArtifactStore.
+        /// Gets and sets the property ArtifactStore. 
+        /// <para>
+        /// Represents the context of an action within the stage of a pipeline to a job worker.
+        /// 
+        /// </para>
         /// </summary>
         public ArtifactStore ArtifactStore
         {

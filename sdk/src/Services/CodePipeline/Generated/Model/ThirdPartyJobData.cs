@@ -42,7 +42,10 @@ namespace Amazon.CodePipeline.Model
         private PipelineContext _pipelineContext;
 
         /// <summary>
-        /// Gets and sets the property ActionConfiguration.
+        /// Gets and sets the property ActionConfiguration. 
+        /// <para>
+        /// Represents information about an action configuration.
+        /// </para>
         /// </summary>
         public ActionConfiguration ActionConfiguration
         {
@@ -57,7 +60,10 @@ namespace Amazon.CodePipeline.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ActionTypeId.
+        /// Gets and sets the property ActionTypeId. 
+        /// <para>
+        /// Represents information about an action type.
+        /// </para>
         /// </summary>
         public ActionTypeId ActionTypeId
         {
@@ -72,7 +78,13 @@ namespace Amazon.CodePipeline.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ArtifactCredentials.
+        /// Gets and sets the property ArtifactCredentials. 
+        /// <para>
+        /// Represents an AWS session credentials object. These credentials are temporary credentials
+        /// that are issued by AWS Secure Token Service (STS). They can be used to access input
+        /// and output artifacts in the Amazon S3 bucket used to store artifact for the pipeline
+        /// in AWS CodePipeline. 
+        /// </para>
         /// </summary>
         public AWSSessionCredentials ArtifactCredentials
         {
@@ -167,7 +179,10 @@ namespace Amazon.CodePipeline.Model
         }
 
         /// <summary>
-        /// Gets and sets the property PipelineContext.
+        /// Gets and sets the property PipelineContext. 
+        /// <para>
+        /// Represents information about a pipeline to a job worker.
+        /// </para>
         /// </summary>
         public PipelineContext PipelineContext
         {

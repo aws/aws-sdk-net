@@ -57,7 +57,10 @@ namespace Amazon.CodePipeline.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ActionRevision.
+        /// Gets and sets the property ActionRevision. 
+        /// <para>
+        /// Represents information about the version (or revision) of an action.
+        /// </para>
         /// </summary>
         public ActionRevision ActionRevision
         {
