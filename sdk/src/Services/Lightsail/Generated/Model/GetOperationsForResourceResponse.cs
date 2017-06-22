@@ -33,13 +33,21 @@ namespace Amazon.Lightsail.Model
     public partial class GetOperationsForResourceResponse : AmazonWebServiceResponse
     {
         private string _nextPageCount;
+        private string _nextPageToken;
         private List<Operation> _operations = new List<Operation>();
 
         /// <summary>
         /// Gets and sets the property NextPageCount. 
         /// <para>
-        /// Returns the number of pages of results that remain.
+        /// (Deprecated) Returns the number of pages of results that remain.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// In releases prior to June 12, 2017, this parameter returned <code>null</code> by the
+        /// API. It is now deprecated, and the API returns the <code>nextPageToken</code> parameter
+        /// instead.
+        /// </para>
+        ///  </note>
         /// </summary>
         public string NextPageCount
         {
@@ -51,6 +59,25 @@ namespace Amazon.Lightsail.Model
         internal bool IsSetNextPageCount()
         {
             return this._nextPageCount != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property NextPageToken. 
+        /// <para>
+        /// An identifier that was returned from the previous call to this operation, which can
+        /// be used to return the next set of items in the list.
+        /// </para>
+        /// </summary>
+        public string NextPageToken
+        {
+            get { return this._nextPageToken; }
+            set { this._nextPageToken = value; }
+        }
+
+        // Check to see if NextPageToken property is set
+        internal bool IsSetNextPageToken()
+        {
+            return this._nextPageToken != null;
         }
 
         /// <summary>

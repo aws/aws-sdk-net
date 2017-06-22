@@ -57,6 +57,12 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
                     response.NextPageCount = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("nextPageToken", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.NextPageToken = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("operations", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<Operation, OperationUnmarshaller>(OperationUnmarshaller.Instance);

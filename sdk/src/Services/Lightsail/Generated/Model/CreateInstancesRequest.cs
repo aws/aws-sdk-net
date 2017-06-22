@@ -105,8 +105,14 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property CustomImageName. 
         /// <para>
-        /// The name for your custom image.
+        /// (Deprecated) The name for your custom image.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// In releases prior to June 12, 2017, this parameter was ignored by the API. It is now
+        /// deprecated.
+        /// </para>
+        ///  </note>
         /// </summary>
         public string CustomImageName
         {
