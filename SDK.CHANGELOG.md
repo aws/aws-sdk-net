@@ -1,3 +1,21 @@
+### 3.3.113.0 (2017-06-22 23:13 UTC)
+* AWSMarketplaceMetering (3.3.1.15)
+	* Documentation update.
+* CodePipeline (3.3.1.0)
+	* A new API, ListPipelineExecutions, enables you to retrieve summary information about the most recent executions in a pipeline, including pipeline execution ID, status, start time, and last updated time. You can request information for a maximum of 100 executions. Pipeline execution data is available for the most recent 12 months of activity.
+* DatabaseMigrationService (3.3.3.0)
+	* Added tagging for DMS certificates.
+* ImportExport (3.3.0.18)
+	* Documentation update.
+* Lightsail (3.3.2.0)
+	* This release adds a new nextPageToken property to the result of the GetOperationsForResource API. Developers can now get the next set of items in a list by making subsequent calls to GetOperationsForResource API with the token from the previous call. This release also deprecates the nextPageCount property, which previously returned null (use the nextPageToken property instead). This release also deprecates the customImageName property on the CreateInstancesRequest class, which was previously ignored by the API.
+* Route53 (3.3.6.0)
+	* Amazon Route 53 now supports multivalue answers in response to DNS queries, which lets you route traffic approximately randomly to multiple resources, such as web servers. Create one multivalue answer record for each resource and, optionally, associate an Amazon Route 53 health check with each record, and Amazon Route 53 responds to DNS queries with up to eight healthy records.
+* Core 3.3.14.2
+	* Lambda is now available in the Canada (Central) region.
+
+
+
 ### 3.3.112.0 (2017-06-21 21:55 UTC)
 * DAX (3.3.0.0)
 	* Amazon DynamoDB Accelerator (DAX) is a fully managed, highly available, in-memory cache for DynamoDB that delivers up to a 10x performance improvement - from milliseconds to microseconds - even at millions of requests per second. DAX does all the heavy lifting required to add in-memory acceleration to your DynamoDB tables, without requiring developers to manage cache invalidation, data population, or cluster management.
