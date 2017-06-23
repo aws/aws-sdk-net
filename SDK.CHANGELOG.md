@@ -1,3 +1,7 @@
+### 3.3.114.0 (2017-06-23 19:10 UTC)
+* Lambda (3.3.7.0)
+	* The Lambda Invoke API will now throw new exception InvalidRuntimeException (status code 502) for invokes with deprecated runtimes.
+
 ### 3.3.113.0 (2017-06-22 23:13 UTC)
 * AWSMarketplaceMetering (3.3.1.15)
 	* Documentation update.

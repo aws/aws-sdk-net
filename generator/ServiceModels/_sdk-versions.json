@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.3.113.0",
+    "ProductVersion" : "3.3.114.0",
     "CoreVersion"    : "3.3.14.2",
     "DefaultToPreview" : false,
     "ServiceVersions"  : {
@@ -241,7 +241,7 @@
             "InPreview"               : false
         },
         "Lambda"               : {
-            "Version" : "3.3.6.2",
+            "Version" : "3.3.7.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.14.0"
