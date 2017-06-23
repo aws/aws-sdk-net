@@ -66,6 +66,10 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
             {
                 return new InvalidRequestContentException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidRuntimeException"))
+            {
+                return new InvalidRuntimeException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
             if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceNotFoundException"))
             {
                 return new ResourceNotFoundException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
