@@ -128,6 +128,14 @@ namespace Microsoft.Extensions.Configuration
                 options.Region = RegionEndpoint.GetBySystemName(section["AWSRegion"]);
             }
 
+            if (!string.IsNullOrEmpty(section["AccessKeyId"]) && !string.IsNullOrEmpty(section["SecretAccessKey"]))
+            {
+                options.Credentials = new BasicAWSCredentials(
+                    section["AccessKeyId"],
+                    section["SecretAccessKey"]
+                );
+            }
+
             return options;
         }
     }
