@@ -16,9 +16,9 @@
 
 	<h2>Version 3 Migration Guide</h2>
 	<p>
-	Version 3 is the AWS SDK for .NET has a very high compatible with version 2. For most applications you will just need to replace the old reference to version 2 and add the 
-	reference to the services they are using. If you are using NuGet to get the SDK, the reference to our core runtime package will be added automatically. If you 
-	are getting the SDK from the installer on our website, then you will need to add a reference to AWSSDK.Core.
+	Version 3 is the AWS SDK for .NET has a high level of compatibility with version 2. For most applications you will just need to remove the old reference to version 2 and add the 
+	reference to the services they are using. For instance, if you are using <code>S3</code> and <code>DynamoDB</code>, you'll need to add references to <code>AWSSDK.S3</code> and <code>AWSSDK.DynamoDBv2</code>. If you are using NuGet to get the SDK, the reference to our core runtime package - <code>AWSSDK.Core</code> will be added automatically. If you 
+	are getting the SDK from the installer on our website, then you will need to add a reference to <code>AWSSDK.Core</code> as well as to the service-specific assemblies.
 	</p>
 
     <table border="0" cellspacing="0" cellpadding="0">
