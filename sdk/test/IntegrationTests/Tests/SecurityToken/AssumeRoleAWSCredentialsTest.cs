@@ -1,5 +1,5 @@
 /*
- * Copyright 2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -16,6 +16,7 @@ using Amazon.Runtime;
 using Amazon.S3;
 using Amazon.S3.Model;
 using Amazon.SecurityToken;
+using Amazon.SecurityToken.Model;
 using AWSSDK_DotNet.IntegrationTests.Utils;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
@@ -53,7 +54,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
                     TestAssumeRoleProfile(null, null, TestMfaSerialNumber, () =>
                     {
                         throw new Exception(MfaTokenCodeErrorMessage);
-                    }, true);
+                    }, true, false);
                 }, typeof(AmazonClientException), new Regex(CredentialErrorMessage)).InnerException;
             }, typeof(Exception), MfaTokenCodeErrorMessage);
         }
@@ -67,7 +68,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
             {
                 throw AssertExtensions.ExpectException(() =>
                 {
-                    TestAssumeRoleProfile(null, null, TestMfaSerialNumber, null, true);
+                    TestAssumeRoleProfile(null, null, TestMfaSerialNumber, null, true, false);
                 }, typeof(AmazonClientException), new Regex(CredentialErrorMessage)).InnerException;
             }, typeof(InvalidOperationException), new Regex(MfaCallbackErrorMessage));
         }
@@ -81,7 +82,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
             {
                 throw AssertExtensions.ExpectException(() =>
                 {
-                    TestAssumeRoleProfile(null, TestExternalId, null, null, true);
+                    TestAssumeRoleProfile(null, TestExternalId, null, null, true, false);
                 }, typeof(AmazonClientException), new Regex(CredentialErrorMessage)).InnerException;
             }, typeof(AmazonSecurityTokenServiceException), new Regex(SecurityTokenErrorMessage));
         }
@@ -95,7 +96,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
             {
                 throw AssertExtensions.ExpectException(() =>
                 {
-                    TestAssumeRoleProfile(TestExternalId, null, null, null, true);
+                    TestAssumeRoleProfile(TestExternalId, null, null, null, true, false);
                 }, typeof(AmazonClientException), new Regex(CredentialErrorMessage)).InnerException;
             }, typeof(AmazonSecurityTokenServiceException), new Regex(SecurityTokenErrorMessage));
         }
@@ -105,7 +106,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
         [TestCategory("IdentityManagement")]
         public void ExternalId()
         {
-            TestAssumeRoleProfile(TestExternalId, TestExternalId, null, null, false);
+            TestAssumeRoleProfile(TestExternalId, TestExternalId, null, null, false, false);
         }
 
         [TestMethod]
@@ -113,10 +114,19 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
         [TestCategory("IdentityManagement")]
         public void NoExternalId()
         {
-            TestAssumeRoleProfile(null, null, null, null, false);
+            TestAssumeRoleProfile(null, null, null, null, false, false);
         }
 
-        public void TestAssumeRoleProfile(string roleExternalId, string credentialsExternalId, string mfaSerialNumber, Func<string> mfaTokenCallback, bool expectFailure)
+        [TestMethod]
+        [TestCategory("SecurityToken")]
+        [TestCategory("IdentityManagement")]
+        public void AssumeRoleWithSessionCredentials()
+        {
+            TestAssumeRoleProfile(null, null, null, null, false, true);
+        }
+
+        public void TestAssumeRoleProfile(string roleExternalId, string credentialsExternalId,
+            string mfaSerialNumber, Func<string> mfaTokenCallback, bool expectFailure, bool sessionCredsAsSource)
         {
             try
             {
@@ -124,7 +134,9 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
                 IAMTestUtil.CleanupTestRoleAndUser(TestRoleName, TestUserName);
 
                 var roleArn = "arn:aws:iam::" + UtilityMethods.AccountId + ":role/" + TestRoleName;
-                var sourceCredentials = IAMTestUtil.CreateTestRoleAndUser(TestRoleName, TestUserName, roleExternalId);
+                var newCredentials = IAMTestUtil.CreateTestRoleAndUser(TestRoleName, TestUserName, roleExternalId);
+                var sourceCredentials = sessionCredsAsSource ? GetSessionCredentials(newCredentials) : newCredentials;
+
                 var options = new AssumeRoleAWSCredentialsOptions()
                 {
                     ExternalId = credentialsExternalId,
@@ -139,6 +151,37 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
             finally
             {
                 IAMTestUtil.CleanupTestRoleAndUser(TestRoleName, TestUserName);
+            }
+        }
+
+        private AWSCredentials GetSessionCredentials(AWSCredentials credentials)
+        {
+            using (var stsClient = new AmazonSecurityTokenServiceClient(credentials))
+            {
+                GetSessionTokenResponse response = null;
+
+                // wait for eventual consistency of user creation
+                UtilityMethods.WaitUntil(() =>
+                {
+                    try
+                    {
+                        response = stsClient.GetSessionToken();
+                        return true;
+                    }
+                    catch (AmazonSecurityTokenServiceException e)
+                    {
+                        if (String.Equals(e.ErrorCode, "InvalidClientTokenId", StringComparison.OrdinalIgnoreCase))
+                            return false;
+                        else
+                            throw e;
+                    }
+                });
+
+                Assert.IsNotNull(response);
+                Assert.IsNotNull(response.Credentials);
+
+                return new SessionAWSCredentials(response.Credentials.AccessKeyId,
+                    response.Credentials.SecretAccessKey, response.Credentials.SessionToken);
             }
         }
 

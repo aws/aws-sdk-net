@@ -184,8 +184,8 @@ namespace Amazon.Runtime.CredentialManagement
                     case CredentialProfileType.AssumeRoleExternal:
                     case CredentialProfileType.AssumeRoleMFA:
                     case CredentialProfileType.AssumeRoleExternalMFA:
-                        BasicAWSCredentials sourceCredentials;
-                        // get basic credentials from profileSource
+                        AWSCredentials sourceCredentials;
+                        // get basic or session credentials from profileSource
                         try
                         {
                             sourceCredentials = GetSourceAWSCredentials(options.SourceProfile, profileSource, throwIfInvalid);
@@ -243,7 +243,7 @@ namespace Amazon.Runtime.CredentialManagement
             }
         }
 
-        private static BasicAWSCredentials GetSourceAWSCredentials(string sourceProfileName,
+        private static AWSCredentials GetSourceAWSCredentials(string sourceProfileName,
             ICredentialProfileSource profileSource, bool throwIfInvalid)
         {
             CredentialProfile sourceProfile = null;
@@ -251,16 +251,13 @@ namespace Amazon.Runtime.CredentialManagement
             {
                 if (sourceProfile.CanCreateAWSCredentials)
                 {
-                    // The isSourceProfile parameter is important to prevent possible stack overflow in recursive call.
                     if (sourceProfile.ProfileType == CredentialProfileType.Basic)
-                    {
                         return new BasicAWSCredentials(sourceProfile.Options.AccessKey, sourceProfile.Options.SecretKey);
-                    }
+                    else if (sourceProfile.ProfileType == CredentialProfileType.Session)
+                        return new SessionAWSCredentials(sourceProfile.Options.AccessKey, sourceProfile.Options.SecretKey, sourceProfile.Options.Token);
                     else
-                    {
                         return ThrowOrReturnNull(string.Format(CultureInfo.InvariantCulture,
-                            "Source profile [{0}] is not a basic profile.", sourceProfileName), null, throwIfInvalid);
-                    }
+                            "Source profile [{0}] is not a basic or a session profile.", sourceProfileName), null, throwIfInvalid);
                 }
                 else
                 {
