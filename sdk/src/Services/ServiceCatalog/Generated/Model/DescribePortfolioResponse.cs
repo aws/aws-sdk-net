@@ -33,6 +33,7 @@ namespace Amazon.ServiceCatalog.Model
     public partial class DescribePortfolioResponse : AmazonWebServiceResponse
     {
         private PortfolioDetail _portfolioDetail;
+        private List<TagOptionDetail> _tagOptions = new List<TagOptionDetail>();
         private List<Tag> _tags = new List<Tag>();
 
         /// <summary>
@@ -51,6 +52,24 @@ namespace Amazon.ServiceCatalog.Model
         internal bool IsSetPortfolioDetail()
         {
             return this._portfolioDetail != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TagOptions. 
+        /// <para>
+        /// TagOptions associated with the portfolio.
+        /// </para>
+        /// </summary>
+        public List<TagOptionDetail> TagOptions
+        {
+            get { return this._tagOptions; }
+            set { this._tagOptions = value; }
+        }
+
+        // Check to see if TagOptions property is set
+        internal bool IsSetTagOptions()
+        {
+            return this._tagOptions != null && this._tagOptions.Count > 0; 
         }
 
         /// <summary>

@@ -34,6 +34,7 @@ namespace Amazon.ServiceCatalog.Model
     {
         private List<ConstraintSummary> _constraintSummaries = new List<ConstraintSummary>();
         private List<ProvisioningArtifactParameter> _provisioningArtifactParameters = new List<ProvisioningArtifactParameter>();
+        private List<TagOptionSummary> _tagOptions = new List<TagOptionSummary>();
         private List<UsageInstruction> _usageInstructions = new List<UsageInstruction>();
 
         /// <summary>
@@ -71,6 +72,24 @@ namespace Amazon.ServiceCatalog.Model
         internal bool IsSetProvisioningArtifactParameters()
         {
             return this._provisioningArtifactParameters != null && this._provisioningArtifactParameters.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property TagOptions. 
+        /// <para>
+        /// List of TagOptions associated with the provisioned provisioning parameters.
+        /// </para>
+        /// </summary>
+        public List<TagOptionSummary> TagOptions
+        {
+            get { return this._tagOptions; }
+            set { this._tagOptions = value; }
+        }
+
+        // Check to see if TagOptions property is set
+        internal bool IsSetTagOptions()
+        {
+            return this._tagOptions != null && this._tagOptions.Count > 0; 
         }
 
         /// <summary>

@@ -353,6 +353,38 @@ namespace Amazon.ServiceCatalog
 
         #endregion
         
+        #region  AssociateTagOptionWithResource
+
+        internal AssociateTagOptionWithResourceResponse AssociateTagOptionWithResource(AssociateTagOptionWithResourceRequest request)
+        {
+            var marshaller = new AssociateTagOptionWithResourceRequestMarshaller();
+            var unmarshaller = AssociateTagOptionWithResourceResponseUnmarshaller.Instance;
+
+            return Invoke<AssociateTagOptionWithResourceRequest,AssociateTagOptionWithResourceResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AssociateTagOptionWithResource operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AssociateTagOptionWithResource operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/AssociateTagOptionWithResource">REST API Reference for AssociateTagOptionWithResource Operation</seealso>
+        public Task<AssociateTagOptionWithResourceResponse> AssociateTagOptionWithResourceAsync(AssociateTagOptionWithResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new AssociateTagOptionWithResourceRequestMarshaller();
+            var unmarshaller = AssociateTagOptionWithResourceResponseUnmarshaller.Instance;
+
+            return InvokeAsync<AssociateTagOptionWithResourceRequest,AssociateTagOptionWithResourceResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateConstraint
 
         internal CreateConstraintResponse CreateConstraint(CreateConstraintRequest request)
@@ -508,6 +540,38 @@ namespace Amazon.ServiceCatalog
             var unmarshaller = CreateProvisioningArtifactResponseUnmarshaller.Instance;
 
             return InvokeAsync<CreateProvisioningArtifactRequest,CreateProvisioningArtifactResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CreateTagOption
+
+        internal CreateTagOptionResponse CreateTagOption(CreateTagOptionRequest request)
+        {
+            var marshaller = new CreateTagOptionRequestMarshaller();
+            var unmarshaller = CreateTagOptionResponseUnmarshaller.Instance;
+
+            return Invoke<CreateTagOptionRequest,CreateTagOptionResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateTagOption operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateTagOption operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/CreateTagOption">REST API Reference for CreateTagOption Operation</seealso>
+        public Task<CreateTagOptionResponse> CreateTagOptionAsync(CreateTagOptionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new CreateTagOptionRequestMarshaller();
+            var unmarshaller = CreateTagOptionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateTagOptionRequest,CreateTagOptionResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -961,6 +1025,38 @@ namespace Amazon.ServiceCatalog
 
         #endregion
         
+        #region  DescribeTagOption
+
+        internal DescribeTagOptionResponse DescribeTagOption(DescribeTagOptionRequest request)
+        {
+            var marshaller = new DescribeTagOptionRequestMarshaller();
+            var unmarshaller = DescribeTagOptionResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeTagOptionRequest,DescribeTagOptionResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeTagOption operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeTagOption operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DescribeTagOption">REST API Reference for DescribeTagOption Operation</seealso>
+        public Task<DescribeTagOptionResponse> DescribeTagOptionAsync(DescribeTagOptionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DescribeTagOptionRequestMarshaller();
+            var unmarshaller = DescribeTagOptionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeTagOptionRequest,DescribeTagOptionResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DisassociatePrincipalFromPortfolio
 
         internal DisassociatePrincipalFromPortfolioResponse DisassociatePrincipalFromPortfolio(DisassociatePrincipalFromPortfolioRequest request)
@@ -1020,6 +1116,38 @@ namespace Amazon.ServiceCatalog
             var unmarshaller = DisassociateProductFromPortfolioResponseUnmarshaller.Instance;
 
             return InvokeAsync<DisassociateProductFromPortfolioRequest,DisassociateProductFromPortfolioResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DisassociateTagOptionFromResource
+
+        internal DisassociateTagOptionFromResourceResponse DisassociateTagOptionFromResource(DisassociateTagOptionFromResourceRequest request)
+        {
+            var marshaller = new DisassociateTagOptionFromResourceRequestMarshaller();
+            var unmarshaller = DisassociateTagOptionFromResourceResponseUnmarshaller.Instance;
+
+            return Invoke<DisassociateTagOptionFromResourceRequest,DisassociateTagOptionFromResourceResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DisassociateTagOptionFromResource operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateTagOptionFromResource operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DisassociateTagOptionFromResource">REST API Reference for DisassociateTagOptionFromResource Operation</seealso>
+        public Task<DisassociateTagOptionFromResourceResponse> DisassociateTagOptionFromResourceAsync(DisassociateTagOptionFromResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DisassociateTagOptionFromResourceRequestMarshaller();
+            var unmarshaller = DisassociateTagOptionFromResourceResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DisassociateTagOptionFromResourceRequest,DisassociateTagOptionFromResourceResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -1308,6 +1436,70 @@ namespace Amazon.ServiceCatalog
             var unmarshaller = ListRecordHistoryResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListRecordHistoryRequest,ListRecordHistoryResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListResourcesForTagOption
+
+        internal ListResourcesForTagOptionResponse ListResourcesForTagOption(ListResourcesForTagOptionRequest request)
+        {
+            var marshaller = new ListResourcesForTagOptionRequestMarshaller();
+            var unmarshaller = ListResourcesForTagOptionResponseUnmarshaller.Instance;
+
+            return Invoke<ListResourcesForTagOptionRequest,ListResourcesForTagOptionResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListResourcesForTagOption operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListResourcesForTagOption operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListResourcesForTagOption">REST API Reference for ListResourcesForTagOption Operation</seealso>
+        public Task<ListResourcesForTagOptionResponse> ListResourcesForTagOptionAsync(ListResourcesForTagOptionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new ListResourcesForTagOptionRequestMarshaller();
+            var unmarshaller = ListResourcesForTagOptionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListResourcesForTagOptionRequest,ListResourcesForTagOptionResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListTagOptions
+
+        internal ListTagOptionsResponse ListTagOptions(ListTagOptionsRequest request)
+        {
+            var marshaller = new ListTagOptionsRequestMarshaller();
+            var unmarshaller = ListTagOptionsResponseUnmarshaller.Instance;
+
+            return Invoke<ListTagOptionsRequest,ListTagOptionsResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListTagOptions operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListTagOptions operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListTagOptions">REST API Reference for ListTagOptions Operation</seealso>
+        public Task<ListTagOptionsResponse> ListTagOptionsAsync(ListTagOptionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new ListTagOptionsRequestMarshaller();
+            var unmarshaller = ListTagOptionsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListTagOptionsRequest,ListTagOptionsResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -1660,6 +1852,38 @@ namespace Amazon.ServiceCatalog
             var unmarshaller = UpdateProvisioningArtifactResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdateProvisioningArtifactRequest,UpdateProvisioningArtifactResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateTagOption
+
+        internal UpdateTagOptionResponse UpdateTagOption(UpdateTagOptionRequest request)
+        {
+            var marshaller = new UpdateTagOptionRequestMarshaller();
+            var unmarshaller = UpdateTagOptionResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateTagOptionRequest,UpdateTagOptionResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateTagOption operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateTagOption operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/UpdateTagOption">REST API Reference for UpdateTagOption Operation</seealso>
+        public Task<UpdateTagOptionResponse> UpdateTagOptionAsync(UpdateTagOptionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new UpdateTagOptionRequestMarshaller();
+            var unmarshaller = UpdateTagOptionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateTagOptionRequest,UpdateTagOptionResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 

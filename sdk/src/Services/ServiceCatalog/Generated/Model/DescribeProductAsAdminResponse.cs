@@ -34,6 +34,7 @@ namespace Amazon.ServiceCatalog.Model
     {
         private ProductViewDetail _productViewDetail;
         private List<ProvisioningArtifactSummary> _provisioningArtifactSummaries = new List<ProvisioningArtifactSummary>();
+        private List<TagOptionDetail> _tagOptions = new List<TagOptionDetail>();
         private List<Tag> _tags = new List<Tag>();
 
         /// <summary>
@@ -70,6 +71,24 @@ namespace Amazon.ServiceCatalog.Model
         internal bool IsSetProvisioningArtifactSummaries()
         {
             return this._provisioningArtifactSummaries != null && this._provisioningArtifactSummaries.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property TagOptions. 
+        /// <para>
+        /// List of TagOptions associated with the product.
+        /// </para>
+        /// </summary>
+        public List<TagOptionDetail> TagOptions
+        {
+            get { return this._tagOptions; }
+            set { this._tagOptions = value; }
+        }
+
+        // Check to see if TagOptions property is set
+        internal bool IsSetTagOptions()
+        {
+            return this._tagOptions != null && this._tagOptions.Count > 0; 
         }
 
         /// <summary>

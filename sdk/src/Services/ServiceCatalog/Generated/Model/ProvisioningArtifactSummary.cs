@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ServiceCatalog.Model
 {
     /// <summary>
-    /// Summary information about a provisioning artifact.
+    /// Stores summary information about a provisioning artifact.
     /// </summary>
     public partial class ProvisioningArtifactSummary
     {
@@ -59,7 +59,7 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// The provisioning artifact description.
+        /// The description of the provisioning artifact.
         /// </para>
         /// </summary>
         public string Description
@@ -77,7 +77,7 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
-        /// The provisioning artifact identifier.
+        /// The identifier of the provisioning artifact.
         /// </para>
         /// </summary>
         public string Id
@@ -95,7 +95,7 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The provisioning artifact name.
+        /// The name of the provisioning artifact.
         /// </para>
         /// </summary>
         public string Name

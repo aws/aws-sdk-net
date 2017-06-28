@@ -112,7 +112,7 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property Verbose. 
         /// <para>
-        /// Selects verbose results. If set to true, the CloudFormation template is returned.
+        /// Enable a verbose level of details for the provisioning artifact.
         /// </para>
         /// </summary>
         public bool Verbose

@@ -57,6 +57,12 @@ namespace Amazon.ServiceCatalog.Model.Internal.MarshallTransformations
                     response.PortfolioDetail = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("TagOptions", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<TagOptionDetail, TagOptionDetailUnmarshaller>(TagOptionDetailUnmarshaller.Instance);
+                    response.TagOptions = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Tags", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<Tag, TagUnmarshaller>(TagUnmarshaller.Instance);

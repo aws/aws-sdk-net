@@ -212,6 +212,69 @@ namespace Amazon.ServiceCatalog
 
         #endregion
         
+        #region  AssociateTagOptionWithResource
+
+
+        /// <summary>
+        /// Associate a TagOption identifier with a resource identifier.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateTagOptionWithResource service method.</param>
+        /// 
+        /// <returns>The response from the AssociateTagOptionWithResource service method, as returned by ServiceCatalog.</returns>
+        /// <exception cref="Amazon.ServiceCatalog.Model.DuplicateResourceException">
+        /// The specified resource is a duplicate.
+        /// </exception>
+        /// <exception cref="Amazon.ServiceCatalog.Model.InvalidParametersException">
+        /// One or more parameters provided to the operation are invalid.
+        /// </exception>
+        /// <exception cref="Amazon.ServiceCatalog.Model.InvalidStateException">
+        /// An attempt was made to modify a resource that is in an invalid state. Inspect the
+        /// resource you are using for this operation to ensure that all resource states are valid
+        /// before retrying the operation.
+        /// </exception>
+        /// <exception cref="Amazon.ServiceCatalog.Model.LimitExceededException">
+        /// The current limits of the service would have been exceeded by this operation. Reduce
+        /// the resource use or increase the service limits and retry the operation.
+        /// </exception>
+        /// <exception cref="Amazon.ServiceCatalog.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.ServiceCatalog.Model.TagOptionNotMigratedException">
+        /// An operation requiring TagOptions failed because the TagOptions migration process
+        /// has not been performed for this account. Please use the AWS console to perform the
+        /// migration process before retrying the operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/AssociateTagOptionWithResource">REST API Reference for AssociateTagOptionWithResource Operation</seealso>
+        AssociateTagOptionWithResourceResponse AssociateTagOptionWithResource(AssociateTagOptionWithResourceRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AssociateTagOptionWithResource operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AssociateTagOptionWithResource operation on AmazonServiceCatalogClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAssociateTagOptionWithResource
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/AssociateTagOptionWithResource">REST API Reference for AssociateTagOptionWithResource Operation</seealso>
+        IAsyncResult BeginAssociateTagOptionWithResource(AssociateTagOptionWithResourceRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  AssociateTagOptionWithResource operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAssociateTagOptionWithResource.</param>
+        /// 
+        /// <returns>Returns a  AssociateTagOptionWithResourceResult from ServiceCatalog.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/AssociateTagOptionWithResource">REST API Reference for AssociateTagOptionWithResource Operation</seealso>
+        AssociateTagOptionWithResourceResponse EndAssociateTagOptionWithResource(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  CreateConstraint
 
 
@@ -281,6 +344,11 @@ namespace Amazon.ServiceCatalog
         /// <exception cref="Amazon.ServiceCatalog.Model.LimitExceededException">
         /// The current limits of the service would have been exceeded by this operation. Reduce
         /// the resource use or increase the service limits and retry the operation.
+        /// </exception>
+        /// <exception cref="Amazon.ServiceCatalog.Model.TagOptionNotMigratedException">
+        /// An operation requiring TagOptions failed because the TagOptions migration process
+        /// has not been performed for this account. Please use the AWS console to perform the
+        /// migration process before retrying the operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/CreatePortfolio">REST API Reference for CreatePortfolio Operation</seealso>
         CreatePortfolioResponse CreatePortfolio(CreatePortfolioRequest request);
@@ -379,6 +447,11 @@ namespace Amazon.ServiceCatalog
         /// The current limits of the service would have been exceeded by this operation. Reduce
         /// the resource use or increase the service limits and retry the operation.
         /// </exception>
+        /// <exception cref="Amazon.ServiceCatalog.Model.TagOptionNotMigratedException">
+        /// An operation requiring TagOptions failed because the TagOptions migration process
+        /// has not been performed for this account. Please use the AWS console to perform the
+        /// migration process before retrying the operation.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/CreateProduct">REST API Reference for CreateProduct Operation</seealso>
         CreateProductResponse CreateProduct(CreateProductRequest request);
 
@@ -466,6 +539,58 @@ namespace Amazon.ServiceCatalog
 
         #endregion
         
+        #region  CreateTagOption
+
+
+        /// <summary>
+        /// Create a new TagOption.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateTagOption service method.</param>
+        /// 
+        /// <returns>The response from the CreateTagOption service method, as returned by ServiceCatalog.</returns>
+        /// <exception cref="Amazon.ServiceCatalog.Model.DuplicateResourceException">
+        /// The specified resource is a duplicate.
+        /// </exception>
+        /// <exception cref="Amazon.ServiceCatalog.Model.LimitExceededException">
+        /// The current limits of the service would have been exceeded by this operation. Reduce
+        /// the resource use or increase the service limits and retry the operation.
+        /// </exception>
+        /// <exception cref="Amazon.ServiceCatalog.Model.TagOptionNotMigratedException">
+        /// An operation requiring TagOptions failed because the TagOptions migration process
+        /// has not been performed for this account. Please use the AWS console to perform the
+        /// migration process before retrying the operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/CreateTagOption">REST API Reference for CreateTagOption Operation</seealso>
+        CreateTagOptionResponse CreateTagOption(CreateTagOptionRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateTagOption operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateTagOption operation on AmazonServiceCatalogClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateTagOption
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/CreateTagOption">REST API Reference for CreateTagOption Operation</seealso>
+        IAsyncResult BeginCreateTagOption(CreateTagOptionRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateTagOption operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateTagOption.</param>
+        /// 
+        /// <returns>Returns a  CreateTagOptionResult from ServiceCatalog.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/CreateTagOption">REST API Reference for CreateTagOption Operation</seealso>
+        CreateTagOptionResponse EndCreateTagOption(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  DeleteConstraint
 
 
@@ -532,6 +657,11 @@ namespace Amazon.ServiceCatalog
         /// </exception>
         /// <exception cref="Amazon.ServiceCatalog.Model.ResourceNotFoundException">
         /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.ServiceCatalog.Model.TagOptionNotMigratedException">
+        /// An operation requiring TagOptions failed because the TagOptions migration process
+        /// has not been performed for this account. Please use the AWS console to perform the
+        /// migration process before retrying the operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DeletePortfolio">REST API Reference for DeletePortfolio Operation</seealso>
         DeletePortfolioResponse DeletePortfolio(DeletePortfolioRequest request);
@@ -626,6 +756,11 @@ namespace Amazon.ServiceCatalog
         /// </exception>
         /// <exception cref="Amazon.ServiceCatalog.Model.ResourceNotFoundException">
         /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.ServiceCatalog.Model.TagOptionNotMigratedException">
+        /// An operation requiring TagOptions failed because the TagOptions migration process
+        /// has not been performed for this account. Please use the AWS console to perform the
+        /// migration process before retrying the operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DeleteProduct">REST API Reference for DeleteProduct Operation</seealso>
         DeleteProductResponse DeleteProduct(DeleteProductRequest request);
@@ -1038,6 +1173,18 @@ namespace Amazon.ServiceCatalog
         /// a specified manner. Use this operation to obtain the list of <code>ProvisioningArtifactParameters</code>
         /// parameters available to call the <a>ProvisionProduct</a> operation for the specified
         /// product.
+        /// 
+        ///  
+        /// <para>
+        /// If the output contains a TagOption key with an empty list of values, there is a TagOption
+        /// conflict for that key. The end user cannot take action to fix the conflict, and launch
+        /// is not blocked. In subsequent calls to the <code>ProvisionProduct</code> operation,
+        /// do not include conflicted TagOption keys as tags. Calls to <code>ProvisionProduct</code>
+        /// with empty TagOption values cause the error "Parameter validation failed: Missing
+        /// required parameter in Tags[<i>N</i>]:<i>Value</i> ". Calls to <code>ProvisionProduct</code>
+        /// with conflicted TagOption keys automatically tag the provisioned product with the
+        /// conflicted keys with the value "<code>sc-tagoption-conflict-portfolioId-productId</code>".
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeProvisioningParameters service method.</param>
         /// 
@@ -1124,6 +1271,54 @@ namespace Amazon.ServiceCatalog
 
         #endregion
         
+        #region  DescribeTagOption
+
+
+        /// <summary>
+        /// Describes a TagOption.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeTagOption service method.</param>
+        /// 
+        /// <returns>The response from the DescribeTagOption service method, as returned by ServiceCatalog.</returns>
+        /// <exception cref="Amazon.ServiceCatalog.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.ServiceCatalog.Model.TagOptionNotMigratedException">
+        /// An operation requiring TagOptions failed because the TagOptions migration process
+        /// has not been performed for this account. Please use the AWS console to perform the
+        /// migration process before retrying the operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DescribeTagOption">REST API Reference for DescribeTagOption Operation</seealso>
+        DescribeTagOptionResponse DescribeTagOption(DescribeTagOptionRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeTagOption operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeTagOption operation on AmazonServiceCatalogClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeTagOption
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DescribeTagOption">REST API Reference for DescribeTagOption Operation</seealso>
+        IAsyncResult BeginDescribeTagOption(DescribeTagOptionRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeTagOption operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeTagOption.</param>
+        /// 
+        /// <returns>Returns a  DescribeTagOptionResult from ServiceCatalog.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DescribeTagOption">REST API Reference for DescribeTagOption Operation</seealso>
+        DescribeTagOptionResponse EndDescribeTagOption(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  DisassociatePrincipalFromPortfolio
 
 
@@ -1182,6 +1377,10 @@ namespace Amazon.ServiceCatalog
         /// <exception cref="Amazon.ServiceCatalog.Model.InvalidParametersException">
         /// One or more parameters provided to the operation are invalid.
         /// </exception>
+        /// <exception cref="Amazon.ServiceCatalog.Model.ResourceInUseException">
+        /// The operation was requested against a resource that is currently in use. Free the
+        /// resource from use and retry the operation.
+        /// </exception>
         /// <exception cref="Amazon.ServiceCatalog.Model.ResourceNotFoundException">
         /// The specified resource was not found.
         /// </exception>
@@ -1213,6 +1412,54 @@ namespace Amazon.ServiceCatalog
         /// <returns>Returns a  DisassociateProductFromPortfolioResult from ServiceCatalog.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DisassociateProductFromPortfolio">REST API Reference for DisassociateProductFromPortfolio Operation</seealso>
         DisassociateProductFromPortfolioResponse EndDisassociateProductFromPortfolio(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DisassociateTagOptionFromResource
+
+
+        /// <summary>
+        /// Disassociates a TagOption from a resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateTagOptionFromResource service method.</param>
+        /// 
+        /// <returns>The response from the DisassociateTagOptionFromResource service method, as returned by ServiceCatalog.</returns>
+        /// <exception cref="Amazon.ServiceCatalog.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.ServiceCatalog.Model.TagOptionNotMigratedException">
+        /// An operation requiring TagOptions failed because the TagOptions migration process
+        /// has not been performed for this account. Please use the AWS console to perform the
+        /// migration process before retrying the operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DisassociateTagOptionFromResource">REST API Reference for DisassociateTagOptionFromResource Operation</seealso>
+        DisassociateTagOptionFromResourceResponse DisassociateTagOptionFromResource(DisassociateTagOptionFromResourceRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DisassociateTagOptionFromResource operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateTagOptionFromResource operation on AmazonServiceCatalogClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDisassociateTagOptionFromResource
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DisassociateTagOptionFromResource">REST API Reference for DisassociateTagOptionFromResource Operation</seealso>
+        IAsyncResult BeginDisassociateTagOptionFromResource(DisassociateTagOptionFromResourceRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DisassociateTagOptionFromResource operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDisassociateTagOptionFromResource.</param>
+        /// 
+        /// <returns>Returns a  DisassociateTagOptionFromResourceResult from ServiceCatalog.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DisassociateTagOptionFromResource">REST API Reference for DisassociateTagOptionFromResource Operation</seealso>
+        DisassociateTagOptionFromResourceResponse EndDisassociateTagOptionFromResource(IAsyncResult asyncResult);
 
         #endregion
         
@@ -1621,6 +1868,105 @@ namespace Amazon.ServiceCatalog
 
         #endregion
         
+        #region  ListResourcesForTagOption
+
+
+        /// <summary>
+        /// Lists resources associated with a TagOption.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListResourcesForTagOption service method.</param>
+        /// 
+        /// <returns>The response from the ListResourcesForTagOption service method, as returned by ServiceCatalog.</returns>
+        /// <exception cref="Amazon.ServiceCatalog.Model.InvalidParametersException">
+        /// One or more parameters provided to the operation are invalid.
+        /// </exception>
+        /// <exception cref="Amazon.ServiceCatalog.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.ServiceCatalog.Model.TagOptionNotMigratedException">
+        /// An operation requiring TagOptions failed because the TagOptions migration process
+        /// has not been performed for this account. Please use the AWS console to perform the
+        /// migration process before retrying the operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListResourcesForTagOption">REST API Reference for ListResourcesForTagOption Operation</seealso>
+        ListResourcesForTagOptionResponse ListResourcesForTagOption(ListResourcesForTagOptionRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListResourcesForTagOption operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListResourcesForTagOption operation on AmazonServiceCatalogClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListResourcesForTagOption
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListResourcesForTagOption">REST API Reference for ListResourcesForTagOption Operation</seealso>
+        IAsyncResult BeginListResourcesForTagOption(ListResourcesForTagOptionRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListResourcesForTagOption operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListResourcesForTagOption.</param>
+        /// 
+        /// <returns>Returns a  ListResourcesForTagOptionResult from ServiceCatalog.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListResourcesForTagOption">REST API Reference for ListResourcesForTagOption Operation</seealso>
+        ListResourcesForTagOptionResponse EndListResourcesForTagOption(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ListTagOptions
+
+
+        /// <summary>
+        /// Lists detailed TagOptions information.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTagOptions service method.</param>
+        /// 
+        /// <returns>The response from the ListTagOptions service method, as returned by ServiceCatalog.</returns>
+        /// <exception cref="Amazon.ServiceCatalog.Model.InvalidParametersException">
+        /// One or more parameters provided to the operation are invalid.
+        /// </exception>
+        /// <exception cref="Amazon.ServiceCatalog.Model.TagOptionNotMigratedException">
+        /// An operation requiring TagOptions failed because the TagOptions migration process
+        /// has not been performed for this account. Please use the AWS console to perform the
+        /// migration process before retrying the operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListTagOptions">REST API Reference for ListTagOptions Operation</seealso>
+        ListTagOptionsResponse ListTagOptions(ListTagOptionsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListTagOptions operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListTagOptions operation on AmazonServiceCatalogClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListTagOptions
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListTagOptions">REST API Reference for ListTagOptions Operation</seealso>
+        IAsyncResult BeginListTagOptions(ListTagOptionsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListTagOptions operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListTagOptions.</param>
+        /// 
+        /// <returns>Returns a  ListTagOptionsResult from ServiceCatalog.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListTagOptions">REST API Reference for ListTagOptions Operation</seealso>
+        ListTagOptionsResponse EndListTagOptions(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  ProvisionProduct
 
 
@@ -1633,6 +1979,12 @@ namespace Amazon.ServiceCatalog
         ///  
         /// <para>
         /// You can check the status of this request using the <a>DescribeRecord</a> operation.
+        /// The error "Parameter validation failed: Missing required parameter in Tags[<i>N</i>]:<i>Value</i>"
+        /// indicates that your request contains a tag which has a tag key but no corresponding
+        /// tag value (value is empty or null). Your call may have included values returned from
+        /// a <code>DescribeProvisioningParameters</code> call that resulted in a TagOption key
+        /// with an empty list. This happens when TagOption keys are in conflict. For more information,
+        /// see <a>DescribeProvisioningParameters</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ProvisionProduct service method.</param>
@@ -1983,6 +2335,11 @@ namespace Amazon.ServiceCatalog
         /// <exception cref="Amazon.ServiceCatalog.Model.ResourceNotFoundException">
         /// The specified resource was not found.
         /// </exception>
+        /// <exception cref="Amazon.ServiceCatalog.Model.TagOptionNotMigratedException">
+        /// An operation requiring TagOptions failed because the TagOptions migration process
+        /// has not been performed for this account. Please use the AWS console to perform the
+        /// migration process before retrying the operation.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/UpdatePortfolio">REST API Reference for UpdatePortfolio Operation</seealso>
         UpdatePortfolioResponse UpdatePortfolio(UpdatePortfolioRequest request);
 
@@ -2028,6 +2385,11 @@ namespace Amazon.ServiceCatalog
         /// </exception>
         /// <exception cref="Amazon.ServiceCatalog.Model.ResourceNotFoundException">
         /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.ServiceCatalog.Model.TagOptionNotMigratedException">
+        /// An operation requiring TagOptions failed because the TagOptions migration process
+        /// has not been performed for this account. Please use the AWS console to perform the
+        /// migration process before retrying the operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/UpdateProduct">REST API Reference for UpdateProduct Operation</seealso>
         UpdateProductResponse UpdateProduct(UpdateProductRequest request);
@@ -2159,6 +2521,60 @@ namespace Amazon.ServiceCatalog
         /// <returns>Returns a  UpdateProvisioningArtifactResult from ServiceCatalog.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/UpdateProvisioningArtifact">REST API Reference for UpdateProvisioningArtifact Operation</seealso>
         UpdateProvisioningArtifactResponse EndUpdateProvisioningArtifact(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  UpdateTagOption
+
+
+        /// <summary>
+        /// Updates an existing TagOption.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateTagOption service method.</param>
+        /// 
+        /// <returns>The response from the UpdateTagOption service method, as returned by ServiceCatalog.</returns>
+        /// <exception cref="Amazon.ServiceCatalog.Model.DuplicateResourceException">
+        /// The specified resource is a duplicate.
+        /// </exception>
+        /// <exception cref="Amazon.ServiceCatalog.Model.InvalidParametersException">
+        /// One or more parameters provided to the operation are invalid.
+        /// </exception>
+        /// <exception cref="Amazon.ServiceCatalog.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.ServiceCatalog.Model.TagOptionNotMigratedException">
+        /// An operation requiring TagOptions failed because the TagOptions migration process
+        /// has not been performed for this account. Please use the AWS console to perform the
+        /// migration process before retrying the operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/UpdateTagOption">REST API Reference for UpdateTagOption Operation</seealso>
+        UpdateTagOptionResponse UpdateTagOption(UpdateTagOptionRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateTagOption operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateTagOption operation on AmazonServiceCatalogClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateTagOption
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/UpdateTagOption">REST API Reference for UpdateTagOption Operation</seealso>
+        IAsyncResult BeginUpdateTagOption(UpdateTagOptionRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateTagOption operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateTagOption.</param>
+        /// 
+        /// <returns>Returns a  UpdateTagOptionResult from ServiceCatalog.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/UpdateTagOption">REST API Reference for UpdateTagOption Operation</seealso>
+        UpdateTagOptionResponse EndUpdateTagOption(IAsyncResult asyncResult);
 
         #endregion
         

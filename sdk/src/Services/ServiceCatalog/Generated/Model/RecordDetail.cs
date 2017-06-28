@@ -261,7 +261,7 @@ namespace Amazon.ServiceCatalog.Model
         ///  
         /// <para>
         ///  <code>IN_PROGRESS_IN_ERROR</code> - The provisioned product is under change but the
-        /// requested operation failed and some remediation is occurring. For example, a roll-back.
+        /// requested operation failed and some remediation is occurring. For example, a rollback.
         /// </para>
         ///  
         /// <para>
