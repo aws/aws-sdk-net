@@ -1,3 +1,10 @@
+### 3.3.115.0 (2017-06-28 21:52 UTC)
+* ServiceCatalog (3.3.4.0)
+	* Proper tagging of resources is critical to post-launch operations such as billing, cost allocation, and resource management. By using Service Catalog's TagOption Library, administrators can define a library of re-usable TagOptions that conform to company standards, and associate these with Service Catalog portfolios and products. Learn how to move your current tags to the new library, create new TagOptions, and view and associate your library items with portfolios and products. Understand how to ensure that the right tags are created on products launched through Service Catalog and how to provide users with defined selectable tags.
+* Core 3.3.15.0
+	* Allow session credentials to be used as the source for assume role profiles. AWS Greengrass is now available in new regions.
+	* All services packages updated to require new Core
+
 ### 3.3.114.0 (2017-06-23 19:10 UTC)
 * Lambda (3.3.7.0)
 	* The Lambda Invoke API will now throw new exception InvalidRuntimeException (status code 502) for invokes with deprecated runtimes.
