@@ -137,7 +137,7 @@ namespace Amazon.CloudWatchEvents.Model
         /// <summary>
         /// Gets and sets the property ScheduleExpression. 
         /// <para>
-        /// The scheduling expression. For example, "cron(0 20 * * ? *)", "rate(5 minutes)".
+        /// The scheduling expression. For example, "cron(0 20 * * ? *)" or "rate(5 minutes)".
         /// </para>
         /// </summary>
         public string ScheduleExpression

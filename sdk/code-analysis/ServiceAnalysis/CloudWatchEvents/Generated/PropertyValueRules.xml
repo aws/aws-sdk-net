@@ -115,6 +115,24 @@
     <max>2048</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CloudWatchEvents.Model.PutPermissionRequest.Action</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>events:[a-zA-Z]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudWatchEvents.Model.PutPermissionRequest.Principal</property>
+    <min>1</min>
+    <max>12</max>
+    <pattern>(\d{12}|\*)</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudWatchEvents.Model.PutPermissionRequest.StatementId</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[a-zA-Z0-9-_]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CloudWatchEvents.Model.PutRuleRequest.Description</property>
     <max>512</max>
   </property-value-rule>
@@ -147,6 +165,12 @@
     <min>1</min>
     <max>64</max>
     <pattern>[\.\-_A-Za-z0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudWatchEvents.Model.RemovePermissionRequest.StatementId</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[a-zA-Z0-9-_]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudWatchEvents.Model.RemoveTargetsRequest.Rule</property>

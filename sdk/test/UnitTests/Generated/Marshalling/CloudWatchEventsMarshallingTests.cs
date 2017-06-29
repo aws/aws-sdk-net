@@ -59,6 +59,35 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Json")]
         [TestCategory("CloudWatchEvents")]
+        public void DescribeEventBusMarshallTest()
+        {
+            var request = InstantiateClassGenerator.Execute<DescribeEventBusRequest>();
+            var marshaller = new DescribeEventBusRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            Comparer.CompareObjectToJson<DescribeEventBusRequest>(request,jsonRequest);
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("DescribeEventBus").ResponseStructure).Execute();
+            webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
+            UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
+            var response = DescribeEventBusResponseUnmarshaller.Instance.Unmarshall(context)
+                as DescribeEventBusResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("CloudWatchEvents")]
         public void DescribeRuleMarshallTest()
         {
             var request = InstantiateClassGenerator.Execute<DescribeRuleRequest>();
@@ -236,6 +265,22 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Json")]
         [TestCategory("CloudWatchEvents")]
+        public void PutPermissionMarshallTest()
+        {
+            var request = InstantiateClassGenerator.Execute<PutPermissionRequest>();
+            var marshaller = new PutPermissionRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            Comparer.CompareObjectToJson<PutPermissionRequest>(request,jsonRequest);
+
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("CloudWatchEvents")]
         public void PutRuleMarshallTest()
         {
             var request = InstantiateClassGenerator.Execute<PutRuleRequest>();
@@ -287,6 +332,22 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var response = PutTargetsResponseUnmarshaller.Instance.Unmarshall(context)
                 as PutTargetsResponse;
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("CloudWatchEvents")]
+        public void RemovePermissionMarshallTest()
+        {
+            var request = InstantiateClassGenerator.Execute<RemovePermissionRequest>();
+            var marshaller = new RemovePermissionRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            Comparer.CompareObjectToJson<RemovePermissionRequest>(request,jsonRequest);
+
         }
 
         

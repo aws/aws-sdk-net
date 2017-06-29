@@ -105,6 +105,41 @@ namespace Amazon.CloudWatchEvents
 
         #endregion
         
+        #region  DescribeEventBus
+
+
+        /// <summary>
+        /// Displays the external AWS accounts that are permitted to write events to your account
+        /// using your account's event bus, and the associated policy. To enable your account
+        /// to receive events from other accounts, use <a>PutPermission</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeEventBus service method.</param>
+        /// 
+        /// <returns>The response from the DescribeEventBus service method, as returned by CloudWatchEvents.</returns>
+        /// <exception cref="Amazon.CloudWatchEvents.Model.InternalException">
+        /// This exception occurs due to unexpected causes.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchEvents.Model.ResourceNotFoundException">
+        /// An entity that you specified does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/DescribeEventBus">REST API Reference for DescribeEventBus Operation</seealso>
+        DescribeEventBusResponse DescribeEventBus(DescribeEventBusRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeEventBus operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeEventBus operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/DescribeEventBus">REST API Reference for DescribeEventBus Operation</seealso>
+        Task<DescribeEventBusResponse> DescribeEventBusAsync(DescribeEventBusRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  DescribeRule
 
 
@@ -118,7 +153,7 @@ namespace Amazon.CloudWatchEvents
         /// This exception occurs due to unexpected causes.
         /// </exception>
         /// <exception cref="Amazon.CloudWatchEvents.Model.ResourceNotFoundException">
-        /// The rule does not exist.
+        /// An entity that you specified does not exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/DescribeRule">REST API Reference for DescribeRule Operation</seealso>
         DescribeRuleResponse DescribeRule(DescribeRuleRequest request);
@@ -161,7 +196,7 @@ namespace Amazon.CloudWatchEvents
         /// This exception occurs due to unexpected causes.
         /// </exception>
         /// <exception cref="Amazon.CloudWatchEvents.Model.ResourceNotFoundException">
-        /// The rule does not exist.
+        /// An entity that you specified does not exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/DisableRule">REST API Reference for DisableRule Operation</seealso>
         DisableRuleResponse DisableRule(DisableRuleRequest request);
@@ -203,7 +238,7 @@ namespace Amazon.CloudWatchEvents
         /// This exception occurs due to unexpected causes.
         /// </exception>
         /// <exception cref="Amazon.CloudWatchEvents.Model.ResourceNotFoundException">
-        /// The rule does not exist.
+        /// An entity that you specified does not exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/EnableRule">REST API Reference for EnableRule Operation</seealso>
         EnableRuleResponse EnableRule(EnableRuleRequest request);
@@ -327,7 +362,7 @@ namespace Amazon.CloudWatchEvents
         /// This exception occurs due to unexpected causes.
         /// </exception>
         /// <exception cref="Amazon.CloudWatchEvents.Model.ResourceNotFoundException">
-        /// The rule does not exist.
+        /// An entity that you specified does not exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/ListTargetsByRule">REST API Reference for ListTargetsByRule Operation</seealso>
         ListTargetsByRuleResponse ListTargetsByRule(ListTargetsByRuleRequest request);
@@ -374,6 +409,55 @@ namespace Amazon.CloudWatchEvents
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/PutEvents">REST API Reference for PutEvents Operation</seealso>
         Task<PutEventsResponse> PutEventsAsync(PutEventsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  PutPermission
+
+
+        /// <summary>
+        /// Running <code>PutPermission</code> permits the specified AWS account to put events
+        /// to your account's default <i>event bus</i>. CloudWatch Events rules in your account
+        /// are triggered by these events arriving to your default event bus. 
+        /// 
+        ///  
+        /// <para>
+        /// For another account to send events to your account, that external account must have
+        /// a CloudWatch Events rule with your account's default event bus as a target.
+        /// </para>
+        ///  
+        /// <para>
+        /// To enable multiple AWS accounts to put events to your default event bus, run <code>PutPermission</code>
+        /// once for each of these accounts.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutPermission service method.</param>
+        /// 
+        /// <returns>The response from the PutPermission service method, as returned by CloudWatchEvents.</returns>
+        /// <exception cref="Amazon.CloudWatchEvents.Model.InternalException">
+        /// This exception occurs due to unexpected causes.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchEvents.Model.PolicyLengthExceededException">
+        /// The event bus policy is too long. For more information, see the limits.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchEvents.Model.ResourceNotFoundException">
+        /// An entity that you specified does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/PutPermission">REST API Reference for PutPermission Operation</seealso>
+        PutPermissionResponse PutPermission(PutPermissionRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutPermission operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutPermission operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/PutPermission">REST API Reference for PutPermission Operation</seealso>
+        Task<PutPermissionResponse> PutPermissionAsync(PutPermissionRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -446,10 +530,48 @@ namespace Amazon.CloudWatchEvents
         /// 
         ///  
         /// <para>
-        /// Targets are the resources that are invoked when a rule is triggered. Example targets
-        /// include EC2 instances, AWS Lambda functions, Amazon Kinesis streams, Amazon ECS tasks,
-        /// AWS Step Functions state machines, and built-in targets. Note that creating rules
-        /// with built-in targets is supported only in the AWS Management Console.
+        /// Targets are the resources that are invoked when a rule is triggered.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can configure the following as targets for CloudWatch Events:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// EC2 instances
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// AWS Lambda functions
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Streams in Amazon Kinesis Streams
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Delivery streams in Amazon Kinesis Firehose
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Amazon ECS tasks
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// AWS Step Functions state machines
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Amazon SNS topics
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Amazon SQS queues
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// Note that creating rules with built-in targets is supported only in the AWS Management
+        /// Console.
         /// </para>
         ///  
         /// <para>
@@ -465,9 +587,17 @@ namespace Amazon.CloudWatchEvents
         /// Events needs the appropriate permissions. For AWS Lambda and Amazon SNS resources,
         /// CloudWatch Events relies on resource-based policies. For EC2 instances, Amazon Kinesis
         /// streams, and AWS Step Functions state machines, CloudWatch Events relies on IAM roles
-        /// that you specify in the <code>RoleARN</code> argument in <code>PutTarget</code>. For
-        /// more information, see <a href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/events/auth-and-access-control-cwe.html">Authentication
+        /// that you specify in the <code>RoleARN</code> argument in <code>PutTargets</code>.
+        /// For more information, see <a href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/events/auth-and-access-control-cwe.html">Authentication
         /// and Access Control</a> in the <i>Amazon CloudWatch Events User Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// If another AWS account is in the same region and has granted you permission (using
+        /// <code>PutPermission</code>), you can set that account's event bus as a target of the
+        /// rules in your account. To send the matched events to the other account, specify that
+        /// account's event bus as the <code>Arn</code> when you run <code>PutTargets</code>.
+        /// For more information about enabling cross-account events, see <a>PutPermission</a>.
         /// </para>
         ///  
         /// <para>
@@ -528,7 +658,7 @@ namespace Amazon.CloudWatchEvents
         /// You tried to create more rules or add more targets to a rule than is allowed.
         /// </exception>
         /// <exception cref="Amazon.CloudWatchEvents.Model.ResourceNotFoundException">
-        /// The rule does not exist.
+        /// An entity that you specified does not exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/PutTargets">REST API Reference for PutTargets Operation</seealso>
         PutTargetsResponse PutTargets(PutTargetsRequest request);
@@ -545,6 +675,42 @@ namespace Amazon.CloudWatchEvents
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/PutTargets">REST API Reference for PutTargets Operation</seealso>
         Task<PutTargetsResponse> PutTargetsAsync(PutTargetsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  RemovePermission
+
+
+        /// <summary>
+        /// Revokes the permission of another AWS account to be able to put events to your default
+        /// event bus. Specify the account to revoke by the <code>StatementId</code> value that
+        /// you associated with the account when you granted it permission with <code>PutPermission</code>.
+        /// You can find the <code>StatementId</code> by using <a>DescribeEventBus</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RemovePermission service method.</param>
+        /// 
+        /// <returns>The response from the RemovePermission service method, as returned by CloudWatchEvents.</returns>
+        /// <exception cref="Amazon.CloudWatchEvents.Model.InternalException">
+        /// This exception occurs due to unexpected causes.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchEvents.Model.ResourceNotFoundException">
+        /// An entity that you specified does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/RemovePermission">REST API Reference for RemovePermission Operation</seealso>
+        RemovePermissionResponse RemovePermission(RemovePermissionRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the RemovePermission operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the RemovePermission operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/RemovePermission">REST API Reference for RemovePermission Operation</seealso>
+        Task<RemovePermissionResponse> RemovePermissionAsync(RemovePermissionRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -577,7 +743,7 @@ namespace Amazon.CloudWatchEvents
         /// This exception occurs due to unexpected causes.
         /// </exception>
         /// <exception cref="Amazon.CloudWatchEvents.Model.ResourceNotFoundException">
-        /// The rule does not exist.
+        /// An entity that you specified does not exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/RemoveTargets">REST API Reference for RemoveTargets Operation</seealso>
         RemoveTargetsResponse RemoveTargets(RemoveTargetsRequest request);

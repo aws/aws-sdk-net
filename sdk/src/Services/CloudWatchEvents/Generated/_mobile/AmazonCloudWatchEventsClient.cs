@@ -286,6 +286,38 @@ namespace Amazon.CloudWatchEvents
 
         #endregion
         
+        #region  DescribeEventBus
+
+        internal DescribeEventBusResponse DescribeEventBus(DescribeEventBusRequest request)
+        {
+            var marshaller = new DescribeEventBusRequestMarshaller();
+            var unmarshaller = DescribeEventBusResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeEventBusRequest,DescribeEventBusResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeEventBus operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeEventBus operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/DescribeEventBus">REST API Reference for DescribeEventBus Operation</seealso>
+        public Task<DescribeEventBusResponse> DescribeEventBusAsync(DescribeEventBusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DescribeEventBusRequestMarshaller();
+            var unmarshaller = DescribeEventBusResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeEventBusRequest,DescribeEventBusResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DescribeRule
 
         internal DescribeRuleResponse DescribeRule(DescribeRuleRequest request)
@@ -533,6 +565,38 @@ namespace Amazon.CloudWatchEvents
 
         #endregion
         
+        #region  PutPermission
+
+        internal PutPermissionResponse PutPermission(PutPermissionRequest request)
+        {
+            var marshaller = new PutPermissionRequestMarshaller();
+            var unmarshaller = PutPermissionResponseUnmarshaller.Instance;
+
+            return Invoke<PutPermissionRequest,PutPermissionResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutPermission operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutPermission operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/PutPermission">REST API Reference for PutPermission Operation</seealso>
+        public Task<PutPermissionResponse> PutPermissionAsync(PutPermissionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new PutPermissionRequestMarshaller();
+            var unmarshaller = PutPermissionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<PutPermissionRequest,PutPermissionResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  PutRule
 
         internal PutRuleResponse PutRule(PutRuleRequest request)
@@ -592,6 +656,38 @@ namespace Amazon.CloudWatchEvents
             var unmarshaller = PutTargetsResponseUnmarshaller.Instance;
 
             return InvokeAsync<PutTargetsRequest,PutTargetsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  RemovePermission
+
+        internal RemovePermissionResponse RemovePermission(RemovePermissionRequest request)
+        {
+            var marshaller = new RemovePermissionRequestMarshaller();
+            var unmarshaller = RemovePermissionResponseUnmarshaller.Instance;
+
+            return Invoke<RemovePermissionRequest,RemovePermissionResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the RemovePermission operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the RemovePermission operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/RemovePermission">REST API Reference for RemovePermission Operation</seealso>
+        public Task<RemovePermissionResponse> RemovePermissionAsync(RemovePermissionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new RemovePermissionRequestMarshaller();
+            var unmarshaller = RemovePermissionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<RemovePermissionRequest,RemovePermissionResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
