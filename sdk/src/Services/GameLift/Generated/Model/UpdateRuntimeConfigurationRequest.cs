@@ -29,26 +29,115 @@ namespace Amazon.GameLift.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateRuntimeConfiguration operation.
-    /// Updates the current runtime configuration for the specified fleet, which tells Amazon
+    /// Updates the current run-time configuration for the specified fleet, which tells Amazon
     /// GameLift how to launch server processes on instances in the fleet. You can update
-    /// a fleet's runtime configuration at any time after the fleet is created; it does not
+    /// a fleet's run-time configuration at any time after the fleet is created; it does not
     /// need to be in an <code>ACTIVE</code> status.
     /// 
     ///  
     /// <para>
-    /// To update runtime configuration, specify the fleet ID and provide a <code>RuntimeConfiguration</code>
+    /// To update run-time configuration, specify the fleet ID and provide a <code>RuntimeConfiguration</code>
     /// object with the updated collection of server process configurations.
     /// </para>
     ///  
     /// <para>
-    /// Each instance in a Amazon GameLift fleet checks regularly for an updated runtime configuration
-    /// and changes how it launches server processes to comply with the latest version. Existing
-    /// server processes are not affected by the update; they continue to run until they end,
-    /// while Amazon GameLift simply adds new server processes to fit the current runtime
-    /// configuration. As a result, the runtime configuration changes are applied gradually
-    /// as existing processes shut down and new processes are launched in Amazon GameLift's
-    /// normal process recycling activity.
+    /// Each instance in a Amazon GameLift fleet checks regularly for an updated run-time
+    /// configuration and changes how it launches server processes to comply with the latest
+    /// version. Existing server processes are not affected by the update; they continue to
+    /// run until they end, while Amazon GameLift simply adds new server processes to fit
+    /// the current run-time configuration. As a result, the run-time configuration changes
+    /// are applied gradually as existing processes shut down and new processes are launched
+    /// in Amazon GameLift's normal process recycling activity.
     /// </para>
+    ///  
+    /// <para>
+    /// Fleet-related operations include:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <a>CreateFleet</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>ListFleets</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Describe fleets:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <a>DescribeFleetAttributes</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>DescribeFleetPortSettings</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>DescribeFleetUtilization</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>DescribeRuntimeConfiguration</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>DescribeFleetEvents</a> 
+    /// </para>
+    ///  </li> </ul> </li> <li> 
+    /// <para>
+    /// Update fleets:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <a>UpdateFleetAttributes</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>UpdateFleetCapacity</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>UpdateFleetPortSettings</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>UpdateRuntimeConfiguration</a> 
+    /// </para>
+    ///  </li> </ul> </li> <li> 
+    /// <para>
+    /// Manage fleet capacity:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <a>DescribeFleetCapacity</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>UpdateFleetCapacity</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>PutScalingPolicy</a> (automatic scaling)
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>DescribeScalingPolicies</a> (automatic scaling)
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>DeleteScalingPolicy</a> (automatic scaling)
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>DescribeEC2InstanceLimits</a> 
+    /// </para>
+    ///  </li> </ul> </li> <li> 
+    /// <para>
+    ///  <a>DeleteFleet</a> 
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial class UpdateRuntimeConfigurationRequest : AmazonGameLiftRequest
     {
@@ -58,7 +147,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property FleetId. 
         /// <para>
-        /// Unique identifier for a fleet to update runtime configuration for.
+        /// Unique identifier for a fleet to update run-time configuration for.
         /// </para>
         /// </summary>
         public string FleetId
@@ -76,7 +165,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property RuntimeConfiguration. 
         /// <para>
-        /// Instructions for launching server processes on each instance in the fleet. The runtime
+        /// Instructions for launching server processes on each instance in the fleet. The run-time
         /// configuration for a fleet has a collection of server process configurations, one for
         /// each type of server process to run on an instance. A server process configuration
         /// specifies the location of the server executable, launch parameters, and the number

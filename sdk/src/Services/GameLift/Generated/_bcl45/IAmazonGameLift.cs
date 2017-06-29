@@ -34,43 +34,60 @@ namespace Amazon.GameLift
     /// Amazon GameLift Service 
     /// <para>
     ///  Amazon GameLift is a managed service for developers who need a scalable, dedicated
-    /// server solution for their multiplayer games. Amazon GameLift provides tools to acquire
-    /// computing resources and deploy game servers, scale game server capacity to meet player
-    /// demand, and track in-depth metrics on player usage and server performance.
+    /// server solution for their multiplayer games. Amazon GameLift provides tools for the
+    /// following tasks: (1) acquire computing resources and deploy game servers, (2) scale
+    /// game server capacity to meet player demand, (3) host game sessions and manage player
+    /// access, and (4) track in-depth metrics on player usage and server performance.
     /// </para>
     ///  
     /// <para>
-    /// The Amazon GameLift service API includes important features:
+    /// The Amazon GameLift service API includes two important function sets:
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    /// Find game sessions and match players to games – Retrieve information on available
+    ///  <b>Manage game sessions and player access</b> – Retrieve information on available
     /// game sessions; create new game sessions; send player requests to join a game session.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Configure and manage game server resources – Manage builds, fleets, queues, and aliases;
-    /// set autoscaling policies; retrieve logs and metrics.
+    ///  <b>Configure and manage game server resources</b> – Manage builds, fleets, queues,
+    /// and aliases; set autoscaling policies; retrieve logs and metrics.
     /// </para>
     ///  </li> </ul> 
     /// <para>
-    /// This reference guide describes the low-level service API for Amazon GameLift. We recommend
-    /// using either the Amazon Web Services software development kit (<a href="http://aws.amazon.com/tools/#sdk">AWS
-    /// SDK</a>), available in multiple languages, or the <a href="http://aws.amazon.com/cli/">AWS
-    /// command-line interface</a> (CLI) tool. Both of these align with the low-level service
-    /// API. In addition, you can use the <a href="https://console.aws.amazon.com/gamelift/home">AWS
-    /// Management Console</a> for Amazon GameLift for many administrative actions.
+    /// This reference guide describes the low-level service API for Amazon GameLift. You
+    /// can use the API functionality with these tools: 
     /// </para>
-    ///  
+    ///  <ul> <li> 
     /// <para>
-    /// You can use some API actions with Amazon GameLift Local, a testing tool that lets
-    /// you test your game integration locally before deploying on Amazon GameLift. You can
-    /// call these APIs from the AWS CLI or programmatically; API calls to Amazon GameLift
-    /// Local servers perform exactly as they do when calling Amazon GameLift web servers.
-    /// For more information on using Amazon GameLift Local, see <a href="http://docs.aws.amazon.com/gamelift/latest/developerguide/integration-testing-local.html">Testing
+    /// The Amazon Web Services software development kit (<a href="http://aws.amazon.com/tools/#sdk">AWS
+    /// SDK</a>) is available in <a href="http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-supported.html#gamelift-supported-clients">multiple
+    /// languages</a> including C++ and C#. Use the SDK to access the API programmatically
+    /// from an application, such as a game client.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// The <a href="http://aws.amazon.com/cli/">AWS command-line interface</a> (CLI) tool
+    /// is primarily useful for handling administrative actions, such as setting up and managing
+    /// Amazon GameLift settings and resources. You can use the AWS CLI to manage all of your
+    /// AWS services.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// The <a href="https://console.aws.amazon.com/gamelift/home">AWS Management Console</a>
+    /// for Amazon GameLift provides a web interface to manage your Amazon GameLift settings
+    /// and resources. The console includes a dashboard for tracking key resources, includings
+    /// builds and fleets, and displays usage and performance metrics for your games as customizable
+    /// graphs.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Amazon GameLift Local is a tool for testing your game's integration with Amazon GameLift
+    /// before deploying it on the service. This tools supports a subset of key API actions,
+    /// which can be called from either the AWS CLI or programmatically. See <a href="http://docs.aws.amazon.com/gamelift/latest/developerguide/integration-testing-local.html">Testing
     /// an Integration</a>.
     /// </para>
-    ///  
+    ///  </li> </ul> 
     /// <para>
     ///  <b>MORE RESOURCES</b> 
     /// </para>
@@ -111,14 +128,13 @@ namespace Amazon.GameLift
     /// </para>
     ///  
     /// <para>
-    ///  <b>Finding Games and Joining Players</b> 
+    ///  <b>Managing Games and Players</b> 
     /// </para>
     ///  
     /// <para>
-    /// You can enable players to connect to game servers on Amazon GameLift from a game client
-    /// or through a game service (such as a matchmaking service). You can use these operations
-    /// to discover actively running game or start new games. You can also match players to
-    /// games, either singly or as a group.
+    /// These actions allow you to start new game sessions, find existing game sessions, track
+    /// status and other game session information, and enable access for players to join game
+    /// sessions.
     /// </para>
     ///  <ul> <li> 
     /// <para>
@@ -127,7 +143,7 @@ namespace Amazon.GameLift
     ///  <ul> <li> 
     /// <para>
     ///  <a>SearchGameSessions</a> – Get all available game sessions or search for game sessions
-    /// that match a set of criteria. <i>Available in Amazon GameLift Local.</i> 
+    /// that match a set of criteria. 
     /// </para>
     ///  </li> </ul> </li> <li> 
     /// <para>
@@ -135,8 +151,9 @@ namespace Amazon.GameLift
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    /// Game session placement – Use a queue to process new game session requests and create
-    /// game sessions on fleets designated for the queue.
+    /// Game session placement – Use a queue to process requests for new game sessions and
+    /// place them on the best available fleet. Placement requests are asynchronous; game
+    /// sessions are started whenever acceptable resources become available. 
     /// </para>
     ///  <ul> <li> 
     /// <para>
@@ -154,12 +171,12 @@ namespace Amazon.GameLift
     /// </para>
     ///  </li> </ul> </li> <li> 
     /// <para>
-    ///  <a>CreateGameSession</a> – Start a new game session on a specific fleet. <i>Available
+    ///  <a>CreateGameSession</a> – Request a new game session on a specific fleet. <i>Available
     /// in Amazon GameLift Local.</i> 
     /// </para>
     ///  </li> </ul> </li> <li> 
     /// <para>
-    ///  <b>Manage game session objects</b> 
+    ///  <b>Manage game session data</b> 
     /// </para>
     ///  <ul> <li> 
     /// <para>
@@ -183,7 +200,7 @@ namespace Amazon.GameLift
     /// </para>
     ///  </li> </ul> </li> <li> 
     /// <para>
-    ///  <b>Manage player sessions objects</b> 
+    ///  <b>Manage player sessions</b> 
     /// </para>
     ///  <ul> <li> 
     /// <para>
@@ -206,10 +223,10 @@ namespace Amazon.GameLift
     /// </para>
     ///  
     /// <para>
-    /// When setting up Amazon GameLift, first create a game build and upload the files to
-    /// Amazon GameLift. Then use these operations to set up a fleet of resources to run your
-    /// game servers. Manage games to scale capacity, adjust configuration settings, access
-    /// raw utilization data, and more.
+    /// When setting up Amazon GameLift resources for your game, you first <a href="http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-build-intro.html">create
+    /// a game build</a> and upload it to Amazon GameLift. You can then use these actions
+    /// to configure and manage a fleet of resources to run your game servers, scale capacity
+    /// to meet player demand, access performance and utilization metrics, and more.
     /// </para>
     ///  <ul> <li> 
     /// <para>
@@ -217,9 +234,9 @@ namespace Amazon.GameLift
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <a>CreateBuild</a> – Create a new build by uploading files stored in an Amazon S3
-    /// bucket. (To create a build stored at a local file location, use the AWS CLI command
-    /// <code>upload-build</code>.)
+    ///  <a>CreateBuild</a> – Create a new build using files stored in an Amazon S3 bucket.
+    /// (Update uploading permissions with <a>RequestUploadCredentials</a>.) To create a build
+    /// and upload files from a local path, use the AWS CLI command <code>upload-build</code>.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -247,6 +264,11 @@ namespace Amazon.GameLift
     /// </para>
     ///  </li> <li> 
     /// <para>
+    ///  <a>ListFleets</a> – Get a list of all fleet IDs in a Amazon GameLift region (all
+    /// statuses).
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
     ///  <a>DeleteFleet</a> – Terminate a fleet that is no longer running game servers or
     /// hosting players.
     /// </para>
@@ -255,11 +277,6 @@ namespace Amazon.GameLift
     /// View / update fleet configurations.
     /// </para>
     ///  <ul> <li> 
-    /// <para>
-    ///  <a>ListFleets</a> – Get a list of all fleet IDs in a Amazon GameLift region (all
-    /// statuses).
-    /// </para>
-    ///  </li> <li> 
     /// <para>
     ///  <a>DescribeFleetAttributes</a> / <a>UpdateFleetAttributes</a> – View or change a
     /// fleet's metadata and settings for game session protection and resource creation limits.
@@ -273,11 +290,6 @@ namespace Amazon.GameLift
     /// <para>
     ///  <a>DescribeRuntimeConfiguration</a> / <a>UpdateRuntimeConfiguration</a> – View or
     /// change what server processes (and how many) to run on each instance in a fleet.
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>DescribeInstances</a> – Get information on each instance in a fleet, including
-    /// instance ID, IP address, and status.
     /// </para>
     ///  </li> </ul> </li> </ul> </li> <li> 
     /// <para>
@@ -335,6 +347,11 @@ namespace Amazon.GameLift
     ///  <b>Remotely access an instance</b> 
     /// </para>
     ///  <ul> <li> 
+    /// <para>
+    ///  <a>DescribeInstances</a> – Get information on each instance in a fleet, including
+    /// instance ID, IP address, and status.
+    /// </para>
+    ///  </li> <li> 
     /// <para>
     ///  <a>GetInstanceAccess</a> – Request access credentials needed to remotely connect
     /// to a specified instance in a fleet.
@@ -400,28 +417,57 @@ namespace Amazon.GameLift
 
 
         /// <summary>
-        /// Creates an alias and sets a target fleet. A fleet alias can be used in place of a
-        /// fleet ID, such as when calling <code>CreateGameSession</code> from a game client or
-        /// game service or adding destinations to a game session queue. By changing an alias's
-        /// target fleet, you can switch your players to the new fleet without changing any other
-        /// component. In production, this feature is particularly useful to redirect your player
-        /// base seamlessly to the latest game server update. 
+        /// Creates an alias for a fleet. In most situations, you can use an alias ID in place
+        /// of a fleet ID. By using a fleet alias instead of a specific fleet ID, you can switch
+        /// gameplay and players to a new fleet without changing your game client or other game
+        /// components. For example, for games in production, using an alias allows you to seamlessly
+        /// redirect your player base to a new game server update. 
         /// 
         ///  
         /// <para>
         /// Amazon GameLift supports two types of routing strategies for aliases: simple and terminal.
-        /// Use a simple alias to point to an active fleet. Use a terminal alias to display a
-        /// message to incoming traffic instead of routing players to an active fleet. This option
-        /// is useful when a game server is no longer supported but you want to provide better
-        /// messaging than a standard 404 error.
+        /// A simple alias points to an active fleet. A terminal alias is used to display messaging
+        /// or link to a URL instead of routing players to an active fleet. For example, you might
+        /// use a terminal alias when a game version is no longer supported and you want to direct
+        /// players to an upgrade site. 
         /// </para>
         ///  
         /// <para>
         /// To create a fleet alias, specify an alias name, routing strategy, and optional description.
+        /// Each simple alias can point to only one fleet, but a fleet can have multiple aliases.
         /// If successful, a new alias record is returned, including an alias ID, which you can
-        /// reference when creating a game session. To reassign the alias to another fleet ID,
-        /// call <a>UpdateAlias</a>.
+        /// reference when creating a game session. You can reassign an alias to another fleet
+        /// by calling <code>UpdateAlias</code>.
         /// </para>
+        ///  
+        /// <para>
+        /// Alias-related operations include:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a>CreateAlias</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>ListAliases</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeAlias</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>UpdateAlias</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DeleteAlias</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>ResolveAlias</a> 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateAlias service method.</param>
         /// 
@@ -468,19 +514,18 @@ namespace Amazon.GameLift
 
         /// <summary>
         /// Creates a new Amazon GameLift build from a set of game server binary files stored
-        /// in an Amazon Simple Storage Service (Amazon S3) location. When using this API call,
-        /// you must create a <code>.zip</code> file containing all of the build files and store
-        /// it in an Amazon S3 bucket under your AWS account. For help on packaging your build
-        /// files and creating a build, see <a href="http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-build-intro.html">Uploading
+        /// in an Amazon Simple Storage Service (Amazon S3) location. To use this API call, create
+        /// a <code>.zip</code> file containing all of the files for the build and store it in
+        /// an Amazon S3 bucket under your AWS account. For help on packaging your build files
+        /// and creating a build, see <a href="http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-build-intro.html">Uploading
         /// Your Game to Amazon GameLift</a>.
         /// 
         ///  <important> 
         /// <para>
         /// Use this API action ONLY if you are storing your game build files in an Amazon S3
-        /// bucket in your AWS account. To create a build using files stored in a directory, use
-        /// the CLI command <a href="http://docs.aws.amazon.com/cli/latest/reference/gamelift/upload-build.html">
+        /// bucket. To create a build using files stored locally, use the CLI command <a href="http://docs.aws.amazon.com/cli/latest/reference/gamelift/upload-build.html">
         /// <code>upload-build</code> </a>, which uploads the build files from a file location
-        /// you specify and creates a build.
+        /// you specify.
         /// </para>
         ///  </important> 
         /// <para>
@@ -491,6 +536,31 @@ namespace Amazon.GameLift
         /// to check the status of your build. A build must be in <code>READY</code> status before
         /// it can be used to create fleets to host your game.
         /// </para>
+        ///  
+        /// <para>
+        /// Build-related operations include:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a>CreateBuild</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>ListBuilds</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeBuild</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>UpdateBuild</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DeleteBuild</a> 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateBuild service method.</param>
         /// 
@@ -543,15 +613,36 @@ namespace Amazon.GameLift
         ///  
         /// <para>
         /// To create a new fleet, you must specify the following: (1) fleet name, (2) build ID
-        /// of an uploaded game build, (3) an EC2 instance type, and (4) a runtime configuration
+        /// of an uploaded game build, (3) an EC2 instance type, and (4) a run-time configuration
         /// that describes which server processes to run on each instance in the fleet. (Although
-        /// the runtime configuration is not a required parameter, the fleet cannot be successfully
-        /// created without it.) You can also configure the new fleet with the following settings:
-        /// fleet description, access permissions for inbound traffic, fleet-wide game session
-        /// protection, and resource creation limit. If you use Amazon CloudWatch for metrics,
-        /// you can add the new fleet to a metric group, which allows you to view aggregated metrics
-        /// for a set of fleets. Once you specify a metric group, the new fleet's metrics are
-        /// included in the metric group's data.
+        /// the run-time configuration is not a required parameter, the fleet cannot be successfully
+        /// activated without it.)
+        /// </para>
+        ///  
+        /// <para>
+        /// You can also configure the new fleet with the following settings:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Fleet description
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Access permissions for inbound traffic
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Fleetwide game session protection
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Resource creation limit
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// If you use Amazon CloudWatch for metrics, you can add the new fleet to a metric group.
+        /// This allows you to view aggregated metrics for a set of fleets. Once you specify a
+        /// metric group, the new fleet's metrics are included in the metric group's data.
         /// </para>
         ///  
         /// <para>
@@ -564,8 +655,8 @@ namespace Amazon.GameLift
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Sets the fleet's capacity to 1 "desired", which causes Amazon GameLift to start one
-        /// new EC2 instance.
+        /// Sets the fleet's target capacity to 1 (desired instances), which causes Amazon GameLift
+        /// to start one new EC2 instance.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -580,38 +671,96 @@ namespace Amazon.GameLift
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Sets the fleet's status to <code>ACTIVE</code> once one server process in the fleet
-        /// is ready to host a game session.
+        /// Sets the fleet's status to <code>ACTIVE</code> as soon as one server process in the
+        /// fleet is ready to host a game session.
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// After a fleet is created, use the following actions to change fleet properties and
-        /// configuration:
+        /// Fleet-related operations include:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>UpdateFleetAttributes</a> -- Update fleet metadata, including name and description.
+        ///  <a>CreateFleet</a> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>UpdateFleetCapacity</a> -- Increase or decrease the number of instances you want
-        /// the fleet to maintain.
+        ///  <a>ListFleets</a> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>UpdateFleetPortSettings</a> -- Change the IP address and port ranges that allow
-        /// access to incoming traffic.
+        /// Describe fleets:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a>DescribeFleetAttributes</a> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>UpdateRuntimeConfiguration</a> -- Change how server processes are launched in
-        /// the fleet, including launch path, launch parameters, and the number of concurrent
-        /// processes.
+        ///  <a>DescribeFleetPortSettings</a> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>PutScalingPolicy</a> -- Create or update rules that are used to set the fleet's
-        /// capacity (autoscaling).
+        ///  <a>DescribeFleetUtilization</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeRuntimeConfiguration</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeFleetEvents</a> 
+        /// </para>
+        ///  </li> </ul> </li> <li> 
+        /// <para>
+        /// Update fleets:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a>UpdateFleetAttributes</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>UpdateFleetCapacity</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>UpdateFleetPortSettings</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>UpdateRuntimeConfiguration</a> 
+        /// </para>
+        ///  </li> </ul> </li> <li> 
+        /// <para>
+        /// Manage fleet capacity:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a>DescribeFleetCapacity</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>UpdateFleetCapacity</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>PutScalingPolicy</a> (automatic scaling)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeScalingPolicies</a> (automatic scaling)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DeleteScalingPolicy</a> (automatic scaling)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeEC2InstanceLimits</a> 
+        /// </para>
+        ///  </li> </ul> </li> <li> 
+        /// <para>
+        ///  <a>DeleteFleet</a> 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -700,6 +849,51 @@ namespace Amazon.GameLift
         /// <para>
         ///  <i>Available in Amazon GameLift Local.</i> 
         /// </para>
+        ///  
+        /// <para>
+        /// Game-session-related operations include:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a>CreateGameSession</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeGameSessions</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeGameSessionDetails</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>SearchGameSessions</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>UpdateGameSession</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>GetGameSessionLogUrl</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Game session placements
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a>StartGameSessionPlacement</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeGameSessionPlacement</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>StopGameSessionPlacement</a> 
+        /// </para>
+        ///  </li> </ul> </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateGameSession service method.</param>
         /// 
@@ -802,6 +996,27 @@ namespace Amazon.GameLift
         /// To create a new queue, provide a name, timeout value, a list of destinations and,
         /// if desired, a set of latency policies. If successful, a new queue object is returned.
         /// </para>
+        ///  
+        /// <para>
+        /// Queue-related operations include:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a>CreateGameSessionQueue</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeGameSessionQueues</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>UpdateGameSessionQueue</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DeleteGameSessionQueue</a> 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateGameSessionQueue service method.</param>
         /// 
@@ -859,6 +1074,39 @@ namespace Amazon.GameLift
         /// <para>
         ///  <i>Available in Amazon GameLift Local.</i> 
         /// </para>
+        ///  
+        /// <para>
+        /// Player-session-related operations include:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a>CreatePlayerSession</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>CreatePlayerSessions</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribePlayerSessions</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Game session placements
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a>StartGameSessionPlacement</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeGameSessionPlacement</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>StopGameSessionPlacement</a> 
+        /// </para>
+        ///  </li> </ul> </li> </ul>
         /// </summary>
         /// <param name="gameSessionId">Unique identifier for the game session to add a player to.</param>
         /// <param name="playerId">Unique identifier for a player. Player IDs are developer-defined.</param>
@@ -914,6 +1162,39 @@ namespace Amazon.GameLift
         /// <para>
         ///  <i>Available in Amazon GameLift Local.</i> 
         /// </para>
+        ///  
+        /// <para>
+        /// Player-session-related operations include:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a>CreatePlayerSession</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>CreatePlayerSessions</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribePlayerSessions</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Game session placements
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a>StartGameSessionPlacement</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeGameSessionPlacement</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>StopGameSessionPlacement</a> 
+        /// </para>
+        ///  </li> </ul> </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreatePlayerSession service method.</param>
         /// 
@@ -969,6 +1250,39 @@ namespace Amazon.GameLift
         /// <para>
         ///  <i>Available in Amazon GameLift Local.</i> 
         /// </para>
+        ///  
+        /// <para>
+        /// Player-session-related operations include:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a>CreatePlayerSession</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>CreatePlayerSessions</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribePlayerSessions</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Game session placements
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a>StartGameSessionPlacement</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeGameSessionPlacement</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>StopGameSessionPlacement</a> 
+        /// </para>
+        ///  </li> </ul> </li> </ul>
         /// </summary>
         /// <param name="gameSessionId">Unique identifier for the game session to add a player to.</param>
         /// <param name="playerId">Unique identifier for a player. Player IDs are developer-defined.</param>
@@ -1044,6 +1358,39 @@ namespace Amazon.GameLift
         /// <para>
         ///  <i>Available in Amazon GameLift Local.</i> 
         /// </para>
+        ///  
+        /// <para>
+        /// Player-session-related operations include:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a>CreatePlayerSession</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>CreatePlayerSessions</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribePlayerSessions</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Game session placements
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a>StartGameSessionPlacement</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeGameSessionPlacement</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>StopGameSessionPlacement</a> 
+        /// </para>
+        ///  </li> </ul> </li> </ul>
         /// </summary>
         /// <param name="gameSessionId">Unique identifier for the game session to add players to.</param>
         /// <param name="playerIds">List of unique identifiers for the players to be added.</param>
@@ -1099,6 +1446,39 @@ namespace Amazon.GameLift
         /// <para>
         ///  <i>Available in Amazon GameLift Local.</i> 
         /// </para>
+        ///  
+        /// <para>
+        /// Player-session-related operations include:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a>CreatePlayerSession</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>CreatePlayerSessions</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribePlayerSessions</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Game session placements
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a>StartGameSessionPlacement</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeGameSessionPlacement</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>StopGameSessionPlacement</a> 
+        /// </para>
+        ///  </li> </ul> </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreatePlayerSessions service method.</param>
         /// 
@@ -1154,6 +1534,39 @@ namespace Amazon.GameLift
         /// <para>
         ///  <i>Available in Amazon GameLift Local.</i> 
         /// </para>
+        ///  
+        /// <para>
+        /// Player-session-related operations include:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a>CreatePlayerSession</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>CreatePlayerSessions</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribePlayerSessions</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Game session placements
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a>StartGameSessionPlacement</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeGameSessionPlacement</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>StopGameSessionPlacement</a> 
+        /// </para>
+        ///  </li> </ul> </li> </ul>
         /// </summary>
         /// <param name="gameSessionId">Unique identifier for the game session to add players to.</param>
         /// <param name="playerIds">List of unique identifiers for the players to be added.</param>
@@ -1213,9 +1626,39 @@ namespace Amazon.GameLift
 
 
         /// <summary>
-        /// Deletes a fleet alias. This action removes all record of the alias. Game clients attempting
+        /// Deletes an alias. This action removes all record of the alias. Game clients attempting
         /// to access a server process using the deleted alias receive an error. To delete an
         /// alias, specify the alias ID to be deleted.
+        /// 
+        ///  
+        /// <para>
+        /// Alias-related operations include:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a>CreateAlias</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>ListAliases</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeAlias</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>UpdateAlias</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DeleteAlias</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>ResolveAlias</a> 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="aliasId">Unique identifier for a fleet alias. Specify the alias you want to delete.</param>
         /// 
@@ -1239,9 +1682,39 @@ namespace Amazon.GameLift
         DeleteAliasResponse DeleteAlias(string aliasId);
 
         /// <summary>
-        /// Deletes a fleet alias. This action removes all record of the alias. Game clients attempting
+        /// Deletes an alias. This action removes all record of the alias. Game clients attempting
         /// to access a server process using the deleted alias receive an error. To delete an
         /// alias, specify the alias ID to be deleted.
+        /// 
+        ///  
+        /// <para>
+        /// Alias-related operations include:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a>CreateAlias</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>ListAliases</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeAlias</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>UpdateAlias</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DeleteAlias</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>ResolveAlias</a> 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteAlias service method.</param>
         /// 
@@ -1266,9 +1739,39 @@ namespace Amazon.GameLift
 
 
         /// <summary>
-        /// Deletes a fleet alias. This action removes all record of the alias. Game clients attempting
+        /// Deletes an alias. This action removes all record of the alias. Game clients attempting
         /// to access a server process using the deleted alias receive an error. To delete an
         /// alias, specify the alias ID to be deleted.
+        /// 
+        ///  
+        /// <para>
+        /// Alias-related operations include:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a>CreateAlias</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>ListAliases</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeAlias</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>UpdateAlias</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DeleteAlias</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>ResolveAlias</a> 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="aliasId">Unique identifier for a fleet alias. Specify the alias you want to delete.</param>
         /// <param name="cancellationToken">
@@ -1321,6 +1824,31 @@ namespace Amazon.GameLift
         /// any active fleets using the build, but you can no longer create new fleets with the
         /// deleted build.
         /// </para>
+        ///  
+        /// <para>
+        /// Build-related operations include:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a>CreateBuild</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>ListBuilds</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeBuild</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>UpdateBuild</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DeleteBuild</a> 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="buildId">Unique identifier for a build to delete.</param>
         /// 
@@ -1353,6 +1881,31 @@ namespace Amazon.GameLift
         /// any active fleets using the build, but you can no longer create new fleets with the
         /// deleted build.
         /// </para>
+        ///  
+        /// <para>
+        /// Build-related operations include:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a>CreateBuild</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>ListBuilds</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeBuild</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>UpdateBuild</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DeleteBuild</a> 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteBuild service method.</param>
         /// 
@@ -1386,6 +1939,31 @@ namespace Amazon.GameLift
         /// any active fleets using the build, but you can no longer create new fleets with the
         /// deleted build.
         /// </para>
+        ///  
+        /// <para>
+        /// Build-related operations include:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a>CreateBuild</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>ListBuilds</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeBuild</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>UpdateBuild</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DeleteBuild</a> 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="buildId">Unique identifier for a build to delete.</param>
         /// <param name="cancellationToken">
@@ -1437,6 +2015,95 @@ namespace Amazon.GameLift
         /// This action removes the fleet's resources and the fleet record. Once a fleet is deleted,
         /// you can no longer use that fleet.
         /// </para>
+        ///  
+        /// <para>
+        /// Fleet-related operations include:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a>CreateFleet</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>ListFleets</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Describe fleets:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a>DescribeFleetAttributes</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeFleetPortSettings</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeFleetUtilization</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeRuntimeConfiguration</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeFleetEvents</a> 
+        /// </para>
+        ///  </li> </ul> </li> <li> 
+        /// <para>
+        /// Update fleets:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a>UpdateFleetAttributes</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>UpdateFleetCapacity</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>UpdateFleetPortSettings</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>UpdateRuntimeConfiguration</a> 
+        /// </para>
+        ///  </li> </ul> </li> <li> 
+        /// <para>
+        /// Manage fleet capacity:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a>DescribeFleetCapacity</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>UpdateFleetCapacity</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>PutScalingPolicy</a> (automatic scaling)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeScalingPolicies</a> (automatic scaling)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DeleteScalingPolicy</a> (automatic scaling)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeEC2InstanceLimits</a> 
+        /// </para>
+        ///  </li> </ul> </li> <li> 
+        /// <para>
+        ///  <a>DeleteFleet</a> 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="fleetId">Unique identifier for a fleet to be deleted.</param>
         /// 
@@ -1472,6 +2139,95 @@ namespace Amazon.GameLift
         /// This action removes the fleet's resources and the fleet record. Once a fleet is deleted,
         /// you can no longer use that fleet.
         /// </para>
+        ///  
+        /// <para>
+        /// Fleet-related operations include:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a>CreateFleet</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>ListFleets</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Describe fleets:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a>DescribeFleetAttributes</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeFleetPortSettings</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeFleetUtilization</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeRuntimeConfiguration</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeFleetEvents</a> 
+        /// </para>
+        ///  </li> </ul> </li> <li> 
+        /// <para>
+        /// Update fleets:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a>UpdateFleetAttributes</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>UpdateFleetCapacity</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>UpdateFleetPortSettings</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>UpdateRuntimeConfiguration</a> 
+        /// </para>
+        ///  </li> </ul> </li> <li> 
+        /// <para>
+        /// Manage fleet capacity:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a>DescribeFleetCapacity</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>UpdateFleetCapacity</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>PutScalingPolicy</a> (automatic scaling)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeScalingPolicies</a> (automatic scaling)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DeleteScalingPolicy</a> (automatic scaling)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeEC2InstanceLimits</a> 
+        /// </para>
+        ///  </li> </ul> </li> <li> 
+        /// <para>
+        ///  <a>DeleteFleet</a> 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteFleet service method.</param>
         /// 
@@ -1508,6 +2264,95 @@ namespace Amazon.GameLift
         /// This action removes the fleet's resources and the fleet record. Once a fleet is deleted,
         /// you can no longer use that fleet.
         /// </para>
+        ///  
+        /// <para>
+        /// Fleet-related operations include:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a>CreateFleet</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>ListFleets</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Describe fleets:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a>DescribeFleetAttributes</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeFleetPortSettings</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeFleetUtilization</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeRuntimeConfiguration</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeFleetEvents</a> 
+        /// </para>
+        ///  </li> </ul> </li> <li> 
+        /// <para>
+        /// Update fleets:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a>UpdateFleetAttributes</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>UpdateFleetCapacity</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>UpdateFleetPortSettings</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>UpdateRuntimeConfiguration</a> 
+        /// </para>
+        ///  </li> </ul> </li> <li> 
+        /// <para>
+        /// Manage fleet capacity:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a>DescribeFleetCapacity</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>UpdateFleetCapacity</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>PutScalingPolicy</a> (automatic scaling)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeScalingPolicies</a> (automatic scaling)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DeleteScalingPolicy</a> (automatic scaling)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeEC2InstanceLimits</a> 
+        /// </para>
+        ///  </li> </ul> </li> <li> 
+        /// <para>
+        ///  <a>DeleteFleet</a> 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="fleetId">Unique identifier for a fleet to be deleted.</param>
         /// <param name="cancellationToken">
@@ -1558,6 +2403,28 @@ namespace Amazon.GameLift
         /// Deletes a game session queue. This action means that any <a>StartGameSessionPlacement</a>
         /// requests that reference this queue will fail. To delete a queue, specify the queue
         /// name.
+        /// 
+        ///  
+        /// <para>
+        /// Queue-related operations include:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a>CreateGameSessionQueue</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeGameSessionQueues</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>UpdateGameSessionQueue</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DeleteGameSessionQueue</a> 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteGameSessionQueue service method.</param>
         /// 
@@ -1602,6 +2469,96 @@ namespace Amazon.GameLift
         /// Deletes a fleet scaling policy. This action means that the policy is no longer in
         /// force and removes all record of it. To delete a scaling policy, specify both the scaling
         /// policy name and the fleet ID it is associated with.
+        /// 
+        ///  
+        /// <para>
+        /// Fleet-related operations include:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a>CreateFleet</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>ListFleets</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Describe fleets:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a>DescribeFleetAttributes</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeFleetPortSettings</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeFleetUtilization</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeRuntimeConfiguration</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeFleetEvents</a> 
+        /// </para>
+        ///  </li> </ul> </li> <li> 
+        /// <para>
+        /// Update fleets:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a>UpdateFleetAttributes</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>UpdateFleetCapacity</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>UpdateFleetPortSettings</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>UpdateRuntimeConfiguration</a> 
+        /// </para>
+        ///  </li> </ul> </li> <li> 
+        /// <para>
+        /// Manage fleet capacity:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a>DescribeFleetCapacity</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>UpdateFleetCapacity</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>PutScalingPolicy</a> (automatic scaling)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeScalingPolicies</a> (automatic scaling)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DeleteScalingPolicy</a> (automatic scaling)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeEC2InstanceLimits</a> 
+        /// </para>
+        ///  </li> </ul> </li> <li> 
+        /// <para>
+        ///  <a>DeleteFleet</a> 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteScalingPolicy service method.</param>
         /// 
@@ -1643,15 +2600,43 @@ namespace Amazon.GameLift
 
 
         /// <summary>
-        /// Retrieves properties for a fleet alias. This operation returns all alias metadata
-        /// and settings. To get just the fleet ID an alias is currently pointing to, use <a>ResolveAlias</a>.
-        /// 
+        /// Retrieves properties for an alias. This operation returns all alias metadata and settings.
+        /// To get an alias's target fleet ID only, use <code>ResolveAlias</code>. 
         /// 
         ///  
         /// <para>
-        /// To get alias properties, specify the alias ID. If successful, an <a>Alias</a> object
-        /// is returned.
+        /// To get alias properties, specify the alias ID. If successful, the requested alias
+        /// record is returned.
         /// </para>
+        ///  
+        /// <para>
+        /// Alias-related operations include:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a>CreateAlias</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>ListAliases</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeAlias</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>UpdateAlias</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DeleteAlias</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>ResolveAlias</a> 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="aliasId">Unique identifier for a fleet alias. Specify the alias you want to retrieve.</param>
         /// 
@@ -1675,15 +2660,43 @@ namespace Amazon.GameLift
         DescribeAliasResponse DescribeAlias(string aliasId);
 
         /// <summary>
-        /// Retrieves properties for a fleet alias. This operation returns all alias metadata
-        /// and settings. To get just the fleet ID an alias is currently pointing to, use <a>ResolveAlias</a>.
-        /// 
+        /// Retrieves properties for an alias. This operation returns all alias metadata and settings.
+        /// To get an alias's target fleet ID only, use <code>ResolveAlias</code>. 
         /// 
         ///  
         /// <para>
-        /// To get alias properties, specify the alias ID. If successful, an <a>Alias</a> object
-        /// is returned.
+        /// To get alias properties, specify the alias ID. If successful, the requested alias
+        /// record is returned.
         /// </para>
+        ///  
+        /// <para>
+        /// Alias-related operations include:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a>CreateAlias</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>ListAliases</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeAlias</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>UpdateAlias</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DeleteAlias</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>ResolveAlias</a> 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeAlias service method.</param>
         /// 
@@ -1708,15 +2721,43 @@ namespace Amazon.GameLift
 
 
         /// <summary>
-        /// Retrieves properties for a fleet alias. This operation returns all alias metadata
-        /// and settings. To get just the fleet ID an alias is currently pointing to, use <a>ResolveAlias</a>.
-        /// 
+        /// Retrieves properties for an alias. This operation returns all alias metadata and settings.
+        /// To get an alias's target fleet ID only, use <code>ResolveAlias</code>. 
         /// 
         ///  
         /// <para>
-        /// To get alias properties, specify the alias ID. If successful, an <a>Alias</a> object
-        /// is returned.
+        /// To get alias properties, specify the alias ID. If successful, the requested alias
+        /// record is returned.
         /// </para>
+        ///  
+        /// <para>
+        /// Alias-related operations include:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a>CreateAlias</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>ListAliases</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeAlias</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>UpdateAlias</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DeleteAlias</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>ResolveAlias</a> 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="aliasId">Unique identifier for a fleet alias. Specify the alias you want to retrieve.</param>
         /// <param name="cancellationToken">
@@ -1762,6 +2803,32 @@ namespace Amazon.GameLift
         /// <summary>
         /// Retrieves properties for a build. To get a build record, specify a build ID. If successful,
         /// an object containing the build properties is returned.
+        /// 
+        ///  
+        /// <para>
+        /// Build-related operations include:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a>CreateBuild</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>ListBuilds</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeBuild</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>UpdateBuild</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DeleteBuild</a> 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="buildId">Unique identifier for a build to retrieve properties for.</param>
         /// 
@@ -1787,6 +2854,32 @@ namespace Amazon.GameLift
         /// <summary>
         /// Retrieves properties for a build. To get a build record, specify a build ID. If successful,
         /// an object containing the build properties is returned.
+        /// 
+        ///  
+        /// <para>
+        /// Build-related operations include:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a>CreateBuild</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>ListBuilds</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeBuild</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>UpdateBuild</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DeleteBuild</a> 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeBuild service method.</param>
         /// 
@@ -1813,6 +2906,32 @@ namespace Amazon.GameLift
         /// <summary>
         /// Retrieves properties for a build. To get a build record, specify a build ID. If successful,
         /// an object containing the build properties is returned.
+        /// 
+        ///  
+        /// <para>
+        /// Build-related operations include:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a>CreateBuild</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>ListBuilds</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeBuild</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>UpdateBuild</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DeleteBuild</a> 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="buildId">Unique identifier for a build to retrieve properties for.</param>
         /// <param name="cancellationToken">
@@ -1872,6 +2991,95 @@ namespace Amazon.GameLift
         /// be found in the AWS Management Console for Amazon GameLift (see the drop-down list
         /// in the upper right corner).
         /// </para>
+        ///  
+        /// <para>
+        /// Fleet-related operations include:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a>CreateFleet</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>ListFleets</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Describe fleets:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a>DescribeFleetAttributes</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeFleetPortSettings</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeFleetUtilization</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeRuntimeConfiguration</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeFleetEvents</a> 
+        /// </para>
+        ///  </li> </ul> </li> <li> 
+        /// <para>
+        /// Update fleets:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a>UpdateFleetAttributes</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>UpdateFleetCapacity</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>UpdateFleetPortSettings</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>UpdateRuntimeConfiguration</a> 
+        /// </para>
+        ///  </li> </ul> </li> <li> 
+        /// <para>
+        /// Manage fleet capacity:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a>DescribeFleetCapacity</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>UpdateFleetCapacity</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>PutScalingPolicy</a> (automatic scaling)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeScalingPolicies</a> (automatic scaling)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DeleteScalingPolicy</a> (automatic scaling)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeEC2InstanceLimits</a> 
+        /// </para>
+        ///  </li> </ul> </li> <li> 
+        /// <para>
+        ///  <a>DeleteFleet</a> 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="ec2InstanceType">Name of an EC2 instance type that is supported in Amazon GameLift. A fleet instance type determines the computing resources of each instance in the fleet, including CPU, memory, storage, and networking capacity. Amazon GameLift supports the following EC2 instance types. See <a href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2 Instance Types</a> for detailed descriptions. Leave this parameter blank to retrieve limits for all types.</param>
         /// 
@@ -1907,6 +3115,95 @@ namespace Amazon.GameLift
         /// be found in the AWS Management Console for Amazon GameLift (see the drop-down list
         /// in the upper right corner).
         /// </para>
+        ///  
+        /// <para>
+        /// Fleet-related operations include:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a>CreateFleet</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>ListFleets</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Describe fleets:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a>DescribeFleetAttributes</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeFleetPortSettings</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeFleetUtilization</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeRuntimeConfiguration</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeFleetEvents</a> 
+        /// </para>
+        ///  </li> </ul> </li> <li> 
+        /// <para>
+        /// Update fleets:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a>UpdateFleetAttributes</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>UpdateFleetCapacity</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>UpdateFleetPortSettings</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>UpdateRuntimeConfiguration</a> 
+        /// </para>
+        ///  </li> </ul> </li> <li> 
+        /// <para>
+        /// Manage fleet capacity:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a>DescribeFleetCapacity</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>UpdateFleetCapacity</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>PutScalingPolicy</a> (automatic scaling)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeScalingPolicies</a> (automatic scaling)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DeleteScalingPolicy</a> (automatic scaling)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeEC2InstanceLimits</a> 
+        /// </para>
+        ///  </li> </ul> </li> <li> 
+        /// <para>
+        ///  <a>DeleteFleet</a> 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeEC2InstanceLimits service method.</param>
         /// 
@@ -1943,6 +3240,95 @@ namespace Amazon.GameLift
         /// be found in the AWS Management Console for Amazon GameLift (see the drop-down list
         /// in the upper right corner).
         /// </para>
+        ///  
+        /// <para>
+        /// Fleet-related operations include:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a>CreateFleet</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>ListFleets</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Describe fleets:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a>DescribeFleetAttributes</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeFleetPortSettings</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeFleetUtilization</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeRuntimeConfiguration</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeFleetEvents</a> 
+        /// </para>
+        ///  </li> </ul> </li> <li> 
+        /// <para>
+        /// Update fleets:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a>UpdateFleetAttributes</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>UpdateFleetCapacity</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>UpdateFleetPortSettings</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>UpdateRuntimeConfiguration</a> 
+        /// </para>
+        ///  </li> </ul> </li> <li> 
+        /// <para>
+        /// Manage fleet capacity:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a>DescribeFleetCapacity</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>UpdateFleetCapacity</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>PutScalingPolicy</a> (automatic scaling)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeScalingPolicies</a> (automatic scaling)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DeleteScalingPolicy</a> (automatic scaling)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeEC2InstanceLimits</a> 
+        /// </para>
+        ///  </li> </ul> </li> <li> 
+        /// <para>
+        ///  <a>DeleteFleet</a> 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="ec2InstanceType">Name of an EC2 instance type that is supported in Amazon GameLift. A fleet instance type determines the computing resources of each instance in the fleet, including CPU, memory, storage, and networking capacity. Amazon GameLift supports the following EC2 instance types. See <a href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2 Instance Types</a> for detailed descriptions. Leave this parameter blank to retrieve limits for all types.</param>
         /// <param name="cancellationToken">
@@ -1994,7 +3380,95 @@ namespace Amazon.GameLift
         /// Some API actions may limit the number of fleet IDs allowed in one request. If a request
         /// exceeds this limit, the request fails and the error message includes the maximum allowed.
         /// </para>
-        ///  </note>
+        ///  </note> 
+        /// <para>
+        /// Fleet-related operations include:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a>CreateFleet</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>ListFleets</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Describe fleets:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a>DescribeFleetAttributes</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeFleetPortSettings</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeFleetUtilization</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeRuntimeConfiguration</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeFleetEvents</a> 
+        /// </para>
+        ///  </li> </ul> </li> <li> 
+        /// <para>
+        /// Update fleets:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a>UpdateFleetAttributes</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>UpdateFleetCapacity</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>UpdateFleetPortSettings</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>UpdateRuntimeConfiguration</a> 
+        /// </para>
+        ///  </li> </ul> </li> <li> 
+        /// <para>
+        /// Manage fleet capacity:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a>DescribeFleetCapacity</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>UpdateFleetCapacity</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>PutScalingPolicy</a> (automatic scaling)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeScalingPolicies</a> (automatic scaling)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DeleteScalingPolicy</a> (automatic scaling)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeEC2InstanceLimits</a> 
+        /// </para>
+        ///  </li> </ul> </li> <li> 
+        /// <para>
+        ///  <a>DeleteFleet</a> 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeFleetAttributes service method.</param>
         /// 
@@ -2049,7 +3523,95 @@ namespace Amazon.GameLift
         /// Some API actions may limit the number of fleet IDs allowed in one request. If a request
         /// exceeds this limit, the request fails and the error message includes the maximum allowed.
         /// </para>
-        ///  </note>
+        ///  </note> 
+        /// <para>
+        /// Fleet-related operations include:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a>CreateFleet</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>ListFleets</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Describe fleets:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a>DescribeFleetAttributes</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeFleetPortSettings</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeFleetUtilization</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeRuntimeConfiguration</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeFleetEvents</a> 
+        /// </para>
+        ///  </li> </ul> </li> <li> 
+        /// <para>
+        /// Update fleets:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a>UpdateFleetAttributes</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>UpdateFleetCapacity</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>UpdateFleetPortSettings</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>UpdateRuntimeConfiguration</a> 
+        /// </para>
+        ///  </li> </ul> </li> <li> 
+        /// <para>
+        /// Manage fleet capacity:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a>DescribeFleetCapacity</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>UpdateFleetCapacity</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>PutScalingPolicy</a> (automatic scaling)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeScalingPolicies</a> (automatic scaling)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DeleteScalingPolicy</a> (automatic scaling)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeEC2InstanceLimits</a> 
+        /// </para>
+        ///  </li> </ul> </li> <li> 
+        /// <para>
+        ///  <a>DeleteFleet</a> 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeFleetCapacity service method.</param>
         /// 
@@ -2095,6 +3657,96 @@ namespace Amazon.GameLift
         /// to limit the result set. Use the pagination parameters to retrieve results as a set
         /// of sequential pages. If successful, a collection of event log entries matching the
         /// request are returned.
+        /// 
+        ///  
+        /// <para>
+        /// Fleet-related operations include:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a>CreateFleet</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>ListFleets</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Describe fleets:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a>DescribeFleetAttributes</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeFleetPortSettings</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeFleetUtilization</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeRuntimeConfiguration</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeFleetEvents</a> 
+        /// </para>
+        ///  </li> </ul> </li> <li> 
+        /// <para>
+        /// Update fleets:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a>UpdateFleetAttributes</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>UpdateFleetCapacity</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>UpdateFleetPortSettings</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>UpdateRuntimeConfiguration</a> 
+        /// </para>
+        ///  </li> </ul> </li> <li> 
+        /// <para>
+        /// Manage fleet capacity:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a>DescribeFleetCapacity</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>UpdateFleetCapacity</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>PutScalingPolicy</a> (automatic scaling)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeScalingPolicies</a> (automatic scaling)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DeleteScalingPolicy</a> (automatic scaling)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeEC2InstanceLimits</a> 
+        /// </para>
+        ///  </li> </ul> </li> <li> 
+        /// <para>
+        ///  <a>DeleteFleet</a> 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeFleetEvents service method.</param>
         /// 
@@ -2142,6 +3794,96 @@ namespace Amazon.GameLift
         /// a fleet ID. If successful, a collection of <a>IpPermission</a> objects is returned
         /// for the requested fleet ID. If the requested fleet has been deleted, the result set
         /// is empty.
+        /// 
+        ///  
+        /// <para>
+        /// Fleet-related operations include:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a>CreateFleet</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>ListFleets</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Describe fleets:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a>DescribeFleetAttributes</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeFleetPortSettings</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeFleetUtilization</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeRuntimeConfiguration</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeFleetEvents</a> 
+        /// </para>
+        ///  </li> </ul> </li> <li> 
+        /// <para>
+        /// Update fleets:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a>UpdateFleetAttributes</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>UpdateFleetCapacity</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>UpdateFleetPortSettings</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>UpdateRuntimeConfiguration</a> 
+        /// </para>
+        ///  </li> </ul> </li> <li> 
+        /// <para>
+        /// Manage fleet capacity:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a>DescribeFleetCapacity</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>UpdateFleetCapacity</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>PutScalingPolicy</a> (automatic scaling)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeScalingPolicies</a> (automatic scaling)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DeleteScalingPolicy</a> (automatic scaling)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeEC2InstanceLimits</a> 
+        /// </para>
+        ///  </li> </ul> </li> <li> 
+        /// <para>
+        ///  <a>DeleteFleet</a> 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="fleetId">Unique identifier for a fleet to retrieve port settings for.</param>
         /// 
@@ -2171,6 +3913,96 @@ namespace Amazon.GameLift
         /// a fleet ID. If successful, a collection of <a>IpPermission</a> objects is returned
         /// for the requested fleet ID. If the requested fleet has been deleted, the result set
         /// is empty.
+        /// 
+        ///  
+        /// <para>
+        /// Fleet-related operations include:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a>CreateFleet</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>ListFleets</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Describe fleets:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a>DescribeFleetAttributes</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeFleetPortSettings</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeFleetUtilization</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeRuntimeConfiguration</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeFleetEvents</a> 
+        /// </para>
+        ///  </li> </ul> </li> <li> 
+        /// <para>
+        /// Update fleets:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a>UpdateFleetAttributes</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>UpdateFleetCapacity</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>UpdateFleetPortSettings</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>UpdateRuntimeConfiguration</a> 
+        /// </para>
+        ///  </li> </ul> </li> <li> 
+        /// <para>
+        /// Manage fleet capacity:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a>DescribeFleetCapacity</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>UpdateFleetCapacity</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>PutScalingPolicy</a> (automatic scaling)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeScalingPolicies</a> (automatic scaling)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DeleteScalingPolicy</a> (automatic scaling)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeEC2InstanceLimits</a> 
+        /// </para>
+        ///  </li> </ul> </li> <li> 
+        /// <para>
+        ///  <a>DeleteFleet</a> 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeFleetPortSettings service method.</param>
         /// 
@@ -2201,6 +4033,96 @@ namespace Amazon.GameLift
         /// a fleet ID. If successful, a collection of <a>IpPermission</a> objects is returned
         /// for the requested fleet ID. If the requested fleet has been deleted, the result set
         /// is empty.
+        /// 
+        ///  
+        /// <para>
+        /// Fleet-related operations include:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a>CreateFleet</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>ListFleets</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Describe fleets:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a>DescribeFleetAttributes</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeFleetPortSettings</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeFleetUtilization</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeRuntimeConfiguration</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeFleetEvents</a> 
+        /// </para>
+        ///  </li> </ul> </li> <li> 
+        /// <para>
+        /// Update fleets:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a>UpdateFleetAttributes</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>UpdateFleetCapacity</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>UpdateFleetPortSettings</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>UpdateRuntimeConfiguration</a> 
+        /// </para>
+        ///  </li> </ul> </li> <li> 
+        /// <para>
+        /// Manage fleet capacity:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a>DescribeFleetCapacity</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>UpdateFleetCapacity</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>PutScalingPolicy</a> (automatic scaling)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeScalingPolicies</a> (automatic scaling)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DeleteScalingPolicy</a> (automatic scaling)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeEC2InstanceLimits</a> 
+        /// </para>
+        ///  </li> </ul> </li> <li> 
+        /// <para>
+        ///  <a>DeleteFleet</a> 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="fleetId">Unique identifier for a fleet to retrieve port settings for.</param>
         /// <param name="cancellationToken">
@@ -2256,7 +4178,95 @@ namespace Amazon.GameLift
         /// Some API actions may limit the number of fleet IDs allowed in one request. If a request
         /// exceeds this limit, the request fails and the error message includes the maximum allowed.
         /// </para>
-        ///  </note>
+        ///  </note> 
+        /// <para>
+        /// Fleet-related operations include:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a>CreateFleet</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>ListFleets</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Describe fleets:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a>DescribeFleetAttributes</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeFleetPortSettings</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeFleetUtilization</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeRuntimeConfiguration</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeFleetEvents</a> 
+        /// </para>
+        ///  </li> </ul> </li> <li> 
+        /// <para>
+        /// Update fleets:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a>UpdateFleetAttributes</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>UpdateFleetCapacity</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>UpdateFleetPortSettings</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>UpdateRuntimeConfiguration</a> 
+        /// </para>
+        ///  </li> </ul> </li> <li> 
+        /// <para>
+        /// Manage fleet capacity:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a>DescribeFleetCapacity</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>UpdateFleetCapacity</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>PutScalingPolicy</a> (automatic scaling)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeScalingPolicies</a> (automatic scaling)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DeleteScalingPolicy</a> (automatic scaling)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeEC2InstanceLimits</a> 
+        /// </para>
+        ///  </li> </ul> </li> <li> 
+        /// <para>
+        ///  <a>DeleteFleet</a> 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeFleetUtilization service method.</param>
         /// 
@@ -2311,6 +4321,51 @@ namespace Amazon.GameLift
         /// pagination parameters to retrieve results as a set of sequential pages. If successful,
         /// a <a>GameSessionDetail</a> object is returned for each session matching the request.
         /// </para>
+        ///  
+        /// <para>
+        /// Game-session-related operations include:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a>CreateGameSession</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeGameSessions</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeGameSessionDetails</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>SearchGameSessions</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>UpdateGameSession</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>GetGameSessionLogUrl</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Game session placements
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a>StartGameSessionPlacement</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeGameSessionPlacement</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>StopGameSessionPlacement</a> 
+        /// </para>
+        ///  </li> </ul> </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeGameSessionDetails service method.</param>
         /// 
@@ -2361,6 +4416,52 @@ namespace Amazon.GameLift
         /// Retrieves properties and current status of a game session placement request. To get
         /// game session placement details, specify the placement ID. If successful, a <a>GameSessionPlacement</a>
         /// object is returned.
+        /// 
+        ///  
+        /// <para>
+        /// Game-session-related operations include:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a>CreateGameSession</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeGameSessions</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeGameSessionDetails</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>SearchGameSessions</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>UpdateGameSession</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>GetGameSessionLogUrl</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Game session placements
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a>StartGameSessionPlacement</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeGameSessionPlacement</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>StopGameSessionPlacement</a> 
+        /// </para>
+        ///  </li> </ul> </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeGameSessionPlacement service method.</param>
         /// 
@@ -2407,6 +4508,28 @@ namespace Amazon.GameLift
         /// If successful, a <a>GameSessionQueue</a> object is returned for each requested queue.
         /// When specifying a list of queues, objects are returned only for queues that currently
         /// exist in the region.
+        /// 
+        ///  
+        /// <para>
+        /// Queue-related operations include:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a>CreateGameSessionQueue</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeGameSessionQueues</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>UpdateGameSessionQueue</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DeleteGameSessionQueue</a> 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeGameSessionQueues service method.</param>
         /// 
@@ -2464,6 +4587,51 @@ namespace Amazon.GameLift
         /// <para>
         ///  <i>Available in Amazon GameLift Local.</i> 
         /// </para>
+        ///  
+        /// <para>
+        /// Game-session-related operations include:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a>CreateGameSession</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeGameSessions</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeGameSessionDetails</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>SearchGameSessions</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>UpdateGameSession</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>GetGameSessionLogUrl</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Game session placements
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a>StartGameSessionPlacement</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeGameSessionPlacement</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>StopGameSessionPlacement</a> 
+        /// </para>
+        ///  </li> </ul> </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeGameSessions service method.</param>
         /// 
@@ -2581,6 +4749,39 @@ namespace Amazon.GameLift
         /// <para>
         ///  <i>Available in Amazon GameLift Local.</i> 
         /// </para>
+        ///  
+        /// <para>
+        /// Player-session-related operations include:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a>CreatePlayerSession</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>CreatePlayerSessions</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribePlayerSessions</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Game session placements
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a>StartGameSessionPlacement</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeGameSessionPlacement</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>StopGameSessionPlacement</a> 
+        /// </para>
+        ///  </li> </ul> </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribePlayerSessions service method.</param>
         /// 
@@ -2622,8 +4823,99 @@ namespace Amazon.GameLift
 
 
         /// <summary>
-        /// Retrieves the current runtime configuration for the specified fleet. The runtime configuration
-        /// tells Amazon GameLift how to launch server processes on instances in the fleet.
+        /// Retrieves the current run-time configuration for the specified fleet. The run-time
+        /// configuration tells Amazon GameLift how to launch server processes on instances in
+        /// the fleet.
+        /// 
+        ///  
+        /// <para>
+        /// Fleet-related operations include:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a>CreateFleet</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>ListFleets</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Describe fleets:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a>DescribeFleetAttributes</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeFleetPortSettings</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeFleetUtilization</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeRuntimeConfiguration</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeFleetEvents</a> 
+        /// </para>
+        ///  </li> </ul> </li> <li> 
+        /// <para>
+        /// Update fleets:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a>UpdateFleetAttributes</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>UpdateFleetCapacity</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>UpdateFleetPortSettings</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>UpdateRuntimeConfiguration</a> 
+        /// </para>
+        ///  </li> </ul> </li> <li> 
+        /// <para>
+        /// Manage fleet capacity:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a>DescribeFleetCapacity</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>UpdateFleetCapacity</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>PutScalingPolicy</a> (automatic scaling)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeScalingPolicies</a> (automatic scaling)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DeleteScalingPolicy</a> (automatic scaling)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeEC2InstanceLimits</a> 
+        /// </para>
+        ///  </li> </ul> </li> <li> 
+        /// <para>
+        ///  <a>DeleteFleet</a> 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeRuntimeConfiguration service method.</param>
         /// 
@@ -2674,6 +4966,95 @@ namespace Amazon.GameLift
         /// parameters to retrieve results as a set of sequential pages. If successful, set of
         /// <a>ScalingPolicy</a> objects is returned for the fleet.
         /// </para>
+        ///  
+        /// <para>
+        /// Fleet-related operations include:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a>CreateFleet</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>ListFleets</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Describe fleets:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a>DescribeFleetAttributes</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeFleetPortSettings</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeFleetUtilization</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeRuntimeConfiguration</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeFleetEvents</a> 
+        /// </para>
+        ///  </li> </ul> </li> <li> 
+        /// <para>
+        /// Update fleets:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a>UpdateFleetAttributes</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>UpdateFleetCapacity</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>UpdateFleetPortSettings</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>UpdateRuntimeConfiguration</a> 
+        /// </para>
+        ///  </li> </ul> </li> <li> 
+        /// <para>
+        /// Manage fleet capacity:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a>DescribeFleetCapacity</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>UpdateFleetCapacity</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>PutScalingPolicy</a> (automatic scaling)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeScalingPolicies</a> (automatic scaling)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DeleteScalingPolicy</a> (automatic scaling)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeEC2InstanceLimits</a> 
+        /// </para>
+        ///  </li> </ul> </li> <li> 
+        /// <para>
+        ///  <a>DeleteFleet</a> 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeScalingPolicies service method.</param>
         /// 
@@ -2725,7 +5106,51 @@ namespace Amazon.GameLift
         /// Service Limits</a> page for maximum log file sizes. Log files that exceed this limit
         /// are not saved.
         /// </para>
-        ///  </note>
+        ///  </note> 
+        /// <para>
+        /// Game-session-related operations include:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a>CreateGameSession</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeGameSessions</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeGameSessionDetails</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>SearchGameSessions</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>UpdateGameSession</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>GetGameSessionLogUrl</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Game session placements
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a>StartGameSessionPlacement</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeGameSessionPlacement</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>StopGameSessionPlacement</a> 
+        /// </para>
+        ///  </li> </ul> </li> </ul>
         /// </summary>
         /// <param name="gameSessionId">Unique identifier for the game session to get logs for.</param>
         /// 
@@ -2759,7 +5184,51 @@ namespace Amazon.GameLift
         /// Service Limits</a> page for maximum log file sizes. Log files that exceed this limit
         /// are not saved.
         /// </para>
-        ///  </note>
+        ///  </note> 
+        /// <para>
+        /// Game-session-related operations include:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a>CreateGameSession</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeGameSessions</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeGameSessionDetails</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>SearchGameSessions</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>UpdateGameSession</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>GetGameSessionLogUrl</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Game session placements
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a>StartGameSessionPlacement</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeGameSessionPlacement</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>StopGameSessionPlacement</a> 
+        /// </para>
+        ///  </li> </ul> </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetGameSessionLogUrl service method.</param>
         /// 
@@ -2794,7 +5263,51 @@ namespace Amazon.GameLift
         /// Service Limits</a> page for maximum log file sizes. Log files that exceed this limit
         /// are not saved.
         /// </para>
-        ///  </note>
+        ///  </note> 
+        /// <para>
+        /// Game-session-related operations include:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a>CreateGameSession</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeGameSessions</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeGameSessionDetails</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>SearchGameSessions</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>UpdateGameSession</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>GetGameSessionLogUrl</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Game session placements
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a>StartGameSessionPlacement</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeGameSessionPlacement</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>StopGameSessionPlacement</a> 
+        /// </para>
+        ///  </li> </ul> </li> </ul>
         /// </summary>
         /// <param name="gameSessionId">Unique identifier for the game session to get logs for.</param>
         /// <param name="cancellationToken">
@@ -2900,15 +5413,43 @@ namespace Amazon.GameLift
 
 
         /// <summary>
-        /// Retrieves a collection of alias records for this AWS account. You can filter the result
-        /// set by alias name and/or routing strategy type. Use the pagination parameters to retrieve
-        /// results in sequential pages.
+        /// Retrieves all aliases for this AWS account. You can filter the result set by alias
+        /// name and/or routing strategy type. Use the pagination parameters to retrieve results
+        /// in sequential pages.
         /// 
         ///  <note> 
         /// <para>
-        /// Aliases are not listed in any particular order.
+        /// Returned aliases are not listed in any particular order.
         /// </para>
-        ///  </note>
+        ///  </note> 
+        /// <para>
+        /// Alias-related operations include:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a>CreateAlias</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>ListAliases</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeAlias</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>UpdateAlias</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DeleteAlias</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>ResolveAlias</a> 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListAliases service method.</param>
         /// 
@@ -2955,7 +5496,31 @@ namespace Amazon.GameLift
         /// <para>
         /// Build records are not listed in any particular order.
         /// </para>
-        ///  </note>
+        ///  </note> 
+        /// <para>
+        /// Build-related operations include:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a>CreateBuild</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>ListBuilds</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeBuild</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>UpdateBuild</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DeleteBuild</a> 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListBuilds service method.</param>
         /// 
@@ -3000,7 +5565,95 @@ namespace Amazon.GameLift
         /// <para>
         /// Fleet records are not listed in any particular order.
         /// </para>
-        ///  </note>
+        ///  </note> 
+        /// <para>
+        /// Fleet-related operations include:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a>CreateFleet</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>ListFleets</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Describe fleets:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a>DescribeFleetAttributes</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeFleetPortSettings</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeFleetUtilization</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeRuntimeConfiguration</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeFleetEvents</a> 
+        /// </para>
+        ///  </li> </ul> </li> <li> 
+        /// <para>
+        /// Update fleets:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a>UpdateFleetAttributes</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>UpdateFleetCapacity</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>UpdateFleetPortSettings</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>UpdateRuntimeConfiguration</a> 
+        /// </para>
+        ///  </li> </ul> </li> <li> 
+        /// <para>
+        /// Manage fleet capacity:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a>DescribeFleetCapacity</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>UpdateFleetCapacity</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>PutScalingPolicy</a> (automatic scaling)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeScalingPolicies</a> (automatic scaling)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DeleteScalingPolicy</a> (automatic scaling)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeEC2InstanceLimits</a> 
+        /// </para>
+        ///  </li> </ul> </li> <li> 
+        /// <para>
+        ///  <a>DeleteFleet</a> 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListFleets service method.</param>
         /// 
@@ -3075,6 +5728,95 @@ namespace Amazon.GameLift
         /// the policy name is returned. Scaling policies cannot be suspended or made inactive.
         /// To stop enforcing a scaling policy, call <a>DeleteScalingPolicy</a>.
         /// </para>
+        ///  
+        /// <para>
+        /// Fleet-related operations include:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a>CreateFleet</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>ListFleets</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Describe fleets:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a>DescribeFleetAttributes</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeFleetPortSettings</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeFleetUtilization</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeRuntimeConfiguration</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeFleetEvents</a> 
+        /// </para>
+        ///  </li> </ul> </li> <li> 
+        /// <para>
+        /// Update fleets:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a>UpdateFleetAttributes</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>UpdateFleetCapacity</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>UpdateFleetPortSettings</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>UpdateRuntimeConfiguration</a> 
+        /// </para>
+        ///  </li> </ul> </li> <li> 
+        /// <para>
+        /// Manage fleet capacity:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a>DescribeFleetCapacity</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>UpdateFleetCapacity</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>PutScalingPolicy</a> (automatic scaling)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeScalingPolicies</a> (automatic scaling)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DeleteScalingPolicy</a> (automatic scaling)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeEC2InstanceLimits</a> 
+        /// </para>
+        ///  </li> </ul> </li> <li> 
+        /// <para>
+        ///  <a>DeleteFleet</a> 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutScalingPolicy service method.</param>
         /// 
@@ -3216,6 +5958,36 @@ namespace Amazon.GameLift
 
         /// <summary>
         /// Retrieves the fleet ID that a specified alias is currently pointing to.
+        /// 
+        ///  
+        /// <para>
+        /// Alias-related operations include:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a>CreateAlias</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>ListAliases</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeAlias</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>UpdateAlias</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DeleteAlias</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>ResolveAlias</a> 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="aliasId">Unique identifier for the alias you want to resolve.</param>
         /// 
@@ -3246,6 +6018,36 @@ namespace Amazon.GameLift
 
         /// <summary>
         /// Retrieves the fleet ID that a specified alias is currently pointing to.
+        /// 
+        ///  
+        /// <para>
+        /// Alias-related operations include:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a>CreateAlias</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>ListAliases</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeAlias</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>UpdateAlias</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DeleteAlias</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>ResolveAlias</a> 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ResolveAlias service method.</param>
         /// 
@@ -3277,6 +6079,36 @@ namespace Amazon.GameLift
 
         /// <summary>
         /// Retrieves the fleet ID that a specified alias is currently pointing to.
+        /// 
+        ///  
+        /// <para>
+        /// Alias-related operations include:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a>CreateAlias</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>ListAliases</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeAlias</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>UpdateAlias</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DeleteAlias</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>ResolveAlias</a> 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="aliasId">Unique identifier for the alias you want to resolve.</param>
         /// <param name="cancellationToken">
@@ -3327,9 +6159,9 @@ namespace Amazon.GameLift
 
         /// <summary>
         /// Retrieves a set of game sessions that match a set of search criteria and sorts them
-        /// in a specified order. Currently a game session search is limited to a single fleet.
-        /// Search results include only game sessions that are in <code>ACTIVE</code> status.
-        /// If you need to retrieve game sessions with a status other than active, use <a>DescribeGameSessions</a>.
+        /// in a specified order. A game session search is limited to a single fleet. Search results
+        /// include only game sessions that are in <code>ACTIVE</code> status. If you need to
+        /// retrieve game sessions with a status other than active, use <a>DescribeGameSessions</a>.
         /// If you need to retrieve the protection policy for each game session, use <a>DescribeGameSessionDetails</a>.
         /// 
         ///  
@@ -3365,9 +6197,9 @@ namespace Amazon.GameLift
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>hasAvailablePlayerSessions</b> -- Boolean value indicating whether or not a game
-        /// session has reached its maximum number of players. When searching with this attribute,
-        /// the search value must be <code>true</code> or <code>false</code>. It is highly recommended
+        ///  <b>hasAvailablePlayerSessions</b> -- Boolean value indicating whether a game session
+        /// has reached its maximum number of players. When searching with this attribute, the
+        /// search value must be <code>true</code> or <code>false</code>. It is highly recommended
         /// that all search requests include this filter attribute to optimize search performance
         /// and return only sessions that players can join. 
         /// </para>
@@ -3387,8 +6219,49 @@ namespace Amazon.GameLift
         /// </para>
         ///  </note> 
         /// <para>
-        ///  <i>Available in Amazon GameLift Local.</i> 
+        /// Game-session-related operations include:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a>CreateGameSession</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeGameSessions</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeGameSessionDetails</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>SearchGameSessions</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>UpdateGameSession</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>GetGameSessionLogUrl</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Game session placements
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a>StartGameSessionPlacement</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeGameSessionPlacement</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>StopGameSessionPlacement</a> 
+        /// </para>
+        ///  </li> </ul> </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SearchGameSessions service method.</param>
         /// 
@@ -3497,6 +6370,51 @@ namespace Amazon.GameLift
         /// placement request times out, you can resubmit the request or retry it with a different
         /// queue. 
         /// </para>
+        ///  
+        /// <para>
+        /// Game-session-related operations include:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a>CreateGameSession</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeGameSessions</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeGameSessionDetails</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>SearchGameSessions</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>UpdateGameSession</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>GetGameSessionLogUrl</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Game session placements
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a>StartGameSessionPlacement</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeGameSessionPlacement</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>StopGameSessionPlacement</a> 
+        /// </para>
+        ///  </li> </ul> </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartGameSessionPlacement service method.</param>
         /// 
@@ -3540,6 +6458,52 @@ namespace Amazon.GameLift
         /// <summary>
         /// Cancels a game session placement that is in Pending status. To stop a placement, provide
         /// the placement ID values. If successful, the placement is moved to Cancelled status.
+        /// 
+        ///  
+        /// <para>
+        /// Game-session-related operations include:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a>CreateGameSession</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeGameSessions</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeGameSessionDetails</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>SearchGameSessions</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>UpdateGameSession</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>GetGameSessionLogUrl</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Game session placements
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a>StartGameSessionPlacement</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeGameSessionPlacement</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>StopGameSessionPlacement</a> 
+        /// </para>
+        ///  </li> </ul> </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StopGameSessionPlacement service method.</param>
         /// 
@@ -3581,10 +6545,40 @@ namespace Amazon.GameLift
 
 
         /// <summary>
-        /// Updates properties for a fleet alias. To update properties, specify the alias ID to
-        /// be updated and provide the information to be changed. To reassign an alias to another
+        /// Updates properties for an alias. To update properties, specify the alias ID to be
+        /// updated and provide the information to be changed. To reassign an alias to another
         /// fleet, provide an updated routing strategy. If successful, the updated alias record
         /// is returned.
+        /// 
+        ///  
+        /// <para>
+        /// Alias-related operations include:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a>CreateAlias</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>ListAliases</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeAlias</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>UpdateAlias</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DeleteAlias</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>ResolveAlias</a> 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateAlias service method.</param>
         /// 
@@ -3629,6 +6623,32 @@ namespace Amazon.GameLift
         /// Updates metadata in a build record, including the build name and version. To update
         /// the metadata, specify the build ID to update and provide the new values. If successful,
         /// a build object containing the updated metadata is returned.
+        /// 
+        ///  
+        /// <para>
+        /// Build-related operations include:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a>CreateBuild</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>ListBuilds</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeBuild</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>UpdateBuild</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DeleteBuild</a> 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateBuild service method.</param>
         /// 
@@ -3671,8 +6691,98 @@ namespace Amazon.GameLift
 
         /// <summary>
         /// Updates fleet properties, including name and description, for a fleet. To update metadata,
-        /// specify the fleet ID and the property values you want to change. If successful, the
-        /// fleet ID for the updated fleet is returned.
+        /// specify the fleet ID and the property values that you want to change. If successful,
+        /// the fleet ID for the updated fleet is returned.
+        /// 
+        ///  
+        /// <para>
+        /// Fleet-related operations include:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a>CreateFleet</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>ListFleets</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Describe fleets:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a>DescribeFleetAttributes</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeFleetPortSettings</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeFleetUtilization</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeRuntimeConfiguration</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeFleetEvents</a> 
+        /// </para>
+        ///  </li> </ul> </li> <li> 
+        /// <para>
+        /// Update fleets:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a>UpdateFleetAttributes</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>UpdateFleetCapacity</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>UpdateFleetPortSettings</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>UpdateRuntimeConfiguration</a> 
+        /// </para>
+        ///  </li> </ul> </li> <li> 
+        /// <para>
+        /// Manage fleet capacity:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a>DescribeFleetCapacity</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>UpdateFleetCapacity</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>PutScalingPolicy</a> (automatic scaling)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeScalingPolicies</a> (automatic scaling)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DeleteScalingPolicy</a> (automatic scaling)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeEC2InstanceLimits</a> 
+        /// </para>
+        ///  </li> </ul> </li> <li> 
+        /// <para>
+        ///  <a>DeleteFleet</a> 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateFleetAttributes service method.</param>
         /// 
@@ -3747,6 +6857,95 @@ namespace Amazon.GameLift
         /// If the desired instance count is higher than the instance type's limit, the "Limit
         /// Exceeded" exception occurs.
         /// </para>
+        ///  
+        /// <para>
+        /// Fleet-related operations include:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a>CreateFleet</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>ListFleets</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Describe fleets:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a>DescribeFleetAttributes</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeFleetPortSettings</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeFleetUtilization</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeRuntimeConfiguration</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeFleetEvents</a> 
+        /// </para>
+        ///  </li> </ul> </li> <li> 
+        /// <para>
+        /// Update fleets:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a>UpdateFleetAttributes</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>UpdateFleetCapacity</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>UpdateFleetPortSettings</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>UpdateRuntimeConfiguration</a> 
+        /// </para>
+        ///  </li> </ul> </li> <li> 
+        /// <para>
+        /// Manage fleet capacity:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a>DescribeFleetCapacity</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>UpdateFleetCapacity</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>PutScalingPolicy</a> (automatic scaling)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeScalingPolicies</a> (automatic scaling)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DeleteScalingPolicy</a> (automatic scaling)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeEC2InstanceLimits</a> 
+        /// </para>
+        ///  </li> </ul> </li> <li> 
+        /// <para>
+        ///  <a>DeleteFleet</a> 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateFleetCapacity service method.</param>
         /// 
@@ -3806,6 +7005,96 @@ namespace Amazon.GameLift
         /// remove in <code>InboundPermissionRevocations</code>. Permissions to be removed must
         /// match existing fleet permissions. If successful, the fleet ID for the updated fleet
         /// is returned.
+        /// 
+        ///  
+        /// <para>
+        /// Fleet-related operations include:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a>CreateFleet</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>ListFleets</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Describe fleets:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a>DescribeFleetAttributes</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeFleetPortSettings</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeFleetUtilization</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeRuntimeConfiguration</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeFleetEvents</a> 
+        /// </para>
+        ///  </li> </ul> </li> <li> 
+        /// <para>
+        /// Update fleets:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a>UpdateFleetAttributes</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>UpdateFleetCapacity</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>UpdateFleetPortSettings</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>UpdateRuntimeConfiguration</a> 
+        /// </para>
+        ///  </li> </ul> </li> <li> 
+        /// <para>
+        /// Manage fleet capacity:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a>DescribeFleetCapacity</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>UpdateFleetCapacity</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>PutScalingPolicy</a> (automatic scaling)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeScalingPolicies</a> (automatic scaling)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DeleteScalingPolicy</a> (automatic scaling)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeEC2InstanceLimits</a> 
+        /// </para>
+        ///  </li> </ul> </li> <li> 
+        /// <para>
+        ///  <a>DeleteFleet</a> 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateFleetPortSettings service method.</param>
         /// 
@@ -3864,7 +7153,53 @@ namespace Amazon.GameLift
         /// during a scale-down event, and the player session creation policy, which controls
         /// whether or not new players can join the session. To update a game session, specify
         /// the game session ID and the values you want to change. If successful, an updated <a>GameSession</a>
-        /// object is returned.
+        /// object is returned. 
+        /// 
+        ///  
+        /// <para>
+        /// Game-session-related operations include:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a>CreateGameSession</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeGameSessions</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeGameSessionDetails</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>SearchGameSessions</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>UpdateGameSession</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>GetGameSessionLogUrl</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Game session placements
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a>StartGameSessionPlacement</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeGameSessionPlacement</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>StopGameSessionPlacement</a> 
+        /// </para>
+        ///  </li> </ul> </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateGameSession service method.</param>
         /// 
@@ -3918,7 +7253,29 @@ namespace Amazon.GameLift
         /// Updates settings for a game session queue, which determines how new game session requests
         /// in the queue are processed. To update settings, specify the queue name to be updated
         /// and provide the new settings. When updating destinations, provide a complete list
-        /// of destinations.
+        /// of destinations. 
+        /// 
+        ///  
+        /// <para>
+        /// Queue-related operations include:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a>CreateGameSessionQueue</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeGameSessionQueues</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>UpdateGameSessionQueue</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DeleteGameSessionQueue</a> 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateGameSessionQueue service method.</param>
         /// 
@@ -3960,26 +7317,115 @@ namespace Amazon.GameLift
 
 
         /// <summary>
-        /// Updates the current runtime configuration for the specified fleet, which tells Amazon
+        /// Updates the current run-time configuration for the specified fleet, which tells Amazon
         /// GameLift how to launch server processes on instances in the fleet. You can update
-        /// a fleet's runtime configuration at any time after the fleet is created; it does not
+        /// a fleet's run-time configuration at any time after the fleet is created; it does not
         /// need to be in an <code>ACTIVE</code> status.
         /// 
         ///  
         /// <para>
-        /// To update runtime configuration, specify the fleet ID and provide a <code>RuntimeConfiguration</code>
+        /// To update run-time configuration, specify the fleet ID and provide a <code>RuntimeConfiguration</code>
         /// object with the updated collection of server process configurations.
         /// </para>
         ///  
         /// <para>
-        /// Each instance in a Amazon GameLift fleet checks regularly for an updated runtime configuration
-        /// and changes how it launches server processes to comply with the latest version. Existing
-        /// server processes are not affected by the update; they continue to run until they end,
-        /// while Amazon GameLift simply adds new server processes to fit the current runtime
-        /// configuration. As a result, the runtime configuration changes are applied gradually
-        /// as existing processes shut down and new processes are launched in Amazon GameLift's
-        /// normal process recycling activity.
+        /// Each instance in a Amazon GameLift fleet checks regularly for an updated run-time
+        /// configuration and changes how it launches server processes to comply with the latest
+        /// version. Existing server processes are not affected by the update; they continue to
+        /// run until they end, while Amazon GameLift simply adds new server processes to fit
+        /// the current run-time configuration. As a result, the run-time configuration changes
+        /// are applied gradually as existing processes shut down and new processes are launched
+        /// in Amazon GameLift's normal process recycling activity.
         /// </para>
+        ///  
+        /// <para>
+        /// Fleet-related operations include:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a>CreateFleet</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>ListFleets</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Describe fleets:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a>DescribeFleetAttributes</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeFleetPortSettings</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeFleetUtilization</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeRuntimeConfiguration</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeFleetEvents</a> 
+        /// </para>
+        ///  </li> </ul> </li> <li> 
+        /// <para>
+        /// Update fleets:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a>UpdateFleetAttributes</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>UpdateFleetCapacity</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>UpdateFleetPortSettings</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>UpdateRuntimeConfiguration</a> 
+        /// </para>
+        ///  </li> </ul> </li> <li> 
+        /// <para>
+        /// Manage fleet capacity:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a>DescribeFleetCapacity</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>UpdateFleetCapacity</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>PutScalingPolicy</a> (automatic scaling)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeScalingPolicies</a> (automatic scaling)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DeleteScalingPolicy</a> (automatic scaling)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeEC2InstanceLimits</a> 
+        /// </para>
+        ///  </li> </ul> </li> <li> 
+        /// <para>
+        ///  <a>DeleteFleet</a> 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateRuntimeConfiguration service method.</param>
         /// 

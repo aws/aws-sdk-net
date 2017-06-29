@@ -728,6 +728,11 @@
     <min>1</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.GameLift.Model.Event.PreSignedLogUrl</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.GameLift.Model.Event.ResourceId</property>
     <min>1</min>
     <max>1024</max>

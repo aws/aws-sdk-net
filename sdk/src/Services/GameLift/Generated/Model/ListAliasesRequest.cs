@@ -29,15 +29,43 @@ namespace Amazon.GameLift.Model
 {
     /// <summary>
     /// Container for the parameters to the ListAliases operation.
-    /// Retrieves a collection of alias records for this AWS account. You can filter the result
-    /// set by alias name and/or routing strategy type. Use the pagination parameters to retrieve
-    /// results in sequential pages.
+    /// Retrieves all aliases for this AWS account. You can filter the result set by alias
+    /// name and/or routing strategy type. Use the pagination parameters to retrieve results
+    /// in sequential pages.
     /// 
     ///  <note> 
     /// <para>
-    /// Aliases are not listed in any particular order.
+    /// Returned aliases are not listed in any particular order.
     /// </para>
-    ///  </note>
+    ///  </note> 
+    /// <para>
+    /// Alias-related operations include:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <a>CreateAlias</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>ListAliases</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>DescribeAlias</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>UpdateAlias</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>DeleteAlias</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>ResolveAlias</a> 
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial class ListAliasesRequest : AmazonGameLiftRequest
     {

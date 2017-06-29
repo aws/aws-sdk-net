@@ -29,8 +29,99 @@ namespace Amazon.GameLift.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeRuntimeConfiguration operation.
-    /// Retrieves the current runtime configuration for the specified fleet. The runtime configuration
-    /// tells Amazon GameLift how to launch server processes on instances in the fleet.
+    /// Retrieves the current run-time configuration for the specified fleet. The run-time
+    /// configuration tells Amazon GameLift how to launch server processes on instances in
+    /// the fleet.
+    /// 
+    ///  
+    /// <para>
+    /// Fleet-related operations include:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <a>CreateFleet</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>ListFleets</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Describe fleets:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <a>DescribeFleetAttributes</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>DescribeFleetPortSettings</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>DescribeFleetUtilization</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>DescribeRuntimeConfiguration</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>DescribeFleetEvents</a> 
+    /// </para>
+    ///  </li> </ul> </li> <li> 
+    /// <para>
+    /// Update fleets:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <a>UpdateFleetAttributes</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>UpdateFleetCapacity</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>UpdateFleetPortSettings</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>UpdateRuntimeConfiguration</a> 
+    /// </para>
+    ///  </li> </ul> </li> <li> 
+    /// <para>
+    /// Manage fleet capacity:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <a>DescribeFleetCapacity</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>UpdateFleetCapacity</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>PutScalingPolicy</a> (automatic scaling)
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>DescribeScalingPolicies</a> (automatic scaling)
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>DeleteScalingPolicy</a> (automatic scaling)
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>DescribeEC2InstanceLimits</a> 
+    /// </para>
+    ///  </li> </ul> </li> <li> 
+    /// <para>
+    ///  <a>DeleteFleet</a> 
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial class DescribeRuntimeConfigurationRequest : AmazonGameLiftRequest
     {
@@ -39,7 +130,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property FleetId. 
         /// <para>
-        /// Unique identifier for a fleet to get the runtime configuration for.
+        /// Unique identifier for a fleet to get the run-time configuration for.
         /// </para>
         /// </summary>
         public string FleetId

@@ -38,6 +38,31 @@ namespace Amazon.GameLift.Model
     /// any active fleets using the build, but you can no longer create new fleets with the
     /// deleted build.
     /// </para>
+    ///  
+    /// <para>
+    /// Build-related operations include:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <a>CreateBuild</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>ListBuilds</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>DescribeBuild</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>UpdateBuild</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>DeleteBuild</a> 
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial class DeleteBuildRequest : AmazonGameLiftRequest
     {

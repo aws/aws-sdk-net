@@ -32,6 +32,40 @@ namespace Amazon.GameLift.Model
     /// request. This object contains only the player ID and player session ID. To retrieve
     /// full details on a player session, call <a>DescribePlayerSessions</a> with the player
     /// session ID.
+    /// 
+    ///  
+    /// <para>
+    /// Player-session-related operations include:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <a>CreatePlayerSession</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>CreatePlayerSessions</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>DescribePlayerSessions</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Game session placements
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <a>StartGameSessionPlacement</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>DescribeGameSessionPlacement</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>StopGameSessionPlacement</a> 
+    /// </para>
+    ///  </li> </ul> </li> </ul>
     /// </summary>
     public partial class PlacedPlayerSession
     {

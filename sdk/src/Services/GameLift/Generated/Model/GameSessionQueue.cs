@@ -31,7 +31,27 @@ namespace Amazon.GameLift.Model
     /// Configuration of a queue that is used to process game session placement requests.
     /// The queue configuration identifies several game features:
     /// 
+    ///  
+    /// <para>
+    /// Queue-related operations include:
+    /// </para>
     ///  <ul> <li> 
+    /// <para>
+    ///  <a>CreateGameSessionQueue</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>DescribeGameSessionQueues</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>UpdateGameSessionQueue</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>DeleteGameSessionQueue</a> 
+    /// </para>
+    ///  </li> </ul> <ul> <li> 
     /// <para>
     /// The destinations where a new game session can potentially be hosted. Amazon GameLift
     /// tries these destinations in an order based on either the queue's default order or

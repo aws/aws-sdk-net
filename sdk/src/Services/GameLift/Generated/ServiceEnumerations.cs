@@ -313,6 +313,18 @@ namespace Amazon.GameLift
         /// </summary>
         public static readonly EventCode FLEET_CREATED = new EventCode("FLEET_CREATED");
         /// <summary>
+        /// Constant FLEET_CREATION_EXTRACTING_BUILD for EventCode
+        /// </summary>
+        public static readonly EventCode FLEET_CREATION_EXTRACTING_BUILD = new EventCode("FLEET_CREATION_EXTRACTING_BUILD");
+        /// <summary>
+        /// Constant FLEET_CREATION_RUNNING_INSTALLER for EventCode
+        /// </summary>
+        public static readonly EventCode FLEET_CREATION_RUNNING_INSTALLER = new EventCode("FLEET_CREATION_RUNNING_INSTALLER");
+        /// <summary>
+        /// Constant FLEET_CREATION_VALIDATING_RUNTIME_CONFIG for EventCode
+        /// </summary>
+        public static readonly EventCode FLEET_CREATION_VALIDATING_RUNTIME_CONFIG = new EventCode("FLEET_CREATION_VALIDATING_RUNTIME_CONFIG");
+        /// <summary>
         /// Constant FLEET_DELETED for EventCode
         /// </summary>
         public static readonly EventCode FLEET_DELETED = new EventCode("FLEET_DELETED");

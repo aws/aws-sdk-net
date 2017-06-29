@@ -36,7 +36,7 @@ namespace Amazon.GameLift.Model
     /// 
     ///  
     /// <para>
-    /// Latency policy-related operations include:
+    /// Queue-related operations include:
     /// </para>
     ///  <ul> <li> 
     /// <para>
@@ -44,11 +44,15 @@ namespace Amazon.GameLift.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
+    ///  <a>DescribeGameSessionQueues</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
     ///  <a>UpdateGameSessionQueue</a> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a>StartGameSessionPlacement</a> 
+    ///  <a>DeleteGameSessionQueue</a> 
     /// </para>
     ///  </li> </ul>
     /// </summary>

@@ -30,9 +30,9 @@ namespace Amazon.GameLift.Model
     /// <summary>
     /// Container for the parameters to the SearchGameSessions operation.
     /// Retrieves a set of game sessions that match a set of search criteria and sorts them
-    /// in a specified order. Currently a game session search is limited to a single fleet.
-    /// Search results include only game sessions that are in <code>ACTIVE</code> status.
-    /// If you need to retrieve game sessions with a status other than active, use <a>DescribeGameSessions</a>.
+    /// in a specified order. A game session search is limited to a single fleet. Search results
+    /// include only game sessions that are in <code>ACTIVE</code> status. If you need to
+    /// retrieve game sessions with a status other than active, use <a>DescribeGameSessions</a>.
     /// If you need to retrieve the protection policy for each game session, use <a>DescribeGameSessionDetails</a>.
     /// 
     ///  
@@ -68,9 +68,9 @@ namespace Amazon.GameLift.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <b>hasAvailablePlayerSessions</b> -- Boolean value indicating whether or not a game
-    /// session has reached its maximum number of players. When searching with this attribute,
-    /// the search value must be <code>true</code> or <code>false</code>. It is highly recommended
+    ///  <b>hasAvailablePlayerSessions</b> -- Boolean value indicating whether a game session
+    /// has reached its maximum number of players. When searching with this attribute, the
+    /// search value must be <code>true</code> or <code>false</code>. It is highly recommended
     /// that all search requests include this filter attribute to optimize search performance
     /// and return only sessions that players can join. 
     /// </para>
@@ -90,8 +90,49 @@ namespace Amazon.GameLift.Model
     /// </para>
     ///  </note> 
     /// <para>
-    ///  <i>Available in Amazon GameLift Local.</i> 
+    /// Game-session-related operations include:
     /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <a>CreateGameSession</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>DescribeGameSessions</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>DescribeGameSessionDetails</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>SearchGameSessions</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>UpdateGameSession</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>GetGameSessionLogUrl</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Game session placements
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <a>StartGameSessionPlacement</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>DescribeGameSessionPlacement</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>StopGameSessionPlacement</a> 
+    /// </para>
+    ///  </li> </ul> </li> </ul>
     /// </summary>
     public partial class SearchGameSessionsRequest : AmazonGameLiftRequest
     {

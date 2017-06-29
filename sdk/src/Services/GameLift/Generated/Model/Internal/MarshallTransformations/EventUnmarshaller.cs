@@ -88,6 +88,12 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
                     unmarshalledObject.Message = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("PreSignedLogUrl", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.PreSignedLogUrl = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ResourceId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

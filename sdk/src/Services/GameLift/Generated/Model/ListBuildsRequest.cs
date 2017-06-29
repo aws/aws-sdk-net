@@ -38,7 +38,31 @@ namespace Amazon.GameLift.Model
     /// <para>
     /// Build records are not listed in any particular order.
     /// </para>
-    ///  </note>
+    ///  </note> 
+    /// <para>
+    /// Build-related operations include:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <a>CreateBuild</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>ListBuilds</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>DescribeBuild</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>UpdateBuild</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>DeleteBuild</a> 
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial class ListBuildsRequest : AmazonGameLiftRequest
     {

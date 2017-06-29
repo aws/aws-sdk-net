@@ -28,28 +28,118 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GameLift.Model
 {
     /// <summary>
-    /// Collection of server process configurations that describe what processes should be
-    /// run on each instance in a fleet. An instance can launch and maintain multiple server
-    /// processes based on the runtime configuration; it regularly checks for an updated runtime
-    /// configuration and starts new server processes to match the latest version.
+    /// A collection of server process configurations that describe what processes to run
+    /// on each instance in a fleet. All fleets must have a runtime configuration. Each instance
+    /// in the fleet launches the server processes specified in the run-time configuration
+    /// and launches new ones as existing processes end. Each instance regularly checks for
+    /// an updated run-time configuration and follows the new instructions. 
     /// 
     ///  
     /// <para>
-    /// The key purpose of a runtime configuration with multiple server process configurations
-    /// is to be able to run more than one kind of game server in a single fleet. You can
-    /// include configurations for more than one server executable in order to run two or
-    /// more different programs to run on the same instance. This option might be useful,
-    /// for example, to run more than one version of your game server on the same fleet. Another
-    /// option is to specify configurations for the same server executable but with different
-    /// launch parameters.
+    /// The run-time configuration enables the instances in a fleet to run multiple processes
+    /// simultaneously. Potential scenarios are as follows: (1) Run multiple processes of
+    /// a single game server executable to maximize usage of your hosting resources. (2) Run
+    /// one or more processes of different build executables, such as your game server executable
+    /// and a related program, or two or more different versions of a game server. (3) Run
+    /// multiple processes of a single game server but with different launch parameters, for
+    /// example to run one process on each instance in debug mode.
     /// </para>
     ///  
     /// <para>
-    /// A Amazon GameLift instance is limited to 50 processes running simultaneously. To calculate
-    /// the total number of processes specified in a runtime configuration, add the values
-    /// of the <code>ConcurrentExecutions</code> parameter for each <code> <a>ServerProcess</a>
-    /// </code> object in the runtime configuration.
+    /// A Amazon GameLift instance is limited to 50 processes running simultaneously. A run-time
+    /// configuration must specify fewer than this limit. To calculate the total number of
+    /// processes specified in a run-time configuration, add the values of the <code>ConcurrentExecutions</code>
+    /// parameter for each <code> <a>ServerProcess</a> </code> object in the run-time configuration.
     /// </para>
+    ///  
+    /// <para>
+    /// Fleet-related operations include:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <a>CreateFleet</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>ListFleets</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Describe fleets:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <a>DescribeFleetAttributes</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>DescribeFleetPortSettings</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>DescribeFleetUtilization</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>DescribeRuntimeConfiguration</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>DescribeFleetEvents</a> 
+    /// </para>
+    ///  </li> </ul> </li> <li> 
+    /// <para>
+    /// Update fleets:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <a>UpdateFleetAttributes</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>UpdateFleetCapacity</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>UpdateFleetPortSettings</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>UpdateRuntimeConfiguration</a> 
+    /// </para>
+    ///  </li> </ul> </li> <li> 
+    /// <para>
+    /// Manage fleet capacity:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <a>DescribeFleetCapacity</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>UpdateFleetCapacity</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>PutScalingPolicy</a> (automatic scaling)
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>DescribeScalingPolicies</a> (automatic scaling)
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>DeleteScalingPolicy</a> (automatic scaling)
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>DescribeEC2InstanceLimits</a> 
+    /// </para>
+    ///  </li> </ul> </li> <li> 
+    /// <para>
+    ///  <a>DeleteFleet</a> 
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial class RuntimeConfiguration
     {
@@ -60,9 +150,9 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property GameSessionActivationTimeoutSeconds. 
         /// <para>
-        /// Maximum amount of time (in seconds) that a game session can remain in status ACTIVATING.
+        /// Maximum amount of time (in seconds) that a game session can remain in status <code>ACTIVATING</code>.
         /// If the game session is not active before the timeout, activation is terminated and
-        /// the game session status is changed to TERMINATED.
+        /// the game session status is changed to <code>TERMINATED</code>.
         /// </para>
         /// </summary>
         public int GameSessionActivationTimeoutSeconds
@@ -80,9 +170,9 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property MaxConcurrentGameSessionActivations. 
         /// <para>
-        /// Maximum number of game sessions with status ACTIVATING to allow on an instance simultaneously.
-        /// This setting limits the amount of instance resources that can be used for new game
-        /// activations at any one time.
+        /// Maximum number of game sessions with status <code>ACTIVATING</code> to allow on an
+        /// instance simultaneously. This setting limits the amount of instance resources that
+        /// can be used for new game activations at any one time.
         /// </para>
         /// </summary>
         public int MaxConcurrentGameSessionActivations

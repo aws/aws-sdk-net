@@ -54,6 +54,10 @@ namespace Amazon.GameLift.Model
     /// <para>
     ///  <a>DeleteAlias</a> 
     /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>ResolveAlias</a> 
+    /// </para>
     ///  </li> </ul>
     /// </summary>
     public partial class Alias

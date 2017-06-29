@@ -42,6 +42,51 @@ namespace Amazon.GameLift.Model
     /// pagination parameters to retrieve results as a set of sequential pages. If successful,
     /// a <a>GameSessionDetail</a> object is returned for each session matching the request.
     /// </para>
+    ///  
+    /// <para>
+    /// Game-session-related operations include:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <a>CreateGameSession</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>DescribeGameSessions</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>DescribeGameSessionDetails</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>SearchGameSessions</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>UpdateGameSession</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>GetGameSessionLogUrl</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Game session placements
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <a>StartGameSessionPlacement</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>DescribeGameSessionPlacement</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>StopGameSessionPlacement</a> 
+    /// </para>
+    ///  </li> </ul> </li> </ul>
     /// </summary>
     public partial class DescribeGameSessionDetailsRequest : AmazonGameLiftRequest
     {
@@ -149,7 +194,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property StatusFilter. 
         /// <para>
-        /// Game session status to filter results on. Possible game session statuses include ACTIVE,
+        /// Game session status to filter results on. Possible game session statuses include <code>ACTIVE</code>,
         /// <code>TERMINATED</code>, <code>ACTIVATING</code> and <code>TERMINATING</code> (the
         /// last two are transitory). 
         /// </para>

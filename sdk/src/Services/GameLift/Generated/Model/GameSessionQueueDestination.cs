@@ -30,6 +30,29 @@ namespace Amazon.GameLift.Model
     /// <summary>
     /// Fleet designated in a game session queue. Requests for new game sessions in the queue
     /// are fulfilled by starting a new game session on any destination configured for a queue.
+    /// 
+    /// 
+    ///  
+    /// <para>
+    /// Queue-related operations include:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <a>CreateGameSessionQueue</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>DescribeGameSessionQueues</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>UpdateGameSessionQueue</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>DeleteGameSessionQueue</a> 
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial class GameSessionQueueDestination
     {

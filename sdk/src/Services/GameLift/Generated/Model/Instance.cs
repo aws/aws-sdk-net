@@ -140,7 +140,7 @@ namespace Amazon.GameLift.Model
         ///  <ul> <li> 
         /// <para>
         ///  <b>PENDING</b> – The instance is in the process of being created and launching server
-        /// processes as defined in the fleet's runtime configuration. 
+        /// processes as defined in the fleet's run-time configuration. 
         /// </para>
         ///  </li> <li> 
         /// <para>

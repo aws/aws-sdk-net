@@ -29,6 +29,96 @@ namespace Amazon.GameLift.Model
 {
     /// <summary>
     /// General properties describing a fleet.
+    /// 
+    ///  
+    /// <para>
+    /// Fleet-related operations include:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <a>CreateFleet</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>ListFleets</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Describe fleets:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <a>DescribeFleetAttributes</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>DescribeFleetPortSettings</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>DescribeFleetUtilization</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>DescribeRuntimeConfiguration</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>DescribeFleetEvents</a> 
+    /// </para>
+    ///  </li> </ul> </li> <li> 
+    /// <para>
+    /// Update fleets:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <a>UpdateFleetAttributes</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>UpdateFleetCapacity</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>UpdateFleetPortSettings</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>UpdateRuntimeConfiguration</a> 
+    /// </para>
+    ///  </li> </ul> </li> <li> 
+    /// <para>
+    /// Manage fleet capacity:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <a>DescribeFleetCapacity</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>UpdateFleetCapacity</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>PutScalingPolicy</a> (automatic scaling)
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>DescribeScalingPolicies</a> (automatic scaling)
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>DeleteScalingPolicy</a> (automatic scaling)
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>DescribeEC2InstanceLimits</a> 
+    /// </para>
+    ///  </li> </ul> </li> <li> 
+    /// <para>
+    ///  <a>DeleteFleet</a> 
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial class FleetAttributes
     {
@@ -146,7 +236,7 @@ namespace Amazon.GameLift.Model
         /// captures and stores any log files in this location. These logs are in addition to
         /// game session logs; see more on game session logs in the <a href="http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-api-server-code">Amazon
         /// GameLift Developer Guide</a>. If no default log path for a fleet is specified, Amazon
-        /// GameLift will automatically upload logs that are stored on each instance at <code>C:\game\logs</code>
+        /// GameLift automatically uploads logs that are stored on each instance at <code>C:\game\logs</code>
         /// (for Windows) or <code>/local/game/logs</code> (for Linux). Use the Amazon GameLift
         /// console to access stored logs. 
         /// </para>
@@ -167,9 +257,8 @@ namespace Amazon.GameLift.Model
         /// Gets and sets the property MetricGroups. 
         /// <para>
         /// Names of metric groups that this fleet is included in. In Amazon CloudWatch, you can
-        /// view metrics for an individual fleet or aggregated metrics for a fleets that are in
-        /// a fleet metric group. Currently, a fleet can be included in only one metric group
-        /// at a time.
+        /// view metrics for an individual fleet or aggregated metrics for fleets that are in
+        /// a fleet metric group. A fleet can be included in only one metric group at a time.
         /// </para>
         /// </summary>
         public List<string> MetricGroups
@@ -271,9 +360,9 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property ServerLaunchParameters. 
         /// <para>
-        /// Game server launch parameters specified for fleets created prior to 2016-08-04 (or
-        /// AWS SDK v. 0.12.16). Server launch parameters for fleets created after this date are
-        /// specified in the fleet's <a>RuntimeConfiguration</a>.
+        /// Game server launch parameters specified for fleets created before 2016-08-04 (or AWS
+        /// SDK v. 0.12.16). Server launch parameters for fleets created after this date are specified
+        /// in the fleet's <a>RuntimeConfiguration</a>.
         /// </para>
         /// </summary>
         public string ServerLaunchParameters
@@ -292,7 +381,7 @@ namespace Amazon.GameLift.Model
         /// Gets and sets the property ServerLaunchPath. 
         /// <para>
         /// Path to a game server executable in the fleet's build, specified for fleets created
-        /// prior to 2016-08-04 (or AWS SDK v. 0.12.16). Server launch paths for fleets created
+        /// before 2016-08-04 (or AWS SDK v. 0.12.16). Server launch paths for fleets created
         /// after this date are specified in the fleet's <a>RuntimeConfiguration</a>.
         /// </para>
         /// </summary>

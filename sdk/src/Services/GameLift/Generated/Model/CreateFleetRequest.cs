@@ -40,15 +40,36 @@ namespace Amazon.GameLift.Model
     ///  
     /// <para>
     /// To create a new fleet, you must specify the following: (1) fleet name, (2) build ID
-    /// of an uploaded game build, (3) an EC2 instance type, and (4) a runtime configuration
+    /// of an uploaded game build, (3) an EC2 instance type, and (4) a run-time configuration
     /// that describes which server processes to run on each instance in the fleet. (Although
-    /// the runtime configuration is not a required parameter, the fleet cannot be successfully
-    /// created without it.) You can also configure the new fleet with the following settings:
-    /// fleet description, access permissions for inbound traffic, fleet-wide game session
-    /// protection, and resource creation limit. If you use Amazon CloudWatch for metrics,
-    /// you can add the new fleet to a metric group, which allows you to view aggregated metrics
-    /// for a set of fleets. Once you specify a metric group, the new fleet's metrics are
-    /// included in the metric group's data.
+    /// the run-time configuration is not a required parameter, the fleet cannot be successfully
+    /// activated without it.)
+    /// </para>
+    ///  
+    /// <para>
+    /// You can also configure the new fleet with the following settings:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// Fleet description
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Access permissions for inbound traffic
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Fleetwide game session protection
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Resource creation limit
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    /// If you use Amazon CloudWatch for metrics, you can add the new fleet to a metric group.
+    /// This allows you to view aggregated metrics for a set of fleets. Once you specify a
+    /// metric group, the new fleet's metrics are included in the metric group's data.
     /// </para>
     ///  
     /// <para>
@@ -61,8 +82,8 @@ namespace Amazon.GameLift.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Sets the fleet's capacity to 1 "desired", which causes Amazon GameLift to start one
-    /// new EC2 instance.
+    /// Sets the fleet's target capacity to 1 (desired instances), which causes Amazon GameLift
+    /// to start one new EC2 instance.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -77,38 +98,96 @@ namespace Amazon.GameLift.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Sets the fleet's status to <code>ACTIVE</code> once one server process in the fleet
-    /// is ready to host a game session.
+    /// Sets the fleet's status to <code>ACTIVE</code> as soon as one server process in the
+    /// fleet is ready to host a game session.
     /// </para>
     ///  </li> </ul> 
     /// <para>
-    /// After a fleet is created, use the following actions to change fleet properties and
-    /// configuration:
+    /// Fleet-related operations include:
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <a>UpdateFleetAttributes</a> -- Update fleet metadata, including name and description.
+    ///  <a>CreateFleet</a> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a>UpdateFleetCapacity</a> -- Increase or decrease the number of instances you want
-    /// the fleet to maintain.
+    ///  <a>ListFleets</a> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a>UpdateFleetPortSettings</a> -- Change the IP address and port ranges that allow
-    /// access to incoming traffic.
+    /// Describe fleets:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <a>DescribeFleetAttributes</a> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a>UpdateRuntimeConfiguration</a> -- Change how server processes are launched in
-    /// the fleet, including launch path, launch parameters, and the number of concurrent
-    /// processes.
+    ///  <a>DescribeFleetPortSettings</a> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a>PutScalingPolicy</a> -- Create or update rules that are used to set the fleet's
-    /// capacity (autoscaling).
+    ///  <a>DescribeFleetUtilization</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>DescribeRuntimeConfiguration</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>DescribeFleetEvents</a> 
+    /// </para>
+    ///  </li> </ul> </li> <li> 
+    /// <para>
+    /// Update fleets:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <a>UpdateFleetAttributes</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>UpdateFleetCapacity</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>UpdateFleetPortSettings</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>UpdateRuntimeConfiguration</a> 
+    /// </para>
+    ///  </li> </ul> </li> <li> 
+    /// <para>
+    /// Manage fleet capacity:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <a>DescribeFleetCapacity</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>UpdateFleetCapacity</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>PutScalingPolicy</a> (automatic scaling)
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>DescribeScalingPolicies</a> (automatic scaling)
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>DeleteScalingPolicy</a> (automatic scaling)
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>DescribeEC2InstanceLimits</a> 
+    /// </para>
+    ///  </li> </ul> </li> <li> 
+    /// <para>
+    ///  <a>DeleteFleet</a> 
     /// </para>
     ///  </li> </ul>
     /// </summary>
@@ -234,8 +313,8 @@ namespace Amazon.GameLift.Model
         /// Gets and sets the property MetricGroups. 
         /// <para>
         /// Names of metric groups to add this fleet to. Use an existing metric group name to
-        /// add this fleet to the group, or use a new name to create a new metric group. Currently,
-        /// a fleet can only be included in one metric group at a time.
+        /// add this fleet to the group. Or use a new name to create a new metric group. A fleet
+        /// can only be included in one metric group at a time.
         /// </para>
         /// </summary>
         public List<string> MetricGroups
@@ -322,15 +401,15 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property RuntimeConfiguration. 
         /// <para>
-        /// Instructions for launching server processes on each instance in the fleet. The runtime
+        /// Instructions for launching server processes on each instance in the fleet. The run-time
         /// configuration for a fleet has a collection of server process configurations, one for
         /// each type of server process to run on an instance. A server process configuration
         /// specifies the location of the server executable, launch parameters, and the number
         /// of concurrent processes with that configuration to maintain on each instance. A CreateFleet
-        /// request must include a runtime configuration with at least one server process configuration;
-        /// otherwise the request will fail with an invalid request exception. (This parameter
-        /// replaces the parameters <code>ServerLaunchPath</code> and <code>ServerLaunchParameters</code>;
-        /// requests that contain values for these parameters instead of a runtime configuration
+        /// request must include a run-time configuration with at least one server process configuration;
+        /// otherwise the request fails with an invalid request exception. (This parameter replaces
+        /// the parameters <code>ServerLaunchPath</code> and <code>ServerLaunchParameters</code>;
+        /// requests that contain values for these parameters instead of a run-time configuration
         /// will continue to work.) 
         /// </para>
         /// </summary>
@@ -351,7 +430,7 @@ namespace Amazon.GameLift.Model
         /// <para>
         /// This parameter is no longer used. Instead, specify server launch parameters in the
         /// <code>RuntimeConfiguration</code> parameter. (Requests that specify a server launch
-        /// path and launch parameters instead of a runtime configuration will continue to work.)
+        /// path and launch parameters instead of a run-time configuration will continue to work.)
         /// </para>
         /// </summary>
         public string ServerLaunchParameters
@@ -371,7 +450,7 @@ namespace Amazon.GameLift.Model
         /// <para>
         /// This parameter is no longer used. Instead, specify a server launch path using the
         /// <code>RuntimeConfiguration</code> parameter. (Requests that specify a server launch
-        /// path and launch parameters instead of a runtime configuration will continue to work.)
+        /// path and launch parameters instead of a run-time configuration will continue to work.)
         /// </para>
         /// </summary>
         public string ServerLaunchPath

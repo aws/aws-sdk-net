@@ -35,7 +35,7 @@ namespace Amazon.GameLift.Model
     /// 
     ///  
     /// <para>
-    /// Player session-related operations include:
+    /// Player-session-related operations include:
     /// </para>
     ///  <ul> <li> 
     /// <para>
@@ -49,7 +49,23 @@ namespace Amazon.GameLift.Model
     /// <para>
     ///  <a>DescribePlayerSessions</a> 
     /// </para>
-    ///  </li> </ul>
+    ///  </li> <li> 
+    /// <para>
+    /// Game session placements
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <a>StartGameSessionPlacement</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>DescribeGameSessionPlacement</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>StopGameSessionPlacement</a> 
+    /// </para>
+    ///  </li> </ul> </li> </ul>
     /// </summary>
     public partial class PlayerSession
     {

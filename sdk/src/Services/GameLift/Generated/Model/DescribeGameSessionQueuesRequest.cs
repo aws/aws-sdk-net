@@ -34,6 +34,28 @@ namespace Amazon.GameLift.Model
     /// If successful, a <a>GameSessionQueue</a> object is returned for each requested queue.
     /// When specifying a list of queues, objects are returned only for queues that currently
     /// exist in the region.
+    /// 
+    ///  
+    /// <para>
+    /// Queue-related operations include:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <a>CreateGameSessionQueue</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>DescribeGameSessionQueues</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>UpdateGameSessionQueue</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>DeleteGameSessionQueue</a> 
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial class DescribeGameSessionQueuesRequest : AmazonGameLiftRequest
     {
