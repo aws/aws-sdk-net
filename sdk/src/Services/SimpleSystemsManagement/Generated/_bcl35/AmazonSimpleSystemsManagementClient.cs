@@ -1161,6 +1161,85 @@ namespace Amazon.SimpleSystemsManagement
 
         #endregion
         
+        #region  CreateResourceDataSync
+
+        /// <summary>
+        /// Creates a resource data sync configuration to a single bucket in Amazon S3. This is
+        /// an asynchronous operation that returns immediately. After a successful initial sync
+        /// is completed, the system continuously syncs data to the Amazon S3 bucket. To check
+        /// the status of the sync, use the <a href="API_ListResourceDataSync.html">ListResourceDataSync</a>
+        /// operation.
+        /// 
+        ///  
+        /// <para>
+        /// By default, data is not encrypted in Amazon S3. We strongly recommend that you enable
+        /// encryption in Amazon S3 to ensure secure data storage. We also recommend that you
+        /// secure access to the Amazon S3 bucket by creating a restrictive bucket policy. To
+        /// view an example of a restrictive Amazon S3 bucket policy for Resource Data Sync, see
+        /// <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-inventory-datasync-create.html">Creating
+        /// a Resource Data Sync</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateResourceDataSync service method.</param>
+        /// 
+        /// <returns>The response from the CreateResourceDataSync service method, as returned by SimpleSystemsManagement.</returns>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.ResourceDataSyncAlreadyExistsException">
+        /// A sync configuration with the same name already exists.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.ResourceDataSyncCountExceededException">
+        /// You have exceeded the allowed maximum sync configurations.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.ResourceDataSyncInvalidConfigurationException">
+        /// The specified sync configuration is invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreateResourceDataSync">REST API Reference for CreateResourceDataSync Operation</seealso>
+        public CreateResourceDataSyncResponse CreateResourceDataSync(CreateResourceDataSyncRequest request)
+        {
+            var marshaller = new CreateResourceDataSyncRequestMarshaller();
+            var unmarshaller = CreateResourceDataSyncResponseUnmarshaller.Instance;
+
+            return Invoke<CreateResourceDataSyncRequest,CreateResourceDataSyncResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateResourceDataSync operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateResourceDataSync operation on AmazonSimpleSystemsManagementClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateResourceDataSync
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreateResourceDataSync">REST API Reference for CreateResourceDataSync Operation</seealso>
+        public IAsyncResult BeginCreateResourceDataSync(CreateResourceDataSyncRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new CreateResourceDataSyncRequestMarshaller();
+            var unmarshaller = CreateResourceDataSyncResponseUnmarshaller.Instance;
+
+            return BeginInvoke<CreateResourceDataSyncRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateResourceDataSync operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateResourceDataSync.</param>
+        /// 
+        /// <returns>Returns a  CreateResourceDataSyncResult from SimpleSystemsManagement.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreateResourceDataSync">REST API Reference for CreateResourceDataSync Operation</seealso>
+        public  CreateResourceDataSyncResponse EndCreateResourceDataSync(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateResourceDataSyncResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DeleteActivation
 
         /// <summary>
@@ -1719,6 +1798,68 @@ namespace Amazon.SimpleSystemsManagement
         public  DeletePatchBaselineResponse EndDeletePatchBaseline(IAsyncResult asyncResult)
         {
             return EndInvoke<DeletePatchBaselineResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeleteResourceDataSync
+
+        /// <summary>
+        /// Deletes a Resource Data Sync configuration. After the configuration is deleted, changes
+        /// to inventory data on managed instances are no longer synced with the target Amazon
+        /// S3 bucket. Deleting a sync configuration does not delete data in the target Amazon
+        /// S3 bucket.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteResourceDataSync service method.</param>
+        /// 
+        /// <returns>The response from the DeleteResourceDataSync service method, as returned by SimpleSystemsManagement.</returns>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.ResourceDataSyncNotFoundException">
+        /// The specified sync name was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeleteResourceDataSync">REST API Reference for DeleteResourceDataSync Operation</seealso>
+        public DeleteResourceDataSyncResponse DeleteResourceDataSync(DeleteResourceDataSyncRequest request)
+        {
+            var marshaller = new DeleteResourceDataSyncRequestMarshaller();
+            var unmarshaller = DeleteResourceDataSyncResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteResourceDataSyncRequest,DeleteResourceDataSyncResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteResourceDataSync operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteResourceDataSync operation on AmazonSimpleSystemsManagementClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteResourceDataSync
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeleteResourceDataSync">REST API Reference for DeleteResourceDataSync Operation</seealso>
+        public IAsyncResult BeginDeleteResourceDataSync(DeleteResourceDataSyncRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new DeleteResourceDataSyncRequestMarshaller();
+            var unmarshaller = DeleteResourceDataSyncResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DeleteResourceDataSyncRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteResourceDataSync operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteResourceDataSync.</param>
+        /// 
+        /// <returns>Returns a  DeleteResourceDataSyncResult from SimpleSystemsManagement.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeleteResourceDataSync">REST API Reference for DeleteResourceDataSync Operation</seealso>
+        public  DeleteResourceDataSyncResponse EndDeleteResourceDataSync(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteResourceDataSyncResponse>(asyncResult);
         }
 
         #endregion
@@ -4479,8 +4620,8 @@ namespace Amazon.SimpleSystemsManagement
         #region  GetParametersByPath
 
         /// <summary>
-        /// Retrieve parameters in a specific hierarchy. For more information, see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-working-path.html">Using
-        /// Parameter Hierarchies</a>.
+        /// Retrieve parameters in a specific hierarchy. For more information, see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-working.html">Working
+        /// with Systems Manager Parameters</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetParametersByPath service method.</param>
         /// 
@@ -5346,6 +5487,78 @@ namespace Amazon.SimpleSystemsManagement
 
         #endregion
         
+        #region  ListResourceDataSync
+
+        /// <summary>
+        /// Lists your resource data sync configurations. Includes information about the last
+        /// time a sync attempted to start, the last sync status, and the last time a sync successfully
+        /// completed.
+        /// 
+        ///  
+        /// <para>
+        /// The number of sync configurations might be too large to return using a single call
+        /// to <code>ListResourceDataSync</code>. You can limit the number of sync configurations
+        /// returned by using the <code>MaxResults</code> parameter. To determine whether there
+        /// are more sync configurations to list, check the value of <code>NextToken</code> in
+        /// the output. If there are more sync configurations to list, you can request them by
+        /// specifying the <code>NextToken</code> returned in the call to the parameter of a subsequent
+        /// call. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListResourceDataSync service method.</param>
+        /// 
+        /// <returns>The response from the ListResourceDataSync service method, as returned by SimpleSystemsManagement.</returns>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidNextTokenException">
+        /// The specified token is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListResourceDataSync">REST API Reference for ListResourceDataSync Operation</seealso>
+        public ListResourceDataSyncResponse ListResourceDataSync(ListResourceDataSyncRequest request)
+        {
+            var marshaller = new ListResourceDataSyncRequestMarshaller();
+            var unmarshaller = ListResourceDataSyncResponseUnmarshaller.Instance;
+
+            return Invoke<ListResourceDataSyncRequest,ListResourceDataSyncResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListResourceDataSync operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListResourceDataSync operation on AmazonSimpleSystemsManagementClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListResourceDataSync
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListResourceDataSync">REST API Reference for ListResourceDataSync Operation</seealso>
+        public IAsyncResult BeginListResourceDataSync(ListResourceDataSyncRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new ListResourceDataSyncRequestMarshaller();
+            var unmarshaller = ListResourceDataSyncResponseUnmarshaller.Instance;
+
+            return BeginInvoke<ListResourceDataSyncRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListResourceDataSync operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListResourceDataSync.</param>
+        /// 
+        /// <returns>Returns a  ListResourceDataSyncResult from SimpleSystemsManagement.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListResourceDataSync">REST API Reference for ListResourceDataSync Operation</seealso>
+        public  ListResourceDataSyncResponse EndListResourceDataSync(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListResourceDataSyncResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ListTagsForResource
 
         /// <summary>
@@ -5603,8 +5816,8 @@ namespace Amazon.SimpleSystemsManagement
         /// </para>
         ///  
         /// <para>
-        /// For more information, see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-working-path.html">Develop
-        /// a Parameter Hierarchy</a>. 
+        /// For more information, see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-working.html">Working
+        /// with Systems Manager Parameters</a>. 
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.HierarchyTypeMismatchException">

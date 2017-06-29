@@ -1193,6 +1193,60 @@ namespace Amazon.SimpleSystemsManagement
 
 
     /// <summary>
+    /// Constants used for properties of type LastResourceDataSyncStatus.
+    /// </summary>
+    public class LastResourceDataSyncStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Failed for LastResourceDataSyncStatus
+        /// </summary>
+        public static readonly LastResourceDataSyncStatus Failed = new LastResourceDataSyncStatus("Failed");
+        /// <summary>
+        /// Constant InProgress for LastResourceDataSyncStatus
+        /// </summary>
+        public static readonly LastResourceDataSyncStatus InProgress = new LastResourceDataSyncStatus("InProgress");
+        /// <summary>
+        /// Constant Successful for LastResourceDataSyncStatus
+        /// </summary>
+        public static readonly LastResourceDataSyncStatus Successful = new LastResourceDataSyncStatus("Successful");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public LastResourceDataSyncStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static LastResourceDataSyncStatus FindValue(string value)
+        {
+            return FindValue<LastResourceDataSyncStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator LastResourceDataSyncStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type MaintenanceWindowExecutionStatus.
     /// </summary>
     public class MaintenanceWindowExecutionStatus : ConstantClass
@@ -1908,6 +1962,52 @@ namespace Amazon.SimpleSystemsManagement
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator PlatformType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ResourceDataSyncS3Format.
+    /// </summary>
+    public class ResourceDataSyncS3Format : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant JsonSerDe for ResourceDataSyncS3Format
+        /// </summary>
+        public static readonly ResourceDataSyncS3Format JsonSerDe = new ResourceDataSyncS3Format("JsonSerDe");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ResourceDataSyncS3Format(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ResourceDataSyncS3Format FindValue(string value)
+        {
+            return FindValue<ResourceDataSyncS3Format>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ResourceDataSyncS3Format(string value)
         {
             return FindValue(value);
         }
