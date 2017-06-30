@@ -56,6 +56,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BuildTaskBase.cs" />
+    <Compile Include="SelfServiceTasks.cs" />
     <Compile Include="TimingTask.cs" />
     <Compile Include="UnityBuild.cs" />
     <Compile Include="UnityPackage.cs" />
