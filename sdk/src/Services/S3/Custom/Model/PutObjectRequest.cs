@@ -51,7 +51,7 @@ namespace Amazon.S3.Model
         private RequestPayer requestPayer;
 
         private string md5Digest;
-        private List<Tag> tagset;
+        private List<Tag> tagset = new List<Tag>();
 
         /// <summary>
         /// A canned access control list (CACL) to apply to the object.
@@ -445,7 +445,7 @@ namespace Amazon.S3.Model
         /// <returns>true if Tagging is set.</returns>
         internal bool IsSetTagSet()
         {
-            return this.tagset!= null;
+            return (this.tagset != null) && (this.tagset.Count > 0);
         }
     }
 }

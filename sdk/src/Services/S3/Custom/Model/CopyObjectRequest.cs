@@ -43,7 +43,7 @@ namespace Amazon.S3.Model
         private DateTime? modifiedSinceDate;
         private DateTime? unmodifiedSinceDate;
 
-        private List<Tag> tagset;
+        private List<Tag> tagset = new List<Tag>();
 
         private S3MetadataDirective metadataDirective;
         private S3StorageClass storageClass;
@@ -540,7 +540,7 @@ namespace Amazon.S3.Model
         /// <returns>true if Tagging is set.</returns>
         internal bool IsSetTagSet()
         {
-            return this.tagset != null;
+            return (this.tagset != null) && (this.tagset.Count > 0);
         }
     }
 }

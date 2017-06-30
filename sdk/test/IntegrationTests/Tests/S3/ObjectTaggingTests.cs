@@ -4,6 +4,10 @@ using Amazon.S3.Model;
 using Amazon.S3.Util;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Collections.Generic;
+using System.IO;
+using Amazon.S3.Transfer;
+
+using AWSSDK_DotNet.IntegrationTests.Utils;
 
 namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
 {
@@ -237,6 +241,72 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             });
 
             Assert.AreEqual("Value2", taggingResponse.Tagging[0].Value);
+        }
+    }
+
+    [TestClass]
+    public class MultipartTaggingTest : TestBase<AmazonS3Client>
+    {
+        private string tempFilePath;
+        private string bucketName;
+        private string objectKey = "helloworld";
+
+        private TransferUtility transferClient;
+
+        [TestInitialize]
+        public void TestInitialize()
+        {
+            transferClient = new TransferUtility(Client);
+
+            tempFilePath = System.IO.Path.GetTempFileName();
+            bucketName = S3TestUtils.CreateBucket(Client);
+
+            UtilityMethods.GenerateFile(tempFilePath, 1024 * 1024 * 20);
+        }
+
+        [TestCleanup]
+        public void TestCleanup()
+        {
+            try
+            {
+                if (File.Exists(tempFilePath)) File.Delete(tempFilePath);
+            }
+            finally{};
+
+            try
+            {
+                AmazonS3Util.DeleteS3BucketWithObjects(Client, bucketName);
+            }
+            finally{};
+
+            BaseClean();
+        }
+
+        [TestMethod]
+        [TestCategory("S3")]
+        public void MutlipartObjectTaggingTest()
+        {
+
+            transferClient.Upload(new TransferUtilityUploadRequest
+            {
+                BucketName = bucketName,
+                Key = objectKey,
+                FilePath = tempFilePath,
+                TagSet = new List<Tag>
+                {
+                    new Tag{Key = "hello", Value="world"}
+                }
+            });
+
+            var response = Client.GetObjectTagging(new GetObjectTaggingRequest
+            {
+                BucketName = bucketName,
+                Key = objectKey
+            });
+
+            Assert.AreEqual(response.Tagging.Count, 1);
+            Assert.AreEqual(response.Tagging[0].Key, "hello");
+            Assert.AreEqual(response.Tagging[0].Value, "world");
         }
     }
 }

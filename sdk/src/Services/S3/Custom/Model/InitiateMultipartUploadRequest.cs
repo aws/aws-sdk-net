@@ -44,6 +44,7 @@ namespace Amazon.S3.Model
         private string serverSideEncryptionKeyManagementServiceKeyId;
         private RequestPayer requestPayer;
 
+        private List<Tag> tagset = new List<Tag>();
         private byte[] envelopeKey;
         private byte[] iv;
 
@@ -305,6 +306,24 @@ namespace Amazon.S3.Model
         internal bool IsSetRequestPayer()
         {
             return requestPayer != null;
+        }
+
+        /// <summary>
+        /// The tag-set for the object. The tag-set must be encoded as URL Query parameters.
+        /// </summary>
+        public List<Tag> TagSet
+        {
+            get { return this.tagset; }
+            set { this.tagset = value; }
+        }
+
+        /// <summary>
+        /// Checks if Tagging property is set
+        /// </summary>
+        /// <returns>true if Tagging is set.</returns>
+        internal bool IsSetTagSet()
+        {
+            return (this.tagset != null) && (this.tagset.Count > 0);
         }
     }
 }
