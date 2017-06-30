@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.3.116.0",
+    "ProductVersion" : "3.3.117.0",
     "CoreVersion"    : "3.3.15.0",
     "DefaultToPreview" : false,
     "ServiceVersions"  : {
@@ -313,7 +313,7 @@
             "InPreview"               : false
         },
         "S3"                   : {
-            "Version" : "3.3.7.1",
+            "Version" : "3.3.8.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.15.0"
@@ -449,7 +449,7 @@
             "InPreview"               : false
         },
         "AWSMarketplaceCommerceAnalytics" : {
-            "Version" : "3.3.3.8",
+            "Version" : "3.3.3.9",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.15.0"

@@ -1,3 +1,9 @@
+### 3.3.117.0 (2017-06-30 19:03 UTC)
+* AWSMarketplaceCommerceAnalytics (3.3.3.9)
+	* Documentation updates for AWS Marketplace Commerce Analytics.
+* S3 (3.3.8.0)
+	* API Update for S3: Adding Object Tagging Header to MultipartUpload Initialization
+
 ### 3.3.116.0 (2017-06-29 23:45 UTC)
 * CloudWatchEvents (3.3.2.0)
 	* CloudWatch Events now allows different AWS accounts to share events with each other through a new resource called event bus. Event buses accept events from AWS services, other AWS accounts and PutEvents API calls. Currently all AWS accounts have one default event bus. To send events to another account, customers simply write rules to match the events of interest and attach an event bus in the receiving account as the target to the rule. The PutTargets API has been updated to allow adding cross account event buses as targets. In addition, we have released two new APIs - PutPermission and RemovePermission - that enables customers to add/remove permissions to their default event bus.
