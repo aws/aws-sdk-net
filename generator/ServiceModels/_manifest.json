@@ -2,28 +2,33 @@
     "projects": [
         {
             "name": "Net35",
-            "configurations": [ "Debug|Any CPU", "Release|Any CPU" ],
-            "targetFramework": "v3.5",
+            "targetFramework": "net35",
             "defineConstants": ";BCL;BCL35;AWS_APM_API;CODE_ANALYSIS;LOCAL_FILE",
-            "binSubFolder": "net35",
-            "template": "BclProjectFile",
-            "platformCodeFolders": [ "_bcl", "_bcl35", "_bcl+sl", "_bcl+unity", "_bcl+pcl", "_bcl+coreclr", "_bcl+coreclr+pcl","_bcl+coreclr+unity","_bcl35+unity" ],
-            "nugetTargetPlatform": "net35"
+            "template": "VS2017ProjectFile",
+            "excludeFolders": [ "_android", "_async", "_bcl45", "_bcl45+coreclr", "_coreclr", "_ios", "_mobile", "_pcl", "_pcl-sl", "_pclReference", "_unity", "_win8", "_winPhone81", "_winPhoneSilverlight8"],
+            "nugetTargetPlatform": "net35",
+            "frameworkPathOverride" : "C:\\Program Files (x86)\\Reference Assemblies\\Microsoft\\Framework\\.NETFramework\\v3.5\\Profile\\Client",
+            "frameworkReferences" : [
+                {"name": "System.Configuration"},
+                {"name": "System.Data.Entity", "hintPath" : "C:\\Program Files (x86)\\Reference Assemblies\\Microsoft\\Framework\\v3.5\\System.Data.Entity.dll"}
+            ]
         },
         {
             "name": "Net45",
-            "configurations": [ "Debug|Any CPU", "Release|Any CPU" ],
-            "targetFramework": "v4.5",
+            "targetFramework": "net45",
             "defineConstants": ";BCL;BCL45;AWS_ASYNC_API;CODE_ANALYSIS;LOCAL_FILE",
-            "binSubFolder": "net45",
-            "template": "BclProjectFile",
-            "platformCodeFolders": [ "_bcl", "_bcl45", "_async", "_bcl+sl", "_bcl+unity", "_bcl+pcl", "_bcl45+pcl", "_bcl45+coreclr", "_bcl+coreclr", "_bcl+coreclr+pcl","_bcl+coreclr+unity" ],
-            "nugetTargetPlatform": "net45"
+            "template": "VS2017ProjectFile",
+            "excludeFolders": [ "_android", "_bcl35", "_coreclr", "_ios", "_mobile", "_pcl", "_pcl-sl", "_pclReference", "_unity", "_win8", "_winPhone81", "_winPhoneSilverlight8"],
+            "nugetTargetPlatform": "net45",
+            "frameworkReferences" : [
+                {"name": "System.Configuration"},
+                {"name": "System.Net.Http"}
+            ]
         },
         {
             "name": "PCL",
             "configurations": [ "Debug|Any CPU", "Release|Any CPU" ],
-            "targetFramework": "v4.5",
+            "targetFramework": "net45",
             "defineConstants": ";PCL;AWS_ASYNC_API;LOCAL_FILE;ADD_SUPPORT_ICLONEABLE",
             "binSubFolder": "pcl",
             "template": "PCLProjectFile",
@@ -49,7 +54,7 @@
         {
             "name": "Android",
             "configurations": [ "Debug|Any CPU", "Release|Any CPU" ],
-            "targetFramework": "v4.5",
+            "targetFramework": "net45",
             "defineConstants": ";PCL;AWS_ASYNC_API;LOCAL_FILE;ADD_SUPPORT_ICLONEABLE",
             "binSubFolder": "monoandroid",
             "template": "AndroidProjectFile",
@@ -60,7 +65,7 @@
         {
             "name": "iOS",
             "configurations": [ "Debug|Any CPU", "Release|Any CPU" ],
-            "targetFramework": "v4.5",
+            "targetFramework": "net45",
             "defineConstants": ";PCL;AWS_ASYNC_API;LOCAL_FILE;ADD_SUPPORT_ICLONEABLE",
             "binSubFolder": "Xamarin.iOS10",
             "template": "IOSProjectFile",
@@ -71,7 +76,7 @@
         {
             "name": "Win8",
             "configurations": [ "Debug|Any CPU", "Release|Any CPU" ],
-            "targetFramework": "v4.5",
+            "targetFramework": "net45",
             "defineConstants": ";PCL;AWS_ASYNC_API;LOCAL_FILE;ADD_SUPPORT_ICLONEABLE",
             "binSubFolder": "windows8",
             "template": "Win8ProjectFile",
@@ -82,7 +87,7 @@
         {
             "name": "WinPhone81",
             "configurations": [ "Debug|Any CPU", "Release|Any CPU" ],
-            "targetFramework": "v4.5",
+            "targetFramework": "net45",
             "defineConstants": ";PCL;AWS_ASYNC_API;LOCAL_FILE;ADD_SUPPORT_ICLONEABLE",
             "binSubFolder": "wpa81",
             "template": "WinPhone81ProjectFile",
@@ -93,7 +98,7 @@
         {
             "name": "WinPhoneSilverlight8",
             "configurations": [ "Debug|Any CPU", "Release|Any CPU" ],
-            "targetFramework": "v4.5",
+            "targetFramework": "net45",
             "defineConstants": ";PCL;AWS_ASYNC_API;LOCAL_FILE;WP_SL;ADD_SUPPORT_ICLONEABLE",
             "binSubFolder": "wp8",
             "template": "WinPhoneSilverlight8ProjectFile",
@@ -104,25 +109,79 @@
         {
             "name": "Unity",
             "configurations": [ "Debug|Any CPU", "Release|Any CPU" ],
-            "targetFramework": "v3.5",
+            "targetFramework": "net35",
             "defineConstants": "",
             "binSubFolder": "unity",
             "template": "UnityProjectFile",
             "platformCodeFolders": [ "_unity", "_bcl+unity" ]
+        },
+        {
+            "name": "CoreCLR",
+            "targetFramework": "netstandard1.3",
+            "defineConstants" : "$(DefineConstants);CORECLR;AWS_ASYNC_API;ADD_SUPPORT_IORDERED_DICTIONARY;ADD_SUPPORT_ICLONEABLE",
+            "template": "VS2017ProjectFile",
+            "binSubFolder" : "",
+            "configurations" : [],
+            "excludeFolders": ["_pcl", "_pcl-sl", "_bcl35", "_bcl45", "_bcl", "_bcl+sl", "_bcl+unity", "_unity", "_android", "_ios", "_pclReference", "_win8", "_winPhone81", "_winPhoneSilverlight8", "_winstorage", "Custom/SyncManager"]
         }
     ],
     "unittestprojects":[
         {
             "name": "Net35",
+            "targetFramework" : "net45",
             "defineConstants": "TRACE;;BCL;BCL35;AWS_APM_API;LOCAL_FILE",
-            "references" : [],
-            "compileInclude" : []
+            "excludeFolders": ["_bcl45"],
+            "visualStudioServices" : ["{82a7f48d-3b50-4b1e-b82e-3ada8210c358}"],
+            "embeddedResources" : ["Custom\\Runtime\\TestResponses\\*.txt", "Custom\\TestTools\\ComparerTest.json", "Custom\\CloudFront\\sample.rsa.private.key.txt"],
+            "packageReferences" : [
+                {
+                    "include" : "MSTest.TestAdapter",
+                    "version" : "1.1.18"
+                },
+                {
+                    "include" : "Microsoft.NET.Test.Sdk",
+                    "version" : "15.0.0"
+                },
+                {
+                    "include" : "MSTest.TestFramework",
+                    "version" : "1.1.18"
+                }
+            ],
+            "frameworkReferences" : [
+                {
+                    "name": "System.Configuration"
+                }
+            ],
+          "noWarn": "CS1591",
+          "outputPathOverride" :  "bin\\$(Configuration)\\net35"
         },
         {
             "name": "Net45",
-            "defineConstants" : "TRACE;;BCL;BCL45;ASYNC_AWAIT;AWS_APM_API;LOCAL_FILE",
+            "targetFramework" : "net45",
+            "defineConstants" : "TRACE;;BCL;BCL45;ASYNC_AWAIT;LOCAL_FILE",
             "references": ["System.Net.Http"],
-            "compileInclude": ["Custom\\*\\_bcl45\\*.cs"],
+            "visualStudioServices" : ["{82a7f48d-3b50-4b1e-b82e-3ada8210c358}"],
+            "embeddedResources" : ["Custom\\Runtime\\TestResponses\\*.txt", "Custom\\TestTools\\ComparerTest.json", "Custom\\CloudFront\\sample.rsa.private.key.txt"],
+            "packageReferences" : [
+                {
+                    "include" : "MSTest.TestAdapter",
+                    "version" : "1.1.18"
+                },
+                {
+                    "include" : "Microsoft.NET.Test.Sdk",
+                    "version" : "15.0.0"
+                },
+                {
+                    "include" : "MSTest.TestFramework",
+                    "version" : "1.1.18"
+                }
+            ],
+            "frameworkReferences" : [
+                {
+                    "name": "System.Configuration"
+                }
+            ],
+            "noWarn" : "CS1591"
         }
     ]
 }

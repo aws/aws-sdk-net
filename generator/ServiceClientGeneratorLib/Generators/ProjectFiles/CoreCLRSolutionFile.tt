@@ -4,31 +4,23 @@
 <#@ import namespace="System.Text" #>
 <#@ import namespace="System.Collections.Generic" #>
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.23107.0
+# Visual Studio 15
+VisualStudioVersion = 15.0.26403.7
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{A49B31CF-83ED-4FF2-9301-66AB909C4896}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{04014228-E2FE-4596-ABD2-905404177293}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{9C8582E9-CD47-4721-A94C-1DF7DF6DFCFA}"
-	ProjectSection(SolutionItems) = preProject
-		global.json = global.json
-	EndProjectSection
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{1523203C-CD16-4B4A-8F9D-8ECCA3A327AA}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{03245B8D-0A27-4C11-9AAC-7047A9F6DFB0}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{9863FCB3-BFA4-4B9C-B8F6-302BA5F660B8}"
 EndProject
 <#
-    foreach(var project in (List<SolutionFileCreator.Project>)this.Session["CoreProjects"])
+    foreach(var project in (IList<SolutionFileCreator.Project>)this.Session["CoreProjects"])
     {
 #>
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "<#=project.Name#>", "<#=project.ProjectPath#>", "<#=project.ProjectGuid#>"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "<#=project.Name#>", "<#=project.ProjectPath#>", "<#=project.ProjectGuid#>"
 EndProject
 <#
     }
-
+#>
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{939EC5C2-8345-43E2-8F97-72EEEBEEA0AB}"
+EndProject
+<#
     foreach(var folder in (List<SolutionFileCreator.ServiceSolutionFolder>)this.Session["ServiceSolutionFolders"])
     {
 #>
@@ -39,34 +31,32 @@ EndProject
         foreach(var project in folder.Projects)
         { 
 #>
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "<#=project.Name#>", "<#=project.ProjectPath#>", "<#=project.ProjectGuid#>"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "<#=project.Name#>", "<#=project.ProjectPath#>", "<#=project.ProjectGuid#>"
 EndProject
 <#
         }
     }
 #>
-<#
-	if ((bool) this.Session["IncludeTests"])
-	{
-#>
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "IntegrationTests", "test\CoreCLR\IntegrationTests\IntegrationTests.xproj", "{456D916F-371A-4E73-BA12-73199057C773}"
-EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "UnitTests", "test\CoreCLR\UnitTests\UnitTests.xproj", "{D65E5A13-9315-4F1A-9C01-B8F51CAEC362}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{12EC4E4B-7E2C-4B63-8EF9-7B959F82A89B}"
 EndProject
 <#
-	}
+    foreach(var project in (IList<SolutionFileCreator.Project>)this.Session["TestProjects"])
+    {
 #>
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "<#=project.Name#>", "<#=project.ProjectPath#>", "<#=project.ProjectGuid#>"
+EndProject
+<#
+    }
+#>
+
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
-	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 <#
-    foreach(var project in (List<SolutionFileCreator.Project>)this.Session["CoreProjects"])
+    foreach(var project in (IList<SolutionFileCreator.Project>)this.Session["CoreProjects"])
     {
 #>
 		<#=project.ProjectGuid#>.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -75,14 +65,10 @@ Global
 		<#=project.ProjectGuid#>.Release|Any CPU.Build.0 = Release|Any CPU
 <#
     }
-
     foreach(var folder in (List<SolutionFileCreator.ServiceSolutionFolder>)this.Session["ServiceSolutionFolders"])
     {
-#>
-		<#=folder.ProjectGuid#> = {03245B8D-0A27-4C11-9AAC-7047A9F6DFB0}
-<#
         foreach(var project in folder.Projects)
-        { 
+        {
 #>
 		<#=project.ProjectGuid#>.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		<#=project.ProjectGuid#>.Debug|Any CPU.Build.0 = Debug|Any CPU
@@ -91,22 +77,33 @@ Global
 <#
         }
     }
-#>
-	EndGlobalSection	
-
-	GlobalSection(NestedProjects) = preSolution
-<#
-    foreach(var project in (List<SolutionFileCreator.Project>)this.Session["CoreProjects"])
+    foreach(var project in (IList<SolutionFileCreator.Project>)this.Session["TestProjects"])
     {
 #>
-		<#=project.ProjectGuid#> = {1523203C-CD16-4B4A-8F9D-8ECCA3A327AA}
+		<#=project.ProjectGuid#>.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		<#=project.ProjectGuid#>.Debug|Any CPU.Build.0 = Debug|Any CPU
+		<#=project.ProjectGuid#>.Release|Any CPU.ActiveCfg = Release|Any CPU
+		<#=project.ProjectGuid#>.Release|Any CPU.Build.0 = Release|Any CPU
+<#
+    }
+#>
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+<#
+    foreach(var project in (IList<SolutionFileCreator.Project>)this.Session["CoreProjects"])
+    {
+#>
+		<#=project.ProjectGuid#> = {9863FCB3-BFA4-4B9C-B8F6-302BA5F660B8}
 <#
     }
 
     foreach(var folder in (List<SolutionFileCreator.ServiceSolutionFolder>)this.Session["ServiceSolutionFolders"])
     {
 #>
-		<#=folder.ProjectGuid#> = {03245B8D-0A27-4C11-9AAC-7047A9F6DFB0}
+		<#=folder.ProjectGuid#> = {939EC5C2-8345-43E2-8F97-72EEEBEEA0AB}
 <#
         foreach(var project in folder.Projects)
         { 
@@ -115,17 +112,12 @@ Global
 <#
         }
     }
+    foreach(var project in (IList<SolutionFileCreator.Project>)this.Session["TestProjects"])
+    {
 #>
-		{1523203C-CD16-4B4A-8F9D-8ECCA3A327AA} = {A49B31CF-83ED-4FF2-9301-66AB909C4896}
-		{03245B8D-0A27-4C11-9AAC-7047A9F6DFB0} = {A49B31CF-83ED-4FF2-9301-66AB909C4896}
+		<#=project.ProjectGuid#> = {12EC4E4B-7E2C-4B63-8EF9-7B959F82A89B}
 <#
-	if ((bool) this.Session["IncludeTests"])
-	{
-#>
-		{456D916F-371A-4E73-BA12-73199057C773} = {04014228-E2FE-4596-ABD2-905404177293}
-		{D65E5A13-9315-4F1A-9C01-B8F51CAEC362} = {04014228-E2FE-4596-ABD2-905404177293}
-<#
-	}
+    }
 #>
 	EndGlobalSection
 EndGlobal

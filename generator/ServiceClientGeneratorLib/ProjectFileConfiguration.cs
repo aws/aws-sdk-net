@@ -5,6 +5,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+using Json.LitJson;
+
 namespace ServiceClientGenerator
 {
     /// <summary>
@@ -55,6 +57,8 @@ namespace ServiceClientGenerator
         /// </summary>
         public IEnumerable<string> PlatformCodeFolders { get; set; }
 
+        public IEnumerable<string> PlatformExcludeFolders { get; set; }
+
         /// <summary>
         /// The parent profile for the current profile. This property is 
         /// valid only for bait-and-switch PCL sub profiles.
@@ -96,6 +100,28 @@ namespace ServiceClientGenerator
         {
             return GetPlatformFolderName(sourceFolder) != null;
         }
+
+        public IEnumerable<ProjectFileCreator.ProjectReference> ProjectReferences { get; set; }
+        
+        public IEnumerable<string> EmbeddedResources { get; set; }
+
+        public IEnumerable<string> VisualStudioServices { get; set; }
+
+        public string ReferencePath { get; set; }
+
+        public string NoWarn { get; set; }
+
+        public string OutputPathOverride { get; set; }
+
+        public List<ProjectFileCreator.PackageReference> PackageReferences { get; set; }
+
+        /// <summary>
+        /// Specify where the framework binaries are.  For net35 in vs2017 project, this is needed
+        /// to work around https://github.com/Microsoft/msbuild/issues/1333
+        /// </summary>
+        public string FrameworkPathOverride { get; set; }
+
+        public IEnumerable<ProjectFileCreator.FrameworkReference> FrameworkReferences { get; set; }
 
         /// <summary>
         /// Returns true if the specified folder ends with one of the custom code
@@ -157,30 +183,5 @@ namespace ServiceClientGenerator
 
             return true;
         }
-    }
-
-    public class UnitTestProjectConfiguration
-    {
-        /// <summary>
-        /// Name of the project configuration.  e.g. Net35, Net45
-        /// </summary>
-        public string Name { get; set; }
-
-        /// <summary>
-        /// The #define constants to be set at compile time. These are used for all
-        /// compilation types (debug, release etc).
-        /// </summary>
-        public string DefineConstants { get; set; }
-
-        /// <summary>
-        /// External dependencies.  Do not include other serivce project references.
-        /// Only add well-known references such as System.Http.Web
-        /// </summary>
-        public IEnumerable<string> References { get; set; }
-
-        /// <summary>
-        /// Directories or paths to include in this *.csproj
-        /// </summary>
-        public IEnumerable<string> CompileInclude { get; set; }
     }
 }

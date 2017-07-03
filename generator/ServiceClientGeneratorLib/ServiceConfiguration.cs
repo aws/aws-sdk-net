@@ -328,5 +328,15 @@ namespace ServiceClientGenerator
         public string Name { get; set; }
         public string Version { get; set; }
         public string HintPath { get; set; }
+
+        public static Dependency ParseJson(Json.LitJson.JsonData data)
+        {
+            return new Dependency
+            {
+                Name = data.SafeGetString("name"),
+                Version = data.SafeGetString("version"),
+                HintPath = data.SafeGetString("hintPath"),
+            };
+        }
     }
 }

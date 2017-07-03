@@ -9,12 +9,12 @@ namespace ServiceClientGenerator
 {
     class UnitTestProjectFileCreator
     {
-        private readonly string TemplateName = "UnitTestProjectFile";
+        private readonly string TemplateName = "VS2017ProjectFile";
 
         private GeneratorOptions _options;
-        private IEnumerable<UnitTestProjectConfiguration> _configurations;
+        private IEnumerable<ProjectFileConfiguration> _configurations;
 
-        public UnitTestProjectFileCreator(GeneratorOptions options, IEnumerable<UnitTestProjectConfiguration> configurations)
+        public UnitTestProjectFileCreator(GeneratorOptions options, IEnumerable<ProjectFileConfiguration> configurations)
         {
             _options = options;
             _configurations = configurations;
@@ -31,9 +31,10 @@ namespace ServiceClientGenerator
 
                 if (useDllReference)
                 {
-                    projectName = string.Format("AWSSDK.UnitTests.{0}.partial.csproj", configuration.Name);
+                    projectName = string.Format("Build.UnitTests.{0}.partial.csproj", configuration.Name);
                     serviceProjectReferences = null;
                     dllProjectReferences = ServiceDllReferences(unitTestRoot, serviceConfigurations, configuration.Name);
+                    
                 }
                 else
                 {
@@ -44,19 +45,31 @@ namespace ServiceClientGenerator
 
                 var session = new Dictionary<string, object>
                 {
-                    {"ProjectGuid",             projectGuid},
-                    {"RootNamespace",           string.Format("AWSSDK_Dot{0}.UnitTests", configuration.Name)},
                     {"AssemblyName",            string.Format("AWSSDK.UnitTests.{0}", configuration.Name)},
-                    {"DebugOutputPath",         string.Format(@"bin\Debug\{0}", configuration.Name.ToLower())},
-                    {"ReleaseOutputPath",       string.Format(@"bin\Release\{0}", configuration.Name.ToLower())},
-                    {"ReleaseDefineConstants",  configuration.DefineConstants},
-                    {"DebugDefineConstants",    "DEBUG;" + configuration.DefineConstants},
-                    {"Reference",               configuration.References},
-                    {"CompileInclude",          configuration.CompileInclude},
-                    {"CommonReferences",        commonReferences},
-                    {"ServiceProjectReferences",serviceProjectReferences},
-                    {"ServiceDllReferences",    dllProjectReferences},
+                    {"TargetFramework",         configuration.TargetFrameworkVersion },
+                    {"DefineConstants",         "DEBUG;" + configuration.CompilationConstants},
+                    {"Reference",               configuration.FrameworkReferences},
+                    {"CompileRemoveList",       configuration.PlatformExcludeFolders},
+                    {"EmbeddedResources",       configuration.EmbeddedResources},
+                    {"Services",                configuration.VisualStudioServices},
+                    {"ReferencePath",           configuration.ReferencePath},
+                    {"FrameworkPathOverride",   configuration.FrameworkPathOverride },
+                    {"FrameworkReferences",     configuration.FrameworkReferences },
+                    {"PackageReferenceList",    configuration.PackageReferences },
+                    {"NoWarn",                  configuration.NoWarn},
+                    {"OutputPathOverride",      configuration.OutputPathOverride },
+                    {"SignBinaries",            false},
                 };
+
+                if (useDllReference) session.Add("ServiceDllReferences", dllProjectReferences);
+                if (serviceProjectReferences != null)
+                {
+                    session.Add("ProjectReferenceList", commonReferences.Concat(serviceProjectReferences).ToList());
+                }
+                else
+                {
+                    session.Add("ProjectReferenceList", commonReferences);
+                }
 
                 GenerateProjectFile(session, unitTestRoot, projectName);
             }
@@ -78,13 +91,12 @@ namespace ServiceClientGenerator
                 references.Add(new ProjectFileCreator.ProjectReference
                 {
                     Name = coreProjectName,
-                    IncludePath = coreIncludePath,
-                    ProjectGuid = Utils.GetProjectGuid(coreProjectPath)
+                    IncludePath = coreIncludePath
                 });
             }
             else
             {
-                // if adding all serices as dll refernece, add core dll as a dll reference in ServiceDllReferences()
+                // if adding all serices as dll reference, add core dll as a dll reference in ServiceDllReferences()
             }
 
             //
@@ -97,8 +109,19 @@ namespace ServiceClientGenerator
             references.Add(new ProjectFileCreator.ProjectReference
             {
                 Name = commonTestProjectName,
-                IncludePath = commonTestIncludePath,
-                ProjectGuid = Utils.GetProjectGuid(commonTestPath)
+                IncludePath = commonTestIncludePath
+            });
+
+            //
+            // Some unit tests require references in ServiceClientGeneratorLib
+            //
+            string generatorLibProjectName = "ServiceClientGeneratorLib";
+            string generatorLibProjectPath = string.Format("..\\..\\..\\generator\\ServiceClientGeneratorLib\\{0}.csproj", generatorLibProjectName);
+
+            references.Add(new ProjectFileCreator.ProjectReference
+            {
+                Name = generatorLibProjectName,
+                IncludePath = generatorLibProjectPath
             });
 
             return references;

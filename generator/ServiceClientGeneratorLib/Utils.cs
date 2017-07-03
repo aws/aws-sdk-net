@@ -70,7 +70,7 @@ namespace ServiceClientGenerator
             var element = ((XmlElement)propertyGroups[propertyGroupIndex]).GetElementsByTagName("ProjectGuid")[0];
 
             if (element == null)
-                throw new ApplicationException("Failed to find project guid for existing project: " + projectPath);
+                return NewProjectGuid;
 
             var projectGuid = element.InnerText;
             return projectGuid;
