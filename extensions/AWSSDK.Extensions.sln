@@ -1,26 +1,23 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.26403.7
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{3D822DC2-ED2E-4434-BC4F-CE7FCD846B02}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{145A79D4-D8E4-42B6-8AA2-8B37D4EA7D13}"
-	ProjectSection(SolutionItems) = preProject
-		global.json = global.json
-	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "sdk", "sdk", "{0BA39F07-84D6-420B-82D3-6DC3AF016C65}"
 EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "AWSSDK.Core.CoreCLR", "..\sdk\src\Core\AWSSDK.Core.CoreCLR.xproj", "{2008FB42-71F9-4B1A-B22E-574D9112C3C2}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{A960D001-40B3-4B1A-A890-D1049FB7586E}"
 EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "NETCore.SetupTests", "test\NETCore.SetupTests\NETCore.SetupTests.xproj", "{2C63DA02-EB94-443A-A986-B0E2CA5FA558}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Core.CoreCLR", "..\sdk\src\Core\AWSSDK.Core.CoreCLR.csproj", "{2008FB42-71F9-4B1A-B22E-574D9112C3C2}"
 EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "AWSSDK.Extensions.NETCore.Setup", "src\AWSSDK.Extensions.NETCore.Setup\AWSSDK.Extensions.NETCore.Setup.xproj", "{C5AA3F6E-7BC8-4E26-8A4D-406938FC95FF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NETCore.SetupTests", "test\NETCore.SetupTests\NETCore.SetupTests.csproj", "{2C63DA02-EB94-443A-A986-B0E2CA5FA558}"
 EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "AWSSDK.S3.CoreCLR", "..\sdk\src\Services\S3\AWSSDK.S3.CoreCLR.xproj", "{8433CB66-751C-4A91-BC10-0B13DB902C04}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Extensions.NETCore.Setup", "src\AWSSDK.Extensions.NETCore.Setup\AWSSDK.Extensions.NETCore.Setup.csproj", "{C5AA3F6E-7BC8-4E26-8A4D-406938FC95FF}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.S3.CoreCLR", "..\sdk\src\Services\S3\AWSSDK.S3.CoreCLR.csproj", "{8433CB66-751C-4A91-BC10-0B13DB902C04}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
