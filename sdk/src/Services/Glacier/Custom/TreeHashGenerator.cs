@@ -114,11 +114,9 @@ namespace Amazon.Glacier
             if (hex.Length % 2 == 1)
                 throw new ArgumentOutOfRangeException("hex", "The binary key cannot have an odd number of digits");
 
-            int length = hex.Length >> 1;
+            byte[] arr = new byte[hex.Length >> 1];
 
-            byte[] arr = new byte[length];
-
-            for (int i = 0; i < length; ++i)
+            for (int i = 0; i < (hex.Length >> 1); ++i)
             {
                 arr[i] = (byte)((getHexVal(hex[i << 1]) << 4) + (getHexVal(hex[(i << 1) + 1])));
             }

@@ -1,45 +1,23 @@
-<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{D3896B6E-0138-44DA-8748-86D88F9B22D6}</ProjectGuid>
-    <OutputType>Library</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Amazon.GameLift</RootNamespace>
+    <TargetFramework>net45</TargetFramework>
+    <DefineConstants>$(DefineConstants);;BCL;BCL45;AWS_ASYNC_API;CODE_ANALYSIS;LOCAL_FILE</DefineConstants>
+    <DebugType>portable</DebugType>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <AssemblyName>AWSSDK.GameLift</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
-    <FileAlignment>512</FileAlignment>
-    <BaseIntermediateOutputPath>obj\net45</BaseIntermediateOutputPath>
-    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\..\..\</SolutionDir>
-    <RestorePackages>true</RestorePackages>
+    <PackageId>AWSSDK.GameLift</PackageId>
+
+    <GenerateAssemblyTitleAttribute>false</GenerateAssemblyTitleAttribute>
+    <GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
+    <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
+    <GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
+    <GenerateAssemblyCopyrightAttribute>false</GenerateAssemblyCopyrightAttribute>
+    <GenerateAssemblyVersionAttribute>false</GenerateAssemblyVersionAttribute>
+    <GenerateAssemblyFileVersionAttribute>false</GenerateAssemblyFileVersionAttribute>
+    <GenerateAssemblyDescriptionAttribute>false</GenerateAssemblyDescriptionAttribute>
+
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\net45</OutputPath>
-    <DefineConstants>DEBUG;TRACE;;BCL;BCL45;AWS_ASYNC_API;CODE_ANALYSIS;LOCAL_FILE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-    <DocumentationFile>bin\Debug\net45\AWSSDK.GameLift.XML</DocumentationFile>
-    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <DebugType>pdbonly</DebugType>
-    <Optimize>true</Optimize>
-    <OutputPath>bin\Release\net45</OutputPath>
-    <DefineConstants>TRACE;;BCL;BCL45;AWS_ASYNC_API;CODE_ANALYSIS;LOCAL_FILE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-    <DocumentationFile>bin\Release\net45\AWSSDK.GameLift.XML</DocumentationFile>
-    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
-  </PropertyGroup>
-  <PropertyGroup>
-    <CheckForOverflowUnderflow>True</CheckForOverflowUnderflow>
-    <SignAssembly>true</SignAssembly>
-  </PropertyGroup>
+
   <Choose>
     <When Condition=" '$(AWSKeyFile)' == '' ">
       <PropertyGroup>
@@ -52,61 +30,29 @@
       </PropertyGroup>
     </Otherwise>
   </Choose>
+
   <ItemGroup>
-    <Reference Include="System" />
-    <Reference Include="System.Configuration" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Xml" />
+    <Compile Remove="**/_android/**"/>
+    <Compile Remove="**/_bcl35/**"/>
+    <Compile Remove="**/_coreclr/**"/>
+    <Compile Remove="**/_ios/**"/>
+    <Compile Remove="**/_mobile/**"/>
+    <Compile Remove="**/_pcl/**"/>
+    <Compile Remove="**/_pcl-sl/**"/>
+    <Compile Remove="**/_pclReference/**"/>
+    <Compile Remove="**/_unity/**"/>
+    <Compile Remove="**/_win8/**"/>
+    <Compile Remove="**/_winPhone81/**"/>
+    <Compile Remove="**/_winPhoneSilverlight8/**"/>
   </ItemGroup>
+
   <ItemGroup>
-    <Compile Include="Custom\*.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Custom\Model\*.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Generated\*.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Generated\Model\*.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Generated\Model\Internal\*.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Generated\Model\Internal\MarshallTransformations\*.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Generated\_bcl45\*.cs">
-      <SubType>Code</SubType>
-    </Compile>
+    <ProjectReference Include="..\..\Core\AWSSDK.Core.Net45.csproj"/>
   </ItemGroup>
+
   <ItemGroup>
+    <Reference Include="System.Configuration"/>
+    <Reference Include="System.Net.Http"/>
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\..\Core\AWSSDK.Core.Net45.csproj">
-        <Project>{25ED6BD4-A32A-4EAA-ACBF-AB4FCD343E8E}</Project>
-        <Name>AWSSDK.Core.Net45</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
-  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
-    <PropertyGroup>
-      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
-    </PropertyGroup>
-  </Target>
-  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
-       Other similar extension points exist, see Microsoft.Common.targets.
-  <Target Name="BeforeBuild">
-  </Target>
-  <Target Name="AfterBuild">
-  </Target>
-  -->
+
 </Project>

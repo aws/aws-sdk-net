@@ -1,45 +1,25 @@
-<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{18355D7A-4D71-4CBF-AC85-EB9CA5E3533E}</ProjectGuid>
-    <OutputType>Library</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Amazon.SimpleDB</RootNamespace>
+    <TargetFramework>net35</TargetFramework>
+    <DefineConstants>$(DefineConstants);;BCL;BCL35;AWS_APM_API;CODE_ANALYSIS;LOCAL_FILE</DefineConstants>
+    <DebugType>portable</DebugType>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <AssemblyName>AWSSDK.SimpleDB</AssemblyName>
-    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
-    <FileAlignment>512</FileAlignment>
-    <BaseIntermediateOutputPath>obj\net35</BaseIntermediateOutputPath>
-    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\..\..\</SolutionDir>
-    <RestorePackages>true</RestorePackages>
+    <PackageId>AWSSDK.SimpleDB</PackageId>
+
+    <GenerateAssemblyTitleAttribute>false</GenerateAssemblyTitleAttribute>
+    <GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
+    <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
+    <GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
+    <GenerateAssemblyCopyrightAttribute>false</GenerateAssemblyCopyrightAttribute>
+    <GenerateAssemblyVersionAttribute>false</GenerateAssemblyVersionAttribute>
+    <GenerateAssemblyFileVersionAttribute>false</GenerateAssemblyFileVersionAttribute>
+    <GenerateAssemblyDescriptionAttribute>false</GenerateAssemblyDescriptionAttribute>
+
+    <!-- workaround per https://github.com/Microsoft/msbuild/issues/1333 -->
+    <FrameworkPathOverride>C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v3.5\Profile\Client</FrameworkPathOverride>
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\net35</OutputPath>
-    <DefineConstants>DEBUG;TRACE;;BCL;BCL35;AWS_APM_API;CODE_ANALYSIS;LOCAL_FILE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-    <DocumentationFile>bin\Debug\net35\AWSSDK.SimpleDB.XML</DocumentationFile>
-    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <DebugType>pdbonly</DebugType>
-    <Optimize>true</Optimize>
-    <OutputPath>bin\Release\net35</OutputPath>
-    <DefineConstants>TRACE;;BCL;BCL35;AWS_APM_API;CODE_ANALYSIS;LOCAL_FILE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-    <DocumentationFile>bin\Release\net35\AWSSDK.SimpleDB.XML</DocumentationFile>
-    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
-  </PropertyGroup>
-  <PropertyGroup>
-    <CheckForOverflowUnderflow>True</CheckForOverflowUnderflow>
-    <SignAssembly>true</SignAssembly>
-  </PropertyGroup>
+
   <Choose>
     <When Condition=" '$(AWSKeyFile)' == '' ">
       <PropertyGroup>
@@ -52,61 +32,33 @@
       </PropertyGroup>
     </Otherwise>
   </Choose>
+
   <ItemGroup>
-    <Reference Include="System" />
-    <Reference Include="System.Configuration" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Xml" />
+    <Compile Remove="**/_android/**"/>
+    <Compile Remove="**/_async/**"/>
+    <Compile Remove="**/_bcl45/**"/>
+    <Compile Remove="**/_bcl45+coreclr/**"/>
+    <Compile Remove="**/_coreclr/**"/>
+    <Compile Remove="**/_ios/**"/>
+    <Compile Remove="**/_mobile/**"/>
+    <Compile Remove="**/_pcl/**"/>
+    <Compile Remove="**/_pcl-sl/**"/>
+    <Compile Remove="**/_pclReference/**"/>
+    <Compile Remove="**/_unity/**"/>
+    <Compile Remove="**/_win8/**"/>
+    <Compile Remove="**/_winPhone81/**"/>
+    <Compile Remove="**/_winPhoneSilverlight8/**"/>
   </ItemGroup>
+
   <ItemGroup>
-    <Compile Include="Custom\*.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Custom\Util\*.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Generated\*.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Generated\Model\*.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Generated\Model\Internal\*.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Generated\Model\Internal\MarshallTransformations\*.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Generated\_bcl35\*.cs">
-      <SubType>Code</SubType>
-    </Compile>
+    <ProjectReference Include="..\..\Core\AWSSDK.Core.Net35.csproj"/>
   </ItemGroup>
+
   <ItemGroup>
+    <Reference Include="System.Configuration"/>
+    <Reference Include="System.Data.Entity">
+        <HintPath>C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\v3.5\System.Data.Entity.dll</HintPath>
+    </Reference>
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\..\Core\AWSSDK.Core.Net35.csproj">
-        <Project>{FCDD969A-7DB7-4FFB-B3C1-F637F475C093}</Project>
-        <Name>AWSSDK.Core.Net35</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
-  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
-    <PropertyGroup>
-      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
-    </PropertyGroup>
-  </Target>
-  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
-       Other similar extension points exist, see Microsoft.Common.targets.
-  <Target Name="BeforeBuild">
-  </Target>
-  <Target Name="AfterBuild">
-  </Target>
-  -->
+
 </Project>
