@@ -1,424 +1,123 @@
-<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{53336B01-72DF-43A6-BEAB-0D56BA6822E0}</ProjectGuid>
-    <OutputType>Library</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>AWSSDK_DotNet35.IntegrationTests</RootNamespace>
+    <TargetFramework>net45</TargetFramework>
+    <DefineConstants>$(DefineConstants);DEBUG;TRACE;;BCL;BCL35;AWS_APM_API;LOCAL_FILE</DefineConstants>
+    <DebugType>portable</DebugType>
+    <GenerateDocumentationFile>false</GenerateDocumentationFile>
     <AssemblyName>AWSSDK.IntegrationTests.Net35</AssemblyName>
-    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
-    <FileAlignment>512</FileAlignment>
-    <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
-    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
-    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
-    <ReferencePath>$(ProgramFiles)\Common Files\microsoft shared\VSTT\$(VisualStudioVersion)\UITestExtensionPackages</ReferencePath>
-    <IsCodedUITest>False</IsCodedUITest>
-    <TestProjectType>UnitTest</TestProjectType>
-    <TargetFrameworkProfile />
-    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\..\</SolutionDir>
-    <RestorePackages>true</RestorePackages>
+    <PackageId>AWSSDK.IntegrationTests.Net35</PackageId>
+
+    <GenerateAssemblyTitleAttribute>false</GenerateAssemblyTitleAttribute>
+    <GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
+    <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
+    <GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
+    <GenerateAssemblyCopyrightAttribute>false</GenerateAssemblyCopyrightAttribute>
+    <GenerateAssemblyVersionAttribute>false</GenerateAssemblyVersionAttribute>
+    <GenerateAssemblyFileVersionAttribute>false</GenerateAssemblyFileVersionAttribute>
+    <GenerateAssemblyDescriptionAttribute>false</GenerateAssemblyDescriptionAttribute>
+
+    <NoWarn>CS1591</NoWarn>
+    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+    <OutputPath>bin\$(Configuration)\net35</OutputPath>
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\net35</OutputPath>
-    <DefineConstants>DEBUG;TRACE;;BCL;BCL35;AWS_APM_API;LOCAL_FILE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
-    <NoWarn>162, 429</NoWarn>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <DebugType>pdbonly</DebugType>
-    <Optimize>true</Optimize>
-    <OutputPath>bin\Release\net35</OutputPath>
-    <DefineConstants>TRACE;;BCL;BCL35;AWS_APM_API;LOCAL_FILE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
+
   <ItemGroup>
-    <Reference Include="System" />
-    <Reference Include="System.configuration" />
-    <Reference Include="System.Data.SQLite, Version=1.0.97.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\System.Data.SQLite.Core.1.0.97.0\lib\net20\System.Data.SQLite.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="System.Data.SQLite.Linq, Version=1.0.97.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\System.Data.SQLite.Linq.1.0.97.0\lib\net20\System.Data.SQLite.Linq.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="System.Web" />
-    <Reference Include="System.XML" />
+    <Compile Remove="**/45/**"/>
   </ItemGroup>
-  <Choose>
-    <When Condition="('$(VisualStudioVersion)' == '10.0' or '$(VisualStudioVersion)' == '') and '$(TargetFrameworkVersion)' == 'v3.5'">
-      <ItemGroup>
-        <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
-      </ItemGroup>
-    </When>
-    <Otherwise>
-      <ItemGroup>
-        <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework" />
-      </ItemGroup>
-    </Otherwise>
-  </Choose>
+
   <ItemGroup>
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include=".\Tests\*.cs" />
-    <Compile Include=".\Tests\*\*.cs" Exclude=".\Tests\45\*.cs" />
-    <Compile Include=".\Utils\*.cs" />
+    <ProjectReference Include="..\..\src\Core\AWSSDK.Core.Net35.csproj"/>
+    <ProjectReference Include="..\Common\AWSSDK.CommonTest.Net35.csproj"/>
   </ItemGroup>
+
   <ItemGroup>
-    <ProjectReference Include="..\..\src\Core\AWSSDK.Core.Net35.csproj">
-      <Project>{FCDD969A-7DB7-4FFB-B3C1-F637F475C093}</Project>
-      <Name>AWSSDK.Core.Net35</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\src\Services\APIGateway\AWSSDK.APIGateway.Net35.csproj">
-      <Project>{56ef10e2-b0d1-43eb-bfb6-3db71fbbd35d}</Project>
-      <Name>AWSSDK.APIGateway.Net35</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\src\Services\ApplicationAutoScaling\AWSSDK.ApplicationAutoScaling.Net35.csproj">
-      <Project>{e9cebf4c-b19e-48ec-96fb-88a558d1f52e}</Project>
-      <Name>AWSSDK.ApplicationAutoScaling.Net35</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\src\Services\ApplicationDiscoveryService\AWSSDK.ApplicationDiscoveryService.Net35.csproj">
-      <Project>{42cfde78-4934-4555-bfa6-eccf1a8271df}</Project>
-      <Name>AWSSDK.ApplicationDiscoveryService.Net35</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\src\Services\AutoScaling\AWSSDK.AutoScaling.Net35.csproj">
-      <Project>{88F2CD8C-2C47-4E66-A4D4-93B2CF5BDCBC}</Project>
-      <Name>AWSSDK.AutoScaling.Net35</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\src\Services\AWSMarketplaceCommerceAnalytics\AWSSDK.AWSMarketplaceCommerceAnalytics.Net35.csproj">
-      <Project>{51d44631-1d3d-4c44-a1f1-0ab86639e682}</Project>
-      <Name>AWSSDK.AWSMarketplaceCommerceAnalytics.Net35</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\src\Services\AWSSupport\AWSSDK.AWSSupport.Net35.csproj">
-      <Project>{663AA578-CBBF-4E69-9753-577480DEED1D}</Project>
-      <Name>AWSSDK.AWSSupport.Net35</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\src\Services\Batch\AWSSDK.Batch.Net35.csproj">
-      <Project>{7749680a-2e8e-4119-8ad8-000dfd5f7d7e}</Project>
-      <Name>AWSSDK.Batch.Net35</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\src\Services\CertificateManager\AWSSDK.CertificateManager.Net35.csproj">
-      <Project>{16a1eedf-cd98-4844-b608-f3f120d7a542}</Project>
-      <Name>AWSSDK.CertificateManager.Net35</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\src\Services\CloudDirectory\AWSSDK.CloudDirectory.Net35.csproj">
-      <Project>{4ce40964-7d49-4111-aeed-e6178748fcfb}</Project>
-      <Name>AWSSDK.CloudDirectory.Net35</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\src\Services\CloudFormation\AWSSDK.CloudFormation.Net35.csproj">
-      <Project>{8311AA7C-5553-45E2-AA0D-11981F8F7DBE}</Project>
-      <Name>AWSSDK.CloudFormation.Net35</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\src\Services\CloudFront\AWSSDK.CloudFront.Net35.csproj">
-      <Project>{7BA4CAEB-2DBB-41AC-8D58-00E6290E2503}</Project>
-      <Name>AWSSDK.CloudFront.Net35</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\src\Services\CloudHSM\AWSSDK.CloudHSM.Net35.csproj">
-      <Project>{E9DD7A57-C490-40BD-93B8-10EC8B1BEFEE}</Project>
-      <Name>AWSSDK.CloudHSM.Net35</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\src\Services\CloudSearch\AWSSDK.CloudSearch.Net35.csproj">
-      <Project>{A23735EA-0E17-4A1B-9E73-CA63735D1958}</Project>
-      <Name>AWSSDK.CloudSearch.Net35</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\src\Services\CloudSearchDomain\AWSSDK.CloudSearchDomain.Net35.csproj">
-      <Project>{F3B1F33E-0466-49DE-B171-625A0288665B}</Project>
-      <Name>AWSSDK.CloudSearchDomain.Net35</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\src\Services\CloudTrail\AWSSDK.CloudTrail.Net35.csproj">
-      <Project>{D0D5AD3D-9737-47B4-8E0E-D7D4AADBDFCF}</Project>
-      <Name>AWSSDK.CloudTrail.Net35</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\src\Services\CloudWatchEvents\AWSSDK.CloudWatchEvents.Net35.csproj">
-      <Project>{968970d4-64ae-4067-aa9d-c258ce720b38}</Project>
-      <Name>AWSSDK.CloudWatchEvents.Net35</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\src\Services\CloudWatch\AWSSDK.CloudWatch.Net35.csproj">
-      <Project>{1A2903F6-896B-4397-8151-B0CC8DC3BCED}</Project>
-      <Name>AWSSDK.CloudWatch.Net35</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\src\Services\CloudWatchLogs\AWSSDK.CloudWatchLogs.Net35.csproj">
-      <Project>{6B43421E-9EA1-4811-9897-E7C130CA175D}</Project>
-      <Name>AWSSDK.CloudWatchLogs.Net35</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\src\Services\CodeDeploy\AWSSDK.CodeDeploy.Net35.csproj">
-      <Project>{1CE0DD3D-78BF-4922-B544-8B26AD4CA860}</Project>
-      <Name>AWSSDK.CodeDeploy.Net35</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\src\Services\CognitoIdentity\AWSSDK.CognitoIdentity.Net35.csproj">
-      <Project>{78446A6A-2F59-4B18-9CB0-14F7C18B8A0E}</Project>
-      <Name>AWSSDK.CognitoIdentity.Net35</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\src\Services\CognitoSync\AWSSDK.CognitoSync.Net35.csproj">
-      <Project>{E0C5CDAF-6D20-4832-8D24-2A7A50711F0D}</Project>
-      <Name>AWSSDK.CognitoSync.Net35</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\src\Services\ConfigService\AWSSDK.ConfigService.Net35.csproj">
-      <Project>{95FFA7BA-A05D-4328-82CE-3362FFA3B85F}</Project>
-      <Name>AWSSDK.ConfigService.Net35</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\src\Services\DatabaseMigrationService\AWSSDK.DatabaseMigrationService.Net35.csproj">
-      <Project>{ba323e0a-7441-4899-bdd0-96ecce837b48}</Project>
-      <Name>AWSSDK.DatabaseMigrationService.Net35</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\src\Services\DataPipeline\AWSSDK.DataPipeline.Net35.csproj">
-      <Project>{DA8B7290-B3D2-4440-AE91-32C946BF86F1}</Project>
-      <Name>AWSSDK.DataPipeline.Net35</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\src\Services\DirectConnect\AWSSDK.DirectConnect.Net35.csproj">
-      <Project>{9C749173-C8C9-4864-8FBA-3E0C9EB7DA6B}</Project>
-      <Name>AWSSDK.DirectConnect.Net35</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\src\Services\DirectoryService\AWSSDK.DirectoryService.Net35.csproj">
-      <Project>{f419e887-8a8d-441c-88fb-51ee57c85a97}</Project>
-      <Name>AWSSDK.DirectoryService.Net35</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\src\Services\DynamoDBv2\AWSSDK.DynamoDBv2.Net35.csproj">
-      <Project>{BF82E571-2EF5-4081-B9DE-F23BD522D0A8}</Project>
-      <Name>AWSSDK.DynamoDBv2.Net35</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\src\Services\EC2\AWSSDK.EC2.Net35.csproj">
-      <Project>{82F8399B-84DC-4632-B081-2B7697531CA1}</Project>
-      <Name>AWSSDK.EC2.Net35</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\src\Services\ECR\AWSSDK.ECR.Net35.csproj">
-      <Project>{e6221d2c-82c9-4701-9b47-262c1be13069}</Project>
-      <Name>AWSSDK.ECR.Net35</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\src\Services\ECS\AWSSDK.ECS.Net35.csproj">
-      <Project>{F12F3D23-2856-4CBA-8905-EA9CB52C9534}</Project>
-      <Name>AWSSDK.ECS.Net35</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\src\Services\ElastiCache\AWSSDK.ElastiCache.Net35.csproj">
-      <Project>{CF9F4EAE-B746-41DE-A547-F65B1E6DF193}</Project>
-      <Name>AWSSDK.ElastiCache.Net35</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\src\Services\ElasticBeanstalk\AWSSDK.ElasticBeanstalk.Net35.csproj">
-      <Project>{E1B654A3-8244-46E6-980C-597AD119A958}</Project>
-      <Name>AWSSDK.ElasticBeanstalk.Net35</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\src\Services\ElasticLoadBalancingV2\AWSSDK.ElasticLoadBalancingV2.Net35.csproj">
-      <Project>{61a7a84f-a00c-420a-bf81-e5a54815ca4f}</Project>
-      <Name>AWSSDK.ElasticLoadBalancingV2.Net35</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\src\Services\ElasticLoadBalancing\AWSSDK.ElasticLoadBalancing.Net35.csproj">
-      <Project>{46291AE6-55A8-4311-AE68-B2FAF11516B1}</Project>
-      <Name>AWSSDK.ElasticLoadBalancing.Net35</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\src\Services\ElasticMapReduce\AWSSDK.ElasticMapReduce.Net35.csproj">
-      <Project>{09BAE709-4F25-4B39-B1F8-0BCE91800D6E}</Project>
-      <Name>AWSSDK.ElasticMapReduce.Net35</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\src\Services\Elasticsearch\AWSSDK.Elasticsearch.Net35.csproj">
-      <Project>{53d1a7e3-ce00-41e7-ad1a-c1adb30beb97}</Project>
-      <Name>AWSSDK.Elasticsearch.Net35</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\src\Services\ElasticTranscoder\AWSSDK.ElasticTranscoder.Net35.csproj">
-      <Project>{E3BFF825-F2A1-4F7D-B08A-6CD34EB28990}</Project>
-      <Name>AWSSDK.ElasticTranscoder.Net35</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\src\Services\GameLift\AWSSDK.GameLift.Net35.csproj">
-      <Project>{794d8685-00aa-4e6c-9050-10c31ca946aa}</Project>
-      <Name>AWSSDK.GameLift.Net35</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\src\Services\Glacier\AWSSDK.Glacier.Net35.csproj">
-      <Project>{C38A2D2C-E410-4084-9245-F577777E8009}</Project>
-      <Name>AWSSDK.Glacier.Net35</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\src\Services\IotData\AWSSDK.IotData.Net35.csproj">
-      <Project>{e928c4c7-63e0-4ddd-a967-ad00baaf40c8}</Project>
-      <Name>AWSSDK.IotData.Net35</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\src\Services\IdentityManagement\AWSSDK.IdentityManagement.Net35.csproj">
-      <Project>{40BA3D89-6B91-4199-AF4B-50ABFBD0C18F}</Project>
-      <Name>AWSSDK.IdentityManagement.Net35</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\src\Services\ImportExport\AWSSDK.ImportExport.Net35.csproj">
-      <Project>{63BB1FC1-A3B1-463D-A2DB-C631344EA5C8}</Project>
-      <Name>AWSSDK.ImportExport.Net35</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\src\Services\Inspector\AWSSDK.Inspector.Net35.csproj">
-      <Project>{6fe3798f-2a60-4e26-9b36-fc7e52b232c9}</Project>
-      <Name>AWSSDK.Inspector.Net35</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\src\Services\IoT\AWSSDK.IoT.Net35.csproj">
-      <Project>{3a3995fd-9750-4248-943b-a4bac190353d}</Project>
-      <Name>AWSSDK.IoT.Net35</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\src\Services\KeyManagementService\AWSSDK.KeyManagementService.Net35.csproj">
-      <Project>{ADF1A47D-4C05-4DC5-B318-E3E412C2578E}</Project>
-      <Name>AWSSDK.KeyManagementService.Net35</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\src\Services\KinesisFirehose\AWSSDK.KinesisFirehose.Net35.csproj">
-      <Project>{0ac889db-f5a3-4a8f-b7b0-2334d70341e6}</Project>
-      <Name>AWSSDK.KinesisFirehose.Net35</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\src\Services\Kinesis\AWSSDK.Kinesis.Net35.csproj">
-      <Project>{602515A5-333A-4B51-BE61-43DDD05B2048}</Project>
-      <Name>AWSSDK.Kinesis.Net35</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\src\Services\Lambda\AWSSDK.Lambda.Net35.csproj">
-      <Project>{787D3BC7-1984-4203-B8A2-BF50E708E751}</Project>
-      <Name>AWSSDK.Lambda.Net35</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\src\Services\Lightsail\AWSSDK.Lightsail.Net35.csproj">
-      <Project>{672230bd-8d64-4250-b5c2-111e9b48b650}</Project>
-      <Name>AWSSDK.Lightsail.Net35</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\src\Services\MachineLearning\AWSSDK.MachineLearning.Net35.csproj">
-      <Project>{6C97BF81-D77B-4050-BD1E-ABB7F756E7D5}</Project>
-      <Name>AWSSDK.MachineLearning.Net35</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\src\Services\MobileAnalytics\AWSSDK.MobileAnalytics.Net35.csproj">
-      <Project>{014dc5e2-2920-4df5-9e2d-22b659b30772}</Project>
-      <Name>AWSSDK.MobileAnalytics.Net35</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\src\Services\OpsWorks\AWSSDK.OpsWorks.Net35.csproj">
-      <Project>{E0546F85-E14F-4AD6-B123-749F143D87FA}</Project>
-      <Name>AWSSDK.OpsWorks.Net35</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\src\Services\Pinpoint\AWSSDK.Pinpoint.Net35.csproj">
-      <Project>{cc7c7f7f-ba0c-4926-8146-d86f044b657e}</Project>
-      <Name>AWSSDK.Pinpoint.Net35</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\src\Services\Polly\AWSSDK.Polly.Net35.csproj">
-      <Project>{C3D9E0A3-7F97-48E0-B37E-05E73449F607}</Project>
-      <Name>AWSSDK.Polly.Net35</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\src\Services\RDS\AWSSDK.RDS.Net35.csproj">
-      <Project>{BA873643-A43A-4DA1-A0EF-2419CE4FD4C0}</Project>
-      <Name>AWSSDK.RDS.Net35</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\src\Services\Redshift\AWSSDK.Redshift.Net35.csproj">
-      <Project>{2A8F70CD-E47E-4C2C-8999-091CD5961EB2}</Project>
-      <Name>AWSSDK.Redshift.Net35</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\src\Services\Route53\AWSSDK.Route53.Net35.csproj">
-      <Project>{DB086F2A-FC46-4F2D-801A-82647B261D6F}</Project>
-      <Name>AWSSDK.Route53.Net35</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\src\Services\Route53Domains\AWSSDK.Route53Domains.Net35.csproj">
-      <Project>{2F05AA9A-C7E9-41ED-9741-3264E34D852D}</Project>
-      <Name>AWSSDK.Route53Domains.Net35</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\src\Services\S3\AWSSDK.S3.Net35.csproj">
-      <Project>{707506E0-BE37-4C01-BEF6-E0E859F1716D}</Project>
-      <Name>AWSSDK.S3.Net35</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\src\Services\SecurityToken\AWSSDK.SecurityToken.Net35.csproj">
-      <Project>{BEE8DED7-9D01-419B-896F-0C5C7D98126A}</Project>
-      <Name>AWSSDK.SecurityToken.Net35</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\src\Services\ServerMigrationService\AWSSDK.ServerMigrationService.Net35.csproj">
-      <Project>{35571cdb-4af0-401a-a329-c8f3534eec01}</Project>
-      <Name>AWSSDK.ServerMigrationService.Net35</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\src\Services\SimpleDB\AWSSDK.SimpleDB.Net35.csproj">
-      <Project>{18355D7A-4D71-4CBF-AC85-EB9CA5E3533E}</Project>
-      <Name>AWSSDK.SimpleDB.Net35</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\src\Services\SimpleEmail\AWSSDK.SimpleEmail.Net35.csproj">
-      <Project>{212B8962-F927-4FE4-A41E-A98E9E7B9362}</Project>
-      <Name>AWSSDK.SimpleEmail.Net35</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\src\Services\SimpleNotificationService\AWSSDK.SimpleNotificationService.Net35.csproj">
-      <Project>{23566608-4A1E-4C97-9C7B-033B62BFB755}</Project>
-      <Name>AWSSDK.SimpleNotificationService.Net35</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\src\Services\SimpleSystemsManagement\AWSSDK.SimpleSystemsManagement.Net35.csproj">
-      <Project>{415B4E11-769F-4F1E-835C-77ABDC2636FF}</Project>
-      <Name>AWSSDK.SimpleSystemsManagement.Net35</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\src\Services\SimpleWorkflow\AWSSDK.SimpleWorkflow.Net35.csproj">
-      <Project>{8B31C371-88B2-4EB4-82CB-8B26318F78A1}</Project>
-      <Name>AWSSDK.SimpleWorkflow.Net35</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\src\Services\Snowball\AWSSDK.Snowball.Net35.csproj">
-      <Project>{f0dbf63f-511a-4780-b23d-a0555938d941}</Project>
-      <Name>AWSSDK.Snowball.Net35</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\src\Services\SQS\AWSSDK.SQS.Net35.csproj">
-      <Project>{1A3A5C87-069B-4D11-854A-F476BA5122F4}</Project>
-      <Name>AWSSDK.SQS.Net35</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\src\Services\StorageGateway\AWSSDK.StorageGateway.Net35.csproj">
-      <Project>{E5D769F1-F0F0-4CA4-B2D6-3DE560DCE248}</Project>
-      <Name>AWSSDK.StorageGateway.Net35</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\src\Services\WAF\AWSSDK.WAF.Net35.csproj">
-      <Project>{756d5d73-16bd-4f8f-af58-a24ce4000606}</Project>
-      <Name>AWSSDK.WAF.Net35</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\src\Services\WorkSpaces\AWSSDK.WorkSpaces.Net35.csproj">
-      <Project>{63422F3B-8FAC-4E5F-A27C-07FB8742E8BD}</Project>
-      <Name>AWSSDK.WorkSpaces.Net35</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Common\AWSSDK.CommonTest.Net35.csproj">
-      <Project>{740165b9-e662-4b09-a990-683dd332f61d}</Project>
-      <Name>AWSSDK.CommonTest.Net35</Name>
-    </ProjectReference>
+    <ProjectReference Include="..\..\src\Services\APIGateway\AWSSDK.APIGateway.Net35.csproj"/>
+    <ProjectReference Include="..\..\src\Services\ApplicationDiscoveryService\AWSSDK.ApplicationDiscoveryService.Net35.csproj"/>
+    <ProjectReference Include="..\..\src\Services\AutoScaling\AWSSDK.AutoScaling.Net35.csproj"/>
+    <ProjectReference Include="..\..\src\Services\AWSMarketplaceCommerceAnalytics\AWSSDK.AWSMarketplaceCommerceAnalytics.Net35.csproj"/>
+    <ProjectReference Include="..\..\src\Services\AWSSupport\AWSSDK.AWSSupport.Net35.csproj"/>
+    <ProjectReference Include="..\..\src\Services\Batch\AWSSDK.Batch.Net35.csproj"/>
+    <ProjectReference Include="..\..\src\Services\CertificateManager\AWSSDK.CertificateManager.Net35.csproj"/>
+    <ProjectReference Include="..\..\src\Services\CloudDirectory\AWSSDK.CloudDirectory.Net35.csproj"/>
+    <ProjectReference Include="..\..\src\Services\CloudFormation\AWSSDK.CloudFormation.Net35.csproj"/>
+    <ProjectReference Include="..\..\src\Services\CloudFront\AWSSDK.CloudFront.Net35.csproj"/>
+    <ProjectReference Include="..\..\src\Services\CloudHSM\AWSSDK.CloudHSM.Net35.csproj"/>
+    <ProjectReference Include="..\..\src\Services\CloudSearch\AWSSDK.CloudSearch.Net35.csproj"/>
+    <ProjectReference Include="..\..\src\Services\CloudTrail\AWSSDK.CloudTrail.Net35.csproj"/>
+    <ProjectReference Include="..\..\src\Services\CloudWatch\AWSSDK.CloudWatch.Net35.csproj"/>
+    <ProjectReference Include="..\..\src\Services\CloudWatchEvents\AWSSDK.CloudWatchEvents.Net35.csproj"/>
+    <ProjectReference Include="..\..\src\Services\CloudWatchLogs\AWSSDK.CloudWatchLogs.Net35.csproj"/>
+    <ProjectReference Include="..\..\src\Services\CodeDeploy\AWSSDK.CodeDeploy.Net35.csproj"/>
+    <ProjectReference Include="..\..\src\Services\CognitoIdentity\AWSSDK.CognitoIdentity.Net35.csproj"/>
+    <ProjectReference Include="..\..\src\Services\CognitoSync\AWSSDK.CognitoSync.Net35.csproj"/>
+    <ProjectReference Include="..\..\src\Services\ConfigService\AWSSDK.ConfigService.Net35.csproj"/>
+    <ProjectReference Include="..\..\src\Services\DatabaseMigrationService\AWSSDK.DatabaseMigrationService.Net35.csproj"/>
+    <ProjectReference Include="..\..\src\Services\DataPipeline\AWSSDK.DataPipeline.Net35.csproj"/>
+    <ProjectReference Include="..\..\src\Services\DirectConnect\AWSSDK.DirectConnect.Net35.csproj"/>
+    <ProjectReference Include="..\..\src\Services\DirectoryService\AWSSDK.DirectoryService.Net35.csproj"/>
+    <ProjectReference Include="..\..\src\Services\DynamoDBv2\AWSSDK.DynamoDBv2.Net35.csproj"/>
+    <ProjectReference Include="..\..\src\Services\EC2\AWSSDK.EC2.Net35.csproj"/>
+    <ProjectReference Include="..\..\src\Services\ECR\AWSSDK.ECR.Net35.csproj"/>
+    <ProjectReference Include="..\..\src\Services\ECS\AWSSDK.ECS.Net35.csproj"/>
+    <ProjectReference Include="..\..\src\Services\ElasticLoadBalancing\AWSSDK.ElasticLoadBalancing.Net35.csproj"/>
+    <ProjectReference Include="..\..\src\Services\ElasticLoadBalancingV2\AWSSDK.ElasticLoadBalancingV2.Net35.csproj"/>
+    <ProjectReference Include="..\..\src\Services\ElastiCache\AWSSDK.ElastiCache.Net35.csproj"/>
+    <ProjectReference Include="..\..\src\Services\Elasticsearch\AWSSDK.Elasticsearch.Net35.csproj"/>
+    <ProjectReference Include="..\..\src\Services\ElasticTranscoder\AWSSDK.ElasticTranscoder.Net35.csproj"/>
+    <ProjectReference Include="..\..\src\Services\GameLift\AWSSDK.GameLift.Net35.csproj"/>
+    <ProjectReference Include="..\..\src\Services\Glacier\AWSSDK.Glacier.Net35.csproj"/>
+    <ProjectReference Include="..\..\src\Services\IdentityManagement\AWSSDK.IdentityManagement.Net35.csproj"/>
+    <ProjectReference Include="..\..\src\Services\ImportExport\AWSSDK.ImportExport.Net35.csproj"/>
+    <ProjectReference Include="..\..\src\Services\Inspector\AWSSDK.Inspector.Net35.csproj"/>
+    <ProjectReference Include="..\..\src\Services\IoT\AWSSDK.IoT.Net35.csproj"/>
+    <ProjectReference Include="..\..\src\Services\IotData\AWSSDK.IotData.Net35.csproj"/>
+    <ProjectReference Include="..\..\src\Services\KeyManagementService\AWSSDK.KeyManagementService.Net35.csproj"/>
+    <ProjectReference Include="..\..\src\Services\Kinesis\AWSSDK.Kinesis.Net35.csproj"/>
+    <ProjectReference Include="..\..\src\Services\KinesisFirehose\AWSSDK.KinesisFirehose.Net35.csproj"/>
+    <ProjectReference Include="..\..\src\Services\Lambda\AWSSDK.Lambda.Net35.csproj"/>
+    <ProjectReference Include="..\..\src\Services\Lightsail\AWSSDK.Lightsail.Net35.csproj"/>
+    <ProjectReference Include="..\..\src\Services\MachineLearning\AWSSDK.MachineLearning.Net35.csproj"/>
+    <ProjectReference Include="..\..\src\Services\OpsWorks\AWSSDK.OpsWorks.Net35.csproj"/>
+    <ProjectReference Include="..\..\src\Services\Pinpoint\AWSSDK.Pinpoint.Net35.csproj"/>
+    <ProjectReference Include="..\..\src\Services\Polly\AWSSDK.Polly.Net35.csproj"/>
+    <ProjectReference Include="..\..\src\Services\RDS\AWSSDK.RDS.Net35.csproj"/>
+    <ProjectReference Include="..\..\src\Services\Redshift\AWSSDK.Redshift.Net35.csproj"/>
+    <ProjectReference Include="..\..\src\Services\Route53\AWSSDK.Route53.Net35.csproj"/>
+    <ProjectReference Include="..\..\src\Services\Route53Domains\AWSSDK.Route53Domains.Net35.csproj"/>
+    <ProjectReference Include="..\..\src\Services\ElasticBeanstalk\AWSSDK.ElasticBeanstalk.Net35.csproj"/>
+    <ProjectReference Include="..\..\src\Services\S3\AWSSDK.S3.Net35.csproj"/>
+    <ProjectReference Include="..\..\src\Services\SecurityToken\AWSSDK.SecurityToken.Net35.csproj"/>
+    <ProjectReference Include="..\..\src\Services\ServerMigrationService\AWSSDK.ServerMigrationService.Net35.csproj"/>
+    <ProjectReference Include="..\..\src\Services\SimpleDB\AWSSDK.SimpleDB.Net35.csproj"/>
+    <ProjectReference Include="..\..\src\Services\SimpleEmail\AWSSDK.SimpleEmail.Net35.csproj"/>
+    <ProjectReference Include="..\..\src\Services\SimpleNotificationService\AWSSDK.SimpleNotificationService.Net35.csproj"/>
+    <ProjectReference Include="..\..\src\Services\SimpleSystemsManagement\AWSSDK.SimpleSystemsManagement.Net35.csproj"/>
+    <ProjectReference Include="..\..\src\Services\SimpleWorkflow\AWSSDK.SimpleWorkflow.Net35.csproj"/>
+    <ProjectReference Include="..\..\src\Services\Snowball\AWSSDK.Snowball.Net35.csproj"/>
+    <ProjectReference Include="..\..\src\Services\StorageGateway\AWSSDK.StorageGateway.Net35.csproj"/>
+    <ProjectReference Include="..\..\src\Services\SQS\AWSSDK.SQS.Net35.csproj"/>
+    <ProjectReference Include="..\..\src\Services\WAF\AWSSDK.WAF.Net35.csproj"/>
   </ItemGroup>
+
   <ItemGroup>
-    <None Include="Config\App.35.config">
-      <SubType>Designer</SubType>
-    </None>
-    <EmbeddedResource Include="Tests\CloudTrailBucketPolicy.json" />
-    <None Include="packages.config" />
+    <PackageReference Include="MSTest.TestAdapter" Version="1.1.18"/>
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.0.0"/>
+    <PackageReference Include="MSTest.TestFramework" Version="1.1.18"/>
+
+    <PackageReference Include="System.Data.SQLite" Version="1.0.97"/>
+    <PackageReference Include="System.Data.SQLite.Core" Version="1.0.97"/>
+    <PackageReference Include="System.Data.SQLite.Linq" Version="1.0.97"/>
   </ItemGroup>
+
   <ItemGroup>
-    <Folder Include="Tests\35\" />
+    <Reference Include="System.Configuration"/>
+    <Reference Include="System.ComponentModel.DataAnnotations"/>
+    <Reference Include="System.IO.Compression"/>
+    <Reference Include="System.Web"/>
   </ItemGroup>
+
   <ItemGroup>
-    <Content Include="Tests\ListObjectsResponse.xml">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
+    <EmbeddedResource Include="Tests\CloudTrailBucketPolicy.json"/>
+    <EmbeddedResource Include="Tests\ListObjectsResponse.xml"/>
   </ItemGroup>
-  <Choose>
-    <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
-      <ItemGroup>
-        <Reference Include="Microsoft.VisualStudio.QualityTools.CodedUITestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-          <Private>False</Private>
-        </Reference>
-        <Reference Include="Microsoft.VisualStudio.TestTools.UITest.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-          <Private>False</Private>
-        </Reference>
-        <Reference Include="Microsoft.VisualStudio.TestTools.UITest.Extension, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-          <Private>False</Private>
-        </Reference>
-        <Reference Include="Microsoft.VisualStudio.TestTools.UITesting, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-          <Private>False</Private>
-        </Reference>
-      </ItemGroup>
-    </When>
-  </Choose>
-  <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
-  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <PropertyGroup>
-    <PostBuildEvent>del $(TargetDir)$(TargetFileName).config
-copy /y $(ProjectDir)\Config\App.35.config $(TargetDir)$(TargetFileName).config
-</PostBuildEvent>
-  </PropertyGroup>
-  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
-  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
-    <PropertyGroup>
-      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
-    </PropertyGroup>
-    <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
-    <Error Condition="!Exists('..\..\packages\System.Data.SQLite.Core.1.0.97.0\build\net20\System.Data.SQLite.Core.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\System.Data.SQLite.Core.1.0.97.0\build\net20\System.Data.SQLite.Core.targets'))" />
-  </Target>
-  <Import Project="..\..\packages\System.Data.SQLite.Core.1.0.97.0\build\net20\System.Data.SQLite.Core.targets" Condition="Exists('..\..\packages\System.Data.SQLite.Core.1.0.97.0\build\net20\System.Data.SQLite.Core.targets')" />
-  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
-       Other similar extension points exist, see Microsoft.Common.targets.
-  <Target Name="BeforeBuild">
-  </Target>
-  <Target Name="AfterBuild">
-  </Target>
-  -->
 </Project>

@@ -6,7 +6,7 @@ namespace AWSSDK_CoreCLR.UnitTests
 {
     public class CloudFrontTests
     {
-        private static string privateRSAKeyResourceName = @"UnitTests.sample.rsa.private.key.txt";
+        private static string privateRSAKeyResourceName = @"UnitTests.CoreCLR.sample.rsa.private.key.txt";
         private static StreamReader privateRSAKeyStreamReader = null;
 
         public CloudFrontTests()

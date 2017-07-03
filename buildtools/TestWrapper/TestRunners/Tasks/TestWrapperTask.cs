@@ -17,6 +17,7 @@ namespace TestWrapper
         public ITaskItem Categories { get; set; }
         public ITaskItem TestSuiteRunner { get; set; }
         public ITaskItem TestContainer { get; set; }
+        public ITaskItem Configuration { get; set; }
 
         protected FileInfo TestContainerFileInfo { get { return new FileInfo(TestContainer.ItemSpec); } }
         protected FileInfo TestSuiteRunnerFileInfo { get { return new FileInfo(TestSuiteRunner.ItemSpec); } }

@@ -42,9 +42,14 @@
     <Choose>
         <When Condition="'$(PartialBuildList)'==''">
             <PropertyGroup>
-                <DesktopSolutionsFile>AWSSDK.Desktop.sln</DesktopSolutionsFile>
+                <Net35SolutionsFile>AWSSDK.Net35.sln</Net35SolutionsFile>
+                <Net45SolutionsFile>AWSSDK.Net45.sln</Net45SolutionsFile>
                 <PCLSolutionsFile>AWSSDK.PCL.sln</PCLSolutionsFile>
                 <UnitySolutionsFile>AWSSDK.Unity.sln</UnitySolutionsFile>
+                <CoreCLRSolutionFile>AWSSDK.CoreCLR.sln</CoreCLRSolutionFile>
+                <Net35UnitTestProject>AWSSDK.UnitTests.Net35.csproj</Net35UnitTestProject>
+                <Net45UnitTestProject>AWSSDK.UnitTests.Net45.csproj</Net45UnitTestProject>
+                <CoreCLRUnitTests>UnitTests.CoreCLR.csproj</CoreCLRUnitTests>
                 <GeneratorPartialBuildArgument></GeneratorPartialBuildArgument>
                 <ReferenceServiceDLLs>false</ReferenceServiceDLLs>
                 <FxCop35TargetFileName>SDK-3.5.FxCop</FxCop35TargetFileName>
@@ -55,9 +60,14 @@
         </When>
         <Otherwise>
             <PropertyGroup>
-                <DesktopSolutionsFile>Build.Desktop.partial.sln</DesktopSolutionsFile>
+                <Net35SolutionsFile>Build.Net35.partial.sln</Net35SolutionsFile>
+                <Net45SolutionsFile>Build.Net45.partial.sln</Net45SolutionsFile>
                 <PCLSolutionsFile>Build.PCL.partial.sln</PCLSolutionsFile>
                 <UnitySolutionsFile>AWSSDK.Unity.sln</UnitySolutionsFile>
+                <CoreCLRSolutionFile>Build.CoreCLR.partial.sln</CoreCLRSolutionFile>
+                <Net35UnitTestProject>Build.UnitTests.Net35.partial.csproj</Net35UnitTestProject>
+                <Net45UnitTestProject>Build.UnitTests.Net45.partial.csproj</Net45UnitTestProject>
+                <CoreCLRUnitTests>UnitTests.CoreCLR.csproj</CoreCLRUnitTests>
                 <GeneratorPartialBuildArgument>--partial-build-list $(PartialBuildList)</GeneratorPartialBuildArgument>
                 <ReferenceServiceDLLs>true</ReferenceServiceDLLs>
                 <FxCop35TargetFileName>SDK-3.5.partial.FxCop</FxCop35TargetFileName>
@@ -126,7 +136,6 @@
 
     <Target Name="restore-nuget">
         <Message Text="Restore nuget packages"/>
-        <Exec Command="..\sdk\.nuget\NuGet.exe restore ..\sdk\$(DesktopSolutionsFile)"/>
         <Exec Command="..\sdk\.nuget\NuGet.exe restore ..\sdk\$(PCLSolutionsFile)"/>
         <Exec Command="..\sdk\.nuget\NuGet.exe restore ..\sdk\$(UnitySolutionsFile)"/>
         <Exec Command="..\sdk\.nuget\NuGet.exe restore ..\sdk\AWSSDK.CodeAnalysis.sln"/>
@@ -148,11 +157,16 @@
             DestinationFolder="$(Deployment)" />
     </Target>
 
-    <Target Name="build-sdk-desktop" DependsOnTargets="run-generator;restore-nuget">
-        <Message Text="Compile the Desktop SDK"/>
-        <MSBuild Projects="..\sdk\$(DesktopSolutionsFile)"
-            Targets="Clean; Build"
-            Properties="Configuration=$(Configuration);AWSKeyFile=$(CustomSnkFileLocation);ResolveNuGetPackages=false;ReferenceServiceDLLs=$(ReferenceServiceDLLs)"/>
+    <Target Name="build-sdk-desktop" DependsOnTargets="GetSDKToolingInfoTarget;run-generator;restore-nuget">
+        <Message Text="Restore and compile .Net35 SDK"/>
+        <Exec Command="&quot;$(SDKToolingExe)&quot; clean -c $(Configuration) $(Net35SolutionsFile)" WorkingDirectory="..\sdk"/>
+        <Exec Command="&quot;$(SDKToolingExe)&quot; restore $(Net35SolutionsFile)" WorkingDirectory="..\sdk"/>
+        <Exec Command="&quot;$(SDKToolingExe)&quot; build -c $(Configuration) --no-incremental $(Net35SolutionsFile) /p:AWSKeyFile=$(CustomSnkFileLocation);SignAssembly=true" WorkingDirectory="..\sdk"/>
+
+        <Message Text="Restore and compile .Net45 SDK"/>
+        <Exec Command="&quot;$(SDKToolingExe)&quot; clean -c $(Configuration) $(Net45SolutionsFile)" WorkingDirectory="..\sdk"/>
+        <Exec Command="&quot;$(SDKToolingExe)&quot; restore $(Net45SolutionsFile)" WorkingDirectory="..\sdk"/>
+        <Exec Command="&quot;$(SDKToolingExe)&quot; build -c $(Configuration) --no-incremental $(Net45SolutionsFile) /p:AWSKeyFile=$(CustomSnkFileLocation);SignAssembly=true" WorkingDirectory="..\sdk"/>
     </Target>
 
 	<Target Name="build-code-analysis" DependsOnTargets="restore-nuget;run-generator">
@@ -168,19 +182,12 @@
             Properties="Configuration=$(Configuration);AWSKeyFile=$(CustomSnkFileLocation);ResolveNuGetPackages=false" />
     </Target>
 
-	<Target Name="build-sdk-coreclr" DependsOnTargets="GetSDKToolingInfoTarget">
-        <!-- depends: restore-nuget;run-generator -->
-        <Exec Command="&quot;$(SDKToolingExe)&quot; restore" 
-            WorkingDirectory="..\sdk"/>
-
-		<Message Text="Compile the CoreCLR version of the SDK"/>
-		<Exec Command="&quot;$(SDKToolingExe)&quot; build -c $(Configuration) --no-incremental" 
-			WorkingDirectory="..\sdk\test\CoreCLR\IntegrationTests"/>
-
-		<Message Text="Compile CoreCLR unit tests"/>
-		<Exec Command="&quot;$(SDKToolingExe)&quot; build -c $(Configuration) --no-incremental" 
-			WorkingDirectory="..\sdk\test\CoreCLR\UnitTests"/>
-	</Target>
+    <Target Name="build-sdk-coreclr" DependsOnTargets="GetSDKToolingInfoTarget">
+        <Message Text="Restore and compile CoreCLR version of the SDK"/>
+        <Exec Command="&quot;$(SDKToolingExe)&quot; clean -c $(Configuration) $(CoreCLRSolutionFile)" WorkingDirectory="..\sdk"/>
+        <Exec Command="&quot;$(SDKToolingExe)&quot; restore $(CoreCLRSolutionFile)" WorkingDirectory="..\sdk"/>
+        <Exec Command="&quot;$(SDKToolingExe)&quot; build -c $(Configuration) --no-incremental $(CoreCLRSolutionFile) /p:AWSKeyFile=$(CustomSnkFileLocation);SignAssembly=true" WorkingDirectory="..\sdk"/>
+    </Target>
 	
 	<Target Name="build-sdk-unity" DependsOnTargets="restore-nuget;run-generator" Condition="!$(DisableUnitySupport)">
 		<Message Text="Compile the Unity SDK"/>
@@ -202,46 +209,50 @@
             />
     </Target>
 
-    <Target Name="build-tests" Condition="'$(PartialBuildList)'!=''">
-        <MSBuild 
-            Projects="..\sdk\Build.UnitTests.partial.sln"
-            Targets="Clean; Build"
-            Properties="Configuration=$(Configuration);AWSKeyFile=$(CustomSnkFileLocation);ResolveNuGetPackages=false;ReferenceServiceDLLs=$(ReferenceServiceDLLs)"/>
+    <Target Name="build-tests" Condition="'$(PartialBuildList)'!=''" DependsOnTargets="GetSDKToolingInfoTarget">
+        <Exec Command="&quot;$(SDKToolingExe)&quot; clean -c $(Configuration) $(Net35UnitTestProject)" WorkingDirectory="..\sdk\test\UnitTests"/>
+        <Exec Command="&quot;$(SDKToolingExe)&quot; restore $(Net35UnitTestProject)" WorkingDirectory="..\sdk\test\UnitTests"/>
+        <Exec Command="&quot;$(SDKToolingExe)&quot; build -c $(Configuration) $(Net35UnitTestProject)" WorkingDirectory="..\sdk\test\UnitTests"/>
+
+        <Exec Command="&quot;$(SDKToolingExe)&quot; clean -c $(Configuration) $(Net45UnitTestProject)" WorkingDirectory="..\sdk\test\UnitTests"/>
+        <Exec Command="&quot;$(SDKToolingExe)&quot; restore $(Net45UnitTestProject)" WorkingDirectory="..\sdk\test\UnitTests"/>
+        <Exec Command="&quot;$(SDKToolingExe)&quot; build -c $(Configuration) $(Net45UnitTestProject)" WorkingDirectory="..\sdk\test\UnitTests"/>
+
+        <Exec Command="&quot;$(SDKToolingExe)&quot; clean -c $(Configuration) $(CoreCLRUnitTests)" WorkingDirectory="..\sdk\test\CoreCLR\UnitTests"/>
+        <Exec Command="&quot;$(SDKToolingExe)&quot; restore $(CoreCLRUnitTests)" WorkingDirectory="..\sdk\test\CoreCLR\UnitTests"/>
+        <Exec Command="&quot;$(SDKToolingExe)&quot; build -c $(Configuration) $(CoreCLRUnitTests)" WorkingDirectory="..\sdk\test\CoreCLR\UnitTests"/>
     </Target>
 
     <Target Name="run-unit-tests" DependsOnTargets="init;build-sdk;build-tests;build-test-wrapper;GetSDKToolingInfoTarget" >
         <MsTestWrapperTask
-            TestSuiteRunner="$(mstest2013exe)"
-            TestContainer="..\sdk\test\UnitTests\bin\$(Configuration)\net35\AWSSDK.UnitTests.Net35.dll"
-            ResultsOutputDir="$(Deployment)"
-            Categories="$(BCLUnitTestCategories)"
-            />
+            TestSuiteRunner="$(SDKToolingExe)"
+            TestContainer="..\sdk\test\UnitTests\$(Net35UnitTestProject)"
+            Configuration="$(Configuration)"
+            Categories="$(BCLUnitTestCategories)"/>
+
         <MsTestWrapperTask
-            TestSuiteRunner="$(mstest2013exe)"
-            TestContainer="..\sdk\test\UnitTests\bin\$(Configuration)\net45\AWSSDK.UnitTests.Net45.dll"
-            ResultsOutputDir="$(Deployment)"
-            Categories="$(BCLUnitTestCategories)"
-            />
+            TestSuiteRunner="$(SDKToolingExe)"
+            TestContainer="..\sdk\test\UnitTests\$(Net45UnitTestProject)"
+            Configuration="$(Configuration)"
+            Categories="$(BCLUnitTestCategories)"/>
+
         <XUnitWrapperTask
             TestSuiteRunner="$(SDKToolingExe)"
-            TestContainer="..\sdk\test\CoreCLR\UnitTests\project.json"
+            TestContainer="..\sdk\test\CoreCLR\UnitTests\UnitTests.CoreCLR.csproj"
             Configuration="$(Configuration)"
-            Categories="$(CoreCLRTestCategories)"
-            />
+            Categories="$(CoreCLRTestCategories)"/>
     </Target>
 
     <Target Name="run-integ-tests" Condition="'$(RunIntegTests)' != '' And '$(RunIntegTests)' != 'false'" DependsOnTargets="init;build-sdk;validate-integ-tests">
         <MsTestWrapperTask
-            TestSuiteRunner="$(mstest2013exe)"
-            TestContainer="..\sdk\test\IntegrationTests\bin\$(Configuration)\net45\AWSSDK.IntegrationTests.Net45.dll"
-            ResultsOutputDir="$(Deployment)"
-            Categories="$(IntegCategoriesToTest)"
-            WaitForDebugger="false"
-            />
+            TestSuiteRunner="$(SDKToolingExe)"
+            TestContainer="..\sdk\test\IntegrationTests\AWSSDK.IntegrationTests.Net45.csproj"
+            Configuration="$(Configuration)"
+            Categories="$(IntegCategoriesToTest)"/>
 
         <XUnitWrapperTask
             TestSuiteRunner="$(SDKToolingExe)"
-            TestContainer="..\sdk\test\CoreCLR\IntegrationTests\project.json"
+            TestContainer="..\sdk\test\CoreCLR\IntegrationTests\IntegrationTests.CoreCLR.csproj"
             Configuration="$(Configuration)"
             Categories="$(IntegCategoriesToTest)"
             />
@@ -250,22 +261,6 @@
     <Target Name="nuget-pack" Condition="'$(Configuration)' == 'Release'">
         <Exec LogStandardErrorAsError="true"
               Command="$(powershell) -ExecutionPolicy Unrestricted -NoProfile -File create-nuget-packages.ps1 -PackageList &quot;$(PartialBuildList)&quot;"/>
-    </Target>
-
-    <Target Name="xam-pack" DependsOnTargets="build-custom-tasks;nuget-pack" Condition="!$(DisablePCLSupport) AND Exists('$(xpkgexe)')  And $(SmokeBuild) == ''">
-        <XamarinComponent
-            ComponentRootPath="..\sdk\xamarin-components\"
-            NugetExe="..\sdk\.nuget\NuGet.exe"
-            ComponentsExe="$(xpkg)"
-            NugetRestoreLocation="$([System.IO.Path]::GetFullPath(..\Deployment\nuget));https://www.nuget.org/api/v2"
-            DevEnvExe="$(devenv2013)"  />
-
-        <ItemGroup>
-            <XamFiles Include="..\sdk\xamarin-components\**\*.xam"/>
-        </ItemGroup>
-        <Copy
-            SourceFiles="@(XamFiles)"
-            DestinationFolder="$(Deployment)\xamarin-components"/>
     </Target>
 
     <Target Name="unity-pack" DependsOnTargets="build-custom-tasks;nuget-pack;copy-assemblies;pdb-mdb" Condition="!$(DisableUnitySupport) And $(SmokeBuild) == ''">
@@ -345,30 +340,27 @@
 	</Target>
 	
 	
-	<Target Name="build-netcore-extensions" DependsOnTargets="build-sdk-coreclr;GetSDKToolingInfoTarget">
-	
-		<!-- depends: restore-nuget;run-generator -->
-		<Exec Command="&quot;$(SDKToolingExe)&quot; restore" 
-			WorkingDirectory="..\extensions"/>		
-			
-		<Exec Command="&quot;$(SDKToolingExe)&quot; build -c $(Configuration)" 
-			WorkingDirectory="..\extensions\test\NETCore.SetupTests"/>		
-			
+    <Target Name="build-netcore-extensions" DependsOnTargets="GetSDKToolingInfoTarget">
+        <!-- depends: restore-nuget;run-generator -->
+        <Exec Command="&quot;$(SDKToolingExe)&quot; clean -c $(Configuration)"  WorkingDirectory="..\extensions"/>
+        <Exec Command="&quot;$(SDKToolingExe)&quot; restore"                    WorkingDirectory="..\extensions"/>
+        <Exec Command="&quot;$(SDKToolingExe)&quot; build -c $(Configuration)"  WorkingDirectory="..\extensions"/>
+
 		<Message Text="Build and Test .NET Core Setup Extension"/>
 		<XUnitWrapperTask
 			TestSuiteRunner="$(SDKToolingExe)"
-			TestContainer="..\extensions\test\NETCore.SetupTests\project.json"
+			TestContainer="..\extensions\test\NETCore.SetupTests\NETCore.SetupTests.csproj"
 			Configuration="$(Configuration)"
 			/>
 			
-	</Target>	
+	</Target>
 	
 	<Target Name="package-netcore-extensions" DependsOnTargets="build-netcore-extensions">
         <MakeDir Directories="..\Deployment\nuget" />
 		<Exec Command="..\..\..\sdk\.nuget\NuGet.exe pack .\AWSSDK.Extensions.NETCore.Setup.nuspec -BasePath . -OutputDirectory ..\..\..\Deployment\nuget" WorkingDirectory="..\extensions\src\AWSSDK.Extensions.NETCore.Setup" />
 	</Target>	
 	
-    <Target Name="copy-assemblies" DependsOnTargets="nuget-pack;xam-pack">
+    <Target Name="copy-assemblies" DependsOnTargets="nuget-pack">
         <Message Text="Collating assemblies for downstream doc generation" />
         <PropertyGroup>
             <CustomSnkPublicKeyToken Condition="'$(CustomSnkPublicKeyToken)' == '' ">71c852f8be1c371d</CustomSnkPublicKeyToken>

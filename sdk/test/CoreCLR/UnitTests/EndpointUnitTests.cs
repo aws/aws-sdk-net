@@ -134,7 +134,7 @@ namespace AWSSDK_CoreCLR.UnitTests
 
         private FileInfo CreateEndpointCustomizationFile()
         {
-            string customizationResourceName = "UnitTests.endpoint.customization.json";
+            string customizationResourceName = "UnitTests.CoreCLR.endpoint.customization.json";
             FileInfo fi = new FileInfo(Path.Combine(Path.GetTempPath(), Path.GetTempFileName()));
 
             using (StreamReader resStream = new StreamReader(Utils.GetAssemblyResourceStream(customizationResourceName)))

@@ -7,6 +7,8 @@ using System.IO;
 using System.Reflection;
 using Microsoft.Build.Framework;
 
+using TestWrapper.TestRunners;
+
 namespace TestWrapper
 {
     public class MsTestWrapperTask : TestWrapperTask
@@ -17,9 +19,9 @@ namespace TestWrapper
         {
             var msTestRunner = new MSTestRunner(TestSuiteRunnerFileInfo, TestContainerFileInfo, null);
             msTestRunner.Categories = CategoriesArray;
-            msTestRunner.ResultsOutputDir = ResultsOutputDir == null ?
-                null :
-                new DirectoryInfo(ResultsOutputDir.ItemSpec);
+            msTestRunner.Configuration = Configuration == null ?
+                TestRunner.TestConfiguration.Release :
+                (TestRunner.TestConfiguration)Enum.Parse(typeof(TestRunner.TestConfiguration), Configuration.ItemSpec);
             Runner = msTestRunner;
         }
     }

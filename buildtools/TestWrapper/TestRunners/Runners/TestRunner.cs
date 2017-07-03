@@ -6,10 +6,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+using System.Text.RegularExpressions;
+
 namespace TestWrapper.TestRunners
 {
     public abstract class TestRunner
     {
+        public enum TestConfiguration
+        {
+            Debug, Release
+        }
+
         private readonly static TimeSpan MAX_SINGLE_EXEC_TIME = TimeSpan.FromHours(2);
         private const int MAX_TEST_RUNS_DEFAULT = 15;
         private const int MAX_CONSECUTIVE_FAILURES_DEFAULT = 3;
@@ -43,6 +50,7 @@ namespace TestWrapper.TestRunners
         public FileInfo TestContainer { get; private set; }
         public DirectoryInfo WorkingDirectory { get; private set; }
         public string[] Categories { get; set; }
+        public TestConfiguration Configuration { get; set; }
 
         /// <summary>
         /// Run the tests for this test runner.
@@ -69,6 +77,12 @@ namespace TestWrapper.TestRunners
                     Console.WriteLine(RunnerName);
                     Console.WriteLine(summary);
                     Console.WriteLine("=======================");
+
+                    if (summary.ExitCode != 0)
+                    {
+                        consecutiveFailureCount++;
+                        prevFailedTestCount = summary.Failed;
+                    }
 
                     var anyRan = summary.Passed > 0 || summary.Failed > 0;
                     if (!anyRan)
@@ -107,7 +121,66 @@ namespace TestWrapper.TestRunners
             return allTestsPassed;
         }
 
-        protected abstract ResultsSummary Run(IEnumerable<string> tests);
+        protected ResultsSummary Run(IEnumerable<string> tests)
+        {
+            var args = ConstructArguments(tests);
+            string log;
+            int exitCode = InvokeTestSuite(args, out log);
+            var summary = ParseLog(exitCode, log);
+            return summary;
+        }
+
+        protected abstract string ConstructArguments(IEnumerable<string> tests);
+        
+        private static ResultsSummary ParseLog(int exitCode, string log)
+        {
+            string[] lines = log.Trim().Split('\n');
+            List<string> failedTests = GetFailedTests(lines);
+            int passed = 0, failed = 0, skipped = 0;
+            ExtractSummary(lines, out passed, out failed, out skipped);
+            return new ResultsSummary(exitCode, log, failedTests, passed, failed, skipped);
+        }
+
+        private static Regex summaryRegex = new Regex(@"Total tests:\s*(\d*).*Failed:\s*(\d*).*Skipped:\s*(\d*).*");
+        private static void ExtractSummary(string[] lines, out int passedCount, out int failedCount, out int skippedCount)
+        {
+            int total = 0;
+            int failed = 0;
+            int skipped = 0;
+
+            for (int i = lines.Length - 1; i >= 0; i--)
+            {
+                string line = lines[i].Trim();
+
+                if (line.IndexOf(@"=== TEST EXECUTION SUMMARY ===", StringComparison.OrdinalIgnoreCase) >= 0)
+                {
+                    throw new Exception("Failed to parse the output while generating test run summary.");
+                }
+
+                Match match = summaryRegex.Match(line);
+                if (match.Success)
+                {
+                    total = Int32.Parse(match.Groups[1].ToString());
+                    failed = Int32.Parse(match.Groups[2].ToString());
+                    skipped = Int32.Parse(match.Groups[3].ToString());
+                    break;
+                }
+            }
+            passedCount = total - failed;
+            failedCount = failed;
+            skippedCount = skipped;
+        }
+
+        private static string ExtractFailedTestName(string line)
+        {
+            return line.StartsWith("Failed") ? line.Substring(6).Trim() : null;
+        }
+        private static List<string> GetFailedTests(string[] lines)
+        {
+            return lines.Select(ExtractFailedTestName)
+                        .Where(testName => !string.IsNullOrEmpty(testName))
+                        .ToList();
+        }
 
         private static void ValidateFileInfo(FileInfo fileInfo, string argName)
         {
@@ -130,7 +203,7 @@ namespace TestWrapper.TestRunners
                 return arg;
         }
 
-        protected string InvokeTestSuite(string args)
+        protected int InvokeTestSuite(string args, out string log)
         {
             var workingDir = WorkingDirectory.FullName;
             var file = TestSuiteExecutable.FullName;
@@ -162,7 +235,12 @@ namespace TestWrapper.TestRunners
                 p.Start();
                 p.BeginOutputReadLine();
                 p.BeginErrorReadLine();
-                p.WaitForExit((int)MAX_SINGLE_EXEC_TIME.TotalMilliseconds);
+                
+                if (p.WaitForExit((int)MAX_SINGLE_EXEC_TIME.TotalMilliseconds))
+                {
+                    p.WaitForExit();
+                }
+
 
                 output = outWriter.ToString();
                 error = errWriter.ToString();
@@ -192,6 +270,8 @@ namespace TestWrapper.TestRunners
                         throw new InvalidOperationException(message);
                     }
                 }
+
+                p.Close();
             }
 
             using (var writer = new StringWriter())
@@ -205,8 +285,10 @@ namespace TestWrapper.TestRunners
                 if (exitCode != 0)
                     writer.WriteLine("Exit code = {0}", exitCode);
 
-                return writer.ToString();
+                log = writer.ToString();
             }
+
+            return exitCode;
         }
         private static DataReceivedEventHandler LogMultiple(TextWriter consoleWriter, StringWriter stringWriter)
         {

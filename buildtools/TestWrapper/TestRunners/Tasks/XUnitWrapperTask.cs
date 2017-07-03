@@ -7,20 +7,20 @@ using System.IO;
 using System.Reflection;
 using Microsoft.Build.Framework;
 using static TestWrapper.XUnitTestRunner;
+using TestWrapper.TestRunners;
 
 namespace TestWrapper
 {
     public class XUnitWrapperTask : TestWrapperTask
     {
-        public ITaskItem Configuration { get; set; }
 
         protected override void PrepareRunner()
         {
             var xunitRunner = new XUnitTestRunner(TestSuiteRunnerFileInfo, TestContainerFileInfo, null);
             xunitRunner.Categories = CategoriesArray;
             xunitRunner.Configuration = Configuration == null ?
-                TestConfiguration.Release :
-                (TestConfiguration)Enum.Parse(typeof(TestConfiguration), Configuration.ItemSpec);
+                TestRunner.TestConfiguration.Release :
+                (TestRunner.TestConfiguration)Enum.Parse(typeof(TestRunner.TestConfiguration), Configuration.ItemSpec);
 
             Runner = xunitRunner;
         }

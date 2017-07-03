@@ -6,10 +6,13 @@ namespace TestWrapper
 {
     public class ResultsSummary
     {
-        public ResultsSummary(string log,
+        public ResultsSummary(
+            int exitCode,
+            string log,
             IList<string> failedTests,
             int passed, int failed, int skipped)
         {
+            this.ExitCode = exitCode;
             this.Log = log;
             this.FailedTestNames = failedTests;
             this.Passed = passed;
@@ -22,6 +25,7 @@ namespace TestWrapper
         public int Failed { get; private set; }
         public int Skipped { get; private set; }
         public string Log { get; private set; }
+        public int ExitCode { get; private set; }
 
         public override string ToString()
         {

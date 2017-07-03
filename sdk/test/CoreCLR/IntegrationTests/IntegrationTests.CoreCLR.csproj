@@ -1,0 +1,51 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp1.0</TargetFramework>
+    <AssemblyName>IntegrationTests</AssemblyName>
+    <PackageId>IntegrationTests</PackageId>
+    <GenerateRuntimeConfigurationFiles>true</GenerateRuntimeConfigurationFiles>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\src\Core\AWSSDK.Core.CoreCLR.csproj" />
+    <ProjectReference Include="..\..\..\src\Services\ApplicationAutoScaling\AWSSDK.ApplicationAutoScaling.CoreCLR.csproj" />
+    <ProjectReference Include="..\..\..\src\Services\AutoScaling\AWSSDK.AutoScaling.CoreCLR.csproj" />
+    <ProjectReference Include="..\..\..\src\Services\AWSSupport\AWSSDK.AWSSupport.CoreCLR.csproj" />
+    <ProjectReference Include="..\..\..\src\Services\CodeDeploy\AWSSDK.CodeDeploy.CoreCLR.csproj" />
+    <ProjectReference Include="..\..\..\src\Services\CognitoSync\AWSSDK.CognitoSync.CoreCLR.csproj" />
+    <ProjectReference Include="..\..\..\src\Services\CloudFormation\AWSSDK.CloudFormation.CoreCLR.csproj" />
+    <ProjectReference Include="..\..\..\src\Services\CloudFront\AWSSDK.CloudFront.CoreCLR.csproj" />
+    <ProjectReference Include="..\..\..\src\Services\CloudHSM\AWSSDK.CloudHSM.CoreCLR.csproj" />
+    <ProjectReference Include="..\..\..\src\Services\CloudSearch\AWSSDK.CloudSearch.CoreCLR.csproj" />
+    <ProjectReference Include="..\..\..\src\Services\CloudWatchLogs\AWSSDK.CloudWatchLogs.CoreCLR.csproj" />
+    <ProjectReference Include="..\..\..\src\Services\DataPipeline\AWSSDK.DataPipeline.CoreCLR.csproj" />
+    <ProjectReference Include="..\..\..\src\Services\DirectoryService\AWSSDK.DirectoryService.CoreCLR.csproj" />
+    <ProjectReference Include="..\..\..\src\Services\DynamoDBv2\AWSSDK.DynamoDBv2.CoreCLR.csproj" />
+    <ProjectReference Include="..\..\..\src\Services\EC2\AWSSDK.EC2.CoreCLR.csproj" />
+    <ProjectReference Include="..\..\..\src\Services\ECS\AWSSDK.ECS.CoreCLR.csproj" />
+    <ProjectReference Include="..\..\..\src\Services\Glacier\AWSSDK.Glacier.CoreCLR.csproj" />
+    <ProjectReference Include="..\..\..\src\Services\ElasticTranscoder\AWSSDK.ElasticTranscoder.CoreCLR.csproj" />
+    <ProjectReference Include="..\..\..\src\Services\ElasticBeanstalk\AWSSDK.ElasticBeanstalk.CoreCLR.csproj" />
+    <ProjectReference Include="..\..\..\src\Services\IdentityManagement\AWSSDK.IdentityManagement.CoreCLR.csproj" />
+    <ProjectReference Include="..\..\..\src\Services\ImportExport\AWSSDK.ImportExport.CoreCLR.csproj" />
+    <ProjectReference Include="..\..\..\src\Services\Kinesis\AWSSDK.Kinesis.CoreCLR.csproj" />
+    <ProjectReference Include="..\..\..\src\Services\SecurityToken\AWSSDK.SecurityToken.CoreCLR.csproj" />
+    <ProjectReference Include="..\..\..\src\Services\SimpleEmail\AWSSDK.SimpleEmail.CoreCLR.csproj" />
+    <ProjectReference Include="..\..\..\src\Services\SimpleSystemsManagement\AWSSDK.SimpleSystemsManagement.CoreCLR.csproj" />
+    <ProjectReference Include="..\..\..\src\Services\RDS\AWSSDK.RDS.CoreCLR.csproj" />
+    <ProjectReference Include="..\..\..\src\Services\Route53\AWSSDK.Route53.CoreCLR.csproj" />
+    <ProjectReference Include="..\..\..\src\Services\Route53Domains\AWSSDK.Route53Domains.CoreCLR.csproj" />
+    <ProjectReference Include="..\..\..\src\Services\S3\AWSSDK.S3.CoreCLR.csproj" />
+    <ProjectReference Include="..\..\..\src\Services\SimpleNotificationService\AWSSDK.SimpleNotificationService.CoreCLR.csproj" />
+    <ProjectReference Include="..\..\..\src\Services\SQS\AWSSDK.SQS.CoreCLR.csproj" />
+    <ProjectReference Include="..\..\..\src\Services\SimpleWorkflow\AWSSDK.SimpleWorkflow.CoreCLR.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.0.0" />
+    <PackageReference Include="xunit.runner.visualstudio" Version="2.2.0" />
+    <PackageReference Include="xunit" Version="2.2.0" />
+  </ItemGroup>
+
+</Project>
