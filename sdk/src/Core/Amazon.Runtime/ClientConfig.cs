@@ -354,7 +354,7 @@ namespace Amazon.Runtime
 #if UNITY
         /// <summary>
         /// Overrides the default request timeout value.
-        /// Unity HTTP client does not support timeouts, so this value is not used.
+        /// On Unity platform this value is not used as Unity HTTP client does not support timeouts.
         /// </summary>
 #elif BCL35
         /// <summary>

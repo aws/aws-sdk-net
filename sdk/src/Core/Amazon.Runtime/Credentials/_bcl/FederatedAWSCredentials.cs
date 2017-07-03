@@ -43,7 +43,7 @@ namespace Amazon.Runtime
         private object syncLock = new object();
         private SAMLRoleSessionManager sessionManager = new SAMLRoleSessionManager();
 
-        // <summary>
+        /// <summary>
         /// Constructs an instance of FederatedAWSCredentials. After construction call GetCredentials
         /// to authenticate the user/process and obtain temporary AWS credentials.
         /// </summary>

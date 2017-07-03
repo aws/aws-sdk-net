@@ -187,9 +187,7 @@ namespace Amazon.Runtime
 
         /// <summary>
         /// Overrides the default read-write timeout value.
-#if UNITY
-        /// Unity HTTP client does not support timeouts, so this value is not used.
-#endif
+        /// On Unity platform, this value is not used as Unity HTTP client does not support timeouts, so 
         /// </summary>
         /// <remarks>
         /// <para>
