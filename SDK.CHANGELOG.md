@@ -1,3 +1,10 @@
+### 3.3.118.0 (2017-07-05 17:15 UTC)
+* CloudWatch (3.3.3.0)
+	* We are excited to announce the availability of APIs and CloudFormation support for CloudWatch Dashboards. You can use the new dashboard APIs or CloudFormation templates to dynamically build and maintain dashboards to monitor your infrastructure and applications. There are four new dashboard APIs - PutDashboard, GetDashboard, DeleteDashboards, and ListDashboards APIs. PutDashboard is used to create a new dashboard or modify an existing one whereas GetDashboard is the API to get the details of a specific dashboard. ListDashboards and DeleteDashboards are used to get the names or delete multiple dashboards respectively. Getting started with dashboard APIs is similar to any other AWS APIs. The APIs can be accessed through AWS SDK or through CLI tools.
+* Core 3.3.16.0
+	* AWSSDK.Core package's dependency update
+	* All services packages updated to require new Core
+
 ### 3.3.117.0 (2017-06-30 19:03 UTC)
 * AWSMarketplaceCommerceAnalytics (3.3.3.9)
 	* Documentation updates for AWS Marketplace Commerce Analytics.
