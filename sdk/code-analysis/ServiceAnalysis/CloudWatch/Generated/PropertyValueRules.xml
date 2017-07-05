@@ -62,7 +62,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudWatch.Model.DescribeAlarmsForMetricRequest.Period</property>
-    <min>60</min>
+    <min>1</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudWatch.Model.GetMetricStatisticsRequest.MetricName</property>
@@ -77,7 +77,17 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudWatch.Model.GetMetricStatisticsRequest.Period</property>
-    <min>60</min>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudWatch.Model.ListDashboardsRequest.NextToken</property>
+    <min>0</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudWatch.Model.ListDashboardsResponse.NextToken</property>
+    <min>0</min>
+    <max>1024</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudWatch.Model.ListMetricsRequest.MetricName</property>
@@ -136,7 +146,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudWatch.Model.PutMetricAlarmRequest.Period</property>
-    <min>60</min>
+    <min>1</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudWatch.Model.PutMetricAlarmRequest.TreatMissingData</property>
@@ -266,7 +276,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudWatch.Model.MetricAlarm.Period</property>
-    <min>60</min>
+    <min>1</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudWatch.Model.MetricAlarm.StateReason</property>
@@ -287,6 +297,10 @@
     <property>Amazon.CloudWatch.Model.MetricDatum.MetricName</property>
     <min>1</min>
     <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudWatch.Model.MetricDatum.StorageResolution</property>
+    <min>1</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudWatch.Model.ResourceNotFound.Message</property>

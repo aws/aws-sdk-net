@@ -36,6 +36,7 @@ namespace Amazon.CloudWatch.Model
         private List<Dimension> _dimensions = new List<Dimension>();
         private string _metricName;
         private StatisticSet _statisticValues;
+        private int? _storageResolution;
         private DateTime? _timestamp;
         private StandardUnit _unit;
         private double? _value;
@@ -95,6 +96,21 @@ namespace Amazon.CloudWatch.Model
         }
 
         /// <summary>
+        /// Gets and sets the property StorageResolution.
+        /// </summary>
+        public int StorageResolution
+        {
+            get { return this._storageResolution.GetValueOrDefault(); }
+            set { this._storageResolution = value; }
+        }
+
+        // Check to see if StorageResolution property is set
+        internal bool IsSetStorageResolution()
+        {
+            return this._storageResolution.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property Timestamp. 
         /// <para>
         /// The time the metric data was received, expressed as the number of milliseconds since
@@ -138,10 +154,10 @@ namespace Amazon.CloudWatch.Model
         /// </para>
         ///  
         /// <para>
-        /// Although the parameter accepts numbers of type Double, Amazon CloudWatch rejects values
-        /// that are either too small or too large. Values must be in the range of 8.515920e-109
-        /// to 1.174271e+108 (Base 10) or 2e-360 to 2e360 (Base 2). In addition, special values
-        /// (for example, NaN, +Infinity, -Infinity) are not supported.
+        /// Although the parameter accepts numbers of type Double, CloudWatch rejects values that
+        /// are either too small or too large. Values must be in the range of 8.515920e-109 to
+        /// 1.174271e+108 (Base 10) or 2e-360 to 2e360 (Base 2). In addition, special values (for
+        /// example, NaN, +Infinity, -Infinity) are not supported.
         /// </para>
         /// </summary>
         public double Value

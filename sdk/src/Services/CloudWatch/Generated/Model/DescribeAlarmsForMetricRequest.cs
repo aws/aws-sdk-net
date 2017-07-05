@@ -29,8 +29,8 @@ namespace Amazon.CloudWatch.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeAlarmsForMetric operation.
-    /// Retrieves the alarms for the specified metric. Specify a statistic, period, or unit
-    /// to filter the results.
+    /// Retrieves the alarms for the specified metric. To filter the results, specify a statistic,
+    /// period, or unit.
     /// </summary>
     public partial class DescribeAlarmsForMetricRequest : AmazonCloudWatchRequest
     {

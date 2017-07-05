@@ -37,17 +37,16 @@ namespace Amazon.CloudWatch
     /// Implementation for accessing CloudWatch
     ///
     /// Amazon CloudWatch monitors your Amazon Web Services (AWS) resources and the applications
-    /// you run on AWS in real-time. You can use CloudWatch to collect and track metrics,
+    /// you run on AWS in real time. You can use CloudWatch to collect and track metrics,
     /// which are the variables you want to measure for your resources and applications.
     /// 
     ///  
     /// <para>
-    /// CloudWatch alarms send notifications or automatically make changes to the resources
-    /// you are monitoring based on rules that you define. For example, you can monitor the
-    /// CPU usage and disk reads and writes of your Amazon Elastic Compute Cloud (Amazon EC2)
-    /// instances and then use this data to determine whether you should launch additional
-    /// instances to handle increased load. You can also use this data to stop under-used
-    /// instances to save money.
+    /// CloudWatch alarms send notifications or automatically change the resources you are
+    /// monitoring based on rules that you define. For example, you can monitor the CPU usage
+    /// and disk reads and writes of your Amazon EC2 instances. Then, use this data to determine
+    /// whether you should launch additional instances to handle increased load. You can also
+    /// use this data to stop under-used instances to save money.
     /// </para>
     ///  
     /// <para>
@@ -280,6 +279,38 @@ namespace Amazon.CloudWatch
 
         #endregion
         
+        #region  DeleteDashboards
+
+        internal DeleteDashboardsResponse DeleteDashboards(DeleteDashboardsRequest request)
+        {
+            var marshaller = new DeleteDashboardsRequestMarshaller();
+            var unmarshaller = DeleteDashboardsResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteDashboardsRequest,DeleteDashboardsResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteDashboards operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteDashboards operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/DeleteDashboards">REST API Reference for DeleteDashboards Operation</seealso>
+        public Task<DeleteDashboardsResponse> DeleteDashboardsAsync(DeleteDashboardsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DeleteDashboardsRequestMarshaller();
+            var unmarshaller = DeleteDashboardsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteDashboardsRequest,DeleteDashboardsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DescribeAlarmHistory
 
         internal DescribeAlarmHistoryResponse DescribeAlarmHistory()
@@ -302,8 +333,7 @@ namespace Amazon.CloudWatch
         /// 
         ///  
         /// <para>
-        /// Note that Amazon CloudWatch retains the history of an alarm even if you delete the
-        /// alarm.
+        /// CloudWatch retains the history of an alarm even if you delete the alarm.
         /// </para>
         /// </summary>
         /// <param name="cancellationToken">
@@ -494,6 +524,38 @@ namespace Amazon.CloudWatch
 
         #endregion
         
+        #region  GetDashboard
+
+        internal GetDashboardResponse GetDashboard(GetDashboardRequest request)
+        {
+            var marshaller = new GetDashboardRequestMarshaller();
+            var unmarshaller = GetDashboardResponseUnmarshaller.Instance;
+
+            return Invoke<GetDashboardRequest,GetDashboardResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetDashboard operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetDashboard operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/GetDashboard">REST API Reference for GetDashboard Operation</seealso>
+        public Task<GetDashboardResponse> GetDashboardAsync(GetDashboardRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new GetDashboardRequestMarshaller();
+            var unmarshaller = GetDashboardResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetDashboardRequest,GetDashboardResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetMetricStatistics
 
         internal GetMetricStatisticsResponse GetMetricStatistics(GetMetricStatisticsRequest request)
@@ -521,6 +583,38 @@ namespace Amazon.CloudWatch
             var unmarshaller = GetMetricStatisticsResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetMetricStatisticsRequest,GetMetricStatisticsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListDashboards
+
+        internal ListDashboardsResponse ListDashboards(ListDashboardsRequest request)
+        {
+            var marshaller = new ListDashboardsRequestMarshaller();
+            var unmarshaller = ListDashboardsResponseUnmarshaller.Instance;
+
+            return Invoke<ListDashboardsRequest,ListDashboardsResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListDashboards operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListDashboards operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/ListDashboards">REST API Reference for ListDashboards Operation</seealso>
+        public Task<ListDashboardsResponse> ListDashboardsAsync(ListDashboardsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new ListDashboardsRequestMarshaller();
+            var unmarshaller = ListDashboardsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListDashboardsRequest,ListDashboardsResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -590,6 +684,38 @@ namespace Amazon.CloudWatch
             var unmarshaller = ListMetricsResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListMetricsRequest,ListMetricsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  PutDashboard
+
+        internal PutDashboardResponse PutDashboard(PutDashboardRequest request)
+        {
+            var marshaller = new PutDashboardRequestMarshaller();
+            var unmarshaller = PutDashboardResponseUnmarshaller.Instance;
+
+            return Invoke<PutDashboardRequest,PutDashboardResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutDashboard operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutDashboard operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/PutDashboard">REST API Reference for PutDashboard Operation</seealso>
+        public Task<PutDashboardResponse> PutDashboardAsync(PutDashboardRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new PutDashboardRequestMarshaller();
+            var unmarshaller = PutDashboardResponseUnmarshaller.Instance;
+
+            return InvokeAsync<PutDashboardRequest,PutDashboardResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 

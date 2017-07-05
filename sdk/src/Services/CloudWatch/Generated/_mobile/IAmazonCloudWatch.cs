@@ -32,17 +32,16 @@ namespace Amazon.CloudWatch
     /// Interface for accessing CloudWatch
     ///
     /// Amazon CloudWatch monitors your Amazon Web Services (AWS) resources and the applications
-    /// you run on AWS in real-time. You can use CloudWatch to collect and track metrics,
+    /// you run on AWS in real time. You can use CloudWatch to collect and track metrics,
     /// which are the variables you want to measure for your resources and applications.
     /// 
     ///  
     /// <para>
-    /// CloudWatch alarms send notifications or automatically make changes to the resources
-    /// you are monitoring based on rules that you define. For example, you can monitor the
-    /// CPU usage and disk reads and writes of your Amazon Elastic Compute Cloud (Amazon EC2)
-    /// instances and then use this data to determine whether you should launch additional
-    /// instances to handle increased load. You can also use this data to stop under-used
-    /// instances to save money.
+    /// CloudWatch alarms send notifications or automatically change the resources you are
+    /// monitoring based on rules that you define. For example, you can monitor the CPU usage
+    /// and disk reads and writes of your Amazon EC2 instances. Then, use this data to determine
+    /// whether you should launch additional instances to handle increased load. You can also
+    /// use this data to stop under-used instances to save money.
     /// </para>
     ///  
     /// <para>
@@ -71,6 +70,23 @@ namespace Amazon.CloudWatch
 
         #endregion
                 
+        #region  DeleteDashboards
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteDashboards operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteDashboards operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/DeleteDashboards">REST API Reference for DeleteDashboards Operation</seealso>
+        Task<DeleteDashboardsResponse> DeleteDashboardsAsync(DeleteDashboardsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  DescribeAlarmHistory
 
 
@@ -81,8 +97,7 @@ namespace Amazon.CloudWatch
         /// 
         ///  
         /// <para>
-        /// Note that Amazon CloudWatch retains the history of an alarm even if you delete the
-        /// alarm.
+        /// CloudWatch retains the history of an alarm even if you delete the alarm.
         /// </para>
         /// </summary>
         /// <param name="cancellationToken">
@@ -196,6 +211,23 @@ namespace Amazon.CloudWatch
 
         #endregion
                 
+        #region  GetDashboard
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetDashboard operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetDashboard operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/GetDashboard">REST API Reference for GetDashboard Operation</seealso>
+        Task<GetDashboardResponse> GetDashboardAsync(GetDashboardRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  GetMetricStatistics
 
 
@@ -210,6 +242,23 @@ namespace Amazon.CloudWatch
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/GetMetricStatistics">REST API Reference for GetMetricStatistics Operation</seealso>
         Task<GetMetricStatisticsResponse> GetMetricStatisticsAsync(GetMetricStatisticsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  ListDashboards
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListDashboards operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListDashboards operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/ListDashboards">REST API Reference for ListDashboards Operation</seealso>
+        Task<ListDashboardsResponse> ListDashboardsAsync(ListDashboardsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -257,6 +306,23 @@ namespace Amazon.CloudWatch
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/ListMetrics">REST API Reference for ListMetrics Operation</seealso>
         Task<ListMetricsResponse> ListMetricsAsync(ListMetricsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  PutDashboard
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutDashboard operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutDashboard operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/PutDashboard">REST API Reference for PutDashboard Operation</seealso>
+        Task<PutDashboardResponse> PutDashboardAsync(PutDashboardRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 

@@ -204,7 +204,13 @@ namespace Amazon.CloudWatch.Model
         }
 
         /// <summary>
-        /// Gets and sets the property EvaluateLowSampleCountPercentile.
+        /// Gets and sets the property EvaluateLowSampleCountPercentile. 
+        /// <para>
+        /// Used only for alarms based on percentiles. If <code>ignore</code>, the alarm state
+        /// does not change during periods with too few data points to be statistically significant.
+        /// If <code>evaluate</code> or this parameter is not used, the alarm will always be evaluated
+        /// and possibly change state no matter how many data points are available.
+        /// </para>
         /// </summary>
         public string EvaluateLowSampleCountPercentile
         {
@@ -457,7 +463,11 @@ namespace Amazon.CloudWatch.Model
         }
 
         /// <summary>
-        /// Gets and sets the property TreatMissingData.
+        /// Gets and sets the property TreatMissingData. 
+        /// <para>
+        /// Sets how this alarm is to handle missing data points. If this parameter is omitted,
+        /// the default behavior of <code>missing</code> is used.
+        /// </para>
         /// </summary>
         public string TreatMissingData
         {

@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudWatch.Model
 {
     /// <summary>
-    /// Encapsulates the statistical data that Amazon CloudWatch computes from metric data.
+    /// Encapsulates the statistical data that CloudWatch computes from metric data.
     /// </summary>
     public partial class Datapoint
     {

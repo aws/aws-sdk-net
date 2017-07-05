@@ -34,17 +34,16 @@ namespace Amazon.CloudWatch
     /// Implementation for accessing CloudWatch
     ///
     /// Amazon CloudWatch monitors your Amazon Web Services (AWS) resources and the applications
-    /// you run on AWS in real-time. You can use CloudWatch to collect and track metrics,
+    /// you run on AWS in real time. You can use CloudWatch to collect and track metrics,
     /// which are the variables you want to measure for your resources and applications.
     /// 
     ///  
     /// <para>
-    /// CloudWatch alarms send notifications or automatically make changes to the resources
-    /// you are monitoring based on rules that you define. For example, you can monitor the
-    /// CPU usage and disk reads and writes of your Amazon Elastic Compute Cloud (Amazon EC2)
-    /// instances and then use this data to determine whether you should launch additional
-    /// instances to handle increased load. You can also use this data to stop under-used
-    /// instances to save money.
+    /// CloudWatch alarms send notifications or automatically change the resources you are
+    /// monitoring based on rules that you define. For example, you can monitor the CPU usage
+    /// and disk reads and writes of your Amazon EC2 instances. Then, use this data to determine
+    /// whether you should launch additional instances to handle increased load. You can also
+    /// use this data to stop under-used instances to save money.
     /// </para>
     ///  
     /// <para>
@@ -297,6 +296,69 @@ namespace Amazon.CloudWatch
 
         #endregion
         
+        #region  DeleteDashboards
+
+        /// <summary>
+        /// Deletes all dashboards that you specify. You may specify up to 100 dashboards to delete.
+        /// If there is an error during this call, no dashboards are deleted.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteDashboards service method.</param>
+        /// 
+        /// <returns>The response from the DeleteDashboards service method, as returned by CloudWatch.</returns>
+        /// <exception cref="Amazon.CloudWatch.Model.DashboardNotFoundErrorException">
+        /// The specified dashboard does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatch.Model.InternalServiceException">
+        /// Request processing has failed due to some unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatch.Model.InvalidParameterValueException">
+        /// The value of an input parameter is bad or out-of-range.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/DeleteDashboards">REST API Reference for DeleteDashboards Operation</seealso>
+        public DeleteDashboardsResponse DeleteDashboards(DeleteDashboardsRequest request)
+        {
+            var marshaller = new DeleteDashboardsRequestMarshaller();
+            var unmarshaller = DeleteDashboardsResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteDashboardsRequest,DeleteDashboardsResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteDashboards operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteDashboards operation on AmazonCloudWatchClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteDashboards
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/DeleteDashboards">REST API Reference for DeleteDashboards Operation</seealso>
+        public IAsyncResult BeginDeleteDashboards(DeleteDashboardsRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new DeleteDashboardsRequestMarshaller();
+            var unmarshaller = DeleteDashboardsResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DeleteDashboardsRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteDashboards operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteDashboards.</param>
+        /// 
+        /// <returns>Returns a  DeleteDashboardsResult from CloudWatch.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/DeleteDashboards">REST API Reference for DeleteDashboards Operation</seealso>
+        public  DeleteDashboardsResponse EndDeleteDashboards(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteDashboardsResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DescribeAlarmHistory
 
         /// <summary>
@@ -306,8 +368,7 @@ namespace Amazon.CloudWatch
         /// 
         ///  
         /// <para>
-        /// Note that Amazon CloudWatch retains the history of an alarm even if you delete the
-        /// alarm.
+        /// CloudWatch retains the history of an alarm even if you delete the alarm.
         /// </para>
         /// </summary>
         /// 
@@ -328,8 +389,7 @@ namespace Amazon.CloudWatch
         /// 
         ///  
         /// <para>
-        /// Note that Amazon CloudWatch retains the history of an alarm even if you delete the
-        /// alarm.
+        /// CloudWatch retains the history of an alarm even if you delete the alarm.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeAlarmHistory service method.</param>
@@ -460,8 +520,8 @@ namespace Amazon.CloudWatch
         #region  DescribeAlarmsForMetric
 
         /// <summary>
-        /// Retrieves the alarms for the specified metric. Specify a statistic, period, or unit
-        /// to filter the results.
+        /// Retrieves the alarms for the specified metric. To filter the results, specify a statistic,
+        /// period, or unit.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeAlarmsForMetric service method.</param>
         /// 
@@ -618,6 +678,75 @@ namespace Amazon.CloudWatch
 
         #endregion
         
+        #region  GetDashboard
+
+        /// <summary>
+        /// Displays the details of the dashboard that you specify.
+        /// 
+        ///  
+        /// <para>
+        /// To copy an existing dashboard, use <code>GetDashboard</code>, and then use the data
+        /// returned within <code>DashboardBody</code> as the template for the new dashboard when
+        /// you call <code>PutDashboard</code> to create the copy.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetDashboard service method.</param>
+        /// 
+        /// <returns>The response from the GetDashboard service method, as returned by CloudWatch.</returns>
+        /// <exception cref="Amazon.CloudWatch.Model.DashboardNotFoundErrorException">
+        /// The specified dashboard does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatch.Model.InternalServiceException">
+        /// Request processing has failed due to some unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatch.Model.InvalidParameterValueException">
+        /// The value of an input parameter is bad or out-of-range.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/GetDashboard">REST API Reference for GetDashboard Operation</seealso>
+        public GetDashboardResponse GetDashboard(GetDashboardRequest request)
+        {
+            var marshaller = new GetDashboardRequestMarshaller();
+            var unmarshaller = GetDashboardResponseUnmarshaller.Instance;
+
+            return Invoke<GetDashboardRequest,GetDashboardResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetDashboard operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetDashboard operation on AmazonCloudWatchClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetDashboard
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/GetDashboard">REST API Reference for GetDashboard Operation</seealso>
+        public IAsyncResult BeginGetDashboard(GetDashboardRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new GetDashboardRequestMarshaller();
+            var unmarshaller = GetDashboardResponseUnmarshaller.Instance;
+
+            return BeginInvoke<GetDashboardRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetDashboard operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetDashboard.</param>
+        /// 
+        /// <returns>Returns a  GetDashboardResult from CloudWatch.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/GetDashboard">REST API Reference for GetDashboard Operation</seealso>
+        public  GetDashboardResponse EndGetDashboard(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetDashboardResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  GetMetricStatistics
 
         /// <summary>
@@ -629,11 +758,11 @@ namespace Amazon.CloudWatch
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Data points with a period of 60 seconds (1 minute) are available for 15 days
+        /// Data points with a period of 60 seconds (1-minute) are available for 15 days
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Data points with a period of 300 seconds (5 minute) are available for 63 days
+        /// Data points with a period of 300 seconds (5-minute) are available for 63 days
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -642,39 +771,37 @@ namespace Amazon.CloudWatch
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// Note that CloudWatch started retaining 5-minute and 1-hour metric data as of 9 July
-        /// 2016.
+        /// CloudWatch started retaining 5-minute and 1-hour metric data as of July 9, 2016.
         /// </para>
         ///  
         /// <para>
         /// The maximum number of data points returned from a single call is 1,440. If you request
-        /// more than 1,440 data points, Amazon CloudWatch returns an error. To reduce the number
-        /// of data points, you can narrow the specified time range and make multiple requests
-        /// across adjacent time ranges, or you can increase the specified period. A period can
-        /// be as short as one minute (60 seconds). Note that data points are not returned in
-        /// chronological order.
+        /// more than 1,440 data points, CloudWatch returns an error. To reduce the number of
+        /// data points, you can narrow the specified time range and make multiple requests across
+        /// adjacent time ranges, or you can increase the specified period. A period can be as
+        /// short as one minute (60 seconds). Data points are not returned in chronological order.
         /// </para>
         ///  
         /// <para>
-        /// Amazon CloudWatch aggregates data points based on the length of the period that you
-        /// specify. For example, if you request statistics with a one-hour period, Amazon CloudWatch
-        /// aggregates all data points with time stamps that fall within each one-hour period.
-        /// Therefore, the number of values aggregated by CloudWatch is larger than the number
-        /// of data points returned.
+        /// CloudWatch aggregates data points based on the length of the period that you specify.
+        /// For example, if you request statistics with a one-hour period, CloudWatch aggregates
+        /// all data points with time stamps that fall within each one-hour period. Therefore,
+        /// the number of values aggregated by CloudWatch is larger than the number of data points
+        /// returned.
         /// </para>
         ///  
         /// <para>
         /// CloudWatch needs raw data points to calculate percentile statistics. If you publish
-        /// data using a statistic set instead, you cannot retrieve percentile statistics for
-        /// this data unless one of the following conditions is true:
+        /// data using a statistic set instead, you can only retrieve percentile statistics for
+        /// this data if one of the following conditions is true:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// The SampleCount of the statistic set is 1
+        /// The SampleCount value of the statistic set is 1.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// The Min and the Max of the statistic set are equal
+        /// The Min and the Max values of the statistic set are equal.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -689,7 +816,7 @@ namespace Amazon.CloudWatch
         /// Request processing has failed due to some unknown error, exception, or failure.
         /// </exception>
         /// <exception cref="Amazon.CloudWatch.Model.InvalidParameterCombinationException">
-        /// Parameters that cannot be used together were used together.
+        /// Parameters were used together that cannot be used together.
         /// </exception>
         /// <exception cref="Amazon.CloudWatch.Model.InvalidParameterValueException">
         /// The value of an input parameter is bad or out-of-range.
@@ -738,6 +865,67 @@ namespace Amazon.CloudWatch
         public  GetMetricStatisticsResponse EndGetMetricStatistics(IAsyncResult asyncResult)
         {
             return EndInvoke<GetMetricStatisticsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListDashboards
+
+        /// <summary>
+        /// Returns a list of the dashboards for your account. If you include <code>DashboardNamePrefix</code>,
+        /// only those dashboards with names starting with the prefix are listed. Otherwise, all
+        /// dashboards in your account are listed.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListDashboards service method.</param>
+        /// 
+        /// <returns>The response from the ListDashboards service method, as returned by CloudWatch.</returns>
+        /// <exception cref="Amazon.CloudWatch.Model.InternalServiceException">
+        /// Request processing has failed due to some unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatch.Model.InvalidParameterValueException">
+        /// The value of an input parameter is bad or out-of-range.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/ListDashboards">REST API Reference for ListDashboards Operation</seealso>
+        public ListDashboardsResponse ListDashboards(ListDashboardsRequest request)
+        {
+            var marshaller = new ListDashboardsRequestMarshaller();
+            var unmarshaller = ListDashboardsResponseUnmarshaller.Instance;
+
+            return Invoke<ListDashboardsRequest,ListDashboardsResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListDashboards operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListDashboards operation on AmazonCloudWatchClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListDashboards
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/ListDashboards">REST API Reference for ListDashboards Operation</seealso>
+        public IAsyncResult BeginListDashboards(ListDashboardsRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new ListDashboardsRequestMarshaller();
+            var unmarshaller = ListDashboardsResponseUnmarshaller.Instance;
+
+            return BeginInvoke<ListDashboardsRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListDashboards operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListDashboards.</param>
+        /// 
+        /// <returns>Returns a  ListDashboardsResult from CloudWatch.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/ListDashboards">REST API Reference for ListDashboards Operation</seealso>
+        public  ListDashboardsResponse EndListDashboards(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListDashboardsResponse>(asyncResult);
         }
 
         #endregion
@@ -842,6 +1030,79 @@ namespace Amazon.CloudWatch
 
         #endregion
         
+        #region  PutDashboard
+
+        /// <summary>
+        /// Creates a dashboard if it does not already exist, or updates an existing dashboard.
+        /// If you update a dashboard, the entire contents are replaced with what you specify
+        /// here.
+        /// 
+        ///  
+        /// <para>
+        /// You can have up to 500 dashboards per account. All dashboards in your account are
+        /// global, not region-specific.
+        /// </para>
+        ///  
+        /// <para>
+        /// To copy an existing dashboard, use <code>GetDashboard</code>, and then use the data
+        /// returned within <code>DashboardBody</code> as the template for the new dashboard when
+        /// you call <code>PutDashboard</code> to create the copy.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutDashboard service method.</param>
+        /// 
+        /// <returns>The response from the PutDashboard service method, as returned by CloudWatch.</returns>
+        /// <exception cref="Amazon.CloudWatch.Model.DashboardInvalidInputErrorException">
+        /// Some part of the dashboard data is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatch.Model.InternalServiceException">
+        /// Request processing has failed due to some unknown error, exception, or failure.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/PutDashboard">REST API Reference for PutDashboard Operation</seealso>
+        public PutDashboardResponse PutDashboard(PutDashboardRequest request)
+        {
+            var marshaller = new PutDashboardRequestMarshaller();
+            var unmarshaller = PutDashboardResponseUnmarshaller.Instance;
+
+            return Invoke<PutDashboardRequest,PutDashboardResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutDashboard operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutDashboard operation on AmazonCloudWatchClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutDashboard
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/PutDashboard">REST API Reference for PutDashboard Operation</seealso>
+        public IAsyncResult BeginPutDashboard(PutDashboardRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new PutDashboardRequestMarshaller();
+            var unmarshaller = PutDashboardResponseUnmarshaller.Instance;
+
+            return BeginInvoke<PutDashboardRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  PutDashboard operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutDashboard.</param>
+        /// 
+        /// <returns>Returns a  PutDashboardResult from CloudWatch.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/PutDashboard">REST API Reference for PutDashboard Operation</seealso>
+        public  PutDashboardResponse EndPutDashboard(IAsyncResult asyncResult)
+        {
+            return EndInvoke<PutDashboardResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  PutMetricAlarm
 
         /// <summary>
@@ -861,8 +1122,7 @@ namespace Amazon.CloudWatch
         /// </para>
         ///  
         /// <para>
-        /// If you are an AWS Identity and Access Management (IAM) user, you must have Amazon
-        /// EC2 permissions for some operations:
+        /// If you are an IAM user, you must have Amazon EC2 permissions for some operations:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -885,29 +1145,28 @@ namespace Amazon.CloudWatch
         ///  </li> </ul> 
         /// <para>
         /// If you have read/write permissions for Amazon CloudWatch but not for Amazon EC2, you
-        /// can still create an alarm, but the stop or terminate actions won't be performed. However,
+        /// can still create an alarm, but the stop or terminate actions are not performed. However,
         /// if you are later granted the required permissions, the alarm actions that you created
-        /// earlier will be performed.
+        /// earlier are performed.
         /// </para>
         ///  
         /// <para>
-        /// If you are using an IAM role (for example, an Amazon EC2 instance profile), you cannot
-        /// stop or terminate the instance using alarm actions. However, you can still see the
-        /// alarm state and perform any other actions such as Amazon SNS notifications or Auto
-        /// Scaling policies.
+        /// If you are using an IAM role (for example, an EC2 instance profile), you cannot stop
+        /// or terminate the instance using alarm actions. However, you can still see the alarm
+        /// state and perform any other actions such as Amazon SNS notifications or Auto Scaling
+        /// policies.
         /// </para>
         ///  
         /// <para>
-        /// If you are using temporary security credentials granted using the AWS Security Token
-        /// Service (AWS STS), you cannot stop or terminate an Amazon EC2 instance using alarm
-        /// actions.
+        /// If you are using temporary security credentials granted using AWS STS, you cannot
+        /// stop or terminate an EC2 instance using alarm actions.
         /// </para>
         ///  
         /// <para>
-        /// Note that you must create at least one stop, terminate, or reboot alarm using the
-        /// Amazon EC2 or CloudWatch console to create the <b>EC2ActionsAccess</b> IAM role. After
-        /// this IAM role is created, you can create stop, terminate, or reboot alarms using a
-        /// command-line interface or an API.
+        /// You must create at least one stop, terminate, or reboot alarm using either the Amazon
+        /// EC2 or CloudWatch consoles to create the <b>EC2ActionsAccess</b> IAM role. After this
+        /// IAM role is created, you can create stop, terminate, or reboot alarms using a command-line
+        /// interface or API.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutMetricAlarm service method.</param>
@@ -964,10 +1223,10 @@ namespace Amazon.CloudWatch
         #region  PutMetricData
 
         /// <summary>
-        /// Publishes metric data points to Amazon CloudWatch. Amazon CloudWatch associates the
-        /// data points with the specified metric. If the specified metric does not exist, Amazon
-        /// CloudWatch creates the metric. When Amazon CloudWatch creates a metric, it can take
-        /// up to fifteen minutes for the metric to appear in calls to <a>ListMetrics</a>.
+        /// Publishes metric data points to Amazon CloudWatch. CloudWatch associates the data
+        /// points with the specified metric. If the specified metric does not exist, CloudWatch
+        /// creates the metric. When CloudWatch creates a metric, it can take up to fifteen minutes
+        /// for the metric to appear in calls to <a>ListMetrics</a>.
         /// 
         ///  
         /// <para>
@@ -977,14 +1236,14 @@ namespace Amazon.CloudWatch
         ///  
         /// <para>
         /// Although the <code>Value</code> parameter accepts numbers of type <code>Double</code>,
-        /// Amazon CloudWatch rejects values that are either too small or too large. Values must
-        /// be in the range of 8.515920e-109 to 1.174271e+108 (Base 10) or 2e-360 to 2e360 (Base
-        /// 2). In addition, special values (e.g., NaN, +Infinity, -Infinity) are not supported.
+        /// CloudWatch rejects values that are either too small or too large. Values must be in
+        /// the range of 8.515920e-109 to 1.174271e+108 (Base 10) or 2e-360 to 2e360 (Base 2).
+        /// In addition, special values (for example, NaN, +Infinity, -Infinity) are not supported.
         /// </para>
         ///  
         /// <para>
         /// You can use up to 10 dimensions per metric to further clarify what data the metric
-        /// collects. For more information on specifying dimensions, see <a href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/publishingMetrics.html">Publishing
+        /// collects. For more information about specifying dimensions, see <a href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/publishingMetrics.html">Publishing
         /// Metrics</a> in the <i>Amazon CloudWatch User Guide</i>.
         /// </para>
         ///  
@@ -995,16 +1254,16 @@ namespace Amazon.CloudWatch
         ///  
         /// <para>
         /// CloudWatch needs raw data points to calculate percentile statistics. If you publish
-        /// data using a statistic set instead, you cannot retrieve percentile statistics for
-        /// this data unless one of the following conditions is true:
+        /// data using a statistic set instead, you can only retrieve percentile statistics for
+        /// this data if one of the following conditions is true:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// The SampleCount of the statistic set is 1
+        /// The SampleCount value of the statistic set is 1
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// The Min and the Max of the statistic set are equal
+        /// The Min and the Max values of the statistic set are equal
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -1015,7 +1274,7 @@ namespace Amazon.CloudWatch
         /// Request processing has failed due to some unknown error, exception, or failure.
         /// </exception>
         /// <exception cref="Amazon.CloudWatch.Model.InvalidParameterCombinationException">
-        /// Parameters that cannot be used together were used together.
+        /// Parameters were used together that cannot be used together.
         /// </exception>
         /// <exception cref="Amazon.CloudWatch.Model.InvalidParameterValueException">
         /// The value of an input parameter is bad or out-of-range.
@@ -1075,9 +1334,9 @@ namespace Amazon.CloudWatch
         /// differs from the previous value, the action configured for the appropriate state is
         /// invoked. For example, if your alarm is configured to send an Amazon SNS message when
         /// an alarm is triggered, temporarily changing the alarm state to <code>ALARM</code>
-        /// sends an Amazon SNS message. The alarm returns to its actual state (often within seconds).
-        /// Because the alarm state change happens very quickly, it is typically only visible
-        /// in the alarm's <b>History</b> tab in the Amazon CloudWatch console or through <a>DescribeAlarmHistory</a>.
+        /// sends an SNS message. The alarm returns to its actual state (often within seconds).
+        /// Because the alarm state change happens quickly, it is typically only visible in the
+        /// alarm's <b>History</b> tab in the Amazon CloudWatch console or through <a>DescribeAlarmHistory</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SetAlarmState service method.</param>
         /// 

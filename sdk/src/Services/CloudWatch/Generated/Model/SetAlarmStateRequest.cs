@@ -33,9 +33,9 @@ namespace Amazon.CloudWatch.Model
     /// differs from the previous value, the action configured for the appropriate state is
     /// invoked. For example, if your alarm is configured to send an Amazon SNS message when
     /// an alarm is triggered, temporarily changing the alarm state to <code>ALARM</code>
-    /// sends an Amazon SNS message. The alarm returns to its actual state (often within seconds).
-    /// Because the alarm state change happens very quickly, it is typically only visible
-    /// in the alarm's <b>History</b> tab in the Amazon CloudWatch console or through <a>DescribeAlarmHistory</a>.
+    /// sends an SNS message. The alarm returns to its actual state (often within seconds).
+    /// Because the alarm state change happens quickly, it is typically only visible in the
+    /// alarm's <b>History</b> tab in the Amazon CloudWatch console or through <a>DescribeAlarmHistory</a>.
     /// </summary>
     public partial class SetAlarmStateRequest : AmazonCloudWatchRequest
     {

@@ -63,6 +63,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("CloudWatch")]
+        public void DeleteDashboardsMarshallTest()
+        {
+            var operation = service_model.FindOperation("DeleteDashboards");
+
+            var request = InstantiateClassGenerator.Execute<DeleteDashboardsRequest>();
+            var marshaller = new DeleteDashboardsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = DeleteDashboardsResponseUnmarshaller.Instance.Unmarshall(context)
+                as DeleteDashboardsResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("CloudWatch")]
         public void DescribeAlarmHistoryMarshallTest()
         {
             var operation = service_model.FindOperation("DescribeAlarmHistory");
@@ -173,6 +197,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("CloudWatch")]
+        public void GetDashboardMarshallTest()
+        {
+            var operation = service_model.FindOperation("GetDashboard");
+
+            var request = InstantiateClassGenerator.Execute<GetDashboardRequest>();
+            var marshaller = new GetDashboardRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = GetDashboardResponseUnmarshaller.Instance.Unmarshall(context)
+                as GetDashboardResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("CloudWatch")]
         public void GetMetricStatisticsMarshallTest()
         {
             var operation = service_model.FindOperation("GetMetricStatistics");
@@ -197,6 +245,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("CloudWatch")]
+        public void ListDashboardsMarshallTest()
+        {
+            var operation = service_model.FindOperation("ListDashboards");
+
+            var request = InstantiateClassGenerator.Execute<ListDashboardsRequest>();
+            var marshaller = new ListDashboardsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = ListDashboardsResponseUnmarshaller.Instance.Unmarshall(context)
+                as ListDashboardsResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("CloudWatch")]
         public void ListMetricsMarshallTest()
         {
             var operation = service_model.FindOperation("ListMetrics");
@@ -212,6 +284,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
             var response = ListMetricsResponseUnmarshaller.Instance.Unmarshall(context)
                 as ListMetricsResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("CloudWatch")]
+        public void PutDashboardMarshallTest()
+        {
+            var operation = service_model.FindOperation("PutDashboard");
+
+            var request = InstantiateClassGenerator.Execute<PutDashboardRequest>();
+            var marshaller = new PutDashboardRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = PutDashboardResponseUnmarshaller.Instance.Unmarshall(context)
+                as PutDashboardResponse;   
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
         }
 

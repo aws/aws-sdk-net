@@ -35,8 +35,7 @@ namespace Amazon.CloudWatch.Model
     /// 
     ///  
     /// <para>
-    /// Note that Amazon CloudWatch retains the history of an alarm even if you delete the
-    /// alarm.
+    /// CloudWatch retains the history of an alarm even if you delete the alarm.
     /// </para>
     /// </summary>
     public partial class DescribeAlarmHistoryRequest : AmazonCloudWatchRequest

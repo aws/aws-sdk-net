@@ -63,8 +63,7 @@ namespace Amazon.CloudWatch.Model
         /// <summary>
         /// Gets and sets the property AlarmNamePrefix. 
         /// <para>
-        /// The alarm name prefix. You cannot specify <code>AlarmNames</code> if this parameter
-        /// is specified.
+        /// The alarm name prefix. If this parameter is specified, you cannot specify <code>AlarmNames</code>.
         /// </para>
         /// </summary>
         public string AlarmNamePrefix

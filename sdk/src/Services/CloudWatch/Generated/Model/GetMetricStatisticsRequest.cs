@@ -37,11 +37,11 @@ namespace Amazon.CloudWatch.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    /// Data points with a period of 60 seconds (1 minute) are available for 15 days
+    /// Data points with a period of 60 seconds (1-minute) are available for 15 days
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Data points with a period of 300 seconds (5 minute) are available for 63 days
+    /// Data points with a period of 300 seconds (5-minute) are available for 63 days
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -50,39 +50,37 @@ namespace Amazon.CloudWatch.Model
     /// </para>
     ///  </li> </ul> 
     /// <para>
-    /// Note that CloudWatch started retaining 5-minute and 1-hour metric data as of 9 July
-    /// 2016.
+    /// CloudWatch started retaining 5-minute and 1-hour metric data as of July 9, 2016.
     /// </para>
     ///  
     /// <para>
     /// The maximum number of data points returned from a single call is 1,440. If you request
-    /// more than 1,440 data points, Amazon CloudWatch returns an error. To reduce the number
-    /// of data points, you can narrow the specified time range and make multiple requests
-    /// across adjacent time ranges, or you can increase the specified period. A period can
-    /// be as short as one minute (60 seconds). Note that data points are not returned in
-    /// chronological order.
+    /// more than 1,440 data points, CloudWatch returns an error. To reduce the number of
+    /// data points, you can narrow the specified time range and make multiple requests across
+    /// adjacent time ranges, or you can increase the specified period. A period can be as
+    /// short as one minute (60 seconds). Data points are not returned in chronological order.
     /// </para>
     ///  
     /// <para>
-    /// Amazon CloudWatch aggregates data points based on the length of the period that you
-    /// specify. For example, if you request statistics with a one-hour period, Amazon CloudWatch
-    /// aggregates all data points with time stamps that fall within each one-hour period.
-    /// Therefore, the number of values aggregated by CloudWatch is larger than the number
-    /// of data points returned.
+    /// CloudWatch aggregates data points based on the length of the period that you specify.
+    /// For example, if you request statistics with a one-hour period, CloudWatch aggregates
+    /// all data points with time stamps that fall within each one-hour period. Therefore,
+    /// the number of values aggregated by CloudWatch is larger than the number of data points
+    /// returned.
     /// </para>
     ///  
     /// <para>
     /// CloudWatch needs raw data points to calculate percentile statistics. If you publish
-    /// data using a statistic set instead, you cannot retrieve percentile statistics for
-    /// this data unless one of the following conditions is true:
+    /// data using a statistic set instead, you can only retrieve percentile statistics for
+    /// this data if one of the following conditions is true:
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    /// The SampleCount of the statistic set is 1
+    /// The SampleCount value of the statistic set is 1.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// The Min and the Max of the statistic set are equal
+    /// The Min and the Max values of the statistic set are equal.
     /// </para>
     ///  </li> </ul> 
     /// <para>
@@ -107,11 +105,11 @@ namespace Amazon.CloudWatch.Model
         /// <para>
         /// The dimensions. If the metric contains multiple dimensions, you must include a value
         /// for each dimension. CloudWatch treats each unique combination of dimensions as a separate
-        /// metric. You can't retrieve statistics using combinations of dimensions that were not
-        /// specially published. You must specify the same dimensions that were used when the
-        /// metrics were created. For an example, see <a href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch_concepts.html#dimension-combinations">Dimension
+        /// metric. If a specific combination of dimensions was not published, you can't retrieve
+        /// statistics for it. You must specify the same dimensions that were used when the metrics
+        /// were created. For an example, see <a href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch_concepts.html#dimension-combinations">Dimension
         /// Combinations</a> in the <i>Amazon CloudWatch User Guide</i>. For more information
-        /// on specifying dimensions, see <a href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/publishingMetrics.html">Publishing
+        /// about specifying dimensions, see <a href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/publishingMetrics.html">Publishing
         /// Metrics</a> in the <i>Amazon CloudWatch User Guide</i>.
         /// </para>
         /// </summary>
@@ -134,7 +132,7 @@ namespace Amazon.CloudWatch.Model
         /// </para>
         ///  
         /// <para>
-        /// The value specified is exclusive; results will include data points up to the specified
+        /// The value specified is exclusive; results include data points up to the specified
         /// time stamp. The time stamp must be in ISO 8601 UTC format (for example, 2016-10-10T23:00:00Z).
         /// </para>
         /// </summary>
@@ -153,7 +151,9 @@ namespace Amazon.CloudWatch.Model
         /// <summary>
         /// Gets and sets the property ExtendedStatistics. 
         /// <para>
-        /// The percentile statistics. Specify values between p0.0 and p100.
+        /// The percentile statistics. Specify values between p0.0 and p100. When calling <code>GetMetricStatistics</code>,
+        /// you must specify either <code>Statistics</code> or <code>ExtendedStatistics</code>,
+        /// but not both.
         /// </para>
         /// </summary>
         public List<string> ExtendedStatistics
@@ -208,7 +208,7 @@ namespace Amazon.CloudWatch.Model
         /// Gets and sets the property Period. 
         /// <para>
         /// The granularity, in seconds, of the returned data points. A period can be as short
-        /// as one minute (60 seconds) and must be a multiple of 60. The default value is 60.
+        /// as one minute (60 seconds) and must be a multiple of 60. 
         /// </para>
         ///  
         /// <para>
@@ -241,8 +241,8 @@ namespace Amazon.CloudWatch.Model
         /// <summary>
         /// Gets and sets the property StartTime. 
         /// <para>
-        /// The time stamp that determines the first data point to return. Note that start times
-        /// are evaluated relative to the time that CloudWatch receives the request.
+        /// The time stamp that determines the first data point to return. Start times are evaluated
+        /// relative to the time that CloudWatch receives the request.
         /// </para>
         ///  
         /// <para>
@@ -285,7 +285,9 @@ namespace Amazon.CloudWatch.Model
         /// <summary>
         /// Gets and sets the property Statistics. 
         /// <para>
-        /// The metric statistics, other than percentile. For percentile statistics, use <code>ExtendedStatistic</code>.
+        /// The metric statistics, other than percentile. For percentile statistics, use <code>ExtendedStatistics</code>.
+        /// When calling <code>GetMetricStatistics</code>, you must specify either <code>Statistics</code>
+        /// or <code>ExtendedStatistics</code>, but not both.
         /// </para>
         /// </summary>
         public List<string> Statistics
