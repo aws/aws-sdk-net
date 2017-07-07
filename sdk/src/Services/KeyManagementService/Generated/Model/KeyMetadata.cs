@@ -46,6 +46,7 @@ namespace Amazon.KeyManagementService.Model
         private bool? _enabled;
         private ExpirationModelType _expirationModel;
         private string _keyId;
+        private KeyManagerType _keyManager;
         private KeyState _keyState;
         private KeyUsageType _keyUsage;
         private OriginType _origin;
@@ -199,6 +200,26 @@ namespace Amazon.KeyManagementService.Model
         internal bool IsSetKeyId()
         {
             return this._keyId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property KeyManager. 
+        /// <para>
+        /// The CMK's manager. CMKs are either customer-managed or AWS-managed. For more information
+        /// about the difference, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#master_keys">Customer
+        /// Master Keys</a> in the <i>AWS Key Management Service Developer Guide</i>.
+        /// </para>
+        /// </summary>
+        public KeyManagerType KeyManager
+        {
+            get { return this._keyManager; }
+            set { this._keyManager = value; }
+        }
+
+        // Check to see if KeyManager property is set
+        internal bool IsSetKeyManager()
+        {
+            return this._keyManager != null;
         }
 
         /// <summary>

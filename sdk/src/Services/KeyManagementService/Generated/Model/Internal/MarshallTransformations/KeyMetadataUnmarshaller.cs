@@ -112,6 +112,12 @@ namespace Amazon.KeyManagementService.Model.Internal.MarshallTransformations
                     unmarshalledObject.KeyId = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("KeyManager", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.KeyManager = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("KeyState", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
