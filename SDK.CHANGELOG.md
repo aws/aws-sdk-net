@@ -9,6 +9,8 @@
 * Core 3.3.16.0
 	* AWSSDK.Core package's dependency update
 	* All services packages updated to require new Core
+* AWSSDK.Extensions.NETCore.Setup (3.3.3)
+	* Updated package dependencies: more accurate version range of AWSSDK.Core and latest Microsoft.Extensions packages.
 
 ### 3.3.117.0 (2017-06-30 19:03 UTC)
 * AWSMarketplaceCommerceAnalytics (3.3.3.9)
