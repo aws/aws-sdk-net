@@ -36,6 +36,7 @@ namespace Amazon.SimpleSystemsManagement.Model
     {
         private PatchRuleGroup _approvalRules;
         private List<string> _approvedPatches = new List<string>();
+        private PatchComplianceLevel _approvedPatchesComplianceLevel;
         private string _baselineId;
         private string _description;
         private PatchFilterGroup _globalFilters;
@@ -76,6 +77,24 @@ namespace Amazon.SimpleSystemsManagement.Model
         internal bool IsSetApprovedPatches()
         {
             return this._approvedPatches != null && this._approvedPatches.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ApprovedPatchesComplianceLevel. 
+        /// <para>
+        /// Assigns a new compliance severity level to an existing patch baseline.
+        /// </para>
+        /// </summary>
+        public PatchComplianceLevel ApprovedPatchesComplianceLevel
+        {
+            get { return this._approvedPatchesComplianceLevel; }
+            set { this._approvedPatchesComplianceLevel = value; }
+        }
+
+        // Check to see if ApprovedPatchesComplianceLevel property is set
+        internal bool IsSetApprovedPatchesComplianceLevel()
+        {
+            return this._approvedPatchesComplianceLevel != null;
         }
 
         /// <summary>

@@ -30,7 +30,7 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// <summary>
     /// Container for the parameters to the DescribeEffectivePatchesForPatchBaseline operation.
     /// Retrieves the current effective patches (the patch and the approval state) for the
-    /// specified patch baseline.
+    /// specified patch baseline. Note that this API applies only to Windows patch baselines.
     /// </summary>
     public partial class DescribeEffectivePatchesForPatchBaselineRequest : AmazonSimpleSystemsManagementRequest
     {

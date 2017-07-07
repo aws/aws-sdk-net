@@ -57,6 +57,12 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
                     response.InstanceId = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("Product", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.Product = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("SnapshotDownloadUrl", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -87,6 +93,10 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
             if (errorResponse.Code != null && errorResponse.Code.Equals("InternalServerError"))
             {
                 return new InternalServerErrorException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("UnsupportedOperatingSystem"))
+            {
+                return new UnsupportedOperatingSystemException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
             return new AmazonSimpleSystemsManagementException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }

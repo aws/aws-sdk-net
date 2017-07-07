@@ -30,7 +30,7 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// <summary>
     /// Container for the parameters to the GetDeployablePatchSnapshotForInstance operation.
     /// Retrieves the current snapshot for the patch baseline the instance uses. This API
-    /// is primarily used by the AWS-ApplyPatchBaseline Systems Manager document.
+    /// is primarily used by the AWS-RunPatchBaseline Systems Manager document.
     /// </summary>
     public partial class GetDeployablePatchSnapshotForInstanceRequest : AmazonSimpleSystemsManagementRequest
     {

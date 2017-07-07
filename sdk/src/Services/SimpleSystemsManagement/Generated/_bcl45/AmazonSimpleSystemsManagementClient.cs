@@ -1307,8 +1307,8 @@ namespace Amazon.SimpleSystemsManagement
         /// encryption in Amazon S3 to ensure secure data storage. We also recommend that you
         /// secure access to the Amazon S3 bucket by creating a restrictive bucket policy. To
         /// view an example of a restrictive Amazon S3 bucket policy for Resource Data Sync, see
-        /// <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-inventory-datasync-create.html">Creating
-        /// a Resource Data Sync</a>.
+        /// <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-inventory-configuring.html#sysman-inventory-datasync">Configuring
+        /// Resource Data Sync for Inventory</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateResourceDataSync service method.</param>
@@ -2710,7 +2710,7 @@ namespace Amazon.SimpleSystemsManagement
 
         /// <summary>
         /// Retrieves the current effective patches (the patch and the approval state) for the
-        /// specified patch baseline.
+        /// specified patch baseline. Note that this API applies only to Windows patch baselines.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeEffectivePatchesForPatchBaseline service method.</param>
         /// 
@@ -2724,6 +2724,11 @@ namespace Amazon.SimpleSystemsManagement
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidResourceIdException">
         /// The resource ID is not valid. Verify that you entered the correct ID and try again.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.UnsupportedOperatingSystemException">
+        /// The operating systems you specified is not supported, or the operation is not supported
+        /// for the operating system. Valid operating systems include: Windows, AmazonLinux, RedhatEnterpriseLinux,
+        /// and Ubuntu.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeEffectivePatchesForPatchBaseline">REST API Reference for DescribeEffectivePatchesForPatchBaseline Operation</seealso>
         public DescribeEffectivePatchesForPatchBaselineResponse DescribeEffectivePatchesForPatchBaseline(DescribeEffectivePatchesForPatchBaselineRequest request)
@@ -3759,7 +3764,9 @@ namespace Amazon.SimpleSystemsManagement
 
 
         /// <summary>
-        /// Retrieves the default patch baseline.
+        /// Retrieves the default patch baseline. Note that Systems Manager supports creating
+        /// multiple default patch baselines. For example, you can create a default patch baseline
+        /// for each operating system.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetDefaultPatchBaseline service method.</param>
         /// 
@@ -3802,13 +3809,18 @@ namespace Amazon.SimpleSystemsManagement
 
         /// <summary>
         /// Retrieves the current snapshot for the patch baseline the instance uses. This API
-        /// is primarily used by the AWS-ApplyPatchBaseline Systems Manager document.
+        /// is primarily used by the AWS-RunPatchBaseline Systems Manager document.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetDeployablePatchSnapshotForInstance service method.</param>
         /// 
         /// <returns>The response from the GetDeployablePatchSnapshotForInstance service method, as returned by SimpleSystemsManagement.</returns>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
         /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.UnsupportedOperatingSystemException">
+        /// The operating systems you specified is not supported, or the operation is not supported
+        /// for the operating system. Valid operating systems include: Windows, AmazonLinux, RedhatEnterpriseLinux,
+        /// and Ubuntu.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetDeployablePatchSnapshotForInstance">REST API Reference for GetDeployablePatchSnapshotForInstance Operation</seealso>
         public GetDeployablePatchSnapshotForInstanceResponse GetDeployablePatchSnapshotForInstance(GetDeployablePatchSnapshotForInstanceRequest request)

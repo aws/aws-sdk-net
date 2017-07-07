@@ -89,6 +89,12 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
+                if(publicRequest.IsSetApprovedPatchesComplianceLevel())
+                {
+                    context.Writer.WritePropertyName("ApprovedPatchesComplianceLevel");
+                    context.Writer.Write(publicRequest.ApprovedPatchesComplianceLevel);
+                }
+
                 if(publicRequest.IsSetClientToken())
                 {
                     context.Writer.WritePropertyName("ClientToken");
@@ -121,6 +127,12 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
                 {
                     context.Writer.WritePropertyName("Name");
                     context.Writer.Write(publicRequest.Name);
+                }
+
+                if(publicRequest.IsSetOperatingSystem())
+                {
+                    context.Writer.WritePropertyName("OperatingSystem");
+                    context.Writer.Write(publicRequest.OperatingSystem);
                 }
 
                 if(publicRequest.IsSetRejectedPatches())

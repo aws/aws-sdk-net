@@ -67,6 +67,12 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetOperatingSystem())
+                {
+                    context.Writer.WritePropertyName("OperatingSystem");
+                    context.Writer.Write(publicRequest.OperatingSystem);
+                }
+
                 if(publicRequest.IsSetPatchGroup())
                 {
                     context.Writer.WritePropertyName("PatchGroup");

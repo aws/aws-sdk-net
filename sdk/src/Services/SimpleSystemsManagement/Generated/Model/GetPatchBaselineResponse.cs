@@ -34,12 +34,14 @@ namespace Amazon.SimpleSystemsManagement.Model
     {
         private PatchRuleGroup _approvalRules;
         private List<string> _approvedPatches = new List<string>();
+        private PatchComplianceLevel _approvedPatchesComplianceLevel;
         private string _baselineId;
         private DateTime? _createdDate;
         private string _description;
         private PatchFilterGroup _globalFilters;
         private DateTime? _modifiedDate;
         private string _name;
+        private OperatingSystem _operatingSystem;
         private List<string> _patchGroups = new List<string>();
         private List<string> _rejectedPatches = new List<string>();
 
@@ -77,6 +79,25 @@ namespace Amazon.SimpleSystemsManagement.Model
         internal bool IsSetApprovedPatches()
         {
             return this._approvedPatches != null && this._approvedPatches.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ApprovedPatchesComplianceLevel. 
+        /// <para>
+        /// Returns the specified compliance severity level for approved patches in the patch
+        /// baseline.
+        /// </para>
+        /// </summary>
+        public PatchComplianceLevel ApprovedPatchesComplianceLevel
+        {
+            get { return this._approvedPatchesComplianceLevel; }
+            set { this._approvedPatchesComplianceLevel = value; }
+        }
+
+        // Check to see if ApprovedPatchesComplianceLevel property is set
+        internal bool IsSetApprovedPatchesComplianceLevel()
+        {
+            return this._approvedPatchesComplianceLevel != null;
         }
 
         /// <summary>
@@ -185,6 +206,24 @@ namespace Amazon.SimpleSystemsManagement.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OperatingSystem. 
+        /// <para>
+        /// Returns the operating system specified for the patch baseline.
+        /// </para>
+        /// </summary>
+        public OperatingSystem OperatingSystem
+        {
+            get { return this._operatingSystem; }
+            set { this._operatingSystem = value; }
+        }
+
+        // Check to see if OperatingSystem property is set
+        internal bool IsSetOperatingSystem()
+        {
+            return this._operatingSystem != null;
         }
 
         /// <summary>

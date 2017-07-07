@@ -36,6 +36,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         private string _baselineId;
         private string _baselineName;
         private bool? _defaultBaseline;
+        private OperatingSystem _operatingSystem;
 
         /// <summary>
         /// Gets and sets the property BaselineDescription. 
@@ -94,7 +95,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property DefaultBaseline. 
         /// <para>
-        /// Whether this is the default baseline.
+        /// Whether this is the default baseline. Note that Systems Manager supports creating
+        /// multiple default patch baselines. For example, you can create a default patch baseline
+        /// for each operating system.
         /// </para>
         /// </summary>
         public bool DefaultBaseline
@@ -107,6 +110,26 @@ namespace Amazon.SimpleSystemsManagement.Model
         internal bool IsSetDefaultBaseline()
         {
             return this._defaultBaseline.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property OperatingSystem. 
+        /// <para>
+        /// Defines the operating system the patch baseline applies to. Supported operating systems
+        /// include WINDOWS, AMAZON_LINUX, UBUNTU and REDHAT_ENTERPRISE_LINUX. The Default value
+        /// is WINDOWS. 
+        /// </para>
+        /// </summary>
+        public OperatingSystem OperatingSystem
+        {
+            get { return this._operatingSystem; }
+            set { this._operatingSystem = value; }
+        }
+
+        // Check to see if OperatingSystem property is set
+        internal bool IsSetOperatingSystem()
+        {
+            return this._operatingSystem != null;
         }
 
     }

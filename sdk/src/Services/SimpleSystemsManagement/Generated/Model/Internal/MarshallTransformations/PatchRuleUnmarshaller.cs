@@ -70,6 +70,12 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
                     unmarshalledObject.ApproveAfterDays = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ComplianceLevel", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ComplianceLevel = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("PatchFilterGroup", targetDepth))
                 {
                     var unmarshaller = PatchFilterGroupUnmarshaller.Instance;

@@ -33,6 +33,7 @@ namespace Amazon.SimpleSystemsManagement.Model
     public partial class GetDeployablePatchSnapshotForInstanceResponse : AmazonWebServiceResponse
     {
         private string _instanceId;
+        private string _product;
         private string _snapshotDownloadUrl;
         private string _snapshotId;
 
@@ -52,6 +53,25 @@ namespace Amazon.SimpleSystemsManagement.Model
         internal bool IsSetInstanceId()
         {
             return this._instanceId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Product. 
+        /// <para>
+        /// Returns the specific operating system (for example Windows Server 2012 or Amazon Linux
+        /// 2015.09) on the instance for the specified patch snapshot.
+        /// </para>
+        /// </summary>
+        public string Product
+        {
+            get { return this._product; }
+            set { this._product = value; }
+        }
+
+        // Check to see if Product property is set
+        internal bool IsSetProduct()
+        {
+            return this._product != null;
         }
 
         /// <summary>

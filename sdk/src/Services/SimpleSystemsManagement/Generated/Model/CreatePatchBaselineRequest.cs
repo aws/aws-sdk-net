@@ -35,10 +35,12 @@ namespace Amazon.SimpleSystemsManagement.Model
     {
         private PatchRuleGroup _approvalRules;
         private List<string> _approvedPatches = new List<string>();
+        private PatchComplianceLevel _approvedPatchesComplianceLevel;
         private string _clientToken;
         private string _description;
         private PatchFilterGroup _globalFilters;
         private string _name;
+        private OperatingSystem _operatingSystem;
         private List<string> _rejectedPatches = new List<string>();
 
         /// <summary>
@@ -75,6 +77,27 @@ namespace Amazon.SimpleSystemsManagement.Model
         internal bool IsSetApprovedPatches()
         {
             return this._approvedPatches != null && this._approvedPatches.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ApprovedPatchesComplianceLevel. 
+        /// <para>
+        /// Defines the compliance level for approved patches. This means that if an approved
+        /// patch is reported as missing, this is the severity of the compliance violation. Valid
+        /// compliance severity levels include the following: CRITICAL, HIGH, MEDIUM, LOW, INFORMATIONAL,
+        /// UNSPECIFIED. The default value is UNSPECIFIED.
+        /// </para>
+        /// </summary>
+        public PatchComplianceLevel ApprovedPatchesComplianceLevel
+        {
+            get { return this._approvedPatchesComplianceLevel; }
+            set { this._approvedPatchesComplianceLevel = value; }
+        }
+
+        // Check to see if ApprovedPatchesComplianceLevel property is set
+        internal bool IsSetApprovedPatchesComplianceLevel()
+        {
+            return this._approvedPatchesComplianceLevel != null;
         }
 
         /// <summary>
@@ -147,6 +170,26 @@ namespace Amazon.SimpleSystemsManagement.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OperatingSystem. 
+        /// <para>
+        /// Defines the operating system the patch baseline applies to. Supported operating systems
+        /// include WINDOWS, AMAZON_LINUX, UBUNTU and REDHAT_ENTERPRISE_LINUX. The Default value
+        /// is WINDOWS.
+        /// </para>
+        /// </summary>
+        public OperatingSystem OperatingSystem
+        {
+            get { return this._operatingSystem; }
+            set { this._operatingSystem = value; }
+        }
+
+        // Check to see if OperatingSystem property is set
+        internal bool IsSetOperatingSystem()
+        {
+            return this._operatingSystem != null;
         }
 
         /// <summary>

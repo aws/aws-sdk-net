@@ -33,6 +33,7 @@ namespace Amazon.SimpleSystemsManagement.Model
     public partial class GetDefaultPatchBaselineResponse : AmazonWebServiceResponse
     {
         private string _baselineId;
+        private OperatingSystem _operatingSystem;
 
         /// <summary>
         /// Gets and sets the property BaselineId. 
@@ -50,6 +51,24 @@ namespace Amazon.SimpleSystemsManagement.Model
         internal bool IsSetBaselineId()
         {
             return this._baselineId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OperatingSystem. 
+        /// <para>
+        /// The operating system for the returned patch baseline. 
+        /// </para>
+        /// </summary>
+        public OperatingSystem OperatingSystem
+        {
+            get { return this._operatingSystem; }
+            set { this._operatingSystem = value; }
+        }
+
+        // Check to see if OperatingSystem property is set
+        internal bool IsSetOperatingSystem()
+        {
+            return this._operatingSystem != null;
         }
 
     }

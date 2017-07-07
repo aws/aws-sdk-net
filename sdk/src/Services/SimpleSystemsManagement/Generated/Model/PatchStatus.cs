@@ -33,6 +33,7 @@ namespace Amazon.SimpleSystemsManagement.Model
     public partial class PatchStatus
     {
         private DateTime? _approvalDate;
+        private PatchComplianceLevel _complianceLevel;
         private PatchDeploymentStatus _deploymentStatus;
 
         /// <summary>
@@ -51,6 +52,24 @@ namespace Amazon.SimpleSystemsManagement.Model
         internal bool IsSetApprovalDate()
         {
             return this._approvalDate.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ComplianceLevel. 
+        /// <para>
+        /// The compliance severity level for a patch.
+        /// </para>
+        /// </summary>
+        public PatchComplianceLevel ComplianceLevel
+        {
+            get { return this._complianceLevel; }
+            set { this._complianceLevel = value; }
+        }
+
+        // Check to see if ComplianceLevel property is set
+        internal bool IsSetComplianceLevel()
+        {
+            return this._complianceLevel != null;
         }
 
         /// <summary>

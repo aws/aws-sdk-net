@@ -63,6 +63,12 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
                     response.ApprovedPatches = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ApprovedPatchesComplianceLevel", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.ApprovedPatchesComplianceLevel = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("BaselineId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -97,6 +103,12 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.Name = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("OperatingSystem", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.OperatingSystem = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("RejectedPatches", targetDepth))

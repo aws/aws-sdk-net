@@ -33,6 +33,7 @@ namespace Amazon.SimpleSystemsManagement.Model
     public partial class PatchRule
     {
         private int? _approveAfterDays;
+        private PatchComplianceLevel _complianceLevel;
         private PatchFilterGroup _patchFilterGroup;
 
         /// <summary>
@@ -52,6 +53,26 @@ namespace Amazon.SimpleSystemsManagement.Model
         internal bool IsSetApproveAfterDays()
         {
             return this._approveAfterDays.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ComplianceLevel. 
+        /// <para>
+        /// A compliance severity level for all approved patches in a patch baseline. Valid compliance
+        /// severity levels include the following: Unspecified, Critical, High, Medium, Low, and
+        /// Informational.
+        /// </para>
+        /// </summary>
+        public PatchComplianceLevel ComplianceLevel
+        {
+            get { return this._complianceLevel; }
+            set { this._complianceLevel = value; }
+        }
+
+        // Check to see if ComplianceLevel property is set
+        internal bool IsSetComplianceLevel()
+        {
+            return this._complianceLevel != null;
         }
 
         /// <summary>

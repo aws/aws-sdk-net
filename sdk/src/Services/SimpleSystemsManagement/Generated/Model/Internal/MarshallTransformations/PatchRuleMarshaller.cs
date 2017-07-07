@@ -51,6 +51,12 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.ApproveAfterDays);
             }
 
+            if(requestObject.IsSetComplianceLevel())
+            {
+                context.Writer.WritePropertyName("ComplianceLevel");
+                context.Writer.Write(requestObject.ComplianceLevel);
+            }
+
             if(requestObject.IsSetPatchFilterGroup())
             {
                 context.Writer.WritePropertyName("PatchFilterGroup");

@@ -57,6 +57,12 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
                     response.BaselineId = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("OperatingSystem", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.OperatingSystem = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
 
             return response;

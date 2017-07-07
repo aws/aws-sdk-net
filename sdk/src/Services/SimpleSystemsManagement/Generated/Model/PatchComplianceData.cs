@@ -61,7 +61,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property InstalledTime. 
         /// <para>
-        /// The date/time the patch was installed on the instance.
+        /// The date/time the patch was installed on the instance. Note that not all operating
+        /// systems provide this level of information.
         /// </para>
         /// </summary>
         public DateTime InstalledTime
@@ -79,7 +80,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property KBId. 
         /// <para>
-        /// The Microsoft Knowledge Base ID of the patch.
+        /// The operating system-specific ID of the patch.
         /// </para>
         /// </summary>
         public string KBId

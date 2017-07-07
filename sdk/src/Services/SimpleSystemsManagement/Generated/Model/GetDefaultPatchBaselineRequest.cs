@@ -29,10 +29,31 @@ namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
     /// Container for the parameters to the GetDefaultPatchBaseline operation.
-    /// Retrieves the default patch baseline.
+    /// Retrieves the default patch baseline. Note that Systems Manager supports creating
+    /// multiple default patch baselines. For example, you can create a default patch baseline
+    /// for each operating system.
     /// </summary>
     public partial class GetDefaultPatchBaselineRequest : AmazonSimpleSystemsManagementRequest
     {
+        private OperatingSystem _operatingSystem;
+
+        /// <summary>
+        /// Gets and sets the property OperatingSystem. 
+        /// <para>
+        /// Returns the default patch baseline for the specified operating system.
+        /// </para>
+        /// </summary>
+        public OperatingSystem OperatingSystem
+        {
+            get { return this._operatingSystem; }
+            set { this._operatingSystem = value; }
+        }
+
+        // Check to see if OperatingSystem property is set
+        internal bool IsSetOperatingSystem()
+        {
+            return this._operatingSystem != null;
+        }
 
     }
 }

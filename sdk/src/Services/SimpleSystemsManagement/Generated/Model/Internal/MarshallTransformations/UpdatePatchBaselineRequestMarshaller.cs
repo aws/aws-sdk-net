@@ -89,6 +89,12 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
+                if(publicRequest.IsSetApprovedPatchesComplianceLevel())
+                {
+                    context.Writer.WritePropertyName("ApprovedPatchesComplianceLevel");
+                    context.Writer.Write(publicRequest.ApprovedPatchesComplianceLevel);
+                }
+
                 if(publicRequest.IsSetBaselineId())
                 {
                     context.Writer.WritePropertyName("BaselineId");
