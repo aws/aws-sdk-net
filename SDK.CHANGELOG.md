@@ -1,3 +1,17 @@
+### 3.3.120.0 (2017-07-07 19:52 UTC)
+* DirectoryService (3.3.2.0)
+	* You can now improve the resilience and performance of your Microsoft AD directory by deploying additional domain controllers. Added UpdateNumberofDomainControllers API that allows you to update the number of domain controllers you want for your directory, and DescribeDomainControllers API that allows you to describe the detailed information of each domain controller of your directory. Also added the 'DesiredNumberOfDomainControllers' field to the DescribeDirectories API output for Microsoft AD.
+* KeyManagementService (3.3.3.0)
+	* This release of AWS Key Management Service introduces the ability to determine whether a key is AWS managed or customer managed.
+* Kinesis (3.3.3.0)
+	* You can now encrypt your data at rest within an Amazon Kinesis Stream using server-side encryption. Server-side encryption via AWS KMS makes it easy for customers to meet strict data management requirements by encrypting their data at rest within the Amazon Kinesis Streams, a fully managed real-time data processing service.
+* SimpleSystemsManagement (3.3.7.0)
+	* Amazon EC2 Systems Manager now expands Patching support to Amazon Linux, Red Hat and Ubuntu in addition to the already supported Windows Server.
+* Core 3.3.17.1
+	* ECS/ECR now available in BJS
+
+
+
 ### 3.3.119.0 (2017-07-07 01:29 UTC)
 * Core 3.3.17.0
 	* Fix dependency issues introduced by VS2017 migration
