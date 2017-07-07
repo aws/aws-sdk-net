@@ -53,6 +53,14 @@
 <#
     }
 #>
+<#
+    if (string.Compare(this.Session["TargetFramework"].ToString(), "netstandard1.3") == 0)
+    {
+#>
+    <NetStandardImplicitPackageVersion>1.6.0</NetStandardImplicitPackageVersion>
+<#
+    }
+#>
   </PropertyGroup>
 
 <#

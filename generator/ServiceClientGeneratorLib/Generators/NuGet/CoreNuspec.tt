@@ -61,8 +61,8 @@
 #>
       <group targetFramework="netstandard1.3">
         <dependency id="System.Net.Requests" version="4.0.11" />
-        <dependency id="System.Reflection.TypeExtensions" version="4.3.0" />
-        <dependency id="System.Security.Cryptography.Csp" version="4.3.0" />
+        <dependency id="System.Reflection.TypeExtensions" version="4.1.0" />
+        <dependency id="System.Security.Cryptography.Csp" version="4.0.0" />
         <dependency id="System.Threading.Thread" version="4.0.0" />
         <dependency id="Microsoft.CSharp" version="4.0.1" />
       </group>
