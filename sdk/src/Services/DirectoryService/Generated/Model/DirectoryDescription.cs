@@ -36,6 +36,7 @@ namespace Amazon.DirectoryService.Model
         private string _alias;
         private DirectoryConnectSettingsDescription _connectSettings;
         private string _description;
+        private int? _desiredNumberOfDomainControllers;
         private string _directoryId;
         private List<string> _dnsIpAddrs = new List<string>();
         private DateTime? _launchTime;
@@ -126,6 +127,25 @@ namespace Amazon.DirectoryService.Model
         internal bool IsSetDescription()
         {
             return this._description != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DesiredNumberOfDomainControllers. 
+        /// <para>
+        /// The desired number of domain controllers in the directory if the directory is Microsoft
+        /// AD.
+        /// </para>
+        /// </summary>
+        public int DesiredNumberOfDomainControllers
+        {
+            get { return this._desiredNumberOfDomainControllers.GetValueOrDefault(); }
+            set { this._desiredNumberOfDomainControllers = value; }
+        }
+
+        // Check to see if DesiredNumberOfDomainControllers property is set
+        internal bool IsSetDesiredNumberOfDomainControllers()
+        {
+            return this._desiredNumberOfDomainControllers.HasValue; 
         }
 
         /// <summary>

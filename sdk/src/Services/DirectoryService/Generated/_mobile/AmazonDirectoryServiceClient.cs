@@ -876,6 +876,38 @@ namespace Amazon.DirectoryService
 
         #endregion
         
+        #region  DescribeDomainControllers
+
+        internal DescribeDomainControllersResponse DescribeDomainControllers(DescribeDomainControllersRequest request)
+        {
+            var marshaller = new DescribeDomainControllersRequestMarshaller();
+            var unmarshaller = DescribeDomainControllersResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeDomainControllersRequest,DescribeDomainControllersResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeDomainControllers operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeDomainControllers operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DescribeDomainControllers">REST API Reference for DescribeDomainControllers Operation</seealso>
+        public Task<DescribeDomainControllersResponse> DescribeDomainControllersAsync(DescribeDomainControllersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DescribeDomainControllersRequestMarshaller();
+            var unmarshaller = DescribeDomainControllersResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeDomainControllersRequest,DescribeDomainControllersResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DescribeEventTopics
 
         internal DescribeEventTopicsResponse DescribeEventTopics(DescribeEventTopicsRequest request)
@@ -1475,6 +1507,38 @@ namespace Amazon.DirectoryService
             var unmarshaller = UpdateConditionalForwarderResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdateConditionalForwarderRequest,UpdateConditionalForwarderResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateNumberOfDomainControllers
+
+        internal UpdateNumberOfDomainControllersResponse UpdateNumberOfDomainControllers(UpdateNumberOfDomainControllersRequest request)
+        {
+            var marshaller = new UpdateNumberOfDomainControllersRequestMarshaller();
+            var unmarshaller = UpdateNumberOfDomainControllersResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateNumberOfDomainControllersRequest,UpdateNumberOfDomainControllersResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateNumberOfDomainControllers operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateNumberOfDomainControllers operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/UpdateNumberOfDomainControllers">REST API Reference for UpdateNumberOfDomainControllers Operation</seealso>
+        public Task<UpdateNumberOfDomainControllersResponse> UpdateNumberOfDomainControllersAsync(UpdateNumberOfDomainControllersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new UpdateNumberOfDomainControllersRequestMarshaller();
+            var unmarshaller = UpdateNumberOfDomainControllersResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateNumberOfDomainControllersRequest,UpdateNumberOfDomainControllersResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 

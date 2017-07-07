@@ -125,7 +125,11 @@ namespace Amazon.DirectoryService.Model
         }
 
         /// <summary>
-        /// Gets and sets the property VpcSettings.
+        /// Gets and sets the property VpcSettings. 
+        /// <para>
+        /// Contains VPC information for the <a>CreateDirectory</a> or <a>CreateMicrosoftAD</a>
+        /// operation.
+        /// </para>
         /// </summary>
         public DirectoryVpcSettings VpcSettings
         {

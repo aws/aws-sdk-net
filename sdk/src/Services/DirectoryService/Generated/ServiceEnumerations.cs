@@ -215,6 +215,76 @@ namespace Amazon.DirectoryService
 
 
     /// <summary>
+    /// Constants used for properties of type DomainControllerStatus.
+    /// </summary>
+    public class DomainControllerStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Active for DomainControllerStatus
+        /// </summary>
+        public static readonly DomainControllerStatus Active = new DomainControllerStatus("Active");
+        /// <summary>
+        /// Constant Creating for DomainControllerStatus
+        /// </summary>
+        public static readonly DomainControllerStatus Creating = new DomainControllerStatus("Creating");
+        /// <summary>
+        /// Constant Deleted for DomainControllerStatus
+        /// </summary>
+        public static readonly DomainControllerStatus Deleted = new DomainControllerStatus("Deleted");
+        /// <summary>
+        /// Constant Deleting for DomainControllerStatus
+        /// </summary>
+        public static readonly DomainControllerStatus Deleting = new DomainControllerStatus("Deleting");
+        /// <summary>
+        /// Constant Failed for DomainControllerStatus
+        /// </summary>
+        public static readonly DomainControllerStatus Failed = new DomainControllerStatus("Failed");
+        /// <summary>
+        /// Constant Impaired for DomainControllerStatus
+        /// </summary>
+        public static readonly DomainControllerStatus Impaired = new DomainControllerStatus("Impaired");
+        /// <summary>
+        /// Constant Restoring for DomainControllerStatus
+        /// </summary>
+        public static readonly DomainControllerStatus Restoring = new DomainControllerStatus("Restoring");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DomainControllerStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DomainControllerStatus FindValue(string value)
+        {
+            return FindValue<DomainControllerStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DomainControllerStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type IpRouteStatusMsg.
     /// </summary>
     public class IpRouteStatusMsg : ConstantClass
