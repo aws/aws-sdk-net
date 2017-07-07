@@ -938,6 +938,70 @@ namespace Amazon.Kinesis
 
         #endregion
         
+        #region  StartStreamEncryption
+
+        internal StartStreamEncryptionResponse StartStreamEncryption(StartStreamEncryptionRequest request)
+        {
+            var marshaller = new StartStreamEncryptionRequestMarshaller();
+            var unmarshaller = StartStreamEncryptionResponseUnmarshaller.Instance;
+
+            return Invoke<StartStreamEncryptionRequest,StartStreamEncryptionResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StartStreamEncryption operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StartStreamEncryption operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/StartStreamEncryption">REST API Reference for StartStreamEncryption Operation</seealso>
+        public Task<StartStreamEncryptionResponse> StartStreamEncryptionAsync(StartStreamEncryptionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new StartStreamEncryptionRequestMarshaller();
+            var unmarshaller = StartStreamEncryptionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<StartStreamEncryptionRequest,StartStreamEncryptionResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  StopStreamEncryption
+
+        internal StopStreamEncryptionResponse StopStreamEncryption(StopStreamEncryptionRequest request)
+        {
+            var marshaller = new StopStreamEncryptionRequestMarshaller();
+            var unmarshaller = StopStreamEncryptionResponseUnmarshaller.Instance;
+
+            return Invoke<StopStreamEncryptionRequest,StopStreamEncryptionResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StopStreamEncryption operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StopStreamEncryption operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/StopStreamEncryption">REST API Reference for StopStreamEncryption Operation</seealso>
+        public Task<StopStreamEncryptionResponse> StopStreamEncryptionAsync(StopStreamEncryptionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new StopStreamEncryptionRequestMarshaller();
+            var unmarshaller = StopStreamEncryptionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<StopStreamEncryptionRequest,StopStreamEncryptionResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  UpdateShardCount
 
         internal UpdateShardCountResponse UpdateShardCount(UpdateShardCountRequest request)

@@ -804,6 +804,62 @@ namespace Amazon.Kinesis
 
         #endregion
         
+        #region  StartStreamEncryption
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StartStreamEncryption operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StartStreamEncryption operation on AmazonKinesisClient.</param>
+        /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+        /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/StartStreamEncryption">REST API Reference for StartStreamEncryption Operation</seealso>
+        public void StartStreamEncryptionAsync(StartStreamEncryptionRequest request, AmazonServiceCallback<StartStreamEncryptionRequest, StartStreamEncryptionResponse> callback, AsyncOptions options = null)
+        {
+            options = options == null?new AsyncOptions():options;
+            var marshaller = new StartStreamEncryptionRequestMarshaller();
+            var unmarshaller = StartStreamEncryptionResponseUnmarshaller.Instance;
+            Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
+            if(callback !=null )
+                callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
+                    AmazonServiceResult<StartStreamEncryptionRequest,StartStreamEncryptionResponse> responseObject 
+                            = new AmazonServiceResult<StartStreamEncryptionRequest,StartStreamEncryptionResponse>((StartStreamEncryptionRequest)req, (StartStreamEncryptionResponse)res, ex , ao.State);    
+                        callback(responseObject); 
+                };
+            BeginInvoke<StartStreamEncryptionRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+        }
+
+        #endregion
+        
+        #region  StopStreamEncryption
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StopStreamEncryption operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StopStreamEncryption operation on AmazonKinesisClient.</param>
+        /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+        /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/StopStreamEncryption">REST API Reference for StopStreamEncryption Operation</seealso>
+        public void StopStreamEncryptionAsync(StopStreamEncryptionRequest request, AmazonServiceCallback<StopStreamEncryptionRequest, StopStreamEncryptionResponse> callback, AsyncOptions options = null)
+        {
+            options = options == null?new AsyncOptions():options;
+            var marshaller = new StopStreamEncryptionRequestMarshaller();
+            var unmarshaller = StopStreamEncryptionResponseUnmarshaller.Instance;
+            Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
+            if(callback !=null )
+                callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
+                    AmazonServiceResult<StopStreamEncryptionRequest,StopStreamEncryptionResponse> responseObject 
+                            = new AmazonServiceResult<StopStreamEncryptionRequest,StopStreamEncryptionResponse>((StopStreamEncryptionRequest)req, (StopStreamEncryptionResponse)res, ex , ao.State);    
+                        callback(responseObject); 
+                };
+            BeginInvoke<StopStreamEncryptionRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+        }
+
+        #endregion
+        
         #region  UpdateShardCount
 
         /// <summary>

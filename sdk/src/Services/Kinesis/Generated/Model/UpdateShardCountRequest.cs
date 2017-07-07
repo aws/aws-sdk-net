@@ -42,18 +42,41 @@ namespace Amazon.Kinesis.Model
     /// </para>
     ///  
     /// <para>
-    /// To update the shard count, Amazon Kinesis performs splits and merges and individual
+    /// To update the shard count, Amazon Kinesis performs splits or merges on individual
     /// shards. This can cause short-lived shards to be created, in addition to the final
     /// shards. We recommend that you double or halve the shard count, as this results in
     /// the fewest number of splits or merges.
     /// </para>
     ///  
     /// <para>
-    /// This operation has a rate limit of twice per rolling 24 hour period. You cannot scale
-    /// above double your current shard count, scale below half your current shard count,
-    /// or exceed the shard limits for your account.
+    /// This operation has the following limits, which are per region per account unless otherwise
+    /// noted:
     /// </para>
-    ///  
+    ///  <ul> <li> 
+    /// <para>
+    /// scale more than twice per rolling 24 hour period
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// scale up above double your current shard count
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// scale down below half your current shard count
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// scale up above 200 shards in a stream
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// scale a stream with more than 200 shards down unless the result is less than 200 shards
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// scale up above the shard limits for your account
+    /// </para>
+    ///  </li> <li>  </li> </ul> 
     /// <para>
     /// For the default limits for an AWS account, see <a href="http://docs.aws.amazon.com/kinesis/latest/dev/service-sizes-and-limits.html">Streams
     /// Limits</a> in the <i>Amazon Kinesis Streams Developer Guide</i>. If you need to increase

@@ -461,6 +461,38 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Json")]
         [TestCategory("Kinesis")]
+        public void StartStreamEncryptionMarshallTest()
+        {
+            var request = InstantiateClassGenerator.Execute<StartStreamEncryptionRequest>();
+            var marshaller = new StartStreamEncryptionRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            Comparer.CompareObjectToJson<StartStreamEncryptionRequest>(request,jsonRequest);
+
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("Kinesis")]
+        public void StopStreamEncryptionMarshallTest()
+        {
+            var request = InstantiateClassGenerator.Execute<StopStreamEncryptionRequest>();
+            var marshaller = new StopStreamEncryptionRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            Comparer.CompareObjectToJson<StopStreamEncryptionRequest>(request,jsonRequest);
+
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("Kinesis")]
         public void UpdateShardCountMarshallTest()
         {
             var request = InstantiateClassGenerator.Execute<UpdateShardCountRequest>();

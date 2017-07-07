@@ -76,6 +76,12 @@ namespace Amazon.Kinesis.Model.Internal.MarshallTransformations
                     unmarshalledObject.Data = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("EncryptionType", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.EncryptionType = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("PartitionKey", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

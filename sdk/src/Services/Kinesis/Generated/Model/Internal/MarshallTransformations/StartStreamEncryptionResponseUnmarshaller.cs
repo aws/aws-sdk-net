@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Kinesis.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for GetRecords operation
+    /// Response Unmarshaller for StartStreamEncryption operation
     /// </summary>  
-    public class GetRecordsResponseUnmarshaller : JsonResponseUnmarshaller
+    public class StartStreamEncryptionResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,31 +45,8 @@ namespace Amazon.Kinesis.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            GetRecordsResponse response = new GetRecordsResponse();
+            StartStreamEncryptionResponse response = new StartStreamEncryptionResponse();
 
-            context.Read();
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
-            {
-                if (context.TestExpression("MillisBehindLatest", targetDepth))
-                {
-                    var unmarshaller = LongUnmarshaller.Instance;
-                    response.MillisBehindLatest = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("NextShardIterator", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.NextShardIterator = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Records", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<Record, RecordUnmarshaller>(RecordUnmarshaller.Instance);
-                    response.Records = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-            }
 
             return response;
         }
@@ -84,10 +61,6 @@ namespace Amazon.Kinesis.Model.Internal.MarshallTransformations
         public override AmazonServiceException UnmarshallException(JsonUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
             ErrorResponse errorResponse = JsonErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
-            if (errorResponse.Code != null && errorResponse.Code.Equals("ExpiredIteratorException"))
-            {
-                return new ExpiredIteratorException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
             if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidArgumentException"))
             {
                 return new InvalidArgumentException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
@@ -116,9 +89,13 @@ namespace Amazon.Kinesis.Model.Internal.MarshallTransformations
             {
                 return new KMSThrottlingException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("ProvisionedThroughputExceededException"))
+            if (errorResponse.Code != null && errorResponse.Code.Equals("LimitExceededException"))
             {
-                return new ProvisionedThroughputExceededException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+                return new LimitExceededException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceInUseException"))
+            {
+                return new ResourceInUseException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
             if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceNotFoundException"))
             {
@@ -127,9 +104,9 @@ namespace Amazon.Kinesis.Model.Internal.MarshallTransformations
             return new AmazonKinesisException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
 
-        private static GetRecordsResponseUnmarshaller _instance = new GetRecordsResponseUnmarshaller();        
+        private static StartStreamEncryptionResponseUnmarshaller _instance = new StartStreamEncryptionResponseUnmarshaller();        
 
-        internal static GetRecordsResponseUnmarshaller GetInstance()
+        internal static StartStreamEncryptionResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -137,7 +114,7 @@ namespace Amazon.Kinesis.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static GetRecordsResponseUnmarshaller Instance
+        public static StartStreamEncryptionResponseUnmarshaller Instance
         {
             get
             {

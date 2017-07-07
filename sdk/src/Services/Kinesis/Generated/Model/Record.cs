@@ -35,6 +35,7 @@ namespace Amazon.Kinesis.Model
     {
         private DateTime? _approximateArrivalTimestamp;
         private MemoryStream _data;
+        private EncryptionType _encryptionType;
         private string _partitionKey;
         private string _sequenceNumber;
 
@@ -78,6 +79,35 @@ namespace Amazon.Kinesis.Model
         }
 
         /// <summary>
+        /// Gets and sets the property EncryptionType. 
+        /// <para>
+        /// The encryption type used on the record. This parameter can be one of the following
+        /// values:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>NONE</code>: Do not encrypt the records in the stream.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>KMS</code>: Use server-side encryption on the records in the stream using a
+        /// customer-managed KMS key.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public EncryptionType EncryptionType
+        {
+            get { return this._encryptionType; }
+            set { this._encryptionType = value; }
+        }
+
+        // Check to see if EncryptionType property is set
+        internal bool IsSetEncryptionType()
+        {
+            return this._encryptionType != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property PartitionKey. 
         /// <para>
         /// Identifies which shard in the stream the data record is assigned to.
@@ -98,7 +128,7 @@ namespace Amazon.Kinesis.Model
         /// <summary>
         /// Gets and sets the property SequenceNumber. 
         /// <para>
-        /// The unique identifier of the record in the stream.
+        /// The unique identifier of the record within its shard.
         /// </para>
         /// </summary>
         public string SequenceNumber

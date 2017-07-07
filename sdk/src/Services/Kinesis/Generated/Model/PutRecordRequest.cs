@@ -82,8 +82,9 @@ namespace Amazon.Kinesis.Model
     /// </para>
     ///  
     /// <para>
-    /// Data records are accessible for only 24 hours from the time that they are added to
-    /// a stream.
+    /// By default, data records are accessible for 24 hours from the time that they are added
+    /// to a stream. You can use <a>IncreaseStreamRetentionPeriod</a> or <a>DecreaseStreamRetentionPeriod</a>
+    /// to modify this retention period.
     /// </para>
     /// </summary>
     public partial class PutRecordRequest : AmazonKinesisRequest

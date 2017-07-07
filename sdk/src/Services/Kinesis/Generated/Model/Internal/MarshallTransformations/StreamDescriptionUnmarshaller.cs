@@ -64,6 +64,12 @@ namespace Amazon.Kinesis.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("EncryptionType", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.EncryptionType = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("EnhancedMonitoring", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<EnhancedMetrics, EnhancedMetricsUnmarshaller>(EnhancedMetricsUnmarshaller.Instance);
@@ -74,6 +80,12 @@ namespace Amazon.Kinesis.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = BoolUnmarshaller.Instance;
                     unmarshalledObject.HasMoreShards = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("KeyId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.KeyId = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("RetentionPeriodHours", targetDepth))

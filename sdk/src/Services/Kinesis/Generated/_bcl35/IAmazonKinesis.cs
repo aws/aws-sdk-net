@@ -692,6 +692,29 @@ namespace Amazon.Kinesis
         /// A specified parameter exceeds its restrictions, is not supported, or can't be used.
         /// For more information, see the returned message.
         /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.KMSAccessDeniedException">
+        /// The ciphertext references a key that doesn't exist or that you don't have access to.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.KMSDisabledException">
+        /// The request was rejected because the specified CMK isn't enabled.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.KMSInvalidStateException">
+        /// The request was rejected because the state of the specified resource isn't valid for
+        /// this request. For more information, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management Service
+        /// Developer Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.KMSNotFoundException">
+        /// The request was rejected because the specified entity or resource couldn't be found.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.KMSOptInRequiredException">
+        /// The AWS access key ID needs a subscription for the service.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.KMSThrottlingException">
+        /// The request was denied due to request throttling. For more information about throttling,
+        /// see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/limits.html#requests-per-second">Limits</a>
+        /// in the <i>AWS Key Management Service Developer Guide</i>.
+        /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.ProvisionedThroughputExceededException">
         /// The request rate for the stream is too high, or the requested data is too large for
         /// the available throughput. Reduce the frequency or size of your requests. For more
@@ -1248,8 +1271,9 @@ namespace Amazon.Kinesis
         /// </para>
         ///  
         /// <para>
-        /// Data records are accessible for only 24 hours from the time that they are added to
-        /// a stream.
+        /// By default, data records are accessible for 24 hours from the time that they are added
+        /// to a stream. You can use <a>IncreaseStreamRetentionPeriod</a> or <a>DecreaseStreamRetentionPeriod</a>
+        /// to modify this retention period.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutRecord service method.</param>
@@ -1258,6 +1282,29 @@ namespace Amazon.Kinesis
         /// <exception cref="Amazon.Kinesis.Model.InvalidArgumentException">
         /// A specified parameter exceeds its restrictions, is not supported, or can't be used.
         /// For more information, see the returned message.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.KMSAccessDeniedException">
+        /// The ciphertext references a key that doesn't exist or that you don't have access to.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.KMSDisabledException">
+        /// The request was rejected because the specified CMK isn't enabled.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.KMSInvalidStateException">
+        /// The request was rejected because the state of the specified resource isn't valid for
+        /// this request. For more information, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management Service
+        /// Developer Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.KMSNotFoundException">
+        /// The request was rejected because the specified entity or resource couldn't be found.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.KMSOptInRequiredException">
+        /// The AWS access key ID needs a subscription for the service.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.KMSThrottlingException">
+        /// The request was denied due to request throttling. For more information about throttling,
+        /// see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/limits.html#requests-per-second">Limits</a>
+        /// in the <i>AWS Key Management Service Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.ProvisionedThroughputExceededException">
         /// The request rate for the stream is too high, or the requested data is too large for
@@ -1377,10 +1424,9 @@ namespace Amazon.Kinesis
         /// </para>
         ///  
         /// <para>
-        /// By default, data records are accessible for only 24 hours from the time that they
-        /// are added to an Amazon Kinesis stream. This retention period can be modified using
-        /// the <a>DecreaseStreamRetentionPeriod</a> and <a>IncreaseStreamRetentionPeriod</a>
-        /// operations.
+        /// By default, data records are accessible for 24 hours from the time that they are added
+        /// to a stream. You can use <a>IncreaseStreamRetentionPeriod</a> or <a>DecreaseStreamRetentionPeriod</a>
+        /// to modify this retention period.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutRecords service method.</param>
@@ -1389,6 +1435,29 @@ namespace Amazon.Kinesis
         /// <exception cref="Amazon.Kinesis.Model.InvalidArgumentException">
         /// A specified parameter exceeds its restrictions, is not supported, or can't be used.
         /// For more information, see the returned message.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.KMSAccessDeniedException">
+        /// The ciphertext references a key that doesn't exist or that you don't have access to.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.KMSDisabledException">
+        /// The request was rejected because the specified CMK isn't enabled.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.KMSInvalidStateException">
+        /// The request was rejected because the state of the specified resource isn't valid for
+        /// this request. For more information, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management Service
+        /// Developer Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.KMSNotFoundException">
+        /// The request was rejected because the specified entity or resource couldn't be found.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.KMSOptInRequiredException">
+        /// The AWS access key ID needs a subscription for the service.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.KMSThrottlingException">
+        /// The request was denied due to request throttling. For more information about throttling,
+        /// see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/limits.html#requests-per-second">Limits</a>
+        /// in the <i>AWS Key Management Service Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.ProvisionedThroughputExceededException">
         /// The request rate for the stream is too high, or the requested data is too large for
@@ -1613,6 +1682,187 @@ namespace Amazon.Kinesis
 
         #endregion
         
+        #region  StartStreamEncryption
+
+
+        /// <summary>
+        /// Enables or updates server-side encryption using an AWS KMS key for a specified stream.
+        /// 
+        /// 
+        ///  
+        /// <para>
+        /// Starting encryption is an asynchronous operation. Upon receiving the request, Amazon
+        /// Kinesis returns immediately and sets the status of the stream to <code>UPDATING</code>.
+        /// After the update is complete, Amazon Kinesis sets the status of the stream back to
+        /// <code>ACTIVE</code>. Updating or applying encryption normally takes a few seconds
+        /// to complete but it can take minutes. You can continue to read and write data to your
+        /// stream while its status is <code>UPDATING</code>. Once the status of the stream is
+        /// <code>ACTIVE</code>, records written to the stream will begin to be encrypted. 
+        /// </para>
+        ///  
+        /// <para>
+        /// API Limits: You can successfully apply a new AWS KMS key for server-side encryption
+        /// 25 times in a rolling 24 hour period.
+        /// </para>
+        ///  
+        /// <para>
+        /// Note: It can take up to 5 seconds after the stream is in an <code>ACTIVE</code> status
+        /// before all records written to the stream are encrypted. After you’ve enabled encryption,
+        /// you can verify encryption was applied by inspecting the API response from <code>PutRecord</code>
+        /// or <code>PutRecords</code>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartStreamEncryption service method.</param>
+        /// 
+        /// <returns>The response from the StartStreamEncryption service method, as returned by Kinesis.</returns>
+        /// <exception cref="Amazon.Kinesis.Model.InvalidArgumentException">
+        /// A specified parameter exceeds its restrictions, is not supported, or can't be used.
+        /// For more information, see the returned message.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.KMSAccessDeniedException">
+        /// The ciphertext references a key that doesn't exist or that you don't have access to.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.KMSDisabledException">
+        /// The request was rejected because the specified CMK isn't enabled.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.KMSInvalidStateException">
+        /// The request was rejected because the state of the specified resource isn't valid for
+        /// this request. For more information, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management Service
+        /// Developer Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.KMSNotFoundException">
+        /// The request was rejected because the specified entity or resource couldn't be found.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.KMSOptInRequiredException">
+        /// The AWS access key ID needs a subscription for the service.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.KMSThrottlingException">
+        /// The request was denied due to request throttling. For more information about throttling,
+        /// see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/limits.html#requests-per-second">Limits</a>
+        /// in the <i>AWS Key Management Service Developer Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.LimitExceededException">
+        /// The requested resource exceeds the maximum number allowed, or the number of concurrent
+        /// stream requests exceeds the maximum number allowed (5).
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.ResourceInUseException">
+        /// The resource is not available for this operation. For successful operation, the resource
+        /// needs to be in the <code>ACTIVE</code> state.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.ResourceNotFoundException">
+        /// The requested resource could not be found. The stream might not be specified correctly.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/StartStreamEncryption">REST API Reference for StartStreamEncryption Operation</seealso>
+        StartStreamEncryptionResponse StartStreamEncryption(StartStreamEncryptionRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StartStreamEncryption operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StartStreamEncryption operation on AmazonKinesisClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStartStreamEncryption
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/StartStreamEncryption">REST API Reference for StartStreamEncryption Operation</seealso>
+        IAsyncResult BeginStartStreamEncryption(StartStreamEncryptionRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  StartStreamEncryption operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStartStreamEncryption.</param>
+        /// 
+        /// <returns>Returns a  StartStreamEncryptionResult from Kinesis.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/StartStreamEncryption">REST API Reference for StartStreamEncryption Operation</seealso>
+        StartStreamEncryptionResponse EndStartStreamEncryption(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  StopStreamEncryption
+
+
+        /// <summary>
+        /// Disables server-side encryption for a specified stream. 
+        /// 
+        ///  
+        /// <para>
+        /// Stopping encryption is an asynchronous operation. Upon receiving the request, Amazon
+        /// Kinesis returns immediately and sets the status of the stream to <code>UPDATING</code>.
+        /// After the update is complete, Amazon Kinesis sets the status of the stream back to
+        /// <code>ACTIVE</code>. Stopping encryption normally takes a few seconds to complete
+        /// but it can take minutes. You can continue to read and write data to your stream while
+        /// its status is <code>UPDATING</code>. Once the status of the stream is <code>ACTIVE</code>
+        /// records written to the stream will no longer be encrypted by the Amazon Kinesis Streams
+        /// service. 
+        /// </para>
+        ///  
+        /// <para>
+        /// API Limits: You can successfully disable server-side encryption 25 times in a rolling
+        /// 24 hour period. 
+        /// </para>
+        ///  
+        /// <para>
+        /// Note: It can take up to 5 seconds after the stream is in an <code>ACTIVE</code> status
+        /// before all records written to the stream are no longer subject to encryption. After
+        /// you’ve disabled encryption, you can verify encryption was not applied by inspecting
+        /// the API response from <code>PutRecord</code> or <code>PutRecords</code>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StopStreamEncryption service method.</param>
+        /// 
+        /// <returns>The response from the StopStreamEncryption service method, as returned by Kinesis.</returns>
+        /// <exception cref="Amazon.Kinesis.Model.InvalidArgumentException">
+        /// A specified parameter exceeds its restrictions, is not supported, or can't be used.
+        /// For more information, see the returned message.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.LimitExceededException">
+        /// The requested resource exceeds the maximum number allowed, or the number of concurrent
+        /// stream requests exceeds the maximum number allowed (5).
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.ResourceInUseException">
+        /// The resource is not available for this operation. For successful operation, the resource
+        /// needs to be in the <code>ACTIVE</code> state.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.ResourceNotFoundException">
+        /// The requested resource could not be found. The stream might not be specified correctly.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/StopStreamEncryption">REST API Reference for StopStreamEncryption Operation</seealso>
+        StopStreamEncryptionResponse StopStreamEncryption(StopStreamEncryptionRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StopStreamEncryption operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StopStreamEncryption operation on AmazonKinesisClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStopStreamEncryption
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/StopStreamEncryption">REST API Reference for StopStreamEncryption Operation</seealso>
+        IAsyncResult BeginStopStreamEncryption(StopStreamEncryptionRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  StopStreamEncryption operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStopStreamEncryption.</param>
+        /// 
+        /// <returns>Returns a  StopStreamEncryptionResult from Kinesis.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/StopStreamEncryption">REST API Reference for StopStreamEncryption Operation</seealso>
+        StopStreamEncryptionResponse EndStopStreamEncryption(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  UpdateShardCount
 
 
@@ -1630,18 +1880,41 @@ namespace Amazon.Kinesis
         /// </para>
         ///  
         /// <para>
-        /// To update the shard count, Amazon Kinesis performs splits and merges and individual
+        /// To update the shard count, Amazon Kinesis performs splits or merges on individual
         /// shards. This can cause short-lived shards to be created, in addition to the final
         /// shards. We recommend that you double or halve the shard count, as this results in
         /// the fewest number of splits or merges.
         /// </para>
         ///  
         /// <para>
-        /// This operation has a rate limit of twice per rolling 24 hour period. You cannot scale
-        /// above double your current shard count, scale below half your current shard count,
-        /// or exceed the shard limits for your account.
+        /// This operation has the following limits, which are per region per account unless otherwise
+        /// noted:
         /// </para>
-        ///  
+        ///  <ul> <li> 
+        /// <para>
+        /// scale more than twice per rolling 24 hour period
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// scale up above double your current shard count
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// scale down below half your current shard count
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// scale up above 200 shards in a stream
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// scale a stream with more than 200 shards down unless the result is less than 200 shards
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// scale up above the shard limits for your account
+        /// </para>
+        ///  </li> <li>  </li> </ul> 
         /// <para>
         /// For the default limits for an AWS account, see <a href="http://docs.aws.amazon.com/kinesis/latest/dev/service-sizes-and-limits.html">Streams
         /// Limits</a> in the <i>Amazon Kinesis Streams Developer Guide</i>. If you need to increase

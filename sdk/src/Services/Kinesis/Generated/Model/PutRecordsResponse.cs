@@ -32,8 +32,38 @@ namespace Amazon.Kinesis.Model
     /// </summary>
     public partial class PutRecordsResponse : AmazonWebServiceResponse
     {
+        private EncryptionType _encryptionType;
         private int? _failedRecordCount;
         private List<PutRecordsResultEntry> _records = new List<PutRecordsResultEntry>();
+
+        /// <summary>
+        /// Gets and sets the property EncryptionType. 
+        /// <para>
+        /// The encryption type used on the records. This parameter can be one of the following
+        /// values:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>NONE</code>: Do not encrypt the records.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>KMS</code>: Use server-side encryption on the records using a customer-managed
+        /// KMS key.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public EncryptionType EncryptionType
+        {
+            get { return this._encryptionType; }
+            set { this._encryptionType = value; }
+        }
+
+        // Check to see if EncryptionType property is set
+        internal bool IsSetEncryptionType()
+        {
+            return this._encryptionType != null;
+        }
 
         /// <summary>
         /// Gets and sets the property FailedRecordCount. 

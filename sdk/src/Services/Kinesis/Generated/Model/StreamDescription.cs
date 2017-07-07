@@ -32,14 +32,45 @@ namespace Amazon.Kinesis.Model
     /// </summary>
     public partial class StreamDescription
     {
+        private EncryptionType _encryptionType;
         private List<EnhancedMetrics> _enhancedMonitoring = new List<EnhancedMetrics>();
         private bool? _hasMoreShards;
+        private string _keyId;
         private int? _retentionPeriodHours;
         private List<Shard> _shards = new List<Shard>();
         private string _streamARN;
         private DateTime? _streamCreationTimestamp;
         private string _streamName;
         private StreamStatus _streamStatus;
+
+        /// <summary>
+        /// Gets and sets the property EncryptionType. 
+        /// <para>
+        /// The server-side encryption type used on the stream. This parameter can be one of the
+        /// following values:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>NONE</code>: Do not encrypt the records in the stream.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>KMS</code>: Use server-side encryption on the records in the stream using a
+        /// customer-managed KMS key.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public EncryptionType EncryptionType
+        {
+            get { return this._encryptionType; }
+            set { this._encryptionType = value; }
+        }
+
+        // Check to see if EncryptionType property is set
+        internal bool IsSetEncryptionType()
+        {
+            return this._encryptionType != null;
+        }
 
         /// <summary>
         /// Gets and sets the property EnhancedMonitoring. 
@@ -75,6 +106,24 @@ namespace Amazon.Kinesis.Model
         internal bool IsSetHasMoreShards()
         {
             return this._hasMoreShards.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property KeyId. 
+        /// <para>
+        /// The GUID for the customer-managed KMS key used for encryption on the stream.
+        /// </para>
+        /// </summary>
+        public string KeyId
+        {
+            get { return this._keyId; }
+            set { this._keyId = value; }
+        }
+
+        // Check to see if KeyId property is set
+        internal bool IsSetKeyId()
+        {
+            return this._keyId != null;
         }
 
         /// <summary>
