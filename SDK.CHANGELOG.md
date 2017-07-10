@@ -1,3 +1,7 @@
+### 3.3.120.1 (2017-07-10 22:33 UTC)
+* Core 3.3.17.2
+	* Fix AWSCredentials.GetCredentialsAsync to use Task.FromResult instead of Task.Run.
+
 ### 3.3.120.0 (2017-07-07 19:52 UTC)
 * DirectoryService (3.3.2.0)
 	* You can now improve the resilience and performance of your Microsoft AD directory by deploying additional domain controllers. Added UpdateNumberofDomainControllers API that allows you to update the number of domain controllers you want for your directory, and DescribeDomainControllers API that allows you to describe the detailed information of each domain controller of your directory. Also added the 'DesiredNumberOfDomainControllers' field to the DescribeDirectories API output for Microsoft AD.
