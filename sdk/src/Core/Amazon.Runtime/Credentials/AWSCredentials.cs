@@ -35,7 +35,7 @@ namespace Amazon.Runtime
 #if AWS_ASYNC_API
         public virtual System.Threading.Tasks.Task<ImmutableCredentials> GetCredentialsAsync()
         {
-            return System.Threading.Tasks.Task.Run<ImmutableCredentials>(() => this.GetCredentials());
+            return System.Threading.Tasks.Task.FromResult<ImmutableCredentials>(this.GetCredentials());
         }
 #endif
     }
