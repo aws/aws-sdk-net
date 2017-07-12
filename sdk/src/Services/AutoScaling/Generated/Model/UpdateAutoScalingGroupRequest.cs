@@ -33,15 +33,16 @@ namespace Amazon.AutoScaling.Model
     /// 
     ///  
     /// <para>
-    /// The new settings take effect on any scaling activities after this call returns. Scaling
-    /// activities that are currently in progress aren't affected.
+    /// To update an Auto Scaling group with a launch configuration with <code>InstanceMonitoring</code>
+    /// set to <code>False</code>, you must first disable the collection of group metrics.
+    /// Otherwise, you will get an error. If you have previously enabled the collection of
+    /// group metrics, you can disable it using <a>DisableMetricsCollection</a>.
     /// </para>
     ///  
     /// <para>
-    /// To update an Auto Scaling group with a launch configuration with <code>InstanceMonitoring</code>
-    /// set to <code>false</code>, you must first disable the collection of group metrics.
-    /// Otherwise, you will get an error. If you have previously enabled the collection of
-    /// group metrics, you can disable it using <a>DisableMetricsCollection</a>.
+    /// The new settings are registered upon the completion of this call. Any launch configuration
+    /// settings take effect on any triggers after this call returns. Scaling activities that
+    /// are currently in progress aren't affected.
     /// </para>
     ///  
     /// <para>

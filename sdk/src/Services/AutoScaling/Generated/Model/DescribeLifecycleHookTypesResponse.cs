@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AutoScaling.Model
 {
     /// <summary>
-    /// This is the response object from the DescribeLifecycleHookTypes operation.
+    /// Contains the output of DescribeLifecycleHookTypes.
     /// </summary>
     public partial class DescribeLifecycleHookTypesResponse : AmazonWebServiceResponse
     {

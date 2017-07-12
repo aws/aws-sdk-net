@@ -28,11 +28,31 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AutoScaling.Model
 {
     /// <summary>
-    /// This is the response object from the PutScalingPolicy operation.
+    /// Contains the output of PutScalingPolicy.
     /// </summary>
     public partial class PutScalingPolicyResponse : AmazonWebServiceResponse
     {
+        private List<Alarm> _alarms = new List<Alarm>();
         private string _policyARN;
+
+        /// <summary>
+        /// Gets and sets the property Alarms. 
+        /// <para>
+        /// The CloudWatch alarms created for the target tracking policy. This parameter will
+        /// be empty if the policy type is anything other than <code>TargetTrackingScaling</code>.
+        /// </para>
+        /// </summary>
+        public List<Alarm> Alarms
+        {
+            get { return this._alarms; }
+            set { this._alarms = value; }
+        }
+
+        // Check to see if Alarms property is set
+        internal bool IsSetAlarms()
+        {
+            return this._alarms != null && this._alarms.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property PolicyARN. 

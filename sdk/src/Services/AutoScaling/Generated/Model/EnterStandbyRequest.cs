@@ -29,12 +29,12 @@ namespace Amazon.AutoScaling.Model
 {
     /// <summary>
     /// Container for the parameters to the EnterStandby operation.
-    /// Moves the specified instances into the standby state.
+    /// Moves the specified instances into <code>Standby</code> mode.
     /// 
     ///  
     /// <para>
-    /// For more information, see <a href="http://docs.aws.amazon.com/autoscaling/latest/userguide/as-enter-exit-standby.html">Temporarily
-    /// Removing Instances from Your Auto Scaling Group</a> in the <i>Auto Scaling User Guide</i>.
+    /// For more information, see <a href="http://docs.aws.amazon.com/autoscaling/latest/userguide/AutoScalingGroupLifecycle.html">Auto
+    /// Scaling Lifecycle</a> in the <i>Auto Scaling User Guide</i>.
     /// </para>
     /// </summary>
     public partial class EnterStandbyRequest : AmazonAutoScalingRequest

@@ -111,6 +111,10 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
             {
                 return new ResourceContentionException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceInUse"))
+            {
+                return new ResourceInUseException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
             return new AmazonAutoScalingException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
         private static CreateOrUpdateTagsResponseUnmarshaller _instance = new CreateOrUpdateTagsResponseUnmarshaller();        

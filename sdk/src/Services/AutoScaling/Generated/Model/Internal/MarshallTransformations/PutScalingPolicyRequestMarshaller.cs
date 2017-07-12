@@ -118,6 +118,63 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
                         publicRequestlistValueIndex++;
                     }
                 }
+                if(publicRequest.IsSetTargetTrackingConfiguration())
+                {
+                    if(publicRequest.TargetTrackingConfiguration.IsSetCustomizedMetricSpecification())
+                    {
+                        if(publicRequest.TargetTrackingConfiguration.CustomizedMetricSpecification.IsSetDimensions())
+                        {
+                            int publicRequestTargetTrackingConfigurationCustomizedMetricSpecificationlistValueIndex = 1;
+                            foreach(var publicRequestTargetTrackingConfigurationCustomizedMetricSpecificationlistValue in publicRequest.TargetTrackingConfiguration.CustomizedMetricSpecification.Dimensions)
+                            {
+                                if(publicRequestTargetTrackingConfigurationCustomizedMetricSpecificationlistValue.IsSetName())
+                                {
+                                    request.Parameters.Add("TargetTrackingConfiguration" + "." + "CustomizedMetricSpecification" + "." + "Dimensions" + "." + "member" + "." + publicRequestTargetTrackingConfigurationCustomizedMetricSpecificationlistValueIndex + "." + "Name", StringUtils.FromString(publicRequestTargetTrackingConfigurationCustomizedMetricSpecificationlistValue.Name));
+                                }
+                                if(publicRequestTargetTrackingConfigurationCustomizedMetricSpecificationlistValue.IsSetValue())
+                                {
+                                    request.Parameters.Add("TargetTrackingConfiguration" + "." + "CustomizedMetricSpecification" + "." + "Dimensions" + "." + "member" + "." + publicRequestTargetTrackingConfigurationCustomizedMetricSpecificationlistValueIndex + "." + "Value", StringUtils.FromString(publicRequestTargetTrackingConfigurationCustomizedMetricSpecificationlistValue.Value));
+                                }
+                                publicRequestTargetTrackingConfigurationCustomizedMetricSpecificationlistValueIndex++;
+                            }
+                        }
+                        if(publicRequest.TargetTrackingConfiguration.CustomizedMetricSpecification.IsSetMetricName())
+                        {
+                            request.Parameters.Add("TargetTrackingConfiguration" + "." + "CustomizedMetricSpecification" + "." + "MetricName", StringUtils.FromString(publicRequest.TargetTrackingConfiguration.CustomizedMetricSpecification.MetricName));
+                        }
+                        if(publicRequest.TargetTrackingConfiguration.CustomizedMetricSpecification.IsSetNamespace())
+                        {
+                            request.Parameters.Add("TargetTrackingConfiguration" + "." + "CustomizedMetricSpecification" + "." + "Namespace", StringUtils.FromString(publicRequest.TargetTrackingConfiguration.CustomizedMetricSpecification.Namespace));
+                        }
+                        if(publicRequest.TargetTrackingConfiguration.CustomizedMetricSpecification.IsSetStatistic())
+                        {
+                            request.Parameters.Add("TargetTrackingConfiguration" + "." + "CustomizedMetricSpecification" + "." + "Statistic", StringUtils.FromString(publicRequest.TargetTrackingConfiguration.CustomizedMetricSpecification.Statistic));
+                        }
+                        if(publicRequest.TargetTrackingConfiguration.CustomizedMetricSpecification.IsSetUnit())
+                        {
+                            request.Parameters.Add("TargetTrackingConfiguration" + "." + "CustomizedMetricSpecification" + "." + "Unit", StringUtils.FromString(publicRequest.TargetTrackingConfiguration.CustomizedMetricSpecification.Unit));
+                        }
+                    }
+                    if(publicRequest.TargetTrackingConfiguration.IsSetDisableScaleIn())
+                    {
+                        request.Parameters.Add("TargetTrackingConfiguration" + "." + "DisableScaleIn", StringUtils.FromBool(publicRequest.TargetTrackingConfiguration.DisableScaleIn));
+                    }
+                    if(publicRequest.TargetTrackingConfiguration.IsSetPredefinedMetricSpecification())
+                    {
+                        if(publicRequest.TargetTrackingConfiguration.PredefinedMetricSpecification.IsSetPredefinedMetricType())
+                        {
+                            request.Parameters.Add("TargetTrackingConfiguration" + "." + "PredefinedMetricSpecification" + "." + "PredefinedMetricType", StringUtils.FromString(publicRequest.TargetTrackingConfiguration.PredefinedMetricSpecification.PredefinedMetricType));
+                        }
+                        if(publicRequest.TargetTrackingConfiguration.PredefinedMetricSpecification.IsSetResourceLabel())
+                        {
+                            request.Parameters.Add("TargetTrackingConfiguration" + "." + "PredefinedMetricSpecification" + "." + "ResourceLabel", StringUtils.FromString(publicRequest.TargetTrackingConfiguration.PredefinedMetricSpecification.ResourceLabel));
+                        }
+                    }
+                    if(publicRequest.TargetTrackingConfiguration.IsSetTargetValue())
+                    {
+                        request.Parameters.Add("TargetTrackingConfiguration" + "." + "TargetValue", StringUtils.FromDouble(publicRequest.TargetTrackingConfiguration.TargetValue));
+                    }
+                }
             }
             return request;
         }

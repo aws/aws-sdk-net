@@ -119,6 +119,126 @@ namespace Amazon.AutoScaling
 
 
     /// <summary>
+    /// Constants used for properties of type MetricStatistic.
+    /// </summary>
+    public class MetricStatistic : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Average for MetricStatistic
+        /// </summary>
+        public static readonly MetricStatistic Average = new MetricStatistic("Average");
+        /// <summary>
+        /// Constant Maximum for MetricStatistic
+        /// </summary>
+        public static readonly MetricStatistic Maximum = new MetricStatistic("Maximum");
+        /// <summary>
+        /// Constant Minimum for MetricStatistic
+        /// </summary>
+        public static readonly MetricStatistic Minimum = new MetricStatistic("Minimum");
+        /// <summary>
+        /// Constant SampleCount for MetricStatistic
+        /// </summary>
+        public static readonly MetricStatistic SampleCount = new MetricStatistic("SampleCount");
+        /// <summary>
+        /// Constant Sum for MetricStatistic
+        /// </summary>
+        public static readonly MetricStatistic Sum = new MetricStatistic("Sum");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public MetricStatistic(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static MetricStatistic FindValue(string value)
+        {
+            return FindValue<MetricStatistic>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator MetricStatistic(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type MetricType.
+    /// </summary>
+    public class MetricType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ALBRequestCountPerTarget for MetricType
+        /// </summary>
+        public static readonly MetricType ALBRequestCountPerTarget = new MetricType("ALBRequestCountPerTarget");
+        /// <summary>
+        /// Constant ASGAverageCPUUtilization for MetricType
+        /// </summary>
+        public static readonly MetricType ASGAverageCPUUtilization = new MetricType("ASGAverageCPUUtilization");
+        /// <summary>
+        /// Constant ASGAverageNetworkIn for MetricType
+        /// </summary>
+        public static readonly MetricType ASGAverageNetworkIn = new MetricType("ASGAverageNetworkIn");
+        /// <summary>
+        /// Constant ASGAverageNetworkOut for MetricType
+        /// </summary>
+        public static readonly MetricType ASGAverageNetworkOut = new MetricType("ASGAverageNetworkOut");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public MetricType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static MetricType FindValue(string value)
+        {
+            return FindValue<MetricType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator MetricType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ScalingActivityStatusCode.
     /// </summary>
     public class ScalingActivityStatusCode : ConstantClass

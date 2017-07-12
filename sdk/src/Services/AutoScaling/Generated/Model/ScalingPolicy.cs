@@ -45,6 +45,7 @@ namespace Amazon.AutoScaling.Model
         private string _policyType;
         private int? _scalingAdjustment;
         private List<StepAdjustment> _stepAdjustments = new List<StepAdjustment>();
+        private TargetTrackingConfiguration _targetTrackingConfiguration;
 
         /// <summary>
         /// Gets and sets the property AdjustmentType. 
@@ -105,7 +106,7 @@ namespace Amazon.AutoScaling.Model
         /// Gets and sets the property Cooldown. 
         /// <para>
         /// The amount of time, in seconds, after a scaling activity completes before any further
-        /// dynamic scaling activities can start.
+        /// trigger-related scaling activities can start.
         /// </para>
         /// </summary>
         public int Cooldown
@@ -286,6 +287,24 @@ namespace Amazon.AutoScaling.Model
         internal bool IsSetStepAdjustments()
         {
             return this._stepAdjustments != null && this._stepAdjustments.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property TargetTrackingConfiguration. 
+        /// <para>
+        /// A target tracking policy.
+        /// </para>
+        /// </summary>
+        public TargetTrackingConfiguration TargetTrackingConfiguration
+        {
+            get { return this._targetTrackingConfiguration; }
+            set { this._targetTrackingConfiguration = value; }
+        }
+
+        // Check to see if TargetTrackingConfiguration property is set
+        internal bool IsSetTargetTrackingConfiguration()
+        {
+            return this._targetTrackingConfiguration != null;
         }
 
     }

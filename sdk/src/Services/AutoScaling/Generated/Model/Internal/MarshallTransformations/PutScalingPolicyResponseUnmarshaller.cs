@@ -81,6 +81,13 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
                 if (context.IsStartElement || context.IsAttribute)
                 {
 
+                    if (context.TestExpression("Alarms/member", targetDepth))
+                    {
+                        var unmarshaller = AlarmUnmarshaller.Instance;
+                        var item = unmarshaller.Unmarshall(context);
+                        response.Alarms.Add(item);
+                        continue;
+                    }
                     if (context.TestExpression("PolicyARN", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

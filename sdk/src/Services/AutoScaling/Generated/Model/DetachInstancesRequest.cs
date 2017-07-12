@@ -33,8 +33,8 @@ namespace Amazon.AutoScaling.Model
     /// 
     ///  
     /// <para>
-    /// After the instances are detached, you can manage them independent of the Auto Scaling
-    /// group.
+    /// After the instances are detached, you can manage them independently from the rest
+    /// of the Auto Scaling group.
     /// </para>
     ///  
     /// <para>

@@ -54,12 +54,17 @@ namespace Amazon.AutoScaling.Model
         private string _policyType;
         private int? _scalingAdjustment;
         private List<StepAdjustment> _stepAdjustments = new List<StepAdjustment>();
+        private TargetTrackingConfiguration _targetTrackingConfiguration;
 
         /// <summary>
         /// Gets and sets the property AdjustmentType. 
         /// <para>
-        /// The adjustment type. Valid values are <code>ChangeInCapacity</code>, <code>ExactCapacity</code>,
+        /// The adjustment type. The valid values are <code>ChangeInCapacity</code>, <code>ExactCapacity</code>,
         /// and <code>PercentChangeInCapacity</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// This parameter is supported if the policy type is <code>SimpleScaling</code> or <code>StepScaling</code>.
         /// </para>
         ///  
         /// <para>
@@ -106,7 +111,7 @@ namespace Amazon.AutoScaling.Model
         /// </para>
         ///  
         /// <para>
-        /// This parameter is not supported unless the policy type is <code>SimpleScaling</code>.
+        /// This parameter is supported if the policy type is <code>SimpleScaling</code>.
         /// </para>
         ///  
         /// <para>
@@ -135,7 +140,7 @@ namespace Amazon.AutoScaling.Model
         /// </para>
         ///  
         /// <para>
-        /// This parameter is not supported if the policy type is <code>SimpleScaling</code>.
+        /// This parameter is supported if the policy type is <code>StepScaling</code> or <code>TargetTrackingScaling</code>.
         /// </para>
         /// </summary>
         public int EstimatedInstanceWarmup
@@ -153,13 +158,13 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property MetricAggregationType. 
         /// <para>
-        /// The aggregation type for the CloudWatch metrics. Valid values are <code>Minimum</code>,
+        /// The aggregation type for the CloudWatch metrics. The valid values are <code>Minimum</code>,
         /// <code>Maximum</code>, and <code>Average</code>. If the aggregation type is null, the
         /// value is treated as <code>Average</code>.
         /// </para>
         ///  
         /// <para>
-        /// This parameter is not supported if the policy type is <code>SimpleScaling</code>.
+        /// This parameter is supported if the policy type is <code>StepScaling</code>.
         /// </para>
         /// </summary>
         public string MetricAggregationType
@@ -181,6 +186,10 @@ namespace Amazon.AutoScaling.Model
         /// is <code>PercentChangeInCapacity</code>, the scaling policy changes the <code>DesiredCapacity</code>
         /// of the Auto Scaling group by at least this many instances. Otherwise, the error is
         /// <code>ValidationError</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// This parameter is supported if the policy type is <code>SimpleScaling</code> or <code>StepScaling</code>.
         /// </para>
         /// </summary>
         public int MinAdjustmentMagnitude
@@ -234,8 +243,9 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property PolicyType. 
         /// <para>
-        /// The policy type. Valid values are <code>SimpleScaling</code> and <code>StepScaling</code>.
-        /// If the policy type is null, the value is treated as <code>SimpleScaling</code>.
+        /// The policy type. The valid values are <code>SimpleScaling</code>, <code>StepScaling</code>,
+        /// and <code>TargetTrackingScaling</code>. If the policy type is null, the value is treated
+        /// as <code>SimpleScaling</code>.
         /// </para>
         /// </summary>
         public string PolicyType
@@ -295,6 +305,29 @@ namespace Amazon.AutoScaling.Model
         internal bool IsSetStepAdjustments()
         {
             return this._stepAdjustments != null && this._stepAdjustments.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property TargetTrackingConfiguration. 
+        /// <para>
+        /// The configuration of a target tracking policy.
+        /// </para>
+        ///  
+        /// <para>
+        /// This parameter is required if the policy type is <code>TargetTrackingScaling</code>
+        /// and not supported otherwise.
+        /// </para>
+        /// </summary>
+        public TargetTrackingConfiguration TargetTrackingConfiguration
+        {
+            get { return this._targetTrackingConfiguration; }
+            set { this._targetTrackingConfiguration = value; }
+        }
+
+        // Check to see if TargetTrackingConfiguration property is set
+        internal bool IsSetTargetTrackingConfiguration()
+        {
+            return this._targetTrackingConfiguration != null;
         }
 
     }

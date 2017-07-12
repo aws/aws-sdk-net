@@ -134,6 +134,12 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
                         unmarshalledObject.StepAdjustments.Add(item);
                         continue;
                     }
+                    if (context.TestExpression("TargetTrackingConfiguration", targetDepth))
+                    {
+                        var unmarshaller = TargetTrackingConfigurationUnmarshaller.Instance;
+                        unmarshalledObject.TargetTrackingConfiguration = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {

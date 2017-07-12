@@ -28,48 +28,47 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AutoScaling.Model
 {
     /// <summary>
-    /// Contains the output of DescribeLoadBalancers.
+    /// Describes the dimension of a metric.
     /// </summary>
-    public partial class DescribeLoadBalancersResponse : AmazonWebServiceResponse
+    public partial class MetricDimension
     {
-        private List<LoadBalancerState> _loadBalancers = new List<LoadBalancerState>();
-        private string _nextToken;
+        private string _name;
+        private string _value;
 
         /// <summary>
-        /// Gets and sets the property LoadBalancers. 
+        /// Gets and sets the property Name. 
         /// <para>
-        /// The load balancers.
+        /// The name of the dimension.
         /// </para>
         /// </summary>
-        public List<LoadBalancerState> LoadBalancers
+        public string Name
         {
-            get { return this._loadBalancers; }
-            set { this._loadBalancers = value; }
+            get { return this._name; }
+            set { this._name = value; }
         }
 
-        // Check to see if LoadBalancers property is set
-        internal bool IsSetLoadBalancers()
+        // Check to see if Name property is set
+        internal bool IsSetName()
         {
-            return this._loadBalancers != null && this._loadBalancers.Count > 0; 
+            return this._name != null;
         }
 
         /// <summary>
-        /// Gets and sets the property NextToken. 
+        /// Gets and sets the property Value. 
         /// <para>
-        /// The token to use when requesting the next set of items. If there are no additional
-        /// items to return, the string is empty.
+        /// The value of the dimension.
         /// </para>
         /// </summary>
-        public string NextToken
+        public string Value
         {
-            get { return this._nextToken; }
-            set { this._nextToken = value; }
+            get { return this._value; }
+            set { this._value = value; }
         }
 
-        // Check to see if NextToken property is set
-        internal bool IsSetNextToken()
+        // Check to see if Value property is set
+        internal bool IsSetValue()
         {
-            return this._nextToken != null;
+            return this._value != null;
         }
 
     }

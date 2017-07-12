@@ -456,6 +456,9 @@ namespace Amazon.AutoScaling
         /// You already have a pending update to an Auto Scaling resource (for example, a group,
         /// instance, or load balancer).
         /// </exception>
+        /// <exception cref="Amazon.AutoScaling.Model.ResourceInUseException">
+        /// The operation can't be performed because the resource is in use.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/CreateOrUpdateTags">REST API Reference for CreateOrUpdateTags Operation</seealso>
         CreateOrUpdateTagsResponse CreateOrUpdateTags(CreateOrUpdateTagsRequest request);
 
@@ -812,6 +815,9 @@ namespace Amazon.AutoScaling
         /// <exception cref="Amazon.AutoScaling.Model.ResourceContentionException">
         /// You already have a pending update to an Auto Scaling resource (for example, a group,
         /// instance, or load balancer).
+        /// </exception>
+        /// <exception cref="Amazon.AutoScaling.Model.ResourceInUseException">
+        /// The operation can't be performed because the resource is in use.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DeleteTags">REST API Reference for DeleteTags Operation</seealso>
         DeleteTagsResponse DeleteTags(DeleteTagsRequest request);
@@ -1918,8 +1924,8 @@ namespace Amazon.AutoScaling
         /// 
         ///  
         /// <para>
-        /// After the instances are detached, you can manage them independent of the Auto Scaling
-        /// group.
+        /// After the instances are detached, you can manage them independently from the rest
+        /// of the Auto Scaling group.
         /// </para>
         ///  
         /// <para>
@@ -2171,12 +2177,12 @@ namespace Amazon.AutoScaling
 
 
         /// <summary>
-        /// Moves the specified instances into the standby state.
+        /// Moves the specified instances into <code>Standby</code> mode.
         /// 
         ///  
         /// <para>
-        /// For more information, see <a href="http://docs.aws.amazon.com/autoscaling/latest/userguide/as-enter-exit-standby.html">Temporarily
-        /// Removing Instances from Your Auto Scaling Group</a> in the <i>Auto Scaling User Guide</i>.
+        /// For more information, see <a href="http://docs.aws.amazon.com/autoscaling/latest/userguide/AutoScalingGroupLifecycle.html">Auto
+        /// Scaling Lifecycle</a> in the <i>Auto Scaling User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the EnterStandby service method.</param>
@@ -2268,12 +2274,12 @@ namespace Amazon.AutoScaling
 
 
         /// <summary>
-        /// Moves the specified instances out of the standby state.
+        /// Moves the specified instances out of <code>Standby</code> mode.
         /// 
         ///  
         /// <para>
-        /// For more information, see <a href="http://docs.aws.amazon.com/autoscaling/latest/userguide/as-enter-exit-standby.html">Temporarily
-        /// Removing Instances from Your Auto Scaling Group</a> in the <i>Auto Scaling User Guide</i>.
+        /// For more information, see <a href="http://docs.aws.amazon.com/autoscaling/latest/userguide/AutoScalingGroupLifecycle.html">Auto
+        /// Scaling Lifecycle</a> in the <i>Auto Scaling User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ExitStandby service method.</param>
@@ -3003,15 +3009,16 @@ namespace Amazon.AutoScaling
         /// 
         ///  
         /// <para>
-        /// The new settings take effect on any scaling activities after this call returns. Scaling
-        /// activities that are currently in progress aren't affected.
+        /// To update an Auto Scaling group with a launch configuration with <code>InstanceMonitoring</code>
+        /// set to <code>False</code>, you must first disable the collection of group metrics.
+        /// Otherwise, you will get an error. If you have previously enabled the collection of
+        /// group metrics, you can disable it using <a>DisableMetricsCollection</a>.
         /// </para>
         ///  
         /// <para>
-        /// To update an Auto Scaling group with a launch configuration with <code>InstanceMonitoring</code>
-        /// set to <code>false</code>, you must first disable the collection of group metrics.
-        /// Otherwise, you will get an error. If you have previously enabled the collection of
-        /// group metrics, you can disable it using <a>DisableMetricsCollection</a>.
+        /// The new settings are registered upon the completion of this call. Any launch configuration
+        /// settings take effect on any triggers after this call returns. Scaling activities that
+        /// are currently in progress aren't affected.
         /// </para>
         ///  
         /// <para>

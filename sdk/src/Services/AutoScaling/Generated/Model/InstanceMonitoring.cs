@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AutoScaling.Model
 {
     /// <summary>
-    /// Describes whether detailed monitoring is enabled for the Auto Scaling instances.
+    /// Describes whether instance monitoring is enabled.
     /// </summary>
     public partial class InstanceMonitoring
     {
@@ -37,8 +37,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property Enabled. 
         /// <para>
-        /// If <code>true</code>, detailed monitoring is enabled. Otherwise, basic monitoring
-        /// is enabled.
+        /// If <code>True</code>, instance monitoring is enabled.
         /// </para>
         /// </summary>
         public bool Enabled

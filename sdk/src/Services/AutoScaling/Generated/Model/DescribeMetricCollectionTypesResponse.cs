@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AutoScaling.Model
 {
     /// <summary>
-    /// This is the response object from the DescribeMetricCollectionTypes operation.
+    /// Contains the output of DescribeMetricsCollectionTypes.
     /// </summary>
     public partial class DescribeMetricCollectionTypesResponse : AmazonWebServiceResponse
     {
