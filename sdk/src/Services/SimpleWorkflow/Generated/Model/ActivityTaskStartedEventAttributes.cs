@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleWorkflow.Model
 {
     /// <summary>
-    /// Provides details of the <code>ActivityTaskStarted</code> event.
+    /// Provides the details of the <code>ActivityTaskStarted</code> event.
     /// </summary>
     public partial class ActivityTaskStartedEventAttributes
     {

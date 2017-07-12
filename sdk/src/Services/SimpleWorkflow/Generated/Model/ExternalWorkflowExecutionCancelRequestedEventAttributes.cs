@@ -28,7 +28,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleWorkflow.Model
 {
     /// <summary>
-    /// Provides details of the <code>ExternalWorkflowExecutionCancelRequested</code> event.
+    /// Provides the details of the <code>ExternalWorkflowExecutionCancelRequested</code>
+    /// event.
     /// </summary>
     public partial class ExternalWorkflowExecutionCancelRequestedEventAttributes
     {

@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleWorkflow.Model
 {
     /// <summary>
-    /// Provides details of the <code>TimerStarted</code> event.
+    /// Provides the details of the <code>TimerStarted</code> event.
     /// </summary>
     public partial class TimerStartedEventAttributes
     {
@@ -40,8 +40,8 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property Control. 
         /// <para>
-        /// <i>Optional.</i> Data attached to the event that can be used by the decider in subsequent
-        /// workflow tasks.
+        /// Data attached to the event that can be used by the decider in subsequent workflow
+        /// tasks.
         /// </para>
         /// </summary>
         public string Control
@@ -80,11 +80,11 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property StartToFireTimeout. 
         /// <para>
-        /// The duration of time after which the timer will fire.
+        /// The duration of time after which the timer fires.
         /// </para>
         ///  
         /// <para>
-        /// The duration is specified in seconds; an integer greater than or equal to 0.
+        /// The duration is specified in seconds, an integer greater than or equal to <code>0</code>.
         /// </para>
         /// </summary>
         public string StartToFireTimeout

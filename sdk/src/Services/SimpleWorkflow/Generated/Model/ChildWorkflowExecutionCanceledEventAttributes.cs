@@ -60,9 +60,9 @@ namespace Amazon.SimpleWorkflow.Model
         /// Gets and sets the property InitiatedEventId. 
         /// <para>
         /// The ID of the <code>StartChildWorkflowExecutionInitiated</code> event corresponding
-        /// to the <code>StartChildWorkflowExecution</code> decision to start this child workflow
-        /// execution. This information can be useful for diagnosing problems by tracing back
-        /// the chain of events leading up to this event.
+        /// to the <code>StartChildWorkflowExecution</code> <a>Decision</a> to start this child
+        /// workflow execution. This information can be useful for diagnosing problems by tracing
+        /// back the chain of events leading up to this event.
         /// </para>
         /// </summary>
         public long InitiatedEventId

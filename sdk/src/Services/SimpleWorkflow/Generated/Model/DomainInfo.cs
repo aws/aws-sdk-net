@@ -77,11 +77,18 @@ namespace Amazon.SimpleWorkflow.Model
         /// <para>
         /// The status of the domain:
         /// </para>
-        ///  <ul> <li> <b>REGISTERED</b>: The domain is properly registered and available. You
-        /// can use this domain for registering types and creating new workflow executions. </li>
-        /// <li> <b>DEPRECATED</b>: The domain was deprecated using <a>DeprecateDomain</a>, but
-        /// is still in use. You should not create new workflow executions in this domain. </li>
-        /// </ul>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>REGISTERED</code> – The domain is properly registered and available. You can
+        /// use this domain for registering types and creating new workflow executions. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>DEPRECATED</code> – The domain was deprecated using <a>DeprecateDomain</a>,
+        /// but is still in use. You should not create new workflow executions in this domain.
+        /// 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public RegistrationStatus Status
         {

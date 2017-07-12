@@ -45,6 +45,12 @@ namespace Amazon.SimpleWorkflow.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ScheduleLambdaFunctionDecisionAttributes requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetControl())
+            {
+                context.Writer.WritePropertyName("control");
+                context.Writer.Write(requestObject.Control);
+            }
+
             if(requestObject.IsSetId())
             {
                 context.Writer.WritePropertyName("id");

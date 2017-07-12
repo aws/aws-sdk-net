@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleWorkflow.Model
 {
     /// <summary>
-    /// Provides details of the <code>WorkflowExecutionCanceled</code> event.
+    /// Provides the details of the <code>WorkflowExecutionCanceled</code> event.
     /// </summary>
     public partial class WorkflowExecutionCanceledEventAttributes
     {
@@ -59,7 +59,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property Details. 
         /// <para>
-        /// Details for the cancellation (if any).
+        /// The details of the cancellation.
         /// </para>
         /// </summary>
         public string Details

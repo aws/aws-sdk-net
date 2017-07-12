@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleWorkflow.Model
 {
     /// <summary>
-    /// Provides details of the <code>ActivityTaskCompleted</code> event.
+    /// Provides the details of the <code>ActivityTaskCompleted</code> event.
     /// </summary>
     public partial class ActivityTaskCompletedEventAttributes
     {
@@ -39,7 +39,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property Result. 
         /// <para>
-        /// The results of the activity task (if any).
+        /// The results of the activity task.
         /// </para>
         /// </summary>
         public string Result

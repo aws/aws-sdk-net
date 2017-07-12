@@ -64,6 +64,12 @@ namespace Amazon.SimpleWorkflow.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("control", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Control = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("decisionTaskCompletedEventId", targetDepth))
                 {
                     var unmarshaller = LongUnmarshaller.Instance;

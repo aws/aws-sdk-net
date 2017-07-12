@@ -33,32 +33,46 @@ namespace Amazon.SimpleWorkflow.Model
     /// This initiates a long poll, where the service holds the HTTP connection open and responds
     /// as soon as a task becomes available. The maximum time the service holds on to the
     /// request before responding is 60 seconds. If no task is available within 60 seconds,
-    /// the poll will return an empty result. An empty result, in this context, means that
-    /// an ActivityTask is returned, but that the value of taskToken is an empty string. If
-    /// a task is returned, the worker should use its type to identify and process it correctly.
+    /// the poll returns an empty result. An empty result, in this context, means that an
+    /// ActivityTask is returned, but that the value of taskToken is an empty string. If a
+    /// task is returned, the worker should use its type to identify and process it correctly.
     /// 
-    ///  <important>Workers should set their client side socket timeout to at least 70 seconds
-    /// (10 seconds higher than the maximum time service may hold the poll request).</important>
-    /// 
+    ///  <important> 
     /// <para>
-    /// <b>Access Control</b>
+    /// Workers should set their client side socket timeout to at least 70 seconds (10 seconds
+    /// higher than the maximum time service may hold the poll request).
+    /// </para>
+    ///  </important> 
+    /// <para>
+    ///  <b>Access Control</b> 
     /// </para>
     ///  
     /// <para>
     /// You can use IAM policies to control this action's access to Amazon SWF resources as
     /// follows:
     /// </para>
-    ///  <ul> <li>Use a <code>Resource</code> element with the domain name to limit the action
-    /// to only specified domains.</li> <li>Use an <code>Action</code> element to allow or
-    /// deny permission to call this action.</li> <li>Constrain the <code>taskList.name</code>
-    /// parameter by using a <b>Condition</b> element with the <code>swf:taskList.name</code>
-    /// key to allow the action to access only certain task lists.</li> </ul> 
+    ///  <ul> <li> 
     /// <para>
-    /// If the caller does not have sufficient permissions to invoke the action, or the parameter
+    /// Use a <code>Resource</code> element with the domain name to limit the action to only
+    /// specified domains.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Use an <code>Action</code> element to allow or deny permission to call this action.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Constrain the <code>taskList.name</code> parameter by using a <code>Condition</code>
+    /// element with the <code>swf:taskList.name</code> key to allow the action to access
+    /// only certain task lists.
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    /// If the caller doesn't have sufficient permissions to invoke the action, or the parameter
     /// values fall outside the specified constraints, the action fails. The associated event
-    /// attribute's <b>cause</b> parameter will be set to OPERATION_NOT_PERMITTED. For details
-    /// and example IAM policies, see <a href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
-    /// IAM to Manage Access to Amazon SWF Workflows</a>.
+    /// attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>.
+    /// For details and example IAM policies, see <a href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
+    /// IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.
     /// </para>
     /// </summary>
     public partial class PollForActivityTaskRequest : AmazonSimpleWorkflowRequest
@@ -114,8 +128,8 @@ namespace Amazon.SimpleWorkflow.Model
         /// <para>
         /// The specified string must not start or end with whitespace. It must not contain a
         /// <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or
-        /// any control characters (\u0000-\u001f | \u007f - \u009f). Also, it must not contain
-        /// the literal string quotarnquot.
+        /// any control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>).
+        /// Also, it must not contain the literal string <code>arn</code>.
         /// </para>
         /// </summary>
         public TaskList TaskList

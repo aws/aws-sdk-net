@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleWorkflow.Model
 {
     /// <summary>
-    /// Provides details of the <code>TimerCanceled</code> event.
+    /// Provides the details of the <code>TimerCanceled</code> event.
     /// </summary>
     public partial class TimerCanceledEventAttributes
     {
@@ -80,7 +80,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property TimerId. 
         /// <para>
-        ///  The unique ID of the timer that was canceled. 
+        /// The unique ID of the timer that was canceled.
         /// </para>
         /// </summary>
         public string TimerId

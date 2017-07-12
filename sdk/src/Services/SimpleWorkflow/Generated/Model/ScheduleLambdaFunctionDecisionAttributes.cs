@@ -28,51 +28,40 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleWorkflow.Model
 {
     /// <summary>
-    /// Provides details of the <code>ScheduleLambdaFunction</code> decision.
-    /// 
-    ///  
-    /// <para>
-    /// <b>Access Control</b>
-    /// </para>
-    ///  
-    /// <para>
-    /// You can use IAM policies to control this decision's access to Amazon SWF resources
-    /// as follows:
-    /// </para>
-    ///  <ul> <li>Use a <code>Resource</code> element with the domain name to limit the action
-    /// to only specified domains.</li> <li>Use an <code>Action</code> element to allow or
-    /// deny permission to call this action.</li> <li>Constrain the following parameters by
-    /// using a <code>Condition</code> element with the appropriate keys. <ul> <li><code>activityType.name</code>:
-    /// String constraint. The key is <code>swf:activityType.name</code>.</li> <li><code>activityType.version</code>:
-    /// String constraint. The key is <code>swf:activityType.version</code>.</li> <li><code>taskList</code>:
-    /// String constraint. The key is <code>swf:taskList.name</code>.</li> </ul> </li> </ul>
-    /// 
-    /// <para>
-    /// If the caller does not have sufficient permissions to invoke the action, or the parameter
-    /// values fall outside the specified constraints, the action fails. The associated event
-    /// attribute's <b>cause</b> parameter will be set to OPERATION_NOT_PERMITTED. For details
-    /// and example IAM policies, see <a href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
-    /// IAM to Manage Access to Amazon SWF Workflows</a>.
-    /// </para>
+    /// Decision attributes specified in <code>scheduleLambdaFunctionDecisionAttributes</code>
+    /// within the list of decisions <code>decisions</code> passed to <a>RespondDecisionTaskCompleted</a>.
     /// </summary>
     public partial class ScheduleLambdaFunctionDecisionAttributes
     {
+        private string _control;
         private string _id;
         private string _input;
         private string _name;
         private string _startToCloseTimeout;
 
         /// <summary>
+        /// Gets and sets the property Control. 
+        /// <para>
+        /// The data attached to the event that the decider can use in subsequent workflow tasks.
+        /// This data isn't sent to the Lambda task.
+        /// </para>
+        /// </summary>
+        public string Control
+        {
+            get { return this._control; }
+            set { this._control = value; }
+        }
+
+        // Check to see if Control property is set
+        internal bool IsSetControl()
+        {
+            return this._control != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
-        /// <b>Required.</b> The SWF <code>id</code> of the AWS Lambda task.
-        /// </para>
-        ///  
-        /// <para>
-        /// The specified string must not start or end with whitespace. It must not contain a
-        /// <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or
-        /// any control characters (\u0000-\u001f | \u007f - \u009f). Also, it must not contain
-        /// the literal string quotarnquot.
+        /// A string that identifies the Lambda function execution in the event history.
         /// </para>
         /// </summary>
         public string Id
@@ -90,7 +79,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property Input. 
         /// <para>
-        /// The input provided to the AWS Lambda function.
+        /// The optional input data to be supplied to the Lambda function.
         /// </para>
         /// </summary>
         public string Input
@@ -108,7 +97,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// <b>Required.</b> The name of the AWS Lambda function to invoke.
+        /// The name, or ARN, of the Lambda function to schedule.
         /// </para>
         /// </summary>
         public string Name
@@ -126,7 +115,9 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property StartToCloseTimeout. 
         /// <para>
-        /// If set, specifies the maximum duration the function may take to execute.
+        /// The timeout value, in seconds, after which the Lambda function is considered to be
+        /// failed once it has started. This can be any integer from 1-300 (1s-5m). If no value
+        /// is supplied, than a default value of 300s is assumed.
         /// </para>
         /// </summary>
         public string StartToCloseTimeout

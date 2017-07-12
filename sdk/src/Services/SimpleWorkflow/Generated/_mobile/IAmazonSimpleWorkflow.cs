@@ -48,8 +48,8 @@ namespace Amazon.SimpleWorkflow
     ///  
     /// <para>
     /// This documentation serves as reference only. For a broader overview of the Amazon
-    /// SWF programming model, see the <a href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/">Amazon
-    /// SWF Developer Guide</a>.
+    /// SWF programming model, see the <i> <a href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/">Amazon
+    /// SWF Developer Guide</a> </i>.
     /// </para>
     /// </summary>
     public partial interface IAmazonSimpleWorkflow : IAmazonService, IDisposable

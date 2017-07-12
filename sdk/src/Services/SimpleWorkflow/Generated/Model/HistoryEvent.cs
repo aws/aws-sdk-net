@@ -30,74 +30,241 @@ namespace Amazon.SimpleWorkflow.Model
     /// <summary>
     /// Event within a workflow execution. A history event can be one of these types:
     /// 
-    ///  <ul> <li> <b>WorkflowExecutionStarted</b>: The workflow execution was started.</li>
-    /// <li> <b>WorkflowExecutionCompleted</b>: The workflow execution was closed due to successful
-    /// completion.</li> <li> <b>WorkflowExecutionFailed</b>: The workflow execution closed
-    /// due to a failure.</li> <li> <b>WorkflowExecutionTimedOut</b>: The workflow execution
-    /// was closed because a time out was exceeded.</li> <li> <b>WorkflowExecutionCanceled</b>:
-    /// The workflow execution was successfully canceled and closed.</li> <li> <b>WorkflowExecutionTerminated</b>:
-    /// The workflow execution was terminated.</li> <li> <b>WorkflowExecutionContinuedAsNew</b>:
-    /// The workflow execution was closed and a new execution of the same type was created
-    /// with the same workflowId.</li> <li> <b>WorkflowExecutionCancelRequested</b>: A request
-    /// to cancel this workflow execution was made.</li> <li> <b>DecisionTaskScheduled</b>:
-    /// A decision task was scheduled for the workflow execution.</li> <li> <b>DecisionTaskStarted</b>:
-    /// The decision task was dispatched to a decider.</li> <li> <b>DecisionTaskCompleted</b>:
-    /// The decider successfully completed a decision task by calling <a>RespondDecisionTaskCompleted</a>.</li>
-    /// <li> <b>DecisionTaskTimedOut</b>: The decision task timed out.</li> <li> <b>ActivityTaskScheduled</b>:
-    /// An activity task was scheduled for execution.</li> <li> <b>ScheduleActivityTaskFailed</b>:
-    /// Failed to process ScheduleActivityTask decision. This happens when the decision is
-    /// not configured properly, for example the activity type specified is not registered.</li>
-    /// <li> <b>ActivityTaskStarted</b>: The scheduled activity task was dispatched to a worker.</li>
-    /// <li> <b>ActivityTaskCompleted</b>: An activity worker successfully completed an activity
-    /// task by calling <a>RespondActivityTaskCompleted</a>.</li> <li> <b>ActivityTaskFailed</b>:
-    /// An activity worker failed an activity task by calling <a>RespondActivityTaskFailed</a>.</li>
-    /// <li> <b>ActivityTaskTimedOut</b>: The activity task timed out.</li> <li> <b>ActivityTaskCanceled</b>:
-    /// The activity task was successfully canceled.</li> <li> <b>ActivityTaskCancelRequested</b>:
-    /// A <code>RequestCancelActivityTask</code> decision was received by the system.</li>
-    /// <li> <b>RequestCancelActivityTaskFailed</b>: Failed to process RequestCancelActivityTask
-    /// decision. This happens when the decision is not configured properly.</li> <li> <b>WorkflowExecutionSignaled</b>:
-    /// An external signal was received for the workflow execution.</li> <li> <b>MarkerRecorded</b>:
-    /// A marker was recorded in the workflow history as the result of a <code>RecordMarker</code>
-    /// decision.</li> <li> <b>TimerStarted</b>: A timer was started for the workflow execution
-    /// due to a <code>StartTimer</code> decision.</li> <li> <b>StartTimerFailed</b>: Failed
-    /// to process StartTimer decision. This happens when the decision is not configured properly,
-    /// for example a timer already exists with the specified timer ID.</li> <li> <b>TimerFired</b>:
-    /// A timer, previously started for this workflow execution, fired.</li> <li> <b>TimerCanceled</b>:
-    /// A timer, previously started for this workflow execution, was successfully canceled.</li>
-    /// <li> <b>CancelTimerFailed</b>: Failed to process CancelTimer decision. This happens
-    /// when the decision is not configured properly, for example no timer exists with the
-    /// specified timer ID.</li> <li> <b>StartChildWorkflowExecutionInitiated</b>: A request
-    /// was made to start a child workflow execution.</li> <li> <b>StartChildWorkflowExecutionFailed</b>:
-    /// Failed to process StartChildWorkflowExecution decision. This happens when the decision
-    /// is not configured properly, for example the workflow type specified is not registered.</li>
-    /// <li> <b>ChildWorkflowExecutionStarted</b>: A child workflow execution was successfully
-    /// started.</li> <li> <b>ChildWorkflowExecutionCompleted</b>: A child workflow execution,
-    /// started by this workflow execution, completed successfully and was closed.</li> <li>
-    /// <b>ChildWorkflowExecutionFailed</b>: A child workflow execution, started by this workflow
-    /// execution, failed to complete successfully and was closed.</li> <li> <b>ChildWorkflowExecutionTimedOut</b>:
-    /// A child workflow execution, started by this workflow execution, timed out and was
-    /// closed.</li> <li> <b>ChildWorkflowExecutionCanceled</b>: A child workflow execution,
-    /// started by this workflow execution, was canceled and closed.</li> <li> <b>ChildWorkflowExecutionTerminated</b>:
-    /// A child workflow execution, started by this workflow execution, was terminated.</li>
-    /// <li> <b>SignalExternalWorkflowExecutionInitiated</b>: A request to signal an external
-    /// workflow was made.</li> <li> <b>ExternalWorkflowExecutionSignaled</b>: A signal, requested
-    /// by this workflow execution, was successfully delivered to the target external workflow
-    /// execution.</li> <li> <b>SignalExternalWorkflowExecutionFailed</b>: The request to
-    /// signal an external workflow execution failed.</li> <li> <b>RequestCancelExternalWorkflowExecutionInitiated</b>:
-    /// A request was made to request the cancellation of an external workflow execution.</li>
-    /// <li> <b>ExternalWorkflowExecutionCancelRequested</b>: Request to cancel an external
-    /// workflow execution was successfully delivered to the target execution.</li> <li> <b>RequestCancelExternalWorkflowExecutionFailed</b>:
-    /// Request to cancel an external workflow execution failed.</li> <li> <b>LambdaFunctionScheduled</b>:
-    /// An AWS Lambda function was scheduled for execution.</li> <li> <b>LambdaFunctionStarted</b>:
-    /// The scheduled function was invoked in the AWS Lambda service.</li> <li> <b>LambdaFunctionCompleted</b>:
-    /// The AWS Lambda function successfully completed.</li> <li> <b>LambdaFunctionFailed</b>:
-    /// The AWS Lambda function execution failed.</li> <li> <b>LambdaFunctionTimedOut</b>:
-    /// The AWS Lambda function execution timed out.</li> <li> <b>ScheduleLambdaFunctionFailed</b>:
-    /// Failed to process ScheduleLambdaFunction decision. This happens when the workflow
-    /// execution does not have the proper IAM role attached to invoke AWS Lambda functions.</li>
-    /// <li> <b>StartLambdaFunctionFailed</b>: Failed to invoke the scheduled function in
-    /// the AWS Lambda service. This happens when the AWS Lambda service is not available
-    /// in the current region, or received too many requests.</li> </ul>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <code>ActivityTaskCancelRequested</code> – A <code>RequestCancelActivityTask</code>
+    /// decision was received by the system.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>ActivityTaskCanceled</code> – The activity task was successfully canceled.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>ActivityTaskCompleted</code> – An activity worker successfully completed an
+    /// activity task by calling <a>RespondActivityTaskCompleted</a>.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>ActivityTaskFailed</code> – An activity worker failed an activity task by calling
+    /// <a>RespondActivityTaskFailed</a>.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>ActivityTaskScheduled</code> – An activity task was scheduled for execution.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>ActivityTaskStarted</code> – The scheduled activity task was dispatched to
+    /// a worker.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>ActivityTaskTimedOut</code> – The activity task timed out.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>CancelTimerFailed</code> – Failed to process CancelTimer decision. This happens
+    /// when the decision isn't configured properly, for example no timer exists with the
+    /// specified timer Id.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>CancelWorkflowExecutionFailed</code> – A request to cancel a workflow execution
+    /// failed.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>ChildWorkflowExecutionCanceled</code> – A child workflow execution, started
+    /// by this workflow execution, was canceled and closed.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>ChildWorkflowExecutionCompleted</code> – A child workflow execution, started
+    /// by this workflow execution, completed successfully and was closed.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>ChildWorkflowExecutionFailed</code> – A child workflow execution, started by
+    /// this workflow execution, failed to complete successfully and was closed.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>ChildWorkflowExecutionStarted</code> – A child workflow execution was successfully
+    /// started.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>ChildWorkflowExecutionTerminated</code> – A child workflow execution, started
+    /// by this workflow execution, was terminated.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>ChildWorkflowExecutionTimedOut</code> – A child workflow execution, started
+    /// by this workflow execution, timed out and was closed.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>CompleteWorkflowExecutionFailed</code> – The workflow execution failed to complete.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>ContinueAsNewWorkflowExecutionFailed</code> – The workflow execution failed
+    /// to complete after being continued as a new workflow execution.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>DecisionTaskCompleted</code> – The decider successfully completed a decision
+    /// task by calling <a>RespondDecisionTaskCompleted</a>.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>DecisionTaskScheduled</code> – A decision task was scheduled for the workflow
+    /// execution.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>DecisionTaskStarted</code> – The decision task was dispatched to a decider.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>DecisionTaskTimedOut</code> – The decision task timed out.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>ExternalWorkflowExecutionCancelRequested</code> – Request to cancel an external
+    /// workflow execution was successfully delivered to the target execution.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>ExternalWorkflowExecutionSignaled</code> – A signal, requested by this workflow
+    /// execution, was successfully delivered to the target external workflow execution.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>FailWorkflowExecutionFailed</code> – A request to mark a workflow execution
+    /// as failed, itself failed.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>MarkerRecorded</code> – A marker was recorded in the workflow history as the
+    /// result of a <code>RecordMarker</code> decision.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>RecordMarkerFailed</code> – A <code>RecordMarker</code> decision was returned
+    /// as failed.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>RequestCancelActivityTaskFailed</code> – Failed to process RequestCancelActivityTask
+    /// decision. This happens when the decision isn't configured properly.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>RequestCancelExternalWorkflowExecutionFailed</code> – Request to cancel an
+    /// external workflow execution failed.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>RequestCancelExternalWorkflowExecutionInitiated</code> – A request was made
+    /// to request the cancellation of an external workflow execution.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>ScheduleActivityTaskFailed</code> – Failed to process ScheduleActivityTask
+    /// decision. This happens when the decision isn't configured properly, for example the
+    /// activity type specified isn't registered.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>SignalExternalWorkflowExecutionFailed</code> – The request to signal an external
+    /// workflow execution failed.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>SignalExternalWorkflowExecutionInitiated</code> – A request to signal an external
+    /// workflow was made.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>StartActivityTaskFailed</code> – A scheduled activity task failed to start.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>StartChildWorkflowExecutionFailed</code> – Failed to process StartChildWorkflowExecution
+    /// decision. This happens when the decision isn't configured properly, for example the
+    /// workflow type specified isn't registered.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>StartChildWorkflowExecutionInitiated</code> – A request was made to start a
+    /// child workflow execution.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>StartTimerFailed</code> – Failed to process StartTimer decision. This happens
+    /// when the decision isn't configured properly, for example a timer already exists with
+    /// the specified timer Id.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>TimerCanceled</code> – A timer, previously started for this workflow execution,
+    /// was successfully canceled.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>TimerFired</code> – A timer, previously started for this workflow execution,
+    /// fired.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>TimerStarted</code> – A timer was started for the workflow execution due to
+    /// a <code>StartTimer</code> decision.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>WorkflowExecutionCancelRequested</code> – A request to cancel this workflow
+    /// execution was made.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>WorkflowExecutionCanceled</code> – The workflow execution was successfully
+    /// canceled and closed.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>WorkflowExecutionCompleted</code> – The workflow execution was closed due to
+    /// successful completion.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>WorkflowExecutionContinuedAsNew</code> – The workflow execution was closed
+    /// and a new execution of the same type was created with the same workflowId.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>WorkflowExecutionFailed</code> – The workflow execution closed due to a failure.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>WorkflowExecutionSignaled</code> – An external signal was received for the
+    /// workflow execution.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>WorkflowExecutionStarted</code> – The workflow execution was started.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>WorkflowExecutionTerminated</code> – The workflow execution was terminated.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>WorkflowExecutionTimedOut</code> – The workflow execution was closed because
+    /// a time out was exceeded.
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial class HistoryEvent
     {
@@ -163,7 +330,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// Gets and sets the property ActivityTaskCanceledEventAttributes. 
         /// <para>
         /// If the event is of type <code>ActivityTaskCanceled</code> then this member is set
-        /// and provides detailed information about the event. It is not set for other event types.
+        /// and provides detailed information about the event. It isn't set for other event types.
         /// </para>
         /// </summary>
         public ActivityTaskCanceledEventAttributes ActivityTaskCanceledEventAttributes
@@ -182,8 +349,8 @@ namespace Amazon.SimpleWorkflow.Model
         /// Gets and sets the property ActivityTaskCancelRequestedEventAttributes. 
         /// <para>
         /// If the event is of type <code>ActivityTaskcancelRequested</code> then this member
-        /// is set and provides detailed information about the event. It is not set for other
-        /// event types.
+        /// is set and provides detailed information about the event. It isn't set for other event
+        /// types.
         /// </para>
         /// </summary>
         public ActivityTaskCancelRequestedEventAttributes ActivityTaskCancelRequestedEventAttributes
@@ -202,7 +369,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// Gets and sets the property ActivityTaskCompletedEventAttributes. 
         /// <para>
         /// If the event is of type <code>ActivityTaskCompleted</code> then this member is set
-        /// and provides detailed information about the event. It is not set for other event types.
+        /// and provides detailed information about the event. It isn't set for other event types.
         /// </para>
         /// </summary>
         public ActivityTaskCompletedEventAttributes ActivityTaskCompletedEventAttributes
@@ -221,7 +388,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// Gets and sets the property ActivityTaskFailedEventAttributes. 
         /// <para>
         /// If the event is of type <code>ActivityTaskFailed</code> then this member is set and
-        /// provides detailed information about the event. It is not set for other event types.
+        /// provides detailed information about the event. It isn't set for other event types.
         /// </para>
         /// </summary>
         public ActivityTaskFailedEventAttributes ActivityTaskFailedEventAttributes
@@ -240,7 +407,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// Gets and sets the property ActivityTaskScheduledEventAttributes. 
         /// <para>
         /// If the event is of type <code>ActivityTaskScheduled</code> then this member is set
-        /// and provides detailed information about the event. It is not set for other event types.
+        /// and provides detailed information about the event. It isn't set for other event types.
         /// </para>
         /// </summary>
         public ActivityTaskScheduledEventAttributes ActivityTaskScheduledEventAttributes
@@ -259,7 +426,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// Gets and sets the property ActivityTaskStartedEventAttributes. 
         /// <para>
         /// If the event is of type <code>ActivityTaskStarted</code> then this member is set and
-        /// provides detailed information about the event. It is not set for other event types.
+        /// provides detailed information about the event. It isn't set for other event types.
         /// </para>
         /// </summary>
         public ActivityTaskStartedEventAttributes ActivityTaskStartedEventAttributes
@@ -278,7 +445,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// Gets and sets the property ActivityTaskTimedOutEventAttributes. 
         /// <para>
         /// If the event is of type <code>ActivityTaskTimedOut</code> then this member is set
-        /// and provides detailed information about the event. It is not set for other event types.
+        /// and provides detailed information about the event. It isn't set for other event types.
         /// </para>
         /// </summary>
         public ActivityTaskTimedOutEventAttributes ActivityTaskTimedOutEventAttributes
@@ -297,7 +464,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// Gets and sets the property CancelTimerFailedEventAttributes. 
         /// <para>
         /// If the event is of type <code>CancelTimerFailed</code> then this member is set and
-        /// provides detailed information about the event. It is not set for other event types.
+        /// provides detailed information about the event. It isn't set for other event types.
         /// </para>
         /// </summary>
         public CancelTimerFailedEventAttributes CancelTimerFailedEventAttributes
@@ -316,8 +483,8 @@ namespace Amazon.SimpleWorkflow.Model
         /// Gets and sets the property CancelWorkflowExecutionFailedEventAttributes. 
         /// <para>
         /// If the event is of type <code>CancelWorkflowExecutionFailed</code> then this member
-        /// is set and provides detailed information about the event. It is not set for other
-        /// event types.
+        /// is set and provides detailed information about the event. It isn't set for other event
+        /// types.
         /// </para>
         /// </summary>
         public CancelWorkflowExecutionFailedEventAttributes CancelWorkflowExecutionFailedEventAttributes
@@ -336,8 +503,8 @@ namespace Amazon.SimpleWorkflow.Model
         /// Gets and sets the property ChildWorkflowExecutionCanceledEventAttributes. 
         /// <para>
         /// If the event is of type <code>ChildWorkflowExecutionCanceled</code> then this member
-        /// is set and provides detailed information about the event. It is not set for other
-        /// event types.
+        /// is set and provides detailed information about the event. It isn't set for other event
+        /// types.
         /// </para>
         /// </summary>
         public ChildWorkflowExecutionCanceledEventAttributes ChildWorkflowExecutionCanceledEventAttributes
@@ -356,8 +523,8 @@ namespace Amazon.SimpleWorkflow.Model
         /// Gets and sets the property ChildWorkflowExecutionCompletedEventAttributes. 
         /// <para>
         /// If the event is of type <code>ChildWorkflowExecutionCompleted</code> then this member
-        /// is set and provides detailed information about the event. It is not set for other
-        /// event types.
+        /// is set and provides detailed information about the event. It isn't set for other event
+        /// types.
         /// </para>
         /// </summary>
         public ChildWorkflowExecutionCompletedEventAttributes ChildWorkflowExecutionCompletedEventAttributes
@@ -376,8 +543,8 @@ namespace Amazon.SimpleWorkflow.Model
         /// Gets and sets the property ChildWorkflowExecutionFailedEventAttributes. 
         /// <para>
         /// If the event is of type <code>ChildWorkflowExecutionFailed</code> then this member
-        /// is set and provides detailed information about the event. It is not set for other
-        /// event types.
+        /// is set and provides detailed information about the event. It isn't set for other event
+        /// types.
         /// </para>
         /// </summary>
         public ChildWorkflowExecutionFailedEventAttributes ChildWorkflowExecutionFailedEventAttributes
@@ -396,8 +563,8 @@ namespace Amazon.SimpleWorkflow.Model
         /// Gets and sets the property ChildWorkflowExecutionStartedEventAttributes. 
         /// <para>
         /// If the event is of type <code>ChildWorkflowExecutionStarted</code> then this member
-        /// is set and provides detailed information about the event. It is not set for other
-        /// event types.
+        /// is set and provides detailed information about the event. It isn't set for other event
+        /// types.
         /// </para>
         /// </summary>
         public ChildWorkflowExecutionStartedEventAttributes ChildWorkflowExecutionStartedEventAttributes
@@ -416,8 +583,8 @@ namespace Amazon.SimpleWorkflow.Model
         /// Gets and sets the property ChildWorkflowExecutionTerminatedEventAttributes. 
         /// <para>
         /// If the event is of type <code>ChildWorkflowExecutionTerminated</code> then this member
-        /// is set and provides detailed information about the event. It is not set for other
-        /// event types.
+        /// is set and provides detailed information about the event. It isn't set for other event
+        /// types.
         /// </para>
         /// </summary>
         public ChildWorkflowExecutionTerminatedEventAttributes ChildWorkflowExecutionTerminatedEventAttributes
@@ -436,8 +603,8 @@ namespace Amazon.SimpleWorkflow.Model
         /// Gets and sets the property ChildWorkflowExecutionTimedOutEventAttributes. 
         /// <para>
         /// If the event is of type <code>ChildWorkflowExecutionTimedOut</code> then this member
-        /// is set and provides detailed information about the event. It is not set for other
-        /// event types.
+        /// is set and provides detailed information about the event. It isn't set for other event
+        /// types.
         /// </para>
         /// </summary>
         public ChildWorkflowExecutionTimedOutEventAttributes ChildWorkflowExecutionTimedOutEventAttributes
@@ -456,8 +623,8 @@ namespace Amazon.SimpleWorkflow.Model
         /// Gets and sets the property CompleteWorkflowExecutionFailedEventAttributes. 
         /// <para>
         /// If the event is of type <code>CompleteWorkflowExecutionFailed</code> then this member
-        /// is set and provides detailed information about the event. It is not set for other
-        /// event types.
+        /// is set and provides detailed information about the event. It isn't set for other event
+        /// types.
         /// </para>
         /// </summary>
         public CompleteWorkflowExecutionFailedEventAttributes CompleteWorkflowExecutionFailedEventAttributes
@@ -476,7 +643,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// Gets and sets the property ContinueAsNewWorkflowExecutionFailedEventAttributes. 
         /// <para>
         /// If the event is of type <code>ContinueAsNewWorkflowExecutionFailed</code> then this
-        /// member is set and provides detailed information about the event. It is not set for
+        /// member is set and provides detailed information about the event. It isn't set for
         /// other event types.
         /// </para>
         /// </summary>
@@ -496,7 +663,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// Gets and sets the property DecisionTaskCompletedEventAttributes. 
         /// <para>
         /// If the event is of type <code>DecisionTaskCompleted</code> then this member is set
-        /// and provides detailed information about the event. It is not set for other event types.
+        /// and provides detailed information about the event. It isn't set for other event types.
         /// </para>
         /// </summary>
         public DecisionTaskCompletedEventAttributes DecisionTaskCompletedEventAttributes
@@ -515,7 +682,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// Gets and sets the property DecisionTaskScheduledEventAttributes. 
         /// <para>
         /// If the event is of type <code>DecisionTaskScheduled</code> then this member is set
-        /// and provides detailed information about the event. It is not set for other event types.
+        /// and provides detailed information about the event. It isn't set for other event types.
         /// </para>
         /// </summary>
         public DecisionTaskScheduledEventAttributes DecisionTaskScheduledEventAttributes
@@ -534,7 +701,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// Gets and sets the property DecisionTaskStartedEventAttributes. 
         /// <para>
         /// If the event is of type <code>DecisionTaskStarted</code> then this member is set and
-        /// provides detailed information about the event. It is not set for other event types.
+        /// provides detailed information about the event. It isn't set for other event types.
         /// </para>
         /// </summary>
         public DecisionTaskStartedEventAttributes DecisionTaskStartedEventAttributes
@@ -553,7 +720,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// Gets and sets the property DecisionTaskTimedOutEventAttributes. 
         /// <para>
         /// If the event is of type <code>DecisionTaskTimedOut</code> then this member is set
-        /// and provides detailed information about the event. It is not set for other event types.
+        /// and provides detailed information about the event. It isn't set for other event types.
         /// </para>
         /// </summary>
         public DecisionTaskTimedOutEventAttributes DecisionTaskTimedOutEventAttributes
@@ -628,7 +795,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// 
         /// <para>
         /// If the event is of type <code>ExternalWorkflowExecutionCancelRequested</code> then
-        /// this member is set and provides detailed information about the event. It is not set
+        /// this member is set and provides detailed information about the event. It isn't set
         /// for other event types. 
         /// </para>
         /// </summary>
@@ -648,8 +815,8 @@ namespace Amazon.SimpleWorkflow.Model
         /// Gets and sets the property ExternalWorkflowExecutionSignaledEventAttributes. 
         /// <para>
         /// If the event is of type <code>ExternalWorkflowExecutionSignaled</code> then this member
-        /// is set and provides detailed information about the event. It is not set for other
-        /// event types.
+        /// is set and provides detailed information about the event. It isn't set for other event
+        /// types.
         /// </para>
         /// </summary>
         public ExternalWorkflowExecutionSignaledEventAttributes ExternalWorkflowExecutionSignaledEventAttributes
@@ -668,8 +835,8 @@ namespace Amazon.SimpleWorkflow.Model
         /// Gets and sets the property FailWorkflowExecutionFailedEventAttributes. 
         /// <para>
         /// If the event is of type <code>FailWorkflowExecutionFailed</code> then this member
-        /// is set and provides detailed information about the event. It is not set for other
-        /// event types.
+        /// is set and provides detailed information about the event. It isn't set for other event
+        /// types.
         /// </para>
         /// </summary>
         public FailWorkflowExecutionFailedEventAttributes FailWorkflowExecutionFailedEventAttributes
@@ -685,7 +852,11 @@ namespace Amazon.SimpleWorkflow.Model
         }
 
         /// <summary>
-        /// Gets and sets the property LambdaFunctionCompletedEventAttributes.
+        /// Gets and sets the property LambdaFunctionCompletedEventAttributes. 
+        /// <para>
+        /// Provides the details of the <code>LambdaFunctionCompleted</code> event. It isn't set
+        /// for other event types.
+        /// </para>
         /// </summary>
         public LambdaFunctionCompletedEventAttributes LambdaFunctionCompletedEventAttributes
         {
@@ -700,7 +871,11 @@ namespace Amazon.SimpleWorkflow.Model
         }
 
         /// <summary>
-        /// Gets and sets the property LambdaFunctionFailedEventAttributes.
+        /// Gets and sets the property LambdaFunctionFailedEventAttributes. 
+        /// <para>
+        /// Provides the details of the <code>LambdaFunctionFailed</code> event. It isn't set
+        /// for other event types.
+        /// </para>
         /// </summary>
         public LambdaFunctionFailedEventAttributes LambdaFunctionFailedEventAttributes
         {
@@ -715,7 +890,11 @@ namespace Amazon.SimpleWorkflow.Model
         }
 
         /// <summary>
-        /// Gets and sets the property LambdaFunctionScheduledEventAttributes.
+        /// Gets and sets the property LambdaFunctionScheduledEventAttributes. 
+        /// <para>
+        /// Provides the details of the <code>LambdaFunctionScheduled</code> event. It isn't set
+        /// for other event types.
+        /// </para>
         /// </summary>
         public LambdaFunctionScheduledEventAttributes LambdaFunctionScheduledEventAttributes
         {
@@ -730,7 +909,11 @@ namespace Amazon.SimpleWorkflow.Model
         }
 
         /// <summary>
-        /// Gets and sets the property LambdaFunctionStartedEventAttributes.
+        /// Gets and sets the property LambdaFunctionStartedEventAttributes. 
+        /// <para>
+        /// Provides the details of the <code>LambdaFunctionStarted</code> event. It isn't set
+        /// for other event types.
+        /// </para>
         /// </summary>
         public LambdaFunctionStartedEventAttributes LambdaFunctionStartedEventAttributes
         {
@@ -745,7 +928,11 @@ namespace Amazon.SimpleWorkflow.Model
         }
 
         /// <summary>
-        /// Gets and sets the property LambdaFunctionTimedOutEventAttributes.
+        /// Gets and sets the property LambdaFunctionTimedOutEventAttributes. 
+        /// <para>
+        /// Provides the details of the <code>LambdaFunctionTimedOut</code> event. It isn't set
+        /// for other event types.
+        /// </para>
         /// </summary>
         public LambdaFunctionTimedOutEventAttributes LambdaFunctionTimedOutEventAttributes
         {
@@ -763,7 +950,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// Gets and sets the property MarkerRecordedEventAttributes. 
         /// <para>
         /// If the event is of type <code>MarkerRecorded</code> then this member is set and provides
-        /// detailed information about the event. It is not set for other event types.
+        /// detailed information about the event. It isn't set for other event types.
         /// </para>
         /// </summary>
         public MarkerRecordedEventAttributes MarkerRecordedEventAttributes
@@ -782,7 +969,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// Gets and sets the property RecordMarkerFailedEventAttributes. 
         /// <para>
         /// If the event is of type <code>DecisionTaskFailed</code> then this member is set and
-        /// provides detailed information about the event. It is not set for other event types.
+        /// provides detailed information about the event. It isn't set for other event types.
         /// </para>
         /// </summary>
         public RecordMarkerFailedEventAttributes RecordMarkerFailedEventAttributes
@@ -801,8 +988,8 @@ namespace Amazon.SimpleWorkflow.Model
         /// Gets and sets the property RequestCancelActivityTaskFailedEventAttributes. 
         /// <para>
         /// If the event is of type <code>RequestCancelActivityTaskFailed</code> then this member
-        /// is set and provides detailed information about the event. It is not set for other
-        /// event types.
+        /// is set and provides detailed information about the event. It isn't set for other event
+        /// types.
         /// </para>
         /// </summary>
         public RequestCancelActivityTaskFailedEventAttributes RequestCancelActivityTaskFailedEventAttributes
@@ -822,7 +1009,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// 
         /// <para>
         /// If the event is of type <code>RequestCancelExternalWorkflowExecutionFailed</code>
-        /// then this member is set and provides detailed information about the event. It is not
+        /// then this member is set and provides detailed information about the event. It isn't
         /// set for other event types.
         /// </para>
         /// </summary>
@@ -843,7 +1030,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// 
         /// <para>
         /// If the event is of type <code>RequestCancelExternalWorkflowExecutionInitiated</code>
-        /// then this member is set and provides detailed information about the event. It is not
+        /// then this member is set and provides detailed information about the event. It isn't
         /// set for other event types.
         /// </para>
         /// </summary>
@@ -863,7 +1050,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// Gets and sets the property ScheduleActivityTaskFailedEventAttributes. 
         /// <para>
         /// If the event is of type <code>ScheduleActivityTaskFailed</code> then this member is
-        /// set and provides detailed information about the event. It is not set for other event
+        /// set and provides detailed information about the event. It isn't set for other event
         /// types.
         /// </para>
         /// </summary>
@@ -880,7 +1067,11 @@ namespace Amazon.SimpleWorkflow.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ScheduleLambdaFunctionFailedEventAttributes.
+        /// Gets and sets the property ScheduleLambdaFunctionFailedEventAttributes. 
+        /// <para>
+        /// Provides the details of the <code>ScheduleLambdaFunctionFailed</code> event. It isn't
+        /// set for other event types.
+        /// </para>
         /// </summary>
         public ScheduleLambdaFunctionFailedEventAttributes ScheduleLambdaFunctionFailedEventAttributes
         {
@@ -898,7 +1089,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// Gets and sets the property SignalExternalWorkflowExecutionFailedEventAttributes. 
         /// <para>
         /// If the event is of type <code>SignalExternalWorkflowExecutionFailed</code> then this
-        /// member is set and provides detailed information about the event. It is not set for
+        /// member is set and provides detailed information about the event. It isn't set for
         /// other event types.
         /// </para>
         /// </summary>
@@ -919,7 +1110,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// 
         /// <para>
         /// If the event is of type <code>SignalExternalWorkflowExecutionInitiated</code> then
-        /// this member is set and provides detailed information about the event. It is not set
+        /// this member is set and provides detailed information about the event. It isn't set
         /// for other event types.
         /// </para>
         /// </summary>
@@ -939,8 +1130,8 @@ namespace Amazon.SimpleWorkflow.Model
         /// Gets and sets the property StartChildWorkflowExecutionFailedEventAttributes. 
         /// <para>
         /// If the event is of type <code>StartChildWorkflowExecutionFailed</code> then this member
-        /// is set and provides detailed information about the event. It is not set for other
-        /// event types.
+        /// is set and provides detailed information about the event. It isn't set for other event
+        /// types.
         /// </para>
         /// </summary>
         public StartChildWorkflowExecutionFailedEventAttributes StartChildWorkflowExecutionFailedEventAttributes
@@ -959,7 +1150,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// Gets and sets the property StartChildWorkflowExecutionInitiatedEventAttributes. 
         /// <para>
         /// If the event is of type <code>StartChildWorkflowExecutionInitiated</code> then this
-        /// member is set and provides detailed information about the event. It is not set for
+        /// member is set and provides detailed information about the event. It isn't set for
         /// other event types.
         /// </para>
         /// </summary>
@@ -976,7 +1167,11 @@ namespace Amazon.SimpleWorkflow.Model
         }
 
         /// <summary>
-        /// Gets and sets the property StartLambdaFunctionFailedEventAttributes.
+        /// Gets and sets the property StartLambdaFunctionFailedEventAttributes. 
+        /// <para>
+        /// Provides the details of the <code>StartLambdaFunctionFailed</code> event. It isn't
+        /// set for other event types.
+        /// </para>
         /// </summary>
         public StartLambdaFunctionFailedEventAttributes StartLambdaFunctionFailedEventAttributes
         {
@@ -994,7 +1189,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// Gets and sets the property StartTimerFailedEventAttributes. 
         /// <para>
         /// If the event is of type <code>StartTimerFailed</code> then this member is set and
-        /// provides detailed information about the event. It is not set for other event types.
+        /// provides detailed information about the event. It isn't set for other event types.
         /// </para>
         /// </summary>
         public StartTimerFailedEventAttributes StartTimerFailedEventAttributes
@@ -1013,7 +1208,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// Gets and sets the property TimerCanceledEventAttributes. 
         /// <para>
         /// If the event is of type <code>TimerCanceled</code> then this member is set and provides
-        /// detailed information about the event. It is not set for other event types.
+        /// detailed information about the event. It isn't set for other event types.
         /// </para>
         /// </summary>
         public TimerCanceledEventAttributes TimerCanceledEventAttributes
@@ -1032,7 +1227,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// Gets and sets the property TimerFiredEventAttributes. 
         /// <para>
         /// If the event is of type <code>TimerFired</code> then this member is set and provides
-        /// detailed information about the event. It is not set for other event types.
+        /// detailed information about the event. It isn't set for other event types.
         /// </para>
         /// </summary>
         public TimerFiredEventAttributes TimerFiredEventAttributes
@@ -1051,7 +1246,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// Gets and sets the property TimerStartedEventAttributes. 
         /// <para>
         /// If the event is of type <code>TimerStarted</code> then this member is set and provides
-        /// detailed information about the event. It is not set for other event types.
+        /// detailed information about the event. It isn't set for other event types.
         /// </para>
         /// </summary>
         public TimerStartedEventAttributes TimerStartedEventAttributes
@@ -1070,7 +1265,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// Gets and sets the property WorkflowExecutionCanceledEventAttributes. 
         /// <para>
         /// If the event is of type <code>WorkflowExecutionCanceled</code> then this member is
-        /// set and provides detailed information about the event. It is not set for other event
+        /// set and provides detailed information about the event. It isn't set for other event
         /// types.
         /// </para>
         /// </summary>
@@ -1090,8 +1285,8 @@ namespace Amazon.SimpleWorkflow.Model
         /// Gets and sets the property WorkflowExecutionCancelRequestedEventAttributes. 
         /// <para>
         /// If the event is of type <code>WorkflowExecutionCancelRequested</code> then this member
-        /// is set and provides detailed information about the event. It is not set for other
-        /// event types.
+        /// is set and provides detailed information about the event. It isn't set for other event
+        /// types.
         /// </para>
         /// </summary>
         public WorkflowExecutionCancelRequestedEventAttributes WorkflowExecutionCancelRequestedEventAttributes
@@ -1110,7 +1305,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// Gets and sets the property WorkflowExecutionCompletedEventAttributes. 
         /// <para>
         /// If the event is of type <code>WorkflowExecutionCompleted</code> then this member is
-        /// set and provides detailed information about the event. It is not set for other event
+        /// set and provides detailed information about the event. It isn't set for other event
         /// types.
         /// </para>
         /// </summary>
@@ -1130,8 +1325,8 @@ namespace Amazon.SimpleWorkflow.Model
         /// Gets and sets the property WorkflowExecutionContinuedAsNewEventAttributes. 
         /// <para>
         /// If the event is of type <code>WorkflowExecutionContinuedAsNew</code> then this member
-        /// is set and provides detailed information about the event. It is not set for other
-        /// event types.
+        /// is set and provides detailed information about the event. It isn't set for other event
+        /// types.
         /// </para>
         /// </summary>
         public WorkflowExecutionContinuedAsNewEventAttributes WorkflowExecutionContinuedAsNewEventAttributes
@@ -1150,7 +1345,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// Gets and sets the property WorkflowExecutionFailedEventAttributes. 
         /// <para>
         /// If the event is of type <code>WorkflowExecutionFailed</code> then this member is set
-        /// and provides detailed information about the event. It is not set for other event types.
+        /// and provides detailed information about the event. It isn't set for other event types.
         /// </para>
         /// </summary>
         public WorkflowExecutionFailedEventAttributes WorkflowExecutionFailedEventAttributes
@@ -1169,7 +1364,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// Gets and sets the property WorkflowExecutionSignaledEventAttributes. 
         /// <para>
         /// If the event is of type <code>WorkflowExecutionSignaled</code> then this member is
-        /// set and provides detailed information about the event. It is not set for other event
+        /// set and provides detailed information about the event. It isn't set for other event
         /// types.
         /// </para>
         /// </summary>
@@ -1189,7 +1384,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// Gets and sets the property WorkflowExecutionStartedEventAttributes. 
         /// <para>
         /// If the event is of type <code>WorkflowExecutionStarted</code> then this member is
-        /// set and provides detailed information about the event. It is not set for other event
+        /// set and provides detailed information about the event. It isn't set for other event
         /// types.
         /// </para>
         /// </summary>
@@ -1209,8 +1404,8 @@ namespace Amazon.SimpleWorkflow.Model
         /// Gets and sets the property WorkflowExecutionTerminatedEventAttributes. 
         /// <para>
         /// If the event is of type <code>WorkflowExecutionTerminated</code> then this member
-        /// is set and provides detailed information about the event. It is not set for other
-        /// event types.
+        /// is set and provides detailed information about the event. It isn't set for other event
+        /// types.
         /// </para>
         /// </summary>
         public WorkflowExecutionTerminatedEventAttributes WorkflowExecutionTerminatedEventAttributes
@@ -1229,7 +1424,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// Gets and sets the property WorkflowExecutionTimedOutEventAttributes. 
         /// <para>
         /// If the event is of type <code>WorkflowExecutionTimedOut</code> then this member is
-        /// set and provides detailed information about the event. It is not set for other event
+        /// set and provides detailed information about the event. It isn't set for other event
         /// types.
         /// </para>
         /// </summary>

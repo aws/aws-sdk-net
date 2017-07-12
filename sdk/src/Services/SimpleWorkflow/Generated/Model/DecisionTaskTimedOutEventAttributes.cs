@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleWorkflow.Model
 {
     /// <summary>
-    /// Provides details of the <code>DecisionTaskTimedOut</code> event.
+    /// Provides the details of the <code>DecisionTaskTimedOut</code> event.
     /// </summary>
     public partial class DecisionTaskTimedOutEventAttributes
     {

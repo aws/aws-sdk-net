@@ -30,37 +30,77 @@ namespace Amazon.SimpleWorkflow.Model
     /// <summary>
     /// Specifies a decision made by the decider. A decision can be one of these types:
     /// 
-    ///  <ul> <li> <b>CancelTimer</b>: cancels a previously started timer and records a <code>TimerCanceled</code>
-    /// event in the history.</li> <li> <b>CancelWorkflowExecution</b>: closes the workflow
-    /// execution and records a <code>WorkflowExecutionCanceled</code> event in the history.</li>
-    /// <li> <b>CompleteWorkflowExecution</b>: closes the workflow execution and records a
-    /// <code>WorkflowExecutionCompleted</code> event in the history .</li> <li> <b>ContinueAsNewWorkflowExecution</b>:
-    /// closes the workflow execution and starts a new workflow execution of the same type
-    /// using the same workflow ID and a unique run ID. A <code>WorkflowExecutionContinuedAsNew</code>
-    /// event is recorded in the history.</li> <li> <b>FailWorkflowExecution</b>: closes the
-    /// workflow execution and records a <code>WorkflowExecutionFailed</code> event in the
-    /// history.</li> <li> <b>RecordMarker</b>: records a <code>MarkerRecorded</code> event
-    /// in the history. Markers can be used for adding custom information in the history for
-    /// instance to let deciders know that they do not need to look at the history beyond
-    /// the marker event.</li> <li> <b>RequestCancelActivityTask</b>: attempts to cancel a
-    /// previously scheduled activity task. If the activity task was scheduled but has not
-    /// been assigned to a worker, then it will be canceled. If the activity task was already
-    /// assigned to a worker, then the worker will be informed that cancellation has been
-    /// requested in the response to <a>RecordActivityTaskHeartbeat</a>.</li> <li> <b>RequestCancelExternalWorkflowExecution</b>:
-    /// requests that a request be made to cancel the specified external workflow execution
-    /// and records a <code>RequestCancelExternalWorkflowExecutionInitiated</code> event in
-    /// the history.</li> <li> <b>ScheduleActivityTask</b>: schedules an activity task.</li>
-    /// <li> <b>ScheduleLambdaFunction</b>: schedules a AWS Lambda function.</li> <li> <b>SignalExternalWorkflowExecution</b>:
-    /// requests a signal to be delivered to the specified external workflow execution and
-    /// records a <code>SignalExternalWorkflowExecutionInitiated</code> event in the history.</li>
-    /// <li> <b>StartChildWorkflowExecution</b>: requests that a child workflow execution
+    ///  <ul> <li> 
+    /// <para>
+    ///  <code>CancelTimer</code> – Cancels a previously started timer and records a <code>TimerCanceled</code>
+    /// event in the history.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>CancelWorkflowExecution</code> – Closes the workflow execution and records
+    /// a <code>WorkflowExecutionCanceled</code> event in the history.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>CompleteWorkflowExecution</code> – Closes the workflow execution and records
+    /// a <code>WorkflowExecutionCompleted</code> event in the history .
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>ContinueAsNewWorkflowExecution</code> – Closes the workflow execution and starts
+    /// a new workflow execution of the same type using the same workflow ID and a unique
+    /// run Id. A <code>WorkflowExecutionContinuedAsNew</code> event is recorded in the history.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>FailWorkflowExecution</code> – Closes the workflow execution and records a
+    /// <code>WorkflowExecutionFailed</code> event in the history.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>RecordMarker</code> – Records a <code>MarkerRecorded</code> event in the history.
+    /// Markers can be used for adding custom information in the history for instance to let
+    /// deciders know that they don't need to look at the history beyond the marker event.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>RequestCancelActivityTask</code> – Attempts to cancel a previously scheduled
+    /// activity task. If the activity task was scheduled but has not been assigned to a worker,
+    /// then it is canceled. If the activity task was already assigned to a worker, then the
+    /// worker is informed that cancellation has been requested in the response to <a>RecordActivityTaskHeartbeat</a>.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>RequestCancelExternalWorkflowExecution</code> – Requests that a request be
+    /// made to cancel the specified external workflow execution and records a <code>RequestCancelExternalWorkflowExecutionInitiated</code>
+    /// event in the history.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>ScheduleActivityTask</code> – Schedules an activity task.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>SignalExternalWorkflowExecution</code> – Requests a signal to be delivered
+    /// to the specified external workflow execution and records a <code>SignalExternalWorkflowExecutionInitiated</code>
+    /// event in the history.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>StartChildWorkflowExecution</code> – Requests that a child workflow execution
     /// be started and records a <code>StartChildWorkflowExecutionInitiated</code> event in
     /// the history. The child workflow execution is a separate workflow execution with its
-    /// own history.</li> <li> <b>StartTimer</b>: starts a timer for this workflow execution
-    /// and records a <code>TimerStarted</code> event in the history. This timer will fire
-    /// after the specified delay and record a <code>TimerFired</code> event.</li> </ul> 
+    /// own history.
+    /// </para>
+    ///  </li> <li> 
     /// <para>
-    /// <b>Access Control</b>
+    ///  <code>StartTimer</code> – Starts a timer for this workflow execution and records
+    /// a <code>TimerStarted</code> event in the history. This timer fires after the specified
+    /// delay and record a <code>TimerFired</code> event.
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    ///  <b>Access Control</b> 
     /// </para>
     ///  
     /// <para>
@@ -69,84 +109,180 @@ namespace Amazon.SimpleWorkflow.Model
     /// action as if they were members of the API. Treating decisions as a pseudo API maintains
     /// a uniform conceptual model and helps keep policies readable. For details and example
     /// IAM policies, see <a href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
-    /// IAM to Manage Access to Amazon SWF Workflows</a>.
+    /// IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.
     /// </para>
     ///  
     /// <para>
-    /// <b>Decision Failure</b>
+    ///  <b>Decision Failure</b> 
     /// </para>
     ///  
     /// <para>
     /// Decisions can fail for several reasons
     /// </para>
-    ///  <ul> <li>The ordering of decisions should follow a logical flow. Some decisions might
-    /// not make sense in the current context of the workflow execution and will therefore
-    /// fail.</li> <li>A limit on your account was reached.</li> <li>The decision lacks sufficient
-    /// permissions.</li> </ul> 
+    ///  <ul> <li> 
+    /// <para>
+    /// The ordering of decisions should follow a logical flow. Some decisions might not make
+    /// sense in the current context of the workflow execution and therefore fails.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// A limit on your account was reached.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// The decision lacks sufficient permissions.
+    /// </para>
+    ///  </li> </ul> 
     /// <para>
     /// One of the following events might be added to the history to indicate an error. The
-    /// event attribute's <b>cause</b> parameter indicates the cause. If <b>cause</b> is set
-    /// to OPERATION_NOT_PERMITTED, the decision failed because it lacked sufficient permissions.
-    /// For details and example IAM policies, see <a href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
-    /// IAM to Manage Access to Amazon SWF Workflows</a>.
+    /// event attribute's <code>cause</code> parameter indicates the cause. If <code>cause</code>
+    /// is set to <code>OPERATION_NOT_PERMITTED</code>, the decision failed because it lacked
+    /// sufficient permissions. For details and example IAM policies, see <a href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
+    /// IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.
     /// </para>
-    ///  <ul> <li> <b>ScheduleActivityTaskFailed</b>: a ScheduleActivityTask decision failed.
-    /// This could happen if the activity type specified in the decision is not registered,
-    /// is in a deprecated state, or the decision is not properly configured.</li> <li> <b>ScheduleLambdaFunctionFailed</b>:
-    /// a ScheduleLambdaFunctionFailed decision failed. This could happen if the AWS Lambda
-    /// function specified in the decision does not exist, or the AWS Lambda service's limits
-    /// are exceeded.</li> <li> <b>RequestCancelActivityTaskFailed</b>: a RequestCancelActivityTask
+    ///  <ul> <li> 
+    /// <para>
+    ///  <code>ScheduleActivityTaskFailed</code> – A <code>ScheduleActivityTask</code> decision
+    /// failed. This could happen if the activity type specified in the decision isn't registered,
+    /// is in a deprecated state, or the decision isn't properly configured.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>RequestCancelActivityTaskFailed</code> – A <code>RequestCancelActivityTask</code>
     /// decision failed. This could happen if there is no open activity task with the specified
-    /// activityId.</li> <li> <b>StartTimerFailed</b>: a StartTimer decision failed. This
-    /// could happen if there is another open timer with the same timerId.</li> <li> <b>CancelTimerFailed</b>:
-    /// a CancelTimer decision failed. This could happen if there is no open timer with the
-    /// specified timerId.</li> <li> <b>StartChildWorkflowExecutionFailed</b>: a StartChildWorkflowExecution
-    /// decision failed. This could happen if the workflow type specified is not registered,
-    /// is deprecated, or the decision is not properly configured.</li> <li> <b>SignalExternalWorkflowExecutionFailed</b>:
-    /// a SignalExternalWorkflowExecution decision failed. This could happen if the <code>workflowID</code>
-    /// specified in the decision was incorrect.</li> <li> <b>RequestCancelExternalWorkflowExecutionFailed</b>:
-    /// a RequestCancelExternalWorkflowExecution decision failed. This could happen if the
-    /// <code>workflowID</code> specified in the decision was incorrect.</li> <li> <b>CancelWorkflowExecutionFailed</b>:
-    /// a CancelWorkflowExecution decision failed. This could happen if there is an unhandled
-    /// decision task pending in the workflow execution.</li> <li> <b>CompleteWorkflowExecutionFailed</b>:
-    /// a CompleteWorkflowExecution decision failed. This could happen if there is an unhandled
-    /// decision task pending in the workflow execution.</li> <li> <b>ContinueAsNewWorkflowExecutionFailed</b>:
-    /// a ContinueAsNewWorkflowExecution decision failed. This could happen if there is an
-    /// unhandled decision task pending in the workflow execution or the ContinueAsNewWorkflowExecution
-    /// decision was not configured correctly.</li> <li> <b>FailWorkflowExecutionFailed</b>:
-    /// a FailWorkflowExecution decision failed. This could happen if there is an unhandled
-    /// decision task pending in the workflow execution.</li> </ul> 
+    /// activityId.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>StartTimerFailed</code> – A <code>StartTimer</code> decision failed. This could
+    /// happen if there is another open timer with the same timerId.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>CancelTimerFailed</code> – A <code>CancelTimer</code> decision failed. This
+    /// could happen if there is no open timer with the specified timerId.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>StartChildWorkflowExecutionFailed</code> – A <code>StartChildWorkflowExecution</code>
+    /// decision failed. This could happen if the workflow type specified isn't registered,
+    /// is deprecated, or the decision isn't properly configured.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>SignalExternalWorkflowExecutionFailed</code> – A <code>SignalExternalWorkflowExecution</code>
+    /// decision failed. This could happen if the <code>workflowID</code> specified in the
+    /// decision was incorrect.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>RequestCancelExternalWorkflowExecutionFailed</code> – A <code>RequestCancelExternalWorkflowExecution</code>
+    /// decision failed. This could happen if the <code>workflowID</code> specified in the
+    /// decision was incorrect.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>CancelWorkflowExecutionFailed</code> – A <code>CancelWorkflowExecution</code>
+    /// decision failed. This could happen if there is an unhandled decision task pending
+    /// in the workflow execution.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>CompleteWorkflowExecutionFailed</code> – A <code>CompleteWorkflowExecution</code>
+    /// decision failed. This could happen if there is an unhandled decision task pending
+    /// in the workflow execution.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>ContinueAsNewWorkflowExecutionFailed</code> – A <code>ContinueAsNewWorkflowExecution</code>
+    /// decision failed. This could happen if there is an unhandled decision task pending
+    /// in the workflow execution or the ContinueAsNewWorkflowExecution decision was not configured
+    /// correctly.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>FailWorkflowExecutionFailed</code> – A <code>FailWorkflowExecution</code> decision
+    /// failed. This could happen if there is an unhandled decision task pending in the workflow
+    /// execution.
+    /// </para>
+    ///  </li> </ul> 
     /// <para>
     /// The preceding error events might occur due to an error in the decider logic, which
     /// might put the workflow execution in an unstable state The cause field in the event
     /// structure for the error event indicates the cause of the error.
     /// </para>
-    ///  <note>A workflow execution may be closed by the decider by returning one of the following
+    ///  <note> 
+    /// <para>
+    /// A workflow execution may be closed by the decider by returning one of the following
     /// decisions when completing a decision task: <code>CompleteWorkflowExecution</code>,
     /// <code>FailWorkflowExecution</code>, <code>CancelWorkflowExecution</code> and <code>ContinueAsNewWorkflowExecution</code>.
-    /// An UnhandledDecision fault will be returned if a workflow closing decision is specified
-    /// and a signal or activity event had been added to the history while the decision task
-    /// was being performed by the decider. Unlike the above situations which are logic issues,
-    /// this fault is always possible because of race conditions in a distributed system.
-    /// The right action here is to call <a>RespondDecisionTaskCompleted</a> without any decisions.
-    /// This would result in another decision task with these new events included in the history.
-    /// The decider should handle the new events and may decide to close the workflow execution.</note>
-    /// 
+    /// An <code>UnhandledDecision</code> fault is returned if a workflow closing decision
+    /// is specified and a signal or activity event had been added to the history while the
+    /// decision task was being performed by the decider. Unlike the above situations which
+    /// are logic issues, this fault is always possible because of race conditions in a distributed
+    /// system. The right action here is to call <a>RespondDecisionTaskCompleted</a> without
+    /// any decisions. This would result in another decision task with these new events included
+    /// in the history. The decider should handle the new events and may decide to close the
+    /// workflow execution.
+    /// </para>
+    ///  </note> 
     /// <para>
-    /// <b>How to code a decision</b>
+    ///  <b>How to Code a Decision</b> 
     /// </para>
     ///  
     /// <para>
     /// You code a decision by first setting the decision type field to one of the above decision
     /// values, and then set the corresponding attributes field shown below:
     /// </para>
-    ///  <ul> <li> <a>ScheduleActivityTaskDecisionAttributes</a> </li> <li> <a>ScheduleLambdaFunctionDecisionAttributes</a>
-    /// </li> <li> <a>RequestCancelActivityTaskDecisionAttributes</a> </li> <li> <a>CompleteWorkflowExecutionDecisionAttributes</a>
-    /// </li> <li> <a>FailWorkflowExecutionDecisionAttributes</a> </li> <li> <a>CancelWorkflowExecutionDecisionAttributes</a>
-    /// </li> <li> <a>ContinueAsNewWorkflowExecutionDecisionAttributes</a> </li> <li> <a>RecordMarkerDecisionAttributes</a>
-    /// </li> <li> <a>StartTimerDecisionAttributes</a> </li> <li> <a>CancelTimerDecisionAttributes</a>
-    /// </li> <li> <a>SignalExternalWorkflowExecutionDecisionAttributes</a> </li> <li> <a>RequestCancelExternalWorkflowExecutionDecisionAttributes</a>
-    /// </li> <li> <a>StartChildWorkflowExecutionDecisionAttributes</a> </li> </ul>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <code> <a>ScheduleActivityTaskDecisionAttributes</a> </code> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code> <a>RequestCancelActivityTaskDecisionAttributes</a> </code> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code> <a>CompleteWorkflowExecutionDecisionAttributes</a> </code> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code> <a>FailWorkflowExecutionDecisionAttributes</a> </code> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code> <a>CancelWorkflowExecutionDecisionAttributes</a> </code> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code> <a>ContinueAsNewWorkflowExecutionDecisionAttributes</a> </code> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code> <a>RecordMarkerDecisionAttributes</a> </code> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code> <a>StartTimerDecisionAttributes</a> </code> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code> <a>CancelTimerDecisionAttributes</a> </code> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code> <a>SignalExternalWorkflowExecutionDecisionAttributes</a> </code> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code> <a>RequestCancelExternalWorkflowExecutionDecisionAttributes</a> </code> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code> <a>StartChildWorkflowExecutionDecisionAttributes</a> </code> 
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial class Decision
     {
@@ -168,7 +304,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property CancelTimerDecisionAttributes. 
         /// <para>
-        /// Provides details of the <code>CancelTimer</code> decision. It is not set for other
+        /// Provides the details of the <code>CancelTimer</code> decision. It isn't set for other
         /// decision types.
         /// </para>
         /// </summary>
@@ -187,8 +323,8 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property CancelWorkflowExecutionDecisionAttributes. 
         /// <para>
-        /// Provides details of the <code>CancelWorkflowExecution</code> decision. It is not set
-        /// for other decision types.
+        /// Provides the details of the <code>CancelWorkflowExecution</code> decision. It isn't
+        /// set for other decision types.
         /// </para>
         /// </summary>
         public CancelWorkflowExecutionDecisionAttributes CancelWorkflowExecutionDecisionAttributes
@@ -206,7 +342,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property CompleteWorkflowExecutionDecisionAttributes. 
         /// <para>
-        /// Provides details of the <code>CompleteWorkflowExecution</code> decision. It is not
+        /// Provides the details of the <code>CompleteWorkflowExecution</code> decision. It isn't
         /// set for other decision types.
         /// </para>
         /// </summary>
@@ -225,8 +361,8 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property ContinueAsNewWorkflowExecutionDecisionAttributes. 
         /// <para>
-        /// Provides details of the <code>ContinueAsNewWorkflowExecution</code> decision. It is
-        /// not set for other decision types.
+        /// Provides the details of the <code>ContinueAsNewWorkflowExecution</code> decision.
+        /// It isn't set for other decision types.
         /// </para>
         /// </summary>
         public ContinueAsNewWorkflowExecutionDecisionAttributes ContinueAsNewWorkflowExecutionDecisionAttributes
@@ -262,8 +398,8 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property FailWorkflowExecutionDecisionAttributes. 
         /// <para>
-        /// Provides details of the <code>FailWorkflowExecution</code> decision. It is not set
-        /// for other decision types.
+        /// Provides the details of the <code>FailWorkflowExecution</code> decision. It isn't
+        /// set for other decision types.
         /// </para>
         /// </summary>
         public FailWorkflowExecutionDecisionAttributes FailWorkflowExecutionDecisionAttributes
@@ -281,7 +417,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property RecordMarkerDecisionAttributes. 
         /// <para>
-        /// Provides details of the <code>RecordMarker</code> decision. It is not set for other
+        /// Provides the details of the <code>RecordMarker</code> decision. It isn't set for other
         /// decision types.
         /// </para>
         /// </summary>
@@ -300,7 +436,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property RequestCancelActivityTaskDecisionAttributes. 
         /// <para>
-        /// Provides details of the <code>RequestCancelActivityTask</code> decision. It is not
+        /// Provides the details of the <code>RequestCancelActivityTask</code> decision. It isn't
         /// set for other decision types.
         /// </para>
         /// </summary>
@@ -320,8 +456,8 @@ namespace Amazon.SimpleWorkflow.Model
         /// Gets and sets the property RequestCancelExternalWorkflowExecutionDecisionAttributes.
         /// 
         /// <para>
-        /// Provides details of the <code>RequestCancelExternalWorkflowExecution</code> decision.
-        /// It is not set for other decision types.
+        /// Provides the details of the <code>RequestCancelExternalWorkflowExecution</code> decision.
+        /// It isn't set for other decision types.
         /// </para>
         /// </summary>
         public RequestCancelExternalWorkflowExecutionDecisionAttributes RequestCancelExternalWorkflowExecutionDecisionAttributes
@@ -339,7 +475,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property ScheduleActivityTaskDecisionAttributes. 
         /// <para>
-        /// Provides details of the <code>ScheduleActivityTask</code> decision. It is not set
+        /// Provides the details of the <code>ScheduleActivityTask</code> decision. It isn't set
         /// for other decision types.
         /// </para>
         /// </summary>
@@ -356,7 +492,11 @@ namespace Amazon.SimpleWorkflow.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ScheduleLambdaFunctionDecisionAttributes.
+        /// Gets and sets the property ScheduleLambdaFunctionDecisionAttributes. 
+        /// <para>
+        /// Provides the details of the <code>ScheduleLambdaFunction</code> decision. It isn't
+        /// set for other decision types.
+        /// </para>
         /// </summary>
         public ScheduleLambdaFunctionDecisionAttributes ScheduleLambdaFunctionDecisionAttributes
         {
@@ -373,8 +513,8 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property SignalExternalWorkflowExecutionDecisionAttributes. 
         /// <para>
-        /// Provides details of the <code>SignalExternalWorkflowExecution</code> decision. It
-        /// is not set for other decision types.
+        /// Provides the details of the <code>SignalExternalWorkflowExecution</code> decision.
+        /// It isn't set for other decision types.
         /// </para>
         /// </summary>
         public SignalExternalWorkflowExecutionDecisionAttributes SignalExternalWorkflowExecutionDecisionAttributes
@@ -392,8 +532,8 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property StartChildWorkflowExecutionDecisionAttributes. 
         /// <para>
-        /// Provides details of the <code>StartChildWorkflowExecution</code> decision. It is not
-        /// set for other decision types.
+        /// Provides the details of the <code>StartChildWorkflowExecution</code> decision. It
+        /// isn't set for other decision types.
         /// </para>
         /// </summary>
         public StartChildWorkflowExecutionDecisionAttributes StartChildWorkflowExecutionDecisionAttributes
@@ -411,7 +551,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property StartTimerDecisionAttributes. 
         /// <para>
-        /// Provides details of the <code>StartTimer</code> decision. It is not set for other
+        /// Provides the details of the <code>StartTimer</code> decision. It isn't set for other
         /// decision types.
         /// </para>
         /// </summary>

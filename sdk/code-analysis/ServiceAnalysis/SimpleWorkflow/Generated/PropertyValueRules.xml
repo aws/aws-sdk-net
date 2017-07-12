@@ -252,10 +252,6 @@
     <max>8</max>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.SimpleWorkflow.Model.RegisterActivityTypeRequest.DefaultTaskPriority</property>
-    <max>11</max>
-  </property-value-rule>
-  <property-value-rule>
     <property>Amazon.SimpleWorkflow.Model.RegisterActivityTypeRequest.DefaultTaskScheduleToCloseTimeout</property>
     <max>8</max>
   </property-value-rule>
@@ -307,11 +303,7 @@
   <property-value-rule>
     <property>Amazon.SimpleWorkflow.Model.RegisterWorkflowTypeRequest.DefaultLambdaRole</property>
     <min>1</min>
-    <max>1224</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.SimpleWorkflow.Model.RegisterWorkflowTypeRequest.DefaultTaskPriority</property>
-    <max>11</max>
+    <max>1600</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleWorkflow.Model.RegisterWorkflowTypeRequest.DefaultTaskStartToCloseTimeout</property>
@@ -429,11 +421,7 @@
   <property-value-rule>
     <property>Amazon.SimpleWorkflow.Model.StartWorkflowExecutionRequest.LambdaRole</property>
     <min>1</min>
-    <max>1224</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.SimpleWorkflow.Model.StartWorkflowExecutionRequest.TaskPriority</property>
-    <max>11</max>
+    <max>1600</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleWorkflow.Model.StartWorkflowExecutionRequest.TaskStartToCloseTimeout</property>
@@ -522,10 +510,6 @@
     <max>8</max>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.SimpleWorkflow.Model.ActivityTaskScheduledEventAttributes.TaskPriority</property>
-    <max>11</max>
-  </property-value-rule>
-  <property-value-rule>
     <property>Amazon.SimpleWorkflow.Model.ActivityTaskStartedEventAttributes.Identity</property>
     <max>256</max>
   </property-value-rule>
@@ -546,10 +530,6 @@
   <property-value-rule>
     <property>Amazon.SimpleWorkflow.Model.ActivityTypeConfiguration.DefaultTaskHeartbeatTimeout</property>
     <max>8</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.SimpleWorkflow.Model.ActivityTypeConfiguration.DefaultTaskPriority</property>
-    <max>11</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleWorkflow.Model.ActivityTypeConfiguration.DefaultTaskScheduleToCloseTimeout</property>
@@ -612,11 +592,7 @@
   <property-value-rule>
     <property>Amazon.SimpleWorkflow.Model.ContinueAsNewWorkflowExecutionDecisionAttributes.LambdaRole</property>
     <min>1</min>
-    <max>1224</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.SimpleWorkflow.Model.ContinueAsNewWorkflowExecutionDecisionAttributes.TaskPriority</property>
-    <max>11</max>
+    <max>1600</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleWorkflow.Model.ContinueAsNewWorkflowExecutionDecisionAttributes.TaskStartToCloseTimeout</property>
@@ -634,10 +610,6 @@
   <property-value-rule>
     <property>Amazon.SimpleWorkflow.Model.DecisionTaskScheduledEventAttributes.StartToCloseTimeout</property>
     <max>8</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.SimpleWorkflow.Model.DecisionTaskScheduledEventAttributes.TaskPriority</property>
-    <max>11</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleWorkflow.Model.DecisionTaskStartedEventAttributes.Identity</property>
@@ -678,13 +650,17 @@
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SimpleWorkflow.Model.LambdaFunctionScheduledEventAttributes.Control</property>
+    <max>32768</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SimpleWorkflow.Model.LambdaFunctionScheduledEventAttributes.Id</property>
     <min>1</min>
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleWorkflow.Model.LambdaFunctionScheduledEventAttributes.Input</property>
-    <min>1</min>
+    <min>0</min>
     <max>32768</max>
   </property-value-rule>
   <property-value-rule>
@@ -798,13 +774,13 @@
     <max>8</max>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.SimpleWorkflow.Model.ScheduleActivityTaskDecisionAttributes.TaskPriority</property>
-    <max>11</max>
-  </property-value-rule>
-  <property-value-rule>
     <property>Amazon.SimpleWorkflow.Model.ScheduleActivityTaskFailedEventAttributes.ActivityId</property>
     <min>1</min>
     <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleWorkflow.Model.ScheduleLambdaFunctionDecisionAttributes.Control</property>
+    <max>32768</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleWorkflow.Model.ScheduleLambdaFunctionDecisionAttributes.Id</property>
@@ -813,7 +789,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleWorkflow.Model.ScheduleLambdaFunctionDecisionAttributes.Input</property>
-    <min>1</min>
+    <min>0</min>
     <max>32768</max>
   </property-value-rule>
   <property-value-rule>
@@ -907,11 +883,7 @@
   <property-value-rule>
     <property>Amazon.SimpleWorkflow.Model.StartChildWorkflowExecutionDecisionAttributes.LambdaRole</property>
     <min>1</min>
-    <max>1224</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.SimpleWorkflow.Model.StartChildWorkflowExecutionDecisionAttributes.TaskPriority</property>
-    <max>11</max>
+    <max>1600</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleWorkflow.Model.StartChildWorkflowExecutionDecisionAttributes.TaskStartToCloseTimeout</property>
@@ -946,11 +918,7 @@
   <property-value-rule>
     <property>Amazon.SimpleWorkflow.Model.StartChildWorkflowExecutionInitiatedEventAttributes.LambdaRole</property>
     <min>1</min>
-    <max>1224</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.SimpleWorkflow.Model.StartChildWorkflowExecutionInitiatedEventAttributes.TaskPriority</property>
-    <max>11</max>
+    <max>1600</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleWorkflow.Model.StartChildWorkflowExecutionInitiatedEventAttributes.TaskStartToCloseTimeout</property>
@@ -986,7 +954,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleWorkflow.Model.TagFilter.Tag</property>
-    <min>1</min>
+    <min>0</min>
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
@@ -1044,11 +1012,7 @@
   <property-value-rule>
     <property>Amazon.SimpleWorkflow.Model.WorkflowExecutionConfiguration.LambdaRole</property>
     <min>1</min>
-    <max>1224</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.SimpleWorkflow.Model.WorkflowExecutionConfiguration.TaskPriority</property>
-    <max>11</max>
+    <max>1600</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleWorkflow.Model.WorkflowExecutionConfiguration.TaskStartToCloseTimeout</property>
@@ -1066,16 +1030,12 @@
   <property-value-rule>
     <property>Amazon.SimpleWorkflow.Model.WorkflowExecutionContinuedAsNewEventAttributes.LambdaRole</property>
     <min>1</min>
-    <max>1224</max>
+    <max>1600</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleWorkflow.Model.WorkflowExecutionContinuedAsNewEventAttributes.NewExecutionRunId</property>
     <min>1</min>
     <max>64</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.SimpleWorkflow.Model.WorkflowExecutionContinuedAsNewEventAttributes.TaskPriority</property>
-    <max>11</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleWorkflow.Model.WorkflowExecutionContinuedAsNewEventAttributes.TaskStartToCloseTimeout</property>
@@ -1139,11 +1099,7 @@
   <property-value-rule>
     <property>Amazon.SimpleWorkflow.Model.WorkflowExecutionStartedEventAttributes.LambdaRole</property>
     <min>1</min>
-    <max>1224</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.SimpleWorkflow.Model.WorkflowExecutionStartedEventAttributes.TaskPriority</property>
-    <max>11</max>
+    <max>1600</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleWorkflow.Model.WorkflowExecutionStartedEventAttributes.TaskStartToCloseTimeout</property>
@@ -1174,11 +1130,7 @@
   <property-value-rule>
     <property>Amazon.SimpleWorkflow.Model.WorkflowTypeConfiguration.DefaultLambdaRole</property>
     <min>1</min>
-    <max>1224</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.SimpleWorkflow.Model.WorkflowTypeConfiguration.DefaultTaskPriority</property>
-    <max>11</max>
+    <max>1600</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleWorkflow.Model.WorkflowTypeConfiguration.DefaultTaskStartToCloseTimeout</property>

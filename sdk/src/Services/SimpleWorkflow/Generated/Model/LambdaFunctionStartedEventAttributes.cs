@@ -28,7 +28,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleWorkflow.Model
 {
     /// <summary>
-    /// Provides details for the <code>LambdaFunctionStarted</code> event.
+    /// Provides the details of the <code>LambdaFunctionStarted</code> event. It isn't set
+    /// for other event types.
     /// </summary>
     public partial class LambdaFunctionStartedEventAttributes
     {
@@ -38,8 +39,8 @@ namespace Amazon.SimpleWorkflow.Model
         /// Gets and sets the property ScheduledEventId. 
         /// <para>
         /// The ID of the <code>LambdaFunctionScheduled</code> event that was recorded when this
-        /// AWS Lambda function was scheduled. This information can be useful for diagnosing problems
-        /// by tracing back the chain of events leading up to this event.
+        /// activity task was scheduled. To help diagnose issues, use this information to trace
+        /// back the chain of events leading up to this event.
         /// </para>
         /// </summary>
         public long ScheduledEventId

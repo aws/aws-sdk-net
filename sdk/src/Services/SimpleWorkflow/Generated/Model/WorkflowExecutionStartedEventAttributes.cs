@@ -56,11 +56,22 @@ namespace Amazon.SimpleWorkflow.Model
         /// <para>
         /// The supported child policies are:
         /// </para>
-        ///  <ul> <li><b>TERMINATE:</b> the child executions will be terminated.</li> <li><b>REQUEST_CANCEL:</b>
-        /// a request to cancel will be attempted for each child execution by recording a <code>WorkflowExecutionCancelRequested</code>
-        /// event in its history. It is up to the decider to take appropriate actions when it
-        /// receives an execution history with this event.</li> <li><b>ABANDON:</b> no action
-        /// will be taken. The child executions will continue to run.</li> </ul>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>TERMINATE</code> – The child executions are terminated.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>REQUEST_CANCEL</code> – A request to cancel is attempted for each child execution
+        /// by recording a <code>WorkflowExecutionCancelRequested</code> event in its history.
+        /// It is up to the decider to take appropriate actions when it receives an execution
+        /// history with this event.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>ABANDON</code> – No action is taken. The child executions continue to run.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public ChildPolicy ChildPolicy
         {
@@ -101,8 +112,8 @@ namespace Amazon.SimpleWorkflow.Model
         /// </para>
         ///  
         /// <para>
-        /// The duration is specified in seconds; an integer greater than or equal to 0. The value
-        /// "NONE" can be used to specify unlimited duration.
+        /// The duration is specified in seconds, an integer greater than or equal to <code>0</code>.
+        /// You can use <code>NONE</code> to specify unlimited duration.
         /// </para>
         /// </summary>
         public string ExecutionStartToCloseTimeout
@@ -120,7 +131,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property Input. 
         /// <para>
-        /// The input provided to the workflow execution (if any).
+        /// The input provided to the workflow execution.
         /// </para>
         /// </summary>
         public string Input
@@ -138,7 +149,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property LambdaRole. 
         /// <para>
-        /// The IAM role attached to this workflow execution to use when invoking AWS Lambda functions.
+        /// The IAM role attached to the workflow execution.
         /// </para>
         /// </summary>
         public string LambdaRole
@@ -157,10 +168,10 @@ namespace Amazon.SimpleWorkflow.Model
         /// Gets and sets the property ParentInitiatedEventId. 
         /// <para>
         /// The ID of the <code>StartChildWorkflowExecutionInitiated</code> event corresponding
-        /// to the <code>StartChildWorkflowExecution</code> decision to start this workflow execution.
-        /// The source event with this ID can be found in the history of the source workflow execution.
-        /// This information can be useful for diagnosing problems by tracing back the chain of
-        /// events leading up to this event.
+        /// to the <code>StartChildWorkflowExecution</code> <a>Decision</a> to start this workflow
+        /// execution. The source event with this ID can be found in the history of the source
+        /// workflow execution. This information can be useful for diagnosing problems by tracing
+        /// back the chain of events leading up to this event.
         /// </para>
         /// </summary>
         public long ParentInitiatedEventId
@@ -178,8 +189,8 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property ParentWorkflowExecution. 
         /// <para>
-        /// The source workflow execution that started this workflow execution. The member is
-        /// not set if the workflow execution was not started by a workflow.
+        /// The source workflow execution that started this workflow execution. The member isn't
+        /// set if the workflow execution was not started by a workflow.
         /// </para>
         /// </summary>
         public WorkflowExecution ParentWorkflowExecution
@@ -232,7 +243,10 @@ namespace Amazon.SimpleWorkflow.Model
         }
 
         /// <summary>
-        /// Gets and sets the property TaskPriority.
+        /// Gets and sets the property TaskPriority. 
+        /// <para>
+        /// The priority of the decision tasks in the workflow execution.
+        /// </para>
         /// </summary>
         public string TaskPriority
         {
@@ -253,8 +267,8 @@ namespace Amazon.SimpleWorkflow.Model
         /// </para>
         ///  
         /// <para>
-        /// The duration is specified in seconds; an integer greater than or equal to 0. The value
-        /// "NONE" can be used to specify unlimited duration.
+        /// The duration is specified in seconds, an integer greater than or equal to <code>0</code>.
+        /// You can use <code>NONE</code> to specify unlimited duration.
         /// </para>
         /// </summary>
         public string TaskStartToCloseTimeout

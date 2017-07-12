@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleWorkflow.Model
 {
     /// <summary>
-    /// Provides details of the <code>RequestCancelExternalWorkflowExecutionInitiated</code>
+    /// Provides the details of the <code>RequestCancelExternalWorkflowExecutionInitiated</code>
     /// event.
     /// </summary>
     public partial class RequestCancelExternalWorkflowExecutionInitiatedEventAttributes
@@ -41,8 +41,8 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property Control. 
         /// <para>
-        /// <i>Optional.</i> Data attached to the event that can be used by the decider in subsequent
-        /// workflow tasks.
+        /// Data attached to the event that can be used by the decider in subsequent workflow
+        /// tasks.
         /// </para>
         /// </summary>
         public string Control

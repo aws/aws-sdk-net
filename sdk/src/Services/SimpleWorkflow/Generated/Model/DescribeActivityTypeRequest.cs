@@ -35,26 +35,42 @@ namespace Amazon.SimpleWorkflow.Model
     /// 
     ///  
     /// <para>
-    /// <b>Access Control</b>
+    ///  <b>Access Control</b> 
     /// </para>
     ///  
     /// <para>
     /// You can use IAM policies to control this action's access to Amazon SWF resources as
     /// follows:
     /// </para>
-    ///  <ul> <li>Use a <code>Resource</code> element with the domain name to limit the action
-    /// to only specified domains.</li> <li>Use an <code>Action</code> element to allow or
-    /// deny permission to call this action.</li> <li>Constrain the following parameters by
-    /// using a <code>Condition</code> element with the appropriate keys. <ul> <li><code>activityType.name</code>:
-    /// String constraint. The key is <code>swf:activityType.name</code>.</li> <li><code>activityType.version</code>:
-    /// String constraint. The key is <code>swf:activityType.version</code>.</li> </ul> </li>
-    /// </ul> 
+    ///  <ul> <li> 
     /// <para>
-    /// If the caller does not have sufficient permissions to invoke the action, or the parameter
+    /// Use a <code>Resource</code> element with the domain name to limit the action to only
+    /// specified domains.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Use an <code>Action</code> element to allow or deny permission to call this action.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Constrain the following parameters by using a <code>Condition</code> element with
+    /// the appropriate keys.
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <code>activityType.name</code>: String constraint. The key is <code>swf:activityType.name</code>.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>activityType.version</code>: String constraint. The key is <code>swf:activityType.version</code>.
+    /// </para>
+    ///  </li> </ul> </li> </ul> 
+    /// <para>
+    /// If the caller doesn't have sufficient permissions to invoke the action, or the parameter
     /// values fall outside the specified constraints, the action fails. The associated event
-    /// attribute's <b>cause</b> parameter will be set to OPERATION_NOT_PERMITTED. For details
-    /// and example IAM policies, see <a href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
-    /// IAM to Manage Access to Amazon SWF Workflows</a>.
+    /// attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>.
+    /// For details and example IAM policies, see <a href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
+    /// IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.
     /// </para>
     /// </summary>
     public partial class DescribeActivityTypeRequest : AmazonSimpleWorkflowRequest

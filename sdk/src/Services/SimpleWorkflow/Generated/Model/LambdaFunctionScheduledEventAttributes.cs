@@ -28,10 +28,12 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleWorkflow.Model
 {
     /// <summary>
-    /// Provides details for the <code>LambdaFunctionScheduled</code> event.
+    /// Provides the details of the <code>LambdaFunctionScheduled</code> event. It isn't set
+    /// for other event types.
     /// </summary>
     public partial class LambdaFunctionScheduledEventAttributes
     {
+        private string _control;
         private long? _decisionTaskCompletedEventId;
         private string _id;
         private string _input;
@@ -39,11 +41,30 @@ namespace Amazon.SimpleWorkflow.Model
         private string _startToCloseTimeout;
 
         /// <summary>
+        /// Gets and sets the property Control. 
+        /// <para>
+        /// Data attached to the event that the decider can use in subsequent workflow tasks.
+        /// This data isn't sent to the Lambda task.
+        /// </para>
+        /// </summary>
+        public string Control
+        {
+            get { return this._control; }
+            set { this._control = value; }
+        }
+
+        // Check to see if Control property is set
+        internal bool IsSetControl()
+        {
+            return this._control != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property DecisionTaskCompletedEventId. 
         /// <para>
-        /// The ID of the <code>DecisionTaskCompleted</code> event for the decision that resulted
-        /// in the scheduling of this AWS Lambda function. This information can be useful for
-        /// diagnosing problems by tracing back the chain of events leading up to this event.
+        /// The ID of the <code>LambdaFunctionCompleted</code> event corresponding to the decision
+        /// that resulted in scheduling this activity task. To help diagnose issues, use this
+        /// information to trace back the chain of events leading up to this event.
         /// </para>
         /// </summary>
         public long DecisionTaskCompletedEventId
@@ -61,7 +82,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
-        /// The unique Amazon SWF ID for the AWS Lambda task.
+        /// The unique ID of the Lambda task.
         /// </para>
         /// </summary>
         public string Id
@@ -79,7 +100,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property Input. 
         /// <para>
-        /// Input provided to the AWS Lambda function.
+        /// The input provided to the Lambda task.
         /// </para>
         /// </summary>
         public string Input
@@ -97,7 +118,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the scheduled AWS Lambda function.
+        /// The name of the Lambda function.
         /// </para>
         /// </summary>
         public string Name
@@ -115,8 +136,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property StartToCloseTimeout. 
         /// <para>
-        /// The maximum time, in seconds, that the AWS Lambda function can take to execute from
-        /// start to close before it is marked as failed.
+        /// The maximum amount of time a worker can take to process the Lambda task.
         /// </para>
         /// </summary>
         public string StartToCloseTimeout

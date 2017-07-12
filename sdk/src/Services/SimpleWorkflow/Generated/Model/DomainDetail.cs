@@ -36,7 +36,10 @@ namespace Amazon.SimpleWorkflow.Model
         private DomainInfo _domainInfo;
 
         /// <summary>
-        /// Gets and sets the property Configuration.
+        /// Gets and sets the property Configuration. 
+        /// <para>
+        /// The domain configuration. Currently, this includes only the domain's retention period.
+        /// </para>
         /// </summary>
         public DomainConfiguration Configuration
         {
@@ -51,7 +54,10 @@ namespace Amazon.SimpleWorkflow.Model
         }
 
         /// <summary>
-        /// Gets and sets the property DomainInfo.
+        /// Gets and sets the property DomainInfo. 
+        /// <para>
+        /// The basic information about a domain, such as its name, status, and description.
+        /// </para>
         /// </summary>
         public DomainInfo DomainInfo
         {

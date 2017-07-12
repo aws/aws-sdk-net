@@ -33,27 +33,41 @@ namespace Amazon.SimpleWorkflow.Model
     /// multiple pages. To retrieve subsequent pages, make the call again using the nextPageToken
     /// returned by the initial call.
     /// 
-    ///  <note> This operation is eventually consistent. The results are best effort and may
-    /// not exactly reflect recent updates and changes.</note> 
+    ///  <note> 
     /// <para>
-    /// <b>Access Control</b>
+    /// This operation is eventually consistent. The results are best effort and may not exactly
+    /// reflect recent updates and changes.
+    /// </para>
+    ///  </note> 
+    /// <para>
+    ///  <b>Access Control</b> 
     /// </para>
     ///  
     /// <para>
     /// You can use IAM policies to control this action's access to Amazon SWF resources as
     /// follows:
     /// </para>
-    ///  <ul> <li>Use a <code>Resource</code> element with the domain name to limit the action
-    /// to only specified domains. The element must be set to <code>arn:aws:swf::AccountID:domain/*</code>,
-    /// where <i>AccountID</i> is the account ID, with no dashes.</li> <li>Use an <code>Action</code>
-    /// element to allow or deny permission to call this action.</li> <li>You cannot use an
-    /// IAM policy to constrain this action's parameters.</li> </ul> 
+    ///  <ul> <li> 
     /// <para>
-    /// If the caller does not have sufficient permissions to invoke the action, or the parameter
+    /// Use a <code>Resource</code> element with the domain name to limit the action to only
+    /// specified domains. The element must be set to <code>arn:aws:swf::AccountID:domain/*</code>,
+    /// where <i>AccountID</i> is the account ID, with no dashes.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Use an <code>Action</code> element to allow or deny permission to call this action.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// You cannot use an IAM policy to constrain this action's parameters.
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    /// If the caller doesn't have sufficient permissions to invoke the action, or the parameter
     /// values fall outside the specified constraints, the action fails. The associated event
-    /// attribute's <b>cause</b> parameter will be set to OPERATION_NOT_PERMITTED. For details
-    /// and example IAM policies, see <a href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
-    /// IAM to Manage Access to Amazon SWF Workflows</a>.
+    /// attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>.
+    /// For details and example IAM policies, see <a href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
+    /// IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.
     /// </para>
     /// </summary>
     public partial class ListDomainsRequest : AmazonSimpleWorkflowRequest
@@ -66,7 +80,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property MaximumPageSize. 
         /// <para>
-        /// The maximum number of results that will be returned per call. <code>nextPageToken</code>
+        /// The maximum number of results that are returned per call. <code>nextPageToken</code>
         /// can be used to obtain futher pages of results. The default is 1000, which is the maximum
         /// allowed page size. You can, however, specify a page size <i>smaller</i> than the maximum.
         /// </para>

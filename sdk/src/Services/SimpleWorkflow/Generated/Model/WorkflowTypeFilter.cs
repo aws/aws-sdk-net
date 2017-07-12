@@ -39,7 +39,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// <b>Required.</b> Name of the workflow type.
+        ///  Name of the workflow type.
         /// </para>
         /// </summary>
         public string Name

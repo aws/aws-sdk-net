@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleWorkflow.Model
 {
     /// <summary>
-    /// Provides details of the <code>WorkflowExecutionSignaled</code> event.
+    /// Provides the details of the <code>WorkflowExecutionSignaled</code> event.
     /// </summary>
     public partial class WorkflowExecutionSignaledEventAttributes
     {
@@ -82,8 +82,8 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property Input. 
         /// <para>
-        /// Inputs provided with the signal (if any). The decider can use the signal name and
-        /// inputs to determine how to process the signal.
+        /// The inputs provided with the signal. The decider can use the signal name and inputs
+        /// to determine how to process the signal.
         /// </para>
         /// </summary>
         public string Input

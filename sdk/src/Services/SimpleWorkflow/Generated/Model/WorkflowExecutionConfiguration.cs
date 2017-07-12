@@ -52,11 +52,22 @@ namespace Amazon.SimpleWorkflow.Model
         /// <para>
         /// The supported child policies are:
         /// </para>
-        ///  <ul> <li><b>TERMINATE:</b> the child executions will be terminated.</li> <li><b>REQUEST_CANCEL:</b>
-        /// a request to cancel will be attempted for each child execution by recording a <code>WorkflowExecutionCancelRequested</code>
-        /// event in its history. It is up to the decider to take appropriate actions when it
-        /// receives an execution history with this event.</li> <li><b>ABANDON:</b> no action
-        /// will be taken. The child executions will continue to run.</li> </ul>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>TERMINATE</code> – The child executions are terminated.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>REQUEST_CANCEL</code> – A request to cancel is attempted for each child execution
+        /// by recording a <code>WorkflowExecutionCancelRequested</code> event in its history.
+        /// It is up to the decider to take appropriate actions when it receives an execution
+        /// history with this event.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>ABANDON</code> – No action is taken. The child executions continue to run.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public ChildPolicy ChildPolicy
         {
@@ -77,8 +88,8 @@ namespace Amazon.SimpleWorkflow.Model
         /// </para>
         ///  
         /// <para>
-        /// The duration is specified in seconds; an integer greater than or equal to 0. The value
-        /// "NONE" can be used to specify unlimited duration.
+        /// The duration is specified in seconds, an integer greater than or equal to <code>0</code>.
+        /// You can use <code>NONE</code> to specify unlimited duration.
         /// </para>
         /// </summary>
         public string ExecutionStartToCloseTimeout
@@ -96,7 +107,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property LambdaRole. 
         /// <para>
-        /// The IAM role used by this workflow execution when invoking AWS Lambda functions.
+        /// The IAM role attached to the child workflow execution.
         /// </para>
         /// </summary>
         public string LambdaRole
@@ -139,7 +150,7 @@ namespace Amazon.SimpleWorkflow.Model
         ///  
         /// <para>
         /// For more information about setting task priority, see <a href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting
-        /// Task Priority</a> in the <i>Amazon Simple Workflow Developer Guide</i>.
+        /// Task Priority</a> in the <i>Amazon SWF Developer Guide</i>.
         /// </para>
         /// </summary>
         public string TaskPriority
@@ -161,8 +172,8 @@ namespace Amazon.SimpleWorkflow.Model
         /// </para>
         ///  
         /// <para>
-        /// The duration is specified in seconds; an integer greater than or equal to 0. The value
-        /// "NONE" can be used to specify unlimited duration.
+        /// The duration is specified in seconds, an integer greater than or equal to <code>0</code>.
+        /// You can use <code>NONE</code> to specify unlimited duration.
         /// </para>
         /// </summary>
         public string TaskStartToCloseTimeout

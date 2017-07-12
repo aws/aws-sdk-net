@@ -37,8 +37,8 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property Tag. 
         /// <para>
-        /// <b>Required.</b> Specifies the tag that must be associated with the execution for
-        /// it to meet the filter criteria.
+        ///  Specifies the tag that must be associated with the execution for it to meet the filter
+        /// criteria.
         /// </para>
         /// </summary>
         public string Tag

@@ -40,7 +40,11 @@ namespace Amazon.SimpleWorkflow.Model
         /// <para>
         /// The name of this activity.
         /// </para>
-        ///  <note>The combination of activity type name and version must be unique within a domain.</note>
+        ///  <note> 
+        /// <para>
+        /// The combination of activity type name and version must be unique within a domain.
+        /// </para>
+        ///  </note>
         /// </summary>
         public string Name
         {
@@ -59,8 +63,11 @@ namespace Amazon.SimpleWorkflow.Model
         /// <para>
         /// The version of this activity.
         /// </para>
-        ///  <note>The combination of activity type name and version must be unique with in a
-        /// domain.</note>
+        ///  <note> 
+        /// <para>
+        /// The combination of activity type name and version must be unique with in a domain.
+        /// </para>
+        ///  </note>
         /// </summary>
         public string Version
         {

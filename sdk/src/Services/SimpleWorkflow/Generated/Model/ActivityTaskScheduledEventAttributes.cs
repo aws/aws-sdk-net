@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleWorkflow.Model
 {
     /// <summary>
-    /// Provides details of the <code>ActivityTaskScheduled</code> event.
+    /// Provides the details of the <code>ActivityTaskScheduled</code> event.
     /// </summary>
     public partial class ActivityTaskScheduledEventAttributes
     {
@@ -83,8 +83,8 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property Control. 
         /// <para>
-        /// <i>Optional.</i> Data attached to the event that can be used by the decider in subsequent
-        /// workflow tasks. This data is not sent to the activity.
+        /// Data attached to the event that can be used by the decider in subsequent workflow
+        /// tasks. This data isn't sent to the activity.
         /// </para>
         /// </summary>
         public string Control
@@ -125,7 +125,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// The maximum time before which the worker processing this task must report progress
         /// by calling <a>RecordActivityTaskHeartbeat</a>. If the timeout is exceeded, the activity
         /// task is automatically timed out. If the worker subsequently attempts to record a heartbeat
-        /// or return a result, it will be ignored.
+        /// or return a result, it is ignored.
         /// </para>
         /// </summary>
         public string HeartbeatTimeout
@@ -233,9 +233,8 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property TaskPriority. 
         /// <para>
-        /// <i>Optional.</i> The priority to assign to the scheduled activity task. If set, this
-        /// will override any default priority value that was assigned when the activity type
-        /// was registered.
+        ///  The priority to assign to the scheduled activity task. If set, this overrides any
+        /// default priority value that was assigned when the activity type was registered.
         /// </para>
         ///  
         /// <para>
@@ -245,7 +244,7 @@ namespace Amazon.SimpleWorkflow.Model
         ///  
         /// <para>
         /// For more information about setting task priority, see <a href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting
-        /// Task Priority</a> in the <i>Amazon Simple Workflow Developer Guide</i>.
+        /// Task Priority</a> in the <i>Amazon SWF Developer Guide</i>.
         /// </para>
         /// </summary>
         public string TaskPriority

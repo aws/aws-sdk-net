@@ -63,10 +63,18 @@ namespace Amazon.SimpleWorkflow.Model
         /// The status of activity type (returned in the ActivityTypeInfo structure) can be one
         /// of the following.
         /// </para>
-        ///  <ul> <li> <b>REGISTERED</b>: The type is registered and available. Workers supporting
-        /// this type should be running. </li> <li> <b>DEPRECATED</b>: The type was deprecated
-        /// using <a>DeprecateActivityType</a>, but is still in use. You should keep workers supporting
-        /// this type running. You cannot create new tasks of this type. </li> </ul>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>REGISTERED</code> – The type is registered and available. Workers supporting
+        /// this type should be running. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>DEPRECATED</code> – The type was deprecated using <a>DeprecateActivityType</a>,
+        /// but is still in use. You should keep workers supporting this type running. You cannot
+        /// create new tasks of this type. 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public ActivityTypeInfo TypeInfo
         {

@@ -42,7 +42,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property OpenActivityTasks. 
         /// <para>
-        /// The count of activity tasks whose status is OPEN.
+        /// The count of activity tasks whose status is <code>OPEN</code>.
         /// </para>
         /// </summary>
         public int OpenActivityTasks
@@ -60,7 +60,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property OpenChildWorkflowExecutions. 
         /// <para>
-        /// The count of child workflow executions whose status is OPEN.
+        /// The count of child workflow executions whose status is <code>OPEN</code>.
         /// </para>
         /// </summary>
         public int OpenChildWorkflowExecutions
@@ -97,7 +97,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property OpenLambdaFunctions. 
         /// <para>
-        /// The count of AWS Lambda functions that are currently executing.
+        /// The count of Lambda tasks whose status is <code>OPEN</code>.
         /// </para>
         /// </summary>
         public int OpenLambdaFunctions

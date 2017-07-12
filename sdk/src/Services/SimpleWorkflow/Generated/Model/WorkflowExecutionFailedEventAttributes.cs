@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleWorkflow.Model
 {
     /// <summary>
-    /// Provides details of the <code>WorkflowExecutionFailed</code> event.
+    /// Provides the details of the <code>WorkflowExecutionFailed</code> event.
     /// </summary>
     public partial class WorkflowExecutionFailedEventAttributes
     {
@@ -60,7 +60,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property Details. 
         /// <para>
-        /// The details of the failure (if any).
+        /// The details of the failure.
         /// </para>
         /// </summary>
         public string Details
@@ -78,7 +78,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property Reason. 
         /// <para>
-        /// The descriptive reason provided for the failure (if any).
+        /// The descriptive reason provided for the failure.
         /// </para>
         /// </summary>
         public string Reason

@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleWorkflow.Model
 {
     /// <summary>
-    /// Provides details of the <code>ChildWorkflowExecutionCompleted</code> event.
+    /// Provides the details of the <code>ChildWorkflowExecutionCompleted</code> event.
     /// </summary>
     public partial class ChildWorkflowExecutionCompletedEventAttributes
     {
@@ -42,9 +42,9 @@ namespace Amazon.SimpleWorkflow.Model
         /// Gets and sets the property InitiatedEventId. 
         /// <para>
         /// The ID of the <code>StartChildWorkflowExecutionInitiated</code> event corresponding
-        /// to the <code>StartChildWorkflowExecution</code> decision to start this child workflow
-        /// execution. This information can be useful for diagnosing problems by tracing back
-        /// the chain of events leading up to this event.
+        /// to the <code>StartChildWorkflowExecution</code> <a>Decision</a> to start this child
+        /// workflow execution. This information can be useful for diagnosing problems by tracing
+        /// back the chain of events leading up to this event.
         /// </para>
         /// </summary>
         public long InitiatedEventId
@@ -62,7 +62,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property Result. 
         /// <para>
-        /// The result of the child workflow execution (if any).
+        /// The result of the child workflow execution.
         /// </para>
         /// </summary>
         public string Result

@@ -28,7 +28,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleWorkflow.Model
 {
     /// <summary>
-    /// Provides details of the <code>SignalExternalWorkflowExecutionInitiated</code> event.
+    /// Provides the details of the <code>SignalExternalWorkflowExecutionInitiated</code>
+    /// event.
     /// </summary>
     public partial class SignalExternalWorkflowExecutionInitiatedEventAttributes
     {
@@ -42,8 +43,8 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property Control. 
         /// <para>
-        /// <i>Optional.</i> data attached to the event that can be used by the decider in subsequent
-        /// decision tasks.
+        /// Data attached to the event that can be used by the decider in subsequent decision
+        /// tasks.
         /// </para>
         /// </summary>
         public string Control
@@ -82,7 +83,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property Input. 
         /// <para>
-        /// Input provided to the signal (if any).
+        /// The input provided to the signal.
         /// </para>
         /// </summary>
         public string Input

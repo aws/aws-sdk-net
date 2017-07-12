@@ -34,30 +34,51 @@ namespace Amazon.SimpleWorkflow.Model
     /// policy, registered with the workflow type or specified when starting this execution,
     /// is applied to any open child workflow executions of this workflow execution.
     /// 
-    ///  <important> If the identified workflow execution was in progress, it is terminated
-    /// immediately.</important> <note> If a runId is not specified, then the <code>WorkflowExecutionTerminated</code>
-    /// event is recorded in the history of the current open workflow with the matching workflowId
-    /// in the domain.</note> <note> You should consider using <a>RequestCancelWorkflowExecution</a>
-    /// action instead because it allows the workflow to gracefully close while <a>TerminateWorkflowExecution</a>
-    /// does not.</note> 
+    ///  <important> 
     /// <para>
-    /// <b>Access Control</b>
+    /// If the identified workflow execution was in progress, it is terminated immediately.
+    /// </para>
+    ///  </important> <note> 
+    /// <para>
+    /// If a runId isn't specified, then the <code>WorkflowExecutionTerminated</code> event
+    /// is recorded in the history of the current open workflow with the matching workflowId
+    /// in the domain.
+    /// </para>
+    ///  </note> <note> 
+    /// <para>
+    /// You should consider using <a>RequestCancelWorkflowExecution</a> action instead because
+    /// it allows the workflow to gracefully close while <a>TerminateWorkflowExecution</a>
+    /// doesn't.
+    /// </para>
+    ///  </note> 
+    /// <para>
+    ///  <b>Access Control</b> 
     /// </para>
     ///  
     /// <para>
     /// You can use IAM policies to control this action's access to Amazon SWF resources as
     /// follows:
     /// </para>
-    ///  <ul> <li>Use a <code>Resource</code> element with the domain name to limit the action
-    /// to only specified domains.</li> <li>Use an <code>Action</code> element to allow or
-    /// deny permission to call this action.</li> <li>You cannot use an IAM policy to constrain
-    /// this action's parameters.</li> </ul> 
+    ///  <ul> <li> 
     /// <para>
-    /// If the caller does not have sufficient permissions to invoke the action, or the parameter
+    /// Use a <code>Resource</code> element with the domain name to limit the action to only
+    /// specified domains.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Use an <code>Action</code> element to allow or deny permission to call this action.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// You cannot use an IAM policy to constrain this action's parameters.
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    /// If the caller doesn't have sufficient permissions to invoke the action, or the parameter
     /// values fall outside the specified constraints, the action fails. The associated event
-    /// attribute's <b>cause</b> parameter will be set to OPERATION_NOT_PERMITTED. For details
-    /// and example IAM policies, see <a href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
-    /// IAM to Manage Access to Amazon SWF Workflows</a>.
+    /// attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>.
+    /// For details and example IAM policies, see <a href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
+    /// IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.
     /// </para>
     /// </summary>
     public partial class TerminateWorkflowExecutionRequest : AmazonSimpleWorkflowRequest
@@ -80,14 +101,28 @@ namespace Amazon.SimpleWorkflow.Model
         /// <para>
         /// The supported child policies are:
         /// </para>
-        ///  <ul> <li><b>TERMINATE:</b> the child executions will be terminated.</li> <li><b>REQUEST_CANCEL:</b>
-        /// a request to cancel will be attempted for each child execution by recording a <code>WorkflowExecutionCancelRequested</code>
-        /// event in its history. It is up to the decider to take appropriate actions when it
-        /// receives an execution history with this event.</li> <li><b>ABANDON:</b> no action
-        /// will be taken. The child executions will continue to run.</li> </ul> <note>A child
-        /// policy for this workflow execution must be specified either as a default for the workflow
-        /// type or through this parameter. If neither this parameter is set nor a default child
-        /// policy was specified at registration time then a fault will be returned.</note>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>TERMINATE</code> – The child executions are terminated.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>REQUEST_CANCEL</code> – A request to cancel is attempted for each child execution
+        /// by recording a <code>WorkflowExecutionCancelRequested</code> event in its history.
+        /// It is up to the decider to take appropriate actions when it receives an execution
+        /// history with this event.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>ABANDON</code> – No action is taken. The child executions continue to run.
+        /// </para>
+        ///  </li> </ul> <note> 
+        /// <para>
+        /// A child policy for this workflow execution must be specified either as a default for
+        /// the workflow type or through this parameter. If neither this parameter is set nor
+        /// a default child policy was specified at registration time then a fault is returned.
+        /// </para>
+        ///  </note>
         /// </summary>
         public ChildPolicy ChildPolicy
         {
@@ -104,7 +139,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property Details. 
         /// <para>
-        /// <i>Optional.</i> Details for terminating the workflow execution.
+        ///  Details for terminating the workflow execution.
         /// </para>
         /// </summary>
         public string Details
@@ -140,7 +175,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property Reason. 
         /// <para>
-        /// <i>Optional.</i> A descriptive reason for terminating the workflow execution.
+        ///  A descriptive reason for terminating the workflow execution.
         /// </para>
         /// </summary>
         public string Reason

@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleWorkflow.Model
 {
     /// <summary>
-    /// Provides details of the <code>ExternalWorkflowExecutionSignaled</code> event.
+    /// Provides the details of the <code>ExternalWorkflowExecutionSignaled</code> event.
     /// </summary>
     public partial class ExternalWorkflowExecutionSignaledEventAttributes
     {
@@ -59,7 +59,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property WorkflowExecution. 
         /// <para>
-        ///  The external workflow execution that the signal was delivered to.
+        /// The external workflow execution that the signal was delivered to.
         /// </para>
         /// </summary>
         public WorkflowExecution WorkflowExecution

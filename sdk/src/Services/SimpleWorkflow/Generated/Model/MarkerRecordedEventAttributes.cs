@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleWorkflow.Model
 {
     /// <summary>
-    /// Provides details of the <code>MarkerRecorded</code> event.
+    /// Provides the details of the <code>MarkerRecorded</code> event.
     /// </summary>
     public partial class MarkerRecordedEventAttributes
     {
@@ -60,7 +60,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property Details. 
         /// <para>
-        /// Details of the marker (if any).
+        /// The details of the marker.
         /// </para>
         /// </summary>
         public string Details
