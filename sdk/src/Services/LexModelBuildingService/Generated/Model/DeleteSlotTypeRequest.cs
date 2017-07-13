@@ -30,7 +30,8 @@ namespace Amazon.LexModelBuildingService.Model
     /// <summary>
     /// Container for the parameters to the DeleteSlotType operation.
     /// Deletes all versions of the slot type, including the <code>$LATEST</code> version.
-    /// To delete a specific version of the slot type, use the operation.
+    /// To delete a specific version of the slot type, use the <a>DeleteSlotTypeVersion</a>
+    /// operation.
     /// 
     ///  
     /// <para>

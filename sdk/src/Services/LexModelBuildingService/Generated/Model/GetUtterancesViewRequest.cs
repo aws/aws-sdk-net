@@ -57,7 +57,7 @@ namespace Amazon.LexModelBuildingService.Model
     /// <para>
     /// If the bot's <code>childDirected</code> field is set to <code>true</code>, utterances
     /// for the bot are not stored and cannot be retrieved with the <code>GetUtterancesView</code>
-    /// operation. For more information, see .
+    /// operation. For more information, see <a>PutBot</a>.
     /// </para>
     ///  
     /// <para>

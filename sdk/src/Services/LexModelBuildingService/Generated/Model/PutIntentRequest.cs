@@ -254,28 +254,38 @@ namespace Amazon.LexModelBuildingService.Model
         /// <summary>
         /// Gets and sets the property FollowUpPrompt. 
         /// <para>
-        /// A user prompt for additional activity after an intent is fulfilled. For example, after
-        /// the <code>OrderPizza</code> intent is fulfilled (your Lambda function placed an order
-        /// with a pizzeria), you might prompt the user to find if they want to order a drink
-        /// (assuming that you have defined an <code>OrderDrink</code> intent in your bot).
-        /// </para>
-        ///  <note> 
-        /// <para>
-        /// The <code>followUpPrompt</code> and <code>conclusionStatement</code> are mutually
-        /// exclusive. You can specify only one. For example, your bot may not solicit both the
-        /// following: 
+        /// Amazon Lex uses this prompt to solicit additional activity after fulfilling an intent.
+        /// For example, after the <code>OrderPizza</code> intent is fulfilled, you might prompt
+        /// the user to order a drink.
         /// </para>
         ///  
         /// <para>
-        ///  Follow up prompt - "<code>$session.FirstName</code>, your pizza order has been placed.
-        /// Would you like to order a drink or a dessert?" 
+        /// The action that Amazon Lex takes depends on the user's response, as follows:
         /// </para>
-        ///  
+        ///  <ul> <li> 
         /// <para>
-        ///  Conclusion statement - "<code>$session.FirstName</code>, your pizza order has been
-        /// placed." 
+        /// If the user says "Yes" it responds with the clarification prompt that is configured
+        /// for the bot.
         /// </para>
-        ///  </note>
+        ///  </li> <li> 
+        /// <para>
+        /// if the user says "Yes" and continues with an utterance that triggers an intent it
+        /// starts a conversation for the intent.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If the user says "No" it responds with the rejection statement configured for the
+        /// the follow-up prompt.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If it doesn't recognize the utterance it repeats the follow-up prompt again.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// The <code>followUpPrompt</code> field and the <code>conclusionStatement</code> field
+        /// are mutually exclusive. You can specify only one. 
+        /// </para>
         /// </summary>
         public FollowUpPrompt FollowUpPrompt
         {

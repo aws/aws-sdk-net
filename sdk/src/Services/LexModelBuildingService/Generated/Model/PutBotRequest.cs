@@ -30,7 +30,7 @@ namespace Amazon.LexModelBuildingService.Model
     /// <summary>
     /// Container for the parameters to the PutBot operation.
     /// Creates an Amazon Lex conversational bot or replaces an existing bot. When you create
-    /// or update a bot you only required to specify a name. You can use this to add intents
+    /// or update a bot you are only required to specify a name. You can use this to add intents
     /// later, or to remove intents from an existing bot. When you create a bot with a name
     /// only, the bot is created or updated but Amazon Lex returns the <code/> response <code>FAILED</code>.
     /// You can build the bot after you add one or more intents. For more information about
@@ -173,11 +173,17 @@ namespace Amazon.LexModelBuildingService.Model
         /// <summary>
         /// Gets and sets the property ClarificationPrompt. 
         /// <para>
-        /// When Amazon Lex doesn't understand the user's intent, it uses one of these messages
-        /// to get clarification. For example, "Sorry, I didn't understand. Please repeat." Amazon
-        /// Lex repeats the clarification prompt the number of times specified in <code>maxAttempts</code>.
-        /// If Amazon Lex still can't understand, it sends the message specified in <code>abortStatement</code>.
-        /// 
+        /// When Amazon Lex doesn't understand the user's intent, it uses this message to get
+        /// clarification. To specify how many times Amazon Lex should repeate the clarification
+        /// prompt, use the <code>maxAttempts</code> field. If Amazon Lex still doesn't understand,
+        /// it sends the message in the <code>abortStatement</code> field. 
+        /// </para>
+        ///  
+        /// <para>
+        /// When you create a clarification prompt, make sure that it suggests the correct response
+        /// from the user. for example, for a bot that orders pizza and drinks, you might create
+        /// this clarification prompt: "What would you like to do? You can say 'Order a pizza'
+        /// or 'Order a drink.'"
         /// </para>
         /// </summary>
         public Prompt ClarificationPrompt
@@ -341,8 +347,8 @@ namespace Amazon.LexModelBuildingService.Model
         /// <para>
         /// The Amazon Polly voice ID that you want Amazon Lex to use for voice interactions with
         /// the user. The locale configured for the voice must match the locale of the bot. For
-        /// more information, see <a href="http://docs.aws.amazon.com/polly/latest/dg/API_Voice.html">Voice</a>
-        /// in the <i>Amazon Polly Developer Guide</i>.
+        /// more information, see <a href="http://docs.aws.amazon.com/polly/latest/dg/voicelist.html">Available
+        /// Voices</a> in the <i>Amazon Polly Developer Guide</i>.
         /// </para>
         /// </summary>
         public string VoiceId

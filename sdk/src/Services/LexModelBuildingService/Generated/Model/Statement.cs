@@ -57,9 +57,9 @@ namespace Amazon.LexModelBuildingService.Model
         /// <summary>
         /// Gets and sets the property ResponseCard. 
         /// <para>
-        ///  At runtime, if the client is using the API, Amazon Lex includes the response card
-        /// in the response. It substitutes all of the session attributes and slot values for
-        /// placeholders in the response card. 
+        ///  At runtime, if the client is using the <a href="http://docs.aws.amazon.com/lex/latest/dg/API_runtime_PostText.html">PostText</a>
+        /// API, Amazon Lex includes the response card in the response. It substitutes all of
+        /// the session attributes and slot values for placeholders in the response card. 
         /// </para>
         /// </summary>
         public string ResponseCard

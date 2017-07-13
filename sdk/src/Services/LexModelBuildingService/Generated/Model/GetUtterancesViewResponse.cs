@@ -56,9 +56,9 @@ namespace Amazon.LexModelBuildingService.Model
         /// <summary>
         /// Gets and sets the property Utterances. 
         /// <para>
-        /// An array of objects, each containing a list of objects describing the utterances that
-        /// were processed by your bot. The response contains a maximum of 100 <code>UtteranceData</code>
-        /// objects for each version.
+        /// An array of <a>UtteranceList</a> objects, each containing a list of <a>UtteranceData</a>
+        /// objects describing the utterances that were processed by your bot. The response contains
+        /// a maximum of 100 <code>UtteranceData</code> objects for each version.
         /// </para>
         /// </summary>
         public List<UtteranceList> Utterances

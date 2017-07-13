@@ -29,8 +29,8 @@ namespace Amazon.LexModelBuildingService.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteBotVersion operation.
-    /// Deletes a specific version of a bot. To delete all versions of a bot, use the operation.
-    /// 
+    /// Deletes a specific version of a bot. To delete all versions of a bot, use the <a>DeleteBot</a>
+    /// operation. 
     /// 
     ///  
     /// <para>
@@ -64,7 +64,7 @@ namespace Amazon.LexModelBuildingService.Model
         /// Gets and sets the property Version. 
         /// <para>
         /// The version of the bot to delete. You cannot delete the <code>$LATEST</code> version
-        /// of the bot. To delete the <code>$LATEST</code> version, use the operation.
+        /// of the bot. To delete the <code>$LATEST</code> version, use the <a>DeleteBot</a> operation.
         /// </para>
         /// </summary>
         public string Version

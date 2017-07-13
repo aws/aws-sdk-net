@@ -28,10 +28,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.LexModelBuildingService.Model
 {
     /// <summary>
-    /// After an intent is fulfilled, you might prompt the user for additional activity. For
-    /// example, after the <code>OrderPizza</code> intent is fulfilled (the pizza order is
-    /// placed with a pizzeria), you might prompt the user to find out whether the user wants
-    /// to order drinks (another intent you defined in your bot).
+    /// A prompt for additional activity after an intent is fulfilled. For example, after
+    /// the <code>OrderPizza</code> intent is fulfilled, you might prompt the user to find
+    /// out whether the user wants to order drinks.
     /// </summary>
     public partial class FollowUpPrompt
     {
@@ -41,7 +40,7 @@ namespace Amazon.LexModelBuildingService.Model
         /// <summary>
         /// Gets and sets the property Prompt. 
         /// <para>
-        /// Obtains information from the user. 
+        /// Prompts for information from the user. 
         /// </para>
         /// </summary>
         public Prompt Prompt
@@ -59,7 +58,7 @@ namespace Amazon.LexModelBuildingService.Model
         /// <summary>
         /// Gets and sets the property RejectionStatement. 
         /// <para>
-        /// If the user answers "no" to the question defined in <code>confirmationPrompt</code>,
+        /// If the user answers "no" to the question defined in the <code>prompt</code> field,
         /// Amazon Lex responds with this statement to acknowledge that the intent was canceled.
         /// 
         /// </para>

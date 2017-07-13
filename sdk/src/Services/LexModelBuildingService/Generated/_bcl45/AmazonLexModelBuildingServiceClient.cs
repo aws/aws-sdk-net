@@ -470,7 +470,7 @@ namespace Amazon.LexModelBuildingService
 
         /// <summary>
         /// Deletes all versions of the bot, including the <code>$LATEST</code> version. To delete
-        /// a specific version of the bot, use the operation.
+        /// a specific version of the bot, use the <a>DeleteBotVersion</a> operation.
         /// 
         ///  
         /// <para>
@@ -707,8 +707,8 @@ namespace Amazon.LexModelBuildingService
 
 
         /// <summary>
-        /// Deletes a specific version of a bot. To delete all versions of a bot, use the operation.
-        /// 
+        /// Deletes a specific version of a bot. To delete all versions of a bot, use the <a>DeleteBot</a>
+        /// operation. 
         /// 
         ///  
         /// <para>
@@ -790,7 +790,7 @@ namespace Amazon.LexModelBuildingService
 
         /// <summary>
         /// Deletes all versions of the intent, including the <code>$LATEST</code> version. To
-        /// delete a specific version of the intent, use the operation.
+        /// delete a specific version of the intent, use the <a>DeleteIntentVersion</a> operation.
         /// 
         ///  
         /// <para>
@@ -887,7 +887,7 @@ namespace Amazon.LexModelBuildingService
 
         /// <summary>
         /// Deletes a specific version of an intent. To delete all versions of a intent, use the
-        /// operation. 
+        /// <a>DeleteIntent</a> operation. 
         /// 
         ///  
         /// <para>
@@ -969,7 +969,8 @@ namespace Amazon.LexModelBuildingService
 
         /// <summary>
         /// Deletes all versions of the slot type, including the <code>$LATEST</code> version.
-        /// To delete a specific version of the slot type, use the operation.
+        /// To delete a specific version of the slot type, use the <a>DeleteSlotTypeVersion</a>
+        /// operation.
         /// 
         ///  
         /// <para>
@@ -1066,7 +1067,7 @@ namespace Amazon.LexModelBuildingService
 
         /// <summary>
         /// Deletes a specific version of a slot type. To delete all versions of a slot type,
-        /// use the operation. 
+        /// use the <a>DeleteSlotType</a> operation. 
         /// 
         ///  
         /// <para>
@@ -1154,8 +1155,8 @@ namespace Amazon.LexModelBuildingService
         /// <para>
         /// Amazon Lex stores the utterances that users send to your bot unless the <code>childDirected</code>
         /// field in the bot is set to <code>true</code>. Utterances are stored for 15 days for
-        /// use with the operation, and then stored indefinately for use in improving the ability
-        /// of your bot to respond to user input.
+        /// use with the <a>GetUtterancesView</a> operation, and then stored indefinately for
+        /// use in improving the ability of your bot to respond to user input.
         /// </para>
         ///  
         /// <para>
@@ -2229,7 +2230,7 @@ namespace Amazon.LexModelBuildingService
         /// <para>
         /// If the bot's <code>childDirected</code> field is set to <code>true</code>, utterances
         /// for the bot are not stored and cannot be retrieved with the <code>GetUtterancesView</code>
-        /// operation. For more information, see .
+        /// operation. For more information, see <a>PutBot</a>.
         /// </para>
         ///  
         /// <para>
@@ -2284,7 +2285,7 @@ namespace Amazon.LexModelBuildingService
 
         /// <summary>
         /// Creates an Amazon Lex conversational bot or replaces an existing bot. When you create
-        /// or update a bot you only required to specify a name. You can use this to add intents
+        /// or update a bot you are only required to specify a name. You can use this to add intents
         /// later, or to remove intents from an existing bot. When you create a bot with a name
         /// only, the bot is created or updated but Amazon Lex returns the <code/> response <code>FAILED</code>.
         /// You can build the bot after you add one or more intents. For more information about

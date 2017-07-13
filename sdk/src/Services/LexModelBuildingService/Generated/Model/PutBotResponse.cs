@@ -52,7 +52,7 @@ namespace Amazon.LexModelBuildingService.Model
         /// Gets and sets the property AbortStatement. 
         /// <para>
         /// The message that Amazon Lex uses to abort a conversation. For more information, see
-        /// .
+        /// <a>PutBot</a>.
         /// </para>
         /// </summary>
         public Statement AbortStatement
@@ -130,7 +130,7 @@ namespace Amazon.LexModelBuildingService.Model
         /// Gets and sets the property ClarificationPrompt. 
         /// <para>
         ///  The prompts that Amazon Lex uses when it doesn't understand the user's intent. For
-        /// more information, see . 
+        /// more information, see <a>PutBot</a>. 
         /// </para>
         /// </summary>
         public Prompt ClarificationPrompt
@@ -204,7 +204,7 @@ namespace Amazon.LexModelBuildingService.Model
         /// Gets and sets the property IdleSessionTTLInSeconds. 
         /// <para>
         /// The maximum length of time that Amazon Lex retains the data gathered in a conversation.
-        /// For more information, see .
+        /// For more information, see <a>PutBot</a>.
         /// </para>
         /// </summary>
         public int IdleSessionTTLInSeconds
@@ -222,7 +222,7 @@ namespace Amazon.LexModelBuildingService.Model
         /// <summary>
         /// Gets and sets the property Intents. 
         /// <para>
-        /// An array of <code>Intent</code> objects. For more information, see .
+        /// An array of <code>Intent</code> objects. For more information, see <a>PutBot</a>.
         /// </para>
         /// </summary>
         public List<Intent> Intents
@@ -342,7 +342,7 @@ namespace Amazon.LexModelBuildingService.Model
         /// Gets and sets the property VoiceId. 
         /// <para>
         /// The Amazon Polly voice ID that Amazon Lex uses for voice interaction with the user.
-        /// For more information, see .
+        /// For more information, see <a>PutBot</a>.
         /// </para>
         /// </summary>
         public string VoiceId

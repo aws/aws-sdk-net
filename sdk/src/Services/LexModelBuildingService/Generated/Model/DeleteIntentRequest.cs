@@ -30,7 +30,7 @@ namespace Amazon.LexModelBuildingService.Model
     /// <summary>
     /// Container for the parameters to the DeleteIntent operation.
     /// Deletes all versions of the intent, including the <code>$LATEST</code> version. To
-    /// delete a specific version of the intent, use the operation.
+    /// delete a specific version of the intent, use the <a>DeleteIntentVersion</a> operation.
     /// 
     ///  
     /// <para>

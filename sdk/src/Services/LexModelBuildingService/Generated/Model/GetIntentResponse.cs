@@ -89,7 +89,7 @@ namespace Amazon.LexModelBuildingService.Model
         /// Gets and sets the property ConfirmationPrompt. 
         /// <para>
         /// If defined in the bot, Amazon Lex uses prompt to confirm the intent before fulfilling
-        /// the user's request. For more information, see . 
+        /// the user's request. For more information, see <a>PutIntent</a>. 
         /// </para>
         /// </summary>
         public Prompt ConfirmationPrompt
@@ -144,7 +144,7 @@ namespace Amazon.LexModelBuildingService.Model
         /// Gets and sets the property DialogCodeHook. 
         /// <para>
         /// If defined in the bot, Amazon Amazon Lex invokes this Lambda function for each user
-        /// input. For more information, see . 
+        /// input. For more information, see <a>PutIntent</a>. 
         /// </para>
         /// </summary>
         public CodeHook DialogCodeHook
@@ -163,7 +163,7 @@ namespace Amazon.LexModelBuildingService.Model
         /// Gets and sets the property FollowUpPrompt. 
         /// <para>
         /// If defined in the bot, Amazon Lex uses this prompt to solicit additional user activity
-        /// after the intent is fulfilled. For more information, see .
+        /// after the intent is fulfilled. For more information, see <a>PutIntent</a>.
         /// </para>
         /// </summary>
         public FollowUpPrompt FollowUpPrompt
@@ -181,7 +181,8 @@ namespace Amazon.LexModelBuildingService.Model
         /// <summary>
         /// Gets and sets the property FulfillmentActivity. 
         /// <para>
-        /// Describes how the intent is fulfilled. For more information, see . 
+        /// Describes how the intent is fulfilled. For more information, see <a>PutIntent</a>.
+        /// 
         /// </para>
         /// </summary>
         public FulfillmentActivity FulfillmentActivity
