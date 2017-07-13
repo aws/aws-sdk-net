@@ -2577,6 +2577,56 @@ namespace Amazon.EC2
 
 
     /// <summary>
+    /// Constants used for properties of type InterfacePermissionType.
+    /// </summary>
+    public class InterfacePermissionType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant EIPASSOCIATE for InterfacePermissionType
+        /// </summary>
+        public static readonly InterfacePermissionType EIPASSOCIATE = new InterfacePermissionType("EIP-ASSOCIATE");
+        /// <summary>
+        /// Constant INSTANCEATTACH for InterfacePermissionType
+        /// </summary>
+        public static readonly InterfacePermissionType INSTANCEATTACH = new InterfacePermissionType("INSTANCE-ATTACH");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public InterfacePermissionType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static InterfacePermissionType FindValue(string value)
+        {
+            return FindValue<InterfacePermissionType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator InterfacePermissionType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ListingState.
     /// </summary>
     public class ListingState : ConstantClass
@@ -2914,6 +2964,64 @@ namespace Amazon.EC2
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator NetworkInterfaceAttribute(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type NetworkInterfacePermissionStateCode.
+    /// </summary>
+    public class NetworkInterfacePermissionStateCode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Granted for NetworkInterfacePermissionStateCode
+        /// </summary>
+        public static readonly NetworkInterfacePermissionStateCode Granted = new NetworkInterfacePermissionStateCode("granted");
+        /// <summary>
+        /// Constant Pending for NetworkInterfacePermissionStateCode
+        /// </summary>
+        public static readonly NetworkInterfacePermissionStateCode Pending = new NetworkInterfacePermissionStateCode("pending");
+        /// <summary>
+        /// Constant Revoked for NetworkInterfacePermissionStateCode
+        /// </summary>
+        public static readonly NetworkInterfacePermissionStateCode Revoked = new NetworkInterfacePermissionStateCode("revoked");
+        /// <summary>
+        /// Constant Revoking for NetworkInterfacePermissionStateCode
+        /// </summary>
+        public static readonly NetworkInterfacePermissionStateCode Revoking = new NetworkInterfacePermissionStateCode("revoking");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public NetworkInterfacePermissionStateCode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static NetworkInterfacePermissionStateCode FindValue(string value)
+        {
+            return FindValue<NetworkInterfacePermissionStateCode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator NetworkInterfacePermissionStateCode(string value)
         {
             return FindValue(value);
         }

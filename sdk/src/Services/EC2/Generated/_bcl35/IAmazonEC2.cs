@@ -2282,6 +2282,52 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  CreateNetworkInterfacePermission
+
+
+        /// <summary>
+        /// Grants an AWS authorized partner account permission to attach the specified network
+        /// interface to an instance in their account.
+        /// 
+        ///  
+        /// <para>
+        /// You can grant permission to a single AWS account only, and only one account at a time.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateNetworkInterfacePermission service method.</param>
+        /// 
+        /// <returns>The response from the CreateNetworkInterfacePermission service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateNetworkInterfacePermission">REST API Reference for CreateNetworkInterfacePermission Operation</seealso>
+        CreateNetworkInterfacePermissionResponse CreateNetworkInterfacePermission(CreateNetworkInterfacePermissionRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateNetworkInterfacePermission operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateNetworkInterfacePermission operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateNetworkInterfacePermission
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateNetworkInterfacePermission">REST API Reference for CreateNetworkInterfacePermission Operation</seealso>
+        IAsyncResult BeginCreateNetworkInterfacePermission(CreateNetworkInterfacePermissionRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateNetworkInterfacePermission operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateNetworkInterfacePermission.</param>
+        /// 
+        /// <returns>Returns a  CreateNetworkInterfacePermissionResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateNetworkInterfacePermission">REST API Reference for CreateNetworkInterfacePermission Operation</seealso>
+        CreateNetworkInterfacePermissionResponse EndCreateNetworkInterfacePermission(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  CreatePlacementGroup
 
 
@@ -3651,6 +3697,48 @@ namespace Amazon.EC2
         /// <returns>Returns a  DeleteNetworkInterfaceResult from EC2.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteNetworkInterface">REST API Reference for DeleteNetworkInterface Operation</seealso>
         DeleteNetworkInterfaceResponse EndDeleteNetworkInterface(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DeleteNetworkInterfacePermission
+
+
+        /// <summary>
+        /// Deletes a permission for a network interface. By default, you cannot delete the permission
+        /// if the account for which you're removing the permission has attached the network interface
+        /// to an instance. However, you can force delete the permission, regardless of any attachment.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteNetworkInterfacePermission service method.</param>
+        /// 
+        /// <returns>The response from the DeleteNetworkInterfacePermission service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteNetworkInterfacePermission">REST API Reference for DeleteNetworkInterfacePermission Operation</seealso>
+        DeleteNetworkInterfacePermissionResponse DeleteNetworkInterfacePermission(DeleteNetworkInterfacePermissionRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteNetworkInterfacePermission operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteNetworkInterfacePermission operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteNetworkInterfacePermission
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteNetworkInterfacePermission">REST API Reference for DeleteNetworkInterfacePermission Operation</seealso>
+        IAsyncResult BeginDeleteNetworkInterfacePermission(DeleteNetworkInterfacePermissionRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteNetworkInterfacePermission operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteNetworkInterfacePermission.</param>
+        /// 
+        /// <returns>Returns a  DeleteNetworkInterfacePermissionResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteNetworkInterfacePermission">REST API Reference for DeleteNetworkInterfacePermission Operation</seealso>
+        DeleteNetworkInterfacePermissionResponse EndDeleteNetworkInterfacePermission(IAsyncResult asyncResult);
 
         #endregion
         
@@ -5705,7 +5793,7 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Describes the status of one or more instances. By default, only running instances
-        /// are described, unless specified otherwise.
+        /// are described, unless you specifically indicate to return the status of all instances.
         /// 
         ///  
         /// <para>
@@ -5741,7 +5829,7 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Describes the status of one or more instances. By default, only running instances
-        /// are described, unless specified otherwise.
+        /// are described, unless you specifically indicate to return the status of all instances.
         /// 
         ///  
         /// <para>
@@ -6091,6 +6179,46 @@ namespace Amazon.EC2
         /// <returns>Returns a  DescribeNetworkInterfaceAttributeResult from EC2.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeNetworkInterfaceAttribute">REST API Reference for DescribeNetworkInterfaceAttribute Operation</seealso>
         DescribeNetworkInterfaceAttributeResponse EndDescribeNetworkInterfaceAttribute(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DescribeNetworkInterfacePermissions
+
+
+        /// <summary>
+        /// Describes the permissions for your network interfaces.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeNetworkInterfacePermissions service method.</param>
+        /// 
+        /// <returns>The response from the DescribeNetworkInterfacePermissions service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeNetworkInterfacePermissions">REST API Reference for DescribeNetworkInterfacePermissions Operation</seealso>
+        DescribeNetworkInterfacePermissionsResponse DescribeNetworkInterfacePermissions(DescribeNetworkInterfacePermissionsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeNetworkInterfacePermissions operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeNetworkInterfacePermissions operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeNetworkInterfacePermissions
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeNetworkInterfacePermissions">REST API Reference for DescribeNetworkInterfacePermissions Operation</seealso>
+        IAsyncResult BeginDescribeNetworkInterfacePermissions(DescribeNetworkInterfacePermissionsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeNetworkInterfacePermissions operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeNetworkInterfacePermissions.</param>
+        /// 
+        /// <returns>Returns a  DescribeNetworkInterfacePermissionsResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeNetworkInterfacePermissions">REST API Reference for DescribeNetworkInterfacePermissions Operation</seealso>
+        DescribeNetworkInterfacePermissionsResponse EndDescribeNetworkInterfacePermissions(IAsyncResult asyncResult);
 
         #endregion
         

@@ -122,7 +122,7 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property DisableApiTermination. 
         /// <para>
         /// If the value is <code>true</code>, you can't terminate the instance using the Amazon
-        /// EC2 console, CLI, or API; otherwise, you can. You cannot use this paramater for Spot
+        /// EC2 console, CLI, or API; otherwise, you can. You cannot use this parameter for Spot
         /// Instances.
         /// </para>
         /// </summary>

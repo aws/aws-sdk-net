@@ -1037,6 +1037,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("EC2")]
+        public void CreateNetworkInterfacePermissionMarshallTest()
+        {
+            var operation = service_model.FindOperation("CreateNetworkInterfacePermission");
+
+            var request = InstantiateClassGenerator.Execute<CreateNetworkInterfacePermissionRequest>();
+            var marshaller = new CreateNetworkInterfacePermissionRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
+            var response = CreateNetworkInterfacePermissionResponseUnmarshaller.Instance.Unmarshall(context)
+                as CreateNetworkInterfacePermissionResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("EC2")]
         public void CreatePlacementGroupMarshallTest()
         {
             var operation = service_model.FindOperation("CreatePlacementGroup");
@@ -1603,6 +1627,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             validator.Validate();
 
 
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("EC2")]
+        public void DeleteNetworkInterfacePermissionMarshallTest()
+        {
+            var operation = service_model.FindOperation("DeleteNetworkInterfacePermission");
+
+            var request = InstantiateClassGenerator.Execute<DeleteNetworkInterfacePermissionRequest>();
+            var marshaller = new DeleteNetworkInterfacePermissionRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
+            var response = DeleteNetworkInterfacePermissionResponseUnmarshaller.Instance.Unmarshall(context)
+                as DeleteNetworkInterfacePermissionResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
         }
 
         
@@ -2660,6 +2708,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
             var response = DescribeNetworkInterfaceAttributeResponseUnmarshaller.Instance.Unmarshall(context)
                 as DescribeNetworkInterfaceAttributeResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("EC2")]
+        public void DescribeNetworkInterfacePermissionsMarshallTest()
+        {
+            var operation = service_model.FindOperation("DescribeNetworkInterfacePermissions");
+
+            var request = InstantiateClassGenerator.Execute<DescribeNetworkInterfacePermissionsRequest>();
+            var marshaller = new DescribeNetworkInterfacePermissionsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
+            var response = DescribeNetworkInterfacePermissionsResponseUnmarshaller.Instance.Unmarshall(context)
+                as DescribeNetworkInterfacePermissionsResponse;   
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
         }
 

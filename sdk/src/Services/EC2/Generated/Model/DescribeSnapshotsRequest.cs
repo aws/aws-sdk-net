@@ -119,7 +119,7 @@ namespace Amazon.EC2.Model
         ///  <code>owner-alias</code> - Value from an Amazon-maintained list (<code>amazon</code>
         /// | <code>aws-marketplace</code> | <code>microsoft</code>) of snapshot owners. Not to
         /// be confused with the user-configured AWS account alias, which is set from the IAM
-        /// consolew.
+        /// console.
         /// </para>
         ///  </li> <li> 
         /// <para>

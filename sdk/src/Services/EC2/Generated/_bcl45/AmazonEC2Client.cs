@@ -2489,6 +2489,51 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  CreateNetworkInterfacePermission
+
+
+        /// <summary>
+        /// Grants an AWS authorized partner account permission to attach the specified network
+        /// interface to an instance in their account.
+        /// 
+        ///  
+        /// <para>
+        /// You can grant permission to a single AWS account only, and only one account at a time.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateNetworkInterfacePermission service method.</param>
+        /// 
+        /// <returns>The response from the CreateNetworkInterfacePermission service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateNetworkInterfacePermission">REST API Reference for CreateNetworkInterfacePermission Operation</seealso>
+        public CreateNetworkInterfacePermissionResponse CreateNetworkInterfacePermission(CreateNetworkInterfacePermissionRequest request)
+        {
+            var marshaller = new CreateNetworkInterfacePermissionRequestMarshaller();
+            var unmarshaller = CreateNetworkInterfacePermissionResponseUnmarshaller.Instance;
+
+            return Invoke<CreateNetworkInterfacePermissionRequest,CreateNetworkInterfacePermissionResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateNetworkInterfacePermission operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateNetworkInterfacePermission operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateNetworkInterfacePermission">REST API Reference for CreateNetworkInterfacePermission Operation</seealso>
+        public Task<CreateNetworkInterfacePermissionResponse> CreateNetworkInterfacePermissionAsync(CreateNetworkInterfacePermissionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new CreateNetworkInterfacePermissionRequestMarshaller();
+            var unmarshaller = CreateNetworkInterfacePermissionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateNetworkInterfacePermissionRequest,CreateNetworkInterfacePermissionResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreatePlacementGroup
 
 
@@ -3830,6 +3875,47 @@ namespace Amazon.EC2
             var unmarshaller = DeleteNetworkInterfaceResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteNetworkInterfaceRequest,DeleteNetworkInterfaceResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteNetworkInterfacePermission
+
+
+        /// <summary>
+        /// Deletes a permission for a network interface. By default, you cannot delete the permission
+        /// if the account for which you're removing the permission has attached the network interface
+        /// to an instance. However, you can force delete the permission, regardless of any attachment.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteNetworkInterfacePermission service method.</param>
+        /// 
+        /// <returns>The response from the DeleteNetworkInterfacePermission service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteNetworkInterfacePermission">REST API Reference for DeleteNetworkInterfacePermission Operation</seealso>
+        public DeleteNetworkInterfacePermissionResponse DeleteNetworkInterfacePermission(DeleteNetworkInterfacePermissionRequest request)
+        {
+            var marshaller = new DeleteNetworkInterfacePermissionRequestMarshaller();
+            var unmarshaller = DeleteNetworkInterfacePermissionResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteNetworkInterfacePermissionRequest,DeleteNetworkInterfacePermissionResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteNetworkInterfacePermission operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteNetworkInterfacePermission operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteNetworkInterfacePermission">REST API Reference for DeleteNetworkInterfacePermission Operation</seealso>
+        public Task<DeleteNetworkInterfacePermissionResponse> DeleteNetworkInterfacePermissionAsync(DeleteNetworkInterfacePermissionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DeleteNetworkInterfacePermissionRequestMarshaller();
+            var unmarshaller = DeleteNetworkInterfacePermissionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteNetworkInterfacePermissionRequest,DeleteNetworkInterfacePermissionResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -6151,7 +6237,7 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Describes the status of one or more instances. By default, only running instances
-        /// are described, unless specified otherwise.
+        /// are described, unless you specifically indicate to return the status of all instances.
         /// 
         ///  
         /// <para>
@@ -6191,7 +6277,7 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Describes the status of one or more instances. By default, only running instances
-        /// are described, unless specified otherwise.
+        /// are described, unless you specifically indicate to return the status of all instances.
         /// 
         ///  
         /// <para>
@@ -6235,7 +6321,7 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Describes the status of one or more instances. By default, only running instances
-        /// are described, unless specified otherwise.
+        /// are described, unless you specifically indicate to return the status of all instances.
         /// 
         ///  
         /// <para>
@@ -6640,6 +6726,45 @@ namespace Amazon.EC2
             var unmarshaller = DescribeNetworkInterfaceAttributeResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeNetworkInterfaceAttributeRequest,DescribeNetworkInterfaceAttributeResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeNetworkInterfacePermissions
+
+
+        /// <summary>
+        /// Describes the permissions for your network interfaces.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeNetworkInterfacePermissions service method.</param>
+        /// 
+        /// <returns>The response from the DescribeNetworkInterfacePermissions service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeNetworkInterfacePermissions">REST API Reference for DescribeNetworkInterfacePermissions Operation</seealso>
+        public DescribeNetworkInterfacePermissionsResponse DescribeNetworkInterfacePermissions(DescribeNetworkInterfacePermissionsRequest request)
+        {
+            var marshaller = new DescribeNetworkInterfacePermissionsRequestMarshaller();
+            var unmarshaller = DescribeNetworkInterfacePermissionsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeNetworkInterfacePermissionsRequest,DescribeNetworkInterfacePermissionsResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeNetworkInterfacePermissions operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeNetworkInterfacePermissions operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeNetworkInterfacePermissions">REST API Reference for DescribeNetworkInterfacePermissions Operation</seealso>
+        public Task<DescribeNetworkInterfacePermissionsResponse> DescribeNetworkInterfacePermissionsAsync(DescribeNetworkInterfacePermissionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DescribeNetworkInterfacePermissionsRequestMarshaller();
+            var unmarshaller = DescribeNetworkInterfacePermissionsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeNetworkInterfacePermissionsRequest,DescribeNetworkInterfacePermissionsResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
