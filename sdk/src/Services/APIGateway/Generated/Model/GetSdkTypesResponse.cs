@@ -38,7 +38,7 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property Items. 
         /// <para>
-        /// The set of <a>SdkType</a> items that comprise this view of the <a>SdkTypes</a> collection.
+        /// The current page of elements from this collection.
         /// </para>
         /// </summary>
         public List<SdkType> Items

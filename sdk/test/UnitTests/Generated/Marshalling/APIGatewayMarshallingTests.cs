@@ -628,6 +628,23 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("APIGateway")]
+        public void DeleteGatewayResponseMarshallTest()
+        {
+            var operation = service_model.FindOperation("DeleteGatewayResponse");
+
+            var request = InstantiateClassGenerator.Execute<DeleteGatewayResponseRequest>();
+            var marshaller = new DeleteGatewayResponseRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("DeleteGatewayResponse", request, internalRequest, service_model);            
+
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("APIGateway")]
         public void DeleteIntegrationMarshallTest()
         {
             var operation = service_model.FindOperation("DeleteIntegration");
@@ -1451,6 +1468,70 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             ResponseUnmarshaller unmarshaller = GetExportResponseUnmarshaller.Instance;
             var response = unmarshaller.Unmarshall(context)
                 as GetExportResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("APIGateway")]
+        public void GetGatewayResponseMarshallTest()
+        {
+            var operation = service_model.FindOperation("GetGatewayResponse");
+
+            var request = InstantiateClassGenerator.Execute<GetGatewayResponseRequest>();
+            var marshaller = new GetGatewayResponseRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("GetGatewayResponse", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString());
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = GetGatewayResponseResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as GetGatewayResponseResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("APIGateway")]
+        public void GetGatewayResponsesMarshallTest()
+        {
+            var operation = service_model.FindOperation("GetGatewayResponses");
+
+            var request = InstantiateClassGenerator.Execute<GetGatewayResponsesRequest>();
+            var marshaller = new GetGatewayResponsesRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("GetGatewayResponses", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString());
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = GetGatewayResponsesResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as GetGatewayResponsesResponse;   
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
         }
 
@@ -2293,6 +2374,38 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("APIGateway")]
+        public void PutGatewayResponseMarshallTest()
+        {
+            var operation = service_model.FindOperation("PutGatewayResponse");
+
+            var request = InstantiateClassGenerator.Execute<PutGatewayResponseRequest>();
+            var marshaller = new PutGatewayResponseRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("PutGatewayResponse", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString());
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = PutGatewayResponseResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as PutGatewayResponseResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("APIGateway")]
         public void PutIntegrationMarshallTest()
         {
             var operation = service_model.FindOperation("PutIntegration");
@@ -2797,6 +2910,38 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             ResponseUnmarshaller unmarshaller = UpdateDomainNameResponseUnmarshaller.Instance;
             var response = unmarshaller.Unmarshall(context)
                 as UpdateDomainNameResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("APIGateway")]
+        public void UpdateGatewayResponseMarshallTest()
+        {
+            var operation = service_model.FindOperation("UpdateGatewayResponse");
+
+            var request = InstantiateClassGenerator.Execute<UpdateGatewayResponseRequest>();
+            var marshaller = new UpdateGatewayResponseRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("UpdateGatewayResponse", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString());
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = UpdateGatewayResponseResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as UpdateGatewayResponseResponse;   
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
         }
 

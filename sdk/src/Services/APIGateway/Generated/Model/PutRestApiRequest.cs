@@ -45,7 +45,8 @@ namespace Amazon.APIGateway.Model
         /// Gets and sets the property Body. 
         /// <para>
         /// The PUT request body containing external API definitions. Currently, only Swagger
-        /// definition JSON files are supported.
+        /// definition JSON files are supported. The maximum size of the API definition file is
+        /// 2MB.
         /// </para>
         /// </summary>
         public MemoryStream Body
@@ -101,7 +102,10 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property Parameters. 
         /// <para>
-        /// Custom headers supplied as part of the request. 
+        /// Custom header parameters as part of the request. For example, to exclude <a>DocumentationParts</a>
+        /// from an imported API, set <code>ignore=documentation</code> as a <code>parameters</code>
+        /// value, as in the AWS CLI command of <code>aws apigateway import-rest-api --parameters
+        /// ignore=documentation --body 'file:///path/to/imported-api-body.json</code>.
         /// </para>
         /// </summary>
         public Dictionary<string, string> Parameters
@@ -119,7 +123,7 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property RestApiId. 
         /// <para>
-        /// The identifier of the <a>RestApi</a> to be updated. 
+        /// The string identifier of the associated <a>RestApi</a>.
         /// </para>
         /// </summary>
         public string RestApiId

@@ -926,6 +926,37 @@ namespace Amazon.APIGateway
 
         #endregion
         
+        #region  DeleteGatewayResponse
+
+        internal DeleteGatewayResponseResponse DeleteGatewayResponse(DeleteGatewayResponseRequest request)
+        {
+            var marshaller = new DeleteGatewayResponseRequestMarshaller();
+            var unmarshaller = DeleteGatewayResponseResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteGatewayResponseRequest,DeleteGatewayResponseResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteGatewayResponse operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteGatewayResponse operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<DeleteGatewayResponseResponse> DeleteGatewayResponseAsync(DeleteGatewayResponseRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DeleteGatewayResponseRequestMarshaller();
+            var unmarshaller = DeleteGatewayResponseResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteGatewayResponseRequest,DeleteGatewayResponseResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeleteIntegration
 
         internal DeleteIntegrationResponse DeleteIntegration(DeleteIntegrationRequest request)
@@ -1918,6 +1949,68 @@ namespace Amazon.APIGateway
 
         #endregion
         
+        #region  GetGatewayResponse
+
+        internal GetGatewayResponseResponse GetGatewayResponse(GetGatewayResponseRequest request)
+        {
+            var marshaller = new GetGatewayResponseRequestMarshaller();
+            var unmarshaller = GetGatewayResponseResponseUnmarshaller.Instance;
+
+            return Invoke<GetGatewayResponseRequest,GetGatewayResponseResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetGatewayResponse operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetGatewayResponse operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<GetGatewayResponseResponse> GetGatewayResponseAsync(GetGatewayResponseRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new GetGatewayResponseRequestMarshaller();
+            var unmarshaller = GetGatewayResponseResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetGatewayResponseRequest,GetGatewayResponseResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetGatewayResponses
+
+        internal GetGatewayResponsesResponse GetGatewayResponses(GetGatewayResponsesRequest request)
+        {
+            var marshaller = new GetGatewayResponsesRequestMarshaller();
+            var unmarshaller = GetGatewayResponsesResponseUnmarshaller.Instance;
+
+            return Invoke<GetGatewayResponsesRequest,GetGatewayResponsesResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetGatewayResponses operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetGatewayResponses operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<GetGatewayResponsesResponse> GetGatewayResponsesAsync(GetGatewayResponsesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new GetGatewayResponsesRequestMarshaller();
+            var unmarshaller = GetGatewayResponsesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetGatewayResponsesRequest,GetGatewayResponsesResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetIntegration
 
         internal GetIntegrationResponse GetIntegration(GetIntegrationRequest request)
@@ -2724,6 +2817,37 @@ namespace Amazon.APIGateway
 
         #endregion
         
+        #region  PutGatewayResponse
+
+        internal PutGatewayResponseResponse PutGatewayResponse(PutGatewayResponseRequest request)
+        {
+            var marshaller = new PutGatewayResponseRequestMarshaller();
+            var unmarshaller = PutGatewayResponseResponseUnmarshaller.Instance;
+
+            return Invoke<PutGatewayResponseRequest,PutGatewayResponseResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutGatewayResponse operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutGatewayResponse operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<PutGatewayResponseResponse> PutGatewayResponseAsync(PutGatewayResponseRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new PutGatewayResponseRequestMarshaller();
+            var unmarshaller = PutGatewayResponseResponseUnmarshaller.Instance;
+
+            return InvokeAsync<PutGatewayResponseRequest,PutGatewayResponseResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  PutIntegration
 
         internal PutIntegrationResponse PutIntegration(PutIntegrationRequest request)
@@ -3215,6 +3339,37 @@ namespace Amazon.APIGateway
             var unmarshaller = UpdateDomainNameResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdateDomainNameRequest,UpdateDomainNameResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateGatewayResponse
+
+        internal UpdateGatewayResponseResponse UpdateGatewayResponse(UpdateGatewayResponseRequest request)
+        {
+            var marshaller = new UpdateGatewayResponseRequestMarshaller();
+            var unmarshaller = UpdateGatewayResponseResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateGatewayResponseRequest,UpdateGatewayResponseResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateGatewayResponse operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateGatewayResponse operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<UpdateGatewayResponseResponse> UpdateGatewayResponseAsync(UpdateGatewayResponseRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new UpdateGatewayResponseRequestMarshaller();
+            var unmarshaller = UpdateGatewayResponseResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateGatewayResponseRequest,UpdateGatewayResponseResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 

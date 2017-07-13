@@ -80,7 +80,7 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property Limit. 
         /// <para>
-        /// The maximum number of <a>ApiKeys</a> to get information about.
+        /// The maximum number of returned results per page.
         /// </para>
         /// </summary>
         public int Limit

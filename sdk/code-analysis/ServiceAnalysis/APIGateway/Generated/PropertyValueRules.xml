@@ -9,6 +9,10 @@
     <pattern>[1-5]\d\d</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.APIGateway.Model.GetGatewayResponseResponse.StatusCode</property>
+    <pattern>[1-5]\d\d</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.APIGateway.Model.GetIntegrationResponseRequest.StatusCode</property>
     <pattern>[1-5]\d\d</pattern>
   </property-value-rule>
@@ -25,6 +29,14 @@
     <pattern>[1-5]\d\d</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.APIGateway.Model.PutGatewayResponseRequest.StatusCode</property>
+    <pattern>[1-5]\d\d</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.APIGateway.Model.PutGatewayResponseResponse.StatusCode</property>
+    <pattern>[1-5]\d\d</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.APIGateway.Model.PutIntegrationResponseRequest.StatusCode</property>
     <pattern>[1-5]\d\d</pattern>
   </property-value-rule>
@@ -38,6 +50,10 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.APIGateway.Model.PutMethodResponseResponse.StatusCode</property>
+    <pattern>[1-5]\d\d</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.APIGateway.Model.UpdateGatewayResponseResponse.StatusCode</property>
     <pattern>[1-5]\d\d</pattern>
   </property-value-rule>
   <property-value-rule>

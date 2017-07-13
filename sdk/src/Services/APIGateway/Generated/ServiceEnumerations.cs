@@ -397,6 +397,128 @@ namespace Amazon.APIGateway
 
 
     /// <summary>
+    /// Constants used for properties of type GatewayResponseType.
+    /// </summary>
+    public class GatewayResponseType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACCESS_DENIED for GatewayResponseType
+        /// </summary>
+        public static readonly GatewayResponseType ACCESS_DENIED = new GatewayResponseType("ACCESS_DENIED");
+        /// <summary>
+        /// Constant API_CONFIGURATION_ERROR for GatewayResponseType
+        /// </summary>
+        public static readonly GatewayResponseType API_CONFIGURATION_ERROR = new GatewayResponseType("API_CONFIGURATION_ERROR");
+        /// <summary>
+        /// Constant AUTHORIZER_CONFIGURATION_ERROR for GatewayResponseType
+        /// </summary>
+        public static readonly GatewayResponseType AUTHORIZER_CONFIGURATION_ERROR = new GatewayResponseType("AUTHORIZER_CONFIGURATION_ERROR");
+        /// <summary>
+        /// Constant AUTHORIZER_FAILURE for GatewayResponseType
+        /// </summary>
+        public static readonly GatewayResponseType AUTHORIZER_FAILURE = new GatewayResponseType("AUTHORIZER_FAILURE");
+        /// <summary>
+        /// Constant BAD_REQUEST_BODY for GatewayResponseType
+        /// </summary>
+        public static readonly GatewayResponseType BAD_REQUEST_BODY = new GatewayResponseType("BAD_REQUEST_BODY");
+        /// <summary>
+        /// Constant BAD_REQUEST_PARAMETERS for GatewayResponseType
+        /// </summary>
+        public static readonly GatewayResponseType BAD_REQUEST_PARAMETERS = new GatewayResponseType("BAD_REQUEST_PARAMETERS");
+        /// <summary>
+        /// Constant DEFAULT_4XX for GatewayResponseType
+        /// </summary>
+        public static readonly GatewayResponseType DEFAULT_4XX = new GatewayResponseType("DEFAULT_4XX");
+        /// <summary>
+        /// Constant DEFAULT_5XX for GatewayResponseType
+        /// </summary>
+        public static readonly GatewayResponseType DEFAULT_5XX = new GatewayResponseType("DEFAULT_5XX");
+        /// <summary>
+        /// Constant EXPIRED_TOKEN for GatewayResponseType
+        /// </summary>
+        public static readonly GatewayResponseType EXPIRED_TOKEN = new GatewayResponseType("EXPIRED_TOKEN");
+        /// <summary>
+        /// Constant INTEGRATION_FAILURE for GatewayResponseType
+        /// </summary>
+        public static readonly GatewayResponseType INTEGRATION_FAILURE = new GatewayResponseType("INTEGRATION_FAILURE");
+        /// <summary>
+        /// Constant INTEGRATION_TIMEOUT for GatewayResponseType
+        /// </summary>
+        public static readonly GatewayResponseType INTEGRATION_TIMEOUT = new GatewayResponseType("INTEGRATION_TIMEOUT");
+        /// <summary>
+        /// Constant INVALID_API_KEY for GatewayResponseType
+        /// </summary>
+        public static readonly GatewayResponseType INVALID_API_KEY = new GatewayResponseType("INVALID_API_KEY");
+        /// <summary>
+        /// Constant INVALID_SIGNATURE for GatewayResponseType
+        /// </summary>
+        public static readonly GatewayResponseType INVALID_SIGNATURE = new GatewayResponseType("INVALID_SIGNATURE");
+        /// <summary>
+        /// Constant MISSING_AUTHENTICATION_TOKEN for GatewayResponseType
+        /// </summary>
+        public static readonly GatewayResponseType MISSING_AUTHENTICATION_TOKEN = new GatewayResponseType("MISSING_AUTHENTICATION_TOKEN");
+        /// <summary>
+        /// Constant QUOTA_EXCEEDED for GatewayResponseType
+        /// </summary>
+        public static readonly GatewayResponseType QUOTA_EXCEEDED = new GatewayResponseType("QUOTA_EXCEEDED");
+        /// <summary>
+        /// Constant REQUEST_TOO_LARGE for GatewayResponseType
+        /// </summary>
+        public static readonly GatewayResponseType REQUEST_TOO_LARGE = new GatewayResponseType("REQUEST_TOO_LARGE");
+        /// <summary>
+        /// Constant RESOURCE_NOT_FOUND for GatewayResponseType
+        /// </summary>
+        public static readonly GatewayResponseType RESOURCE_NOT_FOUND = new GatewayResponseType("RESOURCE_NOT_FOUND");
+        /// <summary>
+        /// Constant THROTTLED for GatewayResponseType
+        /// </summary>
+        public static readonly GatewayResponseType THROTTLED = new GatewayResponseType("THROTTLED");
+        /// <summary>
+        /// Constant UNAUTHORIZED for GatewayResponseType
+        /// </summary>
+        public static readonly GatewayResponseType UNAUTHORIZED = new GatewayResponseType("UNAUTHORIZED");
+        /// <summary>
+        /// Constant UNSUPPORTED_MEDIA_TYPE for GatewayResponseType
+        /// </summary>
+        public static readonly GatewayResponseType UNSUPPORTED_MEDIA_TYPE = new GatewayResponseType("UNSUPPORTED_MEDIA_TYPE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public GatewayResponseType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static GatewayResponseType FindValue(string value)
+        {
+            return FindValue<GatewayResponseType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator GatewayResponseType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type IntegrationType.
     /// </summary>
     public class IntegrationType : ConstantClass

@@ -64,7 +64,7 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property RestApiId. 
         /// <para>
-        /// The name of the API.
+        /// The string identifier of the associated <a>RestApi</a>.
         /// </para>
         /// </summary>
         public string RestApiId
@@ -82,7 +82,7 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property Stage. 
         /// <para>
-        /// The name of the API's stage.
+        /// The name of the associated stage.
         /// </para>
         /// </summary>
         public string Stage

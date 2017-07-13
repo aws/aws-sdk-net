@@ -100,7 +100,7 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property RestApiId. 
         /// <para>
-        /// The <a>RestApi</a> resource identifier for the <a>Deployment</a> resource to create.
+        /// The string identifier of the associated <a>RestApi</a>.
         /// </para>
         /// </summary>
         public string RestApiId

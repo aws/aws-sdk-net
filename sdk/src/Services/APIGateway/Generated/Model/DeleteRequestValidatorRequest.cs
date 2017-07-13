@@ -57,8 +57,7 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property RestApiId. 
         /// <para>
-        /// [Required] The identifier of the <a>RestApi</a> from which the given <a>RequestValidator</a>
-        /// is deleted.
+        /// The string identifier of the associated <a>RestApi</a>.
         /// </para>
         /// </summary>
         public string RestApiId

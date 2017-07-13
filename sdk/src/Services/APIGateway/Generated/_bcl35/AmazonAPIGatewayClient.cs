@@ -1677,6 +1677,72 @@ namespace Amazon.APIGateway
 
         #endregion
         
+        #region  DeleteGatewayResponse
+
+        /// <summary>
+        /// Clears any customization of a <a>GatewayResponse</a> of a specified response type
+        /// on the given <a>RestApi</a> and resets it with the default settings.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteGatewayResponse service method.</param>
+        /// 
+        /// <returns>The response from the DeleteGatewayResponse service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.ConflictException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
+        /// 
+        /// </exception>
+        public DeleteGatewayResponseResponse DeleteGatewayResponse(DeleteGatewayResponseRequest request)
+        {
+            var marshaller = new DeleteGatewayResponseRequestMarshaller();
+            var unmarshaller = DeleteGatewayResponseResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteGatewayResponseRequest,DeleteGatewayResponseResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteGatewayResponse operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteGatewayResponse operation on AmazonAPIGatewayClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteGatewayResponse
+        ///         operation.</returns>
+        public IAsyncResult BeginDeleteGatewayResponse(DeleteGatewayResponseRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new DeleteGatewayResponseRequestMarshaller();
+            var unmarshaller = DeleteGatewayResponseResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DeleteGatewayResponseRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteGatewayResponse operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteGatewayResponse.</param>
+        /// 
+        /// <returns>Returns a  DeleteGatewayResponseResult from APIGateway.</returns>
+        public  DeleteGatewayResponseResponse EndDeleteGatewayResponse(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteGatewayResponseResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DeleteIntegration
 
         /// <summary>
@@ -3600,6 +3666,9 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
         /// 
         /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.ConflictException">
+        /// 
+        /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
         /// 
         /// </exception>
@@ -3647,6 +3716,130 @@ namespace Amazon.APIGateway
         public  GetExportResponse EndGetExport(IAsyncResult asyncResult)
         {
             return EndInvoke<GetExportResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetGatewayResponse
+
+        /// <summary>
+        /// Gets a <a>GatewayResponse</a> of a specified response type on the given <a>RestApi</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetGatewayResponse service method.</param>
+        /// 
+        /// <returns>The response from the GetGatewayResponse service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
+        /// 
+        /// </exception>
+        public GetGatewayResponseResponse GetGatewayResponse(GetGatewayResponseRequest request)
+        {
+            var marshaller = new GetGatewayResponseRequestMarshaller();
+            var unmarshaller = GetGatewayResponseResponseUnmarshaller.Instance;
+
+            return Invoke<GetGatewayResponseRequest,GetGatewayResponseResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetGatewayResponse operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetGatewayResponse operation on AmazonAPIGatewayClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetGatewayResponse
+        ///         operation.</returns>
+        public IAsyncResult BeginGetGatewayResponse(GetGatewayResponseRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new GetGatewayResponseRequestMarshaller();
+            var unmarshaller = GetGatewayResponseResponseUnmarshaller.Instance;
+
+            return BeginInvoke<GetGatewayResponseRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetGatewayResponse operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetGatewayResponse.</param>
+        /// 
+        /// <returns>Returns a  GetGatewayResponseResult from APIGateway.</returns>
+        public  GetGatewayResponseResponse EndGetGatewayResponse(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetGatewayResponseResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetGatewayResponses
+
+        /// <summary>
+        /// Gets the <a>GatewayResponses</a> collection on the given <a>RestApi</a>. If an API
+        /// developer has not added any definitions for gateway responses, the result will be
+        /// the Amazon API Gateway-generated default <a>GatewayResponses</a> collection for the
+        /// supported response types.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetGatewayResponses service method.</param>
+        /// 
+        /// <returns>The response from the GetGatewayResponses service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
+        /// 
+        /// </exception>
+        public GetGatewayResponsesResponse GetGatewayResponses(GetGatewayResponsesRequest request)
+        {
+            var marshaller = new GetGatewayResponsesRequestMarshaller();
+            var unmarshaller = GetGatewayResponsesResponseUnmarshaller.Instance;
+
+            return Invoke<GetGatewayResponsesRequest,GetGatewayResponsesResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetGatewayResponses operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetGatewayResponses operation on AmazonAPIGatewayClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetGatewayResponses
+        ///         operation.</returns>
+        public IAsyncResult BeginGetGatewayResponses(GetGatewayResponsesRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new GetGatewayResponsesRequestMarshaller();
+            var unmarshaller = GetGatewayResponsesResponseUnmarshaller.Instance;
+
+            return BeginInvoke<GetGatewayResponsesRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetGatewayResponses operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetGatewayResponses.</param>
+        /// 
+        /// <returns>Returns a  GetGatewayResponsesResult from APIGateway.</returns>
+        public  GetGatewayResponsesResponse EndGetGatewayResponses(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetGatewayResponsesResponse>(asyncResult);
         }
 
         #endregion
@@ -4440,6 +4633,9 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>The response from the GetSdk service method, as returned by APIGateway.</returns>
         /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.ConflictException">
         /// 
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
@@ -5239,10 +5435,76 @@ namespace Amazon.APIGateway
 
         #endregion
         
+        #region  PutGatewayResponse
+
+        /// <summary>
+        /// Creates a customization of a <a>GatewayResponse</a> of a specified response type and
+        /// status code on the given <a>RestApi</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutGatewayResponse service method.</param>
+        /// 
+        /// <returns>The response from the PutGatewayResponse service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.LimitExceededException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
+        /// 
+        /// </exception>
+        public PutGatewayResponseResponse PutGatewayResponse(PutGatewayResponseRequest request)
+        {
+            var marshaller = new PutGatewayResponseRequestMarshaller();
+            var unmarshaller = PutGatewayResponseResponseUnmarshaller.Instance;
+
+            return Invoke<PutGatewayResponseRequest,PutGatewayResponseResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutGatewayResponse operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutGatewayResponse operation on AmazonAPIGatewayClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutGatewayResponse
+        ///         operation.</returns>
+        public IAsyncResult BeginPutGatewayResponse(PutGatewayResponseRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new PutGatewayResponseRequestMarshaller();
+            var unmarshaller = PutGatewayResponseResponseUnmarshaller.Instance;
+
+            return BeginInvoke<PutGatewayResponseRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  PutGatewayResponse operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutGatewayResponse.</param>
+        /// 
+        /// <returns>Returns a  PutGatewayResponseResult from APIGateway.</returns>
+        public  PutGatewayResponseResponse EndPutGatewayResponse(IAsyncResult asyncResult)
+        {
+            return EndInvoke<PutGatewayResponseResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  PutIntegration
 
         /// <summary>
-        /// Represents a put integration.
+        /// Sets up a method's integration.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutIntegration service method.</param>
         /// 
@@ -6289,6 +6551,68 @@ namespace Amazon.APIGateway
 
         #endregion
         
+        #region  UpdateGatewayResponse
+
+        /// <summary>
+        /// Updates a <a>GatewayResponse</a> of a specified response type on the given <a>RestApi</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateGatewayResponse service method.</param>
+        /// 
+        /// <returns>The response from the UpdateGatewayResponse service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
+        /// 
+        /// </exception>
+        public UpdateGatewayResponseResponse UpdateGatewayResponse(UpdateGatewayResponseRequest request)
+        {
+            var marshaller = new UpdateGatewayResponseRequestMarshaller();
+            var unmarshaller = UpdateGatewayResponseResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateGatewayResponseRequest,UpdateGatewayResponseResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateGatewayResponse operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateGatewayResponse operation on AmazonAPIGatewayClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateGatewayResponse
+        ///         operation.</returns>
+        public IAsyncResult BeginUpdateGatewayResponse(UpdateGatewayResponseRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new UpdateGatewayResponseRequestMarshaller();
+            var unmarshaller = UpdateGatewayResponseResponseUnmarshaller.Instance;
+
+            return BeginInvoke<UpdateGatewayResponseRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateGatewayResponse operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateGatewayResponse.</param>
+        /// 
+        /// <returns>Returns a  UpdateGatewayResponseResult from APIGateway.</returns>
+        public  UpdateGatewayResponseResponse EndUpdateGatewayResponse(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateGatewayResponseResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  UpdateIntegration
 
         /// <summary>
@@ -6877,7 +7201,7 @@ namespace Amazon.APIGateway
         #region  UpdateUsage
 
         /// <summary>
-        /// Grants a temporary extension to the reamining quota of a usage plan associated with
+        /// Grants a temporary extension to the remaining quota of a usage plan associated with
         /// a specified API key.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateUsage service method.</param>

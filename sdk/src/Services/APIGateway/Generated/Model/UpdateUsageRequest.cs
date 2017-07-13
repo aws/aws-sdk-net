@@ -29,7 +29,7 @@ namespace Amazon.APIGateway.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateUsage operation.
-    /// Grants a temporary extension to the reamining quota of a usage plan associated with
+    /// Grants a temporary extension to the remaining quota of a usage plan associated with
     /// a specified API key.
     /// </summary>
     public partial class UpdateUsageRequest : AmazonAPIGatewayRequest

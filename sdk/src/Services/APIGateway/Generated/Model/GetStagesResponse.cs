@@ -40,7 +40,7 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property Item. 
         /// <para>
-        /// An individual <a>Stage</a> resource.
+        /// The current page of elements from this collection.
         /// </para>
         /// </summary>
         public List<Stage> Item

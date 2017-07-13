@@ -42,7 +42,7 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property Items. 
         /// <para>
-        /// An array of links to the current page of <a>RestApi</a> resources.
+        /// The current page of elements from this collection.
         /// </para>
         /// </summary>
         public List<RestApi> Items

@@ -933,6 +933,47 @@ namespace Amazon.APIGateway
 
         #endregion
         
+        #region  DeleteGatewayResponse
+
+
+        /// <summary>
+        /// Clears any customization of a <a>GatewayResponse</a> of a specified response type
+        /// on the given <a>RestApi</a> and resets it with the default settings.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteGatewayResponse service method.</param>
+        /// 
+        /// <returns>The response from the DeleteGatewayResponse service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.ConflictException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
+        /// 
+        /// </exception>
+        DeleteGatewayResponseResponse DeleteGatewayResponse(DeleteGatewayResponseRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteGatewayResponse operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteGatewayResponse operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<DeleteGatewayResponseResponse> DeleteGatewayResponseAsync(DeleteGatewayResponseRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  DeleteIntegration
 
 
@@ -2082,6 +2123,9 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
         /// 
         /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.ConflictException">
+        /// 
+        /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
         /// 
         /// </exception>
@@ -2104,6 +2148,80 @@ namespace Amazon.APIGateway
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         Task<GetExportResponse> GetExportAsync(GetExportRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  GetGatewayResponse
+
+
+        /// <summary>
+        /// Gets a <a>GatewayResponse</a> of a specified response type on the given <a>RestApi</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetGatewayResponse service method.</param>
+        /// 
+        /// <returns>The response from the GetGatewayResponse service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
+        /// 
+        /// </exception>
+        GetGatewayResponseResponse GetGatewayResponse(GetGatewayResponseRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetGatewayResponse operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetGatewayResponse operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<GetGatewayResponseResponse> GetGatewayResponseAsync(GetGatewayResponseRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  GetGatewayResponses
+
+
+        /// <summary>
+        /// Gets the <a>GatewayResponses</a> collection on the given <a>RestApi</a>. If an API
+        /// developer has not added any definitions for gateway responses, the result will be
+        /// the Amazon API Gateway-generated default <a>GatewayResponses</a> collection for the
+        /// supported response types.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetGatewayResponses service method.</param>
+        /// 
+        /// <returns>The response from the GetGatewayResponses service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
+        /// 
+        /// </exception>
+        GetGatewayResponsesResponse GetGatewayResponses(GetGatewayResponsesRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetGatewayResponses operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetGatewayResponses operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<GetGatewayResponsesResponse> GetGatewayResponsesAsync(GetGatewayResponsesRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -2572,6 +2690,9 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>The response from the GetSdk service method, as returned by APIGateway.</returns>
         /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.ConflictException">
         /// 
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
@@ -3045,11 +3166,52 @@ namespace Amazon.APIGateway
 
         #endregion
         
+        #region  PutGatewayResponse
+
+
+        /// <summary>
+        /// Creates a customization of a <a>GatewayResponse</a> of a specified response type and
+        /// status code on the given <a>RestApi</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutGatewayResponse service method.</param>
+        /// 
+        /// <returns>The response from the PutGatewayResponse service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.LimitExceededException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
+        /// 
+        /// </exception>
+        PutGatewayResponseResponse PutGatewayResponse(PutGatewayResponseRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutGatewayResponse operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutGatewayResponse operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<PutGatewayResponseResponse> PutGatewayResponseAsync(PutGatewayResponseRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  PutIntegration
 
 
         /// <summary>
-        /// Represents a put integration.
+        /// Sets up a method's integration.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutIntegration service method.</param>
         /// 
@@ -3695,6 +3857,43 @@ namespace Amazon.APIGateway
 
         #endregion
         
+        #region  UpdateGatewayResponse
+
+
+        /// <summary>
+        /// Updates a <a>GatewayResponse</a> of a specified response type on the given <a>RestApi</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateGatewayResponse service method.</param>
+        /// 
+        /// <returns>The response from the UpdateGatewayResponse service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
+        /// 
+        /// </exception>
+        UpdateGatewayResponseResponse UpdateGatewayResponse(UpdateGatewayResponseRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateGatewayResponse operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateGatewayResponse operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<UpdateGatewayResponseResponse> UpdateGatewayResponseAsync(UpdateGatewayResponseRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  UpdateIntegration
 
 
@@ -4059,7 +4258,7 @@ namespace Amazon.APIGateway
 
 
         /// <summary>
-        /// Grants a temporary extension to the reamining quota of a usage plan associated with
+        /// Grants a temporary extension to the remaining quota of a usage plan associated with
         /// a specified API key.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateUsage service method.</param>

@@ -41,8 +41,7 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property Items. 
         /// <para>
-        /// The current page of any <a>BasePathMapping</a> resources in the collection of base
-        /// path mapping resources.
+        /// The current page of elements from this collection.
         /// </para>
         /// </summary>
         public List<BasePathMapping> Items

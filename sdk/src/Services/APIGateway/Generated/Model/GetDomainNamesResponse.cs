@@ -41,8 +41,7 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property Items. 
         /// <para>
-        /// The current page of any <a>DomainName</a> resources in the collection of <a>DomainName</a>
-        /// resources.
+        /// The current page of elements from this collection.
         /// </para>
         /// </summary>
         public List<DomainName> Items
