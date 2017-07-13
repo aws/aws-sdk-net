@@ -239,7 +239,7 @@ namespace <#=this.Config.Namespace#>
 <#
 			}
 #>
-            var marshaller = new <#=operation.Name#>RequestMarshaller();
+            var marshaller = <#=operation.Name#>RequestMarshaller.Instance;
             var unmarshaller = <#=operation.Name#>ResponseUnmarshaller.Instance;
 
             return Invoke<<#=operation.Name#>Request,<#=operation.Name#>Response>(request, marshaller, unmarshaller);
@@ -291,7 +291,7 @@ namespace <#=this.Config.Namespace#>
 			}
 #>
         	options = options == null?new AsyncOptions():options;
-            var marshaller = new <#=operation.Name#>RequestMarshaller();
+            var marshaller = <#=operation.Name#>RequestMarshaller.Instance;
             var unmarshaller = <#=operation.Name#>ResponseUnmarshaller.Instance;
 			Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
 			if(callback !=null )

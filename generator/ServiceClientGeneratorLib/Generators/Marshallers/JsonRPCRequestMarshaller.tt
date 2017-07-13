@@ -117,7 +117,8 @@ namespace <#=        this.Config.Namespace #>.Model.Internal.MarshallTransformat
 
 			return request;
 		}
-
-
+<#				
+		this.AddRequestSingletonMethod();
+#>
 	}
 }
