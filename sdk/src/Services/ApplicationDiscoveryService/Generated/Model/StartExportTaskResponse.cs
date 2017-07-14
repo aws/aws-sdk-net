@@ -37,7 +37,7 @@ namespace Amazon.ApplicationDiscoveryService.Model
         /// <summary>
         /// Gets and sets the property ExportId. 
         /// <para>
-        ///  A unique identifier used to query the status of an export request.
+        /// A unique identifier used to query the status of an export request.
         /// </para>
         /// </summary>
         public string ExportId

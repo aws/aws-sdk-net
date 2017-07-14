@@ -35,6 +35,7 @@ namespace Amazon.ApplicationDiscoveryService.Model
     public partial class DescribeExportTasksRequest : AmazonApplicationDiscoveryServiceRequest
     {
         private List<string> _exportIds = new List<string>();
+        private List<ExportFilter> _filters = new List<ExportFilter>();
         private int? _maxResults;
         private string _nextToken;
 
@@ -54,6 +55,29 @@ namespace Amazon.ApplicationDiscoveryService.Model
         internal bool IsSetExportIds()
         {
             return this._exportIds != null && this._exportIds.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Filters. 
+        /// <para>
+        /// One or more filters.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>AgentId</code> - ID of the agent whose collected data will be exported
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public List<ExportFilter> Filters
+        {
+            get { return this._filters; }
+            set { this._filters = value; }
+        }
+
+        // Check to see if Filters property is set
+        internal bool IsSetFilters()
+        {
+            return this._filters != null && this._filters.Count > 0; 
         }
 
         /// <summary>

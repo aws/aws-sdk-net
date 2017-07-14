@@ -67,6 +67,12 @@ namespace Amazon.ApplicationDiscoveryService.Model.Internal.MarshallTransformati
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetEndTime())
+                {
+                    context.Writer.WritePropertyName("endTime");
+                    context.Writer.Write(publicRequest.EndTime);
+                }
+
                 if(publicRequest.IsSetExportDataFormat())
                 {
                     context.Writer.WritePropertyName("exportDataFormat");
@@ -76,6 +82,28 @@ namespace Amazon.ApplicationDiscoveryService.Model.Internal.MarshallTransformati
                             context.Writer.Write(publicRequestExportDataFormatListValue);
                     }
                     context.Writer.WriteArrayEnd();
+                }
+
+                if(publicRequest.IsSetFilters())
+                {
+                    context.Writer.WritePropertyName("filters");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestFiltersListValue in publicRequest.Filters)
+                    {
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = ExportFilterMarshaller.Instance;
+                        marshaller.Marshall(publicRequestFiltersListValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
+                if(publicRequest.IsSetStartTime())
+                {
+                    context.Writer.WritePropertyName("startTime");
+                    context.Writer.Write(publicRequest.StartTime);
                 }
 
         

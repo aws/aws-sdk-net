@@ -29,12 +29,49 @@ namespace Amazon.ApplicationDiscoveryService.Model
 {
     /// <summary>
     /// Container for the parameters to the StartExportTask operation.
-    /// Export the configuration data about discovered configuration items and relationships
-    /// to an S3 bucket in a specified format.
+    /// Begins the export of discovered data to an S3 bucket.
+    /// 
+    ///  
+    /// <para>
+    ///  If you specify <code>agentId</code> in a filter, the task exports up to 72 hours
+    /// of detailed data collected by the identified Application Discovery Agent, including
+    /// network, process, and performance details. A time range for exported agent data may
+    /// be set by using <code>startTime</code> and <code>endTime</code>. Export of detailed
+    /// agent data is limited to five concurrently running exports. 
+    /// </para>
+    ///  
+    /// <para>
+    ///  If you do not include an <code>agentId</code> filter, summary data is exported that
+    /// includes both AWS Agentless Discovery Connector data and summary data from AWS Discovery
+    /// Agents. Export of summary data is limited to two exports per day. 
+    /// </para>
     /// </summary>
     public partial class StartExportTaskRequest : AmazonApplicationDiscoveryServiceRequest
     {
+        private DateTime? _endTime;
         private List<string> _exportDataFormat = new List<string>();
+        private List<ExportFilter> _filters = new List<ExportFilter>();
+        private DateTime? _startTime;
+
+        /// <summary>
+        /// Gets and sets the property EndTime. 
+        /// <para>
+        /// The end timestamp for exported data from the single Application Discovery Agent selected
+        /// in the filters. If no value is specified, exported data includes the most recent data
+        /// collected by the agent.
+        /// </para>
+        /// </summary>
+        public DateTime EndTime
+        {
+            get { return this._endTime.GetValueOrDefault(); }
+            set { this._endTime = value; }
+        }
+
+        // Check to see if EndTime property is set
+        internal bool IsSetEndTime()
+        {
+            return this._endTime.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property ExportDataFormat. 
@@ -52,6 +89,49 @@ namespace Amazon.ApplicationDiscoveryService.Model
         internal bool IsSetExportDataFormat()
         {
             return this._exportDataFormat != null && this._exportDataFormat.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Filters. 
+        /// <para>
+        /// If a filter is present, it selects the single <code>agentId</code> of the Application
+        /// Discovery Agent for which data is exported. The <code>agentId</code> can be found
+        /// in the results of the <code>DescribeAgents</code> API or CLI. If no filter is present,
+        /// <code>startTime</code> and <code>endTime</code> are ignored and exported data includes
+        /// both Agentless Discovery Connector data and summary data from Application Discovery
+        /// agents. 
+        /// </para>
+        /// </summary>
+        public List<ExportFilter> Filters
+        {
+            get { return this._filters; }
+            set { this._filters = value; }
+        }
+
+        // Check to see if Filters property is set
+        internal bool IsSetFilters()
+        {
+            return this._filters != null && this._filters.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property StartTime. 
+        /// <para>
+        /// The start timestamp for exported data from the single Application Discovery Agent
+        /// selected in the filters. If no value is specified, data is exported starting from
+        /// the first data collected by the agent.
+        /// </para>
+        /// </summary>
+        public DateTime StartTime
+        {
+            get { return this._startTime.GetValueOrDefault(); }
+            set { this._startTime = value; }
+        }
+
+        // Check to see if StartTime property is set
+        internal bool IsSetStartTime()
+        {
+            return this._startTime.HasValue; 
         }
 
     }

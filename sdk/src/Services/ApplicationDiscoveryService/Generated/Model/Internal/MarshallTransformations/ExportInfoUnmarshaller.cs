@@ -88,6 +88,24 @@ namespace Amazon.ApplicationDiscoveryService.Model.Internal.MarshallTransformati
                     unmarshalledObject.ExportStatus = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("isTruncated", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.IsTruncated = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("requestedEndTime", targetDepth))
+                {
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    unmarshalledObject.RequestedEndTime = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("requestedStartTime", targetDepth))
+                {
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    unmarshalledObject.RequestedStartTime = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("statusMessage", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

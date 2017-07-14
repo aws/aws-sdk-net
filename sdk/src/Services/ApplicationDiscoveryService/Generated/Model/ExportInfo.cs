@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ApplicationDiscoveryService.Model
 {
     /// <summary>
-    /// Information regarding the export status of the discovered data. The value is an array
+    /// Information regarding the export status of discovered data. The value is an array
     /// of objects.
     /// </summary>
     public partial class ExportInfo
@@ -37,13 +37,16 @@ namespace Amazon.ApplicationDiscoveryService.Model
         private string _exportId;
         private DateTime? _exportRequestTime;
         private ExportStatus _exportStatus;
+        private bool? _isTruncated;
+        private DateTime? _requestedEndTime;
+        private DateTime? _requestedStartTime;
         private string _statusMessage;
 
         /// <summary>
         /// Gets and sets the property ConfigurationsDownloadUrl. 
         /// <para>
-        /// A URL for an Amazon S3 bucket where you can review the configuration data. The URL
-        /// is displayed only if the export succeeded.
+        /// A URL for an Amazon S3 bucket where you can review the exported data. The URL is displayed
+        /// only if the export succeeded.
         /// </para>
         /// </summary>
         public string ConfigurationsDownloadUrl
@@ -61,7 +64,7 @@ namespace Amazon.ApplicationDiscoveryService.Model
         /// <summary>
         /// Gets and sets the property ExportId. 
         /// <para>
-        /// A unique identifier that you can use to query the export.
+        /// A unique identifier used to query an export.
         /// </para>
         /// </summary>
         public string ExportId
@@ -79,7 +82,7 @@ namespace Amazon.ApplicationDiscoveryService.Model
         /// <summary>
         /// Gets and sets the property ExportRequestTime. 
         /// <para>
-        /// The time that the configuration data export was initiated.
+        /// The time that the data export was initiated.
         /// </para>
         /// </summary>
         public DateTime ExportRequestTime
@@ -97,7 +100,7 @@ namespace Amazon.ApplicationDiscoveryService.Model
         /// <summary>
         /// Gets and sets the property ExportStatus. 
         /// <para>
-        /// The status of the configuration data export. The status can succeed, fail, or be in-progress.
+        /// The status of the data export job.
         /// </para>
         /// </summary>
         public ExportStatus ExportStatus
@@ -113,10 +116,68 @@ namespace Amazon.ApplicationDiscoveryService.Model
         }
 
         /// <summary>
+        /// Gets and sets the property IsTruncated. 
+        /// <para>
+        /// If true, the export of agent information exceeded the size limit for a single export
+        /// and the exported data is incomplete for the requested time range. To address this,
+        /// select a smaller time range for the export by using <code>startDate</code> and <code>endDate</code>.
+        /// </para>
+        /// </summary>
+        public bool IsTruncated
+        {
+            get { return this._isTruncated.GetValueOrDefault(); }
+            set { this._isTruncated = value; }
+        }
+
+        // Check to see if IsTruncated property is set
+        internal bool IsSetIsTruncated()
+        {
+            return this._isTruncated.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property RequestedEndTime. 
+        /// <para>
+        /// The <code>endTime</code> used in the <code>StartExportTask</code> request. If no <code>endTime</code>
+        /// was requested, this result does not appear in <code>ExportInfo</code>.
+        /// </para>
+        /// </summary>
+        public DateTime RequestedEndTime
+        {
+            get { return this._requestedEndTime.GetValueOrDefault(); }
+            set { this._requestedEndTime = value; }
+        }
+
+        // Check to see if RequestedEndTime property is set
+        internal bool IsSetRequestedEndTime()
+        {
+            return this._requestedEndTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property RequestedStartTime. 
+        /// <para>
+        /// The value of <code>startTime</code> parameter in the <code>StartExportTask</code>
+        /// request. If no <code>startTime</code> was requested, this result does not appear in
+        /// <code>ExportInfo</code>.
+        /// </para>
+        /// </summary>
+        public DateTime RequestedStartTime
+        {
+            get { return this._requestedStartTime.GetValueOrDefault(); }
+            set { this._requestedStartTime = value; }
+        }
+
+        // Check to see if RequestedStartTime property is set
+        internal bool IsSetRequestedStartTime()
+        {
+            return this._requestedStartTime.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property StatusMessage. 
         /// <para>
-        /// Helpful status messages for API callers. For example: Too many exports in the last
-        /// 6 hours. Export in progress. Export was successful.
+        /// A status message provided for API callers.
         /// </para>
         /// </summary>
         public string StatusMessage

@@ -78,6 +78,22 @@ namespace Amazon.ApplicationDiscoveryService.Model.Internal.MarshallTransformati
                     context.Writer.WriteArrayEnd();
                 }
 
+                if(publicRequest.IsSetFilters())
+                {
+                    context.Writer.WritePropertyName("filters");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestFiltersListValue in publicRequest.Filters)
+                    {
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = ExportFilterMarshaller.Instance;
+                        marshaller.Marshall(publicRequestFiltersListValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 if(publicRequest.IsSetMaxResults())
                 {
                     context.Writer.WritePropertyName("maxResults");
