@@ -133,6 +133,20 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                     irequest.Headers[S3Constants.AmzGrantHeaderFullControl] = protoHeaders[permission];
             }
         }
+
+	    private static PutBucketRequestMarshaller _instance;
+
+	    public static PutBucketRequestMarshaller Instance
+	    {
+	        get
+	        {
+	            if (_instance == null)
+	            {
+	                _instance = new PutBucketRequestMarshaller();
+	            }
+	            return _instance;
+	        }
+	    }
     }
 }
 

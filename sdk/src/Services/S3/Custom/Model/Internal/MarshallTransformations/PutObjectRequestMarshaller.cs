@@ -138,6 +138,20 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
             return result;
         }
+
+	    private static PutObjectRequestMarshaller _instance;
+
+	    public static PutObjectRequestMarshaller Instance
+	    {
+	        get
+	        {
+	            if (_instance == null)
+	            {
+	                _instance = new PutObjectRequestMarshaller();
+	            }
+	            return _instance;
+	        }
+	    }
     }
 }
 

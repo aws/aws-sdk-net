@@ -44,5 +44,19 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
             return request;
         }
+
+        private static GetBucketInventoryConfigurationRequestMarshaller _instance;
+
+        public static GetBucketInventoryConfigurationRequestMarshaller Instance
+        {
+            get
+            {
+                if (_instance == null)
+                {
+                    _instance = new GetBucketInventoryConfigurationRequestMarshaller();
+                }
+                return _instance;
+            }
+        }
     }
 }

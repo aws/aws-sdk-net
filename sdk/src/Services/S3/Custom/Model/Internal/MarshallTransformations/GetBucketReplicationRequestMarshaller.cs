@@ -40,5 +40,19 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
             return request;
         }
+
+        private static GetBucketReplicationRequestMarshaller _instance;
+
+        public static GetBucketReplicationRequestMarshaller Instance
+        {
+            get
+            {
+                if (_instance == null)
+                {
+                    _instance = new GetBucketReplicationRequestMarshaller();
+                }
+                return _instance;
+            }
+        }
     }
 }

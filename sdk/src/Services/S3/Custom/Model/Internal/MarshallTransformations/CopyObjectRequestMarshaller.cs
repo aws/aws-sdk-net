@@ -145,6 +145,20 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
             return source;
         }
+
+	    private static CopyObjectRequestMarshaller _instance;
+
+	    public static CopyObjectRequestMarshaller Instance
+	    {
+	        get
+	        {
+	            if (_instance == null)
+	            {
+	                _instance = new CopyObjectRequestMarshaller();
+	            }
+	            return _instance;
+	        }
+	    }
     }
 }
 

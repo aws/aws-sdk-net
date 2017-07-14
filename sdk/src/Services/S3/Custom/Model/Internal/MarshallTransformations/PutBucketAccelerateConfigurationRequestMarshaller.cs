@@ -83,6 +83,20 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             }
             return request;
         }
+
+        private static PutBucketAccelerateConfigurationRequestMarshaller _instance;
+
+        public static PutBucketAccelerateConfigurationRequestMarshaller Instance
+        {
+            get
+            {
+                if (_instance == null)
+                {
+                    _instance = new PutBucketAccelerateConfigurationRequestMarshaller();
+                }
+                return _instance;
+            }
+        }
     }
 }
 

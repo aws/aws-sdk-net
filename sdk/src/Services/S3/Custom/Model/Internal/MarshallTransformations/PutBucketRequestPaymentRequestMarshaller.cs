@@ -78,6 +78,20 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
             return request;
         }
+
+	    private static PutBucketRequestPaymentRequestMarshaller _instance;
+
+	    public static PutBucketRequestPaymentRequestMarshaller Instance
+	    {
+	        get
+	        {
+	            if (_instance == null)
+	            {
+	                _instance = new PutBucketRequestPaymentRequestMarshaller();
+	            }
+	            return _instance;
+	        }
+	    }
     }
 }
 

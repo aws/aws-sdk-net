@@ -93,5 +93,18 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             return request;
         }
 
+        private static PutBucketMetricsConfigurationRequestMarshaller _instance;
+
+        public static PutBucketMetricsConfigurationRequestMarshaller Instance
+        {
+            get
+            {
+                if (_instance == null)
+                {
+                    _instance = new PutBucketMetricsConfigurationRequestMarshaller();
+                }
+                return _instance;
+            }
+        }
     }
 }

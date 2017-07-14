@@ -13,6 +13,7 @@
  * permissions and limitations under the License.
  */
 
+using System;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 
@@ -43,6 +44,20 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             
             return request;
         }
+
+	    private static GetLifecycleConfigurationRequestMarshaller _instance;
+
+	    public static GetLifecycleConfigurationRequestMarshaller Instance
+	    {
+	        get
+	        {
+	            if (_instance == null)
+	            {
+	                _instance = new GetLifecycleConfigurationRequestMarshaller();
+	            }
+	            return _instance;
+	        }
+	    }
     }
 }
     
