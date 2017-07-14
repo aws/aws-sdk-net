@@ -171,7 +171,16 @@ namespace ServiceClientGenerator.Generators.Marshallers
             
             #line default
             #line hidden
-            this.Write("\n\t\t\treturn request;\n\t\t}\n\n\t\t\n\t}\t\n}\n\n");
+            this.Write("\n\t\t\treturn request;\n\t\t}\n\t}\t\n\n");
+            
+            #line 1 "C:\p\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+				
+	this.AddRequestSingletonMethod();
+
+            
+            #line default
+            #line hidden
+            this.Write("\n}\n\n");
             return this.GenerationEnvironment.ToString();
         }
         
@@ -893,8 +902,6 @@ this.Write("\n\t\t\t\t\t}\t\t\t\n\t\t\t\t\txmlWriter.WriteEndElement();\t\t\t\n\
         
         #line 1 "C:\p\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
 				
-
-		this.AddRequestSingletonMethod();
 	}
 
         
