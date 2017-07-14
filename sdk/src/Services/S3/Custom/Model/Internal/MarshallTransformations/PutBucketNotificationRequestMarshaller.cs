@@ -179,6 +179,20 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                 xmlWriter.WriteEndElement();
             }
         }
+
+	    private static PutBucketNotificationRequestMarshaller _instance;
+
+	    public static PutBucketNotificationRequestMarshaller Instance
+	    {
+	        get
+	        {
+	            if (_instance == null)
+	            {
+	                _instance = new PutBucketNotificationRequestMarshaller();
+	            }
+	            return _instance;
+	        }
+	    }
     }
 }
     

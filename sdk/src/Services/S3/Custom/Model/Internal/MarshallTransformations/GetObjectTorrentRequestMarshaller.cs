@@ -55,6 +55,20 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             
             return request;
         }
+
+	    private static GetObjectTorrentRequestMarshaller _instance;
+
+	    public static GetObjectTorrentRequestMarshaller Instance
+	    {
+	        get
+	        {
+	            if (_instance == null)
+	            {
+	                _instance = new GetObjectTorrentRequestMarshaller();
+	            }
+	            return _instance;
+	        }
+	    }
     }
 }
     

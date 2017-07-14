@@ -184,6 +184,20 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
             return request;
         }
+
+	    private static PutBucketWebsiteRequestMarshaller _instance;
+
+	    public static PutBucketWebsiteRequestMarshaller Instance
+	    {
+	        get
+	        {
+	            if (_instance == null)
+	            {
+	                _instance = new PutBucketWebsiteRequestMarshaller();
+	            }
+	            return _instance;
+	        }
+	    }
     }
 }
 

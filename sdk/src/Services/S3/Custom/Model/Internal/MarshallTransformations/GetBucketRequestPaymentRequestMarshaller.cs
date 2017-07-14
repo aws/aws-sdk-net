@@ -42,6 +42,20 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             
             return request;
         }
+
+	    private static GetBucketRequestPaymentRequestMarshaller _instance;
+
+	    public static GetBucketRequestPaymentRequestMarshaller Instance
+	    {
+	        get
+	        {
+	            if (_instance == null)
+	            {
+	                _instance = new GetBucketRequestPaymentRequestMarshaller();
+	            }
+	            return _instance;
+	        }
+	    }
     }
 }
     

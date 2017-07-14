@@ -42,6 +42,20 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             
             return request;
         }
+
+	    private static DeleteCORSConfigurationRequestMarshaller _instance;
+
+	    public static DeleteCORSConfigurationRequestMarshaller Instance
+	    {
+	        get
+	        {
+	            if (_instance == null)
+	            {
+	                _instance = new DeleteCORSConfigurationRequestMarshaller();
+	            }
+	            return _instance;
+	        }
+	    }
     }
 }
     

@@ -77,6 +77,20 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
             return request;
         }
+
+	    private static RestoreObjectRequestMarshaller _instance;
+
+	    public static RestoreObjectRequestMarshaller Instance
+	    {
+	        get
+	        {
+	            if (_instance == null)
+	            {
+	                _instance = new RestoreObjectRequestMarshaller();
+	            }
+	            return _instance;
+	        }
+	    }
     }
 }
 

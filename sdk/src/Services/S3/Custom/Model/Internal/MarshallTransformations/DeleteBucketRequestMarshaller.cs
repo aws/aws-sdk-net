@@ -44,6 +44,20 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             
             return request;
         }
+
+	    private static DeleteBucketRequestMarshaller _instance;
+
+	    public static DeleteBucketRequestMarshaller Instance
+	    {
+	        get
+	        {
+	            if (_instance == null)
+	            {
+	                _instance = new DeleteBucketRequestMarshaller();
+	            }
+	            return _instance;
+	        }
+	    }
     }
 }
     
