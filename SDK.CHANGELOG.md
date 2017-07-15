@@ -1,3 +1,11 @@
+### 3.3.123.0 (2017-07-14 23:04 UTC)
+* ApplicationDiscoveryService (3.3.3.0)
+	* Adding feature to the Export API for Discovery Service to allow filters for the export task to allow export based on per agent id.
+* AWSMarketplaceCommerceAnalytics (3.3.3.12)
+	* Update to Documentation Model For New Report Cadence / Reformat of Docs
+* EC2 (3.3.16.0)
+	* New EC2 GPU Graphics instance
+
 ### 3.3.122.0 (2017-07-13 17:35 UTC)
 * APIGateway (3.3.8.0)
 	* Adds support for management of gateway responses.
