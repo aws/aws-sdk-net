@@ -54,6 +54,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         private string _smsConfigurationFailure;
         private string _smsVerificationMessage;
         private StatusType _status;
+        private List<string> _usernameAttributes = new List<string>();
         private Dictionary<string, string> _userPoolTags = new Dictionary<string, string>();
 
         /// <summary>
@@ -465,6 +466,25 @@ namespace Amazon.CognitoIdentityProvider.Model
         internal bool IsSetStatus()
         {
             return this._status != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property UsernameAttributes. 
+        /// <para>
+        /// Specifies whether email addresses or phone numbers can be specified as usernames when
+        /// a user signs up.
+        /// </para>
+        /// </summary>
+        public List<string> UsernameAttributes
+        {
+            get { return this._usernameAttributes; }
+            set { this._usernameAttributes = value; }
+        }
+
+        // Check to see if UsernameAttributes property is set
+        internal bool IsSetUsernameAttributes()
+        {
+            return this._usernameAttributes != null && this._usernameAttributes.Count > 0; 
         }
 
         /// <summary>

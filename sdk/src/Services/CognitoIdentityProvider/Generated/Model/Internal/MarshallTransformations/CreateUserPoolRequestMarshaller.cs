@@ -207,6 +207,17 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.SmsVerificationMessage);
                 }
 
+                if(publicRequest.IsSetUsernameAttributes())
+                {
+                    context.Writer.WritePropertyName("UsernameAttributes");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestUsernameAttributesListValue in publicRequest.UsernameAttributes)
+                    {
+                            context.Writer.Write(publicRequestUsernameAttributesListValue);
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 if(publicRequest.IsSetUserPoolTags())
                 {
                     context.Writer.WritePropertyName("UserPoolTags");

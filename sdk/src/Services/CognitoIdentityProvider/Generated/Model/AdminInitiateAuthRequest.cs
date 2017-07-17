@@ -57,7 +57,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>USER_SRP_AUTH</code> will take in <code>USERNAME</code> and <code>SRPA</code>
+        ///  <code>USER_SRP_AUTH</code> will take in <code>USERNAME</code> and <code>SRP_A</code>
         /// and return the SRP variables to be used for next challenge execution.
         /// </para>
         ///  </li> </ul> 
@@ -105,7 +105,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// For <code>USER_SRP_AUTH</code>: <code>USERNAME</code> (required), <code>SRPA</code>
+        /// For <code>USER_SRP_AUTH</code>: <code>USERNAME</code> (required), <code>SRP_A</code>
         /// (required), <code>SECRET_HASH</code> (required if the app client is configured with
         /// a client secret), <code>DEVICE_KEY</code> 
         /// </para>
