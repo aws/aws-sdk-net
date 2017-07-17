@@ -1440,13 +1440,20 @@ namespace Amazon.Lambda
         /// </para>
         ///  
         /// <para>
-        /// If you are using versioning feature, the response returns list of $LATEST versions
-        /// of your functions. For information about the versioning feature, see <a href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">AWS
-        /// Lambda Function Versioning and Aliases</a>. 
+        /// If you are using the versioning feature, you can list all of your functions or only
+        /// <code>$LATEST</code> versions. For information about the versioning feature, see <a
+        /// href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">AWS Lambda
+        /// Function Versioning and Aliases</a>. 
         /// </para>
         /// </summary>
         /// 
         /// <returns>The response from the ListFunctions service method, as returned by Lambda.</returns>
+        /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
+        /// One of the parameters in the request is invalid. For example, if you provided an IAM
+        /// role for AWS Lambda to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code>
+        /// API, that AWS Lambda is unable to assume you will get this exception. You will also
+        /// get this exception if you have selected a deprecated runtime, such as Node v0.10.42.
+        /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ServiceException">
         /// The AWS Lambda service encountered an internal error.
         /// </exception>
@@ -1467,14 +1474,21 @@ namespace Amazon.Lambda
         /// </para>
         ///  
         /// <para>
-        /// If you are using versioning feature, the response returns list of $LATEST versions
-        /// of your functions. For information about the versioning feature, see <a href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">AWS
-        /// Lambda Function Versioning and Aliases</a>. 
+        /// If you are using the versioning feature, you can list all of your functions or only
+        /// <code>$LATEST</code> versions. For information about the versioning feature, see <a
+        /// href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">AWS Lambda
+        /// Function Versioning and Aliases</a>. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListFunctions service method.</param>
         /// 
         /// <returns>The response from the ListFunctions service method, as returned by Lambda.</returns>
+        /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
+        /// One of the parameters in the request is invalid. For example, if you provided an IAM
+        /// role for AWS Lambda to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code>
+        /// API, that AWS Lambda is unable to assume you will get this exception. You will also
+        /// get this exception if you have selected a deprecated runtime, such as Node v0.10.42.
+        /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ServiceException">
         /// The AWS Lambda service encountered an internal error.
         /// </exception>

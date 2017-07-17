@@ -42,6 +42,7 @@ namespace Amazon.Lambda.Model
         private string _handler;
         private string _kmsKeyArn;
         private string _lastModified;
+        private string _masterArn;
         private int? _memorySize;
         private string _role;
         private Runtime _runtime;
@@ -234,6 +235,24 @@ namespace Amazon.Lambda.Model
         internal bool IsSetLastModified()
         {
             return this._lastModified != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MasterArn. 
+        /// <para>
+        /// Returns the ARN (Amazon Resource Name) of the master function.
+        /// </para>
+        /// </summary>
+        public string MasterArn
+        {
+            get { return this._masterArn; }
+            set { this._masterArn = value; }
+        }
+
+        // Check to see if MasterArn property is set
+        internal bool IsSetMasterArn()
+        {
+            return this._masterArn != null;
         }
 
         /// <summary>

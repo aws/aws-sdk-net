@@ -59,8 +59,14 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
 
             string uriResourcePath = "/2015-03-31/functions/";
             
+            if (publicRequest.IsSetFunctionVersion())
+                request.Parameters.Add("FunctionVersion", StringUtils.FromString(publicRequest.FunctionVersion));
+            
             if (publicRequest.IsSetMarker())
                 request.Parameters.Add("Marker", StringUtils.FromString(publicRequest.Marker));
+            
+            if (publicRequest.IsSetMasterRegion())
+                request.Parameters.Add("MasterRegion", StringUtils.FromString(publicRequest.MasterRegion));
             
             if (publicRequest.IsSetMaxItems())
                 request.Parameters.Add("MaxItems", StringUtils.FromInt(publicRequest.MaxItems));

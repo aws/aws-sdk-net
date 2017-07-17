@@ -111,6 +111,12 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
                     response.LastModified = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("MasterArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.MasterArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("MemorySize", targetDepth))
                 {
                     var unmarshaller = IntUnmarshaller.Instance;

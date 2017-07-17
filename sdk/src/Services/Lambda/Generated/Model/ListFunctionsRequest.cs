@@ -39,15 +39,46 @@ namespace Amazon.Lambda.Model
     /// </para>
     ///  
     /// <para>
-    /// If you are using versioning feature, the response returns list of $LATEST versions
-    /// of your functions. For information about the versioning feature, see <a href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">AWS
-    /// Lambda Function Versioning and Aliases</a>. 
+    /// If you are using the versioning feature, you can list all of your functions or only
+    /// <code>$LATEST</code> versions. For information about the versioning feature, see <a
+    /// href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">AWS Lambda
+    /// Function Versioning and Aliases</a>. 
     /// </para>
     /// </summary>
     public partial class ListFunctionsRequest : AmazonLambdaRequest
     {
+        private FunctionVersion _functionVersion;
         private string _marker;
+        private string _masterRegion;
         private int? _maxItems;
+
+        /// <summary>
+        /// Gets and sets the property FunctionVersion. 
+        /// <para>
+        /// Optional string. If not specified, only the unqualified functions ARNs (Amazon Resource
+        /// Names) will be returned.
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid value:
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>ALL</code> _ Will return all versions, including <code>$LATEST</code> which
+        /// will have fully qualified ARNs (Amazon Resource Names).
+        /// </para>
+        /// </summary>
+        public FunctionVersion FunctionVersion
+        {
+            get { return this._functionVersion; }
+            set { this._functionVersion = value; }
+        }
+
+        // Check to see if FunctionVersion property is set
+        internal bool IsSetFunctionVersion()
+        {
+            return this._functionVersion != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Marker. 
@@ -66,6 +97,39 @@ namespace Amazon.Lambda.Model
         internal bool IsSetMarker()
         {
             return this._marker != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MasterRegion. 
+        /// <para>
+        /// Optional string. If not specified, will return only regular function versions (i.e.,
+        /// non-replicated versions).
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid values are:
+        /// </para>
+        ///  
+        /// <para>
+        /// The region from which the functions are replicated. For example, if you specify <code>us-east-1</code>,
+        /// only functions replicated from that region will be returned.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>ALL</code> _ Will return all functions from any region. If specified, you also
+        /// must specify a valid FunctionVersion parameter.
+        /// </para>
+        /// </summary>
+        public string MasterRegion
+        {
+            get { return this._masterRegion; }
+            set { this._masterRegion = value; }
+        }
+
+        // Check to see if MasterRegion property is set
+        internal bool IsSetMasterRegion()
+        {
+            return this._masterRegion != null;
         }
 
         /// <summary>
