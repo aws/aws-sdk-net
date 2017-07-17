@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.3.123.0",
+    "ProductVersion" : "3.3.124.0",
     "CoreVersion"    : "3.3.17.2",
     "DefaultToPreview" : false,
     "ServiceVersions"  : {
@@ -241,7 +241,7 @@
             "InPreview"               : false
         },
         "Lambda"               : {
-            "Version" : "3.3.7.3",
+            "Version" : "3.3.8.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.17.0"
@@ -537,7 +537,7 @@
             "InPreview"               : false
         },
         "CognitoIdentityProvider"         : {
-            "Version" : "3.3.4.3",
+            "Version" : "3.3.5.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.17.0"

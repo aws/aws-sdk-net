@@ -1,3 +1,9 @@
+### 3.3.124.0 (2017-07-17 21:14 UTC)
+* CognitoIdentityProvider (3.3.5.0)
+	* Allows developers to configure user pools for email/phone based signup and sign-in.
+* Lambda (3.3.8.0)
+	* Lambda@Edge lets you run code closer to your end users without provisioning or managing servers. With Lambda@Edge, your code runs in AWS edge locations, allowing you to respond to your end users at the lowest latency. Your code is triggered by Amazon CloudFront events, such as requests to and from origin servers and viewers, and it is ready to execute at every AWS edge location whenever a request for content is received. You just upload your Node.js code to AWS Lambda and Lambda takes care of everything required to run and scale your code with high availability. You only pay for the compute time you consume - there is no charge when your code is not running.
+
 ### 3.3.123.0 (2017-07-14 23:04 UTC)
 * ApplicationDiscoveryService (3.3.3.0)
 	* Adding feature to the Export API for Discovery Service to allow filters for the export task to allow export based on per agent id.
