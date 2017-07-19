@@ -1,3 +1,7 @@
+### 3.3.125.0 (2017-07-19 17:49 UTC)
+* Budgets (3.3.2.0)
+	* Update budget Management API's to list/create/update RI_UTILIZATION type budget. Update budget Management API's to support DAILY timeUnit for RI_UTILIZATION type budget.
+
 ### 3.3.124.0 (2017-07-17 21:14 UTC)
 * CognitoIdentityProvider (3.3.5.0)
 	* Allows developers to configure user pools for email/phone based signup and sign-in.
