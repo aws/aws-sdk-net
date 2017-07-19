@@ -217,50 +217,32 @@ namespace Amazon.DNXCore.IntegrationTests
 
         [Fact]
         [Trait(CategoryAttribute, "SNS")]
+        public async void IsMessageSignatureValid()
+        {
+            var topicArn = await CreateTopic();
+            var queueUrl = await CreateQueue();
+            await SubscribeQueue(topicArn, queueUrl);
+            List<Message> messages = await PublishToSNSAndReceiveMessages(GetPublishRequest(topicArn), topicArn, queueUrl);
+
+            Assert.Equal(1, messages.Count);
+            var message = messages[0].Body;
+
+            var validMessage = Amazon.SimpleNotificationService.Util.Message.ParseMessage(message);
+            Assert.True(validMessage.IsMessageSignatureValid());
+
+            var invalidMessage = Amazon.SimpleNotificationService.Util.Message.ParseMessage(message.Replace("Test Message", "Hacked Message"));
+            Assert.False(invalidMessage.IsMessageSignatureValid());
+        }
+
+        [Fact]
+        [Trait(CategoryAttribute, "SNS")]
         public async void TestQueueSubscription()
         {
-            // create new topic
-            var topicName = UtilityMethods.GenerateName("TestQueueSubscription");
-            var createTopicRequest = new CreateTopicRequest
-            {
-                Name = topicName
-            };
-            var createTopicResult = await Client.CreateTopicAsync(createTopicRequest);
-            var topicArn = createTopicResult.TopicArn;
-                _topicArns.Add(topicArn);
-
-            var queueName = UtilityMethods.GenerateName("TestQueueSubscription");
-            var queueUrl = (await sqsClient.CreateQueueAsync(new CreateQueueRequest
-            {
-                QueueName = queueName
-            })).QueueUrl;
-                _queueUrl.Add(queueUrl);
-
-            ICoreAmazonSQS coreSqs = sqsClient as ICoreAmazonSQS;
-            var subscriptionARN = await Client.SubscribeQueueAsync(topicArn, coreSqs, queueUrl);
-
-            // Sleep to wait for the subscribe to complete.
-            Thread.Sleep(TimeSpan.FromSeconds(5));
-
-            var publishRequest = new PublishRequest
-            {
-                TopicArn = topicArn,
-                Subject = "Test Subject",
-                Message = "Test Message",
-                MessageAttributes = new Dictionary<string, SNSMessageAttributeValue>
-                {
-                    { "Color", new SNSMessageAttributeValue { StringValue = "Red", DataType = "String" } },
-                    { "Binary", new SNSMessageAttributeValue { DataType = "Binary", BinaryValue = new MemoryStream(Encoding.UTF8.GetBytes("Yes please")) } },
-                    { "Prime", new SNSMessageAttributeValue { StringValue = "31", DataType = "Number" } },
-                }
-            };
-            await Client.PublishAsync(publishRequest);
-
-            var messages = (await sqsClient.ReceiveMessageAsync(new ReceiveMessageRequest
-            {
-                QueueUrl = queueUrl,
-                WaitTimeSeconds = 20
-            })).Messages;
+            var topicArn = await CreateTopic();
+            var queueUrl = await CreateQueue();
+            var subscriptionArn = await SubscribeQueue(topicArn, queueUrl);
+            var publishRequest = GetPublishRequest(topicArn);
+            List<Message> messages = await PublishToSNSAndReceiveMessages(publishRequest, topicArn, queueUrl);
 
             Assert.Equal(1, messages.Count);
             var message = messages[0];
@@ -304,11 +286,11 @@ namespace Amazon.DNXCore.IntegrationTests
             // This will unsubscribe but leave the policy in place.
             await Client.UnsubscribeAsync(new UnsubscribeRequest
             {
-                SubscriptionArn = subscriptionARN
+                SubscriptionArn = subscriptionArn
             });
 
             // Subscribe again to see if this affects the policy.
-            await Client.SubscribeQueueAsync(topicArn, coreSqs, queueUrl);
+            await Client.SubscribeQueueAsync(topicArn, sqsClient as ICoreAmazonSQS, queueUrl);
 
             await Client.PublishAsync(new PublishRequest
             {
@@ -369,5 +351,71 @@ namespace Amazon.DNXCore.IntegrationTests
 
             Assert.Equal(2, policy.Statements.Count);
         }
+
+        private PublishRequest GetPublishRequest(string topicArn)
+        {
+            return new PublishRequest
+            {
+                TopicArn = topicArn,
+                Subject = "Test Subject",
+                Message = "Test Message",
+                MessageAttributes = new Dictionary<string, SNSMessageAttributeValue>
+                {
+                    { "Color", new SNSMessageAttributeValue { StringValue = "Red", DataType = "String" } },
+                    { "Binary", new SNSMessageAttributeValue { DataType = "Binary", BinaryValue = new MemoryStream(Encoding.UTF8.GetBytes("Yes please")) } },
+                    { "Prime", new SNSMessageAttributeValue { StringValue = "31", DataType = "Number" } },
+                }
+            };
+
+        }
+
+        private async Task<List<Message>> PublishToSNSAndReceiveMessages(PublishRequest publishRequest, string topicArn, string queueUrl)
+        {
+            await Client.PublishAsync(publishRequest);
+
+            var messages = (await sqsClient.ReceiveMessageAsync(new ReceiveMessageRequest
+            {
+                QueueUrl = queueUrl,
+                WaitTimeSeconds = 20
+            })).Messages;
+            return messages;
+        }
+
+        private async Task<string> SubscribeQueue(string topicArn, string queueUrl)
+        {
+            ICoreAmazonSQS coreSqs = sqsClient as ICoreAmazonSQS;
+            var subscriptionARN = await Client.SubscribeQueueAsync(topicArn, coreSqs, queueUrl);
+
+            // Sleep to wait for the subscribe to complete.
+            Thread.Sleep(TimeSpan.FromSeconds(5));
+
+            return subscriptionARN;
+        }
+
+        private async Task<string> CreateQueue()
+        {
+            var queueName = UtilityMethods.GenerateName("TestQueueSubscription");
+            var queueUrl = (await sqsClient.CreateQueueAsync(new CreateQueueRequest
+            {
+                QueueName = queueName
+            })).QueueUrl;
+            _queueUrl.Add(queueUrl);
+            return queueUrl;
+        }
+
+        private async Task<string> CreateTopic()
+        {
+            // create new topic
+            var topicName = UtilityMethods.GenerateName("TestQueueSubscription");
+            var createTopicRequest = new CreateTopicRequest
+            {
+                Name = topicName
+            };
+            var createTopicResult = await Client.CreateTopicAsync(createTopicRequest);
+            var topicArn = createTopicResult.TopicArn;
+            _topicArns.Add(topicArn);
+            return topicArn;
+        }
+
     }
 }

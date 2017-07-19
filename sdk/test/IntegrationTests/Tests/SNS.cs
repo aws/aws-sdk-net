@@ -229,49 +229,53 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
 
         [TestMethod]
         [TestCategory("SimpleNotificationService")]
-        public void TestQueueSubscription()
+        public void IsMessageSignatureValid()
         {
-            // create new topic
-            var topicName = "dotnetsdkTopic" + DateTime.Now.Ticks;
-            var createTopicRequest = new CreateTopicRequest
-            {
-                Name = topicName
-            };
-            var createTopicResult = Client.CreateTopic(createTopicRequest);
-            var topicArn = createTopicResult.TopicArn;
-
-            var queueName = "dotnetsdkQueue-" + DateTime.Now.Ticks;
-            var queueUrl = sqsClient.CreateQueue(new CreateQueueRequest
-            {
-                QueueName = queueName
-            }).QueueUrl;
+            string topicArn = null;
+            string queueUrl = null;
 
             try
             {
-                var subscriptionARN = Client.SubscribeQueue(topicArn, sqsClient, queueUrl);
+                topicArn = CreateTopic();
+                queueUrl = CreateQueue();
 
-                // Sleep to wait for the subscribe to complete.
-                Thread.Sleep(TimeSpan.FromSeconds(5));
+                SubscribeQueue(topicArn, queueUrl);
+                List<Message> messages = PublishToSNSAndReceiveMessages(GetPublishRequest(topicArn), topicArn, queueUrl);
 
-                var publishRequest = new PublishRequest
-                {
-                    TopicArn = topicArn,
-                    Subject = "Test Subject",
-                    Message = "Test Message",
-                    MessageAttributes = new Dictionary<string, SNSMessageAttributeValue>
-                    {
-                        { "Color", new SNSMessageAttributeValue { StringValue = "Red", DataType = "String" } },
-                        { "Binary", new SNSMessageAttributeValue { DataType = "Binary", BinaryValue = new MemoryStream(Encoding.UTF8.GetBytes("Yes please")) } },
-                        { "Prime", new SNSMessageAttributeValue { StringValue = "31", DataType = "Number" } },
-                    }
-                };
-                Client.Publish(publishRequest);
+                Assert.AreEqual(1, messages.Count);
+                var message = messages[0].Body;
 
-                var messages = sqsClient.ReceiveMessage(new ReceiveMessageRequest
-                {
-                    QueueUrl = queueUrl,
-                    WaitTimeSeconds = 20
-                }).Messages;
+                var validMessage = Amazon.SimpleNotificationService.Util.Message.ParseMessage(message);
+                Assert.IsTrue(validMessage.IsMessageSignatureValid());
+
+                var invalidMessage = Amazon.SimpleNotificationService.Util.Message.ParseMessage(message.Replace("Test Message", "Hacked Message"));
+                Assert.IsFalse(invalidMessage.IsMessageSignatureValid());
+            }
+            finally
+            {
+                if (topicArn != null)
+                    Client.DeleteTopic(new DeleteTopicRequest { TopicArn = topicArn });
+
+                if (queueUrl != null)
+                    sqsClient.DeleteQueue(new DeleteQueueRequest { QueueUrl = queueUrl });
+            }
+        }
+
+        [TestMethod]
+        [TestCategory("SimpleNotificationService")]
+        public void TestQueueSubscription()
+        {
+            string topicArn = null;
+            string queueUrl = null;
+
+            try
+            {
+                topicArn = CreateTopic();
+                queueUrl = CreateQueue();
+
+                var subscriptionArn = SubscribeQueue(topicArn, queueUrl);
+                var publishRequest = GetPublishRequest(topicArn);
+                List<Message> messages = PublishToSNSAndReceiveMessages(publishRequest, topicArn, queueUrl);
 
                 Assert.AreEqual(1, messages.Count);
                 var message = messages[0];
@@ -315,7 +319,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
                 // This will unsubscribe but leave the policy in place.
                 Client.Unsubscribe(new UnsubscribeRequest
                 {
-                    SubscriptionArn = subscriptionARN
+                    SubscriptionArn = subscriptionArn
                 });
 
                 // Subscribe again to see if this affects the policy.
@@ -346,8 +350,11 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
             }
             finally
             {
-                Client.DeleteTopic(new DeleteTopicRequest { TopicArn = topicArn });
-                sqsClient.DeleteQueue(new DeleteQueueRequest { QueueUrl = queueUrl });
+                if (topicArn != null)
+                    Client.DeleteTopic(new DeleteTopicRequest { TopicArn = topicArn });
+
+                if (queueUrl != null)
+                    sqsClient.DeleteQueue(new DeleteQueueRequest { QueueUrl = queueUrl });
             }
         }
 
@@ -433,6 +440,68 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
                 listRequest.NextToken = listResponse.NextToken;
             } while (!string.IsNullOrEmpty(listRequest.NextToken));
             return allTopics;
+        }
+
+        private PublishRequest GetPublishRequest(string topicArn)
+        {
+            return new PublishRequest
+            {
+                TopicArn = topicArn,
+                Subject = "Test Subject",
+                Message = "Test Message",
+                MessageAttributes = new Dictionary<string, SNSMessageAttributeValue>
+                {
+                    { "Color", new SNSMessageAttributeValue { StringValue = "Red", DataType = "String" } },
+                    { "Binary", new SNSMessageAttributeValue { DataType = "Binary", BinaryValue = new MemoryStream(Encoding.UTF8.GetBytes("Yes please")) } },
+                    { "Prime", new SNSMessageAttributeValue { StringValue = "31", DataType = "Number" } },
+                }
+            };
+
+        }
+
+        private List<Message> PublishToSNSAndReceiveMessages(PublishRequest publishRequest, string topicArn, string queueUrl)
+        {
+            Client.Publish(publishRequest);
+
+            var messages = (sqsClient.ReceiveMessage(new ReceiveMessageRequest
+            {
+                QueueUrl = queueUrl,
+                WaitTimeSeconds = 20
+            })).Messages;
+            return messages;
+        }
+
+        private string SubscribeQueue(string topicArn, string queueUrl)
+        {
+            var subscriptionARN = Client.SubscribeQueue(topicArn, sqsClient, queueUrl);
+
+            // Sleep to wait for the subscribe to complete.
+            Thread.Sleep(TimeSpan.FromSeconds(5));
+
+            return subscriptionARN;
+        }
+
+        private string CreateQueue()
+        {
+            var queueName = UtilityMethods.GenerateName("TestQueueSubscription");
+            var queueUrl = (sqsClient.CreateQueue(new CreateQueueRequest
+            {
+                QueueName = queueName
+            })).QueueUrl;
+            return queueUrl;
+        }
+
+        private string CreateTopic()
+        {
+            // create new topic
+            var topicName = UtilityMethods.GenerateName("TestQueueSubscription");
+            var createTopicRequest = new CreateTopicRequest
+            {
+                Name = topicName
+            };
+            var createTopicResult = Client.CreateTopic(createTopicRequest);
+            var topicArn = createTopicResult.TopicArn;
+            return topicArn;
         }
 
     }

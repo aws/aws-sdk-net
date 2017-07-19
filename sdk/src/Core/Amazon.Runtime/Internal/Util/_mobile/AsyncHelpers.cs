@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.ExceptionServices;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
@@ -134,9 +135,7 @@ namespace Amazon.Runtime.Internal.Util
                     {
                         task.Item1(task.Item2);
                         if (InnerException != null) // the method threw an exeption
-                        {
-                            throw new AggregateException("AsyncHelpers.Run method threw an exception.", InnerException);
-                        }
+                            ExceptionDispatchInfo.Capture(InnerException).Throw();
                     }
                     else
                     {

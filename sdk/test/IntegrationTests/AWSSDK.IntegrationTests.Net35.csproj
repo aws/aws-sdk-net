@@ -23,6 +23,7 @@
 
   <ItemGroup>
     <Compile Remove="**/45/**"/>
+    <None Remove="**/45/**" />
   </ItemGroup>
 
   <ItemGroup>

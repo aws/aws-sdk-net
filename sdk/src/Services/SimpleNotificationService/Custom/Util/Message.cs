@@ -12,7 +12,8 @@ using Amazon.Util;
 
 using ThirdParty.Json.LitJson;
 
-#if BCL
+#if BCL || CORECLR
+using Amazon.Runtime.Internal.Util;
 using System.Security.Cryptography;
 using System.Security.Cryptography.X509Certificates;
 using ThirdParty.BouncyCastle.OpenSsl;
@@ -250,7 +251,7 @@ namespace Amazon.SimpleNotificationService.Util
             throw new AmazonClientException("Signing certificate url is not from a recognised source.");
         }
 
-#if BCL
+#if BCL || CORECLR
 
         #region Message Verification
         /// <summary>
@@ -261,10 +262,15 @@ namespace Amazon.SimpleNotificationService.Util
         public bool IsMessageSignatureValid()
         {
             var bytesToSign = GetMessageBytesToSign();
-
             var certificate = GetX509Certificate();
+
+#if BCL
             var rsa = certificate.PublicKey.Key as RSACryptoServiceProvider;
             return rsa.VerifyData(bytesToSign, CryptoConfig.MapNameToOID("SHA1"), Convert.FromBase64String(this.Signature));
+#else
+            var rsa = certificate.GetRSAPublicKey();
+            return rsa.VerifyData(bytesToSign, Convert.FromBase64String(this.Signature), HashAlgorithmName.SHA1, RSASignaturePadding.Pkcs1);
+#endif
         }
 
         private byte[] GetMessageBytesToSign()
@@ -376,7 +382,13 @@ namespace Amazon.SimpleNotificationService.Util
                         try
                         {
                             HttpWebRequest request = HttpWebRequest.Create(this.SigningCertURL) as HttpWebRequest;
+#if BCL
                             using (HttpWebResponse response = request.GetResponse() as HttpWebResponse)
+#else
+                            // It's illegal to await an async method within a lock statement block.
+                            // So just get the response on this thread.
+                            using (HttpWebResponse response = AsyncHelpers.RunSync(request.GetResponseAsync) as HttpWebResponse)
+#endif
                             using (var reader = new StreamReader(response.GetResponseStream()))
                             {
                                 var content = reader.ReadToEnd().Trim();
@@ -403,7 +415,9 @@ namespace Amazon.SimpleNotificationService.Util
             }
         }
         #endregion
+#endif
 
+#if BCL
         #region Subscribe/Unsubscribe Actions
         /// <summary>
         /// Uses the SubscribeURL property to subscribe to the topic

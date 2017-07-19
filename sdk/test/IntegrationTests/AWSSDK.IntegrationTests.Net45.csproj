@@ -21,6 +21,7 @@
 
   <ItemGroup>
     <Compile Remove="**/35/**"/>
+    <None Remove="**/35/**" />
   </ItemGroup>
 
   <ItemGroup>
