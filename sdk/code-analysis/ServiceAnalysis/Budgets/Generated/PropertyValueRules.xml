@@ -13,7 +13,7 @@
   <property-value-rule>
     <property>Amazon.Budgets.Model.CreateNotificationRequest.BudgetName</property>
     <max>100</max>
-    <pattern>[^:]+</pattern>
+    <pattern>[^:\\]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Budgets.Model.CreateSubscriberRequest.AccountId</property>
@@ -23,7 +23,7 @@
   <property-value-rule>
     <property>Amazon.Budgets.Model.CreateSubscriberRequest.BudgetName</property>
     <max>100</max>
-    <pattern>[^:]+</pattern>
+    <pattern>[^:\\]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Budgets.Model.DeleteBudgetRequest.AccountId</property>
@@ -33,7 +33,7 @@
   <property-value-rule>
     <property>Amazon.Budgets.Model.DeleteBudgetRequest.BudgetName</property>
     <max>100</max>
-    <pattern>[^:]+</pattern>
+    <pattern>[^:\\]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Budgets.Model.DeleteNotificationRequest.AccountId</property>
@@ -43,7 +43,7 @@
   <property-value-rule>
     <property>Amazon.Budgets.Model.DeleteNotificationRequest.BudgetName</property>
     <max>100</max>
-    <pattern>[^:]+</pattern>
+    <pattern>[^:\\]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Budgets.Model.DeleteSubscriberRequest.AccountId</property>
@@ -53,7 +53,7 @@
   <property-value-rule>
     <property>Amazon.Budgets.Model.DeleteSubscriberRequest.BudgetName</property>
     <max>100</max>
-    <pattern>[^:]+</pattern>
+    <pattern>[^:\\]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Budgets.Model.DescribeBudgetRequest.AccountId</property>
@@ -63,7 +63,7 @@
   <property-value-rule>
     <property>Amazon.Budgets.Model.DescribeBudgetRequest.BudgetName</property>
     <max>100</max>
-    <pattern>[^:]+</pattern>
+    <pattern>[^:\\]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Budgets.Model.DescribeBudgetsRequest.AccountId</property>
@@ -83,7 +83,7 @@
   <property-value-rule>
     <property>Amazon.Budgets.Model.DescribeNotificationsForBudgetRequest.BudgetName</property>
     <max>100</max>
-    <pattern>[^:]+</pattern>
+    <pattern>[^:\\]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Budgets.Model.DescribeNotificationsForBudgetRequest.MaxResults</property>
@@ -98,7 +98,7 @@
   <property-value-rule>
     <property>Amazon.Budgets.Model.DescribeSubscribersForNotificationRequest.BudgetName</property>
     <max>100</max>
-    <pattern>[^:]+</pattern>
+    <pattern>[^:\\]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Budgets.Model.DescribeSubscribersForNotificationRequest.MaxResults</property>
@@ -118,7 +118,7 @@
   <property-value-rule>
     <property>Amazon.Budgets.Model.UpdateNotificationRequest.BudgetName</property>
     <max>100</max>
-    <pattern>[^:]+</pattern>
+    <pattern>[^:\\]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Budgets.Model.UpdateSubscriberRequest.AccountId</property>
@@ -128,12 +128,12 @@
   <property-value-rule>
     <property>Amazon.Budgets.Model.UpdateSubscriberRequest.BudgetName</property>
     <max>100</max>
-    <pattern>[^:]+</pattern>
+    <pattern>[^:\\]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Budgets.Model.Budget.BudgetName</property>
     <max>100</max>
-    <pattern>[^:]+</pattern>
+    <pattern>[^:\\]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Budgets.Model.Notification.Threshold</property>
@@ -142,5 +142,9 @@
   <property-value-rule>
     <property>Amazon.Budgets.Model.Spend.Amount</property>
     <pattern>[0-9]*(\.)?[0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Budgets.Model.Spend.Unit</property>
+    <min>1</min>
   </property-value-rule>
 </property-value-rules>

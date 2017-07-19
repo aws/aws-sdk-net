@@ -35,6 +35,10 @@ namespace Amazon.Budgets
         /// </summary>
         public static readonly BudgetType COST = new BudgetType("COST");
         /// <summary>
+        /// Constant RI_UTILIZATION for BudgetType
+        /// </summary>
+        public static readonly BudgetType RI_UTILIZATION = new BudgetType("RI_UTILIZATION");
+        /// <summary>
         /// Constant USAGE for BudgetType
         /// </summary>
         public static readonly BudgetType USAGE = new BudgetType("USAGE");
@@ -238,6 +242,10 @@ namespace Amazon.Budgets
         /// Constant ANNUALLY for TimeUnit
         /// </summary>
         public static readonly TimeUnit ANNUALLY = new TimeUnit("ANNUALLY");
+        /// <summary>
+        /// Constant DAILY for TimeUnit
+        /// </summary>
+        public static readonly TimeUnit DAILY = new TimeUnit("DAILY");
         /// <summary>
         /// Constant MONTHLY for TimeUnit
         /// </summary>
