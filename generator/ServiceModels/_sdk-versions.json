@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.3.125.0",
+    "ProductVersion" : "3.3.126.0",
     "CoreVersion"    : "3.3.17.2",
     "DefaultToPreview" : false,
     "ServiceVersions"  : {
@@ -191,7 +191,7 @@
             "InPreview"               : false
         },
         "ElasticMapReduce"     : {
-            "Version" : "3.3.3.13",
+            "Version" : "3.3.4.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.17.0"

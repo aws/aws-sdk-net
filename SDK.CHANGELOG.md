@@ -1,3 +1,7 @@
+### 3.3.126.0 (2017-07-20 22:09 UTC)
+* ElasticMapReduce (3.3.4.0)
+	* Amazon EMR now includes the ability to use a custom Amazon Linux AMI and adjustable root volume size when launching a cluster.
+
 ### 3.3.125.0 (2017-07-19 17:49 UTC)
 * Budgets (3.3.2.0)
 	* Update budget Management API's to list/create/update RI_UTILIZATION type budget. Update budget Management API's to support DAILY timeUnit for RI_UTILIZATION type budget.
