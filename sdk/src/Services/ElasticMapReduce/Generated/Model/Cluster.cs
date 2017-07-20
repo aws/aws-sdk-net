@@ -36,6 +36,8 @@ namespace Amazon.ElasticMapReduce.Model
         private string _autoScalingRole;
         private bool? _autoTerminate;
         private List<Configuration> _configurations = new List<Configuration>();
+        private string _customAmiId;
+        private int? _ebsRootVolumeSize;
         private Ec2InstanceAttributes _ec2InstanceAttributes;
         private string _id;
         private InstanceCollectionType _instanceCollectionType;
@@ -44,6 +46,7 @@ namespace Amazon.ElasticMapReduce.Model
         private string _name;
         private int? _normalizedInstanceHours;
         private string _releaseLabel;
+        private RepoUpgradeOnBoot _repoUpgradeOnBoot;
         private string _requestedAmiVersion;
         private string _runningAmiVersion;
         private ScaleDownBehavior _scaleDownBehavior;
@@ -111,13 +114,10 @@ namespace Amazon.ElasticMapReduce.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Configurations. <note> 
+        /// Gets and sets the property Configurations. 
         /// <para>
-        /// Amazon EMR releases 4.x or later.
-        /// </para>
-        ///  </note> 
-        /// <para>
-        /// The list of Configurations supplied to the EMR cluster.
+        /// Applies only to Amazon EMR releases 4.x and later. The list of Configurations supplied
+        /// to the EMR cluster.
         /// </para>
         /// </summary>
         public List<Configuration> Configurations
@@ -130,6 +130,44 @@ namespace Amazon.ElasticMapReduce.Model
         internal bool IsSetConfigurations()
         {
             return this._configurations != null && this._configurations.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property CustomAmiId. 
+        /// <para>
+        /// Available only in Amazon EMR version 5.7.0 and later. The ID of a custom Amazon EBS-backed
+        /// Linux AMI if the cluster uses a custom AMI.
+        /// </para>
+        /// </summary>
+        public string CustomAmiId
+        {
+            get { return this._customAmiId; }
+            set { this._customAmiId = value; }
+        }
+
+        // Check to see if CustomAmiId property is set
+        internal bool IsSetCustomAmiId()
+        {
+            return this._customAmiId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EbsRootVolumeSize. 
+        /// <para>
+        /// The size, in GiB, of the EBS root device volume of the Linux AMI that is used for
+        /// each EC2 instance. Available in Amazon EMR version 4.x and later.
+        /// </para>
+        /// </summary>
+        public int EbsRootVolumeSize
+        {
+            get { return this._ebsRootVolumeSize.GetValueOrDefault(); }
+            set { this._ebsRootVolumeSize = value; }
+        }
+
+        // Check to see if EbsRootVolumeSize property is set
+        internal bool IsSetEbsRootVolumeSize()
+        {
+            return this._ebsRootVolumeSize.HasValue; 
         }
 
         /// <summary>
@@ -273,8 +311,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property ReleaseLabel. 
         /// <para>
-        /// The release label for the Amazon EMR release. For Amazon EMR 3.x and 2.x AMIs, use
-        /// amiVersion instead instead of ReleaseLabel.
+        /// The release label for the Amazon EMR release.
         /// </para>
         /// </summary>
         public string ReleaseLabel
@@ -287,6 +324,26 @@ namespace Amazon.ElasticMapReduce.Model
         internal bool IsSetReleaseLabel()
         {
             return this._releaseLabel != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RepoUpgradeOnBoot. 
+        /// <para>
+        /// Applies only when <code>CustomAmiID</code> is used. Specifies the type of updates
+        /// that are applied from the Amazon Linux AMI package repositories when an instance boots
+        /// using the AMI.
+        /// </para>
+        /// </summary>
+        public RepoUpgradeOnBoot RepoUpgradeOnBoot
+        {
+            get { return this._repoUpgradeOnBoot; }
+            set { this._repoUpgradeOnBoot = value; }
+        }
+
+        // Check to see if RepoUpgradeOnBoot property is set
+        internal bool IsSetRepoUpgradeOnBoot()
+        {
+            return this._repoUpgradeOnBoot != null;
         }
 
         /// <summary>

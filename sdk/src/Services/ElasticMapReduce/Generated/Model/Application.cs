@@ -50,7 +50,7 @@ namespace Amazon.ElasticMapReduce.Model
     /// </para>
     ///  </li> </ul> <note> 
     /// <para>
-    /// In Amazon EMR releases 4.0 and greater, the only accepted parameter is the application
+    /// In Amazon EMR releases 4.x and later, the only accepted parameter is the application
     /// name. To pass arguments to applications, you supply a configuration for each application.
     /// </para>
     ///  </note>

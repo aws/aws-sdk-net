@@ -133,6 +133,18 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
+                if(publicRequest.IsSetCustomAmiId())
+                {
+                    context.Writer.WritePropertyName("CustomAmiId");
+                    context.Writer.Write(publicRequest.CustomAmiId);
+                }
+
+                if(publicRequest.IsSetEbsRootVolumeSize())
+                {
+                    context.Writer.WritePropertyName("EbsRootVolumeSize");
+                    context.Writer.Write(publicRequest.EbsRootVolumeSize);
+                }
+
                 if(publicRequest.IsSetInstances())
                 {
                     context.Writer.WritePropertyName("Instances");
@@ -182,6 +194,12 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
                 {
                     context.Writer.WritePropertyName("ReleaseLabel");
                     context.Writer.Write(publicRequest.ReleaseLabel);
+                }
+
+                if(publicRequest.IsSetRepoUpgradeOnBoot())
+                {
+                    context.Writer.WritePropertyName("RepoUpgradeOnBoot");
+                    context.Writer.Write(publicRequest.RepoUpgradeOnBoot);
                 }
 
                 if(publicRequest.IsSetScaleDownBehavior())

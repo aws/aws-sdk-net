@@ -70,8 +70,9 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property AmiVersion. 
         /// <para>
-        /// The version of the AMI used to initialize Amazon EC2 instances in the job flow. For
-        /// a list of AMI versions currently supported by Amazon EMR, see <a href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/EnvironmentConfig_AMIVersion.html#ami-versions-supported">AMI
+        /// Used only for version 2.x and 3.x of Amazon EMR. The version of the AMI used to initialize
+        /// Amazon EC2 instances in the job flow. For a list of AMI versions supported by Amazon
+        /// EMR, see <a href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/EnvironmentConfig_AMIVersion.html#ami-versions-supported">AMI
         /// Versions Supported in EMR</a> in the <i>Amazon EMR Developer Guide.</i> 
         /// </para>
         /// </summary>

@@ -71,6 +71,11 @@
     <max>10280</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ElasticMapReduce.Model.RunJobFlowRequest.CustomAmiId</property>
+    <min>0</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ElasticMapReduce.Model.RunJobFlowRequest.JobFlowRole</property>
     <min>0</min>
     <max>10280</max>
@@ -118,6 +123,11 @@
     <property>Amazon.ElasticMapReduce.Model.Cluster.AutoScalingRole</property>
     <min>0</min>
     <max>10280</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ElasticMapReduce.Model.Cluster.CustomAmiId</property>
+    <min>0</min>
+    <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ElasticMapReduce.Model.Cluster.SecurityConfiguration</property>

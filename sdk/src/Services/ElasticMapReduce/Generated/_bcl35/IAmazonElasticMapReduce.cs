@@ -940,10 +940,9 @@ namespace Amazon.ElasticMapReduce
 
 
         /// <summary>
-        /// Provides information about the cluster instances that Amazon EMR provisions on behalf
-        /// of a user when it creates the cluster. For example, this operation indicates when
-        /// the EC2 instances reach the Ready state, when instances become available to Amazon
-        /// EMR to use for jobs, and the IP addresses for cluster instances, etc.
+        /// Provides information for all active EC2 instances and EC2 instances terminated in
+        /// the last 30 days, up to a maximum of 2,000. EC2 instances in any of the following
+        /// states are considered active: AWAITING_FULFILLMENT, PROVISIONING, BOOTSTRAPPING, RUNNING.
         /// </summary>
         /// 
         /// <returns>The response from the ListInstances service method, as returned by ElasticMapReduce.</returns>
@@ -957,10 +956,9 @@ namespace Amazon.ElasticMapReduce
         ListInstancesResponse ListInstances();
 
         /// <summary>
-        /// Provides information about the cluster instances that Amazon EMR provisions on behalf
-        /// of a user when it creates the cluster. For example, this operation indicates when
-        /// the EC2 instances reach the Ready state, when instances become available to Amazon
-        /// EMR to use for jobs, and the IP addresses for cluster instances, etc.
+        /// Provides information for all active EC2 instances and EC2 instances terminated in
+        /// the last 30 days, up to a maximum of 2,000. EC2 instances in any of the following
+        /// states are considered active: AWAITING_FULFILLMENT, PROVISIONING, BOOTSTRAPPING, RUNNING.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListInstances service method.</param>
         /// 

@@ -395,6 +395,10 @@ namespace Amazon.ElasticMapReduce
         /// </summary>
         public static readonly ClusterStateChangeReasonCode INSTANCE_FAILURE = new ClusterStateChangeReasonCode("INSTANCE_FAILURE");
         /// <summary>
+        /// Constant INSTANCE_FLEET_TIMEOUT for ClusterStateChangeReasonCode
+        /// </summary>
+        public static readonly ClusterStateChangeReasonCode INSTANCE_FLEET_TIMEOUT = new ClusterStateChangeReasonCode("INSTANCE_FLEET_TIMEOUT");
+        /// <summary>
         /// Constant INTERNAL_ERROR for ClusterStateChangeReasonCode
         /// </summary>
         public static readonly ClusterStateChangeReasonCode INTERNAL_ERROR = new ClusterStateChangeReasonCode("INTERNAL_ERROR");
@@ -1226,6 +1230,56 @@ namespace Amazon.ElasticMapReduce
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator MarketType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type RepoUpgradeOnBoot.
+    /// </summary>
+    public class RepoUpgradeOnBoot : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant NONE for RepoUpgradeOnBoot
+        /// </summary>
+        public static readonly RepoUpgradeOnBoot NONE = new RepoUpgradeOnBoot("NONE");
+        /// <summary>
+        /// Constant SECURITY for RepoUpgradeOnBoot
+        /// </summary>
+        public static readonly RepoUpgradeOnBoot SECURITY = new RepoUpgradeOnBoot("SECURITY");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public RepoUpgradeOnBoot(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RepoUpgradeOnBoot FindValue(string value)
+        {
+            return FindValue<RepoUpgradeOnBoot>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RepoUpgradeOnBoot(string value)
         {
             return FindValue(value);
         }

@@ -88,6 +88,18 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
                     unmarshalledObject.Configurations = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("CustomAmiId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.CustomAmiId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("EbsRootVolumeSize", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.EbsRootVolumeSize = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Ec2InstanceAttributes", targetDepth))
                 {
                     var unmarshaller = Ec2InstanceAttributesUnmarshaller.Instance;
@@ -134,6 +146,12 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ReleaseLabel = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("RepoUpgradeOnBoot", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.RepoUpgradeOnBoot = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("RequestedAmiVersion", targetDepth))

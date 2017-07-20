@@ -75,12 +75,15 @@ namespace Amazon.ElasticMapReduce.Model
         private string _autoScalingRole;
         private List<BootstrapActionConfig> _bootstrapActions = new List<BootstrapActionConfig>();
         private List<Configuration> _configurations = new List<Configuration>();
+        private string _customAmiId;
+        private int? _ebsRootVolumeSize;
         private JobFlowInstancesConfig _instances;
         private string _jobFlowRole;
         private string _logUri;
         private string _name;
         private List<SupportedProductConfig> _newSupportedProducts = new List<SupportedProductConfig>();
         private string _releaseLabel;
+        private RepoUpgradeOnBoot _repoUpgradeOnBoot;
         private ScaleDownBehavior _scaleDownBehavior;
         private string _securityConfiguration;
         private string _serviceRole;
@@ -124,32 +127,20 @@ namespace Amazon.ElasticMapReduce.Model
         }
 
         /// <summary>
-        /// Gets and sets the property AmiVersion. <note> 
+        /// Gets and sets the property AmiVersion. 
         /// <para>
-        /// For Amazon EMR releases 3.x and 2.x. For Amazon EMR releases 4.x and greater, use
-        /// ReleaseLabel.
-        /// </para>
-        ///  </note> 
-        /// <para>
+        /// For Amazon EMR AMI versions 3.x and 2.x. For Amazon EMR releases 4.0 and later, the
+        /// Linux AMI is determined by the <code>ReleaseLabel</code> specified or by <code>CustomAmiID</code>.
         /// The version of the Amazon Machine Image (AMI) to use when launching Amazon EC2 instances
-        /// in the job flow. The following values are valid:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// The version number of the AMI to use, for example, "2.0."
-        /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        /// If the AMI supports multiple versions of Hadoop (for example, AMI 1.0 supports both
-        /// Hadoop 0.18 and 0.20) you can use the <a>JobFlowInstancesConfig</a> <code>HadoopVersion</code>
-        /// parameter to modify the version of Hadoop from the defaults shown above.
+        /// in the job flow. For details about the AMI versions currently supported in EMR version
+        /// 3.x and 2.x, see <a href="ElasticMapReduce/latest/DeveloperGuide/emr-dg.pdf#nameddest=ami-versions-supported">AMI
+        /// Versions Supported in EMR</a> in the <i>Amazon EMR Developer Guide</i>. 
         /// </para>
         ///  
         /// <para>
-        /// For details about the AMI versions currently supported by Amazon Elastic MapReduce,
-        /// see <a href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/EnvironmentConfig_AMIVersion.html#ami-versions-supported">AMI
-        /// Versions Supported in Elastic MapReduce</a> in the <i>Amazon Elastic MapReduce Developer
-        /// Guide.</i> 
+        /// If the AMI supports multiple versions of Hadoop (for example, AMI 1.0 supports both
+        /// Hadoop 0.18 and 0.20), you can use the <a>JobFlowInstancesConfig</a> <code>HadoopVersion</code>
+        /// parameter to modify the version of Hadoop from the defaults shown above.
         /// </para>
         ///  <note> 
         /// <para>
@@ -173,14 +164,10 @@ namespace Amazon.ElasticMapReduce.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Applications. <note> 
+        /// Gets and sets the property Applications. 
         /// <para>
-        /// Amazon EMR releases 4.x or later.
-        /// </para>
-        ///  </note> 
-        /// <para>
-        /// A list of applications for the cluster. Valid values are: "Hadoop", "Hive", "Mahout",
-        /// "Pig", and "Spark." They are case insensitive.
+        /// For Amazon EMR releases 4.0 and later. A list of applications for the cluster. Valid
+        /// values are: "Hadoop", "Hive", "Mahout", "Pig", and "Spark." They are case insensitive.
         /// </para>
         /// </summary>
         public List<Application> Applications
@@ -234,13 +221,10 @@ namespace Amazon.ElasticMapReduce.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Configurations. <note> 
+        /// Gets and sets the property Configurations. 
         /// <para>
-        /// Amazon EMR releases 4.x or later.
-        /// </para>
-        ///  </note> 
-        /// <para>
-        /// The list of configurations supplied for the EMR cluster you are creating.
+        /// For Amazon EMR releases 4.0 and later. The list of configurations supplied for the
+        /// EMR cluster you are creating.
         /// </para>
         /// </summary>
         public List<Configuration> Configurations
@@ -253,6 +237,55 @@ namespace Amazon.ElasticMapReduce.Model
         internal bool IsSetConfigurations()
         {
             return this._configurations != null && this._configurations.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property CustomAmiId. 
+        /// <para>
+        /// Available only in Amazon EMR version 5.7.0 and later. The ID of a custom Amazon EBS-backed
+        /// Linux AMI. If specified, Amazon EMR uses this AMI when it launches cluster EC2 instances.
+        /// For more information about custom AMIs in Amazon EMR, see <a href="http://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-custom-ami.html">Using
+        /// a Custom AMI</a> in the <i>Amazon EMR Management Guide</i>. If omitted, the cluster
+        /// uses the base Linux AMI for the <code>ReleaseLabel</code> specified. For Amazon EMR
+        /// versions 2.x and 3.x, use <code>AmiVersion</code> instead.
+        /// </para>
+        ///  
+        /// <para>
+        /// For information about creating a custom AMI, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/creating-an-ami-ebs.html">Creating
+        /// an Amazon EBS-Backed Linux AMI</a> in the <i>Amazon Elastic Compute Cloud User Guide
+        /// for Linux Instances</i>. For information about finding an AMI ID, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/finding-an-ami.html">Finding
+        /// a Linux AMI</a>. 
+        /// </para>
+        /// </summary>
+        public string CustomAmiId
+        {
+            get { return this._customAmiId; }
+            set { this._customAmiId = value; }
+        }
+
+        // Check to see if CustomAmiId property is set
+        internal bool IsSetCustomAmiId()
+        {
+            return this._customAmiId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EbsRootVolumeSize. 
+        /// <para>
+        /// The size, in GiB, of the EBS root device volume of the Linux AMI that is used for
+        /// each EC2 instance. Available in Amazon EMR version 4.x and later.
+        /// </para>
+        /// </summary>
+        public int EbsRootVolumeSize
+        {
+            get { return this._ebsRootVolumeSize.GetValueOrDefault(); }
+            set { this._ebsRootVolumeSize = value; }
+        }
+
+        // Check to see if EbsRootVolumeSize property is set
+        internal bool IsSetEbsRootVolumeSize()
+        {
+            return this._ebsRootVolumeSize.HasValue; 
         }
 
         /// <summary>
@@ -334,8 +367,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property NewSupportedProducts. <note> 
         /// <para>
-        /// For Amazon EMR releases 3.x and 2.x. For Amazon EMR releases 4.x and greater, use
-        /// Applications.
+        /// For Amazon EMR releases 3.x and 2.x. For Amazon EMR releases 4.x and later, use Applications.
         /// </para>
         ///  </note> 
         /// <para>
@@ -393,14 +425,10 @@ namespace Amazon.ElasticMapReduce.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ReleaseLabel. <note> 
+        /// Gets and sets the property ReleaseLabel. 
         /// <para>
-        /// Amazon EMR releases 4.x or later.
-        /// </para>
-        ///  </note> 
-        /// <para>
-        /// The release label for the Amazon EMR release. For Amazon EMR 3.x and 2.x AMIs, use
-        /// amiVersion instead instead of ReleaseLabel.
+        ///  The release label for the Amazon EMR release. For Amazon EMR 3.x and 2.x AMIs, use
+        /// <code>AmiVersion</code> instead.
         /// </para>
         /// </summary>
         public string ReleaseLabel
@@ -413,6 +441,28 @@ namespace Amazon.ElasticMapReduce.Model
         internal bool IsSetReleaseLabel()
         {
             return this._releaseLabel != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RepoUpgradeOnBoot. 
+        /// <para>
+        /// Applies only when <code>CustomAmiID</code> is used. Specifies which updates from the
+        /// Amazon Linux AMI package repositories to apply automatically when the instance boots
+        /// using the AMI. If omitted, the default is <code>SECURITY</code>, which indicates that
+        /// only security updates are applied. If <code>NONE</code> is specified, no updates are
+        /// applied, and all updates must be applied manually.
+        /// </para>
+        /// </summary>
+        public RepoUpgradeOnBoot RepoUpgradeOnBoot
+        {
+            get { return this._repoUpgradeOnBoot; }
+            set { this._repoUpgradeOnBoot = value; }
+        }
+
+        // Check to see if RepoUpgradeOnBoot property is set
+        internal bool IsSetRepoUpgradeOnBoot()
+        {
+            return this._repoUpgradeOnBoot != null;
         }
 
         /// <summary>
@@ -501,8 +551,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property SupportedProducts. <note> 
         /// <para>
-        /// For Amazon EMR releases 3.x and 2.x. For Amazon EMR releases 4.x and greater, use
-        /// Applications.
+        /// For Amazon EMR releases 3.x and 2.x. For Amazon EMR releases 4.x and later, use Applications.
         /// </para>
         ///  </note> 
         /// <para>
