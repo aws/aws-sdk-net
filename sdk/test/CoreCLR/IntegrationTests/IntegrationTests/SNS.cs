@@ -225,12 +225,12 @@ namespace Amazon.DNXCore.IntegrationTests
             List<Message> messages = await PublishToSNSAndReceiveMessages(GetPublishRequest(topicArn), topicArn, queueUrl);
 
             Assert.Equal(1, messages.Count);
-            var message = messages[0].Body;
+            var bodyJson = GetBodyJson(messages[0]);
 
-            var validMessage = Amazon.SimpleNotificationService.Util.Message.ParseMessage(message);
+            var validMessage = Amazon.SimpleNotificationService.Util.Message.ParseMessage(bodyJson);
             Assert.True(validMessage.IsMessageSignatureValid());
 
-            var invalidMessage = Amazon.SimpleNotificationService.Util.Message.ParseMessage(message.Replace("Test Message", "Hacked Message"));
+            var invalidMessage = Amazon.SimpleNotificationService.Util.Message.ParseMessage(bodyJson.Replace("Test Message", "Hacked Message"));
             Assert.False(invalidMessage.IsMessageSignatureValid());
         }
 
@@ -247,12 +247,7 @@ namespace Amazon.DNXCore.IntegrationTests
             Assert.Equal(1, messages.Count);
             var message = messages[0];
 
-            string bodyJson;
-            // Handle some accounts returning message body as base 64 encoded.
-            if (message.Body.Trim()[0] == '{')
-                bodyJson = message.Body;
-            else
-                bodyJson = Encoding.UTF8.GetString(Convert.FromBase64String(message.Body));
+            string bodyJson = GetBodyJson(message);
 
             var json = ThirdParty.Json.LitJson.JsonMapper.ToObject(bodyJson);
             var messageText = json["Message"];
@@ -321,6 +316,17 @@ namespace Amazon.DNXCore.IntegrationTests
 
             var policy = Policy.FromJson(response.Policy);
             Assert.Equal(1, policy.Statements.Count);
+        }
+
+        private static string GetBodyJson(Message message)
+        {
+            string bodyJson;
+            // Handle some accounts returning message body as base 64 encoded.
+            if (message.Body.Trim()[0] == '{')
+                bodyJson = message.Body;
+            else
+                bodyJson = Encoding.UTF8.GetString(Convert.FromBase64String(message.Body));
+            return bodyJson;
         }
 
         [Trait(CategoryAttribute, "SNS")]

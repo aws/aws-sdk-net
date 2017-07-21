@@ -243,12 +243,12 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
                 List<Message> messages = PublishToSNSAndReceiveMessages(GetPublishRequest(topicArn), topicArn, queueUrl);
 
                 Assert.AreEqual(1, messages.Count);
-                var message = messages[0].Body;
+                var bodyJson = GetBodyJson(messages[0]);
 
-                var validMessage = Amazon.SimpleNotificationService.Util.Message.ParseMessage(message);
+                var validMessage = Amazon.SimpleNotificationService.Util.Message.ParseMessage(bodyJson);
                 Assert.IsTrue(validMessage.IsMessageSignatureValid());
 
-                var invalidMessage = Amazon.SimpleNotificationService.Util.Message.ParseMessage(message.Replace("Test Message", "Hacked Message"));
+                var invalidMessage = Amazon.SimpleNotificationService.Util.Message.ParseMessage(bodyJson.Replace("Test Message", "Hacked Message"));
                 Assert.IsFalse(invalidMessage.IsMessageSignatureValid());
             }
             finally
@@ -280,12 +280,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
                 Assert.AreEqual(1, messages.Count);
                 var message = messages[0];
 
-                string bodyJson;
-                // Handle some accounts returning message body as base 64 encoded.
-                if (message.Body.Trim()[0] == '{')
-                    bodyJson = message.Body;
-                else
-                    bodyJson = Encoding.UTF8.GetString(Convert.FromBase64String(message.Body));
+                string bodyJson = GetBodyJson(message);
 
                 var json = ThirdParty.Json.LitJson.JsonMapper.ToObject(bodyJson);
                 var messageText = json["Message"];
@@ -426,6 +421,17 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
                 };
                 Client.DeleteTopic(deleteTopicRequest);
             }
+        }
+
+        private static string GetBodyJson(Message message)
+        {
+            string bodyJson;
+            // Handle some accounts returning message body as base 64 encoded.
+            if (message.Body.Trim()[0] == '{')
+                bodyJson = message.Body;
+            else
+                bodyJson = Encoding.UTF8.GetString(Convert.FromBase64String(message.Body));
+            return bodyJson;
         }
 
         private static List<Topic> GetAllTopics()
