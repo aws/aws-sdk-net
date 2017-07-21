@@ -301,17 +301,13 @@ namespace Amazon.Runtime.Internal.Util
             }
         }
 
-        public HashSet<string> ListSectionNames()
+        public virtual HashSet<string> ListSectionNames()
         {
             var sectionNames = new HashSet<string>();
             int lineNumber = 0;
             string sectionName = null;
             while (SeekSection(ref lineNumber, out sectionName))
             {
-                if (!sectionNames.Contains(sectionName))
-                {
-                    sectionNames.Add(sectionName);
-                }
                 sectionNames.Add(sectionName);
                 lineNumber++;
             }
@@ -335,7 +331,7 @@ namespace Amazon.Runtime.Internal.Util
         /// <param name="sectionName">name of section to get</param>
         /// <param name="properties">properties contained in the section</param>
         /// <returns>True if the section was found, false otherwise</returns>
-        public bool TryGetSection(string sectionName, out Dictionary<string, string> properties)
+        public virtual bool TryGetSection(string sectionName, out Dictionary<string, string> properties)
         {
             var lineNumber = 0;
             properties = new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase);

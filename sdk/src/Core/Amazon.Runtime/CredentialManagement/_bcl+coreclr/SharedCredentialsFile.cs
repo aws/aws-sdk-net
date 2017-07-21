@@ -38,7 +38,6 @@ namespace Amazon.Runtime.CredentialManagement
 
         private const string ToolkitArtifactGuidField = "toolkit_artifact_guid";
         private const string RegionField = "region";
-        private const string ProfileMarker = "profile";
         private const string ConfigFileName = "config";
         private const string DefaultDirectoryName = ".aws";
         private const string DefaultFileName = "credentials";
@@ -106,8 +105,8 @@ namespace Amazon.Runtime.CredentialManagement
             DefaultFilePath = Path.Combine(DefaultDirectory, DefaultFileName);
         }
 
-        private IniFile credentialsFile;
-        private IniFile configFile;
+        private ProfileIniFile credentialsFile;
+        private ProfileIniFile configFile;
 
         public string FilePath { get; private set; }
 
@@ -280,34 +279,24 @@ namespace Amazon.Runtime.CredentialManagement
 
         private void Refresh()
         {
-            credentialsFile = new IniFile(FilePath);
+            credentialsFile = new ProfileIniFile(FilePath,false);
 
             // If a config file exists in the same location as the credentials file
             // load it for use as a read-only source of profile properties.
             var configPath = Path.Combine(Path.GetDirectoryName(FilePath), ConfigFileName);
             if (File.Exists(configPath))
             {
-                configFile = new IniFile(configPath);
+                configFile = new ProfileIniFile(configPath,true);
             }
         }
 
         private HashSet<string> ListAllProfileNames()
         {
             var profileNames = credentialsFile.ListSectionNames();
-
+            
             if (configFile != null)
             {
-                foreach (var sectionName in configFile.ListSectionNames())
-                {
-                    if (sectionName.StartsWith(ProfileMarker, StringComparison.Ordinal))
-                    {
-                        var profileName = Regex.Replace(sectionName, ProfileMarker + "[ \t]+", "");
-                        if (!profileNames.Contains(profileName))
-                        {
-                            profileNames.Add(profileName);
-                        }
-                    }
-                }
+                profileNames.UnionWith(configFile.ListSectionNames());
             }
             return profileNames;
         }
@@ -382,15 +371,13 @@ namespace Amazon.Runtime.CredentialManagement
         {
             Dictionary<string, string> credentialsProperties = null;
             Dictionary<string, string> configProperties = null;
-
-            var hasCredentialsProperties = credentialsFile.TryGetSection(sectionName, out credentialsProperties);
-
-            // INI sections in the config file must be prefixed with "profile " to be recognized as a profile.
-            var configSectionNameRegex = new Regex(ProfileMarker + "[ \t]+" + Regex.Escape(sectionName));
+            bool hasCredentialsProperties = false;
+            hasCredentialsProperties = credentialsFile.TryGetSection(sectionName, out credentialsProperties);
+           
             bool hasConfigProperties = false;
             if (configFile != null)
             {
-                hasConfigProperties = configFile.TryGetSection(configSectionNameRegex, out configProperties);
+                hasConfigProperties = configFile.TryGetSection(sectionName, out configProperties);
             }
 
             if (hasConfigProperties)

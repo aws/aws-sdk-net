@@ -42,6 +42,13 @@ namespace AWSSDK.UnitTests
             .Append("aws_session_token=session_aws_session_token")
             .ToString();
 
+        private static readonly string ProfileSessionProfileText = new StringBuilder()
+            .AppendLine("[profile session_profile]")
+            .AppendLine("aws_access_key_id=session_aws_access_key_id")
+            .AppendLine("aws_secret_access_key=session_aws_secret_access_key")
+            .Append("aws_session_token=session_aws_session_token")
+            .ToString();
+
         private static readonly CredentialProfileOptions SessionProfileOptions = new CredentialProfileOptions()
         {
             AccessKey = "session_aws_access_key_id",
@@ -633,6 +640,20 @@ namespace AWSSDK.UnitTests
                 var profileNames = profiles.Select(p => p.Name).ToList();
                 Assert.IsTrue(profileNames.Contains("session_profile"));
                 Assert.IsTrue(profileNames.Contains("basic_profile"));
+            }
+        }
+
+
+        [TestMethod]
+        public void ListProfilesWithProfileKeyword()
+        {
+            using (var tester = new SharedCredentialsFileTestFixture(ProfileSessionProfileText))
+            {
+                var profiles = tester.CredentialsFile.ListProfiles();
+                Assert.AreEqual(1, profiles.Count);
+                var profileNames = profiles.Select(p => p.Name).ToList();
+                Assert.IsTrue(profileNames.Contains("session_profile"));
+                tester.TestTryGetProfile("session_profile", true, true);
             }
         }
 
