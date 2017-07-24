@@ -28,39 +28,36 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AppStream.Model
 {
     /// <summary>
-    /// Container for the parameters to the DescribeStacks operation.
-    /// If stack names are not provided, this operation describes the specified stacks; otherwise,
-    /// all stacks in the account are described. To retrieve the next set of items, pass the
-    /// <code>nextToken</code> value in a subsequent call to this operation.
+    /// This is the response object from the DescribeDirectoryConfigs operation.
     /// </summary>
-    public partial class DescribeStacksRequest : AmazonAppStreamRequest
+    public partial class DescribeDirectoryConfigsResponse : AmazonWebServiceResponse
     {
-        private List<string> _names = new List<string>();
+        private List<DirectoryConfig> _directoryConfigs = new List<DirectoryConfig>();
         private string _nextToken;
 
         /// <summary>
-        /// Gets and sets the property Names. 
+        /// Gets and sets the property DirectoryConfigs. 
         /// <para>
-        /// The stack names to describe. Use null to describe all the stacks for the AWS account.
+        /// The list of directory configurations.
         /// </para>
         /// </summary>
-        public List<string> Names
+        public List<DirectoryConfig> DirectoryConfigs
         {
-            get { return this._names; }
-            set { this._names = value; }
+            get { return this._directoryConfigs; }
+            set { this._directoryConfigs = value; }
         }
 
-        // Check to see if Names property is set
-        internal bool IsSetNames()
+        // Check to see if DirectoryConfigs property is set
+        internal bool IsSetDirectoryConfigs()
         {
-            return this._names != null && this._names.Count > 0; 
+            return this._directoryConfigs != null && this._directoryConfigs.Count > 0; 
         }
 
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// The pagination token to use to retrieve the next page of results for this operation.
-        /// If this value is null, it retrieves the first page.
+        /// If not null, more results are available. To retrieve the next set of items, pass this
+        /// value for the NextToken parameter in a subsequent call to DescribeDirectoryConfigs.
         /// </para>
         /// </summary>
         public string NextToken

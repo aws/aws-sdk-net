@@ -61,7 +61,7 @@ namespace Amazon.AppStream.Model
         /// <summary>
         /// Gets and sets the property Enabled. 
         /// <para>
-        /// An application can be disabled after image creation if there is a problem.
+        /// If there is a problem, an application can be disabled after image creation.
         /// </para>
         /// </summary>
         public bool Enabled

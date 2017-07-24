@@ -28,39 +28,56 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AppStream.Model
 {
     /// <summary>
-    /// Container for the parameters to the DescribeStacks operation.
-    /// If stack names are not provided, this operation describes the specified stacks; otherwise,
-    /// all stacks in the account are described. To retrieve the next set of items, pass the
-    /// <code>nextToken</code> value in a subsequent call to this operation.
+    /// Container for the parameters to the DescribeDirectoryConfigs operation.
+    /// Returns a list describing the specified directory configurations.
     /// </summary>
-    public partial class DescribeStacksRequest : AmazonAppStreamRequest
+    public partial class DescribeDirectoryConfigsRequest : AmazonAppStreamRequest
     {
-        private List<string> _names = new List<string>();
+        private List<string> _directoryNames = new List<string>();
+        private int? _maxResults;
         private string _nextToken;
 
         /// <summary>
-        /// Gets and sets the property Names. 
+        /// Gets and sets the property DirectoryNames. 
         /// <para>
-        /// The stack names to describe. Use null to describe all the stacks for the AWS account.
+        /// A specific list of directory names.
         /// </para>
         /// </summary>
-        public List<string> Names
+        public List<string> DirectoryNames
         {
-            get { return this._names; }
-            set { this._names = value; }
+            get { return this._directoryNames; }
+            set { this._directoryNames = value; }
         }
 
-        // Check to see if Names property is set
-        internal bool IsSetNames()
+        // Check to see if DirectoryNames property is set
+        internal bool IsSetDirectoryNames()
         {
-            return this._names != null && this._names.Count > 0; 
+            return this._directoryNames != null && this._directoryNames.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property MaxResults. 
+        /// <para>
+        /// The size of each page of results.
+        /// </para>
+        /// </summary>
+        public int MaxResults
+        {
+            get { return this._maxResults.GetValueOrDefault(); }
+            set { this._maxResults = value; }
+        }
+
+        // Check to see if MaxResults property is set
+        internal bool IsSetMaxResults()
+        {
+            return this._maxResults.HasValue; 
         }
 
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// The pagination token to use to retrieve the next page of results for this operation.
-        /// If this value is null, it retrieves the first page.
+        /// The DescribeDirectoryConfigsResult.NextToken from a previous call to DescribeDirectoryConfigs.
+        /// If this is the first call, pass null.
         /// </para>
         /// </summary>
         public string NextToken

@@ -37,6 +37,7 @@ namespace Amazon.AppStream.Model
         private string _description;
         private int? _disconnectTimeoutInSeconds;
         private string _displayName;
+        private DomainJoinInfo _domainJoinInfo;
         private bool? _enableDefaultInternetAccess;
         private string _imageName;
         private string _instanceType;
@@ -120,9 +121,28 @@ namespace Amazon.AppStream.Model
         }
 
         /// <summary>
+        /// Gets and sets the property DomainJoinInfo. 
+        /// <para>
+        /// The <i>DirectoryName</i> and <i>OrganizationalUnitDistinguishedName</i> values, which
+        /// are used to join domains for the AppStream 2.0 streaming instances.
+        /// </para>
+        /// </summary>
+        public DomainJoinInfo DomainJoinInfo
+        {
+            get { return this._domainJoinInfo; }
+            set { this._domainJoinInfo = value; }
+        }
+
+        // Check to see if DomainJoinInfo property is set
+        internal bool IsSetDomainJoinInfo()
+        {
+            return this._domainJoinInfo != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property EnableDefaultInternetAccess. 
         /// <para>
-        /// Enables or disables default Internet access for the fleet.
+        /// Enables or disables default internet access for the fleet.
         /// </para>
         /// </summary>
         public bool EnableDefaultInternetAccess
@@ -159,8 +179,57 @@ namespace Amazon.AppStream.Model
         /// Gets and sets the property InstanceType. 
         /// <para>
         /// The instance type of compute resources for the fleet. Fleet instances are launched
-        /// from this instance type.
+        /// from this instance type. Available instance types are:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// stream.standard.medium
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// stream.standard.large
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// stream.compute.large
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// stream.compute.xlarge
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// stream.compute.2xlarge
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// stream.compute.4xlarge
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// stream.compute.8xlarge
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// stream.memory.large
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// stream.memory.xlarge
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// stream.memory.2xlarge
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// stream.memory.4xlarge
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// stream.memory.8xlarge
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public string InstanceType
         {

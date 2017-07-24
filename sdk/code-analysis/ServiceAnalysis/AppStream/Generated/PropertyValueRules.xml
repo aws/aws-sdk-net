@@ -60,6 +60,7 @@
     <property>Amazon.AppStream.Model.CreateStreamingURLRequest.UserId</property>
     <min>2</min>
     <max>32</max>
+    <pattern>[\w+=,.@-]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppStream.Model.CreateStreamingURLResponse.StreamingURL</property>
@@ -71,6 +72,14 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppStream.Model.DeleteStackRequest.Name</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppStream.Model.DescribeDirectoryConfigsRequest.NextToken</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppStream.Model.DescribeDirectoryConfigsResponse.NextToken</property>
     <min>1</min>
   </property-value-rule>
   <property-value-rule>
@@ -207,6 +216,10 @@
     <min>1</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.AppStream.Model.DomainJoinInfo.OrganizationalUnitDistinguishedName</property>
+    <max>2000</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.AppStream.Model.Fleet.Arn</property>
     <pattern>^arn:aws:[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9][A-Za-z0-9:_/+=,@.-]{0,1023}$</pattern>
   </property-value-rule>
@@ -257,6 +270,15 @@
   <property-value-rule>
     <property>Amazon.AppStream.Model.ImageStateChangeReason.Message</property>
     <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppStream.Model.ServiceAccountCredentials.AccountName</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppStream.Model.ServiceAccountCredentials.AccountPassword</property>
+    <min>1</min>
+    <max>127</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppStream.Model.Session.FleetName</property>

@@ -100,6 +100,12 @@ namespace Amazon.AppStream.Model.Internal.MarshallTransformations
                     unmarshalledObject.DisplayName = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("DomainJoinInfo", targetDepth))
+                {
+                    var unmarshaller = DomainJoinInfoUnmarshaller.Instance;
+                    unmarshalledObject.DomainJoinInfo = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("EnableDefaultInternetAccess", targetDepth))
                 {
                     var unmarshaller = BoolUnmarshaller.Instance;

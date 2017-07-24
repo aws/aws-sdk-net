@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.AppStream.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for UpdateFleet operation
+    /// Response Unmarshaller for UpdateDirectoryConfig operation
     /// </summary>  
-    public class UpdateFleetResponseUnmarshaller : JsonResponseUnmarshaller
+    public class UpdateDirectoryConfigResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,16 +45,16 @@ namespace Amazon.AppStream.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            UpdateFleetResponse response = new UpdateFleetResponse();
+            UpdateDirectoryConfigResponse response = new UpdateDirectoryConfigResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("Fleet", targetDepth))
+                if (context.TestExpression("DirectoryConfig", targetDepth))
                 {
-                    var unmarshaller = FleetUnmarshaller.Instance;
-                    response.Fleet = unmarshaller.Unmarshall(context);
+                    var unmarshaller = DirectoryConfigUnmarshaller.Instance;
+                    response.DirectoryConfig = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -76,33 +76,9 @@ namespace Amazon.AppStream.Model.Internal.MarshallTransformations
             {
                 return new ConcurrentModificationException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("IncompatibleImageException"))
-            {
-                return new IncompatibleImageException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidParameterCombinationException"))
-            {
-                return new InvalidParameterCombinationException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidRoleException"))
-            {
-                return new InvalidRoleException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("LimitExceededException"))
-            {
-                return new LimitExceededException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("OperationNotPermittedException"))
-            {
-                return new OperationNotPermittedException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
             if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceInUseException"))
             {
                 return new ResourceInUseException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceNotAvailableException"))
-            {
-                return new ResourceNotAvailableException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
             if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceNotFoundException"))
             {
@@ -111,9 +87,9 @@ namespace Amazon.AppStream.Model.Internal.MarshallTransformations
             return new AmazonAppStreamException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
 
-        private static UpdateFleetResponseUnmarshaller _instance = new UpdateFleetResponseUnmarshaller();        
+        private static UpdateDirectoryConfigResponseUnmarshaller _instance = new UpdateDirectoryConfigResponseUnmarshaller();        
 
-        internal static UpdateFleetResponseUnmarshaller GetInstance()
+        internal static UpdateDirectoryConfigResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -121,7 +97,7 @@ namespace Amazon.AppStream.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static UpdateFleetResponseUnmarshaller Instance
+        public static UpdateDirectoryConfigResponseUnmarshaller Instance
         {
             get
             {

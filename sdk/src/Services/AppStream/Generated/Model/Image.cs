@@ -104,7 +104,7 @@ namespace Amazon.AppStream.Model
         /// <summary>
         /// Gets and sets the property CreatedTime. 
         /// <para>
-        /// The timestamp when the image was created.
+        /// The time stamp when the image was created.
         /// </para>
         /// </summary>
         public DateTime CreatedTime
@@ -231,8 +231,8 @@ namespace Amazon.AppStream.Model
         /// <summary>
         /// Gets and sets the property State. 
         /// <para>
-        /// The image starts in the <b>PENDING</b> state, and then moves to <b>AVAILABLE</b> if
-        /// image creation succeeds and <b>FAILED</b> if image creation has failed.
+        /// The image starts in the <b>PENDING</b> state. If image creation succeeds, it moves
+        /// to <b>AVAILABLE</b>. If image creation fails, it moves to <b>FAILED</b>.
         /// </para>
         /// </summary>
         public ImageState State

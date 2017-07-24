@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.AppStream.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for UpdateFleet operation
+    /// Response Unmarshaller for DeleteDirectoryConfig operation
     /// </summary>  
-    public class UpdateFleetResponseUnmarshaller : JsonResponseUnmarshaller
+    public class DeleteDirectoryConfigResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,19 +45,8 @@ namespace Amazon.AppStream.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            UpdateFleetResponse response = new UpdateFleetResponse();
+            DeleteDirectoryConfigResponse response = new DeleteDirectoryConfigResponse();
 
-            context.Read();
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
-            {
-                if (context.TestExpression("Fleet", targetDepth))
-                {
-                    var unmarshaller = FleetUnmarshaller.Instance;
-                    response.Fleet = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-            }
 
             return response;
         }
@@ -72,37 +61,9 @@ namespace Amazon.AppStream.Model.Internal.MarshallTransformations
         public override AmazonServiceException UnmarshallException(JsonUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
             ErrorResponse errorResponse = JsonErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
-            if (errorResponse.Code != null && errorResponse.Code.Equals("ConcurrentModificationException"))
-            {
-                return new ConcurrentModificationException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("IncompatibleImageException"))
-            {
-                return new IncompatibleImageException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidParameterCombinationException"))
-            {
-                return new InvalidParameterCombinationException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidRoleException"))
-            {
-                return new InvalidRoleException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("LimitExceededException"))
-            {
-                return new LimitExceededException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("OperationNotPermittedException"))
-            {
-                return new OperationNotPermittedException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
             if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceInUseException"))
             {
                 return new ResourceInUseException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceNotAvailableException"))
-            {
-                return new ResourceNotAvailableException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
             if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceNotFoundException"))
             {
@@ -111,9 +72,9 @@ namespace Amazon.AppStream.Model.Internal.MarshallTransformations
             return new AmazonAppStreamException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
 
-        private static UpdateFleetResponseUnmarshaller _instance = new UpdateFleetResponseUnmarshaller();        
+        private static DeleteDirectoryConfigResponseUnmarshaller _instance = new DeleteDirectoryConfigResponseUnmarshaller();        
 
-        internal static UpdateFleetResponseUnmarshaller GetInstance()
+        internal static DeleteDirectoryConfigResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -121,7 +82,7 @@ namespace Amazon.AppStream.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static UpdateFleetResponseUnmarshaller Instance
+        public static DeleteDirectoryConfigResponseUnmarshaller Instance
         {
             get
             {

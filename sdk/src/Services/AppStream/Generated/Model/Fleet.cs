@@ -38,6 +38,7 @@ namespace Amazon.AppStream.Model
         private string _description;
         private int? _disconnectTimeoutInSeconds;
         private string _displayName;
+        private DomainJoinInfo _domainJoinInfo;
         private bool? _enableDefaultInternetAccess;
         private List<FleetError> _fleetErrors = new List<FleetError>();
         private string _imageName;
@@ -159,9 +160,28 @@ namespace Amazon.AppStream.Model
         }
 
         /// <summary>
+        /// Gets and sets the property DomainJoinInfo. 
+        /// <para>
+        /// The <i>DirectoryName</i> and <i>OrganizationalUnitDistinguishedName</i> values, which
+        /// are used to join domains for the AppStream 2.0 streaming instances.
+        /// </para>
+        /// </summary>
+        public DomainJoinInfo DomainJoinInfo
+        {
+            get { return this._domainJoinInfo; }
+            set { this._domainJoinInfo = value; }
+        }
+
+        // Check to see if DomainJoinInfo property is set
+        internal bool IsSetDomainJoinInfo()
+        {
+            return this._domainJoinInfo != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property EnableDefaultInternetAccess. 
         /// <para>
-        /// Whether default Internet access is enabled for the fleet. 
+        /// Whether default internet access is enabled for the fleet. 
         /// </para>
         /// </summary>
         public bool EnableDefaultInternetAccess

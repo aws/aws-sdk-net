@@ -96,6 +96,17 @@ namespace Amazon.AppStream.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.DisplayName);
                 }
 
+                if(publicRequest.IsSetDomainJoinInfo())
+                {
+                    context.Writer.WritePropertyName("DomainJoinInfo");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = DomainJoinInfoMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.DomainJoinInfo, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetEnableDefaultInternetAccess())
                 {
                     context.Writer.WritePropertyName("EnableDefaultInternetAccess");

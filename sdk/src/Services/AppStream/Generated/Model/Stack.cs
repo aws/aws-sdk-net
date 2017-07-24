@@ -61,7 +61,7 @@ namespace Amazon.AppStream.Model
         /// <summary>
         /// Gets and sets the property CreatedTime. 
         /// <para>
-        /// The timestamp when the stack was created.
+        /// The time stamp when the stack was created.
         /// </para>
         /// </summary>
         public DateTime CreatedTime

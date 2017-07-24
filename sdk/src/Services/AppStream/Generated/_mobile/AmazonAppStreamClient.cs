@@ -265,6 +265,38 @@ namespace Amazon.AppStream
 
         #endregion
         
+        #region  CreateDirectoryConfig
+
+        internal CreateDirectoryConfigResponse CreateDirectoryConfig(CreateDirectoryConfigRequest request)
+        {
+            var marshaller = new CreateDirectoryConfigRequestMarshaller();
+            var unmarshaller = CreateDirectoryConfigResponseUnmarshaller.Instance;
+
+            return Invoke<CreateDirectoryConfigRequest,CreateDirectoryConfigResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateDirectoryConfig operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateDirectoryConfig operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/CreateDirectoryConfig">REST API Reference for CreateDirectoryConfig Operation</seealso>
+        public Task<CreateDirectoryConfigResponse> CreateDirectoryConfigAsync(CreateDirectoryConfigRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new CreateDirectoryConfigRequestMarshaller();
+            var unmarshaller = CreateDirectoryConfigResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateDirectoryConfigRequest,CreateDirectoryConfigResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateFleet
 
         internal CreateFleetResponse CreateFleet(CreateFleetRequest request)
@@ -361,6 +393,38 @@ namespace Amazon.AppStream
 
         #endregion
         
+        #region  DeleteDirectoryConfig
+
+        internal DeleteDirectoryConfigResponse DeleteDirectoryConfig(DeleteDirectoryConfigRequest request)
+        {
+            var marshaller = new DeleteDirectoryConfigRequestMarshaller();
+            var unmarshaller = DeleteDirectoryConfigResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteDirectoryConfigRequest,DeleteDirectoryConfigResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteDirectoryConfig operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteDirectoryConfig operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DeleteDirectoryConfig">REST API Reference for DeleteDirectoryConfig Operation</seealso>
+        public Task<DeleteDirectoryConfigResponse> DeleteDirectoryConfigAsync(DeleteDirectoryConfigRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DeleteDirectoryConfigRequestMarshaller();
+            var unmarshaller = DeleteDirectoryConfigResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteDirectoryConfigRequest,DeleteDirectoryConfigResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeleteFleet
 
         internal DeleteFleetResponse DeleteFleet(DeleteFleetRequest request)
@@ -420,6 +484,38 @@ namespace Amazon.AppStream
             var unmarshaller = DeleteStackResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteStackRequest,DeleteStackResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeDirectoryConfigs
+
+        internal DescribeDirectoryConfigsResponse DescribeDirectoryConfigs(DescribeDirectoryConfigsRequest request)
+        {
+            var marshaller = new DescribeDirectoryConfigsRequestMarshaller();
+            var unmarshaller = DescribeDirectoryConfigsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeDirectoryConfigsRequest,DescribeDirectoryConfigsResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeDirectoryConfigs operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeDirectoryConfigs operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeDirectoryConfigs">REST API Reference for DescribeDirectoryConfigs Operation</seealso>
+        public Task<DescribeDirectoryConfigsResponse> DescribeDirectoryConfigsAsync(DescribeDirectoryConfigsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DescribeDirectoryConfigsRequestMarshaller();
+            var unmarshaller = DescribeDirectoryConfigsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeDirectoryConfigsRequest,DescribeDirectoryConfigsResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -740,6 +836,38 @@ namespace Amazon.AppStream
             var unmarshaller = StopFleetResponseUnmarshaller.Instance;
 
             return InvokeAsync<StopFleetRequest,StopFleetResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateDirectoryConfig
+
+        internal UpdateDirectoryConfigResponse UpdateDirectoryConfig(UpdateDirectoryConfigRequest request)
+        {
+            var marshaller = new UpdateDirectoryConfigRequestMarshaller();
+            var unmarshaller = UpdateDirectoryConfigResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateDirectoryConfigRequest,UpdateDirectoryConfigResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateDirectoryConfig operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateDirectoryConfig operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/UpdateDirectoryConfig">REST API Reference for UpdateDirectoryConfig Operation</seealso>
+        public Task<UpdateDirectoryConfigResponse> UpdateDirectoryConfigAsync(UpdateDirectoryConfigRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new UpdateDirectoryConfigRequestMarshaller();
+            var unmarshaller = UpdateDirectoryConfigResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateDirectoryConfigRequest,UpdateDirectoryConfigResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 

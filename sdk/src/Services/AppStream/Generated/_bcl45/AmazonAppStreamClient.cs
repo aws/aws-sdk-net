@@ -246,6 +246,9 @@ namespace Amazon.AppStream
         /// <exception cref="Amazon.AppStream.Model.LimitExceededException">
         /// The requested limit exceeds the permitted limit for an account.
         /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.OperationNotPermittedException">
+        /// The attempted operation is not permitted.
+        /// </exception>
         /// <exception cref="Amazon.AppStream.Model.ResourceNotFoundException">
         /// The specified resource was not found.
         /// </exception>
@@ -279,6 +282,51 @@ namespace Amazon.AppStream
 
         #endregion
         
+        #region  CreateDirectoryConfig
+
+
+        /// <summary>
+        /// Creates a directory configuration with the given parameters.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateDirectoryConfig service method.</param>
+        /// 
+        /// <returns>The response from the CreateDirectoryConfig service method, as returned by AppStream.</returns>
+        /// <exception cref="Amazon.AppStream.Model.LimitExceededException">
+        /// The requested limit exceeds the permitted limit for an account.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.ResourceAlreadyExistsException">
+        /// The specified resource already exists.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/CreateDirectoryConfig">REST API Reference for CreateDirectoryConfig Operation</seealso>
+        public CreateDirectoryConfigResponse CreateDirectoryConfig(CreateDirectoryConfigRequest request)
+        {
+            var marshaller = new CreateDirectoryConfigRequestMarshaller();
+            var unmarshaller = CreateDirectoryConfigResponseUnmarshaller.Instance;
+
+            return Invoke<CreateDirectoryConfigRequest,CreateDirectoryConfigResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateDirectoryConfig operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateDirectoryConfig operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/CreateDirectoryConfig">REST API Reference for CreateDirectoryConfig Operation</seealso>
+        public Task<CreateDirectoryConfigResponse> CreateDirectoryConfigAsync(CreateDirectoryConfigRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new CreateDirectoryConfigRequestMarshaller();
+            var unmarshaller = CreateDirectoryConfigResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateDirectoryConfigRequest,CreateDirectoryConfigResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateFleet
 
 
@@ -290,6 +338,12 @@ namespace Amazon.AppStream
         /// <returns>The response from the CreateFleet service method, as returned by AppStream.</returns>
         /// <exception cref="Amazon.AppStream.Model.ConcurrentModificationException">
         /// An API error occurred. Wait a few minutes and try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.IncompatibleImageException">
+        /// The image does not support storage connectors.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.InvalidParameterCombinationException">
+        /// Indicates an incorrect combination of parameters, or a missing parameter.
         /// </exception>
         /// <exception cref="Amazon.AppStream.Model.InvalidRoleException">
         /// The specified role is invalid.
@@ -445,6 +499,51 @@ namespace Amazon.AppStream
 
         #endregion
         
+        #region  DeleteDirectoryConfig
+
+
+        /// <summary>
+        /// Deletes the directory configuration with the given parameters.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteDirectoryConfig service method.</param>
+        /// 
+        /// <returns>The response from the DeleteDirectoryConfig service method, as returned by AppStream.</returns>
+        /// <exception cref="Amazon.AppStream.Model.ResourceInUseException">
+        /// The specified resource is in use.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DeleteDirectoryConfig">REST API Reference for DeleteDirectoryConfig Operation</seealso>
+        public DeleteDirectoryConfigResponse DeleteDirectoryConfig(DeleteDirectoryConfigRequest request)
+        {
+            var marshaller = new DeleteDirectoryConfigRequestMarshaller();
+            var unmarshaller = DeleteDirectoryConfigResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteDirectoryConfigRequest,DeleteDirectoryConfigResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteDirectoryConfig operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteDirectoryConfig operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DeleteDirectoryConfig">REST API Reference for DeleteDirectoryConfig Operation</seealso>
+        public Task<DeleteDirectoryConfigResponse> DeleteDirectoryConfigAsync(DeleteDirectoryConfigRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DeleteDirectoryConfigRequestMarshaller();
+            var unmarshaller = DeleteDirectoryConfigResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteDirectoryConfigRequest,DeleteDirectoryConfigResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeleteFleet
 
 
@@ -542,6 +641,48 @@ namespace Amazon.AppStream
 
         #endregion
         
+        #region  DescribeDirectoryConfigs
+
+
+        /// <summary>
+        /// Returns a list describing the specified directory configurations.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeDirectoryConfigs service method.</param>
+        /// 
+        /// <returns>The response from the DescribeDirectoryConfigs service method, as returned by AppStream.</returns>
+        /// <exception cref="Amazon.AppStream.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeDirectoryConfigs">REST API Reference for DescribeDirectoryConfigs Operation</seealso>
+        public DescribeDirectoryConfigsResponse DescribeDirectoryConfigs(DescribeDirectoryConfigsRequest request)
+        {
+            var marshaller = new DescribeDirectoryConfigsRequestMarshaller();
+            var unmarshaller = DescribeDirectoryConfigsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeDirectoryConfigsRequest,DescribeDirectoryConfigsResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeDirectoryConfigs operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeDirectoryConfigs operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeDirectoryConfigs">REST API Reference for DescribeDirectoryConfigs Operation</seealso>
+        public Task<DescribeDirectoryConfigsResponse> DescribeDirectoryConfigsAsync(DescribeDirectoryConfigsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DescribeDirectoryConfigsRequestMarshaller();
+            var unmarshaller = DescribeDirectoryConfigsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeDirectoryConfigsRequest,DescribeDirectoryConfigsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DescribeFleets
 
 
@@ -633,9 +774,9 @@ namespace Amazon.AppStream
 
         /// <summary>
         /// Describes the streaming sessions for a stack and a fleet. If a user ID is provided,
-        /// this operation returns streaming sessions for only that user. Pass this value for
-        /// the <code>nextToken</code> parameter in a subsequent call to this operation to retrieve
-        /// the next set of items. If an authentication type is not provided, the operation defaults
+        /// this operation returns streaming sessions for only that user. To retrieve the next
+        /// set of items, pass this value for the <code>nextToken</code> parameter in a subsequent
+        /// call to this operation. If an authentication type is not provided, the operation defaults
         /// to users authenticated using a streaming URL.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeSessions service method.</param>
@@ -679,8 +820,8 @@ namespace Amazon.AppStream
 
         /// <summary>
         /// If stack names are not provided, this operation describes the specified stacks; otherwise,
-        /// all stacks in the account are described. Pass the <code>nextToken</code> value in
-        /// a subsequent call to this operation to retrieve the next set of items.
+        /// all stacks in the account are described. To retrieve the next set of items, pass the
+        /// <code>nextToken</code> value in a subsequent call to this operation.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeStacks service method.</param>
         /// 
@@ -979,6 +1120,54 @@ namespace Amazon.AppStream
 
         #endregion
         
+        #region  UpdateDirectoryConfig
+
+
+        /// <summary>
+        /// Updates the directory configuration with the given parameters.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateDirectoryConfig service method.</param>
+        /// 
+        /// <returns>The response from the UpdateDirectoryConfig service method, as returned by AppStream.</returns>
+        /// <exception cref="Amazon.AppStream.Model.ConcurrentModificationException">
+        /// An API error occurred. Wait a few minutes and try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.ResourceInUseException">
+        /// The specified resource is in use.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/UpdateDirectoryConfig">REST API Reference for UpdateDirectoryConfig Operation</seealso>
+        public UpdateDirectoryConfigResponse UpdateDirectoryConfig(UpdateDirectoryConfigRequest request)
+        {
+            var marshaller = new UpdateDirectoryConfigRequestMarshaller();
+            var unmarshaller = UpdateDirectoryConfigResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateDirectoryConfigRequest,UpdateDirectoryConfigResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateDirectoryConfig operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateDirectoryConfig operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/UpdateDirectoryConfig">REST API Reference for UpdateDirectoryConfig Operation</seealso>
+        public Task<UpdateDirectoryConfigResponse> UpdateDirectoryConfigAsync(UpdateDirectoryConfigRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new UpdateDirectoryConfigRequestMarshaller();
+            var unmarshaller = UpdateDirectoryConfigResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateDirectoryConfigRequest,UpdateDirectoryConfigResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  UpdateFleet
 
 
@@ -1005,6 +1194,9 @@ namespace Amazon.AppStream
         /// </exception>
         /// <exception cref="Amazon.AppStream.Model.LimitExceededException">
         /// The requested limit exceeds the permitted limit for an account.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.OperationNotPermittedException">
+        /// The attempted operation is not permitted.
         /// </exception>
         /// <exception cref="Amazon.AppStream.Model.ResourceInUseException">
         /// The specified resource is in use.

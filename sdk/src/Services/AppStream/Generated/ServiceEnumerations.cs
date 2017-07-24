@@ -85,6 +85,10 @@ namespace Amazon.AppStream
     {
 
         /// <summary>
+        /// Constant DOMAIN_JOIN_INFO for FleetAttribute
+        /// </summary>
+        public static readonly FleetAttribute DOMAIN_JOIN_INFO = new FleetAttribute("DOMAIN_JOIN_INFO");
+        /// <summary>
         /// Constant VPC_CONFIGURATION for FleetAttribute
         /// </summary>
         public static readonly FleetAttribute VPC_CONFIGURATION = new FleetAttribute("VPC_CONFIGURATION");
@@ -135,9 +139,61 @@ namespace Amazon.AppStream
     {
 
         /// <summary>
+        /// Constant DOMAIN_JOIN_ERROR_ACCESS_DENIED for FleetErrorCode
+        /// </summary>
+        public static readonly FleetErrorCode DOMAIN_JOIN_ERROR_ACCESS_DENIED = new FleetErrorCode("DOMAIN_JOIN_ERROR_ACCESS_DENIED");
+        /// <summary>
+        /// Constant DOMAIN_JOIN_ERROR_DS_MACHINE_ACCOUNT_QUOTA_EXCEEDED for FleetErrorCode
+        /// </summary>
+        public static readonly FleetErrorCode DOMAIN_JOIN_ERROR_DS_MACHINE_ACCOUNT_QUOTA_EXCEEDED = new FleetErrorCode("DOMAIN_JOIN_ERROR_DS_MACHINE_ACCOUNT_QUOTA_EXCEEDED");
+        /// <summary>
+        /// Constant DOMAIN_JOIN_ERROR_FILE_NOT_FOUND for FleetErrorCode
+        /// </summary>
+        public static readonly FleetErrorCode DOMAIN_JOIN_ERROR_FILE_NOT_FOUND = new FleetErrorCode("DOMAIN_JOIN_ERROR_FILE_NOT_FOUND");
+        /// <summary>
+        /// Constant DOMAIN_JOIN_ERROR_INVALID_PARAMETER for FleetErrorCode
+        /// </summary>
+        public static readonly FleetErrorCode DOMAIN_JOIN_ERROR_INVALID_PARAMETER = new FleetErrorCode("DOMAIN_JOIN_ERROR_INVALID_PARAMETER");
+        /// <summary>
+        /// Constant DOMAIN_JOIN_ERROR_LOGON_FAILURE for FleetErrorCode
+        /// </summary>
+        public static readonly FleetErrorCode DOMAIN_JOIN_ERROR_LOGON_FAILURE = new FleetErrorCode("DOMAIN_JOIN_ERROR_LOGON_FAILURE");
+        /// <summary>
+        /// Constant DOMAIN_JOIN_ERROR_MORE_DATA for FleetErrorCode
+        /// </summary>
+        public static readonly FleetErrorCode DOMAIN_JOIN_ERROR_MORE_DATA = new FleetErrorCode("DOMAIN_JOIN_ERROR_MORE_DATA");
+        /// <summary>
+        /// Constant DOMAIN_JOIN_ERROR_NO_SUCH_DOMAIN for FleetErrorCode
+        /// </summary>
+        public static readonly FleetErrorCode DOMAIN_JOIN_ERROR_NO_SUCH_DOMAIN = new FleetErrorCode("DOMAIN_JOIN_ERROR_NO_SUCH_DOMAIN");
+        /// <summary>
+        /// Constant DOMAIN_JOIN_ERROR_NOT_SUPPORTED for FleetErrorCode
+        /// </summary>
+        public static readonly FleetErrorCode DOMAIN_JOIN_ERROR_NOT_SUPPORTED = new FleetErrorCode("DOMAIN_JOIN_ERROR_NOT_SUPPORTED");
+        /// <summary>
+        /// Constant DOMAIN_JOIN_INTERNAL_SERVICE_ERROR for FleetErrorCode
+        /// </summary>
+        public static readonly FleetErrorCode DOMAIN_JOIN_INTERNAL_SERVICE_ERROR = new FleetErrorCode("DOMAIN_JOIN_INTERNAL_SERVICE_ERROR");
+        /// <summary>
+        /// Constant DOMAIN_JOIN_NERR_INVALID_WORKGROUP_NAME for FleetErrorCode
+        /// </summary>
+        public static readonly FleetErrorCode DOMAIN_JOIN_NERR_INVALID_WORKGROUP_NAME = new FleetErrorCode("DOMAIN_JOIN_NERR_INVALID_WORKGROUP_NAME");
+        /// <summary>
+        /// Constant DOMAIN_JOIN_NERR_PASSWORD_EXPIRED for FleetErrorCode
+        /// </summary>
+        public static readonly FleetErrorCode DOMAIN_JOIN_NERR_PASSWORD_EXPIRED = new FleetErrorCode("DOMAIN_JOIN_NERR_PASSWORD_EXPIRED");
+        /// <summary>
+        /// Constant DOMAIN_JOIN_NERR_WORKSTATION_NOT_STARTED for FleetErrorCode
+        /// </summary>
+        public static readonly FleetErrorCode DOMAIN_JOIN_NERR_WORKSTATION_NOT_STARTED = new FleetErrorCode("DOMAIN_JOIN_NERR_WORKSTATION_NOT_STARTED");
+        /// <summary>
         /// Constant IAM_SERVICE_ROLE_IS_MISSING for FleetErrorCode
         /// </summary>
         public static readonly FleetErrorCode IAM_SERVICE_ROLE_IS_MISSING = new FleetErrorCode("IAM_SERVICE_ROLE_IS_MISSING");
+        /// <summary>
+        /// Constant IAM_SERVICE_ROLE_MISSING_DESCRIBE_SECURITY_GROUPS_ACTION for FleetErrorCode
+        /// </summary>
+        public static readonly FleetErrorCode IAM_SERVICE_ROLE_MISSING_DESCRIBE_SECURITY_GROUPS_ACTION = new FleetErrorCode("IAM_SERVICE_ROLE_MISSING_DESCRIBE_SECURITY_GROUPS_ACTION");
         /// <summary>
         /// Constant IAM_SERVICE_ROLE_MISSING_DESCRIBE_SUBNET_ACTION for FleetErrorCode
         /// </summary>
@@ -170,6 +226,10 @@ namespace Amazon.AppStream
         /// Constant NETWORK_INTERFACE_LIMIT_EXCEEDED for FleetErrorCode
         /// </summary>
         public static readonly FleetErrorCode NETWORK_INTERFACE_LIMIT_EXCEEDED = new FleetErrorCode("NETWORK_INTERFACE_LIMIT_EXCEEDED");
+        /// <summary>
+        /// Constant SECURITY_GROUPS_NOT_FOUND for FleetErrorCode
+        /// </summary>
+        public static readonly FleetErrorCode SECURITY_GROUPS_NOT_FOUND = new FleetErrorCode("SECURITY_GROUPS_NOT_FOUND");
         /// <summary>
         /// Constant SUBNET_HAS_INSUFFICIENT_IP_ADDRESSES for FleetErrorCode
         /// </summary>

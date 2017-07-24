@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.AppStream.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for AssociateFleet operation
+    /// Response Unmarshaller for DescribeDirectoryConfigs operation
     /// </summary>  
-    public class AssociateFleetResponseUnmarshaller : JsonResponseUnmarshaller
+    public class DescribeDirectoryConfigsResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,8 +45,25 @@ namespace Amazon.AppStream.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            AssociateFleetResponse response = new AssociateFleetResponse();
+            DescribeDirectoryConfigsResponse response = new DescribeDirectoryConfigsResponse();
 
+            context.Read();
+            int targetDepth = context.CurrentDepth;
+            while (context.ReadAtDepth(targetDepth))
+            {
+                if (context.TestExpression("DirectoryConfigs", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<DirectoryConfig, DirectoryConfigUnmarshaller>(DirectoryConfigUnmarshaller.Instance);
+                    response.DirectoryConfigs = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("NextToken", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.NextToken = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+            }
 
             return response;
         }
@@ -61,22 +78,6 @@ namespace Amazon.AppStream.Model.Internal.MarshallTransformations
         public override AmazonServiceException UnmarshallException(JsonUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
             ErrorResponse errorResponse = JsonErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
-            if (errorResponse.Code != null && errorResponse.Code.Equals("ConcurrentModificationException"))
-            {
-                return new ConcurrentModificationException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("IncompatibleImageException"))
-            {
-                return new IncompatibleImageException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("LimitExceededException"))
-            {
-                return new LimitExceededException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("OperationNotPermittedException"))
-            {
-                return new OperationNotPermittedException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
             if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceNotFoundException"))
             {
                 return new ResourceNotFoundException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
@@ -84,9 +85,9 @@ namespace Amazon.AppStream.Model.Internal.MarshallTransformations
             return new AmazonAppStreamException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
 
-        private static AssociateFleetResponseUnmarshaller _instance = new AssociateFleetResponseUnmarshaller();        
+        private static DescribeDirectoryConfigsResponseUnmarshaller _instance = new DescribeDirectoryConfigsResponseUnmarshaller();        
 
-        internal static AssociateFleetResponseUnmarshaller GetInstance()
+        internal static DescribeDirectoryConfigsResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -94,7 +95,7 @@ namespace Amazon.AppStream.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static AssociateFleetResponseUnmarshaller Instance
+        public static DescribeDirectoryConfigsResponseUnmarshaller Instance
         {
             get
             {
