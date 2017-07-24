@@ -1,3 +1,11 @@
+### 3.3.127.0 (2017-07-24 20:34 UTC)
+* AppStream (3.3.4.0)
+	* Amazon AppStream 2.0 image builders and fleets can now access applications and network resources that rely on Microsoft Active Directory (AD) for authentication and permissions. This new feature allows you to join your streaming instances to your AD, so you can use your existing AD user management tools. 
+* EC2 (3.3.17.0)
+	* Spot Fleet tagging capability allows customers to automatically tag instances launched by Spot Fleet. You can use this feature to label or distinguish instances created by distinct Spot Fleets. Tagging your EC2 instances also enables you to see instance cost allocation by tag in your AWS bill.
+* Core 3.3.17.4
+	* Made the ‘profile’ keyword, which can be added to the profile name parameter in the shared credentials file, optional.
+
 ### 3.3.126.1 (2017-07-24 15:26 UTC)
 * SimpleNotificationService (3.3.0.21)
 	* Updated to use new Core, version 3.3.17.3
