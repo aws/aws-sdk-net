@@ -1,7 +1,7 @@
 
 {
-    "ProductVersion" : "3.3.126.0",
-    "CoreVersion"    : "3.3.17.2",
+    "ProductVersion" : "3.3.126.1",
+    "CoreVersion"    : "3.3.17.3",
     "DefaultToPreview" : false,
     "ServiceVersions"  : {
         "CloudHSM" : {
@@ -345,10 +345,10 @@
             "InPreview"               : false
         },
         "SimpleNotificationService" : {
-            "Version" : "3.3.0.20",
+            "Version" : "3.3.0.21",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
-                "Core" : "3.3.17.0"
+                "Core" : "3.3.17.3"
             },
             "InPreview"               : false
         },

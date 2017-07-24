@@ -1,3 +1,11 @@
+### 3.3.126.1 (2017-07-24 15:26 UTC)
+* SimpleNotificationService (3.3.0.21)
+	* Updated to use new Core, version 3.3.17.3
+	* Add IsMessageSignatureValid method to .NET Core SDK.
+https://github.com/aws/aws-sdk-net/issues/702
+* Core 3.3.17.3
+	* Stop wrapping exceptions in AsyncHelpers with AggregateException.
+
 ### 3.3.126.0 (2017-07-20 22:09 UTC)
 * ElasticMapReduce (3.3.4.0)
 	* Amazon EMR now includes the ability to use a custom Amazon Linux AMI and adjustable root volume size when launching a cluster.
