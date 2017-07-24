@@ -147,6 +147,13 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.SubnetId = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("tagSpecificationSet/item", targetDepth))
+                    {
+                        var unmarshaller = SpotFleetTagSpecificationUnmarshaller.Instance;
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.TagSpecifications.Add(item);
+                        continue;
+                    }
                     if (context.TestExpression("userData", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

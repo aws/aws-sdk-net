@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// This is the response object from the DescribeNetworkInterfacePermissions operation.
+    /// Contains the output for DescribeNetworkInterfacePermissions.
     /// </summary>
     public partial class DescribeNetworkInterfacePermissionsResponse : AmazonWebServiceResponse
     {

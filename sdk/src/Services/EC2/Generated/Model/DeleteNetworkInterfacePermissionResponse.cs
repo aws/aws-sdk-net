@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// This is the response object from the DeleteNetworkInterfacePermission operation.
+    /// Contains the output for DeleteNetworkInterfacePermission.
     /// </summary>
     public partial class DeleteNetworkInterfacePermissionResponse : AmazonWebServiceResponse
     {

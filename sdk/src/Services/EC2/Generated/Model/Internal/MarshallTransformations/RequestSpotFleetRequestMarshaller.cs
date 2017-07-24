@@ -298,6 +298,34 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                             {
                                 request.Parameters.Add("SpotFleetRequestConfig" + "." + "LaunchSpecifications" + "." + publicRequestSpotFleetRequestConfiglistValueIndex + "." + "SubnetId", StringUtils.FromString(publicRequestSpotFleetRequestConfiglistValue.SubnetId));
                             }
+                            if(publicRequestSpotFleetRequestConfiglistValue.IsSetTagSpecifications())
+                            {
+                                int publicRequestSpotFleetRequestConfiglistValuelistValueIndex = 1;
+                                foreach(var publicRequestSpotFleetRequestConfiglistValuelistValue in publicRequestSpotFleetRequestConfiglistValue.TagSpecifications)
+                                {
+                                    if(publicRequestSpotFleetRequestConfiglistValuelistValue.IsSetResourceType())
+                                    {
+                                        request.Parameters.Add("SpotFleetRequestConfig" + "." + "LaunchSpecifications" + "." + publicRequestSpotFleetRequestConfiglistValueIndex + "." + "TagSpecificationSet" + "." + publicRequestSpotFleetRequestConfiglistValuelistValueIndex + "." + "ResourceType", StringUtils.FromString(publicRequestSpotFleetRequestConfiglistValuelistValue.ResourceType));
+                                    }
+                                    if(publicRequestSpotFleetRequestConfiglistValuelistValue.IsSetTags())
+                                    {
+                                        int publicRequestSpotFleetRequestConfiglistValuelistValuelistValueIndex = 1;
+                                        foreach(var publicRequestSpotFleetRequestConfiglistValuelistValuelistValue in publicRequestSpotFleetRequestConfiglistValuelistValue.Tags)
+                                        {
+                                            if(publicRequestSpotFleetRequestConfiglistValuelistValuelistValue.IsSetKey())
+                                            {
+                                                request.Parameters.Add("SpotFleetRequestConfig" + "." + "LaunchSpecifications" + "." + publicRequestSpotFleetRequestConfiglistValueIndex + "." + "TagSpecificationSet" + "." + publicRequestSpotFleetRequestConfiglistValuelistValueIndex + "." + "Tag" + "." + publicRequestSpotFleetRequestConfiglistValuelistValuelistValueIndex + "." + "Key", StringUtils.FromString(publicRequestSpotFleetRequestConfiglistValuelistValuelistValue.Key));
+                                            }
+                                            if(publicRequestSpotFleetRequestConfiglistValuelistValuelistValue.IsSetValue())
+                                            {
+                                                request.Parameters.Add("SpotFleetRequestConfig" + "." + "LaunchSpecifications" + "." + publicRequestSpotFleetRequestConfiglistValueIndex + "." + "TagSpecificationSet" + "." + publicRequestSpotFleetRequestConfiglistValuelistValueIndex + "." + "Tag" + "." + publicRequestSpotFleetRequestConfiglistValuelistValuelistValueIndex + "." + "Value", StringUtils.FromString(publicRequestSpotFleetRequestConfiglistValuelistValuelistValue.Value));
+                                            }
+                                            publicRequestSpotFleetRequestConfiglistValuelistValuelistValueIndex++;
+                                        }
+                                    }
+                                    publicRequestSpotFleetRequestConfiglistValuelistValueIndex++;
+                                }
+                            }
                             if(publicRequestSpotFleetRequestConfiglistValue.IsSetUserData())
                             {
                                 request.Parameters.Add("SpotFleetRequestConfig" + "." + "LaunchSpecifications" + "." + publicRequestSpotFleetRequestConfiglistValueIndex + "." + "UserData", StringUtils.FromString(publicRequestSpotFleetRequestConfiglistValue.UserData));

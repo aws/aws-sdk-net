@@ -47,6 +47,7 @@ namespace Amazon.EC2.Model
         private List<GroupIdentifier> _securityGroups = new List<GroupIdentifier>();
         private string _spotPrice;
         private string _subnetId;
+        private List<SpotFleetTagSpecification> _tagSpecifications = new List<SpotFleetTagSpecification>();
         private string _userData;
         private double? _weightedCapacity;
 
@@ -331,6 +332,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetSubnetId()
         {
             return this._subnetId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TagSpecifications. 
+        /// <para>
+        /// The tags to apply during creation.
+        /// </para>
+        /// </summary>
+        public List<SpotFleetTagSpecification> TagSpecifications
+        {
+            get { return this._tagSpecifications; }
+            set { this._tagSpecifications = value; }
+        }
+
+        // Check to see if TagSpecifications property is set
+        internal bool IsSetTagSpecifications()
+        {
+            return this._tagSpecifications != null && this._tagSpecifications.Count > 0; 
         }
 
         /// <summary>
