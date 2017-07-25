@@ -11,207 +11,246 @@ using System.Diagnostics;
 using System.Net.Http;
 
 using Xunit;
-
+using Amazon.KeyManagementService;
+using Amazon.KeyManagementService.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal.Util;
 
 namespace Amazon.DNXCore.IntegrationTests.S3
 {
     public class EncryptionTests : TestBase<AmazonS3Client>
     {
-        private static Random random = new Random();
-        private static string bucketName;
-        private string filePath = "";
-        private static string sampleContent = "Encryption Client Testing!";
+        private const string InstructionAndKMSErrorMessage = "AmazonS3EncryptionClient only supports KMS key wrapping in metadata storage mode. " +
+               "Please set StorageMode to CryptoStorageMode.ObjectMetadata or refrain from using KMS EncryptionMaterials.";
 
-        private static AmazonS3EncryptionClient s3EncryptionClientMetadataMode;
-        private static AmazonS3EncryptionClient s3EncryptionClientFileMode;
-        private static EncryptionMaterials encryptionMaterials = new EncryptionMaterials(CreateAsymmetricProvider());
+        private const long MegSize = 1048576;
+        private const string sampleContent = "Encryption Client Testing!";
 
-        private List<string> _filesToDelete = new List<string>();
+        private static readonly byte[] sampleContentBytes = Encoding.UTF8.GetBytes(sampleContent);
+        private static readonly string filePath = Path.Combine(Path.GetTempPath(), "EncryptionPutObjectFile.txt");
 
+        private Random random = new Random();
+        private string bucketName;
+        private string kmsKeyID;
+
+        private AmazonS3EncryptionClient s3EncryptionClientMetadataMode;
+        private AmazonS3EncryptionClient s3EncryptionClientFileMode;
+        private AmazonS3EncryptionClient s3EncryptionClientMetadataModeKMS;
+        private AmazonS3EncryptionClient s3EncryptionClientFileModeKMS;
+        
         public EncryptionTests()
         {
-            s3EncryptionClientMetadataMode = new AmazonS3EncryptionClient(encryptionMaterials);
+            using (var kmsClient = new AmazonKeyManagementServiceClient())
+            {
+                var response = CallAsyncTask(
+                    kmsClient.CreateKeyAsync(new CreateKeyRequest
+                    {
+                        Description = "Key for .NET integration tests.",
+                        Origin = OriginType.AWS_KMS,
+                        KeyUsage = KeyUsageType.ENCRYPT_DECRYPT
+                    }));
+                kmsKeyID = response.KeyMetadata.KeyId;
+            }
+
+            var encryptionMaterials = new EncryptionMaterials(RSA.Create());
+            var kmsEncryptionMaterials = new EncryptionMaterials(kmsKeyID);
 
             AmazonS3CryptoConfiguration config = new AmazonS3CryptoConfiguration()
             {
                 StorageMode = CryptoStorageMode.InstructionFile
             };
+
+            s3EncryptionClientMetadataMode = new AmazonS3EncryptionClient(encryptionMaterials);
             s3EncryptionClientFileMode = new AmazonS3EncryptionClient(config, encryptionMaterials);
+            s3EncryptionClientMetadataModeKMS = new AmazonS3EncryptionClient(kmsEncryptionMaterials);
+            s3EncryptionClientFileModeKMS = new AmazonS3EncryptionClient(config, kmsEncryptionMaterials);
 
-
-            filePath = Path.Combine(Path.GetTempPath(), "EncryptionPutObjectFile.txt");
             using (StreamWriter writer = File.CreateText(filePath))
             {
                 writer.Write(sampleContent);
             }
-            _filesToDelete.Add(filePath);
-
-            bucketName = UtilityMethods.CreateBucketAsync(s3EncryptionClientFileMode, "EncryptionTests").Result;
+            bucketName = CallAsyncTask(UtilityMethods.CreateBucketAsync(s3EncryptionClientFileMode, GetType().Name));
         }
 
-        protected override void Dispose(bool disposing) 
+        protected override void Dispose(bool disposing)
         {
-            UtilityMethods.DeleteBucketWithObjectsAsync(s3EncryptionClientMetadataMode, bucketName).Wait();
+            using (var kmsClient = new AmazonKeyManagementServiceClient())
+            {
+                CallAsyncTask(
+                    kmsClient.ScheduleKeyDeletionAsync(new ScheduleKeyDeletionRequest
+                    {
+                        KeyId = kmsKeyID,
+                        PendingWindowInDays = 7
+                    }));
+            }
 
+            CallAsyncTask(
+                UtilityMethods.DeleteBucketWithObjectsAsync(s3EncryptionClientMetadataMode, bucketName));
             s3EncryptionClientMetadataMode.Dispose();
             s3EncryptionClientFileMode.Dispose();
-
-            foreach(string file in _filesToDelete)
-            {
-                if (File.Exists(file))
-                {
-                    File.Delete(file);
-                }
-            }
-
-            base.Dispose(disposing);
+            s3EncryptionClientMetadataModeKMS.Dispose();
+            s3EncryptionClientFileModeKMS.Dispose();
+            if (File.Exists(filePath))
+                File.Delete(filePath);
         }
 
         [Fact]
         [Trait(CategoryAttribute,"S3")]
-        public async Task PutGetFileUsingMetadataMode()
+        public async void PutGetFileUsingMetadataMode()
         {
-            PutObjectRequest request = new PutObjectRequest()
-            {
-                BucketName = bucketName,
-                Key = "PutGetFileUsingMetadataMode" + random.Next(),
-                FilePath = filePath
-            };
-
-            PutObjectResponse response = await s3EncryptionClientMetadataMode.PutObjectAsync(request);
-            await TestGet(request.Key, File.ReadAllText(filePath), s3EncryptionClientMetadataMode);
+            await TestPutGetAsync(s3EncryptionClientMetadataMode, filePath, null, null, null, sampleContent).ConfigureAwait(false);
         }
 
         [Fact]
         [Trait(CategoryAttribute,"S3")]
-        public async Task PutGetFileUsingInstructionFileMode()
+        public async void PutGetFileUsingInstructionFileMode()
         {
-            PutObjectRequest request = new PutObjectRequest()
-            {
-                BucketName = bucketName,
-                Key = "PutGetFileUsingInstructionFileMode" + random.Next(),
-                FilePath = filePath
-            };
-
-            PutObjectResponse response = await s3EncryptionClientFileMode.PutObjectAsync(request);
-
-            await TestGet(request.Key, File.ReadAllText(filePath), s3EncryptionClientFileMode);
+            await TestPutGetAsync(s3EncryptionClientFileMode, filePath, null, null, null, sampleContent).ConfigureAwait(false);
         }
 
         [Fact]
         [Trait(CategoryAttribute,"S3")]
-        public async Task PutGetStreamUsingMetadataMode()
+        public async void PutGetStreamUsingMetadataMode()
         {
-            byte[] dataBytes = Encoding.UTF8.GetBytes(sampleContent);
-            PutObjectRequest request = new PutObjectRequest()
-            {
-                BucketName = bucketName,
-                Key = "PutGetStreamUsingMeatadaMode" + random.Next(),
-                InputStream = new MemoryStream(dataBytes)
-            };
-
-            PutObjectResponse response = await s3EncryptionClientMetadataMode.PutObjectAsync(request);
-
-            await TestGet(request.Key, sampleContent, s3EncryptionClientMetadataMode);
+            await TestPutGetAsync(s3EncryptionClientMetadataMode, null, sampleContentBytes, null, null, sampleContent).ConfigureAwait(false);
         }
 
         [Fact]
         [Trait(CategoryAttribute,"S3")]
-        public async Task PutGetStreamUsingInstructionFileMode()
+        public async void PutGetStreamUsingInstructionFileMode()
         {
-            byte[] dataBytes = Encoding.UTF8.GetBytes(sampleContent);
-            PutObjectRequest request = new PutObjectRequest()
-            {
-                BucketName = bucketName,
-                Key = "PutGetStreamUsingMeatadaMode" + random.Next(),
-                InputStream = new MemoryStream(dataBytes)
-            };
-
-            PutObjectResponse response = await s3EncryptionClientFileMode.PutObjectAsync(request);
-
-            await TestGet(request.Key, sampleContent, s3EncryptionClientFileMode);
+            await TestPutGetAsync(s3EncryptionClientFileMode, null, sampleContentBytes, null, null, sampleContent).ConfigureAwait(false);
         }
 
         [Fact]
         [Trait(CategoryAttribute,"S3")]
-        public async Task PutGetContentUsingMetadataMode()
+        public async void PutGetContentUsingMetadataMode()
         {
-            PutObjectRequest request = new PutObjectRequest()
-            {
-                BucketName = bucketName,
-                Key = "PutGetContentUsingMeatadaMode" + random.Next(),
-                ContentBody = "Encryption Client Testing!",
-                CannedACL = S3CannedACL.AuthenticatedRead
-            };
-
-            PutObjectResponse response = await s3EncryptionClientMetadataMode.PutObjectAsync(request);
-
-            await TestGet(request.Key, request.ContentBody, s3EncryptionClientMetadataMode);
+            await TestPutGetAsync(s3EncryptionClientMetadataMode, null, null, sampleContent, S3CannedACL.AuthenticatedRead, sampleContent).ConfigureAwait(false);
         }
 
         [Fact]
         [Trait(CategoryAttribute,"S3")]
-        public async Task PutGetZeroLengthContentUsingMetadataMode()
+        public async void PutGetZeroLengthContentUsingMetadataMode()
         {
-            PutObjectRequest request = new PutObjectRequest()
-            {
-                BucketName = bucketName,
-                Key = "PutGetContentUsingMeatadaMode" + random.Next(),
-                ContentBody = "",
-                CannedACL = S3CannedACL.AuthenticatedRead
-            };
-
-            PutObjectResponse response = await s3EncryptionClientMetadataMode.PutObjectAsync(request);
-
-            await TestGet(request.Key, request.ContentBody, s3EncryptionClientMetadataMode);
+            await TestPutGetAsync(s3EncryptionClientMetadataMode, null, null, "", S3CannedACL.AuthenticatedRead, "").ConfigureAwait(false);
         }
 
         [Fact]
         [Trait(CategoryAttribute,"S3")]
-        public async Task PutGetNullContentContentUsingMetadataMode()
+        public async void PutGetNullContentContentUsingMetadataMode()
         {
-            PutObjectRequest request = new PutObjectRequest()
-            {
-                BucketName = bucketName,
-                Key = "PutGetContentUsingMeatadaMode" + random.Next(),
-                CannedACL = S3CannedACL.AuthenticatedRead
-            };
-
-            PutObjectResponse response = await s3EncryptionClientMetadataMode.PutObjectAsync(request);
-
-            await TestGet(request.Key, "", s3EncryptionClientMetadataMode);
+            await TestPutGetAsync(s3EncryptionClientMetadataMode, null, null, null, S3CannedACL.AuthenticatedRead, "").ConfigureAwait(false);
         }
 
         [Fact]
         [Trait(CategoryAttribute,"S3")]
-        public async Task PutGetContentUsingInstructionFileMode()
+        public async void PutGetContentUsingInstructionFileMode()
         {
-            PutObjectRequest request = new PutObjectRequest()
-            {
-                BucketName = bucketName,
-                Key = "PutGetContentUsingMeatadaMode" + random.Next(),
-                ContentBody = "Encryption Client Testing!",
-                CannedACL = S3CannedACL.AuthenticatedRead
-            };
-
-            PutObjectResponse response = await s3EncryptionClientFileMode.PutObjectAsync(request);
-
-            await TestGet(request.Key, request.ContentBody, s3EncryptionClientFileMode);
+            await TestPutGetAsync(s3EncryptionClientFileMode, null, null, sampleContent, S3CannedACL.AuthenticatedRead, sampleContent).ConfigureAwait(false);
         }
 
         [Fact]
         [Trait(CategoryAttribute,"S3")]
-        public async Task MultipartEncryptionTestMetadataMode()
+        public void PutGetFileUsingInstructionFileModeKMS()
         {
-            string filePath = Path.Combine(Path.GetTempPath(), "MultipartEncryptionTestMetaDatamode_upload.txt");
-            string retrievedFilepath = Path.Combine(Path.GetTempPath(), "MultipartEncryptionTestMetaDatamode_download.txt");
-            int MEG_SIZE = (int)Math.Pow(2, 20);
-            long totalSize = (long)(15 * MEG_SIZE);
+            AssertExtensions.ExpectException(() =>
+            {
+                AsyncHelpers.RunSync(() => { return TestPutGetAsync(s3EncryptionClientFileModeKMS, filePath, null, null, null, sampleContent); });
+            }, InstructionAndKMSErrorMessage);
+        }
+
+        [Fact]
+        [Trait(CategoryAttribute,"S3")]
+        public async void PutGetStreamUsingMetadataModeKMS()
+        {
+            await TestPutGetAsync(s3EncryptionClientMetadataModeKMS, null, sampleContentBytes, null, null, sampleContent).ConfigureAwait(false);
+        }
+
+        [Fact]
+        [Trait(CategoryAttribute,"S3")]
+        public void PutGetStreamUsingInstructionFileModeKMS()
+        {
+            AssertExtensions.ExpectException(() =>
+            {
+                AsyncHelpers.RunSync(() => { return TestPutGetAsync(s3EncryptionClientFileModeKMS, null, sampleContentBytes, null, null, sampleContent); });
+            }, InstructionAndKMSErrorMessage);
+        }
+
+        [Fact]
+        [Trait(CategoryAttribute,"S3")]
+        public async void PutGetContentUsingMetadataModeKMS()
+        {
+            await TestPutGetAsync(s3EncryptionClientMetadataModeKMS, null, null, sampleContent, S3CannedACL.AuthenticatedRead, sampleContent).ConfigureAwait(false);
+        }
+
+        [Fact]
+        [Trait(CategoryAttribute,"S3")]
+        public async void PutGetZeroLengthContentUsingMetadataModeKMS()
+        {
+            await TestPutGetAsync(s3EncryptionClientMetadataModeKMS, null, null, "", S3CannedACL.AuthenticatedRead, "").ConfigureAwait(false);
+        }
+
+        [Fact]
+        [Trait(CategoryAttribute,"S3")]
+        public async void PutGetNullContentContentUsingMetadataModeKMS()
+        {
+            await TestPutGetAsync(s3EncryptionClientMetadataModeKMS, null, null, null, S3CannedACL.AuthenticatedRead, "").ConfigureAwait(false);
+        }
+
+        [Fact]
+        [Trait(CategoryAttribute,"S3")]
+        public void PutGetContentUsingInstructionFileModeKMS()
+        {
+            AssertExtensions.ExpectException(() =>
+            {
+                AsyncHelpers.RunSync(() => { return TestPutGetAsync(s3EncryptionClientFileModeKMS, null, null, sampleContent, S3CannedACL.AuthenticatedRead, sampleContent); });
+            }, InstructionAndKMSErrorMessage);
+        }
+
+        [Fact]
+        [Trait(CategoryAttribute,"S3")]
+        public async void MultipartEncryptionTestMetadataMode()
+        {
+            await MultipartEncryptionTestAsync(s3EncryptionClientMetadataMode).ConfigureAwait(false);
+        }
+
+        [Fact]
+        [Trait(CategoryAttribute,"S3")]
+        public async void MultipartEncryptionTestInstructionFile()
+        {
+            await MultipartEncryptionTestAsync(s3EncryptionClientFileMode).ConfigureAwait(false);
+        }
+
+        [Fact]
+        [Trait(CategoryAttribute,"S3")]
+        public async void MultipartEncryptionTestMetadataModeKMS()
+        {
+            await MultipartEncryptionTestAsync(s3EncryptionClientMetadataModeKMS).ConfigureAwait(false);
+        }
+
+        [Fact]
+        [Trait(CategoryAttribute,"S3")]
+        public void MultipartEncryptionTestInstructionFileKMS()
+        {
+            AssertExtensions.ExpectException(() =>
+            {
+                AsyncHelpers.RunSync(() => { return MultipartEncryptionTestAsync(s3EncryptionClientFileModeKMS); });
+            }, InstructionAndKMSErrorMessage);
+        }
+
+        private async Task MultipartEncryptionTestAsync(AmazonS3EncryptionClient s3EncryptionClient)
+        {
+            var nextRandom = random.Next();
+            var filePath = @"C:\temp\multi-" + nextRandom + ".txt";
+            var retrievedFilepath = @"C:\temp\retreived-" + nextRandom + ".txt";
+            var totalSize = MegSize * 15;
+
             UtilityMethods.GenerateFile(filePath, totalSize);
-                _filesToDelete.Add(filePath);
-            string key = "MultipartEncryptionTestMetadataMode" + random.Next();
+            string key = "key-" + random.Next();
 
-            using(Stream inputStream = File.OpenRead(filePath))
+            Stream inputStream = File.OpenRead(filePath);
+            try
             {
                 InitiateMultipartUploadRequest initRequest = new InitiateMultipartUploadRequest()
                 {
@@ -222,7 +261,8 @@ namespace Amazon.DNXCore.IntegrationTests.S3
                     CannedACL = S3CannedACL.PublicRead
                 };
 
-                InitiateMultipartUploadResponse initResponse = await s3EncryptionClientMetadataMode.InitiateMultipartUploadAsync(initRequest);
+                InitiateMultipartUploadResponse initResponse =
+                    await s3EncryptionClient.InitiateMultipartUploadAsync(initRequest).ConfigureAwait(false);
 
                 // Upload part 1
                 UploadPartRequest uploadRequest = new UploadPartRequest()
@@ -231,11 +271,11 @@ namespace Amazon.DNXCore.IntegrationTests.S3
                     Key = key,
                     UploadId = initResponse.UploadId,
                     PartNumber = 1,
-                    PartSize = 5 * MEG_SIZE,
+                    PartSize = 5 * MegSize,
                     InputStream = inputStream,
                 };
 
-                UploadPartResponse up1Response = await s3EncryptionClientMetadataMode.UploadPartAsync(uploadRequest);
+                UploadPartResponse up1Response = await s3EncryptionClient.UploadPartAsync(uploadRequest).ConfigureAwait(false);
 
                 // Upload part 2
                 uploadRequest = new UploadPartRequest()
@@ -244,11 +284,11 @@ namespace Amazon.DNXCore.IntegrationTests.S3
                     Key = key,
                     UploadId = initResponse.UploadId,
                     PartNumber = 2,
-                    PartSize = 5 * MEG_SIZE,
+                    PartSize = 5 * MegSize,
                     InputStream = inputStream,
                 };
 
-                UploadPartResponse up2Response = await s3EncryptionClientMetadataMode.UploadPartAsync(uploadRequest);
+                UploadPartResponse up2Response = await s3EncryptionClient.UploadPartAsync(uploadRequest).ConfigureAwait(false);
 
                 // Upload part 3
                 uploadRequest = new UploadPartRequest()
@@ -261,7 +301,7 @@ namespace Amazon.DNXCore.IntegrationTests.S3
                     IsLastPart = true
                 };
 
-                UploadPartResponse up3Response = await s3EncryptionClientMetadataMode.UploadPartAsync(uploadRequest);
+                UploadPartResponse up3Response = await s3EncryptionClient.UploadPartAsync(uploadRequest).ConfigureAwait(false);
 
                 ListPartsRequest listPartRequest = new ListPartsRequest()
                 {
@@ -270,7 +310,7 @@ namespace Amazon.DNXCore.IntegrationTests.S3
                     UploadId = initResponse.UploadId
                 };
 
-                ListPartsResponse listPartResponse = await s3EncryptionClientMetadataMode.ListPartsAsync(listPartRequest);
+                ListPartsResponse listPartResponse = await s3EncryptionClient.ListPartsAsync(listPartRequest).ConfigureAwait(false);
                 Assert.Equal(3, listPartResponse.Parts.Count);
                 Assert.Equal(up1Response.PartNumber, listPartResponse.Parts[0].PartNumber);
                 Assert.Equal(up1Response.ETag, listPartResponse.Parts[0].ETag);
@@ -280,7 +320,7 @@ namespace Amazon.DNXCore.IntegrationTests.S3
                 Assert.Equal(up3Response.ETag, listPartResponse.Parts[2].ETag);
 
                 listPartRequest.MaxParts = 1;
-                listPartResponse = await s3EncryptionClientMetadataMode.ListPartsAsync(listPartRequest);
+                listPartResponse = await s3EncryptionClient.ListPartsAsync(listPartRequest).ConfigureAwait(false);
                 Assert.Equal(1, listPartResponse.Parts.Count);
 
                 // Complete the response
@@ -292,7 +332,8 @@ namespace Amazon.DNXCore.IntegrationTests.S3
                 };
                 compRequest.AddPartETags(up1Response, up2Response, up3Response);
 
-                CompleteMultipartUploadResponse compResponse = await s3EncryptionClientMetadataMode.CompleteMultipartUploadAsync(compRequest);
+                CompleteMultipartUploadResponse compResponse =
+                    await s3EncryptionClient.CompleteMultipartUploadAsync(compRequest).ConfigureAwait(false);
                 Assert.Equal(bucketName, compResponse.BucketName);
                 Assert.NotNull(compResponse.ETag);
                 Assert.Equal(key, compResponse.Key);
@@ -305,9 +346,8 @@ namespace Amazon.DNXCore.IntegrationTests.S3
                     Key = key
                 };
 
-                GetObjectResponse getResponse = await s3EncryptionClientMetadataMode.GetObjectAsync(getRequest);
+                GetObjectResponse getResponse = await s3EncryptionClient.GetObjectAsync(getRequest).ConfigureAwait(false);
                 await getResponse.WriteResponseStreamToFileAsync(retrievedFilepath, false, System.Threading.CancellationToken.None);
-                _filesToDelete.Add(retrievedFilepath);
 
                 UtilityMethods.CompareFiles(filePath, retrievedFilepath);
 
@@ -316,137 +356,38 @@ namespace Amazon.DNXCore.IntegrationTests.S3
                     BucketName = bucketName,
                     Key = key
                 };
-                GetObjectMetadataResponse metaDataResponse = await s3EncryptionClientMetadataMode.GetObjectMetadataAsync(metaDataRequest);
+                GetObjectMetadataResponse metaDataResponse =
+                    await s3EncryptionClient.GetObjectMetadataAsync(metaDataRequest).ConfigureAwait(false);
                 Assert.Equal("text/html", metaDataResponse.Headers.ContentType);
             }
-        }
-
-        [Fact]
-        [Trait(CategoryAttribute,"S3")]
-        public async Task MultipartEncryptionTestInstructionFile()
-        {
-            string filePath = Path.Combine(Path.GetTempPath(), "MulitpartEncryptionTestInstructionFile_upload.txt");
-            string retrievedFilepath = Path.Combine(Path.GetTempPath(), "MulitpartEncryptionTestInstructionFile_download.txt");
-            int MEG_SIZE = (int)Math.Pow(2, 20);
-            long totalSize = (long)(15 * MEG_SIZE) + 4001;
-            UtilityMethods.GenerateFile(filePath, totalSize);
-                _filesToDelete.Add(filePath);
-
-            string key = "MultipartEncryptionTestInstrcutionFile" + random.Next();
-
-            using (Stream inputStream = File.OpenRead(filePath))
+            finally
             {
-                InitiateMultipartUploadRequest initRequest = new InitiateMultipartUploadRequest()
-                {
-                    BucketName = bucketName,
-                    Key = key,
-                    StorageClass = S3StorageClass.ReducedRedundancy,
-                    ContentType = "text/html",
-                    CannedACL = S3CannedACL.PublicRead
-                };
-
-                InitiateMultipartUploadResponse initResponse = await s3EncryptionClientFileMode.InitiateMultipartUploadAsync(initRequest);
-
-                // Upload part 1
-                UploadPartRequest uploadRequest = new UploadPartRequest()
-                {
-                    BucketName = bucketName,
-                    Key = key,
-                    UploadId = initResponse.UploadId,
-                    PartNumber = 1,
-                    PartSize = 5 * MEG_SIZE,
-                    InputStream = inputStream
-                };
-
-                UploadPartResponse up1Response = await s3EncryptionClientFileMode.UploadPartAsync(uploadRequest);
-
-                // Upload part 2
-                uploadRequest = new UploadPartRequest()
-                {
-                    BucketName = bucketName,
-                    Key = key,
-                    UploadId = initResponse.UploadId,
-                    PartNumber = 2,
-                    PartSize = 5 * MEG_SIZE + 4001,
-                    InputStream = inputStream
-                };
-
-                UploadPartResponse up2Response = await s3EncryptionClientFileMode.UploadPartAsync(uploadRequest);
-
-                // Upload part 3
-                uploadRequest = new UploadPartRequest()
-                {
-                    BucketName = bucketName,
-                    Key = key,
-                    UploadId = initResponse.UploadId,
-                    PartNumber = 3,
-                    InputStream = inputStream,
-                    IsLastPart = true
-                };
-
-                //uploadRequest.setLastPart();
-                UploadPartResponse up3Response = await s3EncryptionClientFileMode.UploadPartAsync(uploadRequest);
-
-
-                ListPartsRequest listPartRequest = new ListPartsRequest()
-                {
-                    BucketName = bucketName,
-                    Key = key,
-                    UploadId = initResponse.UploadId
-                };
-
-                ListPartsResponse listPartResponse = await s3EncryptionClientFileMode.ListPartsAsync(listPartRequest);
-                Assert.Equal(3, listPartResponse.Parts.Count);
-                Assert.Equal(up1Response.PartNumber, listPartResponse.Parts[0].PartNumber);
-                Assert.Equal(up1Response.ETag, listPartResponse.Parts[0].ETag);
-                Assert.Equal(up2Response.PartNumber, listPartResponse.Parts[1].PartNumber);
-                Assert.Equal(up2Response.ETag, listPartResponse.Parts[1].ETag);
-                Assert.Equal(up3Response.PartNumber, listPartResponse.Parts[2].PartNumber);
-                Assert.Equal(up3Response.ETag, listPartResponse.Parts[2].ETag);
-
-                listPartRequest.MaxParts = 1;
-                listPartResponse = await s3EncryptionClientFileMode.ListPartsAsync(listPartRequest);
-                Assert.Equal(1, listPartResponse.Parts.Count);
-
-                // Complete the response
-                CompleteMultipartUploadRequest compRequest = new CompleteMultipartUploadRequest()
-                {
-                    BucketName = bucketName,
-                    Key = key,
-                    UploadId = initResponse.UploadId
-                };
-                compRequest.AddPartETags(up1Response, up2Response, up3Response);
-
-                CompleteMultipartUploadResponse compResponse = await s3EncryptionClientFileMode.CompleteMultipartUploadAsync(compRequest);
-                Assert.Equal(bucketName, compResponse.BucketName);
-                Assert.NotNull(compResponse.ETag);
-                Assert.Equal(key, compResponse.Key);
-                Assert.NotNull(compResponse.Location);
-
-                // Get the file back from S3 and make sure it is still the same.
-                GetObjectRequest getRequest = new GetObjectRequest()
-                {
-                    BucketName = bucketName,
-                    Key = key
-                };
-
-                GetObjectResponse getResponse = await s3EncryptionClientFileMode.GetObjectAsync(getRequest);
-                await getResponse.WriteResponseStreamToFileAsync(retrievedFilepath, false, System.Threading.CancellationToken.None);
-                    _filesToDelete.Add(retrievedFilepath);
-
-                UtilityMethods.CompareFiles(filePath, retrievedFilepath);
-
-                GetObjectMetadataRequest metaDataRequest = new GetObjectMetadataRequest()
-                {
-                    BucketName = bucketName,
-                    Key = key
-                };
-                GetObjectMetadataResponse metaDataResponse = await s3EncryptionClientFileMode.GetObjectMetadataAsync(metaDataRequest);
-                Assert.Equal("text/html", metaDataResponse.Headers.ContentType);
+                inputStream.Dispose();
+                if (File.Exists(filePath))
+                    File.Delete(filePath);
+                if (File.Exists(retrievedFilepath))
+                    File.Delete(retrievedFilepath);
             }
+
         }
 
-        private static async Task TestGet(string key, string uploadedData, AmazonS3EncryptionClient s3EncryptionClient)
+        private async Task TestPutGetAsync(AmazonS3EncryptionClient s3EncryptionClient,
+            string filePath, byte[] inputStreamBytes, string contentBody, S3CannedACL cannedACL, string expectedContent)
+        {
+            PutObjectRequest request = new PutObjectRequest()
+            {
+                BucketName = bucketName,
+                Key = "key-" + random.Next(),
+                FilePath = filePath,
+                InputStream = inputStreamBytes == null ? null : new MemoryStream(inputStreamBytes),
+                ContentBody = contentBody,
+                CannedACL = cannedACL
+            };
+            PutObjectResponse response = await s3EncryptionClient.PutObjectAsync(request).ConfigureAwait(false);
+            await TestGetAsync(request.Key, expectedContent, s3EncryptionClient).ConfigureAwait(false);
+        }
+
+        private async Task TestGetAsync(string key, string uploadedData, AmazonS3EncryptionClient s3EncryptionClient)
         {
             GetObjectRequest getObjectRequest = new GetObjectRequest
             {
@@ -454,7 +395,7 @@ namespace Amazon.DNXCore.IntegrationTests.S3
                 Key = key
             };
 
-            using (GetObjectResponse getObjectResponse = await s3EncryptionClient.GetObjectAsync(getObjectRequest))
+            using (GetObjectResponse getObjectResponse = await s3EncryptionClient.GetObjectAsync(getObjectRequest).ConfigureAwait(false))
             {
                 using (var stream = getObjectResponse.ResponseStream)
                 using (var reader = new StreamReader(stream))
@@ -465,26 +406,33 @@ namespace Amazon.DNXCore.IntegrationTests.S3
             }
         }
 
-        private static string HashFile(string file)
+        private static void CallAsyncTask(Task asyncTask)
         {
-            var md5 = MD5.Create();
-            using (var stream = File.Open(file, FileMode.Open, FileAccess.Read, FileShare.None))
+            try
             {
-                var hashBytes = md5.ComputeHash(stream);
-                return Convert.ToBase64String(hashBytes);
+                asyncTask.Wait();
+            }
+            catch (AggregateException e)
+            {
+                System.Runtime.ExceptionServices.ExceptionDispatchInfo.Capture(e.InnerException).Throw();
+                // shouldn't happen but makes the compiler happy
+                throw;
             }
         }
 
-        private static RSA CreateAsymmetricProvider()
+        private static T CallAsyncTask<T>(Task<T> asyncTask)
         {
-            RSA rsaProvider = RSA.Create();
-            return rsaProvider;
-        }
-
-        private static Aes CreateSymmetricKey()
-        {
-            Aes aesAlg = Aes.Create();
-            return aesAlg;
+            try
+            {
+                asyncTask.Wait();
+                return asyncTask.Result;
+            }
+            catch (AggregateException e)
+            {
+                System.Runtime.ExceptionServices.ExceptionDispatchInfo.Capture(e.InnerException).Throw();
+                // shouldn't happen but makes the compiler happy
+                throw;
+            }
         }
     }
 }

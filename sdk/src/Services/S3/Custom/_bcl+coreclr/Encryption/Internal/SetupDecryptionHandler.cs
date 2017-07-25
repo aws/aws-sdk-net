@@ -12,6 +12,8 @@ using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using Amazon.Util;
+using Amazon.Runtime.SharedInterfaces;
+using ThirdParty.Json.LitJson;
 
 namespace Amazon.S3.Encryption.Internal
 {
@@ -20,6 +22,8 @@ namespace Amazon.S3.Encryption.Internal
     /// </summary>
     public class SetupDecryptionHandler : PipelineHandler
     {
+        private const string KMSKeyIDMetadataMessage = "Unable to determine the KMS key ID from the object metadata.  ";
+
         /// <summary>
         /// Construct instance of SetupDecryptionHandler.
         /// </summary>
@@ -49,6 +53,23 @@ namespace Amazon.S3.Encryption.Internal
             base.InvokeSync(executionContext);
             PostInvoke(executionContext);
         }
+
+        /// <summary>
+        /// Decrypt the object being downloaded.
+        /// </summary>
+        /// <param name="executionContext"></param>
+        protected void PostInvoke(IExecutionContext executionContext)
+        {
+            byte[] encryptedKMSEnvelopeKey;
+            Dictionary<string, string> encryptionContext;
+            byte[] decryptedEnvelopeKeyKMS = null;
+
+            if (KMSEnvelopeKeyIsPresent(executionContext, out encryptedKMSEnvelopeKey, out encryptionContext))
+                decryptedEnvelopeKeyKMS = EncryptionClient.KMSClient.Decrypt(encryptedKMSEnvelopeKey, encryptionContext);
+
+            PostInvokeSynchronous(executionContext, decryptedEnvelopeKeyKMS);
+        }
+
 #if AWS_ASYNC_API
 
         /// <summary>
@@ -62,8 +83,25 @@ namespace Amazon.S3.Encryption.Internal
         public override async System.Threading.Tasks.Task<T> InvokeAsync<T>(IExecutionContext executionContext)
         {
             var response = await base.InvokeAsync<T>(executionContext).ConfigureAwait(false);
-            PostInvoke(executionContext);
+            await PostInvokeAsync(executionContext).ConfigureAwait(false);
             return response;
+        }
+
+        /// <summary>
+        /// Decrypt the object being downloaded.
+        /// </summary>
+        /// <param name="executionContext"></param>
+        protected async System.Threading.Tasks.Task PostInvokeAsync(IExecutionContext executionContext)
+        {
+            byte[] encryptedKMSEnvelopeKey;
+            Dictionary<string, string> encryptionContext;
+            byte[] decryptedEnvelopeKeyKMS = null;
+
+            if (KMSEnvelopeKeyIsPresent(executionContext, out encryptedKMSEnvelopeKey, out encryptionContext))
+                decryptedEnvelopeKeyKMS = await EncryptionClient.KMSClient.DecryptAsync(
+                    encryptedKMSEnvelopeKey, encryptionContext).ConfigureAwait(false);
+
+            PostInvokeSynchronous(executionContext, decryptedEnvelopeKeyKMS);
         }
 
 #elif AWS_APM_API
@@ -76,19 +114,93 @@ namespace Amazon.S3.Encryption.Internal
         /// request and response context.</param>
         protected override void InvokeAsyncCallback(IAsyncExecutionContext executionContext)
         {
+            IExecutionContext syncExecutionContext = ExecutionContext.CreateFromAsyncContext(executionContext);
+
             // Process the response if an exception hasn't occured
             if (executionContext.ResponseContext.AsyncResult.Exception == null)
             {
-                PostInvoke(ExecutionContext.CreateFromAsyncContext(executionContext));
+                byte[] encryptedKMSEnvelopeKey;
+                Dictionary<string, string> encryptionContext;
+                if (KMSEnvelopeKeyIsPresent(syncExecutionContext, out encryptedKMSEnvelopeKey, out encryptionContext))
+                    throw new NotSupportedException("The AWS SDK for .NET Framework 3.5 version of " +
+                        typeof(AmazonS3EncryptionClient).Name + " does not support KMS key wrapping via the async programming model.  " +
+                        "Please use the synchronous version instead.");
+
+                PostInvokeSynchronous(syncExecutionContext, null);
             }
             base.InvokeAsyncCallback(executionContext);
         }
 #endif
+
+        private static bool KMSEnvelopeKeyIsPresent(IExecutionContext executionContext,
+            out byte[] encryptedKMSEnvelopeKey, out Dictionary<string, string> encryptionContext)
+        {
+            var response = executionContext.ResponseContext.Response;
+            var getObjectResponse = response as GetObjectResponse;
+            encryptedKMSEnvelopeKey = null;
+            encryptionContext = null;
+
+            if (getObjectResponse != null)
+            {
+                var metadata = getObjectResponse.Metadata;
+                EncryptionUtils.EnsureSupportedAlgorithms(metadata);
+                var base64EncodedEncryptedKMSEnvelopeKey = metadata[EncryptionUtils.XAmzKeyV2];
+
+                if (base64EncodedEncryptedKMSEnvelopeKey != null)
+                {
+                    encryptedKMSEnvelopeKey = Convert.FromBase64String(base64EncodedEncryptedKMSEnvelopeKey);
+                    string kmsKeyIDFromMetadata = GetKMSKeyIDFromMetadata(metadata);
+                    encryptionContext = new Dictionary<string, string> { { EncryptionUtils.KMSCmkIDKey, kmsKeyIDFromMetadata } };
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        private static string GetKMSKeyIDFromMetadata(MetadataCollection metadata)
+        {
+            var materialDescriptionJsonString = metadata[EncryptionUtils.XAmzMatDesc];
+            if (materialDescriptionJsonString == null)
+            {
+                throw new InvalidDataException(KMSKeyIDMetadataMessage + "The key '" + EncryptionUtils.XAmzMatDesc  + "' is missing.");
+            }
+            else
+            {
+                JsonData materialDescriptionJsonData;
+                try
+                {
+                    materialDescriptionJsonData = JsonMapper.ToObject(materialDescriptionJsonString);
+                }
+                catch (JsonException e)
+                {
+                    throw new InvalidDataException(KMSKeyIDMetadataMessage + "The key '" + EncryptionUtils.XAmzMatDesc + "' does not contain valid JSON.", e);
+                }
+
+                JsonData kmsKeyIDJsonData;
+                try
+                {
+                    kmsKeyIDJsonData = materialDescriptionJsonData[EncryptionUtils.KMSCmkIDKey];
+                }
+                catch (JsonException e)
+                {
+                    throw new InvalidDataException(KMSKeyIDMetadataMessage + "The key '" + EncryptionUtils.KMSCmkIDKey + "' is does not contain valid JSON.", e);
+                }
+
+                if (kmsKeyIDJsonData == null)
+                {
+                    throw new InvalidDataException(KMSKeyIDMetadataMessage + "The key '" + kmsKeyIDJsonData + "' is missing from the material description.");
+                }
+
+                return kmsKeyIDJsonData.ToString();
+            }
+        }
+
         /// <summary>
         /// Decrypt the object being downloaded.
         /// </summary>
         /// <param name="executionContext"></param>
-        protected void PostInvoke(IExecutionContext executionContext)
+        /// <param name="decryptedEnvelopeKeyKMS"></param>
+        protected void PostInvokeSynchronous(IExecutionContext executionContext, byte[] decryptedEnvelopeKeyKMS)
         {
             var request = executionContext.RequestContext.Request;
             var response = executionContext.ResponseContext.Response;
@@ -97,10 +209,13 @@ namespace Amazon.S3.Encryption.Internal
             var initiateMultiPartResponse = response as InitiateMultipartUploadResponse;
             if (initiateMultiPartResponse != null)
             {
+                byte[] encryptedEnvelopeKey = initiateMultiPartUploadRequest.EncryptedEnvelopeKey;
                 byte[] envelopeKey = initiateMultiPartUploadRequest.EnvelopeKey;
                 byte[] iv = initiateMultiPartUploadRequest.IV;
 
                 UploadPartEncryptionContext contextForEncryption = new UploadPartEncryptionContext();
+                contextForEncryption.StorageMode = initiateMultiPartUploadRequest.StorageMode;
+                contextForEncryption.EncryptedEnvelopeKey = encryptedEnvelopeKey;
                 contextForEncryption.EnvelopeKey = envelopeKey;
                 contextForEncryption.NextIV = iv;
                 contextForEncryption.FirstIV = iv;
@@ -138,7 +253,7 @@ namespace Amazon.S3.Encryption.Internal
             {
                 if (EncryptionUtils.IsEncryptionInfoInMetadata(getObjectResponse) == true)
                 {
-                    DecryptObjectUsingMetadata(getObjectResponse);
+                    DecryptObjectUsingMetadata(getObjectResponse, decryptedEnvelopeKeyKMS);
                 }
                 else
                 {
@@ -165,13 +280,14 @@ namespace Amazon.S3.Encryption.Internal
             var completeMultipartUploadResponse = response as CompleteMultipartUploadResponse;
             if (completeMultipartUploadResponse != null)
             {
-                if (this.EncryptionClient.S3CryptoConfig.StorageMode == CryptoStorageMode.InstructionFile)
+                UploadPartEncryptionContext context = this.EncryptionClient.CurrentMultiPartUploadKeys[completeMultiPartUploadRequest.UploadId];
+
+                if (context.StorageMode == CryptoStorageMode.InstructionFile)
                 {
-                    UploadPartEncryptionContext context = this.EncryptionClient.CurrentMultiPartUploadKeys[completeMultiPartUploadRequest.UploadId];
                     byte[] envelopeKey = context.EnvelopeKey;
                     byte[] iv = context.FirstIV;
-                    byte[] encryptedEnvelopeKey = EncryptionUtils.EncryptEnvelopeKey(envelopeKey, this.EncryptionClient.EncryptionMaterials);
-                    EncryptionInstructions instructions = new EncryptionInstructions(EncryptionMaterials.EmptyMaterialsDescription, envelopeKey, encryptedEnvelopeKey, iv);
+                    byte[] encryptedEnvelopeKey = context.EncryptedEnvelopeKey;
+                    EncryptionInstructions instructions = new EncryptionInstructions(EncryptionClient.EncryptionMaterials.MaterialsDescription, envelopeKey, encryptedEnvelopeKey, iv);
 
                     PutObjectRequest instructionFileRequest = EncryptionUtils.CreateInstructionFileRequest(completeMultiPartUploadRequest, instructions);
 
@@ -195,7 +311,8 @@ namespace Amazon.S3.Encryption.Internal
         private void DecryptObjectUsingInstructionFile(GetObjectResponse response, GetObjectResponse instructionFileResponse)
         {
             // Create an instruction object from the instruction file response
-            EncryptionInstructions instructions = EncryptionUtils.BuildInstructionsUsingInstructionFile(instructionFileResponse, this.EncryptionClient.EncryptionMaterials);
+            EncryptionInstructions instructions = EncryptionUtils.BuildInstructionsUsingInstructionFile(
+                instructionFileResponse, this.EncryptionClient.EncryptionMaterials);
 
             // Decrypt the object with the instructions
             EncryptionUtils.DecryptObjectUsingInstructions(response, instructions);
@@ -207,10 +324,14 @@ namespace Amazon.S3.Encryption.Internal
         /// <param name="objectResponse">
         /// The getObject response whose contents are to be decrypted.
         /// </param>
-        private void DecryptObjectUsingMetadata(GetObjectResponse objectResponse)
+        /// <param name="decryptedEnvelopeKeyKMS">
+        /// The decrypted envelope key to be use if KMS key wrapping is being used.  Or null if non-KMS key wrapping is being used.
+        /// </param>
+        private void DecryptObjectUsingMetadata(GetObjectResponse objectResponse, byte[] decryptedEnvelopeKeyKMS)
         {
             // Create an instruction object from the object metadata
-            EncryptionInstructions instructions = EncryptionUtils.BuildInstructionsFromObjectMetadata(objectResponse, this.EncryptionClient.EncryptionMaterials);
+            EncryptionInstructions instructions = EncryptionUtils.BuildInstructionsFromObjectMetadata(
+                objectResponse, this.EncryptionClient.EncryptionMaterials, decryptedEnvelopeKeyKMS);
 
             // Decrypt the object with the instruction
             EncryptionUtils.DecryptObjectUsingInstructions(objectResponse, instructions);

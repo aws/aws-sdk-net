@@ -143,3 +143,5 @@ using System.Diagnostics.CodeAnalysis;
 [module: SuppressMessage("Microsoft.Performance", "CA1810:InitializeReferenceTypeStaticFieldsInline", Scope = "member", Target = "Amazon.AWSConfigsS3.#.cctor()")]
 
 [module: SuppressMessage("Microsoft.Design", "CA1006:DoNotNestGenericTypesInMemberSignatures", Scope="member", Target="Amazon.S3.AmazonS3Client.#ListObjectsByTagsCoalescedAsync(Amazon.S3.Model.ListObjectsByTagsRequest)")]
+
+[module: SuppressMessage("Microsoft.Usage", "CA2213:DisposableFieldsShouldBeDisposed", Scope = "member", Target = "Amazon.S3.Encryption.AmazonS3EncryptionClient.#Dispose(System.Boolean)", MessageId = "s3ClientForInstructionFile")]

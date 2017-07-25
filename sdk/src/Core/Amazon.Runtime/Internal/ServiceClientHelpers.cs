@@ -18,6 +18,9 @@ namespace Amazon.Runtime.Internal
         public const string STS_SERVICE_CLASS_NAME = "Amazon.SecurityToken.AmazonSecurityTokenServiceClient";
         public const string STS_SERVICE_CONFIG_NAME = "Amazon.SecurityToken.AmazonSecurityTokenServiceConfig";
 
+        public const string KMS_ASSEMBLY_NAME = "AWSSDK.KeyManagementService";
+        public const string KMS_SERVICE_CLASS_NAME = "Amazon.KeyManagementService.AmazonKeyManagementServiceClient";
+
         public static TClient CreateServiceFromAnother<TClient, TConfig>(AmazonServiceClient originalServiceClient)
             where TConfig : ClientConfig, new ()
             where TClient : AmazonServiceClient

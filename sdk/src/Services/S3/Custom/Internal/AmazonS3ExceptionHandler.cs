@@ -110,8 +110,7 @@ namespace Amazon.S3.Internal
                 }
             }
 
-            if (executionContext.RequestContext.Request != null)
-                AmazonS3Client.CleanupRequest(executionContext.RequestContext.Request);
+            AmazonS3Client.CleanupRequest(executionContext.RequestContext.OriginalRequest);
         }
     }
 }

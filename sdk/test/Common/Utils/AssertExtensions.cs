@@ -20,6 +20,7 @@ using System.Text;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Text.RegularExpressions;
 using System.Security.Cryptography;
+using System.IO;
 
 namespace AWSSDK_DotNet.IntegrationTests.Utils
 {
@@ -148,6 +149,39 @@ namespace AWSSDK_DotNet.IntegrationTests.Utils
             Assert.AreEqual(expectedHash, actualHash, whatChanged + "  Please read the following notes and " +
                 "make any necessary changes.  Once the changes have been made use the value " + actualHash + " as the new expectedHash.\n" +
                 "NOTES:\n" + notes);
+        }
+
+        public static void AssertSourceCodeUnchanged(List<string> srcRelativeFilenames, string expectedHash, string message)
+        {
+            // find the src directory
+            var sourceRoot = Directory.GetCurrentDirectory();
+            while (sourceRoot != null && !sourceRoot.EndsWith("\\sdk"))
+            {
+                sourceRoot = Path.GetDirectoryName(sourceRoot);
+            }
+            Assert.IsNotNull(sourceRoot, "Unable to find the src directory to check for source file changes.");
+            sourceRoot = Path.Combine(sourceRoot, "src");
+
+            // calculate the hash of the files' contents
+            StringBuilder sourceCodeSB = new StringBuilder();
+            foreach (var srcRelativeFilename in srcRelativeFilenames)
+            {
+                sourceCodeSB.Append(File.ReadAllText(Path.Combine(sourceRoot, srcRelativeFilename)));
+            }
+            SHA256CryptoServiceProvider provider = new SHA256CryptoServiceProvider();
+            var actualHash = BitConverter.ToString(provider.ComputeHash(Encoding.Default.GetBytes(sourceCodeSB.ToString()))).Replace("-", "");
+
+            // compare the hash to the expected hash
+            StringBuilder messageBuilder = new StringBuilder();
+            messageBuilder.AppendLine("One or more of the following source files has changed:");
+            foreach (var sourceShortFilename in srcRelativeFilenames)
+            {
+                messageBuilder.AppendLine(sourceShortFilename);
+            }
+            messageBuilder.AppendLine("This requires manual testing.  Once the testing is complete use " + actualHash + " as expectedHash.");
+            messageBuilder.AppendLine("Manual testing required:");
+            messageBuilder.AppendLine(message);
+            Assert.AreEqual(expectedHash, actualHash, messageBuilder.ToString());
         }
     }
 }

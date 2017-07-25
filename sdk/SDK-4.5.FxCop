@@ -254,6 +254,7 @@
             <Namespace Name="Amazon.Runtime.Internal.Transform" Analyze="True" AnalyzeAllChildren="True" />
             <Namespace Name="Amazon.Runtime.Internal.Util" Analyze="True" AnalyzeAllChildren="True" />
             <Namespace Name="Amazon.Runtime.SharedInterfaces" Analyze="True" AnalyzeAllChildren="True" />
+            <Namespace Name="Amazon.Runtime.SharedInterfaces.Internal" Analyze="True" AnalyzeAllChildren="True" />
             <Namespace Name="Amazon.Util" Analyze="True" AnalyzeAllChildren="True" />
             <Namespace Name="Amazon.Util.Internal" Analyze="True" AnalyzeAllChildren="True" />
             <Namespace Name="Amazon.Util.Internal.PlatformServices" Analyze="True" AnalyzeAllChildren="True" />

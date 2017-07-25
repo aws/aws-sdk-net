@@ -43,28 +43,30 @@ namespace Amazon.S3.Model
         private string serverSideEncryptionCustomerProvidedKeyMD5;
         private string serverSideEncryptionKeyManagementServiceKeyId;
         private RequestPayer requestPayer;
-
+        
         private List<Tag> tagset = new List<Tag>();
-        private byte[] envelopeKey;
-        private byte[] iv;
 
         /// <summary>
-        /// Symmetric Envelope Key to Encrypt data
+        /// Envelope Key to Encrypt data
         /// </summary>
-        internal byte[] EnvelopeKey
-        {
-            get { return this.envelopeKey; }
-            set { this.envelopeKey = value; }
-        }
+        internal byte[] EnvelopeKey { get; set; }
+
+        /// <summary>
+        /// Encrypted Envelope Key to Encrypt data
+        /// </summary>
+        internal byte[] EncryptedEnvelopeKey { get; set; }
 
         /// <summary>
         /// Initialization Vector for encryption
         /// </summary>
-        internal byte[] IV
-        {
-            get { return this.iv; }
-            set { this.iv = value; }
-        }
+        internal byte[] IV { get; set; }
+
+#if BCL || CORECLR
+        /// <summary>
+        /// Storage mode for encryption information.
+        /// </summary>
+        internal Amazon.S3.Encryption.CryptoStorageMode StorageMode { get; set; }
+#endif
 
         /// <summary>
         /// A canned access control list (ACL) to apply to the object.

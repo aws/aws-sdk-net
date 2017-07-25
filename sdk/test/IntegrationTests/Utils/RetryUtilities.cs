@@ -152,7 +152,10 @@ namespace AWSSDK_DotNet.IntegrationTests.Utils
                 if (IsRetry || !IsRewindable)
                     return base.GetResponse();
                 else
+                {
+                    base.Abort();
                     throw new WebException("Newp!", null, WebExceptionStatus.ConnectionClosed, null);
+                }
             }
 
 #if BCL45
@@ -161,7 +164,10 @@ namespace AWSSDK_DotNet.IntegrationTests.Utils
                 if (IsRetry || !IsRewindable)
                     return base.GetResponseAsync(cancellationToken);
                 else
+                {
+                    base.Abort();
                     throw new WebException("Newp!", null, WebExceptionStatus.ConnectionClosed, null);
+                }
             }
 
 #elif BCL && !BCL45
@@ -170,7 +176,10 @@ namespace AWSSDK_DotNet.IntegrationTests.Utils
                 if (IsRetry || !IsRewindable)
                     return base.EndGetResponse(asyncResult);
                 else
+                {
+                    base.Abort();
                     throw new WebException("Newp!", null, WebExceptionStatus.ConnectionClosed, null);
+                }
             }
 #endif
 

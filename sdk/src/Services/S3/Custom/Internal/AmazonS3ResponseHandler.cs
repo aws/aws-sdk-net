@@ -182,7 +182,7 @@ namespace Amazon.S3.Internal
                 copyPartResponse.PartNumber = ((CopyPartRequest)request.OriginalRequest).PartNumber;
             }
 
-            AmazonS3Client.CleanupRequest(request);
+            AmazonS3Client.CleanupRequest(request.OriginalRequest);
         }
 
         private static bool HasSSEHeaders(IWebResponseData webResponseData)

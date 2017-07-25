@@ -24,10 +24,19 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
         public void TestListConfigurations()
         {
             IAmazonApplicationDiscoveryService client = new AmazonApplicationDiscoveryServiceClient(RegionEndpoint.USWest2);
-
-            ListConfigurationsRequest request = new ListConfigurationsRequest { ConfigurationType = ConfigurationItemType.PROCESS };
-            ListConfigurationsResponse response = client.ListConfigurations(request);
-            Assert.IsNotNull(response.ResponseMetadata.RequestId);
+            try
+            {
+                ListConfigurationsRequest request = new ListConfigurationsRequest { ConfigurationType = ConfigurationItemType.PROCESS };
+                ListConfigurationsResponse response = client.ListConfigurations(request);
+                Assert.IsNotNull(response.ResponseMetadata.RequestId);
+            }
+            catch (AmazonApplicationDiscoveryServiceException e)
+            {
+                // We're really just making sure we can contact this service.
+                // So an error from the service that the account isn't whitelisted is acceptable.
+                if (!e.Message.Contains("is not whitelisted to access"))
+                    throw;
+            }
         }
     }
 }

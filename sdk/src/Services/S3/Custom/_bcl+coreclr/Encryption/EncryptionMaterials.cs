@@ -22,36 +22,59 @@ using System.Text;
 namespace Amazon.S3.Encryption
 {
     /// <summary>
-    /// The "key encrypting key" materials used in encrypt/decryption. These
-    /// materials may be either an asymmetric key or a symmetric key but not
-    /// both.
+    /// The "key encrypting key" materials used in encrypt/decryption.
+    /// These materials may be an asymmetric key, a symmetric key, or a KMS key ID.
     /// </summary>
     public class EncryptionMaterials
     {
+
+        private Dictionary<string, string> materialsDescription;
+
         /// <summary>
         /// Constructs a new EncryptionMaterials object, storing an asymmetric key.
         /// </summary>
         /// <param name="algorithm"></param>
-        public EncryptionMaterials(AsymmetricAlgorithm algorithm)
+        public EncryptionMaterials(AsymmetricAlgorithm algorithm) : this(algorithm, null, null)
         {
-            AsymmetricProvider = algorithm;
-            SymmetricProvider = null;
         }
 
         /// <summary>
         /// Constructs a new EncryptionMaterials object, storing a symmetric key.
         /// </summary>
         /// <param name="algorithm"></param>
-        public EncryptionMaterials(SymmetricAlgorithm algorithm)
+        public EncryptionMaterials(SymmetricAlgorithm algorithm) : this(null, algorithm, null)
         {
-            SymmetricProvider = algorithm;
-            AsymmetricProvider = null;
+        }
+
+        /// <summary>
+        /// Constructs a new EncryptionMaterials object, storing a KMS Key ID
+        /// </summary>
+        /// <param name="kmsKeyID"></param>
+        public EncryptionMaterials(string kmsKeyID) : this(null, null, kmsKeyID)
+        {
+            materialsDescription.Add(EncryptionUtils.KMSCmkIDKey, kmsKeyID);
+        }
+
+        private EncryptionMaterials(AsymmetricAlgorithm asymmetricAlgorithm, SymmetricAlgorithm symmetricAlgorithm, string kmsKeyID)
+        {
+            AsymmetricProvider = asymmetricAlgorithm;
+            SymmetricProvider = symmetricAlgorithm;
+            KMSKeyID = kmsKeyID;
+            materialsDescription = new Dictionary<string, string>();
         }
 
         internal AsymmetricAlgorithm AsymmetricProvider { get; private set; }
 
         internal SymmetricAlgorithm SymmetricProvider { get; private set; }
 
-        internal static Dictionary<string, string> EmptyMaterialsDescription { get { return new Dictionary<string, string>(); } }
+        internal string KMSKeyID { get; private set; }
+
+        internal Dictionary<string, string> MaterialsDescription
+        {
+            get
+            {
+                return materialsDescription;
+            }
+        }
     }
 }

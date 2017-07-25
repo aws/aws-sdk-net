@@ -16,6 +16,8 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Runtime.SharedInterfaces;
+using Amazon.Runtime.SharedInterfaces.Internal;
 using Amazon.S3.Internal;
 using Amazon.S3.Model;
 using Amazon.Util;
@@ -29,12 +31,32 @@ namespace Amazon.S3.Encryption
     /// </summary>
     public partial class AmazonS3EncryptionClient : AmazonS3Client, IAmazonS3Encryption
     {
+        private static readonly string S3KMSEncryptionFeature = "the KMS encryption features of " + typeof(AmazonS3EncryptionClient).Name;
+
+        private ICoreAmazonKMS kmsClient;
+        private readonly object kmsClientLock = new object();
+
         internal EncryptionMaterials EncryptionMaterials
         {
             get;
             private set;
         }
 
+        internal ICoreAmazonKMS KMSClient
+        {
+            get
+            {
+                if (kmsClient == null)
+                {
+                    lock (kmsClientLock)
+                    {
+                        if (kmsClient == null)
+                            kmsClient = new CoreAmazonKMS(this, S3KMSEncryptionFeature);
+                    }
+                }
+                return kmsClient;
+            }
+        }
 
         private AmazonS3Client s3ClientForInstructionFile;
         
@@ -308,6 +330,23 @@ namespace Amazon.S3.Encryption
             pipeline.AddHandlerBefore<Amazon.Runtime.Internal.Marshaller>(new Amazon.S3.Encryption.Internal.SetupEncryptionHandler(this));
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new Amazon.S3.Encryption.Internal.UserAgentHandler());
             pipeline.AddHandlerBefore<Amazon.S3.Internal.AmazonS3ResponseHandler>(new Amazon.S3.Encryption.Internal.SetupDecryptionHandler(this));
-        }  
+        }
+
+        /// <summary>
+        /// Dispose this instance
+        /// </summary>
+        /// <param name="disposing"></param>
+        protected override void Dispose(bool disposing)
+        {
+            lock (kmsClientLock)
+            {
+                if (kmsClient != null)
+                {
+                    kmsClient.Dispose();
+                    kmsClient = null;
+                }
+            }
+            base.Dispose(disposing);
+        }
     }
 }

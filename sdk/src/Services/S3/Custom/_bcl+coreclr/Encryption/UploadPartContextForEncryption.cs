@@ -22,6 +22,8 @@ namespace Amazon.S3.Encryption
 {
     internal class UploadPartEncryptionContext
     {
+        public CryptoStorageMode StorageMode { get; set; }
+        public byte[] EncryptedEnvelopeKey { get; set; }
         public byte[] EnvelopeKey { get; set; }
         public byte[] FirstIV { get; set; }
         public byte[] NextIV { get; set; }

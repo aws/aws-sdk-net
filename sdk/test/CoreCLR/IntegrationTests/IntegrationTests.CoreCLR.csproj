@@ -29,6 +29,7 @@
     <ProjectReference Include="..\..\..\src\Services\ElasticBeanstalk\AWSSDK.ElasticBeanstalk.CoreCLR.csproj" />
     <ProjectReference Include="..\..\..\src\Services\IdentityManagement\AWSSDK.IdentityManagement.CoreCLR.csproj" />
     <ProjectReference Include="..\..\..\src\Services\ImportExport\AWSSDK.ImportExport.CoreCLR.csproj" />
+    <ProjectReference Include="..\..\..\src\Services\KeyManagementService\AWSSDK.KeyManagementService.CoreCLR.csproj" />
     <ProjectReference Include="..\..\..\src\Services\Kinesis\AWSSDK.Kinesis.CoreCLR.csproj" />
     <ProjectReference Include="..\..\..\src\Services\SecurityToken\AWSSDK.SecurityToken.CoreCLR.csproj" />
     <ProjectReference Include="..\..\..\src\Services\SimpleEmail\AWSSDK.SimpleEmail.CoreCLR.csproj" />
