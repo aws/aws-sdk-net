@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudDirectory.Model
 {
     /// <summary>
-    /// Represents the output of a <code>ListObjectAttributes</code> response operation.
+    /// Represents the output of a <a>ListObjectAttributes</a> response operation.
     /// </summary>
     public partial class BatchListObjectAttributesResponse
     {

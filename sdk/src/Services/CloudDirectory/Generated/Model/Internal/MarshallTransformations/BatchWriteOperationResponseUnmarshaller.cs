@@ -76,6 +76,30 @@ namespace Amazon.CloudDirectory.Model.Internal.MarshallTransformations
                     unmarshalledObject.AttachObject = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("AttachPolicy", targetDepth))
+                {
+                    var unmarshaller = BatchAttachPolicyResponseUnmarshaller.Instance;
+                    unmarshalledObject.AttachPolicy = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("AttachToIndex", targetDepth))
+                {
+                    var unmarshaller = BatchAttachToIndexResponseUnmarshaller.Instance;
+                    unmarshalledObject.AttachToIndex = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("AttachTypedLink", targetDepth))
+                {
+                    var unmarshaller = BatchAttachTypedLinkResponseUnmarshaller.Instance;
+                    unmarshalledObject.AttachTypedLink = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("CreateIndex", targetDepth))
+                {
+                    var unmarshaller = BatchCreateIndexResponseUnmarshaller.Instance;
+                    unmarshalledObject.CreateIndex = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("CreateObject", targetDepth))
                 {
                     var unmarshaller = BatchCreateObjectResponseUnmarshaller.Instance;
@@ -88,10 +112,22 @@ namespace Amazon.CloudDirectory.Model.Internal.MarshallTransformations
                     unmarshalledObject.DeleteObject = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("DetachFromIndex", targetDepth))
+                {
+                    var unmarshaller = BatchDetachFromIndexResponseUnmarshaller.Instance;
+                    unmarshalledObject.DetachFromIndex = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("DetachObject", targetDepth))
                 {
                     var unmarshaller = BatchDetachObjectResponseUnmarshaller.Instance;
                     unmarshalledObject.DetachObject = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("DetachTypedLink", targetDepth))
+                {
+                    var unmarshaller = BatchDetachTypedLinkResponseUnmarshaller.Instance;
+                    unmarshalledObject.DetachTypedLink = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("RemoveFacetFromObject", targetDepth))

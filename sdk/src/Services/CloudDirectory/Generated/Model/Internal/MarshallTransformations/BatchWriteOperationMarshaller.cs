@@ -67,6 +67,50 @@ namespace Amazon.CloudDirectory.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetAttachPolicy())
+            {
+                context.Writer.WritePropertyName("AttachPolicy");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = BatchAttachPolicyMarshaller.Instance;
+                marshaller.Marshall(requestObject.AttachPolicy, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetAttachToIndex())
+            {
+                context.Writer.WritePropertyName("AttachToIndex");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = BatchAttachToIndexMarshaller.Instance;
+                marshaller.Marshall(requestObject.AttachToIndex, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetAttachTypedLink())
+            {
+                context.Writer.WritePropertyName("AttachTypedLink");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = BatchAttachTypedLinkMarshaller.Instance;
+                marshaller.Marshall(requestObject.AttachTypedLink, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetCreateIndex())
+            {
+                context.Writer.WritePropertyName("CreateIndex");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = BatchCreateIndexMarshaller.Instance;
+                marshaller.Marshall(requestObject.CreateIndex, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetCreateObject())
             {
                 context.Writer.WritePropertyName("CreateObject");
@@ -89,6 +133,17 @@ namespace Amazon.CloudDirectory.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetDetachFromIndex())
+            {
+                context.Writer.WritePropertyName("DetachFromIndex");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = BatchDetachFromIndexMarshaller.Instance;
+                marshaller.Marshall(requestObject.DetachFromIndex, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetDetachObject())
             {
                 context.Writer.WritePropertyName("DetachObject");
@@ -96,6 +151,17 @@ namespace Amazon.CloudDirectory.Model.Internal.MarshallTransformations
 
                 var marshaller = BatchDetachObjectMarshaller.Instance;
                 marshaller.Marshall(requestObject.DetachObject, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetDetachTypedLink())
+            {
+                context.Writer.WritePropertyName("DetachTypedLink");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = BatchDetachTypedLinkMarshaller.Instance;
+                marshaller.Marshall(requestObject.DetachTypedLink, context);
 
                 context.Writer.WriteObjectEnd();
             }

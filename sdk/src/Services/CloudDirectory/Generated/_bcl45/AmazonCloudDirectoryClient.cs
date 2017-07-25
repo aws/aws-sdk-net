@@ -659,6 +659,9 @@ namespace Amazon.CloudDirectory
         /// <exception cref="Amazon.CloudDirectory.Model.AccessDeniedException">
         /// Access denied. Check your permissions.
         /// </exception>
+        /// <exception cref="Amazon.CloudDirectory.Model.DirectoryNotEnabledException">
+        /// An operation can only operate on a directory that is not enabled.
+        /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.FacetValidationException">
         /// The <a>Facet</a> that you provided was not well formed or could not be validated with
         /// the schema.
@@ -1991,6 +1994,9 @@ namespace Amazon.CloudDirectory
         /// <exception cref="Amazon.CloudDirectory.Model.AccessDeniedException">
         /// Access denied. Check your permissions.
         /// </exception>
+        /// <exception cref="Amazon.CloudDirectory.Model.DirectoryNotEnabledException">
+        /// An operation can only operate on a directory that is not enabled.
+        /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.FacetValidationException">
         /// The <a>Facet</a> that you provided was not well formed or could not be validated with
         /// the schema.
@@ -3009,6 +3015,9 @@ namespace Amazon.CloudDirectory
         /// <exception cref="Amazon.CloudDirectory.Model.AccessDeniedException">
         /// Access denied. Check your permissions.
         /// </exception>
+        /// <exception cref="Amazon.CloudDirectory.Model.DirectoryNotEnabledException">
+        /// An operation can only operate on a directory that is not enabled.
+        /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.FacetValidationException">
         /// The <a>Facet</a> that you provided was not well formed or could not be validated with
         /// the schema.
@@ -3569,6 +3578,9 @@ namespace Amazon.CloudDirectory
         /// <returns>The response from the ListOutgoingTypedLinks service method, as returned by CloudDirectory.</returns>
         /// <exception cref="Amazon.CloudDirectory.Model.AccessDeniedException">
         /// Access denied. Check your permissions.
+        /// </exception>
+        /// <exception cref="Amazon.CloudDirectory.Model.DirectoryNotEnabledException">
+        /// An operation can only operate on a directory that is not enabled.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.FacetValidationException">
         /// The <a>Facet</a> that you provided was not well formed or could not be validated with

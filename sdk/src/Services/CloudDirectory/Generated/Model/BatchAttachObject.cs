@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudDirectory.Model
 {
     /// <summary>
-    /// Represents the output of an <code>AttachObject</code> operation.
+    /// Represents the output of an <a>AttachObject</a> operation.
     /// </summary>
     public partial class BatchAttachObject
     {

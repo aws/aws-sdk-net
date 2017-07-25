@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudDirectory.Model
 {
     /// <summary>
-    /// Represents the output of a <code>DeleteObject</code> operation.
+    /// Represents the output of a <a>DeleteObject</a> operation.
     /// </summary>
     public partial class BatchDeleteObject
     {

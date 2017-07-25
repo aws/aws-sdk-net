@@ -217,6 +217,12 @@
     <pattern>[^\/\[\]\(\):\{\}#@!?\s\\;]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CloudDirectory.Model.BatchCreateIndex.LinkName</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[^\/\[\]\(\):\{\}#@!?\s\\;]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CloudDirectory.Model.BatchCreateObject.LinkName</property>
     <min>1</min>
     <max>64</max>
@@ -229,11 +235,43 @@
     <pattern>[^\/\[\]\(\):\{\}#@!?\s\\;]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CloudDirectory.Model.BatchListAttachedIndices.MaxResults</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudDirectory.Model.BatchListIncomingTypedLinks.MaxResults</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudDirectory.Model.BatchListIndex.MaxResults</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CloudDirectory.Model.BatchListObjectAttributes.MaxResults</property>
     <min>1</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudDirectory.Model.BatchListObjectChildren.MaxResults</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudDirectory.Model.BatchListObjectParentPaths.MaxResults</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudDirectory.Model.BatchListObjectPolicies.MaxResults</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudDirectory.Model.BatchListOutgoingTypedLinks.MaxResults</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudDirectory.Model.BatchListPolicyAttachments.MaxResults</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudDirectory.Model.BatchLookupPolicy.MaxResults</property>
     <min>1</min>
   </property-value-rule>
   <property-value-rule>

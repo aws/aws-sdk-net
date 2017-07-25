@@ -64,6 +64,30 @@ namespace Amazon.CloudDirectory.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("GetObjectInformation", targetDepth))
+                {
+                    var unmarshaller = BatchGetObjectInformationResponseUnmarshaller.Instance;
+                    unmarshalledObject.GetObjectInformation = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ListAttachedIndices", targetDepth))
+                {
+                    var unmarshaller = BatchListAttachedIndicesResponseUnmarshaller.Instance;
+                    unmarshalledObject.ListAttachedIndices = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ListIncomingTypedLinks", targetDepth))
+                {
+                    var unmarshaller = BatchListIncomingTypedLinksResponseUnmarshaller.Instance;
+                    unmarshalledObject.ListIncomingTypedLinks = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ListIndex", targetDepth))
+                {
+                    var unmarshaller = BatchListIndexResponseUnmarshaller.Instance;
+                    unmarshalledObject.ListIndex = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ListObjectAttributes", targetDepth))
                 {
                     var unmarshaller = BatchListObjectAttributesResponseUnmarshaller.Instance;
@@ -74,6 +98,36 @@ namespace Amazon.CloudDirectory.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = BatchListObjectChildrenResponseUnmarshaller.Instance;
                     unmarshalledObject.ListObjectChildren = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ListObjectParentPaths", targetDepth))
+                {
+                    var unmarshaller = BatchListObjectParentPathsResponseUnmarshaller.Instance;
+                    unmarshalledObject.ListObjectParentPaths = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ListObjectPolicies", targetDepth))
+                {
+                    var unmarshaller = BatchListObjectPoliciesResponseUnmarshaller.Instance;
+                    unmarshalledObject.ListObjectPolicies = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ListOutgoingTypedLinks", targetDepth))
+                {
+                    var unmarshaller = BatchListOutgoingTypedLinksResponseUnmarshaller.Instance;
+                    unmarshalledObject.ListOutgoingTypedLinks = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ListPolicyAttachments", targetDepth))
+                {
+                    var unmarshaller = BatchListPolicyAttachmentsResponseUnmarshaller.Instance;
+                    unmarshalledObject.ListPolicyAttachments = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("LookupPolicy", targetDepth))
+                {
+                    var unmarshaller = BatchLookupPolicyResponseUnmarshaller.Instance;
+                    unmarshalledObject.LookupPolicy = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

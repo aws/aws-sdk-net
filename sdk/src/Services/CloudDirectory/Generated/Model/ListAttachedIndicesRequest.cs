@@ -114,7 +114,7 @@ namespace Amazon.CloudDirectory.Model
         /// <summary>
         /// Gets and sets the property TargetReference. 
         /// <para>
-        /// A reference to the object to that has indices attached.
+        /// A reference to the object that has indices attached.
         /// </para>
         /// </summary>
         public ObjectReference TargetReference

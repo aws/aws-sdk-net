@@ -34,9 +34,15 @@ namespace Amazon.CloudDirectory.Model
     {
         private BatchAddFacetToObject _addFacetToObject;
         private BatchAttachObject _attachObject;
+        private BatchAttachPolicy _attachPolicy;
+        private BatchAttachToIndex _attachToIndex;
+        private BatchAttachTypedLink _attachTypedLink;
+        private BatchCreateIndex _createIndex;
         private BatchCreateObject _createObject;
         private BatchDeleteObject _deleteObject;
+        private BatchDetachFromIndex _detachFromIndex;
         private BatchDetachObject _detachObject;
+        private BatchDetachTypedLink _detachTypedLink;
         private BatchRemoveFacetFromObject _removeFacetFromObject;
         private BatchUpdateObjectAttributes _updateObjectAttributes;
 
@@ -77,6 +83,82 @@ namespace Amazon.CloudDirectory.Model
         }
 
         /// <summary>
+        /// Gets and sets the property AttachPolicy. 
+        /// <para>
+        /// Attaches a policy object to a regular object. An object can have a limited number
+        /// of attached policies.
+        /// </para>
+        /// </summary>
+        public BatchAttachPolicy AttachPolicy
+        {
+            get { return this._attachPolicy; }
+            set { this._attachPolicy = value; }
+        }
+
+        // Check to see if AttachPolicy property is set
+        internal bool IsSetAttachPolicy()
+        {
+            return this._attachPolicy != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AttachToIndex. 
+        /// <para>
+        /// Attaches the specified object to the specified index.
+        /// </para>
+        /// </summary>
+        public BatchAttachToIndex AttachToIndex
+        {
+            get { return this._attachToIndex; }
+            set { this._attachToIndex = value; }
+        }
+
+        // Check to see if AttachToIndex property is set
+        internal bool IsSetAttachToIndex()
+        {
+            return this._attachToIndex != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AttachTypedLink. 
+        /// <para>
+        /// Attaches a typed link to a specified source and target object. For more information,
+        /// see <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#typedlink">Typed
+        /// link</a>.
+        /// </para>
+        /// </summary>
+        public BatchAttachTypedLink AttachTypedLink
+        {
+            get { return this._attachTypedLink; }
+            set { this._attachTypedLink = value; }
+        }
+
+        // Check to see if AttachTypedLink property is set
+        internal bool IsSetAttachTypedLink()
+        {
+            return this._attachTypedLink != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CreateIndex. 
+        /// <para>
+        /// Creates an index object. See <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_indexing.html">Indexing</a>
+        /// for more information.
+        /// </para>
+        /// </summary>
+        public BatchCreateIndex CreateIndex
+        {
+            get { return this._createIndex; }
+            set { this._createIndex = value; }
+        }
+
+        // Check to see if CreateIndex property is set
+        internal bool IsSetCreateIndex()
+        {
+            return this._createIndex != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property CreateObject. 
         /// <para>
         /// Creates an object.
@@ -113,6 +195,24 @@ namespace Amazon.CloudDirectory.Model
         }
 
         /// <summary>
+        /// Gets and sets the property DetachFromIndex. 
+        /// <para>
+        /// Detaches the specified object from the specified index.
+        /// </para>
+        /// </summary>
+        public BatchDetachFromIndex DetachFromIndex
+        {
+            get { return this._detachFromIndex; }
+            set { this._detachFromIndex = value; }
+        }
+
+        // Check to see if DetachFromIndex property is set
+        internal bool IsSetDetachFromIndex()
+        {
+            return this._detachFromIndex != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property DetachObject. 
         /// <para>
         /// Detaches an object from a <a>Directory</a>.
@@ -128,6 +228,26 @@ namespace Amazon.CloudDirectory.Model
         internal bool IsSetDetachObject()
         {
             return this._detachObject != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DetachTypedLink. 
+        /// <para>
+        /// Detaches a typed link from a specified source and target object. For more information,
+        /// see <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#typedlink">Typed
+        /// link</a>.
+        /// </para>
+        /// </summary>
+        public BatchDetachTypedLink DetachTypedLink
+        {
+            get { return this._detachTypedLink; }
+            set { this._detachTypedLink = value; }
+        }
+
+        // Check to see if DetachTypedLink property is set
+        internal bool IsSetDetachTypedLink()
+        {
+            return this._detachTypedLink != null;
         }
 
         /// <summary>

@@ -35,6 +35,22 @@ namespace Amazon.CloudDirectory
         /// </summary>
         public static readonly BatchReadExceptionType AccessDeniedException = new BatchReadExceptionType("AccessDeniedException");
         /// <summary>
+        /// Constant CannotListParentOfRootException for BatchReadExceptionType
+        /// </summary>
+        public static readonly BatchReadExceptionType CannotListParentOfRootException = new BatchReadExceptionType("CannotListParentOfRootException");
+        /// <summary>
+        /// Constant DirectoryNotEnabledException for BatchReadExceptionType
+        /// </summary>
+        public static readonly BatchReadExceptionType DirectoryNotEnabledException = new BatchReadExceptionType("DirectoryNotEnabledException");
+        /// <summary>
+        /// Constant FacetValidationException for BatchReadExceptionType
+        /// </summary>
+        public static readonly BatchReadExceptionType FacetValidationException = new BatchReadExceptionType("FacetValidationException");
+        /// <summary>
+        /// Constant InternalServiceException for BatchReadExceptionType
+        /// </summary>
+        public static readonly BatchReadExceptionType InternalServiceException = new BatchReadExceptionType("InternalServiceException");
+        /// <summary>
         /// Constant InvalidArnException for BatchReadExceptionType
         /// </summary>
         public static readonly BatchReadExceptionType InvalidArnException = new BatchReadExceptionType("InvalidArnException");
@@ -43,9 +59,21 @@ namespace Amazon.CloudDirectory
         /// </summary>
         public static readonly BatchReadExceptionType InvalidNextTokenException = new BatchReadExceptionType("InvalidNextTokenException");
         /// <summary>
+        /// Constant LimitExceededException for BatchReadExceptionType
+        /// </summary>
+        public static readonly BatchReadExceptionType LimitExceededException = new BatchReadExceptionType("LimitExceededException");
+        /// <summary>
+        /// Constant NotIndexException for BatchReadExceptionType
+        /// </summary>
+        public static readonly BatchReadExceptionType NotIndexException = new BatchReadExceptionType("NotIndexException");
+        /// <summary>
         /// Constant NotNodeException for BatchReadExceptionType
         /// </summary>
         public static readonly BatchReadExceptionType NotNodeException = new BatchReadExceptionType("NotNodeException");
+        /// <summary>
+        /// Constant NotPolicyException for BatchReadExceptionType
+        /// </summary>
+        public static readonly BatchReadExceptionType NotPolicyException = new BatchReadExceptionType("NotPolicyException");
         /// <summary>
         /// Constant ResourceNotFoundException for BatchReadExceptionType
         /// </summary>
@@ -101,9 +129,17 @@ namespace Amazon.CloudDirectory
         /// </summary>
         public static readonly BatchWriteExceptionType AccessDeniedException = new BatchWriteExceptionType("AccessDeniedException");
         /// <summary>
+        /// Constant DirectoryNotEnabledException for BatchWriteExceptionType
+        /// </summary>
+        public static readonly BatchWriteExceptionType DirectoryNotEnabledException = new BatchWriteExceptionType("DirectoryNotEnabledException");
+        /// <summary>
         /// Constant FacetValidationException for BatchWriteExceptionType
         /// </summary>
         public static readonly BatchWriteExceptionType FacetValidationException = new BatchWriteExceptionType("FacetValidationException");
+        /// <summary>
+        /// Constant IndexedAttributeMissingException for BatchWriteExceptionType
+        /// </summary>
+        public static readonly BatchWriteExceptionType IndexedAttributeMissingException = new BatchWriteExceptionType("IndexedAttributeMissingException");
         /// <summary>
         /// Constant InternalServiceException for BatchWriteExceptionType
         /// </summary>
@@ -113,9 +149,29 @@ namespace Amazon.CloudDirectory
         /// </summary>
         public static readonly BatchWriteExceptionType InvalidArnException = new BatchWriteExceptionType("InvalidArnException");
         /// <summary>
+        /// Constant InvalidAttachmentException for BatchWriteExceptionType
+        /// </summary>
+        public static readonly BatchWriteExceptionType InvalidAttachmentException = new BatchWriteExceptionType("InvalidAttachmentException");
+        /// <summary>
+        /// Constant LimitExceededException for BatchWriteExceptionType
+        /// </summary>
+        public static readonly BatchWriteExceptionType LimitExceededException = new BatchWriteExceptionType("LimitExceededException");
+        /// <summary>
         /// Constant LinkNameAlreadyInUseException for BatchWriteExceptionType
         /// </summary>
         public static readonly BatchWriteExceptionType LinkNameAlreadyInUseException = new BatchWriteExceptionType("LinkNameAlreadyInUseException");
+        /// <summary>
+        /// Constant NotIndexException for BatchWriteExceptionType
+        /// </summary>
+        public static readonly BatchWriteExceptionType NotIndexException = new BatchWriteExceptionType("NotIndexException");
+        /// <summary>
+        /// Constant NotPolicyException for BatchWriteExceptionType
+        /// </summary>
+        public static readonly BatchWriteExceptionType NotPolicyException = new BatchWriteExceptionType("NotPolicyException");
+        /// <summary>
+        /// Constant ObjectAlreadyDetachedException for BatchWriteExceptionType
+        /// </summary>
+        public static readonly BatchWriteExceptionType ObjectAlreadyDetachedException = new BatchWriteExceptionType("ObjectAlreadyDetachedException");
         /// <summary>
         /// Constant ObjectNotDetachedException for BatchWriteExceptionType
         /// </summary>
@@ -128,6 +184,10 @@ namespace Amazon.CloudDirectory
         /// Constant StillContainsLinksException for BatchWriteExceptionType
         /// </summary>
         public static readonly BatchWriteExceptionType StillContainsLinksException = new BatchWriteExceptionType("StillContainsLinksException");
+        /// <summary>
+        /// Constant UnsupportedIndexTypeException for BatchWriteExceptionType
+        /// </summary>
+        public static readonly BatchWriteExceptionType UnsupportedIndexTypeException = new BatchWriteExceptionType("UnsupportedIndexTypeException");
         /// <summary>
         /// Constant ValidationException for BatchWriteExceptionType
         /// </summary>
