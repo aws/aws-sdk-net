@@ -48,6 +48,7 @@ namespace Amazon.CloudFormation.Model
     public partial class GetTemplateSummaryRequest : AmazonCloudFormationRequest
     {
         private string _stackName;
+        private string _stackSetName;
         private string _templateBody;
         private string _templateURL;
 
@@ -74,6 +75,24 @@ namespace Amazon.CloudFormation.Model
         internal bool IsSetStackName()
         {
             return this._stackName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property StackSetName. 
+        /// <para>
+        /// The name or unique ID of the stack set from which the stack was created.
+        /// </para>
+        /// </summary>
+        public string StackSetName
+        {
+            get { return this._stackSetName; }
+            set { this._stackSetName = value; }
+        }
+
+        // Check to see if StackSetName property is set
+        internal bool IsSetStackSetName()
+        {
+            return this._stackSetName != null;
         }
 
         /// <summary>

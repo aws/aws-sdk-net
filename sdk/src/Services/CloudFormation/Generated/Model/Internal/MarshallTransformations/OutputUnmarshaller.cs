@@ -60,6 +60,12 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                         unmarshalledObject.Description = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("ExportName", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.ExportName = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("OutputKey", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

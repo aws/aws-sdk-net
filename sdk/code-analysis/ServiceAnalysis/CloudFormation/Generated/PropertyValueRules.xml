@@ -4,13 +4,13 @@
     <property>Amazon.CloudFormation.Model.CancelUpdateStackRequest.ClientRequestToken</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[a-zA-Z][-a-zA-Z0-9]*</pattern>
+    <pattern>[a-zA-Z0-9][-a-zA-Z0-9]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudFormation.Model.ContinueUpdateRollbackRequest.ClientRequestToken</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[a-zA-Z][-a-zA-Z0-9]*</pattern>
+    <pattern>[a-zA-Z0-9][-a-zA-Z0-9]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudFormation.Model.ContinueUpdateRollbackRequest.RoleARN</property>
@@ -66,7 +66,7 @@
     <property>Amazon.CloudFormation.Model.CreateStackRequest.ClientRequestToken</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[a-zA-Z][-a-zA-Z0-9]*</pattern>
+    <pattern>[a-zA-Z0-9][-a-zA-Z0-9]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudFormation.Model.CreateStackRequest.RoleARN</property>
@@ -97,6 +97,38 @@
     <min>1</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CloudFormation.Model.CreateStackInstancesRequest.OperationId</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[a-zA-Z0-9][-a-zA-Z0-9]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudFormation.Model.CreateStackInstancesResponse.OperationId</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[a-zA-Z0-9][-a-zA-Z0-9]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudFormation.Model.CreateStackSetRequest.ClientRequestToken</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[a-zA-Z0-9][-a-zA-Z0-9]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudFormation.Model.CreateStackSetRequest.Description</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudFormation.Model.CreateStackSetRequest.TemplateBody</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudFormation.Model.CreateStackSetRequest.TemplateURL</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CloudFormation.Model.DeleteChangeSetRequest.ChangeSetName</property>
     <min>1</min>
     <max>1600</max>
@@ -111,12 +143,24 @@
     <property>Amazon.CloudFormation.Model.DeleteStackRequest.ClientRequestToken</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[a-zA-Z][-a-zA-Z0-9]*</pattern>
+    <pattern>[a-zA-Z0-9][-a-zA-Z0-9]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudFormation.Model.DeleteStackRequest.RoleARN</property>
     <min>20</min>
     <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudFormation.Model.DeleteStackInstancesRequest.OperationId</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[a-zA-Z0-9][-a-zA-Z0-9]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudFormation.Model.DeleteStackInstancesResponse.OperationId</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[a-zA-Z0-9][-a-zA-Z0-9]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudFormation.Model.DescribeAccountLimitsRequest.NextToken</property>
@@ -176,6 +220,10 @@
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CloudFormation.Model.DescribeStackInstanceRequest.StackInstanceAccount</property>
+    <pattern>[0-9]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CloudFormation.Model.DescribeStacksRequest.NextToken</property>
     <min>1</min>
     <max>1024</max>
@@ -184,6 +232,12 @@
     <property>Amazon.CloudFormation.Model.DescribeStacksResponse.NextToken</property>
     <min>1</min>
     <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudFormation.Model.DescribeStackSetOperationRequest.OperationId</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[a-zA-Z0-9][-a-zA-Z0-9]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudFormation.Model.EstimateTemplateCostRequest.TemplateBody</property>
@@ -204,7 +258,7 @@
     <property>Amazon.CloudFormation.Model.ExecuteChangeSetRequest.ClientRequestToken</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[a-zA-Z][-a-zA-Z0-9]*</pattern>
+    <pattern>[a-zA-Z0-9][-a-zA-Z0-9]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudFormation.Model.ExecuteChangeSetRequest.StackName</property>
@@ -230,6 +284,11 @@
     <property>Amazon.CloudFormation.Model.GetTemplateSummaryRequest.StackName</property>
     <min>1</min>
     <pattern>([a-zA-Z][-a-zA-Z0-9]*)|(arn:\b(aws|aws-us-gov|aws-cn)\b:[-a-zA-Z0-9:/._+]*)</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudFormation.Model.GetTemplateSummaryRequest.StackSetName</property>
+    <min>1</min>
+    <pattern>[a-zA-Z][-a-zA-Z0-9]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudFormation.Model.GetTemplateSummaryRequest.TemplateBody</property>
@@ -281,6 +340,25 @@
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CloudFormation.Model.ListStackInstancesRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudFormation.Model.ListStackInstancesRequest.NextToken</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudFormation.Model.ListStackInstancesRequest.StackInstanceAccount</property>
+    <pattern>[0-9]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudFormation.Model.ListStackInstancesResponse.NextToken</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CloudFormation.Model.ListStackResourcesRequest.NextToken</property>
     <min>1</min>
     <max>1024</max>
@@ -297,6 +375,57 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudFormation.Model.ListStacksResponse.NextToken</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudFormation.Model.ListStackSetOperationResultsRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudFormation.Model.ListStackSetOperationResultsRequest.NextToken</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudFormation.Model.ListStackSetOperationResultsRequest.OperationId</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[a-zA-Z0-9][-a-zA-Z0-9]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudFormation.Model.ListStackSetOperationResultsResponse.NextToken</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudFormation.Model.ListStackSetOperationsRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudFormation.Model.ListStackSetOperationsRequest.NextToken</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudFormation.Model.ListStackSetOperationsResponse.NextToken</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudFormation.Model.ListStackSetsRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudFormation.Model.ListStackSetsRequest.NextToken</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudFormation.Model.ListStackSetsResponse.NextToken</property>
     <min>1</min>
     <max>1024</max>
   </property-value-rule>
@@ -321,10 +450,16 @@
     <max>64</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CloudFormation.Model.StopStackSetOperationRequest.OperationId</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[a-zA-Z0-9][-a-zA-Z0-9]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CloudFormation.Model.UpdateStackRequest.ClientRequestToken</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[a-zA-Z][-a-zA-Z0-9]*</pattern>
+    <pattern>[a-zA-Z0-9][-a-zA-Z0-9]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudFormation.Model.UpdateStackRequest.RoleARN</property>
@@ -359,6 +494,32 @@
     <property>Amazon.CloudFormation.Model.UpdateStackRequest.TemplateURL</property>
     <min>1</min>
     <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudFormation.Model.UpdateStackSetRequest.Description</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudFormation.Model.UpdateStackSetRequest.OperationId</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[a-zA-Z0-9][-a-zA-Z0-9]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudFormation.Model.UpdateStackSetRequest.TemplateBody</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudFormation.Model.UpdateStackSetRequest.TemplateURL</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudFormation.Model.UpdateStackSetResponse.OperationId</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[a-zA-Z0-9][-a-zA-Z0-9]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudFormation.Model.ValidateTemplateRequest.TemplateBody</property>
@@ -428,12 +589,20 @@
     <property>Amazon.CloudFormation.Model.StackEvent.ClientRequestToken</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[a-zA-Z][-a-zA-Z0-9]*</pattern>
+    <pattern>[a-zA-Z0-9][-a-zA-Z0-9]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudFormation.Model.StackEvent.ResourceType</property>
     <min>1</min>
     <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudFormation.Model.StackInstance.Account</property>
+    <pattern>[0-9]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudFormation.Model.StackInstanceSummary.Account</property>
+    <pattern>[0-9]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudFormation.Model.StackResource.Description</property>
@@ -457,6 +626,64 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudFormation.Model.StackResourceSummary.ResourceType</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudFormation.Model.StackSet.Description</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudFormation.Model.StackSet.TemplateBody</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudFormation.Model.StackSetOperation.OperationId</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[a-zA-Z0-9][-a-zA-Z0-9]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudFormation.Model.StackSetOperationPreferences.FailureToleranceCount</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudFormation.Model.StackSetOperationPreferences.FailureTolerancePercentage</property>
+    <min>0</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudFormation.Model.StackSetOperationPreferences.MaxConcurrentCount</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudFormation.Model.StackSetOperationPreferences.MaxConcurrentPercentage</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudFormation.Model.StackSetOperationResultSummary.Account</property>
+    <pattern>[0-9]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudFormation.Model.StackSetOperationSummary.OperationId</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[a-zA-Z0-9][-a-zA-Z0-9]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudFormation.Model.StackSetSummary.Description</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudFormation.Model.Tag.Key</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudFormation.Model.Tag.Value</property>
     <min>1</min>
     <max>256</max>
   </property-value-rule>

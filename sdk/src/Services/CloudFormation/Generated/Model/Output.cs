@@ -33,6 +33,7 @@ namespace Amazon.CloudFormation.Model
     public partial class Output
     {
         private string _description;
+        private string _exportName;
         private string _outputKey;
         private string _outputValue;
 
@@ -52,6 +53,24 @@ namespace Amazon.CloudFormation.Model
         internal bool IsSetDescription()
         {
             return this._description != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ExportName. 
+        /// <para>
+        /// The name of the export associated with the output.
+        /// </para>
+        /// </summary>
+        public string ExportName
+        {
+            get { return this._exportName; }
+            set { this._exportName = value; }
+        }
+
+        // Check to see if ExportName property is set
+        internal bool IsSetExportName()
+        {
+            return this._exportName != null;
         }
 
         /// <summary>

@@ -60,6 +60,387 @@ namespace Amazon.CloudFormation
     /// information about a specific AWS product, you can find the product's technical documentation
     /// at <a href="http://docs.aws.amazon.com/">docs.aws.amazon.com</a>.
     /// </para>
+    ///  
+    /// <para>
+    ///  <i>APIs for stacks </i> 
+    /// </para>
+    ///  
+    /// <para>
+    /// When you use AWS CloudFormation, you manage related resources as a single unit called
+    /// a stack. You create, update, and delete a collection of resources by creating, updating,
+    /// and deleting stacks. All the resources in a stack are defined by the stack's AWS CloudFormation
+    /// template. 
+    /// </para>
+    ///  
+    /// <para>
+    /// Actions
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_CancelUpdateStack.html">CancelUpdateStack</a>
+    /// 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ContinueUpdateRollback.html">ContinueUpdateRollback</a>
+    /// 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_CreateStack.html">CreateStack</a>
+    /// 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeleteStack.html">DeleteStack</a>
+    /// 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DescribeStackEvents.html">DescribeStackEvents</a>
+    /// 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DescribeStackResource.html">DescribeStackResource</a>
+    /// 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DescribeStackResources.html">DescribeStackResources</a>
+    /// 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DescribeStacks.html">DescribeStacks</a>
+    /// 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_EstimateTemplateCost.html">EstimateTemplateCost</a>
+    /// 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_GetStackPolicy.html">GetStackPolicy</a>
+    /// 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_GetTemplate.html">GetTemplate</a>
+    /// 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_GetTemplateSummary.html">GetTemplateSummary</a>
+    /// 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ListExports.html">ListExports</a>
+    /// 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ListImports.html">ListImports</a>
+    /// 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ListStackResources.html">ListStackResources</a>
+    /// 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ListStacks.html">ListStacks</a>
+    /// 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_SetStackPolicy.html">SetStackPolicy</a>
+    /// 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_UpdateStack.html">UpdateStack</a>
+    /// 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ValidateTemplate.html">ValidateTemplate</a>
+    /// 
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    /// Data Types
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_Export.html">Export</a>
+    /// 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_Parameter.html">Parameter</a>
+    /// 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ParameterConstraints.html">ParameterConstraints</a>
+    /// 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ParameterDeclaration.html">ParameterDeclaration</a>
+    /// 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_Stack.html">Stack</a>
+    /// 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_StackEvent.html">StackEvent</a>
+    /// 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_StackResource.html">StackResource</a>
+    /// 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_StackResourceDetail.html">StackResourceDetail</a>
+    /// 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_StackResourceSummary.html">StackResourceSummary</a>
+    /// 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_StackSummary.html">StackSummary</a>
+    /// 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_Tag.html">Tag</a>
+    /// 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_TemplateParameter.html">TemplateParameter</a>
+    /// 
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    ///  <i>APIs for change sets</i> 
+    /// </para>
+    ///  
+    /// <para>
+    /// If you need to make changes to the running resources in a stack, you update the stack.
+    /// Before making changes to your resources, you can generate a change set, which is summary
+    /// of your proposed changes. Change sets allow you to see how your changes might impact
+    /// your running resources, especially for critical resources, before implementing them.
+    /// </para>
+    ///  
+    /// <para>
+    /// Actions
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_CreateChangeSet.html">CreateChangeSet</a>
+    /// 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeleteChangeSet.html">DeleteChangeSet</a>
+    /// 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DescribeChangeSet.html">DescribeChangeSet</a>
+    /// 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ExecuteChangeSet.html">ExecuteChangeSet</a>
+    /// 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ListChangeSets.html">ListChangeSets</a>
+    /// 
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    /// Data Types
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_Change.html">Change</a>
+    /// 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ChangeSetSummary.html">ChangeSetSummary</a>
+    /// 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ResourceChange.html">ResourceChange</a>
+    /// 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ResourceChangeDetail.html">ResourceChangeDetail</a>
+    /// 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ResourceTargetDefinition.html">ResourceTargetDefinition</a>
+    /// 
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    ///  <i>APIs for stack sets</i> 
+    /// </para>
+    ///  
+    /// <para>
+    /// AWS CloudFormation StackSets lets you create a collection, or stack set, of stacks
+    /// that can automatically and safely provision a common set of AWS resources across multiple
+    /// AWS accounts and multiple AWS regions from a single AWS CloudFormation template. When
+    /// you create a stack set, AWS CloudFormation provisions a stack in each of the specified
+    /// accounts and regions by using the supplied AWS CloudFormation template and parameters.
+    /// Stack sets let you manage a common set of AWS resources in a selection of accounts
+    /// and regions in a single operation. 
+    /// </para>
+    ///  
+    /// <para>
+    /// Actions
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_CreateStackInstances.html">CreateStackInstances</a>
+    /// 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_CreateStackSet.html">CreateStackSet</a>
+    /// 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeleteStackInstances.html">DeleteStackInstances</a>
+    /// 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeleteStackSet.html">DeleteStackSet</a>
+    /// 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DescribeStackInstance.html">DescribeStackInstance</a>
+    /// 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DescribeStackSet.html">DescribeStackSet</a>
+    /// 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DescribeStackSetOperation.html">DescribeStackSetOperation</a>
+    /// 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ListStackInstances.html">ListStackInstances</a>
+    /// 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ListStackSetOperationResults">ListStackSetOperationResults</a>
+    /// 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ListStackSetOperations">ListStackSetOperations</a>
+    /// 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ListStackSets">ListStackSets</a>
+    /// 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_StopStackSetOperation.html">StopStackSetOperation</a>
+    /// 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_UpdateStackSet.html">UpdateStackSet</a>
+    /// 
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    /// Data Types
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_Parameter.html">Parameter</a>
+    /// 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_StackInstance.html.html">StackInstance</a>
+    /// 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_StackInstanceSummary.html.html">StackInstanceSummary</a>
+    /// 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_StackSet.html">StackSet</a>
+    /// 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_StackSetOperation.html.html">StackSetOperation</a>
+    /// 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_StackSetOperationPreferences.html.html">StackSetOperationPreferences</a>
+    /// 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_StackSetOperationResultSummary.html.html">StackSetOperationResultSummary</a>
+    /// 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_StackSetOperationSummary.html.html">StackSetOperationSummary</a>
+    /// 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_StackSetSummary.html">StackSetSummary</a>
+    /// 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_Tag.html">Tag</a>
+    /// 
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial class AmazonCloudFormationClient : AmazonServiceClient, IAmazonCloudFormation
     {
@@ -424,14 +805,14 @@ namespace Amazon.CloudFormation
         /// 
         /// <returns>The response from the CreateChangeSet service method, as returned by CloudFormation.</returns>
         /// <exception cref="Amazon.CloudFormation.Model.AlreadyExistsException">
-        /// Resource with the name requested already exists.
+        /// The resource with the name requested already exists.
         /// </exception>
         /// <exception cref="Amazon.CloudFormation.Model.InsufficientCapabilitiesException">
-        /// The template contains resources with capabilities that were not specified in the Capabilities
+        /// The template contains resources with capabilities that weren't specified in the Capabilities
         /// parameter.
         /// </exception>
         /// <exception cref="Amazon.CloudFormation.Model.LimitExceededException">
-        /// Quota for the resource has already been reached.
+        /// The quota for the resource has already been reached.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">REST API Reference for CreateChangeSet Operation</seealso>
         public CreateChangeSetResponse CreateChangeSet(CreateChangeSetRequest request)
@@ -489,14 +870,14 @@ namespace Amazon.CloudFormation
         /// 
         /// <returns>The response from the CreateStack service method, as returned by CloudFormation.</returns>
         /// <exception cref="Amazon.CloudFormation.Model.AlreadyExistsException">
-        /// Resource with the name requested already exists.
+        /// The resource with the name requested already exists.
         /// </exception>
         /// <exception cref="Amazon.CloudFormation.Model.InsufficientCapabilitiesException">
-        /// The template contains resources with capabilities that were not specified in the Capabilities
+        /// The template contains resources with capabilities that weren't specified in the Capabilities
         /// parameter.
         /// </exception>
         /// <exception cref="Amazon.CloudFormation.Model.LimitExceededException">
-        /// Quota for the resource has already been reached.
+        /// The quota for the resource has already been reached.
         /// </exception>
         /// <exception cref="Amazon.CloudFormation.Model.TokenAlreadyExistsException">
         /// A client request token already exists.
@@ -546,6 +927,144 @@ namespace Amazon.CloudFormation
 
         #endregion
         
+        #region  CreateStackInstances
+
+        /// <summary>
+        /// Creates stack instances for the specified accounts, within the specified regions.
+        /// A stack instance refers to a stack in a specific account and region. <code>Accounts</code>
+        /// and <code>Regions</code> are required parameters—you must specify at least one account
+        /// and one region.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateStackInstances service method.</param>
+        /// 
+        /// <returns>The response from the CreateStackInstances service method, as returned by CloudFormation.</returns>
+        /// <exception cref="Amazon.CloudFormation.Model.InvalidOperationException">
+        /// The specified operation isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFormation.Model.LimitExceededException">
+        /// The quota for the resource has already been reached.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFormation.Model.OperationIdAlreadyExistsException">
+        /// The specified operation ID already exists.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFormation.Model.OperationInProgressException">
+        /// Another operation is currently in progress for this stack set. Only one operation
+        /// can be performed for a stack set at a given time.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFormation.Model.StackSetNotFoundException">
+        /// The specified stack set doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFormation.Model.StaleRequestException">
+        /// Another operation has been performed on this stack set since the specified operation
+        /// was performed.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateStackInstances">REST API Reference for CreateStackInstances Operation</seealso>
+        public CreateStackInstancesResponse CreateStackInstances(CreateStackInstancesRequest request)
+        {
+            var marshaller = new CreateStackInstancesRequestMarshaller();
+            var unmarshaller = CreateStackInstancesResponseUnmarshaller.Instance;
+
+            return Invoke<CreateStackInstancesRequest,CreateStackInstancesResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateStackInstances operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateStackInstances operation on AmazonCloudFormationClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateStackInstances
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateStackInstances">REST API Reference for CreateStackInstances Operation</seealso>
+        public IAsyncResult BeginCreateStackInstances(CreateStackInstancesRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new CreateStackInstancesRequestMarshaller();
+            var unmarshaller = CreateStackInstancesResponseUnmarshaller.Instance;
+
+            return BeginInvoke<CreateStackInstancesRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateStackInstances operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateStackInstances.</param>
+        /// 
+        /// <returns>Returns a  CreateStackInstancesResult from CloudFormation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateStackInstances">REST API Reference for CreateStackInstances Operation</seealso>
+        public  CreateStackInstancesResponse EndCreateStackInstances(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateStackInstancesResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  CreateStackSet
+
+        /// <summary>
+        /// Creates a stack set.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateStackSet service method.</param>
+        /// 
+        /// <returns>The response from the CreateStackSet service method, as returned by CloudFormation.</returns>
+        /// <exception cref="Amazon.CloudFormation.Model.CreatedButModifiedException">
+        /// The specified resource exists, but has been changed.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFormation.Model.LimitExceededException">
+        /// The quota for the resource has already been reached.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFormation.Model.NameAlreadyExistsException">
+        /// The specified name is already in use.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateStackSet">REST API Reference for CreateStackSet Operation</seealso>
+        public CreateStackSetResponse CreateStackSet(CreateStackSetRequest request)
+        {
+            var marshaller = new CreateStackSetRequestMarshaller();
+            var unmarshaller = CreateStackSetResponseUnmarshaller.Instance;
+
+            return Invoke<CreateStackSetRequest,CreateStackSetResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateStackSet operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateStackSet operation on AmazonCloudFormationClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateStackSet
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateStackSet">REST API Reference for CreateStackSet Operation</seealso>
+        public IAsyncResult BeginCreateStackSet(CreateStackSetRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new CreateStackSetRequestMarshaller();
+            var unmarshaller = CreateStackSetResponseUnmarshaller.Instance;
+
+            return BeginInvoke<CreateStackSetRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateStackSet operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateStackSet.</param>
+        /// 
+        /// <returns>Returns a  CreateStackSetResult from CloudFormation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateStackSet">REST API Reference for CreateStackSet Operation</seealso>
+        public  CreateStackSetResponse EndCreateStackSet(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateStackSetResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DeleteChangeSet
 
         /// <summary>
@@ -562,8 +1081,9 @@ namespace Amazon.CloudFormation
         /// 
         /// <returns>The response from the DeleteChangeSet service method, as returned by CloudFormation.</returns>
         /// <exception cref="Amazon.CloudFormation.Model.InvalidChangeSetStatusException">
-        /// The specified change set cannot be used to update the stack. For example, the change
-        /// set status might be <code>CREATE_IN_PROGRESS</code> or the stack status might be <code>UPDATE_IN_PROGRESS</code>.
+        /// The specified change set can't be used to update the stack. For example, the change
+        /// set status might be <code>CREATE_IN_PROGRESS</code>, or the stack status might be
+        /// <code>UPDATE_IN_PROGRESS</code>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DeleteChangeSet">REST API Reference for DeleteChangeSet Operation</seealso>
         public DeleteChangeSetResponse DeleteChangeSet(DeleteChangeSetRequest request)
@@ -664,6 +1184,138 @@ namespace Amazon.CloudFormation
         public  DeleteStackResponse EndDeleteStack(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteStackResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeleteStackInstances
+
+        /// <summary>
+        /// Deletes stack instances for the specified accounts, in the specified regions.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteStackInstances service method.</param>
+        /// 
+        /// <returns>The response from the DeleteStackInstances service method, as returned by CloudFormation.</returns>
+        /// <exception cref="Amazon.CloudFormation.Model.InvalidOperationException">
+        /// The specified operation isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFormation.Model.OperationIdAlreadyExistsException">
+        /// The specified operation ID already exists.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFormation.Model.OperationInProgressException">
+        /// Another operation is currently in progress for this stack set. Only one operation
+        /// can be performed for a stack set at a given time.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFormation.Model.StackSetNotFoundException">
+        /// The specified stack set doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFormation.Model.StaleRequestException">
+        /// Another operation has been performed on this stack set since the specified operation
+        /// was performed.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DeleteStackInstances">REST API Reference for DeleteStackInstances Operation</seealso>
+        public DeleteStackInstancesResponse DeleteStackInstances(DeleteStackInstancesRequest request)
+        {
+            var marshaller = new DeleteStackInstancesRequestMarshaller();
+            var unmarshaller = DeleteStackInstancesResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteStackInstancesRequest,DeleteStackInstancesResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteStackInstances operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteStackInstances operation on AmazonCloudFormationClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteStackInstances
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DeleteStackInstances">REST API Reference for DeleteStackInstances Operation</seealso>
+        public IAsyncResult BeginDeleteStackInstances(DeleteStackInstancesRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new DeleteStackInstancesRequestMarshaller();
+            var unmarshaller = DeleteStackInstancesResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DeleteStackInstancesRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteStackInstances operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteStackInstances.</param>
+        /// 
+        /// <returns>Returns a  DeleteStackInstancesResult from CloudFormation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DeleteStackInstances">REST API Reference for DeleteStackInstances Operation</seealso>
+        public  DeleteStackInstancesResponse EndDeleteStackInstances(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteStackInstancesResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeleteStackSet
+
+        /// <summary>
+        /// Deletes a stack set. Before you can delete a stack set, all of its member stack instances
+        /// must be deleted. For more information about how to do this, see <a>DeleteStackInstances</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteStackSet service method.</param>
+        /// 
+        /// <returns>The response from the DeleteStackSet service method, as returned by CloudFormation.</returns>
+        /// <exception cref="Amazon.CloudFormation.Model.OperationInProgressException">
+        /// Another operation is currently in progress for this stack set. Only one operation
+        /// can be performed for a stack set at a given time.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFormation.Model.StackSetNotEmptyException">
+        /// You can't yet delete this stack set, because it still contains one or more stack instances.
+        /// Delete all stack instances from the stack set before deleting the stack set.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DeleteStackSet">REST API Reference for DeleteStackSet Operation</seealso>
+        public DeleteStackSetResponse DeleteStackSet(DeleteStackSetRequest request)
+        {
+            var marshaller = new DeleteStackSetRequestMarshaller();
+            var unmarshaller = DeleteStackSetResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteStackSetRequest,DeleteStackSetResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteStackSet operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteStackSet operation on AmazonCloudFormationClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteStackSet
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DeleteStackSet">REST API Reference for DeleteStackSet Operation</seealso>
+        public IAsyncResult BeginDeleteStackSet(DeleteStackSetRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new DeleteStackSetRequestMarshaller();
+            var unmarshaller = DeleteStackSetResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DeleteStackSetRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteStackSet operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteStackSet.</param>
+        /// 
+        /// <returns>Returns a  DeleteStackSetResult from CloudFormation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DeleteStackSet">REST API Reference for DeleteStackSet Operation</seealso>
+        public  DeleteStackSetResponse EndDeleteStackSet(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteStackSetResponse>(asyncResult);
         }
 
         #endregion
@@ -839,6 +1491,71 @@ namespace Amazon.CloudFormation
         public  DescribeStackEventsResponse EndDescribeStackEvents(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeStackEventsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DescribeStackInstance
+
+        /// <summary>
+        /// Returns the stack instance that's associated with the specified stack set, AWS account,
+        /// and region.
+        /// 
+        ///  
+        /// <para>
+        /// For a list of stack instances that are associated with a specific stack set, use <a>ListStackInstances</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeStackInstance service method.</param>
+        /// 
+        /// <returns>The response from the DescribeStackInstance service method, as returned by CloudFormation.</returns>
+        /// <exception cref="Amazon.CloudFormation.Model.StackInstanceNotFoundException">
+        /// The specified stack instance doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFormation.Model.StackSetNotFoundException">
+        /// The specified stack set doesn't exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DescribeStackInstance">REST API Reference for DescribeStackInstance Operation</seealso>
+        public DescribeStackInstanceResponse DescribeStackInstance(DescribeStackInstanceRequest request)
+        {
+            var marshaller = new DescribeStackInstanceRequestMarshaller();
+            var unmarshaller = DescribeStackInstanceResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeStackInstanceRequest,DescribeStackInstanceResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeStackInstance operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeStackInstance operation on AmazonCloudFormationClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeStackInstance
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DescribeStackInstance">REST API Reference for DescribeStackInstance Operation</seealso>
+        public IAsyncResult BeginDescribeStackInstance(DescribeStackInstanceRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new DescribeStackInstanceRequestMarshaller();
+            var unmarshaller = DescribeStackInstanceResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DescribeStackInstanceRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeStackInstance operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeStackInstance.</param>
+        /// 
+        /// <returns>Returns a  DescribeStackInstanceResult from CloudFormation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DescribeStackInstance">REST API Reference for DescribeStackInstance Operation</seealso>
+        public  DescribeStackInstanceResponse EndDescribeStackInstance(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeStackInstanceResponse>(asyncResult);
         }
 
         #endregion
@@ -1061,6 +1778,121 @@ namespace Amazon.CloudFormation
 
         #endregion
         
+        #region  DescribeStackSet
+
+        /// <summary>
+        /// Returns the description of the specified stack set.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeStackSet service method.</param>
+        /// 
+        /// <returns>The response from the DescribeStackSet service method, as returned by CloudFormation.</returns>
+        /// <exception cref="Amazon.CloudFormation.Model.StackSetNotFoundException">
+        /// The specified stack set doesn't exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DescribeStackSet">REST API Reference for DescribeStackSet Operation</seealso>
+        public DescribeStackSetResponse DescribeStackSet(DescribeStackSetRequest request)
+        {
+            var marshaller = new DescribeStackSetRequestMarshaller();
+            var unmarshaller = DescribeStackSetResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeStackSetRequest,DescribeStackSetResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeStackSet operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeStackSet operation on AmazonCloudFormationClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeStackSet
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DescribeStackSet">REST API Reference for DescribeStackSet Operation</seealso>
+        public IAsyncResult BeginDescribeStackSet(DescribeStackSetRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new DescribeStackSetRequestMarshaller();
+            var unmarshaller = DescribeStackSetResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DescribeStackSetRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeStackSet operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeStackSet.</param>
+        /// 
+        /// <returns>Returns a  DescribeStackSetResult from CloudFormation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DescribeStackSet">REST API Reference for DescribeStackSet Operation</seealso>
+        public  DescribeStackSetResponse EndDescribeStackSet(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeStackSetResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DescribeStackSetOperation
+
+        /// <summary>
+        /// Returns the description of the specified stack set operation.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeStackSetOperation service method.</param>
+        /// 
+        /// <returns>The response from the DescribeStackSetOperation service method, as returned by CloudFormation.</returns>
+        /// <exception cref="Amazon.CloudFormation.Model.OperationNotFoundException">
+        /// The specified ID refers to an operation that doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFormation.Model.StackSetNotFoundException">
+        /// The specified stack set doesn't exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DescribeStackSetOperation">REST API Reference for DescribeStackSetOperation Operation</seealso>
+        public DescribeStackSetOperationResponse DescribeStackSetOperation(DescribeStackSetOperationRequest request)
+        {
+            var marshaller = new DescribeStackSetOperationRequestMarshaller();
+            var unmarshaller = DescribeStackSetOperationResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeStackSetOperationRequest,DescribeStackSetOperationResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeStackSetOperation operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeStackSetOperation operation on AmazonCloudFormationClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeStackSetOperation
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DescribeStackSetOperation">REST API Reference for DescribeStackSetOperation Operation</seealso>
+        public IAsyncResult BeginDescribeStackSetOperation(DescribeStackSetOperationRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new DescribeStackSetOperationRequestMarshaller();
+            var unmarshaller = DescribeStackSetOperationResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DescribeStackSetOperationRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeStackSetOperation operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeStackSetOperation.</param>
+        /// 
+        /// <returns>Returns a  DescribeStackSetOperationResult from CloudFormation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DescribeStackSetOperation">REST API Reference for DescribeStackSetOperation Operation</seealso>
+        public  DescribeStackSetOperationResponse EndDescribeStackSetOperation(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeStackSetOperationResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  EstimateTemplateCost
 
         /// <summary>
@@ -1144,12 +1976,13 @@ namespace Amazon.CloudFormation
         /// stack, use the <code>ListChangeSets</code> action.
         /// </exception>
         /// <exception cref="Amazon.CloudFormation.Model.InsufficientCapabilitiesException">
-        /// The template contains resources with capabilities that were not specified in the Capabilities
+        /// The template contains resources with capabilities that weren't specified in the Capabilities
         /// parameter.
         /// </exception>
         /// <exception cref="Amazon.CloudFormation.Model.InvalidChangeSetStatusException">
-        /// The specified change set cannot be used to update the stack. For example, the change
-        /// set status might be <code>CREATE_IN_PROGRESS</code> or the stack status might be <code>UPDATE_IN_PROGRESS</code>.
+        /// The specified change set can't be used to update the stack. For example, the change
+        /// set status might be <code>CREATE_IN_PROGRESS</code>, or the stack status might be
+        /// <code>UPDATE_IN_PROGRESS</code>.
         /// </exception>
         /// <exception cref="Amazon.CloudFormation.Model.TokenAlreadyExistsException">
         /// A client request token already exists.
@@ -1344,6 +2177,9 @@ namespace Amazon.CloudFormation
         /// <param name="request">Container for the necessary parameters to execute the GetTemplateSummary service method.</param>
         /// 
         /// <returns>The response from the GetTemplateSummary service method, as returned by CloudFormation.</returns>
+        /// <exception cref="Amazon.CloudFormation.Model.StackSetNotFoundException">
+        /// The specified stack set doesn't exist.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/GetTemplateSummary">REST API Reference for GetTemplateSummary Operation</seealso>
         public GetTemplateSummaryResponse GetTemplateSummary(GetTemplateSummaryRequest request)
         {
@@ -1567,6 +2403,64 @@ namespace Amazon.CloudFormation
 
         #endregion
         
+        #region  ListStackInstances
+
+        /// <summary>
+        /// Returns summary information about stack instances that are associated with the specified
+        /// stack set. You can filter for stack instances that are associated with a specific
+        /// AWS account name or region.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListStackInstances service method.</param>
+        /// 
+        /// <returns>The response from the ListStackInstances service method, as returned by CloudFormation.</returns>
+        /// <exception cref="Amazon.CloudFormation.Model.StackSetNotFoundException">
+        /// The specified stack set doesn't exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ListStackInstances">REST API Reference for ListStackInstances Operation</seealso>
+        public ListStackInstancesResponse ListStackInstances(ListStackInstancesRequest request)
+        {
+            var marshaller = new ListStackInstancesRequestMarshaller();
+            var unmarshaller = ListStackInstancesResponseUnmarshaller.Instance;
+
+            return Invoke<ListStackInstancesRequest,ListStackInstancesResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListStackInstances operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListStackInstances operation on AmazonCloudFormationClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListStackInstances
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ListStackInstances">REST API Reference for ListStackInstances Operation</seealso>
+        public IAsyncResult BeginListStackInstances(ListStackInstancesRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new ListStackInstancesRequestMarshaller();
+            var unmarshaller = ListStackInstancesResponseUnmarshaller.Instance;
+
+            return BeginInvoke<ListStackInstancesRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListStackInstances operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListStackInstances.</param>
+        /// 
+        /// <returns>Returns a  ListStackInstancesResult from CloudFormation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ListStackInstances">REST API Reference for ListStackInstances Operation</seealso>
+        public  ListStackInstancesResponse EndListStackInstances(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListStackInstancesResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ListStackResources
 
         /// <summary>
@@ -1696,6 +2590,174 @@ namespace Amazon.CloudFormation
 
         #endregion
         
+        #region  ListStackSetOperationResults
+
+        /// <summary>
+        /// Returns summary information about the results of a stack set operation.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListStackSetOperationResults service method.</param>
+        /// 
+        /// <returns>The response from the ListStackSetOperationResults service method, as returned by CloudFormation.</returns>
+        /// <exception cref="Amazon.CloudFormation.Model.OperationNotFoundException">
+        /// The specified ID refers to an operation that doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFormation.Model.StackSetNotFoundException">
+        /// The specified stack set doesn't exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ListStackSetOperationResults">REST API Reference for ListStackSetOperationResults Operation</seealso>
+        public ListStackSetOperationResultsResponse ListStackSetOperationResults(ListStackSetOperationResultsRequest request)
+        {
+            var marshaller = new ListStackSetOperationResultsRequestMarshaller();
+            var unmarshaller = ListStackSetOperationResultsResponseUnmarshaller.Instance;
+
+            return Invoke<ListStackSetOperationResultsRequest,ListStackSetOperationResultsResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListStackSetOperationResults operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListStackSetOperationResults operation on AmazonCloudFormationClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListStackSetOperationResults
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ListStackSetOperationResults">REST API Reference for ListStackSetOperationResults Operation</seealso>
+        public IAsyncResult BeginListStackSetOperationResults(ListStackSetOperationResultsRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new ListStackSetOperationResultsRequestMarshaller();
+            var unmarshaller = ListStackSetOperationResultsResponseUnmarshaller.Instance;
+
+            return BeginInvoke<ListStackSetOperationResultsRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListStackSetOperationResults operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListStackSetOperationResults.</param>
+        /// 
+        /// <returns>Returns a  ListStackSetOperationResultsResult from CloudFormation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ListStackSetOperationResults">REST API Reference for ListStackSetOperationResults Operation</seealso>
+        public  ListStackSetOperationResultsResponse EndListStackSetOperationResults(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListStackSetOperationResultsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListStackSetOperations
+
+        /// <summary>
+        /// Returns summary information about operations performed on a stack set.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListStackSetOperations service method.</param>
+        /// 
+        /// <returns>The response from the ListStackSetOperations service method, as returned by CloudFormation.</returns>
+        /// <exception cref="Amazon.CloudFormation.Model.StackSetNotFoundException">
+        /// The specified stack set doesn't exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ListStackSetOperations">REST API Reference for ListStackSetOperations Operation</seealso>
+        public ListStackSetOperationsResponse ListStackSetOperations(ListStackSetOperationsRequest request)
+        {
+            var marshaller = new ListStackSetOperationsRequestMarshaller();
+            var unmarshaller = ListStackSetOperationsResponseUnmarshaller.Instance;
+
+            return Invoke<ListStackSetOperationsRequest,ListStackSetOperationsResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListStackSetOperations operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListStackSetOperations operation on AmazonCloudFormationClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListStackSetOperations
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ListStackSetOperations">REST API Reference for ListStackSetOperations Operation</seealso>
+        public IAsyncResult BeginListStackSetOperations(ListStackSetOperationsRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new ListStackSetOperationsRequestMarshaller();
+            var unmarshaller = ListStackSetOperationsResponseUnmarshaller.Instance;
+
+            return BeginInvoke<ListStackSetOperationsRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListStackSetOperations operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListStackSetOperations.</param>
+        /// 
+        /// <returns>Returns a  ListStackSetOperationsResult from CloudFormation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ListStackSetOperations">REST API Reference for ListStackSetOperations Operation</seealso>
+        public  ListStackSetOperationsResponse EndListStackSetOperations(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListStackSetOperationsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListStackSets
+
+        /// <summary>
+        /// Returns summary information about stack sets that are associated with the user.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListStackSets service method.</param>
+        /// 
+        /// <returns>The response from the ListStackSets service method, as returned by CloudFormation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ListStackSets">REST API Reference for ListStackSets Operation</seealso>
+        public ListStackSetsResponse ListStackSets(ListStackSetsRequest request)
+        {
+            var marshaller = new ListStackSetsRequestMarshaller();
+            var unmarshaller = ListStackSetsResponseUnmarshaller.Instance;
+
+            return Invoke<ListStackSetsRequest,ListStackSetsResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListStackSets operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListStackSets operation on AmazonCloudFormationClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListStackSets
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ListStackSets">REST API Reference for ListStackSets Operation</seealso>
+        public IAsyncResult BeginListStackSets(ListStackSetsRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new ListStackSetsRequestMarshaller();
+            var unmarshaller = ListStackSetsResponseUnmarshaller.Instance;
+
+            return BeginInvoke<ListStackSetsRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListStackSets operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListStackSets.</param>
+        /// 
+        /// <returns>Returns a  ListStackSetsResult from CloudFormation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ListStackSets">REST API Reference for ListStackSets Operation</seealso>
+        public  ListStackSetsResponse EndListStackSets(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListStackSetsResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  SetStackPolicy
 
         /// <summary>
@@ -1807,6 +2869,68 @@ namespace Amazon.CloudFormation
 
         #endregion
         
+        #region  StopStackSetOperation
+
+        /// <summary>
+        /// Stops an in-progress operation on a stack set and its associated stack instances.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StopStackSetOperation service method.</param>
+        /// 
+        /// <returns>The response from the StopStackSetOperation service method, as returned by CloudFormation.</returns>
+        /// <exception cref="Amazon.CloudFormation.Model.InvalidOperationException">
+        /// The specified operation isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFormation.Model.OperationNotFoundException">
+        /// The specified ID refers to an operation that doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFormation.Model.StackSetNotFoundException">
+        /// The specified stack set doesn't exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/StopStackSetOperation">REST API Reference for StopStackSetOperation Operation</seealso>
+        public StopStackSetOperationResponse StopStackSetOperation(StopStackSetOperationRequest request)
+        {
+            var marshaller = new StopStackSetOperationRequestMarshaller();
+            var unmarshaller = StopStackSetOperationResponseUnmarshaller.Instance;
+
+            return Invoke<StopStackSetOperationRequest,StopStackSetOperationResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StopStackSetOperation operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StopStackSetOperation operation on AmazonCloudFormationClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStopStackSetOperation
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/StopStackSetOperation">REST API Reference for StopStackSetOperation Operation</seealso>
+        public IAsyncResult BeginStopStackSetOperation(StopStackSetOperationRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new StopStackSetOperationRequestMarshaller();
+            var unmarshaller = StopStackSetOperationResponseUnmarshaller.Instance;
+
+            return BeginInvoke<StopStackSetOperationRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  StopStackSetOperation operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStopStackSetOperation.</param>
+        /// 
+        /// <returns>Returns a  StopStackSetOperationResult from CloudFormation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/StopStackSetOperation">REST API Reference for StopStackSetOperation Operation</seealso>
+        public  StopStackSetOperationResponse EndStopStackSetOperation(IAsyncResult asyncResult)
+        {
+            return EndInvoke<StopStackSetOperationResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  UpdateStack
 
         /// <summary>
@@ -1830,7 +2954,7 @@ namespace Amazon.CloudFormation
         /// 
         /// <returns>The response from the UpdateStack service method, as returned by CloudFormation.</returns>
         /// <exception cref="Amazon.CloudFormation.Model.InsufficientCapabilitiesException">
-        /// The template contains resources with capabilities that were not specified in the Capabilities
+        /// The template contains resources with capabilities that weren't specified in the Capabilities
         /// parameter.
         /// </exception>
         /// <exception cref="Amazon.CloudFormation.Model.TokenAlreadyExistsException">
@@ -1877,6 +3001,84 @@ namespace Amazon.CloudFormation
         public  UpdateStackResponse EndUpdateStack(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateStackResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpdateStackSet
+
+        /// <summary>
+        /// Updates the stack set and <i>all</i> associated stack instances.
+        /// 
+        ///  
+        /// <para>
+        /// Even if the stack set operation created by updating the stack set fails (completely
+        /// or partially, below or above a specified failure tolerance), the stack set is updated
+        /// with your changes. Subsequent <a>CreateStackInstances</a> calls on the specified stack
+        /// set use the updated stack set.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateStackSet service method.</param>
+        /// 
+        /// <returns>The response from the UpdateStackSet service method, as returned by CloudFormation.</returns>
+        /// <exception cref="Amazon.CloudFormation.Model.InvalidOperationException">
+        /// The specified operation isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFormation.Model.OperationIdAlreadyExistsException">
+        /// The specified operation ID already exists.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFormation.Model.OperationInProgressException">
+        /// Another operation is currently in progress for this stack set. Only one operation
+        /// can be performed for a stack set at a given time.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFormation.Model.StackSetNotFoundException">
+        /// The specified stack set doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFormation.Model.StaleRequestException">
+        /// Another operation has been performed on this stack set since the specified operation
+        /// was performed.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/UpdateStackSet">REST API Reference for UpdateStackSet Operation</seealso>
+        public UpdateStackSetResponse UpdateStackSet(UpdateStackSetRequest request)
+        {
+            var marshaller = new UpdateStackSetRequestMarshaller();
+            var unmarshaller = UpdateStackSetResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateStackSetRequest,UpdateStackSetResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateStackSet operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateStackSet operation on AmazonCloudFormationClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateStackSet
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/UpdateStackSet">REST API Reference for UpdateStackSet Operation</seealso>
+        public IAsyncResult BeginUpdateStackSet(UpdateStackSetRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new UpdateStackSetRequestMarshaller();
+            var unmarshaller = UpdateStackSetResponseUnmarshaller.Instance;
+
+            return BeginInvoke<UpdateStackSetRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateStackSet operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateStackSet.</param>
+        /// 
+        /// <returns>Returns a  UpdateStackSetResult from CloudFormation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/UpdateStackSet">REST API Reference for UpdateStackSet Operation</seealso>
+        public  UpdateStackSetResponse EndUpdateStackSet(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateStackSetResponse>(asyncResult);
         }
 
         #endregion

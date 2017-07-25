@@ -25,6 +25,60 @@ namespace Amazon.CloudFormation
 {
 
     /// <summary>
+    /// Constants used for properties of type AccountGateStatus.
+    /// </summary>
+    public class AccountGateStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant FAILED for AccountGateStatus
+        /// </summary>
+        public static readonly AccountGateStatus FAILED = new AccountGateStatus("FAILED");
+        /// <summary>
+        /// Constant SKIPPED for AccountGateStatus
+        /// </summary>
+        public static readonly AccountGateStatus SKIPPED = new AccountGateStatus("SKIPPED");
+        /// <summary>
+        /// Constant SUCCEEDED for AccountGateStatus
+        /// </summary>
+        public static readonly AccountGateStatus SUCCEEDED = new AccountGateStatus("SUCCEEDED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AccountGateStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AccountGateStatus FindValue(string value)
+        {
+            return FindValue<AccountGateStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AccountGateStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type Capability.
     /// </summary>
     public class Capability : ConstantClass
@@ -818,6 +872,288 @@ namespace Amazon.CloudFormation
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ResourceStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type StackInstanceStatus.
+    /// </summary>
+    public class StackInstanceStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CURRENT for StackInstanceStatus
+        /// </summary>
+        public static readonly StackInstanceStatus CURRENT = new StackInstanceStatus("CURRENT");
+        /// <summary>
+        /// Constant INOPERABLE for StackInstanceStatus
+        /// </summary>
+        public static readonly StackInstanceStatus INOPERABLE = new StackInstanceStatus("INOPERABLE");
+        /// <summary>
+        /// Constant OUTDATED for StackInstanceStatus
+        /// </summary>
+        public static readonly StackInstanceStatus OUTDATED = new StackInstanceStatus("OUTDATED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public StackInstanceStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static StackInstanceStatus FindValue(string value)
+        {
+            return FindValue<StackInstanceStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator StackInstanceStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type StackSetOperationAction.
+    /// </summary>
+    public class StackSetOperationAction : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CREATE for StackSetOperationAction
+        /// </summary>
+        public static readonly StackSetOperationAction CREATE = new StackSetOperationAction("CREATE");
+        /// <summary>
+        /// Constant DELETE for StackSetOperationAction
+        /// </summary>
+        public static readonly StackSetOperationAction DELETE = new StackSetOperationAction("DELETE");
+        /// <summary>
+        /// Constant UPDATE for StackSetOperationAction
+        /// </summary>
+        public static readonly StackSetOperationAction UPDATE = new StackSetOperationAction("UPDATE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public StackSetOperationAction(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static StackSetOperationAction FindValue(string value)
+        {
+            return FindValue<StackSetOperationAction>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator StackSetOperationAction(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type StackSetOperationResultStatus.
+    /// </summary>
+    public class StackSetOperationResultStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CANCELLED for StackSetOperationResultStatus
+        /// </summary>
+        public static readonly StackSetOperationResultStatus CANCELLED = new StackSetOperationResultStatus("CANCELLED");
+        /// <summary>
+        /// Constant FAILED for StackSetOperationResultStatus
+        /// </summary>
+        public static readonly StackSetOperationResultStatus FAILED = new StackSetOperationResultStatus("FAILED");
+        /// <summary>
+        /// Constant PENDING for StackSetOperationResultStatus
+        /// </summary>
+        public static readonly StackSetOperationResultStatus PENDING = new StackSetOperationResultStatus("PENDING");
+        /// <summary>
+        /// Constant RUNNING for StackSetOperationResultStatus
+        /// </summary>
+        public static readonly StackSetOperationResultStatus RUNNING = new StackSetOperationResultStatus("RUNNING");
+        /// <summary>
+        /// Constant SUCCEEDED for StackSetOperationResultStatus
+        /// </summary>
+        public static readonly StackSetOperationResultStatus SUCCEEDED = new StackSetOperationResultStatus("SUCCEEDED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public StackSetOperationResultStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static StackSetOperationResultStatus FindValue(string value)
+        {
+            return FindValue<StackSetOperationResultStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator StackSetOperationResultStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type StackSetOperationStatus.
+    /// </summary>
+    public class StackSetOperationStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant FAILED for StackSetOperationStatus
+        /// </summary>
+        public static readonly StackSetOperationStatus FAILED = new StackSetOperationStatus("FAILED");
+        /// <summary>
+        /// Constant RUNNING for StackSetOperationStatus
+        /// </summary>
+        public static readonly StackSetOperationStatus RUNNING = new StackSetOperationStatus("RUNNING");
+        /// <summary>
+        /// Constant STOPPED for StackSetOperationStatus
+        /// </summary>
+        public static readonly StackSetOperationStatus STOPPED = new StackSetOperationStatus("STOPPED");
+        /// <summary>
+        /// Constant STOPPING for StackSetOperationStatus
+        /// </summary>
+        public static readonly StackSetOperationStatus STOPPING = new StackSetOperationStatus("STOPPING");
+        /// <summary>
+        /// Constant SUCCEEDED for StackSetOperationStatus
+        /// </summary>
+        public static readonly StackSetOperationStatus SUCCEEDED = new StackSetOperationStatus("SUCCEEDED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public StackSetOperationStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static StackSetOperationStatus FindValue(string value)
+        {
+            return FindValue<StackSetOperationStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator StackSetOperationStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type StackSetStatus.
+    /// </summary>
+    public class StackSetStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACTIVE for StackSetStatus
+        /// </summary>
+        public static readonly StackSetStatus ACTIVE = new StackSetStatus("ACTIVE");
+        /// <summary>
+        /// Constant DELETED for StackSetStatus
+        /// </summary>
+        public static readonly StackSetStatus DELETED = new StackSetStatus("DELETED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public StackSetStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static StackSetStatus FindValue(string value)
+        {
+            return FindValue<StackSetStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator StackSetStatus(string value)
         {
             return FindValue(value);
         }
