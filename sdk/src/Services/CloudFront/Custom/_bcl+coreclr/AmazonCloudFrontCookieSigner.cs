@@ -309,7 +309,7 @@ namespace Amazon.CloudFront
             }
             else
             {
-                return protocol.ToString() + "://" + distributionDomain +
+                return protocol.ToString().ToLowerInvariant() + "://" + distributionDomain +
                     "/" + path;
             }
         }
