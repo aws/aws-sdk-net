@@ -20,6 +20,7 @@ using AWSSDK_DotNet.IntegrationTests.Utils;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Net;
+using Amazon.Util;
 
 namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
 {
@@ -36,36 +37,33 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         [TestCategory("S3")]
         public void USEastUnder7Days()
         {
-            TestPreSignedUrl(RegionEndpoint.USEast1, DateTime.Now.AddDays(7).AddSeconds(-1), true, true);
+            TestPreSignedUrl(RegionEndpoint.USEast1, AWSSDKUtils.CorrectedUtcNow.AddDays(7).AddHours(-2), true, true);
         }
 
-        /*
         [TestMethod]
         [TestCategory("S3")]
         public void USEastOver7Days()
         {
             // us-east-1 allows Sigv2 so it should fall back to it since the expiration is > 7 days
-            TestPreSignedUrl(RegionEndpoint.USEast1, DateTime.Now.AddDays(7).AddMinutes(1), true, false);
-        }*/
+            TestPreSignedUrl(RegionEndpoint.USEast1, AWSSDKUtils.CorrectedUtcNow.AddDays(7).AddHours(2), true, false);
+        }
 
         [TestMethod]
         [TestCategory("S3")]
         public void EUCentral1Under7Days()
         {
-            TestPreSignedUrl(RegionEndpoint.EUCentral1, DateTime.Now.AddDays(7).AddSeconds(-1), true, true);
+            TestPreSignedUrl(RegionEndpoint.EUCentral1, AWSSDKUtils.CorrectedUtcNow.AddDays(7).AddHours(-2), true, true);
         }
 
-        /*
         [TestMethod]
         [TestCategory("S3")]
         public void EUCentral1Over7Days()
         {
             // EUCentral1 doesn't allow SigV2 so we expect an error since the expiration > 7 days
             AssertExtensions.ExpectException(()=>{
-                TestPreSignedUrl(RegionEndpoint.EUCentral1, DateTime.Now.AddDays(7).AddMinutes(1), true, true);
+                TestPreSignedUrl(RegionEndpoint.EUCentral1, AWSSDKUtils.CorrectedUtcNow.AddDays(7).AddHours(2), true, true);
             }, typeof(ArgumentException), "The maximum expiry period for a presigned url using AWS4 signing is 604800 seconds");
         }
-        */
 
         private void TestPreSignedUrl(RegionEndpoint region, DateTime expires, bool useSigV4, bool expectSigV4Url)
         {
