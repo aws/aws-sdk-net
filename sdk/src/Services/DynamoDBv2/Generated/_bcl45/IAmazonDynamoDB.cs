@@ -653,7 +653,7 @@ namespace Amazon.DynamoDBv2
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        /// <param name="requestItems">A map of one or more table names and, for each table, a list of operations to be performed (<code>DeleteRequest</code> or <code>PutRequest</code>). Each element in the map consists of the following: <ul> <li>  <code>DeleteRequest</code> - Perform a <code>DeleteItem</code> operation on the specified item. The item to be deleted is identified by a <code>Key</code> subelement: <ul> <li>  <code>Key</code> - A map of primary key attribute values that uniquely identify the ! item. Each entry in this map consists of an attribute name and an attribute value. For each primary key, you must provide <i>all</i> of the key attributes. For example, with a simple primary key, you only need to provide a value for the partition key. For a composite primary key, you must provide values for <i>both</i> the partition key and the sort key. </li> </ul> </li> <li>  <code>PutRequest</code> - Perform a <code>PutItem</code> operation on the specified item. The item to be put is identified by an <code>Item</code> subelement: <ul> <li>  <code>Item</code> - A map of attributes and their values. Each entry in this map consists of an attribute name and an attribute value. Attribute values must not be null; string and binary type attributes must have lengths greater than zero; and set type attributes must not be empty. Requests that contain empty values will be rejected with a <code>ValidationException</code> exception. If you specify any attributes that are part of an index key, then the data types for those attributes must match those of the schema in the table's attribute definition. </li> </ul> </li> </ul></param>
+        /// <param name="requestItems">A map of one or more table names and, for each table, a list of operations to be performed (<code>DeleteRequest</code> or <code>PutRequest</code>). Each element in the map consists of the following: <ul> <li>  <code>DeleteRequest</code> - Perform a <code>DeleteItem</code> operation on the specified item. The item to be deleted is identified by a <code>Key</code> subelement: <ul> <li>  <code>Key</code> - A map of primary key attribute values that uniquely identify the item. Each entry in this map consists of an attribute name and an attribute value. For each primary key, you must provide <i>all</i> of the key attributes. For example, with a simple primary key, you only need to provide a value for the partition key. For a composite primary key, you must provide values for <i>both</i> the partition key and the sort key. </li> </ul> </li> <li>  <code>PutRequest</code> - Perform a <code>PutItem</code> operation on the specified item. The item to be put is identified by an <code>Item</code> subelement: <ul> <li>  <code>Item</code> - A map of attributes and their values. Each entry in this map consists of an attribute name and an attribute value. Attribute values must not be null; string and binary type attributes must have lengths greater than zero; and set type attributes must not be empty. Requests that contain empty values will be rejected with a <code>ValidationException</code> exception. If you specify any attributes that are part of an index key, then the data types for those attributes must match those of the schema in the table's attribute definition. </li> </ul> </li> </ul></param>
         /// 
         /// <returns>The response from the BatchWriteItem service method, as returned by DynamoDB.</returns>
         /// <exception cref="Amazon.DynamoDBv2.Model.InternalServerErrorException">
@@ -902,7 +902,7 @@ namespace Amazon.DynamoDBv2
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        /// <param name="requestItems">A map of one or more table names and, for each table, a list of operations to be performed (<code>DeleteRequest</code> or <code>PutRequest</code>). Each element in the map consists of the following: <ul> <li>  <code>DeleteRequest</code> - Perform a <code>DeleteItem</code> operation on the specified item. The item to be deleted is identified by a <code>Key</code> subelement: <ul> <li>  <code>Key</code> - A map of primary key attribute values that uniquely identify the ! item. Each entry in this map consists of an attribute name and an attribute value. For each primary key, you must provide <i>all</i> of the key attributes. For example, with a simple primary key, you only need to provide a value for the partition key. For a composite primary key, you must provide values for <i>both</i> the partition key and the sort key. </li> </ul> </li> <li>  <code>PutRequest</code> - Perform a <code>PutItem</code> operation on the specified item. The item to be put is identified by an <code>Item</code> subelement: <ul> <li>  <code>Item</code> - A map of attributes and their values. Each entry in this map consists of an attribute name and an attribute value. Attribute values must not be null; string and binary type attributes must have lengths greater than zero; and set type attributes must not be empty. Requests that contain empty values will be rejected with a <code>ValidationException</code> exception. If you specify any attributes that are part of an index key, then the data types for those attributes must match those of the schema in the table's attribute definition. </li> </ul> </li> </ul></param>
+        /// <param name="requestItems">A map of one or more table names and, for each table, a list of operations to be performed (<code>DeleteRequest</code> or <code>PutRequest</code>). Each element in the map consists of the following: <ul> <li>  <code>DeleteRequest</code> - Perform a <code>DeleteItem</code> operation on the specified item. The item to be deleted is identified by a <code>Key</code> subelement: <ul> <li>  <code>Key</code> - A map of primary key attribute values that uniquely identify the item. Each entry in this map consists of an attribute name and an attribute value. For each primary key, you must provide <i>all</i> of the key attributes. For example, with a simple primary key, you only need to provide a value for the partition key. For a composite primary key, you must provide values for <i>both</i> the partition key and the sort key. </li> </ul> </li> <li>  <code>PutRequest</code> - Perform a <code>PutItem</code> operation on the specified item. The item to be put is identified by an <code>Item</code> subelement: <ul> <li>  <code>Item</code> - A map of attributes and their values. Each entry in this map consists of an attribute name and an attribute value. Attribute values must not be null; string and binary type attributes must have lengths greater than zero; and set type attributes must not be empty. Requests that contain empty values will be rejected with a <code>ValidationException</code> exception. If you specify any attributes that are part of an index key, then the data types for those attributes must match those of the schema in the table's attribute definition. </li> </ul> </li> </ul></param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
@@ -2306,14 +2306,64 @@ namespace Amazon.DynamoDBv2
         /// same primary key as the new item already exists in the specified table, the new item
         /// completely replaces the existing item. You can perform a conditional put operation
         /// (add a new item if one with the specified primary key doesn't exist), or replace an
-        /// existing item if it has certain attribute values.
+        /// existing item if it has certain attribute values. You can return the item's attribute
+        /// values in the same operation, using the <code>ReturnValues</code> parameter.
         /// 
-        ///  
+        ///  <important> 
         /// <para>
-        /// In addition to putting an item, you can also return the item's attribute values in
-        /// the same operation, using the <code>ReturnValues</code> parameter.
+        /// This topic provides general information about the <code>PutItem</code> API.
         /// </para>
         ///  
+        /// <para>
+        /// For information on how to call the <code>PutItem</code> API using the AWS SDK in specific
+        /// languages, see the following:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a href="http://docs.aws.amazon.com/goto/aws-cli/dynamodb-2012-08-10/PutItem"> PutItem
+        /// in the AWS Command Line Interface </a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="http://docs.aws.amazon.com/goto/DotNetSDKV3/dynamodb-2012-08-10/PutItem">
+        /// PutItem in the AWS SDK for .NET </a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="http://docs.aws.amazon.com/goto/SdkForCpp/dynamodb-2012-08-10/PutItem">
+        /// PutItem in the AWS SDK for C++ </a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="http://docs.aws.amazon.com/goto/SdkForGoV1/dynamodb-2012-08-10/PutItem">
+        /// PutItem in the AWS SDK for Go </a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="http://docs.aws.amazon.com/goto/SdkForJava/dynamodb-2012-08-10/PutItem">
+        /// PutItem in the AWS SDK for Java </a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="http://docs.aws.amazon.com/goto/AWSJavaScriptSDK/dynamodb-2012-08-10/PutItem">
+        /// PutItem in the AWS SDK for JavaScript </a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="http://docs.aws.amazon.com/goto/SdkForPHPV3/dynamodb-2012-08-10/PutItem">
+        /// PutItem in the AWS SDK for PHP V3 </a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="http://docs.aws.amazon.com/goto/boto3/dynamodb-2012-08-10/PutItem"> PutItem
+        /// in the AWS SDK for Python </a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="http://docs.aws.amazon.com/goto/SdkForRubyV2/dynamodb-2012-08-10/PutItem">
+        /// PutItem in the AWS SDK for Ruby V2 </a> 
+        /// </para>
+        ///  </li> </ul> </important> 
         /// <para>
         /// When you add an item, the primary key attribute(s) are the only required attributes.
         /// Attribute values cannot be null. String and Binary type attributes must have lengths
@@ -2367,14 +2417,64 @@ namespace Amazon.DynamoDBv2
         /// same primary key as the new item already exists in the specified table, the new item
         /// completely replaces the existing item. You can perform a conditional put operation
         /// (add a new item if one with the specified primary key doesn't exist), or replace an
-        /// existing item if it has certain attribute values.
+        /// existing item if it has certain attribute values. You can return the item's attribute
+        /// values in the same operation, using the <code>ReturnValues</code> parameter.
         /// 
-        ///  
+        ///  <important> 
         /// <para>
-        /// In addition to putting an item, you can also return the item's attribute values in
-        /// the same operation, using the <code>ReturnValues</code> parameter.
+        /// This topic provides general information about the <code>PutItem</code> API.
         /// </para>
         ///  
+        /// <para>
+        /// For information on how to call the <code>PutItem</code> API using the AWS SDK in specific
+        /// languages, see the following:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a href="http://docs.aws.amazon.com/goto/aws-cli/dynamodb-2012-08-10/PutItem"> PutItem
+        /// in the AWS Command Line Interface </a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="http://docs.aws.amazon.com/goto/DotNetSDKV3/dynamodb-2012-08-10/PutItem">
+        /// PutItem in the AWS SDK for .NET </a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="http://docs.aws.amazon.com/goto/SdkForCpp/dynamodb-2012-08-10/PutItem">
+        /// PutItem in the AWS SDK for C++ </a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="http://docs.aws.amazon.com/goto/SdkForGoV1/dynamodb-2012-08-10/PutItem">
+        /// PutItem in the AWS SDK for Go </a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="http://docs.aws.amazon.com/goto/SdkForJava/dynamodb-2012-08-10/PutItem">
+        /// PutItem in the AWS SDK for Java </a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="http://docs.aws.amazon.com/goto/AWSJavaScriptSDK/dynamodb-2012-08-10/PutItem">
+        /// PutItem in the AWS SDK for JavaScript </a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="http://docs.aws.amazon.com/goto/SdkForPHPV3/dynamodb-2012-08-10/PutItem">
+        /// PutItem in the AWS SDK for PHP V3 </a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="http://docs.aws.amazon.com/goto/boto3/dynamodb-2012-08-10/PutItem"> PutItem
+        /// in the AWS SDK for Python </a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="http://docs.aws.amazon.com/goto/SdkForRubyV2/dynamodb-2012-08-10/PutItem">
+        /// PutItem in the AWS SDK for Ruby V2 </a> 
+        /// </para>
+        ///  </li> </ul> </important> 
         /// <para>
         /// When you add an item, the primary key attribute(s) are the only required attributes.
         /// Attribute values cannot be null. String and Binary type attributes must have lengths
@@ -2429,14 +2529,64 @@ namespace Amazon.DynamoDBv2
         /// same primary key as the new item already exists in the specified table, the new item
         /// completely replaces the existing item. You can perform a conditional put operation
         /// (add a new item if one with the specified primary key doesn't exist), or replace an
-        /// existing item if it has certain attribute values.
+        /// existing item if it has certain attribute values. You can return the item's attribute
+        /// values in the same operation, using the <code>ReturnValues</code> parameter.
         /// 
-        ///  
+        ///  <important> 
         /// <para>
-        /// In addition to putting an item, you can also return the item's attribute values in
-        /// the same operation, using the <code>ReturnValues</code> parameter.
+        /// This topic provides general information about the <code>PutItem</code> API.
         /// </para>
         ///  
+        /// <para>
+        /// For information on how to call the <code>PutItem</code> API using the AWS SDK in specific
+        /// languages, see the following:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a href="http://docs.aws.amazon.com/goto/aws-cli/dynamodb-2012-08-10/PutItem"> PutItem
+        /// in the AWS Command Line Interface </a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="http://docs.aws.amazon.com/goto/DotNetSDKV3/dynamodb-2012-08-10/PutItem">
+        /// PutItem in the AWS SDK for .NET </a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="http://docs.aws.amazon.com/goto/SdkForCpp/dynamodb-2012-08-10/PutItem">
+        /// PutItem in the AWS SDK for C++ </a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="http://docs.aws.amazon.com/goto/SdkForGoV1/dynamodb-2012-08-10/PutItem">
+        /// PutItem in the AWS SDK for Go </a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="http://docs.aws.amazon.com/goto/SdkForJava/dynamodb-2012-08-10/PutItem">
+        /// PutItem in the AWS SDK for Java </a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="http://docs.aws.amazon.com/goto/AWSJavaScriptSDK/dynamodb-2012-08-10/PutItem">
+        /// PutItem in the AWS SDK for JavaScript </a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="http://docs.aws.amazon.com/goto/SdkForPHPV3/dynamodb-2012-08-10/PutItem">
+        /// PutItem in the AWS SDK for PHP V3 </a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="http://docs.aws.amazon.com/goto/boto3/dynamodb-2012-08-10/PutItem"> PutItem
+        /// in the AWS SDK for Python </a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="http://docs.aws.amazon.com/goto/SdkForRubyV2/dynamodb-2012-08-10/PutItem">
+        /// PutItem in the AWS SDK for Ruby V2 </a> 
+        /// </para>
+        ///  </li> </ul> </important> 
         /// <para>
         /// When you add an item, the primary key attribute(s) are the only required attributes.
         /// Attribute values cannot be null. String and Binary type attributes must have lengths
@@ -2490,14 +2640,64 @@ namespace Amazon.DynamoDBv2
         /// same primary key as the new item already exists in the specified table, the new item
         /// completely replaces the existing item. You can perform a conditional put operation
         /// (add a new item if one with the specified primary key doesn't exist), or replace an
-        /// existing item if it has certain attribute values.
+        /// existing item if it has certain attribute values. You can return the item's attribute
+        /// values in the same operation, using the <code>ReturnValues</code> parameter.
         /// 
-        ///  
+        ///  <important> 
         /// <para>
-        /// In addition to putting an item, you can also return the item's attribute values in
-        /// the same operation, using the <code>ReturnValues</code> parameter.
+        /// This topic provides general information about the <code>PutItem</code> API.
         /// </para>
         ///  
+        /// <para>
+        /// For information on how to call the <code>PutItem</code> API using the AWS SDK in specific
+        /// languages, see the following:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a href="http://docs.aws.amazon.com/goto/aws-cli/dynamodb-2012-08-10/PutItem"> PutItem
+        /// in the AWS Command Line Interface </a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="http://docs.aws.amazon.com/goto/DotNetSDKV3/dynamodb-2012-08-10/PutItem">
+        /// PutItem in the AWS SDK for .NET </a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="http://docs.aws.amazon.com/goto/SdkForCpp/dynamodb-2012-08-10/PutItem">
+        /// PutItem in the AWS SDK for C++ </a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="http://docs.aws.amazon.com/goto/SdkForGoV1/dynamodb-2012-08-10/PutItem">
+        /// PutItem in the AWS SDK for Go </a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="http://docs.aws.amazon.com/goto/SdkForJava/dynamodb-2012-08-10/PutItem">
+        /// PutItem in the AWS SDK for Java </a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="http://docs.aws.amazon.com/goto/AWSJavaScriptSDK/dynamodb-2012-08-10/PutItem">
+        /// PutItem in the AWS SDK for JavaScript </a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="http://docs.aws.amazon.com/goto/SdkForPHPV3/dynamodb-2012-08-10/PutItem">
+        /// PutItem in the AWS SDK for PHP V3 </a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="http://docs.aws.amazon.com/goto/boto3/dynamodb-2012-08-10/PutItem"> PutItem
+        /// in the AWS SDK for Python </a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="http://docs.aws.amazon.com/goto/SdkForRubyV2/dynamodb-2012-08-10/PutItem">
+        /// PutItem in the AWS SDK for Ruby V2 </a> 
+        /// </para>
+        ///  </li> </ul> </important> 
         /// <para>
         /// When you add an item, the primary key attribute(s) are the only required attributes.
         /// Attribute values cannot be null. String and Binary type attributes must have lengths
@@ -2554,14 +2754,64 @@ namespace Amazon.DynamoDBv2
         /// same primary key as the new item already exists in the specified table, the new item
         /// completely replaces the existing item. You can perform a conditional put operation
         /// (add a new item if one with the specified primary key doesn't exist), or replace an
-        /// existing item if it has certain attribute values.
+        /// existing item if it has certain attribute values. You can return the item's attribute
+        /// values in the same operation, using the <code>ReturnValues</code> parameter.
         /// 
-        ///  
+        ///  <important> 
         /// <para>
-        /// In addition to putting an item, you can also return the item's attribute values in
-        /// the same operation, using the <code>ReturnValues</code> parameter.
+        /// This topic provides general information about the <code>PutItem</code> API.
         /// </para>
         ///  
+        /// <para>
+        /// For information on how to call the <code>PutItem</code> API using the AWS SDK in specific
+        /// languages, see the following:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a href="http://docs.aws.amazon.com/goto/aws-cli/dynamodb-2012-08-10/PutItem"> PutItem
+        /// in the AWS Command Line Interface </a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="http://docs.aws.amazon.com/goto/DotNetSDKV3/dynamodb-2012-08-10/PutItem">
+        /// PutItem in the AWS SDK for .NET </a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="http://docs.aws.amazon.com/goto/SdkForCpp/dynamodb-2012-08-10/PutItem">
+        /// PutItem in the AWS SDK for C++ </a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="http://docs.aws.amazon.com/goto/SdkForGoV1/dynamodb-2012-08-10/PutItem">
+        /// PutItem in the AWS SDK for Go </a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="http://docs.aws.amazon.com/goto/SdkForJava/dynamodb-2012-08-10/PutItem">
+        /// PutItem in the AWS SDK for Java </a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="http://docs.aws.amazon.com/goto/AWSJavaScriptSDK/dynamodb-2012-08-10/PutItem">
+        /// PutItem in the AWS SDK for JavaScript </a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="http://docs.aws.amazon.com/goto/SdkForPHPV3/dynamodb-2012-08-10/PutItem">
+        /// PutItem in the AWS SDK for PHP V3 </a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="http://docs.aws.amazon.com/goto/boto3/dynamodb-2012-08-10/PutItem"> PutItem
+        /// in the AWS SDK for Python </a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="http://docs.aws.amazon.com/goto/SdkForRubyV2/dynamodb-2012-08-10/PutItem">
+        /// PutItem in the AWS SDK for Ruby V2 </a> 
+        /// </para>
+        ///  </li> </ul> </important> 
         /// <para>
         /// When you add an item, the primary key attribute(s) are the only required attributes.
         /// Attribute values cannot be null. String and Binary type attributes must have lengths
@@ -2632,8 +2882,9 @@ namespace Amazon.DynamoDBv2
 
 
         /// <summary>
-        /// A <code>Query</code> operation uses the primary key of a table or a secondary index
-        /// to directly access items from that table or index.
+        /// The <code>Query</code> operation finds items based on primary key values. You can
+        /// query any table or secondary index that has a composite primary key (a partition key
+        /// and a sort key). 
         /// 
         ///  
         /// <para>
@@ -2641,25 +2892,54 @@ namespace Amazon.DynamoDBv2
         /// for the partition key. The <code>Query</code> operation will return all of the items
         /// from the table or index with that partition key value. You can optionally narrow the
         /// scope of the <code>Query</code> operation by specifying a sort key value and a comparison
-        /// operator in <code>KeyConditionExpression</code>. You can use the <code>ScanIndexForward</code>
-        /// parameter to get results in forward or reverse order, by sort key.
+        /// operator in <code>KeyConditionExpression</code>. To further refine the <code>Query</code>
+        /// results, you can optionally provide a <code>FilterExpression</code>. A <code>FilterExpression</code>
+        /// determines which items within the results should be returned to you. All of the other
+        /// results are discarded. 
         /// </para>
         ///  
         /// <para>
-        /// Queries that do not return results consume the minimum number of read capacity units
-        /// for that type of read operation.
+        ///  A <code>Query</code> operation always returns a result set. If no matching items
+        /// are found, the result set will be empty. Queries that do not return results consume
+        /// the minimum number of read capacity units for that type of read operation. 
+        /// </para>
+        ///  <note> 
+        /// <para>
+        ///  DynamoDB calculates the number of read capacity units consumed based on item size,
+        /// not on the amount of data that is returned to an application. The number of capacity
+        /// units consumed will be the same whether you request all of the attributes (the default
+        /// behavior) or just some of them (using a projection expression). The number will also
+        /// be the same whether or not you use a <code>FilterExpression</code>. 
+        /// </para>
+        ///  </note> 
+        /// <para>
+        ///  <code>Query</code> results are always sorted by the sort key value. If the data type
+        /// of the sort key is Number, the results are returned in numeric order; otherwise, the
+        /// results are returned in order of UTF-8 bytes. By default, the sort order is ascending.
+        /// To reverse the order, set the <code>ScanIndexForward</code> parameter to false. 
         /// </para>
         ///  
         /// <para>
-        /// If the total number of items meeting the query criteria exceeds the result set size
-        /// limit of 1 MB, the query stops and results are returned to the user with the <code>LastEvaluatedKey</code>
-        /// element to continue the query in a subsequent operation. Unlike a <code>Scan</code>
-        /// operation, a <code>Query</code> operation never returns both an empty result set and
-        /// a <code>LastEvaluatedKey</code> value. <code>LastEvaluatedKey</code> is only provided
-        /// if you have used the <code>Limit</code> parameter, or if the result set exceeds 1
-        /// MB (prior to applying a filter). 
+        ///  A single <code>Query</code> operation will read up to the maximum number of items
+        /// set (if using the <code>Limit</code> parameter) or a maximum of 1 MB of data and then
+        /// apply any filtering to the results using <code>FilterExpression</code>. If <code>LastEvaluatedKey</code>
+        /// is present in the response, you will need to paginate the result set. For more information,
+        /// see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Query.html#Query.Pagination">Paginating
+        /// the Results</a> in the <i>Amazon DynamoDB Developer Guide</i>. 
         /// </para>
         ///  
+        /// <para>
+        ///  <code>FilterExpression</code> is applied after a <code>Query</code> finishes, but
+        /// before the results are returned. A <code>FilterExpression</code> cannot contain partition
+        /// key or sort key attributes. You need to specify those attributes in the <code>KeyConditionExpression</code>.
+        /// 
+        /// </para>
+        ///  <note> 
+        /// <para>
+        ///  A <code>Query</code> operation can return an empty result set and a <code>LastEvaluatedKey</code>
+        /// if all the items read for the page of results are filtered out. 
+        /// </para>
+        ///  </note> 
         /// <para>
         /// You can query a table, a local secondary index, or a global secondary index. For a
         /// query on a table or on a local secondary index, you can set the <code>ConsistentRead</code>
@@ -2721,19 +3001,28 @@ namespace Amazon.DynamoDBv2
         /// </para>
         ///  
         /// <para>
-        /// By default, <code>Scan</code> operations proceed sequentially; however, for faster
-        /// performance on a large table or secondary index, applications can request a parallel
-        /// <code>Scan</code> operation by providing the <code>Segment</code> and <code>TotalSegments</code>
-        /// parameters. For more information, see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#QueryAndScanParallelScan">Parallel
+        /// A single <code>Scan</code> operation will read up to the maximum number of items set
+        /// (if using the <code>Limit</code> parameter) or a maximum of 1 MB of data and then
+        /// apply any filtering to the results using <code>FilterExpression</code>. If <code>LastEvaluatedKey</code>
+        /// is present in the response, you will need to paginate the result set. For more information,
+        /// see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Scan.html#Scan.Pagination">Paginating
+        /// the Results</a> in the <i>Amazon DynamoDB Developer Guide</i>. 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>Scan</code> operations proceed sequentially; however, for faster performance
+        /// on a large table or secondary index, applications can request a parallel <code>Scan</code>
+        /// operation by providing the <code>Segment</code> and <code>TotalSegments</code> parameters.
+        /// For more information, see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Scan.html#Scan.ParallelScan">Parallel
         /// Scan</a> in the <i>Amazon DynamoDB Developer Guide</i>.
         /// </para>
         ///  
         /// <para>
-        /// By default, <code>Scan</code> uses eventually consistent reads when accessing the
-        /// data in a table; therefore, the result set might not include the changes to data in
-        /// the table immediately before the operation began. If you need a consistent copy of
-        /// the data, as of the time that the Scan begins, you can set the <code>ConsistentRead</code>
-        /// parameter to <code>true</code>.
+        ///  <code>Scan</code> uses eventually consistent reads when accessing the data in a table;
+        /// therefore, the result set might not include the changes to data in the table immediately
+        /// before the operation began. If you need a consistent copy of the data, as of the time
+        /// that the <code>Scan</code> begins, you can set the <code>ConsistentRead</code> parameter
+        /// to <code>true</code>.
         /// </para>
         /// </summary>
         /// <param name="tableName">The name of the table containing the requested items; or, if you provide <code>IndexName</code>, the name of the table to which that index belongs.</param>
@@ -2772,19 +3061,28 @@ namespace Amazon.DynamoDBv2
         /// </para>
         ///  
         /// <para>
-        /// By default, <code>Scan</code> operations proceed sequentially; however, for faster
-        /// performance on a large table or secondary index, applications can request a parallel
-        /// <code>Scan</code> operation by providing the <code>Segment</code> and <code>TotalSegments</code>
-        /// parameters. For more information, see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#QueryAndScanParallelScan">Parallel
+        /// A single <code>Scan</code> operation will read up to the maximum number of items set
+        /// (if using the <code>Limit</code> parameter) or a maximum of 1 MB of data and then
+        /// apply any filtering to the results using <code>FilterExpression</code>. If <code>LastEvaluatedKey</code>
+        /// is present in the response, you will need to paginate the result set. For more information,
+        /// see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Scan.html#Scan.Pagination">Paginating
+        /// the Results</a> in the <i>Amazon DynamoDB Developer Guide</i>. 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>Scan</code> operations proceed sequentially; however, for faster performance
+        /// on a large table or secondary index, applications can request a parallel <code>Scan</code>
+        /// operation by providing the <code>Segment</code> and <code>TotalSegments</code> parameters.
+        /// For more information, see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Scan.html#Scan.ParallelScan">Parallel
         /// Scan</a> in the <i>Amazon DynamoDB Developer Guide</i>.
         /// </para>
         ///  
         /// <para>
-        /// By default, <code>Scan</code> uses eventually consistent reads when accessing the
-        /// data in a table; therefore, the result set might not include the changes to data in
-        /// the table immediately before the operation began. If you need a consistent copy of
-        /// the data, as of the time that the Scan begins, you can set the <code>ConsistentRead</code>
-        /// parameter to <code>true</code>.
+        ///  <code>Scan</code> uses eventually consistent reads when accessing the data in a table;
+        /// therefore, the result set might not include the changes to data in the table immediately
+        /// before the operation began. If you need a consistent copy of the data, as of the time
+        /// that the <code>Scan</code> begins, you can set the <code>ConsistentRead</code> parameter
+        /// to <code>true</code>.
         /// </para>
         /// </summary>
         /// <param name="tableName">The name of the table containing the requested items; or, if you provide <code>IndexName</code>, the name of the table to which that index belongs.</param>
@@ -2823,19 +3121,28 @@ namespace Amazon.DynamoDBv2
         /// </para>
         ///  
         /// <para>
-        /// By default, <code>Scan</code> operations proceed sequentially; however, for faster
-        /// performance on a large table or secondary index, applications can request a parallel
-        /// <code>Scan</code> operation by providing the <code>Segment</code> and <code>TotalSegments</code>
-        /// parameters. For more information, see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#QueryAndScanParallelScan">Parallel
+        /// A single <code>Scan</code> operation will read up to the maximum number of items set
+        /// (if using the <code>Limit</code> parameter) or a maximum of 1 MB of data and then
+        /// apply any filtering to the results using <code>FilterExpression</code>. If <code>LastEvaluatedKey</code>
+        /// is present in the response, you will need to paginate the result set. For more information,
+        /// see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Scan.html#Scan.Pagination">Paginating
+        /// the Results</a> in the <i>Amazon DynamoDB Developer Guide</i>. 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>Scan</code> operations proceed sequentially; however, for faster performance
+        /// on a large table or secondary index, applications can request a parallel <code>Scan</code>
+        /// operation by providing the <code>Segment</code> and <code>TotalSegments</code> parameters.
+        /// For more information, see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Scan.html#Scan.ParallelScan">Parallel
         /// Scan</a> in the <i>Amazon DynamoDB Developer Guide</i>.
         /// </para>
         ///  
         /// <para>
-        /// By default, <code>Scan</code> uses eventually consistent reads when accessing the
-        /// data in a table; therefore, the result set might not include the changes to data in
-        /// the table immediately before the operation began. If you need a consistent copy of
-        /// the data, as of the time that the Scan begins, you can set the <code>ConsistentRead</code>
-        /// parameter to <code>true</code>.
+        ///  <code>Scan</code> uses eventually consistent reads when accessing the data in a table;
+        /// therefore, the result set might not include the changes to data in the table immediately
+        /// before the operation began. If you need a consistent copy of the data, as of the time
+        /// that the <code>Scan</code> begins, you can set the <code>ConsistentRead</code> parameter
+        /// to <code>true</code>.
         /// </para>
         /// </summary>
         /// <param name="tableName">The name of the table containing the requested items; or, if you provide <code>IndexName</code>, the name of the table to which that index belongs.</param>
@@ -2875,19 +3182,28 @@ namespace Amazon.DynamoDBv2
         /// </para>
         ///  
         /// <para>
-        /// By default, <code>Scan</code> operations proceed sequentially; however, for faster
-        /// performance on a large table or secondary index, applications can request a parallel
-        /// <code>Scan</code> operation by providing the <code>Segment</code> and <code>TotalSegments</code>
-        /// parameters. For more information, see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#QueryAndScanParallelScan">Parallel
+        /// A single <code>Scan</code> operation will read up to the maximum number of items set
+        /// (if using the <code>Limit</code> parameter) or a maximum of 1 MB of data and then
+        /// apply any filtering to the results using <code>FilterExpression</code>. If <code>LastEvaluatedKey</code>
+        /// is present in the response, you will need to paginate the result set. For more information,
+        /// see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Scan.html#Scan.Pagination">Paginating
+        /// the Results</a> in the <i>Amazon DynamoDB Developer Guide</i>. 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>Scan</code> operations proceed sequentially; however, for faster performance
+        /// on a large table or secondary index, applications can request a parallel <code>Scan</code>
+        /// operation by providing the <code>Segment</code> and <code>TotalSegments</code> parameters.
+        /// For more information, see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Scan.html#Scan.ParallelScan">Parallel
         /// Scan</a> in the <i>Amazon DynamoDB Developer Guide</i>.
         /// </para>
         ///  
         /// <para>
-        /// By default, <code>Scan</code> uses eventually consistent reads when accessing the
-        /// data in a table; therefore, the result set might not include the changes to data in
-        /// the table immediately before the operation began. If you need a consistent copy of
-        /// the data, as of the time that the Scan begins, you can set the <code>ConsistentRead</code>
-        /// parameter to <code>true</code>.
+        ///  <code>Scan</code> uses eventually consistent reads when accessing the data in a table;
+        /// therefore, the result set might not include the changes to data in the table immediately
+        /// before the operation began. If you need a consistent copy of the data, as of the time
+        /// that the <code>Scan</code> begins, you can set the <code>ConsistentRead</code> parameter
+        /// to <code>true</code>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the Scan service method.</param>
@@ -2926,19 +3242,28 @@ namespace Amazon.DynamoDBv2
         /// </para>
         ///  
         /// <para>
-        /// By default, <code>Scan</code> operations proceed sequentially; however, for faster
-        /// performance on a large table or secondary index, applications can request a parallel
-        /// <code>Scan</code> operation by providing the <code>Segment</code> and <code>TotalSegments</code>
-        /// parameters. For more information, see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#QueryAndScanParallelScan">Parallel
+        /// A single <code>Scan</code> operation will read up to the maximum number of items set
+        /// (if using the <code>Limit</code> parameter) or a maximum of 1 MB of data and then
+        /// apply any filtering to the results using <code>FilterExpression</code>. If <code>LastEvaluatedKey</code>
+        /// is present in the response, you will need to paginate the result set. For more information,
+        /// see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Scan.html#Scan.Pagination">Paginating
+        /// the Results</a> in the <i>Amazon DynamoDB Developer Guide</i>. 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>Scan</code> operations proceed sequentially; however, for faster performance
+        /// on a large table or secondary index, applications can request a parallel <code>Scan</code>
+        /// operation by providing the <code>Segment</code> and <code>TotalSegments</code> parameters.
+        /// For more information, see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Scan.html#Scan.ParallelScan">Parallel
         /// Scan</a> in the <i>Amazon DynamoDB Developer Guide</i>.
         /// </para>
         ///  
         /// <para>
-        /// By default, <code>Scan</code> uses eventually consistent reads when accessing the
-        /// data in a table; therefore, the result set might not include the changes to data in
-        /// the table immediately before the operation began. If you need a consistent copy of
-        /// the data, as of the time that the Scan begins, you can set the <code>ConsistentRead</code>
-        /// parameter to <code>true</code>.
+        ///  <code>Scan</code> uses eventually consistent reads when accessing the data in a table;
+        /// therefore, the result set might not include the changes to data in the table immediately
+        /// before the operation began. If you need a consistent copy of the data, as of the time
+        /// that the <code>Scan</code> begins, you can set the <code>ConsistentRead</code> parameter
+        /// to <code>true</code>.
         /// </para>
         /// </summary>
         /// <param name="tableName">The name of the table containing the requested items; or, if you provide <code>IndexName</code>, the name of the table to which that index belongs.</param>
@@ -2980,19 +3305,28 @@ namespace Amazon.DynamoDBv2
         /// </para>
         ///  
         /// <para>
-        /// By default, <code>Scan</code> operations proceed sequentially; however, for faster
-        /// performance on a large table or secondary index, applications can request a parallel
-        /// <code>Scan</code> operation by providing the <code>Segment</code> and <code>TotalSegments</code>
-        /// parameters. For more information, see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#QueryAndScanParallelScan">Parallel
+        /// A single <code>Scan</code> operation will read up to the maximum number of items set
+        /// (if using the <code>Limit</code> parameter) or a maximum of 1 MB of data and then
+        /// apply any filtering to the results using <code>FilterExpression</code>. If <code>LastEvaluatedKey</code>
+        /// is present in the response, you will need to paginate the result set. For more information,
+        /// see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Scan.html#Scan.Pagination">Paginating
+        /// the Results</a> in the <i>Amazon DynamoDB Developer Guide</i>. 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>Scan</code> operations proceed sequentially; however, for faster performance
+        /// on a large table or secondary index, applications can request a parallel <code>Scan</code>
+        /// operation by providing the <code>Segment</code> and <code>TotalSegments</code> parameters.
+        /// For more information, see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Scan.html#Scan.ParallelScan">Parallel
         /// Scan</a> in the <i>Amazon DynamoDB Developer Guide</i>.
         /// </para>
         ///  
         /// <para>
-        /// By default, <code>Scan</code> uses eventually consistent reads when accessing the
-        /// data in a table; therefore, the result set might not include the changes to data in
-        /// the table immediately before the operation began. If you need a consistent copy of
-        /// the data, as of the time that the Scan begins, you can set the <code>ConsistentRead</code>
-        /// parameter to <code>true</code>.
+        ///  <code>Scan</code> uses eventually consistent reads when accessing the data in a table;
+        /// therefore, the result set might not include the changes to data in the table immediately
+        /// before the operation began. If you need a consistent copy of the data, as of the time
+        /// that the <code>Scan</code> begins, you can set the <code>ConsistentRead</code> parameter
+        /// to <code>true</code>.
         /// </para>
         /// </summary>
         /// <param name="tableName">The name of the table containing the requested items; or, if you provide <code>IndexName</code>, the name of the table to which that index belongs.</param>
@@ -3034,19 +3368,28 @@ namespace Amazon.DynamoDBv2
         /// </para>
         ///  
         /// <para>
-        /// By default, <code>Scan</code> operations proceed sequentially; however, for faster
-        /// performance on a large table or secondary index, applications can request a parallel
-        /// <code>Scan</code> operation by providing the <code>Segment</code> and <code>TotalSegments</code>
-        /// parameters. For more information, see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#QueryAndScanParallelScan">Parallel
+        /// A single <code>Scan</code> operation will read up to the maximum number of items set
+        /// (if using the <code>Limit</code> parameter) or a maximum of 1 MB of data and then
+        /// apply any filtering to the results using <code>FilterExpression</code>. If <code>LastEvaluatedKey</code>
+        /// is present in the response, you will need to paginate the result set. For more information,
+        /// see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Scan.html#Scan.Pagination">Paginating
+        /// the Results</a> in the <i>Amazon DynamoDB Developer Guide</i>. 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>Scan</code> operations proceed sequentially; however, for faster performance
+        /// on a large table or secondary index, applications can request a parallel <code>Scan</code>
+        /// operation by providing the <code>Segment</code> and <code>TotalSegments</code> parameters.
+        /// For more information, see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Scan.html#Scan.ParallelScan">Parallel
         /// Scan</a> in the <i>Amazon DynamoDB Developer Guide</i>.
         /// </para>
         ///  
         /// <para>
-        /// By default, <code>Scan</code> uses eventually consistent reads when accessing the
-        /// data in a table; therefore, the result set might not include the changes to data in
-        /// the table immediately before the operation began. If you need a consistent copy of
-        /// the data, as of the time that the Scan begins, you can set the <code>ConsistentRead</code>
-        /// parameter to <code>true</code>.
+        ///  <code>Scan</code> uses eventually consistent reads when accessing the data in a table;
+        /// therefore, the result set might not include the changes to data in the table immediately
+        /// before the operation began. If you need a consistent copy of the data, as of the time
+        /// that the <code>Scan</code> begins, you can set the <code>ConsistentRead</code> parameter
+        /// to <code>true</code>.
         /// </para>
         /// </summary>
         /// <param name="tableName">The name of the table containing the requested items; or, if you provide <code>IndexName</code>, the name of the table to which that index belongs.</param>
@@ -3273,7 +3616,7 @@ namespace Amazon.DynamoDBv2
         /// <param name="tableName">The name of the table containing the item to update.</param>
         /// <param name="key">The primary key of the item to be updated. Each element consists of an attribute name and a value for that attribute. For the primary key, you must provide all of the attributes. For example, with a simple primary key, you only need to provide a value for the partition key. For a composite primary key, you must provide values for both the partition key and the sort key.</param>
         /// <param name="attributeUpdates">This is a legacy parameter. Use <code>UpdateExpression</code> instead. For more information, see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.AttributeUpdates.html">AttributeUpdates</a> in the <i>Amazon DynamoDB Developer Guide</i>.</param>
-        /// <param name="returnValues">Use <code>ReturnValues</code> if you want to get the item attributes as they appeared either before or after they were updated. For <code>UpdateItem</code>, the valid values are: <ul> <li>  <code>NONE</code> - If <code>ReturnValues</code> is not specified, or if its value is <code>NONE</code>, then nothing is returned. (This setting is the default for <code>ReturnValues</code>.) </li> <li>  <code>ALL_OLD</code> - Returns all of the attributes of the item, as they appeared before the UpdateItem operation. </li> <li>  <code>UPDATED_OLD</code> - Returns only the updated attributes, as they appeared before the UpdateItem operation. </li> <li>  <code>ALL_NEW</code> - Returns all of the attributes of the item, as they appear after the UpdateItem operation. </li> <li>  <code>UPDATED_NEW</code> - Returns only the updated attributes, as they appear after the UpdateItem operation. </li> </ul> There is no additional cost associated with requesting a return value aside from the small network and processing overhead of receiving a larger response. No Read Capacity Units are consumed. Values returned are strongly consistent</param>
+        /// <param name="returnValues">Use <code>ReturnValues</code> if you want to get the item attributes as they appear before or after they are updated. For <code>UpdateItem</code>, the valid values are: <ul> <li>  <code>NONE</code> - If <code>ReturnValues</code> is not specified, or if its value is <code>NONE</code>, then nothing is returned. (This setting is the default for <code>ReturnValues</code>.) </li> <li>  <code>ALL_OLD</code> - Returns all of the attributes of the item, as they appeared before the UpdateItem operation. </li> <li>  <code>UPDATED_OLD</code> - Returns only the updated attributes, as they appeared before the UpdateItem operation. </li> <li>  <code>ALL_NEW</code> - Returns all of the attributes of the item, as they appear after the UpdateItem operation. </li> <li>  <code>UPDATED_NEW</code> - Returns only the updated attributes, as they appear after the UpdateItem operation. </li> </ul> There is no additional cost associated with requesting a return value aside from the small network and processing overhead of receiving a larger response. No read capacity units are consumed. The values returned are strongly consistent.</param>
         /// 
         /// <returns>The response from the UpdateItem service method, as returned by DynamoDB.</returns>
         /// <exception cref="Amazon.DynamoDBv2.Model.ConditionalCheckFailedException">
@@ -3402,7 +3745,7 @@ namespace Amazon.DynamoDBv2
         /// <param name="tableName">The name of the table containing the item to update.</param>
         /// <param name="key">The primary key of the item to be updated. Each element consists of an attribute name and a value for that attribute. For the primary key, you must provide all of the attributes. For example, with a simple primary key, you only need to provide a value for the partition key. For a composite primary key, you must provide values for both the partition key and the sort key.</param>
         /// <param name="attributeUpdates">This is a legacy parameter. Use <code>UpdateExpression</code> instead. For more information, see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.AttributeUpdates.html">AttributeUpdates</a> in the <i>Amazon DynamoDB Developer Guide</i>.</param>
-        /// <param name="returnValues">Use <code>ReturnValues</code> if you want to get the item attributes as they appeared either before or after they were updated. For <code>UpdateItem</code>, the valid values are: <ul> <li>  <code>NONE</code> - If <code>ReturnValues</code> is not specified, or if its value is <code>NONE</code>, then nothing is returned. (This setting is the default for <code>ReturnValues</code>.) </li> <li>  <code>ALL_OLD</code> - Returns all of the attributes of the item, as they appeared before the UpdateItem operation. </li> <li>  <code>UPDATED_OLD</code> - Returns only the updated attributes, as they appeared before the UpdateItem operation. </li> <li>  <code>ALL_NEW</code> - Returns all of the attributes of the item, as they appear after the UpdateItem operation. </li> <li>  <code>UPDATED_NEW</code> - Returns only the updated attributes, as they appear after the UpdateItem operation. </li> </ul> There is no additional cost associated with requesting a return value aside from the small network and processing overhead of receiving a larger response. No Read Capacity Units are consumed. Values returned are strongly consistent</param>
+        /// <param name="returnValues">Use <code>ReturnValues</code> if you want to get the item attributes as they appear before or after they are updated. For <code>UpdateItem</code>, the valid values are: <ul> <li>  <code>NONE</code> - If <code>ReturnValues</code> is not specified, or if its value is <code>NONE</code>, then nothing is returned. (This setting is the default for <code>ReturnValues</code>.) </li> <li>  <code>ALL_OLD</code> - Returns all of the attributes of the item, as they appeared before the UpdateItem operation. </li> <li>  <code>UPDATED_OLD</code> - Returns only the updated attributes, as they appeared before the UpdateItem operation. </li> <li>  <code>ALL_NEW</code> - Returns all of the attributes of the item, as they appear after the UpdateItem operation. </li> <li>  <code>UPDATED_NEW</code> - Returns only the updated attributes, as they appear after the UpdateItem operation. </li> </ul> There is no additional cost associated with requesting a return value aside from the small network and processing overhead of receiving a larger response. No read capacity units are consumed. The values returned are strongly consistent.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
@@ -3674,11 +4017,11 @@ namespace Amazon.DynamoDBv2
 
 
         /// <summary>
-        /// Specify the lifetime of individual table items. The database automatically removes
-        /// the item at the expiration of the item. The UpdateTimeToLive method will enable or
-        /// disable TTL for the specified table. A successful <code>UpdateTimeToLive</code> call
-        /// returns the current <code>TimeToLiveSpecification</code>; it may take up to one hour
-        /// for the change to fully process. 
+        /// The UpdateTimeToLive method will enable or disable TTL for the specified table. A
+        /// successful <code>UpdateTimeToLive</code> call returns the current <code>TimeToLiveSpecification</code>;
+        /// it may take up to one hour for the change to fully process. Any additional <code>UpdateTimeToLive</code>
+        /// calls for the same table during this one hour duration result in a <code>ValidationException</code>.
+        /// 
         /// 
         ///  
         /// <para>

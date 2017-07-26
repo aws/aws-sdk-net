@@ -29,8 +29,9 @@ namespace Amazon.DynamoDBv2.Model
 {
     /// <summary>
     /// Container for the parameters to the Query operation.
-    /// A <code>Query</code> operation uses the primary key of a table or a secondary index
-    /// to directly access items from that table or index.
+    /// The <code>Query</code> operation finds items based on primary key values. You can
+    /// query any table or secondary index that has a composite primary key (a partition key
+    /// and a sort key). 
     /// 
     ///  
     /// <para>
@@ -38,25 +39,54 @@ namespace Amazon.DynamoDBv2.Model
     /// for the partition key. The <code>Query</code> operation will return all of the items
     /// from the table or index with that partition key value. You can optionally narrow the
     /// scope of the <code>Query</code> operation by specifying a sort key value and a comparison
-    /// operator in <code>KeyConditionExpression</code>. You can use the <code>ScanIndexForward</code>
-    /// parameter to get results in forward or reverse order, by sort key.
+    /// operator in <code>KeyConditionExpression</code>. To further refine the <code>Query</code>
+    /// results, you can optionally provide a <code>FilterExpression</code>. A <code>FilterExpression</code>
+    /// determines which items within the results should be returned to you. All of the other
+    /// results are discarded. 
     /// </para>
     ///  
     /// <para>
-    /// Queries that do not return results consume the minimum number of read capacity units
-    /// for that type of read operation.
+    ///  A <code>Query</code> operation always returns a result set. If no matching items
+    /// are found, the result set will be empty. Queries that do not return results consume
+    /// the minimum number of read capacity units for that type of read operation. 
+    /// </para>
+    ///  <note> 
+    /// <para>
+    ///  DynamoDB calculates the number of read capacity units consumed based on item size,
+    /// not on the amount of data that is returned to an application. The number of capacity
+    /// units consumed will be the same whether you request all of the attributes (the default
+    /// behavior) or just some of them (using a projection expression). The number will also
+    /// be the same whether or not you use a <code>FilterExpression</code>. 
+    /// </para>
+    ///  </note> 
+    /// <para>
+    ///  <code>Query</code> results are always sorted by the sort key value. If the data type
+    /// of the sort key is Number, the results are returned in numeric order; otherwise, the
+    /// results are returned in order of UTF-8 bytes. By default, the sort order is ascending.
+    /// To reverse the order, set the <code>ScanIndexForward</code> parameter to false. 
     /// </para>
     ///  
     /// <para>
-    /// If the total number of items meeting the query criteria exceeds the result set size
-    /// limit of 1 MB, the query stops and results are returned to the user with the <code>LastEvaluatedKey</code>
-    /// element to continue the query in a subsequent operation. Unlike a <code>Scan</code>
-    /// operation, a <code>Query</code> operation never returns both an empty result set and
-    /// a <code>LastEvaluatedKey</code> value. <code>LastEvaluatedKey</code> is only provided
-    /// if you have used the <code>Limit</code> parameter, or if the result set exceeds 1
-    /// MB (prior to applying a filter). 
+    ///  A single <code>Query</code> operation will read up to the maximum number of items
+    /// set (if using the <code>Limit</code> parameter) or a maximum of 1 MB of data and then
+    /// apply any filtering to the results using <code>FilterExpression</code>. If <code>LastEvaluatedKey</code>
+    /// is present in the response, you will need to paginate the result set. For more information,
+    /// see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Query.html#Query.Pagination">Paginating
+    /// the Results</a> in the <i>Amazon DynamoDB Developer Guide</i>. 
     /// </para>
     ///  
+    /// <para>
+    ///  <code>FilterExpression</code> is applied after a <code>Query</code> finishes, but
+    /// before the results are returned. A <code>FilterExpression</code> cannot contain partition
+    /// key or sort key attributes. You need to specify those attributes in the <code>KeyConditionExpression</code>.
+    /// 
+    /// </para>
+    ///  <note> 
+    /// <para>
+    ///  A <code>Query</code> operation can return an empty result set and a <code>LastEvaluatedKey</code>
+    /// if all the items read for the page of results are filtered out. 
+    /// </para>
+    ///  </note> 
     /// <para>
     /// You can query a table, a local secondary index, or a global secondary index. For a
     /// query on a table or on a local secondary index, you can set the <code>ConsistentRead</code>

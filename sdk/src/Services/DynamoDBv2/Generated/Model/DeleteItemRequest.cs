@@ -161,7 +161,7 @@ namespace Amazon.DynamoDBv2.Model
         /// <summary>
         /// Gets and sets the property Expected. 
         /// <para>
-        /// This is a legacy parameter. Use <code>ConditionExpresssion</code> instead. For more
+        /// This is a legacy parameter. Use <code>ConditionExpression</code> instead. For more
         /// information, see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.Expected.html">Expected</a>
         /// in the <i>Amazon DynamoDB Developer Guide</i>.
         /// </para>

@@ -33,14 +33,64 @@ namespace Amazon.DynamoDBv2.Model
     /// same primary key as the new item already exists in the specified table, the new item
     /// completely replaces the existing item. You can perform a conditional put operation
     /// (add a new item if one with the specified primary key doesn't exist), or replace an
-    /// existing item if it has certain attribute values.
+    /// existing item if it has certain attribute values. You can return the item's attribute
+    /// values in the same operation, using the <code>ReturnValues</code> parameter.
     /// 
-    ///  
+    ///  <important> 
     /// <para>
-    /// In addition to putting an item, you can also return the item's attribute values in
-    /// the same operation, using the <code>ReturnValues</code> parameter.
+    /// This topic provides general information about the <code>PutItem</code> API.
     /// </para>
     ///  
+    /// <para>
+    /// For information on how to call the <code>PutItem</code> API using the AWS SDK in specific
+    /// languages, see the following:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <a href="http://docs.aws.amazon.com/goto/aws-cli/dynamodb-2012-08-10/PutItem"> PutItem
+    /// in the AWS Command Line Interface </a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="http://docs.aws.amazon.com/goto/DotNetSDKV3/dynamodb-2012-08-10/PutItem">
+    /// PutItem in the AWS SDK for .NET </a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="http://docs.aws.amazon.com/goto/SdkForCpp/dynamodb-2012-08-10/PutItem">
+    /// PutItem in the AWS SDK for C++ </a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="http://docs.aws.amazon.com/goto/SdkForGoV1/dynamodb-2012-08-10/PutItem">
+    /// PutItem in the AWS SDK for Go </a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="http://docs.aws.amazon.com/goto/SdkForJava/dynamodb-2012-08-10/PutItem">
+    /// PutItem in the AWS SDK for Java </a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="http://docs.aws.amazon.com/goto/AWSJavaScriptSDK/dynamodb-2012-08-10/PutItem">
+    /// PutItem in the AWS SDK for JavaScript </a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="http://docs.aws.amazon.com/goto/SdkForPHPV3/dynamodb-2012-08-10/PutItem">
+    /// PutItem in the AWS SDK for PHP V3 </a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="http://docs.aws.amazon.com/goto/boto3/dynamodb-2012-08-10/PutItem"> PutItem
+    /// in the AWS SDK for Python </a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="http://docs.aws.amazon.com/goto/SdkForRubyV2/dynamodb-2012-08-10/PutItem">
+    /// PutItem in the AWS SDK for Ruby V2 </a> 
+    /// </para>
+    ///  </li> </ul> </important> 
     /// <para>
     /// When you add an item, the primary key attribute(s) are the only required attributes.
     /// Attribute values cannot be null. String and Binary type attributes must have lengths
@@ -172,7 +222,7 @@ namespace Amazon.DynamoDBv2.Model
         /// <summary>
         /// Gets and sets the property Expected. 
         /// <para>
-        /// This is a legacy parameter. Use <code>ConditionExpresssion</code> instead. For more
+        /// This is a legacy parameter. Use <code>ConditionExpression</code> instead. For more
         /// information, see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.Expected.html">Expected</a>
         /// in the <i>Amazon DynamoDB Developer Guide</i>.
         /// </para>

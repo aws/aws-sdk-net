@@ -39,9 +39,14 @@ namespace Amazon.DynamoDBv2.Model
         /// <summary>
         /// Gets and sets the property Attributes. 
         /// <para>
-        /// A map of attribute values as they appeared before the <code>UpdateItem</code> operation.
-        /// This map only appears if <code>ReturnValues</code> was specified as something other
-        /// than <code>NONE</code> in the request. Each element represents one attribute.
+        /// A map of attribute values as they appear before or after the <code>UpdateItem</code>
+        /// operation, as determined by the <code>ReturnValues</code> parameter.
+        /// </para>
+        ///  
+        /// <para>
+        /// The <code>Attributes</code> map is only present if <code>ReturnValues</code> was specified
+        /// as something other than <code>NONE</code> in the request. Each element represents
+        /// one attribute.
         /// </para>
         /// </summary>
         public Dictionary<string, AttributeValue> Attributes

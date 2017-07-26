@@ -43,19 +43,28 @@ namespace Amazon.DynamoDBv2.Model
     /// </para>
     ///  
     /// <para>
-    /// By default, <code>Scan</code> operations proceed sequentially; however, for faster
-    /// performance on a large table or secondary index, applications can request a parallel
-    /// <code>Scan</code> operation by providing the <code>Segment</code> and <code>TotalSegments</code>
-    /// parameters. For more information, see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#QueryAndScanParallelScan">Parallel
+    /// A single <code>Scan</code> operation will read up to the maximum number of items set
+    /// (if using the <code>Limit</code> parameter) or a maximum of 1 MB of data and then
+    /// apply any filtering to the results using <code>FilterExpression</code>. If <code>LastEvaluatedKey</code>
+    /// is present in the response, you will need to paginate the result set. For more information,
+    /// see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Scan.html#Scan.Pagination">Paginating
+    /// the Results</a> in the <i>Amazon DynamoDB Developer Guide</i>. 
+    /// </para>
+    ///  
+    /// <para>
+    ///  <code>Scan</code> operations proceed sequentially; however, for faster performance
+    /// on a large table or secondary index, applications can request a parallel <code>Scan</code>
+    /// operation by providing the <code>Segment</code> and <code>TotalSegments</code> parameters.
+    /// For more information, see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Scan.html#Scan.ParallelScan">Parallel
     /// Scan</a> in the <i>Amazon DynamoDB Developer Guide</i>.
     /// </para>
     ///  
     /// <para>
-    /// By default, <code>Scan</code> uses eventually consistent reads when accessing the
-    /// data in a table; therefore, the result set might not include the changes to data in
-    /// the table immediately before the operation began. If you need a consistent copy of
-    /// the data, as of the time that the Scan begins, you can set the <code>ConsistentRead</code>
-    /// parameter to <code>true</code>.
+    ///  <code>Scan</code> uses eventually consistent reads when accessing the data in a table;
+    /// therefore, the result set might not include the changes to data in the table immediately
+    /// before the operation began. If you need a consistent copy of the data, as of the time
+    /// that the <code>Scan</code> begins, you can set the <code>ConsistentRead</code> parameter
+    /// to <code>true</code>.
     /// </para>
     /// </summary>
     public partial class ScanRequest : AmazonDynamoDBRequest
