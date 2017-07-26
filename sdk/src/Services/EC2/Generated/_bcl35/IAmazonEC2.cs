@@ -5041,6 +5041,48 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  DescribeElasticGpus
+
+
+        /// <summary>
+        /// Describes the Elastic GPUs associated with your instances. For more information about
+        /// Elastic GPUs, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-gpus.html">Amazon
+        /// EC2 Elastic GPUs</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeElasticGpus service method.</param>
+        /// 
+        /// <returns>The response from the DescribeElasticGpus service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeElasticGpus">REST API Reference for DescribeElasticGpus Operation</seealso>
+        DescribeElasticGpusResponse DescribeElasticGpus(DescribeElasticGpusRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeElasticGpus operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeElasticGpus operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeElasticGpus
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeElasticGpus">REST API Reference for DescribeElasticGpus Operation</seealso>
+        IAsyncResult BeginDescribeElasticGpus(DescribeElasticGpusRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeElasticGpus operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeElasticGpus.</param>
+        /// 
+        /// <returns>Returns a  DescribeElasticGpusResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeElasticGpus">REST API Reference for DescribeElasticGpus Operation</seealso>
+        DescribeElasticGpusResponse EndDescribeElasticGpus(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  DescribeExportTasks
 
 

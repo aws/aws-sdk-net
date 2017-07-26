@@ -110,6 +110,7 @@ namespace Amazon.EC2.Model
         private string _clientToken;
         private bool? _disableApiTermination;
         private bool? _ebsOptimized;
+        private List<ElasticGpuSpecification> _elasticGpuSpecification = new List<ElasticGpuSpecification>();
         private IamInstanceProfileSpecification _iamInstanceProfile;
         private string _imageId;
         private ShutdownBehavior _instanceInitiatedShutdownBehavior;
@@ -267,6 +268,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetEbsOptimized()
         {
             return this._ebsOptimized.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ElasticGpuSpecification. 
+        /// <para>
+        /// An Elastic GPU to associate with the instance.
+        /// </para>
+        /// </summary>
+        public List<ElasticGpuSpecification> ElasticGpuSpecification
+        {
+            get { return this._elasticGpuSpecification; }
+            set { this._elasticGpuSpecification = value; }
+        }
+
+        // Check to see if ElasticGpuSpecification property is set
+        internal bool IsSetElasticGpuSpecification()
+        {
+            return this._elasticGpuSpecification != null && this._elasticGpuSpecification.Count > 0; 
         }
 
         /// <summary>

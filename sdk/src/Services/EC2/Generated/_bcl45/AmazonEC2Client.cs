@@ -5416,6 +5416,47 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  DescribeElasticGpus
+
+
+        /// <summary>
+        /// Describes the Elastic GPUs associated with your instances. For more information about
+        /// Elastic GPUs, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-gpus.html">Amazon
+        /// EC2 Elastic GPUs</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeElasticGpus service method.</param>
+        /// 
+        /// <returns>The response from the DescribeElasticGpus service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeElasticGpus">REST API Reference for DescribeElasticGpus Operation</seealso>
+        public DescribeElasticGpusResponse DescribeElasticGpus(DescribeElasticGpusRequest request)
+        {
+            var marshaller = new DescribeElasticGpusRequestMarshaller();
+            var unmarshaller = DescribeElasticGpusResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeElasticGpusRequest,DescribeElasticGpusResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeElasticGpus operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeElasticGpus operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeElasticGpus">REST API Reference for DescribeElasticGpus Operation</seealso>
+        public Task<DescribeElasticGpusResponse> DescribeElasticGpusAsync(DescribeElasticGpusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DescribeElasticGpusRequestMarshaller();
+            var unmarshaller = DescribeElasticGpusResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeElasticGpusRequest,DescribeElasticGpusResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DescribeExportTasks
 
 

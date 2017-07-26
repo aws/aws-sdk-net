@@ -3598,6 +3598,38 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  DescribeElasticGpus
+
+        internal DescribeElasticGpusResponse DescribeElasticGpus(DescribeElasticGpusRequest request)
+        {
+            var marshaller = new DescribeElasticGpusRequestMarshaller();
+            var unmarshaller = DescribeElasticGpusResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeElasticGpusRequest,DescribeElasticGpusResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeElasticGpus operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeElasticGpus operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeElasticGpus">REST API Reference for DescribeElasticGpus Operation</seealso>
+        public Task<DescribeElasticGpusResponse> DescribeElasticGpusAsync(DescribeElasticGpusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DescribeElasticGpusRequestMarshaller();
+            var unmarshaller = DescribeElasticGpusResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeElasticGpusRequest,DescribeElasticGpusResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DescribeExportTasks
 
         internal DescribeExportTasksResponse DescribeExportTasks()

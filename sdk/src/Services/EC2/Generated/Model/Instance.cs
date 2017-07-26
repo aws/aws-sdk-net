@@ -37,6 +37,7 @@ namespace Amazon.EC2.Model
         private List<InstanceBlockDeviceMapping> _blockDeviceMappings = new List<InstanceBlockDeviceMapping>();
         private string _clientToken;
         private bool? _ebsOptimized;
+        private List<ElasticGpuAssociation> _elasticGpuAssociations = new List<ElasticGpuAssociation>();
         private bool? _enaSupport;
         private HypervisorType _hypervisor;
         private IamInstanceProfile _iamInstanceProfile;
@@ -162,6 +163,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetEbsOptimized()
         {
             return this._ebsOptimized.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ElasticGpuAssociations. 
+        /// <para>
+        /// The Elastic GPU associated with the instance.
+        /// </para>
+        /// </summary>
+        public List<ElasticGpuAssociation> ElasticGpuAssociations
+        {
+            get { return this._elasticGpuAssociations; }
+            set { this._elasticGpuAssociations = value; }
+        }
+
+        // Check to see if ElasticGpuAssociations property is set
+        internal bool IsSetElasticGpuAssociations()
+        {
+            return this._elasticGpuAssociations != null && this._elasticGpuAssociations.Count > 0; 
         }
 
         /// <summary>

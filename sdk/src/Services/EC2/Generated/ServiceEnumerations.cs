@@ -1125,6 +1125,102 @@ namespace Amazon.EC2
 
 
     /// <summary>
+    /// Constants used for properties of type ElasticGpuState.
+    /// </summary>
+    public class ElasticGpuState : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ATTACHED for ElasticGpuState
+        /// </summary>
+        public static readonly ElasticGpuState ATTACHED = new ElasticGpuState("ATTACHED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ElasticGpuState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ElasticGpuState FindValue(string value)
+        {
+            return FindValue<ElasticGpuState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ElasticGpuState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ElasticGpuStatus.
+    /// </summary>
+    public class ElasticGpuStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant IMPAIRED for ElasticGpuStatus
+        /// </summary>
+        public static readonly ElasticGpuStatus IMPAIRED = new ElasticGpuStatus("IMPAIRED");
+        /// <summary>
+        /// Constant OK for ElasticGpuStatus
+        /// </summary>
+        public static readonly ElasticGpuStatus OK = new ElasticGpuStatus("OK");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ElasticGpuStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ElasticGpuStatus FindValue(string value)
+        {
+            return FindValue<ElasticGpuStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ElasticGpuStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type EventCode.
     /// </summary>
     public class EventCode : ConstantClass

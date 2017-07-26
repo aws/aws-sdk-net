@@ -121,6 +121,18 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("EbsOptimized", StringUtils.FromBool(publicRequest.EbsOptimized));
                 }
+                if(publicRequest.IsSetElasticGpuSpecification())
+                {
+                    int publicRequestlistValueIndex = 1;
+                    foreach(var publicRequestlistValue in publicRequest.ElasticGpuSpecification)
+                    {
+                        if(publicRequestlistValue.IsSetType())
+                        {
+                            request.Parameters.Add("ElasticGpuSpecification" + "." + publicRequestlistValueIndex + "." + "Type", StringUtils.FromString(publicRequestlistValue.Type));
+                        }
+                        publicRequestlistValueIndex++;
+                    }
+                }
                 if(publicRequest.IsSetIamInstanceProfile())
                 {
                     if(publicRequest.IamInstanceProfile.IsSetArn())

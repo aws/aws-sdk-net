@@ -85,6 +85,13 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.EbsOptimized = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("elasticGpuAssociationSet/item", targetDepth))
+                    {
+                        var unmarshaller = ElasticGpuAssociationUnmarshaller.Instance;
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.ElasticGpuAssociations.Add(item);
+                        continue;
+                    }
                     if (context.TestExpression("enaSupport", targetDepth))
                     {
                         var unmarshaller = BoolUnmarshaller.Instance;
