@@ -208,8 +208,8 @@ namespace Amazon.CloudWatch.Model
         /// <para>
         /// Used only for alarms based on percentiles. If <code>ignore</code>, the alarm state
         /// does not change during periods with too few data points to be statistically significant.
-        /// If <code>evaluate</code> or this parameter is not used, the alarm will always be evaluated
-        /// and possibly change state no matter how many data points are available.
+        /// If <code>evaluate</code> or this parameter is not used, the alarm is always evaluated
+        /// and possibly changes state no matter how many data points are available.
         /// </para>
         /// </summary>
         public string EvaluateLowSampleCountPercentile
