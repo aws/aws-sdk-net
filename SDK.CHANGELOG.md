@@ -1,3 +1,13 @@
+### 3.3.129.0 (2017-07-26 22:18 UTC)
+* CloudFront (3.3.5.0)
+	* Fixed CloudFrontCookierSigner incorrectly constructing resource path
+* CloudWatch (3.3.4.0)
+	* This release adds high resolution features to CloudWatch, with support for Custom Metrics down to 1 second and Alarms down to 10 seconds.
+* DynamoDBv2 (3.3.4.17)
+	* Corrected a typo.
+* EC2 (3.3.18.0)
+	* Amazon EC2 Elastic GPUs allow you to easily attach low-cost graphics acceleration to current generation EC2 instances. With Amazon EC2 Elastic GPUs, you can configure the right amount of graphics acceleration to your particular workload without being constrained by fixed hardware configurations and limited GPU selection.
+
 ### 3.3.128.0 (2017-07-25 23:11 UTC)
 * CloudDirectory (3.3.4.0)
 	* Cloud Directory adds support for additional batch operations.
