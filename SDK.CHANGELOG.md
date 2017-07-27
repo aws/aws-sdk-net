@@ -1,3 +1,11 @@
+### 3.3.130.0 (2017-07-27 19:59 UTC)
+* EC2 (3.3.19.0)
+	* The CreateDefaultVPC API enables you to create a new default VPC . You no longer need to contact AWS support, if your default VPC has been deleted.
+* KinesisAnalytics (3.3.2.0)
+	* Added additional exception types and clarified documentation.
+* SecurityToken (3.3.3.0)
+	* Removed use of new credential cache when authenticating using SAML, causing issues with the default Kereberos mode. Setting UseDefaultCredentials fixed issue and also worked with NTLM mode, for both domain joined and non-joined usage scenarios.
+
 ### 3.3.129.0 (2017-07-26 22:18 UTC)
 * CloudFront (3.3.5.0)
 	* Fixed CloudFrontCookierSigner incorrectly constructing resource path
