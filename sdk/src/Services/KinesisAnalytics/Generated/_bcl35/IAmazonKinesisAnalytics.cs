@@ -41,8 +41,8 @@ namespace Amazon.KinesisAnalytics
         /// <summary>
         /// Adds a CloudWatch log stream to monitor application configuration errors. For more
         /// information about using CloudWatch log streams with Amazon Kinesis Analytics applications,
-        /// see <a href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/cloudwatch-monitor-configuration.html">Monitoring
-        /// Configuration Errors</a>.
+        /// see <a href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/cloudwatch-logs.html">Working
+        /// with Amazon CloudWatch Logs</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AddApplicationCloudWatchLoggingOption service method.</param>
         /// 
@@ -120,6 +120,9 @@ namespace Amazon.KinesisAnalytics
         /// <param name="request">Container for the necessary parameters to execute the AddApplicationInput service method.</param>
         /// 
         /// <returns>The response from the AddApplicationInput service method, as returned by KinesisAnalytics.</returns>
+        /// <exception cref="Amazon.KinesisAnalytics.Model.CodeValidationException">
+        /// User-provided application code (query) is invalid. This can be a simple syntax error.
+        /// </exception>
         /// <exception cref="Amazon.KinesisAnalytics.Model.ConcurrentModificationException">
         /// Exception thrown as a result of concurrent modification to an application. For example,
         /// two individuals attempting to edit the same application at the same time.
@@ -474,8 +477,8 @@ namespace Amazon.KinesisAnalytics
 
         /// <summary>
         /// Deletes a CloudWatch log stream from an application. For more information about using
-        /// CloudWatch log streams with Amazon Kinesis Analytics applications, see <a href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/cloudwatch-monitor-configuration.html">Monitoring
-        /// Configuration Errors</a>.
+        /// CloudWatch log streams with Amazon Kinesis Analytics applications, see <a href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/cloudwatch-logs.html">Working
+        /// with Amazon CloudWatch Logs</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteApplicationCloudWatchLoggingOption service method.</param>
         /// 
@@ -738,6 +741,9 @@ namespace Amazon.KinesisAnalytics
         /// Discovery failed to get a record from the streaming source because of the Amazon Kinesis
         /// Streams ProvisionedThroughputExceededException. For more information, see <a href="http://docs.aws.amazon.com/kinesis/latest/APIReference/API_GetRecords.html">GetRecords</a>
         /// in the Amazon Kinesis Streams API Reference.
+        /// </exception>
+        /// <exception cref="Amazon.KinesisAnalytics.Model.ServiceUnavailableException">
+        /// The service is unavailable, back off and retry the operation.
         /// </exception>
         /// <exception cref="Amazon.KinesisAnalytics.Model.UnableToDetectSchemaException">
         /// Data format is not valid, Amazon Kinesis Analytics is not able to detect schema for

@@ -152,8 +152,8 @@ namespace Amazon.KinesisAnalytics.Model
         /// Gets and sets the property CloudWatchLoggingOptions. 
         /// <para>
         /// Use this parameter to configure a CloudWatch log stream to monitor application configuration
-        /// errors. For more information, see <a href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/cloudwatch-monitor-configuration.html">Monitoring
-        /// Configuration Errors</a>.
+        /// errors. For more information, see <a href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/cloudwatch-logs.html">Working
+        /// with Amazon CloudWatch Logs</a>.
         /// </para>
         /// </summary>
         public List<CloudWatchLoggingOption> CloudWatchLoggingOptions

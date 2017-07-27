@@ -31,8 +31,8 @@ namespace Amazon.KinesisAnalytics.Model
     /// Container for the parameters to the AddApplicationCloudWatchLoggingOption operation.
     /// Adds a CloudWatch log stream to monitor application configuration errors. For more
     /// information about using CloudWatch log streams with Amazon Kinesis Analytics applications,
-    /// see <a href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/cloudwatch-monitor-configuration.html">Monitoring
-    /// Configuration Errors</a>.
+    /// see <a href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/cloudwatch-logs.html">Working
+    /// with Amazon CloudWatch Logs</a>.
     /// </summary>
     public partial class AddApplicationCloudWatchLoggingOptionRequest : AmazonKinesisAnalyticsRequest
     {
@@ -43,7 +43,7 @@ namespace Amazon.KinesisAnalytics.Model
         /// <summary>
         /// Gets and sets the property ApplicationName. 
         /// <para>
-        /// The Amazon Kinesis Analytics application name.
+        /// The Kinesis Analytics application name.
         /// </para>
         /// </summary>
         public string ApplicationName
@@ -61,9 +61,9 @@ namespace Amazon.KinesisAnalytics.Model
         /// <summary>
         /// Gets and sets the property CloudWatchLoggingOption. 
         /// <para>
-        /// Provide the CloudWatch log stream ARN and the IAM role ARN. Note: To write application
-        /// messages to CloudWatch, the IAM role used must have the <code>PutLogEvents</code>
-        /// policy action enabled. 
+        /// Provides the CloudWatch log stream Amazon Resource Name (ARN) and the IAM role ARN.
+        /// Note: To write application messages to CloudWatch, the IAM role that is used must
+        /// have the <code>PutLogEvents</code> policy action enabled.
         /// </para>
         /// </summary>
         public CloudWatchLoggingOption CloudWatchLoggingOption
@@ -81,7 +81,7 @@ namespace Amazon.KinesisAnalytics.Model
         /// <summary>
         /// Gets and sets the property CurrentApplicationVersionId. 
         /// <para>
-        /// The version ID of the Amazon Kinesis Analytics application.
+        /// The version ID of the Kinesis Analytics application.
         /// </para>
         /// </summary>
         public long CurrentApplicationVersionId

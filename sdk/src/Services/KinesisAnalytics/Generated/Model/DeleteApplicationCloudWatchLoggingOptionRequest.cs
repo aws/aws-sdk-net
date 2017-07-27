@@ -30,8 +30,8 @@ namespace Amazon.KinesisAnalytics.Model
     /// <summary>
     /// Container for the parameters to the DeleteApplicationCloudWatchLoggingOption operation.
     /// Deletes a CloudWatch log stream from an application. For more information about using
-    /// CloudWatch log streams with Amazon Kinesis Analytics applications, see <a href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/cloudwatch-monitor-configuration.html">Monitoring
-    /// Configuration Errors</a>.
+    /// CloudWatch log streams with Amazon Kinesis Analytics applications, see <a href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/cloudwatch-logs.html">Working
+    /// with Amazon CloudWatch Logs</a>.
     /// </summary>
     public partial class DeleteApplicationCloudWatchLoggingOptionRequest : AmazonKinesisAnalyticsRequest
     {
@@ -42,7 +42,7 @@ namespace Amazon.KinesisAnalytics.Model
         /// <summary>
         /// Gets and sets the property ApplicationName. 
         /// <para>
-        /// The Amazon Kinesis Analytics application name.
+        /// The Kinesis Analytics application name.
         /// </para>
         /// </summary>
         public string ApplicationName
@@ -80,7 +80,7 @@ namespace Amazon.KinesisAnalytics.Model
         /// <summary>
         /// Gets and sets the property CurrentApplicationVersionId. 
         /// <para>
-        /// The version ID of the Amazon Kinesis Analytics application.
+        /// The version ID of the Kinesis Analytics application.
         /// </para>
         /// </summary>
         public long CurrentApplicationVersionId

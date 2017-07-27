@@ -40,15 +40,6 @@ namespace Amazon.KinesisAnalytics.Model
         /// <para>
         /// Path to the top-level parent that contains the records.
         /// </para>
-        ///  
-        /// <para>
-        /// For example, consider the following JSON record:
-        /// </para>
-        ///  
-        /// <para>
-        /// In the <code>RecordRowPath</code>, <code>"$"</code> refers to the root and path <code>"$.vehicle.Model"</code>
-        /// refers to the specific <code>"Model"</code> key in the JSON.
-        /// </para>
         /// </summary>
         public string RecordRowPath
         {

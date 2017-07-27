@@ -98,6 +98,11 @@ namespace Amazon.KinesisAnalytics.Model
         /// the Firehose delivery stream's ARN and an IAM role that enables Amazon Kinesis Analytics
         /// to access the stream on your behalf.
         /// </para>
+        ///  
+        /// <para>
+        /// Note: Either <code>KinesisStreamsInput</code> or <code>KinesisFirehoseInput</code>
+        /// is required.
+        /// </para>
         /// </summary>
         public KinesisFirehoseInput KinesisFirehoseInput
         {
@@ -117,6 +122,11 @@ namespace Amazon.KinesisAnalytics.Model
         /// If the streaming source is an Amazon Kinesis stream, identifies the stream's Amazon
         /// Resource Name (ARN) and an IAM role that enables Amazon Kinesis Analytics to access
         /// the stream on your behalf.
+        /// </para>
+        ///  
+        /// <para>
+        /// Note: Either <code>KinesisStreamsInput</code> or <code>KinesisFirehoseInput</code>
+        /// is required.
         /// </para>
         /// </summary>
         public KinesisStreamsInput KinesisStreamsInput

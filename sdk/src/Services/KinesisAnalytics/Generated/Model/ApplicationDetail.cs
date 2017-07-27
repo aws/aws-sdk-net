@@ -158,10 +158,10 @@ namespace Amazon.KinesisAnalytics.Model
         /// <summary>
         /// Gets and sets the property CloudWatchLoggingOptionDescriptions. 
         /// <para>
-        /// Describes the CloudWatch log streams configured to receive application messages. For
-        /// more information about using CloudWatch log streams with Amazon Kinesis Analytics
-        /// applications, see <a href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/cloudwatch-monitor-configuration.html">Monitoring
-        /// Configuration Errors</a>. 
+        /// Describes the CloudWatch log streams that are configured to receive application messages.
+        /// For more information about using CloudWatch log streams with Amazon Kinesis Analytics
+        /// applications, see <a href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/cloudwatch-logs.html">Working
+        /// with Amazon CloudWatch Logs</a>. 
         /// </para>
         /// </summary>
         public List<CloudWatchLoggingOptionDescription> CloudWatchLoggingOptionDescriptions
