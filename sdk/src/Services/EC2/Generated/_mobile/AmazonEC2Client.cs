@@ -1263,6 +1263,38 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  CreateDefaultVpc
+
+        internal CreateDefaultVpcResponse CreateDefaultVpc(CreateDefaultVpcRequest request)
+        {
+            var marshaller = new CreateDefaultVpcRequestMarshaller();
+            var unmarshaller = CreateDefaultVpcResponseUnmarshaller.Instance;
+
+            return Invoke<CreateDefaultVpcRequest,CreateDefaultVpcResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateDefaultVpc operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateDefaultVpc operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateDefaultVpc">REST API Reference for CreateDefaultVpc Operation</seealso>
+        public Task<CreateDefaultVpcResponse> CreateDefaultVpcAsync(CreateDefaultVpcRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new CreateDefaultVpcRequestMarshaller();
+            var unmarshaller = CreateDefaultVpcResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateDefaultVpcRequest,CreateDefaultVpcResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateDhcpOptions
 
         internal CreateDhcpOptionsResponse CreateDhcpOptions(CreateDhcpOptionsRequest request)

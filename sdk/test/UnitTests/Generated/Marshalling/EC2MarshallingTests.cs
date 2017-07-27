@@ -754,6 +754,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("EC2")]
+        public void CreateDefaultVpcMarshallTest()
+        {
+            var operation = service_model.FindOperation("CreateDefaultVpc");
+
+            var request = InstantiateClassGenerator.Execute<CreateDefaultVpcRequest>();
+            var marshaller = new CreateDefaultVpcRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
+            var response = CreateDefaultVpcResponseUnmarshaller.Instance.Unmarshall(context)
+                as CreateDefaultVpcResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("EC2")]
         public void CreateDhcpOptionsMarshallTest()
         {
             var operation = service_model.FindOperation("CreateDhcpOptions");

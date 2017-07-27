@@ -2228,6 +2228,77 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  CreateDefaultVpc
+
+        /// <summary>
+        /// Creates a default VPC with a size <code>/16</code> IPv4 CIDR block and a default subnet
+        /// in each Availability Zone. For more information about the components of a default
+        /// VPC, see <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/default-vpc.html">Default
+        /// VPC and Default Subnets</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+        /// You cannot specify the components of the default VPC yourself.
+        /// 
+        ///  
+        /// <para>
+        /// You can create a default VPC if you deleted your previous default VPC. You cannot
+        /// have more than one default VPC per region. 
+        /// </para>
+        ///  
+        /// <para>
+        /// If your account supports EC2-Classic, you cannot use this action to create a default
+        /// VPC in a region that supports EC2-Classic. If you want a default VPC in a region that
+        /// supports EC2-Classic, see "I really want a default VPC for my existing EC2 account.
+        /// Is that possible?" in the <a href="http://aws.amazon.com/vpc/faqs/#Default_VPCs">Default
+        /// VPCs FAQ</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateDefaultVpc service method.</param>
+        /// 
+        /// <returns>The response from the CreateDefaultVpc service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateDefaultVpc">REST API Reference for CreateDefaultVpc Operation</seealso>
+        public CreateDefaultVpcResponse CreateDefaultVpc(CreateDefaultVpcRequest request)
+        {
+            var marshaller = new CreateDefaultVpcRequestMarshaller();
+            var unmarshaller = CreateDefaultVpcResponseUnmarshaller.Instance;
+
+            return Invoke<CreateDefaultVpcRequest,CreateDefaultVpcResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateDefaultVpc operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateDefaultVpc operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateDefaultVpc
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateDefaultVpc">REST API Reference for CreateDefaultVpc Operation</seealso>
+        public IAsyncResult BeginCreateDefaultVpc(CreateDefaultVpcRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new CreateDefaultVpcRequestMarshaller();
+            var unmarshaller = CreateDefaultVpcResponseUnmarshaller.Instance;
+
+            return BeginInvoke<CreateDefaultVpcRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateDefaultVpc operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateDefaultVpc.</param>
+        /// 
+        /// <returns>Returns a  CreateDefaultVpcResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateDefaultVpc">REST API Reference for CreateDefaultVpc Operation</seealso>
+        public  CreateDefaultVpcResponse EndCreateDefaultVpc(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateDefaultVpcResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  CreateDhcpOptions
 
         /// <summary>
