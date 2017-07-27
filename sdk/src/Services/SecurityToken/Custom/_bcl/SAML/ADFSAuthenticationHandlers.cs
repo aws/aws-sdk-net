@@ -63,7 +63,7 @@ namespace Amazon.SecurityToken.SAML
                     impersonationState = ImpersonationState.Impersonate(networkCredentials);
                 }
 
-                using (var response = QueryProvider(identityProvider, authenticationType, proxySettings))
+                using (var response = QueryProvider(identityProvider, proxySettings))
                 {
                     using (var reader = new StreamReader(response.GetResponseStream()))
                     {
@@ -85,7 +85,7 @@ namespace Amazon.SecurityToken.SAML
         }
 
 
-        private static HttpWebResponse QueryProvider(Uri identityProvider, string authenticationType, WebProxy proxySettings)
+        private static HttpWebResponse QueryProvider(Uri identityProvider, WebProxy proxySettings)
         {
             var request = (HttpWebRequest)WebRequest.Create(identityProvider);
             request.UserAgent = "Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.2; WOW64; Trident/6.0)";
@@ -95,10 +95,7 @@ namespace Amazon.SecurityToken.SAML
             request.CookieContainer = new CookieContainer();
             if (proxySettings != null)
                 request.Proxy = proxySettings;
-
-            CredentialCache credCache = new CredentialCache();
-            credCache.Add(identityProvider, authenticationType, CredentialCache.DefaultNetworkCredentials);
-            request.Credentials = credCache;
+            request.UseDefaultCredentials = true;
 
             return (HttpWebResponse)request.GetResponse();
         }
