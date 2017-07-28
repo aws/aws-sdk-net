@@ -57,15 +57,18 @@ namespace Amazon.S3.Model
                     current += bytesRead;
                     totalIncrementTransferred += bytesRead;
 
-                    if (totalIncrementTransferred >= AWSSDKUtils.DefaultProgressUpdateInterval ||
-                        current == this.ContentLength)
+                    if (totalIncrementTransferred >= AWSSDKUtils.DefaultProgressUpdateInterval)
                     {
-                        this.OnRaiseProgressEvent(filePath, totalIncrementTransferred, current, this.ContentLength);
+                        this.OnRaiseProgressEvent(filePath, totalIncrementTransferred, current, this.ContentLength, completed:false);
                         totalIncrementTransferred = 0;
                     }
                 }
 
                 ValidateWrittenStreamSize(current);
+
+                // Encrypted objects may have size smaller than the total amount of data transfered due to padding.
+                // Instead of changing the file size or the total downloaded size, pass a flag that indicate that the transfer is complete.
+                this.OnRaiseProgressEvent(filePath, 0, current, this.ContentLength, completed:true);
             }
         }
 

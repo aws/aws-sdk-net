@@ -455,15 +455,18 @@ namespace Amazon.S3.Model
                     current += bytesRead;
                     totalIncrementTransferred += bytesRead;
 
-                    if (totalIncrementTransferred >= AWSSDKUtils.DefaultProgressUpdateInterval ||
-                        current == this.ContentLength)
+                    if (totalIncrementTransferred >= AWSSDKUtils.DefaultProgressUpdateInterval)
                     {
-                        this.OnRaiseProgressEvent(filePath, totalIncrementTransferred, current, this.ContentLength);
+                        this.OnRaiseProgressEvent(filePath, totalIncrementTransferred, current, this.ContentLength, completed:false);
                         totalIncrementTransferred = 0;
                     }
                 }
 
                 ValidateWrittenStreamSize(current);
+
+                // Encrypted objects may have size smaller than the total amount of data transfered due to padding.
+                // Instead of changing the file size or the total downloaded size, pass a flag that indicate that the transfer is complete.
+                this.OnRaiseProgressEvent(filePath, 0, current, this.ContentLength, completed:true);
             }
         }
 
@@ -522,9 +525,10 @@ namespace Amazon.S3.Model
         /// <param name="incrementTransferred">The number of bytes transferred since last event</param>
         /// <param name="transferred">The number of bytes transferred</param>
         /// <param name="total">The total number of bytes to be transferred</param>
-        internal void OnRaiseProgressEvent(string file, long incrementTransferred, long transferred, long total)
+        /// <param name="completed">True if transfer is complete</param>
+        internal void OnRaiseProgressEvent(string file, long incrementTransferred, long transferred, long total, bool completed)
         {
-            AWSSDKUtils.InvokeInBackground(WriteObjectProgressEvent, new WriteObjectProgressArgs(this.BucketName, this.Key, file, this.VersionId, incrementTransferred, transferred, total), this);
+            AWSSDKUtils.InvokeInBackground(WriteObjectProgressEvent, new WriteObjectProgressArgs(this.BucketName, this.Key, file, this.VersionId, incrementTransferred, transferred, total, completed), this);
         }
 
 
@@ -610,15 +614,18 @@ namespace Amazon.S3.Model
                     current += bytesRead;
                     totalIncrementTransferred += bytesRead;
 
-                    if (totalIncrementTransferred >= AWSSDKUtils.DefaultProgressUpdateInterval ||
-                        current == this.ContentLength)
+                    if (totalIncrementTransferred >= AWSSDKUtils.DefaultProgressUpdateInterval)
                     {
-                        this.OnRaiseProgressEvent(filePath, totalIncrementTransferred, current, this.ContentLength);
+                        this.OnRaiseProgressEvent(filePath, totalIncrementTransferred, current, this.ContentLength, completed:false);
                         totalIncrementTransferred = 0;
                     }
                 }
 
                 ValidateWrittenStreamSize(current);
+
+                // Encrypted objects may have size smaller than the total amount of data trasnfered due to padding.
+                // Instead of changing the file size or the total downloaded size, pass a flag that indicate that the transfer is complete.
+                this.OnRaiseProgressEvent(filePath, 0, current, this.ContentLength, completed:true);
             }
             finally
             {
@@ -647,12 +654,14 @@ namespace Amazon.S3.Model
         /// <param name="incrementTransferred">The number of bytes transferred since last event</param>
         /// <param name="transferred">The number of bytes transferred</param>
         /// <param name="total">The total number of bytes to be transferred</param>
-        internal WriteObjectProgressArgs(string bucketName, string key, string versionId, long incrementTransferred, long transferred, long total)
+        /// <param name="completed">True if finished writing</param>
+        internal WriteObjectProgressArgs(string bucketName, string key, string versionId, long incrementTransferred, long transferred, long total, bool completed)
             : base(incrementTransferred, transferred, total)
         {
             this.BucketName = bucketName;
             this.Key = key;
             this.VersionId = versionId;
+            this.IsCompleted = completed;
         }
 
         /// <summary>
@@ -667,13 +676,15 @@ namespace Amazon.S3.Model
         /// <param name="incrementTransferred">The number of bytes transferred since last event</param>
         /// <param name="transferred">The number of bytes transferred</param>
         /// <param name="total">The total number of bytes to be transferred</param>
-        internal WriteObjectProgressArgs(string bucketName, string key, string filePath, string versionId, long incrementTransferred, long transferred, long total)
+        /// <param name="completed">True if finished writing</param>
+        internal WriteObjectProgressArgs(string bucketName, string key, string filePath, string versionId, long incrementTransferred, long transferred, long total, bool completed)
             : base(incrementTransferred, transferred, total)
         {
             this.BucketName = bucketName;
             this.Key = key;
             this.VersionId = versionId;
             this.FilePath = filePath;
+            this.IsCompleted = completed;
         }
 
         /// <summary>
@@ -695,6 +706,11 @@ namespace Amazon.S3.Model
         /// The file for the S3 object being written.
         /// </summary>
         public string FilePath { get; private set; }
+
+        /// <summary>
+        /// True if writing is complete
+        /// </summary>
+        public bool IsCompleted { get; private set; }
     }
 #endif    
 }

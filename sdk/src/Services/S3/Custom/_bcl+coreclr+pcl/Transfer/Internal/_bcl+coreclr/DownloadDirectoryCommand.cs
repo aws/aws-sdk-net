@@ -58,7 +58,7 @@ namespace Amazon.S3.Transfer.Internal
             var transferredBytes = Interlocked.Add(ref _transferredBytes, e.IncrementTransferred);
 
             int numberOfFilesDownloaded = _numberOfFilesDownloaded;
-            if (e.TransferredBytes == e.TotalBytes)
+            if (e.IsCompleted)
             {
                 numberOfFilesDownloaded = Interlocked.Increment(ref _numberOfFilesDownloaded);
             }
