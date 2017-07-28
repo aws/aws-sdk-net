@@ -67,6 +67,12 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         }
         */
 
+        [TestMethod]
+        [TestCategory("S3")]
+        public void USEastSignedParameters() {
+            TestSignedUrlParameters(RegionEndpoint.USEast1, DateTime.Now.AddDays(1));
+        }
+
         private void TestPreSignedUrl(RegionEndpoint region, DateTime expires, bool useSigV4, bool expectSigV4Url)
         {
             var client = new AmazonS3Client(region);
@@ -80,6 +86,22 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             }
             finally
             {
+                AWSConfigsS3.UseSignatureVersion4 = originalUseSigV4;
+                if (bucketName != null)
+                    DeleteBucket(client, bucketName);
+            }
+        }
+
+        private void TestSignedUrlParameters(RegionEndpoint region, DateTime expires) {
+            var client = new AmazonS3Client(region);
+            var originalUseSigV4 = AWSConfigsS3.UseSignatureVersion4;
+            string bucketName = null;
+            try {
+                AWSConfigsS3.UseSignatureVersion4 = true;
+                bucketName = CreateBucketAndObject(client);
+                AssertSignedUrlParameters(client, bucketName, expires, true);
+            }
+            finally {
                 AWSConfigsS3.UseSignatureVersion4 = originalUseSigV4;
                 if (bucketName != null)
                     DeleteBucket(client, bucketName);
@@ -116,6 +138,48 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             // use independent web client make sure the URL actually works
             var wc = new WebClient();
             Assert.AreEqual(wc.DownloadString(url), TestContent);
+        }
+
+        private void AssertSignedUrlParameters(AmazonS3Client client, string bucketName, DateTime expires, bool expectSigV4Url) {
+            const string paramKey = "x-test-param";
+            const string paramValue = "TestParamValue";
+            const string badParamKey = "x-test-param2";
+            const string badParamValue = "TestParamValue2";
+
+            var preSignedRequest = new GetPreSignedUrlRequest
+            {
+                BucketName = bucketName,
+                Key = TestKey,
+                Expires = expires
+            };
+            // Add a parameter & value to be signed
+            preSignedRequest.Parameters.Add(paramKey, paramValue);
+
+            // generate url
+            var url = client.GetPreSignedURL(preSignedRequest);
+
+
+            // make sure we used the correct signtaure version
+            var urlIsSigV4 = url.Contains("aws4_request");
+            Assert.AreEqual(expectSigV4Url, urlIsSigV4);
+
+            // use independent web client make sure the URL actually works
+            var wc = new WebClient();
+            Assert.AreEqual(wc.DownloadString(url), TestContent);
+
+            // change parameter and we should get a 403 response
+            string badParamURL = url.Replace(paramKey, badParamKey);
+            // Using a modified parameter name should throw an exception
+            WebException wex = Assert.ThrowsException<WebException>(() => wc.DownloadString(badParamURL));
+            // And that exception should be permission denied:
+            Assert.IsTrue(wex.Message.Contains("403"));
+
+            // change value and we should get a 403 response
+            string badValueURL = url.Replace(paramValue, badParamValue);
+            // Using a modified parameter value should throw an exception
+            wex = Assert.ThrowsException<WebException>(() => wc.DownloadString(badValueURL));
+            // And that exception should be permission denied:
+            Assert.IsTrue(wex.Message.Contains("403"));
         }
 
         private void DeleteBucket(AmazonS3Client client, string bucketName)
