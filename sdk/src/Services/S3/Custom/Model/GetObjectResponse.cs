@@ -466,7 +466,7 @@ namespace Amazon.S3.Model
 
                 // Encrypted objects may have size smaller than the total amount of data transfered due to padding.
                 // Instead of changing the file size or the total downloaded size, pass a flag that indicate that the transfer is complete.
-                this.OnRaiseProgressEvent(filePath, 0, current, this.ContentLength, completed:true);
+                this.OnRaiseProgressEvent(filePath, totalIncrementTransferred, current, this.ContentLength, completed:true);
             }
         }
 
@@ -625,7 +625,7 @@ namespace Amazon.S3.Model
 
                 // Encrypted objects may have size smaller than the total amount of data trasnfered due to padding.
                 // Instead of changing the file size or the total downloaded size, pass a flag that indicate that the transfer is complete.
-                this.OnRaiseProgressEvent(filePath, 0, current, this.ContentLength, completed:true);
+                this.OnRaiseProgressEvent(filePath, totalIncrementTransferred, current, this.ContentLength, completed:true);
             }
             finally
             {
