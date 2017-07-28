@@ -152,20 +152,18 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
                 Assert.AreEqual(ErrorType.Unknown, ex.ErrorType);
             }
 
-            // Temporarily disabling this while investigating why this unrelated test started to fail.
-            //
-            //using (var client = new Amazon.IdentityManagement.AmazonIdentityManagementServiceClient())
-            //{
-            //    var ex = AssertExtensions.ExpectException<Amazon.IdentityManagement.Model.NoSuchEntityException>(() =>
-            //    {
-            //        client.AttachGroupPolicy(new Amazon.IdentityManagement.Model.AttachGroupPolicyRequest
-            //        {
-            //            PolicyArn = fakeData,
-            //            GroupName = fakeData
-            //        });
-            //    });
-            //    Assert.AreEqual(ErrorType.Sender, ex.ErrorType);
-            //}
+            using (var client = new Amazon.IdentityManagement.AmazonIdentityManagementServiceClient())
+            {
+                var ex = AssertExtensions.ExpectException<Amazon.IdentityManagement.Model.NoSuchEntityException>(() =>
+                {
+                    client.AttachGroupPolicy(new Amazon.IdentityManagement.Model.AttachGroupPolicyRequest
+                    {
+                        PolicyArn = fakeData,
+                        GroupName = fakeData
+                    });
+                });
+                Assert.AreEqual(ErrorType.Sender, ex.ErrorType);
+            }
         }
 
 
