@@ -1,3 +1,7 @@
+### 3.3.131.0 (2017-07-30 19:34 UTC)
+* S3 (3.3.9.0)
+	* Fix TransferUtility reporting 0 files transferred when performing directory download
+
 ### 3.3.130.0 (2017-07-27 19:59 UTC)
 * EC2 (3.3.19.0)
 	* The CreateDefaultVPC API enables you to create a new default VPC . You no longer need to contact AWS support, if your default VPC has been deleted.
