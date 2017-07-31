@@ -53,7 +53,7 @@ namespace Amazon.Runtime.Internal
             PropertyInfo isDoneProperty = unityWebRequestType.GetProperty("isDone");
             PropertyInfo downloadProgressProperty = unityWebRequestType.GetProperty("downloadProgress");
             PropertyInfo uploadProgressProperty = unityWebRequestType.GetProperty("uploadProgress");
-            PropertyInfo isErrorProperty = unityWebRequestType.GetProperty("isError");
+            PropertyInfo isErrorProperty = unityWebRequestType.GetProperty("isNetworkError");
             PropertyInfo downloadedBytesProperty = unityWebRequestType.GetProperty("downloadedBytes");
             PropertyInfo responseCodeProperty = unityWebRequestType.GetProperty("responseCode");
             PropertyInfo downloadHandlerPropery = unityWebRequestType.GetProperty("downloadHandler");
