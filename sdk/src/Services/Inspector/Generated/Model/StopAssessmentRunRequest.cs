@@ -34,6 +34,7 @@ namespace Amazon.Inspector.Model
     public partial class StopAssessmentRunRequest : AmazonInspectorRequest
     {
         private string _assessmentRunArn;
+        private StopAction _stopAction;
 
         /// <summary>
         /// Gets and sets the property AssessmentRunArn. 
@@ -51,6 +52,27 @@ namespace Amazon.Inspector.Model
         internal bool IsSetAssessmentRunArn()
         {
             return this._assessmentRunArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property StopAction. 
+        /// <para>
+        /// An input option that can be set to either START_EVALUATION or SKIP_EVALUATION. START_EVALUATION
+        /// (the default value), stops the AWS agent from collecting data and begins the results
+        /// evaluation and the findings generation process. SKIP_EVALUATION cancels the assessment
+        /// run immediately, after which no findings are generated.
+        /// </para>
+        /// </summary>
+        public StopAction StopAction
+        {
+            get { return this._stopAction; }
+            set { this._stopAction = value; }
+        }
+
+        // Check to see if StopAction property is set
+        internal bool IsSetStopAction()
+        {
+            return this._stopAction != null;
         }
 
     }

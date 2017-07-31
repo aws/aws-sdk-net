@@ -73,6 +73,12 @@ namespace Amazon.Inspector.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.AssessmentRunArn);
                 }
 
+                if(publicRequest.IsSetStopAction())
+                {
+                    context.Writer.WritePropertyName("stopAction");
+                    context.Writer.Write(publicRequest.StopAction);
+                }
+
         
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();

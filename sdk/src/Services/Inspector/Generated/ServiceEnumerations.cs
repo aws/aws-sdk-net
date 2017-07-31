@@ -279,6 +279,10 @@ namespace Amazon.Inspector
     {
 
         /// <summary>
+        /// Constant CANCELED for AssessmentRunState
+        /// </summary>
+        public static readonly AssessmentRunState CANCELED = new AssessmentRunState("CANCELED");
+        /// <summary>
         /// Constant COLLECTING_DATA for AssessmentRunState
         /// </summary>
         public static readonly AssessmentRunState COLLECTING_DATA = new AssessmentRunState("COLLECTING_DATA");
@@ -1236,6 +1240,56 @@ namespace Amazon.Inspector
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator Severity(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type StopAction.
+    /// </summary>
+    public class StopAction : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant SKIP_EVALUATION for StopAction
+        /// </summary>
+        public static readonly StopAction SKIP_EVALUATION = new StopAction("SKIP_EVALUATION");
+        /// <summary>
+        /// Constant START_EVALUATION for StopAction
+        /// </summary>
+        public static readonly StopAction START_EVALUATION = new StopAction("START_EVALUATION");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public StopAction(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static StopAction FindValue(string value)
+        {
+            return FindValue<StopAction>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator StopAction(string value)
         {
             return FindValue(value);
         }
