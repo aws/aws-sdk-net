@@ -3444,6 +3444,38 @@ namespace Amazon.SimpleSystemsManagement
 
         #endregion
         
+        #region  SendAutomationSignal
+
+        internal SendAutomationSignalResponse SendAutomationSignal(SendAutomationSignalRequest request)
+        {
+            var marshaller = new SendAutomationSignalRequestMarshaller();
+            var unmarshaller = SendAutomationSignalResponseUnmarshaller.Instance;
+
+            return Invoke<SendAutomationSignalRequest,SendAutomationSignalResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the SendAutomationSignal operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the SendAutomationSignal operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/SendAutomationSignal">REST API Reference for SendAutomationSignal Operation</seealso>
+        public Task<SendAutomationSignalResponse> SendAutomationSignalAsync(SendAutomationSignalRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new SendAutomationSignalRequestMarshaller();
+            var unmarshaller = SendAutomationSignalResponseUnmarshaller.Instance;
+
+            return InvokeAsync<SendAutomationSignalRequest,SendAutomationSignalResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  SendCommand
 
         internal SendCommandResponse SendCommand(SendCommandRequest request)

@@ -33,6 +33,7 @@ using System.Diagnostics.CodeAnalysis;
 [module: SuppressMessage("Microsoft.Design", "CA1006:DoNotNestGenericTypesInMemberSignatures", Scope="member", Target="Amazon.SimpleSystemsManagement.Model.AutomationExecution.#Parameters")]
 [module: SuppressMessage("Microsoft.Design", "CA1006:DoNotNestGenericTypesInMemberSignatures", Scope="member", Target="Amazon.SimpleSystemsManagement.Model.AutomationExecution.#Outputs")]
 [module: SuppressMessage("Microsoft.Design", "CA1006:DoNotNestGenericTypesInMemberSignatures", Scope="member", Target="Amazon.SimpleSystemsManagement.Model.FailureDetails.#Details")]
+[module: SuppressMessage("Microsoft.Design", "CA1006:DoNotNestGenericTypesInMemberSignatures", Scope="member", Target="Amazon.SimpleSystemsManagement.Model.SendAutomationSignalRequest.#Payload")]
 
 // Types names matching namespaces
 [module: SuppressMessage("Microsoft.Naming", "CA1724:TypeNamesShouldNotMatchNamespaces", Scope = "type", Target = "Amazon.SimpleSystemsManagement.Model.Activation")]

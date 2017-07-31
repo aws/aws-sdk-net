@@ -28,31 +28,10 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
-    /// Container for the parameters to the DeleteParameters operation.
-    /// Delete a list of parameters. This API is used to delete parameters by using the Amazon
-    /// EC2 console.
+    /// This is the response object from the SendAutomationSignal operation.
     /// </summary>
-    public partial class DeleteParametersRequest : AmazonSimpleSystemsManagementRequest
+    public partial class SendAutomationSignalResponse : AmazonWebServiceResponse
     {
-        private List<string> _names = new List<string>();
-
-        /// <summary>
-        /// Gets and sets the property Names. 
-        /// <para>
-        /// The names of the parameters to delete.
-        /// </para>
-        /// </summary>
-        public List<string> Names
-        {
-            get { return this._names; }
-            set { this._names = value; }
-        }
-
-        // Check to see if Names property is set
-        internal bool IsSetNames()
-        {
-            return this._names != null && this._names.Count > 0; 
-        }
 
     }
 }

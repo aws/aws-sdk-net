@@ -1837,7 +1837,8 @@ namespace Amazon.SimpleSystemsManagement
 
 
         /// <summary>
-        /// Delete a list of parameters.
+        /// Delete a list of parameters. This API is used to delete parameters by using the Amazon
+        /// EC2 console.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteParameters service method.</param>
         /// 
@@ -3459,6 +3460,17 @@ namespace Amazon.SimpleSystemsManagement
 
         /// <summary>
         /// Get information about a parameter.
+        /// 
+        ///  
+        /// <para>
+        /// Request results are returned on a best-effort basis. If you specify <code>MaxResults</code>
+        /// in the request, the response includes information up to the limit specified. The number
+        /// of items returned, however, can be between zero and the value of <code>MaxResults</code>.
+        /// If the service reaches an internal limit while processing the results, it stops the
+        /// operation and returns the matching values up to that point and a <code>NextToken</code>.
+        /// You can specify the <code>NextToken</code> in a subsequent call to get the next set
+        /// of results.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeParameters service method.</param>
         /// 
@@ -4342,7 +4354,18 @@ namespace Amazon.SimpleSystemsManagement
 
         /// <summary>
         /// Retrieve parameters in a specific hierarchy. For more information, see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-working.html">Working
-        /// with Systems Manager Parameters</a>.
+        /// with Systems Manager Parameters</a>. 
+        /// 
+        ///  
+        /// <para>
+        /// Request results are returned on a best-effort basis. If you specify <code>MaxResults</code>
+        /// in the request, the response includes information up to the limit specified. The number
+        /// of items returned, however, can be between zero and the value of <code>MaxResults</code>.
+        /// If the service reaches an internal limit while processing the results, it stops the
+        /// operation and returns the matching values up to that point and a <code>NextToken</code>.
+        /// You can specify the <code>NextToken</code> in a subsequent call to get the next set
+        /// of results.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetParametersByPath service method.</param>
         /// 
@@ -5919,6 +5942,56 @@ namespace Amazon.SimpleSystemsManagement
             var unmarshaller = RemoveTagsFromResourceResponseUnmarshaller.Instance;
 
             return InvokeAsync<RemoveTagsFromResourceRequest,RemoveTagsFromResourceResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  SendAutomationSignal
+
+
+        /// <summary>
+        /// Sends a signal to an Automation execution to change the current behavior or status
+        /// of the execution.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SendAutomationSignal service method.</param>
+        /// 
+        /// <returns>The response from the SendAutomationSignal service method, as returned by SimpleSystemsManagement.</returns>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.AutomationExecutionNotFoundException">
+        /// There is no automation execution information for the requested automation execution
+        /// ID.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidAutomationSignalException">
+        /// The signal is not valid for the current Automation execution.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/SendAutomationSignal">REST API Reference for SendAutomationSignal Operation</seealso>
+        public SendAutomationSignalResponse SendAutomationSignal(SendAutomationSignalRequest request)
+        {
+            var marshaller = new SendAutomationSignalRequestMarshaller();
+            var unmarshaller = SendAutomationSignalResponseUnmarshaller.Instance;
+
+            return Invoke<SendAutomationSignalRequest,SendAutomationSignalResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the SendAutomationSignal operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the SendAutomationSignal operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/SendAutomationSignal">REST API Reference for SendAutomationSignal Operation</seealso>
+        public Task<SendAutomationSignalResponse> SendAutomationSignalAsync(SendAutomationSignalRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new SendAutomationSignalRequestMarshaller();
+            var unmarshaller = SendAutomationSignalResponseUnmarshaller.Instance;
+
+            return InvokeAsync<SendAutomationSignalRequest,SendAutomationSignalResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
