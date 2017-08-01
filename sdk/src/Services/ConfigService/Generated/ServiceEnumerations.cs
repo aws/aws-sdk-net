@@ -583,6 +583,10 @@ namespace Amazon.ConfigService
         /// </summary>
         public static readonly ResourceType AWSACMCertificate = new ResourceType("AWS::ACM::Certificate");
         /// <summary>
+        /// Constant AWSCloudFormationStack for ResourceType
+        /// </summary>
+        public static readonly ResourceType AWSCloudFormationStack = new ResourceType("AWS::CloudFormation::Stack");
+        /// <summary>
         /// Constant AWSCloudTrailTrail for ResourceType
         /// </summary>
         public static readonly ResourceType AWSCloudTrailTrail = new ResourceType("AWS::CloudTrail::Trail");

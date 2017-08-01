@@ -84,7 +84,7 @@ namespace Amazon.ConfigService.Model
         ///  
         /// <para>
         /// For custom rules, the identifier is the Amazon Resource Name (ARN) of the rule's AWS
-        /// Lambda function, such as <code>arn:aws:lambda:us-east-1:123456789012:function:custom_rule_name</code>.
+        /// Lambda function, such as <code>arn:aws:lambda:us-east-2:123456789012:function:custom_rule_name</code>.
         /// </para>
         /// </summary>
         public string SourceIdentifier

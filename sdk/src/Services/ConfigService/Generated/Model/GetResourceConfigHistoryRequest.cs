@@ -34,11 +34,10 @@ namespace Amazon.ConfigService.Model
     /// 
     ///  
     /// <para>
-    /// The response is paginated, and by default, AWS Config returns a limit of 10 configuration
+    /// The response is paginated. By default, AWS Config returns a limit of 10 configuration
     /// items per page. You can customize this number with the <code>limit</code> parameter.
-    /// The response includes a <code>nextToken</code> string, and to get the next page of
-    /// results, run the request again and enter this string for the <code>nextToken</code>
-    /// parameter.
+    /// The response includes a <code>nextToken</code> string. To get the next page of results,
+    /// run the request again and specify the string for the <code>nextToken</code> parameter.
     /// </para>
     ///  <note> 
     /// <para>
