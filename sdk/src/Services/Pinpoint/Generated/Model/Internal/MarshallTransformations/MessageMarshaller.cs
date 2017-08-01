@@ -87,6 +87,12 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.MediaUrl);
             }
 
+            if(requestObject.IsSetRawContent())
+            {
+                context.Writer.WritePropertyName("RawContent");
+                context.Writer.Write(requestObject.RawContent);
+            }
+
             if(requestObject.IsSetSilentPush())
             {
                 context.Writer.WritePropertyName("SilentPush");

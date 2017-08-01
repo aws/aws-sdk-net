@@ -28,25 +28,42 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Pinpoint.Model
 {
     /// <summary>
-    /// This is the response object from the PutEventStream operation.
+    /// Container for the parameters to the GetApps operation.
+    /// Returns information about your apps.
     /// </summary>
-    public partial class PutEventStreamResponse : AmazonWebServiceResponse
+    public partial class GetAppsRequest : AmazonPinpointRequest
     {
-        private EventStream _eventStream;
+        private string _pageSize;
+        private string _token;
 
         /// <summary>
-        /// Gets and sets the property EventStream.
+        /// Gets and sets the property PageSize.
         /// </summary>
-        public EventStream EventStream
+        public string PageSize
         {
-            get { return this._eventStream; }
-            set { this._eventStream = value; }
+            get { return this._pageSize; }
+            set { this._pageSize = value; }
         }
 
-        // Check to see if EventStream property is set
-        internal bool IsSetEventStream()
+        // Check to see if PageSize property is set
+        internal bool IsSetPageSize()
         {
-            return this._eventStream != null;
+            return this._pageSize != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Token.
+        /// </summary>
+        public string Token
+        {
+            get { return this._token; }
+            set { this._token = value; }
+        }
+
+        // Check to see if Token property is set
+        internal bool IsSetToken()
+        {
+            return this._token != null;
         }
 
     }

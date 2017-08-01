@@ -99,7 +99,8 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ChannelType. The channel type.Valid values: APNS, GCM
+        /// Gets and sets the property ChannelType. The channel type.Valid values: GCM | APNS
+        /// | SMS | EMAIL
         /// </summary>
         public ChannelType ChannelType
         {
@@ -245,8 +246,8 @@ namespace Amazon.Pinpoint.Model
 
         /// <summary>
         /// Gets and sets the property OptOut. Indicates whether a user has opted out of receiving
-        /// messages with one of the following values:ALL – User receives all messages.NONE –
-        /// User receives no messages.
+        /// messages with one of the following values:ALL - User has opted out of all messages.NONE
+        /// - Users has not opted out and receives all messages.
         /// </summary>
         public string OptOut
         {

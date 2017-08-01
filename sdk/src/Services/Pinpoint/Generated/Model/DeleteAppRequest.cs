@@ -28,25 +28,26 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Pinpoint.Model
 {
     /// <summary>
-    /// This is the response object from the PutEventStream operation.
+    /// Container for the parameters to the DeleteApp operation.
+    /// Deletes an app.
     /// </summary>
-    public partial class PutEventStreamResponse : AmazonWebServiceResponse
+    public partial class DeleteAppRequest : AmazonPinpointRequest
     {
-        private EventStream _eventStream;
+        private string _applicationId;
 
         /// <summary>
-        /// Gets and sets the property EventStream.
+        /// Gets and sets the property ApplicationId.
         /// </summary>
-        public EventStream EventStream
+        public string ApplicationId
         {
-            get { return this._eventStream; }
-            set { this._eventStream = value; }
+            get { return this._applicationId; }
+            set { this._applicationId = value; }
         }
 
-        // Check to see if EventStream property is set
-        internal bool IsSetEventStream()
+        // Check to see if ApplicationId property is set
+        internal bool IsSetApplicationId()
         {
-            return this._eventStream != null;
+            return this._applicationId != null;
         }
 
     }

@@ -33,6 +33,7 @@ namespace Amazon.Pinpoint.Model
     public partial class CampaignEmailMessage
     {
         private string _body;
+        private string _fromAddress;
         private string _htmlBody;
         private string _title;
 
@@ -49,6 +50,22 @@ namespace Amazon.Pinpoint.Model
         internal bool IsSetBody()
         {
             return this._body != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property FromAddress. The email address used to send the email from.
+        /// Defaults to use FromAddress specified in the Email Channel.
+        /// </summary>
+        public string FromAddress
+        {
+            get { return this._fromAddress; }
+            set { this._fromAddress = value; }
+        }
+
+        // Check to see if FromAddress property is set
+        internal bool IsSetFromAddress()
+        {
+            return this._fromAddress != null;
         }
 
         /// <summary>

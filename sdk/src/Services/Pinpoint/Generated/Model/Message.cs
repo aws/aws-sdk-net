@@ -39,6 +39,7 @@ namespace Amazon.Pinpoint.Model
         private string _imageUrl;
         private string _jsonBody;
         private string _mediaUrl;
+        private string _rawContent;
         private bool? _silentPush;
         private string _title;
         private string _url;
@@ -155,6 +156,22 @@ namespace Amazon.Pinpoint.Model
         internal bool IsSetMediaUrl()
         {
             return this._mediaUrl != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RawContent. The Raw JSON formatted string to be used as
+        /// the payload. This value overrides the message.
+        /// </summary>
+        public string RawContent
+        {
+            get { return this._rawContent; }
+            set { this._rawContent = value; }
+        }
+
+        // Check to see if RawContent property is set
+        internal bool IsSetRawContent()
+        {
+            return this._rawContent != null;
         }
 
         /// <summary>

@@ -28,25 +28,25 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Pinpoint.Model
 {
     /// <summary>
-    /// This is the response object from the PutEventStream operation.
+    /// This is the response object from the GetApps operation.
     /// </summary>
-    public partial class PutEventStreamResponse : AmazonWebServiceResponse
+    public partial class GetAppsResponse : AmazonWebServiceResponse
     {
-        private EventStream _eventStream;
+        private ApplicationsResponse _applicationsResponse;
 
         /// <summary>
-        /// Gets and sets the property EventStream.
+        /// Gets and sets the property ApplicationsResponse.
         /// </summary>
-        public EventStream EventStream
+        public ApplicationsResponse ApplicationsResponse
         {
-            get { return this._eventStream; }
-            set { this._eventStream = value; }
+            get { return this._applicationsResponse; }
+            set { this._applicationsResponse = value; }
         }
 
-        // Check to see if EventStream property is set
-        internal bool IsSetEventStream()
+        // Check to see if ApplicationsResponse property is set
+        internal bool IsSetApplicationsResponse()
         {
-            return this._eventStream != null;
+            return this._applicationsResponse != null;
         }
 
     }

@@ -35,6 +35,61 @@ namespace Amazon.Pinpoint
     {
 
         
+        #region  CreateApp
+
+
+        /// <summary>
+        /// Used to create an app.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateApp service method.</param>
+        /// 
+        /// <returns>The response from the CreateApp service method, as returned by Pinpoint.</returns>
+        /// <exception cref="Amazon.Pinpoint.Model.BadRequestException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.ForbiddenException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.InternalServerErrorException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.MethodNotAllowedException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.NotFoundException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
+        /// Simple message object.
+        /// </exception>
+        CreateAppResponse CreateApp(CreateAppRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateApp operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateApp operation on AmazonPinpointClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateApp
+        ///         operation.</returns>
+        IAsyncResult BeginCreateApp(CreateAppRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateApp operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateApp.</param>
+        /// 
+        /// <returns>Returns a  CreateAppResult from Pinpoint.</returns>
+        CreateAppResponse EndCreateApp(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  CreateCampaign
 
 
@@ -307,6 +362,61 @@ namespace Amazon.Pinpoint
         /// 
         /// <returns>Returns a  DeleteApnsSandboxChannelResult from Pinpoint.</returns>
         DeleteApnsSandboxChannelResponse EndDeleteApnsSandboxChannel(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DeleteApp
+
+
+        /// <summary>
+        /// Deletes an app.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteApp service method.</param>
+        /// 
+        /// <returns>The response from the DeleteApp service method, as returned by Pinpoint.</returns>
+        /// <exception cref="Amazon.Pinpoint.Model.BadRequestException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.ForbiddenException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.InternalServerErrorException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.MethodNotAllowedException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.NotFoundException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
+        /// Simple message object.
+        /// </exception>
+        DeleteAppResponse DeleteApp(DeleteAppRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteApp operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteApp operation on AmazonPinpointClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteApp
+        ///         operation.</returns>
+        IAsyncResult BeginDeleteApp(DeleteAppRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteApp operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteApp.</param>
+        /// 
+        /// <returns>Returns a  DeleteAppResult from Pinpoint.</returns>
+        DeleteAppResponse EndDeleteApp(IAsyncResult asyncResult);
 
         #endregion
         
@@ -750,6 +860,61 @@ namespace Amazon.Pinpoint
 
         #endregion
         
+        #region  GetApp
+
+
+        /// <summary>
+        /// Returns information about an app.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetApp service method.</param>
+        /// 
+        /// <returns>The response from the GetApp service method, as returned by Pinpoint.</returns>
+        /// <exception cref="Amazon.Pinpoint.Model.BadRequestException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.ForbiddenException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.InternalServerErrorException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.MethodNotAllowedException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.NotFoundException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
+        /// Simple message object.
+        /// </exception>
+        GetAppResponse GetApp(GetAppRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetApp operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetApp operation on AmazonPinpointClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetApp
+        ///         operation.</returns>
+        IAsyncResult BeginGetApp(GetAppRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetApp operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetApp.</param>
+        /// 
+        /// <returns>Returns a  GetAppResult from Pinpoint.</returns>
+        GetAppResponse EndGetApp(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  GetApplicationSettings
 
 
@@ -802,6 +967,61 @@ namespace Amazon.Pinpoint
         /// 
         /// <returns>Returns a  GetApplicationSettingsResult from Pinpoint.</returns>
         GetApplicationSettingsResponse EndGetApplicationSettings(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  GetApps
+
+
+        /// <summary>
+        /// Returns information about your apps.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetApps service method.</param>
+        /// 
+        /// <returns>The response from the GetApps service method, as returned by Pinpoint.</returns>
+        /// <exception cref="Amazon.Pinpoint.Model.BadRequestException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.ForbiddenException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.InternalServerErrorException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.MethodNotAllowedException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.NotFoundException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
+        /// Simple message object.
+        /// </exception>
+        GetAppsResponse GetApps(GetAppsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetApps operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetApps operation on AmazonPinpointClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetApps
+        ///         operation.</returns>
+        IAsyncResult BeginGetApps(GetAppsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetApps operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetApps.</param>
+        /// 
+        /// <returns>Returns a  GetAppsResult from Pinpoint.</returns>
+        GetAppsResponse EndGetApps(IAsyncResult asyncResult);
 
         #endregion
         

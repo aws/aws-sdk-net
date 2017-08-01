@@ -69,7 +69,8 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property PageSize.
+        /// Gets and sets the property PageSize. The number of entries you want on each page in
+        /// the response.
         /// </summary>
         public string PageSize
         {
@@ -84,7 +85,8 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Token.
+        /// Gets and sets the property Token. The NextToken string returned on a previous page
+        /// that you use to get the next page of results in a paginated response.
         /// </summary>
         public string Token
         {

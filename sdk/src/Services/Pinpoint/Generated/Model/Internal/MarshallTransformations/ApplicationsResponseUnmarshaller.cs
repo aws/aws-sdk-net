@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for CampaignEmailMessage Object
+    /// Response Unmarshaller for ApplicationsResponse Object
     /// </summary>  
-    public class CampaignEmailMessageUnmarshaller : IUnmarshaller<CampaignEmailMessage, XmlUnmarshallerContext>, IUnmarshaller<CampaignEmailMessage, JsonUnmarshallerContext>
+    public class ApplicationsResponseUnmarshaller : IUnmarshaller<ApplicationsResponse, XmlUnmarshallerContext>, IUnmarshaller<ApplicationsResponse, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        CampaignEmailMessage IUnmarshaller<CampaignEmailMessage, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        ApplicationsResponse IUnmarshaller<ApplicationsResponse, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,39 +53,27 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public CampaignEmailMessage Unmarshall(JsonUnmarshallerContext context)
+        public ApplicationsResponse Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            CampaignEmailMessage unmarshalledObject = new CampaignEmailMessage();
+            ApplicationsResponse unmarshalledObject = new ApplicationsResponse();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("Body", targetDepth))
+                if (context.TestExpression("Item", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Body = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new ListUnmarshaller<ApplicationResponse, ApplicationResponseUnmarshaller>(ApplicationResponseUnmarshaller.Instance);
+                    unmarshalledObject.Item = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("FromAddress", targetDepth))
+                if (context.TestExpression("NextToken", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.FromAddress = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("HtmlBody", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.HtmlBody = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Title", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Title = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.NextToken = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -94,12 +82,12 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
         }
 
 
-        private static CampaignEmailMessageUnmarshaller _instance = new CampaignEmailMessageUnmarshaller();        
+        private static ApplicationsResponseUnmarshaller _instance = new ApplicationsResponseUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CampaignEmailMessageUnmarshaller Instance
+        public static ApplicationsResponseUnmarshaller Instance
         {
             get
             {

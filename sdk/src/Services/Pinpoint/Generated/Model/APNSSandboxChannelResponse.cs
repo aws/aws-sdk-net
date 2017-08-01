@@ -148,7 +148,7 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Platform. The platform type. Will be APNS.
+        /// Gets and sets the property Platform. The platform type. Will be APNS_SANDBOX.
         /// </summary>
         public string Platform
         {

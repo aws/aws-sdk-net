@@ -223,6 +223,74 @@ namespace Amazon.Pinpoint
         #endregion
 
         
+        #region  CreateApp
+
+        /// <summary>
+        /// Used to create an app.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateApp service method.</param>
+        /// 
+        /// <returns>The response from the CreateApp service method, as returned by Pinpoint.</returns>
+        /// <exception cref="Amazon.Pinpoint.Model.BadRequestException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.ForbiddenException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.InternalServerErrorException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.MethodNotAllowedException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.NotFoundException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
+        /// Simple message object.
+        /// </exception>
+        public CreateAppResponse CreateApp(CreateAppRequest request)
+        {
+            var marshaller = new CreateAppRequestMarshaller();
+            var unmarshaller = CreateAppResponseUnmarshaller.Instance;
+
+            return Invoke<CreateAppRequest,CreateAppResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateApp operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateApp operation on AmazonPinpointClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateApp
+        ///         operation.</returns>
+        public IAsyncResult BeginCreateApp(CreateAppRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new CreateAppRequestMarshaller();
+            var unmarshaller = CreateAppResponseUnmarshaller.Instance;
+
+            return BeginInvoke<CreateAppRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateApp operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateApp.</param>
+        /// 
+        /// <returns>Returns a  CreateAppResult from Pinpoint.</returns>
+        public  CreateAppResponse EndCreateApp(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateAppResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  CreateCampaign
 
         /// <summary>
@@ -559,6 +627,74 @@ namespace Amazon.Pinpoint
         public  DeleteApnsSandboxChannelResponse EndDeleteApnsSandboxChannel(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteApnsSandboxChannelResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeleteApp
+
+        /// <summary>
+        /// Deletes an app.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteApp service method.</param>
+        /// 
+        /// <returns>The response from the DeleteApp service method, as returned by Pinpoint.</returns>
+        /// <exception cref="Amazon.Pinpoint.Model.BadRequestException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.ForbiddenException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.InternalServerErrorException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.MethodNotAllowedException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.NotFoundException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
+        /// Simple message object.
+        /// </exception>
+        public DeleteAppResponse DeleteApp(DeleteAppRequest request)
+        {
+            var marshaller = new DeleteAppRequestMarshaller();
+            var unmarshaller = DeleteAppResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteAppRequest,DeleteAppResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteApp operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteApp operation on AmazonPinpointClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteApp
+        ///         operation.</returns>
+        public IAsyncResult BeginDeleteApp(DeleteAppRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new DeleteAppRequestMarshaller();
+            var unmarshaller = DeleteAppResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DeleteAppRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteApp operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteApp.</param>
+        /// 
+        /// <returns>Returns a  DeleteAppResult from Pinpoint.</returns>
+        public  DeleteAppResponse EndDeleteApp(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteAppResponse>(asyncResult);
         }
 
         #endregion
@@ -1107,6 +1243,74 @@ namespace Amazon.Pinpoint
 
         #endregion
         
+        #region  GetApp
+
+        /// <summary>
+        /// Returns information about an app.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetApp service method.</param>
+        /// 
+        /// <returns>The response from the GetApp service method, as returned by Pinpoint.</returns>
+        /// <exception cref="Amazon.Pinpoint.Model.BadRequestException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.ForbiddenException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.InternalServerErrorException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.MethodNotAllowedException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.NotFoundException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
+        /// Simple message object.
+        /// </exception>
+        public GetAppResponse GetApp(GetAppRequest request)
+        {
+            var marshaller = new GetAppRequestMarshaller();
+            var unmarshaller = GetAppResponseUnmarshaller.Instance;
+
+            return Invoke<GetAppRequest,GetAppResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetApp operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetApp operation on AmazonPinpointClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetApp
+        ///         operation.</returns>
+        public IAsyncResult BeginGetApp(GetAppRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new GetAppRequestMarshaller();
+            var unmarshaller = GetAppResponseUnmarshaller.Instance;
+
+            return BeginInvoke<GetAppRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetApp operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetApp.</param>
+        /// 
+        /// <returns>Returns a  GetAppResult from Pinpoint.</returns>
+        public  GetAppResponse EndGetApp(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetAppResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  GetApplicationSettings
 
         /// <summary>
@@ -1171,6 +1375,74 @@ namespace Amazon.Pinpoint
         public  GetApplicationSettingsResponse EndGetApplicationSettings(IAsyncResult asyncResult)
         {
             return EndInvoke<GetApplicationSettingsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetApps
+
+        /// <summary>
+        /// Returns information about your apps.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetApps service method.</param>
+        /// 
+        /// <returns>The response from the GetApps service method, as returned by Pinpoint.</returns>
+        /// <exception cref="Amazon.Pinpoint.Model.BadRequestException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.ForbiddenException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.InternalServerErrorException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.MethodNotAllowedException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.NotFoundException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
+        /// Simple message object.
+        /// </exception>
+        public GetAppsResponse GetApps(GetAppsRequest request)
+        {
+            var marshaller = new GetAppsRequestMarshaller();
+            var unmarshaller = GetAppsResponseUnmarshaller.Instance;
+
+            return Invoke<GetAppsRequest,GetAppsResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetApps operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetApps operation on AmazonPinpointClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetApps
+        ///         operation.</returns>
+        public IAsyncResult BeginGetApps(GetAppsRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new GetAppsRequestMarshaller();
+            var unmarshaller = GetAppsResponseUnmarshaller.Instance;
+
+            return BeginInvoke<GetAppsRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetApps operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetApps.</param>
+        /// 
+        /// <returns>Returns a  GetAppsResult from Pinpoint.</returns>
+        public  GetAppsResponse EndGetApps(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetAppsResponse>(asyncResult);
         }
 
         #endregion

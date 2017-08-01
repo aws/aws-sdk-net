@@ -45,7 +45,8 @@ namespace Amazon.Pinpoint.Model
         private int? _version;
 
         /// <summary>
-        /// Gets and sets the property ApplicationId. Application id
+        /// Gets and sets the property ApplicationId. The unique ID of the application to which
+        /// the SMS channel belongs.
         /// </summary>
         public string ApplicationId
         {

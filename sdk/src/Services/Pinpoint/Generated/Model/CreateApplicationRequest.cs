@@ -28,25 +28,26 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Pinpoint.Model
 {
     /// <summary>
-    /// This is the response object from the PutEventStream operation.
+    /// Application Request.
     /// </summary>
-    public partial class PutEventStreamResponse : AmazonWebServiceResponse
+    public partial class CreateApplicationRequest
     {
-        private EventStream _eventStream;
+        private string _name;
 
         /// <summary>
-        /// Gets and sets the property EventStream.
+        /// Gets and sets the property Name. The display name of the application. Used in the
+        /// Amazon Pinpoint console.
         /// </summary>
-        public EventStream EventStream
+        public string Name
         {
-            get { return this._eventStream; }
-            set { this._eventStream = value; }
+            get { return this._name; }
+            set { this._name = value; }
         }
 
-        // Check to see if EventStream property is set
-        internal bool IsSetEventStream()
+        // Check to see if Name property is set
+        internal bool IsSetName()
         {
-            return this._eventStream != null;
+            return this._name != null;
         }
 
     }

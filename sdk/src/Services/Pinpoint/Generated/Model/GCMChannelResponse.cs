@@ -105,7 +105,7 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Id. Channel ID. Not used, only for backwards compatibility.
+        /// Gets and sets the property Id. Channel ID. Not used. Present only for backwards compatibility.
         /// </summary>
         public string Id
         {

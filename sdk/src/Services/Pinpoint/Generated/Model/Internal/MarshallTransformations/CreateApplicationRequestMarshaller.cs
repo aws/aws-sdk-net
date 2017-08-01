@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// CampaignEmailMessage Marshaller
+    /// CreateApplicationRequest Marshaller
     /// </summary>       
-    public class CampaignEmailMessageMarshaller : IRequestMarshaller<CampaignEmailMessage, JsonMarshallerContext> 
+    public class CreateApplicationRequestMarshaller : IRequestMarshaller<CreateApplicationRequest, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,30 +43,12 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(CampaignEmailMessage requestObject, JsonMarshallerContext context)
+        public void Marshall(CreateApplicationRequest requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetBody())
+            if(requestObject.IsSetName())
             {
-                context.Writer.WritePropertyName("Body");
-                context.Writer.Write(requestObject.Body);
-            }
-
-            if(requestObject.IsSetFromAddress())
-            {
-                context.Writer.WritePropertyName("FromAddress");
-                context.Writer.Write(requestObject.FromAddress);
-            }
-
-            if(requestObject.IsSetHtmlBody())
-            {
-                context.Writer.WritePropertyName("HtmlBody");
-                context.Writer.Write(requestObject.HtmlBody);
-            }
-
-            if(requestObject.IsSetTitle())
-            {
-                context.Writer.WritePropertyName("Title");
-                context.Writer.Write(requestObject.Title);
+                context.Writer.WritePropertyName("Name");
+                context.Writer.Write(requestObject.Name);
             }
 
         }
@@ -74,7 +56,7 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>  
-        public readonly static CampaignEmailMessageMarshaller Instance = new CampaignEmailMessageMarshaller();
+        public readonly static CreateApplicationRequestMarshaller Instance = new CreateApplicationRequestMarshaller();
 
     }
 }
