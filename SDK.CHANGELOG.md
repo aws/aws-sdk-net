@@ -1,3 +1,13 @@
+### 3.3.132.0 (2017-07-31 23:25 UTC)
+* Inspector (3.3.2.0)
+	* Inspector's StopAssessmentRun API has been updated with a new input option - stopAction. This request parameter can be set to either START_EVALUATION or SKIP_EVALUATION. START_EVALUATION (the default value, and the previous behavior) stops the AWS agent data collection and begins the results evaluation for findings generation based on the data collected so far. SKIP_EVALUATION cancels the assessment run immediately, after which no findings are generated.
+* SimpleSystemsManagement (3.3.8.0)
+	* Adds a SendAutomationSignal API to SSM Service. This API is used to send a signal to an automation execution to change the current behavior or status of the execution.
+* Core 3.3.17.5
+	*  AWS CodeStar is now available in the following regions: Asia Pacific (Singapore), Asia Pacific (Sydney), EU (Frankfurt)
+
+
+
 ### 3.3.131.0 (2017-07-30 19:34 UTC)
 * S3 (3.3.9.0)
 	* Fix TransferUtility reporting 0 files transferred when performing directory download
