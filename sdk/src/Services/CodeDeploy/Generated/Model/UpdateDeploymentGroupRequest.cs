@@ -42,9 +42,11 @@ namespace Amazon.CodeDeploy.Model
         private string _deploymentConfigName;
         private DeploymentStyle _deploymentStyle;
         private List<EC2TagFilter> _ec2TagFilters = new List<EC2TagFilter>();
+        private EC2TagSet _ec2TagSet;
         private LoadBalancerInfo _loadBalancerInfo;
         private string _newDeploymentGroupName;
         private List<TagFilter> _onPremisesInstanceTagFilters = new List<TagFilter>();
+        private OnPremisesTagSet _onPremisesTagSet;
         private string _serviceRoleArn;
         private List<TriggerConfig> _triggerConfigurations = new List<TriggerConfig>();
 
@@ -218,6 +220,25 @@ namespace Amazon.CodeDeploy.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Ec2TagSet. 
+        /// <para>
+        /// Information about groups of tags applied to on-premises instances. The deployment
+        /// group will include only EC2 instances identified by all the tag groups.
+        /// </para>
+        /// </summary>
+        public EC2TagSet Ec2TagSet
+        {
+            get { return this._ec2TagSet; }
+            set { this._ec2TagSet = value; }
+        }
+
+        // Check to see if Ec2TagSet property is set
+        internal bool IsSetEc2TagSet()
+        {
+            return this._ec2TagSet != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property LoadBalancerInfo. 
         /// <para>
         /// Information about the load balancer used in a deployment.
@@ -271,6 +292,25 @@ namespace Amazon.CodeDeploy.Model
         internal bool IsSetOnPremisesInstanceTagFilters()
         {
             return this._onPremisesInstanceTagFilters != null && this._onPremisesInstanceTagFilters.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property OnPremisesTagSet. 
+        /// <para>
+        /// Information about an on-premises instance tag set. The deployment group will include
+        /// only on-premises instances identified by all the tag groups.
+        /// </para>
+        /// </summary>
+        public OnPremisesTagSet OnPremisesTagSet
+        {
+            get { return this._onPremisesTagSet; }
+            set { this._onPremisesTagSet = value; }
+        }
+
+        // Check to see if OnPremisesTagSet property is set
+        internal bool IsSetOnPremisesTagSet()
+        {
+            return this._onPremisesTagSet != null;
         }
 
         /// <summary>

@@ -156,6 +156,17 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
+                if(publicRequest.IsSetEc2TagSet())
+                {
+                    context.Writer.WritePropertyName("ec2TagSet");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = EC2TagSetMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.Ec2TagSet, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetLoadBalancerInfo())
                 {
                     context.Writer.WritePropertyName("loadBalancerInfo");
@@ -187,6 +198,17 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
                         context.Writer.WriteObjectEnd();
                     }
                     context.Writer.WriteArrayEnd();
+                }
+
+                if(publicRequest.IsSetOnPremisesTagSet())
+                {
+                    context.Writer.WritePropertyName("onPremisesTagSet");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = OnPremisesTagSetMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.OnPremisesTagSet, context);
+
+                    context.Writer.WriteObjectEnd();
                 }
 
                 if(publicRequest.IsSetServiceRoleArn())

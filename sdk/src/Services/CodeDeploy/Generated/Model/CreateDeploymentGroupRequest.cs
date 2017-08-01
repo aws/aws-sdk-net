@@ -42,8 +42,10 @@ namespace Amazon.CodeDeploy.Model
         private string _deploymentGroupName;
         private DeploymentStyle _deploymentStyle;
         private List<EC2TagFilter> _ec2TagFilters = new List<EC2TagFilter>();
+        private EC2TagSet _ec2TagSet;
         private LoadBalancerInfo _loadBalancerInfo;
         private List<TagFilter> _onPremisesInstanceTagFilters = new List<TagFilter>();
+        private OnPremisesTagSet _onPremisesTagSet;
         private string _serviceRoleArn;
         private List<TriggerConfig> _triggerConfigurations = new List<TriggerConfig>();
 
@@ -211,7 +213,7 @@ namespace Amazon.CodeDeploy.Model
         /// Gets and sets the property Ec2TagFilters. 
         /// <para>
         /// The Amazon EC2 tags on which to filter. The deployment group will include EC2 instances
-        /// with any of the specified tags.
+        /// with any of the specified tags. Cannot be used in the same call as ec2TagSet.
         /// </para>
         /// </summary>
         public List<EC2TagFilter> Ec2TagFilters
@@ -224,6 +226,26 @@ namespace Amazon.CodeDeploy.Model
         internal bool IsSetEc2TagFilters()
         {
             return this._ec2TagFilters != null && this._ec2TagFilters.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Ec2TagSet. 
+        /// <para>
+        /// Information about groups of tags applied to EC2 instances. The deployment group will
+        /// include only EC2 instances identified by all the tag groups. Cannot be used in the
+        /// same call as ec2TagFilters.
+        /// </para>
+        /// </summary>
+        public EC2TagSet Ec2TagSet
+        {
+            get { return this._ec2TagSet; }
+            set { this._ec2TagSet = value; }
+        }
+
+        // Check to see if Ec2TagSet property is set
+        internal bool IsSetEc2TagSet()
+        {
+            return this._ec2TagSet != null;
         }
 
         /// <summary>
@@ -248,7 +270,8 @@ namespace Amazon.CodeDeploy.Model
         /// Gets and sets the property OnPremisesInstanceTagFilters. 
         /// <para>
         /// The on-premises instance tags on which to filter. The deployment group will include
-        /// on-premises instances with any of the specified tags.
+        /// on-premises instances with any of the specified tags. Cannot be used in the same call
+        /// as OnPremisesTagSet.
         /// </para>
         /// </summary>
         public List<TagFilter> OnPremisesInstanceTagFilters
@@ -261,6 +284,26 @@ namespace Amazon.CodeDeploy.Model
         internal bool IsSetOnPremisesInstanceTagFilters()
         {
             return this._onPremisesInstanceTagFilters != null && this._onPremisesInstanceTagFilters.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property OnPremisesTagSet. 
+        /// <para>
+        /// Information about groups of tags applied to on-premises instances. The deployment
+        /// group will include only on-premises instances identified by all the tag groups. Cannot
+        /// be used in the same call as onPremisesInstanceTagFilters.
+        /// </para>
+        /// </summary>
+        public OnPremisesTagSet OnPremisesTagSet
+        {
+            get { return this._onPremisesTagSet; }
+            set { this._onPremisesTagSet = value; }
+        }
+
+        // Check to see if OnPremisesTagSet property is set
+        internal bool IsSetOnPremisesTagSet()
+        {
+            return this._onPremisesTagSet != null;
         }
 
         /// <summary>

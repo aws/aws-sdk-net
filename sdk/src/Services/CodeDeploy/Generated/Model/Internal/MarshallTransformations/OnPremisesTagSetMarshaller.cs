@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// TargetInstances Marshaller
+    /// OnPremisesTagSet Marshaller
     /// </summary>       
-    public class TargetInstancesMarshaller : IRequestMarshaller<TargetInstances, JsonMarshallerContext> 
+    public class OnPremisesTagSetMarshaller : IRequestMarshaller<OnPremisesTagSet, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,42 +43,25 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(TargetInstances requestObject, JsonMarshallerContext context)
+        public void Marshall(OnPremisesTagSet requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetAutoScalingGroups())
+            if(requestObject.IsSetOnPremisesTagSetList())
             {
-                context.Writer.WritePropertyName("autoScalingGroups");
+                context.Writer.WritePropertyName("onPremisesTagSetList");
                 context.Writer.WriteArrayStart();
-                foreach(var requestObjectAutoScalingGroupsListValue in requestObject.AutoScalingGroups)
+                foreach(var requestObjectOnPremisesTagSetListListValue in requestObject.OnPremisesTagSetList)
                 {
-                        context.Writer.Write(requestObjectAutoScalingGroupsListValue);
-                }
-                context.Writer.WriteArrayEnd();
-            }
+                    context.Writer.WriteArrayStart();
+                    foreach(var requestObjectOnPremisesTagSetListListValueListValue in requestObjectOnPremisesTagSetListListValue)
+                    {
+                        context.Writer.WriteObjectStart();
 
-            if(requestObject.IsSetEc2TagSet())
-            {
-                context.Writer.WritePropertyName("ec2TagSet");
-                context.Writer.WriteObjectStart();
+                        var marshaller = TagFilterMarshaller.Instance;
+                        marshaller.Marshall(requestObjectOnPremisesTagSetListListValueListValue, context);
 
-                var marshaller = EC2TagSetMarshaller.Instance;
-                marshaller.Marshall(requestObject.Ec2TagSet, context);
-
-                context.Writer.WriteObjectEnd();
-            }
-
-            if(requestObject.IsSetTagFilters())
-            {
-                context.Writer.WritePropertyName("tagFilters");
-                context.Writer.WriteArrayStart();
-                foreach(var requestObjectTagFiltersListValue in requestObject.TagFilters)
-                {
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = EC2TagFilterMarshaller.Instance;
-                    marshaller.Marshall(requestObjectTagFiltersListValue, context);
-
-                    context.Writer.WriteObjectEnd();
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteArrayEnd();
                 }
                 context.Writer.WriteArrayEnd();
             }
@@ -88,7 +71,7 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>  
-        public readonly static TargetInstancesMarshaller Instance = new TargetInstancesMarshaller();
+        public readonly static OnPremisesTagSetMarshaller Instance = new OnPremisesTagSetMarshaller();
 
     }
 }

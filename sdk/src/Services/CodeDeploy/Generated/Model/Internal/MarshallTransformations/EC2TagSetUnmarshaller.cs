@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for TargetInstances Object
+    /// Response Unmarshaller for EC2TagSet Object
     /// </summary>  
-    public class TargetInstancesUnmarshaller : IUnmarshaller<TargetInstances, XmlUnmarshallerContext>, IUnmarshaller<TargetInstances, JsonUnmarshallerContext>
+    public class EC2TagSetUnmarshaller : IUnmarshaller<EC2TagSet, XmlUnmarshallerContext>, IUnmarshaller<EC2TagSet, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        TargetInstances IUnmarshaller<TargetInstances, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        EC2TagSet IUnmarshaller<EC2TagSet, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,33 +53,21 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public TargetInstances Unmarshall(JsonUnmarshallerContext context)
+        public EC2TagSet Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            TargetInstances unmarshalledObject = new TargetInstances();
+            EC2TagSet unmarshalledObject = new EC2TagSet();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("autoScalingGroups", targetDepth))
+                if (context.TestExpression("ec2TagSetList", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.AutoScalingGroups = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("ec2TagSet", targetDepth))
-                {
-                    var unmarshaller = EC2TagSetUnmarshaller.Instance;
-                    unmarshalledObject.Ec2TagSet = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("tagFilters", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<EC2TagFilter, EC2TagFilterUnmarshaller>(EC2TagFilterUnmarshaller.Instance);
-                    unmarshalledObject.TagFilters = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new ListUnmarshaller<List<EC2TagFilter>, ListUnmarshaller<EC2TagFilter, EC2TagFilterUnmarshaller>>(new ListUnmarshaller<EC2TagFilter, EC2TagFilterUnmarshaller>(EC2TagFilterUnmarshaller.Instance));
+                    unmarshalledObject.Ec2TagSetList = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -88,12 +76,12 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
         }
 
 
-        private static TargetInstancesUnmarshaller _instance = new TargetInstancesUnmarshaller();        
+        private static EC2TagSetUnmarshaller _instance = new EC2TagSetUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static TargetInstancesUnmarshaller Instance
+        public static EC2TagSetUnmarshaller Instance
         {
             get
             {

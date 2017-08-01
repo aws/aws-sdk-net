@@ -34,6 +34,7 @@ namespace Amazon.CodeDeploy.Model
     public partial class TargetInstances
     {
         private List<string> _autoScalingGroups = new List<string>();
+        private EC2TagSet _ec2TagSet;
         private List<EC2TagFilter> _tagFilters = new List<EC2TagFilter>();
 
         /// <summary>
@@ -56,10 +57,30 @@ namespace Amazon.CodeDeploy.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Ec2TagSet. 
+        /// <para>
+        /// Information about the groups of EC2 instance tags that an instance must be identified
+        /// by in order for it to be included in the replacement environment for a blue/green
+        /// deployment. Cannot be used in the same call as tagFilters.
+        /// </para>
+        /// </summary>
+        public EC2TagSet Ec2TagSet
+        {
+            get { return this._ec2TagSet; }
+            set { this._ec2TagSet = value; }
+        }
+
+        // Check to see if Ec2TagSet property is set
+        internal bool IsSetEc2TagSet()
+        {
+            return this._ec2TagSet != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property TagFilters. 
         /// <para>
         /// The tag filter key, type, and value used to identify Amazon EC2 instances in a replacement
-        /// environment for a blue/green deployment.
+        /// environment for a blue/green deployment. Cannot be used in the same call as ec2TagSet.
         /// </para>
         /// </summary>
         public List<EC2TagFilter> TagFilters

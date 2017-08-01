@@ -731,11 +731,19 @@ namespace Amazon.CodeDeploy
         /// An invalid deployment style was specified. Valid deployment types include "IN_PLACE"
         /// and "BLUE_GREEN". Valid deployment options include "WITH_TRAFFIC_CONTROL" and "WITHOUT_TRAFFIC_CONTROL".
         /// </exception>
+        /// <exception cref="Amazon.CodeDeploy.Model.InvalidEC2TagCombinationException">
+        /// A call was submitted that specified both Ec2TagFilters and Ec2TagSet, but only one
+        /// of these data types can be used in a single call.
+        /// </exception>
         /// <exception cref="Amazon.CodeDeploy.Model.InvalidEC2TagException">
         /// The tag was specified in an invalid format.
         /// </exception>
         /// <exception cref="Amazon.CodeDeploy.Model.InvalidLoadBalancerInfoException">
         /// An invalid load balancer name, or no load balancer name, was specified.
+        /// </exception>
+        /// <exception cref="Amazon.CodeDeploy.Model.InvalidOnPremisesTagCombinationException">
+        /// A call was submitted that specified both OnPremisesTagFilters and OnPremisesTagSet,
+        /// but only one of these data types can be used in a single call.
         /// </exception>
         /// <exception cref="Amazon.CodeDeploy.Model.InvalidRoleException">
         /// The service role ARN was specified in an invalid format. Or, if an Auto Scaling group
@@ -753,6 +761,10 @@ namespace Amazon.CodeDeploy
         /// </exception>
         /// <exception cref="Amazon.CodeDeploy.Model.RoleRequiredException">
         /// The role ID was not specified.
+        /// </exception>
+        /// <exception cref="Amazon.CodeDeploy.Model.TagSetListLimitExceededException">
+        /// The number of tag groups included in the tag set list exceeded the maximum allowed
+        /// limit of 3.
         /// </exception>
         /// <exception cref="Amazon.CodeDeploy.Model.TriggerTargetsLimitExceededException">
         /// The maximum allowed number of triggers was exceeded.
@@ -1969,11 +1981,19 @@ namespace Amazon.CodeDeploy
         /// An invalid deployment style was specified. Valid deployment types include "IN_PLACE"
         /// and "BLUE_GREEN". Valid deployment options include "WITH_TRAFFIC_CONTROL" and "WITHOUT_TRAFFIC_CONTROL".
         /// </exception>
+        /// <exception cref="Amazon.CodeDeploy.Model.InvalidEC2TagCombinationException">
+        /// A call was submitted that specified both Ec2TagFilters and Ec2TagSet, but only one
+        /// of these data types can be used in a single call.
+        /// </exception>
         /// <exception cref="Amazon.CodeDeploy.Model.InvalidEC2TagException">
         /// The tag was specified in an invalid format.
         /// </exception>
         /// <exception cref="Amazon.CodeDeploy.Model.InvalidLoadBalancerInfoException">
         /// An invalid load balancer name, or no load balancer name, was specified.
+        /// </exception>
+        /// <exception cref="Amazon.CodeDeploy.Model.InvalidOnPremisesTagCombinationException">
+        /// A call was submitted that specified both OnPremisesTagFilters and OnPremisesTagSet,
+        /// but only one of these data types can be used in a single call.
         /// </exception>
         /// <exception cref="Amazon.CodeDeploy.Model.InvalidRoleException">
         /// The service role ARN was specified in an invalid format. Or, if an Auto Scaling group
@@ -1988,6 +2008,10 @@ namespace Amazon.CodeDeploy
         /// </exception>
         /// <exception cref="Amazon.CodeDeploy.Model.LifecycleHookLimitExceededException">
         /// The limit for lifecycle hooks was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.CodeDeploy.Model.TagSetListLimitExceededException">
+        /// The number of tag groups included in the tag set list exceeded the maximum allowed
+        /// limit of 3.
         /// </exception>
         /// <exception cref="Amazon.CodeDeploy.Model.TriggerTargetsLimitExceededException">
         /// The maximum allowed number of triggers was exceeded.

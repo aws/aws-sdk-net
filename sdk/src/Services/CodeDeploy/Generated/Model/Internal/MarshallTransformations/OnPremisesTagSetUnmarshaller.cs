@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for TargetInstances Object
+    /// Response Unmarshaller for OnPremisesTagSet Object
     /// </summary>  
-    public class TargetInstancesUnmarshaller : IUnmarshaller<TargetInstances, XmlUnmarshallerContext>, IUnmarshaller<TargetInstances, JsonUnmarshallerContext>
+    public class OnPremisesTagSetUnmarshaller : IUnmarshaller<OnPremisesTagSet, XmlUnmarshallerContext>, IUnmarshaller<OnPremisesTagSet, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        TargetInstances IUnmarshaller<TargetInstances, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        OnPremisesTagSet IUnmarshaller<OnPremisesTagSet, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,33 +53,21 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public TargetInstances Unmarshall(JsonUnmarshallerContext context)
+        public OnPremisesTagSet Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            TargetInstances unmarshalledObject = new TargetInstances();
+            OnPremisesTagSet unmarshalledObject = new OnPremisesTagSet();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("autoScalingGroups", targetDepth))
+                if (context.TestExpression("onPremisesTagSetList", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.AutoScalingGroups = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("ec2TagSet", targetDepth))
-                {
-                    var unmarshaller = EC2TagSetUnmarshaller.Instance;
-                    unmarshalledObject.Ec2TagSet = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("tagFilters", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<EC2TagFilter, EC2TagFilterUnmarshaller>(EC2TagFilterUnmarshaller.Instance);
-                    unmarshalledObject.TagFilters = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new ListUnmarshaller<List<TagFilter>, ListUnmarshaller<TagFilter, TagFilterUnmarshaller>>(new ListUnmarshaller<TagFilter, TagFilterUnmarshaller>(TagFilterUnmarshaller.Instance));
+                    unmarshalledObject.OnPremisesTagSetList = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -88,12 +76,12 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
         }
 
 
-        private static TargetInstancesUnmarshaller _instance = new TargetInstancesUnmarshaller();        
+        private static OnPremisesTagSetUnmarshaller _instance = new OnPremisesTagSetUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static TargetInstancesUnmarshaller Instance
+        public static OnPremisesTagSetUnmarshaller Instance
         {
             get
             {

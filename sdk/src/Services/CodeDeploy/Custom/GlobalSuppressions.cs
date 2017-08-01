@@ -17,3 +17,5 @@ using System.Diagnostics.CodeAnalysis;
 
 // Types names matching namespaces
 [module: SuppressMessage("Microsoft.Naming", "CA1724:TypeNamesShouldNotMatchNamespaces", Scope = "type", Target = "Amazon.CodeDeploy.Model.Diagnostics")]
+[module: SuppressMessage("Microsoft.Design", "CA1006:DoNotNestGenericTypesInMemberSignatures", Scope = "member", Target = "Amazon.CodeDeploy.Model.EC2TagSet.#Ec2TagSetList")]
+[module: SuppressMessage("Microsoft.Design", "CA1006:DoNotNestGenericTypesInMemberSignatures", Scope = "member", Target = "Amazon.CodeDeploy.Model.OnPremisesTagSet.#OnPremisesTagSetList")]

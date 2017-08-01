@@ -124,6 +124,12 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
                     unmarshalledObject.Ec2TagFilters = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ec2TagSet", targetDepth))
+                {
+                    var unmarshaller = EC2TagSetUnmarshaller.Instance;
+                    unmarshalledObject.Ec2TagSet = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("lastAttemptedDeployment", targetDepth))
                 {
                     var unmarshaller = LastDeploymentInfoUnmarshaller.Instance;
@@ -146,6 +152,12 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = new ListUnmarshaller<TagFilter, TagFilterUnmarshaller>(TagFilterUnmarshaller.Instance);
                     unmarshalledObject.OnPremisesInstanceTagFilters = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("onPremisesTagSet", targetDepth))
+                {
+                    var unmarshaller = OnPremisesTagSetUnmarshaller.Instance;
+                    unmarshalledObject.OnPremisesTagSet = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("serviceRoleArn", targetDepth))

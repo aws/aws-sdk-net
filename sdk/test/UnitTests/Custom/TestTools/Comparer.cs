@@ -315,7 +315,15 @@ namespace AWSSDK_DotNet35.UnitTests.TestTools
             {
                 var token = reader.Token;
                 var value = reader.Value;
-
+                if (token == JsonToken.ArrayStart)
+                {
+                    object itemInstance = null;
+                    if (itemType.GetInterface("System.Collections.IList") != null)
+                    {
+                        itemInstance = ParseArray(reader, itemType);
+                    }
+                    list.Add(itemInstance);
+                }
                 if (token == JsonToken.ObjectStart)
                 {
                     object itemInstance = null;
@@ -323,7 +331,7 @@ namespace AWSSDK_DotNet35.UnitTests.TestTools
                     {
                         itemInstance = ParseMap(reader, itemType);
                     }
-                    else
+                    else 
                     {
                         itemInstance = Activator.CreateInstance(itemType);
                         Unmarshall(reader, itemType, itemInstance);
