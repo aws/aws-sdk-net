@@ -34,13 +34,15 @@ namespace Amazon.SimpleEmail.Model
     ///  <note> 
     /// <para>
     /// When you create or update an event destination, you must provide one, and only one,
-    /// destination. The destination can be either Amazon CloudWatch or Amazon Kinesis Firehose.
+    /// destination. The destination can be Amazon CloudWatch, Amazon Kinesis Firehose or
+    /// Amazon Simple Notification Service (Amazon SNS).
     /// </para>
     ///  </note> 
     /// <para>
     /// Event destinations are associated with configuration sets, which enable you to publish
-    /// email sending events to Amazon CloudWatch or Amazon Kinesis Firehose. For information
-    /// about using configuration sets, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon
+    /// email sending events to Amazon CloudWatch, Amazon Kinesis Firehose, or Amazon Simple
+    /// Notification Service (Amazon SNS). For information about using configuration sets,
+    /// see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon
     /// SES Developer Guide</a>.
     /// </para>
     /// </summary>
@@ -51,6 +53,7 @@ namespace Amazon.SimpleEmail.Model
         private KinesisFirehoseDestination _kinesisFirehoseDestination;
         private List<string> _matchingEventTypes = new List<string>();
         private string _name;
+        private SNSDestination _snsDestination;
 
         /// <summary>
         /// Gets and sets the property CloudWatchDestination. 
@@ -154,6 +157,25 @@ namespace Amazon.SimpleEmail.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SNSDestination. 
+        /// <para>
+        /// An object that contains the topic ARN associated with an Amazon Simple Notification
+        /// Service (Amazon SNS) event destination.
+        /// </para>
+        /// </summary>
+        public SNSDestination SNSDestination
+        {
+            get { return this._snsDestination; }
+            set { this._snsDestination = value; }
+        }
+
+        // Check to see if SNSDestination property is set
+        internal bool IsSetSNSDestination()
+        {
+            return this._snsDestination != null;
         }
 
     }

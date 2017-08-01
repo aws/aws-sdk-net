@@ -52,6 +52,12 @@ namespace Amazon.SimpleEmail.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
+    /// You must provide at least one recipient email address. The recipient address can be
+    /// a To: address, a CC: address, or a BCC: address. If any email address you provide
+    /// is invalid, Amazon SES rejects the entire email.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
     /// Amazon SES has a limit on the total number of recipients per message. The combined
     /// number of To:, CC: and BCC: email addresses cannot exceed 50. If you need to send
     /// an email message to a larger audience, you can divide your recipient list into groups
@@ -130,7 +136,7 @@ namespace Amazon.SimpleEmail.Model
         /// <summary>
         /// Instantiates SendRawEmailRequest with the parameterized properties
         /// </summary>
-        /// <param name="rawMessage">The raw text of the message. The client is responsible for ensuring the following: <ul> <li> Message must contain a header and a body, separated by a blank line. </li> <li> All required header fields must be present. </li> <li> Each part of a multipart MIME message must be formatted properly. </li> <li> MIME content types must be among those supported by Amazon SES. For more information, go to the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/mime-types.html">Amazon SES Developer Guide</a>. </li> <li> Must be base64-encoded. </li> </ul></param>
+        /// <param name="rawMessage">The raw text of the message. The client is responsible for ensuring the following: <ul> <li> Message must contain a header and a body, separated by a blank line. </li> <li> All required header fields must be present. </li> <li> Each part of a multipart MIME message must be formatted properly. </li> <li> MIME content types must be among those supported by Amazon SES. For more information, go to the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/mime-types.html">Amazon SES Developer Guide</a>. </li> <li> Must be base64-encoded. </li> <li> Per <a href="https://tools.ietf.org/html/rfc5321#section-4.5.3.1.6">RFC 5321</a>, the maximum length of each line of text, including the &lt;CRLF&gt;, must not exceed 1,000 characters. </li> </ul></param>
         public SendRawEmailRequest(RawMessage rawMessage)
         {
             _rawMessage = rawMessage;
@@ -232,6 +238,12 @@ namespace Amazon.SimpleEmail.Model
         ///  </li> <li> 
         /// <para>
         /// Must be base64-encoded.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Per <a href="https://tools.ietf.org/html/rfc5321#section-4.5.3.1.6">RFC 5321</a>,
+        /// the maximum length of each line of text, including the &lt;CRLF&gt;, must not exceed
+        /// 1,000 characters.
         /// </para>
         ///  </li> </ul>
         /// </summary>

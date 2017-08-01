@@ -115,6 +115,10 @@ namespace Amazon.SimpleEmail.Model.Internal.MarshallTransformations
             {
                 return new InvalidFirehoseDestinationException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidSNSDestination"))
+            {
+                return new InvalidSNSDestinationException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
             return new AmazonSimpleEmailServiceException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
         private static UpdateConfigurationSetEventDestinationResponseUnmarshaller _instance = new UpdateConfigurationSetEventDestinationResponseUnmarshaller();        

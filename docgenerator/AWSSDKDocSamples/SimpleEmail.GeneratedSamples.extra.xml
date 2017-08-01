@@ -1,0 +1,782 @@
+<?xml version="1.0" encoding="utf-8"?>
+<docs>
+    <doc>
+        <members>
+            <member name="M:Amazon.SimpleEmail.IAmazonSimpleEmailService.CloneReceiptRuleSet(Amazon.SimpleEmail.Model.CloneReceiptRuleSetRequest)" />
+            <member name="M:Amazon.SimpleEmail.AmazonSimpleEmailServiceClient.CloneReceiptRuleSet(Amazon.SimpleEmail.Model.CloneReceiptRuleSetRequest)" />
+            <member name="T:Amazon.SimpleEmail.Model.CloneReceiptRuleSetRequest" />
+            <member name="T:Amazon.SimpleEmail.Model.CloneReceiptRuleSetResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example creates a receipt rule set by cloning an existing one:
+                </para>
+                <code
+                    title="CloneReceiptRuleSet"
+                    source=".\AWSSDKDocSamples\SimpleEmail\SimpleEmail.GeneratedSamples.cs"
+                    region="clonereceiptruleset-1469055039770" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.SimpleEmail.IAmazonSimpleEmailService.CreateReceiptFilter(Amazon.SimpleEmail.Model.CreateReceiptFilterRequest)" />
+            <member name="M:Amazon.SimpleEmail.AmazonSimpleEmailServiceClient.CreateReceiptFilter(Amazon.SimpleEmail.Model.CreateReceiptFilterRequest)" />
+            <member name="T:Amazon.SimpleEmail.Model.CreateReceiptFilterRequest" />
+            <member name="T:Amazon.SimpleEmail.Model.CreateReceiptFilterResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example creates a new IP address filter:
+                </para>
+                <code
+                    title="CreateReceiptFilter"
+                    source=".\AWSSDKDocSamples\SimpleEmail\SimpleEmail.GeneratedSamples.cs"
+                    region="createreceiptfilter-1469122681253" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.SimpleEmail.IAmazonSimpleEmailService.CreateReceiptRule(Amazon.SimpleEmail.Model.CreateReceiptRuleRequest)" />
+            <member name="M:Amazon.SimpleEmail.AmazonSimpleEmailServiceClient.CreateReceiptRule(Amazon.SimpleEmail.Model.CreateReceiptRuleRequest)" />
+            <member name="T:Amazon.SimpleEmail.Model.CreateReceiptRuleRequest" />
+            <member name="T:Amazon.SimpleEmail.Model.CreateReceiptRuleResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example creates a new receipt rule:
+                </para>
+                <code
+                    title="CreateReceiptRule"
+                    source=".\AWSSDKDocSamples\SimpleEmail\SimpleEmail.GeneratedSamples.cs"
+                    region="createreceiptrule-1469122946515" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.SimpleEmail.IAmazonSimpleEmailService.CreateReceiptRuleSet(Amazon.SimpleEmail.Model.CreateReceiptRuleSetRequest)" />
+            <member name="M:Amazon.SimpleEmail.AmazonSimpleEmailServiceClient.CreateReceiptRuleSet(Amazon.SimpleEmail.Model.CreateReceiptRuleSetRequest)" />
+            <member name="T:Amazon.SimpleEmail.Model.CreateReceiptRuleSetRequest" />
+            <member name="T:Amazon.SimpleEmail.Model.CreateReceiptRuleSetResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example creates an empty receipt rule set:
+                </para>
+                <code
+                    title="CreateReceiptRuleSet"
+                    source=".\AWSSDKDocSamples\SimpleEmail\SimpleEmail.GeneratedSamples.cs"
+                    region="createreceiptruleset-1469058761646" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.SimpleEmail.IAmazonSimpleEmailService.DeleteIdentity(Amazon.SimpleEmail.Model.DeleteIdentityRequest)" />
+            <member name="M:Amazon.SimpleEmail.AmazonSimpleEmailServiceClient.DeleteIdentity(Amazon.SimpleEmail.Model.DeleteIdentityRequest)" />
+            <member name="T:Amazon.SimpleEmail.Model.DeleteIdentityRequest" />
+            <member name="T:Amazon.SimpleEmail.Model.DeleteIdentityResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example deletes an identity from the list of identities that have been submitted for verification with Amazon SES:
+                </para>
+                <code
+                    title="DeleteIdentity"
+                    source=".\AWSSDKDocSamples\SimpleEmail\SimpleEmail.GeneratedSamples.cs"
+                    region="deleteidentity-1469047858906" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.SimpleEmail.IAmazonSimpleEmailService.DeleteIdentityPolicy(Amazon.SimpleEmail.Model.DeleteIdentityPolicyRequest)" />
+            <member name="M:Amazon.SimpleEmail.AmazonSimpleEmailServiceClient.DeleteIdentityPolicy(Amazon.SimpleEmail.Model.DeleteIdentityPolicyRequest)" />
+            <member name="T:Amazon.SimpleEmail.Model.DeleteIdentityPolicyRequest" />
+            <member name="T:Amazon.SimpleEmail.Model.DeleteIdentityPolicyResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example deletes a sending authorization policy for an identity:
+                </para>
+                <code
+                    title="DeleteIdentityPolicy"
+                    source=".\AWSSDKDocSamples\SimpleEmail\SimpleEmail.GeneratedSamples.cs"
+                    region="deleteidentitypolicy-1469055282499" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.SimpleEmail.IAmazonSimpleEmailService.DeleteReceiptFilter(Amazon.SimpleEmail.Model.DeleteReceiptFilterRequest)" />
+            <member name="M:Amazon.SimpleEmail.AmazonSimpleEmailServiceClient.DeleteReceiptFilter(Amazon.SimpleEmail.Model.DeleteReceiptFilterRequest)" />
+            <member name="T:Amazon.SimpleEmail.Model.DeleteReceiptFilterRequest" />
+            <member name="T:Amazon.SimpleEmail.Model.DeleteReceiptFilterResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example deletes an IP address filter:
+                </para>
+                <code
+                    title="DeleteReceiptFilter"
+                    source=".\AWSSDKDocSamples\SimpleEmail\SimpleEmail.GeneratedSamples.cs"
+                    region="deletereceiptfilter-1469055456835" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.SimpleEmail.IAmazonSimpleEmailService.DeleteReceiptRule(Amazon.SimpleEmail.Model.DeleteReceiptRuleRequest)" />
+            <member name="M:Amazon.SimpleEmail.AmazonSimpleEmailServiceClient.DeleteReceiptRule(Amazon.SimpleEmail.Model.DeleteReceiptRuleRequest)" />
+            <member name="T:Amazon.SimpleEmail.Model.DeleteReceiptRuleRequest" />
+            <member name="T:Amazon.SimpleEmail.Model.DeleteReceiptRuleResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example deletes a receipt rule:
+                </para>
+                <code
+                    title="DeleteReceiptRule"
+                    source=".\AWSSDKDocSamples\SimpleEmail\SimpleEmail.GeneratedSamples.cs"
+                    region="deletereceiptrule-1469055563599" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.SimpleEmail.IAmazonSimpleEmailService.DeleteReceiptRuleSet(Amazon.SimpleEmail.Model.DeleteReceiptRuleSetRequest)" />
+            <member name="M:Amazon.SimpleEmail.AmazonSimpleEmailServiceClient.DeleteReceiptRuleSet(Amazon.SimpleEmail.Model.DeleteReceiptRuleSetRequest)" />
+            <member name="T:Amazon.SimpleEmail.Model.DeleteReceiptRuleSetRequest" />
+            <member name="T:Amazon.SimpleEmail.Model.DeleteReceiptRuleSetResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example deletes a receipt rule set:
+                </para>
+                <code
+                    title="DeleteReceiptRuleSet"
+                    source=".\AWSSDKDocSamples\SimpleEmail\SimpleEmail.GeneratedSamples.cs"
+                    region="deletereceiptruleset-1469055713690" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.SimpleEmail.IAmazonSimpleEmailService.DeleteVerifiedEmailAddress(Amazon.SimpleEmail.Model.DeleteVerifiedEmailAddressRequest)" />
+            <member name="M:Amazon.SimpleEmail.AmazonSimpleEmailServiceClient.DeleteVerifiedEmailAddress(Amazon.SimpleEmail.Model.DeleteVerifiedEmailAddressRequest)" />
+            <member name="T:Amazon.SimpleEmail.Model.DeleteVerifiedEmailAddressRequest" />
+            <member name="T:Amazon.SimpleEmail.Model.DeleteVerifiedEmailAddressResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example deletes an email address from the list of identities that have been submitted for verification with Amazon SES:
+                </para>
+                <code
+                    title="DeleteVerifiedEmailAddress"
+                    source=".\AWSSDKDocSamples\SimpleEmail\SimpleEmail.GeneratedSamples.cs"
+                    region="deleteverifiedemailaddress-1469051086444" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.SimpleEmail.IAmazonSimpleEmailService.DescribeActiveReceiptRuleSet(Amazon.SimpleEmail.Model.DescribeActiveReceiptRuleSetRequest)" />
+            <member name="M:Amazon.SimpleEmail.AmazonSimpleEmailServiceClient.DescribeActiveReceiptRuleSet(Amazon.SimpleEmail.Model.DescribeActiveReceiptRuleSetRequest)" />
+            <member name="T:Amazon.SimpleEmail.Model.DescribeActiveReceiptRuleSetRequest" />
+            <member name="T:Amazon.SimpleEmail.Model.DescribeActiveReceiptRuleSetResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example returns the metadata and receipt rules for the receipt rule set that is currently active:
+                </para>
+                <code
+                    title="DescribeActiveReceiptRuleSet"
+                    source=".\AWSSDKDocSamples\SimpleEmail\SimpleEmail.GeneratedSamples.cs"
+                    region="describeactivereceiptruleset-1469121611502" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.SimpleEmail.IAmazonSimpleEmailService.DescribeReceiptRule(Amazon.SimpleEmail.Model.DescribeReceiptRuleRequest)" />
+            <member name="M:Amazon.SimpleEmail.AmazonSimpleEmailServiceClient.DescribeReceiptRule(Amazon.SimpleEmail.Model.DescribeReceiptRuleRequest)" />
+            <member name="T:Amazon.SimpleEmail.Model.DescribeReceiptRuleRequest" />
+            <member name="T:Amazon.SimpleEmail.Model.DescribeReceiptRuleResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example returns the details of a receipt rule:
+                </para>
+                <code
+                    title="DescribeReceiptRule"
+                    source=".\AWSSDKDocSamples\SimpleEmail\SimpleEmail.GeneratedSamples.cs"
+                    region="describereceiptrule-1469055813118" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.SimpleEmail.IAmazonSimpleEmailService.DescribeReceiptRuleSet(Amazon.SimpleEmail.Model.DescribeReceiptRuleSetRequest)" />
+            <member name="M:Amazon.SimpleEmail.AmazonSimpleEmailServiceClient.DescribeReceiptRuleSet(Amazon.SimpleEmail.Model.DescribeReceiptRuleSetRequest)" />
+            <member name="T:Amazon.SimpleEmail.Model.DescribeReceiptRuleSetRequest" />
+            <member name="T:Amazon.SimpleEmail.Model.DescribeReceiptRuleSetResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example returns the metadata and receipt rules of a receipt rule set:
+                </para>
+                <code
+                    title="DescribeReceiptRuleSet"
+                    source=".\AWSSDKDocSamples\SimpleEmail\SimpleEmail.GeneratedSamples.cs"
+                    region="describereceiptruleset-1469121240385" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.SimpleEmail.IAmazonSimpleEmailService.GetIdentityDkimAttributes(Amazon.SimpleEmail.Model.GetIdentityDkimAttributesRequest)" />
+            <member name="M:Amazon.SimpleEmail.AmazonSimpleEmailServiceClient.GetIdentityDkimAttributes(Amazon.SimpleEmail.Model.GetIdentityDkimAttributesRequest)" />
+            <member name="T:Amazon.SimpleEmail.Model.GetIdentityDkimAttributesRequest" />
+            <member name="T:Amazon.SimpleEmail.Model.GetIdentityDkimAttributesResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example retrieves the Amazon SES Easy DKIM attributes for a list of identities:
+                </para>
+                <code
+                    title="GetIdentityDkimAttributes"
+                    source=".\AWSSDKDocSamples\SimpleEmail\SimpleEmail.GeneratedSamples.cs"
+                    region="getidentitydkimattributes-1469050695628" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.SimpleEmail.IAmazonSimpleEmailService.GetIdentityMailFromDomainAttributes(Amazon.SimpleEmail.Model.GetIdentityMailFromDomainAttributesRequest)" />
+            <member name="M:Amazon.SimpleEmail.AmazonSimpleEmailServiceClient.GetIdentityMailFromDomainAttributes(Amazon.SimpleEmail.Model.GetIdentityMailFromDomainAttributesRequest)" />
+            <member name="T:Amazon.SimpleEmail.Model.GetIdentityMailFromDomainAttributesRequest" />
+            <member name="T:Amazon.SimpleEmail.Model.GetIdentityMailFromDomainAttributesResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example returns the custom MAIL FROM attributes for an identity:
+                </para>
+                <code
+                    title="GetIdentityMailFromDomainAttributes"
+                    source=".\AWSSDKDocSamples\SimpleEmail\SimpleEmail.GeneratedSamples.cs"
+                    region="getidentitymailfromdomainattributes-1469123114860" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.SimpleEmail.IAmazonSimpleEmailService.GetIdentityNotificationAttributes(Amazon.SimpleEmail.Model.GetIdentityNotificationAttributesRequest)" />
+            <member name="M:Amazon.SimpleEmail.AmazonSimpleEmailServiceClient.GetIdentityNotificationAttributes(Amazon.SimpleEmail.Model.GetIdentityNotificationAttributesRequest)" />
+            <member name="T:Amazon.SimpleEmail.Model.GetIdentityNotificationAttributesRequest" />
+            <member name="T:Amazon.SimpleEmail.Model.GetIdentityNotificationAttributesResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example returns the notification attributes for an identity:
+                </para>
+                <code
+                    title="GetIdentityNotificationAttributes"
+                    source=".\AWSSDKDocSamples\SimpleEmail\SimpleEmail.GeneratedSamples.cs"
+                    region="getidentitynotificationattributes-1469123466947" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.SimpleEmail.IAmazonSimpleEmailService.GetIdentityPolicies(Amazon.SimpleEmail.Model.GetIdentityPoliciesRequest)" />
+            <member name="M:Amazon.SimpleEmail.AmazonSimpleEmailServiceClient.GetIdentityPolicies(Amazon.SimpleEmail.Model.GetIdentityPoliciesRequest)" />
+            <member name="T:Amazon.SimpleEmail.Model.GetIdentityPoliciesRequest" />
+            <member name="T:Amazon.SimpleEmail.Model.GetIdentityPoliciesResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example returns a sending authorization policy for an identity:
+                </para>
+                <code
+                    title="GetIdentityPolicies"
+                    source=".\AWSSDKDocSamples\SimpleEmail\SimpleEmail.GeneratedSamples.cs"
+                    region="getidentitypolicies-1469123949351" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.SimpleEmail.IAmazonSimpleEmailService.GetIdentityVerificationAttributes(Amazon.SimpleEmail.Model.GetIdentityVerificationAttributesRequest)" />
+            <member name="M:Amazon.SimpleEmail.AmazonSimpleEmailServiceClient.GetIdentityVerificationAttributes(Amazon.SimpleEmail.Model.GetIdentityVerificationAttributesRequest)" />
+            <member name="T:Amazon.SimpleEmail.Model.GetIdentityVerificationAttributesRequest" />
+            <member name="T:Amazon.SimpleEmail.Model.GetIdentityVerificationAttributesResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example returns the verification status and the verification token for a domain identity:
+                </para>
+                <code
+                    title="GetIdentityVerificationAttributes"
+                    source=".\AWSSDKDocSamples\SimpleEmail\SimpleEmail.GeneratedSamples.cs"
+                    region="getidentityverificationattributes-1469124205897" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.SimpleEmail.IAmazonSimpleEmailService.GetSendQuota(Amazon.SimpleEmail.Model.GetSendQuotaRequest)" />
+            <member name="M:Amazon.SimpleEmail.AmazonSimpleEmailServiceClient.GetSendQuota(Amazon.SimpleEmail.Model.GetSendQuotaRequest)" />
+            <member name="T:Amazon.SimpleEmail.Model.GetSendQuotaRequest" />
+            <member name="T:Amazon.SimpleEmail.Model.GetSendQuotaResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example returns the Amazon SES sending limits for an AWS account:
+                </para>
+                <code
+                    title="GetSendQuota"
+                    source=".\AWSSDKDocSamples\SimpleEmail\SimpleEmail.GeneratedSamples.cs"
+                    region="getsendquota-1469047324508" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.SimpleEmail.IAmazonSimpleEmailService.GetSendStatistics(Amazon.SimpleEmail.Model.GetSendStatisticsRequest)" />
+            <member name="M:Amazon.SimpleEmail.AmazonSimpleEmailServiceClient.GetSendStatistics(Amazon.SimpleEmail.Model.GetSendStatisticsRequest)" />
+            <member name="T:Amazon.SimpleEmail.Model.GetSendStatisticsRequest" />
+            <member name="T:Amazon.SimpleEmail.Model.GetSendStatisticsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example returns Amazon SES sending statistics:
+                </para>
+                <code
+                    title="GetSendStatistics"
+                    source=".\AWSSDKDocSamples\SimpleEmail\SimpleEmail.GeneratedSamples.cs"
+                    region="getsendstatistics-1469047741329" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.SimpleEmail.IAmazonSimpleEmailService.ListIdentities(Amazon.SimpleEmail.Model.ListIdentitiesRequest)" />
+            <member name="M:Amazon.SimpleEmail.AmazonSimpleEmailServiceClient.ListIdentities(Amazon.SimpleEmail.Model.ListIdentitiesRequest)" />
+            <member name="T:Amazon.SimpleEmail.Model.ListIdentitiesRequest" />
+            <member name="T:Amazon.SimpleEmail.Model.ListIdentitiesResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example lists the email address identities that have been submitted for verification with Amazon SES:
+                </para>
+                <code
+                    title="ListIdentities"
+                    source=".\AWSSDKDocSamples\SimpleEmail\SimpleEmail.GeneratedSamples.cs"
+                    region="listidentities-1469048638493" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.SimpleEmail.IAmazonSimpleEmailService.ListIdentityPolicies(Amazon.SimpleEmail.Model.ListIdentityPoliciesRequest)" />
+            <member name="M:Amazon.SimpleEmail.AmazonSimpleEmailServiceClient.ListIdentityPolicies(Amazon.SimpleEmail.Model.ListIdentityPoliciesRequest)" />
+            <member name="T:Amazon.SimpleEmail.Model.ListIdentityPoliciesRequest" />
+            <member name="T:Amazon.SimpleEmail.Model.ListIdentityPoliciesResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example returns a list of sending authorization policies that are attached to an identity:
+                </para>
+                <code
+                    title="ListIdentityPolicies"
+                    source=".\AWSSDKDocSamples\SimpleEmail\SimpleEmail.GeneratedSamples.cs"
+                    region="listidentitypolicies-1469124417674" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.SimpleEmail.IAmazonSimpleEmailService.ListReceiptFilters(Amazon.SimpleEmail.Model.ListReceiptFiltersRequest)" />
+            <member name="M:Amazon.SimpleEmail.AmazonSimpleEmailServiceClient.ListReceiptFilters(Amazon.SimpleEmail.Model.ListReceiptFiltersRequest)" />
+            <member name="T:Amazon.SimpleEmail.Model.ListReceiptFiltersRequest" />
+            <member name="T:Amazon.SimpleEmail.Model.ListReceiptFiltersResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example lists the IP address filters that are associated with an AWS account:
+                </para>
+                <code
+                    title="ListReceiptFilters"
+                    source=".\AWSSDKDocSamples\SimpleEmail\SimpleEmail.GeneratedSamples.cs"
+                    region="listreceiptfilters-1469120786789" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.SimpleEmail.IAmazonSimpleEmailService.ListReceiptRuleSets(Amazon.SimpleEmail.Model.ListReceiptRuleSetsRequest)" />
+            <member name="M:Amazon.SimpleEmail.AmazonSimpleEmailServiceClient.ListReceiptRuleSets(Amazon.SimpleEmail.Model.ListReceiptRuleSetsRequest)" />
+            <member name="T:Amazon.SimpleEmail.Model.ListReceiptRuleSetsRequest" />
+            <member name="T:Amazon.SimpleEmail.Model.ListReceiptRuleSetsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example lists the receipt rule sets that exist under an AWS account:
+                </para>
+                <code
+                    title="ListReceiptRuleSets"
+                    source=".\AWSSDKDocSamples\SimpleEmail\SimpleEmail.GeneratedSamples.cs"
+                    region="listreceiptrulesets-1469121037235" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.SimpleEmail.IAmazonSimpleEmailService.ListVerifiedEmailAddresses(Amazon.SimpleEmail.Model.ListVerifiedEmailAddressesRequest)" />
+            <member name="M:Amazon.SimpleEmail.AmazonSimpleEmailServiceClient.ListVerifiedEmailAddresses(Amazon.SimpleEmail.Model.ListVerifiedEmailAddressesRequest)" />
+            <member name="T:Amazon.SimpleEmail.Model.ListVerifiedEmailAddressesRequest" />
+            <member name="T:Amazon.SimpleEmail.Model.ListVerifiedEmailAddressesResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example lists all email addresses that have been submitted for verification with Amazon SES:
+                </para>
+                <code
+                    title="ListVerifiedEmailAddresses"
+                    source=".\AWSSDKDocSamples\SimpleEmail\SimpleEmail.GeneratedSamples.cs"
+                    region="listverifiedemailaddresses-1469051402570" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.SimpleEmail.IAmazonSimpleEmailService.PutIdentityPolicy(Amazon.SimpleEmail.Model.PutIdentityPolicyRequest)" />
+            <member name="M:Amazon.SimpleEmail.AmazonSimpleEmailServiceClient.PutIdentityPolicy(Amazon.SimpleEmail.Model.PutIdentityPolicyRequest)" />
+            <member name="T:Amazon.SimpleEmail.Model.PutIdentityPolicyRequest" />
+            <member name="T:Amazon.SimpleEmail.Model.PutIdentityPolicyResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example adds a sending authorization policy to an identity:
+                </para>
+                <code
+                    title="PutIdentityPolicy"
+                    source=".\AWSSDKDocSamples\SimpleEmail\SimpleEmail.GeneratedSamples.cs"
+                    region="putidentitypolicy-1469124560016" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.SimpleEmail.IAmazonSimpleEmailService.ReorderReceiptRuleSet(Amazon.SimpleEmail.Model.ReorderReceiptRuleSetRequest)" />
+            <member name="M:Amazon.SimpleEmail.AmazonSimpleEmailServiceClient.ReorderReceiptRuleSet(Amazon.SimpleEmail.Model.ReorderReceiptRuleSetRequest)" />
+            <member name="T:Amazon.SimpleEmail.Model.ReorderReceiptRuleSetRequest" />
+            <member name="T:Amazon.SimpleEmail.Model.ReorderReceiptRuleSetResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example reorders the receipt rules within a receipt rule set:
+                </para>
+                <code
+                    title="ReorderReceiptRuleSet"
+                    source=".\AWSSDKDocSamples\SimpleEmail\SimpleEmail.GeneratedSamples.cs"
+                    region="reorderreceiptruleset-1469058156806" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.SimpleEmail.IAmazonSimpleEmailService.SendEmail(Amazon.SimpleEmail.Model.SendEmailRequest)" />
+            <member name="M:Amazon.SimpleEmail.AmazonSimpleEmailServiceClient.SendEmail(Amazon.SimpleEmail.Model.SendEmailRequest)" />
+            <member name="T:Amazon.SimpleEmail.Model.SendEmailRequest" />
+            <member name="T:Amazon.SimpleEmail.Model.SendEmailResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example sends a formatted email:
+                </para>
+                <code
+                    title="SendEmail"
+                    source=".\AWSSDKDocSamples\SimpleEmail\SimpleEmail.GeneratedSamples.cs"
+                    region="sendemail-1469049656296" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.SimpleEmail.IAmazonSimpleEmailService.SendRawEmail(Amazon.SimpleEmail.Model.SendRawEmailRequest)" />
+            <member name="M:Amazon.SimpleEmail.AmazonSimpleEmailServiceClient.SendRawEmail(Amazon.SimpleEmail.Model.SendRawEmailRequest)" />
+            <member name="T:Amazon.SimpleEmail.Model.SendRawEmailRequest" />
+            <member name="T:Amazon.SimpleEmail.Model.SendRawEmailResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example sends an email with an attachment:
+                </para>
+                <code
+                    title="SendRawEmail"
+                    source=".\AWSSDKDocSamples\SimpleEmail\SimpleEmail.GeneratedSamples.cs"
+                    region="sendrawemail-1469118548649" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.SimpleEmail.IAmazonSimpleEmailService.SetActiveReceiptRuleSet(Amazon.SimpleEmail.Model.SetActiveReceiptRuleSetRequest)" />
+            <member name="M:Amazon.SimpleEmail.AmazonSimpleEmailServiceClient.SetActiveReceiptRuleSet(Amazon.SimpleEmail.Model.SetActiveReceiptRuleSetRequest)" />
+            <member name="T:Amazon.SimpleEmail.Model.SetActiveReceiptRuleSetRequest" />
+            <member name="T:Amazon.SimpleEmail.Model.SetActiveReceiptRuleSetResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example sets the active receipt rule set:
+                </para>
+                <code
+                    title="SetActiveReceiptRuleSet"
+                    source=".\AWSSDKDocSamples\SimpleEmail\SimpleEmail.GeneratedSamples.cs"
+                    region="setactivereceiptruleset-1469058391329" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.SimpleEmail.IAmazonSimpleEmailService.SetIdentityDkimEnabled(Amazon.SimpleEmail.Model.SetIdentityDkimEnabledRequest)" />
+            <member name="M:Amazon.SimpleEmail.AmazonSimpleEmailServiceClient.SetIdentityDkimEnabled(Amazon.SimpleEmail.Model.SetIdentityDkimEnabledRequest)" />
+            <member name="T:Amazon.SimpleEmail.Model.SetIdentityDkimEnabledRequest" />
+            <member name="T:Amazon.SimpleEmail.Model.SetIdentityDkimEnabledResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example configures Amazon SES to Easy DKIM-sign the email sent from an identity:
+                </para>
+                <code
+                    title="SetIdentityDkimEnabled"
+                    source=".\AWSSDKDocSamples\SimpleEmail\SimpleEmail.GeneratedSamples.cs"
+                    region="setidentitydkimenabled-1469057485202" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.SimpleEmail.IAmazonSimpleEmailService.SetIdentityFeedbackForwardingEnabled(Amazon.SimpleEmail.Model.SetIdentityFeedbackForwardingEnabledRequest)" />
+            <member name="M:Amazon.SimpleEmail.AmazonSimpleEmailServiceClient.SetIdentityFeedbackForwardingEnabled(Amazon.SimpleEmail.Model.SetIdentityFeedbackForwardingEnabledRequest)" />
+            <member name="T:Amazon.SimpleEmail.Model.SetIdentityFeedbackForwardingEnabledRequest" />
+            <member name="T:Amazon.SimpleEmail.Model.SetIdentityFeedbackForwardingEnabledResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example configures Amazon SES to forward an identity's bounces and complaints via email:
+                </para>
+                <code
+                    title="SetIdentityFeedbackForwardingEnabled"
+                    source=".\AWSSDKDocSamples\SimpleEmail\SimpleEmail.GeneratedSamples.cs"
+                    region="setidentityfeedbackforwardingenabled-1469056811329" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.SimpleEmail.IAmazonSimpleEmailService.SetIdentityHeadersInNotificationsEnabled(Amazon.SimpleEmail.Model.SetIdentityHeadersInNotificationsEnabledRequest)" />
+            <member name="M:Amazon.SimpleEmail.AmazonSimpleEmailServiceClient.SetIdentityHeadersInNotificationsEnabled(Amazon.SimpleEmail.Model.SetIdentityHeadersInNotificationsEnabledRequest)" />
+            <member name="T:Amazon.SimpleEmail.Model.SetIdentityHeadersInNotificationsEnabledRequest" />
+            <member name="T:Amazon.SimpleEmail.Model.SetIdentityHeadersInNotificationsEnabledResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example configures Amazon SES to include the original email headers in the Amazon SNS bounce notifications for an identity:
+                </para>
+                <code
+                    title="SetIdentityHeadersInNotificationsEnabled"
+                    source=".\AWSSDKDocSamples\SimpleEmail\SimpleEmail.GeneratedSamples.cs"
+                    region="setidentityheadersinnotificationsenabled-1469057295001" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.SimpleEmail.IAmazonSimpleEmailService.SetIdentityMailFromDomain(Amazon.SimpleEmail.Model.SetIdentityMailFromDomainRequest)" />
+            <member name="M:Amazon.SimpleEmail.AmazonSimpleEmailServiceClient.SetIdentityMailFromDomain(Amazon.SimpleEmail.Model.SetIdentityMailFromDomainRequest)" />
+            <member name="T:Amazon.SimpleEmail.Model.SetIdentityMailFromDomainRequest" />
+            <member name="T:Amazon.SimpleEmail.Model.SetIdentityMailFromDomainResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example configures Amazon SES to use a custom MAIL FROM domain for an identity:
+                </para>
+                <code
+                    title="SetIdentityMailFromDomain"
+                    source=".\AWSSDKDocSamples\SimpleEmail\SimpleEmail.GeneratedSamples.cs"
+                    region="setidentitymailfromdomain-1469057693908" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.SimpleEmail.IAmazonSimpleEmailService.SetIdentityNotificationTopic(Amazon.SimpleEmail.Model.SetIdentityNotificationTopicRequest)" />
+            <member name="M:Amazon.SimpleEmail.AmazonSimpleEmailServiceClient.SetIdentityNotificationTopic(Amazon.SimpleEmail.Model.SetIdentityNotificationTopicRequest)" />
+            <member name="T:Amazon.SimpleEmail.Model.SetIdentityNotificationTopicRequest" />
+            <member name="T:Amazon.SimpleEmail.Model.SetIdentityNotificationTopicResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example sets the Amazon SNS topic to which Amazon SES will publish bounce, complaint, and/or delivery notifications for emails sent with the specified identity as the Source:
+                </para>
+                <code
+                    title="SetIdentityNotificationTopic"
+                    source=".\AWSSDKDocSamples\SimpleEmail\SimpleEmail.GeneratedSamples.cs"
+                    region="setidentitynotificationtopic-1469057854966" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.SimpleEmail.IAmazonSimpleEmailService.SetReceiptRulePosition(Amazon.SimpleEmail.Model.SetReceiptRulePositionRequest)" />
+            <member name="M:Amazon.SimpleEmail.AmazonSimpleEmailServiceClient.SetReceiptRulePosition(Amazon.SimpleEmail.Model.SetReceiptRulePositionRequest)" />
+            <member name="T:Amazon.SimpleEmail.Model.SetReceiptRulePositionRequest" />
+            <member name="T:Amazon.SimpleEmail.Model.SetReceiptRulePositionResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example sets the position of a receipt rule in a receipt rule set:
+                </para>
+                <code
+                    title="SetReceiptRulePosition"
+                    source=".\AWSSDKDocSamples\SimpleEmail\SimpleEmail.GeneratedSamples.cs"
+                    region="setreceiptruleposition-1469058530550" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.SimpleEmail.IAmazonSimpleEmailService.UpdateReceiptRule(Amazon.SimpleEmail.Model.UpdateReceiptRuleRequest)" />
+            <member name="M:Amazon.SimpleEmail.AmazonSimpleEmailServiceClient.UpdateReceiptRule(Amazon.SimpleEmail.Model.UpdateReceiptRuleRequest)" />
+            <member name="T:Amazon.SimpleEmail.Model.UpdateReceiptRuleRequest" />
+            <member name="T:Amazon.SimpleEmail.Model.UpdateReceiptRuleResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example updates a receipt rule to use an Amazon S3 action:
+                </para>
+                <code
+                    title="UpdateReceiptRule"
+                    source=".\AWSSDKDocSamples\SimpleEmail\SimpleEmail.GeneratedSamples.cs"
+                    region="updatereceiptrule-1469051756940" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.SimpleEmail.IAmazonSimpleEmailService.VerifyDomainDkim(Amazon.SimpleEmail.Model.VerifyDomainDkimRequest)" />
+            <member name="M:Amazon.SimpleEmail.AmazonSimpleEmailServiceClient.VerifyDomainDkim(Amazon.SimpleEmail.Model.VerifyDomainDkimRequest)" />
+            <member name="T:Amazon.SimpleEmail.Model.VerifyDomainDkimRequest" />
+            <member name="T:Amazon.SimpleEmail.Model.VerifyDomainDkimResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example generates DKIM tokens for a domain that has been verified with Amazon SES:
+                </para>
+                <code
+                    title="VerifyDomainDkim"
+                    source=".\AWSSDKDocSamples\SimpleEmail\SimpleEmail.GeneratedSamples.cs"
+                    region="verifydomaindkim-1469049503083" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.SimpleEmail.IAmazonSimpleEmailService.VerifyDomainIdentity(Amazon.SimpleEmail.Model.VerifyDomainIdentityRequest)" />
+            <member name="M:Amazon.SimpleEmail.AmazonSimpleEmailServiceClient.VerifyDomainIdentity(Amazon.SimpleEmail.Model.VerifyDomainIdentityRequest)" />
+            <member name="T:Amazon.SimpleEmail.Model.VerifyDomainIdentityRequest" />
+            <member name="T:Amazon.SimpleEmail.Model.VerifyDomainIdentityResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example starts the domain verification process with Amazon SES:
+                </para>
+                <code
+                    title="VerifyDomainIdentity"
+                    source=".\AWSSDKDocSamples\SimpleEmail\SimpleEmail.GeneratedSamples.cs"
+                    region="verifydomainidentity-1469049165936" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.SimpleEmail.IAmazonSimpleEmailService.VerifyEmailAddress(Amazon.SimpleEmail.Model.VerifyEmailAddressRequest)" />
+            <member name="M:Amazon.SimpleEmail.AmazonSimpleEmailServiceClient.VerifyEmailAddress(Amazon.SimpleEmail.Model.VerifyEmailAddressRequest)" />
+            <member name="T:Amazon.SimpleEmail.Model.VerifyEmailAddressRequest" />
+            <member name="T:Amazon.SimpleEmail.Model.VerifyEmailAddressResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example starts the email address verification process with Amazon SES:
+                </para>
+                <code
+                    title="VerifyEmailAddress"
+                    source=".\AWSSDKDocSamples\SimpleEmail\SimpleEmail.GeneratedSamples.cs"
+                    region="verifyemailaddress-1469048849187" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.SimpleEmail.IAmazonSimpleEmailService.VerifyEmailIdentity(Amazon.SimpleEmail.Model.VerifyEmailIdentityRequest)" />
+            <member name="M:Amazon.SimpleEmail.AmazonSimpleEmailServiceClient.VerifyEmailIdentity(Amazon.SimpleEmail.Model.VerifyEmailIdentityRequest)" />
+            <member name="T:Amazon.SimpleEmail.Model.VerifyEmailIdentityRequest" />
+            <member name="T:Amazon.SimpleEmail.Model.VerifyEmailIdentityResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example starts the email address verification process with Amazon SES:
+                </para>
+                <code
+                    title="VerifyEmailIdentity"
+                    source=".\AWSSDKDocSamples\SimpleEmail\SimpleEmail.GeneratedSamples.cs"
+                    region="verifyemailidentity-1469049068623" />
+            </example>
+        </value>
+    </doc>
+</docs>

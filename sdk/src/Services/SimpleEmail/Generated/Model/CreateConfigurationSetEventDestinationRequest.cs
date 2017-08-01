@@ -34,7 +34,8 @@ namespace Amazon.SimpleEmail.Model
     ///  <note> 
     /// <para>
     /// When you create or update an event destination, you must provide one, and only one,
-    /// destination. The destination can be either Amazon CloudWatch or Amazon Kinesis Firehose.
+    /// destination. The destination can be Amazon CloudWatch, Amazon Kinesis Firehose, or
+    /// Amazon Simple Notification Service (Amazon SNS).
     /// </para>
     ///  </note> 
     /// <para>

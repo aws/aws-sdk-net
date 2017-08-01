@@ -115,6 +115,13 @@ namespace Amazon.SimpleEmail.Model.Internal.MarshallTransformations
                     {
                         request.Parameters.Add("EventDestination" + "." + "Name", StringUtils.FromString(publicRequest.EventDestination.Name));
                     }
+                    if(publicRequest.EventDestination.IsSetSNSDestination())
+                    {
+                        if(publicRequest.EventDestination.SNSDestination.IsSetTopicARN())
+                        {
+                            request.Parameters.Add("EventDestination" + "." + "SNSDestination" + "." + "TopicARN", StringUtils.FromString(publicRequest.EventDestination.SNSDestination.TopicARN));
+                        }
+                    }
                 }
             }
             return request;

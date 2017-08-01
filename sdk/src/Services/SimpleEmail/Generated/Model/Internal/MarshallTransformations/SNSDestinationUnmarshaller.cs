@@ -32,18 +32,18 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.SimpleEmail.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for EventDestination Object
+    /// Response Unmarshaller for SNSDestination Object
     /// </summary>  
-    public class EventDestinationUnmarshaller : IUnmarshaller<EventDestination, XmlUnmarshallerContext>, IUnmarshaller<EventDestination, JsonUnmarshallerContext>
+    public class SNSDestinationUnmarshaller : IUnmarshaller<SNSDestination, XmlUnmarshallerContext>, IUnmarshaller<SNSDestination, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public EventDestination Unmarshall(XmlUnmarshallerContext context)
+        public SNSDestination Unmarshall(XmlUnmarshallerContext context)
         {
-            EventDestination unmarshalledObject = new EventDestination();
+            SNSDestination unmarshalledObject = new SNSDestination();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
@@ -54,41 +54,10 @@ namespace Amazon.SimpleEmail.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-                    if (context.TestExpression("CloudWatchDestination", targetDepth))
-                    {
-                        var unmarshaller = CloudWatchDestinationUnmarshaller.Instance;
-                        unmarshalledObject.CloudWatchDestination = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("Enabled", targetDepth))
-                    {
-                        var unmarshaller = BoolUnmarshaller.Instance;
-                        unmarshalledObject.Enabled = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("KinesisFirehoseDestination", targetDepth))
-                    {
-                        var unmarshaller = KinesisFirehoseDestinationUnmarshaller.Instance;
-                        unmarshalledObject.KinesisFirehoseDestination = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("MatchingEventTypes/member", targetDepth))
+                    if (context.TestExpression("TopicARN", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
-                        var item = unmarshaller.Unmarshall(context);
-                        unmarshalledObject.MatchingEventTypes.Add(item);
-                        continue;
-                    }
-                    if (context.TestExpression("Name", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.Name = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("SNSDestination", targetDepth))
-                    {
-                        var unmarshaller = SNSDestinationUnmarshaller.Instance;
-                        unmarshalledObject.SNSDestination = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.TopicARN = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
@@ -106,18 +75,18 @@ namespace Amazon.SimpleEmail.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public EventDestination Unmarshall(JsonUnmarshallerContext context)
+        public SNSDestination Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
 
-        private static EventDestinationUnmarshaller _instance = new EventDestinationUnmarshaller();        
+        private static SNSDestinationUnmarshaller _instance = new SNSDestinationUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static EventDestinationUnmarshaller Instance
+        public static SNSDestinationUnmarshaller Instance
         {
             get
             {

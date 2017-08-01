@@ -255,6 +255,10 @@ namespace Amazon.SimpleEmail
         /// </summary>
         public static readonly DimensionValueSource EmailHeader = new DimensionValueSource("emailHeader");
         /// <summary>
+        /// Constant LinkTag for DimensionValueSource
+        /// </summary>
+        public static readonly DimensionValueSource LinkTag = new DimensionValueSource("linkTag");
+        /// <summary>
         /// Constant MessageTag for DimensionValueSource
         /// </summary>
         public static readonly DimensionValueSource MessageTag = new DimensionValueSource("messageTag");
@@ -367,6 +371,10 @@ namespace Amazon.SimpleEmail
         /// </summary>
         public static readonly EventType Bounce = new EventType("bounce");
         /// <summary>
+        /// Constant Click for EventType
+        /// </summary>
+        public static readonly EventType Click = new EventType("click");
+        /// <summary>
         /// Constant Complaint for EventType
         /// </summary>
         public static readonly EventType Complaint = new EventType("complaint");
@@ -374,6 +382,10 @@ namespace Amazon.SimpleEmail
         /// Constant Delivery for EventType
         /// </summary>
         public static readonly EventType Delivery = new EventType("delivery");
+        /// <summary>
+        /// Constant Open for EventType
+        /// </summary>
+        public static readonly EventType Open = new EventType("open");
         /// <summary>
         /// Constant Reject for EventType
         /// </summary>
