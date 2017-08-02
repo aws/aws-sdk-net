@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.3.132.0",
+    "ProductVersion" : "3.3.133.0",
     "CoreVersion"    : "3.3.17.5",
     "DefaultToPreview" : false,
     "ServiceVersions"  : {
@@ -69,7 +69,7 @@
             "InPreview"               : false
         },
         "ConfigService"     : {
-            "Version" : "3.3.7.3",
+            "Version" : "3.3.8.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.17.0"
@@ -93,7 +93,7 @@
             "InPreview"               : false
         },
         "CodeDeploy"        : {
-            "Version" : "3.3.5.3",
+            "Version" : "3.3.6.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.17.0"
@@ -337,7 +337,7 @@
             "InPreview"               : false
         },
         "SimpleEmail"          : {
-            "Version" : "3.3.1.18",
+            "Version" : "3.3.2.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.17.0"
@@ -665,7 +665,7 @@
             "InPreview"               : false
         },
         "Pinpoint"                        : {
-            "Version" : "3.3.2.3",
+            "Version" : "3.3.3.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.17.0"
