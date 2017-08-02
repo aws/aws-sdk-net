@@ -45,20 +45,11 @@
 
   <Target Name="build-sdk">
     <Message Text="Compile the core runtime"/>
-    <MSBuild Projects="..\sdk\src\Core\AWSSDK.Core.Net35.csproj"
-      Targets="Rebuild"
-      Properties="Configuration=Release;AWSKeyFile=$(CustomSnkFileLocation);ResolveNuGetPackages=false" />
-    <MSBuild Projects="..\sdk\src\Core\AWSSDK.Core.Net45.csproj"
-      Targets="Rebuild"
-      Properties="Configuration=Release;AWSKeyFile=$(CustomSnkFileLocation);ResolveNuGetPackages=false" />
+    <Exec Command="dotnet msbuild ..\sdk\src\Core\AWSSDK.Core.Net35.csproj /p:Configuration=Release;AWSKeyFile=$(CustomSnkFileLocation);ResolveNuGetPackages=false"/>
+    <Exec Command="dotnet msbuild ..\sdk\src\Core\AWSSDK.Core.Net45.csproj /p:Configuration=Release;AWSKeyFile=$(CustomSnkFileLocation);ResolveNuGetPackages=false"/>
 
     <Message Text="Compile the service $(BaseName)"/>
-    <MSBuild Projects="..\sdk\src\Services\$(BaseName)\AWSSDK.$(BaseName).Net35.csproj"
-      Targets="Rebuild"
-      Properties="Configuration=Release;AWSKeyFile=$(CustomSnkFileLocation);ResolveNuGetPackages=false" />
-    <MSBuild Projects="..\sdk\src\Services\$(BaseName)\AWSSDK.$(BaseName).Net45.csproj"
-      Targets="Rebuild"
-      Properties="Configuration=Release;AWSKeyFile=$(CustomSnkFileLocation);ResolveNuGetPackages=false" />
+    <Exec Command="dotnet msbuild ..\sdk\src\Services\$(BaseName)\AWSSDK.$(BaseName).Net35.csproj /p:Configuration=Release;AWSKeyFile=$(CustomSnkFileLocation);ResolveNuGetPackages=false"/>
   </Target>
   
   <Target Name="consolidate-build">
