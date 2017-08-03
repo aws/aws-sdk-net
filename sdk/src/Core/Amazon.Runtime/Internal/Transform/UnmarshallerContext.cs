@@ -147,8 +147,10 @@ namespace Amazon.Runtime.Internal.Transform
                     startingStackDepth++;
                 }
             }
-            return (startingStackDepth == currentDepth
-                    && currentPath.EndsWith("/" + expression, StringComparison.OrdinalIgnoreCase));
+            return startingStackDepth == currentDepth
+                   && currentPath.EndsWith(expression, StringComparison.OrdinalIgnoreCase)
+                   && currentPath.Length > expression.Length
+                   && currentPath[currentPath.Length - expression.Length - 1] == '/';
         }
 
         #region Abstract members
