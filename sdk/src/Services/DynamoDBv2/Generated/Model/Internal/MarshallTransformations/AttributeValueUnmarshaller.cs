@@ -48,6 +48,13 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
             throw new NotImplementedException();
         }
 
+        private static bool TestNode(string path, string name)
+        {
+            return path.Length > name.Length
+                && path.EndsWith(name, StringComparison.OrdinalIgnoreCase)
+                && path[path.Length - 1 - name.Length] == '/';
+        }
+
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
@@ -64,61 +71,62 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("B", targetDepth))
+                var path = context.CurrentPath;
+                if (TestNode(path, "B"))
                 {
                     var unmarshaller = MemoryStreamUnmarshaller.Instance;
                     unmarshalledObject.B = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("BOOL", targetDepth))
+                if (TestNode(path, "BOOL"))
                 {
                     var unmarshaller = BoolUnmarshaller.Instance;
                     unmarshalledObject.BOOL = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("BS", targetDepth))
+                if (TestNode(path, "BS"))
                 {
                     var unmarshaller = new ListUnmarshaller<MemoryStream, MemoryStreamUnmarshaller>(MemoryStreamUnmarshaller.Instance);
                     unmarshalledObject.BS = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("L", targetDepth))
+                if (TestNode(path, "L"))
                 {
                     var unmarshaller = new ListUnmarshaller<AttributeValue, AttributeValueUnmarshaller>(AttributeValueUnmarshaller.Instance);
                     unmarshalledObject.L = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("M", targetDepth))
+                if (TestNode(path, "M"))
                 {
                     var unmarshaller = new DictionaryUnmarshaller<string, AttributeValue, StringUnmarshaller, AttributeValueUnmarshaller>(StringUnmarshaller.Instance, AttributeValueUnmarshaller.Instance);
                     unmarshalledObject.M = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("N", targetDepth))
+                if (TestNode(path, "N"))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.N = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("NS", targetDepth))
+                if (TestNode(path, "NS"))
                 {
                     var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.NS = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("NULL", targetDepth))
+                if (TestNode(path, "NULL"))
                 {
                     var unmarshaller = BoolUnmarshaller.Instance;
                     unmarshalledObject.NULL = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("S", targetDepth))
+                if (TestNode(path, "S"))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.S = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("SS", targetDepth))
+                if (TestNode(path, "SS"))
                 {
                     var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.SS = unmarshaller.Unmarshall(context);
