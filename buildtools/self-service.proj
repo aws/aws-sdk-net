@@ -50,6 +50,7 @@
 
     <Message Text="Compile the service $(BaseName)"/>
     <Exec Command="dotnet msbuild ..\sdk\src\Services\$(BaseName)\AWSSDK.$(BaseName).Net35.csproj /p:Configuration=Release;AWSKeyFile=$(CustomSnkFileLocation);ResolveNuGetPackages=false"/>
+    <Exec Command="dotnet msbuild ..\sdk\src\Services\$(BaseName)\AWSSDK.$(BaseName).Net45.csproj /p:Configuration=Release;AWSKeyFile=$(CustomSnkFileLocation);ResolveNuGetPackages=false"/>
   </Target>
   
   <Target Name="consolidate-build">
