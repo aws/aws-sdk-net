@@ -37,6 +37,17 @@ To find the current version 2 source checkout the [version 2 branch][github-aws-
 
 With version 3 of the AWS SDK for .NET the SDK has been modularized. This means a separate NuGet package is created for each service as well as a core project. To use this branch compile the solution in the **sdk** folder that matches the desired platform and then include the assemblies for the services needed as well as the core assembly.
 
+## Versioning
+
+The AWS SDK for .NET uses a 4 part versioning scheme following the pattern of `w.x.y.z`. 
+
+* **w** - Incremented for code breaking changes.
+* **x** - Incremented for binary breaking changes. In particular this is used to identitfy what versions of AWSSDK.Core are binary compatible with the service packages. For example if AWSSDK.SQS version 3.3.1.0 came out today when the current version of AWSSDK.Core is 3.3.17.5 then AWSSDK.SQS 3.3.1.0 would be compatible with all versions of AWSSDK.Core starting from 3.3.17.5 up to but not including a future 3.4.0.0.
+* **y** - Incremented for a new SDK feature, like new credential management, or an AWS service update.
+* **z** - Incremented for a bug fix or for service packages to update to the latest AWSSDK.Core to pull in latest bug fixes.
+
+The SDK assemblies are strongly named which requires consumers of the SDK to recompile every time the `AssemblyVersion` attribute is incremented. To avoid forced recompilations the `AssemblyVersion` only contains the `w.x` portion of the version. The full `w.x.y.z` version number is set in the `AssemblyFileVersion` attribute which is not part of the strong name.
+
 ## Portable Class Library
 
 This release of the AWS SDK for .NET adds support for Portable Class Library projects, which allow you to target multiple platforms including Windows Store, Windows Phone, and Xamarin on iOS and Android. More information on this can be found [here](http://docs.aws.amazon.com/mobile/sdkforxamarin/developerguide/index.html).
