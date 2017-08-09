@@ -1,3 +1,7 @@
+### 3.3.134.0 (2017-08-09 02:27 UTC)
+* ElasticBeanstalk (3.3.5.0)
+	* Add support for paginating the result of DescribeEnvironments     Include the ARN of described environments in DescribeEnvironments output
+
 ### 3.3.133.0 (2017-08-01 23:14 UTC)
 * CodeDeploy (3.3.6.0)
 	* AWS CodeDeploy now supports the use of multiple tag groups in a single deployment group (an intersection of tags) to identify the instances for a deployment. When you create or update a deployment group, use the new ec2TagSet and onPremisesTagSet structures to specify up to three groups of tags. Only instances that are identified by at least one tag in each of the tag groups are included in the deployment group.

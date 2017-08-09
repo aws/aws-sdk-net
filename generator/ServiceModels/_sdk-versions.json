@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.3.133.0",
+    "ProductVersion" : "3.3.134.0",
     "CoreVersion"    : "3.3.17.5",
     "DefaultToPreview" : false,
     "ServiceVersions"  : {
@@ -175,7 +175,7 @@
             "InPreview"               : false
         },
         "ElasticBeanstalk"  : {
-            "Version" : "3.3.4.13",
+            "Version" : "3.3.5.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.17.0"
