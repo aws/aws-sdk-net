@@ -1,0 +1,35 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>    
+    <TargetFramework>netcoreapp1.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="..\..\src\AWSSDK.Extensions.CognitoAuthentication\Util\AuthenticationHelper.cs" Link="LinkedFiles\AuthenticationHelper.cs" />
+    <Compile Include="..\..\src\AWSSDK.Extensions.CognitoAuthentication\Util\CognitoConstants.cs" Link="LinkedFiles\CognitoConstants.cs" />
+    <Compile Include="..\..\src\AWSSDK.Extensions.CognitoAuthentication\Util\CognitoDeviceHelper.cs" Link="LinkedFiles\CognitoDeviceHelper.cs" />
+    <Compile Include="..\..\src\AWSSDK.Extensions.CognitoAuthentication\Util\Hkdf.cs" Link="LinkedFiles\Hkdf.cs" />
+    <Compile Include="..\..\src\AWSSDK.Extensions.CognitoAuthentication\Util\ThirdParty\BigInteger.cs" Link="LinkedFiles\BigInteger.cs" />
+    <Compile Include="..\..\src\AWSSDK.Extensions.CognitoAuthentication\Util\ThirdParty\Platform.cs" Link="LinkedFiles\Platform.cs" />
+    <Compile Include="..\..\src\AWSSDK.Extensions.CognitoAuthentication\Util\Util.cs" Link="LinkedFiles\Util.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.0.0" />
+    <PackageReference Include="xunit" Version="2.2.0" />
+    <PackageReference Include="xunit.runner.visualstudio" Version="2.2.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Service Include="{82a7f48d-3b50-4b1e-b82e-3ada8210c358}" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="LinkedFiles\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\AWSSDK.Extensions.CognitoAuthentication\CognitoAuthentication.CoreCLR.csproj" />
+  </ItemGroup>
+
+</Project>

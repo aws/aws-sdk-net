@@ -132,7 +132,7 @@
 
     <Target Name="full-build" DependsOnTargets="test-sdk;copy-assemblies;copy-service-models;unity-pack;keyscan;consolidate-docartifacts;save-build"/>
 
-    <Target Name="full-build-nodocs" DependsOnTargets="test-sdk;package-netcore-extensions;keyscan;copy-assemblies;copy-service-models;unity-pack;save-build"/>
+    <Target Name="full-build-nodocs" DependsOnTargets="test-sdk;package-extensions;keyscan;copy-assemblies;copy-service-models;unity-pack;save-build"/>
 
     <Target Name="restore-nuget">
         <Message Text="Restore nuget packages"/>
@@ -352,13 +352,57 @@
 			TestContainer="..\extensions\test\NETCore.SetupTests\NETCore.SetupTests.csproj"
 			Configuration="$(Configuration)"
 			/>
-			
 	</Target>
-	
+
+
+    <Target Name="build-cognito-auth-extension-coreCLR" DependsOnTargets="GetSDKToolingInfoTarget">
+        <Message Text="Build and Test Cognito Authentication Extension"/>
+        
+        <Exec Command="&quot;$(SDKToolingExe)&quot; clean CognitoAuthentication.CoreCLR.sln"      WorkingDirectory="..\extensions"/>
+        <Exec Command="&quot;$(SDKToolingExe)&quot; restore CognitoAuthentication.CoreCLR.sln"    WorkingDirectory="..\extensions"/>
+        <Exec Command="&quot;$(SDKToolingExe)&quot; build -c $(Configuration) --no-incremental CognitoAuthentication.CoreCLR.sln /p:AWSKeyFile=$(CustomSnkFileLocation);SignAssembly=true" WorkingDirectory="..\extensions"/>
+
+        <XUnitWrapperTask
+            TestSuiteRunner="$(SDKToolingExe)"
+            TestContainer="..\extensions\test\CognitoAuthentication.UnitTests\CognitoAuthentication.UnitTests.CoreCLR.csproj"
+            Configuration="$(Configuration)"/> 
+         <XUnitWrapperTask
+            TestSuiteRunner="$(SDKToolingExe)"
+            TestContainer="..\extensions\test\CognitoAuthentication.IntegrationTests\CognitoAuthentication.IntegrationTests.CoreCLR.csproj"
+            Configuration="$(Configuration)"/>       
+    </Target>
+
+    <Target Name="build-cognito-auth-extension-net45" DependsOnTargets="GetSDKToolingInfoTarget">
+        <Message Text="Build and Test Cognito Authentication Extension"/>
+        
+        <Exec Command="&quot;$(SDKToolingExe)&quot; clean CognitoAuthentication.NET45.sln"      WorkingDirectory="..\extensions"/>
+        <Exec Command="&quot;$(SDKToolingExe)&quot; restore CognitoAuthentication.NET45.sln"    WorkingDirectory="..\extensions"/>
+        <Exec Command="&quot;$(SDKToolingExe)&quot; build -c $(Configuration) --no-incremental CognitoAuthentication.NET45.sln /p:AWSKeyFile=$(CustomSnkFileLocation);SignAssembly=true" WorkingDirectory="..\extensions"/>
+
+        <!-- Omit running 45 integration tests as they are the same tests as coreclr.
+
+        <XUnitWrapperTask
+            TestSuiteRunner="$(SDKToolingExe)"
+            TestContainer="..\extensions\test\CognitoAuthentication.UnitTests\CognitoAuthentication.UnitTests.NET45.csproj"
+            Configuration="$(Configuration)"/> 
+         <XUnitWrapperTask
+            TestSuiteRunner="$(SDKToolingExe)"
+            TestContainer="..\extensions\test\CognitoAuthentication.IntegrationTests\CognitoAuthentication.IntegrationTests.NET45.csproj"
+            Configuration="$(Configuration)"/>
+        -->
+    </Target>
+
+    <Target Name="package-extensions" DependsOnTargets="init;package-netcore-extensions;package-cognito-auth-extension"/>
+
 	<Target Name="package-netcore-extensions" DependsOnTargets="build-netcore-extensions">
         <MakeDir Directories="..\Deployment\nuget" />
 		<Exec Command="..\..\..\sdk\.nuget\NuGet.exe pack .\AWSSDK.Extensions.NETCore.Setup.nuspec -BasePath . -OutputDirectory ..\..\..\Deployment\nuget" WorkingDirectory="..\extensions\src\AWSSDK.Extensions.NETCore.Setup" />
-	</Target>	
+	</Target>
+
+    <Target Name="package-cognito-auth-extension" DependsOnTargets="build-cognito-auth-extension-net45;build-cognito-auth-extension-coreCLR">
+        <MakeDir Directories="..\Deployment\nuget" />
+        <Exec Command="..\..\..\sdk\.nuget\NuGet.exe pack .\AWSSDK.Extensions.CognitoAuthentication.nuspec -BasePath . -OutputDirectory ..\..\..\Deployment\nuget" WorkingDirectory="..\extensions\src\AWSSDK.Extensions.CognitoAuthentication" />
+    </Target>   
 	
     <Target Name="copy-assemblies" DependsOnTargets="nuget-pack">
         <Message Text="Collating assemblies for downstream doc generation" />

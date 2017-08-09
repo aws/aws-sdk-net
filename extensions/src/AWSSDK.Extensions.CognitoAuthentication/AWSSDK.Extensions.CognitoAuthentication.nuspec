@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package >
+  <metadata>
+    <id>AWSSDK.Extensions.CognitoAuthentication</id>
+    <version>0.9.0</version>
+    <title>CognitoAuthentication</title>
+    <authors>Amazon Web Services</authors>
+    <description>An extension library to assist in the Amazon Cognito User Pools authentication process.</description>
+    <language>en-US</language>
+    <licenseUrl>http://aws.amazon.com/apache2.0/</licenseUrl>
+    <projectUrl>https://github.com/aws/aws-sdk-net/</projectUrl>
+    <tags>AWS Amazon aws-sdk-v3</tags>
+    <iconUrl>http://media.amazonwebservices.com/aws_singlebox_01.png</iconUrl>
+
+    <dependencies>
+        <group targetFramework="net45">
+            <dependency id="AWSSDK.CognitoIdentityProvider" version="[3.3.4.3, 3.4)" />
+            <dependency id="AWSSDK.Core" version="[3.3.17.2, 3.4)" />
+            <dependency id="AWSSDK.CognitoIdentity" version="[3.3.2.14, 3.4)" />
+        </group>
+
+        <group targetFramework="netstandard1.3">
+            <dependency id="AWSSDK.CognitoIdentityProvider" version="[3.3.4.3, 3.4)" />
+            <dependency id="AWSSDK.Core" version="[3.3.17.2, 3.4)" />
+            <dependency id="AWSSDK.CognitoIdentity" version="[3.3.2.14, 3.4)" />
+            <dependency id="System.Collections.NonGeneric" version="[4.0.1, 4.1)" />
+        </group>
+    </dependencies>
+  </metadata>
+
+    <files>
+        <file src=".\bin\Release\net45\AWSSDK.Extensions.CognitoAuthentication.dll" target="lib\net45" />
+        <file src=".\bin\Release\net45\AWSSDK.Extensions.CognitoAuthentication.pdb" target="lib\net45" />
+
+        <file src=".\bin\Release\netstandard1.3\AWSSDK.Extensions.CognitoAuthentication.dll" target="lib\netstandard1.3" />
+        <file src=".\bin\Release\netstandard1.3\AWSSDK.Extensions.CognitoAuthentication.pdb" target="lib\netstandard1.3" />
+    </files>
+</package>
