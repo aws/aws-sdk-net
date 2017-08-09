@@ -254,6 +254,11 @@
     <max>100</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ElasticBeanstalk.Model.DescribeEnvironmentsRequest.MaxRecords</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ElasticBeanstalk.Model.DescribeEnvironmentsRequest.VersionLabel</property>
     <min>1</min>
     <max>100</max>

@@ -88,6 +88,14 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("IncludeDeleted", StringUtils.FromBool(publicRequest.IncludeDeleted));
                 }
+                if(publicRequest.IsSetMaxRecords())
+                {
+                    request.Parameters.Add("MaxRecords", StringUtils.FromInt(publicRequest.MaxRecords));
+                }
+                if(publicRequest.IsSetNextToken())
+                {
+                    request.Parameters.Add("NextToken", StringUtils.FromString(publicRequest.NextToken));
+                }
                 if(publicRequest.IsSetVersionLabel())
                 {
                     request.Parameters.Add("VersionLabel", StringUtils.FromString(publicRequest.VersionLabel));

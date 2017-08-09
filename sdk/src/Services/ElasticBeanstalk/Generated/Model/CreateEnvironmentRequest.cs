@@ -56,7 +56,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// Instantiates CreateEnvironmentRequest with the parameterized properties
         /// </summary>
         /// <param name="applicationName">The name of the application that contains the version to be deployed.  If no application is found with this name, <code>CreateEnvironment</code> returns an <code>InvalidParameterValue</code> error. </param>
-        /// <param name="environmentName">A unique name for the deployment environment. Used in the application URL. Constraint: Must be from 4 to 40 characters in length. The name can contain only letters, numbers, and hyphens. It cannot start or end with a hyphen. This name must be unique in your account. If the specified name already exists, AWS Elastic Beanstalk returns an <code>InvalidParameterValue</code> error.  Default: If the CNAME parameter is not specified, the environment name becomes part of the CNAME, and therefore part of the visible URL for your application.</param>
+        /// <param name="environmentName">A unique name for the deployment environment. Used in the application URL. Constraint: Must be from 4 to 40 characters in length. The name can contain only letters, numbers, and hyphens. It cannot start or end with a hyphen. This name must be unique within a region in your account. If the specified name already exists in the region, AWS Elastic Beanstalk returns an <code>InvalidParameterValue</code> error.  Default: If the CNAME parameter is not specified, the environment name becomes part of the CNAME, and therefore part of the visible URL for your application.</param>
         public CreateEnvironmentRequest(string applicationName, string environmentName)
         {
             _applicationName = applicationName;
@@ -133,8 +133,8 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <para>
         /// Constraint: Must be from 4 to 40 characters in length. The name can contain only letters,
         /// numbers, and hyphens. It cannot start or end with a hyphen. This name must be unique
-        /// in your account. If the specified name already exists, AWS Elastic Beanstalk returns
-        /// an <code>InvalidParameterValue</code> error. 
+        /// within a region in your account. If the specified name already exists in the region,
+        /// AWS Elastic Beanstalk returns an <code>InvalidParameterValue</code> error. 
         /// </para>
         ///  
         /// <para>
@@ -217,7 +217,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <summary>
         /// Gets and sets the property PlatformArn. 
         /// <para>
-        /// The ARN of the custom platform.
+        /// The ARN of the platform.
         /// </para>
         /// </summary>
         public string PlatformArn

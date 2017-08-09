@@ -39,6 +39,7 @@ namespace Amazon.ElasticBeanstalk.Model
         private DateTime? _dateUpdated;
         private string _description;
         private string _endpointURL;
+        private string _environmentArn;
         private string _environmentId;
         private List<EnvironmentLink> _environmentLinks = new List<EnvironmentLink>();
         private string _environmentName;
@@ -189,6 +190,25 @@ namespace Amazon.ElasticBeanstalk.Model
         }
 
         /// <summary>
+        /// Gets and sets the property EnvironmentArn. 
+        /// <para>
+        /// The environment's Amazon Resource Name (ARN), which can be used in other API reuqests
+        /// that require an ARN.
+        /// </para>
+        /// </summary>
+        public string EnvironmentArn
+        {
+            get { return this._environmentArn; }
+            set { this._environmentArn = value; }
+        }
+
+        // Check to see if EnvironmentArn property is set
+        internal bool IsSetEnvironmentArn()
+        {
+            return this._environmentArn != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property EnvironmentId. 
         /// <para>
         /// The ID of this environment.
@@ -308,7 +328,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <summary>
         /// Gets and sets the property PlatformArn. 
         /// <para>
-        /// The ARN of the custom platform.
+        /// The ARN of the platform.
         /// </para>
         /// </summary>
         public string PlatformArn

@@ -123,6 +123,12 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
                         response.EndpointURL = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("EnvironmentArn", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        response.EnvironmentArn = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("EnvironmentId", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

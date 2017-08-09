@@ -64,7 +64,13 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <summary>
         /// Gets and sets the property MaxRecords. 
         /// <para>
-        /// Specify a maximum number of application versions to paginate in the request.
+        /// For a paginated request. Specify a maximum number of application versions to include
+        /// in each response.
+        /// </para>
+        ///  
+        /// <para>
+        /// If no <code>MaxRecords</code> is specified, all available application versions are
+        /// retrieved in a single response.
         /// </para>
         /// </summary>
         public int MaxRecords
@@ -82,7 +88,13 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// Specify a next token to retrieve the next page in a paginated request.
+        /// For a paginated request. Specify a token from a previous response page to retrieve
+        /// the next response page. All other parameter values must be identical to the ones specified
+        /// in the initial request.
+        /// </para>
+        ///  
+        /// <para>
+        /// If no <code>NextToken</code> is specified, the first page is retrieved.
         /// </para>
         /// </summary>
         public string NextToken

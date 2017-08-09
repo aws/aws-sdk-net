@@ -38,6 +38,8 @@ namespace Amazon.ElasticBeanstalk.Model
         private List<string> _environmentNames = new List<string>();
         private DateTime? _includedDeletedBackTo;
         private bool? _includeDeleted;
+        private int? _maxRecords;
+        private string _nextToken;
         private string _versionLabel;
 
         /// <summary>
@@ -146,6 +148,54 @@ namespace Amazon.ElasticBeanstalk.Model
         internal bool IsSetIncludeDeleted()
         {
             return this._includeDeleted.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property MaxRecords. 
+        /// <para>
+        /// For a paginated request. Specify a maximum number of environments to include in each
+        /// response.
+        /// </para>
+        ///  
+        /// <para>
+        /// If no <code>MaxRecords</code> is specified, all available environments are retrieved
+        /// in a single response.
+        /// </para>
+        /// </summary>
+        public int MaxRecords
+        {
+            get { return this._maxRecords.GetValueOrDefault(); }
+            set { this._maxRecords = value; }
+        }
+
+        // Check to see if MaxRecords property is set
+        internal bool IsSetMaxRecords()
+        {
+            return this._maxRecords.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property NextToken. 
+        /// <para>
+        /// For a paginated request. Specify a token from a previous response page to retrieve
+        /// the next response page. All other parameter values must be identical to the ones specified
+        /// in the initial request.
+        /// </para>
+        ///  
+        /// <para>
+        /// If no <code>NextToken</code> is specified, the first page is retrieved.
+        /// </para>
+        /// </summary>
+        public string NextToken
+        {
+            get { return this._nextToken; }
+            set { this._nextToken = value; }
+        }
+
+        // Check to see if NextToken property is set
+        internal bool IsSetNextToken()
+        {
+            return this._nextToken != null;
         }
 
         /// <summary>

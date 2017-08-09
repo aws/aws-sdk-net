@@ -59,7 +59,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <summary>
         /// Gets and sets the property DeploymentTime. 
         /// <para>
-        /// For in-progress deployments, the time that the deloyment started.
+        /// For in-progress deployments, the time that the deployment started.
         /// </para>
         ///  
         /// <para>
