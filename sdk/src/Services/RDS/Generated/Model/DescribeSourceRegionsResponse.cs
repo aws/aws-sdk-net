@@ -60,7 +60,7 @@ namespace Amazon.RDS.Model
         /// Gets and sets the property SourceRegions. 
         /// <para>
         /// A list of SourceRegion instances that contains each source AWS Region that the current
-        /// region can get a Read Replica or a DB snapshot from.
+        /// AWS Region can get a Read Replica or a DB snapshot from.
         /// </para>
         /// </summary>
         public List<SourceRegion> SourceRegions

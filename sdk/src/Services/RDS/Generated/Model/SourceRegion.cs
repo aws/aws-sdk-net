@@ -40,7 +40,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property Endpoint. 
         /// <para>
-        /// The source region endpoint.
+        /// The endpoint for the source AWS Region endpoint.
         /// </para>
         /// </summary>
         public string Endpoint
@@ -58,7 +58,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property RegionName. 
         /// <para>
-        /// The source region name.
+        /// The name of the source AWS Region.
         /// </para>
         /// </summary>
         public string RegionName
@@ -76,7 +76,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The status of the source region.
+        /// The status of the source AWS Region.
         /// </para>
         /// </summary>
         public string Status

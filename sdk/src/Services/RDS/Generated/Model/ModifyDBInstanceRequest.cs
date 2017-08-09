@@ -305,6 +305,15 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
+        ///  <b>Amazon Aurora</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// Not applicable. The retention period for automated backups is managed by the DB cluster.
+        /// For more information, see <a>ModifyDBCluster</a>.
+        /// </para>
+        ///  
+        /// <para>
         /// Default: Uses existing setting
         /// </para>
         ///  
@@ -716,6 +725,19 @@ namespace Amazon.RDS.Model
         /// <para>
         ///  You can enable IAM database authentication for the following database engines
         /// </para>
+        ///  
+        /// <para>
+        ///  <b>Amazon Aurora</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// Not applicable. Mapping AWS IAM accounts to database accounts is managed by the DB
+        /// cluster. For more information, see <a>ModifyDBCluster</a>.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>MySQL</b> 
+        /// </para>
         ///  <ul> <li> 
         /// <para>
         /// For MySQL 5.6, minor version 5.6.34 or higher
@@ -751,7 +773,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// For major version upgrades, if a non-default DB parameter group is currently in use,
+        /// For major version upgrades, if a nondefault DB parameter group is currently in use,
         /// a new DB parameter group in the DB parameter group family for the new engine version
         /// must be specified. The new DB parameter group can be the default for that DB parameter
         /// group family.
@@ -858,8 +880,8 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property MasterUserPassword. 
         /// <para>
-        /// The new password for the DB instance master user. Can be any printable ASCII character
-        /// except "/", """, or "@".
+        /// The new password for the master user. Can be any printable ASCII character except
+        /// "/", """, or "@".
         /// </para>
         ///  
         /// <para>
@@ -867,6 +889,15 @@ namespace Amazon.RDS.Model
         /// applied as soon as possible. Between the time of the request and the completion of
         /// the request, the <code>MasterUserPassword</code> element exists in the <code>PendingModifiedValues</code>
         /// element of the operation response. 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Amazon Aurora</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// Not applicable. The password for the master user is managed by the DB cluster. For
+        /// more information, see <a>ModifyDBCluster</a>.
         /// </para>
         ///  
         /// <para>
@@ -1054,6 +1085,15 @@ namespace Amazon.RDS.Model
         /// are enabled, as determined by the <code>BackupRetentionPeriod</code> parameter. Changing
         /// this parameter does not result in an outage and the change is asynchronously applied
         /// as soon as possible. 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Amazon Aurora</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// Not applicable. The daily time range for creating automated backups is managed by
+        /// the DB cluster. For more information, see <a>ModifyDBCluster</a>.
         /// </para>
         ///  
         /// <para>
@@ -1268,6 +1308,15 @@ namespace Amazon.RDS.Model
         /// <para>
         /// A list of EC2 VPC security groups to authorize on this DB instance. This change is
         /// asynchronously applied as soon as possible.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Amazon Aurora</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// Not applicable. The associated list of EC2 VPC security groups is managed by the DB
+        /// cluster. For more information, see <a>ModifyDBCluster</a>.
         /// </para>
         ///  
         /// <para>

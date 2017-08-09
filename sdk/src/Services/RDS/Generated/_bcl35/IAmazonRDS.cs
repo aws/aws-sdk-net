@@ -321,7 +321,7 @@ namespace Amazon.RDS
         /// 
         ///  <note> 
         /// <para>
-        /// You cannot authorize ingress from an EC2 security group in one region to an Amazon
+        /// You cannot authorize ingress from an EC2 security group in one AWS Region to an Amazon
         /// RDS DB instance in another. You cannot authorize ingress from a VPC security group
         /// in one VPC to an Amazon RDS DB instance in another.
         /// </para>
@@ -440,23 +440,24 @@ namespace Amazon.RDS
         /// </para>
         ///  
         /// <para>
-        /// You can copy an encrypted DB cluster snapshot from another AWS region. In that case,
-        /// the region where you call the <code>CopyDBClusterSnapshot</code> action is the destination
-        /// region for the encrypted DB cluster snapshot to be copied to. To copy an encrypted
-        /// DB cluster snapshot from another region, you must provide the following values:
+        /// You can copy an encrypted DB cluster snapshot from another AWS Region. In that case,
+        /// the AWS Region where you call the <code>CopyDBClusterSnapshot</code> action is the
+        /// destination AWS Region for the encrypted DB cluster snapshot to be copied to. To copy
+        /// an encrypted DB cluster snapshot from another AWS Region, you must provide the following
+        /// values:
         /// </para>
         ///  <ul> <li> 
         /// <para>
         ///  <code>KmsKeyId</code> - The AWS Key Management System (KMS) key identifier for the
-        /// key to use to encrypt the copy of the DB cluster snapshot in the destination region.
+        /// key to use to encrypt the copy of the DB cluster snapshot in the destination AWS Region.
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <code>PreSignedUrl</code> - A URL that contains a Signature Version 4 signed request
-        /// for the <code>CopyDBClusterSnapshot</code> action to be called in the source region
+        /// for the <code>CopyDBClusterSnapshot</code> action to be called in the source AWS Region
         /// where the DB cluster snapshot will be copied from. The pre-signed URL must be a valid
         /// request for the <code>CopyDBClusterSnapshot</code> API action that can be executed
-        /// in the source region that contains the encrypted DB cluster snapshot to be copied.
+        /// in the source AWS Region that contains the encrypted DB cluster snapshot to be copied.
         /// </para>
         ///  
         /// <para>
@@ -465,21 +466,21 @@ namespace Amazon.RDS
         ///  <ul> <li> 
         /// <para>
         ///  <code>KmsKeyId</code> - The KMS key identifier for the key to use to encrypt the
-        /// copy of the DB cluster snapshot in the destination region. This is the same identifier
+        /// copy of the DB cluster snapshot in the destination AWS Region. This is the same identifier
         /// for both the <code>CopyDBClusterSnapshot</code> action that is called in the destination
-        /// region, and the action contained in the pre-signed URL.
+        /// AWS Region, and the action contained in the pre-signed URL.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>DestinationRegion</code> - The name of the region that the DB cluster snapshot
+        ///  <code>DestinationRegion</code> - The name of the AWS Region that the DB cluster snapshot
         /// will be created in.
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <code>SourceDBClusterSnapshotIdentifier</code> - The DB cluster snapshot identifier
         /// for the encrypted DB cluster snapshot to be copied. This identifier must be in the
-        /// Amazon Resource Name (ARN) format for the source region. For example, if you are copying
-        /// an encrypted DB cluster snapshot from the us-west-2 region, then your <code>SourceDBClusterSnapshotIdentifier</code>
+        /// Amazon Resource Name (ARN) format for the source AWS Region. For example, if you are
+        /// copying an encrypted DB cluster snapshot from the us-west-2 region, then your <code>SourceDBClusterSnapshotIdentifier</code>
         /// looks like the following example: <code>arn:aws:rds:us-west-2:123456789012:cluster-snapshot:aurora-cluster1-snapshot-20161115</code>.
         /// </para>
         ///  </li> </ul> 
@@ -492,13 +493,13 @@ namespace Amazon.RDS
         ///  </li> <li> 
         /// <para>
         ///  <code>TargetDBClusterSnapshotIdentifier</code> - The identifier for the new copy
-        /// of the DB cluster snapshot in the destination region.
+        /// of the DB cluster snapshot in the destination AWS Region.
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <code>SourceDBClusterSnapshotIdentifier</code> - The DB cluster snapshot identifier
         /// for the encrypted DB cluster snapshot to be copied. This identifier must be in the
-        /// ARN format for the source region and is the same value as the <code>SourceDBClusterSnapshotIdentifier</code>
+        /// ARN format for the source AWS Region and is the same value as the <code>SourceDBClusterSnapshotIdentifier</code>
         /// in the pre-signed URL. 
         /// </para>
         ///  </li> </ul> 
@@ -509,8 +510,8 @@ namespace Amazon.RDS
         /// </para>
         ///  
         /// <para>
-        /// For more information on copying encrypted DB cluster snapshots from one region to
-        /// another, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_CopySnapshot.html#USER_CopyDBClusterSnapshot.CrossRegion">
+        /// For more information on copying encrypted DB cluster snapshots from one AWS Region
+        /// to another, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_CopySnapshot.html#USER_CopyDBClusterSnapshot.CrossRegion">
         /// Copying a DB Cluster Snapshot in the Same Account, Either in the Same Region or Across
         /// Regions</a> in the Amazon RDS User Guide.
         /// </para>
@@ -630,13 +631,13 @@ namespace Amazon.RDS
         /// 
         ///  
         /// <para>
-        /// You can copy a snapshot from one AWS region to another. In that case, the region where
-        /// you call the <code>CopyDBSnapshot</code> action is the destination region for the
-        /// DB snapshot copy. 
+        /// You can copy a snapshot from one AWS Region to another. In that case, the AWS Region
+        /// where you call the <code>CopyDBSnapshot</code> action is the destination AWS Region
+        /// for the DB snapshot copy. 
         /// </para>
         ///  
         /// <para>
-        /// You cannot copy an encrypted, shared DB snapshot from one AWS region to another.
+        /// You cannot copy an encrypted, shared DB snapshot from one AWS Region to another.
         /// </para>
         ///  
         /// <para>
@@ -1093,104 +1094,30 @@ namespace Amazon.RDS
 
 
         /// <summary>
-        /// Creates a DB instance for a DB instance running MySQL, MariaDB, or PostgreSQL that
-        /// acts as a Read Replica of a source DB instance.
+        /// Creates a new DB instance that acts as a Read Replica for an existing source DB instance.
+        /// You can create a Read Replica for a DB instance running MySQL, MariaDB, or PostgreSQL.
+        /// 
         /// 
         ///  <note> 
         /// <para>
         /// Amazon Aurora does not support this action. You must call the <code>CreateDBInstance</code>
-        /// action to create a DB instance for an Aurora DB cluster.
+        /// action to create a DB instance for an Aurora DB cluster. 
         /// </para>
         ///  </note> 
         /// <para>
         /// All Read Replica DB instances are created as Single-AZ deployments with backups disabled.
         /// All other DB instance attributes (including DB security groups and DB parameter groups)
-        /// are inherited from the source DB instance, except as specified below.
+        /// are inherited from the source DB instance, except as specified below. 
         /// </para>
         ///  <important> 
         /// <para>
-        /// The source DB instance must have backup retention enabled.
+        /// The source DB instance must have backup retention enabled. 
         /// </para>
         ///  </important> 
         /// <para>
-        /// You can create an encrypted Read Replica in a different AWS Region than the source
-        /// DB instance. In that case, the region where you call the <code>CreateDBInstanceReadReplica</code>
-        /// action is the destination region of the encrypted Read Replica. The source DB instance
-        /// must be encrypted.
+        /// For more information, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_ReadRepl.html">Working
+        /// with PostgreSQL, MySQL, and MariaDB Read Replicas</a>. 
         /// </para>
-        ///  
-        /// <para>
-        /// To create an encrypted Read Replica in another AWS Region, you must provide the following
-        /// values:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        ///  <code>KmsKeyId</code> - The AWS Key Management System (KMS) key identifier for the
-        /// key to use to encrypt the Read Replica in the destination region.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>PreSignedUrl</code> - A URL that contains a Signature Version 4 signed request
-        /// for the <code> CreateDBInstanceReadReplica</code> API action in the AWS region that
-        /// contains the source DB instance. The <code>PreSignedUrl</code> parameter must be used
-        /// when encrypting a Read Replica from another AWS region.
-        /// </para>
-        ///  
-        /// <para>
-        /// The presigned URL must be a valid request for the <code>CreateDBInstanceReadReplica</code>
-        /// API action that can be executed in the source region that contains the encrypted DB
-        /// instance. The presigned URL request must contain the following parameter values:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        ///  <code>DestinationRegion</code> - The AWS Region that the Read Replica is created
-        /// in. This region is the same one where the <code>CreateDBInstanceReadReplica</code>
-        /// action is called that contains this presigned URL. 
-        /// </para>
-        ///  
-        /// <para>
-        ///  For example, if you create an encrypted Read Replica in the us-east-1 region, and
-        /// the source DB instance is in the west-2 region, then you call the <code>CreateDBInstanceReadReplica</code>
-        /// action in the us-east-1 region and provide a presigned URL that contains a call to
-        /// the <code>CreateDBInstanceReadReplica</code> action in the us-west-2 region. For this
-        /// example, the <code>DestinationRegion</code> in the presigned URL must be set to the
-        /// us-east-1 region.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>KmsKeyId</code> - The KMS key identifier for the key to use to encrypt the
-        /// Read Replica in the destination region. This is the same identifier for both the <code>CreateDBInstanceReadReplica</code>
-        /// action that is called in the destination region, and the action contained in the presigned
-        /// URL.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>SourceDBInstanceIdentifier</code> - The DB instance identifier for the encrypted
-        /// Read Replica to be created. This identifier must be in the Amazon Resource Name (ARN)
-        /// format for the source region. For example, if you create an encrypted Read Replica
-        /// from a DB instance in the us-west-2 region, then your <code>SourceDBInstanceIdentifier</code>
-        /// would look like this example: <code> arn:aws:rds:us-west-2:123456789012:instance:mysql-instance1-instance-20161115</code>.
-        /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        /// To learn how to generate a Signature Version 4 signed request, see <a href="http://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html">
-        /// Authenticating Requests: Using Query Parameters (AWS Signature Version 4)</a> and
-        /// <a href="http://docs.aws.amazon.com/general/latest/gr/signature-version-4.html"> Signature
-        /// Version 4 Signing Process</a>.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>DBInstanceIdentifier</code> - The identifier for the encrypted Read Replica
-        /// in the destination region.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>SourceDBInstanceIdentifier</code> - The DB instance identifier for the encrypted
-        /// Read Replica. This identifier must be in the ARN format for the source region and
-        /// is the same value as the <code>SourceDBInstanceIdentifier</code> in the presigned
-        /// URL. 
-        /// </para>
-        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateDBInstanceReadReplica service method.</param>
         /// 
@@ -1463,7 +1390,7 @@ namespace Amazon.RDS
 
         /// <summary>
         /// Creates a new DB subnet group. DB subnet groups must contain at least one subnet in
-        /// at least two AZs in the region.
+        /// at least two AZs in the AWS Region.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateDBSubnetGroup service method.</param>
         /// 
@@ -3618,7 +3545,7 @@ namespace Amazon.RDS
 
 
         /// <summary>
-        /// Returns a list of the source AWS regions where the current AWS region can create a
+        /// Returns a list of the source AWS regions where the current AWS Region can create a
         /// Read Replica or copy a DB snapshot from. This API action supports pagination.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeSourceRegions service method.</param>
@@ -4344,7 +4271,7 @@ namespace Amazon.RDS
 
         /// <summary>
         /// Modifies an existing DB subnet group. DB subnet groups must contain at least one subnet
-        /// in at least two AZs in the region.
+        /// in at least two AZs in the AWS Region.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ModifyDBSubnetGroup service method.</param>
         /// 
@@ -5209,7 +5136,15 @@ namespace Amazon.RDS
         /// as the original DB cluster, except that the new DB cluster is created with the default
         /// DB security group. 
         /// 
-        ///  
+        ///  <note> 
+        /// <para>
+        /// This action only restores the DB cluster, not the DB instances for that DB cluster.
+        /// You must invoke the <a>CreateDBInstance</a> action to create DB instances for the
+        /// restored DB cluster, specifying the identifier of the restored DB cluster in <code>DBClusterIdentifier</code>.
+        /// You can create DB instances only after the <code>RestoreDBClusterToPointInTime</code>
+        /// action has completed and the DB cluster is available.
+        /// </para>
+        ///  </note> 
         /// <para>
         /// For more information on Amazon Aurora, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html">Aurora
         /// on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i> 

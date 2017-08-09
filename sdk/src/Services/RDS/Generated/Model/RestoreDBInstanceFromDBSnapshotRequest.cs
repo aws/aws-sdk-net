@@ -85,7 +85,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Instantiates RestoreDBInstanceFromDBSnapshotRequest with the parameterized properties
         /// </summary>
-        /// <param name="dbInstanceIdentifier">Name of the DB instance to create from the DB snapshot. This parameter isn't case-sensitive. Constraints: <ul> <li> Must contain from 1 to 63 alphanumeric characters or hyphens (1 to 15 for SQL Server) </li> <li> First character must be a letter </li> <li> Cannot end with a hyphen or contain two consecutive hyphens </li> </ul> Example: <code>my-snapshot-id</code> </param>
+        /// <param name="dbInstanceIdentifier">Name of the DB instance to create from the DB snapshot. This parameter isn't case-sensitive. Constraints: <ul> <li> Must contain from 1 to 63 alphanumeric characters or hyphens </li> <li> First character must be a letter </li> <li> Cannot end with a hyphen or contain two consecutive hyphens </li> </ul> Example: <code>my-snapshot-id</code> </param>
         /// <param name="dbSnapshotIdentifier">The identifier for the DB snapshot to restore from. Constraints: <ul> <li> Must contain from 1 to 255 alphanumeric characters or hyphens </li> <li> First character must be a letter </li> <li> Cannot end with a hyphen or contain two consecutive hyphens </li> </ul> If you are restoring from a shared manual DB snapshot, the <code>DBSnapshotIdentifier</code> must be the ARN of the shared DB snapshot.</param>
         public RestoreDBInstanceFromDBSnapshotRequest(string dbInstanceIdentifier, string dbSnapshotIdentifier)
         {
@@ -199,7 +199,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Must contain from 1 to 63 alphanumeric characters or hyphens (1 to 15 for SQL Server)
+        /// Must contain from 1 to 63 alphanumeric characters or hyphens
         /// </para>
         ///  </li> <li> 
         /// <para>

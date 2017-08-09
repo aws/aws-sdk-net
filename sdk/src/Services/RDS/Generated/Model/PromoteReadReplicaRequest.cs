@@ -128,8 +128,8 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        ///  Default: A 30-minute window selected at random from an 8-hour block of time per region.
-        /// To see the time blocks available, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html">
+        ///  Default: A 30-minute window selected at random from an 8-hour block of time per AWS
+        /// Region. To see the time blocks available, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html">
         /// Adjusting the Preferred Maintenance Window</a> in the <i>Amazon RDS User Guide.</i>
         /// 
         /// </para>

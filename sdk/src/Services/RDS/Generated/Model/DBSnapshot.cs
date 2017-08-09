@@ -422,8 +422,8 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property SourceDBSnapshotIdentifier. 
         /// <para>
-        /// The DB snapshot Arn that the DB snapshot was copied from. It only has value in case
-        /// of cross customer or cross region copy.
+        /// The DB snapshot Amazon Resource Name (ARN) that the DB snapshot was copied from. It
+        /// only has value in case of cross-customer or cross-region copy.
         /// </para>
         /// </summary>
         public string SourceDBSnapshotIdentifier
@@ -441,7 +441,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property SourceRegion. 
         /// <para>
-        /// The region that the DB snapshot was created in or copied from.
+        /// The AWS Region that the DB snapshot was created in or copied from.
         /// </para>
         /// </summary>
         public string SourceRegion

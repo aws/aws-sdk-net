@@ -29,7 +29,7 @@ namespace Amazon.RDS.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeSourceRegions operation.
-    /// Returns a list of the source AWS regions where the current AWS region can create a
+    /// Returns a list of the source AWS regions where the current AWS Region can create a
     /// Read Replica or copy a DB snapshot from. This API action supports pagination.
     /// </summary>
     public partial class DescribeSourceRegionsRequest : AmazonRDSRequest
@@ -108,7 +108,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property RegionName. 
         /// <para>
-        /// The source region name. For example, <code>us-east-1</code>.
+        /// The source AWS Region name. For example, <code>us-east-1</code>.
         /// </para>
         ///  
         /// <para>

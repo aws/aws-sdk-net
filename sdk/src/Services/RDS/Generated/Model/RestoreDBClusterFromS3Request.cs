@@ -340,7 +340,7 @@ namespace Amazon.RDS.Model
         /// If the <code>StorageEncrypted</code> parameter is true, and you do not specify a value
         /// for the <code>KmsKeyId</code> parameter, then Amazon RDS will use your default encryption
         /// key. AWS KMS creates the default encryption key for your AWS account. Your AWS account
-        /// has a different default encryption key for each AWS region.
+        /// has a different default encryption key for each AWS Region.
         /// </para>
         /// </summary>
         public string KmsKeyId
@@ -467,8 +467,8 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// Default: A 30-minute window selected at random from an 8-hour block of time per region.
-        /// To see the time blocks available, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html">
+        /// Default: A 30-minute window selected at random from an 8-hour block of time per AWS
+        /// Region. To see the time blocks available, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html">
         /// Adjusting the Preferred Maintenance Window</a> in the <i>Amazon RDS User Guide.</i>
         /// 
         /// </para>
@@ -518,8 +518,9 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// Default: A 30-minute window selected at random from an 8-hour block of time per region,
-        /// occurring on a random day of the week. To see the time blocks available, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html">
+        /// Default: A 30-minute window selected at random from an 8-hour block of time per AWS
+        /// Region, occurring on a random day of the week. To see the time blocks available, see
+        /// <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html">
         /// Adjusting the Preferred Maintenance Window</a> in the <i>Amazon RDS User Guide.</i>
         /// 
         /// </para>
