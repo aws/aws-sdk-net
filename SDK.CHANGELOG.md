@@ -1,3 +1,7 @@
+### 3.3.134.1 (2017-08-09 18:18 UTC)
+* RDS (3.3.12.4)
+	* Documentation updates for RDS.
+
 ### 3.3.134.0 (2017-08-09 02:27 UTC)
 * ElasticBeanstalk (3.3.5.0)
 	* Add support for paginating the result of DescribeEnvironments     Include the ARN of described environments in DescribeEnvironments output
