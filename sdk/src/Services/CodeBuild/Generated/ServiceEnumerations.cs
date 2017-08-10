@@ -379,6 +379,10 @@ namespace Amazon.CodeBuild
         /// </summary>
         public static readonly LanguageType DOCKER = new LanguageType("DOCKER");
         /// <summary>
+        /// Constant DOTNET for LanguageType
+        /// </summary>
+        public static readonly LanguageType DOTNET = new LanguageType("DOTNET");
+        /// <summary>
         /// Constant GOLANG for LanguageType
         /// </summary>
         public static readonly LanguageType GOLANG = new LanguageType("GOLANG");
@@ -644,6 +648,10 @@ namespace Amazon.CodeBuild
     public class SourceType : ConstantClass
     {
 
+        /// <summary>
+        /// Constant BITBUCKET for SourceType
+        /// </summary>
+        public static readonly SourceType BITBUCKET = new SourceType("BITBUCKET");
         /// <summary>
         /// Constant CODECOMMIT for SourceType
         /// </summary>
