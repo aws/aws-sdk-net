@@ -124,6 +124,12 @@ namespace Amazon.CloudDirectory.Model.Internal.MarshallTransformations
                     unmarshalledObject.DetachObject = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("DetachPolicy", targetDepth))
+                {
+                    var unmarshaller = BatchDetachPolicyResponseUnmarshaller.Instance;
+                    unmarshalledObject.DetachPolicy = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("DetachTypedLink", targetDepth))
                 {
                     var unmarshaller = BatchDetachTypedLinkResponseUnmarshaller.Instance;

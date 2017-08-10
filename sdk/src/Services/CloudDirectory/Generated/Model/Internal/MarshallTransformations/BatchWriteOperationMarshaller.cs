@@ -155,6 +155,17 @@ namespace Amazon.CloudDirectory.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetDetachPolicy())
+            {
+                context.Writer.WritePropertyName("DetachPolicy");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = BatchDetachPolicyMarshaller.Instance;
+                marshaller.Marshall(requestObject.DetachPolicy, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetDetachTypedLink())
             {
                 context.Writer.WritePropertyName("DetachTypedLink");

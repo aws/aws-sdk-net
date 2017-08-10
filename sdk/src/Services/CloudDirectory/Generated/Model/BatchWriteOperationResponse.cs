@@ -42,6 +42,7 @@ namespace Amazon.CloudDirectory.Model
         private BatchDeleteObjectResponse _deleteObject;
         private BatchDetachFromIndexResponse _detachFromIndex;
         private BatchDetachObjectResponse _detachObject;
+        private BatchDetachPolicyResponse _detachPolicy;
         private BatchDetachTypedLinkResponse _detachTypedLink;
         private BatchRemoveFacetFromObjectResponse _removeFacetFromObject;
         private BatchUpdateObjectAttributesResponse _updateObjectAttributes;
@@ -228,6 +229,24 @@ namespace Amazon.CloudDirectory.Model
         internal bool IsSetDetachObject()
         {
             return this._detachObject != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DetachPolicy. 
+        /// <para>
+        /// Detaches a policy from a <a>Directory</a>.
+        /// </para>
+        /// </summary>
+        public BatchDetachPolicyResponse DetachPolicy
+        {
+            get { return this._detachPolicy; }
+            set { this._detachPolicy = value; }
+        }
+
+        // Check to see if DetachPolicy property is set
+        internal bool IsSetDetachPolicy()
+        {
+            return this._detachPolicy != null;
         }
 
         /// <summary>
