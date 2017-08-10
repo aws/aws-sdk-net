@@ -1,3 +1,9 @@
+### 3.3.135.0 (2017-08-10 20:29 UTC)
+* CloudDirectory (3.3.5.0)
+	* Enable BatchDetachPolicy
+* CodeBuild (3.3.2.0)
+	* Supporting Bitbucket as source type in AWS CodeBuild.
+
 ### 3.3.134.1 (2017-08-09 18:18 UTC)
 * RDS (3.3.12.4)
 	* Documentation updates for RDS.
