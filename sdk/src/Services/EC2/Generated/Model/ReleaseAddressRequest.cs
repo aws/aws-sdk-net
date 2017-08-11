@@ -33,14 +33,6 @@ namespace Amazon.EC2.Model
     /// 
     ///  
     /// <para>
-    /// After releasing an Elastic IP address, it is released to the IP address pool and might
-    /// be unavailable to you. Be sure to update your DNS records and any servers or devices
-    /// that communicate with the address. If you attempt to release an Elastic IP address
-    /// that you already released, you'll get an <code>AuthFailure</code> error if the address
-    /// is already allocated to another AWS account.
-    /// </para>
-    ///  
-    /// <para>
     /// [EC2-Classic, default VPC] Releasing an Elastic IP address automatically disassociates
     /// it from any instance that it's associated with. To disassociate an Elastic IP address
     /// without releasing it, use <a>DisassociateAddress</a>.
@@ -48,7 +40,20 @@ namespace Amazon.EC2.Model
     ///  
     /// <para>
     /// [Nondefault VPC] You must use <a>DisassociateAddress</a> to disassociate the Elastic
-    /// IP address before you try to release it. Otherwise, Amazon EC2 returns an error (<code>InvalidIPAddress.InUse</code>).
+    /// IP address before you can release it. Otherwise, Amazon EC2 returns an error (<code>InvalidIPAddress.InUse</code>).
+    /// </para>
+    ///  
+    /// <para>
+    /// After releasing an Elastic IP address, it is released to the IP address pool. Be sure
+    /// to update your DNS records and any servers or devices that communicate with the address.
+    /// If you attempt to release an Elastic IP address that you already released, you'll
+    /// get an <code>AuthFailure</code> error if the address is already allocated to another
+    /// AWS account.
+    /// </para>
+    ///  
+    /// <para>
+    /// [EC2-VPC] After you release an Elastic IP address for use in a VPC, you might be able
+    /// to recover it. For more information, see <a>AllocateAddress</a>.
     /// </para>
     /// </summary>
     public partial class ReleaseAddressRequest : AmazonEC2Request

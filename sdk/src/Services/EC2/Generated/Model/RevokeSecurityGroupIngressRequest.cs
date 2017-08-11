@@ -33,7 +33,13 @@ namespace Amazon.EC2.Model
     /// in the revoke request (for example, ports) must match the existing rule's values for
     /// the rule to be removed.
     /// 
-    ///  
+    ///  <note> 
+    /// <para>
+    /// [EC2-Classic security groups only] If the values you specify do not match the existing
+    /// rule's values, no error is returned. Use <a>DescribeSecurityGroups</a> to verify that
+    /// the rule has been removed.
+    /// </para>
+    ///  </note> 
     /// <para>
     /// Each rule consists of the protocol and the CIDR range or source security group. For
     /// the TCP and UDP protocols, you must also specify the destination port or range of

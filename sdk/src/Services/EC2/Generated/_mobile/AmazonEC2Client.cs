@@ -325,12 +325,24 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Acquires an Elastic IP address.
+        /// Allocates an Elastic IP address.
         /// 
         ///  
         /// <para>
-        /// An Elastic IP address is for use either in the EC2-Classic platform or in a VPC. For
-        /// more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic
+        /// An Elastic IP address is for use either in the EC2-Classic platform or in a VPC. By
+        /// default, you can allocate 5 Elastic IP addresses for EC2-Classic per region and 5
+        /// Elastic IP addresses for EC2-VPC per region.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you release an Elastic IP address for use in a VPC, you might be able to recover
+        /// it. To recover an Elastic IP address that you released, specify it in the <code>Address</code>
+        /// parameter. Note that you cannot recover an Elastic IP address that you released after
+        /// it is allocated to another AWS account.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic
         /// IP Addresses</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         /// </summary>
