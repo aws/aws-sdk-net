@@ -433,6 +433,38 @@ namespace Amazon.CognitoIdentityProvider
 
         #endregion
         
+        #region  AdminDisableProviderForUser
+
+        internal AdminDisableProviderForUserResponse AdminDisableProviderForUser(AdminDisableProviderForUserRequest request)
+        {
+            var marshaller = new AdminDisableProviderForUserRequestMarshaller();
+            var unmarshaller = AdminDisableProviderForUserResponseUnmarshaller.Instance;
+
+            return Invoke<AdminDisableProviderForUserRequest,AdminDisableProviderForUserResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AdminDisableProviderForUser operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AdminDisableProviderForUser operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminDisableProviderForUser">REST API Reference for AdminDisableProviderForUser Operation</seealso>
+        public Task<AdminDisableProviderForUserResponse> AdminDisableProviderForUserAsync(AdminDisableProviderForUserRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new AdminDisableProviderForUserRequestMarshaller();
+            var unmarshaller = AdminDisableProviderForUserResponseUnmarshaller.Instance;
+
+            return InvokeAsync<AdminDisableProviderForUserRequest,AdminDisableProviderForUserResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  AdminDisableUser
 
         internal AdminDisableUserResponse AdminDisableUser(AdminDisableUserRequest request)
@@ -620,6 +652,38 @@ namespace Amazon.CognitoIdentityProvider
             var unmarshaller = AdminInitiateAuthResponseUnmarshaller.Instance;
 
             return InvokeAsync<AdminInitiateAuthRequest,AdminInitiateAuthResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  AdminLinkProviderForUser
+
+        internal AdminLinkProviderForUserResponse AdminLinkProviderForUser(AdminLinkProviderForUserRequest request)
+        {
+            var marshaller = new AdminLinkProviderForUserRequestMarshaller();
+            var unmarshaller = AdminLinkProviderForUserResponseUnmarshaller.Instance;
+
+            return Invoke<AdminLinkProviderForUserRequest,AdminLinkProviderForUserResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AdminLinkProviderForUser operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AdminLinkProviderForUser operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminLinkProviderForUser">REST API Reference for AdminLinkProviderForUser Operation</seealso>
+        public Task<AdminLinkProviderForUserResponse> AdminLinkProviderForUserAsync(AdminLinkProviderForUserRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new AdminLinkProviderForUserRequestMarshaller();
+            var unmarshaller = AdminLinkProviderForUserResponseUnmarshaller.Instance;
+
+            return InvokeAsync<AdminLinkProviderForUserRequest,AdminLinkProviderForUserResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -1105,6 +1169,38 @@ namespace Amazon.CognitoIdentityProvider
 
         #endregion
         
+        #region  CreateResourceServer
+
+        internal CreateResourceServerResponse CreateResourceServer(CreateResourceServerRequest request)
+        {
+            var marshaller = new CreateResourceServerRequestMarshaller();
+            var unmarshaller = CreateResourceServerResponseUnmarshaller.Instance;
+
+            return Invoke<CreateResourceServerRequest,CreateResourceServerResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateResourceServer operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateResourceServer operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/CreateResourceServer">REST API Reference for CreateResourceServer Operation</seealso>
+        public Task<CreateResourceServerResponse> CreateResourceServerAsync(CreateResourceServerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new CreateResourceServerRequestMarshaller();
+            var unmarshaller = CreateResourceServerResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateResourceServerRequest,CreateResourceServerResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateUserImportJob
 
         internal CreateUserImportJobResponse CreateUserImportJob(CreateUserImportJobRequest request)
@@ -1297,6 +1393,38 @@ namespace Amazon.CognitoIdentityProvider
 
         #endregion
         
+        #region  DeleteResourceServer
+
+        internal DeleteResourceServerResponse DeleteResourceServer(DeleteResourceServerRequest request)
+        {
+            var marshaller = new DeleteResourceServerRequestMarshaller();
+            var unmarshaller = DeleteResourceServerResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteResourceServerRequest,DeleteResourceServerResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteResourceServer operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteResourceServer operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/DeleteResourceServer">REST API Reference for DeleteResourceServer Operation</seealso>
+        public Task<DeleteResourceServerResponse> DeleteResourceServerAsync(DeleteResourceServerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DeleteResourceServerRequestMarshaller();
+            var unmarshaller = DeleteResourceServerResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteResourceServerRequest,DeleteResourceServerResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeleteUser
 
         internal DeleteUserResponse DeleteUser(DeleteUserRequest request)
@@ -1484,6 +1612,38 @@ namespace Amazon.CognitoIdentityProvider
             var unmarshaller = DescribeIdentityProviderResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeIdentityProviderRequest,DescribeIdentityProviderResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeResourceServer
+
+        internal DescribeResourceServerResponse DescribeResourceServer(DescribeResourceServerRequest request)
+        {
+            var marshaller = new DescribeResourceServerRequestMarshaller();
+            var unmarshaller = DescribeResourceServerResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeResourceServerRequest,DescribeResourceServerResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeResourceServer operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeResourceServer operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/DescribeResourceServer">REST API Reference for DescribeResourceServer Operation</seealso>
+        public Task<DescribeResourceServerResponse> DescribeResourceServerAsync(DescribeResourceServerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DescribeResourceServerRequestMarshaller();
+            var unmarshaller = DescribeResourceServerResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeResourceServerRequest,DescribeResourceServerResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -1809,6 +1969,38 @@ namespace Amazon.CognitoIdentityProvider
 
         #endregion
         
+        #region  GetUICustomization
+
+        internal GetUICustomizationResponse GetUICustomization(GetUICustomizationRequest request)
+        {
+            var marshaller = new GetUICustomizationRequestMarshaller();
+            var unmarshaller = GetUICustomizationResponseUnmarshaller.Instance;
+
+            return Invoke<GetUICustomizationRequest,GetUICustomizationResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetUICustomization operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetUICustomization operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/GetUICustomization">REST API Reference for GetUICustomization Operation</seealso>
+        public Task<GetUICustomizationResponse> GetUICustomizationAsync(GetUICustomizationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new GetUICustomizationRequestMarshaller();
+            var unmarshaller = GetUICustomizationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetUICustomizationRequest,GetUICustomizationResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetUser
 
         internal GetUserResponse GetUser(GetUserRequest request)
@@ -2028,6 +2220,38 @@ namespace Amazon.CognitoIdentityProvider
             var unmarshaller = ListIdentityProvidersResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListIdentityProvidersRequest,ListIdentityProvidersResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListResourceServers
+
+        internal ListResourceServersResponse ListResourceServers(ListResourceServersRequest request)
+        {
+            var marshaller = new ListResourceServersRequestMarshaller();
+            var unmarshaller = ListResourceServersResponseUnmarshaller.Instance;
+
+            return Invoke<ListResourceServersRequest,ListResourceServersResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListResourceServers operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListResourceServers operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/ListResourceServers">REST API Reference for ListResourceServers Operation</seealso>
+        public Task<ListResourceServersResponse> ListResourceServersAsync(ListResourceServersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new ListResourceServersRequestMarshaller();
+            var unmarshaller = ListResourceServersResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListResourceServersRequest,ListResourceServersResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -2257,6 +2481,38 @@ namespace Amazon.CognitoIdentityProvider
 
         #endregion
         
+        #region  SetUICustomization
+
+        internal SetUICustomizationResponse SetUICustomization(SetUICustomizationRequest request)
+        {
+            var marshaller = new SetUICustomizationRequestMarshaller();
+            var unmarshaller = SetUICustomizationResponseUnmarshaller.Instance;
+
+            return Invoke<SetUICustomizationRequest,SetUICustomizationResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the SetUICustomization operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the SetUICustomization operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/SetUICustomization">REST API Reference for SetUICustomization Operation</seealso>
+        public Task<SetUICustomizationResponse> SetUICustomizationAsync(SetUICustomizationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new SetUICustomizationRequestMarshaller();
+            var unmarshaller = SetUICustomizationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<SetUICustomizationRequest,SetUICustomizationResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  SetUserSettings
 
         internal SetUserSettingsResponse SetUserSettings(SetUserSettingsRequest request)
@@ -2476,6 +2732,38 @@ namespace Amazon.CognitoIdentityProvider
             var unmarshaller = UpdateIdentityProviderResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdateIdentityProviderRequest,UpdateIdentityProviderResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateResourceServer
+
+        internal UpdateResourceServerResponse UpdateResourceServer(UpdateResourceServerRequest request)
+        {
+            var marshaller = new UpdateResourceServerRequestMarshaller();
+            var unmarshaller = UpdateResourceServerResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateResourceServerRequest,UpdateResourceServerResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateResourceServer operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateResourceServer operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/UpdateResourceServer">REST API Reference for UpdateResourceServer Operation</seealso>
+        public Task<UpdateResourceServerResponse> UpdateResourceServerAsync(UpdateResourceServerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new UpdateResourceServerRequestMarshaller();
+            var unmarshaller = UpdateResourceServerResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateResourceServerRequest,UpdateResourceServerResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 

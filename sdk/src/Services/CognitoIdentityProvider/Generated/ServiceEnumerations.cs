@@ -269,6 +269,56 @@ namespace Amazon.CognitoIdentityProvider
 
 
     /// <summary>
+    /// Constants used for properties of type DefaultEmailOptionType.
+    /// </summary>
+    public class DefaultEmailOptionType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CONFIRM_WITH_CODE for DefaultEmailOptionType
+        /// </summary>
+        public static readonly DefaultEmailOptionType CONFIRM_WITH_CODE = new DefaultEmailOptionType("CONFIRM_WITH_CODE");
+        /// <summary>
+        /// Constant CONFIRM_WITH_LINK for DefaultEmailOptionType
+        /// </summary>
+        public static readonly DefaultEmailOptionType CONFIRM_WITH_LINK = new DefaultEmailOptionType("CONFIRM_WITH_LINK");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DefaultEmailOptionType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DefaultEmailOptionType FindValue(string value)
+        {
+            return FindValue<DefaultEmailOptionType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DefaultEmailOptionType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type DeliveryMediumType.
     /// </summary>
     public class DeliveryMediumType : ConstantClass
@@ -387,6 +437,10 @@ namespace Amazon.CognitoIdentityProvider
         /// </summary>
         public static readonly DomainStatusType DELETING = new DomainStatusType("DELETING");
         /// <summary>
+        /// Constant FAILED for DomainStatusType
+        /// </summary>
+        public static readonly DomainStatusType FAILED = new DomainStatusType("FAILED");
+        /// <summary>
         /// Constant UPDATING for DomainStatusType
         /// </summary>
         public static readonly DomainStatusType UPDATING = new DomainStatusType("UPDATING");
@@ -482,6 +536,18 @@ namespace Amazon.CognitoIdentityProvider
     public class IdentityProviderTypeType : ConstantClass
     {
 
+        /// <summary>
+        /// Constant Facebook for IdentityProviderTypeType
+        /// </summary>
+        public static readonly IdentityProviderTypeType Facebook = new IdentityProviderTypeType("Facebook");
+        /// <summary>
+        /// Constant Google for IdentityProviderTypeType
+        /// </summary>
+        public static readonly IdentityProviderTypeType Google = new IdentityProviderTypeType("Google");
+        /// <summary>
+        /// Constant LoginWithAmazon for IdentityProviderTypeType
+        /// </summary>
+        public static readonly IdentityProviderTypeType LoginWithAmazon = new IdentityProviderTypeType("LoginWithAmazon");
         /// <summary>
         /// Constant SAML for IdentityProviderTypeType
         /// </summary>

@@ -43,7 +43,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property ClientId. 
         /// <para>
-        /// The ID of the client associated with the user pool.
+        /// The ID of the app client associated with the user pool.
         /// </para>
         /// </summary>
         public string ClientId

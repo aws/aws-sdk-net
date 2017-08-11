@@ -56,6 +56,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         private StatusType _status;
         private List<string> _usernameAttributes = new List<string>();
         private Dictionary<string, string> _userPoolTags = new Dictionary<string, string>();
+        private VerificationMessageTemplateType _verificationMessageTemplate;
 
         /// <summary>
         /// Gets and sets the property AdminCreateUserConfig. 
@@ -504,6 +505,24 @@ namespace Amazon.CognitoIdentityProvider.Model
         internal bool IsSetUserPoolTags()
         {
             return this._userPoolTags != null && this._userPoolTags.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property VerificationMessageTemplate. 
+        /// <para>
+        /// The template for verification messages.
+        /// </para>
+        /// </summary>
+        public VerificationMessageTemplateType VerificationMessageTemplate
+        {
+            get { return this._verificationMessageTemplate; }
+            set { this._verificationMessageTemplate = value; }
+        }
+
+        // Check to see if VerificationMessageTemplate property is set
+        internal bool IsSetVerificationMessageTemplate()
+        {
+            return this._verificationMessageTemplate != null;
         }
 
     }

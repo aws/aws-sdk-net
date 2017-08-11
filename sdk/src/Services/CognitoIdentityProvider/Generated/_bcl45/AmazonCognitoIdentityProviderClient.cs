@@ -672,6 +672,110 @@ namespace Amazon.CognitoIdentityProvider
 
         #endregion
         
+        #region  AdminDisableProviderForUser
+
+
+        /// <summary>
+        /// Disables the user from signing in with the specified external (SAML or social) identity
+        /// provider. If the user to disable is a Cognito User Pools native username + password
+        /// user, they are not permitted to use their password to sign-in. If the user to disable
+        /// is a linked external IdP user, any link between that user and an existing user is
+        /// removed. The next time the external user (no longer attached to the previously linked
+        /// <code>DestinationUser</code>) signs in, they must create a new user account. See <a
+        /// href="API_AdminLinkProviderForUser.html">AdminLinkProviderForUser</a>.
+        /// 
+        ///  
+        /// <para>
+        /// This action is enabled only for admin access and requires developer credentials.
+        /// </para>
+        ///  
+        /// <para>
+        /// The <code>ProviderName</code> must match the value specified when creating an IdP
+        /// for the pool. 
+        /// </para>
+        ///  
+        /// <para>
+        /// To disable a native username + password user, the <code>ProviderName</code> value
+        /// must be <code>Cognito</code> and the <code>ProviderAttributeName</code> must be <code>Cognito_Subject</code>,
+        /// with the <code>ProviderAttributeValue</code> being the name that is used in the user
+        /// pool for the user.
+        /// </para>
+        ///  
+        /// <para>
+        /// The <code>ProviderAttributeName</code> must always be <code>Cognito_Subject</code>
+        /// for social identity providers. The <code>ProviderAttributeValue</code> must always
+        /// be the exact subject that was used when the user was originally linked as a source
+        /// user.
+        /// </para>
+        ///  
+        /// <para>
+        /// For de-linking a SAML identity, there are two scenarios. If the linked identity has
+        /// not yet been used to sign-in, the <code>ProviderAttributeName</code> and <code>ProviderAttributeValue</code>
+        /// must be the same values that were used for the <code>SourceUser</code> when the identities
+        /// were originally linked in the <a href="API_AdminLinkProviderForUser.html">AdminLinkProviderForUser</a>
+        /// call. (If the linking was done with <code>ProviderAttributeName</code> set to <code>Cognito_Subject</code>,
+        /// the same applies here). However, if the user has already signed in, the <code>ProviderAttributeName</code>
+        /// must be <code>Cognito_Subject</code> and <code>ProviderAttributeValue</code> must
+        /// be the subject of the SAML assertion.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AdminDisableProviderForUser service method.</param>
+        /// 
+        /// <returns>The response from the AdminDisableProviderForUser service method, as returned by CognitoIdentityProvider.</returns>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.AliasExistsException">
+        /// This exception is thrown when a user tries to confirm the account with an email or
+        /// phone number that has already been supplied as an alias from a different account.
+        /// This exception tells user that an account with this email or phone already exists.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InternalErrorException">
+        /// This exception is thrown when Amazon Cognito encounters an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidParameterException">
+        /// This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
+        /// This exception is thrown when a user is not authorized.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
+        /// This exception is thrown when the Amazon Cognito service cannot find the requested
+        /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.TooManyRequestsException">
+        /// This exception is thrown when the user has made too many requests for a given operation.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserNotFoundException">
+        /// This exception is thrown when a user is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminDisableProviderForUser">REST API Reference for AdminDisableProviderForUser Operation</seealso>
+        public AdminDisableProviderForUserResponse AdminDisableProviderForUser(AdminDisableProviderForUserRequest request)
+        {
+            var marshaller = new AdminDisableProviderForUserRequestMarshaller();
+            var unmarshaller = AdminDisableProviderForUserResponseUnmarshaller.Instance;
+
+            return Invoke<AdminDisableProviderForUserRequest,AdminDisableProviderForUserResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AdminDisableProviderForUser operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AdminDisableProviderForUser operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminDisableProviderForUser">REST API Reference for AdminDisableProviderForUser Operation</seealso>
+        public Task<AdminDisableProviderForUserResponse> AdminDisableProviderForUserAsync(AdminDisableProviderForUserRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new AdminDisableProviderForUserRequestMarshaller();
+            var unmarshaller = AdminDisableProviderForUserResponseUnmarshaller.Instance;
+
+            return InvokeAsync<AdminDisableProviderForUserRequest,AdminDisableProviderForUserResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  AdminDisableUser
 
 
@@ -1084,6 +1188,96 @@ namespace Amazon.CognitoIdentityProvider
             var unmarshaller = AdminInitiateAuthResponseUnmarshaller.Instance;
 
             return InvokeAsync<AdminInitiateAuthRequest,AdminInitiateAuthResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  AdminLinkProviderForUser
+
+
+        /// <summary>
+        /// Links an existing user account in a user pool (<code>DestinationUser</code>) to an
+        /// identity from an external identity provider (<code>SourceUser</code>) based on a specified
+        /// attribute name and value from the external identity provider. This allows you to create
+        /// a link from the existing user account to an external federated user identity that
+        /// has not yet been used to sign in, so that the federated user identity can be used
+        /// to sign in as the existing user account. 
+        /// 
+        ///  
+        /// <para>
+        ///  For example, if there is an existing user with a username and password, this API
+        /// links that user to a federated user identity, so that when the federated user identity
+        /// is used, the user signs in as the existing user account. 
+        /// </para>
+        ///  <important> 
+        /// <para>
+        /// Because this API allows a user with an external federated identity to sign in as an
+        /// existing user in the user pool, it is critical that it only be used with external
+        /// identity providers and provider attributes that have been trusted by the application
+        /// owner.
+        /// </para>
+        ///  </important> 
+        /// <para>
+        /// See also <a href="API_AdminDisableProviderForUser.html">AdminDisableProviderForUser</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// This action is enabled only for admin access and requires developer credentials.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AdminLinkProviderForUser service method.</param>
+        /// 
+        /// <returns>The response from the AdminLinkProviderForUser service method, as returned by CognitoIdentityProvider.</returns>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.AliasExistsException">
+        /// This exception is thrown when a user tries to confirm the account with an email or
+        /// phone number that has already been supplied as an alias from a different account.
+        /// This exception tells user that an account with this email or phone already exists.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InternalErrorException">
+        /// This exception is thrown when Amazon Cognito encounters an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidParameterException">
+        /// This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
+        /// This exception is thrown when a user is not authorized.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
+        /// This exception is thrown when the Amazon Cognito service cannot find the requested
+        /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.TooManyRequestsException">
+        /// This exception is thrown when the user has made too many requests for a given operation.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserNotFoundException">
+        /// This exception is thrown when a user is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminLinkProviderForUser">REST API Reference for AdminLinkProviderForUser Operation</seealso>
+        public AdminLinkProviderForUserResponse AdminLinkProviderForUser(AdminLinkProviderForUserRequest request)
+        {
+            var marshaller = new AdminLinkProviderForUserRequestMarshaller();
+            var unmarshaller = AdminLinkProviderForUserResponseUnmarshaller.Instance;
+
+            return Invoke<AdminLinkProviderForUserRequest,AdminLinkProviderForUserResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AdminLinkProviderForUser operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AdminLinkProviderForUser operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminLinkProviderForUser">REST API Reference for AdminLinkProviderForUser Operation</seealso>
+        public Task<AdminLinkProviderForUserResponse> AdminLinkProviderForUserAsync(AdminLinkProviderForUserRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new AdminLinkProviderForUserRequestMarshaller();
+            var unmarshaller = AdminLinkProviderForUserResponseUnmarshaller.Instance;
+
+            return InvokeAsync<AdminLinkProviderForUserRequest,AdminLinkProviderForUserResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -2226,6 +2420,64 @@ namespace Amazon.CognitoIdentityProvider
 
         #endregion
         
+        #region  CreateResourceServer
+
+
+        /// <summary>
+        /// Creates a new OAuth2.0 resource server and defines custom scopes in it.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateResourceServer service method.</param>
+        /// 
+        /// <returns>The response from the CreateResourceServer service method, as returned by CognitoIdentityProvider.</returns>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InternalErrorException">
+        /// This exception is thrown when Amazon Cognito encounters an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidParameterException">
+        /// This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.LimitExceededException">
+        /// This exception is thrown when a user exceeds the limit for a requested AWS resource.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
+        /// This exception is thrown when a user is not authorized.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
+        /// This exception is thrown when the Amazon Cognito service cannot find the requested
+        /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.TooManyRequestsException">
+        /// This exception is thrown when the user has made too many requests for a given operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/CreateResourceServer">REST API Reference for CreateResourceServer Operation</seealso>
+        public CreateResourceServerResponse CreateResourceServer(CreateResourceServerRequest request)
+        {
+            var marshaller = new CreateResourceServerRequestMarshaller();
+            var unmarshaller = CreateResourceServerResponseUnmarshaller.Instance;
+
+            return Invoke<CreateResourceServerRequest,CreateResourceServerResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateResourceServer operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateResourceServer operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/CreateResourceServer">REST API Reference for CreateResourceServer Operation</seealso>
+        public Task<CreateResourceServerResponse> CreateResourceServerAsync(CreateResourceServerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new CreateResourceServerRequestMarshaller();
+            var unmarshaller = CreateResourceServerResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateResourceServerRequest,CreateResourceServerResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateUserImportJob
 
 
@@ -2592,11 +2844,66 @@ namespace Amazon.CognitoIdentityProvider
 
         #endregion
         
+        #region  DeleteResourceServer
+
+
+        /// <summary>
+        /// Deletes a resource server.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteResourceServer service method.</param>
+        /// 
+        /// <returns>The response from the DeleteResourceServer service method, as returned by CognitoIdentityProvider.</returns>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InternalErrorException">
+        /// This exception is thrown when Amazon Cognito encounters an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidParameterException">
+        /// This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
+        /// This exception is thrown when a user is not authorized.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
+        /// This exception is thrown when the Amazon Cognito service cannot find the requested
+        /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.TooManyRequestsException">
+        /// This exception is thrown when the user has made too many requests for a given operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/DeleteResourceServer">REST API Reference for DeleteResourceServer Operation</seealso>
+        public DeleteResourceServerResponse DeleteResourceServer(DeleteResourceServerRequest request)
+        {
+            var marshaller = new DeleteResourceServerRequestMarshaller();
+            var unmarshaller = DeleteResourceServerResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteResourceServerRequest,DeleteResourceServerResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteResourceServer operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteResourceServer operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/DeleteResourceServer">REST API Reference for DeleteResourceServer Operation</seealso>
+        public Task<DeleteResourceServerResponse> DeleteResourceServerAsync(DeleteResourceServerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DeleteResourceServerRequestMarshaller();
+            var unmarshaller = DeleteResourceServerResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteResourceServerRequest,DeleteResourceServerResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeleteUser
 
 
         /// <summary>
-        /// Allows a user to delete one's self.
+        /// Allows a user to delete himself or herself.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteUser service method.</param>
         /// 
@@ -2936,6 +3243,61 @@ namespace Amazon.CognitoIdentityProvider
             var unmarshaller = DescribeIdentityProviderResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeIdentityProviderRequest,DescribeIdentityProviderResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeResourceServer
+
+
+        /// <summary>
+        /// Describes a resource server.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeResourceServer service method.</param>
+        /// 
+        /// <returns>The response from the DescribeResourceServer service method, as returned by CognitoIdentityProvider.</returns>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InternalErrorException">
+        /// This exception is thrown when Amazon Cognito encounters an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidParameterException">
+        /// This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
+        /// This exception is thrown when a user is not authorized.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
+        /// This exception is thrown when the Amazon Cognito service cannot find the requested
+        /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.TooManyRequestsException">
+        /// This exception is thrown when the user has made too many requests for a given operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/DescribeResourceServer">REST API Reference for DescribeResourceServer Operation</seealso>
+        public DescribeResourceServerResponse DescribeResourceServer(DescribeResourceServerRequest request)
+        {
+            var marshaller = new DescribeResourceServerRequestMarshaller();
+            var unmarshaller = DescribeResourceServerResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeResourceServerRequest,DescribeResourceServerResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeResourceServer operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeResourceServer operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/DescribeResourceServer">REST API Reference for DescribeResourceServer Operation</seealso>
+        public Task<DescribeResourceServerResponse> DescribeResourceServerAsync(DescribeResourceServerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DescribeResourceServerRequestMarshaller();
+            var unmarshaller = DescribeResourceServerResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeResourceServerRequest,DescribeResourceServerResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -3566,6 +3928,64 @@ namespace Amazon.CognitoIdentityProvider
 
         #endregion
         
+        #region  GetUICustomization
+
+
+        /// <summary>
+        /// Gets the UI Customization information for a particular app client's app UI, if there
+        /// is something set. If nothing is set for the particular client, but there is an existing
+        /// pool level customization (app <code>clientId</code> will be <code>ALL</code>), then
+        /// that is returned. If nothing is present, then an empty shape is returned.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetUICustomization service method.</param>
+        /// 
+        /// <returns>The response from the GetUICustomization service method, as returned by CognitoIdentityProvider.</returns>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InternalErrorException">
+        /// This exception is thrown when Amazon Cognito encounters an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidParameterException">
+        /// This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
+        /// This exception is thrown when a user is not authorized.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
+        /// This exception is thrown when the Amazon Cognito service cannot find the requested
+        /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.TooManyRequestsException">
+        /// This exception is thrown when the user has made too many requests for a given operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/GetUICustomization">REST API Reference for GetUICustomization Operation</seealso>
+        public GetUICustomizationResponse GetUICustomization(GetUICustomizationRequest request)
+        {
+            var marshaller = new GetUICustomizationRequestMarshaller();
+            var unmarshaller = GetUICustomizationResponseUnmarshaller.Instance;
+
+            return Invoke<GetUICustomizationRequest,GetUICustomizationResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetUICustomization operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetUICustomization operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/GetUICustomization">REST API Reference for GetUICustomization Operation</seealso>
+        public Task<GetUICustomizationResponse> GetUICustomizationAsync(GetUICustomizationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new GetUICustomizationRequestMarshaller();
+            var unmarshaller = GetUICustomizationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetUICustomizationRequest,GetUICustomizationResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetUser
 
 
@@ -4048,6 +4468,61 @@ namespace Amazon.CognitoIdentityProvider
 
         #endregion
         
+        #region  ListResourceServers
+
+
+        /// <summary>
+        /// Lists the resource servers for a user pool.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListResourceServers service method.</param>
+        /// 
+        /// <returns>The response from the ListResourceServers service method, as returned by CognitoIdentityProvider.</returns>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InternalErrorException">
+        /// This exception is thrown when Amazon Cognito encounters an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidParameterException">
+        /// This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
+        /// This exception is thrown when a user is not authorized.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
+        /// This exception is thrown when the Amazon Cognito service cannot find the requested
+        /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.TooManyRequestsException">
+        /// This exception is thrown when the user has made too many requests for a given operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/ListResourceServers">REST API Reference for ListResourceServers Operation</seealso>
+        public ListResourceServersResponse ListResourceServers(ListResourceServersRequest request)
+        {
+            var marshaller = new ListResourceServersRequestMarshaller();
+            var unmarshaller = ListResourceServersResponseUnmarshaller.Instance;
+
+            return Invoke<ListResourceServersRequest,ListResourceServersResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListResourceServers operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListResourceServers operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/ListResourceServers">REST API Reference for ListResourceServers Operation</seealso>
+        public Task<ListResourceServersResponse> ListResourceServersAsync(ListResourceServersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new ListResourceServersRequestMarshaller();
+            var unmarshaller = ListResourceServersResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListResourceServersRequest,ListResourceServersResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListUserImportJobs
 
 
@@ -4522,6 +4997,77 @@ namespace Amazon.CognitoIdentityProvider
 
         #endregion
         
+        #region  SetUICustomization
+
+
+        /// <summary>
+        /// Sets the UI customization information for a user pool's built-in app UI.
+        /// 
+        ///  
+        /// <para>
+        /// You can specify app UI customization settings for a single client (with a specific
+        /// <code>clientId</code>) or for all clients (by setting the <code>clientId</code> to
+        /// <code>ALL</code>). If you specify <code>ALL</code>, the default configuration will
+        /// be used for every client that has no UI customization set previously. If you specify
+        /// UI customization settings for a particular client, it will no longer fall back to
+        /// the <code>ALL</code> configuration. 
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// To use this API, your user pool must have a domain associated with it. Otherwise,
+        /// there is no place to host the app's pages, and the service will throw an error.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SetUICustomization service method.</param>
+        /// 
+        /// <returns>The response from the SetUICustomization service method, as returned by CognitoIdentityProvider.</returns>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InternalErrorException">
+        /// This exception is thrown when Amazon Cognito encounters an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidParameterException">
+        /// This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
+        /// This exception is thrown when a user is not authorized.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
+        /// This exception is thrown when the Amazon Cognito service cannot find the requested
+        /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.TooManyRequestsException">
+        /// This exception is thrown when the user has made too many requests for a given operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/SetUICustomization">REST API Reference for SetUICustomization Operation</seealso>
+        public SetUICustomizationResponse SetUICustomization(SetUICustomizationRequest request)
+        {
+            var marshaller = new SetUICustomizationRequestMarshaller();
+            var unmarshaller = SetUICustomizationResponseUnmarshaller.Instance;
+
+            return Invoke<SetUICustomizationRequest,SetUICustomizationResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the SetUICustomization operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the SetUICustomization operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/SetUICustomization">REST API Reference for SetUICustomization Operation</seealso>
+        public Task<SetUICustomizationResponse> SetUICustomizationAsync(SetUICustomizationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new SetUICustomizationRequestMarshaller();
+            var unmarshaller = SetUICustomizationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<SetUICustomizationRequest,SetUICustomizationResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  SetUserSettings
 
 
@@ -4973,6 +5519,61 @@ namespace Amazon.CognitoIdentityProvider
             var unmarshaller = UpdateIdentityProviderResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdateIdentityProviderRequest,UpdateIdentityProviderResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateResourceServer
+
+
+        /// <summary>
+        /// Updates the name and scopes of resource server. All other fields are read-only.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateResourceServer service method.</param>
+        /// 
+        /// <returns>The response from the UpdateResourceServer service method, as returned by CognitoIdentityProvider.</returns>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InternalErrorException">
+        /// This exception is thrown when Amazon Cognito encounters an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidParameterException">
+        /// This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
+        /// This exception is thrown when a user is not authorized.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
+        /// This exception is thrown when the Amazon Cognito service cannot find the requested
+        /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.TooManyRequestsException">
+        /// This exception is thrown when the user has made too many requests for a given operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/UpdateResourceServer">REST API Reference for UpdateResourceServer Operation</seealso>
+        public UpdateResourceServerResponse UpdateResourceServer(UpdateResourceServerRequest request)
+        {
+            var marshaller = new UpdateResourceServerRequestMarshaller();
+            var unmarshaller = UpdateResourceServerResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateResourceServerRequest,UpdateResourceServerResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateResourceServer operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateResourceServer operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/UpdateResourceServer">REST API Reference for UpdateResourceServer Operation</seealso>
+        public Task<UpdateResourceServerResponse> UpdateResourceServerAsync(UpdateResourceServerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new UpdateResourceServerRequestMarshaller();
+            var unmarshaller = UpdateResourceServerResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateResourceServerRequest,UpdateResourceServerResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 

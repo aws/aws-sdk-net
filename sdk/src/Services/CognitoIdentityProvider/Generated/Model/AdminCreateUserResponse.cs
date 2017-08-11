@@ -37,7 +37,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property User. 
         /// <para>
-        /// The user returned in the request to create a new user.
+        /// The newly created user.
         /// </para>
         /// </summary>
         public UserType User

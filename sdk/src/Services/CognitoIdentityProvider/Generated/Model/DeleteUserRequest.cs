@@ -30,7 +30,7 @@ namespace Amazon.CognitoIdentityProvider.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteUser operation.
-    /// Allows a user to delete one's self.
+    /// Allows a user to delete himself or herself.
     /// </summary>
     public partial class DeleteUserRequest : AmazonCognitoIdentityProviderRequest
     {

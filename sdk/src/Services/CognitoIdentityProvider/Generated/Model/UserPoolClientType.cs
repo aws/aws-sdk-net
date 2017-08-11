@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CognitoIdentityProvider.Model
 {
     /// <summary>
-    /// A user pool of the client type.
+    /// Contains information about a user pool client.
     /// </summary>
     public partial class UserPoolClientType
     {
@@ -260,7 +260,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property LogoutURLs. 
         /// <para>
-        /// A list ofallowed logout URLs for the identity providers.
+        /// A list of allowed logout URLs for the identity providers.
         /// </para>
         /// </summary>
         public List<string> LogoutURLs

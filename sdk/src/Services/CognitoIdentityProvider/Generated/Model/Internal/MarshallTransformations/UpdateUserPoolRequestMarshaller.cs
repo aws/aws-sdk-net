@@ -194,6 +194,17 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetVerificationMessageTemplate())
+                {
+                    context.Writer.WritePropertyName("VerificationMessageTemplate");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = VerificationMessageTemplateTypeMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.VerificationMessageTemplate, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
         
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
