@@ -28,17 +28,20 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CodeDeploy.Model
 {
     /// <summary>
-    /// Information about the load balancer used in a deployment.
+    /// Information about the Elastic Load Balancing load balancer or target group used in
+    /// a deployment.
     /// </summary>
     public partial class LoadBalancerInfo
     {
         private List<ELBInfo> _elbInfoList = new List<ELBInfo>();
+        private List<TargetGroupInfo> _targetGroupInfoList = new List<TargetGroupInfo>();
 
         /// <summary>
         /// Gets and sets the property ElbInfoList. 
         /// <para>
-        /// An array containing information about the load balancer in Elastic Load Balancing
-        /// to use in a deployment.
+        /// An array containing information about the load balancer to use for load balancing
+        /// in a deployment. In Elastic Load Balancing, load balancers are used with Classic Load
+        /// Balancers.
         /// </para>
         /// </summary>
         public List<ELBInfo> ElbInfoList
@@ -51,6 +54,26 @@ namespace Amazon.CodeDeploy.Model
         internal bool IsSetElbInfoList()
         {
             return this._elbInfoList != null && this._elbInfoList.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property TargetGroupInfoList. 
+        /// <para>
+        /// An array containing information about the target group to use for load balancing in
+        /// a deployment. In Elastic Load Balancing, target groups are used with Application Load
+        /// Balancers.
+        /// </para>
+        /// </summary>
+        public List<TargetGroupInfo> TargetGroupInfoList
+        {
+            get { return this._targetGroupInfoList; }
+            set { this._targetGroupInfoList = value; }
+        }
+
+        // Check to see if TargetGroupInfoList property is set
+        internal bool IsSetTargetGroupInfoList()
+        {
+            return this._targetGroupInfoList != null && this._targetGroupInfoList.Count > 0; 
         }
 
     }

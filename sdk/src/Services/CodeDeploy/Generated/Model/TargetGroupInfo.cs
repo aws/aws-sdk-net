@@ -28,22 +28,22 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CodeDeploy.Model
 {
     /// <summary>
-    /// Information about a load balancer in Elastic Load Balancing to use in a deployment.
-    /// Instances are registered directly with a load balancer, and traffic is routed to the
-    /// load balancer.
+    /// Information about a target group in Elastic Load Balancing to use in a deployment.
+    /// Instances are registered as targets in a target group, and traffic is routed to the
+    /// target group.
     /// </summary>
-    public partial class ELBInfo
+    public partial class TargetGroupInfo
     {
         private string _name;
 
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// For blue/green deployments, the name of the load balancer that will be used to route
-        /// traffic from original instances to replacement instances in a blue/green deployment.
-        /// For in-place deployments, the name of the load balancer that instances are deregistered
+        /// For blue/green deployments, the name of the target group that instances in the original
+        /// environment are deregistered from, and instances in the replacement environment registered
+        /// with. For in-place deployments, the name of the target group that instances are deregistered
         /// from, so they are not serving traffic during a deployment, and then re-registered
-        /// with after the deployment completes.
+        /// with after the deployment completes. 
         /// </para>
         /// </summary>
         public string Name

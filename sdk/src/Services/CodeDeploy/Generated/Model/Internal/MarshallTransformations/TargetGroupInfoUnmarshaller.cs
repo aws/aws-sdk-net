@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for LoadBalancerInfo Object
+    /// Response Unmarshaller for TargetGroupInfo Object
     /// </summary>  
-    public class LoadBalancerInfoUnmarshaller : IUnmarshaller<LoadBalancerInfo, XmlUnmarshallerContext>, IUnmarshaller<LoadBalancerInfo, JsonUnmarshallerContext>
+    public class TargetGroupInfoUnmarshaller : IUnmarshaller<TargetGroupInfo, XmlUnmarshallerContext>, IUnmarshaller<TargetGroupInfo, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        LoadBalancerInfo IUnmarshaller<LoadBalancerInfo, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        TargetGroupInfo IUnmarshaller<TargetGroupInfo, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,27 +53,21 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public LoadBalancerInfo Unmarshall(JsonUnmarshallerContext context)
+        public TargetGroupInfo Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            LoadBalancerInfo unmarshalledObject = new LoadBalancerInfo();
+            TargetGroupInfo unmarshalledObject = new TargetGroupInfo();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("elbInfoList", targetDepth))
+                if (context.TestExpression("name", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<ELBInfo, ELBInfoUnmarshaller>(ELBInfoUnmarshaller.Instance);
-                    unmarshalledObject.ElbInfoList = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("targetGroupInfoList", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<TargetGroupInfo, TargetGroupInfoUnmarshaller>(TargetGroupInfoUnmarshaller.Instance);
-                    unmarshalledObject.TargetGroupInfoList = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Name = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -82,12 +76,12 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
         }
 
 
-        private static LoadBalancerInfoUnmarshaller _instance = new LoadBalancerInfoUnmarshaller();        
+        private static TargetGroupInfoUnmarshaller _instance = new TargetGroupInfoUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static LoadBalancerInfoUnmarshaller Instance
+        public static TargetGroupInfoUnmarshaller Instance
         {
             get
             {
