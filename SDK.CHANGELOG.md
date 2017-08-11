@@ -1,3 +1,11 @@
+### 3.3.136.0 (2017-08-11 21:30 UTC)
+* CodeDeploy (3.3.7.0)
+	* Adds support for specifying Application Load Balancers in deployment groups, for both in-place and blue/green deployments.
+* CognitoIdentityProvider (3.3.6.0)
+	* We have added support for features for Amazon Cognito User Pools that enable application developers to easily add and customize a sign-up and sign-in user experience, use OAuth 2.0, and integrate with Facebook, Google, Login with Amazon, and SAML-based identity providers.
+* EC2 (3.3.20.0)
+	* Provides customers an opportunity to recover an EIP that was released
+
 ### 3.3.135.0 (2017-08-10 20:29 UTC)
 * CloudDirectory (3.3.5.0)
 	* Enable BatchDetachPolicy
