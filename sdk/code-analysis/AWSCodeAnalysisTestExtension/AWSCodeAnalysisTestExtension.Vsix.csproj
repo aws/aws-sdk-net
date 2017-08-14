@@ -332,6 +332,10 @@
       <Project>{0FDE26C8-DEB7-4466-8A1F-6072943EFEB6}</Project>
       <Name>AWSSDK.MarketplaceEntitlementService.CodeAnalysis</Name>
     </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/MigrationHub/AWSSDK.MigrationHub.CodeAnalysis.csproj">
+      <Project>{60427D51-62F5-43D6-888E-D9E2281C7804}</Project>
+      <Name>AWSSDK.MigrationHub.CodeAnalysis</Name>
+    </ProjectReference>
     <ProjectReference Include="../ServiceAnalysis/MobileAnalytics/AWSSDK.MobileAnalytics.CodeAnalysis.csproj">
       <Project>{C2F1BD96-3D53-4927-B608-17B154666D00}</Project>
       <Name>AWSSDK.MobileAnalytics.CodeAnalysis</Name>

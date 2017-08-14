@@ -96,6 +96,7 @@
     <ProjectReference Include="..\..\src\Services\Lightsail\AWSSDK.Lightsail.Net45.csproj"/>
     <ProjectReference Include="..\..\src\Services\MachineLearning\AWSSDK.MachineLearning.Net45.csproj"/>
     <ProjectReference Include="..\..\src\Services\MarketplaceEntitlementService\AWSSDK.MarketplaceEntitlementService.Net45.csproj"/>
+    <ProjectReference Include="..\..\src\Services\MigrationHub\AWSSDK.MigrationHub.Net45.csproj"/>
     <ProjectReference Include="..\..\src\Services\MobileAnalytics\AWSSDK.MobileAnalytics.Net45.csproj"/>
     <ProjectReference Include="..\..\src\Services\MTurk\AWSSDK.MTurk.Net45.csproj"/>
     <ProjectReference Include="..\..\src\Services\OpsWorks\AWSSDK.OpsWorks.Net45.csproj"/>
