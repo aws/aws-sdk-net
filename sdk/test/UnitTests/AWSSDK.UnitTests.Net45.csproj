@@ -43,6 +43,7 @@
     <ProjectReference Include="..\..\src\Services\CloudFormation\AWSSDK.CloudFormation.Net45.csproj"/>
     <ProjectReference Include="..\..\src\Services\CloudFront\AWSSDK.CloudFront.Net45.csproj"/>
     <ProjectReference Include="..\..\src\Services\CloudHSM\AWSSDK.CloudHSM.Net45.csproj"/>
+    <ProjectReference Include="..\..\src\Services\CloudHSMV2\AWSSDK.CloudHSMV2.Net45.csproj"/>
     <ProjectReference Include="..\..\src\Services\CloudSearch\AWSSDK.CloudSearch.Net45.csproj"/>
     <ProjectReference Include="..\..\src\Services\CloudSearchDomain\AWSSDK.CloudSearchDomain.Net45.csproj"/>
     <ProjectReference Include="..\..\src\Services\CloudTrail\AWSSDK.CloudTrail.Net45.csproj"/>
@@ -80,6 +81,7 @@
     <ProjectReference Include="..\..\src\Services\ElasticTranscoder\AWSSDK.ElasticTranscoder.Net45.csproj"/>
     <ProjectReference Include="..\..\src\Services\GameLift\AWSSDK.GameLift.Net45.csproj"/>
     <ProjectReference Include="..\..\src\Services\Glacier\AWSSDK.Glacier.Net45.csproj"/>
+    <ProjectReference Include="..\..\src\Services\Glue\AWSSDK.Glue.Net45.csproj"/>
     <ProjectReference Include="..\..\src\Services\Greengrass\AWSSDK.Greengrass.Net45.csproj"/>
     <ProjectReference Include="..\..\src\Services\IdentityManagement\AWSSDK.IdentityManagement.Net45.csproj"/>
     <ProjectReference Include="..\..\src\Services\ImportExport\AWSSDK.ImportExport.Net45.csproj"/>
