@@ -76,10 +76,22 @@ namespace Amazon.ElasticFileSystem.Model.Internal.MarshallTransformations
                     unmarshalledObject.CreationToken = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("Encrypted", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.Encrypted = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("FileSystemId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.FileSystemId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("KmsKeyId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.KmsKeyId = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("LifeCycleState", targetDepth))

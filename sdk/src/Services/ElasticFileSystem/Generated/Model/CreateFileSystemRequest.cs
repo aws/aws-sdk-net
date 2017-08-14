@@ -99,6 +99,8 @@ namespace Amazon.ElasticFileSystem.Model
     public partial class CreateFileSystemRequest : AmazonElasticFileSystemRequest
     {
         private string _creationToken;
+        private bool? _encrypted;
+        private string _kmsKeyId;
         private PerformanceMode _performanceMode;
 
         /// <summary>
@@ -131,6 +133,70 @@ namespace Amazon.ElasticFileSystem.Model
         internal bool IsSetCreationToken()
         {
             return this._creationToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Encrypted. 
+        /// <para>
+        /// A boolean value that, if true, creates an encrypted file system. When creating an
+        /// encrypted file system, you have the option of specifying a <a>CreateFileSystemRequest$KmsKeyId</a>
+        /// for an existing AWS Key Management Service (AWS KMS) customer master key (CMK). If
+        /// you don't specify a CMK, then the default CMK for Amazon EFS, <code>/aws/elasticfilesystem</code>,
+        /// is used to protect the encrypted file system. 
+        /// </para>
+        /// </summary>
+        public bool Encrypted
+        {
+            get { return this._encrypted.GetValueOrDefault(); }
+            set { this._encrypted = value; }
+        }
+
+        // Check to see if Encrypted property is set
+        internal bool IsSetEncrypted()
+        {
+            return this._encrypted.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property KmsKeyId. 
+        /// <para>
+        /// The id of the AWS KMS CMK that will be used to protect the encrypted file system.
+        /// This parameter is only required if you want to use a non-default CMK. If this parameter
+        /// is not specified, the default CMK for Amazon EFS is used. This id can be in one of
+        /// the following formats:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Key ID - A unique identifier of the key. For example, <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// ARN - An Amazon Resource Name for the key. For example, <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Key alias - A previously created display name for a key. For example, <code>alias/projectKey1</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Key alias ARN - An Amazon Resource Name for a key alias. For example, <code>arn:aws:kms:us-west-2:444455556666:alias/projectKey1</code>.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// Note that if the KmsKeyId is specified, the <a>CreateFileSystemRequest$Encrypted</a>
+        /// parameter must be set to true.
+        /// </para>
+        /// </summary>
+        public string KmsKeyId
+        {
+            get { return this._kmsKeyId; }
+            set { this._kmsKeyId = value; }
+        }
+
+        // Check to see if KmsKeyId property is set
+        internal bool IsSetKmsKeyId()
+        {
+            return this._kmsKeyId != null;
         }
 
         /// <summary>

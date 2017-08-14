@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<docs>
+    <doc>
+        <members>
+            <member name="M:Amazon.ElasticFileSystem.IAmazonElasticFileSystem.CreateFileSystem(Amazon.ElasticFileSystem.Model.CreateFileSystemRequest)" />
+            <member name="M:Amazon.ElasticFileSystem.AmazonElasticFileSystemClient.CreateFileSystem(Amazon.ElasticFileSystem.Model.CreateFileSystemRequest)" />
+            <member name="T:Amazon.ElasticFileSystem.Model.CreateFileSystemRequest" />
+            <member name="T:Amazon.ElasticFileSystem.Model.CreateFileSystemResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This operation creates a new file system with the default generalpurpose performance mode.
+                </para>
+                <code
+                    title="To create a new file system"
+                    source=".\AWSSDKDocSamples\ElasticFileSystem\ElasticFileSystem.GeneratedSamples.cs"
+                    region="to-create-a-new-file-system-1481840798547" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.ElasticFileSystem.IAmazonElasticFileSystem.CreateMountTarget(Amazon.ElasticFileSystem.Model.CreateMountTargetRequest)" />
+            <member name="M:Amazon.ElasticFileSystem.AmazonElasticFileSystemClient.CreateMountTarget(Amazon.ElasticFileSystem.Model.CreateMountTargetRequest)" />
+            <member name="T:Amazon.ElasticFileSystem.Model.CreateMountTargetRequest" />
+            <member name="T:Amazon.ElasticFileSystem.Model.CreateMountTargetResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This operation creates a new mount target for an EFS file system.
+                </para>
+                <code
+                    title="To create a new mount target"
+                    source=".\AWSSDKDocSamples\ElasticFileSystem\ElasticFileSystem.GeneratedSamples.cs"
+                    region="to-create-a-new-mount-target-1481842289329" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.ElasticFileSystem.IAmazonElasticFileSystem.CreateTags(Amazon.ElasticFileSystem.Model.CreateTagsRequest)" />
+            <member name="M:Amazon.ElasticFileSystem.AmazonElasticFileSystemClient.CreateTags(Amazon.ElasticFileSystem.Model.CreateTagsRequest)" />
+            <member name="T:Amazon.ElasticFileSystem.Model.CreateTagsRequest" />
+            <member name="T:Amazon.ElasticFileSystem.Model.CreateTagsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This operation creates a new tag for an EFS file system.
+                </para>
+                <code
+                    title="To create a new tag"
+                    source=".\AWSSDKDocSamples\ElasticFileSystem\ElasticFileSystem.GeneratedSamples.cs"
+                    region="to-create-a-new-tag-1481843409357" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.ElasticFileSystem.IAmazonElasticFileSystem.DeleteFileSystem(Amazon.ElasticFileSystem.Model.DeleteFileSystemRequest)" />
+            <member name="M:Amazon.ElasticFileSystem.AmazonElasticFileSystemClient.DeleteFileSystem(Amazon.ElasticFileSystem.Model.DeleteFileSystemRequest)" />
+            <member name="T:Amazon.ElasticFileSystem.Model.DeleteFileSystemRequest" />
+            <member name="T:Amazon.ElasticFileSystem.Model.DeleteFileSystemResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This operation deletes an EFS file system.
+                </para>
+                <code
+                    title="To delete a file system"
+                    source=".\AWSSDKDocSamples\ElasticFileSystem\ElasticFileSystem.GeneratedSamples.cs"
+                    region="to-delete-a-file-system-1481847318348" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.ElasticFileSystem.IAmazonElasticFileSystem.DeleteMountTarget(Amazon.ElasticFileSystem.Model.DeleteMountTargetRequest)" />
+            <member name="M:Amazon.ElasticFileSystem.AmazonElasticFileSystemClient.DeleteMountTarget(Amazon.ElasticFileSystem.Model.DeleteMountTargetRequest)" />
+            <member name="T:Amazon.ElasticFileSystem.Model.DeleteMountTargetRequest" />
+            <member name="T:Amazon.ElasticFileSystem.Model.DeleteMountTargetResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This operation deletes a mount target.
+                </para>
+                <code
+                    title="To delete a mount target"
+                    source=".\AWSSDKDocSamples\ElasticFileSystem\ElasticFileSystem.GeneratedSamples.cs"
+                    region="to-delete-a-mount-target-1481847635607" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.ElasticFileSystem.IAmazonElasticFileSystem.DeleteTags(Amazon.ElasticFileSystem.Model.DeleteTagsRequest)" />
+            <member name="M:Amazon.ElasticFileSystem.AmazonElasticFileSystemClient.DeleteTags(Amazon.ElasticFileSystem.Model.DeleteTagsRequest)" />
+            <member name="T:Amazon.ElasticFileSystem.Model.DeleteTagsRequest" />
+            <member name="T:Amazon.ElasticFileSystem.Model.DeleteTagsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This operation deletes tags for an EFS file system.
+                </para>
+                <code
+                    title="To delete tags for an EFS file system"
+                    source=".\AWSSDKDocSamples\ElasticFileSystem\ElasticFileSystem.GeneratedSamples.cs"
+                    region="to-delete-tags-for-an-efs-file-system-1481848189061" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.ElasticFileSystem.IAmazonElasticFileSystem.DescribeFileSystems(Amazon.ElasticFileSystem.Model.DescribeFileSystemsRequest)" />
+            <member name="M:Amazon.ElasticFileSystem.AmazonElasticFileSystemClient.DescribeFileSystems(Amazon.ElasticFileSystem.Model.DescribeFileSystemsRequest)" />
+            <member name="T:Amazon.ElasticFileSystem.Model.DescribeFileSystemsRequest" />
+            <member name="T:Amazon.ElasticFileSystem.Model.DescribeFileSystemsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This operation describes all of the EFS file systems in an account.
+                </para>
+                <code
+                    title="To describe an EFS file system"
+                    source=".\AWSSDKDocSamples\ElasticFileSystem\ElasticFileSystem.GeneratedSamples.cs"
+                    region="to-describe-an-efs-file-system-1481848448460" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.ElasticFileSystem.IAmazonElasticFileSystem.DescribeMountTargets(Amazon.ElasticFileSystem.Model.DescribeMountTargetsRequest)" />
+            <member name="M:Amazon.ElasticFileSystem.AmazonElasticFileSystemClient.DescribeMountTargets(Amazon.ElasticFileSystem.Model.DescribeMountTargetsRequest)" />
+            <member name="T:Amazon.ElasticFileSystem.Model.DescribeMountTargetsRequest" />
+            <member name="T:Amazon.ElasticFileSystem.Model.DescribeMountTargetsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This operation describes all of a file system's mount targets.
+                </para>
+                <code
+                    title="To describe the mount targets for a file system"
+                    source=".\AWSSDKDocSamples\ElasticFileSystem\ElasticFileSystem.GeneratedSamples.cs"
+                    region="to-describe-the-mount-targets-for-a-file-system-1481849958584" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.ElasticFileSystem.IAmazonElasticFileSystem.DescribeMountTargetSecurityGroups(Amazon.ElasticFileSystem.Model.DescribeMountTargetSecurityGroupsRequest)" />
+            <member name="M:Amazon.ElasticFileSystem.AmazonElasticFileSystemClient.DescribeMountTargetSecurityGroups(Amazon.ElasticFileSystem.Model.DescribeMountTargetSecurityGroupsRequest)" />
+            <member name="T:Amazon.ElasticFileSystem.Model.DescribeMountTargetSecurityGroupsRequest" />
+            <member name="T:Amazon.ElasticFileSystem.Model.DescribeMountTargetSecurityGroupsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This operation describes all of the security groups for a file system's mount target.
+                </para>
+                <code
+                    title="To describe the security groups for a mount target"
+                    source=".\AWSSDKDocSamples\ElasticFileSystem\ElasticFileSystem.GeneratedSamples.cs"
+                    region="to-describe-the-security-groups-for-a-mount-target-1481849317823" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.ElasticFileSystem.IAmazonElasticFileSystem.DescribeTags(Amazon.ElasticFileSystem.Model.DescribeTagsRequest)" />
+            <member name="M:Amazon.ElasticFileSystem.AmazonElasticFileSystemClient.DescribeTags(Amazon.ElasticFileSystem.Model.DescribeTagsRequest)" />
+            <member name="T:Amazon.ElasticFileSystem.Model.DescribeTagsRequest" />
+            <member name="T:Amazon.ElasticFileSystem.Model.DescribeTagsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This operation describes all of a file system's tags.
+                </para>
+                <code
+                    title="To describe the tags for a file system"
+                    source=".\AWSSDKDocSamples\ElasticFileSystem\ElasticFileSystem.GeneratedSamples.cs"
+                    region="to-describe-the-tags-for-a-file-system-1481850497090" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.ElasticFileSystem.IAmazonElasticFileSystem.ModifyMountTargetSecurityGroups(Amazon.ElasticFileSystem.Model.ModifyMountTargetSecurityGroupsRequest)" />
+            <member name="M:Amazon.ElasticFileSystem.AmazonElasticFileSystemClient.ModifyMountTargetSecurityGroups(Amazon.ElasticFileSystem.Model.ModifyMountTargetSecurityGroupsRequest)" />
+            <member name="T:Amazon.ElasticFileSystem.Model.ModifyMountTargetSecurityGroupsRequest" />
+            <member name="T:Amazon.ElasticFileSystem.Model.ModifyMountTargetSecurityGroupsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This operation modifies the security groups associated with a mount target for a file system.
+                </para>
+                <code
+                    title="To modify the security groups associated with a mount target for a file system"
+                    source=".\AWSSDKDocSamples\ElasticFileSystem\ElasticFileSystem.GeneratedSamples.cs"
+                    region="to-modify-the-security-groups-associated-with-a-mount-target-for-a-file-system-1481850772562" />
+            </example>
+        </value>
+    </doc>
+</docs>

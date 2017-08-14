@@ -71,6 +71,18 @@ namespace Amazon.ElasticFileSystem.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.CreationToken);
                 }
 
+                if(publicRequest.IsSetEncrypted())
+                {
+                    context.Writer.WritePropertyName("Encrypted");
+                    context.Writer.Write(publicRequest.Encrypted);
+                }
+
+                if(publicRequest.IsSetKmsKeyId())
+                {
+                    context.Writer.WritePropertyName("KmsKeyId");
+                    context.Writer.Write(publicRequest.KmsKeyId);
+                }
+
                 if(publicRequest.IsSetPerformanceMode())
                 {
                     context.Writer.WritePropertyName("PerformanceMode");

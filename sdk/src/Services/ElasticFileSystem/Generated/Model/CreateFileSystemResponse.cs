@@ -34,7 +34,9 @@ namespace Amazon.ElasticFileSystem.Model
     {
         private DateTime? _creationTime;
         private string _creationToken;
+        private bool? _encrypted;
         private string _fileSystemId;
+        private string _kmsKeyId;
         private LifeCycleState _lifeCycleState;
         private string _name;
         private int? _numberOfMountTargets;
@@ -79,6 +81,24 @@ namespace Amazon.ElasticFileSystem.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Encrypted. 
+        /// <para>
+        /// A boolean value that, if true, indicates that the file system is encrypted.
+        /// </para>
+        /// </summary>
+        public bool Encrypted
+        {
+            get { return this._encrypted.GetValueOrDefault(); }
+            set { this._encrypted = value; }
+        }
+
+        // Check to see if Encrypted property is set
+        internal bool IsSetEncrypted()
+        {
+            return this._encrypted.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property FileSystemId. 
         /// <para>
         /// ID of the file system, assigned by Amazon EFS.
@@ -94,6 +114,25 @@ namespace Amazon.ElasticFileSystem.Model
         internal bool IsSetFileSystemId()
         {
             return this._fileSystemId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property KmsKeyId. 
+        /// <para>
+        /// The id of an AWS Key Management Service (AWS KMS) customer master key (CMK) that was
+        /// used to protect the encrypted file system.
+        /// </para>
+        /// </summary>
+        public string KmsKeyId
+        {
+            get { return this._kmsKeyId; }
+            set { this._kmsKeyId = value; }
+        }
+
+        // Check to see if KmsKeyId property is set
+        internal bool IsSetKmsKeyId()
+        {
+            return this._kmsKeyId != null;
         }
 
         /// <summary>
