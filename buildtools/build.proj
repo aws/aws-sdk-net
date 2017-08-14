@@ -342,9 +342,9 @@
 	
     <Target Name="build-netcore-extensions" DependsOnTargets="GetSDKToolingInfoTarget">
         <!-- depends: restore-nuget;run-generator -->
-        <Exec Command="&quot;$(SDKToolingExe)&quot; clean -c $(Configuration)"  WorkingDirectory="..\extensions"/>
-        <Exec Command="&quot;$(SDKToolingExe)&quot; restore"                    WorkingDirectory="..\extensions"/>
-        <Exec Command="&quot;$(SDKToolingExe)&quot; build -c $(Configuration)"  WorkingDirectory="..\extensions"/>
+        <Exec Command="&quot;$(SDKToolingExe)&quot; clean AWSSDK.Extensions.sln"    WorkingDirectory="..\extensions"/>
+        <Exec Command="&quot;$(SDKToolingExe)&quot; restore AWSSDK.Extensions.sln"  WorkingDirectory="..\extensions"/>
+        <Exec Command="&quot;$(SDKToolingExe)&quot; build -c $(Configuration) AWSSDK.Extensions.sln /p:AWSKeyFile=$(CustomSnkFileLocation);SignAssembly=true"  WorkingDirectory="..\extensions"/>
 
 		<Message Text="Build and Test .NET Core Setup Extension"/>
 		<XUnitWrapperTask
