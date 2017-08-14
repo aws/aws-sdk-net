@@ -30,7 +30,9 @@ namespace Amazon.StorageGateway.Model
     /// <summary>
     /// Container for the parameters to the CreateTapeWithBarcode operation.
     /// Creates a virtual tape by using your own barcode. You write data to the virtual tape
-    /// and then archive the tape. This operation is only supported in the tape gateway architecture.
+    /// and then archive the tape. A barcode is unique and can not be reused if it has already
+    /// been used on a tape . This applies to barcodes used on deleted tapes. This operation
+    /// is only supported in the tape gateway. architecture.
     /// 
     ///  <note> 
     /// <para>
@@ -70,6 +72,11 @@ namespace Amazon.StorageGateway.Model
         /// <para>
         /// The barcode that you want to assign to the tape.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// Barcodes cannot be reused. This includes barcodes used for tapes that have been deleted.
+        /// </para>
+        ///  </note>
         /// </summary>
         public string TapeBarcode
         {

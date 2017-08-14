@@ -158,7 +158,7 @@ namespace Amazon.StorageGateway.Model
         /// <summary>
         /// Gets and sets the property VolumeSizeInBytes. 
         /// <para>
-        /// The size of the volume in bytes.
+        /// The size, in bytes, of the volume capacity.
         /// </para>
         /// </summary>
         public long VolumeSizeInBytes

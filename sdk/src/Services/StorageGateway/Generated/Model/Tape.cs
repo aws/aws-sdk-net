@@ -161,7 +161,7 @@ namespace Amazon.StorageGateway.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// This value is not available for tapes created prior to May,13 2015.
+        /// This value is not available for tapes created prior to May 13, 2015.
         /// </para>
         ///  </note>
         /// </summary>

@@ -193,8 +193,8 @@ namespace Amazon.StorageGateway.Model
         /// <summary>
         /// Gets and sets the property ReadOnly. 
         /// <para>
-        /// Sets the write status of a file share: "true" if the write status is read-only, and
-        /// otherwise "false".
+        /// Sets the write status of a file share: "true" if the write status is read-only, otherwise
+        /// "false".
         /// </para>
         /// </summary>
         public bool ReadOnly

@@ -30,8 +30,8 @@ namespace Amazon.StorageGateway.Model
     /// <summary>
     /// Container for the parameters to the RefreshCache operation.
     /// Refreshes the cache for the specified file share. This operation finds objects in
-    /// the Amazon S3 bucket that were added or removed since the gateway last listed the
-    /// bucket's contents and cached the results.
+    /// the Amazon S3 bucket that were added, removed or replaced since the gateway last listed
+    /// the bucket's contents and cached the results.
     /// </summary>
     public partial class RefreshCacheRequest : AmazonStorageGatewayRequest
     {

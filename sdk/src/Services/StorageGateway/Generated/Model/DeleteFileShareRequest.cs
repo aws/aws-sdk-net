@@ -35,6 +35,7 @@ namespace Amazon.StorageGateway.Model
     public partial class DeleteFileShareRequest : AmazonStorageGatewayRequest
     {
         private string _fileShareARN;
+        private bool? _forceDelete;
 
         /// <summary>
         /// Gets and sets the property FileShareARN. 
@@ -52,6 +53,26 @@ namespace Amazon.StorageGateway.Model
         internal bool IsSetFileShareARN()
         {
             return this._fileShareARN != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ForceDelete. 
+        /// <para>
+        /// If set to true, deletes a file share immediately and aborts all data uploads to AWS.
+        /// Otherwise the file share is not deleted until all data is uploaded to AWS. This process
+        /// aborts the data upload process and the file share enters the FORCE_DELETING status.
+        /// </para>
+        /// </summary>
+        public bool ForceDelete
+        {
+            get { return this._forceDelete.GetValueOrDefault(); }
+            set { this._forceDelete = value; }
+        }
+
+        // Check to see if ForceDelete property is set
+        internal bool IsSetForceDelete()
+        {
+            return this._forceDelete.HasValue; 
         }
 
     }

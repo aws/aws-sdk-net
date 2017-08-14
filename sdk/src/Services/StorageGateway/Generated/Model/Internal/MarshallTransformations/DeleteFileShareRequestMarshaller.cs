@@ -73,6 +73,12 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.FileShareARN);
                 }
 
+                if(publicRequest.IsSetForceDelete())
+                {
+                    context.Writer.WritePropertyName("ForceDelete");
+                    context.Writer.Write(publicRequest.ForceDelete);
+                }
+
         
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
