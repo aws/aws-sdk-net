@@ -422,6 +422,53 @@ namespace Amazon.DNXCore.IntegrationTests.S3
             }
         }
 
+        [Fact]
+        [Trait(CategoryAttribute, "S3")]
+        public async Task UploadDirectoryWithTagsTest()
+        {
+            for(int i = 1; i < 4; i++)
+            {
+                UtilityMethods.GenerateFile(Path.Combine(basePath, "tempfile-" + i), MEG_SIZE /i);
+            }
+
+            var uploadRequest = new TransferUtilityUploadDirectoryRequest
+            {
+                BucketName = testBucketName,
+                Directory = basePath,
+                TagSet = new List<Tag>
+                {
+                    new Tag
+                    {
+                        Key = "hello",
+                        Value = "world"
+                    }
+                }
+            };
+
+            using (var transferUtility = new TransferUtility(Client))
+            {
+                await transferUtility.UploadDirectoryAsync(uploadRequest);
+            }
+
+            var objects = Client.ListObjectsAsync(new ListObjectsRequest
+            {
+                BucketName = testBucketName
+            }).Result.S3Objects;
+
+            foreach(var obj in objects)
+            {
+                var tags = Client.GetObjectTaggingAsync(new GetObjectTaggingRequest
+                {
+                    BucketName = testBucketName,
+                    Key = obj.Key
+                }).Result.Tagging;
+
+                Assert.Equal(1, tags.Count);
+                Assert.Equal("hello", tags[0].Key);
+                Assert.Equal("world", tags[0].Value);
+            }
+        }
+
         public static void ConfigureProgressValidator(DirectoryProgressValidator<DownloadDirectoryProgressArgs> progressValidator)
         {
             progressValidator.Validate = (progress, lastProgress) =>

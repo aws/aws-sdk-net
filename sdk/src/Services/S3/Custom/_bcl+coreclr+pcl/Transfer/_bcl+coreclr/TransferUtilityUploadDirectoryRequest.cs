@@ -49,6 +49,7 @@ namespace Amazon.S3.Transfer
         MetadataCollection metadataCollection;
         ServerSideEncryptionMethod encryption;
         string serverSideEncryptionKeyManagementServiceKeyId;
+        private List<Tag> tagset;
 
 
         /// <summary>
@@ -312,6 +313,15 @@ namespace Amazon.S3.Transfer
                 var args = new UploadDirectoryFileRequestArgs(request);
                 targetEvent(this, args);
             }
+        }
+
+        /// <summary>
+        /// Tags that will be applied to all objects in the diretory.
+        /// </summary>
+        public List<Tag> TagSet
+        {
+            get { return this.tagset; }
+            set { this.tagset = value; }
         }
     }
 
