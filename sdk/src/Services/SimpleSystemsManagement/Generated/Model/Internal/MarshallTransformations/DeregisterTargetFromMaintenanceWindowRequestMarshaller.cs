@@ -67,6 +67,12 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetSafe())
+                {
+                    context.Writer.WritePropertyName("Safe");
+                    context.Writer.Write(publicRequest.Safe);
+                }
+
                 if(publicRequest.IsSetWindowId())
                 {
                     context.Writer.WritePropertyName("WindowId");

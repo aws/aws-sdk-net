@@ -78,6 +78,12 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
                     context.Writer.WritePropertyName("ClientToken");
                     context.Writer.Write(Guid.NewGuid().ToString());                                                
                 }
+                if(publicRequest.IsSetDescription())
+                {
+                    context.Writer.WritePropertyName("Description");
+                    context.Writer.Write(publicRequest.Description);
+                }
+
                 if(publicRequest.IsSetLoggingInfo())
                 {
                     context.Writer.WritePropertyName("LoggingInfo");
@@ -99,6 +105,12 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
                 {
                     context.Writer.WritePropertyName("MaxErrors");
                     context.Writer.Write(publicRequest.MaxErrors);
+                }
+
+                if(publicRequest.IsSetName())
+                {
+                    context.Writer.WritePropertyName("Name");
+                    context.Writer.Write(publicRequest.Name);
                 }
 
                 if(publicRequest.IsSetPriority())
@@ -133,6 +145,17 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
                 {
                     context.Writer.WritePropertyName("TaskArn");
                     context.Writer.Write(publicRequest.TaskArn);
+                }
+
+                if(publicRequest.IsSetTaskInvocationParameters())
+                {
+                    context.Writer.WritePropertyName("TaskInvocationParameters");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = MaintenanceWindowTaskInvocationParametersMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.TaskInvocationParameters, context);
+
+                    context.Writer.WriteObjectEnd();
                 }
 
                 if(publicRequest.IsSetTaskParameters())

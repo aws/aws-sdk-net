@@ -529,6 +529,184 @@ namespace Amazon.SimpleSystemsManagement
 
 
     /// <summary>
+    /// Constants used for properties of type ComplianceQueryOperatorType.
+    /// </summary>
+    public class ComplianceQueryOperatorType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant BEGIN_WITH for ComplianceQueryOperatorType
+        /// </summary>
+        public static readonly ComplianceQueryOperatorType BEGIN_WITH = new ComplianceQueryOperatorType("BEGIN_WITH");
+        /// <summary>
+        /// Constant EQUAL for ComplianceQueryOperatorType
+        /// </summary>
+        public static readonly ComplianceQueryOperatorType EQUAL = new ComplianceQueryOperatorType("EQUAL");
+        /// <summary>
+        /// Constant GREATER_THAN for ComplianceQueryOperatorType
+        /// </summary>
+        public static readonly ComplianceQueryOperatorType GREATER_THAN = new ComplianceQueryOperatorType("GREATER_THAN");
+        /// <summary>
+        /// Constant LESS_THAN for ComplianceQueryOperatorType
+        /// </summary>
+        public static readonly ComplianceQueryOperatorType LESS_THAN = new ComplianceQueryOperatorType("LESS_THAN");
+        /// <summary>
+        /// Constant NOT_EQUAL for ComplianceQueryOperatorType
+        /// </summary>
+        public static readonly ComplianceQueryOperatorType NOT_EQUAL = new ComplianceQueryOperatorType("NOT_EQUAL");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ComplianceQueryOperatorType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ComplianceQueryOperatorType FindValue(string value)
+        {
+            return FindValue<ComplianceQueryOperatorType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ComplianceQueryOperatorType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ComplianceSeverity.
+    /// </summary>
+    public class ComplianceSeverity : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CRITICAL for ComplianceSeverity
+        /// </summary>
+        public static readonly ComplianceSeverity CRITICAL = new ComplianceSeverity("CRITICAL");
+        /// <summary>
+        /// Constant HIGH for ComplianceSeverity
+        /// </summary>
+        public static readonly ComplianceSeverity HIGH = new ComplianceSeverity("HIGH");
+        /// <summary>
+        /// Constant INFORMATIONAL for ComplianceSeverity
+        /// </summary>
+        public static readonly ComplianceSeverity INFORMATIONAL = new ComplianceSeverity("INFORMATIONAL");
+        /// <summary>
+        /// Constant LOW for ComplianceSeverity
+        /// </summary>
+        public static readonly ComplianceSeverity LOW = new ComplianceSeverity("LOW");
+        /// <summary>
+        /// Constant MEDIUM for ComplianceSeverity
+        /// </summary>
+        public static readonly ComplianceSeverity MEDIUM = new ComplianceSeverity("MEDIUM");
+        /// <summary>
+        /// Constant UNSPECIFIED for ComplianceSeverity
+        /// </summary>
+        public static readonly ComplianceSeverity UNSPECIFIED = new ComplianceSeverity("UNSPECIFIED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ComplianceSeverity(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ComplianceSeverity FindValue(string value)
+        {
+            return FindValue<ComplianceSeverity>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ComplianceSeverity(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ComplianceStatus.
+    /// </summary>
+    public class ComplianceStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant COMPLIANT for ComplianceStatus
+        /// </summary>
+        public static readonly ComplianceStatus COMPLIANT = new ComplianceStatus("COMPLIANT");
+        /// <summary>
+        /// Constant NON_COMPLIANT for ComplianceStatus
+        /// </summary>
+        public static readonly ComplianceStatus NON_COMPLIANT = new ComplianceStatus("NON_COMPLIANT");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ComplianceStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ComplianceStatus FindValue(string value)
+        {
+            return FindValue<ComplianceStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ComplianceStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type DescribeActivationsFilterKeys.
     /// </summary>
     public class DescribeActivationsFilterKeys : ConstantClass
@@ -1377,9 +1555,21 @@ namespace Amazon.SimpleSystemsManagement
     {
 
         /// <summary>
+        /// Constant AUTOMATION for MaintenanceWindowTaskType
+        /// </summary>
+        public static readonly MaintenanceWindowTaskType AUTOMATION = new MaintenanceWindowTaskType("AUTOMATION");
+        /// <summary>
+        /// Constant LAMBDA for MaintenanceWindowTaskType
+        /// </summary>
+        public static readonly MaintenanceWindowTaskType LAMBDA = new MaintenanceWindowTaskType("LAMBDA");
+        /// <summary>
         /// Constant RUN_COMMAND for MaintenanceWindowTaskType
         /// </summary>
         public static readonly MaintenanceWindowTaskType RUN_COMMAND = new MaintenanceWindowTaskType("RUN_COMMAND");
+        /// <summary>
+        /// Constant STEP_FUNCTIONS for MaintenanceWindowTaskType
+        /// </summary>
+        public static readonly MaintenanceWindowTaskType STEP_FUNCTIONS = new MaintenanceWindowTaskType("STEP_FUNCTIONS");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

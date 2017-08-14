@@ -2021,6 +2021,10 @@ namespace Amazon.SimpleSystemsManagement
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
         /// An error occurred on the server side.
         /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.TargetInUseException">
+        /// You specified the <code>Safe</code> option for the DeregisterTargetFromMaintenanceWindow
+        /// operation, but the target is still referenced in a task.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeregisterTargetFromMaintenanceWindow">REST API Reference for DeregisterTargetFromMaintenanceWindow Operation</seealso>
         public DeregisterTargetFromMaintenanceWindowResponse DeregisterTargetFromMaintenanceWindow(DeregisterTargetFromMaintenanceWindowRequest request)
         {
@@ -3184,9 +3188,9 @@ namespace Amazon.SimpleSystemsManagement
         #region  DescribeMaintenanceWindowExecutions
 
         /// <summary>
-        /// Lists the executions of a Maintenance Window (meaning, information about when the
-        /// Maintenance Window was scheduled to be active and information about tasks registered
-        /// and run with the Maintenance Window).
+        /// Lists the executions of a Maintenance Window. This includes information about when
+        /// the Maintenance Window was scheduled to be active, and information about tasks registered
+        /// and run with the Maintenance Window.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeMaintenanceWindowExecutions service method.</param>
         /// 
@@ -4455,6 +4459,127 @@ namespace Amazon.SimpleSystemsManagement
 
         #endregion
         
+        #region  GetMaintenanceWindowExecutionTaskInvocation
+
+        /// <summary>
+        /// Retrieves a task invocation. A task invocation is a specific task executing on a specific
+        /// target. Maintenance Windows report status for all invocations.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetMaintenanceWindowExecutionTaskInvocation service method.</param>
+        /// 
+        /// <returns>The response from the GetMaintenanceWindowExecutionTaskInvocation service method, as returned by SimpleSystemsManagement.</returns>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.DoesNotExistException">
+        /// Error returned when the ID specified for a resource (e.g. a Maintenance Window) doesn't
+        /// exist.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetMaintenanceWindowExecutionTaskInvocation">REST API Reference for GetMaintenanceWindowExecutionTaskInvocation Operation</seealso>
+        public GetMaintenanceWindowExecutionTaskInvocationResponse GetMaintenanceWindowExecutionTaskInvocation(GetMaintenanceWindowExecutionTaskInvocationRequest request)
+        {
+            var marshaller = new GetMaintenanceWindowExecutionTaskInvocationRequestMarshaller();
+            var unmarshaller = GetMaintenanceWindowExecutionTaskInvocationResponseUnmarshaller.Instance;
+
+            return Invoke<GetMaintenanceWindowExecutionTaskInvocationRequest,GetMaintenanceWindowExecutionTaskInvocationResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetMaintenanceWindowExecutionTaskInvocation operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetMaintenanceWindowExecutionTaskInvocation operation on AmazonSimpleSystemsManagementClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetMaintenanceWindowExecutionTaskInvocation
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetMaintenanceWindowExecutionTaskInvocation">REST API Reference for GetMaintenanceWindowExecutionTaskInvocation Operation</seealso>
+        public IAsyncResult BeginGetMaintenanceWindowExecutionTaskInvocation(GetMaintenanceWindowExecutionTaskInvocationRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new GetMaintenanceWindowExecutionTaskInvocationRequestMarshaller();
+            var unmarshaller = GetMaintenanceWindowExecutionTaskInvocationResponseUnmarshaller.Instance;
+
+            return BeginInvoke<GetMaintenanceWindowExecutionTaskInvocationRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetMaintenanceWindowExecutionTaskInvocation operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetMaintenanceWindowExecutionTaskInvocation.</param>
+        /// 
+        /// <returns>Returns a  GetMaintenanceWindowExecutionTaskInvocationResult from SimpleSystemsManagement.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetMaintenanceWindowExecutionTaskInvocation">REST API Reference for GetMaintenanceWindowExecutionTaskInvocation Operation</seealso>
+        public  GetMaintenanceWindowExecutionTaskInvocationResponse EndGetMaintenanceWindowExecutionTaskInvocation(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetMaintenanceWindowExecutionTaskInvocationResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetMaintenanceWindowTask
+
+        /// <summary>
+        /// Lists the tasks in a Maintenance Window.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetMaintenanceWindowTask service method.</param>
+        /// 
+        /// <returns>The response from the GetMaintenanceWindowTask service method, as returned by SimpleSystemsManagement.</returns>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.DoesNotExistException">
+        /// Error returned when the ID specified for a resource (e.g. a Maintenance Window) doesn't
+        /// exist.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetMaintenanceWindowTask">REST API Reference for GetMaintenanceWindowTask Operation</seealso>
+        public GetMaintenanceWindowTaskResponse GetMaintenanceWindowTask(GetMaintenanceWindowTaskRequest request)
+        {
+            var marshaller = new GetMaintenanceWindowTaskRequestMarshaller();
+            var unmarshaller = GetMaintenanceWindowTaskResponseUnmarshaller.Instance;
+
+            return Invoke<GetMaintenanceWindowTaskRequest,GetMaintenanceWindowTaskResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetMaintenanceWindowTask operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetMaintenanceWindowTask operation on AmazonSimpleSystemsManagementClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetMaintenanceWindowTask
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetMaintenanceWindowTask">REST API Reference for GetMaintenanceWindowTask Operation</seealso>
+        public IAsyncResult BeginGetMaintenanceWindowTask(GetMaintenanceWindowTaskRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new GetMaintenanceWindowTaskRequestMarshaller();
+            var unmarshaller = GetMaintenanceWindowTaskResponseUnmarshaller.Instance;
+
+            return BeginInvoke<GetMaintenanceWindowTaskRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetMaintenanceWindowTask operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetMaintenanceWindowTask.</param>
+        /// 
+        /// <returns>Returns a  GetMaintenanceWindowTaskResult from SimpleSystemsManagement.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetMaintenanceWindowTask">REST API Reference for GetMaintenanceWindowTask Operation</seealso>
+        public  GetMaintenanceWindowTaskResponse EndGetMaintenanceWindowTask(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetMaintenanceWindowTaskResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  GetParameter
 
         /// <summary>
@@ -5289,6 +5414,141 @@ namespace Amazon.SimpleSystemsManagement
 
         #endregion
         
+        #region  ListComplianceItems
+
+        /// <summary>
+        /// For a specified resource ID, this API returns a list of compliance statuses for different
+        /// resource types. Currently, you can only specify one resource ID per call. List results
+        /// depend on the criteria specified in the filter.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListComplianceItems service method.</param>
+        /// 
+        /// <returns>The response from the ListComplianceItems service method, as returned by SimpleSystemsManagement.</returns>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidFilterException">
+        /// The filter name is not valid. Verify the you entered the correct name and try again.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidNextTokenException">
+        /// The specified token is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidResourceIdException">
+        /// The resource ID is not valid. Verify that you entered the correct ID and try again.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidResourceTypeException">
+        /// The resource type is not valid. If you are attempting to tag an instance, the instance
+        /// must be a registered, managed instance.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListComplianceItems">REST API Reference for ListComplianceItems Operation</seealso>
+        public ListComplianceItemsResponse ListComplianceItems(ListComplianceItemsRequest request)
+        {
+            var marshaller = new ListComplianceItemsRequestMarshaller();
+            var unmarshaller = ListComplianceItemsResponseUnmarshaller.Instance;
+
+            return Invoke<ListComplianceItemsRequest,ListComplianceItemsResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListComplianceItems operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListComplianceItems operation on AmazonSimpleSystemsManagementClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListComplianceItems
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListComplianceItems">REST API Reference for ListComplianceItems Operation</seealso>
+        public IAsyncResult BeginListComplianceItems(ListComplianceItemsRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new ListComplianceItemsRequestMarshaller();
+            var unmarshaller = ListComplianceItemsResponseUnmarshaller.Instance;
+
+            return BeginInvoke<ListComplianceItemsRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListComplianceItems operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListComplianceItems.</param>
+        /// 
+        /// <returns>Returns a  ListComplianceItemsResult from SimpleSystemsManagement.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListComplianceItems">REST API Reference for ListComplianceItems Operation</seealso>
+        public  ListComplianceItemsResponse EndListComplianceItems(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListComplianceItemsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListComplianceSummaries
+
+        /// <summary>
+        /// Returns a summary count of compliant and non-compliant resources for a compliance
+        /// type. For example, this call can return State Manager associations, patches, or custom
+        /// compliance types according to the filter criteria you specify.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListComplianceSummaries service method.</param>
+        /// 
+        /// <returns>The response from the ListComplianceSummaries service method, as returned by SimpleSystemsManagement.</returns>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidFilterException">
+        /// The filter name is not valid. Verify the you entered the correct name and try again.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidNextTokenException">
+        /// The specified token is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListComplianceSummaries">REST API Reference for ListComplianceSummaries Operation</seealso>
+        public ListComplianceSummariesResponse ListComplianceSummaries(ListComplianceSummariesRequest request)
+        {
+            var marshaller = new ListComplianceSummariesRequestMarshaller();
+            var unmarshaller = ListComplianceSummariesResponseUnmarshaller.Instance;
+
+            return Invoke<ListComplianceSummariesRequest,ListComplianceSummariesResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListComplianceSummaries operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListComplianceSummaries operation on AmazonSimpleSystemsManagementClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListComplianceSummaries
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListComplianceSummaries">REST API Reference for ListComplianceSummaries Operation</seealso>
+        public IAsyncResult BeginListComplianceSummaries(ListComplianceSummariesRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new ListComplianceSummariesRequestMarshaller();
+            var unmarshaller = ListComplianceSummariesResponseUnmarshaller.Instance;
+
+            return BeginInvoke<ListComplianceSummariesRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListComplianceSummaries operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListComplianceSummaries.</param>
+        /// 
+        /// <returns>Returns a  ListComplianceSummariesResult from SimpleSystemsManagement.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListComplianceSummaries">REST API Reference for ListComplianceSummaries Operation</seealso>
+        public  ListComplianceSummariesResponse EndListComplianceSummaries(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListComplianceSummariesResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ListDocuments
 
         /// <summary>
@@ -5522,6 +5782,70 @@ namespace Amazon.SimpleSystemsManagement
 
         #endregion
         
+        #region  ListResourceComplianceSummaries
+
+        /// <summary>
+        /// Returns a resource-level summary count. The summary includes information about compliant
+        /// and non-compliant statuses and detailed compliance-item severity counts, according
+        /// to the filter criteria you specify.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListResourceComplianceSummaries service method.</param>
+        /// 
+        /// <returns>The response from the ListResourceComplianceSummaries service method, as returned by SimpleSystemsManagement.</returns>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidFilterException">
+        /// The filter name is not valid. Verify the you entered the correct name and try again.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidNextTokenException">
+        /// The specified token is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListResourceComplianceSummaries">REST API Reference for ListResourceComplianceSummaries Operation</seealso>
+        public ListResourceComplianceSummariesResponse ListResourceComplianceSummaries(ListResourceComplianceSummariesRequest request)
+        {
+            var marshaller = new ListResourceComplianceSummariesRequestMarshaller();
+            var unmarshaller = ListResourceComplianceSummariesResponseUnmarshaller.Instance;
+
+            return Invoke<ListResourceComplianceSummariesRequest,ListResourceComplianceSummariesResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListResourceComplianceSummaries operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListResourceComplianceSummaries operation on AmazonSimpleSystemsManagementClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListResourceComplianceSummaries
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListResourceComplianceSummaries">REST API Reference for ListResourceComplianceSummaries Operation</seealso>
+        public IAsyncResult BeginListResourceComplianceSummaries(ListResourceComplianceSummariesRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new ListResourceComplianceSummariesRequestMarshaller();
+            var unmarshaller = ListResourceComplianceSummariesResponseUnmarshaller.Instance;
+
+            return BeginInvoke<ListResourceComplianceSummariesRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListResourceComplianceSummaries operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListResourceComplianceSummaries.</param>
+        /// 
+        /// <returns>Returns a  ListResourceComplianceSummariesResult from SimpleSystemsManagement.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListResourceComplianceSummaries">REST API Reference for ListResourceComplianceSummaries Operation</seealso>
+        public  ListResourceComplianceSummariesResponse EndListResourceComplianceSummaries(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListResourceComplianceSummariesResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ListResourceDataSync
 
         /// <summary>
@@ -5730,6 +6054,85 @@ namespace Amazon.SimpleSystemsManagement
 
         #endregion
         
+        #region  PutComplianceItems
+
+        /// <summary>
+        /// Registers a compliance type and other compliance details on a designated resource.
+        /// This API lets you register custom compliance details with a resource. This call overwrites
+        /// existing compliance information on the resource, so you must provide a full list of
+        /// compliance items each time you send the request.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutComplianceItems service method.</param>
+        /// 
+        /// <returns>The response from the PutComplianceItems service method, as returned by SimpleSystemsManagement.</returns>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.ComplianceTypeCountLimitExceededException">
+        /// You specified too many custom compliance types. You can specify a maximum of 10 different
+        /// types.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidItemContentException">
+        /// One or more content items is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidResourceIdException">
+        /// The resource ID is not valid. Verify that you entered the correct ID and try again.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidResourceTypeException">
+        /// The resource type is not valid. If you are attempting to tag an instance, the instance
+        /// must be a registered, managed instance.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.ItemSizeLimitExceededException">
+        /// The inventory item size has exceeded the size limit.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.TotalSizeLimitExceededException">
+        /// The size of inventory data has exceeded the total size limit for the resource.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/PutComplianceItems">REST API Reference for PutComplianceItems Operation</seealso>
+        public PutComplianceItemsResponse PutComplianceItems(PutComplianceItemsRequest request)
+        {
+            var marshaller = new PutComplianceItemsRequestMarshaller();
+            var unmarshaller = PutComplianceItemsResponseUnmarshaller.Instance;
+
+            return Invoke<PutComplianceItemsRequest,PutComplianceItemsResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutComplianceItems operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutComplianceItems operation on AmazonSimpleSystemsManagementClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutComplianceItems
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/PutComplianceItems">REST API Reference for PutComplianceItems Operation</seealso>
+        public IAsyncResult BeginPutComplianceItems(PutComplianceItemsRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new PutComplianceItemsRequestMarshaller();
+            var unmarshaller = PutComplianceItemsResponseUnmarshaller.Instance;
+
+            return BeginInvoke<PutComplianceItemsRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  PutComplianceItems operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutComplianceItems.</param>
+        /// 
+        /// <returns>Returns a  PutComplianceItemsResult from SimpleSystemsManagement.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/PutComplianceItems">REST API Reference for PutComplianceItems Operation</seealso>
+        public  PutComplianceItemsResponse EndPutComplianceItems(IAsyncResult asyncResult)
+        {
+            return EndInvoke<PutComplianceItemsResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  PutInventory
 
         /// <summary>
@@ -5770,6 +6173,10 @@ namespace Amazon.SimpleSystemsManagement
         /// Invalid states are: Shutting-down and Terminated.
         /// </para>
         /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidInventoryItemContextException">
+        /// You specified invalid keys or values in the <code>Context</code> attribute for <code>InventoryItem</code>.
+        /// Verify the keys and values, and try again.
+        /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidItemContentException">
         /// One or more content items is not valid.
         /// </exception>
@@ -5782,8 +6189,16 @@ namespace Amazon.SimpleSystemsManagement
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.ItemSizeLimitExceededException">
         /// The inventory item size has exceeded the size limit.
         /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.SubTypeCountLimitExceededException">
+        /// The sub-type count exceeded the limit for the inventory type.
+        /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.TotalSizeLimitExceededException">
         /// The size of inventory data has exceeded the total size limit for the resource.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.UnsupportedInventoryItemContextException">
+        /// The <code>Context</code> attribute you specified for the <code>InventoryItem</code>
+        /// is not allowed for this inventory type. You can only use the <code>Context</code>
+        /// attribute with inventory types like <code>AWS:ComplianceItem</code>.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.UnsupportedInventorySchemaVersionException">
         /// Inventory item type schema version has to match supported versions in the service.
@@ -6143,6 +6558,10 @@ namespace Amazon.SimpleSystemsManagement
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.DoesNotExistException">
         /// Error returned when the ID specified for a resource (e.g. a Maintenance Window) doesn't
         /// exist.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.FeatureNotAvailableException">
+        /// You attempted to register a LAMBDA or STEP_FUNCTION task in a region where there corresponding
+        /// service is not available.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.IdempotentParameterMismatchException">
         /// Error returned when an idempotent operation is retried and the parameters don't match
@@ -7021,6 +7440,190 @@ namespace Amazon.SimpleSystemsManagement
         public  UpdateMaintenanceWindowResponse EndUpdateMaintenanceWindow(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateMaintenanceWindowResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpdateMaintenanceWindowTarget
+
+        /// <summary>
+        /// Modifies the target of an existing Maintenance Window. You can't change the target
+        /// type, but you can change the following:
+        /// 
+        ///  
+        /// <para>
+        /// The target from being an ID target to a Tag target, or a Tag target to an ID target.
+        /// </para>
+        ///  
+        /// <para>
+        /// The IDs of an ID target.
+        /// </para>
+        ///  
+        /// <para>
+        /// The tags of a Tag target.
+        /// </para>
+        ///  
+        /// <para>
+        /// The Owner.
+        /// </para>
+        ///  
+        /// <para>
+        /// The Name.
+        /// </para>
+        ///  
+        /// <para>
+        /// The Description.
+        /// </para>
+        ///  
+        /// <para>
+        /// Also note that if a parameter is null, then the corresponding field is not modified.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateMaintenanceWindowTarget service method.</param>
+        /// 
+        /// <returns>The response from the UpdateMaintenanceWindowTarget service method, as returned by SimpleSystemsManagement.</returns>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.DoesNotExistException">
+        /// Error returned when the ID specified for a resource (e.g. a Maintenance Window) doesn't
+        /// exist.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateMaintenanceWindowTarget">REST API Reference for UpdateMaintenanceWindowTarget Operation</seealso>
+        public UpdateMaintenanceWindowTargetResponse UpdateMaintenanceWindowTarget(UpdateMaintenanceWindowTargetRequest request)
+        {
+            var marshaller = new UpdateMaintenanceWindowTargetRequestMarshaller();
+            var unmarshaller = UpdateMaintenanceWindowTargetResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateMaintenanceWindowTargetRequest,UpdateMaintenanceWindowTargetResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateMaintenanceWindowTarget operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateMaintenanceWindowTarget operation on AmazonSimpleSystemsManagementClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateMaintenanceWindowTarget
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateMaintenanceWindowTarget">REST API Reference for UpdateMaintenanceWindowTarget Operation</seealso>
+        public IAsyncResult BeginUpdateMaintenanceWindowTarget(UpdateMaintenanceWindowTargetRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new UpdateMaintenanceWindowTargetRequestMarshaller();
+            var unmarshaller = UpdateMaintenanceWindowTargetResponseUnmarshaller.Instance;
+
+            return BeginInvoke<UpdateMaintenanceWindowTargetRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateMaintenanceWindowTarget operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateMaintenanceWindowTarget.</param>
+        /// 
+        /// <returns>Returns a  UpdateMaintenanceWindowTargetResult from SimpleSystemsManagement.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateMaintenanceWindowTarget">REST API Reference for UpdateMaintenanceWindowTarget Operation</seealso>
+        public  UpdateMaintenanceWindowTargetResponse EndUpdateMaintenanceWindowTarget(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateMaintenanceWindowTargetResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpdateMaintenanceWindowTask
+
+        /// <summary>
+        /// Modifies a task assigned to a Maintenance Window. You can't change the task type,
+        /// but you can change the following:
+        /// 
+        ///  
+        /// <para>
+        /// The Task Arn. For example, you can change a RUN_COMMAND task from AWS-RunPowerShellScript
+        /// to AWS-RunShellScript.
+        /// </para>
+        ///  
+        /// <para>
+        /// The service role ARN.
+        /// </para>
+        ///  
+        /// <para>
+        /// The task parameters.
+        /// </para>
+        ///  
+        /// <para>
+        /// The task priority.
+        /// </para>
+        ///  
+        /// <para>
+        /// The task MaxConcurrency and MaxErrors.
+        /// </para>
+        ///  
+        /// <para>
+        /// The log location.
+        /// </para>
+        ///  
+        /// <para>
+        /// If a parameter is null, then the corresponding field is not modified. Also, if you
+        /// set Replace to true, then all fields required by the RegisterTaskWithMaintenanceWindow
+        /// operation are required for this request. Optional fields that aren't specified are
+        /// be set to null.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateMaintenanceWindowTask service method.</param>
+        /// 
+        /// <returns>The response from the UpdateMaintenanceWindowTask service method, as returned by SimpleSystemsManagement.</returns>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.DoesNotExistException">
+        /// Error returned when the ID specified for a resource (e.g. a Maintenance Window) doesn't
+        /// exist.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateMaintenanceWindowTask">REST API Reference for UpdateMaintenanceWindowTask Operation</seealso>
+        public UpdateMaintenanceWindowTaskResponse UpdateMaintenanceWindowTask(UpdateMaintenanceWindowTaskRequest request)
+        {
+            var marshaller = new UpdateMaintenanceWindowTaskRequestMarshaller();
+            var unmarshaller = UpdateMaintenanceWindowTaskResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateMaintenanceWindowTaskRequest,UpdateMaintenanceWindowTaskResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateMaintenanceWindowTask operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateMaintenanceWindowTask operation on AmazonSimpleSystemsManagementClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateMaintenanceWindowTask
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateMaintenanceWindowTask">REST API Reference for UpdateMaintenanceWindowTask Operation</seealso>
+        public IAsyncResult BeginUpdateMaintenanceWindowTask(UpdateMaintenanceWindowTaskRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new UpdateMaintenanceWindowTaskRequestMarshaller();
+            var unmarshaller = UpdateMaintenanceWindowTaskResponseUnmarshaller.Instance;
+
+            return BeginInvoke<UpdateMaintenanceWindowTaskRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateMaintenanceWindowTask operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateMaintenanceWindowTask.</param>
+        /// 
+        /// <returns>Returns a  UpdateMaintenanceWindowTaskResult from SimpleSystemsManagement.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateMaintenanceWindowTask">REST API Reference for UpdateMaintenanceWindowTask Operation</seealso>
+        public  UpdateMaintenanceWindowTaskResponse EndUpdateMaintenanceWindowTask(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateMaintenanceWindowTaskResponse>(asyncResult);
         }
 
         #endregion

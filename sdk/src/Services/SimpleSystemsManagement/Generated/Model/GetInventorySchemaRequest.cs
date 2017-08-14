@@ -36,6 +36,7 @@ namespace Amazon.SimpleSystemsManagement.Model
     {
         private int? _maxResults;
         private string _nextToken;
+        private bool? _subType;
         private string _typeName;
 
         /// <summary>
@@ -74,6 +75,24 @@ namespace Amazon.SimpleSystemsManagement.Model
         internal bool IsSetNextToken()
         {
             return this._nextToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SubType. 
+        /// <para>
+        /// Returns the sub-type schema for a specified inventory type.
+        /// </para>
+        /// </summary>
+        public bool SubType
+        {
+            get { return this._subType.GetValueOrDefault(); }
+            set { this._subType = value; }
+        }
+
+        // Check to see if SubType property is set
+        internal bool IsSetSubType()
+        {
+            return this._subType.HasValue; 
         }
 
         /// <summary>

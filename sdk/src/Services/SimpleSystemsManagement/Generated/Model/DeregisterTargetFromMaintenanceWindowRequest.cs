@@ -33,8 +33,29 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// </summary>
     public partial class DeregisterTargetFromMaintenanceWindowRequest : AmazonSimpleSystemsManagementRequest
     {
+        private bool? _safe;
         private string _windowId;
         private string _windowTargetId;
+
+        /// <summary>
+        /// Gets and sets the property Safe. 
+        /// <para>
+        /// The system checks if the target is being referenced by a task. If the target is being
+        /// referenced, the system returns and error and does not deregister the target from the
+        /// Maintenance Window.
+        /// </para>
+        /// </summary>
+        public bool Safe
+        {
+            get { return this._safe.GetValueOrDefault(); }
+            set { this._safe = value; }
+        }
+
+        // Check to see if Safe property is set
+        internal bool IsSetSafe()
+        {
+            return this._safe.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property WindowId. 

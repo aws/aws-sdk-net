@@ -76,6 +76,20 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.ContentHash);
             }
 
+            if(requestObject.IsSetContext())
+            {
+                context.Writer.WritePropertyName("Context");
+                context.Writer.WriteObjectStart();
+                foreach (var requestObjectContextKvp in requestObject.Context)
+                {
+                    context.Writer.WritePropertyName(requestObjectContextKvp.Key);
+                    var requestObjectContextValue = requestObjectContextKvp.Value;
+
+                        context.Writer.Write(requestObjectContextValue);
+                }
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetSchemaVersion())
             {
                 context.Writer.WritePropertyName("SchemaVersion");

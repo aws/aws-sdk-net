@@ -33,6 +33,7 @@ namespace Amazon.SimpleSystemsManagement.Model
     public partial class MaintenanceWindowIdentity
     {
         private int? _cutoff;
+        private string _description;
         private int? _duration;
         private bool? _enabled;
         private string _name;
@@ -55,6 +56,24 @@ namespace Amazon.SimpleSystemsManagement.Model
         internal bool IsSetCutoff()
         {
             return this._cutoff.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Description. 
+        /// <para>
+        /// A description of the Maintenance Window.
+        /// </para>
+        /// </summary>
+        public string Description
+        {
+            get { return this._description; }
+            set { this._description = value; }
+        }
+
+        // Check to see if Description property is set
+        internal bool IsSetDescription()
+        {
+            return this._description != null;
         }
 
         /// <summary>

@@ -35,9 +35,11 @@ namespace Amazon.SimpleSystemsManagement.Model
     {
         private bool? _allowUnassociatedTargets;
         private int? _cutoff;
+        private string _description;
         private int? _duration;
         private bool? _enabled;
         private string _name;
+        private bool? _replace;
         private string _schedule;
         private string _windowId;
 
@@ -77,6 +79,24 @@ namespace Amazon.SimpleSystemsManagement.Model
         internal bool IsSetCutoff()
         {
             return this._cutoff.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Description. 
+        /// <para>
+        /// An optional description for the update request.
+        /// </para>
+        /// </summary>
+        public string Description
+        {
+            get { return this._description; }
+            set { this._description = value; }
+        }
+
+        // Check to see if Description property is set
+        internal bool IsSetDescription()
+        {
+            return this._description != null;
         }
 
         /// <summary>
@@ -131,6 +151,26 @@ namespace Amazon.SimpleSystemsManagement.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Replace. 
+        /// <para>
+        /// If you specify True, then all fields that are required by the CreateMaintenanceWindow
+        /// API are also required for this API request. Optional fields that are not specified
+        /// will be set to null. 
+        /// </para>
+        /// </summary>
+        public bool Replace
+        {
+            get { return this._replace.GetValueOrDefault(); }
+            set { this._replace = value; }
+        }
+
+        // Check to see if Replace property is set
+        internal bool IsSetReplace()
+        {
+            return this._replace.HasValue; 
         }
 
         /// <summary>

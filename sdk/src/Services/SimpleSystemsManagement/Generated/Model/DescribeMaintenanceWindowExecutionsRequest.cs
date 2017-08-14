@@ -29,9 +29,9 @@ namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeMaintenanceWindowExecutions operation.
-    /// Lists the executions of a Maintenance Window (meaning, information about when the
-    /// Maintenance Window was scheduled to be active and information about tasks registered
-    /// and run with the Maintenance Window).
+    /// Lists the executions of a Maintenance Window. This includes information about when
+    /// the Maintenance Window was scheduled to be active, and information about tasks registered
+    /// and run with the Maintenance Window.
     /// </summary>
     public partial class DescribeMaintenanceWindowExecutionsRequest : AmazonSimpleSystemsManagementRequest
     {

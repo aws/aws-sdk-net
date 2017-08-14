@@ -32,11 +32,49 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// </summary>
     public partial class MaintenanceWindowTarget
     {
+        private string _description;
+        private string _name;
         private string _ownerInformation;
         private MaintenanceWindowResourceType _resourceType;
         private List<Target> _targets = new List<Target>();
         private string _windowId;
         private string _windowTargetId;
+
+        /// <summary>
+        /// Gets and sets the property Description. 
+        /// <para>
+        /// A description of the target.
+        /// </para>
+        /// </summary>
+        public string Description
+        {
+            get { return this._description; }
+            set { this._description = value; }
+        }
+
+        // Check to see if Description property is set
+        internal bool IsSetDescription()
+        {
+            return this._description != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Name. 
+        /// <para>
+        /// The target name.
+        /// </para>
+        /// </summary>
+        public string Name
+        {
+            get { return this._name; }
+            set { this._name = value; }
+        }
+
+        // Check to see if Name property is set
+        internal bool IsSetName()
+        {
+            return this._name != null;
+        }
 
         /// <summary>
         /// Gets and sets the property OwnerInformation. 

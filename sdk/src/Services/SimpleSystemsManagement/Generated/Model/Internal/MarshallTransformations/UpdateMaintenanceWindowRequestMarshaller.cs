@@ -79,6 +79,12 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Cutoff);
                 }
 
+                if(publicRequest.IsSetDescription())
+                {
+                    context.Writer.WritePropertyName("Description");
+                    context.Writer.Write(publicRequest.Description);
+                }
+
                 if(publicRequest.IsSetDuration())
                 {
                     context.Writer.WritePropertyName("Duration");
@@ -95,6 +101,12 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
                 {
                     context.Writer.WritePropertyName("Name");
                     context.Writer.Write(publicRequest.Name);
+                }
+
+                if(publicRequest.IsSetReplace())
+                {
+                    context.Writer.WritePropertyName("Replace");
+                    context.Writer.Write(publicRequest.Replace);
                 }
 
                 if(publicRequest.IsSetSchedule())

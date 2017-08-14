@@ -2486,6 +2486,70 @@ namespace Amazon.SimpleSystemsManagement
 
         #endregion
         
+        #region  GetMaintenanceWindowExecutionTaskInvocation
+
+        internal GetMaintenanceWindowExecutionTaskInvocationResponse GetMaintenanceWindowExecutionTaskInvocation(GetMaintenanceWindowExecutionTaskInvocationRequest request)
+        {
+            var marshaller = new GetMaintenanceWindowExecutionTaskInvocationRequestMarshaller();
+            var unmarshaller = GetMaintenanceWindowExecutionTaskInvocationResponseUnmarshaller.Instance;
+
+            return Invoke<GetMaintenanceWindowExecutionTaskInvocationRequest,GetMaintenanceWindowExecutionTaskInvocationResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetMaintenanceWindowExecutionTaskInvocation operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetMaintenanceWindowExecutionTaskInvocation operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetMaintenanceWindowExecutionTaskInvocation">REST API Reference for GetMaintenanceWindowExecutionTaskInvocation Operation</seealso>
+        public Task<GetMaintenanceWindowExecutionTaskInvocationResponse> GetMaintenanceWindowExecutionTaskInvocationAsync(GetMaintenanceWindowExecutionTaskInvocationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new GetMaintenanceWindowExecutionTaskInvocationRequestMarshaller();
+            var unmarshaller = GetMaintenanceWindowExecutionTaskInvocationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetMaintenanceWindowExecutionTaskInvocationRequest,GetMaintenanceWindowExecutionTaskInvocationResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetMaintenanceWindowTask
+
+        internal GetMaintenanceWindowTaskResponse GetMaintenanceWindowTask(GetMaintenanceWindowTaskRequest request)
+        {
+            var marshaller = new GetMaintenanceWindowTaskRequestMarshaller();
+            var unmarshaller = GetMaintenanceWindowTaskResponseUnmarshaller.Instance;
+
+            return Invoke<GetMaintenanceWindowTaskRequest,GetMaintenanceWindowTaskResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetMaintenanceWindowTask operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetMaintenanceWindowTask operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetMaintenanceWindowTask">REST API Reference for GetMaintenanceWindowTask Operation</seealso>
+        public Task<GetMaintenanceWindowTaskResponse> GetMaintenanceWindowTaskAsync(GetMaintenanceWindowTaskRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new GetMaintenanceWindowTaskRequestMarshaller();
+            var unmarshaller = GetMaintenanceWindowTaskResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetMaintenanceWindowTaskRequest,GetMaintenanceWindowTaskResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetParameter
 
         internal GetParameterResponse GetParameter(GetParameterRequest request)
@@ -3000,6 +3064,70 @@ namespace Amazon.SimpleSystemsManagement
 
         #endregion
         
+        #region  ListComplianceItems
+
+        internal ListComplianceItemsResponse ListComplianceItems(ListComplianceItemsRequest request)
+        {
+            var marshaller = new ListComplianceItemsRequestMarshaller();
+            var unmarshaller = ListComplianceItemsResponseUnmarshaller.Instance;
+
+            return Invoke<ListComplianceItemsRequest,ListComplianceItemsResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListComplianceItems operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListComplianceItems operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListComplianceItems">REST API Reference for ListComplianceItems Operation</seealso>
+        public Task<ListComplianceItemsResponse> ListComplianceItemsAsync(ListComplianceItemsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new ListComplianceItemsRequestMarshaller();
+            var unmarshaller = ListComplianceItemsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListComplianceItemsRequest,ListComplianceItemsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListComplianceSummaries
+
+        internal ListComplianceSummariesResponse ListComplianceSummaries(ListComplianceSummariesRequest request)
+        {
+            var marshaller = new ListComplianceSummariesRequestMarshaller();
+            var unmarshaller = ListComplianceSummariesResponseUnmarshaller.Instance;
+
+            return Invoke<ListComplianceSummariesRequest,ListComplianceSummariesResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListComplianceSummaries operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListComplianceSummaries operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListComplianceSummaries">REST API Reference for ListComplianceSummaries Operation</seealso>
+        public Task<ListComplianceSummariesResponse> ListComplianceSummariesAsync(ListComplianceSummariesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new ListComplianceSummariesRequestMarshaller();
+            var unmarshaller = ListComplianceSummariesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListComplianceSummariesRequest,ListComplianceSummariesResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListDocuments
 
         internal ListDocumentsResponse ListDocuments()
@@ -3124,6 +3252,38 @@ namespace Amazon.SimpleSystemsManagement
 
         #endregion
         
+        #region  ListResourceComplianceSummaries
+
+        internal ListResourceComplianceSummariesResponse ListResourceComplianceSummaries(ListResourceComplianceSummariesRequest request)
+        {
+            var marshaller = new ListResourceComplianceSummariesRequestMarshaller();
+            var unmarshaller = ListResourceComplianceSummariesResponseUnmarshaller.Instance;
+
+            return Invoke<ListResourceComplianceSummariesRequest,ListResourceComplianceSummariesResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListResourceComplianceSummaries operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListResourceComplianceSummaries operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListResourceComplianceSummaries">REST API Reference for ListResourceComplianceSummaries Operation</seealso>
+        public Task<ListResourceComplianceSummariesResponse> ListResourceComplianceSummariesAsync(ListResourceComplianceSummariesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new ListResourceComplianceSummariesRequestMarshaller();
+            var unmarshaller = ListResourceComplianceSummariesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListResourceComplianceSummariesRequest,ListResourceComplianceSummariesResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListResourceDataSync
 
         internal ListResourceDataSyncResponse ListResourceDataSync(ListResourceDataSyncRequest request)
@@ -3215,6 +3375,38 @@ namespace Amazon.SimpleSystemsManagement
             var unmarshaller = ModifyDocumentPermissionResponseUnmarshaller.Instance;
 
             return InvokeAsync<ModifyDocumentPermissionRequest,ModifyDocumentPermissionResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  PutComplianceItems
+
+        internal PutComplianceItemsResponse PutComplianceItems(PutComplianceItemsRequest request)
+        {
+            var marshaller = new PutComplianceItemsRequestMarshaller();
+            var unmarshaller = PutComplianceItemsResponseUnmarshaller.Instance;
+
+            return Invoke<PutComplianceItemsRequest,PutComplianceItemsResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutComplianceItems operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutComplianceItems operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/PutComplianceItems">REST API Reference for PutComplianceItems Operation</seealso>
+        public Task<PutComplianceItemsResponse> PutComplianceItemsAsync(PutComplianceItemsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new PutComplianceItemsRequestMarshaller();
+            var unmarshaller = PutComplianceItemsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<PutComplianceItemsRequest,PutComplianceItemsResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -3805,6 +3997,70 @@ namespace Amazon.SimpleSystemsManagement
             var unmarshaller = UpdateMaintenanceWindowResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdateMaintenanceWindowRequest,UpdateMaintenanceWindowResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateMaintenanceWindowTarget
+
+        internal UpdateMaintenanceWindowTargetResponse UpdateMaintenanceWindowTarget(UpdateMaintenanceWindowTargetRequest request)
+        {
+            var marshaller = new UpdateMaintenanceWindowTargetRequestMarshaller();
+            var unmarshaller = UpdateMaintenanceWindowTargetResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateMaintenanceWindowTargetRequest,UpdateMaintenanceWindowTargetResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateMaintenanceWindowTarget operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateMaintenanceWindowTarget operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateMaintenanceWindowTarget">REST API Reference for UpdateMaintenanceWindowTarget Operation</seealso>
+        public Task<UpdateMaintenanceWindowTargetResponse> UpdateMaintenanceWindowTargetAsync(UpdateMaintenanceWindowTargetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new UpdateMaintenanceWindowTargetRequestMarshaller();
+            var unmarshaller = UpdateMaintenanceWindowTargetResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateMaintenanceWindowTargetRequest,UpdateMaintenanceWindowTargetResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateMaintenanceWindowTask
+
+        internal UpdateMaintenanceWindowTaskResponse UpdateMaintenanceWindowTask(UpdateMaintenanceWindowTaskRequest request)
+        {
+            var marshaller = new UpdateMaintenanceWindowTaskRequestMarshaller();
+            var unmarshaller = UpdateMaintenanceWindowTaskResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateMaintenanceWindowTaskRequest,UpdateMaintenanceWindowTaskResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateMaintenanceWindowTask operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateMaintenanceWindowTask operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateMaintenanceWindowTask">REST API Reference for UpdateMaintenanceWindowTask Operation</seealso>
+        public Task<UpdateMaintenanceWindowTaskResponse> UpdateMaintenanceWindowTaskAsync(UpdateMaintenanceWindowTaskRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new UpdateMaintenanceWindowTaskRequestMarshaller();
+            var unmarshaller = UpdateMaintenanceWindowTaskResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateMaintenanceWindowTaskRequest,UpdateMaintenanceWindowTaskResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 

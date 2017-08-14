@@ -79,6 +79,12 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.NextToken);
                 }
 
+                if(publicRequest.IsSetSubType())
+                {
+                    context.Writer.WritePropertyName("SubType");
+                    context.Writer.Write(publicRequest.SubType);
+                }
+
                 if(publicRequest.IsSetTypeName())
                 {
                     context.Writer.WritePropertyName("TypeName");

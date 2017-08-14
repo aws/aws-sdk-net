@@ -36,6 +36,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         private bool? _allowUnassociatedTargets;
         private string _clientToken;
         private int? _cutoff;
+        private string _description;
         private int? _duration;
         private string _name;
         private string _schedule;
@@ -94,6 +95,25 @@ namespace Amazon.SimpleSystemsManagement.Model
         internal bool IsSetCutoff()
         {
             return this._cutoff.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Description. 
+        /// <para>
+        /// An optional description for the Maintenance Window. We recommend specifying a description
+        /// to help your organize your Maintenance Windows. 
+        /// </para>
+        /// </summary>
+        public string Description
+        {
+            get { return this._description; }
+            set { this._description = value; }
+        }
+
+        // Check to see if Description property is set
+        internal bool IsSetDescription()
+        {
+            return this._description != null;
         }
 
         /// <summary>

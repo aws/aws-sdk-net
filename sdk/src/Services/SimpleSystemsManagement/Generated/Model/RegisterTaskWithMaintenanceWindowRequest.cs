@@ -34,13 +34,16 @@ namespace Amazon.SimpleSystemsManagement.Model
     public partial class RegisterTaskWithMaintenanceWindowRequest : AmazonSimpleSystemsManagementRequest
     {
         private string _clientToken;
+        private string _description;
         private LoggingInfo _loggingInfo;
         private string _maxConcurrency;
         private string _maxErrors;
+        private string _name;
         private int? _priority;
         private string _serviceRoleArn;
         private List<Target> _targets = new List<Target>();
         private string _taskArn;
+        private MaintenanceWindowTaskInvocationParameters _taskInvocationParameters;
         private Dictionary<string, MaintenanceWindowTaskParameterValueExpression> _taskParameters = new Dictionary<string, MaintenanceWindowTaskParameterValueExpression>();
         private MaintenanceWindowTaskType _taskType;
         private string _windowId;
@@ -61,6 +64,24 @@ namespace Amazon.SimpleSystemsManagement.Model
         internal bool IsSetClientToken()
         {
             return this._clientToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Description. 
+        /// <para>
+        /// An optional description for the task.
+        /// </para>
+        /// </summary>
+        public string Description
+        {
+            get { return this._description; }
+            set { this._description = value; }
+        }
+
+        // Check to see if Description property is set
+        internal bool IsSetDescription()
+        {
+            return this._description != null;
         }
 
         /// <summary>
@@ -116,6 +137,24 @@ namespace Amazon.SimpleSystemsManagement.Model
         internal bool IsSetMaxErrors()
         {
             return this._maxErrors != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Name. 
+        /// <para>
+        /// An optional name for the task.
+        /// </para>
+        /// </summary>
+        public string Name
+        {
+            get { return this._name; }
+            set { this._name = value; }
+        }
+
+        // Check to see if Name property is set
+        internal bool IsSetName()
+        {
+            return this._name != null;
         }
 
         /// <summary>
@@ -191,6 +230,25 @@ namespace Amazon.SimpleSystemsManagement.Model
         internal bool IsSetTaskArn()
         {
             return this._taskArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TaskInvocationParameters. 
+        /// <para>
+        /// Parameters the task should use during execution. Populate only the fields that match
+        /// the task type. All other fields should be empty. 
+        /// </para>
+        /// </summary>
+        public MaintenanceWindowTaskInvocationParameters TaskInvocationParameters
+        {
+            get { return this._taskInvocationParameters; }
+            set { this._taskInvocationParameters = value; }
+        }
+
+        // Check to see if TaskInvocationParameters property is set
+        internal bool IsSetTaskInvocationParameters()
+        {
+            return this._taskInvocationParameters != null;
         }
 
         /// <summary>

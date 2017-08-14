@@ -32,9 +32,11 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// </summary>
     public partial class MaintenanceWindowTask
     {
+        private string _description;
         private LoggingInfo _loggingInfo;
         private string _maxConcurrency;
         private string _maxErrors;
+        private string _name;
         private int? _priority;
         private string _serviceRoleArn;
         private List<Target> _targets = new List<Target>();
@@ -43,6 +45,24 @@ namespace Amazon.SimpleSystemsManagement.Model
         private MaintenanceWindowTaskType _type;
         private string _windowId;
         private string _windowTaskId;
+
+        /// <summary>
+        /// Gets and sets the property Description. 
+        /// <para>
+        /// A description of the task.
+        /// </para>
+        /// </summary>
+        public string Description
+        {
+            get { return this._description; }
+            set { this._description = value; }
+        }
+
+        // Check to see if Description property is set
+        internal bool IsSetDescription()
+        {
+            return this._description != null;
+        }
 
         /// <summary>
         /// Gets and sets the property LoggingInfo. 
@@ -99,11 +119,28 @@ namespace Amazon.SimpleSystemsManagement.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Name. 
+        /// <para>
+        /// The task name.
+        /// </para>
+        /// </summary>
+        public string Name
+        {
+            get { return this._name; }
+            set { this._name = value; }
+        }
+
+        // Check to see if Name property is set
+        internal bool IsSetName()
+        {
+            return this._name != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Priority. 
         /// <para>
-        /// The priority of the task in the Maintenance Window, the lower the number the higher
-        /// the priority. Tasks in a Maintenance Window are scheduled in priority order with tasks
-        /// that have the same priority scheduled in parallel.
+        /// The priority of the task in the Maintenance Window. The lower the number, the higher
+        /// the priority. Tasks that have the same priority are scheduled in parallel.
         /// </para>
         /// </summary>
         public int Priority
@@ -158,7 +195,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property TaskArn. 
         /// <para>
-        /// The ARN of the task to execute.
+        /// TaskArn is the resource that the task uses during execution. For RUN_COMMAND and AUTOMATION
+        /// task types, the TaskArn is the SSM Document Name/ARN. For LAMBDA tasks, it's the Function
+        /// Name/ARN. For STEP_FUNCTION tasks, it's the State Machine ARN.
         /// </para>
         /// </summary>
         public string TaskArn
@@ -194,7 +233,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The type of task.
+        /// The type of task. The type can be one of the following: RUN_COMMAND, AUTOMATION, LAMBDA,
+        /// or STEP_FUNCTION.
         /// </para>
         /// </summary>
         public MaintenanceWindowTaskType Type

@@ -35,6 +35,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         private string _captureTime;
         private List<Dictionary<string, string>> _content = new List<Dictionary<string, string>>();
         private string _contentHash;
+        private Dictionary<string, string> _context = new Dictionary<string, string>();
         private string _schemaVersion;
         private string _typeName;
 
@@ -92,6 +93,26 @@ namespace Amazon.SimpleSystemsManagement.Model
         internal bool IsSetContentHash()
         {
             return this._contentHash != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Context. 
+        /// <para>
+        /// A map of associated properties for a specified inventory type. For example, with this
+        /// attribute, you can specify the <code>ExecutionId</code>, <code>ExecutionType</code>,
+        /// <code>ComplianceType</code> properties of the <code>AWS:ComplianceItem</code> type.
+        /// </para>
+        /// </summary>
+        public Dictionary<string, string> Context
+        {
+            get { return this._context; }
+            set { this._context = value; }
+        }
+
+        // Check to see if Context property is set
+        internal bool IsSetContext()
+        {
+            return this._context != null && this._context.Count > 0; 
         }
 
         /// <summary>

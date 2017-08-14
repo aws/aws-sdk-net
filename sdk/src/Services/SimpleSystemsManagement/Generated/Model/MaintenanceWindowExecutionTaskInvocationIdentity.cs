@@ -42,6 +42,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         private MaintenanceWindowExecutionStatus _status;
         private string _statusDetails;
         private string _taskExecutionId;
+        private MaintenanceWindowTaskType _taskType;
         private string _windowExecutionId;
         private string _windowTargetId;
 
@@ -208,6 +209,24 @@ namespace Amazon.SimpleSystemsManagement.Model
         internal bool IsSetTaskExecutionId()
         {
             return this._taskExecutionId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TaskType. 
+        /// <para>
+        /// The task type.
+        /// </para>
+        /// </summary>
+        public MaintenanceWindowTaskType TaskType
+        {
+            get { return this._taskType; }
+            set { this._taskType = value; }
+        }
+
+        // Check to see if TaskType property is set
+        internal bool IsSetTaskType()
+        {
+            return this._taskType != null;
         }
 
         /// <summary>

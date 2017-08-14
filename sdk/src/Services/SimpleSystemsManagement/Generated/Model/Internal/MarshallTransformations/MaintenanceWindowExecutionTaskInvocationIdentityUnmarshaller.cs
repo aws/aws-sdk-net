@@ -118,6 +118,12 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
                     unmarshalledObject.TaskExecutionId = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("TaskType", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.TaskType = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("WindowExecutionId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
