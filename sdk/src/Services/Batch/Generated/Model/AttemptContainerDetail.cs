@@ -34,6 +34,7 @@ namespace Amazon.Batch.Model
     {
         private string _containerInstanceArn;
         private int? _exitCode;
+        private string _logStreamName;
         private string _reason;
         private string _taskArn;
 
@@ -72,6 +73,21 @@ namespace Amazon.Batch.Model
         internal bool IsSetExitCode()
         {
             return this._exitCode.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property LogStreamName.
+        /// </summary>
+        public string LogStreamName
+        {
+            get { return this._logStreamName; }
+            set { this._logStreamName = value; }
+        }
+
+        // Check to see if LogStreamName property is set
+        internal bool IsSetLogStreamName()
+        {
+            return this._logStreamName != null;
         }
 
         /// <summary>

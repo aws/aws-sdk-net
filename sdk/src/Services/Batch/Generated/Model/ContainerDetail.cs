@@ -38,6 +38,7 @@ namespace Amazon.Batch.Model
         private int? _exitCode;
         private string _image;
         private string _jobRoleArn;
+        private string _logStreamName;
         private int? _memory;
         private List<MountPoint> _mountPoints = new List<MountPoint>();
         private bool? _privileged;
@@ -156,6 +157,21 @@ namespace Amazon.Batch.Model
         internal bool IsSetJobRoleArn()
         {
             return this._jobRoleArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LogStreamName.
+        /// </summary>
+        public string LogStreamName
+        {
+            get { return this._logStreamName; }
+            set { this._logStreamName = value; }
+        }
+
+        // Check to see if LogStreamName property is set
+        internal bool IsSetLogStreamName()
+        {
+            return this._logStreamName != null;
         }
 
         /// <summary>

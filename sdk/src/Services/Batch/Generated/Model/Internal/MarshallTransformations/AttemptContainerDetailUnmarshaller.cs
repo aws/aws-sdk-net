@@ -76,6 +76,12 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
                     unmarshalledObject.ExitCode = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("logStreamName", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.LogStreamName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("reason", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
