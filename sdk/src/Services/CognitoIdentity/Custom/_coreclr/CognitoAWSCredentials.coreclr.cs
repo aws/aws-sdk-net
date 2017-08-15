@@ -59,21 +59,8 @@ namespace Amazon.CognitoIdentity
         /// <returns>The previously cached identity id</returns>
         public virtual string GetCachedIdentityId()
         {
-            var serviceFactory = ServiceFactory.Instance;
-            var appSettings = serviceFactory.GetService<IApplicationSettings>();
-            string cachedIdentity = appSettings.GetValue(GetNamespacedKey(IDENTITY_ID_CACHE_KEY), ApplicationSettingsMode.Local);
-            
-            //this check if for backward compatibility for windows phone 8 and win rt
-            if(string.IsNullOrEmpty(cachedIdentity))
-            {
-                cachedIdentity = appSettings.GetValue(IDENTITY_ID_CACHE_KEY, ApplicationSettingsMode.Local);
-                if(!string.IsNullOrEmpty(cachedIdentity))
-                {
-                    CacheIdentityId(cachedIdentity);
-                }
-            }
-
-            return cachedIdentity;
+            // override this method to support caching
+            return null;
         }
 
         /// <summary>
@@ -92,9 +79,7 @@ namespace Amazon.CognitoIdentity
         /// <param name="identityId">The Cognito identity id to cache</param>
         public virtual void CacheIdentityId(string identityId)
         {
-            var serviceFactory = ServiceFactory.Instance;
-            var appSettings = serviceFactory.GetService<IApplicationSettings>();
-            appSettings.SetValue(GetNamespacedKey(IDENTITY_ID_CACHE_KEY), identityId, ApplicationSettingsMode.Local);
+            // override this method to support caching
         }
 
         /// <summary>
@@ -106,9 +91,7 @@ namespace Amazon.CognitoIdentity
         /// </summary>
         public virtual void ClearIdentityCache()
         {
-            var serviceFactory = ServiceFactory.Instance;
-            var appSettings = serviceFactory.GetService<IApplicationSettings>();
-            appSettings.RemoveValue(GetNamespacedKey(IDENTITY_ID_CACHE_KEY), ApplicationSettingsMode.Local);
+            // override this method to support caching
         }
 
         /// <summary>
@@ -126,15 +109,6 @@ namespace Amazon.CognitoIdentity
         {
             return null;
             //TODO: add support for caching
-        }
-
-        /// <summary>
-        /// Clears currently-stored credentials, forcing the next GetCredentials call to generate new credentials.
-        /// </summary>
-        public virtual void ClearCredentials()
-        {
-            base.ClearCredentials();
-            //TODO: Add support for caching
         }
 
     }
