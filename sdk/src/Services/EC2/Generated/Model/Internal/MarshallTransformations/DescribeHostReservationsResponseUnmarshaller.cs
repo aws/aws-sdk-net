@@ -55,7 +55,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 if (context.IsStartElement || context.IsAttribute)
                 {
 
-                    if (context.TestExpression("hostReservationSet/member", targetDepth))
+                    if (context.TestExpression("hostReservationSet/item", targetDepth))
                     {
                         var unmarshaller = HostReservationUnmarshaller.Instance;
                         var item = unmarshaller.Unmarshall(context);
