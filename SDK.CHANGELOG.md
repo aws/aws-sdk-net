@@ -1,3 +1,7 @@
+### 3.3.139.0 (2017-08-15 21:32 UTC)
+* EC2 (3.3.21.0)
+	* Fixed bug in EC2 clients preventing HostReservation from being set
+
 ### 3.3.138.0 (2017-08-14 23:27 UTC)
 * S3 (3.3.10.0)
 	* Added tagging support for TransferUtility's upload directory command.
