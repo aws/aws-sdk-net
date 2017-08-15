@@ -1,3 +1,7 @@
+### 3.3.138.0 (2017-08-14 23:27 UTC)
+* S3 (3.3.10.0)
+	* Added tagging support for TransferUtility's upload directory command.
+
 ### 3.3.137.0 (2017-08-14 16:41 UTC)
 * Batch (3.3.3.0)
 	* This release enhances the DescribeJobs API to include the CloudWatch logStreamName attribute in ContainerDetail and ContainerDetailAttempt
