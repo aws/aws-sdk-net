@@ -1,3 +1,7 @@
+### 3.3.140.1 (2017-08-16 22:00 UTC)
+* EC2 (3.3.21.1)
+	* Use HTTPS endpoint to retrieve stockamis.json
+
 ### 3.3.140.0 (2017-08-16 19:34 UTC)
 * GameLift (3.3.7.0)
 	* The Matchmaking Grouping Service is a new feature that groups player match requests for a given game together into game sessions based on developer configured rules.
