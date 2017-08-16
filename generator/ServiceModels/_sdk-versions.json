@@ -101,7 +101,7 @@
             "InPreview"               : false
         },
         "CognitoIdentity"   : {
-            "Version" : "3.3.2.13",
+            "Version" : "3.3.2.14",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.17.0",
@@ -313,7 +313,7 @@
             "InPreview"               : false
         },
         "S3"                   : {
-            "Version" : "3.3.10.0",
+            "Version" : "3.3.10.1",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.17.0"
