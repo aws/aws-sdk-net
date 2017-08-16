@@ -22,5 +22,16 @@ namespace Amazon.DNXCore.IntegrationTests.EC2
                 Assert.NotNull(image);
             }
         }
-    }   
+
+        [Trait(CategoryAttribute, "EC2")]
+        [Fact]
+        public async Task GetDescriptors()
+        {
+            var descriptor = await ImageUtilities.DescriptorFromKeyAsync("WINDOWS_2016_BASE", Client);
+            Assert.Equal(descriptor.NamePrefix, "Windows_Server-2016-English-Full-Base*");
+
+            descriptor = await ImageUtilities.DescriptorFromKeyAsync("WINDOWS_2012_SQL_SERVER_WEB_2012", Client);
+            Assert.Equal(descriptor.NamePrefix, "Windows_Server-2012-RTM-English-64Bit-SQL_2012_SP2_Web*");
+        }
+    }
 }

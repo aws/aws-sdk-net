@@ -360,7 +360,7 @@ namespace Amazon.EC2.Util
             VPC_NAT
         };
 
-        private const string CLOUDFRONT_LOCATION_OF_AMI_FILE = "http://aws-sdk-configurations.amazonwebservices.com/stockamis.json";
+        private const string CLOUDFRONT_LOCATION_OF_AMI_FILE = "https://aws-sdk-configurations.amazonwebservices.com/stockamis.json";
         private const string S3_LOCATION_OF_AMI_FILE = "https://aws-sdk-configurations.s3.amazonaws.com/stockamis.json";
 
         private static readonly string[] DownloadLocations =
