@@ -1,4 +1,10 @@
-### 3.3.139.0 (2017-08-15 21:32 UTC)
+### 3.3.139.1 (2017-08-16 7:30 UTC)
+* CognitoIdentity (3.3.2.14)
+	* Fix NotImplementedException exception when using the CognitoAWSCredentials in .NET Core
+* S3 (3.3.10.1)
+	* Fix doc typo
+
+	### 3.3.139.0 (2017-08-15 21:32 UTC)
 * EC2 (3.3.21.0)
 	* Fixed bug in EC2 clients preventing HostReservation from being set
 
