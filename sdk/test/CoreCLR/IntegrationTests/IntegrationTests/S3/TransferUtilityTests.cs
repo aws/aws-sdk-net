@@ -476,7 +476,7 @@ namespace Amazon.DNXCore.IntegrationTests.S3
                 if (lastProgress != null)
                 {
                     Assert.True(progress.NumberOfFilesDownloaded >= lastProgress.NumberOfFilesDownloaded);
-                    Assert.True(progress.TransferredBytes > lastProgress.TransferredBytes);
+                    Assert.True(progress.TransferredBytes >= lastProgress.TransferredBytes);
                     if (progress.NumberOfFilesDownloaded == lastProgress.NumberOfFilesDownloaded)
                     {
                         Assert.True(progress.TransferredBytes - lastProgress.TransferredBytes >= 100 * KILO_SIZE);
