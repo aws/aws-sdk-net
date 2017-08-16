@@ -1,3 +1,7 @@
+### 3.3.140.0 (2017-08-16 19:34 UTC)
+* GameLift (3.3.7.0)
+	* The Matchmaking Grouping Service is a new feature that groups player match requests for a given game together into game sessions based on developer configured rules.
+
 ### 3.3.139.1 (2017-08-16 7:30 UTC)
 * CognitoIdentity (3.3.2.14)
 	* Fix NotImplementedException exception when using the CognitoAWSCredentials in .NET Core
