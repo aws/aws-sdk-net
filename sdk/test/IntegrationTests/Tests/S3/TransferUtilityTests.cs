@@ -281,20 +281,20 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             return directory;
         }
 
-        // [TestMethod]
-        // [TestCategory("S3")]
-        // public void DownloadDirectoryProgressTest()
-        // {
-        //     // disable clock skew testing, this is a multithreaded test
-        //     using (RetryUtilities.DisableClockSkewCorrection())
-        //     {
-        //         var progressValidator = new DirectoryProgressValidator<DownloadDirectoryProgressArgs>();
-        //         ConfigureProgressValidator(progressValidator);
+         [TestMethod]
+         [TestCategory("S3")]
+         public void DownloadDirectoryProgressTest()
+         {
+             // disable clock skew testing, this is a multithreaded test
+             using (RetryUtilities.DisableClockSkewCorrection())
+             {
+                 var progressValidator = new DirectoryProgressValidator<DownloadDirectoryProgressArgs>();
+                 ConfigureProgressValidator(progressValidator);
 
-        //         DownloadDirectory(progressValidator);
-        //         progressValidator.AssertOnCompletion();
-        //     }
-        // }
+                 DownloadDirectory(progressValidator);
+                 progressValidator.AssertOnCompletion();
+             }
+         }
 
         void DownloadDirectory(DirectoryProgressValidator<DownloadDirectoryProgressArgs> progressValidator, bool concurrent = true)
         {
