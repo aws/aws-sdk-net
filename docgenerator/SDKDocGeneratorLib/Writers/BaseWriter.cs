@@ -518,7 +518,7 @@ namespace SDKDocGenerator.Writers
 
             // .NET core Framework
             if (boolNoDocs || (wrapper != null && docsCore != null))
-                writer.WriteLine("<p><strong>.NET Core: </strong><br/>Supported in: 1.3<br/>");
+                writer.WriteLine("<p><strong>.NET Standard: </strong><br/>Supported in: 1.3<br/>");
 
             // .NET Framework
             StringBuilder sb = new StringBuilder();
