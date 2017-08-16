@@ -76,7 +76,7 @@ namespace Amazon.GameLift
     /// <para>
     /// The <a href="https://console.aws.amazon.com/gamelift/home">AWS Management Console</a>
     /// for Amazon GameLift provides a web interface to manage your Amazon GameLift settings
-    /// and resources. The console includes a dashboard for tracking key resources, includings
+    /// and resources. The console includes a dashboard for tracking key resources, including
     /// builds and fleets, and displays usage and performance metrics for your games as customizable
     /// graphs.
     /// </para>
@@ -132,9 +132,8 @@ namespace Amazon.GameLift
     /// </para>
     ///  
     /// <para>
-    /// These actions allow you to start new game sessions, find existing game sessions, track
-    /// status and other game session information, and enable access for players to join game
-    /// sessions.
+    /// Use these actions to start new game sessions, find existing game sessions, track game
+    /// session status and other information, and enable player access to game sessions.
     /// </para>
     ///  <ul> <li> 
     /// <para>
@@ -142,18 +141,18 @@ namespace Amazon.GameLift
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <a>SearchGameSessions</a> – Get all available game sessions or search for game sessions
-    /// that match a set of criteria. 
+    ///  <a>SearchGameSessions</a> – Retrieve all available game sessions or search for game
+    /// sessions that match a set of criteria. 
     /// </para>
     ///  </li> </ul> </li> <li> 
     /// <para>
-    ///  <b>Start a new game session</b> 
+    ///  <b>Start new game sessions</b> 
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    /// Game session placement – Use a queue to process requests for new game sessions and
-    /// place them on the best available fleet. Placement requests are asynchronous; game
-    /// sessions are started whenever acceptable resources become available. 
+    /// Start new games with Queues to find the best available hosting resources across multiple
+    /// regions, minimize player latency, and balance game session activity for efficiency
+    /// and cost effectiveness. 
     /// </para>
     ///  <ul> <li> 
     /// <para>
@@ -171,8 +170,30 @@ namespace Amazon.GameLift
     /// </para>
     ///  </li> </ul> </li> <li> 
     /// <para>
-    ///  <a>CreateGameSession</a> – Request a new game session on a specific fleet. <i>Available
+    ///  <a>CreateGameSession</a> – Start a new game session on a specific fleet. <i>Available
     /// in Amazon GameLift Local.</i> 
+    /// </para>
+    ///  </li> </ul> </li> <li> 
+    /// <para>
+    ///  <b>Start new game sessions with FlexMatch matchmaking</b> 
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <a>StartMatchmaking</a> – Request matchmaking for one players or a group who want
+    /// to play together. 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>DescribeMatchmaking</a> – Get details on a matchmaking request, including status.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>AcceptMatch</a> – Register that a player accepts a proposed match, for matches
+    /// that require player acceptance. 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>StopMatchmaking</a> – Cancel a matchmaking request. 
     /// </para>
     ///  </li> </ul> </li> <li> 
     /// <para>
@@ -396,8 +417,8 @@ namespace Amazon.GameLift
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a>DescribeGameSessionQueues</a> – Get data on all game session queues defined in
-    /// a Amazon GameLift region.
+    ///  <a>DescribeGameSessionQueues</a> – Retrieve game session queues defined in a Amazon
+    /// GameLift region.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -407,10 +428,66 @@ namespace Amazon.GameLift
     /// <para>
     ///  <a>DeleteGameSessionQueue</a> – Remove a game session queue from the region.
     /// </para>
+    ///  </li> </ul> </li> <li> 
+    /// <para>
+    ///  <b>Manage FlexMatch resources</b> 
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <a>CreateMatchmakingConfiguration</a> – Create a matchmaking configuration with instructions
+    /// for building a player group and placing in a new game session. 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>DescribeMatchmakingConfigurations</a> – Retrieve matchmaking configurations defined
+    /// a Amazon GameLift region.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>UpdateMatchmakingConfiguration</a> – Change settings for matchmaking configuration.
+    /// queue.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>DeleteMatchmakingConfiguration</a> – Remove a matchmaking configuration from the
+    /// region.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>CreateMatchmakingRuleSet</a> – Create a set of rules to use when searching for
+    /// player matches. 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>DescribeMatchmakingRuleSets</a> – Retrieve matchmaking rule sets defined in a
+    /// Amazon GameLift region.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>ValidateMatchmakingRuleSet</a> – Verify syntax for a set of matchmaking rules.
+    /// 
+    /// </para>
     ///  </li> </ul> </li> </ul>
     /// </summary>
     public partial interface IAmazonGameLift : IAmazonService, IDisposable
     {
+                
+        #region  AcceptMatch
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AcceptMatch operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AcceptMatch operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/AcceptMatch">REST API Reference for AcceptMatch Operation</seealso>
+        Task<AcceptMatchResponse> AcceptMatchAsync(AcceptMatchRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
                 
         #region  CreateAlias
 
@@ -494,6 +571,40 @@ namespace Amazon.GameLift
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreateGameSessionQueue">REST API Reference for CreateGameSessionQueue Operation</seealso>
         Task<CreateGameSessionQueueResponse> CreateGameSessionQueueAsync(CreateGameSessionQueueRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  CreateMatchmakingConfiguration
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateMatchmakingConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateMatchmakingConfiguration operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreateMatchmakingConfiguration">REST API Reference for CreateMatchmakingConfiguration Operation</seealso>
+        Task<CreateMatchmakingConfigurationResponse> CreateMatchmakingConfigurationAsync(CreateMatchmakingConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  CreateMatchmakingRuleSet
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateMatchmakingRuleSet operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateMatchmakingRuleSet operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreateMatchmakingRuleSet">REST API Reference for CreateMatchmakingRuleSet Operation</seealso>
+        Task<CreateMatchmakingRuleSetResponse> CreateMatchmakingRuleSetAsync(CreateMatchmakingRuleSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -1024,6 +1135,23 @@ namespace Amazon.GameLift
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DeleteGameSessionQueue">REST API Reference for DeleteGameSessionQueue Operation</seealso>
         Task<DeleteGameSessionQueueResponse> DeleteGameSessionQueueAsync(DeleteGameSessionQueueRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DeleteMatchmakingConfiguration
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteMatchmakingConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteMatchmakingConfiguration operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DeleteMatchmakingConfiguration">REST API Reference for DeleteMatchmakingConfiguration Operation</seealso>
+        Task<DeleteMatchmakingConfigurationResponse> DeleteMatchmakingConfigurationAsync(DeleteMatchmakingConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -1631,6 +1759,57 @@ namespace Amazon.GameLift
 
         #endregion
                 
+        #region  DescribeMatchmaking
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeMatchmaking operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeMatchmaking operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeMatchmaking">REST API Reference for DescribeMatchmaking Operation</seealso>
+        Task<DescribeMatchmakingResponse> DescribeMatchmakingAsync(DescribeMatchmakingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DescribeMatchmakingConfigurations
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeMatchmakingConfigurations operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeMatchmakingConfigurations operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeMatchmakingConfigurations">REST API Reference for DescribeMatchmakingConfigurations Operation</seealso>
+        Task<DescribeMatchmakingConfigurationsResponse> DescribeMatchmakingConfigurationsAsync(DescribeMatchmakingConfigurationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DescribeMatchmakingRuleSets
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeMatchmakingRuleSets operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeMatchmakingRuleSets operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeMatchmakingRuleSets">REST API Reference for DescribeMatchmakingRuleSets Operation</seealso>
+        Task<DescribeMatchmakingRuleSetsResponse> DescribeMatchmakingRuleSetsAsync(DescribeMatchmakingRuleSetsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  DescribePlayerSessions
 
 
@@ -1688,7 +1867,7 @@ namespace Amazon.GameLift
         /// <summary>
         /// Retrieves the location of stored game session logs for a specified game session. When
         /// a game session is terminated, Amazon GameLift automatically stores the logs in Amazon
-        /// S3. Use this URL to download the logs.
+        /// S3 and retains them for 14 days. Use this URL to download the logs.
         /// 
         ///  <note> 
         /// <para>
@@ -2025,6 +2204,23 @@ namespace Amazon.GameLift
 
         #endregion
                 
+        #region  StartMatchmaking
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StartMatchmaking operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StartMatchmaking operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/StartMatchmaking">REST API Reference for StartMatchmaking Operation</seealso>
+        Task<StartMatchmakingResponse> StartMatchmakingAsync(StartMatchmakingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  StopGameSessionPlacement
 
 
@@ -2039,6 +2235,23 @@ namespace Amazon.GameLift
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/StopGameSessionPlacement">REST API Reference for StopGameSessionPlacement Operation</seealso>
         Task<StopGameSessionPlacementResponse> StopGameSessionPlacementAsync(StopGameSessionPlacementRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  StopMatchmaking
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StopMatchmaking operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StopMatchmaking operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/StopMatchmaking">REST API Reference for StopMatchmaking Operation</seealso>
+        Task<StopMatchmakingResponse> StopMatchmakingAsync(StopMatchmakingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -2161,6 +2374,23 @@ namespace Amazon.GameLift
 
         #endregion
                 
+        #region  UpdateMatchmakingConfiguration
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateMatchmakingConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateMatchmakingConfiguration operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/UpdateMatchmakingConfiguration">REST API Reference for UpdateMatchmakingConfiguration Operation</seealso>
+        Task<UpdateMatchmakingConfigurationResponse> UpdateMatchmakingConfigurationAsync(UpdateMatchmakingConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  UpdateRuntimeConfiguration
 
 
@@ -2175,6 +2405,23 @@ namespace Amazon.GameLift
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/UpdateRuntimeConfiguration">REST API Reference for UpdateRuntimeConfiguration Operation</seealso>
         Task<UpdateRuntimeConfigurationResponse> UpdateRuntimeConfigurationAsync(UpdateRuntimeConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  ValidateMatchmakingRuleSet
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ValidateMatchmakingRuleSet operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ValidateMatchmakingRuleSet operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/ValidateMatchmakingRuleSet">REST API Reference for ValidateMatchmakingRuleSet Operation</seealso>
+        Task<ValidateMatchmakingRuleSetResponse> ValidateMatchmakingRuleSetAsync(ValidateMatchmakingRuleSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         

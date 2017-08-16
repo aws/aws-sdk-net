@@ -29,8 +29,9 @@ namespace Amazon.GameLift.Model
 {
     /// <summary>
     /// Container for the parameters to the StopGameSessionPlacement operation.
-    /// Cancels a game session placement that is in Pending status. To stop a placement, provide
-    /// the placement ID values. If successful, the placement is moved to Cancelled status.
+    /// Cancels a game session placement that is in <code>PENDING</code> status. To stop a
+    /// placement, provide the placement ID values. If successful, the placement is moved
+    /// to <code>CANCELLED</code> status.
     /// 
     ///  
     /// <para>

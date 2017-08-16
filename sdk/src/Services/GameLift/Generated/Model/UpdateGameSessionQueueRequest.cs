@@ -87,8 +87,8 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// Descriptive label that is associated with queue. Queue names must be unique within
-        /// each region.
+        /// Descriptive label that is associated with game session queue. Queue names must be
+        /// unique within each region.
         /// </para>
         /// </summary>
         public string Name
@@ -132,7 +132,7 @@ namespace Amazon.GameLift.Model
         /// Gets and sets the property TimeoutInSeconds. 
         /// <para>
         /// Maximum time, in seconds, that a new game session placement request remains in the
-        /// queue. When a request exceeds this time, the game session placement changes to a TIMED_OUT
+        /// queue. When a request exceeds this time, the game session placement changes to a <code>TIMED_OUT</code>
         /// status.
         /// </para>
         /// </summary>

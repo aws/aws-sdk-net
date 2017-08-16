@@ -25,6 +25,56 @@ namespace Amazon.GameLift
 {
 
     /// <summary>
+    /// Constants used for properties of type AcceptanceType.
+    /// </summary>
+    public class AcceptanceType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACCEPT for AcceptanceType
+        /// </summary>
+        public static readonly AcceptanceType ACCEPT = new AcceptanceType("ACCEPT");
+        /// <summary>
+        /// Constant REJECT for AcceptanceType
+        /// </summary>
+        public static readonly AcceptanceType REJECT = new AcceptanceType("REJECT");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AcceptanceType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AcceptanceType FindValue(string value)
+        {
+            return FindValue<AcceptanceType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AcceptanceType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type BuildStatus.
     /// </summary>
     public class BuildStatus : ConstantClass
@@ -744,6 +794,80 @@ namespace Amazon.GameLift
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator IpProtocol(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type MatchmakingConfigurationStatus.
+    /// </summary>
+    public class MatchmakingConfigurationStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CANCELED for MatchmakingConfigurationStatus
+        /// </summary>
+        public static readonly MatchmakingConfigurationStatus CANCELED = new MatchmakingConfigurationStatus("CANCELED");
+        /// <summary>
+        /// Constant COMPLETE for MatchmakingConfigurationStatus
+        /// </summary>
+        public static readonly MatchmakingConfigurationStatus COMPLETE = new MatchmakingConfigurationStatus("COMPLETE");
+        /// <summary>
+        /// Constant FAILED for MatchmakingConfigurationStatus
+        /// </summary>
+        public static readonly MatchmakingConfigurationStatus FAILED = new MatchmakingConfigurationStatus("FAILED");
+        /// <summary>
+        /// Constant PLACING for MatchmakingConfigurationStatus
+        /// </summary>
+        public static readonly MatchmakingConfigurationStatus PLACING = new MatchmakingConfigurationStatus("PLACING");
+        /// <summary>
+        /// Constant QUEUED for MatchmakingConfigurationStatus
+        /// </summary>
+        public static readonly MatchmakingConfigurationStatus QUEUED = new MatchmakingConfigurationStatus("QUEUED");
+        /// <summary>
+        /// Constant REQUIRES_ACCEPTANCE for MatchmakingConfigurationStatus
+        /// </summary>
+        public static readonly MatchmakingConfigurationStatus REQUIRES_ACCEPTANCE = new MatchmakingConfigurationStatus("REQUIRES_ACCEPTANCE");
+        /// <summary>
+        /// Constant SEARCHING for MatchmakingConfigurationStatus
+        /// </summary>
+        public static readonly MatchmakingConfigurationStatus SEARCHING = new MatchmakingConfigurationStatus("SEARCHING");
+        /// <summary>
+        /// Constant TIMED_OUT for MatchmakingConfigurationStatus
+        /// </summary>
+        public static readonly MatchmakingConfigurationStatus TIMED_OUT = new MatchmakingConfigurationStatus("TIMED_OUT");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public MatchmakingConfigurationStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static MatchmakingConfigurationStatus FindValue(string value)
+        {
+            return FindValue<MatchmakingConfigurationStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator MatchmakingConfigurationStatus(string value)
         {
             return FindValue(value);
         }

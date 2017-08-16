@@ -94,6 +94,12 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
                     unmarshalledObject.GameProperties = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("GameSessionData", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.GameSessionData = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("GameSessionId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

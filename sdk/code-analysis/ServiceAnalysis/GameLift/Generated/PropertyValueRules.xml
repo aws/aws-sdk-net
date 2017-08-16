@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="utf-16"?>
 <property-value-rules>
   <property-value-rule>
+    <property>Amazon.GameLift.Model.AcceptMatchRequest.TicketId</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[a-zA-Z0-9-\.]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.GameLift.Model.CreateAliasRequest.Description</property>
     <min>1</min>
     <max>1024</max>
@@ -59,6 +65,11 @@
     <pattern>^fleet-\S+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.GameLift.Model.CreateGameSessionRequest.GameSessionData</property>
+    <min>1</min>
+    <max>4096</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.GameLift.Model.CreateGameSessionRequest.GameSessionId</property>
     <min>1</min>
     <max>48</max>
@@ -88,6 +99,64 @@
   <property-value-rule>
     <property>Amazon.GameLift.Model.CreateGameSessionQueueRequest.TimeoutInSeconds</property>
     <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GameLift.Model.CreateMatchmakingConfigurationRequest.AcceptanceTimeoutSeconds</property>
+    <min>1</min>
+    <max>600</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GameLift.Model.CreateMatchmakingConfigurationRequest.AdditionalPlayerCount</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GameLift.Model.CreateMatchmakingConfigurationRequest.CustomEventData</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GameLift.Model.CreateMatchmakingConfigurationRequest.Description</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GameLift.Model.CreateMatchmakingConfigurationRequest.GameSessionData</property>
+    <min>1</min>
+    <max>4096</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GameLift.Model.CreateMatchmakingConfigurationRequest.Name</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[a-zA-Z0-9-\.]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GameLift.Model.CreateMatchmakingConfigurationRequest.NotificationTarget</property>
+    <min>1</min>
+    <max>300</max>
+    <pattern>[a-zA-Z0-9:_/-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GameLift.Model.CreateMatchmakingConfigurationRequest.RequestTimeoutSeconds</property>
+    <min>1</min>
+    <max>43200</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GameLift.Model.CreateMatchmakingConfigurationRequest.RuleSetName</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[a-zA-Z0-9-\.]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GameLift.Model.CreateMatchmakingRuleSetRequest.Name</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[a-zA-Z0-9-\.]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GameLift.Model.CreateMatchmakingRuleSetRequest.RuleSetBody</property>
+    <min>1</min>
+    <max>65535</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLift.Model.CreatePlayerSessionRequest.GameSessionId</property>
@@ -128,6 +197,12 @@
     <min>1</min>
     <max>128</max>
     <pattern>[a-zA-Z0-9-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GameLift.Model.DeleteMatchmakingConfigurationRequest.Name</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[a-zA-Z0-9-\.]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLift.Model.DeleteScalingPolicyRequest.FleetId</property>
@@ -319,6 +394,41 @@
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.GameLift.Model.DescribeMatchmakingConfigurationsRequest.Limit</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GameLift.Model.DescribeMatchmakingConfigurationsRequest.NextToken</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GameLift.Model.DescribeMatchmakingConfigurationsRequest.RuleSetName</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[a-zA-Z0-9-\.]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GameLift.Model.DescribeMatchmakingConfigurationsResponse.NextToken</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GameLift.Model.DescribeMatchmakingRuleSetsRequest.Limit</property>
+    <min>1</min>
+    <max>10</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GameLift.Model.DescribeMatchmakingRuleSetsRequest.NextToken</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GameLift.Model.DescribeMatchmakingRuleSetsResponse.NextToken</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.GameLift.Model.DescribePlayerSessionsRequest.GameSessionId</property>
     <min>1</min>
     <max>256</max>
@@ -502,6 +612,11 @@
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.GameLift.Model.StartGameSessionPlacementRequest.GameSessionData</property>
+    <min>1</min>
+    <max>4096</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.GameLift.Model.StartGameSessionPlacementRequest.GameSessionName</property>
     <min>1</min>
     <max>1024</max>
@@ -523,10 +638,28 @@
     <pattern>[a-zA-Z0-9-]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.GameLift.Model.StartMatchmakingRequest.ConfigurationName</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[a-zA-Z0-9-\.]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GameLift.Model.StartMatchmakingRequest.TicketId</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[a-zA-Z0-9-\.]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.GameLift.Model.StopGameSessionPlacementRequest.PlacementId</property>
     <min>1</min>
     <max>48</max>
     <pattern>[a-zA-Z0-9-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GameLift.Model.StopMatchmakingRequest.TicketId</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[a-zA-Z0-9-\.]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLift.Model.UpdateAliasRequest.AliasId</property>
@@ -629,8 +762,60 @@
     <min>0</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.GameLift.Model.UpdateMatchmakingConfigurationRequest.AcceptanceTimeoutSeconds</property>
+    <min>1</min>
+    <max>600</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GameLift.Model.UpdateMatchmakingConfigurationRequest.AdditionalPlayerCount</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GameLift.Model.UpdateMatchmakingConfigurationRequest.CustomEventData</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GameLift.Model.UpdateMatchmakingConfigurationRequest.Description</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GameLift.Model.UpdateMatchmakingConfigurationRequest.GameSessionData</property>
+    <min>1</min>
+    <max>4096</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GameLift.Model.UpdateMatchmakingConfigurationRequest.Name</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[a-zA-Z0-9-\.]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GameLift.Model.UpdateMatchmakingConfigurationRequest.NotificationTarget</property>
+    <min>1</min>
+    <max>300</max>
+    <pattern>[a-zA-Z0-9:_/-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GameLift.Model.UpdateMatchmakingConfigurationRequest.RequestTimeoutSeconds</property>
+    <min>1</min>
+    <max>43200</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GameLift.Model.UpdateMatchmakingConfigurationRequest.RuleSetName</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[a-zA-Z0-9-\.]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.GameLift.Model.UpdateRuntimeConfigurationRequest.FleetId</property>
     <pattern>^fleet-\S+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GameLift.Model.ValidateMatchmakingRuleSetRequest.RuleSetBody</property>
+    <min>1</min>
+    <max>65535</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLift.Model.Alias.AliasArn</property>
@@ -647,6 +832,11 @@
     <min>1</min>
     <max>1024</max>
     <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GameLift.Model.AttributeValue.S</property>
+    <min>1</min>
+    <max>1024</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLift.Model.Build.BuildId</property>
@@ -821,6 +1011,11 @@
     <pattern>^fleet-\S+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.GameLift.Model.GameSession.GameSessionData</property>
+    <min>1</min>
+    <max>4096</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.GameLift.Model.GameSession.GameSessionId</property>
     <min>1</min>
     <max>1024</max>
@@ -840,6 +1035,16 @@
     <max>60000</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.GameLift.Model.GameSessionConnectionInfo.GameSessionArn</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>[a-zA-Z0-9:/-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GameLift.Model.GameSessionConnectionInfo.Port</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.GameLift.Model.GameSessionFullException.Message</property>
     <min>1</min>
   </property-value-rule>
@@ -847,6 +1052,11 @@
     <property>Amazon.GameLift.Model.GameSessionPlacement.GameSessionArn</property>
     <min>1</min>
     <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GameLift.Model.GameSessionPlacement.GameSessionData</property>
+    <min>1</min>
+    <max>4096</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLift.Model.GameSessionPlacement.GameSessionId</property>
@@ -969,6 +1179,85 @@
     <min>1</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.GameLift.Model.MatchedPlayerSession.PlayerId</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GameLift.Model.MatchedPlayerSession.PlayerSessionId</property>
+    <pattern>^psess-\S+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GameLift.Model.MatchmakingConfiguration.AcceptanceTimeoutSeconds</property>
+    <min>1</min>
+    <max>600</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GameLift.Model.MatchmakingConfiguration.AdditionalPlayerCount</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GameLift.Model.MatchmakingConfiguration.CustomEventData</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GameLift.Model.MatchmakingConfiguration.Description</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GameLift.Model.MatchmakingConfiguration.GameSessionData</property>
+    <min>1</min>
+    <max>4096</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GameLift.Model.MatchmakingConfiguration.Name</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[a-zA-Z0-9-\.]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GameLift.Model.MatchmakingConfiguration.NotificationTarget</property>
+    <min>1</min>
+    <max>300</max>
+    <pattern>[a-zA-Z0-9:_/-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GameLift.Model.MatchmakingConfiguration.RequestTimeoutSeconds</property>
+    <min>1</min>
+    <max>43200</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GameLift.Model.MatchmakingConfiguration.RuleSetName</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[a-zA-Z0-9-\.]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GameLift.Model.MatchmakingRuleSet.RuleSetBody</property>
+    <min>1</min>
+    <max>65535</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GameLift.Model.MatchmakingRuleSet.RuleSetName</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[a-zA-Z0-9-\.]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GameLift.Model.MatchmakingTicket.ConfigurationName</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[a-zA-Z0-9-\.]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GameLift.Model.MatchmakingTicket.TicketId</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[a-zA-Z0-9-\.]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.GameLift.Model.NotFoundException.Message</property>
     <min>1</min>
   </property-value-rule>
@@ -980,6 +1269,17 @@
   <property-value-rule>
     <property>Amazon.GameLift.Model.PlacedPlayerSession.PlayerSessionId</property>
     <pattern>^psess-\S+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GameLift.Model.Player.PlayerId</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[a-zA-Z0-9-\.]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GameLift.Model.Player.Team</property>
+    <min>1</min>
+    <max>1024</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLift.Model.PlayerLatency.PlayerId</property>
@@ -1094,6 +1394,10 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLift.Model.UnauthorizedException.Message</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GameLift.Model.UnsupportedRegionException.Message</property>
     <min>1</min>
   </property-value-rule>
 </property-value-rules>

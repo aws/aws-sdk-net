@@ -37,8 +37,8 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property GameSessionPlacement. 
         /// <para>
-        /// Object that describes the canceled game session placement, with Cancelled status and
-        /// an end time stamp. 
+        /// Object that describes the canceled game session placement, with <code>CANCELLED</code>
+        /// status and an end time stamp. 
         /// </para>
         /// </summary>
         public GameSessionPlacement GameSessionPlacement

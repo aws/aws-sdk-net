@@ -28,10 +28,12 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GameLift.Model
 {
     /// <summary>
-    /// Set of key-value pairs containing information a server process requires to set up
-    /// a game session. This object allows you to pass in any set of data needed for your
-    /// game. For more information, see the <a href="http://docs.aws.amazon.com/gamelift/latest/developerguide/">Amazon
-    /// GameLift Developer Guide</a>.
+    /// Set of key-value pairs that contain information about a game session. When included
+    /// in a game session request, these properties communicate details to be used when setting
+    /// up the new game session, such as to specify a game mode, level, or map. Game properties
+    /// are passed to the game server process when initiating a new game session; the server
+    /// process uses the properties as appropriate. For more information, see the <a href="http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-client-api.html#gamelift-sdk-client-api-create">
+    /// Amazon GameLift Developer Guide</a>.
     /// </summary>
     public partial class GameProperty
     {
@@ -41,7 +43,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property Key. 
         /// <para>
-        /// TBD
+        /// Game property identifier.
         /// </para>
         /// </summary>
         public string Key
@@ -59,7 +61,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property Value. 
         /// <para>
-        /// TBD
+        /// Game property value.
         /// </para>
         /// </summary>
         public string Value

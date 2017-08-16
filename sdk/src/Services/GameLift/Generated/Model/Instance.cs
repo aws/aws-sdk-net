@@ -29,7 +29,7 @@ namespace Amazon.GameLift.Model
 {
     /// <summary>
     /// Properties that describe an instance of a virtual computing resource that hosts one
-    /// or more game servers. A fleet contains zero or more instances.
+    /// or more game servers. A fleet may contain zero or more instances.
     /// </summary>
     public partial class Instance
     {

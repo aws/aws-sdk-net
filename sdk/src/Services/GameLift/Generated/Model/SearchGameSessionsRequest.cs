@@ -288,8 +288,8 @@ namespace Amazon.GameLift.Model
         /// Gets and sets the property NextToken. 
         /// <para>
         /// Token that indicates the start of the next sequential page of results. Use the token
-        /// that is returned with a previous call to this action. To specify the start of the
-        /// result set, do not specify a value.
+        /// that is returned with a previous call to this action. To start at the beginning of
+        /// the result set, do not specify a value.
         /// </para>
         /// </summary>
         public string NextToken

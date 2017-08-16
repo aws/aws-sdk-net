@@ -32,6 +32,17 @@ namespace Amazon.GameLift.Model
     /// 
     ///  
     /// <para>
+    /// A game session in ACTIVE status can host players. When a game session ends, its status
+    /// is set to <code>TERMINATED</code>. 
+    /// </para>
+    ///  
+    /// <para>
+    /// Once the session ends, the game session object is retained for 30 days. This means
+    /// you can reuse idempotency token values after this time. Game session logs are retained
+    /// for 14 days.
+    /// </para>
+    ///  
+    /// <para>
     /// Game-session-related operations include:
     /// </para>
     ///  <ul> <li> 
@@ -83,6 +94,7 @@ namespace Amazon.GameLift.Model
         private int? _currentPlayerSessionCount;
         private string _fleetId;
         private List<GameProperty> _gameProperties = new List<GameProperty>();
+        private string _gameSessionData;
         private string _gameSessionId;
         private string _ipAddress;
         private int? _maximumPlayerSessionCount;
@@ -169,8 +181,10 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property GameProperties. 
         /// <para>
-        /// Set of developer-defined properties for a game session. These properties are passed
-        /// to the server process hosting the game session.
+        /// Set of developer-defined properties for a game session, formatted as a set of type:value
+        /// pairs. These properties are included in the <a>GameSession</a> object, which is passed
+        /// to the game server with a request to start a new game session (see <a href="http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start
+        /// a Game Session</a>).
         /// </para>
         /// </summary>
         public List<GameProperty> GameProperties
@@ -183,6 +197,27 @@ namespace Amazon.GameLift.Model
         internal bool IsSetGameProperties()
         {
             return this._gameProperties != null && this._gameProperties.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property GameSessionData. 
+        /// <para>
+        /// Set of developer-defined game session properties, formatted as a single string value.
+        /// This data is included in the <a>GameSession</a> object, which is passed to the game
+        /// server with a request to start a new game session (see <a href="http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start
+        /// a Game Session</a>).
+        /// </para>
+        /// </summary>
+        public string GameSessionData
+        {
+            get { return this._gameSessionData; }
+            set { this._gameSessionData = value; }
+        }
+
+        // Check to see if GameSessionData property is set
+        internal bool IsSetGameSessionData()
+        {
+            return this._gameSessionData != null;
         }
 
         /// <summary>

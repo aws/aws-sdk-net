@@ -59,7 +59,7 @@ namespace Amazon.GameLift.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Fleetwide game session protection
+    /// Fleet-wide game session protection
     /// </para>
     ///  </li> <li> 
     /// <para>

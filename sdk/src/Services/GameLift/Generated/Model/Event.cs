@@ -60,13 +60,13 @@ namespace Amazon.GameLift.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <b>FLEET_CREATED</b> – A fleet record was successfully created with a status of NEW.
+        ///  <b>FLEET_CREATED</b> – A fleet record was successfully created with a status of <code>NEW</code>.
         /// Event messaging includes the fleet ID.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>FLEET_STATE_DOWNLOADING</b> – Fleet status changed from NEW to DOWNLOADING. The
-        /// compressed build has started downloading to a fleet instance for installation.
+        ///  <b>FLEET_STATE_DOWNLOADING</b> – Fleet status changed from <code>NEW</code> to <code>DOWNLOADING</code>.
+        /// The compressed build has started downloading to a fleet instance for installation.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -76,53 +76,55 @@ namespace Amazon.GameLift.Model
         /// <para>
         ///  <b>FLEET_CREATION_EXTRACTING_BUILD</b> – The game server build was successfully downloaded
         /// to an instance, and the build files are now being extracted from the uploaded build
-        /// and saved to an instance. Failure at this stage prevents a fleet from moving to ACTIVE
+        /// and saved to an instance. Failure at this stage prevents a fleet from moving to <code>ACTIVE</code>
         /// status. Logs for this stage display a list of the files that are extracted and saved
-        /// on the instance. Access the logs by using the URL in <i>PreSignedLogUrl</i>).
+        /// on the instance. Access the logs by using the URL in <i>PreSignedLogUrl</i>.
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <b>FLEET_CREATION_RUNNING_INSTALLER</b> – The game server build files were successfully
         /// extracted, and the Amazon GameLift is now running the build's install script (if one
-        /// is included). Failure in this stage prevents a fleet from moving to ACTIVE status.
-        /// Logs for this stage list the installation steps and whether or not the install completed
-        /// sucessfully. Access the logs by using the URL in <i>PreSignedLogUrl</i>). 
+        /// is included). Failure in this stage prevents a fleet from moving to <code>ACTIVE</code>
+        /// status. Logs for this stage list the installation steps and whether or not the install
+        /// completed successfully. Access the logs by using the URL in <i>PreSignedLogUrl</i>.
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <b>FLEET_CREATION_VALIDATING_RUNTIME_CONFIG</b> – The build process was successful,
-        /// and the Amazon GameLift is now verifying that the game server launch path(s), which
+        /// and the Amazon GameLift is now verifying that the game server launch paths, which
         /// are specified in the fleet's run-time configuration, exist. If any listed launch path
         /// exists, Amazon GameLift tries to launch a game server process and waits for the process
-        /// to report ready. Failures in this stage prevent a fleet from moving to ACTIVE status.
-        /// Logs for this stage list the launch paths in the run-time configuration and indicate
-        /// whether each is found. Access the logs by using the URL in <i>PreSignedLogUrl</i>).
-        /// Once the game server is launched, failures and crashes are logged; these logs can
-        /// be downloaded from the Amazon GameLift console. 
+        /// to report ready. Failures in this stage prevent a fleet from moving to <code>ACTIVE</code>
+        /// status. Logs for this stage list the launch paths in the run-time configuration and
+        /// indicate whether each is found. Access the logs by using the URL in <i>PreSignedLogUrl</i>.
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>FLEET_STATE_VALIDATING</b> – Fleet status changed from DOWNLOADING to VALIDATING.
+        ///  <b>FLEET_STATE_VALIDATING</b> – Fleet status changed from <code>DOWNLOADING</code>
+        /// to <code>VALIDATING</code>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>FLEET_VALIDATION_LAUNCH_PATH_NOT_FOUND</b> – Validation of the run-time validation
+        ///  <b>FLEET_VALIDATION_LAUNCH_PATH_NOT_FOUND</b> – Validation of the run-time configuration
         /// failed because the executable specified in a launch path does not exist on the instance.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>FLEET_STATE_BUILDING</b> – Fleet status changed from VALIDATING to BUILDING.
+        ///  <b>FLEET_STATE_BUILDING</b> – Fleet status changed from <code>VALIDATING</code> to
+        /// <code>BUILDING</code>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>FLEET_VALIDATION_EXECUTABLE_RUNTIME_FAILURE</b> – Validation of the runtime validation
+        ///  <b>FLEET_VALIDATION_EXECUTABLE_RUNTIME_FAILURE</b> – Validation of the run-time configuration
         /// failed because the executable specified in a launch path failed to run on the fleet
         /// instance.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>FLEET_STATE_ACTIVATING</b> – Fleet status changed from BUILDING to ACTIVATING.
-        /// 
+        ///  <b>FLEET_STATE_ACTIVATING</b> – Fleet status changed from <code>BUILDING</code> to
+        /// <code>ACTIVATING</code>. 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -134,8 +136,8 @@ namespace Amazon.GameLift.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>FLEET_STATE_ACTIVE</b> – The fleet's status changed from ACTIVATING to ACTIVE.
-        /// The fleet is now ready to host game sessions.
+        ///  <b>FLEET_STATE_ACTIVE</b> – The fleet's status changed from <code>ACTIVATING</code>
+        /// to <code>ACTIVE</code>. The fleet is now ready to host game sessions.
         /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>
@@ -229,9 +231,9 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property PreSignedLogUrl. 
         /// <para>
-        /// Location of stored logs with additional detail related to the event, useful for debugging
-        /// issues. The URL is valid for 15 minutes. Fleet creation logs can also be accessed
-        /// through the Amazon GameLift console.
+        /// Location of stored logs with additional detail that is related to the event. This
+        /// is useful for debugging issues. The URL is valid for 15 minutes. You can also access
+        /// fleet creation logs through the Amazon GameLift console.
         /// </para>
         /// </summary>
         public string PreSignedLogUrl

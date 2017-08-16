@@ -39,8 +39,7 @@ namespace Amazon.GameLift.Model
     /// To create a game session, specify either fleet ID or alias ID and indicate a maximum
     /// number of players to allow in the game session. You can also provide a name and game-specific
     /// properties for this game session. If successful, a <a>GameSession</a> object is returned
-    /// containing game session properties, including a game session ID with the custom string
-    /// you provided.
+    /// containing the game session properties and other settings you specified.
     /// </para>
     ///  
     /// <para>
@@ -59,8 +58,14 @@ namespace Amazon.GameLift.Model
     /// </para>
     ///  
     /// <para>
-    ///  By default, newly created game sessions allow new players to join. Use <a>UpdateGameSession</a>
+    ///  <b>Player acceptance policy.</b> By default, newly created game sessions are open
+    /// to new players. You can restrict new player access by using <a>UpdateGameSession</a>
     /// to change the game session's player session creation policy.
+    /// </para>
+    ///  
+    /// <para>
+    ///  <b>Game session logs.</b> Logs are retained for all active game sessions for 14 days.
+    /// To access the logs, call <a>GetGameSessionLogUrl</a> to download the log files.
     /// </para>
     ///  
     /// <para>
@@ -118,6 +123,7 @@ namespace Amazon.GameLift.Model
         private string _creatorId;
         private string _fleetId;
         private List<GameProperty> _gameProperties = new List<GameProperty>();
+        private string _gameSessionData;
         private string _gameSessionId;
         private string _idempotencyToken;
         private int? _maximumPlayerSessionCount;
@@ -184,8 +190,10 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property GameProperties. 
         /// <para>
-        /// Set of developer-defined properties for a game session. These properties are passed
-        /// to the server process hosting the game session.
+        /// Set of developer-defined properties for a game session, formatted as a set of type:value
+        /// pairs. These properties are included in the <a>GameSession</a> object, which is passed
+        /// to the game server with a request to start a new game session (see <a href="http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start
+        /// a Game Session</a>).
         /// </para>
         /// </summary>
         public List<GameProperty> GameProperties
@@ -198,6 +206,27 @@ namespace Amazon.GameLift.Model
         internal bool IsSetGameProperties()
         {
             return this._gameProperties != null && this._gameProperties.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property GameSessionData. 
+        /// <para>
+        /// Set of developer-defined game session properties, formatted as a single string value.
+        /// This data is included in the <a>GameSession</a> object, which is passed to the game
+        /// server with a request to start a new game session (see <a href="http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start
+        /// a Game Session</a>).
+        /// </para>
+        /// </summary>
+        public string GameSessionData
+        {
+            get { return this._gameSessionData; }
+            set { this._gameSessionData = value; }
+        }
+
+        // Check to see if GameSessionData property is set
+        internal bool IsSetGameSessionData()
+        {
+            return this._gameSessionData != null;
         }
 
         /// <summary>
@@ -228,7 +257,9 @@ namespace Amazon.GameLift.Model
         /// Custom string that uniquely identifies a request for a new game session. Maximum token
         /// length is 48 characters. If provided, this string is included in the new game session's
         /// ID. (A game session ID has the following format: <code>arn:aws:gamelift:&lt;region&gt;::gamesession/&lt;fleet
-        /// ID&gt;/&lt;custom ID string or idempotency token&gt;</code>.) 
+        /// ID&gt;/&lt;custom ID string or idempotency token&gt;</code>.) Idempotency tokens remain
+        /// in use for 30 days after a game session has ended; game session objects are retained
+        /// for this time period and then deleted.
         /// </para>
         /// </summary>
         public string IdempotencyToken

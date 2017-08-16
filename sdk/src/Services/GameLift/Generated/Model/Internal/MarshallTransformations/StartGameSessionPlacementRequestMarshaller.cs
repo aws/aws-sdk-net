@@ -99,6 +99,12 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
+                if(publicRequest.IsSetGameSessionData())
+                {
+                    context.Writer.WritePropertyName("GameSessionData");
+                    context.Writer.Write(publicRequest.GameSessionData);
+                }
+
                 if(publicRequest.IsSetGameSessionName())
                 {
                     context.Writer.WritePropertyName("GameSessionName");

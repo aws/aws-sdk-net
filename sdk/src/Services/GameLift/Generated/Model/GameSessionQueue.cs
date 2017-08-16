@@ -31,27 +31,7 @@ namespace Amazon.GameLift.Model
     /// Configuration of a queue that is used to process game session placement requests.
     /// The queue configuration identifies several game features:
     /// 
-    ///  
-    /// <para>
-    /// Queue-related operations include:
-    /// </para>
     ///  <ul> <li> 
-    /// <para>
-    ///  <a>CreateGameSessionQueue</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>DescribeGameSessionQueues</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>UpdateGameSessionQueue</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>DeleteGameSessionQueue</a> 
-    /// </para>
-    ///  </li> </ul> <ul> <li> 
     /// <para>
     /// The destinations where a new game session can potentially be hosted. Amazon GameLift
     /// tries these destinations in an order based on either the queue's default order or
@@ -72,7 +52,7 @@ namespace Amazon.GameLift.Model
     /// </para>
     ///  </li> </ul> 
     /// <para>
-    /// Queue-related operations include the following:
+    /// Queue-related operations include:
     /// </para>
     ///  <ul> <li> 
     /// <para>
@@ -142,8 +122,8 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// Descriptive label that is associated with queue. Queue names must be unique within
-        /// each region.
+        /// Descriptive label that is associated with game session queue. Queue names must be
+        /// unique within each region.
         /// </para>
         /// </summary>
         public string Name
@@ -186,7 +166,7 @@ namespace Amazon.GameLift.Model
         /// Gets and sets the property TimeoutInSeconds. 
         /// <para>
         /// Maximum time, in seconds, that a new game session placement request remains in the
-        /// queue. When a request exceeds this time, the game session placement changes to a TIMED_OUT
+        /// queue. When a request exceeds this time, the game session placement changes to a <code>TIMED_OUT</code>
         /// status.
         /// </para>
         /// </summary>

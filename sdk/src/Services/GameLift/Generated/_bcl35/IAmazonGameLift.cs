@@ -74,7 +74,7 @@ namespace Amazon.GameLift
     /// <para>
     /// The <a href="https://console.aws.amazon.com/gamelift/home">AWS Management Console</a>
     /// for Amazon GameLift provides a web interface to manage your Amazon GameLift settings
-    /// and resources. The console includes a dashboard for tracking key resources, includings
+    /// and resources. The console includes a dashboard for tracking key resources, including
     /// builds and fleets, and displays usage and performance metrics for your games as customizable
     /// graphs.
     /// </para>
@@ -130,9 +130,8 @@ namespace Amazon.GameLift
     /// </para>
     ///  
     /// <para>
-    /// These actions allow you to start new game sessions, find existing game sessions, track
-    /// status and other game session information, and enable access for players to join game
-    /// sessions.
+    /// Use these actions to start new game sessions, find existing game sessions, track game
+    /// session status and other information, and enable player access to game sessions.
     /// </para>
     ///  <ul> <li> 
     /// <para>
@@ -140,18 +139,18 @@ namespace Amazon.GameLift
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <a>SearchGameSessions</a> – Get all available game sessions or search for game sessions
-    /// that match a set of criteria. 
+    ///  <a>SearchGameSessions</a> – Retrieve all available game sessions or search for game
+    /// sessions that match a set of criteria. 
     /// </para>
     ///  </li> </ul> </li> <li> 
     /// <para>
-    ///  <b>Start a new game session</b> 
+    ///  <b>Start new game sessions</b> 
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    /// Game session placement – Use a queue to process requests for new game sessions and
-    /// place them on the best available fleet. Placement requests are asynchronous; game
-    /// sessions are started whenever acceptable resources become available. 
+    /// Start new games with Queues to find the best available hosting resources across multiple
+    /// regions, minimize player latency, and balance game session activity for efficiency
+    /// and cost effectiveness. 
     /// </para>
     ///  <ul> <li> 
     /// <para>
@@ -169,8 +168,30 @@ namespace Amazon.GameLift
     /// </para>
     ///  </li> </ul> </li> <li> 
     /// <para>
-    ///  <a>CreateGameSession</a> – Request a new game session on a specific fleet. <i>Available
+    ///  <a>CreateGameSession</a> – Start a new game session on a specific fleet. <i>Available
     /// in Amazon GameLift Local.</i> 
+    /// </para>
+    ///  </li> </ul> </li> <li> 
+    /// <para>
+    ///  <b>Start new game sessions with FlexMatch matchmaking</b> 
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <a>StartMatchmaking</a> – Request matchmaking for one players or a group who want
+    /// to play together. 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>DescribeMatchmaking</a> – Get details on a matchmaking request, including status.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>AcceptMatch</a> – Register that a player accepts a proposed match, for matches
+    /// that require player acceptance. 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>StopMatchmaking</a> – Cancel a matchmaking request. 
     /// </para>
     ///  </li> </ul> </li> <li> 
     /// <para>
@@ -394,8 +415,8 @@ namespace Amazon.GameLift
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a>DescribeGameSessionQueues</a> – Get data on all game session queues defined in
-    /// a Amazon GameLift region.
+    ///  <a>DescribeGameSessionQueues</a> – Retrieve game session queues defined in a Amazon
+    /// GameLift region.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -405,11 +426,153 @@ namespace Amazon.GameLift
     /// <para>
     ///  <a>DeleteGameSessionQueue</a> – Remove a game session queue from the region.
     /// </para>
+    ///  </li> </ul> </li> <li> 
+    /// <para>
+    ///  <b>Manage FlexMatch resources</b> 
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <a>CreateMatchmakingConfiguration</a> – Create a matchmaking configuration with instructions
+    /// for building a player group and placing in a new game session. 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>DescribeMatchmakingConfigurations</a> – Retrieve matchmaking configurations defined
+    /// a Amazon GameLift region.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>UpdateMatchmakingConfiguration</a> – Change settings for matchmaking configuration.
+    /// queue.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>DeleteMatchmakingConfiguration</a> – Remove a matchmaking configuration from the
+    /// region.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>CreateMatchmakingRuleSet</a> – Create a set of rules to use when searching for
+    /// player matches. 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>DescribeMatchmakingRuleSets</a> – Retrieve matchmaking rule sets defined in a
+    /// Amazon GameLift region.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>ValidateMatchmakingRuleSet</a> – Verify syntax for a set of matchmaking rules.
+    /// 
+    /// </para>
     ///  </li> </ul> </li> </ul>
     /// </summary>
     public partial interface IAmazonGameLift : IAmazonService, IDisposable
     {
 
+        
+        #region  AcceptMatch
+
+
+        /// <summary>
+        /// Registers a player's acceptance or rejection of a proposed FlexMatch match. A matchmaking
+        /// configuration may require player acceptance; if so, then matches built with that configuration
+        /// cannot be completed unless all players accept the proposed match within a specified
+        /// time limit. 
+        /// 
+        ///  
+        /// <para>
+        /// When FlexMatch builds a match, all the matchmaking tickets involved in the proposed
+        /// match are placed into status <code>REQUIRES_ACCEPTANCE</code>. This is a trigger for
+        /// your game to get acceptance from all players in the ticket. Acceptances are only valid
+        /// for tickets when they are in this status; all other acceptances result in an error.
+        /// </para>
+        ///  
+        /// <para>
+        /// To register acceptance, specify the ticket ID, a response, and one or more players.
+        /// Once all players have registered acceptance, the matchmaking tickets advance to status
+        /// <code>PLACING</code>, where a new game session is created for the match. 
+        /// </para>
+        ///  
+        /// <para>
+        /// If any player rejects the match, or if acceptances are not received before a specified
+        /// timeout, the proposed match is dropped. The matchmaking tickets are then handled in
+        /// one of two ways: For tickets where all players accepted the match, the ticket status
+        /// is returned to <code>SEARCHING</code> to find a new match. For tickets where one or
+        /// more players failed to accept the match, the ticket status is set to <code>FAILED</code>,
+        /// and processing is terminated. A new matchmaking request for these players can be submitted
+        /// as needed. 
+        /// </para>
+        ///  
+        /// <para>
+        /// Matchmaking-related operations include:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a>StartMatchmaking</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeMatchmaking</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>StopMatchmaking</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>AcceptMatch</a> 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AcceptMatch service method.</param>
+        /// 
+        /// <returns>The response from the AcceptMatch service method, as returned by GameLift.</returns>
+        /// <exception cref="Amazon.GameLift.Model.InternalServiceException">
+        /// The service encountered an unrecoverable internal failure while processing the request.
+        /// Clients can retry such requests immediately or after a waiting period.
+        /// </exception>
+        /// <exception cref="Amazon.GameLift.Model.InvalidRequestException">
+        /// One or more parameter values in the request are invalid. Correct the invalid parameter
+        /// values before retrying.
+        /// </exception>
+        /// <exception cref="Amazon.GameLift.Model.NotFoundException">
+        /// A service resource associated with the request could not be found. Clients should
+        /// not retry such requests.
+        /// </exception>
+        /// <exception cref="Amazon.GameLift.Model.UnsupportedRegionException">
+        /// The requested operation is not supported in the region specified.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/AcceptMatch">REST API Reference for AcceptMatch Operation</seealso>
+        AcceptMatchResponse AcceptMatch(AcceptMatchRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AcceptMatch operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AcceptMatch operation on AmazonGameLiftClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAcceptMatch
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/AcceptMatch">REST API Reference for AcceptMatch Operation</seealso>
+        IAsyncResult BeginAcceptMatch(AcceptMatchRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  AcceptMatch operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAcceptMatch.</param>
+        /// 
+        /// <returns>Returns a  AcceptMatchResult from GameLift.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/AcceptMatch">REST API Reference for AcceptMatch Operation</seealso>
+        AcceptMatchResponse EndAcceptMatch(IAsyncResult asyncResult);
+
+        #endregion
         
         #region  CreateAlias
 
@@ -656,7 +819,7 @@ namespace Amazon.GameLift
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Fleetwide game session protection
+        /// Fleet-wide game session protection
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -859,8 +1022,7 @@ namespace Amazon.GameLift
         /// To create a game session, specify either fleet ID or alias ID and indicate a maximum
         /// number of players to allow in the game session. You can also provide a name and game-specific
         /// properties for this game session. If successful, a <a>GameSession</a> object is returned
-        /// containing game session properties, including a game session ID with the custom string
-        /// you provided.
+        /// containing the game session properties and other settings you specified.
         /// </para>
         ///  
         /// <para>
@@ -879,8 +1041,14 @@ namespace Amazon.GameLift
         /// </para>
         ///  
         /// <para>
-        ///  By default, newly created game sessions allow new players to join. Use <a>UpdateGameSession</a>
+        ///  <b>Player acceptance policy.</b> By default, newly created game sessions are open
+        /// to new players. You can restrict new player access by using <a>UpdateGameSession</a>
         /// to change the game session's player session creation policy.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Game session logs.</b> Logs are retained for all active game sessions for 14 days.
+        /// To access the logs, call <a>GetGameSessionLogUrl</a> to download the log files.
         /// </para>
         ///  
         /// <para>
@@ -1114,6 +1282,238 @@ namespace Amazon.GameLift
         /// <returns>Returns a  CreateGameSessionQueueResult from GameLift.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreateGameSessionQueue">REST API Reference for CreateGameSessionQueue Operation</seealso>
         CreateGameSessionQueueResponse EndCreateGameSessionQueue(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  CreateMatchmakingConfiguration
+
+
+        /// <summary>
+        /// Defines a new matchmaking configuration for use with FlexMatch. A matchmaking configuration
+        /// sets out guidelines for matching players and getting the matches into games. You can
+        /// set up multiple matchmaking configurations to handle the scenarios needed for your
+        /// game. Each matchmaking request (<a>StartMatchmaking</a>) specifies a configuration
+        /// for the match and provides player attributes to support the configuration being used.
+        /// 
+        /// 
+        ///  
+        /// <para>
+        /// To create a matchmaking configuration, at a minimum you must specify the following:
+        /// configuration name; a rule set that governs how to evaluate players and find acceptable
+        /// matches; a game session queue to use when placing a new game session for the match;
+        /// and the maximum time allowed for a matchmaking attempt.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Player acceptance</b> -- In each configuration, you have the option to require
+        /// that all players accept participation in a proposed match. To enable this feature,
+        /// set <i>AcceptanceRequired</i> to true and specify a time limit for player acceptance.
+        /// Players have the option to accept or reject a proposed match, and a match does not
+        /// move ahead to game session placement unless all matched players accept. 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Matchmaking status notification</b> -- There are two ways to track the progress
+        /// of matchmaking tickets: (1) polling ticket status with <a>DescribeMatchmaking</a>;
+        /// or (2) receiving notifications with Amazon Simple Notification Service (SNS). To use
+        /// notifications, you first need to set up an SNS topic to receive the notifications,
+        /// and provide the topic ARN in the matchmaking configuration (see <a href="http://docs.aws.amazon.com/gamelift/latest/developerguide/match-notification.html">
+        /// Setting up Notifications for Matchmaking</a>). Since notifications promise only "best
+        /// effort" delivery, we recommend calling <code>DescribeMatchmaking</code> if no notifications
+        /// are received within 30 seconds.
+        /// </para>
+        ///  
+        /// <para>
+        /// Operations related to match configurations and rule sets include:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a>CreateMatchmakingConfiguration</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeMatchmakingConfigurations</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>UpdateMatchmakingConfiguration</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DeleteMatchmakingConfiguration</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>CreateMatchmakingRuleSet</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeMatchmakingRuleSets</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>ValidateMatchmakingRuleSet</a> 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateMatchmakingConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the CreateMatchmakingConfiguration service method, as returned by GameLift.</returns>
+        /// <exception cref="Amazon.GameLift.Model.InternalServiceException">
+        /// The service encountered an unrecoverable internal failure while processing the request.
+        /// Clients can retry such requests immediately or after a waiting period.
+        /// </exception>
+        /// <exception cref="Amazon.GameLift.Model.InvalidRequestException">
+        /// One or more parameter values in the request are invalid. Correct the invalid parameter
+        /// values before retrying.
+        /// </exception>
+        /// <exception cref="Amazon.GameLift.Model.LimitExceededException">
+        /// The requested operation would cause the resource to exceed the allowed service limit.
+        /// Resolve the issue before retrying.
+        /// </exception>
+        /// <exception cref="Amazon.GameLift.Model.NotFoundException">
+        /// A service resource associated with the request could not be found. Clients should
+        /// not retry such requests.
+        /// </exception>
+        /// <exception cref="Amazon.GameLift.Model.UnsupportedRegionException">
+        /// The requested operation is not supported in the region specified.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreateMatchmakingConfiguration">REST API Reference for CreateMatchmakingConfiguration Operation</seealso>
+        CreateMatchmakingConfigurationResponse CreateMatchmakingConfiguration(CreateMatchmakingConfigurationRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateMatchmakingConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateMatchmakingConfiguration operation on AmazonGameLiftClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateMatchmakingConfiguration
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreateMatchmakingConfiguration">REST API Reference for CreateMatchmakingConfiguration Operation</seealso>
+        IAsyncResult BeginCreateMatchmakingConfiguration(CreateMatchmakingConfigurationRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateMatchmakingConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateMatchmakingConfiguration.</param>
+        /// 
+        /// <returns>Returns a  CreateMatchmakingConfigurationResult from GameLift.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreateMatchmakingConfiguration">REST API Reference for CreateMatchmakingConfiguration Operation</seealso>
+        CreateMatchmakingConfigurationResponse EndCreateMatchmakingConfiguration(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  CreateMatchmakingRuleSet
+
+
+        /// <summary>
+        /// Creates a new rule set for FlexMatch matchmaking. A rule set describes the type of
+        /// match to create, such as the number and size of teams, and sets the parameters for
+        /// acceptable player matches, such as minimum skill level or character type. Rule sets
+        /// are used in matchmaking configurations, which define how matchmaking requests are
+        /// handled. Each <a>MatchmakingConfiguration</a> uses one rule set; you can set up multiple
+        /// rule sets to handle the scenarios that suit your game (such as for different game
+        /// modes), and create a separate matchmaking configuration for each rule set. See additional
+        /// information on rule set content in the <a>MatchmakingRuleSet</a> structure. For help
+        /// creating rule sets, including useful examples, see the topic <a href="http://docs.aws.amazon.com/gamelift/latest/developerguide/match-intro.html">
+        /// Adding FlexMatch to Your Game</a>.
+        /// 
+        ///  
+        /// <para>
+        /// Once created, matchmaking rule sets cannot be changed or deleted, so we recommend
+        /// checking the rule set syntax using <a>ValidateMatchmakingRuleSet</a>before creating
+        /// the rule set.
+        /// </para>
+        ///  
+        /// <para>
+        /// To create a matchmaking rule set, provide the set of rules and a unique name. Rule
+        /// sets must be defined in the same region as the matchmaking configuration they will
+        /// be used with. Rule sets cannot be edited or deleted. If you need to change a rule
+        /// set, create a new one with the necessary edits and then update matchmaking configurations
+        /// to use the new rule set.
+        /// </para>
+        ///  
+        /// <para>
+        /// Operations related to match configurations and rule sets include:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a>CreateMatchmakingConfiguration</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeMatchmakingConfigurations</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>UpdateMatchmakingConfiguration</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DeleteMatchmakingConfiguration</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>CreateMatchmakingRuleSet</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeMatchmakingRuleSets</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>ValidateMatchmakingRuleSet</a> 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateMatchmakingRuleSet service method.</param>
+        /// 
+        /// <returns>The response from the CreateMatchmakingRuleSet service method, as returned by GameLift.</returns>
+        /// <exception cref="Amazon.GameLift.Model.InternalServiceException">
+        /// The service encountered an unrecoverable internal failure while processing the request.
+        /// Clients can retry such requests immediately or after a waiting period.
+        /// </exception>
+        /// <exception cref="Amazon.GameLift.Model.InvalidRequestException">
+        /// One or more parameter values in the request are invalid. Correct the invalid parameter
+        /// values before retrying.
+        /// </exception>
+        /// <exception cref="Amazon.GameLift.Model.UnsupportedRegionException">
+        /// The requested operation is not supported in the region specified.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreateMatchmakingRuleSet">REST API Reference for CreateMatchmakingRuleSet Operation</seealso>
+        CreateMatchmakingRuleSetResponse CreateMatchmakingRuleSet(CreateMatchmakingRuleSetRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateMatchmakingRuleSet operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateMatchmakingRuleSet operation on AmazonGameLiftClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateMatchmakingRuleSet
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreateMatchmakingRuleSet">REST API Reference for CreateMatchmakingRuleSet Operation</seealso>
+        IAsyncResult BeginCreateMatchmakingRuleSet(CreateMatchmakingRuleSetRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateMatchmakingRuleSet operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateMatchmakingRuleSet.</param>
+        /// 
+        /// <returns>Returns a  CreateMatchmakingRuleSetResult from GameLift.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreateMatchmakingRuleSet">REST API Reference for CreateMatchmakingRuleSet Operation</seealso>
+        CreateMatchmakingRuleSetResponse EndCreateMatchmakingRuleSet(IAsyncResult asyncResult);
 
         #endregion
         
@@ -2172,6 +2572,97 @@ namespace Amazon.GameLift
         /// <returns>Returns a  DeleteGameSessionQueueResult from GameLift.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DeleteGameSessionQueue">REST API Reference for DeleteGameSessionQueue Operation</seealso>
         DeleteGameSessionQueueResponse EndDeleteGameSessionQueue(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DeleteMatchmakingConfiguration
+
+
+        /// <summary>
+        /// Permanently removes a FlexMatch matchmaking configuration. To delete, specify the
+        /// configuration name. A matchmaking configuration cannot be deleted if it is being used
+        /// in any active matchmaking tickets.
+        /// 
+        ///  
+        /// <para>
+        /// Operations related to match configurations and rule sets include:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a>CreateMatchmakingConfiguration</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeMatchmakingConfigurations</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>UpdateMatchmakingConfiguration</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DeleteMatchmakingConfiguration</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>CreateMatchmakingRuleSet</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeMatchmakingRuleSets</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>ValidateMatchmakingRuleSet</a> 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteMatchmakingConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the DeleteMatchmakingConfiguration service method, as returned by GameLift.</returns>
+        /// <exception cref="Amazon.GameLift.Model.InternalServiceException">
+        /// The service encountered an unrecoverable internal failure while processing the request.
+        /// Clients can retry such requests immediately or after a waiting period.
+        /// </exception>
+        /// <exception cref="Amazon.GameLift.Model.InvalidRequestException">
+        /// One or more parameter values in the request are invalid. Correct the invalid parameter
+        /// values before retrying.
+        /// </exception>
+        /// <exception cref="Amazon.GameLift.Model.NotFoundException">
+        /// A service resource associated with the request could not be found. Clients should
+        /// not retry such requests.
+        /// </exception>
+        /// <exception cref="Amazon.GameLift.Model.UnsupportedRegionException">
+        /// The requested operation is not supported in the region specified.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DeleteMatchmakingConfiguration">REST API Reference for DeleteMatchmakingConfiguration Operation</seealso>
+        DeleteMatchmakingConfigurationResponse DeleteMatchmakingConfiguration(DeleteMatchmakingConfigurationRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteMatchmakingConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteMatchmakingConfiguration operation on AmazonGameLiftClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteMatchmakingConfiguration
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DeleteMatchmakingConfiguration">REST API Reference for DeleteMatchmakingConfiguration Operation</seealso>
+        IAsyncResult BeginDeleteMatchmakingConfiguration(DeleteMatchmakingConfigurationRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteMatchmakingConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteMatchmakingConfiguration.</param>
+        /// 
+        /// <returns>Returns a  DeleteMatchmakingConfigurationResult from GameLift.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DeleteMatchmakingConfiguration">REST API Reference for DeleteMatchmakingConfiguration Operation</seealso>
+        DeleteMatchmakingConfigurationResponse EndDeleteMatchmakingConfiguration(IAsyncResult asyncResult);
 
         #endregion
         
@@ -4256,6 +4747,277 @@ namespace Amazon.GameLift
 
         #endregion
         
+        #region  DescribeMatchmaking
+
+
+        /// <summary>
+        /// Retrieves a set of one or more matchmaking tickets. Use this operation to retrieve
+        /// ticket information, including status and--once a successful match is made--acquire
+        /// connection information for the resulting new game session. 
+        /// 
+        ///  
+        /// <para>
+        /// You can use this operation to track the progress of matchmaking requests (through
+        /// polling) as an alternative to using event notifications. See more details on tracking
+        /// matchmaking requests through polling or notifications in <a>StartMatchmaking</a>.
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        /// You can request data for a one or a list of ticket IDs. If the request is successful,
+        /// a ticket object is returned for each requested ID. When specifying a list of ticket
+        /// IDs, objects are returned only for tickets that currently exist. 
+        /// </para>
+        ///  
+        /// <para>
+        /// Matchmaking-related operations include:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a>StartMatchmaking</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeMatchmaking</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>StopMatchmaking</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>AcceptMatch</a> 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeMatchmaking service method.</param>
+        /// 
+        /// <returns>The response from the DescribeMatchmaking service method, as returned by GameLift.</returns>
+        /// <exception cref="Amazon.GameLift.Model.InternalServiceException">
+        /// The service encountered an unrecoverable internal failure while processing the request.
+        /// Clients can retry such requests immediately or after a waiting period.
+        /// </exception>
+        /// <exception cref="Amazon.GameLift.Model.InvalidRequestException">
+        /// One or more parameter values in the request are invalid. Correct the invalid parameter
+        /// values before retrying.
+        /// </exception>
+        /// <exception cref="Amazon.GameLift.Model.UnsupportedRegionException">
+        /// The requested operation is not supported in the region specified.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeMatchmaking">REST API Reference for DescribeMatchmaking Operation</seealso>
+        DescribeMatchmakingResponse DescribeMatchmaking(DescribeMatchmakingRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeMatchmaking operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeMatchmaking operation on AmazonGameLiftClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeMatchmaking
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeMatchmaking">REST API Reference for DescribeMatchmaking Operation</seealso>
+        IAsyncResult BeginDescribeMatchmaking(DescribeMatchmakingRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeMatchmaking operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeMatchmaking.</param>
+        /// 
+        /// <returns>Returns a  DescribeMatchmakingResult from GameLift.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeMatchmaking">REST API Reference for DescribeMatchmaking Operation</seealso>
+        DescribeMatchmakingResponse EndDescribeMatchmaking(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DescribeMatchmakingConfigurations
+
+
+        /// <summary>
+        /// Retrieves the details of FlexMatch matchmaking configurations. with this operation,
+        /// you have the following options: (1) retrieve all existing configurations, (2) provide
+        /// the names of one or more configurations to retrieve, or (3) retrieve all configurations
+        /// that use a specified rule set name. When requesting multiple items, use the pagination
+        /// parameters to retrieve results as a set of sequential pages. If successful, a configuration
+        /// is returned for each requested name. When specifying a list of names, only configurations
+        /// that currently exist are returned. 
+        /// 
+        ///  
+        /// <para>
+        /// Operations related to match configurations and rule sets include:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a>CreateMatchmakingConfiguration</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeMatchmakingConfigurations</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>UpdateMatchmakingConfiguration</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DeleteMatchmakingConfiguration</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>CreateMatchmakingRuleSet</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeMatchmakingRuleSets</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>ValidateMatchmakingRuleSet</a> 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeMatchmakingConfigurations service method.</param>
+        /// 
+        /// <returns>The response from the DescribeMatchmakingConfigurations service method, as returned by GameLift.</returns>
+        /// <exception cref="Amazon.GameLift.Model.InternalServiceException">
+        /// The service encountered an unrecoverable internal failure while processing the request.
+        /// Clients can retry such requests immediately or after a waiting period.
+        /// </exception>
+        /// <exception cref="Amazon.GameLift.Model.InvalidRequestException">
+        /// One or more parameter values in the request are invalid. Correct the invalid parameter
+        /// values before retrying.
+        /// </exception>
+        /// <exception cref="Amazon.GameLift.Model.UnsupportedRegionException">
+        /// The requested operation is not supported in the region specified.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeMatchmakingConfigurations">REST API Reference for DescribeMatchmakingConfigurations Operation</seealso>
+        DescribeMatchmakingConfigurationsResponse DescribeMatchmakingConfigurations(DescribeMatchmakingConfigurationsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeMatchmakingConfigurations operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeMatchmakingConfigurations operation on AmazonGameLiftClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeMatchmakingConfigurations
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeMatchmakingConfigurations">REST API Reference for DescribeMatchmakingConfigurations Operation</seealso>
+        IAsyncResult BeginDescribeMatchmakingConfigurations(DescribeMatchmakingConfigurationsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeMatchmakingConfigurations operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeMatchmakingConfigurations.</param>
+        /// 
+        /// <returns>Returns a  DescribeMatchmakingConfigurationsResult from GameLift.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeMatchmakingConfigurations">REST API Reference for DescribeMatchmakingConfigurations Operation</seealso>
+        DescribeMatchmakingConfigurationsResponse EndDescribeMatchmakingConfigurations(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DescribeMatchmakingRuleSets
+
+
+        /// <summary>
+        /// Retrieves the details for FlexMatch matchmaking rule sets. You can request all existing
+        /// rule sets for the region, or provide a list of one or more rule set names. When requesting
+        /// multiple items, use the pagination parameters to retrieve results as a set of sequential
+        /// pages. If successful, a rule set is returned for each requested name. 
+        /// 
+        ///  
+        /// <para>
+        /// Operations related to match configurations and rule sets include:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a>CreateMatchmakingConfiguration</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeMatchmakingConfigurations</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>UpdateMatchmakingConfiguration</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DeleteMatchmakingConfiguration</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>CreateMatchmakingRuleSet</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeMatchmakingRuleSets</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>ValidateMatchmakingRuleSet</a> 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeMatchmakingRuleSets service method.</param>
+        /// 
+        /// <returns>The response from the DescribeMatchmakingRuleSets service method, as returned by GameLift.</returns>
+        /// <exception cref="Amazon.GameLift.Model.InternalServiceException">
+        /// The service encountered an unrecoverable internal failure while processing the request.
+        /// Clients can retry such requests immediately or after a waiting period.
+        /// </exception>
+        /// <exception cref="Amazon.GameLift.Model.InvalidRequestException">
+        /// One or more parameter values in the request are invalid. Correct the invalid parameter
+        /// values before retrying.
+        /// </exception>
+        /// <exception cref="Amazon.GameLift.Model.NotFoundException">
+        /// A service resource associated with the request could not be found. Clients should
+        /// not retry such requests.
+        /// </exception>
+        /// <exception cref="Amazon.GameLift.Model.UnsupportedRegionException">
+        /// The requested operation is not supported in the region specified.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeMatchmakingRuleSets">REST API Reference for DescribeMatchmakingRuleSets Operation</seealso>
+        DescribeMatchmakingRuleSetsResponse DescribeMatchmakingRuleSets(DescribeMatchmakingRuleSetsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeMatchmakingRuleSets operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeMatchmakingRuleSets operation on AmazonGameLiftClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeMatchmakingRuleSets
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeMatchmakingRuleSets">REST API Reference for DescribeMatchmakingRuleSets Operation</seealso>
+        IAsyncResult BeginDescribeMatchmakingRuleSets(DescribeMatchmakingRuleSetsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeMatchmakingRuleSets operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeMatchmakingRuleSets.</param>
+        /// 
+        /// <returns>Returns a  DescribeMatchmakingRuleSetsResult from GameLift.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeMatchmakingRuleSets">REST API Reference for DescribeMatchmakingRuleSets Operation</seealso>
+        DescribeMatchmakingRuleSetsResponse EndDescribeMatchmakingRuleSets(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  DescribePlayerSessions
 
 
@@ -4666,7 +5428,7 @@ namespace Amazon.GameLift
         /// <summary>
         /// Retrieves the location of stored game session logs for a specified game session. When
         /// a game session is terminated, Amazon GameLift automatically stores the logs in Amazon
-        /// S3. Use this URL to download the logs.
+        /// S3 and retains them for 14 days. Use this URL to download the logs.
         /// 
         ///  <note> 
         /// <para>
@@ -4744,7 +5506,7 @@ namespace Amazon.GameLift
         /// <summary>
         /// Retrieves the location of stored game session logs for a specified game session. When
         /// a game session is terminated, Amazon GameLift automatically stores the logs in Amazon
-        /// S3. Use this URL to download the logs.
+        /// S3 and retains them for 14 days. Use this URL to download the logs.
         /// 
         ///  <note> 
         /// <para>
@@ -5877,7 +6639,7 @@ namespace Amazon.GameLift
         ///  
         /// <para>
         /// To track the status of a placement request, call <a>DescribeGameSessionPlacement</a>
-        /// and check the request's status. If the status is <code>Fulfilled</code>, a new game
+        /// and check the request's status. If the status is <code>FULFILLED</code>, a new game
         /// session has been created and a game session ARN and region are referenced. If the
         /// placement request times out, you can resubmit the request or retry it with a different
         /// queue. 
@@ -5977,12 +6739,167 @@ namespace Amazon.GameLift
 
         #endregion
         
+        #region  StartMatchmaking
+
+
+        /// <summary>
+        /// Uses FlexMatch to create a game match for a group of players based on custom matchmaking
+        /// rules, and starts a new game for the matched players. Each matchmaking request specifies
+        /// the type of match to build (team configuration, rules for an acceptable match, etc.).
+        /// The request also specifies the players to find a match for and where to host the new
+        /// game session for optimal performance. A matchmaking request might start with a single
+        /// player or a group of players who want to play together. FlexMatch finds additional
+        /// players as needed to fill the match. Match type, rules, and the queue used to place
+        /// a new game session are defined in a <code>MatchmakingConfiguration</code>. For complete
+        /// information on setting up and using FlexMatch, see the topic <a href="http://docs.aws.amazon.com/gamelift/latest/developerguide/match-intro.html">
+        /// Adding FlexMatch to Your Game</a>.
+        /// 
+        ///  
+        /// <para>
+        /// To start matchmaking, provide a unique ticket ID, specify a matchmaking configuration,
+        /// and include the players to be matched. You must also include a set of player attributes
+        /// relevant for the matchmaking configuration. If successful, a matchmaking ticket is
+        /// returned with status set to <code>QUEUED</code>. Track the status of the ticket to
+        /// respond as needed and acquire game session connection information for sucessfully
+        /// completed matches.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Tracking ticket status</b> -- A couple of options are available for tracking the
+        /// status of matchmaking requests: 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Polling -- Call <code>DescribeMatchmaking</code>. This operation returns the full
+        /// ticket object, including current status and (for completed tickets) game session connection
+        /// info. We recommend polling no more than once every 10 seconds.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Notifications -- Get event notifications for changes in ticket status using Amazon
+        /// Simple Notification Service (SNS). Notifications are easy to set up (see <a>CreateMatchmakingConfiguration</a>)
+        /// and typically deliver match status changes faster and more efficiently than polling.
+        /// We recommend that you use polling to back up to notifications (since delivery is not
+        /// guaranteed) and call <code>DescribeMatchmaking</code> only when notifications are
+        /// not received within 30 seconds.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Processing a matchmaking request</b> -- FlexMatch handles a matchmaking request
+        /// as follows: 
+        /// </para>
+        ///  <ol> <li> 
+        /// <para>
+        /// Your client code submits a <code>StartMatchmaking</code> request for one or more players
+        /// and tracks the status of the request ticket. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// FlexMatch uses this ticket and others in process to build an acceptable match. When
+        /// a potential match is identified, all tickets in the proposed match are advanced to
+        /// the next status. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If the match requires player acceptance (set in the matchmaking configuration), the
+        /// tickets move into status <code>REQUIRES_ACCEPTANCE</code>. This status triggers your
+        /// client code to solicit acceptance from all players in every ticket involved in the
+        /// match, and then call <a>AcceptMatch</a> for each player. If any player rejects or
+        /// fails to accept the match before a specified timeout, the proposed match is dropped
+        /// (see <code>AcceptMatch</code> for more details).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Once a match is proposed and accepted, the matchmaking tickets move into status <code>PLACING</code>.
+        /// FlexMatch locates resources for a new game session using the game session queue (set
+        /// in the matchmaking configuration) and creates the game session based on the match
+        /// data. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// When the match is successfully placed, the matchmaking tickets move into <code>COMPLETED</code>
+        /// status. Connection information (including game session endpoint and player session)
+        /// is added to the matchmaking tickets. Matched players can use the connection information
+        /// to join the game. 
+        /// </para>
+        ///  </li> </ol> 
+        /// <para>
+        /// Matchmaking-related operations include:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a>StartMatchmaking</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeMatchmaking</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>StopMatchmaking</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>AcceptMatch</a> 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartMatchmaking service method.</param>
+        /// 
+        /// <returns>The response from the StartMatchmaking service method, as returned by GameLift.</returns>
+        /// <exception cref="Amazon.GameLift.Model.InternalServiceException">
+        /// The service encountered an unrecoverable internal failure while processing the request.
+        /// Clients can retry such requests immediately or after a waiting period.
+        /// </exception>
+        /// <exception cref="Amazon.GameLift.Model.InvalidRequestException">
+        /// One or more parameter values in the request are invalid. Correct the invalid parameter
+        /// values before retrying.
+        /// </exception>
+        /// <exception cref="Amazon.GameLift.Model.NotFoundException">
+        /// A service resource associated with the request could not be found. Clients should
+        /// not retry such requests.
+        /// </exception>
+        /// <exception cref="Amazon.GameLift.Model.UnsupportedRegionException">
+        /// The requested operation is not supported in the region specified.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/StartMatchmaking">REST API Reference for StartMatchmaking Operation</seealso>
+        StartMatchmakingResponse StartMatchmaking(StartMatchmakingRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StartMatchmaking operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StartMatchmaking operation on AmazonGameLiftClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStartMatchmaking
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/StartMatchmaking">REST API Reference for StartMatchmaking Operation</seealso>
+        IAsyncResult BeginStartMatchmaking(StartMatchmakingRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  StartMatchmaking operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStartMatchmaking.</param>
+        /// 
+        /// <returns>Returns a  StartMatchmakingResult from GameLift.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/StartMatchmaking">REST API Reference for StartMatchmaking Operation</seealso>
+        StartMatchmakingResponse EndStartMatchmaking(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  StopGameSessionPlacement
 
 
         /// <summary>
-        /// Cancels a game session placement that is in Pending status. To stop a placement, provide
-        /// the placement ID values. If successful, the placement is moved to Cancelled status.
+        /// Cancels a game session placement that is in <code>PENDING</code> status. To stop a
+        /// placement, provide the placement ID values. If successful, the placement is moved
+        /// to <code>CANCELLED</code> status.
         /// 
         ///  
         /// <para>
@@ -6076,6 +6993,85 @@ namespace Amazon.GameLift
         /// <returns>Returns a  StopGameSessionPlacementResult from GameLift.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/StopGameSessionPlacement">REST API Reference for StopGameSessionPlacement Operation</seealso>
         StopGameSessionPlacementResponse EndStopGameSessionPlacement(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  StopMatchmaking
+
+
+        /// <summary>
+        /// Cancels a matchmaking ticket that is currently being processed. To stop the matchmaking
+        /// operation, specify the ticket ID. If successful, work on the ticket is stopped, and
+        /// the ticket status is changed to <code>CANCELLED</code>.
+        /// 
+        ///  
+        /// <para>
+        /// Matchmaking-related operations include:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a>StartMatchmaking</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeMatchmaking</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>StopMatchmaking</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>AcceptMatch</a> 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StopMatchmaking service method.</param>
+        /// 
+        /// <returns>The response from the StopMatchmaking service method, as returned by GameLift.</returns>
+        /// <exception cref="Amazon.GameLift.Model.InternalServiceException">
+        /// The service encountered an unrecoverable internal failure while processing the request.
+        /// Clients can retry such requests immediately or after a waiting period.
+        /// </exception>
+        /// <exception cref="Amazon.GameLift.Model.InvalidRequestException">
+        /// One or more parameter values in the request are invalid. Correct the invalid parameter
+        /// values before retrying.
+        /// </exception>
+        /// <exception cref="Amazon.GameLift.Model.NotFoundException">
+        /// A service resource associated with the request could not be found. Clients should
+        /// not retry such requests.
+        /// </exception>
+        /// <exception cref="Amazon.GameLift.Model.UnsupportedRegionException">
+        /// The requested operation is not supported in the region specified.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/StopMatchmaking">REST API Reference for StopMatchmaking Operation</seealso>
+        StopMatchmakingResponse StopMatchmaking(StopMatchmakingRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StopMatchmaking operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StopMatchmaking operation on AmazonGameLiftClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStopMatchmaking
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/StopMatchmaking">REST API Reference for StopMatchmaking Operation</seealso>
+        IAsyncResult BeginStopMatchmaking(StopMatchmakingRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  StopMatchmaking operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStopMatchmaking.</param>
+        /// 
+        /// <returns>Returns a  StopMatchmakingResult from GameLift.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/StopMatchmaking">REST API Reference for StopMatchmaking Operation</seealso>
+        StopMatchmakingResponse EndStopMatchmaking(IAsyncResult asyncResult);
 
         #endregion
         
@@ -6942,6 +7938,96 @@ namespace Amazon.GameLift
 
         #endregion
         
+        #region  UpdateMatchmakingConfiguration
+
+
+        /// <summary>
+        /// Updates settings for a FlexMatch matchmaking configuration. To update settings, specify
+        /// the configuration name to be updated and provide the new settings. 
+        /// 
+        ///  
+        /// <para>
+        /// Operations related to match configurations and rule sets include:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a>CreateMatchmakingConfiguration</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeMatchmakingConfigurations</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>UpdateMatchmakingConfiguration</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DeleteMatchmakingConfiguration</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>CreateMatchmakingRuleSet</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeMatchmakingRuleSets</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>ValidateMatchmakingRuleSet</a> 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateMatchmakingConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the UpdateMatchmakingConfiguration service method, as returned by GameLift.</returns>
+        /// <exception cref="Amazon.GameLift.Model.InternalServiceException">
+        /// The service encountered an unrecoverable internal failure while processing the request.
+        /// Clients can retry such requests immediately or after a waiting period.
+        /// </exception>
+        /// <exception cref="Amazon.GameLift.Model.InvalidRequestException">
+        /// One or more parameter values in the request are invalid. Correct the invalid parameter
+        /// values before retrying.
+        /// </exception>
+        /// <exception cref="Amazon.GameLift.Model.NotFoundException">
+        /// A service resource associated with the request could not be found. Clients should
+        /// not retry such requests.
+        /// </exception>
+        /// <exception cref="Amazon.GameLift.Model.UnsupportedRegionException">
+        /// The requested operation is not supported in the region specified.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/UpdateMatchmakingConfiguration">REST API Reference for UpdateMatchmakingConfiguration Operation</seealso>
+        UpdateMatchmakingConfigurationResponse UpdateMatchmakingConfiguration(UpdateMatchmakingConfigurationRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateMatchmakingConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateMatchmakingConfiguration operation on AmazonGameLiftClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateMatchmakingConfiguration
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/UpdateMatchmakingConfiguration">REST API Reference for UpdateMatchmakingConfiguration Operation</seealso>
+        IAsyncResult BeginUpdateMatchmakingConfiguration(UpdateMatchmakingConfigurationRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateMatchmakingConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateMatchmakingConfiguration.</param>
+        /// 
+        /// <returns>Returns a  UpdateMatchmakingConfigurationResult from GameLift.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/UpdateMatchmakingConfiguration">REST API Reference for UpdateMatchmakingConfiguration Operation</seealso>
+        UpdateMatchmakingConfigurationResponse EndUpdateMatchmakingConfiguration(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  UpdateRuntimeConfiguration
 
 
@@ -7106,6 +8192,93 @@ namespace Amazon.GameLift
         /// <returns>Returns a  UpdateRuntimeConfigurationResult from GameLift.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/UpdateRuntimeConfiguration">REST API Reference for UpdateRuntimeConfiguration Operation</seealso>
         UpdateRuntimeConfigurationResponse EndUpdateRuntimeConfiguration(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ValidateMatchmakingRuleSet
+
+
+        /// <summary>
+        /// Validates the syntax of a matchmaking rule or rule set. This operation checks that
+        /// the rule set uses syntactically correct JSON and that it conforms to allowed property
+        /// expressions. To validate syntax, provide a rule set string.
+        /// 
+        ///  
+        /// <para>
+        /// Operations related to match configurations and rule sets include:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a>CreateMatchmakingConfiguration</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeMatchmakingConfigurations</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>UpdateMatchmakingConfiguration</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DeleteMatchmakingConfiguration</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>CreateMatchmakingRuleSet</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeMatchmakingRuleSets</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>ValidateMatchmakingRuleSet</a> 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ValidateMatchmakingRuleSet service method.</param>
+        /// 
+        /// <returns>The response from the ValidateMatchmakingRuleSet service method, as returned by GameLift.</returns>
+        /// <exception cref="Amazon.GameLift.Model.InternalServiceException">
+        /// The service encountered an unrecoverable internal failure while processing the request.
+        /// Clients can retry such requests immediately or after a waiting period.
+        /// </exception>
+        /// <exception cref="Amazon.GameLift.Model.InvalidRequestException">
+        /// One or more parameter values in the request are invalid. Correct the invalid parameter
+        /// values before retrying.
+        /// </exception>
+        /// <exception cref="Amazon.GameLift.Model.UnsupportedRegionException">
+        /// The requested operation is not supported in the region specified.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/ValidateMatchmakingRuleSet">REST API Reference for ValidateMatchmakingRuleSet Operation</seealso>
+        ValidateMatchmakingRuleSetResponse ValidateMatchmakingRuleSet(ValidateMatchmakingRuleSetRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ValidateMatchmakingRuleSet operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ValidateMatchmakingRuleSet operation on AmazonGameLiftClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndValidateMatchmakingRuleSet
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/ValidateMatchmakingRuleSet">REST API Reference for ValidateMatchmakingRuleSet Operation</seealso>
+        IAsyncResult BeginValidateMatchmakingRuleSet(ValidateMatchmakingRuleSetRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ValidateMatchmakingRuleSet operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginValidateMatchmakingRuleSet.</param>
+        /// 
+        /// <returns>Returns a  ValidateMatchmakingRuleSetResult from GameLift.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/ValidateMatchmakingRuleSet">REST API Reference for ValidateMatchmakingRuleSet Operation</seealso>
+        ValidateMatchmakingRuleSetResponse EndValidateMatchmakingRuleSet(IAsyncResult asyncResult);
 
         #endregion
         
