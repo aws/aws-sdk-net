@@ -204,7 +204,7 @@ namespace Amazon.S3.IO
         }
 
         /// <summary>
-        /// Returns the last time the fule was modified in UTC.
+        /// Returns the last time the file was modified in UTC.
         /// </summary>
         /// <exception cref="T:System.Net.WebException"></exception>
         /// <exception cref="T:Amazon.S3.AmazonS3Exception"></exception>
