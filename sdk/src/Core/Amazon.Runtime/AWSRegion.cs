@@ -132,11 +132,32 @@ namespace Amazon.Runtime
     {
         /// <summary>
         /// Attempts to construct an instance of <see cref="ProfileAWSRegion"/>.
+        /// If the AWS_PROFILE environment variable is set the instance will be constructed using that profile,
+        /// otherwise it will use the default profile.
+        ///
+        /// If the profile doesn't exist or there is no region information an InvalidOperationException is thrown.
+        /// </summary>
+        /// <param name="source">The ICredentialProfileSource to read the profile from.</param>
+        public ProfileAWSRegion(ICredentialProfileSource source)
+        {
+            var profileName = Environment.GetEnvironmentVariable(FallbackCredentialsFactory.AWS_PROFILE_ENVIRONMENT_VARIABLE);
+            if (profileName == null)
+                profileName = FallbackCredentialsFactory.DefaultProfileName;
+            Setup(source, profileName);
+        }
+
+        /// <summary>
+        /// Attempts to construct an instance of <see cref="ProfileAWSRegion"/>.
         /// If the profile doesn't exist or there is no region information an InvalidOperationException is thrown.
         /// </summary>
         /// <param name="source">The ICredentialProfileSource to read the profile from.</param>
         /// <param name="profileName">The name of the profile.</param>
         public ProfileAWSRegion(ICredentialProfileSource source, string profileName)
+        {
+            Setup(source, profileName);
+        }
+
+        private void Setup(ICredentialProfileSource source, string profileName)
         {
             RegionEndpoint region = null;
             CredentialProfile profile;
@@ -165,7 +186,6 @@ namespace Amazon.Runtime
     public static class FallbackRegionFactory
     {
 #if BCL || CORECLR
-        private const string DefaultProfileName = "default";
         private static CredentialProfileStoreChain credentialProfileChain = new CredentialProfileStoreChain();
 #endif
 
@@ -189,7 +209,7 @@ namespace Amazon.Runtime
                 () => new AppConfigAWSRegion(),
 #if BCL || CORECLR
                 () => new EnvironmentVariableAWSRegion(),
-                () => new ProfileAWSRegion(credentialProfileChain, DefaultProfileName),
+                () => new ProfileAWSRegion(credentialProfileChain),
                 () => new InstanceProfileAWSRegion()
 #endif
             };
@@ -199,7 +219,7 @@ namespace Amazon.Runtime
                 () => new AppConfigAWSRegion(),
 #if BCL || CORECLR
                 () => new EnvironmentVariableAWSRegion(),
-                () => new ProfileAWSRegion(credentialProfileChain, DefaultProfileName),
+                () => new ProfileAWSRegion(credentialProfileChain),
 #endif
             };
         }

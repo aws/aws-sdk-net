@@ -30,9 +30,9 @@ namespace AWSSDK.UnitTests
         private const string CredentialsFileName = "credentials";
         private const string ConfigFileName = "config";
 
-        private string CredentialsFilePath { get; set; }
-        private string ConfigFilePath { get; set; }
-        private string DirectoryPath { get; set; }
+        public string CredentialsFilePath { get; set; }
+        public string ConfigFilePath { get; set; }
+        public string DirectoryPath { get; set; }
 
         public SharedCredentialsFile CredentialsFile { get; private set; }
 

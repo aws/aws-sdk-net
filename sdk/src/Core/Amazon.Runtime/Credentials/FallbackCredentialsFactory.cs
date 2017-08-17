@@ -28,7 +28,9 @@ namespace Amazon.Runtime
     public static class FallbackCredentialsFactory
     {
 #if BCL || CORECLR
-        private const string DefaultProfileName = "default";
+        internal const string AWS_PROFILE_ENVIRONMENT_VARIABLE = "AWS_PROFILE";
+        internal const string DefaultProfileName = "default";
+
         private static CredentialProfileStoreChain credentialProfileChain = new CredentialProfileStoreChain();
 #endif
 
@@ -49,7 +51,7 @@ namespace Amazon.Runtime
 #endif
 #if BCL || CORECLR
                 // Attempt to load the default profile.  It could be Basic, Session, AssumeRole, or SAML.
-                () => GetAWSCredentials(credentialProfileChain, DefaultProfileName),
+                () => GetAWSCredentials(credentialProfileChain),
                 () => new EnvironmentVariablesAWSCredentials(), // Look for credentials set in environment vars.
 #endif
                 ECSEC2CredentialsWrapper,                       // either get ECS credentials or instance profile credentials
@@ -57,17 +59,17 @@ namespace Amazon.Runtime
         }
 
 #if BCL || CORECLR
-        private static AWSCredentials GetAWSCredentials(ICredentialProfileSource source, string defaultProfileName)
+        private static AWSCredentials GetAWSCredentials(ICredentialProfileSource source)
         {
-            CredentialProfile defaultProfile;
-            if (source.TryGetProfile(defaultProfileName, out defaultProfile))
-            {
-                return defaultProfile.GetAWSCredentials(source, true);
-            }
+            var profileName = Environment.GetEnvironmentVariable(AWS_PROFILE_ENVIRONMENT_VARIABLE);
+            if (profileName == null)
+                profileName = DefaultProfileName;
+
+            CredentialProfile profile;
+            if (source.TryGetProfile(profileName, out profile))
+                return profile.GetAWSCredentials(source, true);
             else
-            {
-                throw new AmazonClientException("Unable to find a default profile in CredentialProfileStoreChain.");
-            }
+                throw new AmazonClientException("Unable to find the '" + profileName + "' profile in CredentialProfileStoreChain.");
         }
 #endif
 
