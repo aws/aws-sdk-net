@@ -1,6 +1,8 @@
 ### 3.3.140.1 (2017-08-16 22:00 UTC)
 * EC2 (3.3.21.1)
 	* Use HTTPS endpoint to retrieve stockamis.json
+* AWSSDK.Extensions.CognitoAuthentication (0.9.0)
+	* Developer preview release of an extension library to assist in the Amazon Cognito User Pools authentication process.
 
 ### 3.3.140.0 (2017-08-16 19:34 UTC)
 * GameLift (3.3.7.0)
@@ -12,7 +14,7 @@
 * S3 (3.3.10.1)
 	* Fix doc typo
 
-	### 3.3.139.0 (2017-08-15 21:32 UTC)
+### 3.3.139.0 (2017-08-15 21:32 UTC)
 * EC2 (3.3.21.0)
 	* Fixed bug in EC2 clients preventing HostReservation from being set
 
