@@ -1,3 +1,7 @@
+### 3.3.142.0 (2017-08-22 18:31 UTC)
+* SimpleSystemsManagement (3.3.10.0)
+	* Changes to associations in Systems Manager State Manager can now be recorded. Previously, when you edited associations, you could not go back and review older association settings. Now, associations are versioned, and can be named using human-readable strings, allowing you to see a trail of association changes. You can also perform rate-based scheduling, which allows you to schedule associations more granularly.
+
 ### 3.3.141.0 (2017-08-22 00:16 UTC)
 * KinesisFirehose (3.3.2.0)
 	* This change will allow customers to attach a Firehose delivery stream to an existing Kinesis stream directly. You no longer need a forwarder to move data from a Kinesis stream to a Firehose delivery stream. You can now run your streaming applications on your Kinesis stream and easily attach a Firehose delivery stream to it for data delivery to S3, Redshift, or Elasticsearch concurrently.
