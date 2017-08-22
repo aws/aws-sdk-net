@@ -1,3 +1,9 @@
+### 3.3.141.0 (2017-08-22 00:16 UTC)
+* KinesisFirehose (3.3.2.0)
+	* This change will allow customers to attach a Firehose delivery stream to an existing Kinesis stream directly. You no longer need a forwarder to move data from a Kinesis stream to a Firehose delivery stream. You can now run your streaming applications on your Kinesis stream and easily attach a Firehose delivery stream to it for data delivery to S3, Redshift, or Elasticsearch concurrently.
+* Route53 (3.3.7.0)
+	* Amazon Route 53 now supports CAA resource record type. A CAA record controls which certificate authorities are allowed to issue certificates for the domain or subdomain.
+
 ### 3.3.140.1 (2017-08-16 22:00 UTC)
 * EC2 (3.3.21.1)
 	* Use HTTPS endpoint to retrieve stockamis.json
