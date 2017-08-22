@@ -2,7 +2,7 @@
 <package >
   <metadata>
     <id>AWSSDK.Extensions.CognitoAuthentication</id>
-    <version>0.9.0</version>
+    <version>0.9.1</version>
     <title>CognitoAuthentication</title>
     <authors>Amazon Web Services</authors>
     <description>An extension library to assist in the Amazon Cognito User Pools authentication process.</description>
@@ -23,7 +23,7 @@
             <dependency id="AWSSDK.CognitoIdentityProvider" version="[3.3.4.3, 3.4)" />
             <dependency id="AWSSDK.Core" version="[3.3.17.2, 3.4)" />
             <dependency id="AWSSDK.CognitoIdentity" version="[3.3.2.14, 3.4)" />
-            <dependency id="System.Collections.NonGeneric" version="[4.0.1, 4.1)" />
+            <dependency id="System.Collections.NonGeneric" version="4.0.1" />
         </group>
     </dependencies>
   </metadata>
