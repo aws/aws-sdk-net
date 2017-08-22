@@ -321,23 +321,23 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
                 Assert.IsNotNull(descResponse.DomainDetail.DomainInfo.Status);
 
 
-                DomainInfo info = null;
-                for (int i = 0; i < MaxRetries; i++)
-                {
-                    Sleep(); // Sleep for the eventual consistency
-                    var listDomainResponse = Client.ListDomains(
-                        new ListDomainsRequest()
-                        {
-                            RegistrationStatus = descResponse.DomainDetail.DomainInfo.Status
-                        });
+                //DomainInfo info = null;
+                //for (int i = 0; i < MaxRetries; i++)
+                //{
+                //    Sleep(); // Sleep for the eventual consistency
+                //    var listDomainResponse = Client.ListDomains(
+                //        new ListDomainsRequest()
+                //        {
+                //            RegistrationStatus = RegistrationStatus.REGISTERED
+                //        });
 
-                    Assert.IsTrue(listDomainResponse.DomainInfos.Infos.Count > 0);
-                    info = listDomainResponse.DomainInfos.Infos.FirstOrDefault(x => string.Equals(x.Name, domainName));
-                    if (info != null)
-                        break;
-                }
-                Assert.IsNotNull(info);
-                Assert.IsNotNull(info.Status);
+                //    Assert.IsTrue(listDomainResponse.DomainInfos.Infos.Count > 0);
+                //    info = listDomainResponse.DomainInfos.Infos.FirstOrDefault(x => string.Equals(x.Name, domainName));
+                //    if (info != null)
+                //        break;
+                //}
+                //Assert.IsNotNull(info);
+                //Assert.IsNotNull(info.Status);
 
 
                 var activityDescription = "My Description Activity" + DateTime.Now.Ticks;
