@@ -73,6 +73,18 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.AssociationId);
                 }
 
+                if(publicRequest.IsSetAssociationName())
+                {
+                    context.Writer.WritePropertyName("AssociationName");
+                    context.Writer.Write(publicRequest.AssociationName);
+                }
+
+                if(publicRequest.IsSetAssociationVersion())
+                {
+                    context.Writer.WritePropertyName("AssociationVersion");
+                    context.Writer.Write(publicRequest.AssociationVersion);
+                }
+
                 if(publicRequest.IsSetDocumentVersion())
                 {
                     context.Writer.WritePropertyName("DocumentVersion");

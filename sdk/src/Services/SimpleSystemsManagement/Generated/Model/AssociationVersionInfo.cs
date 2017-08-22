@@ -28,15 +28,14 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
-    /// Container for the parameters to the UpdateAssociation operation.
-    /// Updates an association. You can update the association name and version, the document
-    /// version, schedule, parameters, and Amazon S3 output.
+    /// Information about the association version.
     /// </summary>
-    public partial class UpdateAssociationRequest : AmazonSimpleSystemsManagementRequest
+    public partial class AssociationVersionInfo
     {
         private string _associationId;
         private string _associationName;
         private string _associationVersion;
+        private DateTime? _createdDate;
         private string _documentVersion;
         private string _name;
         private InstanceAssociationOutputLocation _outputLocation;
@@ -47,7 +46,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property AssociationId. 
         /// <para>
-        /// The ID of the association you want to update. 
+        /// The ID created by the system when the association was created.
         /// </para>
         /// </summary>
         public string AssociationId
@@ -65,7 +64,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property AssociationName. 
         /// <para>
-        /// The name of the association that you want to update.
+        /// The name specified for the association version when the association version was created.
         /// </para>
         /// </summary>
         public string AssociationName
@@ -83,9 +82,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property AssociationVersion. 
         /// <para>
-        /// This parameter is provided for concurrency control purposes. You must specify the
-        /// latest association version in the service. If you want to ensure that this request
-        /// succeeds, either specify <code>$LATEST</code>, or omit this parameter.
+        /// The association version.
         /// </para>
         /// </summary>
         public string AssociationVersion
@@ -101,9 +98,27 @@ namespace Amazon.SimpleSystemsManagement.Model
         }
 
         /// <summary>
+        /// Gets and sets the property CreatedDate. 
+        /// <para>
+        /// The date the association version was created.
+        /// </para>
+        /// </summary>
+        public DateTime CreatedDate
+        {
+            get { return this._createdDate.GetValueOrDefault(); }
+            set { this._createdDate = value; }
+        }
+
+        // Check to see if CreatedDate property is set
+        internal bool IsSetCreatedDate()
+        {
+            return this._createdDate.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property DocumentVersion. 
         /// <para>
-        /// The document version you want update for the association. 
+        /// The version of an SSM document used when the association version was created.
         /// </para>
         /// </summary>
         public string DocumentVersion
@@ -121,7 +136,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the association document.
+        /// The name specified when the association was created.
         /// </para>
         /// </summary>
         public string Name
@@ -139,7 +154,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property OutputLocation. 
         /// <para>
-        /// An Amazon S3 bucket where you want to store the results of this request.
+        /// The location in Amazon S3 specified for the association when the association version
+        /// was created.
         /// </para>
         /// </summary>
         public InstanceAssociationOutputLocation OutputLocation
@@ -157,8 +173,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property Parameters. 
         /// <para>
-        /// The parameters you want to update for the association. If you create a parameter using
-        /// Parameter Store, you can reference the parameter using {{ssm:parameter-name}}
+        /// Parameters specified when the association version was created.
         /// </para>
         /// </summary>
         public Dictionary<string, List<string>> Parameters
@@ -176,7 +191,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property ScheduleExpression. 
         /// <para>
-        /// The cron expression used to schedule the association that you want to update.
+        /// The cron or rate schedule specified for the association when the association version
+        /// was created.
         /// </para>
         /// </summary>
         public string ScheduleExpression
@@ -194,7 +210,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property Targets. 
         /// <para>
-        /// The targets of the association.
+        /// The targets specified for the association when the association version was created.
+        /// 
         /// </para>
         /// </summary>
         public List<Target> Targets

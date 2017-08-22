@@ -48,7 +48,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property EndTime. 
         /// <para>
-        /// The time the task finished executing on the target.
+        /// The time that the task finished executing on the target.
         /// </para>
         /// </summary>
         public DateTime EndTime
@@ -102,8 +102,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property OwnerInformation. 
         /// <para>
-        /// User-provided value that will be included in any CloudWatch events raised while running
-        /// tasks for these targets in this Maintenance Window. 
+        /// User-provided value to be included in any CloudWatch events raised while running tasks
+        /// for these targets in this Maintenance Window. 
         /// </para>
         /// </summary>
         public string OwnerInformation
@@ -121,7 +121,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property Parameters. 
         /// <para>
-        /// The parameters used at the time the task executed.
+        /// The parameters used at the time that the task executed.
         /// </para>
         /// </summary>
         public string Parameters
@@ -139,7 +139,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property StartTime. 
         /// <para>
-        /// The time the task started executing on the target.
+        /// The time that the task started executing on the target.
         /// </para>
         /// </summary>
         public DateTime StartTime

@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
-    /// Parameters for a LAMBDA task type.
+    /// The parameters for a LAMBDA task type.
     /// </summary>
     public partial class MaintenanceWindowLambdaParameters
     {
@@ -39,9 +39,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property ClientContext. 
         /// <para>
-        /// Using the ClientContext you can pass client-specific information to the Lambda function
-        /// you are invoking. You can then process the client information in your Lambda function
-        /// as you choose through the context variable.
+        /// Pass client-specific information to the Lambda function that you are invoking. You
+        /// can then process the client information in your Lambda function as you choose through
+        /// the context variable.
         /// </para>
         /// </summary>
         public string ClientContext
@@ -59,7 +59,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property Payload. 
         /// <para>
-        /// JSON that you want to provide to your Lambda function as input.
+        /// JSON to provide to your Lambda function as input.
         /// </para>
         /// </summary>
         public MemoryStream Payload
@@ -77,10 +77,10 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property Qualifier. 
         /// <para>
-        /// You can use this optional parameter to specify a Lambda function version or alias
-        /// name. If you specify a function version, the API uses the qualified function ARN to
-        /// invoke a specific Lambda function. If you specify an alias name, the API uses the
-        /// alias ARN to invoke the Lambda function version to which the alias points.
+        /// (Optional) Specify a Lambda function version or alias name. If you specify a function
+        /// version, the action uses the qualified function ARN to invoke a specific Lambda function.
+        /// If you specify an alias name, the action uses the alias ARN to invoke the Lambda function
+        /// version to which the alias points.
         /// </para>
         /// </summary>
         public string Qualifier

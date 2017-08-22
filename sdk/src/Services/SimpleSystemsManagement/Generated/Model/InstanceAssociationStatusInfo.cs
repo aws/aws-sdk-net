@@ -33,6 +33,8 @@ namespace Amazon.SimpleSystemsManagement.Model
     public partial class InstanceAssociationStatusInfo
     {
         private string _associationId;
+        private string _associationName;
+        private string _associationVersion;
         private string _detailedStatus;
         private string _documentVersion;
         private string _errorCode;
@@ -59,6 +61,42 @@ namespace Amazon.SimpleSystemsManagement.Model
         internal bool IsSetAssociationId()
         {
             return this._associationId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AssociationName. 
+        /// <para>
+        /// The name of the association applied to the instance.
+        /// </para>
+        /// </summary>
+        public string AssociationName
+        {
+            get { return this._associationName; }
+            set { this._associationName = value; }
+        }
+
+        // Check to see if AssociationName property is set
+        internal bool IsSetAssociationName()
+        {
+            return this._associationName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AssociationVersion. 
+        /// <para>
+        /// The version of the association applied to the instance.
+        /// </para>
+        /// </summary>
+        public string AssociationVersion
+        {
+            get { return this._associationVersion; }
+            set { this._associationVersion = value; }
+        }
+
+        // Check to see if AssociationVersion property is set
+        internal bool IsSetAssociationVersion()
+        {
+            return this._associationVersion != null;
         }
 
         /// <summary>

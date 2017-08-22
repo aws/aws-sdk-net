@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for Association Object
+    /// Response Unmarshaller for AssociationVersionInfo Object
     /// </summary>  
-    public class AssociationUnmarshaller : IUnmarshaller<Association, XmlUnmarshallerContext>, IUnmarshaller<Association, JsonUnmarshallerContext>
+    public class AssociationVersionInfoUnmarshaller : IUnmarshaller<AssociationVersionInfo, XmlUnmarshallerContext>, IUnmarshaller<AssociationVersionInfo, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        Association IUnmarshaller<Association, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        AssociationVersionInfo IUnmarshaller<AssociationVersionInfo, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,13 +53,13 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public Association Unmarshall(JsonUnmarshallerContext context)
+        public AssociationVersionInfo Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            Association unmarshalledObject = new Association();
+            AssociationVersionInfo unmarshalledObject = new AssociationVersionInfo();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
@@ -82,22 +82,16 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
                     unmarshalledObject.AssociationVersion = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("CreatedDate", targetDepth))
+                {
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    unmarshalledObject.CreatedDate = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("DocumentVersion", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DocumentVersion = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("InstanceId", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.InstanceId = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("LastExecutionDate", targetDepth))
-                {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
-                    unmarshalledObject.LastExecutionDate = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("Name", targetDepth))
@@ -106,10 +100,16 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
                     unmarshalledObject.Name = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("Overview", targetDepth))
+                if (context.TestExpression("OutputLocation", targetDepth))
                 {
-                    var unmarshaller = AssociationOverviewUnmarshaller.Instance;
-                    unmarshalledObject.Overview = unmarshaller.Unmarshall(context);
+                    var unmarshaller = InstanceAssociationOutputLocationUnmarshaller.Instance;
+                    unmarshalledObject.OutputLocation = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Parameters", targetDepth))
+                {
+                    var unmarshaller = new DictionaryUnmarshaller<string, List<string>, StringUnmarshaller, ListUnmarshaller<string, StringUnmarshaller>>(StringUnmarshaller.Instance, new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance));
+                    unmarshalledObject.Parameters = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("ScheduleExpression", targetDepth))
@@ -130,12 +130,12 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
         }
 
 
-        private static AssociationUnmarshaller _instance = new AssociationUnmarshaller();        
+        private static AssociationVersionInfoUnmarshaller _instance = new AssociationVersionInfoUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static AssociationUnmarshaller Instance
+        public static AssociationVersionInfoUnmarshaller Instance
         {
             get
             {

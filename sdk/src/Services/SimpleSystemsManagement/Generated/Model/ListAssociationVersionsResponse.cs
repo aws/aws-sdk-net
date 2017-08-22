@@ -28,31 +28,29 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
-    /// This is the response object from the ListComplianceSummaries operation.
+    /// This is the response object from the ListAssociationVersions operation.
     /// </summary>
-    public partial class ListComplianceSummariesResponse : AmazonWebServiceResponse
+    public partial class ListAssociationVersionsResponse : AmazonWebServiceResponse
     {
-        private List<ComplianceSummaryItem> _complianceSummaryItems = new List<ComplianceSummaryItem>();
+        private List<AssociationVersionInfo> _associationVersions = new List<AssociationVersionInfo>();
         private string _nextToken;
 
         /// <summary>
-        /// Gets and sets the property ComplianceSummaryItems. 
+        /// Gets and sets the property AssociationVersions. 
         /// <para>
-        /// A list of compliant and non-compliant summary counts based on compliance types. For
-        /// example, this call returns State Manager associations, patches, or custom compliance
-        /// types according to the filter criteria that you specified.
+        /// Information about all versions of the association for the specified association ID.
         /// </para>
         /// </summary>
-        public List<ComplianceSummaryItem> ComplianceSummaryItems
+        public List<AssociationVersionInfo> AssociationVersions
         {
-            get { return this._complianceSummaryItems; }
-            set { this._complianceSummaryItems = value; }
+            get { return this._associationVersions; }
+            set { this._associationVersions = value; }
         }
 
-        // Check to see if ComplianceSummaryItems property is set
-        internal bool IsSetComplianceSummaryItems()
+        // Check to see if AssociationVersions property is set
+        internal bool IsSetAssociationVersions()
         {
-            return this._complianceSummaryItems != null && this._complianceSummaryItems.Count > 0; 
+            return this._associationVersions != null && this._associationVersions.Count > 0; 
         }
 
         /// <summary>

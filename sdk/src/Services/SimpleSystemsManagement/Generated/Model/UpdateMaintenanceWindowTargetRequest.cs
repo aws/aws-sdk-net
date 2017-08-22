@@ -38,27 +38,27 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// </para>
     ///  
     /// <para>
-    /// The IDs of an ID target.
+    /// IDs for an ID target.
     /// </para>
     ///  
     /// <para>
-    /// The tags of a Tag target.
+    /// Tags for a Tag target.
     /// </para>
     ///  
     /// <para>
-    /// The Owner.
+    /// Owner.
     /// </para>
     ///  
     /// <para>
-    /// The Name.
+    /// Name.
     /// </para>
     ///  
     /// <para>
-    /// The Description.
+    /// Description.
     /// </para>
     ///  
     /// <para>
-    /// Also note that if a parameter is null, then the corresponding field is not modified.
+    /// If a parameter is null, then the corresponding field is not modified.
     /// </para>
     /// </summary>
     public partial class UpdateMaintenanceWindowTargetRequest : AmazonSimpleSystemsManagementRequest
@@ -129,9 +129,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property Replace. 
         /// <para>
-        /// If you specify True, then all fields that are required by the RegisterTargetWithMaintenanceWindow
-        /// API are also required for this API request. Optional fields that are not specified
-        /// will be set to null.
+        /// If True, then all fields that are required by the RegisterTargetWithMaintenanceWindow
+        /// action are also required for this API request. Optional fields that are not specified
+        /// are set to null.
         /// </para>
         /// </summary>
         public bool Replace
@@ -149,7 +149,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property Targets. 
         /// <para>
-        /// The targets that you want to add or replace.
+        /// The targets to add or replace.
         /// </para>
         /// </summary>
         public List<Target> Targets
@@ -167,7 +167,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property WindowId. 
         /// <para>
-        /// The Maintenance Window ID for which you want to modify the target.
+        /// The Maintenance Window ID with which to modify the target.
         /// </para>
         /// </summary>
         public string WindowId
@@ -185,7 +185,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property WindowTargetId. 
         /// <para>
-        /// The target ID that you want to modify.
+        /// The target ID to modify.
         /// </para>
         /// </summary>
         public string WindowTargetId

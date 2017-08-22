@@ -78,7 +78,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property WindowExecutionId. 
         /// <para>
-        /// The ID of the Maintenance Window execution the task is part of.
+        /// The ID of the Maintenance Window execution for which the task is a part.
         /// </para>
         /// </summary>
         public string WindowExecutionId

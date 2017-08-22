@@ -76,7 +76,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property Values. 
         /// <para>
-        /// The value you want to search for.
+        /// The value for which to search.
         /// </para>
         /// </summary>
         public List<string> Values

@@ -35,6 +35,10 @@ namespace Amazon.SimpleSystemsManagement
         /// </summary>
         public static readonly AssociationFilterKey AssociationId = new AssociationFilterKey("AssociationId");
         /// <summary>
+        /// Constant AssociationName for AssociationFilterKey
+        /// </summary>
+        public static readonly AssociationFilterKey AssociationName = new AssociationFilterKey("AssociationName");
+        /// <summary>
         /// Constant AssociationStatusName for AssociationFilterKey
         /// </summary>
         public static readonly AssociationFilterKey AssociationStatusName = new AssociationFilterKey("AssociationStatusName");

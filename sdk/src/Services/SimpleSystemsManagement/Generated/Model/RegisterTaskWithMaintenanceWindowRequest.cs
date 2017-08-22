@@ -235,8 +235,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property TaskInvocationParameters. 
         /// <para>
-        /// Parameters the task should use during execution. Populate only the fields that match
-        /// the task type. All other fields should be empty. 
+        /// The parameters that the task should use during execution. Populate only the fields
+        /// that match the task type. All other fields should be empty. 
         /// </para>
         /// </summary>
         public MaintenanceWindowTaskInvocationParameters TaskInvocationParameters

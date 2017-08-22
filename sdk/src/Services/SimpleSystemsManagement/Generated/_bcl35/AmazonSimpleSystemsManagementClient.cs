@@ -2209,6 +2209,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
         /// An error occurred on the server side.
         /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidAssociationVersionException">
+        /// The version you specified is not valid. Use ListAssociationVersions to view all versions
+        /// of an association according to the association ID. Or, use the <code>$LATEST</code>
+        /// parameter to view the latest version of the association.
+        /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidDocumentException">
         /// The specified document does not exist.
         /// </exception>
@@ -2257,6 +2262,11 @@ namespace Amazon.SimpleSystemsManagement
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
         /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidAssociationVersionException">
+        /// The version you specified is not valid. Use ListAssociationVersions to view all versions
+        /// of an association according to the association ID. Or, use the <code>$LATEST</code>
+        /// parameter to view the latest version of the association.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidDocumentException">
         /// The specified document does not exist.
@@ -5028,6 +5038,68 @@ namespace Amazon.SimpleSystemsManagement
 
         #endregion
         
+        #region  ListAssociationVersions
+
+        /// <summary>
+        /// Retrieves all versions of an association for a specific association ID.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAssociationVersions service method.</param>
+        /// 
+        /// <returns>The response from the ListAssociationVersions service method, as returned by SimpleSystemsManagement.</returns>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.AssociationDoesNotExistException">
+        /// The specified association does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidNextTokenException">
+        /// The specified token is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListAssociationVersions">REST API Reference for ListAssociationVersions Operation</seealso>
+        public ListAssociationVersionsResponse ListAssociationVersions(ListAssociationVersionsRequest request)
+        {
+            var marshaller = new ListAssociationVersionsRequestMarshaller();
+            var unmarshaller = ListAssociationVersionsResponseUnmarshaller.Instance;
+
+            return Invoke<ListAssociationVersionsRequest,ListAssociationVersionsResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListAssociationVersions operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListAssociationVersions operation on AmazonSimpleSystemsManagementClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListAssociationVersions
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListAssociationVersions">REST API Reference for ListAssociationVersions Operation</seealso>
+        public IAsyncResult BeginListAssociationVersions(ListAssociationVersionsRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new ListAssociationVersionsRequestMarshaller();
+            var unmarshaller = ListAssociationVersionsResponseUnmarshaller.Instance;
+
+            return BeginInvoke<ListAssociationVersionsRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListAssociationVersions operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListAssociationVersions.</param>
+        /// 
+        /// <returns>Returns a  ListAssociationVersionsResult from SimpleSystemsManagement.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListAssociationVersions">REST API Reference for ListAssociationVersions Operation</seealso>
+        public  ListAssociationVersionsResponse EndListAssociationVersions(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListAssociationVersionsResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ListCommandInvocations
 
         /// <summary>
@@ -5417,9 +5489,9 @@ namespace Amazon.SimpleSystemsManagement
         #region  ListComplianceItems
 
         /// <summary>
-        /// For a specified resource ID, this API returns a list of compliance statuses for different
-        /// resource types. Currently, you can only specify one resource ID per call. List results
-        /// depend on the criteria specified in the filter.
+        /// For a specified resource ID, this API action returns a list of compliance statuses
+        /// for different resource types. Currently, you can only specify one resource ID per
+        /// call. List results depend on the criteria specified in the filter.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListComplianceItems service method.</param>
         /// 
@@ -5490,7 +5562,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <summary>
         /// Returns a summary count of compliant and non-compliant resources for a compliance
         /// type. For example, this call can return State Manager associations, patches, or custom
-        /// compliance types according to the filter criteria you specify.
+        /// compliance types according to the filter criteria that you specify.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListComplianceSummaries service method.</param>
         /// 
@@ -6058,9 +6130,9 @@ namespace Amazon.SimpleSystemsManagement
 
         /// <summary>
         /// Registers a compliance type and other compliance details on a designated resource.
-        /// This API lets you register custom compliance details with a resource. This call overwrites
-        /// existing compliance information on the resource, so you must provide a full list of
-        /// compliance items each time you send the request.
+        /// This action lets you register custom compliance details with a resource. This call
+        /// overwrites existing compliance information on the resource, so you must provide a
+        /// full list of compliance items each time that you send the request.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutComplianceItems service method.</param>
         /// 
@@ -6196,7 +6268,7 @@ namespace Amazon.SimpleSystemsManagement
         /// The size of inventory data has exceeded the total size limit for the resource.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.UnsupportedInventoryItemContextException">
-        /// The <code>Context</code> attribute you specified for the <code>InventoryItem</code>
+        /// The <code>Context</code> attribute that you specified for the <code>InventoryItem</code>
         /// is not allowed for this inventory type. You can only use the <code>Context</code>
         /// attribute with inventory types like <code>AWS:ComplianceItem</code>.
         /// </exception>
@@ -6560,7 +6632,7 @@ namespace Amazon.SimpleSystemsManagement
         /// exist.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.FeatureNotAvailableException">
-        /// You attempted to register a LAMBDA or STEP_FUNCTION task in a region where there corresponding
+        /// You attempted to register a LAMBDA or STEP_FUNCTION task in a region where the corresponding
         /// service is not available.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.IdempotentParameterMismatchException">
@@ -7066,8 +7138,8 @@ namespace Amazon.SimpleSystemsManagement
         #region  UpdateAssociation
 
         /// <summary>
-        /// Updates an association. You can only update the document version, schedule, parameters,
-        /// and Amazon S3 output of an association.
+        /// Updates an association. You can update the association name and version, the document
+        /// version, schedule, parameters, and Amazon S3 output.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateAssociation service method.</param>
         /// 
@@ -7075,8 +7147,17 @@ namespace Amazon.SimpleSystemsManagement
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.AssociationDoesNotExistException">
         /// The specified association does not exist.
         /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.AssociationVersionLimitExceededException">
+        /// You have reached the maximum number versions allowed for an association. Each association
+        /// has a limit of 1,000 versions.
+        /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
         /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidAssociationVersionException">
+        /// The version you specified is not valid. Use ListAssociationVersions to view all versions
+        /// of an association according to the association ID. Or, use the <code>$LATEST</code>
+        /// parameter to view the latest version of the association.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidDocumentException">
         /// The specified document does not exist.
@@ -7456,27 +7537,27 @@ namespace Amazon.SimpleSystemsManagement
         /// </para>
         ///  
         /// <para>
-        /// The IDs of an ID target.
+        /// IDs for an ID target.
         /// </para>
         ///  
         /// <para>
-        /// The tags of a Tag target.
+        /// Tags for a Tag target.
         /// </para>
         ///  
         /// <para>
-        /// The Owner.
+        /// Owner.
         /// </para>
         ///  
         /// <para>
-        /// The Name.
+        /// Name.
         /// </para>
         ///  
         /// <para>
-        /// The Description.
+        /// Description.
         /// </para>
         ///  
         /// <para>
-        /// Also note that if a parameter is null, then the corresponding field is not modified.
+        /// If a parameter is null, then the corresponding field is not modified.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateMaintenanceWindowTarget service method.</param>
@@ -7538,39 +7619,39 @@ namespace Amazon.SimpleSystemsManagement
 
         /// <summary>
         /// Modifies a task assigned to a Maintenance Window. You can't change the task type,
-        /// but you can change the following:
+        /// but you can change the following values:
         /// 
         ///  
         /// <para>
-        /// The Task Arn. For example, you can change a RUN_COMMAND task from AWS-RunPowerShellScript
+        /// Task ARN. For example, you can change a RUN_COMMAND task from AWS-RunPowerShellScript
         /// to AWS-RunShellScript.
         /// </para>
         ///  
         /// <para>
-        /// The service role ARN.
+        /// Service role ARN.
         /// </para>
         ///  
         /// <para>
-        /// The task parameters.
+        /// Task parameters.
         /// </para>
         ///  
         /// <para>
-        /// The task priority.
+        /// Task priority.
         /// </para>
         ///  
         /// <para>
-        /// The task MaxConcurrency and MaxErrors.
+        /// Task MaxConcurrency and MaxErrors.
         /// </para>
         ///  
         /// <para>
-        /// The log location.
+        /// Log location.
         /// </para>
         ///  
         /// <para>
         /// If a parameter is null, then the corresponding field is not modified. Also, if you
         /// set Replace to true, then all fields required by the RegisterTaskWithMaintenanceWindow
-        /// operation are required for this request. Optional fields that aren't specified are
-        /// be set to null.
+        /// action are required for this request. Optional fields that aren't specified are set
+        /// to null.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateMaintenanceWindowTask service method.</param>

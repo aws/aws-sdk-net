@@ -68,7 +68,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property LoggingInfo. 
         /// <para>
-        /// The location in Amazon S3 where the task results will be logged.
+        /// The location in Amazon S3 where the task results are logged.
         /// </para>
         /// </summary>
         public LoggingInfo LoggingInfo
@@ -195,9 +195,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property TaskArn. 
         /// <para>
-        /// TaskArn is the resource that the task used during execution. For RUN_COMMAND and AUTOMATION
-        /// task types, the TaskArn is the SSM Document Name/ARN. For LAMBDA tasks, TaskArn is
-        /// the Function Name/ARN. For STEP_FUNCTION tasks, the TaskArn is the State Machine ARN.
+        /// The resource that the task used during execution. For RUN_COMMAND and AUTOMATION task
+        /// types, the TaskArn is the SSM Document name/ARN. For LAMBDA tasks, the value is the
+        /// function name/ARN. For STEP_FUNCTION tasks, the value is the state machine ARN.
         /// </para>
         /// </summary>
         public string TaskArn

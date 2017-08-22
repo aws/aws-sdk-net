@@ -30,9 +30,9 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// <summary>
     /// Container for the parameters to the PutComplianceItems operation.
     /// Registers a compliance type and other compliance details on a designated resource.
-    /// This API lets you register custom compliance details with a resource. This call overwrites
-    /// existing compliance information on the resource, so you must provide a full list of
-    /// compliance items each time you send the request.
+    /// This action lets you register custom compliance details with a resource. This call
+    /// overwrites existing compliance information on the resource, so you must provide a
+    /// full list of compliance items each time that you send the request.
     /// </summary>
     public partial class PutComplianceItemsRequest : AmazonSimpleSystemsManagementRequest
     {
@@ -85,8 +85,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property ItemContentHash. 
         /// <para>
-        /// MD5 or Sha256 content hash. The content hash is used to determine if existing information
-        /// should be overwritten or ignored. If the content hashes match, ,the request to put
+        /// MD5 or SHA-256 content hash. The content hash is used to determine if existing information
+        /// should be overwritten or ignored. If the content hashes match, the request to put
         /// compliance information is ignored.
         /// </para>
         /// </summary>

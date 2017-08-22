@@ -28,42 +28,38 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
-    /// Container for the parameters to the ListComplianceSummaries operation.
-    /// Returns a summary count of compliant and non-compliant resources for a compliance
-    /// type. For example, this call can return State Manager associations, patches, or custom
-    /// compliance types according to the filter criteria that you specify.
+    /// Container for the parameters to the ListAssociationVersions operation.
+    /// Retrieves all versions of an association for a specific association ID.
     /// </summary>
-    public partial class ListComplianceSummariesRequest : AmazonSimpleSystemsManagementRequest
+    public partial class ListAssociationVersionsRequest : AmazonSimpleSystemsManagementRequest
     {
-        private List<ComplianceStringFilter> _filters = new List<ComplianceStringFilter>();
+        private string _associationId;
         private int? _maxResults;
         private string _nextToken;
 
         /// <summary>
-        /// Gets and sets the property Filters. 
+        /// Gets and sets the property AssociationId. 
         /// <para>
-        /// One or more compliance or inventory filters. Use a filter to return a more specific
-        /// list of results.
+        /// The association ID for which you want to view all versions.
         /// </para>
         /// </summary>
-        public List<ComplianceStringFilter> Filters
+        public string AssociationId
         {
-            get { return this._filters; }
-            set { this._filters = value; }
+            get { return this._associationId; }
+            set { this._associationId = value; }
         }
 
-        // Check to see if Filters property is set
-        internal bool IsSetFilters()
+        // Check to see if AssociationId property is set
+        internal bool IsSetAssociationId()
         {
-            return this._filters != null && this._filters.Count > 0; 
+            return this._associationId != null;
         }
 
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// The maximum number of items to return for this call. Currently, you can specify null
-        /// or 50. The call also returns a token that you can specify in a subsequent call to
-        /// get the next set of results.
+        /// The maximum number of items to return for this call. The call also returns a token
+        /// that you can specify in a subsequent call to get the next set of results.
         /// </para>
         /// </summary>
         public int MaxResults

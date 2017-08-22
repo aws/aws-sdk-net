@@ -48,7 +48,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Gets and sets the property ComplianceType. 
         /// <para>
         /// The compliance type. For example, Association (for a State Manager association), Patch,
-        /// or Custom:<code>string</code> are all valide compliance types.
+        /// or Custom:<code>string</code> are all valid compliance types.
         /// </para>
         /// </summary>
         public string ComplianceType
@@ -160,7 +160,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Gets and sets the property Severity. 
         /// <para>
         /// The severity of the compliance status. Severity can be one of the following: Critical,
-        /// HIGH, Medium, Low, Informational, Unspecified.
+        /// High, Medium, Low, Informational, Unspecified.
         /// </para>
         /// </summary>
         public ComplianceSeverity Severity

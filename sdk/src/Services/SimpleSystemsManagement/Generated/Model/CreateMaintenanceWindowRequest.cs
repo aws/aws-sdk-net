@@ -44,8 +44,14 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property AllowUnassociatedTargets. 
         /// <para>
-        /// Whether targets must be registered with the Maintenance Window before tasks can be
-        /// defined for those targets.
+        /// Enables a Maintenance Window task to execute on managed instances, even if you have
+        /// not registered those instances as targets. If enabled, then you must specify the unregistered
+        /// instances (by instance ID) when you register a task with the Maintenance Window 
+        /// </para>
+        ///  
+        /// <para>
+        /// If you don't enable this option, then you must specify previously-registered targets
+        /// when you register a task with the Maintenance Window. 
         /// </para>
         /// </summary>
         public bool AllowUnassociatedTargets
@@ -101,7 +107,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Gets and sets the property Description. 
         /// <para>
         /// An optional description for the Maintenance Window. We recommend specifying a description
-        /// to help your organize your Maintenance Windows. 
+        /// to help you organize your Maintenance Windows. 
         /// </para>
         /// </summary>
         public string Description

@@ -70,6 +70,18 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
                     unmarshalledObject.AssociationId = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("AssociationName", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.AssociationName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("AssociationVersion", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.AssociationVersion = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Date", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;

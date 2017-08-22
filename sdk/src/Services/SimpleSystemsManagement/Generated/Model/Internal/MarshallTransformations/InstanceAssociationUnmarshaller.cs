@@ -70,6 +70,12 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
                     unmarshalledObject.AssociationId = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("AssociationVersion", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.AssociationVersion = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Content", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

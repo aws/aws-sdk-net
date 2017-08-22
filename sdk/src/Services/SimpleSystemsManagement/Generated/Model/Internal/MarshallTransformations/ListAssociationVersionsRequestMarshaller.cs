@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// DescribeAssociation Request Marshaller
+    /// ListAssociationVersions Request Marshaller
     /// </summary>       
-    public class DescribeAssociationRequestMarshaller : IMarshaller<IRequest, DescribeAssociationRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class ListAssociationVersionsRequestMarshaller : IMarshaller<IRequest, ListAssociationVersionsRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((DescribeAssociationRequest)input);
+            return this.Marshall((ListAssociationVersionsRequest)input);
         }
 
         /// <summary>
@@ -52,10 +52,10 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(DescribeAssociationRequest publicRequest)
+        public IRequest Marshall(ListAssociationVersionsRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.SimpleSystemsManagement");
-            string target = "AmazonSSM.DescribeAssociation";
+            string target = "AmazonSSM.ListAssociationVersions";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
             request.HttpMethod = "POST";
@@ -73,22 +73,16 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.AssociationId);
                 }
 
-                if(publicRequest.IsSetAssociationVersion())
+                if(publicRequest.IsSetMaxResults())
                 {
-                    context.Writer.WritePropertyName("AssociationVersion");
-                    context.Writer.Write(publicRequest.AssociationVersion);
+                    context.Writer.WritePropertyName("MaxResults");
+                    context.Writer.Write(publicRequest.MaxResults);
                 }
 
-                if(publicRequest.IsSetInstanceId())
+                if(publicRequest.IsSetNextToken())
                 {
-                    context.Writer.WritePropertyName("InstanceId");
-                    context.Writer.Write(publicRequest.InstanceId);
-                }
-
-                if(publicRequest.IsSetName())
-                {
-                    context.Writer.WritePropertyName("Name");
-                    context.Writer.Write(publicRequest.Name);
+                    context.Writer.WritePropertyName("NextToken");
+                    context.Writer.Write(publicRequest.NextToken);
                 }
 
         

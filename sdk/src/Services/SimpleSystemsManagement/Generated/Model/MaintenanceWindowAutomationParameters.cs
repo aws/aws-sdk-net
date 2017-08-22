@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
-    /// Parameters for an AUTOMATION task type.
+    /// The parameters for an AUTOMATION task type.
     /// </summary>
     public partial class MaintenanceWindowAutomationParameters
     {
@@ -38,7 +38,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property DocumentVersion. 
         /// <para>
-        /// The version of an SSM Automation document to use during task execution.
+        /// The version of an Automation document to use during task execution.
         /// </para>
         /// </summary>
         public string DocumentVersion
@@ -56,7 +56,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property Parameters. 
         /// <para>
-        /// Parameters for the AUTOMATION task.
+        /// The parameters for the AUTOMATION task.
         /// </para>
         /// </summary>
         public Dictionary<string, List<string>> Parameters

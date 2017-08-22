@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for DescribeAssociation operation
+    /// Response Unmarshaller for ListAssociationVersions operation
     /// </summary>  
-    public class DescribeAssociationResponseUnmarshaller : JsonResponseUnmarshaller
+    public class ListAssociationVersionsResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,16 +45,22 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            DescribeAssociationResponse response = new DescribeAssociationResponse();
+            ListAssociationVersionsResponse response = new ListAssociationVersionsResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("AssociationDescription", targetDepth))
+                if (context.TestExpression("AssociationVersions", targetDepth))
                 {
-                    var unmarshaller = AssociationDescriptionUnmarshaller.Instance;
-                    response.AssociationDescription = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new ListUnmarshaller<AssociationVersionInfo, AssociationVersionInfoUnmarshaller>(AssociationVersionInfoUnmarshaller.Instance);
+                    response.AssociationVersions = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("NextToken", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.NextToken = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -80,24 +86,16 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
             {
                 return new InternalServerErrorException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidAssociationVersion"))
+            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidNextToken"))
             {
-                return new InvalidAssociationVersionException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidDocument"))
-            {
-                return new InvalidDocumentException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidInstanceId"))
-            {
-                return new InvalidInstanceIdException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+                return new InvalidNextTokenException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
             return new AmazonSimpleSystemsManagementException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
 
-        private static DescribeAssociationResponseUnmarshaller _instance = new DescribeAssociationResponseUnmarshaller();        
+        private static ListAssociationVersionsResponseUnmarshaller _instance = new ListAssociationVersionsResponseUnmarshaller();        
 
-        internal static DescribeAssociationResponseUnmarshaller GetInstance()
+        internal static ListAssociationVersionsResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -105,7 +103,7 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static DescribeAssociationResponseUnmarshaller Instance
+        public static ListAssociationVersionsResponseUnmarshaller Instance
         {
             get
             {

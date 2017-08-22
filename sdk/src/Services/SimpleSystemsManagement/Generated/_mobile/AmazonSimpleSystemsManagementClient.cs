@@ -1322,6 +1322,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
         /// An error occurred on the server side.
         /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidAssociationVersionException">
+        /// The version you specified is not valid. Use ListAssociationVersions to view all versions
+        /// of an association according to the association ID. Or, use the <code>$LATEST</code>
+        /// parameter to view the latest version of the association.
+        /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidDocumentException">
         /// The specified document does not exist.
         /// </exception>
@@ -2769,6 +2774,38 @@ namespace Amazon.SimpleSystemsManagement
             var unmarshaller = ListAssociationsResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListAssociationsRequest,ListAssociationsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListAssociationVersions
+
+        internal ListAssociationVersionsResponse ListAssociationVersions(ListAssociationVersionsRequest request)
+        {
+            var marshaller = new ListAssociationVersionsRequestMarshaller();
+            var unmarshaller = ListAssociationVersionsResponseUnmarshaller.Instance;
+
+            return Invoke<ListAssociationVersionsRequest,ListAssociationVersionsResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListAssociationVersions operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListAssociationVersions operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListAssociationVersions">REST API Reference for ListAssociationVersions Operation</seealso>
+        public Task<ListAssociationVersionsResponse> ListAssociationVersionsAsync(ListAssociationVersionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new ListAssociationVersionsRequestMarshaller();
+            var unmarshaller = ListAssociationVersionsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListAssociationVersionsRequest,ListAssociationVersionsResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 

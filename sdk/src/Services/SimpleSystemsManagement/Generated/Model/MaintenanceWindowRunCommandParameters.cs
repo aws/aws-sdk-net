@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
-    /// Parameters for a RUN_COMMAND task type.
+    /// The parameters for a RUN_COMMAND task type.
     /// </summary>
     public partial class MaintenanceWindowRunCommandParameters
     {
@@ -63,7 +63,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property DocumentHash. 
         /// <para>
-        /// The Sha256 or Sha1 hash created by the system when the document was created. Sha1
+        /// The SHA-256 or SHA-1 hash created by the system when the document was created. SHA-1
         /// hashes have been deprecated.
         /// </para>
         /// </summary>
@@ -82,7 +82,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property DocumentHashType. 
         /// <para>
-        /// Sha256 or Sha1. Sha1 hashes have been deprecated.
+        /// SHA-256 or SHA-1. SHA-1 hashes have been deprecated.
         /// </para>
         /// </summary>
         public DocumentHashType DocumentHashType
@@ -100,7 +100,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property NotificationConfig. 
         /// <para>
-        /// Configurations for sending notifications about command status changes on a per instance
+        /// Configurations for sending notifications about command status changes on a per-instance
         /// basis.
         /// </para>
         /// </summary>
@@ -155,7 +155,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property Parameters. 
         /// <para>
-        /// Parameters for the RUN_COMMAND task execution.
+        /// The parameters for the RUN_COMMAND task execution.
         /// </para>
         /// </summary>
         public Dictionary<string, List<string>> Parameters
@@ -173,7 +173,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property ServiceRoleArn. 
         /// <para>
-        /// The IAM service role that to assume during task execution.
+        /// The IAM service role to assume during task execution.
         /// </para>
         /// </summary>
         public string ServiceRoleArn
@@ -191,7 +191,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property TimeoutSeconds. 
         /// <para>
-        /// If this time is reached and the command has not already started executing, it will
+        /// If this time is reached and the command has not already started executing, it doesn
         /// not execute.
         /// </para>
         /// </summary>

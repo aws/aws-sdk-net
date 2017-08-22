@@ -45,6 +45,12 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(CreateAssociationBatchRequestEntry requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetAssociationName())
+            {
+                context.Writer.WritePropertyName("AssociationName");
+                context.Writer.Write(requestObject.AssociationName);
+            }
+
             if(requestObject.IsSetDocumentVersion())
             {
                 context.Writer.WritePropertyName("DocumentVersion");

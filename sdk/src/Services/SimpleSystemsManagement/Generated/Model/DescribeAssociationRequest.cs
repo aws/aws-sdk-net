@@ -34,6 +34,7 @@ namespace Amazon.SimpleSystemsManagement.Model
     public partial class DescribeAssociationRequest : AmazonSimpleSystemsManagementRequest
     {
         private string _associationId;
+        private string _associationVersion;
         private string _instanceId;
         private string _name;
 
@@ -69,6 +70,27 @@ namespace Amazon.SimpleSystemsManagement.Model
         internal bool IsSetAssociationId()
         {
             return this._associationId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AssociationVersion. 
+        /// <para>
+        /// Specify the association version to retrieve. To view the latest version, either specify
+        /// <code>$LATEST</code> for this parameter, or omit this parameter. To view a list of
+        /// all associations for an instance, use ListInstanceAssociations. To get a list of versions
+        /// for a specific association, use ListAssociationVersions. 
+        /// </para>
+        /// </summary>
+        public string AssociationVersion
+        {
+            get { return this._associationVersion; }
+            set { this._associationVersion = value; }
+        }
+
+        // Check to see if AssociationVersion property is set
+        internal bool IsSetAssociationVersion()
+        {
+            return this._associationVersion != null;
         }
 
         /// <summary>

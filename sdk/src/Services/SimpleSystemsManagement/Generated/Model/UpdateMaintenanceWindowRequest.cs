@@ -156,9 +156,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property Replace. 
         /// <para>
-        /// If you specify True, then all fields that are required by the CreateMaintenanceWindow
-        /// API are also required for this API request. Optional fields that are not specified
-        /// will be set to null. 
+        /// If True, then all fields that are required by the CreateMaintenanceWindow action are
+        /// also required for this API request. Optional fields that are not specified are set
+        /// to null. 
         /// </para>
         /// </summary>
         public bool Replace

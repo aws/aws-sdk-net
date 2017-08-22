@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
-    /// Parameters for task execution.
+    /// The parameters for task execution.
     /// </summary>
     public partial class MaintenanceWindowTaskInvocationParameters
     {
@@ -40,7 +40,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property Automation. 
         /// <para>
-        /// Parameters for a AUTOMATION task type.
+        /// The parameters for a AUTOMATION task type.
         /// </para>
         /// </summary>
         public MaintenanceWindowAutomationParameters Automation
@@ -58,7 +58,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property Lambda. 
         /// <para>
-        /// Parameters for a LAMBDA task type.
+        /// The parameters for a LAMBDA task type.
         /// </para>
         /// </summary>
         public MaintenanceWindowLambdaParameters Lambda
@@ -76,7 +76,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property RunCommand. 
         /// <para>
-        /// Parameters for a RUN_COMMAND task type.
+        /// The parameters for a RUN_COMMAND task type.
         /// </para>
         /// </summary>
         public MaintenanceWindowRunCommandParameters RunCommand
@@ -94,7 +94,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property StepFunctions. 
         /// <para>
-        /// Parameters for a STEP_FUNCTION task type.
+        /// The parameters for a STEP_FUNCTION task type.
         /// </para>
         /// </summary>
         public MaintenanceWindowStepFunctionsParameters StepFunctions

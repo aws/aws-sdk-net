@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
-    /// Parameters for the STEP_FUNCTION execution.
+    /// The parameters for the STEP_FUNCTION execution.
     /// </summary>
     public partial class MaintenanceWindowStepFunctionsParameters
     {

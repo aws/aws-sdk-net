@@ -32,6 +32,7 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// </summary>
     public partial class CreateAssociationBatchRequestEntry
     {
+        private string _associationName;
         private string _documentVersion;
         private string _instanceId;
         private string _name;
@@ -39,6 +40,24 @@ namespace Amazon.SimpleSystemsManagement.Model
         private Dictionary<string, List<string>> _parameters = new Dictionary<string, List<string>>();
         private string _scheduleExpression;
         private List<Target> _targets = new List<Target>();
+
+        /// <summary>
+        /// Gets and sets the property AssociationName. 
+        /// <para>
+        /// Specify a descriptive name for the association.
+        /// </para>
+        /// </summary>
+        public string AssociationName
+        {
+            get { return this._associationName; }
+            set { this._associationName = value; }
+        }
+
+        // Check to see if AssociationName property is set
+        internal bool IsSetAssociationName()
+        {
+            return this._associationName != null;
+        }
 
         /// <summary>
         /// Gets and sets the property DocumentVersion. 

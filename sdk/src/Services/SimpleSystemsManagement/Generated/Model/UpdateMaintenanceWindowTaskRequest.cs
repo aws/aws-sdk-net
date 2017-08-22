@@ -30,39 +30,39 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// <summary>
     /// Container for the parameters to the UpdateMaintenanceWindowTask operation.
     /// Modifies a task assigned to a Maintenance Window. You can't change the task type,
-    /// but you can change the following:
+    /// but you can change the following values:
     /// 
     ///  
     /// <para>
-    /// The Task Arn. For example, you can change a RUN_COMMAND task from AWS-RunPowerShellScript
+    /// Task ARN. For example, you can change a RUN_COMMAND task from AWS-RunPowerShellScript
     /// to AWS-RunShellScript.
     /// </para>
     ///  
     /// <para>
-    /// The service role ARN.
+    /// Service role ARN.
     /// </para>
     ///  
     /// <para>
-    /// The task parameters.
+    /// Task parameters.
     /// </para>
     ///  
     /// <para>
-    /// The task priority.
+    /// Task priority.
     /// </para>
     ///  
     /// <para>
-    /// The task MaxConcurrency and MaxErrors.
+    /// Task MaxConcurrency and MaxErrors.
     /// </para>
     ///  
     /// <para>
-    /// The log location.
+    /// Log location.
     /// </para>
     ///  
     /// <para>
     /// If a parameter is null, then the corresponding field is not modified. Also, if you
     /// set Replace to true, then all fields required by the RegisterTaskWithMaintenanceWindow
-    /// operation are required for this request. Optional fields that aren't specified are
-    /// be set to null.
+    /// action are required for this request. Optional fields that aren't specified are set
+    /// to null.
     /// </para>
     /// </summary>
     public partial class UpdateMaintenanceWindowTaskRequest : AmazonSimpleSystemsManagementRequest
@@ -85,7 +85,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// The new task description that you want to specify.
+        /// The new task description to specify.
         /// </para>
         /// </summary>
         public string Description
@@ -103,7 +103,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property LoggingInfo. 
         /// <para>
-        /// The new logging location in Amazon S3 that you want to specify.
+        /// The new logging location in Amazon S3 to specify.
         /// </para>
         /// </summary>
         public LoggingInfo LoggingInfo
@@ -140,8 +140,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property MaxErrors. 
         /// <para>
-        /// The new <code>MaxErrors</code> value you want to specify. <code>MaxErrors</code> is
-        /// the maximum number of errors that are allowed before the task stops being scheduled.
+        /// The new <code>MaxErrors</code> value to specify. <code>MaxErrors</code> is the maximum
+        /// number of errors that are allowed before the task stops being scheduled.
         /// </para>
         /// </summary>
         public string MaxErrors
@@ -159,7 +159,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The new task name that you want to specify.
+        /// The new task name to specify.
         /// </para>
         /// </summary>
         public string Name
@@ -177,8 +177,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property Priority. 
         /// <para>
-        /// The new task priority that you want to specify. The lower the number, the higher the
-        /// priority. Tasks that have the same priority are scheduled in parallel.
+        /// The new task priority to specify. The lower the number, the higher the priority. Tasks
+        /// that have the same priority are scheduled in parallel.
         /// </para>
         /// </summary>
         public int Priority
@@ -196,9 +196,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property Replace. 
         /// <para>
-        /// If you specify True, then all fields that are required by the RegisterTaskWithMaintenanceWndow
-        /// API are also required for this API request. Optional fields that are not specified
-        /// will be set to null.
+        /// If True, then all fields that are required by the RegisterTaskWithMaintenanceWndow
+        /// action are also required for this API request. Optional fields that are not specified
+        /// are set to null.
         /// </para>
         /// </summary>
         public bool Replace
@@ -216,8 +216,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property ServiceRoleArn. 
         /// <para>
-        /// The IAM service role ARN that you want to modify. The system assumes this role during
-        /// task exectuion. 
+        /// The IAM service role ARN to modify. The system assumes this role during task execution.
+        /// 
         /// </para>
         /// </summary>
         public string ServiceRoleArn
@@ -235,9 +235,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property Targets. 
         /// <para>
-        /// The targets (either instances or tags) that you want to modify. Instances are specified
-        /// using Key=instanceids,Values=instanceID_1,instanceID_2. Tags are specified using Key=tag_name,Values=tag_value.
-        /// 
+        /// The targets (either instances or tags) to modify. Instances are specified using Key=instanceids,Values=instanceID_1,instanceID_2.
+        /// Tags are specified using Key=tag_name,Values=tag_value. 
         /// </para>
         /// </summary>
         public List<Target> Targets
@@ -255,7 +254,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property TaskArn. 
         /// <para>
-        /// The task ARN that you want to modify.
+        /// The task ARN to modify.
         /// </para>
         /// </summary>
         public string TaskArn
@@ -273,8 +272,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property TaskInvocationParameters. 
         /// <para>
-        /// Parameters the task should use during execution. Populate only the fields that match
-        /// the task type. All other fields should be empty.
+        /// The parameters that the task should use during execution. Populate only the fields
+        /// that match the task type. All other fields should be empty.
         /// </para>
         /// </summary>
         public MaintenanceWindowTaskInvocationParameters TaskInvocationParameters
@@ -292,7 +291,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property TaskParameters. 
         /// <para>
-        /// The parameters that you want to modify. The map has the following format:
+        /// The parameters to modify. The map has the following format:
         /// </para>
         ///  
         /// <para>
@@ -318,7 +317,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property WindowId. 
         /// <para>
-        /// The Maintenance Window ID that contains the task that you want to modify.
+        /// The Maintenance Window ID that contains the task to modify.
         /// </para>
         /// </summary>
         public string WindowId
@@ -336,7 +335,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property WindowTaskId. 
         /// <para>
-        /// The task ID that you want to modify.
+        /// The task ID to modify.
         /// </para>
         /// </summary>
         public string WindowTaskId

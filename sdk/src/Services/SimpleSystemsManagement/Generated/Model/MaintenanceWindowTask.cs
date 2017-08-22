@@ -195,9 +195,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property TaskArn. 
         /// <para>
-        /// TaskArn is the resource that the task uses during execution. For RUN_COMMAND and AUTOMATION
-        /// task types, the TaskArn is the SSM Document Name/ARN. For LAMBDA tasks, it's the Function
-        /// Name/ARN. For STEP_FUNCTION tasks, it's the State Machine ARN.
+        /// The resource that the task uses during execution. For RUN_COMMAND and AUTOMATION task
+        /// types, <code>TaskArn</code> is the SSM document name or ARN. For LAMBDA tasks, it's
+        /// the function name or ARN. For STEP_FUNCTION tasks, it's the state machine ARN.
         /// </para>
         /// </summary>
         public string TaskArn

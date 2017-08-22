@@ -29,9 +29,9 @@ namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
     /// Container for the parameters to the ListComplianceItems operation.
-    /// For a specified resource ID, this API returns a list of compliance statuses for different
-    /// resource types. Currently, you can only specify one resource ID per call. List results
-    /// depend on the criteria specified in the filter.
+    /// For a specified resource ID, this API action returns a list of compliance statuses
+    /// for different resource types. Currently, you can only specify one resource ID per
+    /// call. List results depend on the criteria specified in the filter.
     /// </summary>
     public partial class ListComplianceItemsRequest : AmazonSimpleSystemsManagementRequest
     {
@@ -99,8 +99,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property ResourceIds. 
         /// <para>
-        /// The ID for the resources from which you want to get compliance information. Currently,
-        /// you can only specify one resource ID.
+        /// The ID for the resources from which to get compliance information. Currently, you
+        /// can only specify one resource ID.
         /// </para>
         /// </summary>
         public List<string> ResourceIds
@@ -118,8 +118,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property ResourceTypes. 
         /// <para>
-        /// The type of resource from which you want to get compliance information. Currently,
-        /// the only supported resource type is <code>ManagedInstance</code>.
+        /// The type of resource from which to get compliance information. Currently, the only
+        /// supported resource type is <code>ManagedInstance</code>.
         /// </para>
         /// </summary>
         public List<string> ResourceTypes
