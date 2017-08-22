@@ -649,6 +649,10 @@ namespace Amazon.Route53
         /// </summary>
         public static readonly RRType AAAA = new RRType("AAAA");
         /// <summary>
+        /// Constant CAA for RRType
+        /// </summary>
+        public static readonly RRType CAA = new RRType("CAA");
+        /// <summary>
         /// Constant CNAME for RRType
         /// </summary>
         public static readonly RRType CNAME = new RRType("CNAME");

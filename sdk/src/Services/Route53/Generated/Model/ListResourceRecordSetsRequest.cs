@@ -157,14 +157,15 @@ namespace Amazon.Route53.Model
         ///  
         /// <para>
         /// Valid values for basic resource record sets: <code>A</code> | <code>AAAA</code> |
-        /// <code>CNAME</code> | <code>MX</code> | <code>NAPTR</code> | <code>NS</code> | <code>PTR</code>
-        /// | <code>SOA</code> | <code>SPF</code> | <code>SRV</code> | <code>TXT</code> 
+        /// <code>CAA</code> | <code>CNAME</code> | <code>MX</code> | <code>NAPTR</code> | <code>NS</code>
+        /// | <code>PTR</code> | <code>SOA</code> | <code>SPF</code> | <code>SRV</code> | <code>TXT</code>
+        /// 
         /// </para>
         ///  
         /// <para>
         /// Values for weighted, latency, geo, and failover resource record sets: <code>A</code>
-        /// | <code>AAAA</code> | <code>CNAME</code> | <code>MX</code> | <code>NAPTR</code> |
-        /// <code>PTR</code> | <code>SPF</code> | <code>SRV</code> | <code>TXT</code> 
+        /// | <code>AAAA</code> | <code>CAA</code> | <code>CNAME</code> | <code>MX</code> | <code>NAPTR</code>
+        /// | <code>PTR</code> | <code>SPF</code> | <code>SRV</code> | <code>TXT</code> 
         /// </para>
         ///  
         /// <para>
@@ -185,6 +186,11 @@ namespace Amazon.Route53.Model
         ///  </li> <li> 
         /// <para>
         ///  <b>Amazon S3 bucket</b>: A
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>Another resource record set in this hosted zone:</b> The type of the resource
+        /// record set that the alias references.
         /// </para>
         ///  </li> </ul> 
         /// <para>
