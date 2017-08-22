@@ -28,48 +28,47 @@ using Amazon.Runtime.Internal;
 namespace Amazon.KinesisFirehose.Model
 {
     /// <summary>
-    /// Describes the encryption for a destination in Amazon S3.
+    /// The stream and role ARNs for a Kinesis stream used as the source for a delivery stream.
     /// </summary>
-    public partial class EncryptionConfiguration
+    public partial class KinesisStreamSourceConfiguration
     {
-        private KMSEncryptionConfig _kmsEncryptionConfig;
-        private NoEncryptionConfig _noEncryptionConfig;
+        private string _kinesisStreamARN;
+        private string _roleARN;
 
         /// <summary>
-        /// Gets and sets the property KMSEncryptionConfig. 
+        /// Gets and sets the property KinesisStreamARN. 
         /// <para>
-        /// The encryption key.
+        /// The ARN of the source Kinesis stream.
         /// </para>
         /// </summary>
-        public KMSEncryptionConfig KMSEncryptionConfig
+        public string KinesisStreamARN
         {
-            get { return this._kmsEncryptionConfig; }
-            set { this._kmsEncryptionConfig = value; }
+            get { return this._kinesisStreamARN; }
+            set { this._kinesisStreamARN = value; }
         }
 
-        // Check to see if KMSEncryptionConfig property is set
-        internal bool IsSetKMSEncryptionConfig()
+        // Check to see if KinesisStreamARN property is set
+        internal bool IsSetKinesisStreamARN()
         {
-            return this._kmsEncryptionConfig != null;
+            return this._kinesisStreamARN != null;
         }
 
         /// <summary>
-        /// Gets and sets the property NoEncryptionConfig. 
+        /// Gets and sets the property RoleARN. 
         /// <para>
-        /// Specifically override existing encryption information to ensure that no encryption
-        /// is used.
+        /// The ARN of the role that provides access to the source Kinesis stream.
         /// </para>
         /// </summary>
-        public NoEncryptionConfig NoEncryptionConfig
+        public string RoleARN
         {
-            get { return this._noEncryptionConfig; }
-            set { this._noEncryptionConfig = value; }
+            get { return this._roleARN; }
+            set { this._roleARN = value; }
         }
 
-        // Check to see if NoEncryptionConfig property is set
-        internal bool IsSetNoEncryptionConfig()
+        // Check to see if RoleARN property is set
+        internal bool IsSetRoleARN()
         {
-            return this._noEncryptionConfig != null;
+            return this._roleARN != null;
         }
 
     }

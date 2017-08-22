@@ -88,6 +88,12 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
                     unmarshalledObject.DeliveryStreamStatus = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("DeliveryStreamType", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.DeliveryStreamType = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Destinations", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<DestinationDescription, DestinationDescriptionUnmarshaller>(DestinationDescriptionUnmarshaller.Instance);
@@ -104,6 +110,12 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;
                     unmarshalledObject.LastUpdateTimestamp = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Source", targetDepth))
+                {
+                    var unmarshaller = SourceDescriptionUnmarshaller.Instance;
+                    unmarshalledObject.Source = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("VersionId", targetDepth))

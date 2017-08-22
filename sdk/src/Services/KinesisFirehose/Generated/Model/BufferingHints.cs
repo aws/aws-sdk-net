@@ -29,8 +29,8 @@ namespace Amazon.KinesisFirehose.Model
 {
     /// <summary>
     /// Describes hints for the buffering to perform before delivering data to the destination.
-    /// Please note that these options are treated as hints, and therefore Firehose may choose
-    /// to use different values when it is optimal.
+    /// Please note that these options are treated as hints, and therefore Kinesis Firehose
+    /// may choose to use different values when it is optimal.
     /// </summary>
     public partial class BufferingHints
     {

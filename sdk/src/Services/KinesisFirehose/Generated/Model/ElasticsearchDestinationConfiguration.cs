@@ -122,8 +122,8 @@ namespace Amazon.KinesisFirehose.Model
         /// <summary>
         /// Gets and sets the property IndexRotationPeriod. 
         /// <para>
-        /// The Elasticsearch index rotation period. Index rotation appends a timestamp to the
-        /// IndexName to facilitate expiration of old data. For more information, see <a href="http://docs.aws.amazon.com/firehose/latest/dev/basic-deliver.html#es-index-rotation">Index
+        /// The Elasticsearch index rotation period. Index rotation appends a time stamp to the
+        /// IndexName to facilitate the expiration of old data. For more information, see <a href="http://docs.aws.amazon.com/firehose/latest/dev/basic-deliver.html#es-index-rotation">Index
         /// Rotation for Amazon Elasticsearch Service Destination</a>. The default value is <code>OneDay</code>.
         /// </para>
         /// </summary>
@@ -160,7 +160,7 @@ namespace Amazon.KinesisFirehose.Model
         /// <summary>
         /// Gets and sets the property RetryOptions. 
         /// <para>
-        /// The retry behavior in the event that Firehose is unable to deliver documents to Amazon
+        /// The retry behavior in case Kinesis Firehose is unable to deliver documents to Amazon
         /// ES. The default value is 300 (5 minutes).
         /// </para>
         /// </summary>
@@ -179,8 +179,8 @@ namespace Amazon.KinesisFirehose.Model
         /// <summary>
         /// Gets and sets the property RoleARN. 
         /// <para>
-        /// The ARN of the IAM role to be assumed by Firehose for calling the Amazon ES Configuration
-        /// API and for indexing documents. For more information, see <a href="http://docs.aws.amazon.com/firehose/latest/dev/controlling-access.html#using-iam-s3">Amazon
+        /// The ARN of the IAM role to be assumed by Kinesis Firehose for calling the Amazon ES
+        /// Configuration API and for indexing documents. For more information, see <a href="http://docs.aws.amazon.com/firehose/latest/dev/controlling-access.html#using-iam-s3">Amazon
         /// S3 Bucket Access</a>.
         /// </para>
         /// </summary>
@@ -200,10 +200,11 @@ namespace Amazon.KinesisFirehose.Model
         /// Gets and sets the property S3BackupMode. 
         /// <para>
         /// Defines how documents should be delivered to Amazon S3. When set to FailedDocumentsOnly,
-        /// Firehose writes any documents that could not be indexed to the configured Amazon S3
-        /// destination, with elasticsearch-failed/ appended to the key prefix. When set to AllDocuments,
-        /// Firehose delivers all incoming records to Amazon S3, and also writes failed documents
-        /// with elasticsearch-failed/ appended to the prefix. For more information, see <a href="http://docs.aws.amazon.com/firehose/latest/dev/basic-deliver.html#es-s3-backup">Amazon
+        /// Kinesis Firehose writes any documents that could not be indexed to the configured
+        /// Amazon S3 destination, with elasticsearch-failed/ appended to the key prefix. When
+        /// set to AllDocuments, Kinesis Firehose delivers all incoming records to Amazon S3,
+        /// and also writes failed documents with elasticsearch-failed/ appended to the prefix.
+        /// For more information, see <a href="http://docs.aws.amazon.com/firehose/latest/dev/basic-deliver.html#es-s3-backup">Amazon
         /// S3 Backup for Amazon Elasticsearch Service Destination</a>. Default value is FailedDocumentsOnly.
         /// </para>
         /// </summary>
@@ -222,8 +223,7 @@ namespace Amazon.KinesisFirehose.Model
         /// <summary>
         /// Gets and sets the property S3Configuration. 
         /// <para>
-        /// The configuration for the intermediate Amazon S3 location from which Amazon ES obtains
-        /// data.
+        /// The configuration for the backup Amazon S3 location.
         /// </para>
         /// </summary>
         public S3DestinationConfiguration S3Configuration

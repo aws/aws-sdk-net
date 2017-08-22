@@ -44,8 +44,41 @@ namespace Amazon.KinesisFirehose.Model
     /// </summary>
     public partial class ListDeliveryStreamsRequest : AmazonKinesisFirehoseRequest
     {
+        private DeliveryStreamType _deliveryStreamType;
         private string _exclusiveStartDeliveryStreamName;
         private int? _limit;
+
+        /// <summary>
+        /// Gets and sets the property DeliveryStreamType. 
+        /// <para>
+        /// The delivery stream type. This can be one of the following values:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>DirectPut</code>: Provider applications access the delivery stream directly.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>KinesisStreamAsSource</code>: The delivery stream uses a Kinesis stream as
+        /// a source.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// This parameter is optional. If this parameter is omitted, delivery streams of all
+        /// types are returned.
+        /// </para>
+        /// </summary>
+        public DeliveryStreamType DeliveryStreamType
+        {
+            get { return this._deliveryStreamType; }
+            set { this._deliveryStreamType = value; }
+        }
+
+        // Check to see if DeliveryStreamType property is set
+        internal bool IsSetDeliveryStreamType()
+        {
+            return this._deliveryStreamType != null;
+        }
 
         /// <summary>
         /// Gets and sets the property ExclusiveStartDeliveryStreamName. 

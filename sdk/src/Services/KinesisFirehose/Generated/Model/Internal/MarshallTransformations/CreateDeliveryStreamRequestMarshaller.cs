@@ -73,6 +73,12 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.DeliveryStreamName);
                 }
 
+                if(publicRequest.IsSetDeliveryStreamType())
+                {
+                    context.Writer.WritePropertyName("DeliveryStreamType");
+                    context.Writer.Write(publicRequest.DeliveryStreamType);
+                }
+
                 if(publicRequest.IsSetElasticsearchDestinationConfiguration())
                 {
                     context.Writer.WritePropertyName("ElasticsearchDestinationConfiguration");
@@ -91,6 +97,17 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
 
                     var marshaller = ExtendedS3DestinationConfigurationMarshaller.Instance;
                     marshaller.Marshall(publicRequest.ExtendedS3DestinationConfiguration, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetKinesisStreamSourceConfiguration())
+                {
+                    context.Writer.WritePropertyName("KinesisStreamSourceConfiguration");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = KinesisStreamSourceConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.KinesisStreamSourceConfiguration, context);
 
                     context.Writer.WriteObjectEnd();
                 }

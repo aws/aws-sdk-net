@@ -28,32 +28,26 @@ using Amazon.Runtime.Internal;
 namespace Amazon.KinesisFirehose.Model
 {
     /// <summary>
-    /// Configures retry behavior in case Kinesis Firehose is unable to deliver documents
-    /// to Amazon ES.
+    /// Container for the parameters to the GetKinesisStream operation.
+    /// 
     /// </summary>
-    public partial class ElasticsearchRetryOptions
+    public partial class GetKinesisStreamRequest : AmazonKinesisFirehoseRequest
     {
-        private int? _durationInSeconds;
+        private string _deliveryStreamARN;
 
         /// <summary>
-        /// Gets and sets the property DurationInSeconds. 
-        /// <para>
-        /// After an initial failure to deliver to Amazon ES, the total amount of time during
-        /// which Kinesis Firehose re-attempts delivery (including the first attempt). After this
-        /// time has elapsed, the failed documents are written to Amazon S3. Default value is
-        /// 300 seconds (5 minutes). A value of 0 (zero) results in no retries.
-        /// </para>
+        /// Gets and sets the property DeliveryStreamARN.
         /// </summary>
-        public int DurationInSeconds
+        public string DeliveryStreamARN
         {
-            get { return this._durationInSeconds.GetValueOrDefault(); }
-            set { this._durationInSeconds = value; }
+            get { return this._deliveryStreamARN; }
+            set { this._deliveryStreamARN = value; }
         }
 
-        // Check to see if DurationInSeconds property is set
-        internal bool IsSetDurationInSeconds()
+        // Check to see if DeliveryStreamARN property is set
+        internal bool IsSetDeliveryStreamARN()
         {
-            return this._durationInSeconds.HasValue; 
+            return this._deliveryStreamARN != null;
         }
 
     }

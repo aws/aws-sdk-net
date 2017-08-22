@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// ListDeliveryStreams Request Marshaller
+    /// GetKinesisStream Request Marshaller
     /// </summary>       
-    public class ListDeliveryStreamsRequestMarshaller : IMarshaller<IRequest, ListDeliveryStreamsRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class GetKinesisStreamRequestMarshaller : IMarshaller<IRequest, GetKinesisStreamRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((ListDeliveryStreamsRequest)input);
+            return this.Marshall((GetKinesisStreamRequest)input);
         }
 
         /// <summary>
@@ -52,10 +52,10 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(ListDeliveryStreamsRequest publicRequest)
+        public IRequest Marshall(GetKinesisStreamRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.KinesisFirehose");
-            string target = "Firehose_20150804.ListDeliveryStreams";
+            string target = "Firehose_20150804.GetKinesisStream";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
             request.HttpMethod = "POST";
@@ -67,22 +67,10 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDeliveryStreamType())
+                if(publicRequest.IsSetDeliveryStreamARN())
                 {
-                    context.Writer.WritePropertyName("DeliveryStreamType");
-                    context.Writer.Write(publicRequest.DeliveryStreamType);
-                }
-
-                if(publicRequest.IsSetExclusiveStartDeliveryStreamName())
-                {
-                    context.Writer.WritePropertyName("ExclusiveStartDeliveryStreamName");
-                    context.Writer.Write(publicRequest.ExclusiveStartDeliveryStreamName);
-                }
-
-                if(publicRequest.IsSetLimit())
-                {
-                    context.Writer.WritePropertyName("Limit");
-                    context.Writer.Write(publicRequest.Limit);
+                    context.Writer.WritePropertyName("DeliveryStreamARN");
+                    context.Writer.Write(publicRequest.DeliveryStreamARN);
                 }
 
         

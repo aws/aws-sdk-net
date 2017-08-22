@@ -28,32 +28,29 @@ using Amazon.Runtime.Internal;
 namespace Amazon.KinesisFirehose.Model
 {
     /// <summary>
-    /// Configures retry behavior in case Kinesis Firehose is unable to deliver documents
-    /// to Amazon ES.
+    /// Details about a Kinesis stream used as the source for a Kinesis Firehose delivery
+    /// stream.
     /// </summary>
-    public partial class ElasticsearchRetryOptions
+    public partial class SourceDescription
     {
-        private int? _durationInSeconds;
+        private KinesisStreamSourceDescription _kinesisStreamSourceDescription;
 
         /// <summary>
-        /// Gets and sets the property DurationInSeconds. 
+        /// Gets and sets the property KinesisStreamSourceDescription. 
         /// <para>
-        /// After an initial failure to deliver to Amazon ES, the total amount of time during
-        /// which Kinesis Firehose re-attempts delivery (including the first attempt). After this
-        /// time has elapsed, the failed documents are written to Amazon S3. Default value is
-        /// 300 seconds (5 minutes). A value of 0 (zero) results in no retries.
+        /// The <a>KinesisStreamSourceDescription</a> value for the source Kinesis stream.
         /// </para>
         /// </summary>
-        public int DurationInSeconds
+        public KinesisStreamSourceDescription KinesisStreamSourceDescription
         {
-            get { return this._durationInSeconds.GetValueOrDefault(); }
-            set { this._durationInSeconds = value; }
+            get { return this._kinesisStreamSourceDescription; }
+            set { this._kinesisStreamSourceDescription = value; }
         }
 
-        // Check to see if DurationInSeconds property is set
-        internal bool IsSetDurationInSeconds()
+        // Check to see if KinesisStreamSourceDescription property is set
+        internal bool IsSetKinesisStreamSourceDescription()
         {
-            return this._durationInSeconds.HasValue; 
+            return this._kinesisStreamSourceDescription != null;
         }
 
     }

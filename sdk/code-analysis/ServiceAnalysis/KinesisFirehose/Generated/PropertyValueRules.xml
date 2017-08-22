@@ -35,6 +35,18 @@
     <max>10000</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.KinesisFirehose.Model.GetKinesisStreamRequest.DeliveryStreamARN</property>
+    <min>1</min>
+    <max>512</max>
+    <pattern>arn:.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.KinesisFirehose.Model.GetKinesisStreamResponse.KinesisStreamARN</property>
+    <min>1</min>
+    <max>512</max>
+    <pattern>arn:.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.KinesisFirehose.Model.ListDeliveryStreamsRequest.ExclusiveStartDeliveryStreamName</property>
     <min>1</min>
     <max>64</max>
@@ -232,6 +244,30 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisFirehose.Model.ExtendedS3DestinationUpdate.RoleARN</property>
+    <min>1</min>
+    <max>512</max>
+    <pattern>arn:.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.KinesisFirehose.Model.KinesisStreamSourceConfiguration.KinesisStreamARN</property>
+    <min>1</min>
+    <max>512</max>
+    <pattern>arn:.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.KinesisFirehose.Model.KinesisStreamSourceConfiguration.RoleARN</property>
+    <min>1</min>
+    <max>512</max>
+    <pattern>arn:.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.KinesisFirehose.Model.KinesisStreamSourceDescription.KinesisStreamARN</property>
+    <min>1</min>
+    <max>512</max>
+    <pattern>arn:.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.KinesisFirehose.Model.KinesisStreamSourceDescription.RoleARN</property>
     <min>1</min>
     <max>512</max>
     <pattern>arn:.*</pattern>

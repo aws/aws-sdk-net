@@ -38,7 +38,7 @@ namespace Amazon.KinesisFirehose
     ///
     /// Amazon Kinesis Firehose API Reference 
     /// <para>
-    /// Amazon Kinesis Firehose is a fully-managed service that delivers real-time streaming
+    /// Amazon Kinesis Firehose is a fully managed service that delivers real-time streaming
     /// data to destinations such as Amazon Simple Storage Service (Amazon S3), Amazon Elasticsearch
     /// Service (Amazon ES), and Amazon Redshift.
     /// </para>
@@ -250,21 +250,31 @@ namespace Amazon.KinesisFirehose
         /// </para>
         ///  
         /// <para>
-        /// A delivery stream is configured with a single destination: Amazon S3, Amazon Elasticsearch
-        /// Service, or Amazon Redshift. You must specify only one of the following destination
-        /// configuration parameters: <b>ExtendedS3DestinationConfiguration</b>, <b>S3DestinationConfiguration</b>,
+        /// A Kinesis Firehose delivery stream can be configured to receive records directly from
+        /// providers using <a>PutRecord</a> or <a>PutRecordBatch</a>, or it can be configured
+        /// to use an existing Kinesis stream as its source. To specify a Kinesis stream as input,
+        /// set the <code>DeliveryStreamType</code> parameter to <code>KinesisStreamAsSource</code>,
+        /// and provide the Kinesis stream ARN and role ARN in the <code>KinesisStreamSourceConfiguration</code>
+        /// parameter.
+        /// </para>
+        ///  
+        /// <para>
+        /// A delivery stream is configured with a single destination: Amazon S3, Amazon ES, or
+        /// Amazon Redshift. You must specify only one of the following destination configuration
+        /// parameters: <b>ExtendedS3DestinationConfiguration</b>, <b>S3DestinationConfiguration</b>,
         /// <b>ElasticsearchDestinationConfiguration</b>, or <b>RedshiftDestinationConfiguration</b>.
         /// </para>
         ///  
         /// <para>
         /// When you specify <b>S3DestinationConfiguration</b>, you can also provide the following
         /// optional values: <b>BufferingHints</b>, <b>EncryptionConfiguration</b>, and <b>CompressionFormat</b>.
-        /// By default, if no <b>BufferingHints</b> value is provided, Firehose buffers data up
-        /// to 5 MB or for 5 minutes, whichever condition is satisfied first. Note that <b>BufferingHints</b>
-        /// is a hint, so there are some cases where the service cannot adhere to these conditions
-        /// strictly; for example, record boundaries are such that the size is a little over or
-        /// under the configured buffering size. By default, no encryption is performed. We strongly
-        /// recommend that you enable encryption to ensure secure data storage in Amazon S3.
+        /// By default, if no <b>BufferingHints</b> value is provided, Kinesis Firehose buffers
+        /// data up to 5 MB or for 5 minutes, whichever condition is satisfied first. Note that
+        /// <b>BufferingHints</b> is a hint, so there are some cases where the service cannot
+        /// adhere to these conditions strictly; for example, record boundaries are such that
+        /// the size is a little over or under the configured buffering size. By default, no encryption
+        /// is performed. We strongly recommend that you enable encryption to ensure secure data
+        /// storage in Amazon S3.
         /// </para>
         ///  
         /// <para>
@@ -273,8 +283,8 @@ namespace Amazon.KinesisFirehose
         ///  <ul> <li> 
         /// <para>
         /// An Amazon Redshift destination requires an S3 bucket as intermediate location, as
-        /// Firehose first delivers data to S3 and then uses <code>COPY</code> syntax to load
-        /// data into an Amazon Redshift table. This is specified in the <b>RedshiftDestinationConfiguration.S3Configuration</b>
+        /// Kinesis Firehose first delivers data to S3 and then uses <code>COPY</code> syntax
+        /// to load data into an Amazon Redshift table. This is specified in the <b>RedshiftDestinationConfiguration.S3Configuration</b>
         /// parameter.
         /// </para>
         ///  </li> <li> 
@@ -287,14 +297,15 @@ namespace Amazon.KinesisFirehose
         ///  </li> <li> 
         /// <para>
         /// We strongly recommend that you use the user name and password you provide exclusively
-        /// with Firehose, and that the permissions for the account are restricted for Amazon
-        /// Redshift <code>INSERT</code> permissions.
+        /// with Kinesis Firehose, and that the permissions for the account are restricted for
+        /// Amazon Redshift <code>INSERT</code> permissions.
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// Firehose assumes the IAM role that is configured as part of the destination. The role
-        /// should allow the Firehose principal to assume the role, and the role should have permissions
-        /// that allows the service to deliver the data. For more information, see <a href="http://docs.aws.amazon.com/firehose/latest/dev/controlling-access.html#using-iam-s3">Amazon
+        /// Kinesis Firehose assumes the IAM role that is configured as part of the destination.
+        /// The role should allow the Kinesis Firehose principal to assume the role, and the role
+        /// should have permissions that allow the service to deliver the data. For more information,
+        /// see <a href="http://docs.aws.amazon.com/firehose/latest/dev/controlling-access.html#using-iam-s3">Amazon
         /// S3 Bucket Access</a> in the <i>Amazon Kinesis Firehose Developer Guide</i>.
         /// </para>
         /// </summary>
@@ -302,7 +313,7 @@ namespace Amazon.KinesisFirehose
         /// 
         /// <returns>The response from the CreateDeliveryStream service method, as returned by KinesisFirehose.</returns>
         /// <exception cref="Amazon.KinesisFirehose.Model.InvalidArgumentException">
-        /// The specified input parameter has an value that is not valid.
+        /// The specified input parameter has a value that is not valid.
         /// </exception>
         /// <exception cref="Amazon.KinesisFirehose.Model.LimitExceededException">
         /// You have already reached the limit for a requested resource.
@@ -528,6 +539,54 @@ namespace Amazon.KinesisFirehose
 
         #endregion
         
+        #region  GetKinesisStream
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetKinesisStream service method.</param>
+        /// 
+        /// <returns>The response from the GetKinesisStream service method, as returned by KinesisFirehose.</returns>
+        /// <exception cref="Amazon.KinesisFirehose.Model.InvalidArgumentException">
+        /// The specified input parameter has a value that is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.KinesisFirehose.Model.InvalidStreamTypeException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.KinesisFirehose.Model.ResourceNotFoundException">
+        /// The specified resource could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/GetKinesisStream">REST API Reference for GetKinesisStream Operation</seealso>
+        public GetKinesisStreamResponse GetKinesisStream(GetKinesisStreamRequest request)
+        {
+            var marshaller = new GetKinesisStreamRequestMarshaller();
+            var unmarshaller = GetKinesisStreamResponseUnmarshaller.Instance;
+
+            return Invoke<GetKinesisStreamRequest,GetKinesisStreamResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetKinesisStream operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetKinesisStream operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/GetKinesisStream">REST API Reference for GetKinesisStream Operation</seealso>
+        public Task<GetKinesisStreamResponse> GetKinesisStreamAsync(GetKinesisStreamRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new GetKinesisStreamRequestMarshaller();
+            var unmarshaller = GetKinesisStreamResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetKinesisStreamRequest,GetKinesisStreamResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListDeliveryStreams
 
 
@@ -647,16 +706,16 @@ namespace Amazon.KinesisFirehose
         /// <para>
         /// You must specify the name of the delivery stream and the data record when using <a>PutRecord</a>.
         /// The data record consists of a data blob that can be up to 1,000 KB in size, and any
-        /// kind of data, for example, a segment from a log file, geographic location data, web
-        /// site clickstream data, etc.
+        /// kind of data, for example, a segment from a log file, geographic location data, website
+        /// clickstream data, and so on.
         /// </para>
         ///  
         /// <para>
-        /// Firehose buffers records before delivering them to the destination. To disambiguate
+        /// Kinesis Firehose buffers records before delivering them to the destination. To disambiguate
         /// the data blobs at the destination, a common solution is to use delimiters in the data,
         /// such as a newline (<code>\n</code>) or some other character unique within the data.
-        /// This allows the consumer application(s) to parse individual data items when reading
-        /// the data from the destination.
+        /// This allows the consumer application to parse individual data items when reading the
+        /// data from the destination.
         /// </para>
         ///  
         /// <para>
@@ -672,9 +731,9 @@ namespace Amazon.KinesisFirehose
         /// </para>
         ///  
         /// <para>
-        /// Data records sent to Firehose are stored for 24 hours from the time they are added
-        /// to a delivery stream as it attempts to send the records to the destination. If the
-        /// destination is unreachable for more than 24 hours, the data is no longer available.
+        /// Data records sent to Kinesis Firehose are stored for 24 hours from the time they are
+        /// added to a delivery stream as it attempts to send the records to the destination.
+        /// If the destination is unreachable for more than 24 hours, the data is no longer available.
         /// </para>
         /// </summary>
         /// <param name="deliveryStreamName">The name of the delivery stream.</param>
@@ -682,7 +741,7 @@ namespace Amazon.KinesisFirehose
         /// 
         /// <returns>The response from the PutRecord service method, as returned by KinesisFirehose.</returns>
         /// <exception cref="Amazon.KinesisFirehose.Model.InvalidArgumentException">
-        /// The specified input parameter has an value that is not valid.
+        /// The specified input parameter has a value that is not valid.
         /// </exception>
         /// <exception cref="Amazon.KinesisFirehose.Model.ResourceNotFoundException">
         /// The specified resource could not be found.
@@ -721,16 +780,16 @@ namespace Amazon.KinesisFirehose
         /// <para>
         /// You must specify the name of the delivery stream and the data record when using <a>PutRecord</a>.
         /// The data record consists of a data blob that can be up to 1,000 KB in size, and any
-        /// kind of data, for example, a segment from a log file, geographic location data, web
-        /// site clickstream data, etc.
+        /// kind of data, for example, a segment from a log file, geographic location data, website
+        /// clickstream data, and so on.
         /// </para>
         ///  
         /// <para>
-        /// Firehose buffers records before delivering them to the destination. To disambiguate
+        /// Kinesis Firehose buffers records before delivering them to the destination. To disambiguate
         /// the data blobs at the destination, a common solution is to use delimiters in the data,
         /// such as a newline (<code>\n</code>) or some other character unique within the data.
-        /// This allows the consumer application(s) to parse individual data items when reading
-        /// the data from the destination.
+        /// This allows the consumer application to parse individual data items when reading the
+        /// data from the destination.
         /// </para>
         ///  
         /// <para>
@@ -746,16 +805,16 @@ namespace Amazon.KinesisFirehose
         /// </para>
         ///  
         /// <para>
-        /// Data records sent to Firehose are stored for 24 hours from the time they are added
-        /// to a delivery stream as it attempts to send the records to the destination. If the
-        /// destination is unreachable for more than 24 hours, the data is no longer available.
+        /// Data records sent to Kinesis Firehose are stored for 24 hours from the time they are
+        /// added to a delivery stream as it attempts to send the records to the destination.
+        /// If the destination is unreachable for more than 24 hours, the data is no longer available.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutRecord service method.</param>
         /// 
         /// <returns>The response from the PutRecord service method, as returned by KinesisFirehose.</returns>
         /// <exception cref="Amazon.KinesisFirehose.Model.InvalidArgumentException">
-        /// The specified input parameter has an value that is not valid.
+        /// The specified input parameter has a value that is not valid.
         /// </exception>
         /// <exception cref="Amazon.KinesisFirehose.Model.ResourceNotFoundException">
         /// The specified resource could not be found.
@@ -794,16 +853,16 @@ namespace Amazon.KinesisFirehose
         /// <para>
         /// You must specify the name of the delivery stream and the data record when using <a>PutRecord</a>.
         /// The data record consists of a data blob that can be up to 1,000 KB in size, and any
-        /// kind of data, for example, a segment from a log file, geographic location data, web
-        /// site clickstream data, etc.
+        /// kind of data, for example, a segment from a log file, geographic location data, website
+        /// clickstream data, and so on.
         /// </para>
         ///  
         /// <para>
-        /// Firehose buffers records before delivering them to the destination. To disambiguate
+        /// Kinesis Firehose buffers records before delivering them to the destination. To disambiguate
         /// the data blobs at the destination, a common solution is to use delimiters in the data,
         /// such as a newline (<code>\n</code>) or some other character unique within the data.
-        /// This allows the consumer application(s) to parse individual data items when reading
-        /// the data from the destination.
+        /// This allows the consumer application to parse individual data items when reading the
+        /// data from the destination.
         /// </para>
         ///  
         /// <para>
@@ -819,9 +878,9 @@ namespace Amazon.KinesisFirehose
         /// </para>
         ///  
         /// <para>
-        /// Data records sent to Firehose are stored for 24 hours from the time they are added
-        /// to a delivery stream as it attempts to send the records to the destination. If the
-        /// destination is unreachable for more than 24 hours, the data is no longer available.
+        /// Data records sent to Kinesis Firehose are stored for 24 hours from the time they are
+        /// added to a delivery stream as it attempts to send the records to the destination.
+        /// If the destination is unreachable for more than 24 hours, the data is no longer available.
         /// </para>
         /// </summary>
         /// <param name="deliveryStreamName">The name of the delivery stream.</param>
@@ -832,7 +891,7 @@ namespace Amazon.KinesisFirehose
         /// 
         /// <returns>The response from the PutRecord service method, as returned by KinesisFirehose.</returns>
         /// <exception cref="Amazon.KinesisFirehose.Model.InvalidArgumentException">
-        /// The specified input parameter has an value that is not valid.
+        /// The specified input parameter has a value that is not valid.
         /// </exception>
         /// <exception cref="Amazon.KinesisFirehose.Model.ResourceNotFoundException">
         /// The specified resource could not be found.
@@ -885,9 +944,9 @@ namespace Amazon.KinesisFirehose
         ///  
         /// <para>
         /// By default, each delivery stream can take in up to 2,000 transactions per second,
-        /// 5,000 records per second, or 5 MB per second. Note that if you use <a>PutRecord</a>
-        /// and <a>PutRecordBatch</a>, the limits are an aggregate across these two operations
-        /// for each delivery stream. For more information about limits, see <a href="http://docs.aws.amazon.com/firehose/latest/dev/limits.html">Amazon
+        /// 5,000 records per second, or 5 MB per second. If you use <a>PutRecord</a> and <a>PutRecordBatch</a>,
+        /// the limits are an aggregate across these two operations for each delivery stream.
+        /// For more information about limits, see <a href="http://docs.aws.amazon.com/firehose/latest/dev/limits.html">Amazon
         /// Kinesis Firehose Limits</a>.
         /// </para>
         ///  
@@ -900,27 +959,27 @@ namespace Amazon.KinesisFirehose
         /// <para>
         /// You must specify the name of the delivery stream and the data record when using <a>PutRecord</a>.
         /// The data record consists of a data blob that can be up to 1,000 KB in size, and any
-        /// kind of data, for example, a segment from a log file, geographic location data, web
-        /// site clickstream data, and so on.
+        /// kind of data. For example, it could be a segment from a log file, geographic location
+        /// data, web site clickstream data, and so on.
         /// </para>
         ///  
         /// <para>
-        /// Firehose buffers records before delivering them to the destination. To disambiguate
+        /// Kinesis Firehose buffers records before delivering them to the destination. To disambiguate
         /// the data blobs at the destination, a common solution is to use delimiters in the data,
         /// such as a newline (<code>\n</code>) or some other character unique within the data.
-        /// This allows the consumer application(s) to parse individual data items when reading
-        /// the data from the destination.
+        /// This allows the consumer application to parse individual data items when reading the
+        /// data from the destination.
         /// </para>
         ///  
         /// <para>
         /// The <a>PutRecordBatch</a> response includes a count of failed records, <b>FailedPutCount</b>,
         /// and an array of responses, <b>RequestResponses</b>. Each entry in the <b>RequestResponses</b>
-        /// array provides additional information about the processed record, and directly correlates
+        /// array provides additional information about the processed record. It directly correlates
         /// with a record in the request array using the same ordering, from the top to the bottom.
         /// The response array always includes the same number of records as the request array.
         /// <b>RequestResponses</b> includes both successfully and unsuccessfully processed records.
-        /// Firehose attempts to process all records in each <a>PutRecordBatch</a> request. A
-        /// single record failure does not stop the processing of subsequent records.
+        /// Kinesis Firehose attempts to process all records in each <a>PutRecordBatch</a> request.
+        /// A single record failure does not stop the processing of subsequent records.
         /// </para>
         ///  
         /// <para>
@@ -946,9 +1005,9 @@ namespace Amazon.KinesisFirehose
         /// </para>
         ///  
         /// <para>
-        /// Data records sent to Firehose are stored for 24 hours from the time they are added
-        /// to a delivery stream as it attempts to send the records to the destination. If the
-        /// destination is unreachable for more than 24 hours, the data is no longer available.
+        /// Data records sent to Kinesis Firehose are stored for 24 hours from the time they are
+        /// added to a delivery stream as it attempts to send the records to the destination.
+        /// If the destination is unreachable for more than 24 hours, the data is no longer available.
         /// </para>
         /// </summary>
         /// <param name="deliveryStreamName">The name of the delivery stream.</param>
@@ -956,7 +1015,7 @@ namespace Amazon.KinesisFirehose
         /// 
         /// <returns>The response from the PutRecordBatch service method, as returned by KinesisFirehose.</returns>
         /// <exception cref="Amazon.KinesisFirehose.Model.InvalidArgumentException">
-        /// The specified input parameter has an value that is not valid.
+        /// The specified input parameter has a value that is not valid.
         /// </exception>
         /// <exception cref="Amazon.KinesisFirehose.Model.ResourceNotFoundException">
         /// The specified resource could not be found.
@@ -986,9 +1045,9 @@ namespace Amazon.KinesisFirehose
         ///  
         /// <para>
         /// By default, each delivery stream can take in up to 2,000 transactions per second,
-        /// 5,000 records per second, or 5 MB per second. Note that if you use <a>PutRecord</a>
-        /// and <a>PutRecordBatch</a>, the limits are an aggregate across these two operations
-        /// for each delivery stream. For more information about limits, see <a href="http://docs.aws.amazon.com/firehose/latest/dev/limits.html">Amazon
+        /// 5,000 records per second, or 5 MB per second. If you use <a>PutRecord</a> and <a>PutRecordBatch</a>,
+        /// the limits are an aggregate across these two operations for each delivery stream.
+        /// For more information about limits, see <a href="http://docs.aws.amazon.com/firehose/latest/dev/limits.html">Amazon
         /// Kinesis Firehose Limits</a>.
         /// </para>
         ///  
@@ -1001,27 +1060,27 @@ namespace Amazon.KinesisFirehose
         /// <para>
         /// You must specify the name of the delivery stream and the data record when using <a>PutRecord</a>.
         /// The data record consists of a data blob that can be up to 1,000 KB in size, and any
-        /// kind of data, for example, a segment from a log file, geographic location data, web
-        /// site clickstream data, and so on.
+        /// kind of data. For example, it could be a segment from a log file, geographic location
+        /// data, web site clickstream data, and so on.
         /// </para>
         ///  
         /// <para>
-        /// Firehose buffers records before delivering them to the destination. To disambiguate
+        /// Kinesis Firehose buffers records before delivering them to the destination. To disambiguate
         /// the data blobs at the destination, a common solution is to use delimiters in the data,
         /// such as a newline (<code>\n</code>) or some other character unique within the data.
-        /// This allows the consumer application(s) to parse individual data items when reading
-        /// the data from the destination.
+        /// This allows the consumer application to parse individual data items when reading the
+        /// data from the destination.
         /// </para>
         ///  
         /// <para>
         /// The <a>PutRecordBatch</a> response includes a count of failed records, <b>FailedPutCount</b>,
         /// and an array of responses, <b>RequestResponses</b>. Each entry in the <b>RequestResponses</b>
-        /// array provides additional information about the processed record, and directly correlates
+        /// array provides additional information about the processed record. It directly correlates
         /// with a record in the request array using the same ordering, from the top to the bottom.
         /// The response array always includes the same number of records as the request array.
         /// <b>RequestResponses</b> includes both successfully and unsuccessfully processed records.
-        /// Firehose attempts to process all records in each <a>PutRecordBatch</a> request. A
-        /// single record failure does not stop the processing of subsequent records.
+        /// Kinesis Firehose attempts to process all records in each <a>PutRecordBatch</a> request.
+        /// A single record failure does not stop the processing of subsequent records.
         /// </para>
         ///  
         /// <para>
@@ -1047,16 +1106,16 @@ namespace Amazon.KinesisFirehose
         /// </para>
         ///  
         /// <para>
-        /// Data records sent to Firehose are stored for 24 hours from the time they are added
-        /// to a delivery stream as it attempts to send the records to the destination. If the
-        /// destination is unreachable for more than 24 hours, the data is no longer available.
+        /// Data records sent to Kinesis Firehose are stored for 24 hours from the time they are
+        /// added to a delivery stream as it attempts to send the records to the destination.
+        /// If the destination is unreachable for more than 24 hours, the data is no longer available.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutRecordBatch service method.</param>
         /// 
         /// <returns>The response from the PutRecordBatch service method, as returned by KinesisFirehose.</returns>
         /// <exception cref="Amazon.KinesisFirehose.Model.InvalidArgumentException">
-        /// The specified input parameter has an value that is not valid.
+        /// The specified input parameter has a value that is not valid.
         /// </exception>
         /// <exception cref="Amazon.KinesisFirehose.Model.ResourceNotFoundException">
         /// The specified resource could not be found.
@@ -1086,9 +1145,9 @@ namespace Amazon.KinesisFirehose
         ///  
         /// <para>
         /// By default, each delivery stream can take in up to 2,000 transactions per second,
-        /// 5,000 records per second, or 5 MB per second. Note that if you use <a>PutRecord</a>
-        /// and <a>PutRecordBatch</a>, the limits are an aggregate across these two operations
-        /// for each delivery stream. For more information about limits, see <a href="http://docs.aws.amazon.com/firehose/latest/dev/limits.html">Amazon
+        /// 5,000 records per second, or 5 MB per second. If you use <a>PutRecord</a> and <a>PutRecordBatch</a>,
+        /// the limits are an aggregate across these two operations for each delivery stream.
+        /// For more information about limits, see <a href="http://docs.aws.amazon.com/firehose/latest/dev/limits.html">Amazon
         /// Kinesis Firehose Limits</a>.
         /// </para>
         ///  
@@ -1101,27 +1160,27 @@ namespace Amazon.KinesisFirehose
         /// <para>
         /// You must specify the name of the delivery stream and the data record when using <a>PutRecord</a>.
         /// The data record consists of a data blob that can be up to 1,000 KB in size, and any
-        /// kind of data, for example, a segment from a log file, geographic location data, web
-        /// site clickstream data, and so on.
+        /// kind of data. For example, it could be a segment from a log file, geographic location
+        /// data, web site clickstream data, and so on.
         /// </para>
         ///  
         /// <para>
-        /// Firehose buffers records before delivering them to the destination. To disambiguate
+        /// Kinesis Firehose buffers records before delivering them to the destination. To disambiguate
         /// the data blobs at the destination, a common solution is to use delimiters in the data,
         /// such as a newline (<code>\n</code>) or some other character unique within the data.
-        /// This allows the consumer application(s) to parse individual data items when reading
-        /// the data from the destination.
+        /// This allows the consumer application to parse individual data items when reading the
+        /// data from the destination.
         /// </para>
         ///  
         /// <para>
         /// The <a>PutRecordBatch</a> response includes a count of failed records, <b>FailedPutCount</b>,
         /// and an array of responses, <b>RequestResponses</b>. Each entry in the <b>RequestResponses</b>
-        /// array provides additional information about the processed record, and directly correlates
+        /// array provides additional information about the processed record. It directly correlates
         /// with a record in the request array using the same ordering, from the top to the bottom.
         /// The response array always includes the same number of records as the request array.
         /// <b>RequestResponses</b> includes both successfully and unsuccessfully processed records.
-        /// Firehose attempts to process all records in each <a>PutRecordBatch</a> request. A
-        /// single record failure does not stop the processing of subsequent records.
+        /// Kinesis Firehose attempts to process all records in each <a>PutRecordBatch</a> request.
+        /// A single record failure does not stop the processing of subsequent records.
         /// </para>
         ///  
         /// <para>
@@ -1147,9 +1206,9 @@ namespace Amazon.KinesisFirehose
         /// </para>
         ///  
         /// <para>
-        /// Data records sent to Firehose are stored for 24 hours from the time they are added
-        /// to a delivery stream as it attempts to send the records to the destination. If the
-        /// destination is unreachable for more than 24 hours, the data is no longer available.
+        /// Data records sent to Kinesis Firehose are stored for 24 hours from the time they are
+        /// added to a delivery stream as it attempts to send the records to the destination.
+        /// If the destination is unreachable for more than 24 hours, the data is no longer available.
         /// </para>
         /// </summary>
         /// <param name="deliveryStreamName">The name of the delivery stream.</param>
@@ -1160,7 +1219,7 @@ namespace Amazon.KinesisFirehose
         /// 
         /// <returns>The response from the PutRecordBatch service method, as returned by KinesisFirehose.</returns>
         /// <exception cref="Amazon.KinesisFirehose.Model.InvalidArgumentException">
-        /// The specified input parameter has an value that is not valid.
+        /// The specified input parameter has a value that is not valid.
         /// </exception>
         /// <exception cref="Amazon.KinesisFirehose.Model.ResourceNotFoundException">
         /// The specified resource could not be found.
@@ -1224,26 +1283,25 @@ namespace Amazon.KinesisFirehose
         /// </para>
         ///  
         /// <para>
-        /// If the destination type is the same, Firehose merges the configuration parameters
+        /// If the destination type is the same, Kinesis Firehose merges the configuration parameters
         /// specified with the destination configuration that already exists on the delivery stream.
         /// If any of the parameters are not specified in the call, the existing values are retained.
         /// For example, in the Amazon S3 destination, if <a>EncryptionConfiguration</a> is not
-        /// specified then the existing <a>EncryptionConfiguration</a> is maintained on the destination.
+        /// specified, then the existing <a>EncryptionConfiguration</a> is maintained on the destination.
         /// </para>
         ///  
         /// <para>
         /// If the destination type is not the same, for example, changing the destination from
-        /// Amazon S3 to Amazon Redshift, Firehose does not merge any parameters. In this case,
-        /// all parameters must be specified.
+        /// Amazon S3 to Amazon Redshift, Kinesis Firehose does not merge any parameters. In this
+        /// case, all parameters must be specified.
         /// </para>
         ///  
         /// <para>
-        /// Firehose uses <b>CurrentDeliveryStreamVersionId</b> to avoid race conditions and conflicting
-        /// merges. This is a required field, and the service updates the configuration only if
-        /// the existing configuration has a version ID that matches. After the update is applied
-        /// successfully, the version ID is updated, and can be retrieved using <a>DescribeDeliveryStream</a>.
-        /// You should use the new version ID to set <b>CurrentDeliveryStreamVersionId</b> in
-        /// the next call.
+        /// Kinesis Firehose uses <b>CurrentDeliveryStreamVersionId</b> to avoid race conditions
+        /// and conflicting merges. This is a required field, and the service updates the configuration
+        /// only if the existing configuration has a version ID that matches. After the update
+        /// is applied successfully, the version ID is updated, and can be retrieved using <a>DescribeDeliveryStream</a>.
+        /// Use the new version ID to set <b>CurrentDeliveryStreamVersionId</b> in the next call.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateDestination service method.</param>
@@ -1254,7 +1312,7 @@ namespace Amazon.KinesisFirehose
         /// to update the destination.
         /// </exception>
         /// <exception cref="Amazon.KinesisFirehose.Model.InvalidArgumentException">
-        /// The specified input parameter has an value that is not valid.
+        /// The specified input parameter has a value that is not valid.
         /// </exception>
         /// <exception cref="Amazon.KinesisFirehose.Model.ResourceInUseException">
         /// The resource is already in use and not available for this operation.

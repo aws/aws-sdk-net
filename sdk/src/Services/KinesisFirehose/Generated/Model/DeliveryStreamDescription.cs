@@ -36,9 +36,11 @@ namespace Amazon.KinesisFirehose.Model
         private string _deliveryStreamARN;
         private string _deliveryStreamName;
         private DeliveryStreamStatus _deliveryStreamStatus;
+        private DeliveryStreamType _deliveryStreamType;
         private List<DestinationDescription> _destinations = new List<DestinationDescription>();
         private bool? _hasMoreDestinations;
         private DateTime? _lastUpdateTimestamp;
+        private SourceDescription _source;
         private string _versionId;
 
         /// <summary>
@@ -114,6 +116,34 @@ namespace Amazon.KinesisFirehose.Model
         }
 
         /// <summary>
+        /// Gets and sets the property DeliveryStreamType. 
+        /// <para>
+        /// The delivery stream type. This can be one of the following values:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>DirectPut</code>: Provider applications access the delivery stream directly.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>KinesisStreamAsSource</code>: The delivery stream uses a Kinesis stream as
+        /// a source.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public DeliveryStreamType DeliveryStreamType
+        {
+            get { return this._deliveryStreamType; }
+            set { this._deliveryStreamType = value; }
+        }
+
+        // Check to see if DeliveryStreamType property is set
+        internal bool IsSetDeliveryStreamType()
+        {
+            return this._deliveryStreamType != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Destinations. 
         /// <para>
         /// The destinations.
@@ -165,6 +195,25 @@ namespace Amazon.KinesisFirehose.Model
         internal bool IsSetLastUpdateTimestamp()
         {
             return this._lastUpdateTimestamp.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Source. 
+        /// <para>
+        /// If the <code>DeliveryStreamType</code> parameter is <code>KinesisStreamAsSource</code>,
+        /// a <a>SourceDescription</a> object describing the source Kinesis stream.
+        /// </para>
+        /// </summary>
+        public SourceDescription Source
+        {
+            get { return this._source; }
+            set { this._source = value; }
+        }
+
+        // Check to see if Source property is set
+        internal bool IsSetSource()
+        {
+            return this._source != null;
         }
 
         /// <summary>

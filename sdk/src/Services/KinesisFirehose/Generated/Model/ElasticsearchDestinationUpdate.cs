@@ -121,7 +121,7 @@ namespace Amazon.KinesisFirehose.Model
         /// <summary>
         /// Gets and sets the property IndexRotationPeriod. 
         /// <para>
-        /// The Elasticsearch index rotation period. Index rotation appends a timestamp to IndexName
+        /// The Elasticsearch index rotation period. Index rotation appends a time stamp to IndexName
         /// to facilitate the expiration of old data. For more information, see <a href="http://docs.aws.amazon.com/firehose/latest/dev/basic-deliver.html#es-index-rotation">Index
         /// Rotation for Amazon Elasticsearch Service Destination</a>. Default value is <code>OneDay</code>.
         /// </para>
@@ -159,8 +159,8 @@ namespace Amazon.KinesisFirehose.Model
         /// <summary>
         /// Gets and sets the property RetryOptions. 
         /// <para>
-        /// The retry behavior in the event that Firehose is unable to deliver documents to Amazon
-        /// ES. Default value is 300 (5 minutes).
+        /// The retry behavior in case Kinesis Firehose is unable to deliver documents to Amazon
+        /// ES. The default value is 300 (5 minutes).
         /// </para>
         /// </summary>
         public ElasticsearchRetryOptions RetryOptions
@@ -178,8 +178,8 @@ namespace Amazon.KinesisFirehose.Model
         /// <summary>
         /// Gets and sets the property RoleARN. 
         /// <para>
-        /// The ARN of the IAM role to be assumed by Firehose for calling the Amazon ES Configuration
-        /// API and for indexing documents. For more information, see <a href="http://docs.aws.amazon.com/firehose/latest/dev/controlling-access.html#using-iam-s3">Amazon
+        /// The ARN of the IAM role to be assumed by Kinesis Firehose for calling the Amazon ES
+        /// Configuration API and for indexing documents. For more information, see <a href="http://docs.aws.amazon.com/firehose/latest/dev/controlling-access.html#using-iam-s3">Amazon
         /// S3 Bucket Access</a>.
         /// </para>
         /// </summary>
