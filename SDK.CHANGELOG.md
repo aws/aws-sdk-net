@@ -1,3 +1,7 @@
+### 3.3.142.1 (2017-08-23 19:38 UTC)
+* AppStream (3.3.4.1)
+	* Documentation updates for appstream
+
 ### 3.3.142.0 (2017-08-22 18:31 UTC)
 * SimpleSystemsManagement (3.3.10.0)
 	* Changes to associations in Systems Manager State Manager can now be recorded. Previously, when you edited associations, you could not go back and review older association settings. Now, associations are versioned, and can be named using human-readable strings, allowing you to see a trail of association changes. You can also perform rate-based scheduling, which allows you to schedule associations more granularly.
