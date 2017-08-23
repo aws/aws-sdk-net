@@ -270,6 +270,22 @@ namespace Amazon.AppStream.Model
         /// <para>
         /// stream.memory.8xlarge
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// stream.graphics-pro.4xlarge
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// stream.graphics-pro.8xlarge
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// stream.graphics-pro.16xlarge
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// stream.graphics-desktop.2xlarge
+        /// </para>
         ///  </li> </ul>
         /// </summary>
         public string InstanceType
