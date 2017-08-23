@@ -35,21 +35,28 @@ namespace Amazon.Runtime.Internal
             Task<T> task = Task.Run<T>(action);
             return task;
 #else
-            return Task<T>.Run(() =>
+            return Task<T>.Run(async () =>
             {
                 Exception exception = null;
                 T result = default(T);
-                Thread thread = new Thread(() =>
+
+                using (var semaphore = new SemaphoreSlim(0))
                 {
-                    try
+                    Thread thread = new Thread(() =>
                     {
-                        result = action();
-                    }
-                    catch (Exception e)
-                    {
-                        exception = e;
-                    }
-                });
+                        try
+                        {
+                            result = action();
+                        }
+                        catch (Exception e)
+                        {
+                            exception = e;
+                        }
+                        finally
+                        {
+                            semaphore.Release();
+                        }
+                    });
 #if !CORECLR
                 using (var ctr = cancellationToken.Register(() =>
                 {
@@ -57,17 +64,19 @@ namespace Amazon.Runtime.Internal
                         thread.Abort();
                 }))
 #endif
-                {
-                    thread.Start();
-                    thread.Join();
-
-                    if (exception != null)
                     {
-                        cancellationToken.ThrowIfCancellationRequested();
-                        System.Runtime.ExceptionServices.ExceptionDispatchInfo.Capture(exception).Throw();
-                    }
+                        thread.Start();
+                        await semaphore.WaitAsync();
+                        thread.Join();
 
-                    return result;
+                        if (exception != null)
+                        {
+                            cancellationToken.ThrowIfCancellationRequested();
+                            System.Runtime.ExceptionServices.ExceptionDispatchInfo.Capture(exception).Throw();
+                        }
+
+                        return result;
+                    }
                 }
             }, cancellationToken);
 #endif
