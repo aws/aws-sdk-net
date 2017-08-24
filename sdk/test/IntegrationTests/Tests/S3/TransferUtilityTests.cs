@@ -28,6 +28,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
 
         private static string bucketName;
         private static string octetStreamContentType = "application/octet-stream";
+        private static string plainTextContentType = "text/plain";
         private static string fullPath;
         private const string testContent = "This is the content body!";
         private const string testFile = "PutObjectFile.txt";
@@ -252,6 +253,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 BucketName = bucketName,
                 Directory = directoryPath,
                 KeyPrefix = keyPrefix,
+                ContentType = plainTextContentType,
                 SearchPattern = "*",
                 SearchOption = SearchOption.AllDirectories,
             };
@@ -276,7 +278,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             Assert.AreEqual(5, files.Count);
 
             if (validate)
-                ValidateDirectoryContents(Client, bucketName, keyPrefix, directory);
+                ValidateDirectoryContents(Client, bucketName, keyPrefix, directory, plainTextContentType);
 
             return directory;
         }
@@ -545,7 +547,10 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             {
                 using (var response = s3client.GetObject(request))
                 {
-                    //Assert.AreEqual(contentType, response.Headers.ContentType);
+                    if (!string.IsNullOrEmpty(contentType))
+                    {
+                        Assert.AreEqual(contentType, response.Headers.ContentType);
+                    }
                     response.WriteResponseStreamToFile(downloadPath);
                 }
                 return true;
@@ -555,6 +560,11 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
 
         public static void ValidateDirectoryContents(IAmazonS3 s3client, string bucketName, string keyPrefix, DirectoryInfo sourceDirectory)
         {
+            ValidateDirectoryContents(s3client, bucketName, keyPrefix, sourceDirectory, null);
+        }
+
+        public static void ValidateDirectoryContents(IAmazonS3 s3client, string bucketName, string keyPrefix, DirectoryInfo sourceDirectory, string contentType)
+        {
             var directoryPath = sourceDirectory.FullName;
             var files = sourceDirectory.GetFiles("*", SearchOption.AllDirectories);
             foreach (var file in files)
@@ -562,7 +572,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 var filePath = file.FullName;
                 var key = filePath.Substring(directoryPath.Length + 1);
                 key = keyPrefix + "/" + key.Replace("\\", "/");
-                ValidateFileContents(s3client, bucketName, key, filePath);
+                ValidateFileContents(s3client, bucketName, key, filePath, contentType);
             }
         }
 
