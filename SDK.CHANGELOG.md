@@ -1,3 +1,7 @@
+### 3.3.143.0 (2017-08-24 18:16 UTC)
+* Rekognition (3.3.6.0)
+	* Update the enum value of LandmarkType and GenderType to be consistent with service response
+
 ### 3.3.142.1 (2017-08-23 19:38 UTC)
 * AppStream (3.3.4.1)
 	* Documentation updates for appstream
