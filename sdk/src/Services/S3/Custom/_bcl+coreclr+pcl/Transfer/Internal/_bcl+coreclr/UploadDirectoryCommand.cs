@@ -65,6 +65,7 @@ namespace Amazon.S3.Transfer.Internal
                 FilePath = filepath,
                 CannedACL = this._request.CannedACL,
                 Metadata = this._request.Metadata,
+                ContentType = this._request.ContentType,
                 StorageClass = this._request.StorageClass,
                 ServerSideEncryptionMethod = this._request.ServerSideEncryptionMethod,
                 ServerSideEncryptionKeyManagementServiceKeyId = this._request.ServerSideEncryptionKeyManagementServiceKeyId,

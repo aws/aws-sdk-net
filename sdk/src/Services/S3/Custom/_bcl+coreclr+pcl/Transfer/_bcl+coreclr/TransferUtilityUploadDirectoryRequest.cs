@@ -42,6 +42,7 @@ namespace Amazon.S3.Transfer
         string _bucketname;
         string _searchPattern = "*";
         string _keyPrefix;
+        private string contentType;
         private bool _uploadFilesConcurrently = false;
         SearchOption _searchOption = SearchOption.TopDirectoryOnly;
         S3CannedACL _cannedACL;
@@ -185,6 +186,23 @@ namespace Amazon.S3.Transfer
         {
             return (_cannedACL != null &&_cannedACL != S3CannedACL.NoACL);
         }
+
+        /// <summary>
+        /// 	Gets or sets the content type for the uploaded Amazon S3 objects.
+        ///     The default behavior when this field is not set is to use the file
+        ///     extension to set the content type. If this field is set to a value it
+        ///     will be applied to all uploaded files in the directory, overriding
+        ///     file extension inspection.
+        /// </summary>
+        /// <value>
+        /// 	The content type for all the uploaded Amazon S3 objects.
+        /// </value>
+        public string ContentType
+        {
+            get { return this.contentType; }
+            set { this.contentType = value; }
+        }
+
 
         /// <summary>
         /// 	Gets or sets the storage class for the uploaded Amazon S3 objects.
