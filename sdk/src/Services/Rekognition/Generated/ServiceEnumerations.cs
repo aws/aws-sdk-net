@@ -155,13 +155,13 @@ namespace Amazon.Rekognition
     {
 
         /// <summary>
-        /// Constant FEMALE for GenderType
+        /// Constant Female for GenderType
         /// </summary>
-        public static readonly GenderType FEMALE = new GenderType("FEMALE");
+        public static readonly GenderType Female = new GenderType("Female");
         /// <summary>
-        /// Constant MALE for GenderType
+        /// Constant Male for GenderType
         /// </summary>
-        public static readonly GenderType MALE = new GenderType("MALE");
+        public static readonly GenderType Male = new GenderType("Male");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -205,105 +205,105 @@ namespace Amazon.Rekognition
     {
 
         /// <summary>
-        /// Constant EYE_LEFT for LandmarkType
+        /// Constant EyeLeft for LandmarkType
         /// </summary>
-        public static readonly LandmarkType EYE_LEFT = new LandmarkType("EYE_LEFT");
+        public static readonly LandmarkType EyeLeft = new LandmarkType("eyeLeft");
         /// <summary>
-        /// Constant EYE_RIGHT for LandmarkType
+        /// Constant EyeRight for LandmarkType
         /// </summary>
-        public static readonly LandmarkType EYE_RIGHT = new LandmarkType("EYE_RIGHT");
+        public static readonly LandmarkType EyeRight = new LandmarkType("eyeRight");
         /// <summary>
-        /// Constant LEFT_EYE_DOWN for LandmarkType
+        /// Constant LeftEyeBrowLeft for LandmarkType
         /// </summary>
-        public static readonly LandmarkType LEFT_EYE_DOWN = new LandmarkType("LEFT_EYE_DOWN");
+        public static readonly LandmarkType LeftEyeBrowLeft = new LandmarkType("leftEyeBrowLeft");
         /// <summary>
-        /// Constant LEFT_EYE_LEFT for LandmarkType
+        /// Constant LeftEyeBrowRight for LandmarkType
         /// </summary>
-        public static readonly LandmarkType LEFT_EYE_LEFT = new LandmarkType("LEFT_EYE_LEFT");
+        public static readonly LandmarkType LeftEyeBrowRight = new LandmarkType("leftEyeBrowRight");
         /// <summary>
-        /// Constant LEFT_EYE_RIGHT for LandmarkType
+        /// Constant LeftEyeBrowUp for LandmarkType
         /// </summary>
-        public static readonly LandmarkType LEFT_EYE_RIGHT = new LandmarkType("LEFT_EYE_RIGHT");
+        public static readonly LandmarkType LeftEyeBrowUp = new LandmarkType("leftEyeBrowUp");
         /// <summary>
-        /// Constant LEFT_EYE_UP for LandmarkType
+        /// Constant LeftEyeDown for LandmarkType
         /// </summary>
-        public static readonly LandmarkType LEFT_EYE_UP = new LandmarkType("LEFT_EYE_UP");
+        public static readonly LandmarkType LeftEyeDown = new LandmarkType("leftEyeDown");
         /// <summary>
-        /// Constant LEFT_EYEBROW_LEFT for LandmarkType
+        /// Constant LeftEyeLeft for LandmarkType
         /// </summary>
-        public static readonly LandmarkType LEFT_EYEBROW_LEFT = new LandmarkType("LEFT_EYEBROW_LEFT");
+        public static readonly LandmarkType LeftEyeLeft = new LandmarkType("leftEyeLeft");
         /// <summary>
-        /// Constant LEFT_EYEBROW_RIGHT for LandmarkType
+        /// Constant LeftEyeRight for LandmarkType
         /// </summary>
-        public static readonly LandmarkType LEFT_EYEBROW_RIGHT = new LandmarkType("LEFT_EYEBROW_RIGHT");
+        public static readonly LandmarkType LeftEyeRight = new LandmarkType("leftEyeRight");
         /// <summary>
-        /// Constant LEFT_EYEBROW_UP for LandmarkType
+        /// Constant LeftEyeUp for LandmarkType
         /// </summary>
-        public static readonly LandmarkType LEFT_EYEBROW_UP = new LandmarkType("LEFT_EYEBROW_UP");
+        public static readonly LandmarkType LeftEyeUp = new LandmarkType("leftEyeUp");
         /// <summary>
-        /// Constant LEFT_PUPIL for LandmarkType
+        /// Constant LeftPupil for LandmarkType
         /// </summary>
-        public static readonly LandmarkType LEFT_PUPIL = new LandmarkType("LEFT_PUPIL");
+        public static readonly LandmarkType LeftPupil = new LandmarkType("leftPupil");
         /// <summary>
-        /// Constant MOUTH_DOWN for LandmarkType
+        /// Constant MouthDown for LandmarkType
         /// </summary>
-        public static readonly LandmarkType MOUTH_DOWN = new LandmarkType("MOUTH_DOWN");
+        public static readonly LandmarkType MouthDown = new LandmarkType("mouthDown");
         /// <summary>
-        /// Constant MOUTH_LEFT for LandmarkType
+        /// Constant MouthLeft for LandmarkType
         /// </summary>
-        public static readonly LandmarkType MOUTH_LEFT = new LandmarkType("MOUTH_LEFT");
+        public static readonly LandmarkType MouthLeft = new LandmarkType("mouthLeft");
         /// <summary>
-        /// Constant MOUTH_RIGHT for LandmarkType
+        /// Constant MouthRight for LandmarkType
         /// </summary>
-        public static readonly LandmarkType MOUTH_RIGHT = new LandmarkType("MOUTH_RIGHT");
+        public static readonly LandmarkType MouthRight = new LandmarkType("mouthRight");
         /// <summary>
-        /// Constant MOUTH_UP for LandmarkType
+        /// Constant MouthUp for LandmarkType
         /// </summary>
-        public static readonly LandmarkType MOUTH_UP = new LandmarkType("MOUTH_UP");
+        public static readonly LandmarkType MouthUp = new LandmarkType("mouthUp");
         /// <summary>
-        /// Constant NOSE for LandmarkType
+        /// Constant Nose for LandmarkType
         /// </summary>
-        public static readonly LandmarkType NOSE = new LandmarkType("NOSE");
+        public static readonly LandmarkType Nose = new LandmarkType("nose");
         /// <summary>
-        /// Constant NOSE_LEFT for LandmarkType
+        /// Constant NoseLeft for LandmarkType
         /// </summary>
-        public static readonly LandmarkType NOSE_LEFT = new LandmarkType("NOSE_LEFT");
+        public static readonly LandmarkType NoseLeft = new LandmarkType("noseLeft");
         /// <summary>
-        /// Constant NOSE_RIGHT for LandmarkType
+        /// Constant NoseRight for LandmarkType
         /// </summary>
-        public static readonly LandmarkType NOSE_RIGHT = new LandmarkType("NOSE_RIGHT");
+        public static readonly LandmarkType NoseRight = new LandmarkType("noseRight");
         /// <summary>
-        /// Constant RIGHT_EYE_DOWN for LandmarkType
+        /// Constant RightEyeBrowLeft for LandmarkType
         /// </summary>
-        public static readonly LandmarkType RIGHT_EYE_DOWN = new LandmarkType("RIGHT_EYE_DOWN");
+        public static readonly LandmarkType RightEyeBrowLeft = new LandmarkType("rightEyeBrowLeft");
         /// <summary>
-        /// Constant RIGHT_EYE_LEFT for LandmarkType
+        /// Constant RightEyeBrowRight for LandmarkType
         /// </summary>
-        public static readonly LandmarkType RIGHT_EYE_LEFT = new LandmarkType("RIGHT_EYE_LEFT");
+        public static readonly LandmarkType RightEyeBrowRight = new LandmarkType("rightEyeBrowRight");
         /// <summary>
-        /// Constant RIGHT_EYE_RIGHT for LandmarkType
+        /// Constant RightEyeBrowUp for LandmarkType
         /// </summary>
-        public static readonly LandmarkType RIGHT_EYE_RIGHT = new LandmarkType("RIGHT_EYE_RIGHT");
+        public static readonly LandmarkType RightEyeBrowUp = new LandmarkType("rightEyeBrowUp");
         /// <summary>
-        /// Constant RIGHT_EYE_UP for LandmarkType
+        /// Constant RightEyeDown for LandmarkType
         /// </summary>
-        public static readonly LandmarkType RIGHT_EYE_UP = new LandmarkType("RIGHT_EYE_UP");
+        public static readonly LandmarkType RightEyeDown = new LandmarkType("rightEyeDown");
         /// <summary>
-        /// Constant RIGHT_EYEBROW_LEFT for LandmarkType
+        /// Constant RightEyeLeft for LandmarkType
         /// </summary>
-        public static readonly LandmarkType RIGHT_EYEBROW_LEFT = new LandmarkType("RIGHT_EYEBROW_LEFT");
+        public static readonly LandmarkType RightEyeLeft = new LandmarkType("rightEyeLeft");
         /// <summary>
-        /// Constant RIGHT_EYEBROW_RIGHT for LandmarkType
+        /// Constant RightEyeRight for LandmarkType
         /// </summary>
-        public static readonly LandmarkType RIGHT_EYEBROW_RIGHT = new LandmarkType("RIGHT_EYEBROW_RIGHT");
+        public static readonly LandmarkType RightEyeRight = new LandmarkType("rightEyeRight");
         /// <summary>
-        /// Constant RIGHT_EYEBROW_UP for LandmarkType
+        /// Constant RightEyeUp for LandmarkType
         /// </summary>
-        public static readonly LandmarkType RIGHT_EYEBROW_UP = new LandmarkType("RIGHT_EYEBROW_UP");
+        public static readonly LandmarkType RightEyeUp = new LandmarkType("rightEyeUp");
         /// <summary>
-        /// Constant RIGHT_PUPIL for LandmarkType
+        /// Constant RightPupil for LandmarkType
         /// </summary>
-        public static readonly LandmarkType RIGHT_PUPIL = new LandmarkType("RIGHT_PUPIL");
+        public static readonly LandmarkType RightPupil = new LandmarkType("rightPupil");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
