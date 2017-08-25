@@ -1,3 +1,11 @@
+### 3.3.144.0 (2017-08-25 21:01 UTC)
+* CloudFormation (3.3.7.0)
+	* Rollback triggers enable you to have AWS CloudFormation monitor the state of your application during stack creation and updating, and to roll back that operation if the application breaches the threshold of any of the alarms you've specified.
+* GameLift (3.3.8.0)
+	* Update spelling of MatchmakingTicket status values for internal consistency.
+* RDS (3.3.13.0)
+	* Option group options now contain additional properties that identify requirements for certain options. Check these properties to determine if your DB instance must be in a VPC or have auto minor upgrade turned on before you can use an option. Check to see if you can downgrade the version of an option after you have installed it.
+
 ### 3.3.143.1 (2017-08-24 22:23 UTC)
 * S3 (3.3.10.2)
 	* Added ability to specify content type for all files when uploading a folder. Note that this overrides the default behavior which inspects the file extensions to set content type, and applies the specified content type to all files uploaded from the folder hierarchy.

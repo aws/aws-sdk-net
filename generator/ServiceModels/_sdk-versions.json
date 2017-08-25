@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.3.143.1",
+    "ProductVersion" : "3.3.144.0",
     "CoreVersion"    : "3.3.17.5",
     "DefaultToPreview" : false,
     "ServiceVersions"  : {
@@ -29,7 +29,7 @@
             "InPreview"               : false
         },
         "CloudFormation" : {
-            "Version" : "3.3.6.0",
+            "Version" : "3.3.7.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.17.0"
@@ -281,7 +281,7 @@
             "InPreview"               : false
         },
         "RDS"                  : {
-            "Version" : "3.3.12.4",
+            "Version" : "3.3.13.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.17.0"
@@ -513,7 +513,7 @@
             "InPreview"               : false
         },
         "GameLift"                        : {
-            "Version" : "3.3.7.0",
+            "Version" : "3.3.8.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.17.0"
