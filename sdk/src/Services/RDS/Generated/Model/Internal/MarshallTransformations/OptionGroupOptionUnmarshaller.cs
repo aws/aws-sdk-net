@@ -136,6 +136,24 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                         unmarshalledObject.PortRequired = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("RequiresAutoMinorEngineVersionUpgrade", targetDepth))
+                    {
+                        var unmarshaller = BoolUnmarshaller.Instance;
+                        unmarshalledObject.RequiresAutoMinorEngineVersionUpgrade = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("SupportsOptionVersionDowngrade", targetDepth))
+                    {
+                        var unmarshaller = BoolUnmarshaller.Instance;
+                        unmarshalledObject.SupportsOptionVersionDowngrade = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("VpcOnly", targetDepth))
+                    {
+                        var unmarshaller = BoolUnmarshaller.Instance;
+                        unmarshalledObject.VpcOnly = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {

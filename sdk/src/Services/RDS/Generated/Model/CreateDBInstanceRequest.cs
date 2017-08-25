@@ -82,7 +82,7 @@ namespace Amazon.RDS.Model
         /// Instantiates CreateDBInstanceRequest with the parameterized properties
         /// </summary>
         /// <param name="dbInstanceIdentifier">The DB instance identifier. This parameter is stored as a lowercase string. Constraints: <ul> <li> Must contain from 1 to 63 alphanumeric characters or hyphens. </li> <li> First character must be a letter. </li> <li> Cannot end with a hyphen or contain two consecutive hyphens. </li> </ul> Example: <code>mydbinstance</code> </param>
-        /// <param name="allocatedStorage">The amount of storage (in gigabytes) to be initially allocated for the database instance. Type: Integer  <b>Amazon Aurora</b>  Not applicable. Aurora cluster volumes automatically grow as the amount of data in your database increases, though you are only charged for the space that you use in an Aurora cluster volume.  <b>MySQL</b>  Constraints: Must be an integer from 5 to 6144.  <b>MariaDB</b>  Constraints: Must be an integer from 5 to 6144.  <b>PostgreSQL</b>  Constraints: Must be an integer from 5 to 6144.  <b>Oracle</b>  Constraints: Must be an integer from 10 to 6144.  <b>SQL Server</b>  Constraints: Must be an integer from 200 to 4096 (Standard Edition and Enterprise Edition) or from 20 to 4096 (Express Edition and Web Edition)</param>
+        /// <param name="allocatedStorage">The amount of storage (in gigabytes) to be initially allocated for the database instance. Type: Integer  <b>Amazon Aurora</b>  Not applicable. Aurora cluster volumes automatically grow as the amount of data in your database increases, though you are only charged for the space that you use in an Aurora cluster volume.  <b>MySQL</b>  Constraints to the amount of storage for each storage type are the following:  <ul> <li> General Purpose (SSD) storage (gp2): Must be an integer from 5 to 6144. </li> <li> Provisioned IOPS storage (io1): Must be an integer from 100 to 6144. </li> <li> Magnetic storage (standard): Must be an integer from 5 to 3072. </li> </ul>  <b>MariaDB</b>  Constraints to the amount of storage for each storage type are the following:  <ul> <li> General Purpose (SSD) storage (gp2): Must be an integer from 5 to 6144. </li> <li> Provisioned IOPS storage (io1): Must be an integer from 100 to 6144. </li> <li> Magnetic storage (standard): Must be an integer from 5 to 3072. </li> </ul>  <b>PostgreSQL</b>  Constraints to the amount of storage for each storage type are the following:  <ul> <li> General Purpose (SSD) storage (gp2): Must be an integer from 5 to 6144. </li> <li> Provisioned IOPS storage (io1): Must be an integer from 100 to 6144. </li> <li> Magnetic storage (standard): Must be an integer from 5 to 3072. </li> </ul>  <b>Oracle</b>  Constraints to the amount of storage for each storage type are the following:  <ul> <li> General Purpose (SSD) storage (gp2): Must be an integer from 10 to 6144. </li> <li> Provisioned IOPS storage (io1): Must be an integer from 100 to 6144. </li> <li> Magnetic storage (standard): Must be an integer from 10 to 3072. </li> </ul>  <b>SQL Server</b>  Constraints to the amount of storage for each storage type are the following:  <ul> <li> General Purpose (SSD) storage (gp2): <ul> <li> Enterprise and Standard editions: Must be an integer from 200 to 16384. </li> <li> Web and Express editions: Must be an integer from 20 to 16384. </li> </ul> </li> <li> Provisioned IOPS storage (io1): <ul> <li> Enterprise and Standard editions: Must be an integer from 200 to 16384. </li> <li> Web and Express editions: Must be an integer from 100 to 16384. </li> </ul> </li> <li> Magnetic storage (standard): <ul> <li> Enterprise and Standard editions: Must be an integer from 200 to 1024. </li> <li> Web and Express editions: Must be an integer from 20 to 1024. </li> </ul> </li> </ul></param>
         /// <param name="dbInstanceClass">The compute and memory capacity of the DB instance. Note that not all instance classes are available in all regions for all DB engines.  Valid Values: <code>db.t1.micro | db.m1.small | db.m1.medium | db.m1.large | db.m1.xlarge | db.m2.xlarge |db.m2.2xlarge | db.m2.4xlarge | db.m3.medium | db.m3.large | db.m3.xlarge | db.m3.2xlarge | db.m4.large | db.m4.xlarge | db.m4.2xlarge | db.m4.4xlarge | db.m4.10xlarge | db.r3.large | db.r3.xlarge | db.r3.2xlarge | db.r3.4xlarge | db.r3.8xlarge | db.t2.micro | db.t2.small | db.t2.medium | db.t2.large</code> </param>
         /// <param name="engine">The name of the database engine to be used for this instance.  Not every database engine is available for every AWS Region.  Valid Values:  <ul> <li>  <code>aurora</code>  </li> <li>  <code>mariadb</code>  </li> <li>  <code>mysql</code>  </li> <li>  <code>oracle-ee</code>  </li> <li>  <code>oracle-se2</code>  </li> <li>  <code>oracle-se1</code>  </li> <li>  <code>oracle-se</code>  </li> <li>  <code>postgres</code>  </li> <li>  <code>sqlserver-ee</code>  </li> <li>  <code>sqlserver-se</code>  </li> <li>  <code>sqlserver-ex</code>  </li> <li>  <code>sqlserver-web</code>  </li> </ul></param>
         /// <param name="masterUsername">The name for the master user.  <b>Amazon Aurora</b>  Not applicable. The name for the master user is managed by the DB cluster. For more information, see <a>CreateDBCluster</a>.  <b>MariaDB</b>  Constraints: <ul> <li> Must be 1 to 16 alphanumeric characters. </li> <li> Cannot be a reserved word for the chosen database engine. </li> </ul>  <b>Microsoft SQL Server</b>  Constraints: <ul> <li> Must be 1 to 128 alphanumeric characters. </li> <li> First character must be a letter. </li> <li> Cannot be a reserved word for the chosen database engine. </li> </ul>  <b>MySQL</b>  Constraints: <ul> <li> Must be 1 to 16 alphanumeric characters. </li> <li> First character must be a letter. </li> <li> Cannot be a reserved word for the chosen database engine. </li> </ul>  <b>Oracle</b>  Constraints: <ul> <li> Must be 1 to 30 alphanumeric characters. </li> <li> First character must be a letter. </li> <li> Cannot be a reserved word for the chosen database engine. </li> </ul>  <b>PostgreSQL</b>  Constraints: <ul> <li> Must be 1 to 63 alphanumeric characters. </li> <li> First character must be a letter. </li> <li> Cannot be a reserved word for the chosen database engine. </li> </ul></param>
@@ -122,41 +122,125 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// Constraints: Must be an integer from 5 to 6144.
+        /// Constraints to the amount of storage for each storage type are the following: 
         /// </para>
-        ///  
+        ///  <ul> <li> 
+        /// <para>
+        /// General Purpose (SSD) storage (gp2): Must be an integer from 5 to 6144.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Provisioned IOPS storage (io1): Must be an integer from 100 to 6144.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Magnetic storage (standard): Must be an integer from 5 to 3072.
+        /// </para>
+        ///  </li> </ul> 
         /// <para>
         ///  <b>MariaDB</b> 
         /// </para>
         ///  
         /// <para>
-        /// Constraints: Must be an integer from 5 to 6144.
+        /// Constraints to the amount of storage for each storage type are the following: 
         /// </para>
-        ///  
+        ///  <ul> <li> 
+        /// <para>
+        /// General Purpose (SSD) storage (gp2): Must be an integer from 5 to 6144.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Provisioned IOPS storage (io1): Must be an integer from 100 to 6144.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Magnetic storage (standard): Must be an integer from 5 to 3072.
+        /// </para>
+        ///  </li> </ul> 
         /// <para>
         ///  <b>PostgreSQL</b> 
         /// </para>
         ///  
         /// <para>
-        /// Constraints: Must be an integer from 5 to 6144.
+        /// Constraints to the amount of storage for each storage type are the following: 
         /// </para>
-        ///  
+        ///  <ul> <li> 
+        /// <para>
+        /// General Purpose (SSD) storage (gp2): Must be an integer from 5 to 6144.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Provisioned IOPS storage (io1): Must be an integer from 100 to 6144.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Magnetic storage (standard): Must be an integer from 5 to 3072.
+        /// </para>
+        ///  </li> </ul> 
         /// <para>
         ///  <b>Oracle</b> 
         /// </para>
         ///  
         /// <para>
-        /// Constraints: Must be an integer from 10 to 6144.
+        /// Constraints to the amount of storage for each storage type are the following: 
         /// </para>
-        ///  
+        ///  <ul> <li> 
+        /// <para>
+        /// General Purpose (SSD) storage (gp2): Must be an integer from 10 to 6144.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Provisioned IOPS storage (io1): Must be an integer from 100 to 6144.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Magnetic storage (standard): Must be an integer from 10 to 3072.
+        /// </para>
+        ///  </li> </ul> 
         /// <para>
         ///  <b>SQL Server</b> 
         /// </para>
         ///  
         /// <para>
-        /// Constraints: Must be an integer from 200 to 4096 (Standard Edition and Enterprise
-        /// Edition) or from 20 to 4096 (Express Edition and Web Edition)
+        /// Constraints to the amount of storage for each storage type are the following: 
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// General Purpose (SSD) storage (gp2):
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Enterprise and Standard editions: Must be an integer from 200 to 16384.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Web and Express editions: Must be an integer from 20 to 16384.
+        /// </para>
+        ///  </li> </ul> </li> <li> 
+        /// <para>
+        /// Provisioned IOPS storage (io1):
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Enterprise and Standard editions: Must be an integer from 200 to 16384.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Web and Express editions: Must be an integer from 100 to 16384.
+        /// </para>
+        ///  </li> </ul> </li> <li> 
+        /// <para>
+        /// Magnetic storage (standard):
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Enterprise and Standard editions: Must be an integer from 200 to 1024.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Web and Express editions: Must be an integer from 20 to 1024.
+        /// </para>
+        ///  </li> </ul> </li> </ul>
         /// </summary>
         public int AllocatedStorage
         {
@@ -818,6 +902,10 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
+        ///  <code>10.1.23</code> (supported in all AWS regions)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <code>10.1.19</code> (supported in all AWS regions)
         /// </para>
         ///  </li> <li> 
@@ -825,6 +913,10 @@ namespace Amazon.RDS.Model
         ///  <code>10.1.14</code> (supported in all regions except us-east-2)
         /// </para>
         ///  </li> </ul>  <ul> <li> 
+        /// <para>
+        ///  <code>10.0.31</code> (supported in all AWS regions)
+        /// </para>
+        ///  </li> <li> 
         /// <para>
         ///  <code>10.0.28</code> (supported in all AWS regions)
         /// </para>
