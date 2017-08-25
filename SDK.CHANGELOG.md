@@ -1,3 +1,7 @@
+### 3.3.143.1 (2017-08-24 22:23 UTC)
+* S3 (3.3.10.2)
+	* Added ability to specify content type for all files when uploading a folder. Note that this overrides the default behavior which inspects the file extensions to set content type, and applies the specified content type to all files uploaded from the folder hierarchy.
+
 ### 3.3.143.0 (2017-08-24 18:16 UTC)
 * Rekognition (3.3.6.0)
 	* Update the enum value of LandmarkType and GenderType to be consistent with service response
