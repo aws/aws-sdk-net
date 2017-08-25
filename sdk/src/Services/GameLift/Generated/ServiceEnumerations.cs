@@ -807,13 +807,13 @@ namespace Amazon.GameLift
     {
 
         /// <summary>
-        /// Constant CANCELED for MatchmakingConfigurationStatus
+        /// Constant CANCELLED for MatchmakingConfigurationStatus
         /// </summary>
-        public static readonly MatchmakingConfigurationStatus CANCELED = new MatchmakingConfigurationStatus("CANCELED");
+        public static readonly MatchmakingConfigurationStatus CANCELLED = new MatchmakingConfigurationStatus("CANCELLED");
         /// <summary>
-        /// Constant COMPLETE for MatchmakingConfigurationStatus
+        /// Constant COMPLETED for MatchmakingConfigurationStatus
         /// </summary>
-        public static readonly MatchmakingConfigurationStatus COMPLETE = new MatchmakingConfigurationStatus("COMPLETE");
+        public static readonly MatchmakingConfigurationStatus COMPLETED = new MatchmakingConfigurationStatus("COMPLETED");
         /// <summary>
         /// Constant FAILED for MatchmakingConfigurationStatus
         /// </summary>
