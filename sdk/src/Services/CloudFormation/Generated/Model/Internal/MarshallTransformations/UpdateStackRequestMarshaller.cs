@@ -113,6 +113,29 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("RoleARN", StringUtils.FromString(publicRequest.RoleARN));
                 }
+                if(publicRequest.IsSetRollbackConfiguration())
+                {
+                    if(publicRequest.RollbackConfiguration.IsSetMonitoringTimeInMinutes())
+                    {
+                        request.Parameters.Add("RollbackConfiguration" + "." + "MonitoringTimeInMinutes", StringUtils.FromInt(publicRequest.RollbackConfiguration.MonitoringTimeInMinutes));
+                    }
+                    if(publicRequest.RollbackConfiguration.IsSetRollbackTriggers())
+                    {
+                        int publicRequestRollbackConfigurationlistValueIndex = 1;
+                        foreach(var publicRequestRollbackConfigurationlistValue in publicRequest.RollbackConfiguration.RollbackTriggers)
+                        {
+                            if(publicRequestRollbackConfigurationlistValue.IsSetArn())
+                            {
+                                request.Parameters.Add("RollbackConfiguration" + "." + "RollbackTriggers" + "." + "member" + "." + publicRequestRollbackConfigurationlistValueIndex + "." + "Arn", StringUtils.FromString(publicRequestRollbackConfigurationlistValue.Arn));
+                            }
+                            if(publicRequestRollbackConfigurationlistValue.IsSetType())
+                            {
+                                request.Parameters.Add("RollbackConfiguration" + "." + "RollbackTriggers" + "." + "member" + "." + publicRequestRollbackConfigurationlistValueIndex + "." + "Type", StringUtils.FromString(publicRequestRollbackConfigurationlistValue.Type));
+                            }
+                            publicRequestRollbackConfigurationlistValueIndex++;
+                        }
+                    }
+                }
                 if(publicRequest.IsSetStackName())
                 {
                     request.Parameters.Add("StackName", StringUtils.FromString(publicRequest.StackName));

@@ -66,6 +66,7 @@ namespace Amazon.CloudFormation.Model
         private List<Parameter> _parameters = new List<Parameter>();
         private List<string> _resourceTypes = new List<string>();
         private string _roleARN;
+        private RollbackConfiguration _rollbackConfiguration;
         private string _stackName;
         private List<Tag> _tags = new List<Tag>();
         private string _templateBody;
@@ -310,6 +311,25 @@ namespace Amazon.CloudFormation.Model
         internal bool IsSetRoleARN()
         {
             return this._roleARN != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RollbackConfiguration. 
+        /// <para>
+        /// The rollback triggers for AWS CloudFormation to monitor during stack creation and
+        /// updating operations, and for the specified monitoring period afterwards.
+        /// </para>
+        /// </summary>
+        public RollbackConfiguration RollbackConfiguration
+        {
+            get { return this._rollbackConfiguration; }
+            set { this._rollbackConfiguration = value; }
+        }
+
+        // Check to see if RollbackConfiguration property is set
+        internal bool IsSetRollbackConfiguration()
+        {
+            return this._rollbackConfiguration != null;
         }
 
         /// <summary>

@@ -29,6 +29,14 @@ namespace Amazon.CloudFormation.Model
 {
     /// <summary>
     /// The user-specified preferences for how AWS CloudFormation performs a stack set operation.
+    /// 
+    /// 
+    ///  
+    /// <para>
+    /// For more information on maximum concurrent accounts and failure tolerance, see <a
+    /// href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-ops-options">Stack
+    /// set operation options</a>.
+    /// </para>
     /// </summary>
     public partial class StackSetOperationPreferences
     {

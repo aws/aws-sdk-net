@@ -145,6 +145,12 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                         response.Parameters.Add(item);
                         continue;
                     }
+                    if (context.TestExpression("RollbackConfiguration", targetDepth))
+                    {
+                        var unmarshaller = RollbackConfigurationUnmarshaller.Instance;
+                        response.RollbackConfiguration = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("StackId", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

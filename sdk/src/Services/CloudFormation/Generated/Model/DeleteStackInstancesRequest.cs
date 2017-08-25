@@ -135,6 +135,11 @@ namespace Amazon.CloudFormation.Model
         /// You can't reassociate a retained stack or add an existing, saved stack to a new stack
         /// set.
         /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-ops-options">Stack
+        /// set operation options</a>.
+        /// </para>
         /// </summary>
         public bool RetainStacks
         {

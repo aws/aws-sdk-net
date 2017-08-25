@@ -31,12 +31,12 @@ namespace Amazon.CloudFormation.Model
     /// Container for the parameters to the GetTemplateSummary operation.
     /// Returns information about a new or existing template. The <code>GetTemplateSummary</code>
     /// action is useful for viewing parameter information, such as default parameter values
-    /// and parameter types, before you create or update a stack.
+    /// and parameter types, before you create or update a stack or stack set.
     /// 
     ///  
     /// <para>
     /// You can use the <code>GetTemplateSummary</code> action when you submit a template,
-    /// or you can get template information for a running or deleted stack.
+    /// or you can get template information for a stack set, or a running or deleted stack.
     /// </para>
     ///  
     /// <para>
@@ -62,7 +62,7 @@ namespace Amazon.CloudFormation.Model
         ///  
         /// <para>
         /// Conditional: You must specify only one of the following parameters: <code>StackName</code>,
-        /// <code>TemplateBody</code>, or <code>TemplateURL</code>.
+        /// <code>StackSetName</code>, <code>TemplateBody</code>, or <code>TemplateURL</code>.
         /// </para>
         /// </summary>
         public string StackName
@@ -81,6 +81,11 @@ namespace Amazon.CloudFormation.Model
         /// Gets and sets the property StackSetName. 
         /// <para>
         /// The name or unique ID of the stack set from which the stack was created.
+        /// </para>
+        ///  
+        /// <para>
+        /// Conditional: You must specify only one of the following parameters: <code>StackName</code>,
+        /// <code>StackSetName</code>, <code>TemplateBody</code>, or <code>TemplateURL</code>.
         /// </para>
         /// </summary>
         public string StackSetName
@@ -105,7 +110,7 @@ namespace Amazon.CloudFormation.Model
         ///  
         /// <para>
         /// Conditional: You must specify only one of the following parameters: <code>StackName</code>,
-        /// <code>TemplateBody</code>, or <code>TemplateURL</code>.
+        /// <code>StackSetName</code>, <code>TemplateBody</code>, or <code>TemplateURL</code>.
         /// </para>
         /// </summary>
         public string TemplateBody
@@ -131,7 +136,7 @@ namespace Amazon.CloudFormation.Model
         ///  
         /// <para>
         /// Conditional: You must specify only one of the following parameters: <code>StackName</code>,
-        /// <code>TemplateBody</code>, or <code>TemplateURL</code>.
+        /// <code>StackSetName</code>, <code>TemplateBody</code>, or <code>TemplateURL</code>.
         /// </para>
         /// </summary>
         public string TemplateURL

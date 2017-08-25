@@ -121,8 +121,9 @@ namespace Amazon.CloudFormation.Model
         /// <para>
         ///  <code>INOPERABLE</code>: A <code>DeleteStackInstances</code> operation has failed
         /// and left the stack in an unstable state. Stacks in this state are excluded from further
-        /// <code>UpdateStackSet</code> and <code>DeleteStackInstances</code> operations. You
-        /// might need to clean up the stack manually.
+        /// <code>UpdateStackSet</code> operations. You might need to perform a <code>DeleteStackInstances</code>
+        /// operation, with <code>RetainStacks</code> set to <code>true</code>, to delete the
+        /// stack instance, and then delete the stack manually.
         /// </para>
         ///  </li> <li> 
         /// <para>

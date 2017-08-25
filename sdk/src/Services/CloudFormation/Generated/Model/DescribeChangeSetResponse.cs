@@ -42,6 +42,7 @@ namespace Amazon.CloudFormation.Model
         private string _nextToken;
         private List<string> _notificationARNs = new List<string>();
         private List<Parameter> _parameters = new List<Parameter>();
+        private RollbackConfiguration _rollbackConfiguration;
         private string _stackId;
         private string _stackName;
         private ChangeSetStatus _status;
@@ -236,6 +237,25 @@ namespace Amazon.CloudFormation.Model
         internal bool IsSetParameters()
         {
             return this._parameters != null && this._parameters.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property RollbackConfiguration. 
+        /// <para>
+        /// The rollback triggers for AWS CloudFormation to monitor during stack creation and
+        /// updating operations, and for the specified monitoring period afterwards.
+        /// </para>
+        /// </summary>
+        public RollbackConfiguration RollbackConfiguration
+        {
+            get { return this._rollbackConfiguration; }
+            set { this._rollbackConfiguration = value; }
+        }
+
+        // Check to see if RollbackConfiguration property is set
+        internal bool IsSetRollbackConfiguration()
+        {
+            return this._rollbackConfiguration != null;
         }
 
         /// <summary>
