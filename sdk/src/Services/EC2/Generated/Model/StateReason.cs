@@ -89,6 +89,11 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        ///  <code>Client.InstanceTerminated</code>: The instance was terminated or rebooted during
+        /// AMI creation.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <code>Client.UserInitiatedShutdown</code>: The instance was shut down using the Amazon
         /// EC2 API.
         /// </para>

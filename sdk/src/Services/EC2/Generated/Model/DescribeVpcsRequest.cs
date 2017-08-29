@@ -43,9 +43,24 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>cidr</code> - The IPv4 CIDR block of the VPC. The CIDR block you specify must
-        /// exactly match the VPC's CIDR block for information to be returned for the VPC. Must
-        /// contain the slash followed by one or two digits (for example, <code>/28</code>).
+        ///  <code>cidr</code> - The primary IPv4 CIDR block of the VPC. The CIDR block you specify
+        /// must exactly match the VPC's CIDR block for information to be returned for the VPC.
+        /// Must contain the slash followed by one or two digits (for example, <code>/28</code>).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>cidr-block-association.cidr-block</code> - An IPv4 CIDR block associated with
+        /// the VPC.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>cidr-block-association.association-id</code> - The association ID for an IPv4
+        /// CIDR block associated with the VPC.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>cidr-block-association.state</code> - The state of an IPv4 CIDR block associated
+        /// with the VPC.
         /// </para>
         ///  </li> <li> 
         /// <para>

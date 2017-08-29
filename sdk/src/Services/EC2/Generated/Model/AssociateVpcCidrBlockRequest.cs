@@ -29,12 +29,21 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the AssociateVpcCidrBlock operation.
-    /// Associates a CIDR block with your VPC. You can only associate a single Amazon-provided
-    /// IPv6 CIDR block with your VPC. The IPv6 CIDR block size is fixed at /56.
+    /// Associates a CIDR block with your VPC. You can associate a secondary IPv4 CIDR block,
+    /// or you can associate an Amazon-provided IPv6 CIDR block. The IPv6 CIDR block size
+    /// is fixed at /56.
+    /// 
+    ///  
+    /// <para>
+    /// For more information about associating CIDR blocks with your VPC and applicable restrictions,
+    /// see <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Subnets.html#VPC_Sizing">VPC
+    /// and Subnet Sizing</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+    /// </para>
     /// </summary>
     public partial class AssociateVpcCidrBlockRequest : AmazonEC2Request
     {
         private bool? _amazonProvidedIpv6CidrBlock;
+        private string _cidrBlock;
         private string _vpcId;
 
         /// <summary>
@@ -54,6 +63,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetAmazonProvidedIpv6CidrBlock()
         {
             return this._amazonProvidedIpv6CidrBlock.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property CidrBlock. 
+        /// <para>
+        /// An IPv4 CIDR block to associate with the VPC.
+        /// </para>
+        /// </summary>
+        public string CidrBlock
+        {
+            get { return this._cidrBlock; }
+            set { this._cidrBlock = value; }
+        }
+
+        // Check to see if CidrBlock property is set
+        internal bool IsSetCidrBlock()
+        {
+            return this._cidrBlock != null;
         }
 
         /// <summary>

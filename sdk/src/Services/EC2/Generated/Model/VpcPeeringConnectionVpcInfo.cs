@@ -33,6 +33,7 @@ namespace Amazon.EC2.Model
     public partial class VpcPeeringConnectionVpcInfo
     {
         private string _cidrBlock;
+        private List<CidrBlock> _cidrBlockSet = new List<CidrBlock>();
         private List<Ipv6CidrBlock> _ipv6CidrBlockSet = new List<Ipv6CidrBlock>();
         private string _ownerId;
         private VpcPeeringConnectionOptionsDescription _peeringOptions;
@@ -54,6 +55,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetCidrBlock()
         {
             return this._cidrBlock != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CidrBlockSet. 
+        /// <para>
+        /// Information about the IPv4 CIDR blocks for the VPC.
+        /// </para>
+        /// </summary>
+        public List<CidrBlock> CidrBlockSet
+        {
+            get { return this._cidrBlockSet; }
+            set { this._cidrBlockSet = value; }
+        }
+
+        // Check to see if CidrBlockSet property is set
+        internal bool IsSetCidrBlockSet()
+        {
+            return this._cidrBlockSet != null && this._cidrBlockSet.Count > 0; 
         }
 
         /// <summary>

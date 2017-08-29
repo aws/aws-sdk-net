@@ -55,6 +55,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 if (context.IsStartElement || context.IsAttribute)
                 {
 
+                    if (context.TestExpression("cidrBlockAssociation", targetDepth))
+                    {
+                        var unmarshaller = VpcCidrBlockAssociationUnmarshaller.Instance;
+                        response.CidrBlockAssociation = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("ipv6CidrBlockAssociation", targetDepth))
                     {
                         var unmarshaller = VpcIpv6CidrBlockAssociationUnmarshaller.Instance;

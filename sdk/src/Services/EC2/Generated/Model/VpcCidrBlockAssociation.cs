@@ -28,26 +28,18 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Container for the parameters to the DisassociateVpcCidrBlock operation.
-    /// Disassociates a CIDR block from a VPC. To disassociate the CIDR block, you must specify
-    /// its association ID. You can get the association ID by using <a>DescribeVpcs</a>. You
-    /// must detach or delete all gateways and resources that are associated with the CIDR
-    /// block before you can disassociate it. 
-    /// 
-    ///  
-    /// <para>
-    /// You cannot disassociate the CIDR block with which you originally created the VPC (the
-    /// primary CIDR block).
-    /// </para>
+    /// Describes an IPv4 CIDR block associated with a VPC.
     /// </summary>
-    public partial class DisassociateVpcCidrBlockRequest : AmazonEC2Request
+    public partial class VpcCidrBlockAssociation
     {
         private string _associationId;
+        private string _cidrBlock;
+        private VpcCidrBlockState _cidrBlockState;
 
         /// <summary>
         /// Gets and sets the property AssociationId. 
         /// <para>
-        /// The association ID for the CIDR block.
+        /// The association ID for the IPv4 CIDR block.
         /// </para>
         /// </summary>
         public string AssociationId
@@ -60,6 +52,42 @@ namespace Amazon.EC2.Model
         internal bool IsSetAssociationId()
         {
             return this._associationId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CidrBlock. 
+        /// <para>
+        /// The IPv4 CIDR block.
+        /// </para>
+        /// </summary>
+        public string CidrBlock
+        {
+            get { return this._cidrBlock; }
+            set { this._cidrBlock = value; }
+        }
+
+        // Check to see if CidrBlock property is set
+        internal bool IsSetCidrBlock()
+        {
+            return this._cidrBlock != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CidrBlockState. 
+        /// <para>
+        /// Information about the state of the CIDR block.
+        /// </para>
+        /// </summary>
+        public VpcCidrBlockState CidrBlockState
+        {
+            get { return this._cidrBlockState; }
+            set { this._cidrBlockState = value; }
+        }
+
+        // Check to see if CidrBlockState property is set
+        internal bool IsSetCidrBlockState()
+        {
+            return this._cidrBlockState != null;
         }
 
     }

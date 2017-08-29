@@ -33,6 +33,7 @@ namespace Amazon.EC2.Model
     public partial class Vpc
     {
         private string _cidrBlock;
+        private List<VpcCidrBlockAssociation> _cidrBlockAssociationSet = new List<VpcCidrBlockAssociation>();
         private string _dhcpOptionsId;
         private Tenancy _instanceTenancy;
         private List<VpcIpv6CidrBlockAssociation> _ipv6CidrBlockAssociationSet = new List<VpcIpv6CidrBlockAssociation>();
@@ -44,7 +45,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property CidrBlock. 
         /// <para>
-        /// The IPv4 CIDR block for the VPC.
+        /// The primary IPv4 CIDR block for the VPC.
         /// </para>
         /// </summary>
         public string CidrBlock
@@ -57,6 +58,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetCidrBlock()
         {
             return this._cidrBlock != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CidrBlockAssociationSet. 
+        /// <para>
+        /// Information about the IPv4 CIDR blocks associated with the VPC.
+        /// </para>
+        /// </summary>
+        public List<VpcCidrBlockAssociation> CidrBlockAssociationSet
+        {
+            get { return this._cidrBlockAssociationSet; }
+            set { this._cidrBlockAssociationSet = value; }
+        }
+
+        // Check to see if CidrBlockAssociationSet property is set
+        internal bool IsSetCidrBlockAssociationSet()
+        {
+            return this._cidrBlockAssociationSet != null && this._cidrBlockAssociationSet.Count > 0; 
         }
 
         /// <summary>

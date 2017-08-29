@@ -297,6 +297,13 @@
                     "SpotFleetRequestConfig": { "emitPropertyName": "ConfigData" }
                 }
             ]
+        },
+        "CidrBlock":{
+            "modify": [
+                {
+                    "CidrBlock": { "emitPropertyName": "Cidr" }
+                }
+            ]
         }
     },
     "operationModifiers": {

@@ -62,6 +62,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("AmazonProvidedIpv6CidrBlock", StringUtils.FromBool(publicRequest.AmazonProvidedIpv6CidrBlock));
                 }
+                if(publicRequest.IsSetCidrBlock())
+                {
+                    request.Parameters.Add("CidrBlock", StringUtils.FromString(publicRequest.CidrBlock));
+                }
                 if(publicRequest.IsSetVpcId())
                 {
                     request.Parameters.Add("VpcId", StringUtils.FromString(publicRequest.VpcId));

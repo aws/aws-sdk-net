@@ -60,6 +60,13 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.CidrBlock = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("cidrBlockSet/item", targetDepth))
+                    {
+                        var unmarshaller = CidrBlockUnmarshaller.Instance;
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.CidrBlockSet.Add(item);
+                        continue;
+                    }
                     if (context.TestExpression("ipv6CidrBlockSet/item", targetDepth))
                     {
                         var unmarshaller = Ipv6CidrBlockUnmarshaller.Instance;

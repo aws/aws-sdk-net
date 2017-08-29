@@ -32,82 +32,66 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for DisassociateVpcCidrBlock operation
+    /// Response Unmarshaller for CidrBlock Object
     /// </summary>  
-    public class DisassociateVpcCidrBlockResponseUnmarshaller : EC2ResponseUnmarshaller
+    public class CidrBlockUnmarshaller : IUnmarshaller<CidrBlock, XmlUnmarshallerContext>, IUnmarshaller<CidrBlock, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context)
+        public CidrBlock Unmarshall(XmlUnmarshallerContext context)
         {
-            DisassociateVpcCidrBlockResponse response = new DisassociateVpcCidrBlockResponse();
-
+            CidrBlock unmarshalledObject = new CidrBlock();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
+            
             if (context.IsStartOfDocument) 
-               targetDepth = 2;
-
+               targetDepth += 2;
+            
             while (context.ReadAtDepth(originalDepth))
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-
-                    if (context.TestExpression("cidrBlockAssociation", targetDepth))
-                    {
-                        var unmarshaller = VpcCidrBlockAssociationUnmarshaller.Instance;
-                        response.CidrBlockAssociation = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("ipv6CidrBlockAssociation", targetDepth))
-                    {
-                        var unmarshaller = VpcIpv6CidrBlockAssociationUnmarshaller.Instance;
-                        response.Ipv6CidrBlockAssociation = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("vpcId", targetDepth))
+                    if (context.TestExpression("cidrBlock", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
-                        response.VpcId = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.Cidr = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                } 
+                }
+                else if (context.IsEndElement && context.CurrentDepth < originalDepth)
+                {
+                    return unmarshalledObject;
+                }
             }
 
-            return response;
+            return unmarshalledObject;
         }
 
         /// <summary>
         /// Unmarshaller error response to exception.
         /// </summary>  
         /// <param name="context"></param>
-        /// <param name="innerException"></param>
-        /// <param name="statusCode"></param>
         /// <returns></returns>
-        public override AmazonServiceException UnmarshallException(XmlUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
+        public CidrBlock Unmarshall(JsonUnmarshallerContext context)
         {
-            ErrorResponse errorResponse = ErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
-            return new AmazonEC2Exception(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            return null;
         }
-        private static DisassociateVpcCidrBlockResponseUnmarshaller _instance = new DisassociateVpcCidrBlockResponseUnmarshaller();        
 
-        internal static DisassociateVpcCidrBlockResponseUnmarshaller GetInstance()
-        {
-            return _instance;
-        }
+
+        private static CidrBlockUnmarshaller _instance = new CidrBlockUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static DisassociateVpcCidrBlockResponseUnmarshaller Instance
+        public static CidrBlockUnmarshaller Instance
         {
             get
             {
                 return _instance;
             }
         }
-
     }
 }

@@ -32,8 +32,27 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class AssociateVpcCidrBlockResponse : AmazonWebServiceResponse
     {
+        private VpcCidrBlockAssociation _cidrBlockAssociation;
         private VpcIpv6CidrBlockAssociation _ipv6CidrBlockAssociation;
         private string _vpcId;
+
+        /// <summary>
+        /// Gets and sets the property CidrBlockAssociation. 
+        /// <para>
+        /// Information about the IPv4 CIDR block association.
+        /// </para>
+        /// </summary>
+        public VpcCidrBlockAssociation CidrBlockAssociation
+        {
+            get { return this._cidrBlockAssociation; }
+            set { this._cidrBlockAssociation = value; }
+        }
+
+        // Check to see if CidrBlockAssociation property is set
+        internal bool IsSetCidrBlockAssociation()
+        {
+            return this._cidrBlockAssociation != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Ipv6CidrBlockAssociation. 

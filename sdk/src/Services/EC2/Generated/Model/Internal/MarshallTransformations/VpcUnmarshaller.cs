@@ -60,6 +60,13 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.CidrBlock = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("cidrBlockAssociationSet/item", targetDepth))
+                    {
+                        var unmarshaller = VpcCidrBlockAssociationUnmarshaller.Instance;
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.CidrBlockAssociationSet.Add(item);
+                        continue;
+                    }
                     if (context.TestExpression("dhcpOptionsId", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

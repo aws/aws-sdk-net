@@ -611,8 +611,16 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Associates a CIDR block with your VPC. You can only associate a single Amazon-provided
-        /// IPv6 CIDR block with your VPC. The IPv6 CIDR block size is fixed at /56.
+        /// Associates a CIDR block with your VPC. You can associate a secondary IPv4 CIDR block,
+        /// or you can associate an Amazon-provided IPv6 CIDR block. The IPv6 CIDR block size
+        /// is fixed at /56.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about associating CIDR blocks with your VPC and applicable restrictions,
+        /// see <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Subnets.html#VPC_Sizing">VPC
+        /// and Subnet Sizing</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AssociateVpcCidrBlock service method.</param>
         /// 
@@ -2851,13 +2859,13 @@ namespace Amazon.EC2
         /// 
         ///  
         /// <para>
-        /// When you create each subnet, you provide the VPC ID and the CIDR block you want for
-        /// the subnet. After you create a subnet, you can't change its CIDR block. The subnet's
-        /// IPv4 CIDR block can be the same as the VPC's IPv4 CIDR block (assuming you want only
-        /// a single subnet in the VPC), or a subset of the VPC's IPv4 CIDR block. If you create
-        /// more than one subnet in a VPC, the subnets' CIDR blocks must not overlap. The smallest
-        /// IPv4 subnet (and VPC) you can create uses a /28 netmask (16 IPv4 addresses), and the
-        /// largest uses a /16 netmask (65,536 IPv4 addresses).
+        /// When you create each subnet, you provide the VPC ID and the IPv4 CIDR block you want
+        /// for the subnet. After you create a subnet, you can't change its CIDR block. The size
+        /// of the subnet's IPv4 CIDR block can be the same as a VPC's IPv4 CIDR block, or a subset
+        /// of a VPC's IPv4 CIDR block. If you create more than one subnet in a VPC, the subnets'
+        /// CIDR blocks must not overlap. The smallest IPv4 subnet (and VPC) you can create uses
+        /// a /28 netmask (16 IPv4 addresses), and the largest uses a /16 netmask (65,536 IPv4
+        /// addresses).
         /// </para>
         ///  
         /// <para>
@@ -4147,12 +4155,12 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Deletes the specified set of tags from the specified set of resources. This call is
-        /// designed to follow a <code>DescribeTags</code> request.
+        /// Deletes the specified set of tags from the specified set of resources.
         /// 
         ///  
         /// <para>
-        /// For more information about tags, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tagging
+        /// To list the current tags, use <a>DescribeTags</a>. For more information about tags,
+        /// see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tagging
         /// Your Resources</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         /// </summary>
@@ -9147,9 +9155,16 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Disassociates a CIDR block from a VPC. Currently, you can disassociate an IPv6 CIDR
-        /// block only. You must detach or delete all gateways and resources that are associated
-        /// with the CIDR block before you can disassociate it.
+        /// Disassociates a CIDR block from a VPC. To disassociate the CIDR block, you must specify
+        /// its association ID. You can get the association ID by using <a>DescribeVpcs</a>. You
+        /// must detach or delete all gateways and resources that are associated with the CIDR
+        /// block before you can disassociate it. 
+        /// 
+        ///  
+        /// <para>
+        /// You cannot disassociate the CIDR block with which you originally created the VPC (the
+        /// primary CIDR block).
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisassociateVpcCidrBlock service method.</param>
         /// 

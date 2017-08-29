@@ -29,12 +29,12 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteTags operation.
-    /// Deletes the specified set of tags from the specified set of resources. This call is
-    /// designed to follow a <code>DescribeTags</code> request.
+    /// Deletes the specified set of tags from the specified set of resources.
     /// 
     ///  
     /// <para>
-    /// For more information about tags, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tagging
+    /// To list the current tags, use <a>DescribeTags</a>. For more information about tags,
+    /// see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tagging
     /// Your Resources</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
     /// </para>
     /// </summary>
@@ -51,7 +51,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Instantiates DeleteTagsRequest with the parameterized properties
         /// </summary>
-        /// <param name="resources">The ID of the resource. For example, ami-1a2b3c4d. You can specify more than one resource ID.</param>
+        /// <param name="resources">The IDs of one or more resources.</param>
         public DeleteTagsRequest(List<string> resources)
         {
             _resources = resources;
@@ -60,8 +60,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Resources. 
         /// <para>
-        /// The ID of the resource. For example, ami-1a2b3c4d. You can specify more than one resource
-        /// ID.
+        /// The IDs of one or more resources.
         /// </para>
         /// </summary>
         public List<string> Resources
@@ -79,9 +78,11 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// One or more tags to delete. If you omit the <code>value</code> parameter, we delete
-        /// the tag regardless of its value. If you specify this parameter with an empty string
-        /// as the value, we delete the key only if its value is an empty string.
+        /// One or more tags to delete. If you omit this parameter, we delete all tags for the
+        /// specified resources. Specify a tag key and an optional tag value to delete specific
+        /// tags. If you specify a tag key without a tag value, we delete any tag with this key
+        /// regardless of its value. If you specify a tag key with an empty string as the tag
+        /// value, we delete the tag only if its value is an empty string.
         /// </para>
         /// </summary>
         public List<Tag> Tags
