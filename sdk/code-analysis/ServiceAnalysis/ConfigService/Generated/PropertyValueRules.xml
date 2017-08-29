@@ -33,7 +33,7 @@
   <property-value-rule>
     <property>Amazon.ConfigService.Model.DescribeComplianceByResourceRequest.ResourceId</property>
     <min>1</min>
-    <max>256</max>
+    <max>768</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ConfigService.Model.DescribeComplianceByResourceRequest.ResourceType</property>
@@ -58,7 +58,7 @@
   <property-value-rule>
     <property>Amazon.ConfigService.Model.GetComplianceDetailsByResourceRequest.ResourceId</property>
     <min>1</min>
-    <max>256</max>
+    <max>768</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ConfigService.Model.GetComplianceDetailsByResourceRequest.ResourceType</property>
@@ -98,7 +98,7 @@
   <property-value-rule>
     <property>Amazon.ConfigService.Model.ComplianceByResource.ResourceId</property>
     <min>1</min>
-    <max>256</max>
+    <max>768</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ConfigService.Model.ComplianceByResource.ResourceType</property>
@@ -148,7 +148,7 @@
   <property-value-rule>
     <property>Amazon.ConfigService.Model.Evaluation.ComplianceResourceId</property>
     <min>1</min>
-    <max>256</max>
+    <max>768</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ConfigService.Model.Evaluation.ComplianceResourceType</property>
@@ -168,7 +168,7 @@
   <property-value-rule>
     <property>Amazon.ConfigService.Model.EvaluationResultQualifier.ResourceId</property>
     <min>1</min>
-    <max>256</max>
+    <max>768</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ConfigService.Model.EvaluationResultQualifier.ResourceType</property>
@@ -178,7 +178,7 @@
   <property-value-rule>
     <property>Amazon.ConfigService.Model.Scope.ComplianceResourceId</property>
     <min>1</min>
-    <max>256</max>
+    <max>768</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ConfigService.Model.Scope.TagKey</property>
