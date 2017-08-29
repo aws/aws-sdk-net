@@ -1,3 +1,9 @@
+### 3.3.145.0 (2017-08-29 18:35 UTC)
+* ConfigService (3.3.9.0)
+	* Increased the internal size limit of resourceId
+* EC2 (3.3.22.0)
+	* Provides capability to add secondary CIDR blocks to a VPC.
+
 ### 3.3.144.0 (2017-08-25 21:01 UTC)
 * CloudFormation (3.3.7.0)
 	* Rollback triggers enable you to have AWS CloudFormation monitor the state of your application during stack creation and updating, and to roll back that operation if the application breaches the threshold of any of the alarms you've specified.
