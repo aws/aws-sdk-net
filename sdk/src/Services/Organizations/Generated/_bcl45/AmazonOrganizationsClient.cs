@@ -451,7 +451,14 @@ namespace Amazon.Organizations
         /// accounts in an organization. <b>Note</b>: deleted and closed accounts still count
         /// toward your limit.
         /// </para>
-        ///  </li> <li> 
+        ///  <important> 
+        /// <para>
+        /// If you get an exception that indicates that you exceeded your account limits for the
+        /// organization or that you can"t add an account because your organization is still initializing,
+        /// please contact <a href="https://console.aws.amazon.com/support/home#/"> AWS Customer
+        /// Support</a>.
+        /// </para>
+        ///  </important> </li> <li> 
         /// <para>
         /// HANDSHAKE_RATE_LIMIT_EXCEEDED: You attempted to exceed the number of handshakes you
         /// can send in one day.
@@ -718,7 +725,14 @@ namespace Amazon.Organizations
         /// <para>
         ///  <b>Note</b>: deleted and closed accounts still count toward your limit.
         /// </para>
-        ///  </li> <li> 
+        ///  <important> 
+        /// <para>
+        /// If you get an exception that indicates that you exceeded your account limits for the
+        /// organization or that you can"t add an account because your organization is still initializing,
+        /// please contact <a href="https://console.aws.amazon.com/support/home#/"> AWS Customer
+        /// Support</a>.
+        /// </para>
+        ///  </important> </li> <li> 
         /// <para>
         /// HANDSHAKE_RATE_LIMIT_EXCEEDED: You attempted to exceed the number of handshakes you
         /// can send in one day.
@@ -753,24 +767,35 @@ namespace Amazon.Organizations
         /// <para>
         /// ACCOUNT_CANNOT_LEAVE_WITHOUT_EULA: You attempted to remove an account from the organization
         /// that does not yet have enough information to exist as a stand-alone account. This
-        /// account requires you to first agree to the End-User License Agreement (EULA).
+        /// account requires you to first agree to the AWS Customer Agreement. Follow the steps
+        /// at <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info">To
+        /// leave an organization when all required account information has not yet been provided</a>
+        /// in the <i>AWS Organizations User Guide</i>.
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// ACCOUNT_CANNOT_LEAVE_WITHOUT_PHONE_VERIFICATION: You attempted to remove an account
         /// from the organization that does not yet have enough information to exist as a stand-alone
-        /// account. This account requires you to first complete phone verification.
+        /// account. This account requires you to first complete phone verification. Follow the
+        /// steps at <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info">To
+        /// leave an organization when all required account information has not yet been provided</a>
+        /// in the <i>AWS Organizations User Guide</i>.
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// MASTER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED: To create an organization with this account,
         /// you first must associate a payment instrument, such as a credit card, with the account.
+        /// Follow the steps at <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info">To
+        /// leave an organization when all required account information has not yet been provided</a>
+        /// in the <i>AWS Organizations User Guide</i>.
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// MEMBER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED: To complete this operation with this member
         /// account, you first must associate a payment instrument, such as a credit card, with
-        /// the account.
+        /// the account. Follow the steps at <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info">To
+        /// leave an organization when all required account information has not yet been provided</a>
+        /// in the <i>AWS Organizations User Guide</i>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -784,6 +809,12 @@ namespace Amazon.Organizations
         /// to the master account's address. For example, accounts with India addresses must be
         /// associated with the AISPL marketplace. All accounts in an organization must be associated
         /// with the same marketplace.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// MASTER_ACCOUNT_MISSING_CONTACT_INFO: To complete this operation, you must first provide
+        /// contact a valid address and phone number for the master account. Then try the operation
+        /// again.
         /// </para>
         ///  </li> </ul>
         /// </exception>
@@ -1111,9 +1142,14 @@ namespace Amazon.Organizations
         /// </para>
         ///  <important> 
         /// <para>
-        /// You cannot remove accounts that are created with this operation from an organization.
-        /// That also means that you cannot delete an organization that contains an account that
-        /// is created with this operation.
+        /// When you create an account in an organization using the AWS Organizations console,
+        /// API, or CLI commands, the information required for the account to operate as a standalone
+        /// account, such as a payment method and signing the End User Licence Agreement (EULA)
+        /// is <i>not</i> automatically collected. If you must remove an account from your organization
+        /// later, you can do so only after you provide the missing information. Follow the steps
+        /// at <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info">
+        /// To leave an organization when all required account information has not yet been provided</a>
+        /// in the <i>AWS Organizations User Guide</i>.
         /// </para>
         ///  </important> <note> 
         /// <para>
@@ -1129,6 +1165,14 @@ namespace Amazon.Organizations
         /// <para>
         /// This operation can be called only from the organization's master account.
         /// </para>
+        ///  <important> 
+        /// <para>
+        /// If you get an exception that indicates that you exceeded your account limits for the
+        /// organization or that you can"t add an account because your organization is still initializing,
+        /// please contact <a href="https://console.aws.amazon.com/support/home#/"> AWS Customer
+        /// Support</a>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateAccount service method.</param>
         /// 
@@ -1170,7 +1214,14 @@ namespace Amazon.Organizations
         /// <para>
         ///  <b>Note</b>: deleted and closed accounts still count toward your limit.
         /// </para>
-        ///  </li> <li> 
+        ///  <important> 
+        /// <para>
+        /// If you get an exception that indicates that you exceeded your account limits for the
+        /// organization or that you can"t add an account because your organization is still initializing,
+        /// please contact <a href="https://console.aws.amazon.com/support/home#/"> AWS Customer
+        /// Support</a>.
+        /// </para>
+        ///  </important> </li> <li> 
         /// <para>
         /// HANDSHAKE_RATE_LIMIT_EXCEEDED: You attempted to exceed the number of handshakes you
         /// can send in one day.
@@ -1205,24 +1256,35 @@ namespace Amazon.Organizations
         /// <para>
         /// ACCOUNT_CANNOT_LEAVE_WITHOUT_EULA: You attempted to remove an account from the organization
         /// that does not yet have enough information to exist as a stand-alone account. This
-        /// account requires you to first agree to the End-User License Agreement (EULA).
+        /// account requires you to first agree to the AWS Customer Agreement. Follow the steps
+        /// at <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info">To
+        /// leave an organization when all required account information has not yet been provided</a>
+        /// in the <i>AWS Organizations User Guide</i>.
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// ACCOUNT_CANNOT_LEAVE_WITHOUT_PHONE_VERIFICATION: You attempted to remove an account
         /// from the organization that does not yet have enough information to exist as a stand-alone
-        /// account. This account requires you to first complete phone verification.
+        /// account. This account requires you to first complete phone verification. Follow the
+        /// steps at <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info">To
+        /// leave an organization when all required account information has not yet been provided</a>
+        /// in the <i>AWS Organizations User Guide</i>.
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// MASTER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED: To create an organization with this account,
         /// you first must associate a payment instrument, such as a credit card, with the account.
+        /// Follow the steps at <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info">To
+        /// leave an organization when all required account information has not yet been provided</a>
+        /// in the <i>AWS Organizations User Guide</i>.
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// MEMBER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED: To complete this operation with this member
         /// account, you first must associate a payment instrument, such as a credit card, with
-        /// the account.
+        /// the account. Follow the steps at <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info">To
+        /// leave an organization when all required account information has not yet been provided</a>
+        /// in the <i>AWS Organizations User Guide</i>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -1236,6 +1298,12 @@ namespace Amazon.Organizations
         /// to the master account's address. For example, accounts with India addresses must be
         /// associated with the AISPL marketplace. All accounts in an organization must be associated
         /// with the same marketplace.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// MASTER_ACCOUNT_MISSING_CONTACT_INFO: To complete this operation, you must first provide
+        /// contact a valid address and phone number for the master account. Then try the operation
+        /// again.
         /// </para>
         ///  </li> </ul>
         /// </exception>
@@ -1427,7 +1495,14 @@ namespace Amazon.Organizations
         /// <para>
         ///  <b>Note</b>: deleted and closed accounts still count toward your limit.
         /// </para>
-        ///  </li> <li> 
+        ///  <important> 
+        /// <para>
+        /// If you get an exception that indicates that you exceeded your account limits for the
+        /// organization or that you can"t add an account because your organization is still initializing,
+        /// please contact <a href="https://console.aws.amazon.com/support/home#/"> AWS Customer
+        /// Support</a>.
+        /// </para>
+        ///  </important> </li> <li> 
         /// <para>
         /// HANDSHAKE_RATE_LIMIT_EXCEEDED: You attempted to exceed the number of handshakes you
         /// can send in one day.
@@ -1462,24 +1537,35 @@ namespace Amazon.Organizations
         /// <para>
         /// ACCOUNT_CANNOT_LEAVE_WITHOUT_EULA: You attempted to remove an account from the organization
         /// that does not yet have enough information to exist as a stand-alone account. This
-        /// account requires you to first agree to the End-User License Agreement (EULA).
+        /// account requires you to first agree to the AWS Customer Agreement. Follow the steps
+        /// at <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info">To
+        /// leave an organization when all required account information has not yet been provided</a>
+        /// in the <i>AWS Organizations User Guide</i>.
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// ACCOUNT_CANNOT_LEAVE_WITHOUT_PHONE_VERIFICATION: You attempted to remove an account
         /// from the organization that does not yet have enough information to exist as a stand-alone
-        /// account. This account requires you to first complete phone verification.
+        /// account. This account requires you to first complete phone verification. Follow the
+        /// steps at <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info">To
+        /// leave an organization when all required account information has not yet been provided</a>
+        /// in the <i>AWS Organizations User Guide</i>.
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// MASTER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED: To create an organization with this account,
         /// you first must associate a payment instrument, such as a credit card, with the account.
+        /// Follow the steps at <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info">To
+        /// leave an organization when all required account information has not yet been provided</a>
+        /// in the <i>AWS Organizations User Guide</i>.
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// MEMBER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED: To complete this operation with this member
         /// account, you first must associate a payment instrument, such as a credit card, with
-        /// the account.
+        /// the account. Follow the steps at <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info">To
+        /// leave an organization when all required account information has not yet been provided</a>
+        /// in the <i>AWS Organizations User Guide</i>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -1493,6 +1579,12 @@ namespace Amazon.Organizations
         /// to the master account's address. For example, accounts with India addresses must be
         /// associated with the AISPL marketplace. All accounts in an organization must be associated
         /// with the same marketplace.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// MASTER_ACCOUNT_MISSING_CONTACT_INFO: To complete this operation, you must first provide
+        /// contact a valid address and phone number for the master account. Then try the operation
+        /// again.
         /// </para>
         ///  </li> </ul>
         /// </exception>
@@ -1676,7 +1768,14 @@ namespace Amazon.Organizations
         /// <para>
         ///  <b>Note</b>: deleted and closed accounts still count toward your limit.
         /// </para>
-        ///  </li> <li> 
+        ///  <important> 
+        /// <para>
+        /// If you get an exception that indicates that you exceeded your account limits for the
+        /// organization or that you can"t add an account because your organization is still initializing,
+        /// please contact <a href="https://console.aws.amazon.com/support/home#/"> AWS Customer
+        /// Support</a>.
+        /// </para>
+        ///  </important> </li> <li> 
         /// <para>
         /// HANDSHAKE_RATE_LIMIT_EXCEEDED: You attempted to exceed the number of handshakes you
         /// can send in one day.
@@ -1711,24 +1810,35 @@ namespace Amazon.Organizations
         /// <para>
         /// ACCOUNT_CANNOT_LEAVE_WITHOUT_EULA: You attempted to remove an account from the organization
         /// that does not yet have enough information to exist as a stand-alone account. This
-        /// account requires you to first agree to the End-User License Agreement (EULA).
+        /// account requires you to first agree to the AWS Customer Agreement. Follow the steps
+        /// at <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info">To
+        /// leave an organization when all required account information has not yet been provided</a>
+        /// in the <i>AWS Organizations User Guide</i>.
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// ACCOUNT_CANNOT_LEAVE_WITHOUT_PHONE_VERIFICATION: You attempted to remove an account
         /// from the organization that does not yet have enough information to exist as a stand-alone
-        /// account. This account requires you to first complete phone verification.
+        /// account. This account requires you to first complete phone verification. Follow the
+        /// steps at <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info">To
+        /// leave an organization when all required account information has not yet been provided</a>
+        /// in the <i>AWS Organizations User Guide</i>.
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// MASTER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED: To create an organization with this account,
         /// you first must associate a payment instrument, such as a credit card, with the account.
+        /// Follow the steps at <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info">To
+        /// leave an organization when all required account information has not yet been provided</a>
+        /// in the <i>AWS Organizations User Guide</i>.
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// MEMBER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED: To complete this operation with this member
         /// account, you first must associate a payment instrument, such as a credit card, with
-        /// the account.
+        /// the account. Follow the steps at <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info">To
+        /// leave an organization when all required account information has not yet been provided</a>
+        /// in the <i>AWS Organizations User Guide</i>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -1742,6 +1852,12 @@ namespace Amazon.Organizations
         /// to the master account's address. For example, accounts with India addresses must be
         /// associated with the AISPL marketplace. All accounts in an organization must be associated
         /// with the same marketplace.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// MASTER_ACCOUNT_MISSING_CONTACT_INFO: To complete this operation, you must first provide
+        /// contact a valid address and phone number for the master account. Then try the operation
+        /// again.
         /// </para>
         ///  </li> </ul>
         /// </exception>
@@ -1928,7 +2044,14 @@ namespace Amazon.Organizations
         /// <para>
         ///  <b>Note</b>: deleted and closed accounts still count toward your limit.
         /// </para>
-        ///  </li> <li> 
+        ///  <important> 
+        /// <para>
+        /// If you get an exception that indicates that you exceeded your account limits for the
+        /// organization or that you can"t add an account because your organization is still initializing,
+        /// please contact <a href="https://console.aws.amazon.com/support/home#/"> AWS Customer
+        /// Support</a>.
+        /// </para>
+        ///  </important> </li> <li> 
         /// <para>
         /// HANDSHAKE_RATE_LIMIT_EXCEEDED: You attempted to exceed the number of handshakes you
         /// can send in one day.
@@ -1963,24 +2086,35 @@ namespace Amazon.Organizations
         /// <para>
         /// ACCOUNT_CANNOT_LEAVE_WITHOUT_EULA: You attempted to remove an account from the organization
         /// that does not yet have enough information to exist as a stand-alone account. This
-        /// account requires you to first agree to the End-User License Agreement (EULA).
+        /// account requires you to first agree to the AWS Customer Agreement. Follow the steps
+        /// at <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info">To
+        /// leave an organization when all required account information has not yet been provided</a>
+        /// in the <i>AWS Organizations User Guide</i>.
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// ACCOUNT_CANNOT_LEAVE_WITHOUT_PHONE_VERIFICATION: You attempted to remove an account
         /// from the organization that does not yet have enough information to exist as a stand-alone
-        /// account. This account requires you to first complete phone verification.
+        /// account. This account requires you to first complete phone verification. Follow the
+        /// steps at <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info">To
+        /// leave an organization when all required account information has not yet been provided</a>
+        /// in the <i>AWS Organizations User Guide</i>.
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// MASTER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED: To create an organization with this account,
         /// you first must associate a payment instrument, such as a credit card, with the account.
+        /// Follow the steps at <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info">To
+        /// leave an organization when all required account information has not yet been provided</a>
+        /// in the <i>AWS Organizations User Guide</i>.
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// MEMBER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED: To complete this operation with this member
         /// account, you first must associate a payment instrument, such as a credit card, with
-        /// the account.
+        /// the account. Follow the steps at <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info">To
+        /// leave an organization when all required account information has not yet been provided</a>
+        /// in the <i>AWS Organizations User Guide</i>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -1994,6 +2128,12 @@ namespace Amazon.Organizations
         /// to the master account's address. For example, accounts with India addresses must be
         /// associated with the AISPL marketplace. All accounts in an organization must be associated
         /// with the same marketplace.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// MASTER_ACCOUNT_MISSING_CONTACT_INFO: To complete this operation, you must first provide
+        /// contact a valid address and phone number for the master account. Then try the operation
+        /// again.
         /// </para>
         ///  </li> </ul>
         /// </exception>
@@ -2304,14 +2444,6 @@ namespace Amazon.Organizations
         /// Deletes the organization. You can delete an organization only by using credentials
         /// from the master account. The organization must be empty of member accounts, OUs, and
         /// policies.
-        /// 
-        ///  <important> 
-        /// <para>
-        /// If you create any accounts using Organizations operations or the Organizations console,
-        /// you can't remove those accounts from the organization, which means that you can't
-        /// delete the organization.
-        /// </para>
-        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteOrganization service method.</param>
         /// 
@@ -3641,7 +3773,14 @@ namespace Amazon.Organizations
         /// <para>
         ///  <b>Note</b>: deleted and closed accounts still count toward your limit.
         /// </para>
-        ///  </li> <li> 
+        ///  <important> 
+        /// <para>
+        /// If you get an exception that indicates that you exceeded your account limits for the
+        /// organization or that you can"t add an account because your organization is still initializing,
+        /// please contact <a href="https://console.aws.amazon.com/support/home#/"> AWS Customer
+        /// Support</a>.
+        /// </para>
+        ///  </important> </li> <li> 
         /// <para>
         /// HANDSHAKE_RATE_LIMIT_EXCEEDED: You attempted to exceed the number of handshakes you
         /// can send in one day.
@@ -3676,24 +3815,35 @@ namespace Amazon.Organizations
         /// <para>
         /// ACCOUNT_CANNOT_LEAVE_WITHOUT_EULA: You attempted to remove an account from the organization
         /// that does not yet have enough information to exist as a stand-alone account. This
-        /// account requires you to first agree to the End-User License Agreement (EULA).
+        /// account requires you to first agree to the AWS Customer Agreement. Follow the steps
+        /// at <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info">To
+        /// leave an organization when all required account information has not yet been provided</a>
+        /// in the <i>AWS Organizations User Guide</i>.
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// ACCOUNT_CANNOT_LEAVE_WITHOUT_PHONE_VERIFICATION: You attempted to remove an account
         /// from the organization that does not yet have enough information to exist as a stand-alone
-        /// account. This account requires you to first complete phone verification.
+        /// account. This account requires you to first complete phone verification. Follow the
+        /// steps at <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info">To
+        /// leave an organization when all required account information has not yet been provided</a>
+        /// in the <i>AWS Organizations User Guide</i>.
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// MASTER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED: To create an organization with this account,
         /// you first must associate a payment instrument, such as a credit card, with the account.
+        /// Follow the steps at <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info">To
+        /// leave an organization when all required account information has not yet been provided</a>
+        /// in the <i>AWS Organizations User Guide</i>.
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// MEMBER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED: To complete this operation with this member
         /// account, you first must associate a payment instrument, such as a credit card, with
-        /// the account.
+        /// the account. Follow the steps at <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info">To
+        /// leave an organization when all required account information has not yet been provided</a>
+        /// in the <i>AWS Organizations User Guide</i>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -3707,6 +3857,12 @@ namespace Amazon.Organizations
         /// to the master account's address. For example, accounts with India addresses must be
         /// associated with the AISPL marketplace. All accounts in an organization must be associated
         /// with the same marketplace.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// MASTER_ACCOUNT_MISSING_CONTACT_INFO: To complete this operation, you must first provide
+        /// contact a valid address and phone number for the master account. Then try the operation
+        /// again.
         /// </para>
         ///  </li> </ul>
         /// </exception>
@@ -3894,7 +4050,14 @@ namespace Amazon.Organizations
         /// <para>
         ///  <b>Note</b>: deleted and closed accounts still count toward your limit.
         /// </para>
-        ///  </li> <li> 
+        ///  <important> 
+        /// <para>
+        /// If you get an exception that indicates that you exceeded your account limits for the
+        /// organization or that you can"t add an account because your organization is still initializing,
+        /// please contact <a href="https://console.aws.amazon.com/support/home#/"> AWS Customer
+        /// Support</a>.
+        /// </para>
+        ///  </important> </li> <li> 
         /// <para>
         /// HANDSHAKE_RATE_LIMIT_EXCEEDED: You attempted to exceed the number of handshakes you
         /// can send in one day.
@@ -3929,24 +4092,35 @@ namespace Amazon.Organizations
         /// <para>
         /// ACCOUNT_CANNOT_LEAVE_WITHOUT_EULA: You attempted to remove an account from the organization
         /// that does not yet have enough information to exist as a stand-alone account. This
-        /// account requires you to first agree to the End-User License Agreement (EULA).
+        /// account requires you to first agree to the AWS Customer Agreement. Follow the steps
+        /// at <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info">To
+        /// leave an organization when all required account information has not yet been provided</a>
+        /// in the <i>AWS Organizations User Guide</i>.
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// ACCOUNT_CANNOT_LEAVE_WITHOUT_PHONE_VERIFICATION: You attempted to remove an account
         /// from the organization that does not yet have enough information to exist as a stand-alone
-        /// account. This account requires you to first complete phone verification.
+        /// account. This account requires you to first complete phone verification. Follow the
+        /// steps at <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info">To
+        /// leave an organization when all required account information has not yet been provided</a>
+        /// in the <i>AWS Organizations User Guide</i>.
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// MASTER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED: To create an organization with this account,
         /// you first must associate a payment instrument, such as a credit card, with the account.
+        /// Follow the steps at <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info">To
+        /// leave an organization when all required account information has not yet been provided</a>
+        /// in the <i>AWS Organizations User Guide</i>.
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// MEMBER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED: To complete this operation with this member
         /// account, you first must associate a payment instrument, such as a credit card, with
-        /// the account.
+        /// the account. Follow the steps at <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info">To
+        /// leave an organization when all required account information has not yet been provided</a>
+        /// in the <i>AWS Organizations User Guide</i>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -3960,6 +4134,12 @@ namespace Amazon.Organizations
         /// to the master account's address. For example, accounts with India addresses must be
         /// associated with the AISPL marketplace. All accounts in an organization must be associated
         /// with the same marketplace.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// MASTER_ACCOUNT_MISSING_CONTACT_INFO: To complete this operation, you must first provide
+        /// contact a valid address and phone number for the master account. Then try the operation
+        /// again.
         /// </para>
         ///  </li> </ul>
         /// </exception>
@@ -4157,7 +4337,14 @@ namespace Amazon.Organizations
         /// accounts in an organization. <b>Note</b>: deleted and closed accounts still count
         /// toward your limit.
         /// </para>
-        ///  </li> <li> 
+        ///  <important> 
+        /// <para>
+        /// If you get an exception that indicates that you exceeded your account limits for the
+        /// organization or that you can"t add an account because your organization is still initializing,
+        /// please contact <a href="https://console.aws.amazon.com/support/home#/"> AWS Customer
+        /// Support</a>.
+        /// </para>
+        ///  </important> </li> <li> 
         /// <para>
         /// HANDSHAKE_RATE_LIMIT_EXCEEDED: You attempted to exceed the number of handshakes you
         /// can send in one day.
@@ -4371,7 +4558,14 @@ namespace Amazon.Organizations
         /// <para>
         ///  <b>Note</b>: deleted and closed accounts still count toward your limit.
         /// </para>
-        ///  </li> <li> 
+        ///  <important> 
+        /// <para>
+        /// If you get an exception that indicates that you exceeded your account limits for the
+        /// organization or that you can"t add an account because your organization is still initializing,
+        /// please contact <a href="https://console.aws.amazon.com/support/home#/"> AWS Customer
+        /// Support</a>.
+        /// </para>
+        ///  </important> </li> <li> 
         /// <para>
         /// HANDSHAKE_RATE_LIMIT_EXCEEDED: You attempted to exceed the number of handshakes you
         /// can send in one day.
@@ -4406,24 +4600,35 @@ namespace Amazon.Organizations
         /// <para>
         /// ACCOUNT_CANNOT_LEAVE_WITHOUT_EULA: You attempted to remove an account from the organization
         /// that does not yet have enough information to exist as a stand-alone account. This
-        /// account requires you to first agree to the End-User License Agreement (EULA).
+        /// account requires you to first agree to the AWS Customer Agreement. Follow the steps
+        /// at <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info">To
+        /// leave an organization when all required account information has not yet been provided</a>
+        /// in the <i>AWS Organizations User Guide</i>.
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// ACCOUNT_CANNOT_LEAVE_WITHOUT_PHONE_VERIFICATION: You attempted to remove an account
         /// from the organization that does not yet have enough information to exist as a stand-alone
-        /// account. This account requires you to first complete phone verification.
+        /// account. This account requires you to first complete phone verification. Follow the
+        /// steps at <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info">To
+        /// leave an organization when all required account information has not yet been provided</a>
+        /// in the <i>AWS Organizations User Guide</i>.
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// MASTER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED: To create an organization with this account,
         /// you first must associate a payment instrument, such as a credit card, with the account.
+        /// Follow the steps at <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info">To
+        /// leave an organization when all required account information has not yet been provided</a>
+        /// in the <i>AWS Organizations User Guide</i>.
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// MEMBER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED: To complete this operation with this member
         /// account, you first must associate a payment instrument, such as a credit card, with
-        /// the account.
+        /// the account. Follow the steps at <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info">To
+        /// leave an organization when all required account information has not yet been provided</a>
+        /// in the <i>AWS Organizations User Guide</i>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -4437,6 +4642,12 @@ namespace Amazon.Organizations
         /// to the master account's address. For example, accounts with India addresses must be
         /// associated with the AISPL marketplace. All accounts in an organization must be associated
         /// with the same marketplace.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// MASTER_ACCOUNT_MISSING_CONTACT_INFO: To complete this operation, you must first provide
+        /// contact a valid address and phone number for the master account. Then try the operation
+        /// again.
         /// </para>
         ///  </li> </ul>
         /// </exception>
@@ -4583,17 +4794,25 @@ namespace Amazon.Organizations
         /// 
         ///  <important> 
         /// <para>
-        /// You can invite AWS accounts only from the same reseller as the master account. For
-        /// example, if your organization's master account was created by Amazon Internet Services
-        /// Pvt. Ltd (AISPL), an AWS reseller in India, then you can only invite other AISPL accounts
-        /// to your organization. You can't combine accounts from AISPL and AWS. For more information,
-        /// see <a href="http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/useconsolidatedbilliing-India.html">Consolidated
+        /// You can invite AWS accounts only from the same seller as the master account. For example,
+        /// if your organization's master account was created by Amazon Internet Services Pvt.
+        /// Ltd (AISPL), an AWS seller in India, then you can only invite other AISPL accounts
+        /// to your organization. You can't combine accounts from AISPL and AWS, or any other
+        /// AWS seller. For more information, see <a href="http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/useconsolidatedbilliing-India.html">Consolidated
         /// Billing in India</a>.
         /// </para>
         ///  </important> 
         /// <para>
         /// This operation can be called only from the organization's master account.
         /// </para>
+        ///  <important> 
+        /// <para>
+        /// If you get an exception that indicates that you exceeded your account limits for the
+        /// organization or that you can"t add an account because your organization is still initializing,
+        /// please contact <a href="https://console.aws.amazon.com/support/home#/"> AWS Customer
+        /// Support</a>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the InviteAccountToOrganization service method.</param>
         /// 
@@ -4632,7 +4851,14 @@ namespace Amazon.Organizations
         /// accounts in an organization. <b>Note</b>: deleted and closed accounts still count
         /// toward your limit.
         /// </para>
-        ///  </li> <li> 
+        ///  <important> 
+        /// <para>
+        /// If you get an exception that indicates that you exceeded your account limits for the
+        /// organization or that you can"t add an account because your organization is still initializing,
+        /// please contact <a href="https://console.aws.amazon.com/support/home#/"> AWS Customer
+        /// Support</a>.
+        /// </para>
+        ///  </important> </li> <li> 
         /// <para>
         /// HANDSHAKE_RATE_LIMIT_EXCEEDED: You attempted to exceed the number of handshakes you
         /// can send in one day.
@@ -4814,8 +5040,17 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// If you created the account using the AWS Organizations console, the Organizations
-        /// API, or the Organizations CLI commands, then you cannot remove the account.
+        /// You can leave an organization as a member account only if the account is configured
+        /// with the information required to operate as a standalone account. When you create
+        /// an account in an organization using the AWS Organizations console, API, or CLI commands,
+        /// the information required of standalone accounts is <i>not</i> automatically collected.
+        /// For each account that you want to make standalone, you must accept the End User License
+        /// Agreement (EULA), choose a support plan, provide and verify the required contact information,
+        /// and provide a current payment method. AWS uses the payment method to charge for any
+        /// billable (not free tier) AWS activity that occurs while the account is not attached
+        /// to an organization. Follow the steps at <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info">
+        /// To leave an organization when all required account information has not yet been provided</a>
+        /// in the <i>AWS Organizations User Guide</i>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -4870,7 +5105,14 @@ namespace Amazon.Organizations
         /// <para>
         ///  <b>Note</b>: deleted and closed accounts still count toward your limit.
         /// </para>
-        ///  </li> <li> 
+        ///  <important> 
+        /// <para>
+        /// If you get an exception that indicates that you exceeded your account limits for the
+        /// organization or that you can"t add an account because your organization is still initializing,
+        /// please contact <a href="https://console.aws.amazon.com/support/home#/"> AWS Customer
+        /// Support</a>.
+        /// </para>
+        ///  </important> </li> <li> 
         /// <para>
         /// HANDSHAKE_RATE_LIMIT_EXCEEDED: You attempted to exceed the number of handshakes you
         /// can send in one day.
@@ -4905,24 +5147,35 @@ namespace Amazon.Organizations
         /// <para>
         /// ACCOUNT_CANNOT_LEAVE_WITHOUT_EULA: You attempted to remove an account from the organization
         /// that does not yet have enough information to exist as a stand-alone account. This
-        /// account requires you to first agree to the End-User License Agreement (EULA).
+        /// account requires you to first agree to the AWS Customer Agreement. Follow the steps
+        /// at <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info">To
+        /// leave an organization when all required account information has not yet been provided</a>
+        /// in the <i>AWS Organizations User Guide</i>.
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// ACCOUNT_CANNOT_LEAVE_WITHOUT_PHONE_VERIFICATION: You attempted to remove an account
         /// from the organization that does not yet have enough information to exist as a stand-alone
-        /// account. This account requires you to first complete phone verification.
+        /// account. This account requires you to first complete phone verification. Follow the
+        /// steps at <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info">To
+        /// leave an organization when all required account information has not yet been provided</a>
+        /// in the <i>AWS Organizations User Guide</i>.
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// MASTER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED: To create an organization with this account,
         /// you first must associate a payment instrument, such as a credit card, with the account.
+        /// Follow the steps at <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info">To
+        /// leave an organization when all required account information has not yet been provided</a>
+        /// in the <i>AWS Organizations User Guide</i>.
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// MEMBER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED: To complete this operation with this member
         /// account, you first must associate a payment instrument, such as a credit card, with
-        /// the account.
+        /// the account. Follow the steps at <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info">To
+        /// leave an organization when all required account information has not yet been provided</a>
+        /// in the <i>AWS Organizations User Guide</i>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -4936,6 +5189,12 @@ namespace Amazon.Organizations
         /// to the master account's address. For example, accounts with India addresses must be
         /// associated with the AISPL marketplace. All accounts in an organization must be associated
         /// with the same marketplace.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// MASTER_ACCOUNT_MISSING_CONTACT_INFO: To complete this operation, you must first provide
+        /// contact a valid address and phone number for the master account. Then try the operation
+        /// again.
         /// </para>
         ///  </li> </ul>
         /// </exception>
@@ -7021,9 +7280,18 @@ namespace Amazon.Organizations
         /// </para>
         ///  <important> <ul> <li> 
         /// <para>
-        /// You can remove only accounts that were created outside your organization and invited
-        /// to join. If you created the account using the AWS Organizations console, the Organizations
-        /// API, or the Organizations CLI commands, then you cannot remove the account.
+        /// You can remove an account from your organization only if the account is configured
+        /// with the information required to operate as a standalone account. When you create
+        /// an account in an organization using the AWS Organizations console, API, or CLI commands,
+        /// the information required of standalone accounts is <i>not</i> automatically collected.
+        /// For an account that you want to make standalone, you must accept the End User License
+        /// Agreement (EULA), choose a support plan, provide and verify the required contact information,
+        /// and provide a current payment method. AWS uses the payment method to charge for any
+        /// billable (not free tier) AWS activity that occurs while the account is not attached
+        /// to an organization. To remove an account that does not yet have this information,
+        /// you must sign in as the member account and follow the steps at <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info">
+        /// To leave an organization when all required account information has not yet been provided</a>
+        /// in the <i>AWS Organizations User Guide</i>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -7078,7 +7346,14 @@ namespace Amazon.Organizations
         /// <para>
         ///  <b>Note</b>: deleted and closed accounts still count toward your limit.
         /// </para>
-        ///  </li> <li> 
+        ///  <important> 
+        /// <para>
+        /// If you get an exception that indicates that you exceeded your account limits for the
+        /// organization or that you can"t add an account because your organization is still initializing,
+        /// please contact <a href="https://console.aws.amazon.com/support/home#/"> AWS Customer
+        /// Support</a>.
+        /// </para>
+        ///  </important> </li> <li> 
         /// <para>
         /// HANDSHAKE_RATE_LIMIT_EXCEEDED: You attempted to exceed the number of handshakes you
         /// can send in one day.
@@ -7113,24 +7388,35 @@ namespace Amazon.Organizations
         /// <para>
         /// ACCOUNT_CANNOT_LEAVE_WITHOUT_EULA: You attempted to remove an account from the organization
         /// that does not yet have enough information to exist as a stand-alone account. This
-        /// account requires you to first agree to the End-User License Agreement (EULA).
+        /// account requires you to first agree to the AWS Customer Agreement. Follow the steps
+        /// at <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info">To
+        /// leave an organization when all required account information has not yet been provided</a>
+        /// in the <i>AWS Organizations User Guide</i>.
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// ACCOUNT_CANNOT_LEAVE_WITHOUT_PHONE_VERIFICATION: You attempted to remove an account
         /// from the organization that does not yet have enough information to exist as a stand-alone
-        /// account. This account requires you to first complete phone verification.
+        /// account. This account requires you to first complete phone verification. Follow the
+        /// steps at <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info">To
+        /// leave an organization when all required account information has not yet been provided</a>
+        /// in the <i>AWS Organizations User Guide</i>.
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// MASTER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED: To create an organization with this account,
         /// you first must associate a payment instrument, such as a credit card, with the account.
+        /// Follow the steps at <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info">To
+        /// leave an organization when all required account information has not yet been provided</a>
+        /// in the <i>AWS Organizations User Guide</i>.
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// MEMBER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED: To complete this operation with this member
         /// account, you first must associate a payment instrument, such as a credit card, with
-        /// the account.
+        /// the account. Follow the steps at <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info">To
+        /// leave an organization when all required account information has not yet been provided</a>
+        /// in the <i>AWS Organizations User Guide</i>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -7144,6 +7430,12 @@ namespace Amazon.Organizations
         /// to the master account's address. For example, accounts with India addresses must be
         /// associated with the AISPL marketplace. All accounts in an organization must be associated
         /// with the same marketplace.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// MASTER_ACCOUNT_MISSING_CONTACT_INFO: To complete this operation, you must first provide
+        /// contact a valid address and phone number for the master account. Then try the operation
+        /// again.
         /// </para>
         ///  </li> </ul>
         /// </exception>
@@ -7481,7 +7773,14 @@ namespace Amazon.Organizations
         /// <para>
         ///  <b>Note</b>: deleted and closed accounts still count toward your limit.
         /// </para>
-        ///  </li> <li> 
+        ///  <important> 
+        /// <para>
+        /// If you get an exception that indicates that you exceeded your account limits for the
+        /// organization or that you can"t add an account because your organization is still initializing,
+        /// please contact <a href="https://console.aws.amazon.com/support/home#/"> AWS Customer
+        /// Support</a>.
+        /// </para>
+        ///  </important> </li> <li> 
         /// <para>
         /// HANDSHAKE_RATE_LIMIT_EXCEEDED: You attempted to exceed the number of handshakes you
         /// can send in one day.
@@ -7516,24 +7815,35 @@ namespace Amazon.Organizations
         /// <para>
         /// ACCOUNT_CANNOT_LEAVE_WITHOUT_EULA: You attempted to remove an account from the organization
         /// that does not yet have enough information to exist as a stand-alone account. This
-        /// account requires you to first agree to the End-User License Agreement (EULA).
+        /// account requires you to first agree to the AWS Customer Agreement. Follow the steps
+        /// at <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info">To
+        /// leave an organization when all required account information has not yet been provided</a>
+        /// in the <i>AWS Organizations User Guide</i>.
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// ACCOUNT_CANNOT_LEAVE_WITHOUT_PHONE_VERIFICATION: You attempted to remove an account
         /// from the organization that does not yet have enough information to exist as a stand-alone
-        /// account. This account requires you to first complete phone verification.
+        /// account. This account requires you to first complete phone verification. Follow the
+        /// steps at <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info">To
+        /// leave an organization when all required account information has not yet been provided</a>
+        /// in the <i>AWS Organizations User Guide</i>.
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// MASTER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED: To create an organization with this account,
         /// you first must associate a payment instrument, such as a credit card, with the account.
+        /// Follow the steps at <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info">To
+        /// leave an organization when all required account information has not yet been provided</a>
+        /// in the <i>AWS Organizations User Guide</i>.
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// MEMBER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED: To complete this operation with this member
         /// account, you first must associate a payment instrument, such as a credit card, with
-        /// the account.
+        /// the account. Follow the steps at <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info">To
+        /// leave an organization when all required account information has not yet been provided</a>
+        /// in the <i>AWS Organizations User Guide</i>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -7547,6 +7857,12 @@ namespace Amazon.Organizations
         /// to the master account's address. For example, accounts with India addresses must be
         /// associated with the AISPL marketplace. All accounts in an organization must be associated
         /// with the same marketplace.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// MASTER_ACCOUNT_MISSING_CONTACT_INFO: To complete this operation, you must first provide
+        /// contact a valid address and phone number for the master account. Then try the operation
+        /// again.
         /// </para>
         ///  </li> </ul>
         /// </exception>
