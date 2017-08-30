@@ -33,6 +33,7 @@ namespace Amazon.ApplicationAutoScaling.Model
     public partial class TargetTrackingScalingPolicyConfiguration
     {
         private CustomizedMetricSpecification _customizedMetricSpecification;
+        private bool? _disableScaleIn;
         private PredefinedMetricSpecification _predefinedMetricSpecification;
         private int? _scaleInCooldown;
         private int? _scaleOutCooldown;
@@ -54,6 +55,21 @@ namespace Amazon.ApplicationAutoScaling.Model
         internal bool IsSetCustomizedMetricSpecification()
         {
             return this._customizedMetricSpecification != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DisableScaleIn.
+        /// </summary>
+        public bool DisableScaleIn
+        {
+            get { return this._disableScaleIn.GetValueOrDefault(); }
+            set { this._disableScaleIn = value; }
+        }
+
+        // Check to see if DisableScaleIn property is set
+        internal bool IsSetDisableScaleIn()
+        {
+            return this._disableScaleIn.HasValue; 
         }
 
         /// <summary>

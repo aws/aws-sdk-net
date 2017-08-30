@@ -70,6 +70,12 @@ namespace Amazon.ApplicationAutoScaling.Model.Internal.MarshallTransformations
                     unmarshalledObject.CustomizedMetricSpecification = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("DisableScaleIn", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.DisableScaleIn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("PredefinedMetricSpecification", targetDepth))
                 {
                     var unmarshaller = PredefinedMetricSpecificationUnmarshaller.Instance;

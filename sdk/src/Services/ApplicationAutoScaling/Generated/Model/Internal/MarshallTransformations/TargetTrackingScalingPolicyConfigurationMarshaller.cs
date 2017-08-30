@@ -56,6 +56,12 @@ namespace Amazon.ApplicationAutoScaling.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetDisableScaleIn())
+            {
+                context.Writer.WritePropertyName("DisableScaleIn");
+                context.Writer.Write(requestObject.DisableScaleIn);
+            }
+
             if(requestObject.IsSetPredefinedMetricSpecification())
             {
                 context.Writer.WritePropertyName("PredefinedMetricSpecification");
