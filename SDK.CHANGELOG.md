@@ -1,3 +1,9 @@
+### 3.3.146.0 (2017-08-30 16:16 UTC)
+* ApplicationAutoScaling (3.3.4.0)
+	* Application Auto Scaling now supports the DisableScaleIn option for Target Tracking Scaling Policies. This allows customers to create scaling policies that will only add capacity to the target.
+* Organizations (3.3.4.0)
+	* The exception ConstraintViolationException now contains a new reason subcode MASTERACCOUNT_MISSING_CONTACT_INFO to make it easier to understand why attempting to remove an account from an Organization can fail. We also improved several other of the text descriptions and examples.
+
 ### 3.3.145.0 (2017-08-29 18:35 UTC)
 * ConfigService (3.3.9.0)
 	* Increased the internal size limit of resourceId
