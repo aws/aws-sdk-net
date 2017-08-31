@@ -67,6 +67,10 @@ namespace Amazon.ElasticLoadBalancingV2.Model.Internal.MarshallTransformations
                     int publicRequestlistValueIndex = 1;
                     foreach(var publicRequestlistValue in publicRequest.Targets)
                     {
+                        if(publicRequestlistValue.IsSetAvailabilityZone())
+                        {
+                            request.Parameters.Add("Targets" + "." + "member" + "." + publicRequestlistValueIndex + "." + "AvailabilityZone", StringUtils.FromString(publicRequestlistValue.AvailabilityZone));
+                        }
                         if(publicRequestlistValue.IsSetId())
                         {
                             request.Parameters.Add("Targets" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Id", StringUtils.FromString(publicRequestlistValue.Id));

@@ -32,13 +32,44 @@ namespace Amazon.ElasticLoadBalancingV2.Model
     /// </summary>
     public partial class TargetDescription
     {
+        private string _availabilityZone;
         private string _id;
         private int? _port;
 
         /// <summary>
+        /// Gets and sets the property AvailabilityZone. 
+        /// <para>
+        /// The Availability Zone where the IP address is to be registered. Specify <code>all</code>
+        /// to register an IP address outside the target group VPC with all Availability Zones
+        /// that are enabled for the load balancer.
+        /// </para>
+        ///  
+        /// <para>
+        /// If the IP address is in a subnet of the VPC for the target group, the Availability
+        /// Zone is automatically detected and this parameter is optional.
+        /// </para>
+        ///  
+        /// <para>
+        /// This parameter is not supported if the target type of the target group is <code>instance</code>.
+        /// </para>
+        /// </summary>
+        public string AvailabilityZone
+        {
+            get { return this._availabilityZone; }
+            set { this._availabilityZone = value; }
+        }
+
+        // Check to see if AvailabilityZone property is set
+        internal bool IsSetAvailabilityZone()
+        {
+            return this._availabilityZone != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
-        /// The ID of the target.
+        /// The ID of the target. If the target type of the target group is <code>instance</code>,
+        /// specify an instance ID. If the target type is <code>ip</code>, specify an IP address.
         /// </para>
         /// </summary>
         public string Id

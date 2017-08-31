@@ -65,6 +65,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         private string _name;
         private int? _port;
         private ProtocolEnum _protocol;
+        private TargetTypeEnum _targetType;
         private int? _unhealthyThresholdCount;
         private string _vpcId;
 
@@ -261,6 +262,35 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         internal bool IsSetProtocol()
         {
             return this._protocol != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TargetType. 
+        /// <para>
+        /// The type of target that you must specify when registering targets with this target
+        /// group. The possible values are <code>instance</code> (targets are specified by instance
+        /// ID) or <code>ip</code> (targets are specified by IP address). The default is <code>instance</code>.
+        /// Note that you can't specify targets for a target group using both instance IDs and
+        /// IP addresses.
+        /// </para>
+        ///  
+        /// <para>
+        /// If the target type is <code>ip</code>, specify IP addresses from the subnets of the
+        /// virtual private cloud (VPC) for the target group, the RFC 1918 range (10.0.0.0/8,
+        /// 172.16.0.0/12, and 192.168.0.0/16), and the RFC 6598 range (100.64.0.0/10). You can't
+        /// specify publicly routable IP addresses.
+        /// </para>
+        /// </summary>
+        public TargetTypeEnum TargetType
+        {
+            get { return this._targetType; }
+            set { this._targetType = value; }
+        }
+
+        // Check to see if TargetType property is set
+        internal bool IsSetTargetType()
+        {
+            return this._targetType != null;
         }
 
         /// <summary>

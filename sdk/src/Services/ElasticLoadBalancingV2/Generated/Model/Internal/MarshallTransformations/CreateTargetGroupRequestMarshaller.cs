@@ -101,6 +101,10 @@ namespace Amazon.ElasticLoadBalancingV2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("Protocol", StringUtils.FromString(publicRequest.Protocol));
                 }
+                if(publicRequest.IsSetTargetType())
+                {
+                    request.Parameters.Add("TargetType", StringUtils.FromString(publicRequest.TargetType));
+                }
                 if(publicRequest.IsSetUnhealthyThresholdCount())
                 {
                     request.Parameters.Add("UnhealthyThresholdCount", StringUtils.FromInt(publicRequest.UnhealthyThresholdCount));

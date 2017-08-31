@@ -44,6 +44,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         private ProtocolEnum _protocol;
         private string _targetGroupArn;
         private string _targetGroupName;
+        private TargetTypeEnum _targetType;
         private int? _unhealthyThresholdCount;
         private string _vpcId;
 
@@ -264,6 +265,26 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         internal bool IsSetTargetGroupName()
         {
             return this._targetGroupName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TargetType. 
+        /// <para>
+        /// The type of target that you must specify when registering targets with this target
+        /// group. The possible values are <code>instance</code> (targets are specified by instance
+        /// ID) or <code>ip</code> (targets are specified by IP address).
+        /// </para>
+        /// </summary>
+        public TargetTypeEnum TargetType
+        {
+            get { return this._targetType; }
+            set { this._targetType = value; }
+        }
+
+        // Check to see if TargetType property is set
+        internal bool IsSetTargetType()
+        {
+            return this._targetType != null;
         }
 
         /// <summary>

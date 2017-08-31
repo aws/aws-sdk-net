@@ -127,6 +127,12 @@ namespace Amazon.ElasticLoadBalancingV2.Model.Internal.MarshallTransformations
                         unmarshalledObject.TargetGroupName = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("TargetType", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.TargetType = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("UnhealthyThresholdCount", targetDepth))
                     {
                         var unmarshaller = IntUnmarshaller.Instance;
