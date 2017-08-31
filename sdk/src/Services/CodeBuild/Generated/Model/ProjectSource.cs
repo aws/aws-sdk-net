@@ -47,7 +47,7 @@ namespace Amazon.CodeBuild.Model
         /// <para>
         /// This information is for the AWS CodeBuild console's use only. Your code should not
         /// get or set this information directly (unless the build project's source <code>type</code>
-        /// value is <code>GITHUB</code>).
+        /// value is <code>BITBUCKET</code> or <code>GITHUB</code>).
         /// </para>
         /// </summary>
         public SourceAuth Auth
@@ -122,6 +122,18 @@ namespace Amazon.CodeBuild.Model
         /// this connection, in the <code>source</code> object, set the <code>auth</code> object's
         /// <code>type</code> value to <code>OAUTH</code>.
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For source code in a Bitbucket repository, the HTTPS clone URL to the repository that
+        /// contains the source and the build spec. Also, you must connect your AWS account to
+        /// your Bitbucket account. To do this, use the AWS CodeBuild console to begin creating
+        /// a build project. When you use the console to connect (or reconnect) with Bitbucket,
+        /// on the Bitbucket <b>Confirm access to your account</b> page that displays, choose
+        /// <b>Grant access</b>. (After you have connected to your Bitbucket account, you do not
+        /// need to finish creating the build project, and you may then leave the AWS CodeBuild
+        /// console.) To instruct AWS CodeBuild to then use this connection, in the <code>source</code>
+        /// object, set the <code>auth</code> object's <code>type</code> value to <code>OAUTH</code>.
+        /// </para>
         ///  </li> </ul>
         /// </summary>
         public string Location
@@ -142,6 +154,10 @@ namespace Amazon.CodeBuild.Model
         /// The type of repository that contains the source code to be built. Valid values include:
         /// </para>
         ///  <ul> <li> 
+        /// <para>
+        ///  <code>BITBUCKET</code>: The source code is in a Bitbucket repository.
+        /// </para>
+        ///  </li> <li> 
         /// <para>
         ///  <code>CODECOMMIT</code>: The source code is in an AWS CodeCommit repository.
         /// </para>

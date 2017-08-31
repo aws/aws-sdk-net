@@ -35,7 +35,7 @@ namespace Amazon.CodeBuild.Model
     /// <para>
     /// This information is for the AWS CodeBuild console's use only. Your code should not
     /// get or set this information directly (unless the build project's source <code>type</code>
-    /// value is <code>GITHUB</code>).
+    /// value is <code>BITBUCKET</code> or <code>GITHUB</code>).
     /// </para>
     /// </summary>
     public partial class SourceAuth

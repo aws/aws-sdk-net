@@ -123,8 +123,8 @@ namespace Amazon.CodeBuild.Model
         ///  
         /// <para>
         ///  <code>- nohup /usr/local/bin/dockerd --host=unix:///var/run/docker.sock --host=tcp://0.0.0.0:2375
-        /// --storage-driver=vfs&amp; - timeout -t 15 sh -c "until docker info; do echo .; sleep
-        /// 1; done"</code> 
+        /// --storage-driver=overlay&amp; - timeout -t 15 sh -c "until docker info; do echo .;
+        /// sleep 1; done"</code> 
         /// </para>
         /// </summary>
         public bool PrivilegedMode

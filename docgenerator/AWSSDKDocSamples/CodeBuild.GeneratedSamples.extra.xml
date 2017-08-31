@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<docs>
+    <doc>
+        <members>
+            <member name="M:Amazon.CodeBuild.IAmazonCodeBuild.BatchGetBuilds(Amazon.CodeBuild.Model.BatchGetBuildsRequest)" />
+            <member name="M:Amazon.CodeBuild.AmazonCodeBuildClient.BatchGetBuilds(Amazon.CodeBuild.Model.BatchGetBuildsRequest)" />
+            <member name="T:Amazon.CodeBuild.Model.BatchGetBuildsRequest" />
+            <member name="T:Amazon.CodeBuild.Model.BatchGetBuildsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example gets information about builds with the specified build IDs.
+                </para>
+                <code
+                    title="To get information about builds"
+                    source=".\AWSSDKDocSamples\CodeBuild\CodeBuild.GeneratedSamples.cs"
+                    region="to-get-information-about-builds-1501187184588" />
+            </example>
+        </value>
+    </doc>
+</docs>

@@ -88,6 +88,10 @@
     <min>1</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CodeBuild.Model.BuildNotDeleted.Id</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CodeBuild.Model.EnvironmentVariable.Name</property>
     <min>1</min>
   </property-value-rule>

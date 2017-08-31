@@ -53,6 +53,10 @@ namespace Amazon.CodeBuild
     /// </para>
     ///  <ul> <li> 
     /// <para>
+    ///  <code>BatchDeleteBuilds</code>: Deletes one or more builds.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
     ///  <code>BatchGetProjects</code>: Gets information about one or more build projects.
     /// A <i>build project</i> defines how AWS CodeBuild will run a build. This includes information
     /// such as where to get the source code to build, the build environment to use, the build
@@ -293,6 +297,48 @@ namespace Amazon.CodeBuild
 
         #endregion
 
+        
+        #region  BatchDeleteBuilds
+
+
+        /// <summary>
+        /// Deletes one or more builds.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchDeleteBuilds service method.</param>
+        /// 
+        /// <returns>The response from the BatchDeleteBuilds service method, as returned by CodeBuild.</returns>
+        /// <exception cref="Amazon.CodeBuild.Model.InvalidInputException">
+        /// The input value that was provided is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/BatchDeleteBuilds">REST API Reference for BatchDeleteBuilds Operation</seealso>
+        public BatchDeleteBuildsResponse BatchDeleteBuilds(BatchDeleteBuildsRequest request)
+        {
+            var marshaller = new BatchDeleteBuildsRequestMarshaller();
+            var unmarshaller = BatchDeleteBuildsResponseUnmarshaller.Instance;
+
+            return Invoke<BatchDeleteBuildsRequest,BatchDeleteBuildsResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the BatchDeleteBuilds operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the BatchDeleteBuilds operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/BatchDeleteBuilds">REST API Reference for BatchDeleteBuilds Operation</seealso>
+        public Task<BatchDeleteBuildsResponse> BatchDeleteBuildsAsync(BatchDeleteBuildsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new BatchDeleteBuildsRequestMarshaller();
+            var unmarshaller = BatchDeleteBuildsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<BatchDeleteBuildsRequest,BatchDeleteBuildsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
         
         #region  BatchGetBuilds
 
