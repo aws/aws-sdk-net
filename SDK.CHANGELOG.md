@@ -1,3 +1,13 @@
+### 3.3.147.0 (2017-08-31 21:35 UTC)
+* CodeBuild (3.3.3.0)
+	* The AWS CodeBuild HTTP API now provides the BatchDeleteBuilds operation, which enables you to delete existing builds.
+* ElasticLoadBalancingV2 (3.3.4.0)
+	* This change now allows Application Load Balancers to distribute traffic to AWS resources using their IP addresses as targets in addition to the instance IDs. You can also load balance to resources outside the VPC hosting the load balancer using their IP addresses as targets. This includes resources in peered VPCs, EC2-Classic, and on-premises locations reachable over AWS Direct Connect or a VPN connection.
+* LexModelBuildingService (3.3.2.0)
+	* Amazon Lex now supports synonyms for slot type values. If the user inputs a synonym, it will be resolved to the corresponding slot value.
+* Core 3.3.17.6
+	* Look at AWS_PROFILE environment variable in FallbackCredentialsFactory and FallbackRegionFactory.
+
 ### 3.3.146.0 (2017-08-30 16:16 UTC)
 * ApplicationAutoScaling (3.3.4.0)
 	* Application Auto Scaling now supports the DisableScaleIn option for Target Tracking Scaling Policies. This allows customers to create scaling policies that will only add capacity to the target.

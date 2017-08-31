@@ -1,7 +1,7 @@
 
 {
-    "ProductVersion" : "3.3.146.0",
-    "CoreVersion"    : "3.3.17.5",
+    "ProductVersion" : "3.3.147.0",
+    "CoreVersion"    : "3.3.17.6",
     "DefaultToPreview" : false,
     "ServiceVersions"  : {
         "CloudHSM" : {
@@ -569,7 +569,7 @@
             "InPreview"               : false
         },
         "ElasticLoadBalancingV2"          : {
-            "Version" : "3.3.3.3",
+            "Version" : "3.3.4.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.17.0"
@@ -657,7 +657,7 @@
             "InPreview"               : false
         },
         "CodeBuild"                       : {
-            "Version" : "3.3.2.0",
+            "Version" : "3.3.3.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.17.0"
@@ -777,7 +777,7 @@
             "InPreview"               : false
         },
         "LexModelBuildingService"         : {
-            "Version" : "3.3.1.5",
+            "Version" : "3.3.2.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.17.0"
