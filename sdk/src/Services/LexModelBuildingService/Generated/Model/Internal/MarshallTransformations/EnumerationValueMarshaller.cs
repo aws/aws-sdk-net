@@ -45,6 +45,17 @@ namespace Amazon.LexModelBuildingService.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(EnumerationValue requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetSynonyms())
+            {
+                context.Writer.WritePropertyName("synonyms");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectSynonymsListValue in requestObject.Synonyms)
+                {
+                        context.Writer.Write(requestObjectSynonymsListValue);
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
             if(requestObject.IsSetValue())
             {
                 context.Writer.WritePropertyName("value");

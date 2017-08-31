@@ -96,6 +96,12 @@ namespace Amazon.LexModelBuildingService.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
+                if(publicRequest.IsSetValueSelectionStrategy())
+                {
+                    context.Writer.WritePropertyName("valueSelectionStrategy");
+                    context.Writer.Write(publicRequest.ValueSelectionStrategy);
+                }
+
         
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();

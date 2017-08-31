@@ -38,6 +38,7 @@ namespace Amazon.LexModelBuildingService.Model
         private List<EnumerationValue> _enumerationValues = new List<EnumerationValue>();
         private DateTime? _lastUpdatedDate;
         private string _name;
+        private SlotValueSelectionStrategy _valueSelectionStrategy;
         private string _version;
 
         /// <summary>
@@ -148,6 +149,25 @@ namespace Amazon.LexModelBuildingService.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ValueSelectionStrategy. 
+        /// <para>
+        /// The strategy that Amazon Lex uses to determine the value of the slot. For more information,
+        /// see <a>PutSlotType</a>.
+        /// </para>
+        /// </summary>
+        public SlotValueSelectionStrategy ValueSelectionStrategy
+        {
+            get { return this._valueSelectionStrategy; }
+            set { this._valueSelectionStrategy = value; }
+        }
+
+        // Check to see if ValueSelectionStrategy property is set
+        internal bool IsSetValueSelectionStrategy()
+        {
+            return this._valueSelectionStrategy != null;
         }
 
         /// <summary>

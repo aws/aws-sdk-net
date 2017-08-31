@@ -52,7 +52,26 @@ namespace Amazon.LexModelBuildingService.Model
     /// </summary>
     public partial class EnumerationValue
     {
+        private List<string> _synonyms = new List<string>();
         private string _value;
+
+        /// <summary>
+        /// Gets and sets the property Synonyms. 
+        /// <para>
+        /// Additional values related to the slot type value.
+        /// </para>
+        /// </summary>
+        public List<string> Synonyms
+        {
+            get { return this._synonyms; }
+            set { this._synonyms = value; }
+        }
+
+        // Check to see if Synonyms property is set
+        internal bool IsSetSynonyms()
+        {
+            return this._synonyms != null && this._synonyms.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property Value. 

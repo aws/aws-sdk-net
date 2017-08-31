@@ -55,6 +55,7 @@ namespace Amazon.LexModelBuildingService.Model
         private string _description;
         private List<EnumerationValue> _enumerationValues = new List<EnumerationValue>();
         private string _name;
+        private SlotValueSelectionStrategy _valueSelectionStrategy;
 
         /// <summary>
         /// Gets and sets the property Checksum. 
@@ -108,7 +109,18 @@ namespace Amazon.LexModelBuildingService.Model
         /// Gets and sets the property EnumerationValues. 
         /// <para>
         /// A list of <code>EnumerationValue</code> objects that defines the values that the slot
-        /// type can take.
+        /// type can take. Each value can have a list of <code>synonyms</code>, which are additional
+        /// values that help train the machine learning model about the values that it resolves
+        /// for a slot. 
+        /// </para>
+        ///  
+        /// <para>
+        /// When Amazon Lex resolves a slot value, it generates a resolution list that contains
+        /// up to five possible values for the slot. If you are using a Lambda function, this
+        /// resolution list is passed to the function. If you are not using a Lambda function
+        /// you can choose to return the value that the user entered or the first value in the
+        /// resolution list as the slot value. The <code>valueSelectionStrategy</code> field indicates
+        /// the option to use. 
         /// </para>
         /// </summary>
         public List<EnumerationValue> EnumerationValues
@@ -150,6 +162,40 @@ namespace Amazon.LexModelBuildingService.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ValueSelectionStrategy. 
+        /// <para>
+        /// Determines the strategy that Amazon Lex uses to return slot type values. The field
+        /// can be set to one of the following values:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>ORIGINAL_VALUE</code> - Returns the value entered by the user.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>TOP_RESOLUTION</code> - If there is a resolution list for the slot, return
+        /// the first value in the resolution list as the slot type value. If there is no resolution
+        /// list, null is returned.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// If you don't specify the <code>valueSelectionStrategy</code> is not provided, the
+        /// default is <code>ORIGINAL_VALUE</code>.
+        /// </para>
+        /// </summary>
+        public SlotValueSelectionStrategy ValueSelectionStrategy
+        {
+            get { return this._valueSelectionStrategy; }
+            set { this._valueSelectionStrategy = value; }
+        }
+
+        // Check to see if ValueSelectionStrategy property is set
+        internal bool IsSetValueSelectionStrategy()
+        {
+            return this._valueSelectionStrategy != null;
         }
 
     }

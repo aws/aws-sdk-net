@@ -34,8 +34,7 @@ namespace Amazon.LexModelBuildingService.Model
     /// 
     ///  
     /// <para>
-    ///  The GetBot operation requires permissions for the <code>lex:GetBot</code> action.
-    /// 
+    ///  This operation requires permissions for the <code>lex:GetBot</code> action. 
     /// </para>
     /// </summary>
     public partial class GetBotRequest : AmazonLexModelBuildingServiceRequest

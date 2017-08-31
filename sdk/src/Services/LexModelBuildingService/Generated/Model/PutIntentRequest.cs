@@ -302,9 +302,9 @@ namespace Amazon.LexModelBuildingService.Model
         /// <summary>
         /// Gets and sets the property FulfillmentActivity. 
         /// <para>
-        ///  Describes how the intent is fulfilled. For example, after a user provides all of
-        /// the information for a pizza order, <code>fulfillmentActivity</code> defines how the
-        /// bot places an order with a local pizza store. 
+        /// Required. Describes how the intent is fulfilled. For example, after a user provides
+        /// all of the information for a pizza order, <code>fulfillmentActivity</code> defines
+        /// how the bot places an order with a local pizza store. 
         /// </para>
         ///  
         /// <para>
@@ -427,7 +427,7 @@ namespace Amazon.LexModelBuildingService.Model
         /// Gets and sets the property Slots. 
         /// <para>
         /// An array of intent slots. At runtime, Amazon Lex elicits required slot values from
-        /// the user using prompts defined in the slots. For more information, see &lt;xref linkend="how-it-works"/&gt;.
+        /// the user using prompts defined in the slots. For more information, see <a>how-it-works</a>.
         /// 
         /// </para>
         /// </summary>

@@ -1045,8 +1045,7 @@ namespace Amazon.LexModelBuildingService
         /// 
         ///  
         /// <para>
-        ///  The GetBot operation requires permissions for the <code>lex:GetBot</code> action.
-        /// 
+        ///  This operation requires permissions for the <code>lex:GetBot</code> action. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetBot service method.</param>
