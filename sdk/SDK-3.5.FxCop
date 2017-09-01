@@ -94,6 +94,7 @@
       <Directory>$(ProjectDir)/src/Services/machinelearning/bin/Release/net35/</Directory>
       <Directory>$(ProjectDir)/src/Services/marketplaceentitlementservice/bin/Release/net35/</Directory>
       <Directory>$(ProjectDir)/src/Services/migrationhub/bin/Release/net35/</Directory>
+      <Directory>$(ProjectDir)/src/Services/mobile/bin/Release/net35/</Directory>
       <Directory>$(ProjectDir)/src/Services/mobileanalytics/bin/Release/net35/</Directory>
       <Directory>$(ProjectDir)/src/Services/mturk/bin/Release/net35/</Directory>
       <Directory>$(ProjectDir)/src/Services/opsworks/bin/Release/net35/</Directory>
@@ -200,6 +201,7 @@
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.MachineLearning.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.MarketplaceEntitlementService.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.MigrationHub.dll" Analyze="True" AnalyzeAllChildren="True" />
+    <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.Mobile.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.MobileAnalytics.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.MTurk.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.OpsWorks.dll" Analyze="True" AnalyzeAllChildren="True" />

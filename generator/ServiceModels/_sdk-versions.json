@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.3.147.0",
+    "ProductVersion" : "3.3.148.0",
     "CoreVersion"    : "3.3.17.6",
     "DefaultToPreview" : false,
     "ServiceVersions"  : {
@@ -369,7 +369,7 @@
             "InPreview"               : false
         },
         "SimpleSystemsManagement"   : {
-            "Version" : "3.3.10.0",
+            "Version" : "3.3.11.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.17.0"
@@ -513,7 +513,7 @@
             "InPreview"               : false
         },
         "GameLift"                        : {
-            "Version" : "3.3.8.0",
+            "Version" : "3.3.9.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.17.0"
@@ -837,6 +837,14 @@
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.17.5"
+            },
+            "InPreview"               : false
+        },
+        "Mobile"                          : {
+            "Version" : "3.3.0.0",
+            "AssemblyVersionOverride" : null,
+            "Dependencies"            : {
+                "Core" : "3.3.17.6"
             },
             "InPreview"               : false
         }
