@@ -28,9 +28,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GameLift.Model
 {
     /// <summary>
-    /// New player session created as a result of a successful FlexMatch match. A successful
-    /// match automatically creates new player sessions for every player ID in the original
-    /// matchmaking request. 
+    /// Represents a new player session that is created as a result of a successful FlexMatch
+    /// match. A successful match automatically creates new player sessions for every player
+    /// ID in the original matchmaking request. 
     /// 
     ///  
     /// <para>

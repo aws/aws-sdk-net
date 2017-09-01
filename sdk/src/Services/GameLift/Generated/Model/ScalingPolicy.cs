@@ -195,22 +195,22 @@ namespace Amazon.GameLift.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <b>ActivatingGameSessions</b> – number of game sessions in the process of being created
-        /// (game session status = <code>ACTIVATING</code>).
+        ///  <b>ActivatingGameSessions</b> -- number of game sessions in the process of being
+        /// created (game session status = <code>ACTIVATING</code>).
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>ActiveGameSessions</b> – number of game sessions currently running (game session
+        ///  <b>ActiveGameSessions</b> -- number of game sessions currently running (game session
         /// status = <code>ACTIVE</code>).
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>CurrentPlayerSessions</b> – number of active or reserved player sessions (player
+        ///  <b>CurrentPlayerSessions</b> -- number of active or reserved player sessions (player
         /// session status = <code>ACTIVE</code> or <code>RESERVED</code>). 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>AvailablePlayerSessions</b> – number of player session slots currently available
+        ///  <b>AvailablePlayerSessions</b> -- number of player session slots currently available
         /// in active game sessions across the fleet, calculated by subtracting a game session's
         /// current player session count from its maximum player session count. This number does
         /// include game sessions that are not currently accepting players (game session <code>PlayerSessionCreationPolicy</code>
@@ -218,11 +218,11 @@ namespace Amazon.GameLift.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>ActiveInstances</b> – number of instances currently running a game session.
+        ///  <b>ActiveInstances</b> -- number of instances currently running a game session.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>IdleInstances</b> – number of instances not currently running a game session.
+        ///  <b>IdleInstances</b> -- number of instances not currently running a game session.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -282,16 +282,16 @@ namespace Amazon.GameLift.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <b>ChangeInCapacity</b> – add (or subtract) the scaling adjustment value from the
+        ///  <b>ChangeInCapacity</b> -- add (or subtract) the scaling adjustment value from the
         /// current instance count. Positive values scale up while negative values scale down.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>ExactCapacity</b> – set the instance count to the scaling adjustment value.
+        ///  <b>ExactCapacity</b> -- set the instance count to the scaling adjustment value.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>PercentChangeInCapacity</b> – increase or reduce the current instance count by
+        ///  <b>PercentChangeInCapacity</b> -- increase or reduce the current instance count by
         /// the scaling adjustment, read as a percentage. Positive values scale up while negative
         /// values scale down.
         /// </para>
@@ -317,31 +317,31 @@ namespace Amazon.GameLift.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <b>ACTIVE</b> – The scaling policy is currently in force.
+        ///  <b>ACTIVE</b> -- The scaling policy is currently in force.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>UPDATE_REQUESTED</b> – A request to update the scaling policy has been received.
+        ///  <b>UPDATE_REQUESTED</b> -- A request to update the scaling policy has been received.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>UPDATING</b> – A change is being made to the scaling policy.
+        ///  <b>UPDATING</b> -- A change is being made to the scaling policy.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>DELETE_REQUESTED</b> – A request to delete the scaling policy has been received.
+        ///  <b>DELETE_REQUESTED</b> -- A request to delete the scaling policy has been received.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>DELETING</b> – The scaling policy is being deleted.
+        ///  <b>DELETING</b> -- The scaling policy is being deleted.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>DELETED</b> – The scaling policy has been deleted.
+        ///  <b>DELETED</b> -- The scaling policy has been deleted.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>ERROR</b> – An error occurred in creating the policy. It should be removed and
+        ///  <b>ERROR</b> -- An error occurred in creating the policy. It should be removed and
         /// recreated.
         /// </para>
         ///  </li> </ul>

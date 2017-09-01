@@ -163,7 +163,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property FleetId. 
         /// <para>
-        /// Unique identifier for a fleet the game session is running on.
+        /// Unique identifier for a fleet that the game session is running on.
         /// </para>
         /// </summary>
         public string FleetId
@@ -223,7 +223,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property GameSessionId. 
         /// <para>
-        /// Unique identifier for the game session. A game session ID has the following format:
+        /// Unique identifier for the game session. A game session ARN has the following format:
         /// <code>arn:aws:gamelift:&lt;region&gt;::gamesession/&lt;fleet ID&gt;/&lt;custom ID
         /// string or idempotency token&gt;</code>.
         /// </para>

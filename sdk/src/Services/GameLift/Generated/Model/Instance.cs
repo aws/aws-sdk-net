@@ -139,19 +139,19 @@ namespace Amazon.GameLift.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <b>PENDING</b> – The instance is in the process of being created and launching server
+        ///  <b>PENDING</b> -- The instance is in the process of being created and launching server
         /// processes as defined in the fleet's run-time configuration. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>ACTIVE</b> – The instance has been successfully created and at least one server
+        ///  <b>ACTIVE</b> -- The instance has been successfully created and at least one server
         /// process has successfully launched and reported back to Amazon GameLift that it is
         /// ready to host a game session. The instance is now considered ready to host game sessions.
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>TERMINATING</b> – The instance is in the process of shutting down. This may happen
+        ///  <b>TERMINATING</b> -- The instance is in the process of shutting down. This may happen
         /// to reduce capacity during a scaling down event or to recycle resources in the event
         /// of a problem.
         /// </para>

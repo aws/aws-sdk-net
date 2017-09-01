@@ -46,35 +46,35 @@ namespace Amazon.GameLift.Model
         /// <para>
         /// Type of event being logged. The following events are currently in use:
         /// </para>
-        ///  <ul> <li> 
+        ///  
         /// <para>
-        /// General events:
+        ///  <b>General events:</b> 
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <b>GENERIC_EVENT</b> – An unspecified event has occurred.
+        ///  GENERIC_EVENT -- An unspecified event has occurred.
         /// </para>
-        ///  </li> </ul> </li> <li> 
+        ///  </li> </ul> 
         /// <para>
-        /// Fleet creation events:
+        ///  <b>Fleet creation events:</b> 
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <b>FLEET_CREATED</b> – A fleet record was successfully created with a status of <code>NEW</code>.
+        /// FLEET_CREATED -- A fleet record was successfully created with a status of <code>NEW</code>.
         /// Event messaging includes the fleet ID.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>FLEET_STATE_DOWNLOADING</b> – Fleet status changed from <code>NEW</code> to <code>DOWNLOADING</code>.
+        /// FLEET_STATE_DOWNLOADING -- Fleet status changed from <code>NEW</code> to <code>DOWNLOADING</code>.
         /// The compressed build has started downloading to a fleet instance for installation.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>FLEET_BINARY_DOWNLOAD_FAILED</b> – The build failed to download to the fleet instance.
+        ///  FLEET_BINARY_DOWNLOAD_FAILED -- The build failed to download to the fleet instance.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>FLEET_CREATION_EXTRACTING_BUILD</b> – The game server build was successfully downloaded
+        /// FLEET_CREATION_EXTRACTING_BUILD – The game server build was successfully downloaded
         /// to an instance, and the build files are now being extracted from the uploaded build
         /// and saved to an instance. Failure at this stage prevents a fleet from moving to <code>ACTIVE</code>
         /// status. Logs for this stage display a list of the files that are extracted and saved
@@ -82,18 +82,17 @@ namespace Amazon.GameLift.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>FLEET_CREATION_RUNNING_INSTALLER</b> – The game server build files were successfully
-        /// extracted, and the Amazon GameLift is now running the build's install script (if one
-        /// is included). Failure in this stage prevents a fleet from moving to <code>ACTIVE</code>
-        /// status. Logs for this stage list the installation steps and whether or not the install
-        /// completed successfully. Access the logs by using the URL in <i>PreSignedLogUrl</i>.
-        /// 
+        /// FLEET_CREATION_RUNNING_INSTALLER – The game server build files were successfully extracted,
+        /// and the Amazon GameLift is now running the build's install script (if one is included).
+        /// Failure in this stage prevents a fleet from moving to <code>ACTIVE</code> status.
+        /// Logs for this stage list the installation steps and whether or not the install completed
+        /// successfully. Access the logs by using the URL in <i>PreSignedLogUrl</i>. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>FLEET_CREATION_VALIDATING_RUNTIME_CONFIG</b> – The build process was successful,
-        /// and the Amazon GameLift is now verifying that the game server launch paths, which
-        /// are specified in the fleet's run-time configuration, exist. If any listed launch path
+        /// FLEET_CREATION_VALIDATING_RUNTIME_CONFIG -- The build process was successful, and
+        /// the Amazon GameLift is now verifying that the game server launch paths, which are
+        /// specified in the fleet's run-time configuration, exist. If any listed launch path
         /// exists, Amazon GameLift tries to launch a game server process and waits for the process
         /// to report ready. Failures in this stage prevent a fleet from moving to <code>ACTIVE</code>
         /// status. Logs for this stage list the launch paths in the run-time configuration and
@@ -102,64 +101,84 @@ namespace Amazon.GameLift.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>FLEET_STATE_VALIDATING</b> – Fleet status changed from <code>DOWNLOADING</code>
-        /// to <code>VALIDATING</code>.
+        /// FLEET_STATE_VALIDATING -- Fleet status changed from <code>DOWNLOADING</code> to <code>VALIDATING</code>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>FLEET_VALIDATION_LAUNCH_PATH_NOT_FOUND</b> – Validation of the run-time configuration
+        ///  FLEET_VALIDATION_LAUNCH_PATH_NOT_FOUND -- Validation of the run-time configuration
         /// failed because the executable specified in a launch path does not exist on the instance.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>FLEET_STATE_BUILDING</b> – Fleet status changed from <code>VALIDATING</code> to
-        /// <code>BUILDING</code>.
+        /// FLEET_STATE_BUILDING -- Fleet status changed from <code>VALIDATING</code> to <code>BUILDING</code>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>FLEET_VALIDATION_EXECUTABLE_RUNTIME_FAILURE</b> – Validation of the run-time configuration
+        /// FLEET_VALIDATION_EXECUTABLE_RUNTIME_FAILURE -- Validation of the run-time configuration
         /// failed because the executable specified in a launch path failed to run on the fleet
         /// instance.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>FLEET_STATE_ACTIVATING</b> – Fleet status changed from <code>BUILDING</code> to
-        /// <code>ACTIVATING</code>. 
+        /// FLEET_STATE_ACTIVATING -- Fleet status changed from <code>BUILDING</code> to <code>ACTIVATING</code>.
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>FLEET_ACTIVATION_FAILED</b> - The fleet failed to successfully complete one of
-        /// the steps in the fleet activation process. This event code indicates that the game
-        /// build was successfully downloaded to a fleet instance, built, and validated, but was
-        /// not able to start a server process. A possible reason for failure is that the game
-        /// server is not reporting "process ready" to the Amazon GameLift service.
+        ///  FLEET_ACTIVATION_FAILED - The fleet failed to successfully complete one of the steps
+        /// in the fleet activation process. This event code indicates that the game build was
+        /// successfully downloaded to a fleet instance, built, and validated, but was not able
+        /// to start a server process. A possible reason for failure is that the game server is
+        /// not reporting "process ready" to the Amazon GameLift service.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>FLEET_STATE_ACTIVE</b> – The fleet's status changed from <code>ACTIVATING</code>
-        /// to <code>ACTIVE</code>. The fleet is now ready to host game sessions.
+        /// FLEET_STATE_ACTIVE -- The fleet's status changed from <code>ACTIVATING</code> to <code>ACTIVE</code>.
+        /// The fleet is now ready to host game sessions.
         /// </para>
-        ///  </li> </ul> </li> <li> 
+        ///  </li> </ul> 
         /// <para>
-        /// Other fleet events:
+        ///  <b>VPC peering events:</b> 
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <b>FLEET_SCALING_EVENT</b> – A change was made to the fleet's capacity settings (desired
+        /// FLEET_VPC_PEERING_SUCCEEDED -- A VPC peering connection has been established between
+        /// the VPC for an Amazon GameLift fleet and a VPC in your AWS account.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// FLEET_VPC_PEERING_FAILED -- A requested VPC peering connection has failed. Event details
+        /// and status information (see <a>DescribeVpcPeeringConnections</a>) provide additional
+        /// detail. A common reason for peering failure is that the two VPCs have overlapping
+        /// CIDR blocks of IPv4 addresses. To resolve this, change the CIDR block for the VPC
+        /// in your AWS account. For more information on VPC peering failures, see <a href="http://docs.aws.amazon.com/AmazonVPC/latest/PeeringGuide/invalid-peering-configurations.html">http://docs.aws.amazon.com/AmazonVPC/latest/PeeringGuide/invalid-peering-configurations.html</a>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// FLEET_VPC_PEERING_DELETED -- A VPC peering connection has been successfully deleted.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Other fleet events:</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// FLEET_SCALING_EVENT -- A change was made to the fleet's capacity settings (desired
         /// instances, minimum/maximum scaling limits). Event messaging includes the new capacity
         /// settings.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>FLEET_NEW_GAME_SESSION_PROTECTION_POLICY_UPDATED</b> – A change was made to the
-        /// fleet's game session protection policy setting. Event messaging includes both the
-        /// old and new policy setting. 
+        /// FLEET_NEW_GAME_SESSION_PROTECTION_POLICY_UPDATED -- A change was made to the fleet's
+        /// game session protection policy setting. Event messaging includes both the old and
+        /// new policy setting. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>FLEET_DELETED</b> – A request to delete a fleet was initiated.
+        /// FLEET_DELETED -- A request to delete a fleet was initiated.
         /// </para>
-        ///  </li> </ul> </li> </ul>
+        ///  </li> </ul>
         /// </summary>
         public EventCode EventCode
         {

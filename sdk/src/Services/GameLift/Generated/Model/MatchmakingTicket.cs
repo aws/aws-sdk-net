@@ -36,6 +36,8 @@ namespace Amazon.GameLift.Model
     public partial class MatchmakingTicket
     {
         private string _configurationName;
+        private DateTime? _endTime;
+        private int? _estimatedWaitTime;
         private GameSessionConnectionInfo _gameSessionConnectionInfo;
         private List<Player> _players = new List<Player>();
         private DateTime? _startTime;
@@ -62,6 +64,45 @@ namespace Amazon.GameLift.Model
         internal bool IsSetConfigurationName()
         {
             return this._configurationName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EndTime. 
+        /// <para>
+        /// Time stamp indicating when the matchmaking request stopped being processed due to
+        /// successful completion, timeout, or cancellation. Format is a number expressed in Unix
+        /// time as milliseconds (for example "1469498468.057").
+        /// </para>
+        /// </summary>
+        public DateTime EndTime
+        {
+            get { return this._endTime.GetValueOrDefault(); }
+            set { this._endTime = value; }
+        }
+
+        // Check to see if EndTime property is set
+        internal bool IsSetEndTime()
+        {
+            return this._endTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property EstimatedWaitTime. 
+        /// <para>
+        /// Average amount of time (in seconds) that players are currently waiting for a match.
+        /// If there is not enough recent data, this property may be empty.
+        /// </para>
+        /// </summary>
+        public int EstimatedWaitTime
+        {
+            get { return this._estimatedWaitTime.GetValueOrDefault(); }
+            set { this._estimatedWaitTime = value; }
+        }
+
+        // Check to see if EstimatedWaitTime property is set
+        internal bool IsSetEstimatedWaitTime()
+        {
+            return this._estimatedWaitTime.HasValue; 
         }
 
         /// <summary>
@@ -131,43 +172,43 @@ namespace Amazon.GameLift.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <b>QUEUED</b> – The matchmaking request has been received and is currently waiting
+        ///  <b>QUEUED</b> -- The matchmaking request has been received and is currently waiting
         /// to be processed.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>SEARCHING</b> – The matchmaking request is currently being processed. 
+        ///  <b>SEARCHING</b> -- The matchmaking request is currently being processed. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>REQUIRES_ACCEPTANCE</b> – A match has been proposed and the players must accept
+        ///  <b>REQUIRES_ACCEPTANCE</b> -- A match has been proposed and the players must accept
         /// the match (see <a>AcceptMatch</a>). This status is used only with requests that use
         /// a matchmaking configuration with a player acceptance requirement.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>PLACING</b> – The FlexMatch engine has matched players and is in the process of
-        /// placing a new game session for the match.
+        ///  <b>PLACING</b> -- The FlexMatch engine has matched players and is in the process
+        /// of placing a new game session for the match.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>COMPLETED</b> – Players have been matched and a game session is ready to host
+        ///  <b>COMPLETED</b> -- Players have been matched and a game session is ready to host
         /// the players. A ticket in this state contains the necessary connection information
         /// for players.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>FAILED</b> – The matchmaking request was not completed. Tickets with players who
-        /// fail to accept a proposed match are placed in <code>FAILED</code> status; new matchmaking
-        /// requests can be submitted for these players.
+        ///  <b>FAILED</b> -- The matchmaking request was not completed. Tickets with players
+        /// who fail to accept a proposed match are placed in <code>FAILED</code> status; new
+        /// matchmaking requests can be submitted for these players.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>CANCELLED</b> – The matchmaking request was canceled with a call to <a>StopMatchmaking</a>.
+        ///  <b>CANCELLED</b> -- The matchmaking request was canceled with a call to <a>StopMatchmaking</a>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>TIMED_OUT</b> – The matchmaking request was not completed within the duration
+        ///  <b>TIMED_OUT</b> -- The matchmaking request was not completed within the duration
         /// specified in the matchmaking configuration. Matchmaking requests that time out can
         /// be resubmitted.
         /// </para>

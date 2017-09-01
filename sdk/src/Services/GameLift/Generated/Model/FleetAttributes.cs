@@ -298,11 +298,11 @@ namespace Amazon.GameLift.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <b>NoProtection</b> – The game session can be terminated during a scale-down event.
+        ///  <b>NoProtection</b> -- The game session can be terminated during a scale-down event.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>FullProtection</b> – If the game session is in an <code>ACTIVE</code> status,
+        ///  <b>FullProtection</b> -- If the game session is in an <code>ACTIVE</code> status,
         /// it cannot be terminated during a scale-down event.
         /// </para>
         ///  </li> </ul>
@@ -408,29 +408,29 @@ namespace Amazon.GameLift.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <b>NEW</b> – A new fleet has been defined and desired instances is set to 1. 
+        ///  <b>NEW</b> -- A new fleet has been defined and desired instances is set to 1. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>DOWNLOADING/VALIDATING/BUILDING/ACTIVATING</b> – Amazon GameLift is setting up
+        ///  <b>DOWNLOADING/VALIDATING/BUILDING/ACTIVATING</b> -- Amazon GameLift is setting up
         /// the new fleet, creating new instances with the game build and starting server processes.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>ACTIVE</b> – Hosts can now accept game sessions.
+        ///  <b>ACTIVE</b> -- Hosts can now accept game sessions.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>ERROR</b> – An error occurred when downloading, validating, building, or activating
+        ///  <b>ERROR</b> -- An error occurred when downloading, validating, building, or activating
         /// the fleet.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>DELETING</b> – Hosts are responding to a delete fleet request.
+        ///  <b>DELETING</b> -- Hosts are responding to a delete fleet request.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>TERMINATED</b> – The fleet no longer exists.
+        ///  <b>TERMINATED</b> -- The fleet no longer exists.
         /// </para>
         ///  </li> </ul>
         /// </summary>

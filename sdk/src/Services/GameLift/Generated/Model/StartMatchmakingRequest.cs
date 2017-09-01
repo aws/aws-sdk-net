@@ -46,7 +46,7 @@ namespace Amazon.GameLift.Model
     /// and include the players to be matched. You must also include a set of player attributes
     /// relevant for the matchmaking configuration. If successful, a matchmaking ticket is
     /// returned with status set to <code>QUEUED</code>. Track the status of the ticket to
-    /// respond as needed and acquire game session connection information for sucessfully
+    /// respond as needed and acquire game session connection information for successfully
     /// completed matches.
     /// </para>
     ///  

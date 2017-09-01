@@ -70,6 +70,18 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
                     unmarshalledObject.ConfigurationName = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("EndTime", targetDepth))
+                {
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    unmarshalledObject.EndTime = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("EstimatedWaitTime", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.EstimatedWaitTime = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("GameSessionConnectionInfo", targetDepth))
                 {
                     var unmarshaller = GameSessionConnectionInfoUnmarshaller.Instance;

@@ -73,6 +73,12 @@ namespace Amazon.GameLift.Model
     /// </para>
     ///  
     /// <para>
+    /// You have the option of creating a VPC peering connection with the new fleet. For more
+    /// information, see <a href="http://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC
+    /// Peering with Amazon GameLift Fleets</a>.
+    /// </para>
+    ///  
+    /// <para>
     /// If the CreateFleet call is successful, Amazon GameLift performs the following tasks:
     /// </para>
     ///  <ul> <li> 
@@ -201,6 +207,8 @@ namespace Amazon.GameLift.Model
         private List<string> _metricGroups = new List<string>();
         private string _name;
         private ProtectionPolicy _newGameSessionProtectionPolicy;
+        private string _peerVpcAwsAccountId;
+        private string _peerVpcId;
         private ResourceCreationLimitPolicy _resourceCreationLimitPolicy;
         private RuntimeConfiguration _runtimeConfiguration;
         private string _serverLaunchParameters;
@@ -358,11 +366,11 @@ namespace Amazon.GameLift.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <b>NoProtection</b> – The game session can be terminated during a scale-down event.
+        ///  <b>NoProtection</b> -- The game session can be terminated during a scale-down event.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>FullProtection</b> – If the game session is in an <code>ACTIVE</code> status,
+        ///  <b>FullProtection</b> -- If the game session is in an <code>ACTIVE</code> status,
         /// it cannot be terminated during a scale-down event.
         /// </para>
         ///  </li> </ul>
@@ -377,6 +385,47 @@ namespace Amazon.GameLift.Model
         internal bool IsSetNewGameSessionProtectionPolicy()
         {
             return this._newGameSessionProtectionPolicy != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PeerVpcAwsAccountId. 
+        /// <para>
+        /// Unique identifier for the AWS account with the VPC that you want to peer your Amazon
+        /// GameLift fleet with. You can find your Account ID in the AWS Management Console under
+        /// account settings.
+        /// </para>
+        /// </summary>
+        public string PeerVpcAwsAccountId
+        {
+            get { return this._peerVpcAwsAccountId; }
+            set { this._peerVpcAwsAccountId = value; }
+        }
+
+        // Check to see if PeerVpcAwsAccountId property is set
+        internal bool IsSetPeerVpcAwsAccountId()
+        {
+            return this._peerVpcAwsAccountId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PeerVpcId. 
+        /// <para>
+        /// Unique identifier for a VPC with resources to be accessed by your Amazon GameLift
+        /// fleet. The VPC must be in the same region where your fleet is deployed. To get VPC
+        /// information, including IDs, use the Virtual Private Cloud service tools, including
+        /// the VPC Dashboard in the AWS Management Console.
+        /// </para>
+        /// </summary>
+        public string PeerVpcId
+        {
+            get { return this._peerVpcId; }
+            set { this._peerVpcId = value; }
+        }
+
+        // Check to see if PeerVpcId property is set
+        internal bool IsSetPeerVpcId()
+        {
+            return this._peerVpcId != null;
         }
 
         /// <summary>

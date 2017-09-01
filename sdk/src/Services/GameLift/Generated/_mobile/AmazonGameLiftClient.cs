@@ -50,12 +50,12 @@ namespace Amazon.GameLift
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <b>Manage game sessions and player access</b> – Retrieve information on available
+    ///  <b>Manage game sessions and player access</b> -- Retrieve information on available
     /// game sessions; create new game sessions; send player requests to join a game session.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <b>Configure and manage game server resources</b> – Manage builds, fleets, queues,
+    ///  <b>Configure and manage game server resources</b> -- Manage builds, fleets, queues,
     /// and aliases; set autoscaling policies; retrieve logs and metrics.
     /// </para>
     ///  </li> </ul> 
@@ -99,28 +99,28 @@ namespace Amazon.GameLift
     ///  <ul> <li> 
     /// <para>
     ///  <a href="http://docs.aws.amazon.com/gamelift/latest/developerguide/">Amazon GameLift
-    /// Developer Guide</a> – Learn more about Amazon GameLift features and how to use them.
+    /// Developer Guide</a> -- Learn more about Amazon GameLift features and how to use them.
     /// 
     /// </para>
     ///  </li> <li> 
     /// <para>
     ///  <a href="https://gamedev.amazon.com/forums/tutorials">Lumberyard and Amazon GameLift
-    /// Tutorials</a> – Get started fast with walkthroughs and sample projects.
+    /// Tutorials</a> -- Get started fast with walkthroughs and sample projects.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a href="http://aws.amazon.com/blogs/gamedev/">GameDev Blog</a> – Stay up to date
+    ///  <a href="http://aws.amazon.com/blogs/gamedev/">GameDev Blog</a> -- Stay up to date
     /// with new features and techniques.
     /// </para>
     ///  </li> <li> 
     /// <para>
     ///  <a href="https://gamedev.amazon.com/forums/spaces/123/gamelift-discussion.html">GameDev
-    /// Forums</a> – Connect with the GameDev community.
+    /// Forums</a> -- Connect with the GameDev community.
     /// </para>
     ///  </li> <li> 
     /// <para>
     ///  <a href="http://docs.aws.amazon.com/gamelift/latest/developerguide/doc-history.html">Amazon
-    /// GameLift Document History</a> – See changes to the Amazon GameLift service, SDKs,
+    /// GameLift Document History</a> -- See changes to the Amazon GameLift service, SDKs,
     /// and documentation, as well as links to release notes. 
     /// </para>
     ///  </li> </ul> 
@@ -146,7 +146,7 @@ namespace Amazon.GameLift
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <a>SearchGameSessions</a> – Retrieve all available game sessions or search for game
+    ///  <a>SearchGameSessions</a> -- Retrieve all available game sessions or search for game
     /// sessions that match a set of criteria. 
     /// </para>
     ///  </li> </ul> </li> <li> 
@@ -161,21 +161,21 @@ namespace Amazon.GameLift
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <a>StartGameSessionPlacement</a> – Request a new game session placement and add one
-    /// or more players to it.
+    ///  <a>StartGameSessionPlacement</a> -- Request a new game session placement and add
+    /// one or more players to it.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a>DescribeGameSessionPlacement</a> – Get details on a placement request, including
+    ///  <a>DescribeGameSessionPlacement</a> -- Get details on a placement request, including
     /// status.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a>StopGameSessionPlacement</a> – Cancel a placement request. 
+    ///  <a>StopGameSessionPlacement</a> -- Cancel a placement request. 
     /// </para>
     ///  </li> </ul> </li> <li> 
     /// <para>
-    ///  <a>CreateGameSession</a> – Start a new game session on a specific fleet. <i>Available
+    ///  <a>CreateGameSession</a> -- Start a new game session on a specific fleet. <i>Available
     /// in Amazon GameLift Local.</i> 
     /// </para>
     ///  </li> </ul> </li> <li> 
@@ -184,21 +184,21 @@ namespace Amazon.GameLift
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <a>StartMatchmaking</a> – Request matchmaking for one players or a group who want
+    ///  <a>StartMatchmaking</a> -- Request matchmaking for one players or a group who want
     /// to play together. 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a>DescribeMatchmaking</a> – Get details on a matchmaking request, including status.
+    ///  <a>DescribeMatchmaking</a> -- Get details on a matchmaking request, including status.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a>AcceptMatch</a> – Register that a player accepts a proposed match, for matches
+    ///  <a>AcceptMatch</a> -- Register that a player accepts a proposed match, for matches
     /// that require player acceptance. 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a>StopMatchmaking</a> – Cancel a matchmaking request. 
+    ///  <a>StopMatchmaking</a> -- Cancel a matchmaking request. 
     /// </para>
     ///  </li> </ul> </li> <li> 
     /// <para>
@@ -206,23 +206,23 @@ namespace Amazon.GameLift
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <a>DescribeGameSessions</a> – Retrieve metadata for one or more game sessions, including
+    ///  <a>DescribeGameSessions</a> -- Retrieve metadata for one or more game sessions, including
     /// length of time active and current player count. <i>Available in Amazon GameLift Local.</i>
     /// 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a>DescribeGameSessionDetails</a> – Retrieve metadata and the game session protection
+    ///  <a>DescribeGameSessionDetails</a> -- Retrieve metadata and the game session protection
     /// setting for one or more game sessions.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a>UpdateGameSession</a> – Change game session settings, such as maximum player count
-    /// and join policy.
+    ///  <a>UpdateGameSession</a> -- Change game session settings, such as maximum player
+    /// count and join policy.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a>GetGameSessionLogUrl</a> – Get the location of saved logs for a game session.
+    ///  <a>GetGameSessionLogUrl</a> -- Get the location of saved logs for a game session.
     /// </para>
     ///  </li> </ul> </li> <li> 
     /// <para>
@@ -230,17 +230,17 @@ namespace Amazon.GameLift
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <a>CreatePlayerSession</a> – Send a request for a player to join a game session.
+    ///  <a>CreatePlayerSession</a> -- Send a request for a player to join a game session.
     /// <i>Available in Amazon GameLift Local.</i> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a>CreatePlayerSessions</a> – Send a request for multiple players to join a game
+    ///  <a>CreatePlayerSessions</a> -- Send a request for multiple players to join a game
     /// session. <i>Available in Amazon GameLift Local.</i> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a>DescribePlayerSessions</a> – Get details on player activity, including status,
+    ///  <a>DescribePlayerSessions</a> -- Get details on player activity, including status,
     /// playing time, and player data. <i>Available in Amazon GameLift Local.</i> 
     /// </para>
     ///  </li> </ul> </li> </ul> 
@@ -260,25 +260,25 @@ namespace Amazon.GameLift
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <a>CreateBuild</a> – Create a new build using files stored in an Amazon S3 bucket.
+    ///  <a>CreateBuild</a> -- Create a new build using files stored in an Amazon S3 bucket.
     /// (Update uploading permissions with <a>RequestUploadCredentials</a>.) To create a build
     /// and upload files from a local path, use the AWS CLI command <code>upload-build</code>.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a>ListBuilds</a> – Get a list of all builds uploaded to a Amazon GameLift region.
+    ///  <a>ListBuilds</a> -- Get a list of all builds uploaded to a Amazon GameLift region.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a>DescribeBuild</a> – Retrieve information associated with a build.
+    ///  <a>DescribeBuild</a> -- Retrieve information associated with a build.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a>UpdateBuild</a> – Change build metadata, including build name and version.
+    ///  <a>UpdateBuild</a> -- Change build metadata, including build name and version.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a>DeleteBuild</a> – Remove a build from Amazon GameLift.
+    ///  <a>DeleteBuild</a> -- Remove a build from Amazon GameLift.
     /// </para>
     ///  </li> </ul> </li> <li> 
     /// <para>
@@ -286,16 +286,16 @@ namespace Amazon.GameLift
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <a>CreateFleet</a> – Configure and activate a new fleet to run a build's game servers.
+    ///  <a>CreateFleet</a> -- Configure and activate a new fleet to run a build's game servers.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a>ListFleets</a> – Get a list of all fleet IDs in a Amazon GameLift region (all
+    ///  <a>ListFleets</a> -- Get a list of all fleet IDs in a Amazon GameLift region (all
     /// statuses).
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a>DeleteFleet</a> – Terminate a fleet that is no longer running game servers or
+    ///  <a>DeleteFleet</a> -- Terminate a fleet that is no longer running game servers or
     /// hosting players.
     /// </para>
     ///  </li> <li> 
@@ -304,17 +304,17 @@ namespace Amazon.GameLift
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <a>DescribeFleetAttributes</a> / <a>UpdateFleetAttributes</a> – View or change a
+    ///  <a>DescribeFleetAttributes</a> / <a>UpdateFleetAttributes</a> -- View or change a
     /// fleet's metadata and settings for game session protection and resource creation limits.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a>DescribeFleetPortSettings</a> / <a>UpdateFleetPortSettings</a> – View or change
+    ///  <a>DescribeFleetPortSettings</a> / <a>UpdateFleetPortSettings</a> -- View or change
     /// the inbound permissions (IP address and port setting ranges) allowed for a fleet.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a>DescribeRuntimeConfiguration</a> / <a>UpdateRuntimeConfiguration</a> – View or
+    ///  <a>DescribeRuntimeConfiguration</a> / <a>UpdateRuntimeConfiguration</a> -- View or
     /// change what server processes (and how many) to run on each instance in a fleet.
     /// </para>
     ///  </li> </ul> </li> </ul> </li> <li> 
@@ -323,49 +323,82 @@ namespace Amazon.GameLift
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <a>DescribeEC2InstanceLimits</a> – Retrieve maximum number of instances allowed for
-    /// the current AWS account and the current usage level.
+    ///  <a>DescribeEC2InstanceLimits</a> -- Retrieve maximum number of instances allowed
+    /// for the current AWS account and the current usage level.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a>DescribeFleetCapacity</a> / <a>UpdateFleetCapacity</a> – Retrieve the capacity
+    ///  <a>DescribeFleetCapacity</a> / <a>UpdateFleetCapacity</a> -- Retrieve the capacity
     /// settings and the current number of instances in a fleet; adjust fleet capacity settings
     /// to scale up or down.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Autoscale – Manage autoscaling rules and apply them to a fleet.
+    /// Autoscale -- Manage autoscaling rules and apply them to a fleet.
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <a>PutScalingPolicy</a> – Create a new autoscaling policy, or update an existing
+    ///  <a>PutScalingPolicy</a> -- Create a new autoscaling policy, or update an existing
     /// one.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a>DescribeScalingPolicies</a> – Retrieve an existing autoscaling policy.
+    ///  <a>DescribeScalingPolicies</a> -- Retrieve an existing autoscaling policy.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a>DeleteScalingPolicy</a> – Delete an autoscaling policy and stop it from affecting
+    ///  <a>DeleteScalingPolicy</a> -- Delete an autoscaling policy and stop it from affecting
     /// a fleet's capacity.
     /// </para>
     ///  </li> </ul> </li> </ul> </li> <li> 
+    /// <para>
+    ///  <b>Manage VPC peering connections for fleets</b> 
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <a>CreateVpcPeeringAuthorization</a> -- Authorize a peering connection to one of
+    /// your VPCs.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>DescribeVpcPeeringAuthorizations</a> -- Retrieve valid peering connection authorizations.
+    /// 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>DeleteVpcPeeringAuthorization</a> -- Delete a peering connection authorization.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>CreateVpcPeeringConnection</a> -- Establish a peering connection between the VPC
+    /// for a Amazon GameLift fleet and one of your VPCs.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>DescribeVpcPeeringConnections</a> -- Retrieve information on active or pending
+    /// VPC peering connections with a Amazon GameLift fleet.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>DeleteVpcPeeringConnection</a> -- Delete a VPC peering connection with a Amazon
+    /// GameLift fleet.
+    /// </para>
+    ///  </li> </ul> </li> <li> 
     /// <para>
     ///  <b>Access fleet activity statistics</b> 
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <a>DescribeFleetUtilization</a> – Get current data on the number of server processes,
+    ///  <a>DescribeFleetUtilization</a> -- Get current data on the number of server processes,
     /// game sessions, and players currently active on a fleet.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a>DescribeFleetEvents</a> – Get a fleet's logged events for a specified time span.
+    ///  <a>DescribeFleetEvents</a> -- Get a fleet's logged events for a specified time span.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a>DescribeGameSessions</a> – Retrieve metadata associated with one or more game
+    ///  <a>DescribeGameSessions</a> -- Retrieve metadata associated with one or more game
     /// sessions, including length of time active and current player count.
     /// </para>
     ///  </li> </ul> </li> <li> 
@@ -374,12 +407,12 @@ namespace Amazon.GameLift
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <a>DescribeInstances</a> – Get information on each instance in a fleet, including
+    ///  <a>DescribeInstances</a> -- Get information on each instance in a fleet, including
     /// instance ID, IP address, and status.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a>GetInstanceAccess</a> – Request access credentials needed to remotely connect
+    ///  <a>GetInstanceAccess</a> -- Request access credentials needed to remotely connect
     /// to a specified instance in a fleet.
     /// </para>
     ///  </li> </ul> </li> <li> 
@@ -388,28 +421,28 @@ namespace Amazon.GameLift
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <a>CreateAlias</a> – Define a new alias and optionally assign it to a fleet.
+    ///  <a>CreateAlias</a> -- Define a new alias and optionally assign it to a fleet.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a>ListAliases</a> – Get all fleet aliases defined in a Amazon GameLift region.
+    ///  <a>ListAliases</a> -- Get all fleet aliases defined in a Amazon GameLift region.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a>DescribeAlias</a> – Retrieve information on an existing alias.
+    ///  <a>DescribeAlias</a> -- Retrieve information on an existing alias.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a>UpdateAlias</a> – Change settings for a alias, such as redirecting it from one
+    ///  <a>UpdateAlias</a> -- Change settings for a alias, such as redirecting it from one
     /// fleet to another.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a>DeleteAlias</a> – Remove an alias from the region.
+    ///  <a>DeleteAlias</a> -- Remove an alias from the region.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a>ResolveAlias</a> – Get the fleet ID that a specified alias points to.
+    ///  <a>ResolveAlias</a> -- Get the fleet ID that a specified alias points to.
     /// </para>
     ///  </li> </ul> </li> <li> 
     /// <para>
@@ -417,21 +450,21 @@ namespace Amazon.GameLift
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <a>CreateGameSessionQueue</a> – Create a queue for processing requests for new game
+    ///  <a>CreateGameSessionQueue</a> -- Create a queue for processing requests for new game
     /// sessions. 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a>DescribeGameSessionQueues</a> – Retrieve game session queues defined in a Amazon
+    ///  <a>DescribeGameSessionQueues</a> -- Retrieve game session queues defined in a Amazon
     /// GameLift region.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a>UpdateGameSessionQueue</a> – Change the configuration of a game session queue.
+    ///  <a>UpdateGameSessionQueue</a> -- Change the configuration of a game session queue.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a>DeleteGameSessionQueue</a> – Remove a game session queue from the region.
+    ///  <a>DeleteGameSessionQueue</a> -- Remove a game session queue from the region.
     /// </para>
     ///  </li> </ul> </li> <li> 
     /// <para>
@@ -439,37 +472,37 @@ namespace Amazon.GameLift
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <a>CreateMatchmakingConfiguration</a> – Create a matchmaking configuration with instructions
-    /// for building a player group and placing in a new game session. 
+    ///  <a>CreateMatchmakingConfiguration</a> -- Create a matchmaking configuration with
+    /// instructions for building a player group and placing in a new game session. 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a>DescribeMatchmakingConfigurations</a> – Retrieve matchmaking configurations defined
+    ///  <a>DescribeMatchmakingConfigurations</a> -- Retrieve matchmaking configurations defined
     /// a Amazon GameLift region.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a>UpdateMatchmakingConfiguration</a> – Change settings for matchmaking configuration.
+    ///  <a>UpdateMatchmakingConfiguration</a> -- Change settings for matchmaking configuration.
     /// queue.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a>DeleteMatchmakingConfiguration</a> – Remove a matchmaking configuration from the
-    /// region.
+    ///  <a>DeleteMatchmakingConfiguration</a> -- Remove a matchmaking configuration from
+    /// the region.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a>CreateMatchmakingRuleSet</a> – Create a set of rules to use when searching for
+    ///  <a>CreateMatchmakingRuleSet</a> -- Create a set of rules to use when searching for
     /// player matches. 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a>DescribeMatchmakingRuleSets</a> – Retrieve matchmaking rule sets defined in a
+    ///  <a>DescribeMatchmakingRuleSets</a> -- Retrieve matchmaking rule sets defined in a
     /// Amazon GameLift region.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a>ValidateMatchmakingRuleSet</a> – Verify syntax for a set of matchmaking rules.
+    ///  <a>ValidateMatchmakingRuleSet</a> -- Verify syntax for a set of matchmaking rules.
     /// 
     /// </para>
     ///  </li> </ul> </li> </ul>
@@ -1182,6 +1215,70 @@ namespace Amazon.GameLift
 
         #endregion
         
+        #region  CreateVpcPeeringAuthorization
+
+        internal CreateVpcPeeringAuthorizationResponse CreateVpcPeeringAuthorization(CreateVpcPeeringAuthorizationRequest request)
+        {
+            var marshaller = new CreateVpcPeeringAuthorizationRequestMarshaller();
+            var unmarshaller = CreateVpcPeeringAuthorizationResponseUnmarshaller.Instance;
+
+            return Invoke<CreateVpcPeeringAuthorizationRequest,CreateVpcPeeringAuthorizationResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateVpcPeeringAuthorization operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateVpcPeeringAuthorization operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreateVpcPeeringAuthorization">REST API Reference for CreateVpcPeeringAuthorization Operation</seealso>
+        public Task<CreateVpcPeeringAuthorizationResponse> CreateVpcPeeringAuthorizationAsync(CreateVpcPeeringAuthorizationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new CreateVpcPeeringAuthorizationRequestMarshaller();
+            var unmarshaller = CreateVpcPeeringAuthorizationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateVpcPeeringAuthorizationRequest,CreateVpcPeeringAuthorizationResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CreateVpcPeeringConnection
+
+        internal CreateVpcPeeringConnectionResponse CreateVpcPeeringConnection(CreateVpcPeeringConnectionRequest request)
+        {
+            var marshaller = new CreateVpcPeeringConnectionRequestMarshaller();
+            var unmarshaller = CreateVpcPeeringConnectionResponseUnmarshaller.Instance;
+
+            return Invoke<CreateVpcPeeringConnectionRequest,CreateVpcPeeringConnectionResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateVpcPeeringConnection operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateVpcPeeringConnection operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreateVpcPeeringConnection">REST API Reference for CreateVpcPeeringConnection Operation</seealso>
+        public Task<CreateVpcPeeringConnectionResponse> CreateVpcPeeringConnectionAsync(CreateVpcPeeringConnectionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new CreateVpcPeeringConnectionRequestMarshaller();
+            var unmarshaller = CreateVpcPeeringConnectionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateVpcPeeringConnectionRequest,CreateVpcPeeringConnectionResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeleteAlias
 
         internal DeleteAliasResponse DeleteAlias(DeleteAliasRequest request)
@@ -1633,6 +1730,70 @@ namespace Amazon.GameLift
             var unmarshaller = DeleteScalingPolicyResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteScalingPolicyRequest,DeleteScalingPolicyResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteVpcPeeringAuthorization
+
+        internal DeleteVpcPeeringAuthorizationResponse DeleteVpcPeeringAuthorization(DeleteVpcPeeringAuthorizationRequest request)
+        {
+            var marshaller = new DeleteVpcPeeringAuthorizationRequestMarshaller();
+            var unmarshaller = DeleteVpcPeeringAuthorizationResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteVpcPeeringAuthorizationRequest,DeleteVpcPeeringAuthorizationResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteVpcPeeringAuthorization operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteVpcPeeringAuthorization operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DeleteVpcPeeringAuthorization">REST API Reference for DeleteVpcPeeringAuthorization Operation</seealso>
+        public Task<DeleteVpcPeeringAuthorizationResponse> DeleteVpcPeeringAuthorizationAsync(DeleteVpcPeeringAuthorizationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DeleteVpcPeeringAuthorizationRequestMarshaller();
+            var unmarshaller = DeleteVpcPeeringAuthorizationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteVpcPeeringAuthorizationRequest,DeleteVpcPeeringAuthorizationResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteVpcPeeringConnection
+
+        internal DeleteVpcPeeringConnectionResponse DeleteVpcPeeringConnection(DeleteVpcPeeringConnectionRequest request)
+        {
+            var marshaller = new DeleteVpcPeeringConnectionRequestMarshaller();
+            var unmarshaller = DeleteVpcPeeringConnectionResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteVpcPeeringConnectionRequest,DeleteVpcPeeringConnectionResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteVpcPeeringConnection operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteVpcPeeringConnection operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DeleteVpcPeeringConnection">REST API Reference for DeleteVpcPeeringConnection Operation</seealso>
+        public Task<DeleteVpcPeeringConnectionResponse> DeleteVpcPeeringConnectionAsync(DeleteVpcPeeringConnectionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DeleteVpcPeeringConnectionRequestMarshaller();
+            var unmarshaller = DeleteVpcPeeringConnectionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteVpcPeeringConnectionRequest,DeleteVpcPeeringConnectionResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -2631,6 +2792,70 @@ namespace Amazon.GameLift
             var unmarshaller = DescribeScalingPoliciesResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeScalingPoliciesRequest,DescribeScalingPoliciesResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeVpcPeeringAuthorizations
+
+        internal DescribeVpcPeeringAuthorizationsResponse DescribeVpcPeeringAuthorizations(DescribeVpcPeeringAuthorizationsRequest request)
+        {
+            var marshaller = new DescribeVpcPeeringAuthorizationsRequestMarshaller();
+            var unmarshaller = DescribeVpcPeeringAuthorizationsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeVpcPeeringAuthorizationsRequest,DescribeVpcPeeringAuthorizationsResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeVpcPeeringAuthorizations operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeVpcPeeringAuthorizations operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeVpcPeeringAuthorizations">REST API Reference for DescribeVpcPeeringAuthorizations Operation</seealso>
+        public Task<DescribeVpcPeeringAuthorizationsResponse> DescribeVpcPeeringAuthorizationsAsync(DescribeVpcPeeringAuthorizationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DescribeVpcPeeringAuthorizationsRequestMarshaller();
+            var unmarshaller = DescribeVpcPeeringAuthorizationsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeVpcPeeringAuthorizationsRequest,DescribeVpcPeeringAuthorizationsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeVpcPeeringConnections
+
+        internal DescribeVpcPeeringConnectionsResponse DescribeVpcPeeringConnections(DescribeVpcPeeringConnectionsRequest request)
+        {
+            var marshaller = new DescribeVpcPeeringConnectionsRequestMarshaller();
+            var unmarshaller = DescribeVpcPeeringConnectionsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeVpcPeeringConnectionsRequest,DescribeVpcPeeringConnectionsResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeVpcPeeringConnections operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeVpcPeeringConnections operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeVpcPeeringConnections">REST API Reference for DescribeVpcPeeringConnections Operation</seealso>
+        public Task<DescribeVpcPeeringConnectionsResponse> DescribeVpcPeeringConnectionsAsync(DescribeVpcPeeringConnectionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DescribeVpcPeeringConnectionsRequestMarshaller();
+            var unmarshaller = DescribeVpcPeeringConnectionsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeVpcPeeringConnectionsRequest,DescribeVpcPeeringConnectionsResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 

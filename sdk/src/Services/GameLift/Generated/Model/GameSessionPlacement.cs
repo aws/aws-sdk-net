@@ -370,21 +370,21 @@ namespace Amazon.GameLift.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <b>PENDING</b> – The placement request is currently in the queue waiting to be processed.
+        ///  <b>PENDING</b> -- The placement request is currently in the queue waiting to be processed.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>FULFILLED</b> – A new game session and player sessions (if requested) have been
+        ///  <b>FULFILLED</b> -- A new game session and player sessions (if requested) have been
         /// successfully created. Values for <i>GameSessionArn</i> and <i>GameSessionRegion</i>
         /// are available. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>CANCELLED</b> – The placement request was canceled with a call to <a>StopGameSessionPlacement</a>.
+        ///  <b>CANCELLED</b> -- The placement request was canceled with a call to <a>StopGameSessionPlacement</a>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>TIMED_OUT</b> – A new game session was not successfully created before the time
+        ///  <b>TIMED_OUT</b> -- A new game session was not successfully created before the time
         /// limit expired. You can resubmit the placement request as needed.
         /// </para>
         ///  </li> </ul>

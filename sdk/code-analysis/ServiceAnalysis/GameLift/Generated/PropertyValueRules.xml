@@ -42,6 +42,16 @@
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.GameLift.Model.CreateFleetRequest.PeerVpcAwsAccountId</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GameLift.Model.CreateFleetRequest.PeerVpcId</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.GameLift.Model.CreateFleetRequest.ServerLaunchParameters</property>
     <min>1</min>
     <max>1024</max>
@@ -111,7 +121,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLift.Model.CreateMatchmakingConfigurationRequest.CustomEventData</property>
-    <min>1</min>
+    <min>0</min>
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
@@ -132,9 +142,9 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLift.Model.CreateMatchmakingConfigurationRequest.NotificationTarget</property>
-    <min>1</min>
+    <min>0</min>
     <max>300</max>
-    <pattern>[a-zA-Z0-9:_/-]+</pattern>
+    <pattern>[a-zA-Z0-9:_/-]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLift.Model.CreateMatchmakingConfigurationRequest.RequestTimeoutSeconds</property>
@@ -181,6 +191,30 @@
     <pattern>[a-zA-Z0-9:/-]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.GameLift.Model.CreateVpcPeeringAuthorizationRequest.GameLiftAwsAccountId</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GameLift.Model.CreateVpcPeeringAuthorizationRequest.PeerVpcId</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GameLift.Model.CreateVpcPeeringConnectionRequest.FleetId</property>
+    <pattern>^fleet-\S+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GameLift.Model.CreateVpcPeeringConnectionRequest.PeerVpcAwsAccountId</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GameLift.Model.CreateVpcPeeringConnectionRequest.PeerVpcId</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.GameLift.Model.DeleteAliasRequest.AliasId</property>
     <pattern>^alias-\S+</pattern>
   </property-value-rule>
@@ -210,6 +244,25 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLift.Model.DeleteScalingPolicyRequest.Name</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GameLift.Model.DeleteVpcPeeringAuthorizationRequest.GameLiftAwsAccountId</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GameLift.Model.DeleteVpcPeeringAuthorizationRequest.PeerVpcId</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GameLift.Model.DeleteVpcPeeringConnectionRequest.FleetId</property>
+    <pattern>^fleet-\S+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GameLift.Model.DeleteVpcPeeringConnectionRequest.VpcPeeringConnectionId</property>
     <min>1</min>
     <max>1024</max>
   </property-value-rule>
@@ -483,6 +536,10 @@
     <property>Amazon.GameLift.Model.DescribeScalingPoliciesResponse.NextToken</property>
     <min>1</min>
     <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GameLift.Model.DescribeVpcPeeringConnectionsRequest.FleetId</property>
+    <pattern>^fleet-\S+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLift.Model.GetGameSessionLogUrlRequest.GameSessionId</property>
@@ -772,7 +829,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLift.Model.UpdateMatchmakingConfigurationRequest.CustomEventData</property>
-    <min>1</min>
+    <min>0</min>
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
@@ -793,9 +850,9 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLift.Model.UpdateMatchmakingConfigurationRequest.NotificationTarget</property>
-    <min>1</min>
+    <min>0</min>
     <max>300</max>
-    <pattern>[a-zA-Z0-9:_/-]+</pattern>
+    <pattern>[a-zA-Z0-9:_/-]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLift.Model.UpdateMatchmakingConfigurationRequest.RequestTimeoutSeconds</property>
@@ -1198,7 +1255,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLift.Model.MatchmakingConfiguration.CustomEventData</property>
-    <min>1</min>
+    <min>0</min>
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
@@ -1219,9 +1276,9 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLift.Model.MatchmakingConfiguration.NotificationTarget</property>
-    <min>1</min>
+    <min>0</min>
     <max>300</max>
-    <pattern>[a-zA-Z0-9:_/-]+</pattern>
+    <pattern>[a-zA-Z0-9:_/-]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLift.Model.MatchmakingConfiguration.RequestTimeoutSeconds</property>
@@ -1250,6 +1307,10 @@
     <min>1</min>
     <max>128</max>
     <pattern>[a-zA-Z0-9-\.]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GameLift.Model.MatchmakingTicket.EstimatedWaitTime</property>
+    <min>0</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLift.Model.MatchmakingTicket.TicketId</property>
@@ -1399,5 +1460,54 @@
   <property-value-rule>
     <property>Amazon.GameLift.Model.UnsupportedRegionException.Message</property>
     <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GameLift.Model.VpcPeeringAuthorization.GameLiftAwsAccountId</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GameLift.Model.VpcPeeringAuthorization.PeerVpcAwsAccountId</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GameLift.Model.VpcPeeringAuthorization.PeerVpcId</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GameLift.Model.VpcPeeringConnection.FleetId</property>
+    <pattern>^fleet-\S+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GameLift.Model.VpcPeeringConnection.GameLiftVpcId</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GameLift.Model.VpcPeeringConnection.IpV4CidrBlock</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GameLift.Model.VpcPeeringConnection.PeerVpcId</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GameLift.Model.VpcPeeringConnection.VpcPeeringConnectionId</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GameLift.Model.VpcPeeringConnectionStatus.Code</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GameLift.Model.VpcPeeringConnectionStatus.Message</property>
+    <min>1</min>
+    <max>1024</max>
   </property-value-rule>
 </property-value-rules>

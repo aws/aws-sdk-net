@@ -173,13 +173,13 @@ namespace Amazon.GameLift.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <b>SIMPLE</b> – The alias resolves to one specific fleet. Use this type when routing
+        ///  <b>SIMPLE</b> -- The alias resolves to one specific fleet. Use this type when routing
         /// to active fleets.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>TERMINAL</b> – The alias does not resolve to a fleet but instead can be used to
-        /// display a message to the user. A terminal alias throws a TerminalRoutingStrategyException
+        ///  <b>TERMINAL</b> -- The alias does not resolve to a fleet but instead can be used
+        /// to display a message to the user. A terminal alias throws a TerminalRoutingStrategyException
         /// with the <a>RoutingStrategy</a> message embedded.
         /// </para>
         ///  </li> </ul>

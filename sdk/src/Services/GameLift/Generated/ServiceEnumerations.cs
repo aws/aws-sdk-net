@@ -289,6 +289,30 @@ namespace Amazon.GameLift
         /// </summary>
         public static readonly EC2InstanceType R3Xlarge = new EC2InstanceType("r3.xlarge");
         /// <summary>
+        /// Constant R416xlarge for EC2InstanceType
+        /// </summary>
+        public static readonly EC2InstanceType R416xlarge = new EC2InstanceType("r4.16xlarge");
+        /// <summary>
+        /// Constant R42xlarge for EC2InstanceType
+        /// </summary>
+        public static readonly EC2InstanceType R42xlarge = new EC2InstanceType("r4.2xlarge");
+        /// <summary>
+        /// Constant R44xlarge for EC2InstanceType
+        /// </summary>
+        public static readonly EC2InstanceType R44xlarge = new EC2InstanceType("r4.4xlarge");
+        /// <summary>
+        /// Constant R48xlarge for EC2InstanceType
+        /// </summary>
+        public static readonly EC2InstanceType R48xlarge = new EC2InstanceType("r4.8xlarge");
+        /// <summary>
+        /// Constant R4Large for EC2InstanceType
+        /// </summary>
+        public static readonly EC2InstanceType R4Large = new EC2InstanceType("r4.large");
+        /// <summary>
+        /// Constant R4Xlarge for EC2InstanceType
+        /// </summary>
+        public static readonly EC2InstanceType R4Xlarge = new EC2InstanceType("r4.xlarge");
+        /// <summary>
         /// Constant T2Large for EC2InstanceType
         /// </summary>
         public static readonly EC2InstanceType T2Large = new EC2InstanceType("t2.large");
@@ -426,6 +450,18 @@ namespace Amazon.GameLift
         /// Constant FLEET_VALIDATION_TIMED_OUT for EventCode
         /// </summary>
         public static readonly EventCode FLEET_VALIDATION_TIMED_OUT = new EventCode("FLEET_VALIDATION_TIMED_OUT");
+        /// <summary>
+        /// Constant FLEET_VPC_PEERING_DELETED for EventCode
+        /// </summary>
+        public static readonly EventCode FLEET_VPC_PEERING_DELETED = new EventCode("FLEET_VPC_PEERING_DELETED");
+        /// <summary>
+        /// Constant FLEET_VPC_PEERING_FAILED for EventCode
+        /// </summary>
+        public static readonly EventCode FLEET_VPC_PEERING_FAILED = new EventCode("FLEET_VPC_PEERING_FAILED");
+        /// <summary>
+        /// Constant FLEET_VPC_PEERING_SUCCEEDED for EventCode
+        /// </summary>
+        public static readonly EventCode FLEET_VPC_PEERING_SUCCEEDED = new EventCode("FLEET_VPC_PEERING_SUCCEEDED");
         /// <summary>
         /// Constant GAME_SESSION_ACTIVATION_TIMEOUT for EventCode
         /// </summary>

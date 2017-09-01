@@ -135,6 +135,18 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.NewGameSessionProtectionPolicy);
                 }
 
+                if(publicRequest.IsSetPeerVpcAwsAccountId())
+                {
+                    context.Writer.WritePropertyName("PeerVpcAwsAccountId");
+                    context.Writer.Write(publicRequest.PeerVpcAwsAccountId);
+                }
+
+                if(publicRequest.IsSetPeerVpcId())
+                {
+                    context.Writer.WritePropertyName("PeerVpcId");
+                    context.Writer.Write(publicRequest.PeerVpcId);
+                }
+
                 if(publicRequest.IsSetResourceCreationLimitPolicy())
                 {
                     context.Writer.WritePropertyName("ResourceCreationLimitPolicy");

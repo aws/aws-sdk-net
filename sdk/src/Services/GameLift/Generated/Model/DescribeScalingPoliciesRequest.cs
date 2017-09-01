@@ -200,31 +200,31 @@ namespace Amazon.GameLift.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <b>ACTIVE</b> – The scaling policy is currently in force.
+        ///  <b>ACTIVE</b> -- The scaling policy is currently in force.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>UPDATEREQUESTED</b> – A request to update the scaling policy has been received.
+        ///  <b>UPDATEREQUESTED</b> -- A request to update the scaling policy has been received.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>UPDATING</b> – A change is being made to the scaling policy.
+        ///  <b>UPDATING</b> -- A change is being made to the scaling policy.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>DELETEREQUESTED</b> – A request to delete the scaling policy has been received.
+        ///  <b>DELETEREQUESTED</b> -- A request to delete the scaling policy has been received.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>DELETING</b> – The scaling policy is being deleted.
+        ///  <b>DELETING</b> -- The scaling policy is being deleted.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>DELETED</b> – The scaling policy has been deleted.
+        ///  <b>DELETED</b> -- The scaling policy has been deleted.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>ERROR</b> – An error occurred in creating the policy. It should be removed and
+        ///  <b>ERROR</b> -- An error occurred in creating the policy. It should be removed and
         /// recreated.
         /// </para>
         ///  </li> </ul>

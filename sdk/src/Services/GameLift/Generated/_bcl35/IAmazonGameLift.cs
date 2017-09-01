@@ -43,12 +43,12 @@ namespace Amazon.GameLift
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <b>Manage game sessions and player access</b> – Retrieve information on available
+    ///  <b>Manage game sessions and player access</b> -- Retrieve information on available
     /// game sessions; create new game sessions; send player requests to join a game session.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <b>Configure and manage game server resources</b> – Manage builds, fleets, queues,
+    ///  <b>Configure and manage game server resources</b> -- Manage builds, fleets, queues,
     /// and aliases; set autoscaling policies; retrieve logs and metrics.
     /// </para>
     ///  </li> </ul> 
@@ -92,28 +92,28 @@ namespace Amazon.GameLift
     ///  <ul> <li> 
     /// <para>
     ///  <a href="http://docs.aws.amazon.com/gamelift/latest/developerguide/">Amazon GameLift
-    /// Developer Guide</a> – Learn more about Amazon GameLift features and how to use them.
+    /// Developer Guide</a> -- Learn more about Amazon GameLift features and how to use them.
     /// 
     /// </para>
     ///  </li> <li> 
     /// <para>
     ///  <a href="https://gamedev.amazon.com/forums/tutorials">Lumberyard and Amazon GameLift
-    /// Tutorials</a> – Get started fast with walkthroughs and sample projects.
+    /// Tutorials</a> -- Get started fast with walkthroughs and sample projects.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a href="http://aws.amazon.com/blogs/gamedev/">GameDev Blog</a> – Stay up to date
+    ///  <a href="http://aws.amazon.com/blogs/gamedev/">GameDev Blog</a> -- Stay up to date
     /// with new features and techniques.
     /// </para>
     ///  </li> <li> 
     /// <para>
     ///  <a href="https://gamedev.amazon.com/forums/spaces/123/gamelift-discussion.html">GameDev
-    /// Forums</a> – Connect with the GameDev community.
+    /// Forums</a> -- Connect with the GameDev community.
     /// </para>
     ///  </li> <li> 
     /// <para>
     ///  <a href="http://docs.aws.amazon.com/gamelift/latest/developerguide/doc-history.html">Amazon
-    /// GameLift Document History</a> – See changes to the Amazon GameLift service, SDKs,
+    /// GameLift Document History</a> -- See changes to the Amazon GameLift service, SDKs,
     /// and documentation, as well as links to release notes. 
     /// </para>
     ///  </li> </ul> 
@@ -139,7 +139,7 @@ namespace Amazon.GameLift
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <a>SearchGameSessions</a> – Retrieve all available game sessions or search for game
+    ///  <a>SearchGameSessions</a> -- Retrieve all available game sessions or search for game
     /// sessions that match a set of criteria. 
     /// </para>
     ///  </li> </ul> </li> <li> 
@@ -154,21 +154,21 @@ namespace Amazon.GameLift
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <a>StartGameSessionPlacement</a> – Request a new game session placement and add one
-    /// or more players to it.
+    ///  <a>StartGameSessionPlacement</a> -- Request a new game session placement and add
+    /// one or more players to it.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a>DescribeGameSessionPlacement</a> – Get details on a placement request, including
+    ///  <a>DescribeGameSessionPlacement</a> -- Get details on a placement request, including
     /// status.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a>StopGameSessionPlacement</a> – Cancel a placement request. 
+    ///  <a>StopGameSessionPlacement</a> -- Cancel a placement request. 
     /// </para>
     ///  </li> </ul> </li> <li> 
     /// <para>
-    ///  <a>CreateGameSession</a> – Start a new game session on a specific fleet. <i>Available
+    ///  <a>CreateGameSession</a> -- Start a new game session on a specific fleet. <i>Available
     /// in Amazon GameLift Local.</i> 
     /// </para>
     ///  </li> </ul> </li> <li> 
@@ -177,21 +177,21 @@ namespace Amazon.GameLift
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <a>StartMatchmaking</a> – Request matchmaking for one players or a group who want
+    ///  <a>StartMatchmaking</a> -- Request matchmaking for one players or a group who want
     /// to play together. 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a>DescribeMatchmaking</a> – Get details on a matchmaking request, including status.
+    ///  <a>DescribeMatchmaking</a> -- Get details on a matchmaking request, including status.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a>AcceptMatch</a> – Register that a player accepts a proposed match, for matches
+    ///  <a>AcceptMatch</a> -- Register that a player accepts a proposed match, for matches
     /// that require player acceptance. 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a>StopMatchmaking</a> – Cancel a matchmaking request. 
+    ///  <a>StopMatchmaking</a> -- Cancel a matchmaking request. 
     /// </para>
     ///  </li> </ul> </li> <li> 
     /// <para>
@@ -199,23 +199,23 @@ namespace Amazon.GameLift
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <a>DescribeGameSessions</a> – Retrieve metadata for one or more game sessions, including
+    ///  <a>DescribeGameSessions</a> -- Retrieve metadata for one or more game sessions, including
     /// length of time active and current player count. <i>Available in Amazon GameLift Local.</i>
     /// 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a>DescribeGameSessionDetails</a> – Retrieve metadata and the game session protection
+    ///  <a>DescribeGameSessionDetails</a> -- Retrieve metadata and the game session protection
     /// setting for one or more game sessions.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a>UpdateGameSession</a> – Change game session settings, such as maximum player count
-    /// and join policy.
+    ///  <a>UpdateGameSession</a> -- Change game session settings, such as maximum player
+    /// count and join policy.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a>GetGameSessionLogUrl</a> – Get the location of saved logs for a game session.
+    ///  <a>GetGameSessionLogUrl</a> -- Get the location of saved logs for a game session.
     /// </para>
     ///  </li> </ul> </li> <li> 
     /// <para>
@@ -223,17 +223,17 @@ namespace Amazon.GameLift
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <a>CreatePlayerSession</a> – Send a request for a player to join a game session.
+    ///  <a>CreatePlayerSession</a> -- Send a request for a player to join a game session.
     /// <i>Available in Amazon GameLift Local.</i> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a>CreatePlayerSessions</a> – Send a request for multiple players to join a game
+    ///  <a>CreatePlayerSessions</a> -- Send a request for multiple players to join a game
     /// session. <i>Available in Amazon GameLift Local.</i> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a>DescribePlayerSessions</a> – Get details on player activity, including status,
+    ///  <a>DescribePlayerSessions</a> -- Get details on player activity, including status,
     /// playing time, and player data. <i>Available in Amazon GameLift Local.</i> 
     /// </para>
     ///  </li> </ul> </li> </ul> 
@@ -253,25 +253,25 @@ namespace Amazon.GameLift
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <a>CreateBuild</a> – Create a new build using files stored in an Amazon S3 bucket.
+    ///  <a>CreateBuild</a> -- Create a new build using files stored in an Amazon S3 bucket.
     /// (Update uploading permissions with <a>RequestUploadCredentials</a>.) To create a build
     /// and upload files from a local path, use the AWS CLI command <code>upload-build</code>.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a>ListBuilds</a> – Get a list of all builds uploaded to a Amazon GameLift region.
+    ///  <a>ListBuilds</a> -- Get a list of all builds uploaded to a Amazon GameLift region.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a>DescribeBuild</a> – Retrieve information associated with a build.
+    ///  <a>DescribeBuild</a> -- Retrieve information associated with a build.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a>UpdateBuild</a> – Change build metadata, including build name and version.
+    ///  <a>UpdateBuild</a> -- Change build metadata, including build name and version.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a>DeleteBuild</a> – Remove a build from Amazon GameLift.
+    ///  <a>DeleteBuild</a> -- Remove a build from Amazon GameLift.
     /// </para>
     ///  </li> </ul> </li> <li> 
     /// <para>
@@ -279,16 +279,16 @@ namespace Amazon.GameLift
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <a>CreateFleet</a> – Configure and activate a new fleet to run a build's game servers.
+    ///  <a>CreateFleet</a> -- Configure and activate a new fleet to run a build's game servers.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a>ListFleets</a> – Get a list of all fleet IDs in a Amazon GameLift region (all
+    ///  <a>ListFleets</a> -- Get a list of all fleet IDs in a Amazon GameLift region (all
     /// statuses).
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a>DeleteFleet</a> – Terminate a fleet that is no longer running game servers or
+    ///  <a>DeleteFleet</a> -- Terminate a fleet that is no longer running game servers or
     /// hosting players.
     /// </para>
     ///  </li> <li> 
@@ -297,17 +297,17 @@ namespace Amazon.GameLift
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <a>DescribeFleetAttributes</a> / <a>UpdateFleetAttributes</a> – View or change a
+    ///  <a>DescribeFleetAttributes</a> / <a>UpdateFleetAttributes</a> -- View or change a
     /// fleet's metadata and settings for game session protection and resource creation limits.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a>DescribeFleetPortSettings</a> / <a>UpdateFleetPortSettings</a> – View or change
+    ///  <a>DescribeFleetPortSettings</a> / <a>UpdateFleetPortSettings</a> -- View or change
     /// the inbound permissions (IP address and port setting ranges) allowed for a fleet.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a>DescribeRuntimeConfiguration</a> / <a>UpdateRuntimeConfiguration</a> – View or
+    ///  <a>DescribeRuntimeConfiguration</a> / <a>UpdateRuntimeConfiguration</a> -- View or
     /// change what server processes (and how many) to run on each instance in a fleet.
     /// </para>
     ///  </li> </ul> </li> </ul> </li> <li> 
@@ -316,49 +316,82 @@ namespace Amazon.GameLift
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <a>DescribeEC2InstanceLimits</a> – Retrieve maximum number of instances allowed for
-    /// the current AWS account and the current usage level.
+    ///  <a>DescribeEC2InstanceLimits</a> -- Retrieve maximum number of instances allowed
+    /// for the current AWS account and the current usage level.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a>DescribeFleetCapacity</a> / <a>UpdateFleetCapacity</a> – Retrieve the capacity
+    ///  <a>DescribeFleetCapacity</a> / <a>UpdateFleetCapacity</a> -- Retrieve the capacity
     /// settings and the current number of instances in a fleet; adjust fleet capacity settings
     /// to scale up or down.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Autoscale – Manage autoscaling rules and apply them to a fleet.
+    /// Autoscale -- Manage autoscaling rules and apply them to a fleet.
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <a>PutScalingPolicy</a> – Create a new autoscaling policy, or update an existing
+    ///  <a>PutScalingPolicy</a> -- Create a new autoscaling policy, or update an existing
     /// one.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a>DescribeScalingPolicies</a> – Retrieve an existing autoscaling policy.
+    ///  <a>DescribeScalingPolicies</a> -- Retrieve an existing autoscaling policy.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a>DeleteScalingPolicy</a> – Delete an autoscaling policy and stop it from affecting
+    ///  <a>DeleteScalingPolicy</a> -- Delete an autoscaling policy and stop it from affecting
     /// a fleet's capacity.
     /// </para>
     ///  </li> </ul> </li> </ul> </li> <li> 
+    /// <para>
+    ///  <b>Manage VPC peering connections for fleets</b> 
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <a>CreateVpcPeeringAuthorization</a> -- Authorize a peering connection to one of
+    /// your VPCs.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>DescribeVpcPeeringAuthorizations</a> -- Retrieve valid peering connection authorizations.
+    /// 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>DeleteVpcPeeringAuthorization</a> -- Delete a peering connection authorization.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>CreateVpcPeeringConnection</a> -- Establish a peering connection between the VPC
+    /// for a Amazon GameLift fleet and one of your VPCs.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>DescribeVpcPeeringConnections</a> -- Retrieve information on active or pending
+    /// VPC peering connections with a Amazon GameLift fleet.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>DeleteVpcPeeringConnection</a> -- Delete a VPC peering connection with a Amazon
+    /// GameLift fleet.
+    /// </para>
+    ///  </li> </ul> </li> <li> 
     /// <para>
     ///  <b>Access fleet activity statistics</b> 
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <a>DescribeFleetUtilization</a> – Get current data on the number of server processes,
+    ///  <a>DescribeFleetUtilization</a> -- Get current data on the number of server processes,
     /// game sessions, and players currently active on a fleet.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a>DescribeFleetEvents</a> – Get a fleet's logged events for a specified time span.
+    ///  <a>DescribeFleetEvents</a> -- Get a fleet's logged events for a specified time span.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a>DescribeGameSessions</a> – Retrieve metadata associated with one or more game
+    ///  <a>DescribeGameSessions</a> -- Retrieve metadata associated with one or more game
     /// sessions, including length of time active and current player count.
     /// </para>
     ///  </li> </ul> </li> <li> 
@@ -367,12 +400,12 @@ namespace Amazon.GameLift
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <a>DescribeInstances</a> – Get information on each instance in a fleet, including
+    ///  <a>DescribeInstances</a> -- Get information on each instance in a fleet, including
     /// instance ID, IP address, and status.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a>GetInstanceAccess</a> – Request access credentials needed to remotely connect
+    ///  <a>GetInstanceAccess</a> -- Request access credentials needed to remotely connect
     /// to a specified instance in a fleet.
     /// </para>
     ///  </li> </ul> </li> <li> 
@@ -381,28 +414,28 @@ namespace Amazon.GameLift
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <a>CreateAlias</a> – Define a new alias and optionally assign it to a fleet.
+    ///  <a>CreateAlias</a> -- Define a new alias and optionally assign it to a fleet.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a>ListAliases</a> – Get all fleet aliases defined in a Amazon GameLift region.
+    ///  <a>ListAliases</a> -- Get all fleet aliases defined in a Amazon GameLift region.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a>DescribeAlias</a> – Retrieve information on an existing alias.
+    ///  <a>DescribeAlias</a> -- Retrieve information on an existing alias.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a>UpdateAlias</a> – Change settings for a alias, such as redirecting it from one
+    ///  <a>UpdateAlias</a> -- Change settings for a alias, such as redirecting it from one
     /// fleet to another.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a>DeleteAlias</a> – Remove an alias from the region.
+    ///  <a>DeleteAlias</a> -- Remove an alias from the region.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a>ResolveAlias</a> – Get the fleet ID that a specified alias points to.
+    ///  <a>ResolveAlias</a> -- Get the fleet ID that a specified alias points to.
     /// </para>
     ///  </li> </ul> </li> <li> 
     /// <para>
@@ -410,21 +443,21 @@ namespace Amazon.GameLift
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <a>CreateGameSessionQueue</a> – Create a queue for processing requests for new game
+    ///  <a>CreateGameSessionQueue</a> -- Create a queue for processing requests for new game
     /// sessions. 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a>DescribeGameSessionQueues</a> – Retrieve game session queues defined in a Amazon
+    ///  <a>DescribeGameSessionQueues</a> -- Retrieve game session queues defined in a Amazon
     /// GameLift region.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a>UpdateGameSessionQueue</a> – Change the configuration of a game session queue.
+    ///  <a>UpdateGameSessionQueue</a> -- Change the configuration of a game session queue.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a>DeleteGameSessionQueue</a> – Remove a game session queue from the region.
+    ///  <a>DeleteGameSessionQueue</a> -- Remove a game session queue from the region.
     /// </para>
     ///  </li> </ul> </li> <li> 
     /// <para>
@@ -432,37 +465,37 @@ namespace Amazon.GameLift
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <a>CreateMatchmakingConfiguration</a> – Create a matchmaking configuration with instructions
-    /// for building a player group and placing in a new game session. 
+    ///  <a>CreateMatchmakingConfiguration</a> -- Create a matchmaking configuration with
+    /// instructions for building a player group and placing in a new game session. 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a>DescribeMatchmakingConfigurations</a> – Retrieve matchmaking configurations defined
+    ///  <a>DescribeMatchmakingConfigurations</a> -- Retrieve matchmaking configurations defined
     /// a Amazon GameLift region.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a>UpdateMatchmakingConfiguration</a> – Change settings for matchmaking configuration.
+    ///  <a>UpdateMatchmakingConfiguration</a> -- Change settings for matchmaking configuration.
     /// queue.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a>DeleteMatchmakingConfiguration</a> – Remove a matchmaking configuration from the
-    /// region.
+    ///  <a>DeleteMatchmakingConfiguration</a> -- Remove a matchmaking configuration from
+    /// the region.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a>CreateMatchmakingRuleSet</a> – Create a set of rules to use when searching for
+    ///  <a>CreateMatchmakingRuleSet</a> -- Create a set of rules to use when searching for
     /// player matches. 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a>DescribeMatchmakingRuleSets</a> – Retrieve matchmaking rule sets defined in a
+    ///  <a>DescribeMatchmakingRuleSets</a> -- Retrieve matchmaking rule sets defined in a
     /// Amazon GameLift region.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a>ValidateMatchmakingRuleSet</a> – Verify syntax for a set of matchmaking rules.
+    ///  <a>ValidateMatchmakingRuleSet</a> -- Verify syntax for a set of matchmaking rules.
     /// 
     /// </para>
     ///  </li> </ul> </li> </ul>
@@ -830,6 +863,12 @@ namespace Amazon.GameLift
         /// If you use Amazon CloudWatch for metrics, you can add the new fleet to a metric group.
         /// This allows you to view aggregated metrics for a set of fleets. Once you specify a
         /// metric group, the new fleet's metrics are included in the metric group's data.
+        /// </para>
+        ///  
+        /// <para>
+        /// You have the option of creating a VPC peering connection with the new fleet. For more
+        /// information, see <a href="http://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC
+        /// Peering with Amazon GameLift Fleets</a>.
         /// </para>
         ///  
         /// <para>
@@ -1929,6 +1968,235 @@ namespace Amazon.GameLift
 
         #endregion
         
+        #region  CreateVpcPeeringAuthorization
+
+
+        /// <summary>
+        /// Requests authorization to create or delete a peer connection between the VPC for your
+        /// Amazon GameLift fleet and a virtual private cloud (VPC) in your AWS account. VPC peering
+        /// enables the game servers on your fleet to communicate directly with other AWS resources.
+        /// Once you've received authorization, call <a>CreateVpcPeeringConnection</a> to establish
+        /// the peering connection. For more information, see <a href="http://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC
+        /// Peering with Amazon GameLift Fleets</a>.
+        /// 
+        ///  
+        /// <para>
+        /// You can peer with VPCs that are owned by any AWS account you have access to, including
+        /// the account that you use to manage your Amazon GameLift fleets. You cannot peer with
+        /// VPCs that are in different regions.
+        /// </para>
+        ///  
+        /// <para>
+        /// To request authorization to create a connection, call this operation from the AWS
+        /// account with the VPC that you want to peer to your Amazon GameLift fleet. For example,
+        /// to enable your game servers to retrieve data from a DynamoDB table, use the account
+        /// that manages that DynamoDB resource. Identify the following values: (1) The ID of
+        /// the VPC that you want to peer with, and (2) the ID of the AWS account that you use
+        /// to manage Amazon GameLift. If successful, VPC peering is authorized for the specified
+        /// VPC. 
+        /// </para>
+        ///  
+        /// <para>
+        /// To request authorization to delete a connection, call this operation from the AWS
+        /// account with the VPC that is peered with your Amazon GameLift fleet. Identify the
+        /// following values: (1) VPC ID that you want to delete the peering connection for, and
+        /// (2) ID of the AWS account that you use to manage Amazon GameLift. 
+        /// </para>
+        ///  
+        /// <para>
+        /// The authorization remains valid for 24 hours unless it is canceled by a call to <a>DeleteVpcPeeringAuthorization</a>.
+        /// You must create or delete the peering connection while the authorization is valid.
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        /// VPC peering connection operations include:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a>CreateVpcPeeringAuthorization</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeVpcPeeringAuthorizations</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DeleteVpcPeeringAuthorization</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>CreateVpcPeeringConnection</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeVpcPeeringConnections</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DeleteVpcPeeringConnection</a> 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateVpcPeeringAuthorization service method.</param>
+        /// 
+        /// <returns>The response from the CreateVpcPeeringAuthorization service method, as returned by GameLift.</returns>
+        /// <exception cref="Amazon.GameLift.Model.InternalServiceException">
+        /// The service encountered an unrecoverable internal failure while processing the request.
+        /// Clients can retry such requests immediately or after a waiting period.
+        /// </exception>
+        /// <exception cref="Amazon.GameLift.Model.InvalidRequestException">
+        /// One or more parameter values in the request are invalid. Correct the invalid parameter
+        /// values before retrying.
+        /// </exception>
+        /// <exception cref="Amazon.GameLift.Model.NotFoundException">
+        /// A service resource associated with the request could not be found. Clients should
+        /// not retry such requests.
+        /// </exception>
+        /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
+        /// The client failed authentication. Clients should not retry such requests.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreateVpcPeeringAuthorization">REST API Reference for CreateVpcPeeringAuthorization Operation</seealso>
+        CreateVpcPeeringAuthorizationResponse CreateVpcPeeringAuthorization(CreateVpcPeeringAuthorizationRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateVpcPeeringAuthorization operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateVpcPeeringAuthorization operation on AmazonGameLiftClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateVpcPeeringAuthorization
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreateVpcPeeringAuthorization">REST API Reference for CreateVpcPeeringAuthorization Operation</seealso>
+        IAsyncResult BeginCreateVpcPeeringAuthorization(CreateVpcPeeringAuthorizationRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateVpcPeeringAuthorization operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateVpcPeeringAuthorization.</param>
+        /// 
+        /// <returns>Returns a  CreateVpcPeeringAuthorizationResult from GameLift.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreateVpcPeeringAuthorization">REST API Reference for CreateVpcPeeringAuthorization Operation</seealso>
+        CreateVpcPeeringAuthorizationResponse EndCreateVpcPeeringAuthorization(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  CreateVpcPeeringConnection
+
+
+        /// <summary>
+        /// Establishes a VPC peering connection between a virtual private cloud (VPC) in an AWS
+        /// account with the VPC for your Amazon GameLift fleet. VPC peering enables the game
+        /// servers on your fleet to communicate directly with other AWS resources. You can peer
+        /// with VPCs in any AWS account that you have access to, including the account that you
+        /// use to manage your Amazon GameLift fleets. You cannot peer with VPCs that are in different
+        /// regions. For more information, see <a href="http://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC
+        /// Peering with Amazon GameLift Fleets</a>.
+        /// 
+        ///  
+        /// <para>
+        /// Before calling this operation to establish the peering connection, you first need
+        /// to call <a>CreateVpcPeeringAuthorization</a> and identify the VPC you want to peer
+        /// with. Once the authorization for the specified VPC is issued, you have 24 hours to
+        /// establish the connection. These two operations handle all tasks necessary to peer
+        /// the two VPCs, including acceptance, updating routing tables, etc. 
+        /// </para>
+        ///  
+        /// <para>
+        /// To establish the connection, call this operation from the AWS account that is used
+        /// to manage the Amazon GameLift fleets. Identify the following values: (1) The ID of
+        /// the fleet you want to be enable a VPC peering connection for; (2) The AWS account
+        /// with the VPC that you want to peer with; and (3) The ID of the VPC you want to peer
+        /// with. This operation is asynchronous. If successful, a <a>VpcPeeringConnection</a>
+        /// request is created. You can use continuous polling to track the request's status using
+        /// <a>DescribeVpcPeeringConnections</a>, or by monitoring fleet events for success or
+        /// failure using <a>DescribeFleetEvents</a>. 
+        /// </para>
+        ///  
+        /// <para>
+        /// VPC peering connection operations include:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a>CreateVpcPeeringAuthorization</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeVpcPeeringAuthorizations</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DeleteVpcPeeringAuthorization</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>CreateVpcPeeringConnection</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeVpcPeeringConnections</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DeleteVpcPeeringConnection</a> 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateVpcPeeringConnection service method.</param>
+        /// 
+        /// <returns>The response from the CreateVpcPeeringConnection service method, as returned by GameLift.</returns>
+        /// <exception cref="Amazon.GameLift.Model.InternalServiceException">
+        /// The service encountered an unrecoverable internal failure while processing the request.
+        /// Clients can retry such requests immediately or after a waiting period.
+        /// </exception>
+        /// <exception cref="Amazon.GameLift.Model.InvalidRequestException">
+        /// One or more parameter values in the request are invalid. Correct the invalid parameter
+        /// values before retrying.
+        /// </exception>
+        /// <exception cref="Amazon.GameLift.Model.NotFoundException">
+        /// A service resource associated with the request could not be found. Clients should
+        /// not retry such requests.
+        /// </exception>
+        /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
+        /// The client failed authentication. Clients should not retry such requests.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreateVpcPeeringConnection">REST API Reference for CreateVpcPeeringConnection Operation</seealso>
+        CreateVpcPeeringConnectionResponse CreateVpcPeeringConnection(CreateVpcPeeringConnectionRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateVpcPeeringConnection operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateVpcPeeringConnection operation on AmazonGameLiftClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateVpcPeeringConnection
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreateVpcPeeringConnection">REST API Reference for CreateVpcPeeringConnection Operation</seealso>
+        IAsyncResult BeginCreateVpcPeeringConnection(CreateVpcPeeringConnectionRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateVpcPeeringConnection operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateVpcPeeringConnection.</param>
+        /// 
+        /// <returns>Returns a  CreateVpcPeeringConnectionResult from GameLift.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreateVpcPeeringConnection">REST API Reference for CreateVpcPeeringConnection Operation</seealso>
+        CreateVpcPeeringConnectionResponse EndCreateVpcPeeringConnection(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  DeleteAlias
 
 
@@ -2810,6 +3078,187 @@ namespace Amazon.GameLift
         /// <returns>Returns a  DeleteScalingPolicyResult from GameLift.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DeleteScalingPolicy">REST API Reference for DeleteScalingPolicy Operation</seealso>
         DeleteScalingPolicyResponse EndDeleteScalingPolicy(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DeleteVpcPeeringAuthorization
+
+
+        /// <summary>
+        /// Cancels a pending VPC peering authorization for the specified VPC. If the authorization
+        /// has already been used to create a peering connection, call <a>DeleteVpcPeeringConnection</a>
+        /// to remove the connection. 
+        /// 
+        ///  
+        /// <para>
+        /// VPC peering connection operations include:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a>CreateVpcPeeringAuthorization</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeVpcPeeringAuthorizations</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DeleteVpcPeeringAuthorization</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>CreateVpcPeeringConnection</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeVpcPeeringConnections</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DeleteVpcPeeringConnection</a> 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteVpcPeeringAuthorization service method.</param>
+        /// 
+        /// <returns>The response from the DeleteVpcPeeringAuthorization service method, as returned by GameLift.</returns>
+        /// <exception cref="Amazon.GameLift.Model.InternalServiceException">
+        /// The service encountered an unrecoverable internal failure while processing the request.
+        /// Clients can retry such requests immediately or after a waiting period.
+        /// </exception>
+        /// <exception cref="Amazon.GameLift.Model.InvalidRequestException">
+        /// One or more parameter values in the request are invalid. Correct the invalid parameter
+        /// values before retrying.
+        /// </exception>
+        /// <exception cref="Amazon.GameLift.Model.NotFoundException">
+        /// A service resource associated with the request could not be found. Clients should
+        /// not retry such requests.
+        /// </exception>
+        /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
+        /// The client failed authentication. Clients should not retry such requests.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DeleteVpcPeeringAuthorization">REST API Reference for DeleteVpcPeeringAuthorization Operation</seealso>
+        DeleteVpcPeeringAuthorizationResponse DeleteVpcPeeringAuthorization(DeleteVpcPeeringAuthorizationRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteVpcPeeringAuthorization operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteVpcPeeringAuthorization operation on AmazonGameLiftClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteVpcPeeringAuthorization
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DeleteVpcPeeringAuthorization">REST API Reference for DeleteVpcPeeringAuthorization Operation</seealso>
+        IAsyncResult BeginDeleteVpcPeeringAuthorization(DeleteVpcPeeringAuthorizationRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteVpcPeeringAuthorization operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteVpcPeeringAuthorization.</param>
+        /// 
+        /// <returns>Returns a  DeleteVpcPeeringAuthorizationResult from GameLift.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DeleteVpcPeeringAuthorization">REST API Reference for DeleteVpcPeeringAuthorization Operation</seealso>
+        DeleteVpcPeeringAuthorizationResponse EndDeleteVpcPeeringAuthorization(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DeleteVpcPeeringConnection
+
+
+        /// <summary>
+        /// Removes a VPC peering connection. To delete the connection, you must have a valid
+        /// authorization for the VPC peering connection that you want to delete. You can check
+        /// for an authorization by calling <a>DescribeVpcPeeringAuthorizations</a> or request
+        /// a new one using <a>CreateVpcPeeringAuthorization</a>. 
+        /// 
+        ///  
+        /// <para>
+        /// Once a valid authorization exists, call this operation from the AWS account that is
+        /// used to manage the Amazon GameLift fleets. Identify the connection to delete by the
+        /// connection ID and fleet ID. If successful, the connection is removed. 
+        /// </para>
+        ///  
+        /// <para>
+        /// VPC peering connection operations include:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a>CreateVpcPeeringAuthorization</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeVpcPeeringAuthorizations</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DeleteVpcPeeringAuthorization</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>CreateVpcPeeringConnection</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeVpcPeeringConnections</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DeleteVpcPeeringConnection</a> 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteVpcPeeringConnection service method.</param>
+        /// 
+        /// <returns>The response from the DeleteVpcPeeringConnection service method, as returned by GameLift.</returns>
+        /// <exception cref="Amazon.GameLift.Model.InternalServiceException">
+        /// The service encountered an unrecoverable internal failure while processing the request.
+        /// Clients can retry such requests immediately or after a waiting period.
+        /// </exception>
+        /// <exception cref="Amazon.GameLift.Model.InvalidRequestException">
+        /// One or more parameter values in the request are invalid. Correct the invalid parameter
+        /// values before retrying.
+        /// </exception>
+        /// <exception cref="Amazon.GameLift.Model.NotFoundException">
+        /// A service resource associated with the request could not be found. Clients should
+        /// not retry such requests.
+        /// </exception>
+        /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
+        /// The client failed authentication. Clients should not retry such requests.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DeleteVpcPeeringConnection">REST API Reference for DeleteVpcPeeringConnection Operation</seealso>
+        DeleteVpcPeeringConnectionResponse DeleteVpcPeeringConnection(DeleteVpcPeeringConnectionRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteVpcPeeringConnection operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteVpcPeeringConnection operation on AmazonGameLiftClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteVpcPeeringConnection
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DeleteVpcPeeringConnection">REST API Reference for DeleteVpcPeeringConnection Operation</seealso>
+        IAsyncResult BeginDeleteVpcPeeringConnection(DeleteVpcPeeringConnectionRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteVpcPeeringConnection operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteVpcPeeringConnection.</param>
+        /// 
+        /// <returns>Returns a  DeleteVpcPeeringConnectionResult from GameLift.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DeleteVpcPeeringConnection">REST API Reference for DeleteVpcPeeringConnection Operation</seealso>
+        DeleteVpcPeeringConnectionResponse EndDeleteVpcPeeringConnection(IAsyncResult asyncResult);
 
         #endregion
         
@@ -5422,6 +5871,183 @@ namespace Amazon.GameLift
 
         #endregion
         
+        #region  DescribeVpcPeeringAuthorizations
+
+
+        /// <summary>
+        /// Retrieves valid VPC peering authorizations that are pending for the AWS account. This
+        /// operation returns all VPC peering authorizations and requests for peering. This includes
+        /// those initiated and received by this account. 
+        /// 
+        ///  
+        /// <para>
+        /// VPC peering connection operations include:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a>CreateVpcPeeringAuthorization</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeVpcPeeringAuthorizations</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DeleteVpcPeeringAuthorization</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>CreateVpcPeeringConnection</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeVpcPeeringConnections</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DeleteVpcPeeringConnection</a> 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeVpcPeeringAuthorizations service method.</param>
+        /// 
+        /// <returns>The response from the DescribeVpcPeeringAuthorizations service method, as returned by GameLift.</returns>
+        /// <exception cref="Amazon.GameLift.Model.InternalServiceException">
+        /// The service encountered an unrecoverable internal failure while processing the request.
+        /// Clients can retry such requests immediately or after a waiting period.
+        /// </exception>
+        /// <exception cref="Amazon.GameLift.Model.InvalidRequestException">
+        /// One or more parameter values in the request are invalid. Correct the invalid parameter
+        /// values before retrying.
+        /// </exception>
+        /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
+        /// The client failed authentication. Clients should not retry such requests.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeVpcPeeringAuthorizations">REST API Reference for DescribeVpcPeeringAuthorizations Operation</seealso>
+        DescribeVpcPeeringAuthorizationsResponse DescribeVpcPeeringAuthorizations(DescribeVpcPeeringAuthorizationsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeVpcPeeringAuthorizations operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeVpcPeeringAuthorizations operation on AmazonGameLiftClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeVpcPeeringAuthorizations
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeVpcPeeringAuthorizations">REST API Reference for DescribeVpcPeeringAuthorizations Operation</seealso>
+        IAsyncResult BeginDescribeVpcPeeringAuthorizations(DescribeVpcPeeringAuthorizationsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeVpcPeeringAuthorizations operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeVpcPeeringAuthorizations.</param>
+        /// 
+        /// <returns>Returns a  DescribeVpcPeeringAuthorizationsResult from GameLift.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeVpcPeeringAuthorizations">REST API Reference for DescribeVpcPeeringAuthorizations Operation</seealso>
+        DescribeVpcPeeringAuthorizationsResponse EndDescribeVpcPeeringAuthorizations(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DescribeVpcPeeringConnections
+
+
+        /// <summary>
+        /// Retrieves information on VPC peering connections. Use this operation to get peering
+        /// information for all fleets or for one specific fleet ID. 
+        /// 
+        ///  
+        /// <para>
+        /// To retrieve connection information, call this operation from the AWS account that
+        /// is used to manage the Amazon GameLift fleets. Specify a fleet ID or leave the parameter
+        /// empty to retrieve all connection records. If successful, the retrieved information
+        /// includes both active and pending connections. Active connections identify the IpV4
+        /// CIDR block that the VPC uses to connect. 
+        /// </para>
+        ///  
+        /// <para>
+        /// VPC peering connection operations include:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a>CreateVpcPeeringAuthorization</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeVpcPeeringAuthorizations</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DeleteVpcPeeringAuthorization</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>CreateVpcPeeringConnection</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeVpcPeeringConnections</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DeleteVpcPeeringConnection</a> 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeVpcPeeringConnections service method.</param>
+        /// 
+        /// <returns>The response from the DescribeVpcPeeringConnections service method, as returned by GameLift.</returns>
+        /// <exception cref="Amazon.GameLift.Model.InternalServiceException">
+        /// The service encountered an unrecoverable internal failure while processing the request.
+        /// Clients can retry such requests immediately or after a waiting period.
+        /// </exception>
+        /// <exception cref="Amazon.GameLift.Model.InvalidRequestException">
+        /// One or more parameter values in the request are invalid. Correct the invalid parameter
+        /// values before retrying.
+        /// </exception>
+        /// <exception cref="Amazon.GameLift.Model.NotFoundException">
+        /// A service resource associated with the request could not be found. Clients should
+        /// not retry such requests.
+        /// </exception>
+        /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
+        /// The client failed authentication. Clients should not retry such requests.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeVpcPeeringConnections">REST API Reference for DescribeVpcPeeringConnections Operation</seealso>
+        DescribeVpcPeeringConnectionsResponse DescribeVpcPeeringConnections(DescribeVpcPeeringConnectionsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeVpcPeeringConnections operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeVpcPeeringConnections operation on AmazonGameLiftClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeVpcPeeringConnections
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeVpcPeeringConnections">REST API Reference for DescribeVpcPeeringConnections Operation</seealso>
+        IAsyncResult BeginDescribeVpcPeeringConnections(DescribeVpcPeeringConnectionsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeVpcPeeringConnections operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeVpcPeeringConnections.</param>
+        /// 
+        /// <returns>Returns a  DescribeVpcPeeringConnectionsResult from GameLift.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeVpcPeeringConnections">REST API Reference for DescribeVpcPeeringConnections Operation</seealso>
+        DescribeVpcPeeringConnectionsResponse EndDescribeVpcPeeringConnections(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  GetGameSessionLogUrl
 
 
@@ -6760,7 +7386,7 @@ namespace Amazon.GameLift
         /// and include the players to be matched. You must also include a set of player attributes
         /// relevant for the matchmaking configuration. If successful, a matchmaking ticket is
         /// returned with status set to <code>QUEUED</code>. Track the status of the ticket to
-        /// respond as needed and acquire game session connection information for sucessfully
+        /// respond as needed and acquire game session connection information for successfully
         /// completed matches.
         /// </para>
         ///  

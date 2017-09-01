@@ -28,9 +28,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GameLift.Model
 {
     /// <summary>
-    /// Object used in matchmaking to represent a player. When starting a matchmaking request,
-    /// a player has a player ID and may have latency data. Team information is added after
-    /// a match has been successfully completed.
+    /// Represents a player in matchmaking. When starting a matchmaking request, a player
+    /// has a player ID, attributes, and may have latency data. Team information is added
+    /// after a match has been successfully completed.
     /// </summary>
     public partial class Player
     {
@@ -44,17 +44,14 @@ namespace Amazon.GameLift.Model
         /// <para>
         /// Set of values, expressed in milliseconds, indicating the amount of latency that a
         /// player experiences when connected to AWS regions. If this property is present, FlexMatch
-        /// considers placing the match only in regions that are included in the object map. If
-        /// not present (that is, null), FlexMatch ignores latency issues and may place the match
-        /// in any region in the queue.
+        /// considers placing the match only in regions for which latency is reported. 
         /// </para>
-        ///  <note> 
+        ///  
         /// <para>
-        /// If this property contains an empty map, FlexMatch assumes that no regions are available
-        /// to the player. In this scenario, the ticket is not matchable and always times out
-        /// unless canceled. 
+        /// If a matchmaker has a rule that evaluates player latency, players must report latency
+        /// in order to be matched. If no latency is reported in this scenario, FlexMatch assumes
+        /// that no regions are available to the player and the ticket is not matchable. 
         /// </para>
-        ///  </note>
         /// </summary>
         public Dictionary<string, int> LatencyInMs
         {
