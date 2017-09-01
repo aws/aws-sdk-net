@@ -33,9 +33,29 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// </summary>
     public partial class StartAutomationExecutionRequest : AmazonSimpleSystemsManagementRequest
     {
+        private string _clientToken;
         private string _documentName;
         private string _documentVersion;
         private Dictionary<string, List<string>> _parameters = new Dictionary<string, List<string>>();
+
+        /// <summary>
+        /// Gets and sets the property ClientToken. 
+        /// <para>
+        /// User-provided idempotency token. The token must be unique, is case insensitive, enforces
+        /// the UUID format, and can't be reused.
+        /// </para>
+        /// </summary>
+        public string ClientToken
+        {
+            get { return this._clientToken; }
+            set { this._clientToken = value; }
+        }
+
+        // Check to see if ClientToken property is set
+        internal bool IsSetClientToken()
+        {
+            return this._clientToken != null;
+        }
 
         /// <summary>
         /// Gets and sets the property DocumentName. 

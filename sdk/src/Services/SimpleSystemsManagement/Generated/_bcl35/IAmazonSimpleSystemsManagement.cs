@@ -5640,6 +5640,10 @@ namespace Amazon.SimpleSystemsManagement
         /// The number of simultaneously running Automation executions exceeded the allowable
         /// limit.
         /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.IdempotentParameterMismatchException">
+        /// Error returned when an idempotent operation is retried and the parameters don't match
+        /// the original call to the API with the same idempotency token.
+        /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
         /// An error occurred on the server side.
         /// </exception>

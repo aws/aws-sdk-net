@@ -1178,6 +1178,12 @@
     <max>2592000</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.StartAutomationExecutionRequest.ClientToken</property>
+    <min>36</min>
+    <max>36</max>
+    <pattern>[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.StartAutomationExecutionRequest.DocumentName</property>
     <pattern>^[a-zA-Z0-9_\-.:/]{3,128}$</pattern>
   </property-value-rule>
@@ -2438,6 +2444,12 @@
     <property>Amazon.SimpleSystemsManagement.Model.ResourceDataSyncNotFoundException.SyncName</property>
     <min>1</min>
     <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.ResourceDataSyncS3Destination.AWSKMSKeyARN</property>
+    <min>1</min>
+    <max>512</max>
+    <pattern>arn:.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.ResourceDataSyncS3Destination.BucketName</property>

@@ -32,10 +32,30 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// </summary>
     public partial class ResourceDataSyncS3Destination
     {
+        private string _awskmsKeyARN;
         private string _bucketName;
         private string _prefix;
         private string _region;
         private ResourceDataSyncS3Format _syncFormat;
+
+        /// <summary>
+        /// Gets and sets the property AWSKMSKeyARN. 
+        /// <para>
+        /// The ARN of an encryption key for a destination in Amazon S3. Must belong to the same
+        /// region as the destination Amazon S3 bucket.
+        /// </para>
+        /// </summary>
+        public string AWSKMSKeyARN
+        {
+            get { return this._awskmsKeyARN; }
+            set { this._awskmsKeyARN = value; }
+        }
+
+        // Check to see if AWSKMSKeyARN property is set
+        internal bool IsSetAWSKMSKeyARN()
+        {
+            return this._awskmsKeyARN != null;
+        }
 
         /// <summary>
         /// Gets and sets the property BucketName. 
