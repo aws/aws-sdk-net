@@ -41,7 +41,7 @@ namespace Amazon.CodeStar.Model
         /// <para>
         /// The role assigned to the user in the project. Project roles have different levels
         /// of access. For more information, see <a href="http://docs.aws.amazon.com/codestar/latest/userguide/working-with-teams.html">Working
-        /// with Teams</a> in the AWS CodeStar User Guide. 
+        /// with Teams</a> in the <i>AWS CodeStar User Guide</i>. 
         /// </para>
         /// </summary>
         public string ProjectRole

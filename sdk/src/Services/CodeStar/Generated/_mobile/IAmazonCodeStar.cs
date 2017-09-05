@@ -46,24 +46,35 @@ namespace Amazon.CodeStar
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <a>DeleteProject</a>, which deletes a project in AWS CodeStar.
+    ///  <code>DeleteProject</code>, which deletes a project.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a>DescribeProject</a>, which lists the attributes of a project.
+    ///  <code>DescribeProject</code>, which lists the attributes of a project.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a>ListProjects</a>, which lists all AWS CodeStar projects associated with your AWS
-    /// account.
+    ///  <code>ListProjects</code>, which lists all projects associated with your AWS account.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a>ListResources</a>, which lists the resources associated with an AWS CodeStar project.
+    ///  <code>ListResources</code>, which lists the resources associated with a project.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a>UpdateProject</a>, which updates the attributes of an AWS CodeStar project.
+    ///  <code>ListTagsForProject</code>, which lists the tags associated with a project.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>TagProject</code>, which adds tags to a project.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>UntagProject</code>, which removes tags from a project.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>UpdateProject</code>, which updates the attributes of a project.
     /// </para>
     ///  </li> </ul> 
     /// <para>
@@ -71,18 +82,21 @@ namespace Amazon.CodeStar
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <a>AssociateTeamMember</a>, which adds an IAM user to the team for an AWS CodeStar
-    /// project.
+    ///  <code>AssociateTeamMember</code>, which adds an IAM user to the team for a project.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a>DisassociateTeamMember</a>, which removes an IAM user from the team for an AWS
-    /// CodeStar project.
+    ///  <code>DisassociateTeamMember</code>, which removes an IAM user from the team for
+    /// a project.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a>ListTeamMembers</a>, which lists all the IAM users in the team for an AWS CodeStar
-    /// project, including their roles and attributes.
+    ///  <code>ListTeamMembers</code>, which lists all the IAM users in the team for a project,
+    /// including their roles and attributes.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>UpdateTeamMember</code>, which updates a team member's attributes in a project.
     /// </para>
     ///  </li> </ul> 
     /// <para>
@@ -90,25 +104,25 @@ namespace Amazon.CodeStar
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <a>CreateUserProfile</a>, which creates a user profile that contains data associated
-    /// with the user across all AWS CodeStar projects.
+    ///  <code>CreateUserProfile</code>, which creates a user profile that contains data associated
+    /// with the user across all projects.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a>DeleteUserProfile</a>, which deletes all user profile information across all AWS
-    /// CodeStar projects.
+    ///  <code>DeleteUserProfile</code>, which deletes all user profile information across
+    /// all projects.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a>DescribeUserProfile</a>, which describes the profile of a user.
+    ///  <code>DescribeUserProfile</code>, which describes the profile of a user.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a>ListUserProfiles</a>, which lists all AWS CodeStar user profiles.
+    ///  <code>ListUserProfiles</code>, which lists all user profiles.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a>UpdateUserProfile</a>, which updates the profile for an AWS CodeStar user. 
+    ///  <code>UpdateUserProfile</code>, which updates the profile for a user.
     /// </para>
     ///  </li> </ul>
     /// </summary>
@@ -285,6 +299,23 @@ namespace Amazon.CodeStar
 
         #endregion
                 
+        #region  ListTagsForProject
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListTagsForProject operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListTagsForProject operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-2017-04-19/ListTagsForProject">REST API Reference for ListTagsForProject Operation</seealso>
+        Task<ListTagsForProjectResponse> ListTagsForProjectAsync(ListTagsForProjectRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  ListTeamMembers
 
 
@@ -316,6 +347,40 @@ namespace Amazon.CodeStar
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-2017-04-19/ListUserProfiles">REST API Reference for ListUserProfiles Operation</seealso>
         Task<ListUserProfilesResponse> ListUserProfilesAsync(ListUserProfilesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  TagProject
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the TagProject operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the TagProject operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-2017-04-19/TagProject">REST API Reference for TagProject Operation</seealso>
+        Task<TagProjectResponse> TagProjectAsync(TagProjectRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  UntagProject
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UntagProject operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UntagProject operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-2017-04-19/UntagProject">REST API Reference for UntagProject Operation</seealso>
+        Task<UntagProjectResponse> UntagProjectAsync(UntagProjectRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 

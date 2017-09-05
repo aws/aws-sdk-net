@@ -43,7 +43,7 @@ namespace Amazon.CodeStar.Model
         /// Gets and sets the property ClientRequestToken. 
         /// <para>
         /// A user- or system-generated token that identifies the entity that requested the team
-        /// member association to the project. This token can be used to repeat the request. 
+        /// member association to the project. This token can be used to repeat the request.
         /// </para>
         /// </summary>
         public string ClientRequestToken
@@ -117,7 +117,8 @@ namespace Amazon.CodeStar.Model
         /// <summary>
         /// Gets and sets the property UserArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) for the IAM user you want to add to the DevHub project.
+        /// The Amazon Resource Name (ARN) for the IAM user you want to add to the AWS CodeStar
+        /// project.
         /// </para>
         /// </summary>
         public string UserArn

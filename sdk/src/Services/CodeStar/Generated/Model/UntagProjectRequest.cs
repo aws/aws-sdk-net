@@ -28,29 +28,48 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CodeStar.Model
 {
     /// <summary>
-    /// This is the response object from the AssociateTeamMember operation.
+    /// Container for the parameters to the UntagProject operation.
+    /// Removes tags from a project.
     /// </summary>
-    public partial class AssociateTeamMemberResponse : AmazonWebServiceResponse
+    public partial class UntagProjectRequest : AmazonCodeStarRequest
     {
-        private string _clientRequestToken;
+        private string _id;
+        private List<string> _tags = new List<string>();
 
         /// <summary>
-        /// Gets and sets the property ClientRequestToken. 
+        /// Gets and sets the property Id. 
         /// <para>
-        /// The user- or system-generated token from the initial request that can be used to repeat
-        /// the request.
+        /// The ID of the project to remove tags from.
         /// </para>
         /// </summary>
-        public string ClientRequestToken
+        public string Id
         {
-            get { return this._clientRequestToken; }
-            set { this._clientRequestToken = value; }
+            get { return this._id; }
+            set { this._id = value; }
         }
 
-        // Check to see if ClientRequestToken property is set
-        internal bool IsSetClientRequestToken()
+        // Check to see if Id property is set
+        internal bool IsSetId()
         {
-            return this._clientRequestToken != null;
+            return this._id != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// The tags to remove from the project.
+        /// </para>
+        /// </summary>
+        public List<string> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
     }

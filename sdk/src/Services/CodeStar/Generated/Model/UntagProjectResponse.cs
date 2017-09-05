@@ -28,30 +28,10 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CodeStar.Model
 {
     /// <summary>
-    /// This is the response object from the AssociateTeamMember operation.
+    /// This is the response object from the UntagProject operation.
     /// </summary>
-    public partial class AssociateTeamMemberResponse : AmazonWebServiceResponse
+    public partial class UntagProjectResponse : AmazonWebServiceResponse
     {
-        private string _clientRequestToken;
-
-        /// <summary>
-        /// Gets and sets the property ClientRequestToken. 
-        /// <para>
-        /// The user- or system-generated token from the initial request that can be used to repeat
-        /// the request.
-        /// </para>
-        /// </summary>
-        public string ClientRequestToken
-        {
-            get { return this._clientRequestToken; }
-            set { this._clientRequestToken = value; }
-        }
-
-        // Check to see if ClientRequestToken property is set
-        internal bool IsSetClientRequestToken()
-        {
-            return this._clientRequestToken != null;
-        }
 
     }
 }

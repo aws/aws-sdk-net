@@ -28,19 +28,37 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CodeStar.Model
 {
     /// <summary>
-    /// Container for the parameters to the ListResources operation.
-    /// Lists resources associated with a project in AWS CodeStar.
+    /// Container for the parameters to the ListTagsForProject operation.
+    /// Gets the tags for a project.
     /// </summary>
-    public partial class ListResourcesRequest : AmazonCodeStarRequest
+    public partial class ListTagsForProjectRequest : AmazonCodeStarRequest
     {
+        private string _id;
         private int? _maxResults;
         private string _nextToken;
-        private string _projectId;
+
+        /// <summary>
+        /// Gets and sets the property Id. 
+        /// <para>
+        /// The ID of the project to get tags for.
+        /// </para>
+        /// </summary>
+        public string Id
+        {
+            get { return this._id; }
+            set { this._id = value; }
+        }
+
+        // Check to see if Id property is set
+        internal bool IsSetId()
+        {
+            return this._id != null;
+        }
 
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// The maximum amount of data that can be contained in a single set of results.
+        /// Reserved for future use.
         /// </para>
         /// </summary>
         public int MaxResults
@@ -58,8 +76,7 @@ namespace Amazon.CodeStar.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// The continuation token for the next set of results, if the results cannot be returned
-        /// in one response.
+        /// Reserved for future use.
         /// </para>
         /// </summary>
         public string NextToken
@@ -72,24 +89,6 @@ namespace Amazon.CodeStar.Model
         internal bool IsSetNextToken()
         {
             return this._nextToken != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property ProjectId. 
-        /// <para>
-        /// The ID of the project.
-        /// </para>
-        /// </summary>
-        public string ProjectId
-        {
-            get { return this._projectId; }
-            set { this._projectId = value; }
-        }
-
-        // Check to see if ProjectId property is set
-        internal bool IsSetProjectId()
-        {
-            return this._projectId != null;
         }
 
     }

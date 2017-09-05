@@ -28,38 +28,17 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CodeStar.Model
 {
     /// <summary>
-    /// Container for the parameters to the ListResources operation.
-    /// Lists resources associated with a project in AWS CodeStar.
+    /// This is the response object from the ListTagsForProject operation.
     /// </summary>
-    public partial class ListResourcesRequest : AmazonCodeStarRequest
+    public partial class ListTagsForProjectResponse : AmazonWebServiceResponse
     {
-        private int? _maxResults;
         private string _nextToken;
-        private string _projectId;
-
-        /// <summary>
-        /// Gets and sets the property MaxResults. 
-        /// <para>
-        /// The maximum amount of data that can be contained in a single set of results.
-        /// </para>
-        /// </summary>
-        public int MaxResults
-        {
-            get { return this._maxResults.GetValueOrDefault(); }
-            set { this._maxResults = value; }
-        }
-
-        // Check to see if MaxResults property is set
-        internal bool IsSetMaxResults()
-        {
-            return this._maxResults.HasValue; 
-        }
+        private Dictionary<string, string> _tags = new Dictionary<string, string>();
 
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// The continuation token for the next set of results, if the results cannot be returned
-        /// in one response.
+        /// Reserved for future use.
         /// </para>
         /// </summary>
         public string NextToken
@@ -75,21 +54,21 @@ namespace Amazon.CodeStar.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ProjectId. 
+        /// Gets and sets the property Tags. 
         /// <para>
-        /// The ID of the project.
+        /// The tags for the project.
         /// </para>
         /// </summary>
-        public string ProjectId
+        public Dictionary<string, string> Tags
         {
-            get { return this._projectId; }
-            set { this._projectId = value; }
+            get { return this._tags; }
+            set { this._tags = value; }
         }
 
-        // Check to see if ProjectId property is set
-        internal bool IsSetProjectId()
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
         {
-            return this._projectId != null;
+            return this._tags != null && this._tags.Count > 0; 
         }
 
     }

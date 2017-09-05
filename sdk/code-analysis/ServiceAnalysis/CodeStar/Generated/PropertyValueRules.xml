@@ -20,7 +20,7 @@
     <property>Amazon.CodeStar.Model.AssociateTeamMemberRequest.UserArn</property>
     <min>32</min>
     <max>95</max>
-    <pattern>arn:aws:iam::\d{12}:user\/[\w-]+</pattern>
+    <pattern>^arn:aws:iam::\d{12}:user(?:(\u002F)|(\u002F[\u0021-\u007E]+\u002F))[\w+=,.@-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeStar.Model.AssociateTeamMemberResponse.ClientRequestToken</property>
@@ -93,7 +93,7 @@
     <property>Amazon.CodeStar.Model.CreateUserProfileRequest.UserArn</property>
     <min>32</min>
     <max>95</max>
-    <pattern>arn:aws:iam::\d{12}:user\/[\w-]+</pattern>
+    <pattern>^arn:aws:iam::\d{12}:user(?:(\u002F)|(\u002F[\u0021-\u007E]+\u002F))[\w+=,.@-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeStar.Model.CreateUserProfileResponse.DisplayName</property>
@@ -116,7 +116,7 @@
     <property>Amazon.CodeStar.Model.CreateUserProfileResponse.UserArn</property>
     <min>32</min>
     <max>95</max>
-    <pattern>arn:aws:iam::\d{12}:user\/[\w-]+</pattern>
+    <pattern>^arn:aws:iam::\d{12}:user(?:(\u002F)|(\u002F[\u0021-\u007E]+\u002F))[\w+=,.@-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeStar.Model.DeleteProjectRequest.ClientRequestToken</property>
@@ -142,13 +142,13 @@
     <property>Amazon.CodeStar.Model.DeleteUserProfileRequest.UserArn</property>
     <min>32</min>
     <max>95</max>
-    <pattern>arn:aws:iam::\d{12}:user\/[\w-]+</pattern>
+    <pattern>^arn:aws:iam::\d{12}:user(?:(\u002F)|(\u002F[\u0021-\u007E]+\u002F))[\w+=,.@-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeStar.Model.DeleteUserProfileResponse.UserArn</property>
     <min>32</min>
     <max>95</max>
-    <pattern>arn:aws:iam::\d{12}:user\/[\w-]+</pattern>
+    <pattern>^arn:aws:iam::\d{12}:user(?:(\u002F)|(\u002F[\u0021-\u007E]+\u002F))[\w+=,.@-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeStar.Model.DescribeProjectRequest.Id</property>
@@ -196,7 +196,7 @@
     <property>Amazon.CodeStar.Model.DescribeUserProfileRequest.UserArn</property>
     <min>32</min>
     <max>95</max>
-    <pattern>arn:aws:iam::\d{12}:user\/[\w-]+</pattern>
+    <pattern>^arn:aws:iam::\d{12}:user(?:(\u002F)|(\u002F[\u0021-\u007E]+\u002F))[\w+=,.@-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeStar.Model.DescribeUserProfileResponse.DisplayName</property>
@@ -219,7 +219,7 @@
     <property>Amazon.CodeStar.Model.DescribeUserProfileResponse.UserArn</property>
     <min>32</min>
     <max>95</max>
-    <pattern>arn:aws:iam::\d{12}:user\/[\w-]+</pattern>
+    <pattern>^arn:aws:iam::\d{12}:user(?:(\u002F)|(\u002F[\u0021-\u007E]+\u002F))[\w+=,.@-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeStar.Model.DisassociateTeamMemberRequest.ProjectId</property>
@@ -231,7 +231,7 @@
     <property>Amazon.CodeStar.Model.DisassociateTeamMemberRequest.UserArn</property>
     <min>32</min>
     <max>95</max>
-    <pattern>arn:aws:iam::\d{12}:user\/[\w-]+</pattern>
+    <pattern>^arn:aws:iam::\d{12}:user(?:(\u002F)|(\u002F[\u0021-\u007E]+\u002F))[\w+=,.@-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeStar.Model.ListProjectsRequest.MaxResults</property>
@@ -241,13 +241,13 @@
   <property-value-rule>
     <property>Amazon.CodeStar.Model.ListProjectsRequest.NextToken</property>
     <min>1</min>
-    <max>256</max>
+    <max>512</max>
     <pattern>^[\w/+=]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeStar.Model.ListProjectsResponse.NextToken</property>
     <min>1</min>
-    <max>256</max>
+    <max>512</max>
     <pattern>^[\w/+=]+$</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -258,7 +258,7 @@
   <property-value-rule>
     <property>Amazon.CodeStar.Model.ListResourcesRequest.NextToken</property>
     <min>1</min>
-    <max>256</max>
+    <max>512</max>
     <pattern>^[\w/+=]+$</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -270,7 +270,30 @@
   <property-value-rule>
     <property>Amazon.CodeStar.Model.ListResourcesResponse.NextToken</property>
     <min>1</min>
-    <max>256</max>
+    <max>512</max>
+    <pattern>^[\w/+=]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeStar.Model.ListTagsForProjectRequest.Id</property>
+    <min>2</min>
+    <max>15</max>
+    <pattern>^[a-z][a-z0-9-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeStar.Model.ListTagsForProjectRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeStar.Model.ListTagsForProjectRequest.NextToken</property>
+    <min>1</min>
+    <max>512</max>
+    <pattern>^[\w/+=]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeStar.Model.ListTagsForProjectResponse.NextToken</property>
+    <min>1</min>
+    <max>512</max>
     <pattern>^[\w/+=]+$</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -281,7 +304,7 @@
   <property-value-rule>
     <property>Amazon.CodeStar.Model.ListTeamMembersRequest.NextToken</property>
     <min>1</min>
-    <max>256</max>
+    <max>512</max>
     <pattern>^[\w/+=]+$</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -293,7 +316,7 @@
   <property-value-rule>
     <property>Amazon.CodeStar.Model.ListTeamMembersResponse.NextToken</property>
     <min>1</min>
-    <max>256</max>
+    <max>512</max>
     <pattern>^[\w/+=]+$</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -304,14 +327,26 @@
   <property-value-rule>
     <property>Amazon.CodeStar.Model.ListUserProfilesRequest.NextToken</property>
     <min>1</min>
-    <max>256</max>
+    <max>512</max>
     <pattern>^[\w/+=]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeStar.Model.ListUserProfilesResponse.NextToken</property>
     <min>1</min>
-    <max>256</max>
+    <max>512</max>
     <pattern>^[\w/+=]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeStar.Model.TagProjectRequest.Id</property>
+    <min>2</min>
+    <max>15</max>
+    <pattern>^[a-z][a-z0-9-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeStar.Model.UntagProjectRequest.Id</property>
+    <min>2</min>
+    <max>15</max>
+    <pattern>^[a-z][a-z0-9-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeStar.Model.UpdateProjectRequest.Description</property>
@@ -344,7 +379,7 @@
     <property>Amazon.CodeStar.Model.UpdateTeamMemberRequest.UserArn</property>
     <min>32</min>
     <max>95</max>
-    <pattern>arn:aws:iam::\d{12}:user\/[\w-]+</pattern>
+    <pattern>^arn:aws:iam::\d{12}:user(?:(\u002F)|(\u002F[\u0021-\u007E]+\u002F))[\w+=,.@-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeStar.Model.UpdateTeamMemberResponse.ProjectRole</property>
@@ -354,7 +389,7 @@
     <property>Amazon.CodeStar.Model.UpdateTeamMemberResponse.UserArn</property>
     <min>32</min>
     <max>95</max>
-    <pattern>arn:aws:iam::\d{12}:user\/[\w-]+</pattern>
+    <pattern>^arn:aws:iam::\d{12}:user(?:(\u002F)|(\u002F[\u0021-\u007E]+\u002F))[\w+=,.@-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeStar.Model.UpdateUserProfileRequest.DisplayName</property>
@@ -377,7 +412,7 @@
     <property>Amazon.CodeStar.Model.UpdateUserProfileRequest.UserArn</property>
     <min>32</min>
     <max>95</max>
-    <pattern>arn:aws:iam::\d{12}:user\/[\w-]+</pattern>
+    <pattern>^arn:aws:iam::\d{12}:user(?:(\u002F)|(\u002F[\u0021-\u007E]+\u002F))[\w+=,.@-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeStar.Model.UpdateUserProfileResponse.DisplayName</property>
@@ -400,7 +435,7 @@
     <property>Amazon.CodeStar.Model.UpdateUserProfileResponse.UserArn</property>
     <min>32</min>
     <max>95</max>
-    <pattern>arn:aws:iam::\d{12}:user\/[\w-]+</pattern>
+    <pattern>^arn:aws:iam::\d{12}:user(?:(\u002F)|(\u002F[\u0021-\u007E]+\u002F))[\w+=,.@-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeStar.Model.ProjectSummary.ProjectArn</property>
@@ -425,7 +460,7 @@
     <property>Amazon.CodeStar.Model.TeamMember.UserArn</property>
     <min>32</min>
     <max>95</max>
-    <pattern>arn:aws:iam::\d{12}:user\/[\w-]+</pattern>
+    <pattern>^arn:aws:iam::\d{12}:user(?:(\u002F)|(\u002F[\u0021-\u007E]+\u002F))[\w+=,.@-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeStar.Model.UserProfileSummary.DisplayName</property>
@@ -448,6 +483,6 @@
     <property>Amazon.CodeStar.Model.UserProfileSummary.UserArn</property>
     <min>32</min>
     <max>95</max>
-    <pattern>arn:aws:iam::\d{12}:user\/[\w-]+</pattern>
+    <pattern>^arn:aws:iam::\d{12}:user(?:(\u002F)|(\u002F[\u0021-\u007E]+\u002F))[\w+=,.@-]+$</pattern>
   </property-value-rule>
 </property-value-rules>

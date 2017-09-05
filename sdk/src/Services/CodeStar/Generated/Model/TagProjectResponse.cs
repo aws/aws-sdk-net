@@ -28,29 +28,28 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CodeStar.Model
 {
     /// <summary>
-    /// This is the response object from the AssociateTeamMember operation.
+    /// This is the response object from the TagProject operation.
     /// </summary>
-    public partial class AssociateTeamMemberResponse : AmazonWebServiceResponse
+    public partial class TagProjectResponse : AmazonWebServiceResponse
     {
-        private string _clientRequestToken;
+        private Dictionary<string, string> _tags = new Dictionary<string, string>();
 
         /// <summary>
-        /// Gets and sets the property ClientRequestToken. 
+        /// Gets and sets the property Tags. 
         /// <para>
-        /// The user- or system-generated token from the initial request that can be used to repeat
-        /// the request.
+        /// The tags for the project.
         /// </para>
         /// </summary>
-        public string ClientRequestToken
+        public Dictionary<string, string> Tags
         {
-            get { return this._clientRequestToken; }
-            set { this._clientRequestToken = value; }
+            get { return this._tags; }
+            set { this._tags = value; }
         }
 
-        // Check to see if ClientRequestToken property is set
-        internal bool IsSetClientRequestToken()
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
         {
-            return this._clientRequestToken != null;
+            return this._tags != null && this._tags.Count > 0; 
         }
 
     }

@@ -51,24 +51,35 @@ namespace Amazon.CodeStar
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <a>DeleteProject</a>, which deletes a project in AWS CodeStar.
+    ///  <code>DeleteProject</code>, which deletes a project.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a>DescribeProject</a>, which lists the attributes of a project.
+    ///  <code>DescribeProject</code>, which lists the attributes of a project.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a>ListProjects</a>, which lists all AWS CodeStar projects associated with your AWS
-    /// account.
+    ///  <code>ListProjects</code>, which lists all projects associated with your AWS account.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a>ListResources</a>, which lists the resources associated with an AWS CodeStar project.
+    ///  <code>ListResources</code>, which lists the resources associated with a project.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a>UpdateProject</a>, which updates the attributes of an AWS CodeStar project.
+    ///  <code>ListTagsForProject</code>, which lists the tags associated with a project.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>TagProject</code>, which adds tags to a project.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>UntagProject</code>, which removes tags from a project.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>UpdateProject</code>, which updates the attributes of a project.
     /// </para>
     ///  </li> </ul> 
     /// <para>
@@ -76,18 +87,21 @@ namespace Amazon.CodeStar
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <a>AssociateTeamMember</a>, which adds an IAM user to the team for an AWS CodeStar
-    /// project.
+    ///  <code>AssociateTeamMember</code>, which adds an IAM user to the team for a project.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a>DisassociateTeamMember</a>, which removes an IAM user from the team for an AWS
-    /// CodeStar project.
+    ///  <code>DisassociateTeamMember</code>, which removes an IAM user from the team for
+    /// a project.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a>ListTeamMembers</a>, which lists all the IAM users in the team for an AWS CodeStar
-    /// project, including their roles and attributes.
+    ///  <code>ListTeamMembers</code>, which lists all the IAM users in the team for a project,
+    /// including their roles and attributes.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>UpdateTeamMember</code>, which updates a team member's attributes in a project.
     /// </para>
     ///  </li> </ul> 
     /// <para>
@@ -95,25 +109,25 @@ namespace Amazon.CodeStar
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <a>CreateUserProfile</a>, which creates a user profile that contains data associated
-    /// with the user across all AWS CodeStar projects.
+    ///  <code>CreateUserProfile</code>, which creates a user profile that contains data associated
+    /// with the user across all projects.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a>DeleteUserProfile</a>, which deletes all user profile information across all AWS
-    /// CodeStar projects.
+    ///  <code>DeleteUserProfile</code>, which deletes all user profile information across
+    /// all projects.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a>DescribeUserProfile</a>, which describes the profile of a user.
+    ///  <code>DescribeUserProfile</code>, which describes the profile of a user.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a>ListUserProfiles</a>, which lists all AWS CodeStar user profiles.
+    ///  <code>ListUserProfiles</code>, which lists all user profiles.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a>UpdateUserProfile</a>, which updates the profile for an AWS CodeStar user. 
+    ///  <code>UpdateUserProfile</code>, which updates the profile for a user.
     /// </para>
     ///  </li> </ul>
     /// </summary>
@@ -819,6 +833,54 @@ namespace Amazon.CodeStar
 
         #endregion
         
+        #region  ListTagsForProject
+
+
+        /// <summary>
+        /// Gets the tags for a project.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTagsForProject service method.</param>
+        /// 
+        /// <returns>The response from the ListTagsForProject service method, as returned by CodeStar.</returns>
+        /// <exception cref="Amazon.CodeStar.Model.InvalidNextTokenException">
+        /// The next token is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CodeStar.Model.ProjectNotFoundException">
+        /// The specified AWS CodeStar project was not found.
+        /// </exception>
+        /// <exception cref="Amazon.CodeStar.Model.ValidationException">
+        /// The specified input is either not valid, or it could not be validated.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-2017-04-19/ListTagsForProject">REST API Reference for ListTagsForProject Operation</seealso>
+        public ListTagsForProjectResponse ListTagsForProject(ListTagsForProjectRequest request)
+        {
+            var marshaller = new ListTagsForProjectRequestMarshaller();
+            var unmarshaller = ListTagsForProjectResponseUnmarshaller.Instance;
+
+            return Invoke<ListTagsForProjectRequest,ListTagsForProjectResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListTagsForProject operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListTagsForProject operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-2017-04-19/ListTagsForProject">REST API Reference for ListTagsForProject Operation</seealso>
+        public Task<ListTagsForProjectResponse> ListTagsForProjectAsync(ListTagsForProjectRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new ListTagsForProjectRequestMarshaller();
+            var unmarshaller = ListTagsForProjectResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListTagsForProjectRequest,ListTagsForProjectResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListTeamMembers
 
 
@@ -907,6 +969,110 @@ namespace Amazon.CodeStar
             var unmarshaller = ListUserProfilesResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListUserProfilesRequest,ListUserProfilesResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  TagProject
+
+
+        /// <summary>
+        /// Adds tags to a project.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the TagProject service method.</param>
+        /// 
+        /// <returns>The response from the TagProject service method, as returned by CodeStar.</returns>
+        /// <exception cref="Amazon.CodeStar.Model.ConcurrentModificationException">
+        /// Another modification is being made. That modification must complete before you can
+        /// make your change.
+        /// </exception>
+        /// <exception cref="Amazon.CodeStar.Model.LimitExceededException">
+        /// A resource limit has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.CodeStar.Model.ProjectNotFoundException">
+        /// The specified AWS CodeStar project was not found.
+        /// </exception>
+        /// <exception cref="Amazon.CodeStar.Model.ValidationException">
+        /// The specified input is either not valid, or it could not be validated.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-2017-04-19/TagProject">REST API Reference for TagProject Operation</seealso>
+        public TagProjectResponse TagProject(TagProjectRequest request)
+        {
+            var marshaller = new TagProjectRequestMarshaller();
+            var unmarshaller = TagProjectResponseUnmarshaller.Instance;
+
+            return Invoke<TagProjectRequest,TagProjectResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the TagProject operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the TagProject operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-2017-04-19/TagProject">REST API Reference for TagProject Operation</seealso>
+        public Task<TagProjectResponse> TagProjectAsync(TagProjectRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new TagProjectRequestMarshaller();
+            var unmarshaller = TagProjectResponseUnmarshaller.Instance;
+
+            return InvokeAsync<TagProjectRequest,TagProjectResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UntagProject
+
+
+        /// <summary>
+        /// Removes tags from a project.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UntagProject service method.</param>
+        /// 
+        /// <returns>The response from the UntagProject service method, as returned by CodeStar.</returns>
+        /// <exception cref="Amazon.CodeStar.Model.ConcurrentModificationException">
+        /// Another modification is being made. That modification must complete before you can
+        /// make your change.
+        /// </exception>
+        /// <exception cref="Amazon.CodeStar.Model.LimitExceededException">
+        /// A resource limit has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.CodeStar.Model.ProjectNotFoundException">
+        /// The specified AWS CodeStar project was not found.
+        /// </exception>
+        /// <exception cref="Amazon.CodeStar.Model.ValidationException">
+        /// The specified input is either not valid, or it could not be validated.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-2017-04-19/UntagProject">REST API Reference for UntagProject Operation</seealso>
+        public UntagProjectResponse UntagProject(UntagProjectRequest request)
+        {
+            var marshaller = new UntagProjectRequestMarshaller();
+            var unmarshaller = UntagProjectResponseUnmarshaller.Instance;
+
+            return Invoke<UntagProjectRequest,UntagProjectResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UntagProject operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UntagProject operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-2017-04-19/UntagProject">REST API Reference for UntagProject Operation</seealso>
+        public Task<UntagProjectResponse> UntagProjectAsync(UntagProjectRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new UntagProjectRequestMarshaller();
+            var unmarshaller = UntagProjectResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UntagProjectRequest,UntagProjectResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
