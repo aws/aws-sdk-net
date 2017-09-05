@@ -1,3 +1,7 @@
+### 3.3.149.0 (2017-09-05 16:41 UTC)
+* CodeStar (3.3.1.0)
+	* Added support to tag CodeStar projects. Tags can be used to organize and find CodeStar projects on key-value pairs that you can choose. For example, you could add a tag with a key of "Release" and a value of "Beta" to projects your organization is working on for an upcoming beta release.
+
 ### 3.3.148.0 (2017-09-01 19:02 UTC)
 * GameLift (3.3.9.0)
 	* GameLift VPC resources can be peered with any other AWS VPC. R4 memory-optimized instances now available to deploy.
