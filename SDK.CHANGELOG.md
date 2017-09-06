@@ -1,3 +1,9 @@
+### 3.3.150.0 (2017-09-06 18:04 UTC)
+* Budgets (3.3.3.0)
+	* Add an optional "thresholdType" to notifications to support percentage or absolute value thresholds.
+* S3 (3.3.10.3)
+	* Remove unused model type TagQuery
+
 ### 3.3.149.0 (2017-09-05 16:41 UTC)
 * CodeStar (3.3.1.0)
 	* Added support to tag CodeStar projects. Tags can be used to organize and find CodeStar projects on key-value pairs that you can choose. For example, you could add a tag with a key of "Release" and a value of "Beta" to projects your organization is working on for an upcoming beta release.
