@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Budgets.Model
 {
     /// <summary>
-    /// A structure holds the actual and forecasted spend for a budget.
+    /// A structure that holds the actual and forecasted spend for a budget.
     /// </summary>
     public partial class CalculatedSpend
     {

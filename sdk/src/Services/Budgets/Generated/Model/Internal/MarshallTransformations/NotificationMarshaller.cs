@@ -63,6 +63,12 @@ namespace Amazon.Budgets.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.Threshold);
             }
 
+            if(requestObject.IsSetThresholdType())
+            {
+                context.Writer.WritePropertyName("ThresholdType");
+                context.Writer.Write(requestObject.ThresholdType);
+            }
+
         }
 
         /// <summary>

@@ -28,8 +28,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Budgets.Model
 {
     /// <summary>
-    /// A structure represent either a cost spend or usage spend. Contains an amount and a
-    /// unit.
+    /// A structure that represents either a cost spend or usage spend. Contains an amount
+    /// and a unit.
     /// </summary>
     public partial class Spend
     {

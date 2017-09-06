@@ -233,6 +233,56 @@ namespace Amazon.Budgets
 
 
     /// <summary>
+    /// Constants used for properties of type ThresholdType.
+    /// </summary>
+    public class ThresholdType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ABSOLUTE_VALUE for ThresholdType
+        /// </summary>
+        public static readonly ThresholdType ABSOLUTE_VALUE = new ThresholdType("ABSOLUTE_VALUE");
+        /// <summary>
+        /// Constant PERCENTAGE for ThresholdType
+        /// </summary>
+        public static readonly ThresholdType PERCENTAGE = new ThresholdType("PERCENTAGE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ThresholdType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ThresholdType FindValue(string value)
+        {
+            return FindValue<ThresholdType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ThresholdType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type TimeUnit.
     /// </summary>
     public class TimeUnit : ConstantClass

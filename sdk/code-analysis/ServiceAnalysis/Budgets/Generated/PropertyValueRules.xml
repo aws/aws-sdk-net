@@ -137,7 +137,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Budgets.Model.Notification.Threshold</property>
-    <max>300</max>
+    <max>1000000000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Budgets.Model.Spend.Amount</property>

@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Budgets.Model
 {
     /// <summary>
-    /// A time period indicated the start date and end date of a budget.
+    /// A time period indicating the start date and end date of a budget.
     /// </summary>
     public partial class TimePeriod
     {

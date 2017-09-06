@@ -36,6 +36,7 @@ namespace Amazon.Budgets.Model
         private ComparisonOperator _comparisonOperator;
         private NotificationType _notificationType;
         private double? _threshold;
+        private ThresholdType _thresholdType;
 
         /// <summary>
         /// Gets and sets the property ComparisonOperator.
@@ -80,6 +81,21 @@ namespace Amazon.Budgets.Model
         internal bool IsSetThreshold()
         {
             return this._threshold.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ThresholdType.
+        /// </summary>
+        public ThresholdType ThresholdType
+        {
+            get { return this._thresholdType; }
+            set { this._thresholdType = value; }
+        }
+
+        // Check to see if ThresholdType property is set
+        internal bool IsSetThresholdType()
+        {
+            return this._thresholdType != null;
         }
 
     }
