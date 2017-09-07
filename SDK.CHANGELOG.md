@@ -1,3 +1,19 @@
+### 3.3.150.1 (2017-09-07 06:06 UTC)
+* CognitoSync (3.3.1.22)
+	* Added try catch block around GetIdentityId during sync. PR https://github.com/aws/aws-sdk-net/pull/448
+* S3 (3.3.10.4)
+	* Fixed bug with S3 Util method PostUpload that wasn't disposing the HttpWebResponse.
+
+Extend S3 signed URLs to allow for custom parameters that cannot be altered PR https://github.com/aws/aws-sdk-net/pull/698
+* Core 3.3.17.7
+	* Improve AsyncRunner utility method to reduce thread usage PR https://github.com/aws/aws-sdk-net/pull/731
+
+Don't allocate memory in UnmarshallerContext.TestExpression. PR https://github.com/aws/aws-sdk-net/pull/716
+
+Fixed unhandled exception in UnityWebResponseData.CopyHeaderValues. PR https://github.com/aws/aws-sdk-net/pull/743
+
+
+
 ### 3.3.150.0 (2017-09-06 18:04 UTC)
 * Budgets (3.3.3.0)
 	* Add an optional "thresholdType" to notifications to support percentage or absolute value thresholds.

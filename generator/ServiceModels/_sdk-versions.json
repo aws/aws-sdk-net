@@ -1,7 +1,7 @@
 
 {
-    "ProductVersion" : "3.3.150.0",
-    "CoreVersion"    : "3.3.17.6",
+    "ProductVersion" : "3.3.150.1",
+    "CoreVersion"    : "3.3.17.7",
     "DefaultToPreview" : false,
     "ServiceVersions"  : {
         "CloudHSM" : {
@@ -110,7 +110,7 @@
             "InPreview"               : false
         },
         "CognitoSync"       : {
-            "Version" : "3.3.1.21",
+            "Version" : "3.3.1.22",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.17.0",
@@ -313,7 +313,7 @@
             "InPreview"               : false
         },
         "S3"                   : {
-            "Version" : "3.3.10.3",
+            "Version" : "3.3.10.4",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.17.0"
