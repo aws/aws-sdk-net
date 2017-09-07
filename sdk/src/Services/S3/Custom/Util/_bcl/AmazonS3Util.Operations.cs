@@ -383,7 +383,9 @@ namespace Amazon.S3.Util
             finally
             {
                 if (response != null)
-                    response.Dispose();
+                {
+                    response.Close();
+                }
             }
         }
     }
