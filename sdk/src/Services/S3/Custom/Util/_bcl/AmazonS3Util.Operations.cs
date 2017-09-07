@@ -341,7 +341,7 @@ namespace Amazon.S3.Util
             Uri uri = new Uri(url);
 
             HttpWebRequest webRequest = WebRequest.Create(uri) as HttpWebRequest;
-
+            
             var boundary = Convert.ToBase64String(Guid.NewGuid().ToByteArray()).Replace('=', 'z');
 
             webRequest.ContentType = string.Format(CultureInfo.InvariantCulture, "multipart/form-data; boundary={0}", boundary);
@@ -374,13 +374,17 @@ namespace Amazon.S3.Util
             try
             {
                 response = webRequest.GetResponse() as HttpWebResponse;
+                return S3PostUploadResponse.FromWebResponse(response);
             }
             catch (WebException ex)
             {
                 throw S3PostUploadException.FromResponse((HttpWebResponse)ex.Response);
             }
-
-            return S3PostUploadResponse.FromWebResponse(response);
+            finally
+            {
+                if (response != null)
+                    response.Dispose();
+            }
         }
     }
 }
