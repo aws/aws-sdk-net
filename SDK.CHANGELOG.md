@@ -1,6 +1,6 @@
 ### 3.3.150.1 (2017-09-07 06:06 UTC)
 * CognitoSync (3.3.1.22)
-	* Added try catch block around GetIdentityId during sync. PR https://github.com/aws/aws-sdk-net/pull/448
+	* Added try catch block around GetIdentityId during sync. PR https://github.com/aws/aws-sdk-net/pull/408
 * S3 (3.3.10.4)
 	* Fixed bug with S3 Util method PostUpload that wasn't disposing the HttpWebResponse.
     * Extend S3 signed URLs to allow for custom parameters that cannot be altered PR https://github.com/aws/aws-sdk-net/pull/698
