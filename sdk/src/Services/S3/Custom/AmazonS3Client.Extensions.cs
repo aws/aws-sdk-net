@@ -223,6 +223,10 @@ namespace Amazon.S3
             if (!string.IsNullOrEmpty(responseHeaderOverrides.ContentEncoding))
                 queryParameters.Add("response-content-encoding", responseHeaderOverrides.ContentEncoding);
 
+            // Add custom parameters to be included and signed
+            foreach (string k in getPreSignedUrlRequest.Parameters.Keys)
+                queryParameters.Add(k, getPreSignedUrlRequest.Parameters[k]);
+
             request.ResourcePath = uriResourcePath.ToString();
             request.UseQueryString = true;
 
