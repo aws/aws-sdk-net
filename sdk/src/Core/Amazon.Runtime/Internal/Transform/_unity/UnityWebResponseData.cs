@@ -220,6 +220,8 @@ namespace Amazon.Runtime.Internal.Transform
 
         private void CopyHeaderValues(Dictionary<string, string> headers)
         {
+            if (headers == null)
+                headers = new Dictionary<string, string>();
             _headers = new Dictionary<string, string>(headers, StringComparer.OrdinalIgnoreCase);
             _headerNames = headers.Keys.ToArray<string>();
             _headerNamesSet = new HashSet<string>(_headerNames, StringComparer.OrdinalIgnoreCase);
