@@ -28,30 +28,47 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElasticLoadBalancingV2.Model
 {
     /// <summary>
-    /// Container for the parameters to the DescribeLoadBalancerAttributes operation.
-    /// Describes the attributes for the specified Application Load Balancer or Network Load
-    /// Balancer.
+    /// Information about a static IP address for a load balancer.
     /// </summary>
-    public partial class DescribeLoadBalancerAttributesRequest : AmazonElasticLoadBalancingV2Request
+    public partial class LoadBalancerAddress
     {
-        private string _loadBalancerArn;
+        private string _allocationId;
+        private string _ipAddress;
 
         /// <summary>
-        /// Gets and sets the property LoadBalancerArn. 
+        /// Gets and sets the property AllocationId. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the load balancer.
+        /// [Network Load Balancers] The allocation ID of the Elastic IP address.
         /// </para>
         /// </summary>
-        public string LoadBalancerArn
+        public string AllocationId
         {
-            get { return this._loadBalancerArn; }
-            set { this._loadBalancerArn = value; }
+            get { return this._allocationId; }
+            set { this._allocationId = value; }
         }
 
-        // Check to see if LoadBalancerArn property is set
-        internal bool IsSetLoadBalancerArn()
+        // Check to see if AllocationId property is set
+        internal bool IsSetAllocationId()
         {
-            return this._loadBalancerArn != null;
+            return this._allocationId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IpAddress. 
+        /// <para>
+        /// The static IP address.
+        /// </para>
+        /// </summary>
+        public string IpAddress
+        {
+            get { return this._ipAddress; }
+            set { this._ipAddress = value; }
+        }
+
+        // Check to see if IpAddress property is set
+        internal bool IsSetIpAddress()
+        {
+            return this._ipAddress != null;
         }
 
     }

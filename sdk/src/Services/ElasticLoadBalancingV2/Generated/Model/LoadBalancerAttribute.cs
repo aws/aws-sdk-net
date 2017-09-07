@@ -42,20 +42,22 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>access_logs.s3.enabled</code> - Indicates whether access logs stored in Amazon
-        /// S3 are enabled. The value is <code>true</code> or <code>false</code>.
+        ///  <code>access_logs.s3.enabled</code> - [Application Load Balancers] Indicates whether
+        /// access logs stored in Amazon S3 are enabled. The value is <code>true</code> or <code>false</code>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>access_logs.s3.bucket</code> - The name of the S3 bucket for the access logs.
-        /// This attribute is required if access logs in Amazon S3 are enabled. The bucket must
-        /// exist in the same region as the load balancer and have a bucket policy that grants
-        /// Elastic Load Balancing permission to write to the bucket.
+        ///  <code>access_logs.s3.bucket</code> - [Application Load Balancers] The name of the
+        /// S3 bucket for the access logs. This attribute is required if access logs in Amazon
+        /// S3 are enabled. The bucket must exist in the same region as the load balancer and
+        /// have a bucket policy that grants Elastic Load Balancing permission to write to the
+        /// bucket.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>access_logs.s3.prefix</code> - The prefix for the location in the S3 bucket.
-        /// If you don't specify a prefix, the access logs are stored in the root of the bucket.
+        ///  <code>access_logs.s3.prefix</code> - [Application Load Balancers] The prefix for
+        /// the location in the S3 bucket. If you don't specify a prefix, the access logs are
+        /// stored in the root of the bucket.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -64,8 +66,8 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>idle_timeout.timeout_seconds</code> - The idle timeout value, in seconds. The
-        /// valid range is 1-3600. The default is 60 seconds.
+        ///  <code>idle_timeout.timeout_seconds</code> - [Application Load Balancers] The idle
+        /// timeout value, in seconds. The valid range is 1-4000. The default is 60 seconds.
         /// </para>
         ///  </li> </ul>
         /// </summary>

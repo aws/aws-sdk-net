@@ -29,8 +29,13 @@ namespace Amazon.ElasticLoadBalancingV2.Model
 {
     /// <summary>
     /// Container for the parameters to the SetSecurityGroups operation.
-    /// Associates the specified security groups with the specified load balancer. The specified
-    /// security groups override the previously associated security groups.
+    /// Associates the specified security groups with the specified Application Load Balancer.
+    /// The specified security groups override the previously associated security groups.
+    /// 
+    ///  
+    /// <para>
+    /// Note that you can't specify a security group for a Network Load Balancer.
+    /// </para>
     /// </summary>
     public partial class SetSecurityGroupsRequest : AmazonElasticLoadBalancingV2Request
     {

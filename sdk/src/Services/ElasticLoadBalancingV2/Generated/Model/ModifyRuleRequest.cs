@@ -49,7 +49,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// <summary>
         /// Gets and sets the property Actions. 
         /// <para>
-        /// The actions.
+        /// The actions. The target group must use the HTTP or HTTPS protocol.
         /// </para>
         /// </summary>
         public List<Action> Actions

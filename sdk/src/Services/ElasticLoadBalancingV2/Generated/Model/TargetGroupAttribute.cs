@@ -48,20 +48,21 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>stickiness.enabled</code> - Indicates whether sticky sessions are enabled.
-        /// The value is <code>true</code> or <code>false</code>.
+        ///  <code>stickiness.enabled</code> - [Application Load Balancers] Indicates whether
+        /// sticky sessions are enabled. The value is <code>true</code> or <code>false</code>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>stickiness.type</code> - The type of sticky sessions. The possible value is
-        /// <code>lb_cookie</code>.
+        ///  <code>stickiness.type</code> - [Application Load Balancers] The type of sticky sessions.
+        /// The possible value is <code>lb_cookie</code>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>stickiness.lb_cookie.duration_seconds</code> - The time period, in seconds,
-        /// during which requests from a client should be routed to the same target. After this
-        /// time period expires, the load balancer-generated cookie is considered stale. The range
-        /// is 1 second to 1 week (604800 seconds). The default value is 1 day (86400 seconds).
+        ///  <code>stickiness.lb_cookie.duration_seconds</code> - [Application Load Balancers]
+        /// The time period, in seconds, during which requests from a client should be routed
+        /// to the same target. After this time period expires, the load balancer-generated cookie
+        /// is considered stale. The range is 1 second to 1 week (604800 seconds). The default
+        /// value is 1 day (86400 seconds).
         /// </para>
         ///  </li> </ul>
         /// </summary>

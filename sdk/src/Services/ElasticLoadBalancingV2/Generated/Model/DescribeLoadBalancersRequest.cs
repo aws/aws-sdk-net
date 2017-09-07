@@ -29,8 +29,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeLoadBalancers operation.
-    /// Describes the specified Application Load Balancers or all of your Application Load
-    /// Balancers.
+    /// Describes the specified load balancers or all of your load balancers.
     /// 
     ///  
     /// <para>

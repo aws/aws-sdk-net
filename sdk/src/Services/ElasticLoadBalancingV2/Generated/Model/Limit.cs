@@ -68,6 +68,14 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// listeners-per-network-load-balancer
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// network-load-balancers
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// rules-per-application-load-balancer
         /// </para>
         ///  </li> <li> 

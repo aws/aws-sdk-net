@@ -8,7 +8,7 @@
   <property-value-rule>
     <property>Amazon.ElasticLoadBalancingV2.Model.CreateRuleRequest.Priority</property>
     <min>1</min>
-    <max>99999</max>
+    <max>50000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ElasticLoadBalancingV2.Model.CreateTargetGroupRequest.HealthCheckIntervalSeconds</property>
@@ -121,7 +121,7 @@
   <property-value-rule>
     <property>Amazon.ElasticLoadBalancingV2.Model.RulePriorityPair.Priority</property>
     <min>1</min>
-    <max>99999</max>
+    <max>50000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ElasticLoadBalancingV2.Model.Tag.Key</property>

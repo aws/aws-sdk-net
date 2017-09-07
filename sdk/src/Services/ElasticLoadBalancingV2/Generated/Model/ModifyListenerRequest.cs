@@ -69,7 +69,9 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// <summary>
         /// Gets and sets the property DefaultActions. 
         /// <para>
-        /// The default actions.
+        /// The default action. For Application Load Balancers, the protocol of the specified
+        /// target group must be HTTP or HTTPS. For Network Load Balancers, the protocol of the
+        /// specified target group must be TCP.
         /// </para>
         /// </summary>
         public List<Action> DefaultActions
@@ -123,7 +125,8 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// <summary>
         /// Gets and sets the property Protocol. 
         /// <para>
-        /// The protocol for connections from clients to the load balancer.
+        /// The protocol for connections from clients to the load balancer. Application Load Balancers
+        /// support HTTP and HTTPS and Network Load Balancers support TCP.
         /// </para>
         /// </summary>
         public ProtocolEnum Protocol

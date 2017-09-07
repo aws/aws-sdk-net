@@ -181,6 +181,10 @@ namespace Amazon.ElasticLoadBalancingV2
         /// </summary>
         public static readonly LoadBalancerStateEnum Active = new LoadBalancerStateEnum("active");
         /// <summary>
+        /// Constant Active_impaired for LoadBalancerStateEnum
+        /// </summary>
+        public static readonly LoadBalancerStateEnum Active_impaired = new LoadBalancerStateEnum("active_impaired");
+        /// <summary>
         /// Constant Failed for LoadBalancerStateEnum
         /// </summary>
         public static readonly LoadBalancerStateEnum Failed = new LoadBalancerStateEnum("failed");
@@ -234,6 +238,10 @@ namespace Amazon.ElasticLoadBalancingV2
         /// Constant Application for LoadBalancerTypeEnum
         /// </summary>
         public static readonly LoadBalancerTypeEnum Application = new LoadBalancerTypeEnum("application");
+        /// <summary>
+        /// Constant Network for LoadBalancerTypeEnum
+        /// </summary>
+        public static readonly LoadBalancerTypeEnum Network = new LoadBalancerTypeEnum("network");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -284,6 +292,10 @@ namespace Amazon.ElasticLoadBalancingV2
         /// Constant HTTPS for ProtocolEnum
         /// </summary>
         public static readonly ProtocolEnum HTTPS = new ProtocolEnum("HTTPS");
+        /// <summary>
+        /// Constant TCP for ProtocolEnum
+        /// </summary>
+        public static readonly ProtocolEnum TCP = new ProtocolEnum("TCP");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -424,6 +436,10 @@ namespace Amazon.ElasticLoadBalancingV2
         /// Constant Initial for TargetHealthStateEnum
         /// </summary>
         public static readonly TargetHealthStateEnum Initial = new TargetHealthStateEnum("initial");
+        /// <summary>
+        /// Constant Unavailable for TargetHealthStateEnum
+        /// </summary>
+        public static readonly TargetHealthStateEnum Unavailable = new TargetHealthStateEnum("unavailable");
         /// <summary>
         /// Constant Unhealthy for TargetHealthStateEnum
         /// </summary>

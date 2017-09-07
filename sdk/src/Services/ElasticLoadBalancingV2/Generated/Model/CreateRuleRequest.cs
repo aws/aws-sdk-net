@@ -29,14 +29,14 @@ namespace Amazon.ElasticLoadBalancingV2.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateRule operation.
-    /// Creates a rule for the specified listener.
+    /// Creates a rule for the specified listener. The listener must be associated with an
+    /// Application Load Balancer.
     /// 
     ///  
     /// <para>
-    /// Each rule can have one action and one condition. Rules are evaluated in priority order,
-    /// from the lowest value to the highest value. When the condition for a rule is met,
-    /// the specified action is taken. If no conditions are met, the default action for the
-    /// default rule is taken. For more information, see <a href="http://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-listeners.html#listener-rules">Listener
+    /// Rules are evaluated in priority order, from the lowest value to the highest value.
+    /// When the condition for a rule is met, the specified action is taken. If no conditions
+    /// are met, the action for the default rule is taken. For more information, see <a href="http://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-listeners.html#listener-rules">Listener
     /// Rules</a> in the <i>Application Load Balancers Guide</i>.
     /// </para>
     ///  
@@ -74,7 +74,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// <summary>
         /// Gets and sets the property Conditions. 
         /// <para>
-        /// A condition. Each condition specifies a field name and a single value.
+        /// The conditions. Each condition specifies a field name and a single value.
         /// </para>
         ///  
         /// <para>

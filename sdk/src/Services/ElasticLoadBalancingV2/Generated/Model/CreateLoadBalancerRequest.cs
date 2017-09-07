@@ -29,7 +29,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateLoadBalancer operation.
-    /// Creates an Application Load Balancer.
+    /// Creates an Application Load Balancer or a Network Load Balancer.
     /// 
     ///  
     /// <para>
@@ -48,12 +48,15 @@ namespace Amazon.ElasticLoadBalancingV2.Model
     /// You can create up to 20 load balancers per region per account. You can request an
     /// increase for the number of load balancers for your account. For more information,
     /// see <a href="http://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-limits.html">Limits
-    /// for Your Application Load Balancer</a> in the <i>Application Load Balancers Guide</i>.
+    /// for Your Application Load Balancer</a> in the <i>Application Load Balancers Guide</i>
+    /// and <a href="http://docs.aws.amazon.com/elasticloadbalancing/latest/network/load-balancer-limits.html">Limits
+    /// for Your Network Load Balancer</a> in the <i>Network Load Balancers Guide</i>.
     /// </para>
     ///  
     /// <para>
     /// For more information, see <a href="http://docs.aws.amazon.com/elasticloadbalancing/latest/application/application-load-balancers.html">Application
-    /// Load Balancers</a> in the <i>Application Load Balancers Guide</i>.
+    /// Load Balancers</a> in the <i>Application Load Balancers Guide</i> and <a href="http://docs.aws.amazon.com/elasticloadbalancing/latest/network/network-load-balancers.html">Network
+    /// Load Balancers</a> in the <i>Network Load Balancers Guide</i>.
     /// </para>
     /// </summary>
     public partial class CreateLoadBalancerRequest : AmazonElasticLoadBalancingV2Request
@@ -62,15 +65,18 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         private string _name;
         private LoadBalancerSchemeEnum _scheme;
         private List<string> _securityGroups = new List<string>();
+        private List<SubnetMapping> _subnetMappings = new List<SubnetMapping>();
         private List<string> _subnets = new List<string>();
         private List<Tag> _tags = new List<Tag>();
+        private LoadBalancerTypeEnum _type;
 
         /// <summary>
         /// Gets and sets the property IpAddressType. 
         /// <para>
-        /// The type of IP addresses used by the subnets for your load balancer. The possible
-        /// values are <code>ipv4</code> (for IPv4 addresses) and <code>dualstack</code> (for
-        /// IPv4 and IPv6 addresses). Internal load balancers must use <code>ipv4</code>.
+        /// [Application Load Balancers] The type of IP addresses used by the subnets for your
+        /// load balancer. The possible values are <code>ipv4</code> (for IPv4 addresses) and
+        /// <code>dualstack</code> (for IPv4 and IPv6 addresses). Internal load balancers must
+        /// use <code>ipv4</code>.
         /// </para>
         /// </summary>
         public IpAddressType IpAddressType
@@ -144,7 +150,8 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// <summary>
         /// Gets and sets the property SecurityGroups. 
         /// <para>
-        /// The IDs of the security groups to assign to the load balancer.
+        /// [Application Load Balancers] The IDs of the security groups to assign to the load
+        /// balancer.
         /// </para>
         /// </summary>
         public List<string> SecurityGroups
@@ -160,10 +167,42 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         }
 
         /// <summary>
+        /// Gets and sets the property SubnetMappings. 
+        /// <para>
+        /// The IDs of the subnets to attach to the load balancer. You can specify only one subnet
+        /// per Availability Zone. You must specify either subnets or subnet mappings.
+        /// </para>
+        ///  
+        /// <para>
+        /// [Network Load Balancers] You can specify one Elastic IP address per subnet.
+        /// </para>
+        ///  
+        /// <para>
+        /// [Application Load Balancers] You cannot specify Elastic IP addresses for your subnets.
+        /// </para>
+        /// </summary>
+        public List<SubnetMapping> SubnetMappings
+        {
+            get { return this._subnetMappings; }
+            set { this._subnetMappings = value; }
+        }
+
+        // Check to see if SubnetMappings property is set
+        internal bool IsSetSubnetMappings()
+        {
+            return this._subnetMappings != null && this._subnetMappings.Count > 0; 
+        }
+
+        /// <summary>
         /// Gets and sets the property Subnets. 
         /// <para>
         /// The IDs of the subnets to attach to the load balancer. You can specify only one subnet
-        /// per Availability Zone. You must specify subnets from at least two Availability Zones.
+        /// per Availability Zone. You must specify either subnets or subnet mappings.
+        /// </para>
+        ///  
+        /// <para>
+        /// [Application Load Balancers] You must specify subnets from at least two Availability
+        /// Zones.
         /// </para>
         /// </summary>
         public List<string> Subnets
@@ -194,6 +233,24 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         internal bool IsSetTags()
         {
             return this._tags != null && this._tags.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Type. 
+        /// <para>
+        /// The type of load balancer to create. The default is <code>application</code>.
+        /// </para>
+        /// </summary>
+        public LoadBalancerTypeEnum Type
+        {
+            get { return this._type; }
+            set { this._type = value; }
+        }
+
+        // Check to see if Type property is set
+        internal bool IsSetType()
+        {
+            return this._type != null;
         }
 
     }

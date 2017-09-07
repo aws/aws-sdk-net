@@ -29,7 +29,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateListener operation.
-    /// Creates a listener for the specified Application Load Balancer.
+    /// Creates a listener for the specified Application Load Balancer or Network Load Balancer.
     /// 
     ///  
     /// <para>
@@ -44,7 +44,9 @@ namespace Amazon.ElasticLoadBalancingV2.Model
     ///  
     /// <para>
     /// For more information, see <a href="http://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-listeners.html">Listeners
-    /// for Your Application Load Balancers</a> in the <i>Application Load Balancers Guide</i>.
+    /// for Your Application Load Balancers</a> in the <i>Application Load Balancers Guide</i>
+    /// and <a href="http://docs.aws.amazon.com/elasticloadbalancing/latest/network/load-balancer-listeners.html">Listeners
+    /// for Your Network Load Balancers</a> in the <i>Network Load Balancers Guide</i>.
     /// </para>
     /// </summary>
     public partial class CreateListenerRequest : AmazonElasticLoadBalancingV2Request
@@ -59,8 +61,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// <summary>
         /// Gets and sets the property Certificates. 
         /// <para>
-        /// The SSL server certificate. You must provide exactly one certificate if the protocol
-        /// is HTTPS.
+        /// [HTTPS listeners] The SSL server certificate. You must provide exactly one certificate.
         /// </para>
         /// </summary>
         public List<Certificate> Certificates
@@ -78,7 +79,9 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// <summary>
         /// Gets and sets the property DefaultActions. 
         /// <para>
-        /// The default action for the listener.
+        /// The default action for the listener. For Application Load Balancers, the protocol
+        /// of the specified target group must be HTTP or HTTPS. For Network Load Balancers, the
+        /// protocol of the specified target group must be TCP.
         /// </para>
         /// </summary>
         public List<Action> DefaultActions
@@ -132,7 +135,9 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// <summary>
         /// Gets and sets the property Protocol. 
         /// <para>
-        /// The protocol for connections from clients to the load balancer.
+        /// The protocol for connections from clients to the load balancer. For Application Load
+        /// Balancers, the supported protocols are HTTP and HTTPS. For Network Load Balancers,
+        /// the supported protocol is TCP.
         /// </para>
         /// </summary>
         public ProtocolEnum Protocol
@@ -150,8 +155,8 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// <summary>
         /// Gets and sets the property SslPolicy. 
         /// <para>
-        /// The security policy that defines which ciphers and protocols are supported. The default
-        /// is the current predefined security policy.
+        /// [HTTPS listeners] The security policy that defines which ciphers and protocols are
+        /// supported. The default is the current predefined security policy.
         /// </para>
         /// </summary>
         public string SslPolicy

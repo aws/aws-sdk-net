@@ -32,18 +32,18 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.ElasticLoadBalancingV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for AvailabilityZone Object
+    /// Response Unmarshaller for LoadBalancerAddress Object
     /// </summary>  
-    public class AvailabilityZoneUnmarshaller : IUnmarshaller<AvailabilityZone, XmlUnmarshallerContext>, IUnmarshaller<AvailabilityZone, JsonUnmarshallerContext>
+    public class LoadBalancerAddressUnmarshaller : IUnmarshaller<LoadBalancerAddress, XmlUnmarshallerContext>, IUnmarshaller<LoadBalancerAddress, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public AvailabilityZone Unmarshall(XmlUnmarshallerContext context)
+        public LoadBalancerAddress Unmarshall(XmlUnmarshallerContext context)
         {
-            AvailabilityZone unmarshalledObject = new AvailabilityZone();
+            LoadBalancerAddress unmarshalledObject = new LoadBalancerAddress();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
@@ -54,23 +54,16 @@ namespace Amazon.ElasticLoadBalancingV2.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-                    if (context.TestExpression("LoadBalancerAddresses/member", targetDepth))
-                    {
-                        var unmarshaller = LoadBalancerAddressUnmarshaller.Instance;
-                        var item = unmarshaller.Unmarshall(context);
-                        unmarshalledObject.LoadBalancerAddresses.Add(item);
-                        continue;
-                    }
-                    if (context.TestExpression("SubnetId", targetDepth))
+                    if (context.TestExpression("AllocationId", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.SubnetId = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.AllocationId = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("ZoneName", targetDepth))
+                    if (context.TestExpression("IpAddress", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.ZoneName = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.IpAddress = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
@@ -88,18 +81,18 @@ namespace Amazon.ElasticLoadBalancingV2.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public AvailabilityZone Unmarshall(JsonUnmarshallerContext context)
+        public LoadBalancerAddress Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
 
-        private static AvailabilityZoneUnmarshaller _instance = new AvailabilityZoneUnmarshaller();        
+        private static LoadBalancerAddressUnmarshaller _instance = new LoadBalancerAddressUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static AvailabilityZoneUnmarshaller Instance
+        public static LoadBalancerAddressUnmarshaller Instance
         {
             get
             {

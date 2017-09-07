@@ -29,7 +29,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
 {
     /// <summary>
     /// Container for the parameters to the RemoveTags operation.
-    /// Removes the specified tags from the specified resource.
+    /// Removes the specified tags from the specified Elastic Load Balancing resource.
     /// 
     ///  
     /// <para>

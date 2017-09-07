@@ -53,7 +53,8 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// Gets and sets the property HealthCheckIntervalSeconds. 
         /// <para>
         /// The approximate amount of time, in seconds, between health checks of an individual
-        /// target.
+        /// target. For Application Load Balancers, the range is 5 to 300 seconds. For Network
+        /// Load Balancers, the supported values are 10 or 30 seconds.
         /// </para>
         /// </summary>
         public int HealthCheckIntervalSeconds
@@ -71,7 +72,8 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// <summary>
         /// Gets and sets the property HealthCheckPath. 
         /// <para>
-        /// The ping path that is the destination for the health check request.
+        /// [HTTP/HTTPS health checks] The ping path that is the destination for the health check
+        /// request.
         /// </para>
         /// </summary>
         public string HealthCheckPath
@@ -89,7 +91,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// <summary>
         /// Gets and sets the property HealthCheckPort. 
         /// <para>
-        /// The port to use to connect with the target.
+        /// The port the load balancer uses when performing health checks on targets.
         /// </para>
         /// </summary>
         public string HealthCheckPort
@@ -107,7 +109,8 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// <summary>
         /// Gets and sets the property HealthCheckProtocol. 
         /// <para>
-        /// The protocol to use to connect with the target.
+        /// The protocol the load balancer uses when performing health checks on targets. The
+        /// TCP protocol is supported only if the protocol of the target group is TCP.
         /// </para>
         /// </summary>
         public ProtocolEnum HealthCheckProtocol
@@ -125,7 +128,8 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// <summary>
         /// Gets and sets the property HealthCheckTimeoutSeconds. 
         /// <para>
-        /// The amount of time, in seconds, during which no response means a failed health check.
+        /// [HTTP/HTTPS health checks] The amount of time, in seconds, during which no response
+        /// means a failed health check.
         /// </para>
         /// </summary>
         public int HealthCheckTimeoutSeconds
@@ -162,7 +166,8 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// <summary>
         /// Gets and sets the property Matcher. 
         /// <para>
-        /// The HTTP codes to use when checking for a successful response from a target.
+        /// [HTTP/HTTPS health checks] The HTTP codes to use when checking for a successful response
+        /// from a target.
         /// </para>
         /// </summary>
         public Matcher Matcher
@@ -199,7 +204,8 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// Gets and sets the property UnhealthyThresholdCount. 
         /// <para>
         /// The number of consecutive health check failures required before considering the target
-        /// unhealthy.
+        /// unhealthy. For Network Load Balancers, this value must be the same as the healthy
+        /// threshold count.
         /// </para>
         /// </summary>
         public int UnhealthyThresholdCount

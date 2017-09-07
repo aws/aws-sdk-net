@@ -37,9 +37,17 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// <summary>
         /// Gets and sets the property HttpCode. 
         /// <para>
-        /// The HTTP codes. You can specify values between 200 and 499. The default value is 200.
-        /// You can specify multiple values (for example, "200,202") or a range of values (for
-        /// example, "200-299").
+        /// The HTTP codes.
+        /// </para>
+        ///  
+        /// <para>
+        /// For Application Load Balancers, you can specify values between 200 and 499, and the
+        /// default value is 200. You can specify multiple values (for example, "200,202") or
+        /// a range of values (for example, "200-299").
+        /// </para>
+        ///  
+        /// <para>
+        /// For Network Load Balancers, this is 200 to 399.
         /// </para>
         /// </summary>
         public string HttpCode

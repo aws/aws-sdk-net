@@ -117,6 +117,11 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        ///  <code>Target.IpUnusable</code> - The target IP address is reserved for use by a load
+        /// balancer.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <code>Target.InvalidState</code> - The target is in the stopped or terminated state.
         /// </para>
         ///  </li> </ul> 

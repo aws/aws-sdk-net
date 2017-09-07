@@ -44,19 +44,28 @@ namespace Amazon.ElasticLoadBalancingV2
     /// </para>
     ///  
     /// <para>
-    /// Elastic Load Balancing supports two types of load balancers: Classic Load Balancers
-    /// and Application Load Balancers. A Classic Load Balancer makes routing and load balancing
-    /// decisions either at the transport layer (TCP/SSL) or the application layer (HTTP/HTTPS),
-    /// and supports either EC2-Classic or a VPC. An Application Load Balancer makes routing
-    /// and load balancing decisions at the application layer (HTTP/HTTPS), supports path-based
-    /// routing, and can route requests to one or more ports on each EC2 instance or container
-    /// instance in your virtual private cloud (VPC). For more information, see the <a href="http://docs.aws.amazon.com/elasticloadbalancing/latest/userguide/">Elastic
+    /// Elastic Load Balancing supports the following types of load balancers: Application
+    /// Load Balancers, Network Load Balancers, and Classic Load Balancers.
+    /// </para>
+    ///  
+    /// <para>
+    /// An Application Load Balancer makes routing and load balancing decisions at the application
+    /// layer (HTTP/HTTPS). A Network Load Balancer makes routing and load balancing decisions
+    /// at the transport layer (TCP). Both Application Load Balancers and Network Load Balancers
+    /// can route requests to one or more ports on each EC2 instance or container instance
+    /// in your virtual private cloud (VPC).
+    /// </para>
+    ///  
+    /// <para>
+    /// A Classic Load Balancer makes routing and load balancing decisions either at the transport
+    /// layer (TCP/SSL) or the application layer (HTTP/HTTPS), and supports either EC2-Classic
+    /// or a VPC. For more information, see the <a href="http://docs.aws.amazon.com/elasticloadbalancing/latest/userguide/">Elastic
     /// Load Balancing User Guide</a>.
     /// </para>
     ///  
     /// <para>
-    /// This reference covers the 2015-12-01 API, which supports Application Load Balancers.
-    /// The 2012-06-01 API supports Classic Load Balancers.
+    /// This reference covers the 2015-12-01 API, which supports Application Load Balancers
+    /// and Network Load Balancers. The 2012-06-01 API supports Classic Load Balancers.
     /// </para>
     ///  
     /// <para>
@@ -64,7 +73,7 @@ namespace Amazon.ElasticLoadBalancingV2
     /// </para>
     ///  <ol> <li> 
     /// <para>
-    /// Create an Application Load Balancer using <a>CreateLoadBalancer</a>.
+    /// Create a load balancer using <a>CreateLoadBalancer</a>.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -78,14 +87,9 @@ namespace Amazon.ElasticLoadBalancingV2
     /// <para>
     /// Create one or more listeners for your load balancer using <a>CreateListener</a>.
     /// </para>
-    ///  </li> <li> 
-    /// <para>
-    /// (Optional) Create one or more rules for content routing based on URL using <a>CreateRule</a>.
-    /// </para>
     ///  </li> </ol> 
     /// <para>
-    /// To delete an Application Load Balancer and its related resources, complete the following
-    /// tasks:
+    /// To delete a load balancer and its related resources, complete the following tasks:
     /// </para>
     ///  <ol> <li> 
     /// <para>

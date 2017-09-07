@@ -32,8 +32,27 @@ namespace Amazon.ElasticLoadBalancingV2.Model
     /// </summary>
     public partial class AvailabilityZone
     {
+        private List<LoadBalancerAddress> _loadBalancerAddresses = new List<LoadBalancerAddress>();
         private string _subnetId;
         private string _zoneName;
+
+        /// <summary>
+        /// Gets and sets the property LoadBalancerAddresses. 
+        /// <para>
+        /// [Network Load Balancers] The static IP address.
+        /// </para>
+        /// </summary>
+        public List<LoadBalancerAddress> LoadBalancerAddresses
+        {
+            get { return this._loadBalancerAddresses; }
+            set { this._loadBalancerAddresses = value; }
+        }
+
+        // Check to see if LoadBalancerAddresses property is set
+        internal bool IsSetLoadBalancerAddresses()
+        {
+            return this._loadBalancerAddresses != null && this._loadBalancerAddresses.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property SubnetId. 
