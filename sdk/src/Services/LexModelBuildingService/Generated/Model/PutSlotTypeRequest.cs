@@ -167,12 +167,13 @@ namespace Amazon.LexModelBuildingService.Model
         /// <summary>
         /// Gets and sets the property ValueSelectionStrategy. 
         /// <para>
-        /// Determines the strategy that Amazon Lex uses to return slot type values. The field
-        /// can be set to one of the following values:
+        /// Determines the slot resolution strategy that Amazon Lex uses to return slot type values.
+        /// The field can be set to one of the following values:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>ORIGINAL_VALUE</code> - Returns the value entered by the user.
+        ///  <code>ORIGINAL_VALUE</code> - Returns the value entered by the user, if the user
+        /// value is similar to the slot value.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -182,8 +183,7 @@ namespace Amazon.LexModelBuildingService.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// If you don't specify the <code>valueSelectionStrategy</code> is not provided, the
-        /// default is <code>ORIGINAL_VALUE</code>.
+        /// If you don't specify the <code>valueSelectionStrategy</code>, the default is <code>ORIGINAL_VALUE</code>.
         /// </para>
         /// </summary>
         public SlotValueSelectionStrategy ValueSelectionStrategy

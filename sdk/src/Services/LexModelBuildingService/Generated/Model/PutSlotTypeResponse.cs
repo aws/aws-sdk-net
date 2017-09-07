@@ -154,8 +154,8 @@ namespace Amazon.LexModelBuildingService.Model
         /// <summary>
         /// Gets and sets the property ValueSelectionStrategy. 
         /// <para>
-        /// The strategy that Amazon Lex uses to determine the value of the slot. For more information,
-        /// see <a>PutSlotType</a>.
+        /// The slot resolution strategy that Amazon Lex uses to determine the value of the slot.
+        /// For more information, see <a>PutSlotType</a>.
         /// </para>
         /// </summary>
         public SlotValueSelectionStrategy ValueSelectionStrategy

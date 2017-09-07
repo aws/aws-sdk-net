@@ -2112,6 +2112,72 @@ namespace Amazon.LexModelBuildingService
 
         #endregion
         
+        #region  GetExport
+
+        /// <summary>
+        /// Exports the contents of a Amazon Lex resource in a specified format.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetExport service method.</param>
+        /// 
+        /// <returns>The response from the GetExport service method, as returned by LexModelBuildingService.</returns>
+        /// <exception cref="Amazon.LexModelBuildingService.Model.BadRequestException">
+        /// The request is not well formed. For example, a value is invalid or a required field
+        /// is missing. Check the field values, and try again.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelBuildingService.Model.InternalFailureException">
+        /// An internal Amazon Lex error occurred. Try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelBuildingService.Model.LimitExceededException">
+        /// The request exceeded a limit. Try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelBuildingService.Model.NotFoundException">
+        /// The resource specified in the request was not found. Check the resource and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/GetExport">REST API Reference for GetExport Operation</seealso>
+        public GetExportResponse GetExport(GetExportRequest request)
+        {
+            var marshaller = new GetExportRequestMarshaller();
+            var unmarshaller = GetExportResponseUnmarshaller.Instance;
+
+            return Invoke<GetExportRequest,GetExportResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetExport operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetExport operation on AmazonLexModelBuildingServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetExport
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/GetExport">REST API Reference for GetExport Operation</seealso>
+        public IAsyncResult BeginGetExport(GetExportRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new GetExportRequestMarshaller();
+            var unmarshaller = GetExportResponseUnmarshaller.Instance;
+
+            return BeginInvoke<GetExportRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetExport operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetExport.</param>
+        /// 
+        /// <returns>Returns a  GetExportResult from LexModelBuildingService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/GetExport">REST API Reference for GetExport Operation</seealso>
+        public  GetExportResponse EndGetExport(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetExportResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  GetIntent
 
         /// <summary>

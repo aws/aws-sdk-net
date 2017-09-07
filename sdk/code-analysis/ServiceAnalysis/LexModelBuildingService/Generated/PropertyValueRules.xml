@@ -346,6 +346,30 @@
     <max>50</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.LexModelBuildingService.Model.GetExportRequest.Name</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[a-zA-Z_]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LexModelBuildingService.Model.GetExportRequest.Version</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LexModelBuildingService.Model.GetExportResponse.Name</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[a-zA-Z_]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LexModelBuildingService.Model.GetExportResponse.Version</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.LexModelBuildingService.Model.GetIntentRequest.Name</property>
     <min>1</min>
     <max>100</max>
@@ -726,7 +750,7 @@
     <property>Amazon.LexModelBuildingService.Model.ResourceReference.Name</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[a-zA-Z]+</pattern>
+    <pattern>[a-zA-Z_]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LexModelBuildingService.Model.ResourceReference.Version</property>

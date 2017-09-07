@@ -129,6 +129,106 @@ namespace Amazon.LexModelBuildingService
 
 
     /// <summary>
+    /// Constants used for properties of type ExportStatus.
+    /// </summary>
+    public class ExportStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant FAILED for ExportStatus
+        /// </summary>
+        public static readonly ExportStatus FAILED = new ExportStatus("FAILED");
+        /// <summary>
+        /// Constant IN_PROGRESS for ExportStatus
+        /// </summary>
+        public static readonly ExportStatus IN_PROGRESS = new ExportStatus("IN_PROGRESS");
+        /// <summary>
+        /// Constant READY for ExportStatus
+        /// </summary>
+        public static readonly ExportStatus READY = new ExportStatus("READY");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ExportStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ExportStatus FindValue(string value)
+        {
+            return FindValue<ExportStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ExportStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ExportType.
+    /// </summary>
+    public class ExportType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ALEXA_SKILLS_KIT for ExportType
+        /// </summary>
+        public static readonly ExportType ALEXA_SKILLS_KIT = new ExportType("ALEXA_SKILLS_KIT");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ExportType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ExportType FindValue(string value)
+        {
+            return FindValue<ExportType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ExportType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type FulfillmentActivityType.
     /// </summary>
     public class FulfillmentActivityType : ConstantClass
@@ -326,6 +426,52 @@ namespace Amazon.LexModelBuildingService
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ReferenceType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ResourceType.
+    /// </summary>
+    public class ResourceType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant BOT for ResourceType
+        /// </summary>
+        public static readonly ResourceType BOT = new ResourceType("BOT");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ResourceType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ResourceType FindValue(string value)
+        {
+            return FindValue<ResourceType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ResourceType(string value)
         {
             return FindValue(value);
         }
