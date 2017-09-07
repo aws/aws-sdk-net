@@ -3,8 +3,7 @@
 	* Added try catch block around GetIdentityId during sync. PR https://github.com/aws/aws-sdk-net/pull/448
 * S3 (3.3.10.4)
 	* Fixed bug with S3 Util method PostUpload that wasn't disposing the HttpWebResponse.
-
-Extend S3 signed URLs to allow for custom parameters that cannot be altered PR https://github.com/aws/aws-sdk-net/pull/698
+    * Extend S3 signed URLs to allow for custom parameters that cannot be altered PR https://github.com/aws/aws-sdk-net/pull/698
 * Core 3.3.17.7
 	* Improve AsyncRunner utility method to reduce thread usage PR https://github.com/aws/aws-sdk-net/pull/731
     * Don't allocate memory in UnmarshallerContext.TestExpression. PR https://github.com/aws/aws-sdk-net/pull/716
