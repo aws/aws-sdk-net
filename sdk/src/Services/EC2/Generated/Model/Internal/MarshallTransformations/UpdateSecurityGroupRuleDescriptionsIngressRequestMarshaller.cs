@@ -31,9 +31,9 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// AuthorizeSecurityGroupEgress Request Marshaller
+    /// UpdateSecurityGroupRuleDescriptionsIngress Request Marshaller
     /// </summary>       
-    public class AuthorizeSecurityGroupEgressRequestMarshaller : IMarshaller<IRequest, AuthorizeSecurityGroupEgressRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class UpdateSecurityGroupRuleDescriptionsIngressRequestMarshaller : IMarshaller<IRequest, UpdateSecurityGroupRuleDescriptionsIngressRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -42,7 +42,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((AuthorizeSecurityGroupEgressRequest)input);
+            return this.Marshall((UpdateSecurityGroupRuleDescriptionsIngressRequest)input);
         }
     
         /// <summary>
@@ -50,10 +50,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(AuthorizeSecurityGroupEgressRequest publicRequest)
+        public IRequest Marshall(UpdateSecurityGroupRuleDescriptionsIngressRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.EC2");
-            request.Parameters.Add("Action", "AuthorizeSecurityGroupEgress");
+            request.Parameters.Add("Action", "UpdateSecurityGroupRuleDescriptionsIngress");
             request.Parameters.Add("Version", "2016-11-15");
 
             if(publicRequest != null)
@@ -61,6 +61,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetGroupId())
                 {
                     request.Parameters.Add("GroupId", StringUtils.FromString(publicRequest.GroupId));
+                }
+                if(publicRequest.IsSetGroupName())
+                {
+                    request.Parameters.Add("GroupName", StringUtils.FromString(publicRequest.GroupName));
                 }
                 if(publicRequest.IsSetIpPermissions())
                 {

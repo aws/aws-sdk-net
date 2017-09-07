@@ -33,6 +33,7 @@ namespace Amazon.EC2.Model
     public partial class Ipv6Range
     {
         private string _cidrIpv6;
+        private string _description;
 
         /// <summary>
         /// Gets and sets the property CidrIpv6. 
@@ -51,6 +52,29 @@ namespace Amazon.EC2.Model
         internal bool IsSetCidrIpv6()
         {
             return this._cidrIpv6 != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Description. 
+        /// <para>
+        /// A description for the security group rule that references this IPv6 address range.
+        /// </para>
+        ///  
+        /// <para>
+        /// Constraints: Up to 255 characters in length. Allowed characters are a-z, A-Z, 0-9,
+        /// spaces, and ._-:/()#,@[]+=;{}!$*
+        /// </para>
+        /// </summary>
+        public string Description
+        {
+            get { return this._description; }
+            set { this._description = value; }
+        }
+
+        // Check to see if Description property is set
+        internal bool IsSetDescription()
+        {
+            return this._description != null;
         }
 
     }

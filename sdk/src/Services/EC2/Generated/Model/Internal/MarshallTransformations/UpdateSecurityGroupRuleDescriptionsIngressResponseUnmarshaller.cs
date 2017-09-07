@@ -32,72 +32,70 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for PrefixListId Object
+    /// Response Unmarshaller for UpdateSecurityGroupRuleDescriptionsIngress operation
     /// </summary>  
-    public class PrefixListIdUnmarshaller : IUnmarshaller<PrefixListId, XmlUnmarshallerContext>, IUnmarshaller<PrefixListId, JsonUnmarshallerContext>
+    public class UpdateSecurityGroupRuleDescriptionsIngressResponseUnmarshaller : EC2ResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public PrefixListId Unmarshall(XmlUnmarshallerContext context)
+        public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context)
         {
-            PrefixListId unmarshalledObject = new PrefixListId();
+            UpdateSecurityGroupRuleDescriptionsIngressResponse response = new UpdateSecurityGroupRuleDescriptionsIngressResponse();
+
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
-            
             if (context.IsStartOfDocument) 
-               targetDepth += 2;
-            
+               targetDepth = 2;
+
             while (context.ReadAtDepth(originalDepth))
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-                    if (context.TestExpression("description", targetDepth))
+
+                    if (context.TestExpression("return", targetDepth))
                     {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.Description = unmarshaller.Unmarshall(context);
+                        var unmarshaller = BoolUnmarshaller.Instance;
+                        response.Return = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("prefixListId", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.Id = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                }
-                else if (context.IsEndElement && context.CurrentDepth < originalDepth)
-                {
-                    return unmarshalledObject;
-                }
+                } 
             }
 
-            return unmarshalledObject;
+            return response;
         }
 
         /// <summary>
         /// Unmarshaller error response to exception.
         /// </summary>  
         /// <param name="context"></param>
+        /// <param name="innerException"></param>
+        /// <param name="statusCode"></param>
         /// <returns></returns>
-        public PrefixListId Unmarshall(JsonUnmarshallerContext context)
+        public override AmazonServiceException UnmarshallException(XmlUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
-            return null;
+            ErrorResponse errorResponse = ErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
+            return new AmazonEC2Exception(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
+        private static UpdateSecurityGroupRuleDescriptionsIngressResponseUnmarshaller _instance = new UpdateSecurityGroupRuleDescriptionsIngressResponseUnmarshaller();        
 
-
-        private static PrefixListIdUnmarshaller _instance = new PrefixListIdUnmarshaller();        
+        internal static UpdateSecurityGroupRuleDescriptionsIngressResponseUnmarshaller GetInstance()
+        {
+            return _instance;
+        }
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static PrefixListIdUnmarshaller Instance
+        public static UpdateSecurityGroupRuleDescriptionsIngressResponseUnmarshaller Instance
         {
             get
             {
                 return _instance;
             }
         }
+
     }
 }

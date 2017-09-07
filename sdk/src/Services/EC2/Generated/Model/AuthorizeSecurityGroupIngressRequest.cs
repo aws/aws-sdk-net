@@ -53,6 +53,10 @@ namespace Amazon.EC2.Model
     /// For more information about VPC security group limits, see <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Appendix_Limits.html">Amazon
     /// VPC Limits</a>.
     /// </para>
+    ///  
+    /// <para>
+    /// You can optionally specify a description for the security group rule.
+    /// </para>
     /// </summary>
     public partial class AuthorizeSecurityGroupIngressRequest : AmazonEC2Request
     {
@@ -68,7 +72,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Instantiates AuthorizeSecurityGroupIngressRequest with the parameterized properties
         /// </summary>
-        /// <param name="groupName">[EC2-Classic, default VPC] The name of the security group.</param>
+        /// <param name="groupName">[EC2-Classic, default VPC] The name of the security group. You must specify either the security group ID or the security group name in the request.</param>
         /// <param name="ipPermissions">A set of IP permissions. Can be used to specify multiple rules in a single command.</param>
         public AuthorizeSecurityGroupIngressRequest(string groupName, List<IpPermission> ipPermissions)
         {
@@ -79,7 +83,9 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property GroupId. 
         /// <para>
-        /// The ID of the security group. Required for a nondefault VPC.
+        /// The ID of the security group. You must specify either the security group ID or the
+        /// security group name in the request. For security groups in a nondefault VPC, you must
+        /// specify the security group ID.
         /// </para>
         /// </summary>
         public string GroupId
@@ -97,7 +103,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property GroupName. 
         /// <para>
-        /// [EC2-Classic, default VPC] The name of the security group.
+        /// [EC2-Classic, default VPC] The name of the security group. You must specify either
+        /// the security group ID or the security group name in the request.
         /// </para>
         /// </summary>
         public string GroupName

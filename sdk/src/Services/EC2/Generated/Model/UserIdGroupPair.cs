@@ -32,12 +32,36 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class UserIdGroupPair
     {
+        private string _description;
         private string _groupId;
         private string _groupName;
         private string _peeringStatus;
         private string _userId;
         private string _vpcId;
         private string _vpcPeeringConnectionId;
+
+        /// <summary>
+        /// Gets and sets the property Description. 
+        /// <para>
+        /// A description for the security group rule that references this user ID group pair.
+        /// </para>
+        ///  
+        /// <para>
+        /// Constraints: Up to 255 characters in length. Allowed characters are a-z, A-Z, 0-9,
+        /// spaces, and ._-:/()#,@[]+=;{}!$*
+        /// </para>
+        /// </summary>
+        public string Description
+        {
+            get { return this._description; }
+            set { this._description = value; }
+        }
+
+        // Check to see if Description property is set
+        internal bool IsSetDescription()
+        {
+            return this._description != null;
+        }
 
         /// <summary>
         /// Gets and sets the property GroupId. 

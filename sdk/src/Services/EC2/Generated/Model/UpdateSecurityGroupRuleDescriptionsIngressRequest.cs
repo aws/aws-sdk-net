@@ -28,56 +28,29 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Container for the parameters to the RevokeSecurityGroupIngress operation.
-    /// Removes one or more ingress rules from a security group. To remove a rule, the values
-    /// that you specify (for example, ports) must match the existing rule's values exactly.
+    /// Container for the parameters to the UpdateSecurityGroupRuleDescriptionsIngress operation.
+    /// Updates the description of an ingress (inbound) security group rule. You can replace
+    /// an existing description, or add a description to a rule that did not have one previously.
     /// 
-    ///  <note> 
-    /// <para>
-    /// [EC2-Classic security groups only] If the values you specify do not match the existing
-    /// rule's values, no error is returned. Use <a>DescribeSecurityGroups</a> to verify that
-    /// the rule has been removed.
-    /// </para>
-    ///  </note> 
-    /// <para>
-    /// Each rule consists of the protocol and the CIDR range or source security group. For
-    /// the TCP and UDP protocols, you must also specify the destination port or range of
-    /// ports. For the ICMP protocol, you must also specify the ICMP type and code. If the
-    /// security group rule has a description, you do not have to specify the description
-    /// to revoke the rule.
-    /// </para>
     ///  
     /// <para>
-    /// Rule changes are propagated to instances within the security group as quickly as possible.
-    /// However, a small delay might occur.
+    /// You specify the description as part of the IP permissions structure. You can remove
+    /// a description for a security group rule by omitting the description parameter in the
+    /// request.
     /// </para>
     /// </summary>
-    public partial class RevokeSecurityGroupIngressRequest : AmazonEC2Request
+    public partial class UpdateSecurityGroupRuleDescriptionsIngressRequest : AmazonEC2Request
     {
         private string _groupId;
         private string _groupName;
         private List<IpPermission> _ipPermissions = new List<IpPermission>();
 
         /// <summary>
-        /// Empty constructor used to set  properties independently even when a simple constructor is available
-        /// </summary>
-        public RevokeSecurityGroupIngressRequest() { }
-
-        /// <summary>
-        /// Instantiates RevokeSecurityGroupIngressRequest with the parameterized properties
-        /// </summary>
-        /// <param name="groupName">[EC2-Classic, default VPC] The name of the security group.</param>
-        /// <param name="ipPermissions">A set of IP permissions. You can't specify a source security group and a CIDR IP address range.</param>
-        public RevokeSecurityGroupIngressRequest(string groupName, List<IpPermission> ipPermissions)
-        {
-            _groupName = groupName;
-            _ipPermissions = ipPermissions;
-        }
-
-        /// <summary>
         /// Gets and sets the property GroupId. 
         /// <para>
-        /// The ID of the security group. Required for a security group in a nondefault VPC.
+        /// The ID of the security group. You must specify either the security group ID or the
+        /// security group name in the request. For security groups in a nondefault VPC, you must
+        /// specify the security group ID.
         /// </para>
         /// </summary>
         public string GroupId
@@ -95,7 +68,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property GroupName. 
         /// <para>
-        /// [EC2-Classic, default VPC] The name of the security group.
+        /// [EC2-Classic, default VPC] The name of the security group. You must specify either
+        /// the security group ID or the security group name in the request.
         /// </para>
         /// </summary>
         public string GroupName
@@ -113,8 +87,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property IpPermissions. 
         /// <para>
-        /// A set of IP permissions. You can't specify a source security group and a CIDR IP address
-        /// range.
+        /// The IP permissions for the security group rule. 
         /// </para>
         /// </summary>
         public List<IpPermission> IpPermissions

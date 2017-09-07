@@ -44,7 +44,8 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property FromPort. 
         /// <para>
         /// The start of port range for the TCP and UDP protocols, or an ICMP/ICMPv6 type number.
-        /// A value of <code>-1</code> indicates all ICMP/ICMPv6 types.
+        /// A value of <code>-1</code> indicates all ICMP/ICMPv6 types. If you specify all ICMP/ICMPv6
+        /// types, you must specify all codes.
         /// </para>
         /// </summary>
         public int FromPort
@@ -151,7 +152,8 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property ToPort. 
         /// <para>
         /// The end of port range for the TCP and UDP protocols, or an ICMP/ICMPv6 code. A value
-        /// of <code>-1</code> indicates all ICMP/ICMPv6 codes for the specified ICMP type.
+        /// of <code>-1</code> indicates all ICMP/ICMPv6 codes for the specified ICMP type. If
+        /// you specify all ICMP/ICMPv6 types, you must specify all codes.
         /// </para>
         /// </summary>
         public int ToPort

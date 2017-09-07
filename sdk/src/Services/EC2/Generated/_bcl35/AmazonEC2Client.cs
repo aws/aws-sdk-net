@@ -1368,7 +1368,8 @@ namespace Amazon.EC2
         /// Each rule consists of the protocol (for example, TCP), plus either a CIDR range or
         /// a source group. For the TCP and UDP protocols, you must also specify the destination
         /// port or port range. For the ICMP protocol, you must also specify the ICMP type and
-        /// code. You can use -1 for the type or code to mean all types or all codes.
+        /// code. You can use -1 for the type or code to mean all types or all codes. You can
+        /// optionally specify a description for the rule.
         /// </para>
         ///  
         /// <para>
@@ -1450,6 +1451,10 @@ namespace Amazon.EC2
         /// The security groups must all be for the same VPC or a peer VPC in a VPC peering connection.
         /// For more information about VPC security group limits, see <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Appendix_Limits.html">Amazon
         /// VPC Limits</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can optionally specify a description for the security group rule.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AuthorizeSecurityGroupIngress service method.</param>
@@ -15108,15 +15113,17 @@ namespace Amazon.EC2
 
         /// <summary>
         /// [EC2-VPC only] Removes one or more egress rules from a security group for EC2-VPC.
-        /// This action doesn't apply to security groups for use in EC2-Classic. The values that
-        /// you specify in the revoke request (for example, ports) must match the existing rule's
-        /// values for the rule to be revoked.
+        /// This action doesn't apply to security groups for use in EC2-Classic. To remove a rule,
+        /// the values that you specify (for example, ports) must match the existing rule's values
+        /// exactly.
         /// 
         ///  
         /// <para>
         /// Each rule consists of the protocol and the IPv4 or IPv6 CIDR range or source security
         /// group. For the TCP and UDP protocols, you must also specify the destination port or
         /// range of ports. For the ICMP protocol, you must also specify the ICMP type and code.
+        /// If the security group rule has a description, you do not have to specify the description
+        /// to revoke the rule.
         /// </para>
         ///  
         /// <para>
@@ -15175,9 +15182,8 @@ namespace Amazon.EC2
         #region  RevokeSecurityGroupIngress
 
         /// <summary>
-        /// Removes one or more ingress rules from a security group. The values that you specify
-        /// in the revoke request (for example, ports) must match the existing rule's values for
-        /// the rule to be removed.
+        /// Removes one or more ingress rules from a security group. To remove a rule, the values
+        /// that you specify (for example, ports) must match the existing rule's values exactly.
         /// 
         ///  <note> 
         /// <para>
@@ -15189,7 +15195,9 @@ namespace Amazon.EC2
         /// <para>
         /// Each rule consists of the protocol and the CIDR range or source security group. For
         /// the TCP and UDP protocols, you must also specify the destination port or range of
-        /// ports. For the ICMP protocol, you must also specify the ICMP type and code.
+        /// ports. For the ICMP protocol, you must also specify the ICMP type and code. If the
+        /// security group rule has a description, you do not have to specify the description
+        /// to revoke the rule.
         /// </para>
         ///  
         /// <para>
@@ -15846,6 +15854,129 @@ namespace Amazon.EC2
         public  UnmonitorInstancesResponse EndUnmonitorInstances(IAsyncResult asyncResult)
         {
             return EndInvoke<UnmonitorInstancesResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpdateSecurityGroupRuleDescriptionsEgress
+
+        /// <summary>
+        /// [EC2-VPC only] Updates the description of an egress (outbound) security group rule.
+        /// You can replace an existing description, or add a description to a rule that did not
+        /// have one previously.
+        /// 
+        ///  
+        /// <para>
+        /// You specify the description as part of the IP permissions structure. You can remove
+        /// a description for a security group rule by omitting the description parameter in the
+        /// request.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateSecurityGroupRuleDescriptionsEgress service method.</param>
+        /// 
+        /// <returns>The response from the UpdateSecurityGroupRuleDescriptionsEgress service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/UpdateSecurityGroupRuleDescriptionsEgress">REST API Reference for UpdateSecurityGroupRuleDescriptionsEgress Operation</seealso>
+        public UpdateSecurityGroupRuleDescriptionsEgressResponse UpdateSecurityGroupRuleDescriptionsEgress(UpdateSecurityGroupRuleDescriptionsEgressRequest request)
+        {
+            var marshaller = new UpdateSecurityGroupRuleDescriptionsEgressRequestMarshaller();
+            var unmarshaller = UpdateSecurityGroupRuleDescriptionsEgressResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateSecurityGroupRuleDescriptionsEgressRequest,UpdateSecurityGroupRuleDescriptionsEgressResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateSecurityGroupRuleDescriptionsEgress operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateSecurityGroupRuleDescriptionsEgress operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateSecurityGroupRuleDescriptionsEgress
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/UpdateSecurityGroupRuleDescriptionsEgress">REST API Reference for UpdateSecurityGroupRuleDescriptionsEgress Operation</seealso>
+        public IAsyncResult BeginUpdateSecurityGroupRuleDescriptionsEgress(UpdateSecurityGroupRuleDescriptionsEgressRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new UpdateSecurityGroupRuleDescriptionsEgressRequestMarshaller();
+            var unmarshaller = UpdateSecurityGroupRuleDescriptionsEgressResponseUnmarshaller.Instance;
+
+            return BeginInvoke<UpdateSecurityGroupRuleDescriptionsEgressRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateSecurityGroupRuleDescriptionsEgress operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateSecurityGroupRuleDescriptionsEgress.</param>
+        /// 
+        /// <returns>Returns a  UpdateSecurityGroupRuleDescriptionsEgressResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/UpdateSecurityGroupRuleDescriptionsEgress">REST API Reference for UpdateSecurityGroupRuleDescriptionsEgress Operation</seealso>
+        public  UpdateSecurityGroupRuleDescriptionsEgressResponse EndUpdateSecurityGroupRuleDescriptionsEgress(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateSecurityGroupRuleDescriptionsEgressResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpdateSecurityGroupRuleDescriptionsIngress
+
+        /// <summary>
+        /// Updates the description of an ingress (inbound) security group rule. You can replace
+        /// an existing description, or add a description to a rule that did not have one previously.
+        /// 
+        ///  
+        /// <para>
+        /// You specify the description as part of the IP permissions structure. You can remove
+        /// a description for a security group rule by omitting the description parameter in the
+        /// request.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateSecurityGroupRuleDescriptionsIngress service method.</param>
+        /// 
+        /// <returns>The response from the UpdateSecurityGroupRuleDescriptionsIngress service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/UpdateSecurityGroupRuleDescriptionsIngress">REST API Reference for UpdateSecurityGroupRuleDescriptionsIngress Operation</seealso>
+        public UpdateSecurityGroupRuleDescriptionsIngressResponse UpdateSecurityGroupRuleDescriptionsIngress(UpdateSecurityGroupRuleDescriptionsIngressRequest request)
+        {
+            var marshaller = new UpdateSecurityGroupRuleDescriptionsIngressRequestMarshaller();
+            var unmarshaller = UpdateSecurityGroupRuleDescriptionsIngressResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateSecurityGroupRuleDescriptionsIngressRequest,UpdateSecurityGroupRuleDescriptionsIngressResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateSecurityGroupRuleDescriptionsIngress operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateSecurityGroupRuleDescriptionsIngress operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateSecurityGroupRuleDescriptionsIngress
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/UpdateSecurityGroupRuleDescriptionsIngress">REST API Reference for UpdateSecurityGroupRuleDescriptionsIngress Operation</seealso>
+        public IAsyncResult BeginUpdateSecurityGroupRuleDescriptionsIngress(UpdateSecurityGroupRuleDescriptionsIngressRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new UpdateSecurityGroupRuleDescriptionsIngressRequestMarshaller();
+            var unmarshaller = UpdateSecurityGroupRuleDescriptionsIngressResponseUnmarshaller.Instance;
+
+            return BeginInvoke<UpdateSecurityGroupRuleDescriptionsIngressRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateSecurityGroupRuleDescriptionsIngress operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateSecurityGroupRuleDescriptionsIngress.</param>
+        /// 
+        /// <returns>Returns a  UpdateSecurityGroupRuleDescriptionsIngressResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/UpdateSecurityGroupRuleDescriptionsIngress">REST API Reference for UpdateSecurityGroupRuleDescriptionsIngress Operation</seealso>
+        public  UpdateSecurityGroupRuleDescriptionsIngressResponse EndUpdateSecurityGroupRuleDescriptionsIngress(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateSecurityGroupRuleDescriptionsIngressResponse>(asyncResult);
         }
 
         #endregion
