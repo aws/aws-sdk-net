@@ -50,8 +50,9 @@ namespace Amazon.S3.Model
         private string serverSideEncryptionKeyManagementServiceKeyId;
         private HeadersCollection headersCollection = new HeadersCollection();
         private MetadataCollection metadataCollection = new MetadataCollection();
+        private ParameterCollection parameterCollection = new ParameterCollection();
 
-        private ServerSideEncryptionCustomerMethod serverSideCustomerEncryption;
+    private ServerSideEncryptionCustomerMethod serverSideCustomerEncryption;
 
         #endregion
 
@@ -329,5 +330,23 @@ namespace Amazon.S3.Model
         }
 
         #endregion
-    }
+
+        #region Parameters
+
+        /// <summary>
+        /// Custom parameters to include in the signed request, so that they are tamper-proof.
+        /// </summary>
+        public ParameterCollection Parameters {
+            get {
+                if (this.parameterCollection == null)
+                    this.parameterCollection = new ParameterCollection();
+                return this.parameterCollection;
+            }
+            internal set {
+                this.parameterCollection = value;
+            }
+        }
+
+        #endregion
+  }
 }
