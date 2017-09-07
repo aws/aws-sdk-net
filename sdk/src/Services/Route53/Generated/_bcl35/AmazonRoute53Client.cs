@@ -890,6 +890,238 @@ namespace Amazon.Route53
 
         #endregion
         
+        #region  CreateQueryLoggingConfig
+
+        /// <summary>
+        /// Creates a configuration for DNS query logging. After you create a query logging configuration,
+        /// Amazon Route 53 begins to publish log data to an Amazon CloudWatch Logs log group.
+        /// 
+        ///  
+        /// <para>
+        /// DNS query logs contain information about the queries that Amazon Route 53 receives
+        /// for a specified public hosted zone, such as the following:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Amazon Route 53 edge location that responded to the DNS query
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Domain or subdomain that was requested
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// DNS record type, such as A or AAAA
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// DNS response code, such as <code>NoError</code> or <code>ServFail</code> 
+        /// </para>
+        ///  </li> </ul> <dl> <dt>Log Group and Resource Policy</dt> <dd> 
+        /// <para>
+        /// Before you create a query logging configuration, perform the following operations.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// If you create a query logging configuration using the Amazon Route 53 console, Amazon
+        /// Route 53 performs these operations automatically.
+        /// </para>
+        ///  </note> <ol> <li> 
+        /// <para>
+        /// Create a CloudWatch Logs log group, and make note of the ARN, which you specify when
+        /// you create a query logging configuration. Note the following:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// You must create the log group in the us-east-1 region.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You must use the same AWS account to create the log group and the hosted zone that
+        /// you want to configure query logging for.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// When you create log groups for query logging, we recommend that you use a consistent
+        /// prefix, for example:
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>/aws/route53/<i>hosted zone name</i> </code> 
+        /// </para>
+        ///  
+        /// <para>
+        /// In the next step, you'll create a resource policy, which controls access to one or
+        /// more log groups and the associated AWS resources, such as Amazon Route 53 hosted zones.
+        /// There's a limit on the number of resource policies that you can create, so we recommend
+        /// that you use a consistent prefix so you can use the same resource policy for all the
+        /// log groups that you create for query logging.
+        /// </para>
+        ///  </li> </ul> </li> <li> 
+        /// <para>
+        /// Create a CloudWatch Logs resource policy, and give it the permissions that Amazon
+        /// Route 53 needs to create log streams and to to send query logs to log streams. For
+        /// the value of <code>Resource</code>, specify the ARN for the log group that you created
+        /// in the previous step. To use the same resource policy for all the CloudWatch Logs
+        /// log groups that you created for query logging configurations, replace the hosted zone
+        /// name with <code>*</code>, for example:
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>arn:aws:logs:us-east-1:123412341234:log-group:/aws/route53/*</code> 
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// You can't use the CloudWatch console to create or edit a resource policy. You must
+        /// use the CloudWatch API, one of the AWS SDKs, or the AWS CLI.
+        /// </para>
+        ///  </note> </li> </ol> </dd> <dt>Log Streams and Edge Locations</dt> <dd> 
+        /// <para>
+        /// When Amazon Route 53 finishes creating the configuration for DNS query logging, it
+        /// does the following:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Creates a log stream for an edge location the first time that the edge location responds
+        /// to DNS queries for the specified hosted zone. That log stream is used to log all queries
+        /// that Amazon Route 53 responds to for that edge location.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Begins to send query logs to the applicable log stream.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// The name of each log stream is in the following format:
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code> <i>hosted zone ID</i>/<i>edge location code</i> </code> 
+        /// </para>
+        ///  
+        /// <para>
+        /// The edge location code is a three-letter code and an arbitrarily assigned number,
+        /// for example, DFW3. The three-letter code typically corresponds with the International
+        /// Air Transport Association airport code for an airport near the edge location. (These
+        /// abbreviations might change in the future.) For a list of edge locations, see "The
+        /// Amazon Route 53 Global Network" on the <a href="http://aws.amazon.com/route53/details/">Amazon
+        /// Route 53 Product Details</a> page.
+        /// </para>
+        ///  </dd> <dt>Queries That Are Logged</dt> <dd> 
+        /// <para>
+        /// Query logs contain only the queries that DNS resolvers forward to Amazon Route 53.
+        /// If a DNS resolver has already cached the response to a query (such as the IP address
+        /// for a load balancer for example.com), the resolver will continue to return the cached
+        /// response. It doesn't forward another query to Amazon Route 53 until the TTL for the
+        /// corresponding resource record set expires. Depending on how many DNS queries are submitted
+        /// for a resource record set, and depending on the TTL for that resource record set,
+        /// query logs might contain information about only one query out of every several thousand
+        /// queries that are submitted to DNS. For more information about how DNS works, see <a
+        /// href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/welcome-dns-service.html">Routing
+        /// Internet Traffic to Your Website or Web Application</a> in the <i>Amazon Route 53
+        /// Developer Guide</i>.
+        /// </para>
+        ///  </dd> <dt>Log File Format</dt> <dd> 
+        /// <para>
+        /// For a list of the values in each query log and the format of each value, see <a href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/query-logs.html">Logging
+        /// DNS Queries</a> in the <i>Amazon Route 53 Developer Guide</i>.
+        /// </para>
+        ///  </dd> <dt>Pricing</dt> <dd> 
+        /// <para>
+        /// For information about charges for query logs, see <a href="http://aws.amazon.com/cloudwatch/pricing/">Amazon
+        /// CloudWatch Pricing</a>.
+        /// </para>
+        ///  </dd> <dt>How to Stop Logging</dt> <dd> 
+        /// <para>
+        /// If you want Amazon Route 53 to stop sending query logs to CloudWatch Logs, delete
+        /// the query logging configuration. For more information, see <a>DeleteQueryLoggingConfig</a>.
+        /// </para>
+        ///  </dd> </dl>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateQueryLoggingConfig service method.</param>
+        /// 
+        /// <returns>The response from the CreateQueryLoggingConfig service method, as returned by Route53.</returns>
+        /// <exception cref="Amazon.Route53.Model.ConcurrentModificationException">
+        /// Another user submitted a request to create, update, or delete the object at the same
+        /// time that you did. Retry the request.
+        /// </exception>
+        /// <exception cref="Amazon.Route53.Model.InsufficientCloudWatchLogsResourcePolicyException">
+        /// Amazon Route 53 doesn't have the permissions required to create log streams and send
+        /// query logs to log streams. Possible causes include the following:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// There is no resource policy that specifies the log group ARN in the value for <code>Resource</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The resource policy that includes the log group ARN in the value for <code>Resource</code>
+        /// doesn't have the necessary permissions.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The resource policy hasn't finished propagating yet.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.Route53.Model.InvalidInputException">
+        /// The input is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Route53.Model.NoSuchCloudWatchLogsLogGroupException">
+        /// There is no CloudWatch Logs log group with the specified ARN.
+        /// </exception>
+        /// <exception cref="Amazon.Route53.Model.NoSuchHostedZoneException">
+        /// No hosted zone exists with the ID that you specified.
+        /// </exception>
+        /// <exception cref="Amazon.Route53.Model.QueryLoggingConfigAlreadyExistsException">
+        /// You can create only one query logging configuration for a hosted zone, and a query
+        /// logging configuration already exists for this hosted zone.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/CreateQueryLoggingConfig">REST API Reference for CreateQueryLoggingConfig Operation</seealso>
+        public CreateQueryLoggingConfigResponse CreateQueryLoggingConfig(CreateQueryLoggingConfigRequest request)
+        {
+            var marshaller = new CreateQueryLoggingConfigRequestMarshaller();
+            var unmarshaller = CreateQueryLoggingConfigResponseUnmarshaller.Instance;
+
+            return Invoke<CreateQueryLoggingConfigRequest,CreateQueryLoggingConfigResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateQueryLoggingConfig operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateQueryLoggingConfig operation on AmazonRoute53Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateQueryLoggingConfig
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/CreateQueryLoggingConfig">REST API Reference for CreateQueryLoggingConfig Operation</seealso>
+        public IAsyncResult BeginCreateQueryLoggingConfig(CreateQueryLoggingConfigRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new CreateQueryLoggingConfigRequestMarshaller();
+            var unmarshaller = CreateQueryLoggingConfigResponseUnmarshaller.Instance;
+
+            return BeginInvoke<CreateQueryLoggingConfigRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateQueryLoggingConfig operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateQueryLoggingConfig.</param>
+        /// 
+        /// <returns>Returns a  CreateQueryLoggingConfigResult from Route53.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/CreateQueryLoggingConfig">REST API Reference for CreateQueryLoggingConfig Operation</seealso>
+        public  CreateQueryLoggingConfigResponse EndCreateQueryLoggingConfig(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateQueryLoggingConfigResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  CreateReusableDelegationSet
 
         /// <summary>
@@ -1078,7 +1310,7 @@ namespace Amazon.Route53
         /// Us</a> page.
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.TrafficPolicyInstanceAlreadyExistsException">
-        /// Traffic policy instance with given Id already exists.
+        /// There is already a traffic policy instance with the specified ID.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/CreateTrafficPolicyInstance">REST API Reference for CreateTrafficPolicyInstance Operation</seealso>
         public CreateTrafficPolicyInstanceResponse CreateTrafficPolicyInstance(CreateTrafficPolicyInstanceRequest request)
@@ -1140,8 +1372,8 @@ namespace Amazon.Route53
         /// 
         /// <returns>The response from the CreateTrafficPolicyVersion service method, as returned by Route53.</returns>
         /// <exception cref="Amazon.Route53.Model.ConcurrentModificationException">
-        /// Another user submitted a request to update the object at the same time that you did.
-        /// Retry the request.
+        /// Another user submitted a request to create, update, or delete the object at the same
+        /// time that you did. Retry the request.
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.InvalidInputException">
         /// The input is not valid.
@@ -1220,8 +1452,8 @@ namespace Amazon.Route53
         /// 
         /// <returns>The response from the CreateVPCAssociationAuthorization service method, as returned by Route53.</returns>
         /// <exception cref="Amazon.Route53.Model.ConcurrentModificationException">
-        /// Another user submitted a request to update the object at the same time that you did.
-        /// Retry the request.
+        /// Another user submitted a request to create, update, or delete the object at the same
+        /// time that you did. Retry the request.
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.InvalidInputException">
         /// The input is not valid.
@@ -1472,6 +1704,76 @@ namespace Amazon.Route53
 
         #endregion
         
+        #region  DeleteQueryLoggingConfig
+
+        /// <summary>
+        /// Deletes a configuration for DNS query logging. If you delete a configuration, Amazon
+        /// Route 53 stops sending query logs to CloudWatch Logs. Amazon Route 53 doesn't delete
+        /// any logs that are already in CloudWatch Logs.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about DNS query logs, see <a>CreateQueryLoggingConfig</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteQueryLoggingConfig service method.</param>
+        /// 
+        /// <returns>The response from the DeleteQueryLoggingConfig service method, as returned by Route53.</returns>
+        /// <exception cref="Amazon.Route53.Model.ConcurrentModificationException">
+        /// Another user submitted a request to create, update, or delete the object at the same
+        /// time that you did. Retry the request.
+        /// </exception>
+        /// <exception cref="Amazon.Route53.Model.InvalidInputException">
+        /// The input is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Route53.Model.NoSuchQueryLoggingConfigException">
+        /// There is no DNS query logging configuration with the specified ID.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/DeleteQueryLoggingConfig">REST API Reference for DeleteQueryLoggingConfig Operation</seealso>
+        public DeleteQueryLoggingConfigResponse DeleteQueryLoggingConfig(DeleteQueryLoggingConfigRequest request)
+        {
+            var marshaller = new DeleteQueryLoggingConfigRequestMarshaller();
+            var unmarshaller = DeleteQueryLoggingConfigResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteQueryLoggingConfigRequest,DeleteQueryLoggingConfigResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteQueryLoggingConfig operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteQueryLoggingConfig operation on AmazonRoute53Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteQueryLoggingConfig
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/DeleteQueryLoggingConfig">REST API Reference for DeleteQueryLoggingConfig Operation</seealso>
+        public IAsyncResult BeginDeleteQueryLoggingConfig(DeleteQueryLoggingConfigRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new DeleteQueryLoggingConfigRequestMarshaller();
+            var unmarshaller = DeleteQueryLoggingConfigResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DeleteQueryLoggingConfigRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteQueryLoggingConfig operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteQueryLoggingConfig.</param>
+        /// 
+        /// <returns>Returns a  DeleteQueryLoggingConfigResult from Route53.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/DeleteQueryLoggingConfig">REST API Reference for DeleteQueryLoggingConfig Operation</seealso>
+        public  DeleteQueryLoggingConfigResponse EndDeleteQueryLoggingConfig(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteQueryLoggingConfigResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DeleteReusableDelegationSet
 
         /// <summary>
@@ -1559,8 +1861,8 @@ namespace Amazon.Route53
         /// 
         /// <returns>The response from the DeleteTrafficPolicy service method, as returned by Route53.</returns>
         /// <exception cref="Amazon.Route53.Model.ConcurrentModificationException">
-        /// Another user submitted a request to update the object at the same time that you did.
-        /// Retry the request.
+        /// Another user submitted a request to create, update, or delete the object at the same
+        /// time that you did. Retry the request.
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.InvalidInputException">
         /// The input is not valid.
@@ -1711,8 +2013,8 @@ namespace Amazon.Route53
         /// 
         /// <returns>The response from the DeleteVPCAssociationAuthorization service method, as returned by Route53.</returns>
         /// <exception cref="Amazon.Route53.Model.ConcurrentModificationException">
-        /// Another user submitted a request to update the object at the same time that you did.
-        /// Retry the request.
+        /// Another user submitted a request to create, update, or delete the object at the same
+        /// time that you did. Retry the request.
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.InvalidInputException">
         /// The input is not valid.
@@ -2440,6 +2742,72 @@ namespace Amazon.Route53
 
         #endregion
         
+        #region  GetQueryLoggingConfig
+
+        /// <summary>
+        /// Gets information about a specified configuration for DNS query logging.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about DNS query logs, see <a>CreateQueryLoggingConfig</a> and
+        /// <a href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/query-logs.html">Logging
+        /// DNS Queries</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetQueryLoggingConfig service method.</param>
+        /// 
+        /// <returns>The response from the GetQueryLoggingConfig service method, as returned by Route53.</returns>
+        /// <exception cref="Amazon.Route53.Model.InvalidInputException">
+        /// The input is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Route53.Model.NoSuchQueryLoggingConfigException">
+        /// There is no DNS query logging configuration with the specified ID.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetQueryLoggingConfig">REST API Reference for GetQueryLoggingConfig Operation</seealso>
+        public GetQueryLoggingConfigResponse GetQueryLoggingConfig(GetQueryLoggingConfigRequest request)
+        {
+            var marshaller = new GetQueryLoggingConfigRequestMarshaller();
+            var unmarshaller = GetQueryLoggingConfigResponseUnmarshaller.Instance;
+
+            return Invoke<GetQueryLoggingConfigRequest,GetQueryLoggingConfigResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetQueryLoggingConfig operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetQueryLoggingConfig operation on AmazonRoute53Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetQueryLoggingConfig
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetQueryLoggingConfig">REST API Reference for GetQueryLoggingConfig Operation</seealso>
+        public IAsyncResult BeginGetQueryLoggingConfig(GetQueryLoggingConfigRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new GetQueryLoggingConfigRequestMarshaller();
+            var unmarshaller = GetQueryLoggingConfigResponseUnmarshaller.Instance;
+
+            return BeginInvoke<GetQueryLoggingConfigRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetQueryLoggingConfig operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetQueryLoggingConfig.</param>
+        /// 
+        /// <returns>Returns a  GetQueryLoggingConfigResult from Route53.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetQueryLoggingConfig">REST API Reference for GetQueryLoggingConfig Operation</seealso>
+        public  GetQueryLoggingConfigResponse EndGetQueryLoggingConfig(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetQueryLoggingConfigResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  GetReusableDelegationSet
 
         /// <summary>
@@ -3080,6 +3448,76 @@ namespace Amazon.Route53
         public  ListHostedZonesByNameResponse EndListHostedZonesByName(IAsyncResult asyncResult)
         {
             return EndInvoke<ListHostedZonesByNameResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListQueryLoggingConfigs
+
+        /// <summary>
+        /// Lists the configurations for DNS query logging that are associated with the current
+        /// AWS account or the configuration that is associated with a specified hosted zone.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about DNS query logs, see <a>CreateQueryLoggingConfig</a>. Additional
+        /// information, including the format of DNS query logs, appears in <a href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/query-logs.html">Logging
+        /// DNS Queries</a> in the <i>Amazon Route 53 Developer Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListQueryLoggingConfigs service method.</param>
+        /// 
+        /// <returns>The response from the ListQueryLoggingConfigs service method, as returned by Route53.</returns>
+        /// <exception cref="Amazon.Route53.Model.InvalidInputException">
+        /// The input is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Route53.Model.InvalidPaginationTokenException">
+        /// The value that you specified to get the second or subsequent page of results is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.Route53.Model.NoSuchHostedZoneException">
+        /// No hosted zone exists with the ID that you specified.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListQueryLoggingConfigs">REST API Reference for ListQueryLoggingConfigs Operation</seealso>
+        public ListQueryLoggingConfigsResponse ListQueryLoggingConfigs(ListQueryLoggingConfigsRequest request)
+        {
+            var marshaller = new ListQueryLoggingConfigsRequestMarshaller();
+            var unmarshaller = ListQueryLoggingConfigsResponseUnmarshaller.Instance;
+
+            return Invoke<ListQueryLoggingConfigsRequest,ListQueryLoggingConfigsResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListQueryLoggingConfigs operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListQueryLoggingConfigs operation on AmazonRoute53Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListQueryLoggingConfigs
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListQueryLoggingConfigs">REST API Reference for ListQueryLoggingConfigs Operation</seealso>
+        public IAsyncResult BeginListQueryLoggingConfigs(ListQueryLoggingConfigsRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new ListQueryLoggingConfigsRequestMarshaller();
+            var unmarshaller = ListQueryLoggingConfigsResponseUnmarshaller.Instance;
+
+            return BeginInvoke<ListQueryLoggingConfigsRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListQueryLoggingConfigs operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListQueryLoggingConfigs.</param>
+        /// 
+        /// <returns>Returns a  ListQueryLoggingConfigsResult from Route53.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListQueryLoggingConfigs">REST API Reference for ListQueryLoggingConfigs Operation</seealso>
+        public  ListQueryLoggingConfigsResponse EndListQueryLoggingConfigs(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListQueryLoggingConfigsResponse>(asyncResult);
         }
 
         #endregion
@@ -3801,7 +4239,7 @@ namespace Amazon.Route53
         /// The input is not valid.
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.InvalidPaginationTokenException">
-        /// 
+        /// The value that you specified to get the second or subsequent page of results is invalid.
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.NoSuchHostedZoneException">
         /// No hosted zone exists with the ID that you specified.
@@ -4050,8 +4488,8 @@ namespace Amazon.Route53
         /// 
         /// <returns>The response from the UpdateTrafficPolicyComment service method, as returned by Route53.</returns>
         /// <exception cref="Amazon.Route53.Model.ConcurrentModificationException">
-        /// Another user submitted a request to update the object at the same time that you did.
-        /// Retry the request.
+        /// Another user submitted a request to create, update, or delete the object at the same
+        /// time that you did. Retry the request.
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.InvalidInputException">
         /// The input is not valid.

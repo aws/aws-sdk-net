@@ -399,6 +399,38 @@ namespace Amazon.Route53
 
         #endregion
         
+        #region  CreateQueryLoggingConfig
+
+        internal CreateQueryLoggingConfigResponse CreateQueryLoggingConfig(CreateQueryLoggingConfigRequest request)
+        {
+            var marshaller = new CreateQueryLoggingConfigRequestMarshaller();
+            var unmarshaller = CreateQueryLoggingConfigResponseUnmarshaller.Instance;
+
+            return Invoke<CreateQueryLoggingConfigRequest,CreateQueryLoggingConfigResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateQueryLoggingConfig operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateQueryLoggingConfig operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/CreateQueryLoggingConfig">REST API Reference for CreateQueryLoggingConfig Operation</seealso>
+        public Task<CreateQueryLoggingConfigResponse> CreateQueryLoggingConfigAsync(CreateQueryLoggingConfigRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new CreateQueryLoggingConfigRequestMarshaller();
+            var unmarshaller = CreateQueryLoggingConfigResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateQueryLoggingConfigRequest,CreateQueryLoggingConfigResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateReusableDelegationSet
 
         internal CreateReusableDelegationSetResponse CreateReusableDelegationSet(CreateReusableDelegationSetRequest request)
@@ -618,6 +650,38 @@ namespace Amazon.Route53
             var unmarshaller = DeleteHostedZoneResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteHostedZoneRequest,DeleteHostedZoneResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteQueryLoggingConfig
+
+        internal DeleteQueryLoggingConfigResponse DeleteQueryLoggingConfig(DeleteQueryLoggingConfigRequest request)
+        {
+            var marshaller = new DeleteQueryLoggingConfigRequestMarshaller();
+            var unmarshaller = DeleteQueryLoggingConfigResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteQueryLoggingConfigRequest,DeleteQueryLoggingConfigResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteQueryLoggingConfig operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteQueryLoggingConfig operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/DeleteQueryLoggingConfig">REST API Reference for DeleteQueryLoggingConfig Operation</seealso>
+        public Task<DeleteQueryLoggingConfigResponse> DeleteQueryLoggingConfigAsync(DeleteQueryLoggingConfigRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DeleteQueryLoggingConfigRequestMarshaller();
+            var unmarshaller = DeleteQueryLoggingConfigResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteQueryLoggingConfigRequest,DeleteQueryLoggingConfigResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -1093,6 +1157,38 @@ namespace Amazon.Route53
 
         #endregion
         
+        #region  GetQueryLoggingConfig
+
+        internal GetQueryLoggingConfigResponse GetQueryLoggingConfig(GetQueryLoggingConfigRequest request)
+        {
+            var marshaller = new GetQueryLoggingConfigRequestMarshaller();
+            var unmarshaller = GetQueryLoggingConfigResponseUnmarshaller.Instance;
+
+            return Invoke<GetQueryLoggingConfigRequest,GetQueryLoggingConfigResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetQueryLoggingConfig operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetQueryLoggingConfig operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetQueryLoggingConfig">REST API Reference for GetQueryLoggingConfig Operation</seealso>
+        public Task<GetQueryLoggingConfigResponse> GetQueryLoggingConfigAsync(GetQueryLoggingConfigRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new GetQueryLoggingConfigRequestMarshaller();
+            var unmarshaller = GetQueryLoggingConfigResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetQueryLoggingConfigRequest,GetQueryLoggingConfigResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetReusableDelegationSet
 
         internal GetReusableDelegationSetResponse GetReusableDelegationSet(GetReusableDelegationSetRequest request)
@@ -1436,6 +1532,38 @@ namespace Amazon.Route53
             var unmarshaller = ListHostedZonesByNameResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListHostedZonesByNameRequest,ListHostedZonesByNameResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListQueryLoggingConfigs
+
+        internal ListQueryLoggingConfigsResponse ListQueryLoggingConfigs(ListQueryLoggingConfigsRequest request)
+        {
+            var marshaller = new ListQueryLoggingConfigsRequestMarshaller();
+            var unmarshaller = ListQueryLoggingConfigsResponseUnmarshaller.Instance;
+
+            return Invoke<ListQueryLoggingConfigsRequest,ListQueryLoggingConfigsResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListQueryLoggingConfigs operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListQueryLoggingConfigs operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListQueryLoggingConfigs">REST API Reference for ListQueryLoggingConfigs Operation</seealso>
+        public Task<ListQueryLoggingConfigsResponse> ListQueryLoggingConfigsAsync(ListQueryLoggingConfigsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new ListQueryLoggingConfigsRequestMarshaller();
+            var unmarshaller = ListQueryLoggingConfigsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListQueryLoggingConfigsRequest,ListQueryLoggingConfigsResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 

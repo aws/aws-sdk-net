@@ -39,6 +39,14 @@
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Route53.Model.CreateQueryLoggingConfigRequest.HostedZoneId</property>
+    <max>32</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53.Model.CreateQueryLoggingConfigResponse.Location</property>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Route53.Model.CreateReusableDelegationSetRequest.CallerReference</property>
     <min>1</min>
     <max>128</max>
@@ -128,6 +136,11 @@
     <max>32</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Route53.Model.DeleteQueryLoggingConfigRequest.Id</property>
+    <min>1</min>
+    <max>36</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Route53.Model.DeleteReusableDelegationSetRequest.Id</property>
     <max>32</max>
   </property-value-rule>
@@ -188,6 +201,11 @@
   <property-value-rule>
     <property>Amazon.Route53.Model.GetHostedZoneRequest.Id</property>
     <max>32</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53.Model.GetQueryLoggingConfigRequest.Id</property>
+    <min>1</min>
+    <max>36</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53.Model.GetReusableDelegationSetRequest.Id</property>
@@ -289,6 +307,18 @@
   <property-value-rule>
     <property>Amazon.Route53.Model.ListHostedZonesByNameResponse.NextHostedZoneId</property>
     <max>32</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53.Model.ListQueryLoggingConfigsRequest.HostedZoneId</property>
+    <max>32</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53.Model.ListQueryLoggingConfigsRequest.NextToken</property>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53.Model.ListQueryLoggingConfigsResponse.NextToken</property>
+    <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53.Model.ListResourceRecordSetsRequest.HostedZoneId</property>
@@ -723,6 +753,15 @@
   <property-value-rule>
     <property>Amazon.Route53.Model.HostedZoneConfig.Comment</property>
     <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53.Model.QueryLoggingConfig.Id</property>
+    <min>1</min>
+    <max>36</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53.Model.QueryLoggingConfig.HostedZoneId</property>
+    <max>32</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53.Model.ResourceRecord.Value</property>
