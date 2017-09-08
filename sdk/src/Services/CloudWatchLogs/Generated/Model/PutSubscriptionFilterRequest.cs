@@ -45,8 +45,8 @@ namespace Amazon.CloudWatchLogs.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// An Amazon Kinesis Firehose stream that belongs to the same account as the subscription
-    /// filter, for same-account delivery.
+    /// An Amazon Kinesis Firehose delivery stream that belongs to the same account as the
+    /// subscription filter, for same-account delivery.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -57,8 +57,8 @@ namespace Amazon.CloudWatchLogs.Model
     /// <para>
     /// There can only be one subscription filter associated with a log group. If you are
     /// updating an existing filter, you must specify the correct name in <code>filterName</code>.
-    /// Otherwise, the call will fail because you cannot associate a second filter with a
-    /// log group.
+    /// Otherwise, the call fails because you cannot associate a second filter with a log
+    /// group.
     /// </para>
     /// </summary>
     public partial class PutSubscriptionFilterRequest : AmazonCloudWatchLogsRequest
@@ -88,7 +88,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// An Amazon Kinesis Firehose stream belonging to the same account as the subscription
+        /// An Amazon Kinesis Firehose delivery stream belonging to the same account as the subscription
         /// filter, for same-account delivery.
         /// </para>
         ///  </li> <li> 
@@ -134,9 +134,9 @@ namespace Amazon.CloudWatchLogs.Model
         /// Gets and sets the property FilterName. 
         /// <para>
         /// A name for the subscription filter. If you are updating an existing filter, you must
-        /// specify the correct name in <code>filterName</code>. Otherwise, the call will fail
-        /// because you cannot associate a second filter with a log group. To find the name of
-        /// the filter currently associated with a log group, use <a>DescribeSubscriptionFilters</a>.
+        /// specify the correct name in <code>filterName</code>. Otherwise, the call fails because
+        /// you cannot associate a second filter with a log group. To find the name of the filter
+        /// currently associated with a log group, use <a>DescribeSubscriptionFilters</a>.
         /// </para>
         /// </summary>
         public string FilterName

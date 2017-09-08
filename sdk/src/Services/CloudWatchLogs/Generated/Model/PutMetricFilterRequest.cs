@@ -56,7 +56,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// <param name="logGroupName">The name of the log group.</param>
         /// <param name="filterName">A name for the metric filter.</param>
         /// <param name="filterPattern">A filter pattern for extracting metric data out of ingested log events.</param>
-        /// <param name="metricTransformations">A collection of information needed to define how metric data gets emitted.</param>
+        /// <param name="metricTransformations">A collection of information that defines how metric data gets emitted.</param>
         public PutMetricFilterRequest(string logGroupName, string filterName, string filterPattern, List<MetricTransformation> metricTransformations)
         {
             _logGroupName = logGroupName;
@@ -122,7 +122,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// <summary>
         /// Gets and sets the property MetricTransformations. 
         /// <para>
-        /// A collection of information needed to define how metric data gets emitted.
+        /// A collection of information that defines how metric data gets emitted.
         /// </para>
         /// </summary>
         public List<MetricTransformation> MetricTransformations

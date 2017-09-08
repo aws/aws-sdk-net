@@ -43,8 +43,8 @@ namespace Amazon.CloudWatchLogs.Model
     ///  
     /// <para>
     /// You can export logs from multiple log groups or multiple time ranges to the same S3
-    /// bucket. To separate out log data for each export task, you can specify a prefix that
-    /// will be used as the Amazon S3 key prefix for all exported objects.
+    /// bucket. To separate out log data for each export task, you can specify a prefix to
+    /// be used as the Amazon S3 key prefix for all exported objects.
     /// </para>
     /// </summary>
     public partial class CreateExportTaskRequest : AmazonCloudWatchLogsRequest
@@ -99,7 +99,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// Gets and sets the property From. 
         /// <para>
         /// The start time of the range for the request, expressed as the number of milliseconds
-        /// since Jan 1, 1970 00:00:00 UTC. Events with a timestamp earlier than this time are
+        /// after Jan 1, 1970 00:00:00 UTC. Events with a time stamp earlier than this time are
         /// not exported.
         /// </para>
         /// </summary>
@@ -174,8 +174,8 @@ namespace Amazon.CloudWatchLogs.Model
         /// Gets and sets the property To. 
         /// <para>
         /// The end time of the range for the request, expressed as the number of milliseconds
-        /// since Jan 1, 1970 00:00:00 UTC. Events with a timestamp later than this time are not
-        /// exported.
+        /// after Jan 1, 1970 00:00:00 UTC. Events with a time stamp later than this time are
+        /// not exported.
         /// </para>
         /// </summary>
         public long To

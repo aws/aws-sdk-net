@@ -35,7 +35,9 @@ namespace Amazon.CloudWatchLogs.Model
     /// <para>
     /// You must include the sequence token obtained from the response of the previous call.
     /// An upload in a newly created log stream does not require a sequence token. You can
-    /// also get the sequence token using <a>DescribeLogStreams</a>.
+    /// also get the sequence token using <a>DescribeLogStreams</a>. If you call <code>PutLogEvents</code>
+    /// twice within a narrow time period using the same value for <code>sequenceToken</code>,
+    /// both calls may be successful, or one may be rejected.
     /// </para>
     ///  
     /// <para>
@@ -57,8 +59,8 @@ namespace Amazon.CloudWatchLogs.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// The log events in the batch must be in chronological ordered by their timestamp (the
-    /// time the event occurred, expressed as the number of milliseconds since Jan 1, 1970
+    /// The log events in the batch must be in chronological ordered by their time stamp (the
+    /// time the event occurred, expressed as the number of milliseconds after Jan 1, 1970
     /// 00:00:00 UTC).
     /// </para>
     ///  </li> <li> 
@@ -154,7 +156,11 @@ namespace Amazon.CloudWatchLogs.Model
         /// <summary>
         /// Gets and sets the property SequenceToken. 
         /// <para>
-        /// The sequence token.
+        /// The sequence token obtained from the response of the previous <code>PutLogEvents</code>
+        /// call. An upload in a newly created log stream does not require a sequence token. You
+        /// can also get the sequence token using <a>DescribeLogStreams</a>. If you call <code>PutLogEvents</code>
+        /// twice within a narrow time period using the same value for <code>sequenceToken</code>,
+        /// both calls may be successful, or one may be rejected.
         /// </para>
         /// </summary>
         public string SequenceToken

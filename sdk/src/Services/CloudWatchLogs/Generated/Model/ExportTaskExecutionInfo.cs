@@ -38,7 +38,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// <summary>
         /// Gets and sets the property CompletionTime. 
         /// <para>
-        /// The completion time of the export task, expressed as the number of milliseconds since
+        /// The completion time of the export task, expressed as the number of milliseconds after
         /// Jan 1, 1970 00:00:00 UTC.
         /// </para>
         /// </summary>
@@ -57,7 +57,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// <summary>
         /// Gets and sets the property CreationTime. 
         /// <para>
-        /// The creation time of the export task, expressed as the number of milliseconds since
+        /// The creation time of the export task, expressed as the number of milliseconds after
         /// Jan 1, 1970 00:00:00 UTC.
         /// </para>
         /// </summary>

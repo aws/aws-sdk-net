@@ -28,49 +28,44 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudWatchLogs.Model
 {
     /// <summary>
-    /// Represents a log event, which is a record of activity that was recorded by the application
-    /// or resource being monitored.
+    /// This is the response object from the DescribeResourcePolicies operation.
     /// </summary>
-    public partial class InputLogEvent
+    public partial class DescribeResourcePoliciesResponse : AmazonWebServiceResponse
     {
-        private string _message;
-        private DateTime? _timestamp;
+        private string _nextToken;
+        private List<ResourcePolicy> _resourcePolicies = new List<ResourcePolicy>();
 
         /// <summary>
-        /// Gets and sets the property Message. 
-        /// <para>
-        /// The raw event message.
-        /// </para>
+        /// Gets and sets the property NextToken.
         /// </summary>
-        public string Message
+        public string NextToken
         {
-            get { return this._message; }
-            set { this._message = value; }
+            get { return this._nextToken; }
+            set { this._nextToken = value; }
         }
 
-        // Check to see if Message property is set
-        internal bool IsSetMessage()
+        // Check to see if NextToken property is set
+        internal bool IsSetNextToken()
         {
-            return this._message != null;
+            return this._nextToken != null;
         }
 
         /// <summary>
-        /// Gets and sets the property Timestamp. 
+        /// Gets and sets the property ResourcePolicies. 
         /// <para>
-        /// The time the event occurred, expressed as the number of milliseconds fter Jan 1, 1970
-        /// 00:00:00 UTC.
+        /// The resource policies that exist in this account.
         /// </para>
         /// </summary>
-        public DateTime Timestamp
+        public List<ResourcePolicy> ResourcePolicies
         {
-            get { return this._timestamp.GetValueOrDefault(); }
-            set { this._timestamp = value; }
+            get { return this._resourcePolicies; }
+            set { this._resourcePolicies = value; }
         }
 
-        // Check to see if Timestamp property is set
-        internal bool IsSetTimestamp()
+        // Check to see if ResourcePolicies property is set
+        internal bool IsSetResourcePolicies()
         {
-            return this._timestamp.HasValue; 
+            return this._resourcePolicies != null && this._resourcePolicies.Count > 0; 
         }
 
     }

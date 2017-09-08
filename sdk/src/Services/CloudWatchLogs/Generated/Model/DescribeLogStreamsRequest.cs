@@ -124,7 +124,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// </para>
         ///  
         /// <para>
-        /// You cannot specify this parameter if <code>orderBy</code> is <code>LastEventTime</code>.
+        /// iIf <code>orderBy</code> is <code>LastEventTime</code>,you cannot specify this parameter.
         /// </para>
         /// </summary>
         public string LogStreamNamePrefix
@@ -173,7 +173,7 @@ namespace Amazon.CloudWatchLogs.Model
         ///  
         /// <para>
         /// lastEventTimestamp represents the time of the most recent log event in the log stream
-        /// in CloudWatch Logs. This number is expressed as the number of milliseconds since Jan
+        /// in CloudWatch Logs. This number is expressed as the number of milliseconds after Jan
         /// 1, 1970 00:00:00 UTC. lastEventTimeStamp updates on an eventual consistency basis.
         /// It typically updates in less than an hour from ingestion, but may take longer in some
         /// rare situations.

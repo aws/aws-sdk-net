@@ -30,7 +30,7 @@ namespace Amazon.CloudWatchLogs.Model
     /// <summary>
     /// Container for the parameters to the PutRetentionPolicy operation.
     /// Sets the retention of the specified log group. A retention policy allows you to configure
-    /// the number of days you want to retain log events in the specified log group.
+    /// the number of days for which to retain log events in the specified log group.
     /// </summary>
     public partial class PutRetentionPolicyRequest : AmazonCloudWatchLogsRequest
     {

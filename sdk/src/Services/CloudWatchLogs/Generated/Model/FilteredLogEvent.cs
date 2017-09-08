@@ -59,7 +59,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// <summary>
         /// Gets and sets the property IngestionTime. 
         /// <para>
-        /// The time the event was ingested, expressed as the number of milliseconds since Jan
+        /// The time the event was ingested, expressed as the number of milliseconds after Jan
         /// 1, 1970 00:00:00 UTC.
         /// </para>
         /// </summary>
@@ -114,7 +114,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// <summary>
         /// Gets and sets the property Timestamp. 
         /// <para>
-        /// The time the event occurred, expressed as the number of milliseconds since Jan 1,
+        /// The time the event occurred, expressed as the number of milliseconds after Jan 1,
         /// 1970 00:00:00 UTC.
         /// </para>
         /// </summary>

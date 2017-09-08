@@ -63,7 +63,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// <summary>
         /// Gets and sets the property CreationTime. 
         /// <para>
-        /// The creation time of the stream, expressed as the number of milliseconds since Jan
+        /// The creation time of the stream, expressed as the number of milliseconds after Jan
         /// 1, 1970 00:00:00 UTC.
         /// </para>
         /// </summary>
@@ -82,7 +82,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// <summary>
         /// Gets and sets the property FirstEventTimestamp. 
         /// <para>
-        /// The time of the first event, expressed as the number of milliseconds since Jan 1,
+        /// The time of the first event, expressed as the number of milliseconds after Jan 1,
         /// 1970 00:00:00 UTC.
         /// </para>
         /// </summary>
@@ -102,7 +102,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// Gets and sets the property LastEventTimestamp. 
         /// <para>
         ///  the time of the most recent log event in the log stream in CloudWatch Logs. This
-        /// number is expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC.
+        /// number is expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC.
         /// lastEventTime updates on an eventual consistency basis. It typically updates in less
         /// than an hour from ingestion, but may take longer in some rare situations.
         /// </para>
@@ -122,7 +122,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// <summary>
         /// Gets and sets the property LastIngestionTime. 
         /// <para>
-        /// The ingestion time, expressed as the number of milliseconds since Jan 1, 1970 00:00:00
+        /// The ingestion time, expressed as the number of milliseconds after Jan 1, 1970 00:00:00
         /// UTC.
         /// </para>
         /// </summary>

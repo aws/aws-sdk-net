@@ -79,7 +79,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// <summary>
         /// Gets and sets the property CreationTime. 
         /// <para>
-        /// The creation time of the destination, expressed as the number of milliseconds since
+        /// The creation time of the destination, expressed as the number of milliseconds after
         /// Jan 1, 1970 00:00:00 UTC.
         /// </para>
         /// </summary>
@@ -134,7 +134,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// <summary>
         /// Gets and sets the property TargetArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the physical target where the log events will be
+        /// The Amazon Resource Name (ARN) of the physical target to where the log events are
         /// delivered (for example, a Kinesis stream).
         /// </para>
         /// </summary>

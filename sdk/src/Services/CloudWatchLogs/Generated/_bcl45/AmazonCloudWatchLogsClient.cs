@@ -37,9 +37,9 @@ namespace Amazon.CloudWatchLogs
     /// Implementation for accessing CloudWatchLogs
     ///
     /// You can use Amazon CloudWatch Logs to monitor, store, and access your log files from
-    /// EC2 instances, Amazon CloudTrail, or other sources. You can then retrieve the associated
-    /// log data from CloudWatch Logs using the Amazon CloudWatch console, the CloudWatch
-    /// Logs commands in the AWS CLI, the CloudWatch Logs API, or the CloudWatch Logs SDK.
+    /// Amazon EC2 instances, AWS CloudTrail, or other sources. You can then retrieve the
+    /// associated log data from CloudWatch Logs using the CloudWatch console, CloudWatch
+    /// Logs commands in the AWS CLI, CloudWatch Logs API, or CloudWatch Logs SDK.
     /// 
     ///  
     /// <para>
@@ -47,26 +47,25 @@ namespace Amazon.CloudWatchLogs
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <b>Monitor Logs from Amazon EC2 Instances in Real-time</b>: You can use CloudWatch
-    /// Logs to monitor applications and systems using log data. For example, CloudWatch Logs
-    /// can track the number of errors that occur in your application logs and send you a
-    /// notification whenever the rate of errors exceeds a threshold you specify. CloudWatch
-    /// Logs uses your log data for monitoring; so, no code changes are required. For example,
+    ///  <b>Monitor logs from EC2 instances in real-time</b>: You can use CloudWatch Logs
+    /// to monitor applications and systems using log data. For example, CloudWatch Logs can
+    /// track the number of errors that occur in your application logs and send you a notification
+    /// whenever the rate of errors exceeds a threshold that you specify. CloudWatch Logs
+    /// uses your log data for monitoring; so, no code changes are required. For example,
     /// you can monitor application logs for specific literal terms (such as "NullReferenceException")
     /// or count the number of occurrences of a literal term at a particular position in log
     /// data (such as "404" status codes in an Apache access log). When the term you are searching
-    /// for is found, CloudWatch Logs reports the data to a Amazon CloudWatch metric that
-    /// you specify.
+    /// for is found, CloudWatch Logs reports the data to a CloudWatch metric that you specify.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <b>Monitor Amazon CloudTrail Logged Events</b>: You can create alarms in Amazon CloudWatch
+    ///  <b>Monitor AWS CloudTrail logged events</b>: You can create alarms in CloudWatch
     /// and receive notifications of particular API activity as captured by CloudTrail and
     /// use the notification to perform troubleshooting.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <b>Archive Log Data</b>: You can use CloudWatch Logs to store your log data in highly
+    ///  <b>Archive log data</b>: You can use CloudWatch Logs to store your log data in highly
     /// durable storage. You can change the log retention setting so that any log events older
     /// than this setting are automatically deleted. The CloudWatch Logs agent makes it easy
     /// to quickly send both rotated and non-rotated log data off of a host and into the log
@@ -335,8 +334,8 @@ namespace Amazon.CloudWatchLogs
         ///  
         /// <para>
         /// You can export logs from multiple log groups or multiple time ranges to the same S3
-        /// bucket. To separate out log data for each export task, you can specify a prefix that
-        /// will be used as the Amazon S3 key prefix for all exported objects.
+        /// bucket. To separate out log data for each export task, you can specify a prefix to
+        /// be used as the Amazon S3 key prefix for all exported objects.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateExportTask service method.</param>
@@ -748,6 +747,55 @@ namespace Amazon.CloudWatchLogs
 
         #endregion
         
+        #region  DeleteResourcePolicy
+
+
+        /// <summary>
+        /// Deletes a resource policy from this account. This revokes the access of the identities
+        /// in that policy to put log events to this account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteResourcePolicy service method.</param>
+        /// 
+        /// <returns>The response from the DeleteResourcePolicy service method, as returned by CloudWatchLogs.</returns>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.InvalidParameterException">
+        /// A parameter is specified incorrectly.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ServiceUnavailableException">
+        /// The service cannot complete the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DeleteResourcePolicy">REST API Reference for DeleteResourcePolicy Operation</seealso>
+        public DeleteResourcePolicyResponse DeleteResourcePolicy(DeleteResourcePolicyRequest request)
+        {
+            var marshaller = new DeleteResourcePolicyRequestMarshaller();
+            var unmarshaller = DeleteResourcePolicyResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteResourcePolicyRequest,DeleteResourcePolicyResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteResourcePolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteResourcePolicy operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DeleteResourcePolicy">REST API Reference for DeleteResourcePolicy Operation</seealso>
+        public Task<DeleteResourcePolicyResponse> DeleteResourcePolicyAsync(DeleteResourcePolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DeleteResourcePolicyRequestMarshaller();
+            var unmarshaller = DeleteResourcePolicyResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteResourcePolicyRequest,DeleteResourcePolicyResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeleteRetentionPolicy
 
 
@@ -1137,6 +1185,51 @@ namespace Amazon.CloudWatchLogs
 
         #endregion
         
+        #region  DescribeResourcePolicies
+
+
+        /// <summary>
+        /// Lists the resource policies in this account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeResourcePolicies service method.</param>
+        /// 
+        /// <returns>The response from the DescribeResourcePolicies service method, as returned by CloudWatchLogs.</returns>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.InvalidParameterException">
+        /// A parameter is specified incorrectly.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ServiceUnavailableException">
+        /// The service cannot complete the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DescribeResourcePolicies">REST API Reference for DescribeResourcePolicies Operation</seealso>
+        public DescribeResourcePoliciesResponse DescribeResourcePolicies(DescribeResourcePoliciesRequest request)
+        {
+            var marshaller = new DescribeResourcePoliciesRequestMarshaller();
+            var unmarshaller = DescribeResourcePoliciesResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeResourcePoliciesRequest,DescribeResourcePoliciesResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeResourcePolicies operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeResourcePolicies operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DescribeResourcePolicies">REST API Reference for DescribeResourcePolicies Operation</seealso>
+        public Task<DescribeResourcePoliciesResponse> DescribeResourcePoliciesAsync(DescribeResourcePoliciesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DescribeResourcePoliciesRequestMarshaller();
+            var unmarshaller = DescribeResourcePoliciesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeResourcePoliciesRequest,DescribeResourcePoliciesResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DescribeSubscriptionFilters
 
 
@@ -1195,7 +1288,7 @@ namespace Amazon.CloudWatchLogs
         /// 
         ///  
         /// <para>
-        /// By default, this operation returns as many log events as can fit in 1MB (up to 10,000
+        /// By default, this operation returns as many log events as can fit in 1 MB (up to 10,000
         /// log events), or all the events found within the time range that you specify. If the
         /// results include a token, then there are more log events available, and you can get
         /// additional results by specifying the token in a subsequent call.
@@ -1253,9 +1346,8 @@ namespace Amazon.CloudWatchLogs
         ///  
         /// <para>
         /// By default, this operation returns as many log events as can fit in a response size
-        /// of 1MB (up to 10,000 log events). If the results include tokens, there are more log
-        /// events available. You can get additional log events by specifying one of the tokens
-        /// in a subsequent call.
+        /// of 1 MB (up to 10,000 log events). You can get additional log events by specifying
+        /// one of the tokens in a subsequent call.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetLogEvents service method.</param>
@@ -1355,17 +1447,17 @@ namespace Amazon.CloudWatchLogs
 
         /// <summary>
         /// Creates or updates a destination. A destination encapsulates a physical resource (such
-        /// as a Kinesis stream) and enables you to subscribe to a real-time stream of log events
-        /// of a different account, ingested using <a>PutLogEvents</a>. Currently, the only supported
-        /// physical resource is a Amazon Kinesis stream belonging to the same account as the
-        /// destination.
+        /// as an Amazon Kinesis stream) and enables you to subscribe to a real-time stream of
+        /// log events for a different account, ingested using <a>PutLogEvents</a>. Currently,
+        /// the only supported physical resource is a Kinesis stream belonging to the same account
+        /// as the destination.
         /// 
         ///  
         /// <para>
-        /// A destination controls what is written to its Amazon Kinesis stream through an access
-        /// policy. By default, <code>PutDestination</code> does not set any access policy with
-        /// the destination, which means a cross-account user cannot call <a>PutSubscriptionFilter</a>
-        /// against this destination. To enable this, the destination owner must call <a>PutDestinationPolicy</a>
+        /// Through an access policy, a destination controls what is written to its Kinesis stream.
+        /// By default, <code>PutDestination</code> does not set any access policy with the destination,
+        /// which means a cross-account user cannot call <a>PutSubscriptionFilter</a> against
+        /// this destination. To enable this, the destination owner must call <a>PutDestinationPolicy</a>
         /// after <code>PutDestination</code>.
         /// </para>
         /// </summary>
@@ -1472,7 +1564,9 @@ namespace Amazon.CloudWatchLogs
         /// <para>
         /// You must include the sequence token obtained from the response of the previous call.
         /// An upload in a newly created log stream does not require a sequence token. You can
-        /// also get the sequence token using <a>DescribeLogStreams</a>.
+        /// also get the sequence token using <a>DescribeLogStreams</a>. If you call <code>PutLogEvents</code>
+        /// twice within a narrow time period using the same value for <code>sequenceToken</code>,
+        /// both calls may be successful, or one may be rejected.
         /// </para>
         ///  
         /// <para>
@@ -1494,8 +1588,8 @@ namespace Amazon.CloudWatchLogs
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// The log events in the batch must be in chronological ordered by their timestamp (the
-        /// time the event occurred, expressed as the number of milliseconds since Jan 1, 1970
+        /// The log events in the batch must be in chronological ordered by their time stamp (the
+        /// time the event occurred, expressed as the number of milliseconds after Jan 1, 1970
         /// 00:00:00 UTC).
         /// </para>
         ///  </li> <li> 
@@ -1618,12 +1712,62 @@ namespace Amazon.CloudWatchLogs
 
         #endregion
         
+        #region  PutResourcePolicy
+
+
+        /// <summary>
+        /// Creates or updates a resource policy allowing other AWS services to put log events
+        /// to this account, such as Amazon Route 53. An account can have up to 50 resource policies
+        /// per region.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutResourcePolicy service method.</param>
+        /// 
+        /// <returns>The response from the PutResourcePolicy service method, as returned by CloudWatchLogs.</returns>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.InvalidParameterException">
+        /// A parameter is specified incorrectly.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.LimitExceededException">
+        /// You have reached the maximum number of resources that can be created.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ServiceUnavailableException">
+        /// The service cannot complete the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/PutResourcePolicy">REST API Reference for PutResourcePolicy Operation</seealso>
+        public PutResourcePolicyResponse PutResourcePolicy(PutResourcePolicyRequest request)
+        {
+            var marshaller = new PutResourcePolicyRequestMarshaller();
+            var unmarshaller = PutResourcePolicyResponseUnmarshaller.Instance;
+
+            return Invoke<PutResourcePolicyRequest,PutResourcePolicyResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutResourcePolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutResourcePolicy operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/PutResourcePolicy">REST API Reference for PutResourcePolicy Operation</seealso>
+        public Task<PutResourcePolicyResponse> PutResourcePolicyAsync(PutResourcePolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new PutResourcePolicyRequestMarshaller();
+            var unmarshaller = PutResourcePolicyResponseUnmarshaller.Instance;
+
+            return InvokeAsync<PutResourcePolicyRequest,PutResourcePolicyResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  PutRetentionPolicy
 
 
         /// <summary>
         /// Sets the retention of the specified log group. A retention policy allows you to configure
-        /// the number of days you want to retain log events in the specified log group.
+        /// the number of days for which to retain log events in the specified log group.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutRetentionPolicy service method.</param>
         /// 
@@ -1690,8 +1834,8 @@ namespace Amazon.CloudWatchLogs
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// An Amazon Kinesis Firehose stream that belongs to the same account as the subscription
-        /// filter, for same-account delivery.
+        /// An Amazon Kinesis Firehose delivery stream that belongs to the same account as the
+        /// subscription filter, for same-account delivery.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -1702,8 +1846,8 @@ namespace Amazon.CloudWatchLogs
         /// <para>
         /// There can only be one subscription filter associated with a log group. If you are
         /// updating an existing filter, you must specify the correct name in <code>filterName</code>.
-        /// Otherwise, the call will fail because you cannot associate a second filter with a
-        /// log group.
+        /// Otherwise, the call fails because you cannot associate a second filter with a log
+        /// group.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutSubscriptionFilter service method.</param>

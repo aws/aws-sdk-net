@@ -32,9 +32,9 @@ namespace Amazon.CloudWatchLogs
     /// Interface for accessing CloudWatchLogs
     ///
     /// You can use Amazon CloudWatch Logs to monitor, store, and access your log files from
-    /// EC2 instances, Amazon CloudTrail, or other sources. You can then retrieve the associated
-    /// log data from CloudWatch Logs using the Amazon CloudWatch console, the CloudWatch
-    /// Logs commands in the AWS CLI, the CloudWatch Logs API, or the CloudWatch Logs SDK.
+    /// Amazon EC2 instances, AWS CloudTrail, or other sources. You can then retrieve the
+    /// associated log data from CloudWatch Logs using the CloudWatch console, CloudWatch
+    /// Logs commands in the AWS CLI, CloudWatch Logs API, or CloudWatch Logs SDK.
     /// 
     ///  
     /// <para>
@@ -42,26 +42,25 @@ namespace Amazon.CloudWatchLogs
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <b>Monitor Logs from Amazon EC2 Instances in Real-time</b>: You can use CloudWatch
-    /// Logs to monitor applications and systems using log data. For example, CloudWatch Logs
-    /// can track the number of errors that occur in your application logs and send you a
-    /// notification whenever the rate of errors exceeds a threshold you specify. CloudWatch
-    /// Logs uses your log data for monitoring; so, no code changes are required. For example,
+    ///  <b>Monitor logs from EC2 instances in real-time</b>: You can use CloudWatch Logs
+    /// to monitor applications and systems using log data. For example, CloudWatch Logs can
+    /// track the number of errors that occur in your application logs and send you a notification
+    /// whenever the rate of errors exceeds a threshold that you specify. CloudWatch Logs
+    /// uses your log data for monitoring; so, no code changes are required. For example,
     /// you can monitor application logs for specific literal terms (such as "NullReferenceException")
     /// or count the number of occurrences of a literal term at a particular position in log
     /// data (such as "404" status codes in an Apache access log). When the term you are searching
-    /// for is found, CloudWatch Logs reports the data to a Amazon CloudWatch metric that
-    /// you specify.
+    /// for is found, CloudWatch Logs reports the data to a CloudWatch metric that you specify.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <b>Monitor Amazon CloudTrail Logged Events</b>: You can create alarms in Amazon CloudWatch
+    ///  <b>Monitor AWS CloudTrail logged events</b>: You can create alarms in CloudWatch
     /// and receive notifications of particular API activity as captured by CloudTrail and
     /// use the notification to perform troubleshooting.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <b>Archive Log Data</b>: You can use CloudWatch Logs to store your log data in highly
+    ///  <b>Archive log data</b>: You can use CloudWatch Logs to store your log data in highly
     /// durable storage. You can change the log retention setting so that any log events older
     /// than this setting are automatically deleted. The CloudWatch Logs agent makes it easy
     /// to quickly send both rotated and non-rotated log data off of a host and into the log
@@ -208,6 +207,23 @@ namespace Amazon.CloudWatchLogs
 
         #endregion
                 
+        #region  DeleteResourcePolicy
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteResourcePolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteResourcePolicy operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DeleteResourcePolicy">REST API Reference for DeleteResourcePolicy Operation</seealso>
+        Task<DeleteResourcePolicyResponse> DeleteResourcePolicyAsync(DeleteResourcePolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  DeleteRetentionPolicy
 
 
@@ -346,6 +362,23 @@ namespace Amazon.CloudWatchLogs
 
         #endregion
                 
+        #region  DescribeResourcePolicies
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeResourcePolicies operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeResourcePolicies operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DescribeResourcePolicies">REST API Reference for DescribeResourcePolicies Operation</seealso>
+        Task<DescribeResourcePoliciesResponse> DescribeResourcePoliciesAsync(DescribeResourcePoliciesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  DescribeSubscriptionFilters
 
 
@@ -479,6 +512,23 @@ namespace Amazon.CloudWatchLogs
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/PutMetricFilter">REST API Reference for PutMetricFilter Operation</seealso>
         Task<PutMetricFilterResponse> PutMetricFilterAsync(PutMetricFilterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  PutResourcePolicy
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutResourcePolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutResourcePolicy operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/PutResourcePolicy">REST API Reference for PutResourcePolicy Operation</seealso>
+        Task<PutResourcePolicyResponse> PutResourcePolicyAsync(PutResourcePolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 

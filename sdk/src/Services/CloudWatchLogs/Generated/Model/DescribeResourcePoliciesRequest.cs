@@ -28,49 +28,45 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudWatchLogs.Model
 {
     /// <summary>
-    /// Represents a log event, which is a record of activity that was recorded by the application
-    /// or resource being monitored.
+    /// Container for the parameters to the DescribeResourcePolicies operation.
+    /// Lists the resource policies in this account.
     /// </summary>
-    public partial class InputLogEvent
+    public partial class DescribeResourcePoliciesRequest : AmazonCloudWatchLogsRequest
     {
-        private string _message;
-        private DateTime? _timestamp;
+        private int? _limit;
+        private string _nextToken;
 
         /// <summary>
-        /// Gets and sets the property Message. 
+        /// Gets and sets the property Limit. 
         /// <para>
-        /// The raw event message.
+        /// The maximum number of resource policies to be displayed with one call of this API.
         /// </para>
         /// </summary>
-        public string Message
+        public int Limit
         {
-            get { return this._message; }
-            set { this._message = value; }
+            get { return this._limit.GetValueOrDefault(); }
+            set { this._limit = value; }
         }
 
-        // Check to see if Message property is set
-        internal bool IsSetMessage()
+        // Check to see if Limit property is set
+        internal bool IsSetLimit()
         {
-            return this._message != null;
+            return this._limit.HasValue; 
         }
 
         /// <summary>
-        /// Gets and sets the property Timestamp. 
-        /// <para>
-        /// The time the event occurred, expressed as the number of milliseconds fter Jan 1, 1970
-        /// 00:00:00 UTC.
-        /// </para>
+        /// Gets and sets the property NextToken.
         /// </summary>
-        public DateTime Timestamp
+        public string NextToken
         {
-            get { return this._timestamp.GetValueOrDefault(); }
-            set { this._timestamp = value; }
+            get { return this._nextToken; }
+            set { this._nextToken = value; }
         }
 
-        // Check to see if Timestamp property is set
-        internal bool IsSetTimestamp()
+        // Check to see if NextToken property is set
+        internal bool IsSetNextToken()
         {
-            return this._timestamp.HasValue; 
+            return this._nextToken != null;
         }
 
     }
