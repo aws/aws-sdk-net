@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.3.151.0",
+    "ProductVersion" : "3.3.152.0",
     "CoreVersion"    : "3.3.17.7",
     "DefaultToPreview" : false,
     "ServiceVersions"  : {
@@ -85,7 +85,7 @@
             "InPreview"               : false
         },
         "CloudWatchLogs"    : {
-            "Version" : "3.3.2.16",
+            "Version" : "3.3.3.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.17.0"

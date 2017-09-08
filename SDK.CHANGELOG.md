@@ -1,3 +1,7 @@
+### 3.3.152.0 (2017-09-08 19:39 UTC)
+* CloudWatchLogs (3.3.3.0)
+	* Adds support for the PutResourcePolicy, DescribeResourcePolicy and DeleteResourcePolicy APIs.
+
 ### 3.3.151.0 (2017-09-07 22:49 UTC)
 * ApplicationAutoScaling (3.3.4.1)
 	* Documentation updates for application-autoscaling
