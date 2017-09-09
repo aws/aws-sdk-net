@@ -150,6 +150,12 @@ namespace Amazon.CognitoSync.SyncManager.Internal
             {
                 return new NetworkException(message);
             }
+            else if (ase.GetType() == typeof(AmazonCognitoSyncException)
+                     && ase.Message != null 
+                     && ase.Message.StartsWith("Current SyncCount for:"))
+            {
+                return new DataConflictException(message);
+            }
             else
             {
                 return new DataStorageException(message, ase);
