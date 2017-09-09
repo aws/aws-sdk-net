@@ -544,9 +544,6 @@ namespace Amazon.CognitoSync.SyncManager.Internal
 
                     if (databaseRecord != null && oldDatabaseRecord != null)
                     {
-                        continue;
-                    }
-
                         if (databaseRecord.SyncCount != oldDatabaseRecord.SyncCount
                             || !string.Equals(databaseRecord.LastModifiedBy, oldDatabaseRecord.LastModifiedBy))
                         {
