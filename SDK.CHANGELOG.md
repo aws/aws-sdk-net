@@ -1,3 +1,14 @@
+### 3.3.152.1 (2017-09-09 04:44 UTC)
+* CognitoSync (3.3.1.23)
+	* Updated to use new Core, version 3.3.17.8
+	* Fixed a race condition in SQLiteLocalStorage.ConditionallyPutRecords() PR https://github.com/aws/aws-sdk-net/pull/446
+
+Make the local merge dataset sync count match the remote sync count PR https://github.com/aws/aws-sdk-net/pull/414
+
+Handle Cognito Sync Count Exception PR https://github.com/aws/aws-sdk-net/pull/532
+* Core 3.3.17.8
+	* Update UnityWebRequestWrapper to work in Unity 2017.1 PR https://github.com/aws/aws-sdk-net/pull/709
+
 ### 3.3.152.0 (2017-09-08 19:39 UTC)
 * CloudWatchLogs (3.3.3.0)
 	* Adds support for the PutResourcePolicy, DescribeResourcePolicy and DeleteResourcePolicy APIs.
