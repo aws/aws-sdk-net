@@ -2,10 +2,8 @@
 * CognitoSync (3.3.1.23)
 	* Updated to use new Core, version 3.3.17.8
 	* Fixed a race condition in SQLiteLocalStorage.ConditionallyPutRecords() PR https://github.com/aws/aws-sdk-net/pull/446
-
-Make the local merge dataset sync count match the remote sync count PR https://github.com/aws/aws-sdk-net/pull/414
-
-Handle Cognito Sync Count Exception PR https://github.com/aws/aws-sdk-net/pull/532
+    * Make the local merge dataset sync count match the remote sync count PR https://github.com/aws/aws-sdk-net/pull/414
+    * Handle Cognito Sync Count Exception PR https://github.com/aws/aws-sdk-net/pull/532
 * Core 3.3.17.8
 	* Update UnityWebRequestWrapper to work in Unity 2017.1 PR https://github.com/aws/aws-sdk-net/pull/709
 
