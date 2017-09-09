@@ -367,6 +367,23 @@ namespace ServiceClientGenerator
             return itemGuidDictionary;
         }
 
+        private static string GetSolutionGuid(string solutionsFilePath)
+        {
+            if (File.Exists(solutionsFilePath))
+            {
+                Regex expression = new Regex(@"\s*SolutionGuid\s*=\s*{(.*)}");
+                foreach (string line in File.ReadAllLines(solutionsFilePath))
+                {
+                    Match match = expression.Match(line);
+                    if (match.Success)
+                    {
+                        return match.Groups[1].ToString();
+                    }
+                }
+            }
+            return Guid.NewGuid().ToString("D").ToUpper();
+        }
+
 
         private void GenerateVS2017Solution(string solutionFileName, bool includeTests, bool isTravisSolution, IEnumerable<ProjectFileConfiguration> projectFileConfigurations, ICollection<string> serviceProjectsForPartialBuild = null)
         {
@@ -375,6 +392,7 @@ namespace ServiceClientGenerator
             // to .sln files if possible.
             //
             IDictionary<string, string> projectGuidDictionary = GetItemGuidDictionary(Path.Combine(Options.SdkRootFolder, solutionFileName));
+            string solutionGuid = GetSolutionGuid(Path.Combine(Options.SdkRootFolder, solutionFileName));
 
             var sdkSourceFolder = Path.Combine(Options.SdkRootFolder, GeneratorDriver.SourceSubFoldername);
             var session = new Dictionary<string, object>();
@@ -465,6 +483,7 @@ namespace ServiceClientGenerator
             session["TestProjects"] = testProjects;
             session["CoreProjects"] = coreProjects;
             session["ServiceSolutionFolders"] = serviceSolutionFolders;
+            session["SolutionGuid"] = solutionGuid;
 
             var generator = new CoreCLRSolutionFile() { Session = session };
             var content = generator.TransformText();

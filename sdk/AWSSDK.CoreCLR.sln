@@ -1,6 +1,6 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26403.7
+VisualStudioVersion = 15.0.26730.12
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{9863FCB3-BFA4-4B9C-B8F6-302BA5F660B8}"
 EndProject
@@ -430,7 +430,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IntegrationTests.CoreCLR", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UnitTests.CoreCLR", "test\CoreCLR\UnitTests\UnitTests.CoreCLR.csproj", "{8AE5ABDF-2812-471A-94E3-492F57131946}"
 EndProject
-
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -1081,5 +1080,8 @@ Global
 		{1CE2D127-EAF8-4FB7-BB70-6054EF10259C} = {AB873FDB-E443-7A3A-A9D6-04E4CB28D1DA}
 		{56831951-B8C6-4CDB-9408-0A405D2B4073} = {12EC4E4B-7E2C-4B63-8EF9-7B959F82A89B}
 		{8AE5ABDF-2812-471A-94E3-492F57131946} = {12EC4E4B-7E2C-4B63-8EF9-7B959F82A89B}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {227CA5E5-FDBE-4409-B7A8-4BD9184E707C}
 	EndGlobalSection
 EndGlobal
