@@ -534,54 +534,60 @@ namespace Amazon.CognitoSync.SyncManager.Internal
 
             foreach (Record record in records)
             {
-                Record databaseRecord = this.GetRecord(identityId, datasetName, record.Key);
-                Record oldDatabaseRecord = localRecordMap.ContainsKey(record.Key) ? localRecordMap[record.Key] : null;
+                Record oldDatabaseRecord;
+                localRecordMap.TryGetValue(record.Key, out oldDatabaseRecord);
 
-                if (databaseRecord != null && oldDatabaseRecord != null)
+                // locking to ensure that database is not changed between GetRecord and UpdateOrInsertRecord
+                lock (sqlite_lock)
                 {
-                    // The record exists both before and after the update locally, but has it changed?
+                    Record databaseRecord = this.GetRecord(identityId, datasetName, record.Key);
 
-                    if (databaseRecord.SyncCount != oldDatabaseRecord.SyncCount
-                        || !StringUtils.Equals(databaseRecord.LastModifiedBy, oldDatabaseRecord.LastModifiedBy))
+                    if (databaseRecord != null && oldDatabaseRecord != null)
                     {
-                    continue;
-                }
+                        continue;
+                    }
 
-                    if (!StringUtils.Equals(databaseRecord.Value, oldDatabaseRecord.Value))
-                    {
-                        if (StringUtils.Equals(record.Value, oldDatabaseRecord.Value))
-                        {
-                            // The value has changed, so this is a local change during the push record operation.
-                            // Avoid a future conflict by updating the metadata so that it looks like the modifications that 
-                            // occurred during the put record operation happened after the put operation completed.
-                            Record resolvedRecord =
-                                new Record(
-                                    record.Key,
-                                    databaseRecord.Value,
-                                    record.SyncCount,
-                                    record.LastModifiedDate,
-                                    record.LastModifiedBy,
-                                    databaseRecord.DeviceLastModifiedDate,
-                                    true
-                                    );
-
-                            UpdateOrInsertRecord(identityId, datasetName, resolvedRecord);
-                        }
-                        else
+                        if (databaseRecord.SyncCount != oldDatabaseRecord.SyncCount
+                            || !string.Equals(databaseRecord.LastModifiedBy, oldDatabaseRecord.LastModifiedBy))
                         {
                             continue;
                         }
-                        
+
+                        if (!string.Equals(databaseRecord.Value, oldDatabaseRecord.Value))
+                        {
+                            if (string.Equals(record.Value, oldDatabaseRecord.Value))
+                            {
+                                // The value has changed, so this is a local change during the push record operation.
+                                // Avoid a future conflict by updating the metadata so that it looks like the modifications that 
+                                // occurred during the put record operation happened after the put operation completed.
+                                Record resolvedRecord =
+                                    new Record(
+                                        record.Key,
+                                        databaseRecord.Value,
+                                        record.SyncCount,
+                                        record.LastModifiedDate,
+                                        record.LastModifiedBy,
+                                        databaseRecord.DeviceLastModifiedDate,
+                                        true
+                                        );
+
+                                UpdateOrInsertRecord(identityId, datasetName, resolvedRecord);
+                            }
+                            else
+                            {
+                                continue;
+                            }
+                        }
+                        else
+                        {
+                            UpdateOrInsertRecord(identityId, datasetName, record);
+                        }
                     }
                     else
                     {
-                UpdateOrInsertRecord(identityId, datasetName, record);
-            }
-        }
-                else
-                {
-                    UpdateOrInsertRecord(identityId, datasetName, record);
-                }
+		                UpdateOrInsertRecord(identityId, datasetName, record);
+		            }
+		        }
             }
         }
 
