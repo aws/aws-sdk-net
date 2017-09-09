@@ -152,7 +152,7 @@ namespace Amazon.CognitoSync.SyncManager.Internal
             }
             else if (ase.GetType() == typeof(AmazonCognitoSyncException)
                      && ase.Message != null 
-                     && ase.Message.StartsWith("Current SyncCount for:"))
+                     && ase.Message.StartsWith("Current SyncCount for:", StringComparison.Ordinal))
             {
                 return new DataConflictException(message);
             }
