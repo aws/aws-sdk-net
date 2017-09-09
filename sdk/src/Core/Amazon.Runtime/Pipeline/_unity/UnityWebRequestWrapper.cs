@@ -53,7 +53,13 @@ namespace Amazon.Runtime.Internal
             PropertyInfo isDoneProperty = unityWebRequestType.GetProperty("isDone");
             PropertyInfo downloadProgressProperty = unityWebRequestType.GetProperty("downloadProgress");
             PropertyInfo uploadProgressProperty = unityWebRequestType.GetProperty("uploadProgress");
-            PropertyInfo isErrorProperty = unityWebRequestType.GetProperty("isNetworkError");
+            PropertyInfo isErrorProperty = unityWebRequestType.GetProperty("isError");
+            if (isErrorProperty == null)
+            {
+                // VS 2017.1 update changed this property
+                // https://github.com/aws/aws-sdk-net/pull/709
+                isErrorProperty = unityWebRequestType.GetProperty("isNetworkError");
+            }
             PropertyInfo downloadedBytesProperty = unityWebRequestType.GetProperty("downloadedBytes");
             PropertyInfo responseCodeProperty = unityWebRequestType.GetProperty("responseCode");
             PropertyInfo downloadHandlerPropery = unityWebRequestType.GetProperty("downloadHandler");
