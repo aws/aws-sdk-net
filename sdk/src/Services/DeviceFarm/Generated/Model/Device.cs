@@ -48,6 +48,7 @@ namespace Amazon.DeviceFarm.Model
         private DevicePlatform _platform;
         private string _radio;
         private bool? _remoteAccessEnabled;
+        private bool? _remoteDebugEnabled;
         private Resolution _resolution;
 
         /// <summary>
@@ -363,6 +364,24 @@ namespace Amazon.DeviceFarm.Model
         internal bool IsSetRemoteAccessEnabled()
         {
             return this._remoteAccessEnabled.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property RemoteDebugEnabled. 
+        /// <para>
+        /// This flag is set to <code>true</code> if remote debugging is enabled for the device.
+        /// </para>
+        /// </summary>
+        public bool RemoteDebugEnabled
+        {
+            get { return this._remoteDebugEnabled.GetValueOrDefault(); }
+            set { this._remoteDebugEnabled = value; }
+        }
+
+        // Check to see if RemoteDebugEnabled property is set
+        internal bool IsSetRemoteDebugEnabled()
+        {
+            return this._remoteDebugEnabled.HasValue; 
         }
 
         /// <summary>

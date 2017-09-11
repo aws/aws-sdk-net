@@ -35,6 +35,7 @@ namespace Amazon.DeviceFarm.Model
     {
         private List<string> _auxiliaryApps = new List<string>();
         private BillingMethod _billingMethod;
+        private CustomerArtifactPaths _customerArtifactPaths;
         private string _extraDataPackageArn;
         private string _locale;
         private Location _location;
@@ -76,6 +77,24 @@ namespace Amazon.DeviceFarm.Model
         internal bool IsSetBillingMethod()
         {
             return this._billingMethod != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CustomerArtifactPaths. 
+        /// <para>
+        /// Input <code>CustomerArtifactPaths</code> object for the scheduled run configuration.
+        /// </para>
+        /// </summary>
+        public CustomerArtifactPaths CustomerArtifactPaths
+        {
+            get { return this._customerArtifactPaths; }
+            set { this._customerArtifactPaths = value; }
+        }
+
+        // Check to see if CustomerArtifactPaths property is set
+        internal bool IsSetCustomerArtifactPaths()
+        {
+            return this._customerArtifactPaths != null;
         }
 
         /// <summary>

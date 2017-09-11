@@ -44,6 +44,11 @@
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.DeviceFarm.Model.CreateRemoteAccessSessionRequest.ClientId</property>
+    <min>0</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.DeviceFarm.Model.CreateRemoteAccessSessionRequest.DeviceArn</property>
     <min>32</min>
   </property-value-rule>
@@ -55,6 +60,11 @@
   <property-value-rule>
     <property>Amazon.DeviceFarm.Model.CreateRemoteAccessSessionRequest.ProjectArn</property>
     <min>32</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DeviceFarm.Model.CreateRemoteAccessSessionRequest.SshPublicKey</property>
+    <min>0</min>
+    <max>8192</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DeviceFarm.Model.CreateUploadRequest.ContentType</property>
@@ -618,6 +628,15 @@
   <property-value-rule>
     <property>Amazon.DeviceFarm.Model.RemoteAccessSession.Arn</property>
     <min>32</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DeviceFarm.Model.RemoteAccessSession.ClientId</property>
+    <min>0</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DeviceFarm.Model.RemoteAccessSession.HostAddress</property>
+    <max>1024</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DeviceFarm.Model.RemoteAccessSession.Message</property>

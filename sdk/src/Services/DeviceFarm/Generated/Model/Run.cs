@@ -28,7 +28,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DeviceFarm.Model
 {
     /// <summary>
-    /// Represents an app on a set of devices with a specific test and configuration.
+    /// Represents a test run on a set of devices with a given app package, test parameters,
+    /// etc.
     /// </summary>
     public partial class Run
     {
@@ -37,12 +38,15 @@ namespace Amazon.DeviceFarm.Model
         private int? _completedJobs;
         private Counters _counters;
         private DateTime? _created;
+        private CustomerArtifactPaths _customerArtifactPaths;
         private DeviceMinutes _deviceMinutes;
         private string _message;
         private string _name;
         private NetworkProfile _networkProfile;
+        private string _parsingResultUrl;
         private DevicePlatform _platform;
         private ExecutionResult _result;
+        private ExecutionResultCode _resultCode;
         private DateTime? _started;
         private ExecutionStatus _status;
         private DateTime? _stopped;
@@ -141,6 +145,24 @@ namespace Amazon.DeviceFarm.Model
         }
 
         /// <summary>
+        /// Gets and sets the property CustomerArtifactPaths. 
+        /// <para>
+        /// Output <code>CustomerArtifactPaths</code> object for the test run.
+        /// </para>
+        /// </summary>
+        public CustomerArtifactPaths CustomerArtifactPaths
+        {
+            get { return this._customerArtifactPaths; }
+            set { this._customerArtifactPaths = value; }
+        }
+
+        // Check to see if CustomerArtifactPaths property is set
+        internal bool IsSetCustomerArtifactPaths()
+        {
+            return this._customerArtifactPaths != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property DeviceMinutes. 
         /// <para>
         /// Represents the total (metered or unmetered) minutes used by the test run.
@@ -210,6 +232,26 @@ namespace Amazon.DeviceFarm.Model
         internal bool IsSetNetworkProfile()
         {
             return this._networkProfile != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ParsingResultUrl. 
+        /// <para>
+        /// Read-only URL for an object in S3 bucket where you can get the parsing results of
+        /// the test package. If the test package doesn't parse, the reason why it doesn't parse
+        /// appears in the file that this URL points to.
+        /// </para>
+        /// </summary>
+        public string ParsingResultUrl
+        {
+            get { return this._parsingResultUrl; }
+            set { this._parsingResultUrl = value; }
+        }
+
+        // Check to see if ParsingResultUrl property is set
+        internal bool IsSetParsingResultUrl()
+        {
+            return this._parsingResultUrl != null;
         }
 
         /// <summary>
@@ -292,6 +334,26 @@ namespace Amazon.DeviceFarm.Model
         internal bool IsSetResult()
         {
             return this._result != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ResultCode. 
+        /// <para>
+        /// Supporting field for the result field. Set only if <code>result</code> is <code>SKIPPED</code>.
+        /// <code>PARSING_FAILED</code> if the result is skipped because of test package parsing
+        /// failure.
+        /// </para>
+        /// </summary>
+        public ExecutionResultCode ResultCode
+        {
+            get { return this._resultCode; }
+            set { this._resultCode = value; }
+        }
+
+        // Check to see if ResultCode property is set
+        internal bool IsSetResultCode()
+        {
+            return this._resultCode != null;
         }
 
         /// <summary>

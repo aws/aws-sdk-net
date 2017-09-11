@@ -129,6 +129,14 @@ namespace Amazon.DeviceFarm
         /// </summary>
         public static readonly ArtifactType CALABASH_STANDARD_OUTPUT = new ArtifactType("CALABASH_STANDARD_OUTPUT");
         /// <summary>
+        /// Constant CUSTOMER_ARTIFACT for ArtifactType
+        /// </summary>
+        public static readonly ArtifactType CUSTOMER_ARTIFACT = new ArtifactType("CUSTOMER_ARTIFACT");
+        /// <summary>
+        /// Constant CUSTOMER_ARTIFACT_LOG for ArtifactType
+        /// </summary>
+        public static readonly ArtifactType CUSTOMER_ARTIFACT_LOG = new ArtifactType("CUSTOMER_ARTIFACT_LOG");
+        /// <summary>
         /// Constant DEVICE_LOG for ArtifactType
         /// </summary>
         public static readonly ArtifactType DEVICE_LOG = new ArtifactType("DEVICE_LOG");
@@ -346,6 +354,10 @@ namespace Amazon.DeviceFarm
         /// Constant REMOTE_ACCESS_ENABLED for DeviceAttribute
         /// </summary>
         public static readonly DeviceAttribute REMOTE_ACCESS_ENABLED = new DeviceAttribute("REMOTE_ACCESS_ENABLED");
+        /// <summary>
+        /// Constant REMOTE_DEBUG_ENABLED for DeviceAttribute
+        /// </summary>
+        public static readonly DeviceAttribute REMOTE_DEBUG_ENABLED = new DeviceAttribute("REMOTE_DEBUG_ENABLED");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -596,6 +608,52 @@ namespace Amazon.DeviceFarm
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ExecutionResult(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ExecutionResultCode.
+    /// </summary>
+    public class ExecutionResultCode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant PARSING_FAILED for ExecutionResultCode
+        /// </summary>
+        public static readonly ExecutionResultCode PARSING_FAILED = new ExecutionResultCode("PARSING_FAILED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ExecutionResultCode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ExecutionResultCode FindValue(string value)
+        {
+            return FindValue<ExecutionResultCode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ExecutionResultCode(string value)
         {
             return FindValue(value);
         }

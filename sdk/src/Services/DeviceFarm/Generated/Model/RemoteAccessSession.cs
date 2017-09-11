@@ -34,12 +34,16 @@ namespace Amazon.DeviceFarm.Model
     {
         private string _arn;
         private BillingMethod _billingMethod;
+        private string _clientId;
         private DateTime? _created;
         private Device _device;
         private DeviceMinutes _deviceMinutes;
+        private string _deviceUdid;
         private string _endpoint;
+        private string _hostAddress;
         private string _message;
         private string _name;
+        private bool? _remoteDebugEnabled;
         private ExecutionResult _result;
         private DateTime? _started;
         private ExecutionStatus _status;
@@ -81,6 +85,25 @@ namespace Amazon.DeviceFarm.Model
         internal bool IsSetBillingMethod()
         {
             return this._billingMethod != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ClientId. 
+        /// <para>
+        /// Unique identifier of your client for the remote access session. Only returned if remote
+        /// debugging is enabled for the remote access session.
+        /// </para>
+        /// </summary>
+        public string ClientId
+        {
+            get { return this._clientId; }
+            set { this._clientId = value; }
+        }
+
+        // Check to see if ClientId property is set
+        internal bool IsSetClientId()
+        {
+            return this._clientId != null;
         }
 
         /// <summary>
@@ -139,6 +162,25 @@ namespace Amazon.DeviceFarm.Model
         }
 
         /// <summary>
+        /// Gets and sets the property DeviceUdid. 
+        /// <para>
+        /// Unique device identifier for the remote device. Only returned if remote debugging
+        /// is enabled for the remote access session.
+        /// </para>
+        /// </summary>
+        public string DeviceUdid
+        {
+            get { return this._deviceUdid; }
+            set { this._deviceUdid = value; }
+        }
+
+        // Check to see if DeviceUdid property is set
+        internal bool IsSetDeviceUdid()
+        {
+            return this._deviceUdid != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Endpoint. 
         /// <para>
         /// The endpoint for the remote access sesssion.
@@ -154,6 +196,25 @@ namespace Amazon.DeviceFarm.Model
         internal bool IsSetEndpoint()
         {
             return this._endpoint != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property HostAddress. 
+        /// <para>
+        /// IP address of the EC2 host where you need to connect to remotely debug devices. Only
+        /// returned if remote debugging is enabled for the remote access session.
+        /// </para>
+        /// </summary>
+        public string HostAddress
+        {
+            get { return this._hostAddress; }
+            set { this._hostAddress = value; }
+        }
+
+        // Check to see if HostAddress property is set
+        internal bool IsSetHostAddress()
+        {
+            return this._hostAddress != null;
         }
 
         /// <summary>
@@ -190,6 +251,25 @@ namespace Amazon.DeviceFarm.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RemoteDebugEnabled. 
+        /// <para>
+        /// This flag is set to <code>true</code> if remote debugging is enabled for the remote
+        /// access session.
+        /// </para>
+        /// </summary>
+        public bool RemoteDebugEnabled
+        {
+            get { return this._remoteDebugEnabled.GetValueOrDefault(); }
+            set { this._remoteDebugEnabled = value; }
+        }
+
+        // Check to see if RemoteDebugEnabled property is set
+        internal bool IsSetRemoteDebugEnabled()
+        {
+            return this._remoteDebugEnabled.HasValue; 
         }
 
         /// <summary>

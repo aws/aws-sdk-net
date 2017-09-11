@@ -160,6 +160,12 @@ namespace Amazon.DeviceFarm.Model.Internal.MarshallTransformations
                     unmarshalledObject.RemoteAccessEnabled = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("remoteDebugEnabled", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.RemoteDebugEnabled = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("resolution", targetDepth))
                 {
                     var unmarshaller = ResolutionUnmarshaller.Instance;

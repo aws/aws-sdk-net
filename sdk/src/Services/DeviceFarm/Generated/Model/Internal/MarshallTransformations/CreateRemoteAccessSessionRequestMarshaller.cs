@@ -67,6 +67,12 @@ namespace Amazon.DeviceFarm.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetClientId())
+                {
+                    context.Writer.WritePropertyName("clientId");
+                    context.Writer.Write(publicRequest.ClientId);
+                }
+
                 if(publicRequest.IsSetConfiguration())
                 {
                     context.Writer.WritePropertyName("configuration");
@@ -94,6 +100,18 @@ namespace Amazon.DeviceFarm.Model.Internal.MarshallTransformations
                 {
                     context.Writer.WritePropertyName("projectArn");
                     context.Writer.Write(publicRequest.ProjectArn);
+                }
+
+                if(publicRequest.IsSetRemoteDebugEnabled())
+                {
+                    context.Writer.WritePropertyName("remoteDebugEnabled");
+                    context.Writer.Write(publicRequest.RemoteDebugEnabled);
+                }
+
+                if(publicRequest.IsSetSshPublicKey())
+                {
+                    context.Writer.WritePropertyName("sshPublicKey");
+                    context.Writer.Write(publicRequest.SshPublicKey);
                 }
 
         

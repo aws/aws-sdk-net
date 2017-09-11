@@ -62,6 +62,17 @@ namespace Amazon.DeviceFarm.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.BillingMethod);
             }
 
+            if(requestObject.IsSetCustomerArtifactPaths())
+            {
+                context.Writer.WritePropertyName("customerArtifactPaths");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = CustomerArtifactPathsMarshaller.Instance;
+                marshaller.Marshall(requestObject.CustomerArtifactPaths, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetExtraDataPackageArn())
             {
                 context.Writer.WritePropertyName("extraDataPackageArn");

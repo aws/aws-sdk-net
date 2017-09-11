@@ -33,10 +33,33 @@ namespace Amazon.DeviceFarm.Model
     /// </summary>
     public partial class CreateRemoteAccessSessionRequest : AmazonDeviceFarmRequest
     {
+        private string _clientId;
         private CreateRemoteAccessSessionConfiguration _configuration;
         private string _deviceArn;
         private string _name;
         private string _projectArn;
+        private bool? _remoteDebugEnabled;
+        private string _sshPublicKey;
+
+        /// <summary>
+        /// Gets and sets the property ClientId. 
+        /// <para>
+        /// Unique identifier for the client. If you want access to multiple devices on the same
+        /// client, you should pass the same <code>clientId</code> value in each call to <code>CreateRemoteAccessSession</code>.
+        /// This is required only if <code>remoteDebugEnabled</code> is set to true <code>true</code>.
+        /// </para>
+        /// </summary>
+        public string ClientId
+        {
+            get { return this._clientId; }
+            set { this._clientId = value; }
+        }
+
+        // Check to see if ClientId property is set
+        internal bool IsSetClientId()
+        {
+            return this._clientId != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Configuration. 
@@ -110,6 +133,45 @@ namespace Amazon.DeviceFarm.Model
         internal bool IsSetProjectArn()
         {
             return this._projectArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RemoteDebugEnabled. 
+        /// <para>
+        /// Set to <code>true</code> if you want to access devices remotely for debugging in your
+        /// remote access session.
+        /// </para>
+        /// </summary>
+        public bool RemoteDebugEnabled
+        {
+            get { return this._remoteDebugEnabled.GetValueOrDefault(); }
+            set { this._remoteDebugEnabled = value; }
+        }
+
+        // Check to see if RemoteDebugEnabled property is set
+        internal bool IsSetRemoteDebugEnabled()
+        {
+            return this._remoteDebugEnabled.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SshPublicKey. 
+        /// <para>
+        /// The public key of the <code>ssh</code> key pair you want to use for connecting to
+        /// remote devices in your remote debugging session. This is only required if <code>remoteDebugEnabled</code>
+        /// is set to <code>true</code>.
+        /// </para>
+        /// </summary>
+        public string SshPublicKey
+        {
+            get { return this._sshPublicKey; }
+            set { this._sshPublicKey = value; }
+        }
+
+        // Check to see if SshPublicKey property is set
+        internal bool IsSetSshPublicKey()
+        {
+            return this._sshPublicKey != null;
         }
 
     }

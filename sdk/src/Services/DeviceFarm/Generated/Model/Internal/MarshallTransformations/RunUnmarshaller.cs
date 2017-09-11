@@ -94,6 +94,12 @@ namespace Amazon.DeviceFarm.Model.Internal.MarshallTransformations
                     unmarshalledObject.Created = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("customerArtifactPaths", targetDepth))
+                {
+                    var unmarshaller = CustomerArtifactPathsUnmarshaller.Instance;
+                    unmarshalledObject.CustomerArtifactPaths = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("deviceMinutes", targetDepth))
                 {
                     var unmarshaller = DeviceMinutesUnmarshaller.Instance;
@@ -118,6 +124,12 @@ namespace Amazon.DeviceFarm.Model.Internal.MarshallTransformations
                     unmarshalledObject.NetworkProfile = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("parsingResultUrl", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ParsingResultUrl = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("platform", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -128,6 +140,12 @@ namespace Amazon.DeviceFarm.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Result = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("resultCode", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ResultCode = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("started", targetDepth))
