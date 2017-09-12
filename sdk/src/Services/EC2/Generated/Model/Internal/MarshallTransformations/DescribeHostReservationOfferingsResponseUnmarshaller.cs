@@ -61,7 +61,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         response.NextToken = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("offeringSet/member", targetDepth))
+                    if (context.TestExpression("offeringSet/item", targetDepth))
                     {
                         var unmarshaller = HostOfferingUnmarshaller.Instance;
                         var item = unmarshaller.Unmarshall(context);
