@@ -171,7 +171,7 @@ namespace Amazon.S3.Encryption.Internal
                     byte[] envelopeKey = context.EnvelopeKey;
                     byte[] iv = context.FirstIV;
                     byte[] encryptedEnvelopeKey = EncryptionUtils.EncryptEnvelopeKey(envelopeKey, this.EncryptionClient.EncryptionMaterials);
-                    EncryptionInstructions instructions = new EncryptionInstructions(EncryptionMaterials.EmptyMaterialsDescription, envelopeKey, encryptedEnvelopeKey, iv);
+                    EncryptionInstructions instructions = new EncryptionInstructions(this.EncryptionClient.EncryptionMaterials.MaterialsDescription, envelopeKey, encryptedEnvelopeKey, iv);
 
                     PutObjectRequest instructionFileRequest = EncryptionUtils.CreateInstructionFileRequest(completeMultiPartUploadRequest, instructions);
 

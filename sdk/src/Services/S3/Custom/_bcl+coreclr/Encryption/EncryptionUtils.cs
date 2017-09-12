@@ -212,7 +212,7 @@ namespace Amazon.S3.Encryption
         {
             Aes AesObject = Aes.Create();
             byte[] encryptedEnvelopeKey = EncryptEnvelopeKey(AesObject.Key, materials);
-            return new EncryptionInstructions(EncryptionMaterials.EmptyMaterialsDescription, AesObject.Key, encryptedEnvelopeKey, AesObject.IV);
+            return new EncryptionInstructions(materials.MaterialsDescription, AesObject.Key, encryptedEnvelopeKey, AesObject.IV);
         }
 
         internal static GetObjectRequest GetInstructionFileRequest(GetObjectResponse response)
@@ -247,7 +247,7 @@ namespace Amazon.S3.Encryption
             string base64EncodedIV = metadata[initVectorInMetadata];
             byte[] IV = Convert.FromBase64String(base64EncodedIV);
 
-            return new EncryptionInstructions(EncryptionMaterials.EmptyMaterialsDescription, decryptedEnvelopeKey, encryptedEvelopeKey, IV);
+            return new EncryptionInstructions(materials.MaterialsDescription, decryptedEnvelopeKey, encryptedEvelopeKey, IV);
         }
 
         /// <summary>
@@ -273,7 +273,7 @@ namespace Amazon.S3.Encryption
                 var base64EncodedIV = jsonData["IV"];
                 byte[] IV = Convert.FromBase64String((string)base64EncodedIV);
 
-                return new EncryptionInstructions(EncryptionMaterials.EmptyMaterialsDescription, decryptedEnvelopeKey, IV);
+                return new EncryptionInstructions(materials.MaterialsDescription, decryptedEnvelopeKey, IV);
             }
         }
 
@@ -306,8 +306,7 @@ namespace Amazon.S3.Encryption
                 metadata.Add(initVectorInMetadata, base64EncodedIV);
 
                 Dictionary<string, string> materialsDescription = instructions.MaterialsDescription;
-                if (materialsDescription.Count == 0)
-                    metadata.Add(encryptionMaterialsDescription, "{}");
+                metadata.Add(encryptionMaterialsDescription, MaterialsDescriptionJson(materialsDescription));
 
                 putObjectRequest.Metadata = metadata;
             }
@@ -320,11 +319,29 @@ namespace Amazon.S3.Encryption
                 metadata.Add(initVectorInMetadata, base64EncodedIV);
 
                 Dictionary<string, string> materialsDescription = instructions.MaterialsDescription;
-                if (materialsDescription.Count == 0)
-                    metadata.Add(encryptionMaterialsDescription, "{}");
+                metadata.Add(encryptionMaterialsDescription, MaterialsDescriptionJson(materialsDescription));
 
                 initiateMultipartrequest.Metadata = metadata;
             }
+        }
+
+        internal static string MaterialsDescriptionJson(Dictionary<string, string> materialsDescription)
+        {
+            string materialsDesc;
+            if (materialsDescription.Count == 0)
+            {
+                materialsDesc = "{}";
+            }
+            else
+            {
+                JsonData jsonData = new JsonData();
+                foreach (KeyValuePair<string, string> description in materialsDescription)
+                {
+                    jsonData[description.Key] = description.Value;
+                }
+                materialsDesc = jsonData.ToJson();
+            }
+            return materialsDesc;
         }
 
         internal static PutObjectRequest CreateInstructionFileRequest(AmazonWebServiceRequest request, EncryptionInstructions instructions)

@@ -175,7 +175,7 @@ namespace Amazon.S3.Encryption.Internal
             byte[] envelopeKey = contextForEncryption.EnvelopeKey;
             byte[] IV = contextForEncryption.NextIV;
 
-            EncryptionInstructions instructions = new EncryptionInstructions(EncryptionMaterials.EmptyMaterialsDescription, envelopeKey, IV);
+            EncryptionInstructions instructions = new EncryptionInstructions(this.EncryptionClient.EncryptionMaterials.MaterialsDescription, envelopeKey, IV);
 
             if (request.IsLastPart == false)
             {

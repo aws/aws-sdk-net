@@ -32,25 +32,31 @@ namespace Amazon.S3.Encryption
         /// Constructs a new EncryptionMaterials object, storing an asymmetric key.
         /// </summary>
         /// <param name="algorithm"></param>
-        public EncryptionMaterials(AsymmetricAlgorithm algorithm)
+        /// <param name="materialsDescription"></param>
+        public EncryptionMaterials(AsymmetricAlgorithm algorithm, Dictionary<string,string> materialsDescription = null)
         {
             AsymmetricProvider = algorithm;
             SymmetricProvider = null;
+            MaterialsDescription = materialsDescription ?? EmptyMaterialsDescription;
         }
 
         /// <summary>
         /// Constructs a new EncryptionMaterials object, storing a symmetric key.
         /// </summary>
         /// <param name="algorithm"></param>
-        public EncryptionMaterials(SymmetricAlgorithm algorithm)
+        /// <param name="materialsDescription"></param>
+        public EncryptionMaterials(SymmetricAlgorithm algorithm, Dictionary<string,string> materialsDescription = null)
         {
             SymmetricProvider = algorithm;
             AsymmetricProvider = null;
+            MaterialsDescription = materialsDescription ?? EmptyMaterialsDescription;
         }
 
         internal AsymmetricAlgorithm AsymmetricProvider { get; private set; }
 
         internal SymmetricAlgorithm SymmetricProvider { get; private set; }
+
+        internal Dictionary<string,string> MaterialsDescription { get; private set; }
 
         internal static Dictionary<string, string> EmptyMaterialsDescription { get { return new Dictionary<string, string>(); } }
     }
