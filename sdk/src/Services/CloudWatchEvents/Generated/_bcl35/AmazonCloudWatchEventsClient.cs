@@ -835,10 +835,17 @@ namespace Amazon.CloudWatchEvents
         /// To enable multiple AWS accounts to put events to your default event bus, run <code>PutPermission</code>
         /// once for each of these accounts.
         /// </para>
+        ///  
+        /// <para>
+        /// The permission policy on the default event bus cannot exceed 10KB in size.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutPermission service method.</param>
         /// 
         /// <returns>The response from the PutPermission service method, as returned by CloudWatchEvents.</returns>
+        /// <exception cref="Amazon.CloudWatchEvents.Model.ConcurrentModificationException">
+        /// There is concurrent modification on a rule or target.
+        /// </exception>
         /// <exception cref="Amazon.CloudWatchEvents.Model.InternalException">
         /// This exception occurs due to unexpected causes.
         /// </exception>
@@ -1019,11 +1026,23 @@ namespace Amazon.CloudWatchEvents
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// Pipelines in Amazon Code Pipeline
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Amazon Inspector assessment templates
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// Amazon SNS topics
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// Amazon SQS queues
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The default event bus of another AWS account
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -1051,9 +1070,17 @@ namespace Amazon.CloudWatchEvents
         ///  
         /// <para>
         /// If another AWS account is in the same region and has granted you permission (using
-        /// <code>PutPermission</code>), you can set that account's event bus as a target of the
-        /// rules in your account. To send the matched events to the other account, specify that
-        /// account's event bus as the <code>Arn</code> when you run <code>PutTargets</code>.
+        /// <code>PutPermission</code>), you can send events to that account by setting that account's
+        /// event bus as a target of the rules in your account. To send the matched events to
+        /// the other account, specify that account's event bus as the <code>Arn</code> when you
+        /// run <code>PutTargets</code>. If your account sends events to another account, your
+        /// account is charged for each sent event. Each event sent to antoher account is charged
+        /// as a custom event. The account receiving the event is not charged. For more information
+        /// on pricing, see <a href="https://aws.amazon.com/cloudwatch/pricing/">Amazon CloudWatch
+        /// Pricing</a>.
+        /// </para>
+        ///  
+        /// <para>
         /// For more information about enabling cross-account events, see <a>PutPermission</a>.
         /// </para>
         ///  
@@ -1173,6 +1200,9 @@ namespace Amazon.CloudWatchEvents
         /// <param name="request">Container for the necessary parameters to execute the RemovePermission service method.</param>
         /// 
         /// <returns>The response from the RemovePermission service method, as returned by CloudWatchEvents.</returns>
+        /// <exception cref="Amazon.CloudWatchEvents.Model.ConcurrentModificationException">
+        /// There is concurrent modification on a rule or target.
+        /// </exception>
         /// <exception cref="Amazon.CloudWatchEvents.Model.InternalException">
         /// This exception occurs due to unexpected causes.
         /// </exception>

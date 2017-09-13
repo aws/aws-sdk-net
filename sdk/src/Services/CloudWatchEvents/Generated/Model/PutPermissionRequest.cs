@@ -43,6 +43,10 @@ namespace Amazon.CloudWatchEvents.Model
     /// To enable multiple AWS accounts to put events to your default event bus, run <code>PutPermission</code>
     /// once for each of these accounts.
     /// </para>
+    ///  
+    /// <para>
+    /// The permission policy on the default event bus cannot exceed 10KB in size.
+    /// </para>
     /// </summary>
     public partial class PutPermissionRequest : AmazonCloudWatchEventsRequest
     {
