@@ -116,10 +116,10 @@ namespace Amazon.Batch
         /// <para>
         /// In a managed compute environment, AWS Batch manages the compute resources within the
         /// environment, based on the compute resources that you specify. Instances launched into
-        /// a managed compute environment use the latest Amazon ECS-optimized AMI. You can choose
-        /// to use Amazon EC2 On-Demand instances in your managed compute environment, or you
-        /// can use Amazon EC2 Spot instances that only launch when the Spot bid price is below
-        /// a specified percentage of the On-Demand price.
+        /// a managed compute environment use a recent, approved version of the Amazon ECS-optimized
+        /// AMI. You can choose to use Amazon EC2 On-Demand instances in your managed compute
+        /// environment, or you can use Amazon EC2 Spot instances that only launch when the Spot
+        /// bid price is below a specified percentage of the On-Demand price.
         /// </para>
         ///  
         /// <para>
@@ -296,8 +296,8 @@ namespace Amazon.Batch
 
         /// <summary>
         /// Deletes the specified job queue. You must first disable submissions for a queue with
-        /// the <a>UpdateJobQueue</a> operation and terminate any jobs that have not completed
-        /// with the <a>TerminateJob</a>.
+        /// the <a>UpdateJobQueue</a> operation. All jobs in the queue are terminated when you
+        /// delete a job queue.
         /// 
         ///  
         /// <para>
@@ -600,7 +600,8 @@ namespace Amazon.Batch
 
         /// <summary>
         /// Returns a list of task jobs for a specified job queue. You can filter the results
-        /// by job status with the <code>jobStatus</code> parameter.
+        /// by job status with the <code>jobStatus</code> parameter. If you do not specify a status,
+        /// only <code>RUNNING</code> jobs are returned.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListJobs service method.</param>
         /// 

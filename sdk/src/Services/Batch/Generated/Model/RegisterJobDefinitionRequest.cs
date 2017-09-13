@@ -61,7 +61,8 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property JobDefinitionName. 
         /// <para>
-        /// The name of the job definition to register. 
+        /// The name of the job definition to register. Up to 128 letters (uppercase and lowercase),
+        /// numbers, hyphens, and underscores are allowed.
         /// </para>
         /// </summary>
         public string JobDefinitionName

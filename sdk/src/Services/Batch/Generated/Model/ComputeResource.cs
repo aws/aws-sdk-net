@@ -124,7 +124,11 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property InstanceRole. 
         /// <para>
-        /// The Amazon ECS instance role applied to Amazon EC2 instances in a compute environment.
+        /// The Amazon ECS instance profile applied to Amazon EC2 instances in a compute environment.
+        /// You can specify the short name or full Amazon Resource Name (ARN) of an instance profile.
+        /// For example, <code>ecsInstanceRole</code> or <code>arn:aws:iam::&lt;aws_account_id&gt;:instance-profile/ecsInstanceRole</code>.
+        /// For more information, see <a href="http://docs.aws.amazon.com/batch/latest/userguide/instance_IAM_role.html">Amazon
+        /// ECS Instance Role</a> in the <i>AWS Batch User Guide</i>.
         /// </para>
         /// </summary>
         public string InstanceRole

@@ -69,7 +69,7 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property DependsOn. 
         /// <para>
-        /// A list of job IDs on which this job depends. A job can depend upon a maximum of 100
+        /// A list of job IDs on which this job depends. A job can depend upon a maximum of 20
         /// jobs. 
         /// </para>
         /// </summary>
@@ -107,11 +107,8 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property JobName. 
         /// <para>
-        /// The name of the job. A name must be 1 to 128 characters in length.
-        /// </para>
-        ///  
-        /// <para>
-        /// Pattern: ^[a-zA-Z0-9_]+$
+        /// The name of the job. The first character must be alphanumeric, and up to 128 letters
+        /// (uppercase and lowercase), numbers, hyphens, and underscores are allowed. 
         /// </para>
         /// </summary>
         public string JobName

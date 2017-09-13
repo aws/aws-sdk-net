@@ -125,7 +125,7 @@ namespace AWSSDKDocSamples.Amazon.Batch.Generated
                     }
                 },
                 JobQueueName = "LowPriority",
-                Priority = 10,
+                Priority = 1,
                 State = "ENABLED"
             });
 
@@ -152,7 +152,7 @@ namespace AWSSDKDocSamples.Amazon.Batch.Generated
                     }
                 },
                 JobQueueName = "HighPriority",
-                Priority = 1,
+                Priority = 10,
                 State = "ENABLED"
             });
 

@@ -30,7 +30,8 @@ namespace Amazon.Batch.Model
     /// <summary>
     /// Container for the parameters to the ListJobs operation.
     /// Returns a list of task jobs for a specified job queue. You can filter the results
-    /// by job status with the <code>jobStatus</code> parameter.
+    /// by job status with the <code>jobStatus</code> parameter. If you do not specify a status,
+    /// only <code>RUNNING</code> jobs are returned.
     /// </summary>
     public partial class ListJobsRequest : AmazonBatchRequest
     {
@@ -60,7 +61,8 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property JobStatus. 
         /// <para>
-        /// The job status with which to filter jobs in the specified queue.
+        /// The job status with which to filter jobs in the specified queue. If you do not specify
+        /// a status, only <code>RUNNING</code> jobs are returned.
         /// </para>
         /// </summary>
         public JobStatus JobStatus

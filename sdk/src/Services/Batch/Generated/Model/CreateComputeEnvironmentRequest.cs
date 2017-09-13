@@ -36,10 +36,10 @@ namespace Amazon.Batch.Model
     /// <para>
     /// In a managed compute environment, AWS Batch manages the compute resources within the
     /// environment, based on the compute resources that you specify. Instances launched into
-    /// a managed compute environment use the latest Amazon ECS-optimized AMI. You can choose
-    /// to use Amazon EC2 On-Demand instances in your managed compute environment, or you
-    /// can use Amazon EC2 Spot instances that only launch when the Spot bid price is below
-    /// a specified percentage of the On-Demand price.
+    /// a managed compute environment use a recent, approved version of the Amazon ECS-optimized
+    /// AMI. You can choose to use Amazon EC2 On-Demand instances in your managed compute
+    /// environment, or you can use Amazon EC2 Spot instances that only launch when the Spot
+    /// bid price is below a specified percentage of the On-Demand price.
     /// </para>
     ///  
     /// <para>
@@ -106,8 +106,22 @@ namespace Amazon.Batch.Model
         /// Gets and sets the property ServiceRole. 
         /// <para>
         /// The full Amazon Resource Name (ARN) of the IAM role that allows AWS Batch to make
-        /// calls to other AWS services on your behalf. 
+        /// calls to other AWS services on your behalf.
         /// </para>
+        ///  
+        /// <para>
+        /// If your specified role has a path other than <code>/</code>, then you must either
+        /// specify the full role ARN (this is recommended) or prefix the role name with the path.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// Depending on how you created your AWS Batch service role, its ARN may contain the
+        /// <code>service-role</code> path prefix. When you only specify the name of the service
+        /// role, AWS Batch assumes that your ARN does not use the <code>service-role</code> path
+        /// prefix. Because of this, we recommend that you specify the full ARN of your service
+        /// role when you create compute environments.
+        /// </para>
+        ///  </note>
         /// </summary>
         public string ServiceRole
         {

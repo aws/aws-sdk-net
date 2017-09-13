@@ -57,7 +57,7 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property JobDefinitionName. 
         /// <para>
-        /// The name of the job definition. 
+        /// The name of the job definition.
         /// </para>
         /// </summary>
         public string JobDefinitionName
