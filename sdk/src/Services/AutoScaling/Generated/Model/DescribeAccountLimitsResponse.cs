@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AutoScaling.Model
 {
     /// <summary>
-    /// Contains the parameters for DescribeAccountLimits.
+    /// This is the response object from the DescribeAccountLimits operation.
     /// </summary>
     public partial class DescribeAccountLimitsResponse : AmazonWebServiceResponse
     {

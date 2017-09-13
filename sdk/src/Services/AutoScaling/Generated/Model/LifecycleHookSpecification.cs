@@ -37,35 +37,15 @@ namespace Amazon.AutoScaling.Model
     /// Scaling Lifecycle Hooks</a> in the <i>Auto Scaling User Guide</i>.
     /// </para>
     /// </summary>
-    public partial class LifecycleHook
+    public partial class LifecycleHookSpecification
     {
-        private string _autoScalingGroupName;
         private string _defaultResult;
-        private int? _globalTimeout;
         private int? _heartbeatTimeout;
         private string _lifecycleHookName;
         private string _lifecycleTransition;
         private string _notificationMetadata;
         private string _notificationTargetARN;
         private string _roleARN;
-
-        /// <summary>
-        /// Gets and sets the property AutoScalingGroupName. 
-        /// <para>
-        /// The name of the Auto Scaling group for the lifecycle hook.
-        /// </para>
-        /// </summary>
-        public string AutoScalingGroupName
-        {
-            get { return this._autoScalingGroupName; }
-            set { this._autoScalingGroupName = value; }
-        }
-
-        // Check to see if AutoScalingGroupName property is set
-        internal bool IsSetAutoScalingGroupName()
-        {
-            return this._autoScalingGroupName != null;
-        }
 
         /// <summary>
         /// Gets and sets the property DefaultResult. 
@@ -85,26 +65,6 @@ namespace Amazon.AutoScaling.Model
         internal bool IsSetDefaultResult()
         {
             return this._defaultResult != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property GlobalTimeout. 
-        /// <para>
-        /// The maximum time, in seconds, that an instance can remain in a <code>Pending:Wait</code>
-        /// or <code>Terminating:Wait</code> state. The maximum is 172800 seconds (48 hours) or
-        /// 100 times <code>HeartbeatTimeout</code>, whichever is smaller.
-        /// </para>
-        /// </summary>
-        public int GlobalTimeout
-        {
-            get { return this._globalTimeout.GetValueOrDefault(); }
-            set { this._globalTimeout = value; }
-        }
-
-        // Check to see if GlobalTimeout property is set
-        internal bool IsSetGlobalTimeout()
-        {
-            return this._globalTimeout.HasValue; 
         }
 
         /// <summary>

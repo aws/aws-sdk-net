@@ -38,8 +38,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property Alarms. 
         /// <para>
-        /// The CloudWatch alarms created for the target tracking policy. This parameter will
-        /// be empty if the policy type is anything other than <code>TargetTrackingScaling</code>.
+        /// The CloudWatch alarms created for the target tracking policy.
         /// </para>
         /// </summary>
         public List<Alarm> Alarms

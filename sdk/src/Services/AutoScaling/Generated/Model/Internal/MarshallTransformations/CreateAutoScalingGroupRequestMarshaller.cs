@@ -95,6 +95,42 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("LaunchConfigurationName", StringUtils.FromString(publicRequest.LaunchConfigurationName));
                 }
+                if(publicRequest.IsSetLifecycleHookSpecificationList())
+                {
+                    int publicRequestlistValueIndex = 1;
+                    foreach(var publicRequestlistValue in publicRequest.LifecycleHookSpecificationList)
+                    {
+                        if(publicRequestlistValue.IsSetDefaultResult())
+                        {
+                            request.Parameters.Add("LifecycleHookSpecificationList" + "." + "member" + "." + publicRequestlistValueIndex + "." + "DefaultResult", StringUtils.FromString(publicRequestlistValue.DefaultResult));
+                        }
+                        if(publicRequestlistValue.IsSetHeartbeatTimeout())
+                        {
+                            request.Parameters.Add("LifecycleHookSpecificationList" + "." + "member" + "." + publicRequestlistValueIndex + "." + "HeartbeatTimeout", StringUtils.FromInt(publicRequestlistValue.HeartbeatTimeout));
+                        }
+                        if(publicRequestlistValue.IsSetLifecycleHookName())
+                        {
+                            request.Parameters.Add("LifecycleHookSpecificationList" + "." + "member" + "." + publicRequestlistValueIndex + "." + "LifecycleHookName", StringUtils.FromString(publicRequestlistValue.LifecycleHookName));
+                        }
+                        if(publicRequestlistValue.IsSetLifecycleTransition())
+                        {
+                            request.Parameters.Add("LifecycleHookSpecificationList" + "." + "member" + "." + publicRequestlistValueIndex + "." + "LifecycleTransition", StringUtils.FromString(publicRequestlistValue.LifecycleTransition));
+                        }
+                        if(publicRequestlistValue.IsSetNotificationMetadata())
+                        {
+                            request.Parameters.Add("LifecycleHookSpecificationList" + "." + "member" + "." + publicRequestlistValueIndex + "." + "NotificationMetadata", StringUtils.FromString(publicRequestlistValue.NotificationMetadata));
+                        }
+                        if(publicRequestlistValue.IsSetNotificationTargetARN())
+                        {
+                            request.Parameters.Add("LifecycleHookSpecificationList" + "." + "member" + "." + publicRequestlistValueIndex + "." + "NotificationTargetARN", StringUtils.FromString(publicRequestlistValue.NotificationTargetARN));
+                        }
+                        if(publicRequestlistValue.IsSetRoleARN())
+                        {
+                            request.Parameters.Add("LifecycleHookSpecificationList" + "." + "member" + "." + publicRequestlistValueIndex + "." + "RoleARN", StringUtils.FromString(publicRequestlistValue.RoleARN));
+                        }
+                        publicRequestlistValueIndex++;
+                    }
+                }
                 if(publicRequest.IsSetLoadBalancerNames())
                 {
                     int publicRequestlistValueIndex = 1;

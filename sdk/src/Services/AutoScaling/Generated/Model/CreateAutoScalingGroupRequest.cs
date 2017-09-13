@@ -53,6 +53,7 @@ namespace Amazon.AutoScaling.Model
         private string _healthCheckType;
         private string _instanceId;
         private string _launchConfigurationName;
+        private List<LifecycleHookSpecification> _lifecycleHookSpecificationList = new List<LifecycleHookSpecification>();
         private List<string> _loadBalancerNames = new List<string>();
         private int? _maxSize;
         private int? _minSize;
@@ -129,7 +130,8 @@ namespace Amazon.AutoScaling.Model
         /// <para>
         /// The number of EC2 instances that should be running in the group. This number must
         /// be greater than or equal to the minimum size of the group and less than or equal to
-        /// the maximum size of the group.
+        /// the maximum size of the group. If you do not specify a desired capacity, the default
+        /// is the minimum size of the group.
         /// </para>
         /// </summary>
         public int DesiredCapacity
@@ -245,6 +247,24 @@ namespace Amazon.AutoScaling.Model
         internal bool IsSetLaunchConfigurationName()
         {
             return this._launchConfigurationName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LifecycleHookSpecificationList. 
+        /// <para>
+        /// One or more lifecycle hooks.
+        /// </para>
+        /// </summary>
+        public List<LifecycleHookSpecification> LifecycleHookSpecificationList
+        {
+            get { return this._lifecycleHookSpecificationList; }
+            set { this._lifecycleHookSpecificationList = value; }
+        }
+
+        // Check to see if LifecycleHookSpecificationList property is set
+        internal bool IsSetLifecycleHookSpecificationList()
+        {
+            return this._lifecycleHookSpecificationList != null && this._lifecycleHookSpecificationList.Count > 0; 
         }
 
         /// <summary>

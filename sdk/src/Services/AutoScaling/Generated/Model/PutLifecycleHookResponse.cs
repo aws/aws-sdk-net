@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AutoScaling.Model
 {
     /// <summary>
-    /// Contains the output of PutLifecycleHook.
+    /// This is the response object from the PutLifecycleHook operation.
     /// </summary>
     public partial class PutLifecycleHookResponse : AmazonWebServiceResponse
     {
