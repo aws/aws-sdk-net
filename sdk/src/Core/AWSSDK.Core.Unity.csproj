@@ -152,6 +152,9 @@
     <Compile Include="Amazon.Runtime\SharedInterfaces\*.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Amazon.Runtime\SharedInterfaces\Internal\*.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Amazon.Runtime\_bcl+unity\*.cs">
       <SubType>Code</SubType>
     </Compile>

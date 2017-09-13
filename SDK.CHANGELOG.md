@@ -1,3 +1,13 @@
+### 3.3.155.0 (2017-09-12 22:22 UTC)
+* KeyManagementService (3.3.3.1)
+	* Updated to use new Core, version 3.3.17.9
+	* Support changes to allow use of KMS master keys with AmazonS3EncryptionClient.
+* S3 (3.3.11.0)
+	* Updated to use new Core, version 3.3.17.9
+	* Allow use of KMS master keys with AmazonS3EncryptionClient.
+* Core 3.3.17.9
+	* Support changes to allow use of KMS master keys with AmazonS3EncryptionClient.
+
 ### 3.3.154.0 (2017-09-12 17:08 UTC)
 * EC2 (3.3.24.0)
 	* Fixed bug in EC2 clients preventing HostOfferingSet from being set
