@@ -110,7 +110,9 @@ namespace Amazon.Organizations.Model
         /// Gets and sets the property Email. 
         /// <para>
         /// The email address of the owner to assign to the new member account. This email address
-        /// must not already be associated with another AWS account.
+        /// must not already be associated with another AWS account. You must use a valid email
+        /// address to complete account creation. You cannot access the root user of the account
+        /// or remove an account that was created with an invalid email address.
         /// </para>
         /// </summary>
         public string Email

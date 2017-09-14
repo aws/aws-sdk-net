@@ -98,7 +98,7 @@ namespace Amazon.Organizations.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>--target id=123456789012,type=ACCOUNT</code> 
+        ///  <code>--target Id=123456789012,Type=ACCOUNT</code> 
         /// </para>
         ///  
         /// <para>
@@ -108,7 +108,7 @@ namespace Amazon.Organizations.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>--target id=bill@example.com,type=EMAIL</code> 
+        ///  <code>--target Id=bill@example.com,Type=EMAIL</code> 
         /// </para>
         /// </summary>
         public HandshakeParty Target
