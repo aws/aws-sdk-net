@@ -1,3 +1,11 @@
+### 3.3.157.0 (2017-09-14 21:13 UTC)
+* CodeBuild (3.3.4.0)
+	* Supporting Parameter Store in environment variables for AWS CodeBuild
+* Organizations (3.3.4.1)
+	* Documentation updates for AWS Organizations
+* ServiceCatalog (3.3.5.0)
+	* This release of Service Catalog adds API support to copy products.
+
 ### 3.3.156.0 (2017-09-13 20:33 UTC)
 * AutoScaling (3.3.2.0)
 	* Customers can create Life Cycle Hooks at the time of creating Auto Scaling Groups through the CreateAutoScalingGroup API
