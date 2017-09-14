@@ -461,6 +461,62 @@ namespace Amazon.ServiceCatalog
 
         #endregion
         
+        #region  CopyProduct
+
+
+        /// <summary>
+        /// Copies the specified source product to the specified target product or a new product.
+        /// 
+        ///  
+        /// <para>
+        /// You can copy the product to the same account or another account. You can copy the
+        /// product to the same region or another region.
+        /// </para>
+        ///  
+        /// <para>
+        /// This operation is performed asynchronously. To track the progress of the operation,
+        /// use <a>DescribeCopyProductStatus</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CopyProduct service method.</param>
+        /// 
+        /// <returns>The response from the CopyProduct service method, as returned by ServiceCatalog.</returns>
+        /// <exception cref="Amazon.ServiceCatalog.Model.InvalidParametersException">
+        /// One or more parameters provided to the operation are invalid.
+        /// </exception>
+        /// <exception cref="Amazon.ServiceCatalog.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/CopyProduct">REST API Reference for CopyProduct Operation</seealso>
+        public CopyProductResponse CopyProduct(CopyProductRequest request)
+        {
+            var marshaller = new CopyProductRequestMarshaller();
+            var unmarshaller = CopyProductResponseUnmarshaller.Instance;
+
+            return Invoke<CopyProductRequest,CopyProductResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CopyProduct operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CopyProduct operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/CopyProduct">REST API Reference for CopyProduct Operation</seealso>
+        public Task<CopyProductResponse> CopyProductAsync(CopyProductRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new CopyProductRequestMarshaller();
+            var unmarshaller = CopyProductResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CopyProductRequest,CopyProductResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateConstraint
 
 
@@ -671,11 +727,6 @@ namespace Amazon.ServiceCatalog
         /// <summary>
         /// Create a new provisioning artifact for the specified product. This operation does
         /// not work with a product that has been shared with you.
-        /// 
-        ///  
-        /// <para>
-        /// See the bottom of this topic for an example JSON request.
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateProvisioningArtifact service method.</param>
         /// 
@@ -1058,6 +1109,48 @@ namespace Amazon.ServiceCatalog
             var unmarshaller = DescribeConstraintResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeConstraintRequest,DescribeConstraintResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeCopyProductStatus
+
+
+        /// <summary>
+        /// Describes the status of the specified copy product operation.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeCopyProductStatus service method.</param>
+        /// 
+        /// <returns>The response from the DescribeCopyProductStatus service method, as returned by ServiceCatalog.</returns>
+        /// <exception cref="Amazon.ServiceCatalog.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DescribeCopyProductStatus">REST API Reference for DescribeCopyProductStatus Operation</seealso>
+        public DescribeCopyProductStatusResponse DescribeCopyProductStatus(DescribeCopyProductStatusRequest request)
+        {
+            var marshaller = new DescribeCopyProductStatusRequestMarshaller();
+            var unmarshaller = DescribeCopyProductStatusResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeCopyProductStatusRequest,DescribeCopyProductStatusResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeCopyProductStatus operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeCopyProductStatus operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DescribeCopyProductStatus">REST API Reference for DescribeCopyProductStatus Operation</seealso>
+        public Task<DescribeCopyProductStatusResponse> DescribeCopyProductStatusAsync(DescribeCopyProductStatusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DescribeCopyProductStatusRequestMarshaller();
+            var unmarshaller = DescribeCopyProductStatusResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeCopyProductStatusRequest,DescribeCopyProductStatusResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 

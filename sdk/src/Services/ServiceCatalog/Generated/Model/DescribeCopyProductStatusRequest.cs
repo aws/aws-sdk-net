@@ -28,13 +28,13 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ServiceCatalog.Model
 {
     /// <summary>
-    /// Container for the parameters to the DescribePortfolio operation.
-    /// Retrieves detailed information and any tags associated with the specified portfolio.
+    /// Container for the parameters to the DescribeCopyProductStatus operation.
+    /// Describes the status of the specified copy product operation.
     /// </summary>
-    public partial class DescribePortfolioRequest : AmazonServiceCatalogRequest
+    public partial class DescribeCopyProductStatusRequest : AmazonServiceCatalogRequest
     {
         private string _acceptLanguage;
-        private string _id;
+        private string _copyProductToken;
 
         /// <summary>
         /// Gets and sets the property AcceptLanguage. 
@@ -68,21 +68,21 @@ namespace Amazon.ServiceCatalog.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Id. 
+        /// Gets and sets the property CopyProductToken. 
         /// <para>
-        /// The identifier of the portfolio for which to retrieve information.
+        /// The token returned from the call to <code>CopyProduct</code> that initiated the operation.
         /// </para>
         /// </summary>
-        public string Id
+        public string CopyProductToken
         {
-            get { return this._id; }
-            set { this._id = value; }
+            get { return this._copyProductToken; }
+            set { this._copyProductToken = value; }
         }
 
-        // Check to see if Id property is set
-        internal bool IsSetId()
+        // Check to see if CopyProductToken property is set
+        internal bool IsSetCopyProductToken()
         {
-            return this._id != null;
+            return this._copyProductToken != null;
         }
 
     }

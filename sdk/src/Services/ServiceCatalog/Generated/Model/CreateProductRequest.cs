@@ -49,24 +49,21 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property AcceptLanguage. 
         /// <para>
-        /// The language code to use for this operation. Supported language codes are as follows:
+        /// The language code.
         /// </para>
-        ///  
+        ///  <ul> <li> 
         /// <para>
-        /// "en" (English)
+        ///  <code>en</code> - English (default)
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        /// "jp" (Japanese)
+        ///  <code>jp</code> - Japanese
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        /// "zh" (Chinese)
+        ///  <code>zh</code> - Chinese
         /// </para>
-        ///  
-        /// <para>
-        /// If no code is specified, "en" is used as the default.
-        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public string AcceptLanguage
         {
@@ -119,9 +116,8 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property IdempotencyToken. 
         /// <para>
-        /// A token to disambiguate duplicate requests. You can create multiple resources using
-        /// the same input in multiple requests, provided that you also specify a different idempotency
-        /// token for each request.
+        /// A token to disambiguate duplicate requests. You can use the same input in multiple
+        /// requests, provided that you also specify a different idempotency token for each request.
         /// </para>
         /// </summary>
         public string IdempotencyToken

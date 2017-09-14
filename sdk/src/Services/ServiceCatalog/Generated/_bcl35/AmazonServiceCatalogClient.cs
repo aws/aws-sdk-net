@@ -515,6 +515,76 @@ namespace Amazon.ServiceCatalog
 
         #endregion
         
+        #region  CopyProduct
+
+        /// <summary>
+        /// Copies the specified source product to the specified target product or a new product.
+        /// 
+        ///  
+        /// <para>
+        /// You can copy the product to the same account or another account. You can copy the
+        /// product to the same region or another region.
+        /// </para>
+        ///  
+        /// <para>
+        /// This operation is performed asynchronously. To track the progress of the operation,
+        /// use <a>DescribeCopyProductStatus</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CopyProduct service method.</param>
+        /// 
+        /// <returns>The response from the CopyProduct service method, as returned by ServiceCatalog.</returns>
+        /// <exception cref="Amazon.ServiceCatalog.Model.InvalidParametersException">
+        /// One or more parameters provided to the operation are invalid.
+        /// </exception>
+        /// <exception cref="Amazon.ServiceCatalog.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/CopyProduct">REST API Reference for CopyProduct Operation</seealso>
+        public CopyProductResponse CopyProduct(CopyProductRequest request)
+        {
+            var marshaller = new CopyProductRequestMarshaller();
+            var unmarshaller = CopyProductResponseUnmarshaller.Instance;
+
+            return Invoke<CopyProductRequest,CopyProductResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CopyProduct operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CopyProduct operation on AmazonServiceCatalogClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCopyProduct
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/CopyProduct">REST API Reference for CopyProduct Operation</seealso>
+        public IAsyncResult BeginCopyProduct(CopyProductRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new CopyProductRequestMarshaller();
+            var unmarshaller = CopyProductResponseUnmarshaller.Instance;
+
+            return BeginInvoke<CopyProductRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CopyProduct operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCopyProduct.</param>
+        /// 
+        /// <returns>Returns a  CopyProductResult from ServiceCatalog.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/CopyProduct">REST API Reference for CopyProduct Operation</seealso>
+        public  CopyProductResponse EndCopyProduct(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CopyProductResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  CreateConstraint
 
         /// <summary>
@@ -780,11 +850,6 @@ namespace Amazon.ServiceCatalog
         /// <summary>
         /// Create a new provisioning artifact for the specified product. This operation does
         /// not work with a product that has been shared with you.
-        /// 
-        ///  
-        /// <para>
-        /// See the bottom of this topic for an example JSON request.
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateProvisioningArtifact service method.</param>
         /// 
@@ -1281,6 +1346,62 @@ namespace Amazon.ServiceCatalog
         public  DescribeConstraintResponse EndDescribeConstraint(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeConstraintResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DescribeCopyProductStatus
+
+        /// <summary>
+        /// Describes the status of the specified copy product operation.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeCopyProductStatus service method.</param>
+        /// 
+        /// <returns>The response from the DescribeCopyProductStatus service method, as returned by ServiceCatalog.</returns>
+        /// <exception cref="Amazon.ServiceCatalog.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DescribeCopyProductStatus">REST API Reference for DescribeCopyProductStatus Operation</seealso>
+        public DescribeCopyProductStatusResponse DescribeCopyProductStatus(DescribeCopyProductStatusRequest request)
+        {
+            var marshaller = new DescribeCopyProductStatusRequestMarshaller();
+            var unmarshaller = DescribeCopyProductStatusResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeCopyProductStatusRequest,DescribeCopyProductStatusResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeCopyProductStatus operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeCopyProductStatus operation on AmazonServiceCatalogClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeCopyProductStatus
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DescribeCopyProductStatus">REST API Reference for DescribeCopyProductStatus Operation</seealso>
+        public IAsyncResult BeginDescribeCopyProductStatus(DescribeCopyProductStatusRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new DescribeCopyProductStatusRequestMarshaller();
+            var unmarshaller = DescribeCopyProductStatusResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DescribeCopyProductStatusRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeCopyProductStatus operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeCopyProductStatus.</param>
+        /// 
+        /// <returns>Returns a  DescribeCopyProductStatusResult from ServiceCatalog.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DescribeCopyProductStatus">REST API Reference for DescribeCopyProductStatus Operation</seealso>
+        public  DescribeCopyProductStatusResponse EndDescribeCopyProductStatus(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeCopyProductStatusResponse>(asyncResult);
         }
 
         #endregion

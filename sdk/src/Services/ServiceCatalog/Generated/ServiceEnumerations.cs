@@ -79,6 +79,106 @@ namespace Amazon.ServiceCatalog
 
 
     /// <summary>
+    /// Constants used for properties of type CopyOption.
+    /// </summary>
+    public class CopyOption : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CopyTags for CopyOption
+        /// </summary>
+        public static readonly CopyOption CopyTags = new CopyOption("CopyTags");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CopyOption(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CopyOption FindValue(string value)
+        {
+            return FindValue<CopyOption>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CopyOption(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type CopyProductStatus.
+    /// </summary>
+    public class CopyProductStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant FAILED for CopyProductStatus
+        /// </summary>
+        public static readonly CopyProductStatus FAILED = new CopyProductStatus("FAILED");
+        /// <summary>
+        /// Constant IN_PROGRESS for CopyProductStatus
+        /// </summary>
+        public static readonly CopyProductStatus IN_PROGRESS = new CopyProductStatus("IN_PROGRESS");
+        /// <summary>
+        /// Constant SUCCEEDED for CopyProductStatus
+        /// </summary>
+        public static readonly CopyProductStatus SUCCEEDED = new CopyProductStatus("SUCCEEDED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CopyProductStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CopyProductStatus FindValue(string value)
+        {
+            return FindValue<CopyProductStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CopyProductStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type PrincipalType.
     /// </summary>
     public class PrincipalType : ConstantClass
@@ -384,6 +484,52 @@ namespace Amazon.ServiceCatalog
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ProvisionedProductStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ProvisioningArtifactPropertyName.
+    /// </summary>
+    public class ProvisioningArtifactPropertyName : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Id for ProvisioningArtifactPropertyName
+        /// </summary>
+        public static readonly ProvisioningArtifactPropertyName Id = new ProvisioningArtifactPropertyName("Id");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ProvisioningArtifactPropertyName(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ProvisioningArtifactPropertyName FindValue(string value)
+        {
+            return FindValue<ProvisioningArtifactPropertyName>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ProvisioningArtifactPropertyName(string value)
         {
             return FindValue(value);
         }
