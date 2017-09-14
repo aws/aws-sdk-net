@@ -33,6 +33,7 @@ namespace Amazon.CodeBuild.Model
     public partial class EnvironmentVariable
     {
         private string _name;
+        private EnvironmentVariableType _type;
         private string _value;
 
         /// <summary>
@@ -51,6 +52,34 @@ namespace Amazon.CodeBuild.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Type. 
+        /// <para>
+        /// The type of environment variable. Valid values include:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>PARAMETER_STORE</code>: An environment variable stored in Amazon EC2 Systems
+        /// Manager Parameter Store.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>PLAINTEXT</code>: An environment variable in plaintext format.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public EnvironmentVariableType Type
+        {
+            get { return this._type; }
+            set { this._type = value; }
+        }
+
+        // Check to see if Type property is set
+        internal bool IsSetType()
+        {
+            return this._type != null;
         }
 
         /// <summary>
