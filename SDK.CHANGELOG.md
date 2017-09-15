@@ -1,3 +1,7 @@
+### 3.3.158.0 (2017-09-15 19:46 UTC)
+* APIGateway (3.3.9.0)
+	* Add a new enum "REQUEST" to '--type <value>' field in the current create-authorizer API, and make "identitySource" optional.
+
 ### 3.3.157.0 (2017-09-14 21:13 UTC)
 * CodeBuild (3.3.4.0)
 	* Supporting Parameter Store in environment variables for AWS CodeBuild
