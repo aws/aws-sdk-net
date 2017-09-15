@@ -50,7 +50,10 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property AuthorizerCredentials. 
         /// <para>
-        /// Specifies the credentials required for the authorizer, if any.
+        /// Specifies the required credentials as an IAM role for Amazon API Gateway to invoke
+        /// the authorizer. To specify an IAM role for Amazon API Gateway to assume, use the role's
+        /// Amazon Resource Name (ARN). To use resource-based permissions on the Lambda function,
+        /// specify null.
         /// </para>
         /// </summary>
         public string AuthorizerCredentials
@@ -68,7 +71,10 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property AuthorizerResultTtlInSeconds. 
         /// <para>
-        /// The TTL of cached authorizer results.
+        /// The TTL in seconds of cached authorizer results. If it equals 0, authorization caching
+        /// is disabled. If it is greater than 0, API Gateway will cache authorizer responses.
+        /// If this field is not set, the default value is 300. The maximum value is 3600, or
+        /// 1 hour.
         /// </para>
         /// </summary>
         public int AuthorizerResultTtlInSeconds
@@ -86,7 +92,14 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property AuthorizerUri. 
         /// <para>
-        /// [Required] Specifies the authorizer's Uniform Resource Identifier (URI).
+        /// Specifies the authorizer's Uniform Resource Identifier (URI). For <code>TOKEN</code>
+        /// or <code>REQUEST</code> authorizers, this must be a well-formed Lambda function URI,
+        /// for example, <code>arn:aws:apigateway:us-west-2:lambda:path/2015-03-31/functions/arn:aws:lambda:us-west-2:{account_id}:function:{lambda_function_name}/invocations</code>.
+        /// In general, the URI has this form <code>arn:aws:apigateway:{region}:lambda:path/{service_api}</code>,
+        /// where <code>{region}</code> is the same as the region hosting the Lambda function,
+        /// <code>path</code> indicates that the remaining substring in the URI should be treated
+        /// as the path to the resource, including the initial <code>/</code>. For Lambda functions,
+        /// this is usually of the form <code>/2015-03-31/functions/[FunctionARN]/invocations</code>.
         /// </para>
         /// </summary>
         public string AuthorizerUri
@@ -104,7 +117,7 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property AuthType. 
         /// <para>
-        /// Optional customer-defined field, used in Swagger imports/exports. Has no functional
+        /// Optional customer-defined field, used in Swagger imports and exports without functional
         /// impact.
         /// </para>
         /// </summary>
@@ -123,7 +136,23 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property IdentitySource. 
         /// <para>
-        /// [Required] The source of the identity in an incoming request.
+        /// The identity source for which authorization is requested. <ul><li>For a <code>TOKEN</code>
+        /// authorizer, this is required and specifies the request header mapping expression for
+        /// the custom header holding the authorization token submitted by the client. For example,
+        /// if the token header name is <code>Auth</code>, the header mapping expression is <code>method.request.header.Auth</code>.</li><li>For
+        /// the <code>REQUEST</code> authorizer, this is required when authorization caching is
+        /// enabled. The value is a comma-separated string of one or more mapping expressions
+        /// of the specified request parameters. For example, if an <code>Auth</code> header,
+        /// a <code>Name</code> query string parameter are defined as identity sources, this value
+        /// is <code>method.request.header.Auth, method.request.querystring.Name</code>. These
+        /// parameters will be used to derive the authorization caching key and to perform runtime
+        /// validation of the <code>REQUEST</code> authorizer by verifying all of the identity-related
+        /// request parameters are present, not null and non-empty. Only when this is true does
+        /// the authorizer invoke the authorizer Lambda function, otherwise, it returns a 401
+        /// Unauthorized response without calling the Lambda function. The valid value is a string
+        /// of comma-separated mapping expressions of the specified request parameters. When the
+        /// authorization caching is not enabled, this property is optional.</li><li>For a <code>COGNITO_USER_POOLS</code>
+        /// authorizer, this property is not used.</li></ul>
         /// </para>
         /// </summary>
         public string IdentitySource
@@ -141,7 +170,12 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property IdentityValidationExpression. 
         /// <para>
-        /// A validation expression for the incoming identity.
+        /// A validation expression for the incoming identity token. For <code>TOKEN</code> authorizers,
+        /// this value is a regular expression. Amazon API Gateway will match the incoming token
+        /// from the client against the specified regular expression. It will invoke the authorizer's
+        /// Lambda function there is a match. Otherwise, it will return a 401 Unauthorized response
+        /// without calling the Lambda function. The validation expression does not apply to the
+        /// <code>REQUEST</code> authorizer.
         /// </para>
         /// </summary>
         public string IdentityValidationExpression
@@ -177,7 +211,10 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property ProviderARNs. 
         /// <para>
-        /// A list of the Cognito Your User Pool authorizer's provider ARNs.
+        /// A list of the Amazon Cognito user pool ARNs for the <code>COGNITO_USER_POOLS</code>
+        /// authorizer. Each element is of this format: <code>arn:aws:cognito-idp:{region}:{account_id}:userpool/{user_pool_id}</code>.
+        /// For a <code>TOKEN</code> or <code>REQUEST</code> authorizer, this is not defined.
+        /// 
         /// </para>
         /// </summary>
         public List<string> ProviderARNs
@@ -213,7 +250,10 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// [Required] The type of the authorizer.
+        /// [Required] The authorizer type. Valid values are <code>TOKEN</code> for a Lambda function
+        /// using a single authorization token submitted in a custom header, <code>REQUEST</code>
+        /// for a Lambda function using incoming request parameters, and <code>COGNITO_USER_POOLS</code>
+        /// for using an Amazon Cognito user pool.
         /// </para>
         /// </summary>
         public AuthorizerType Type

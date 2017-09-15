@@ -110,7 +110,7 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the model.
+        /// The name of the model. Must be an alphanumeric string.
         /// </para>
         /// </summary>
         public string Name

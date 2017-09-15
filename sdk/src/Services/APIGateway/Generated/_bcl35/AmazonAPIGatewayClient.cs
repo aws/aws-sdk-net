@@ -249,22 +249,23 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>The response from the CreateApiKey service method, as returned by APIGateway.</returns>
         /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
-        /// 
+        /// The submitted request is not valid, for example, the input is incomplete or incorrect.
+        /// See the accompanying error message for details.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.ConflictException">
-        /// 
+        /// The request configuration has conflicts. For details, see the accompanying error message.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.LimitExceededException">
-        /// 
+        /// The request exceeded the rate limit. Retry after the specified time period.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
-        /// 
+        /// The requested resource is not found. Make sure that the request URI is correct.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
-        /// 
+        /// The request has reached its throttling limit. Retry after the specified time period.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
-        /// 
+        /// The request is denied because the caller has insufficient permissions.
         /// </exception>
         public CreateApiKeyResponse CreateApiKey(CreateApiKeyRequest request)
         {
@@ -320,19 +321,20 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>The response from the CreateAuthorizer service method, as returned by APIGateway.</returns>
         /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
-        /// 
+        /// The submitted request is not valid, for example, the input is incomplete or incorrect.
+        /// See the accompanying error message for details.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.LimitExceededException">
-        /// 
+        /// The request exceeded the rate limit. Retry after the specified time period.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
-        /// 
+        /// The requested resource is not found. Make sure that the request URI is correct.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
-        /// 
+        /// The request has reached its throttling limit. Retry after the specified time period.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
-        /// 
+        /// The request is denied because the caller has insufficient permissions.
         /// </exception>
         public CreateAuthorizerResponse CreateAuthorizer(CreateAuthorizerRequest request)
         {
@@ -385,19 +387,20 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>The response from the CreateBasePathMapping service method, as returned by APIGateway.</returns>
         /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
-        /// 
+        /// The submitted request is not valid, for example, the input is incomplete or incorrect.
+        /// See the accompanying error message for details.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.ConflictException">
-        /// 
+        /// The request configuration has conflicts. For details, see the accompanying error message.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
-        /// 
+        /// The requested resource is not found. Make sure that the request URI is correct.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
-        /// 
+        /// The request has reached its throttling limit. Retry after the specified time period.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
-        /// 
+        /// The request is denied because the caller has insufficient permissions.
         /// </exception>
         public CreateBasePathMappingResponse CreateBasePathMapping(CreateBasePathMappingRequest request)
         {
@@ -451,25 +454,27 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>The response from the CreateDeployment service method, as returned by APIGateway.</returns>
         /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
-        /// 
+        /// The submitted request is not valid, for example, the input is incomplete or incorrect.
+        /// See the accompanying error message for details.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.ConflictException">
-        /// 
+        /// The request configuration has conflicts. For details, see the accompanying error message.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.LimitExceededException">
-        /// 
+        /// The request exceeded the rate limit. Retry after the specified time period.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
-        /// 
+        /// The requested resource is not found. Make sure that the request URI is correct.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.ServiceUnavailableException">
-        /// 
+        /// The requested service is not available. For details see the accompanying error message.
+        /// Retry after the specified time period.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
-        /// 
+        /// The request has reached its throttling limit. Retry after the specified time period.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
-        /// 
+        /// The request is denied because the caller has insufficient permissions.
         /// </exception>
         public CreateDeploymentResponse CreateDeployment(CreateDeploymentRequest request)
         {
@@ -522,22 +527,23 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>The response from the CreateDocumentationPart service method, as returned by APIGateway.</returns>
         /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
-        /// 
+        /// The submitted request is not valid, for example, the input is incomplete or incorrect.
+        /// See the accompanying error message for details.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.ConflictException">
-        /// 
+        /// The request configuration has conflicts. For details, see the accompanying error message.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.LimitExceededException">
-        /// 
+        /// The request exceeded the rate limit. Retry after the specified time period.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
-        /// 
+        /// The requested resource is not found. Make sure that the request URI is correct.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
-        /// 
+        /// The request has reached its throttling limit. Retry after the specified time period.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
-        /// 
+        /// The request is denied because the caller has insufficient permissions.
         /// </exception>
         public CreateDocumentationPartResponse CreateDocumentationPart(CreateDocumentationPartRequest request)
         {
@@ -590,22 +596,23 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>The response from the CreateDocumentationVersion service method, as returned by APIGateway.</returns>
         /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
-        /// 
+        /// The submitted request is not valid, for example, the input is incomplete or incorrect.
+        /// See the accompanying error message for details.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.ConflictException">
-        /// 
+        /// The request configuration has conflicts. For details, see the accompanying error message.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.LimitExceededException">
-        /// 
+        /// The request exceeded the rate limit. Retry after the specified time period.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
-        /// 
+        /// The requested resource is not found. Make sure that the request URI is correct.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
-        /// 
+        /// The request has reached its throttling limit. Retry after the specified time period.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
-        /// 
+        /// The request is denied because the caller has insufficient permissions.
         /// </exception>
         public CreateDocumentationVersionResponse CreateDocumentationVersion(CreateDocumentationVersionRequest request)
         {
@@ -658,16 +665,17 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>The response from the CreateDomainName service method, as returned by APIGateway.</returns>
         /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
-        /// 
+        /// The submitted request is not valid, for example, the input is incomplete or incorrect.
+        /// See the accompanying error message for details.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.ConflictException">
-        /// 
+        /// The request configuration has conflicts. For details, see the accompanying error message.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
-        /// 
+        /// The request has reached its throttling limit. Retry after the specified time period.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
-        /// 
+        /// The request is denied because the caller has insufficient permissions.
         /// </exception>
         public CreateDomainNameResponse CreateDomainName(CreateDomainNameRequest request)
         {
@@ -720,22 +728,23 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>The response from the CreateModel service method, as returned by APIGateway.</returns>
         /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
-        /// 
+        /// The submitted request is not valid, for example, the input is incomplete or incorrect.
+        /// See the accompanying error message for details.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.ConflictException">
-        /// 
+        /// The request configuration has conflicts. For details, see the accompanying error message.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.LimitExceededException">
-        /// 
+        /// The request exceeded the rate limit. Retry after the specified time period.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
-        /// 
+        /// The requested resource is not found. Make sure that the request URI is correct.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
-        /// 
+        /// The request has reached its throttling limit. Retry after the specified time period.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
-        /// 
+        /// The request is denied because the caller has insufficient permissions.
         /// </exception>
         public CreateModelResponse CreateModel(CreateModelRequest request)
         {
@@ -788,19 +797,20 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>The response from the CreateRequestValidator service method, as returned by APIGateway.</returns>
         /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
-        /// 
+        /// The submitted request is not valid, for example, the input is incomplete or incorrect.
+        /// See the accompanying error message for details.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.LimitExceededException">
-        /// 
+        /// The request exceeded the rate limit. Retry after the specified time period.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
-        /// 
+        /// The requested resource is not found. Make sure that the request URI is correct.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
-        /// 
+        /// The request has reached its throttling limit. Retry after the specified time period.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
-        /// 
+        /// The request is denied because the caller has insufficient permissions.
         /// </exception>
         public CreateRequestValidatorResponse CreateRequestValidator(CreateRequestValidatorRequest request)
         {
@@ -853,22 +863,23 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>The response from the CreateResource service method, as returned by APIGateway.</returns>
         /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
-        /// 
+        /// The submitted request is not valid, for example, the input is incomplete or incorrect.
+        /// See the accompanying error message for details.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.ConflictException">
-        /// 
+        /// The request configuration has conflicts. For details, see the accompanying error message.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.LimitExceededException">
-        /// 
+        /// The request exceeded the rate limit. Retry after the specified time period.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
-        /// 
+        /// The requested resource is not found. Make sure that the request URI is correct.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
-        /// 
+        /// The request has reached its throttling limit. Retry after the specified time period.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
-        /// 
+        /// The request is denied because the caller has insufficient permissions.
         /// </exception>
         public CreateResourceResponse CreateResource(CreateResourceRequest request)
         {
@@ -921,16 +932,17 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>The response from the CreateRestApi service method, as returned by APIGateway.</returns>
         /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
-        /// 
+        /// The submitted request is not valid, for example, the input is incomplete or incorrect.
+        /// See the accompanying error message for details.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.LimitExceededException">
-        /// 
+        /// The request exceeded the rate limit. Retry after the specified time period.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
-        /// 
+        /// The request has reached its throttling limit. Retry after the specified time period.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
-        /// 
+        /// The request is denied because the caller has insufficient permissions.
         /// </exception>
         public CreateRestApiResponse CreateRestApi(CreateRestApiRequest request)
         {
@@ -984,22 +996,23 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>The response from the CreateStage service method, as returned by APIGateway.</returns>
         /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
-        /// 
+        /// The submitted request is not valid, for example, the input is incomplete or incorrect.
+        /// See the accompanying error message for details.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.ConflictException">
-        /// 
+        /// The request configuration has conflicts. For details, see the accompanying error message.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.LimitExceededException">
-        /// 
+        /// The request exceeded the rate limit. Retry after the specified time period.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
-        /// 
+        /// The requested resource is not found. Make sure that the request URI is correct.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
-        /// 
+        /// The request has reached its throttling limit. Retry after the specified time period.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
-        /// 
+        /// The request is denied because the caller has insufficient permissions.
         /// </exception>
         public CreateStageResponse CreateStage(CreateStageRequest request)
         {
@@ -1053,22 +1066,23 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>The response from the CreateUsagePlan service method, as returned by APIGateway.</returns>
         /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
-        /// 
+        /// The submitted request is not valid, for example, the input is incomplete or incorrect.
+        /// See the accompanying error message for details.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.ConflictException">
-        /// 
+        /// The request configuration has conflicts. For details, see the accompanying error message.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.LimitExceededException">
-        /// 
+        /// The request exceeded the rate limit. Retry after the specified time period.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
-        /// 
+        /// The requested resource is not found. Make sure that the request URI is correct.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
-        /// 
+        /// The request has reached its throttling limit. Retry after the specified time period.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
-        /// 
+        /// The request is denied because the caller has insufficient permissions.
         /// </exception>
         public CreateUsagePlanResponse CreateUsagePlan(CreateUsagePlanRequest request)
         {
@@ -1121,19 +1135,20 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>The response from the CreateUsagePlanKey service method, as returned by APIGateway.</returns>
         /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
-        /// 
+        /// The submitted request is not valid, for example, the input is incomplete or incorrect.
+        /// See the accompanying error message for details.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.ConflictException">
-        /// 
+        /// The request configuration has conflicts. For details, see the accompanying error message.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
-        /// 
+        /// The requested resource is not found. Make sure that the request URI is correct.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
-        /// 
+        /// The request has reached its throttling limit. Retry after the specified time period.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
-        /// 
+        /// The request is denied because the caller has insufficient permissions.
         /// </exception>
         public CreateUsagePlanKeyResponse CreateUsagePlanKey(CreateUsagePlanKeyRequest request)
         {
@@ -1186,13 +1201,13 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>The response from the DeleteApiKey service method, as returned by APIGateway.</returns>
         /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
-        /// 
+        /// The requested resource is not found. Make sure that the request URI is correct.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
-        /// 
+        /// The request has reached its throttling limit. Retry after the specified time period.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
-        /// 
+        /// The request is denied because the caller has insufficient permissions.
         /// </exception>
         public DeleteApiKeyResponse DeleteApiKey(DeleteApiKeyRequest request)
         {
@@ -1248,19 +1263,20 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>The response from the DeleteAuthorizer service method, as returned by APIGateway.</returns>
         /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
-        /// 
+        /// The submitted request is not valid, for example, the input is incomplete or incorrect.
+        /// See the accompanying error message for details.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.ConflictException">
-        /// 
+        /// The request configuration has conflicts. For details, see the accompanying error message.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
-        /// 
+        /// The requested resource is not found. Make sure that the request URI is correct.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
-        /// 
+        /// The request has reached its throttling limit. Retry after the specified time period.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
-        /// 
+        /// The request is denied because the caller has insufficient permissions.
         /// </exception>
         public DeleteAuthorizerResponse DeleteAuthorizer(DeleteAuthorizerRequest request)
         {
@@ -1312,14 +1328,21 @@ namespace Amazon.APIGateway
         /// <param name="request">Container for the necessary parameters to execute the DeleteBasePathMapping service method.</param>
         /// 
         /// <returns>The response from the DeleteBasePathMapping service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
+        /// The submitted request is not valid, for example, the input is incomplete or incorrect.
+        /// See the accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.ConflictException">
+        /// The request configuration has conflicts. For details, see the accompanying error message.
+        /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
-        /// 
+        /// The requested resource is not found. Make sure that the request URI is correct.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
-        /// 
+        /// The request has reached its throttling limit. Retry after the specified time period.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
-        /// 
+        /// The request is denied because the caller has insufficient permissions.
         /// </exception>
         public DeleteBasePathMappingResponse DeleteBasePathMapping(DeleteBasePathMappingRequest request)
         {
@@ -1372,16 +1395,17 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>The response from the DeleteClientCertificate service method, as returned by APIGateway.</returns>
         /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
-        /// 
+        /// The submitted request is not valid, for example, the input is incomplete or incorrect.
+        /// See the accompanying error message for details.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
-        /// 
+        /// The requested resource is not found. Make sure that the request URI is correct.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
-        /// 
+        /// The request has reached its throttling limit. Retry after the specified time period.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
-        /// 
+        /// The request is denied because the caller has insufficient permissions.
         /// </exception>
         public DeleteClientCertificateResponse DeleteClientCertificate(DeleteClientCertificateRequest request)
         {
@@ -1435,16 +1459,17 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>The response from the DeleteDeployment service method, as returned by APIGateway.</returns>
         /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
-        /// 
+        /// The submitted request is not valid, for example, the input is incomplete or incorrect.
+        /// See the accompanying error message for details.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
-        /// 
+        /// The requested resource is not found. Make sure that the request URI is correct.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
-        /// 
+        /// The request has reached its throttling limit. Retry after the specified time period.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
-        /// 
+        /// The request is denied because the caller has insufficient permissions.
         /// </exception>
         public DeleteDeploymentResponse DeleteDeployment(DeleteDeploymentRequest request)
         {
@@ -1497,19 +1522,20 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>The response from the DeleteDocumentationPart service method, as returned by APIGateway.</returns>
         /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
-        /// 
+        /// The submitted request is not valid, for example, the input is incomplete or incorrect.
+        /// See the accompanying error message for details.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.ConflictException">
-        /// 
+        /// The request configuration has conflicts. For details, see the accompanying error message.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
-        /// 
+        /// The requested resource is not found. Make sure that the request URI is correct.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
-        /// 
+        /// The request has reached its throttling limit. Retry after the specified time period.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
-        /// 
+        /// The request is denied because the caller has insufficient permissions.
         /// </exception>
         public DeleteDocumentationPartResponse DeleteDocumentationPart(DeleteDocumentationPartRequest request)
         {
@@ -1562,19 +1588,20 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>The response from the DeleteDocumentationVersion service method, as returned by APIGateway.</returns>
         /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
-        /// 
+        /// The submitted request is not valid, for example, the input is incomplete or incorrect.
+        /// See the accompanying error message for details.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.ConflictException">
-        /// 
+        /// The request configuration has conflicts. For details, see the accompanying error message.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
-        /// 
+        /// The requested resource is not found. Make sure that the request URI is correct.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
-        /// 
+        /// The request has reached its throttling limit. Retry after the specified time period.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
-        /// 
+        /// The request is denied because the caller has insufficient permissions.
         /// </exception>
         public DeleteDocumentationVersionResponse DeleteDocumentationVersion(DeleteDocumentationVersionRequest request)
         {
@@ -1627,13 +1654,13 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>The response from the DeleteDomainName service method, as returned by APIGateway.</returns>
         /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
-        /// 
+        /// The requested resource is not found. Make sure that the request URI is correct.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
-        /// 
+        /// The request has reached its throttling limit. Retry after the specified time period.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
-        /// 
+        /// The request is denied because the caller has insufficient permissions.
         /// </exception>
         public DeleteDomainNameResponse DeleteDomainName(DeleteDomainNameRequest request)
         {
@@ -1687,19 +1714,20 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>The response from the DeleteGatewayResponse service method, as returned by APIGateway.</returns>
         /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
-        /// 
+        /// The submitted request is not valid, for example, the input is incomplete or incorrect.
+        /// See the accompanying error message for details.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.ConflictException">
-        /// 
+        /// The request configuration has conflicts. For details, see the accompanying error message.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
-        /// 
+        /// The requested resource is not found. Make sure that the request URI is correct.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
-        /// 
+        /// The request has reached its throttling limit. Retry after the specified time period.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
-        /// 
+        /// The request is denied because the caller has insufficient permissions.
         /// </exception>
         public DeleteGatewayResponseResponse DeleteGatewayResponse(DeleteGatewayResponseRequest request)
         {
@@ -1752,16 +1780,16 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>The response from the DeleteIntegration service method, as returned by APIGateway.</returns>
         /// <exception cref="Amazon.APIGateway.Model.ConflictException">
-        /// 
+        /// The request configuration has conflicts. For details, see the accompanying error message.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
-        /// 
+        /// The requested resource is not found. Make sure that the request URI is correct.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
-        /// 
+        /// The request has reached its throttling limit. Retry after the specified time period.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
-        /// 
+        /// The request is denied because the caller has insufficient permissions.
         /// </exception>
         public DeleteIntegrationResponse DeleteIntegration(DeleteIntegrationRequest request)
         {
@@ -1814,19 +1842,20 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>The response from the DeleteIntegrationResponse service method, as returned by APIGateway.</returns>
         /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
-        /// 
+        /// The submitted request is not valid, for example, the input is incomplete or incorrect.
+        /// See the accompanying error message for details.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.ConflictException">
-        /// 
+        /// The request configuration has conflicts. For details, see the accompanying error message.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
-        /// 
+        /// The requested resource is not found. Make sure that the request URI is correct.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
-        /// 
+        /// The request has reached its throttling limit. Retry after the specified time period.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
-        /// 
+        /// The request is denied because the caller has insufficient permissions.
         /// </exception>
         public DeleteIntegrationResponseResponse DeleteIntegrationResponse(DeleteIntegrationResponseRequest request)
         {
@@ -1879,16 +1908,16 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>The response from the DeleteMethod service method, as returned by APIGateway.</returns>
         /// <exception cref="Amazon.APIGateway.Model.ConflictException">
-        /// 
+        /// The request configuration has conflicts. For details, see the accompanying error message.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
-        /// 
+        /// The requested resource is not found. Make sure that the request URI is correct.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
-        /// 
+        /// The request has reached its throttling limit. Retry after the specified time period.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
-        /// 
+        /// The request is denied because the caller has insufficient permissions.
         /// </exception>
         public DeleteMethodResponse DeleteMethod(DeleteMethodRequest request)
         {
@@ -1941,19 +1970,20 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>The response from the DeleteMethodResponse service method, as returned by APIGateway.</returns>
         /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
-        /// 
+        /// The submitted request is not valid, for example, the input is incomplete or incorrect.
+        /// See the accompanying error message for details.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.ConflictException">
-        /// 
+        /// The request configuration has conflicts. For details, see the accompanying error message.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
-        /// 
+        /// The requested resource is not found. Make sure that the request URI is correct.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
-        /// 
+        /// The request has reached its throttling limit. Retry after the specified time period.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
-        /// 
+        /// The request is denied because the caller has insufficient permissions.
         /// </exception>
         public DeleteMethodResponseResponse DeleteMethodResponse(DeleteMethodResponseRequest request)
         {
@@ -2006,19 +2036,20 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>The response from the DeleteModel service method, as returned by APIGateway.</returns>
         /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
-        /// 
+        /// The submitted request is not valid, for example, the input is incomplete or incorrect.
+        /// See the accompanying error message for details.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.ConflictException">
-        /// 
+        /// The request configuration has conflicts. For details, see the accompanying error message.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
-        /// 
+        /// The requested resource is not found. Make sure that the request URI is correct.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
-        /// 
+        /// The request has reached its throttling limit. Retry after the specified time period.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
-        /// 
+        /// The request is denied because the caller has insufficient permissions.
         /// </exception>
         public DeleteModelResponse DeleteModel(DeleteModelRequest request)
         {
@@ -2071,19 +2102,20 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>The response from the DeleteRequestValidator service method, as returned by APIGateway.</returns>
         /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
-        /// 
+        /// The submitted request is not valid, for example, the input is incomplete or incorrect.
+        /// See the accompanying error message for details.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.ConflictException">
-        /// 
+        /// The request configuration has conflicts. For details, see the accompanying error message.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
-        /// 
+        /// The requested resource is not found. Make sure that the request URI is correct.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
-        /// 
+        /// The request has reached its throttling limit. Retry after the specified time period.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
-        /// 
+        /// The request is denied because the caller has insufficient permissions.
         /// </exception>
         public DeleteRequestValidatorResponse DeleteRequestValidator(DeleteRequestValidatorRequest request)
         {
@@ -2136,19 +2168,20 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>The response from the DeleteResource service method, as returned by APIGateway.</returns>
         /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
-        /// 
+        /// The submitted request is not valid, for example, the input is incomplete or incorrect.
+        /// See the accompanying error message for details.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.ConflictException">
-        /// 
+        /// The request configuration has conflicts. For details, see the accompanying error message.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
-        /// 
+        /// The requested resource is not found. Make sure that the request URI is correct.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
-        /// 
+        /// The request has reached its throttling limit. Retry after the specified time period.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
-        /// 
+        /// The request is denied because the caller has insufficient permissions.
         /// </exception>
         public DeleteResourceResponse DeleteResource(DeleteResourceRequest request)
         {
@@ -2201,16 +2234,17 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>The response from the DeleteRestApi service method, as returned by APIGateway.</returns>
         /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
-        /// 
+        /// The submitted request is not valid, for example, the input is incomplete or incorrect.
+        /// See the accompanying error message for details.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
-        /// 
+        /// The requested resource is not found. Make sure that the request URI is correct.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
-        /// 
+        /// The request has reached its throttling limit. Retry after the specified time period.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
-        /// 
+        /// The request is denied because the caller has insufficient permissions.
         /// </exception>
         public DeleteRestApiResponse DeleteRestApi(DeleteRestApiRequest request)
         {
@@ -2263,16 +2297,17 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>The response from the DeleteStage service method, as returned by APIGateway.</returns>
         /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
-        /// 
+        /// The submitted request is not valid, for example, the input is incomplete or incorrect.
+        /// See the accompanying error message for details.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
-        /// 
+        /// The requested resource is not found. Make sure that the request URI is correct.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
-        /// 
+        /// The request has reached its throttling limit. Retry after the specified time period.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
-        /// 
+        /// The request is denied because the caller has insufficient permissions.
         /// </exception>
         public DeleteStageResponse DeleteStage(DeleteStageRequest request)
         {
@@ -2325,16 +2360,17 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>The response from the DeleteUsagePlan service method, as returned by APIGateway.</returns>
         /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
-        /// 
+        /// The submitted request is not valid, for example, the input is incomplete or incorrect.
+        /// See the accompanying error message for details.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
-        /// 
+        /// The requested resource is not found. Make sure that the request URI is correct.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
-        /// 
+        /// The request has reached its throttling limit. Retry after the specified time period.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
-        /// 
+        /// The request is denied because the caller has insufficient permissions.
         /// </exception>
         public DeleteUsagePlanResponse DeleteUsagePlan(DeleteUsagePlanRequest request)
         {
@@ -2388,19 +2424,20 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>The response from the DeleteUsagePlanKey service method, as returned by APIGateway.</returns>
         /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
-        /// 
+        /// The submitted request is not valid, for example, the input is incomplete or incorrect.
+        /// See the accompanying error message for details.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.ConflictException">
-        /// 
+        /// The request configuration has conflicts. For details, see the accompanying error message.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
-        /// 
+        /// The requested resource is not found. Make sure that the request URI is correct.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
-        /// 
+        /// The request has reached its throttling limit. Retry after the specified time period.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
-        /// 
+        /// The request is denied because the caller has insufficient permissions.
         /// </exception>
         public DeleteUsagePlanKeyResponse DeleteUsagePlanKey(DeleteUsagePlanKeyRequest request)
         {
@@ -2453,16 +2490,17 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>The response from the FlushStageAuthorizersCache service method, as returned by APIGateway.</returns>
         /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
-        /// 
+        /// The submitted request is not valid, for example, the input is incomplete or incorrect.
+        /// See the accompanying error message for details.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
-        /// 
+        /// The requested resource is not found. Make sure that the request URI is correct.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
-        /// 
+        /// The request has reached its throttling limit. Retry after the specified time period.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
-        /// 
+        /// The request is denied because the caller has insufficient permissions.
         /// </exception>
         public FlushStageAuthorizersCacheResponse FlushStageAuthorizersCache(FlushStageAuthorizersCacheRequest request)
         {
@@ -2515,16 +2553,17 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>The response from the FlushStageCache service method, as returned by APIGateway.</returns>
         /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
-        /// 
+        /// The submitted request is not valid, for example, the input is incomplete or incorrect.
+        /// See the accompanying error message for details.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
-        /// 
+        /// The requested resource is not found. Make sure that the request URI is correct.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
-        /// 
+        /// The request has reached its throttling limit. Retry after the specified time period.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
-        /// 
+        /// The request is denied because the caller has insufficient permissions.
         /// </exception>
         public FlushStageCacheResponse FlushStageCache(FlushStageCacheRequest request)
         {
@@ -2577,13 +2616,13 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>The response from the GenerateClientCertificate service method, as returned by APIGateway.</returns>
         /// <exception cref="Amazon.APIGateway.Model.LimitExceededException">
-        /// 
+        /// The request exceeded the rate limit. Retry after the specified time period.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
-        /// 
+        /// The request has reached its throttling limit. Retry after the specified time period.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
-        /// 
+        /// The request is denied because the caller has insufficient permissions.
         /// </exception>
         public GenerateClientCertificateResponse GenerateClientCertificate(GenerateClientCertificateRequest request)
         {
@@ -2636,13 +2675,13 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>The response from the GetAccount service method, as returned by APIGateway.</returns>
         /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
-        /// 
+        /// The requested resource is not found. Make sure that the request URI is correct.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
-        /// 
+        /// The request has reached its throttling limit. Retry after the specified time period.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
-        /// 
+        /// The request is denied because the caller has insufficient permissions.
         /// </exception>
         public GetAccountResponse GetAccount(GetAccountRequest request)
         {
@@ -2695,13 +2734,13 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>The response from the GetApiKey service method, as returned by APIGateway.</returns>
         /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
-        /// 
+        /// The requested resource is not found. Make sure that the request URI is correct.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
-        /// 
+        /// The request has reached its throttling limit. Retry after the specified time period.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
-        /// 
+        /// The request is denied because the caller has insufficient permissions.
         /// </exception>
         public GetApiKeyResponse GetApiKey(GetApiKeyRequest request)
         {
@@ -2754,13 +2793,14 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>The response from the GetApiKeys service method, as returned by APIGateway.</returns>
         /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
-        /// 
+        /// The submitted request is not valid, for example, the input is incomplete or incorrect.
+        /// See the accompanying error message for details.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
-        /// 
+        /// The request has reached its throttling limit. Retry after the specified time period.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
-        /// 
+        /// The request is denied because the caller has insufficient permissions.
         /// </exception>
         public GetApiKeysResponse GetApiKeys(GetApiKeysRequest request)
         {
@@ -2816,13 +2856,13 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>The response from the GetAuthorizer service method, as returned by APIGateway.</returns>
         /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
-        /// 
+        /// The requested resource is not found. Make sure that the request URI is correct.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
-        /// 
+        /// The request has reached its throttling limit. Retry after the specified time period.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
-        /// 
+        /// The request is denied because the caller has insufficient permissions.
         /// </exception>
         public GetAuthorizerResponse GetAuthorizer(GetAuthorizerRequest request)
         {
@@ -2878,16 +2918,17 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>The response from the GetAuthorizers service method, as returned by APIGateway.</returns>
         /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
-        /// 
+        /// The submitted request is not valid, for example, the input is incomplete or incorrect.
+        /// See the accompanying error message for details.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
-        /// 
+        /// The requested resource is not found. Make sure that the request URI is correct.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
-        /// 
+        /// The request has reached its throttling limit. Retry after the specified time period.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
-        /// 
+        /// The request is denied because the caller has insufficient permissions.
         /// </exception>
         public GetAuthorizersResponse GetAuthorizers(GetAuthorizersRequest request)
         {
@@ -2940,13 +2981,13 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>The response from the GetBasePathMapping service method, as returned by APIGateway.</returns>
         /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
-        /// 
+        /// The requested resource is not found. Make sure that the request URI is correct.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
-        /// 
+        /// The request has reached its throttling limit. Retry after the specified time period.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
-        /// 
+        /// The request is denied because the caller has insufficient permissions.
         /// </exception>
         public GetBasePathMappingResponse GetBasePathMapping(GetBasePathMappingRequest request)
         {
@@ -2999,13 +3040,13 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>The response from the GetBasePathMappings service method, as returned by APIGateway.</returns>
         /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
-        /// 
+        /// The requested resource is not found. Make sure that the request URI is correct.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
-        /// 
+        /// The request has reached its throttling limit. Retry after the specified time period.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
-        /// 
+        /// The request is denied because the caller has insufficient permissions.
         /// </exception>
         public GetBasePathMappingsResponse GetBasePathMappings(GetBasePathMappingsRequest request)
         {
@@ -3058,13 +3099,13 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>The response from the GetClientCertificate service method, as returned by APIGateway.</returns>
         /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
-        /// 
+        /// The requested resource is not found. Make sure that the request URI is correct.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
-        /// 
+        /// The request has reached its throttling limit. Retry after the specified time period.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
-        /// 
+        /// The request is denied because the caller has insufficient permissions.
         /// </exception>
         public GetClientCertificateResponse GetClientCertificate(GetClientCertificateRequest request)
         {
@@ -3117,13 +3158,14 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>The response from the GetClientCertificates service method, as returned by APIGateway.</returns>
         /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
-        /// 
+        /// The submitted request is not valid, for example, the input is incomplete or incorrect.
+        /// See the accompanying error message for details.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
-        /// 
+        /// The request has reached its throttling limit. Retry after the specified time period.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
-        /// 
+        /// The request is denied because the caller has insufficient permissions.
         /// </exception>
         public GetClientCertificatesResponse GetClientCertificates(GetClientCertificatesRequest request)
         {
@@ -3176,16 +3218,17 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>The response from the GetDeployment service method, as returned by APIGateway.</returns>
         /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
-        /// 
+        /// The requested resource is not found. Make sure that the request URI is correct.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.ServiceUnavailableException">
-        /// 
+        /// The requested service is not available. For details see the accompanying error message.
+        /// Retry after the specified time period.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
-        /// 
+        /// The request has reached its throttling limit. Retry after the specified time period.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
-        /// 
+        /// The request is denied because the caller has insufficient permissions.
         /// </exception>
         public GetDeploymentResponse GetDeployment(GetDeploymentRequest request)
         {
@@ -3238,16 +3281,18 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>The response from the GetDeployments service method, as returned by APIGateway.</returns>
         /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
-        /// 
+        /// The submitted request is not valid, for example, the input is incomplete or incorrect.
+        /// See the accompanying error message for details.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.ServiceUnavailableException">
-        /// 
+        /// The requested service is not available. For details see the accompanying error message.
+        /// Retry after the specified time period.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
-        /// 
+        /// The request has reached its throttling limit. Retry after the specified time period.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
-        /// 
+        /// The request is denied because the caller has insufficient permissions.
         /// </exception>
         public GetDeploymentsResponse GetDeployments(GetDeploymentsRequest request)
         {
@@ -3300,13 +3345,13 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>The response from the GetDocumentationPart service method, as returned by APIGateway.</returns>
         /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
-        /// 
+        /// The requested resource is not found. Make sure that the request URI is correct.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
-        /// 
+        /// The request has reached its throttling limit. Retry after the specified time period.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
-        /// 
+        /// The request is denied because the caller has insufficient permissions.
         /// </exception>
         public GetDocumentationPartResponse GetDocumentationPart(GetDocumentationPartRequest request)
         {
@@ -3359,16 +3404,17 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>The response from the GetDocumentationParts service method, as returned by APIGateway.</returns>
         /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
-        /// 
+        /// The submitted request is not valid, for example, the input is incomplete or incorrect.
+        /// See the accompanying error message for details.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
-        /// 
+        /// The requested resource is not found. Make sure that the request URI is correct.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
-        /// 
+        /// The request has reached its throttling limit. Retry after the specified time period.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
-        /// 
+        /// The request is denied because the caller has insufficient permissions.
         /// </exception>
         public GetDocumentationPartsResponse GetDocumentationParts(GetDocumentationPartsRequest request)
         {
@@ -3421,13 +3467,13 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>The response from the GetDocumentationVersion service method, as returned by APIGateway.</returns>
         /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
-        /// 
+        /// The requested resource is not found. Make sure that the request URI is correct.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
-        /// 
+        /// The request has reached its throttling limit. Retry after the specified time period.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
-        /// 
+        /// The request is denied because the caller has insufficient permissions.
         /// </exception>
         public GetDocumentationVersionResponse GetDocumentationVersion(GetDocumentationVersionRequest request)
         {
@@ -3480,16 +3526,17 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>The response from the GetDocumentationVersions service method, as returned by APIGateway.</returns>
         /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
-        /// 
+        /// The submitted request is not valid, for example, the input is incomplete or incorrect.
+        /// See the accompanying error message for details.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
-        /// 
+        /// The requested resource is not found. Make sure that the request URI is correct.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
-        /// 
+        /// The request has reached its throttling limit. Retry after the specified time period.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
-        /// 
+        /// The request is denied because the caller has insufficient permissions.
         /// </exception>
         public GetDocumentationVersionsResponse GetDocumentationVersions(GetDocumentationVersionsRequest request)
         {
@@ -3543,16 +3590,17 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>The response from the GetDomainName service method, as returned by APIGateway.</returns>
         /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
-        /// 
+        /// The requested resource is not found. Make sure that the request URI is correct.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.ServiceUnavailableException">
-        /// 
+        /// The requested service is not available. For details see the accompanying error message.
+        /// Retry after the specified time period.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
-        /// 
+        /// The request has reached its throttling limit. Retry after the specified time period.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
-        /// 
+        /// The request is denied because the caller has insufficient permissions.
         /// </exception>
         public GetDomainNameResponse GetDomainName(GetDomainNameRequest request)
         {
@@ -3605,13 +3653,14 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>The response from the GetDomainNames service method, as returned by APIGateway.</returns>
         /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
-        /// 
+        /// The submitted request is not valid, for example, the input is incomplete or incorrect.
+        /// See the accompanying error message for details.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
-        /// 
+        /// The request has reached its throttling limit. Retry after the specified time period.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
-        /// 
+        /// The request is denied because the caller has insufficient permissions.
         /// </exception>
         public GetDomainNamesResponse GetDomainNames(GetDomainNamesRequest request)
         {
@@ -3664,19 +3713,20 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>The response from the GetExport service method, as returned by APIGateway.</returns>
         /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
-        /// 
+        /// The submitted request is not valid, for example, the input is incomplete or incorrect.
+        /// See the accompanying error message for details.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.ConflictException">
-        /// 
+        /// The request configuration has conflicts. For details, see the accompanying error message.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
-        /// 
+        /// The requested resource is not found. Make sure that the request URI is correct.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
-        /// 
+        /// The request has reached its throttling limit. Retry after the specified time period.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
-        /// 
+        /// The request is denied because the caller has insufficient permissions.
         /// </exception>
         public GetExportResponse GetExport(GetExportRequest request)
         {
@@ -3729,13 +3779,13 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>The response from the GetGatewayResponse service method, as returned by APIGateway.</returns>
         /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
-        /// 
+        /// The requested resource is not found. Make sure that the request URI is correct.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
-        /// 
+        /// The request has reached its throttling limit. Retry after the specified time period.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
-        /// 
+        /// The request is denied because the caller has insufficient permissions.
         /// </exception>
         public GetGatewayResponseResponse GetGatewayResponse(GetGatewayResponseRequest request)
         {
@@ -3791,16 +3841,17 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>The response from the GetGatewayResponses service method, as returned by APIGateway.</returns>
         /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
-        /// 
+        /// The submitted request is not valid, for example, the input is incomplete or incorrect.
+        /// See the accompanying error message for details.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
-        /// 
+        /// The requested resource is not found. Make sure that the request URI is correct.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
-        /// 
+        /// The request has reached its throttling limit. Retry after the specified time period.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
-        /// 
+        /// The request is denied because the caller has insufficient permissions.
         /// </exception>
         public GetGatewayResponsesResponse GetGatewayResponses(GetGatewayResponsesRequest request)
         {
@@ -3853,13 +3904,13 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>The response from the GetIntegration service method, as returned by APIGateway.</returns>
         /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
-        /// 
+        /// The requested resource is not found. Make sure that the request URI is correct.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
-        /// 
+        /// The request has reached its throttling limit. Retry after the specified time period.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
-        /// 
+        /// The request is denied because the caller has insufficient permissions.
         /// </exception>
         public GetIntegrationResponse GetIntegration(GetIntegrationRequest request)
         {
@@ -3912,13 +3963,13 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>The response from the GetIntegrationResponse service method, as returned by APIGateway.</returns>
         /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
-        /// 
+        /// The requested resource is not found. Make sure that the request URI is correct.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
-        /// 
+        /// The request has reached its throttling limit. Retry after the specified time period.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
-        /// 
+        /// The request is denied because the caller has insufficient permissions.
         /// </exception>
         public GetIntegrationResponseResponse GetIntegrationResponse(GetIntegrationResponseRequest request)
         {
@@ -3971,13 +4022,13 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>The response from the GetMethod service method, as returned by APIGateway.</returns>
         /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
-        /// 
+        /// The requested resource is not found. Make sure that the request URI is correct.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
-        /// 
+        /// The request has reached its throttling limit. Retry after the specified time period.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
-        /// 
+        /// The request is denied because the caller has insufficient permissions.
         /// </exception>
         public GetMethodResponse GetMethod(GetMethodRequest request)
         {
@@ -4030,13 +4081,13 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>The response from the GetMethodResponse service method, as returned by APIGateway.</returns>
         /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
-        /// 
+        /// The requested resource is not found. Make sure that the request URI is correct.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
-        /// 
+        /// The request has reached its throttling limit. Retry after the specified time period.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
-        /// 
+        /// The request is denied because the caller has insufficient permissions.
         /// </exception>
         public GetMethodResponseResponse GetMethodResponse(GetMethodResponseRequest request)
         {
@@ -4089,13 +4140,13 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>The response from the GetModel service method, as returned by APIGateway.</returns>
         /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
-        /// 
+        /// The requested resource is not found. Make sure that the request URI is correct.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
-        /// 
+        /// The request has reached its throttling limit. Retry after the specified time period.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
-        /// 
+        /// The request is denied because the caller has insufficient permissions.
         /// </exception>
         public GetModelResponse GetModel(GetModelRequest request)
         {
@@ -4148,16 +4199,17 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>The response from the GetModels service method, as returned by APIGateway.</returns>
         /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
-        /// 
+        /// The submitted request is not valid, for example, the input is incomplete or incorrect.
+        /// See the accompanying error message for details.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
-        /// 
+        /// The requested resource is not found. Make sure that the request URI is correct.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
-        /// 
+        /// The request has reached its throttling limit. Retry after the specified time period.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
-        /// 
+        /// The request is denied because the caller has insufficient permissions.
         /// </exception>
         public GetModelsResponse GetModels(GetModelsRequest request)
         {
@@ -4211,16 +4263,17 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>The response from the GetModelTemplate service method, as returned by APIGateway.</returns>
         /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
-        /// 
+        /// The submitted request is not valid, for example, the input is incomplete or incorrect.
+        /// See the accompanying error message for details.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
-        /// 
+        /// The requested resource is not found. Make sure that the request URI is correct.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
-        /// 
+        /// The request has reached its throttling limit. Retry after the specified time period.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
-        /// 
+        /// The request is denied because the caller has insufficient permissions.
         /// </exception>
         public GetModelTemplateResponse GetModelTemplate(GetModelTemplateRequest request)
         {
@@ -4273,13 +4326,13 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>The response from the GetRequestValidator service method, as returned by APIGateway.</returns>
         /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
-        /// 
+        /// The requested resource is not found. Make sure that the request URI is correct.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
-        /// 
+        /// The request has reached its throttling limit. Retry after the specified time period.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
-        /// 
+        /// The request is denied because the caller has insufficient permissions.
         /// </exception>
         public GetRequestValidatorResponse GetRequestValidator(GetRequestValidatorRequest request)
         {
@@ -4332,16 +4385,17 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>The response from the GetRequestValidators service method, as returned by APIGateway.</returns>
         /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
-        /// 
+        /// The submitted request is not valid, for example, the input is incomplete or incorrect.
+        /// See the accompanying error message for details.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
-        /// 
+        /// The requested resource is not found. Make sure that the request URI is correct.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
-        /// 
+        /// The request has reached its throttling limit. Retry after the specified time period.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
-        /// 
+        /// The request is denied because the caller has insufficient permissions.
         /// </exception>
         public GetRequestValidatorsResponse GetRequestValidators(GetRequestValidatorsRequest request)
         {
@@ -4394,13 +4448,13 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>The response from the GetResource service method, as returned by APIGateway.</returns>
         /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
-        /// 
+        /// The requested resource is not found. Make sure that the request URI is correct.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
-        /// 
+        /// The request has reached its throttling limit. Retry after the specified time period.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
-        /// 
+        /// The request is denied because the caller has insufficient permissions.
         /// </exception>
         public GetResourceResponse GetResource(GetResourceRequest request)
         {
@@ -4453,16 +4507,17 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>The response from the GetResources service method, as returned by APIGateway.</returns>
         /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
-        /// 
+        /// The submitted request is not valid, for example, the input is incomplete or incorrect.
+        /// See the accompanying error message for details.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
-        /// 
+        /// The requested resource is not found. Make sure that the request URI is correct.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
-        /// 
+        /// The request has reached its throttling limit. Retry after the specified time period.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
-        /// 
+        /// The request is denied because the caller has insufficient permissions.
         /// </exception>
         public GetResourcesResponse GetResources(GetResourcesRequest request)
         {
@@ -4515,13 +4570,13 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>The response from the GetRestApi service method, as returned by APIGateway.</returns>
         /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
-        /// 
+        /// The requested resource is not found. Make sure that the request URI is correct.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
-        /// 
+        /// The request has reached its throttling limit. Retry after the specified time period.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
-        /// 
+        /// The request is denied because the caller has insufficient permissions.
         /// </exception>
         public GetRestApiResponse GetRestApi(GetRestApiRequest request)
         {
@@ -4574,13 +4629,14 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>The response from the GetRestApis service method, as returned by APIGateway.</returns>
         /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
-        /// 
+        /// The submitted request is not valid, for example, the input is incomplete or incorrect.
+        /// See the accompanying error message for details.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
-        /// 
+        /// The request has reached its throttling limit. Retry after the specified time period.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
-        /// 
+        /// The request is denied because the caller has insufficient permissions.
         /// </exception>
         public GetRestApisResponse GetRestApis(GetRestApisRequest request)
         {
@@ -4633,19 +4689,20 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>The response from the GetSdk service method, as returned by APIGateway.</returns>
         /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
-        /// 
+        /// The submitted request is not valid, for example, the input is incomplete or incorrect.
+        /// See the accompanying error message for details.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.ConflictException">
-        /// 
+        /// The request configuration has conflicts. For details, see the accompanying error message.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
-        /// 
+        /// The requested resource is not found. Make sure that the request URI is correct.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
-        /// 
+        /// The request has reached its throttling limit. Retry after the specified time period.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
-        /// 
+        /// The request is denied because the caller has insufficient permissions.
         /// </exception>
         public GetSdkResponse GetSdk(GetSdkRequest request)
         {
@@ -4698,13 +4755,13 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>The response from the GetSdkType service method, as returned by APIGateway.</returns>
         /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
-        /// 
+        /// The requested resource is not found. Make sure that the request URI is correct.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
-        /// 
+        /// The request has reached its throttling limit. Retry after the specified time period.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
-        /// 
+        /// The request is denied because the caller has insufficient permissions.
         /// </exception>
         public GetSdkTypeResponse GetSdkType(GetSdkTypeRequest request)
         {
@@ -4757,10 +4814,10 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>The response from the GetSdkTypes service method, as returned by APIGateway.</returns>
         /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
-        /// 
+        /// The request has reached its throttling limit. Retry after the specified time period.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
-        /// 
+        /// The request is denied because the caller has insufficient permissions.
         /// </exception>
         public GetSdkTypesResponse GetSdkTypes(GetSdkTypesRequest request)
         {
@@ -4813,13 +4870,13 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>The response from the GetStage service method, as returned by APIGateway.</returns>
         /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
-        /// 
+        /// The requested resource is not found. Make sure that the request URI is correct.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
-        /// 
+        /// The request has reached its throttling limit. Retry after the specified time period.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
-        /// 
+        /// The request is denied because the caller has insufficient permissions.
         /// </exception>
         public GetStageResponse GetStage(GetStageRequest request)
         {
@@ -4872,13 +4929,13 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>The response from the GetStages service method, as returned by APIGateway.</returns>
         /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
-        /// 
+        /// The requested resource is not found. Make sure that the request URI is correct.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
-        /// 
+        /// The request has reached its throttling limit. Retry after the specified time period.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
-        /// 
+        /// The request is denied because the caller has insufficient permissions.
         /// </exception>
         public GetStagesResponse GetStages(GetStagesRequest request)
         {
@@ -4931,16 +4988,17 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>The response from the GetUsage service method, as returned by APIGateway.</returns>
         /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
-        /// 
+        /// The submitted request is not valid, for example, the input is incomplete or incorrect.
+        /// See the accompanying error message for details.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
-        /// 
+        /// The requested resource is not found. Make sure that the request URI is correct.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
-        /// 
+        /// The request has reached its throttling limit. Retry after the specified time period.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
-        /// 
+        /// The request is denied because the caller has insufficient permissions.
         /// </exception>
         public GetUsageResponse GetUsage(GetUsageRequest request)
         {
@@ -4993,16 +5051,17 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>The response from the GetUsagePlan service method, as returned by APIGateway.</returns>
         /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
-        /// 
+        /// The submitted request is not valid, for example, the input is incomplete or incorrect.
+        /// See the accompanying error message for details.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
-        /// 
+        /// The requested resource is not found. Make sure that the request URI is correct.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
-        /// 
+        /// The request has reached its throttling limit. Retry after the specified time period.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
-        /// 
+        /// The request is denied because the caller has insufficient permissions.
         /// </exception>
         public GetUsagePlanResponse GetUsagePlan(GetUsagePlanRequest request)
         {
@@ -5055,16 +5114,17 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>The response from the GetUsagePlanKey service method, as returned by APIGateway.</returns>
         /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
-        /// 
+        /// The submitted request is not valid, for example, the input is incomplete or incorrect.
+        /// See the accompanying error message for details.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
-        /// 
+        /// The requested resource is not found. Make sure that the request URI is correct.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
-        /// 
+        /// The request has reached its throttling limit. Retry after the specified time period.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
-        /// 
+        /// The request is denied because the caller has insufficient permissions.
         /// </exception>
         public GetUsagePlanKeyResponse GetUsagePlanKey(GetUsagePlanKeyRequest request)
         {
@@ -5118,16 +5178,17 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>The response from the GetUsagePlanKeys service method, as returned by APIGateway.</returns>
         /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
-        /// 
+        /// The submitted request is not valid, for example, the input is incomplete or incorrect.
+        /// See the accompanying error message for details.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
-        /// 
+        /// The requested resource is not found. Make sure that the request URI is correct.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
-        /// 
+        /// The request has reached its throttling limit. Retry after the specified time period.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
-        /// 
+        /// The request is denied because the caller has insufficient permissions.
         /// </exception>
         public GetUsagePlanKeysResponse GetUsagePlanKeys(GetUsagePlanKeysRequest request)
         {
@@ -5180,19 +5241,20 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>The response from the GetUsagePlans service method, as returned by APIGateway.</returns>
         /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
-        /// 
+        /// The submitted request is not valid, for example, the input is incomplete or incorrect.
+        /// See the accompanying error message for details.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.ConflictException">
-        /// 
+        /// The request configuration has conflicts. For details, see the accompanying error message.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
-        /// 
+        /// The requested resource is not found. Make sure that the request URI is correct.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
-        /// 
+        /// The request has reached its throttling limit. Retry after the specified time period.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
-        /// 
+        /// The request is denied because the caller has insufficient permissions.
         /// </exception>
         public GetUsagePlansResponse GetUsagePlans(GetUsagePlansRequest request)
         {
@@ -5245,22 +5307,23 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>The response from the ImportApiKeys service method, as returned by APIGateway.</returns>
         /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
-        /// 
+        /// The submitted request is not valid, for example, the input is incomplete or incorrect.
+        /// See the accompanying error message for details.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.ConflictException">
-        /// 
+        /// The request configuration has conflicts. For details, see the accompanying error message.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.LimitExceededException">
-        /// 
+        /// The request exceeded the rate limit. Retry after the specified time period.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
-        /// 
+        /// The requested resource is not found. Make sure that the request URI is correct.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
-        /// 
+        /// The request has reached its throttling limit. Retry after the specified time period.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
-        /// 
+        /// The request is denied because the caller has insufficient permissions.
         /// </exception>
         public ImportApiKeysResponse ImportApiKeys(ImportApiKeysRequest request)
         {
@@ -5313,19 +5376,20 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>The response from the ImportDocumentationParts service method, as returned by APIGateway.</returns>
         /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
-        /// 
+        /// The submitted request is not valid, for example, the input is incomplete or incorrect.
+        /// See the accompanying error message for details.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.LimitExceededException">
-        /// 
+        /// The request exceeded the rate limit. Retry after the specified time period.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
-        /// 
+        /// The requested resource is not found. Make sure that the request URI is correct.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
-        /// 
+        /// The request has reached its throttling limit. Retry after the specified time period.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
-        /// 
+        /// The request is denied because the caller has insufficient permissions.
         /// </exception>
         public ImportDocumentationPartsResponse ImportDocumentationParts(ImportDocumentationPartsRequest request)
         {
@@ -5379,19 +5443,20 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>The response from the ImportRestApi service method, as returned by APIGateway.</returns>
         /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
-        /// 
+        /// The submitted request is not valid, for example, the input is incomplete or incorrect.
+        /// See the accompanying error message for details.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.ConflictException">
-        /// 
+        /// The request configuration has conflicts. For details, see the accompanying error message.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.LimitExceededException">
-        /// 
+        /// The request exceeded the rate limit. Retry after the specified time period.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
-        /// 
+        /// The request has reached its throttling limit. Retry after the specified time period.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
-        /// 
+        /// The request is denied because the caller has insufficient permissions.
         /// </exception>
         public ImportRestApiResponse ImportRestApi(ImportRestApiRequest request)
         {
@@ -5445,19 +5510,20 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>The response from the PutGatewayResponse service method, as returned by APIGateway.</returns>
         /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
-        /// 
+        /// The submitted request is not valid, for example, the input is incomplete or incorrect.
+        /// See the accompanying error message for details.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.LimitExceededException">
-        /// 
+        /// The request exceeded the rate limit. Retry after the specified time period.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
-        /// 
+        /// The requested resource is not found. Make sure that the request URI is correct.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
-        /// 
+        /// The request has reached its throttling limit. Retry after the specified time period.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
-        /// 
+        /// The request is denied because the caller has insufficient permissions.
         /// </exception>
         public PutGatewayResponseResponse PutGatewayResponse(PutGatewayResponseRequest request)
         {
@@ -5510,19 +5576,20 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>The response from the PutIntegration service method, as returned by APIGateway.</returns>
         /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
-        /// 
+        /// The submitted request is not valid, for example, the input is incomplete or incorrect.
+        /// See the accompanying error message for details.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.ConflictException">
-        /// 
+        /// The request configuration has conflicts. For details, see the accompanying error message.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
-        /// 
+        /// The requested resource is not found. Make sure that the request URI is correct.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
-        /// 
+        /// The request has reached its throttling limit. Retry after the specified time period.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
-        /// 
+        /// The request is denied because the caller has insufficient permissions.
         /// </exception>
         public PutIntegrationResponse PutIntegration(PutIntegrationRequest request)
         {
@@ -5575,22 +5642,23 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>The response from the PutIntegrationResponse service method, as returned by APIGateway.</returns>
         /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
-        /// 
+        /// The submitted request is not valid, for example, the input is incomplete or incorrect.
+        /// See the accompanying error message for details.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.ConflictException">
-        /// 
+        /// The request configuration has conflicts. For details, see the accompanying error message.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.LimitExceededException">
-        /// 
+        /// The request exceeded the rate limit. Retry after the specified time period.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
-        /// 
+        /// The requested resource is not found. Make sure that the request URI is correct.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
-        /// 
+        /// The request has reached its throttling limit. Retry after the specified time period.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
-        /// 
+        /// The request is denied because the caller has insufficient permissions.
         /// </exception>
         public PutIntegrationResponseResponse PutIntegrationResponse(PutIntegrationResponseRequest request)
         {
@@ -5643,22 +5711,23 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>The response from the PutMethod service method, as returned by APIGateway.</returns>
         /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
-        /// 
+        /// The submitted request is not valid, for example, the input is incomplete or incorrect.
+        /// See the accompanying error message for details.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.ConflictException">
-        /// 
+        /// The request configuration has conflicts. For details, see the accompanying error message.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.LimitExceededException">
-        /// 
+        /// The request exceeded the rate limit. Retry after the specified time period.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
-        /// 
+        /// The requested resource is not found. Make sure that the request URI is correct.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
-        /// 
+        /// The request has reached its throttling limit. Retry after the specified time period.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
-        /// 
+        /// The request is denied because the caller has insufficient permissions.
         /// </exception>
         public PutMethodResponse PutMethod(PutMethodRequest request)
         {
@@ -5711,22 +5780,23 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>The response from the PutMethodResponse service method, as returned by APIGateway.</returns>
         /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
-        /// 
+        /// The submitted request is not valid, for example, the input is incomplete or incorrect.
+        /// See the accompanying error message for details.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.ConflictException">
-        /// 
+        /// The request configuration has conflicts. For details, see the accompanying error message.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.LimitExceededException">
-        /// 
+        /// The request exceeded the rate limit. Retry after the specified time period.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
-        /// 
+        /// The requested resource is not found. Make sure that the request URI is correct.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
-        /// 
+        /// The request has reached its throttling limit. Retry after the specified time period.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
-        /// 
+        /// The request is denied because the caller has insufficient permissions.
         /// </exception>
         public PutMethodResponseResponse PutMethodResponse(PutMethodResponseRequest request)
         {
@@ -5781,22 +5851,23 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>The response from the PutRestApi service method, as returned by APIGateway.</returns>
         /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
-        /// 
+        /// The submitted request is not valid, for example, the input is incomplete or incorrect.
+        /// See the accompanying error message for details.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.ConflictException">
-        /// 
+        /// The request configuration has conflicts. For details, see the accompanying error message.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.LimitExceededException">
-        /// 
+        /// The request exceeded the rate limit. Retry after the specified time period.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
-        /// 
+        /// The requested resource is not found. Make sure that the request URI is correct.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
-        /// 
+        /// The request has reached its throttling limit. Retry after the specified time period.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
-        /// 
+        /// The request is denied because the caller has insufficient permissions.
         /// </exception>
         public PutRestApiResponse PutRestApi(PutRestApiRequest request)
         {
@@ -5853,16 +5924,17 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>The response from the TestInvokeAuthorizer service method, as returned by APIGateway.</returns>
         /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
-        /// 
+        /// The submitted request is not valid, for example, the input is incomplete or incorrect.
+        /// See the accompanying error message for details.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
-        /// 
+        /// The requested resource is not found. Make sure that the request URI is correct.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
-        /// 
+        /// The request has reached its throttling limit. Retry after the specified time period.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
-        /// 
+        /// The request is denied because the caller has insufficient permissions.
         /// </exception>
         public TestInvokeAuthorizerResponse TestInvokeAuthorizer(TestInvokeAuthorizerRequest request)
         {
@@ -5916,16 +5988,17 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>The response from the TestInvokeMethod service method, as returned by APIGateway.</returns>
         /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
-        /// 
+        /// The submitted request is not valid, for example, the input is incomplete or incorrect.
+        /// See the accompanying error message for details.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
-        /// 
+        /// The requested resource is not found. Make sure that the request URI is correct.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
-        /// 
+        /// The request has reached its throttling limit. Retry after the specified time period.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
-        /// 
+        /// The request is denied because the caller has insufficient permissions.
         /// </exception>
         public TestInvokeMethodResponse TestInvokeMethod(TestInvokeMethodRequest request)
         {
@@ -5978,16 +6051,17 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>The response from the UpdateAccount service method, as returned by APIGateway.</returns>
         /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
-        /// 
+        /// The submitted request is not valid, for example, the input is incomplete or incorrect.
+        /// See the accompanying error message for details.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
-        /// 
+        /// The requested resource is not found. Make sure that the request URI is correct.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
-        /// 
+        /// The request has reached its throttling limit. Retry after the specified time period.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
-        /// 
+        /// The request is denied because the caller has insufficient permissions.
         /// </exception>
         public UpdateAccountResponse UpdateAccount(UpdateAccountRequest request)
         {
@@ -6040,19 +6114,20 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>The response from the UpdateApiKey service method, as returned by APIGateway.</returns>
         /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
-        /// 
+        /// The submitted request is not valid, for example, the input is incomplete or incorrect.
+        /// See the accompanying error message for details.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.ConflictException">
-        /// 
+        /// The request configuration has conflicts. For details, see the accompanying error message.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
-        /// 
+        /// The requested resource is not found. Make sure that the request URI is correct.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
-        /// 
+        /// The request has reached its throttling limit. Retry after the specified time period.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
-        /// 
+        /// The request is denied because the caller has insufficient permissions.
         /// </exception>
         public UpdateApiKeyResponse UpdateApiKey(UpdateApiKeyRequest request)
         {
@@ -6108,16 +6183,17 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>The response from the UpdateAuthorizer service method, as returned by APIGateway.</returns>
         /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
-        /// 
+        /// The submitted request is not valid, for example, the input is incomplete or incorrect.
+        /// See the accompanying error message for details.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
-        /// 
+        /// The requested resource is not found. Make sure that the request URI is correct.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
-        /// 
+        /// The request has reached its throttling limit. Retry after the specified time period.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
-        /// 
+        /// The request is denied because the caller has insufficient permissions.
         /// </exception>
         public UpdateAuthorizerResponse UpdateAuthorizer(UpdateAuthorizerRequest request)
         {
@@ -6170,19 +6246,20 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>The response from the UpdateBasePathMapping service method, as returned by APIGateway.</returns>
         /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
-        /// 
+        /// The submitted request is not valid, for example, the input is incomplete or incorrect.
+        /// See the accompanying error message for details.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.ConflictException">
-        /// 
+        /// The request configuration has conflicts. For details, see the accompanying error message.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
-        /// 
+        /// The requested resource is not found. Make sure that the request URI is correct.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
-        /// 
+        /// The request has reached its throttling limit. Retry after the specified time period.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
-        /// 
+        /// The request is denied because the caller has insufficient permissions.
         /// </exception>
         public UpdateBasePathMappingResponse UpdateBasePathMapping(UpdateBasePathMappingRequest request)
         {
@@ -6235,16 +6312,17 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>The response from the UpdateClientCertificate service method, as returned by APIGateway.</returns>
         /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
-        /// 
+        /// The submitted request is not valid, for example, the input is incomplete or incorrect.
+        /// See the accompanying error message for details.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
-        /// 
+        /// The requested resource is not found. Make sure that the request URI is correct.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
-        /// 
+        /// The request has reached its throttling limit. Retry after the specified time period.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
-        /// 
+        /// The request is denied because the caller has insufficient permissions.
         /// </exception>
         public UpdateClientCertificateResponse UpdateClientCertificate(UpdateClientCertificateRequest request)
         {
@@ -6297,19 +6375,21 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>The response from the UpdateDeployment service method, as returned by APIGateway.</returns>
         /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
-        /// 
+        /// The submitted request is not valid, for example, the input is incomplete or incorrect.
+        /// See the accompanying error message for details.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
-        /// 
+        /// The requested resource is not found. Make sure that the request URI is correct.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.ServiceUnavailableException">
-        /// 
+        /// The requested service is not available. For details see the accompanying error message.
+        /// Retry after the specified time period.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
-        /// 
+        /// The request has reached its throttling limit. Retry after the specified time period.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
-        /// 
+        /// The request is denied because the caller has insufficient permissions.
         /// </exception>
         public UpdateDeploymentResponse UpdateDeployment(UpdateDeploymentRequest request)
         {
@@ -6362,22 +6442,23 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>The response from the UpdateDocumentationPart service method, as returned by APIGateway.</returns>
         /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
-        /// 
+        /// The submitted request is not valid, for example, the input is incomplete or incorrect.
+        /// See the accompanying error message for details.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.ConflictException">
-        /// 
+        /// The request configuration has conflicts. For details, see the accompanying error message.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.LimitExceededException">
-        /// 
+        /// The request exceeded the rate limit. Retry after the specified time period.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
-        /// 
+        /// The requested resource is not found. Make sure that the request URI is correct.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
-        /// 
+        /// The request has reached its throttling limit. Retry after the specified time period.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
-        /// 
+        /// The request is denied because the caller has insufficient permissions.
         /// </exception>
         public UpdateDocumentationPartResponse UpdateDocumentationPart(UpdateDocumentationPartRequest request)
         {
@@ -6430,19 +6511,20 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>The response from the UpdateDocumentationVersion service method, as returned by APIGateway.</returns>
         /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
-        /// 
+        /// The submitted request is not valid, for example, the input is incomplete or incorrect.
+        /// See the accompanying error message for details.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.ConflictException">
-        /// 
+        /// The request configuration has conflicts. For details, see the accompanying error message.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
-        /// 
+        /// The requested resource is not found. Make sure that the request URI is correct.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
-        /// 
+        /// The request has reached its throttling limit. Retry after the specified time period.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
-        /// 
+        /// The request is denied because the caller has insufficient permissions.
         /// </exception>
         public UpdateDocumentationVersionResponse UpdateDocumentationVersion(UpdateDocumentationVersionRequest request)
         {
@@ -6495,19 +6577,20 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>The response from the UpdateDomainName service method, as returned by APIGateway.</returns>
         /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
-        /// 
+        /// The submitted request is not valid, for example, the input is incomplete or incorrect.
+        /// See the accompanying error message for details.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.ConflictException">
-        /// 
+        /// The request configuration has conflicts. For details, see the accompanying error message.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
-        /// 
+        /// The requested resource is not found. Make sure that the request URI is correct.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
-        /// 
+        /// The request has reached its throttling limit. Retry after the specified time period.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
-        /// 
+        /// The request is denied because the caller has insufficient permissions.
         /// </exception>
         public UpdateDomainNameResponse UpdateDomainName(UpdateDomainNameRequest request)
         {
@@ -6560,16 +6643,17 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>The response from the UpdateGatewayResponse service method, as returned by APIGateway.</returns>
         /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
-        /// 
+        /// The submitted request is not valid, for example, the input is incomplete or incorrect.
+        /// See the accompanying error message for details.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
-        /// 
+        /// The requested resource is not found. Make sure that the request URI is correct.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
-        /// 
+        /// The request has reached its throttling limit. Retry after the specified time period.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
-        /// 
+        /// The request is denied because the caller has insufficient permissions.
         /// </exception>
         public UpdateGatewayResponseResponse UpdateGatewayResponse(UpdateGatewayResponseRequest request)
         {
@@ -6622,19 +6706,20 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>The response from the UpdateIntegration service method, as returned by APIGateway.</returns>
         /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
-        /// 
+        /// The submitted request is not valid, for example, the input is incomplete or incorrect.
+        /// See the accompanying error message for details.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.ConflictException">
-        /// 
+        /// The request configuration has conflicts. For details, see the accompanying error message.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
-        /// 
+        /// The requested resource is not found. Make sure that the request URI is correct.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
-        /// 
+        /// The request has reached its throttling limit. Retry after the specified time period.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
-        /// 
+        /// The request is denied because the caller has insufficient permissions.
         /// </exception>
         public UpdateIntegrationResponse UpdateIntegration(UpdateIntegrationRequest request)
         {
@@ -6687,19 +6772,20 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>The response from the UpdateIntegrationResponse service method, as returned by APIGateway.</returns>
         /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
-        /// 
+        /// The submitted request is not valid, for example, the input is incomplete or incorrect.
+        /// See the accompanying error message for details.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.ConflictException">
-        /// 
+        /// The request configuration has conflicts. For details, see the accompanying error message.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
-        /// 
+        /// The requested resource is not found. Make sure that the request URI is correct.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
-        /// 
+        /// The request has reached its throttling limit. Retry after the specified time period.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
-        /// 
+        /// The request is denied because the caller has insufficient permissions.
         /// </exception>
         public UpdateIntegrationResponseResponse UpdateIntegrationResponse(UpdateIntegrationResponseRequest request)
         {
@@ -6752,19 +6838,20 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>The response from the UpdateMethod service method, as returned by APIGateway.</returns>
         /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
-        /// 
+        /// The submitted request is not valid, for example, the input is incomplete or incorrect.
+        /// See the accompanying error message for details.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.ConflictException">
-        /// 
+        /// The request configuration has conflicts. For details, see the accompanying error message.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
-        /// 
+        /// The requested resource is not found. Make sure that the request URI is correct.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
-        /// 
+        /// The request has reached its throttling limit. Retry after the specified time period.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
-        /// 
+        /// The request is denied because the caller has insufficient permissions.
         /// </exception>
         public UpdateMethodResponse UpdateMethod(UpdateMethodRequest request)
         {
@@ -6817,22 +6904,23 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>The response from the UpdateMethodResponse service method, as returned by APIGateway.</returns>
         /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
-        /// 
+        /// The submitted request is not valid, for example, the input is incomplete or incorrect.
+        /// See the accompanying error message for details.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.ConflictException">
-        /// 
+        /// The request configuration has conflicts. For details, see the accompanying error message.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.LimitExceededException">
-        /// 
+        /// The request exceeded the rate limit. Retry after the specified time period.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
-        /// 
+        /// The requested resource is not found. Make sure that the request URI is correct.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
-        /// 
+        /// The request has reached its throttling limit. Retry after the specified time period.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
-        /// 
+        /// The request is denied because the caller has insufficient permissions.
         /// </exception>
         public UpdateMethodResponseResponse UpdateMethodResponse(UpdateMethodResponseRequest request)
         {
@@ -6885,19 +6973,20 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>The response from the UpdateModel service method, as returned by APIGateway.</returns>
         /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
-        /// 
+        /// The submitted request is not valid, for example, the input is incomplete or incorrect.
+        /// See the accompanying error message for details.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.ConflictException">
-        /// 
+        /// The request configuration has conflicts. For details, see the accompanying error message.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
-        /// 
+        /// The requested resource is not found. Make sure that the request URI is correct.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
-        /// 
+        /// The request has reached its throttling limit. Retry after the specified time period.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
-        /// 
+        /// The request is denied because the caller has insufficient permissions.
         /// </exception>
         public UpdateModelResponse UpdateModel(UpdateModelRequest request)
         {
@@ -6950,16 +7039,17 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>The response from the UpdateRequestValidator service method, as returned by APIGateway.</returns>
         /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
-        /// 
+        /// The submitted request is not valid, for example, the input is incomplete or incorrect.
+        /// See the accompanying error message for details.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
-        /// 
+        /// The requested resource is not found. Make sure that the request URI is correct.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
-        /// 
+        /// The request has reached its throttling limit. Retry after the specified time period.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
-        /// 
+        /// The request is denied because the caller has insufficient permissions.
         /// </exception>
         public UpdateRequestValidatorResponse UpdateRequestValidator(UpdateRequestValidatorRequest request)
         {
@@ -7012,19 +7102,20 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>The response from the UpdateResource service method, as returned by APIGateway.</returns>
         /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
-        /// 
+        /// The submitted request is not valid, for example, the input is incomplete or incorrect.
+        /// See the accompanying error message for details.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.ConflictException">
-        /// 
+        /// The request configuration has conflicts. For details, see the accompanying error message.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
-        /// 
+        /// The requested resource is not found. Make sure that the request URI is correct.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
-        /// 
+        /// The request has reached its throttling limit. Retry after the specified time period.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
-        /// 
+        /// The request is denied because the caller has insufficient permissions.
         /// </exception>
         public UpdateResourceResponse UpdateResource(UpdateResourceRequest request)
         {
@@ -7077,19 +7168,20 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>The response from the UpdateRestApi service method, as returned by APIGateway.</returns>
         /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
-        /// 
+        /// The submitted request is not valid, for example, the input is incomplete or incorrect.
+        /// See the accompanying error message for details.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.ConflictException">
-        /// 
+        /// The request configuration has conflicts. For details, see the accompanying error message.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
-        /// 
+        /// The requested resource is not found. Make sure that the request URI is correct.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
-        /// 
+        /// The request has reached its throttling limit. Retry after the specified time period.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
-        /// 
+        /// The request is denied because the caller has insufficient permissions.
         /// </exception>
         public UpdateRestApiResponse UpdateRestApi(UpdateRestApiRequest request)
         {
@@ -7142,19 +7234,20 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>The response from the UpdateStage service method, as returned by APIGateway.</returns>
         /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
-        /// 
+        /// The submitted request is not valid, for example, the input is incomplete or incorrect.
+        /// See the accompanying error message for details.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.ConflictException">
-        /// 
+        /// The request configuration has conflicts. For details, see the accompanying error message.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
-        /// 
+        /// The requested resource is not found. Make sure that the request URI is correct.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
-        /// 
+        /// The request has reached its throttling limit. Retry after the specified time period.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
-        /// 
+        /// The request is denied because the caller has insufficient permissions.
         /// </exception>
         public UpdateStageResponse UpdateStage(UpdateStageRequest request)
         {
@@ -7208,16 +7301,17 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>The response from the UpdateUsage service method, as returned by APIGateway.</returns>
         /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
-        /// 
+        /// The submitted request is not valid, for example, the input is incomplete or incorrect.
+        /// See the accompanying error message for details.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
-        /// 
+        /// The requested resource is not found. Make sure that the request URI is correct.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
-        /// 
+        /// The request has reached its throttling limit. Retry after the specified time period.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
-        /// 
+        /// The request is denied because the caller has insufficient permissions.
         /// </exception>
         public UpdateUsageResponse UpdateUsage(UpdateUsageRequest request)
         {
@@ -7270,19 +7364,20 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>The response from the UpdateUsagePlan service method, as returned by APIGateway.</returns>
         /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
-        /// 
+        /// The submitted request is not valid, for example, the input is incomplete or incorrect.
+        /// See the accompanying error message for details.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.ConflictException">
-        /// 
+        /// The request configuration has conflicts. For details, see the accompanying error message.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
-        /// 
+        /// The requested resource is not found. Make sure that the request URI is correct.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
-        /// 
+        /// The request has reached its throttling limit. Retry after the specified time period.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
-        /// 
+        /// The request is denied because the caller has insufficient permissions.
         /// </exception>
         public UpdateUsagePlanResponse UpdateUsagePlan(UpdateUsagePlanRequest request)
         {
