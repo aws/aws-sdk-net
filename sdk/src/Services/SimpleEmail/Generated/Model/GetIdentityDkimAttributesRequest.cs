@@ -30,12 +30,12 @@ namespace Amazon.SimpleEmail.Model
     /// <summary>
     /// Container for the parameters to the GetIdentityDkimAttributes operation.
     /// Returns the current status of Easy DKIM signing for an entity. For domain name identities,
-    /// this action also returns the DKIM tokens that are required for Easy DKIM signing,
+    /// this operation also returns the DKIM tokens that are required for Easy DKIM signing,
     /// and whether Amazon SES has successfully verified that these tokens have been published.
     /// 
     ///  
     /// <para>
-    /// This action takes a list of identities as input and returns the following information
+    /// This operation takes a list of identities as input and returns the following information
     /// for each:
     /// </para>
     ///  <ul> <li> 
@@ -54,13 +54,14 @@ namespace Amazon.SimpleEmail.Model
     /// </para>
     ///  </li> </ul> 
     /// <para>
-    /// This action is throttled at one request per second and can only get DKIM attributes
+    /// This operation is throttled at one request per second and can only get DKIM attributes
     /// for up to 100 identities at a time.
     /// </para>
     ///  
     /// <para>
-    /// For more information about creating DNS records using DKIM tokens, go to the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim-dns-records.html">Amazon
-    /// SES Developer Guide</a>.
+    /// For more information about creating DNS records using DKIM tokens, go to the <i> <a
+    /// href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim-dns-records.html">Amazon
+    /// SES Developer Guide</a>.</i> 
     /// </para>
     /// </summary>
     public partial class GetIdentityDkimAttributesRequest : AmazonSimpleEmailServiceRequest

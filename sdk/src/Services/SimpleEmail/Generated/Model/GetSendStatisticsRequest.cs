@@ -29,16 +29,13 @@ namespace Amazon.SimpleEmail.Model
 {
     /// <summary>
     /// Container for the parameters to the GetSendStatistics operation.
-    /// Returns the user's sending statistics. The result is a list of data points, representing
-    /// the last two weeks of sending activity.
+    /// Provides sending statistics for the Amazon SES account. The result is a list of data
+    /// points, representing the last two weeks of sending activity. Each data point in the
+    /// list contains statistics for a 15-minute period of time.
     /// 
     ///  
     /// <para>
-    /// Each data point in the list contains statistics for a 15-minute interval.
-    /// </para>
-    ///  
-    /// <para>
-    /// This action is throttled at one request per second.
+    /// You can execute this operation no more than once per second.
     /// </para>
     /// </summary>
     public partial class GetSendStatisticsRequest : AmazonSimpleEmailServiceRequest

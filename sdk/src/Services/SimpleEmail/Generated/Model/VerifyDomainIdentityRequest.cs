@@ -29,11 +29,13 @@ namespace Amazon.SimpleEmail.Model
 {
     /// <summary>
     /// Container for the parameters to the VerifyDomainIdentity operation.
-    /// Verifies a domain.
+    /// Adds a domain to the list of identities for your Amazon SES account and attempts to
+    /// verify it. For more information about verifying domains, see <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-addresses-and-domains.html">Verifying
+    /// Email Addresses and Domains</a> in the <i>Amazon SES Developer Guide</i>.
     /// 
     ///  
     /// <para>
-    /// This action is throttled at one request per second.
+    /// You can execute this operation no more than once per second.
     /// </para>
     /// </summary>
     public partial class VerifyDomainIdentityRequest : AmazonSimpleEmailServiceRequest

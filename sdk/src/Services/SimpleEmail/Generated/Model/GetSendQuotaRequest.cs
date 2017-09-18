@@ -29,11 +29,11 @@ namespace Amazon.SimpleEmail.Model
 {
     /// <summary>
     /// Container for the parameters to the GetSendQuota operation.
-    /// Returns the user's current sending limits.
+    /// Provides the sending limits for the Amazon SES account. 
     /// 
     ///  
     /// <para>
-    /// This action is throttled at one request per second.
+    /// You can execute this operation no more than once per second.
     /// </para>
     /// </summary>
     public partial class GetSendQuotaRequest : AmazonSimpleEmailServiceRequest

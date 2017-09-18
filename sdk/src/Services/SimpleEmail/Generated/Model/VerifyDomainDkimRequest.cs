@@ -38,17 +38,18 @@ namespace Amazon.SimpleEmail.Model
     /// 
     ///  
     /// <para>
-    /// This action is throttled at one request per second.
+    /// You can execute this operation no more than once per second.
     /// </para>
     ///  
     /// <para>
     /// To enable or disable Easy DKIM signing for a domain, use the <code>SetIdentityDkimEnabled</code>
-    /// action.
+    /// operation.
     /// </para>
     ///  
     /// <para>
-    /// For more information about creating DNS records using DKIM tokens, go to the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim-dns-records.html">Amazon
-    /// SES Developer Guide</a>.
+    /// For more information about creating DNS records using DKIM tokens, go to the <i> <a
+    /// href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim-dns-records.html">Amazon
+    /// SES Developer Guide</a>.</i> 
     /// </para>
     /// </summary>
     public partial class VerifyDomainDkimRequest : AmazonSimpleEmailServiceRequest

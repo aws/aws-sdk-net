@@ -33,12 +33,12 @@ namespace Amazon.SimpleEmail.Model
     /// 
     ///  
     /// <para>
-    /// For information about setting up receipt rules, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-receipt-rules.html">Amazon
-    /// SES Developer Guide</a>.
+    /// For information about setting up receipt rules, see the <i> <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-receipt-rules.html">Amazon
+    /// SES Developer Guide</a>.</i> 
     /// </para>
     ///  
     /// <para>
-    /// This action is throttled at one request per second.
+    /// You can execute this operation no more than once per second.
     /// </para>
     /// </summary>
     public partial class CreateReceiptRuleRequest : AmazonSimpleEmailServiceRequest
@@ -88,7 +88,7 @@ namespace Amazon.SimpleEmail.Model
         /// <summary>
         /// Gets and sets the property RuleSetName. 
         /// <para>
-        /// The name of the rule set to which to add the rule.
+        /// The name of the rule set that the receipt rule will be added to.
         /// </para>
         /// </summary>
         public string RuleSetName

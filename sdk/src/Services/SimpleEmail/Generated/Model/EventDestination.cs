@@ -28,8 +28,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleEmail.Model
 {
     /// <summary>
-    /// Contains information about the event destination to which the specified email sending
-    /// events are published.
+    /// Contains information about the event destination that the specified email sending
+    /// events will be published to.
     /// 
     ///  <note> 
     /// <para>

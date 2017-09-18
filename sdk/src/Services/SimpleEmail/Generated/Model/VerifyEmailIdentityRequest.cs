@@ -29,12 +29,13 @@ namespace Amazon.SimpleEmail.Model
 {
     /// <summary>
     /// Container for the parameters to the VerifyEmailIdentity operation.
-    /// Verifies an email address. This action causes a confirmation email message to be sent
-    /// to the specified address.
+    /// Adds an email address to the list of identities for your Amazon SES account and attempts
+    /// to verify it. This operation causes a confirmation email message to be sent to the
+    /// specified address.
     /// 
     ///  
     /// <para>
-    /// This action is throttled at one request per second.
+    /// You can execute this operation no more than once per second.
     /// </para>
     /// </summary>
     public partial class VerifyEmailIdentityRequest : AmazonSimpleEmailServiceRequest

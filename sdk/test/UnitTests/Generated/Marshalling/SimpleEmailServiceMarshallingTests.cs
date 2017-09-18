@@ -116,6 +116,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("SimpleEmail")]
+        public void CreateConfigurationSetTrackingOptionsMarshallTest()
+        {
+            var operation = service_model.FindOperation("CreateConfigurationSetTrackingOptions");
+
+            var request = InstantiateClassGenerator.Execute<CreateConfigurationSetTrackingOptionsRequest>();
+            var marshaller = new CreateConfigurationSetTrackingOptionsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = CreateConfigurationSetTrackingOptionsResponseUnmarshaller.Instance.Unmarshall(context)
+                as CreateConfigurationSetTrackingOptionsResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("SimpleEmail")]
         public void CreateReceiptFilterMarshallTest()
         {
             var operation = service_model.FindOperation("CreateReceiptFilter");
@@ -227,6 +251,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
             var response = DeleteConfigurationSetEventDestinationResponseUnmarshaller.Instance.Unmarshall(context)
                 as DeleteConfigurationSetEventDestinationResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("SimpleEmail")]
+        public void DeleteConfigurationSetTrackingOptionsMarshallTest()
+        {
+            var operation = service_model.FindOperation("DeleteConfigurationSetTrackingOptions");
+
+            var request = InstantiateClassGenerator.Execute<DeleteConfigurationSetTrackingOptionsRequest>();
+            var marshaller = new DeleteConfigurationSetTrackingOptionsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = DeleteConfigurationSetTrackingOptionsResponseUnmarshaller.Instance.Unmarshall(context)
+                as DeleteConfigurationSetTrackingOptionsResponse;   
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
         }
 
@@ -1086,6 +1134,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
             var response = UpdateConfigurationSetEventDestinationResponseUnmarshaller.Instance.Unmarshall(context)
                 as UpdateConfigurationSetEventDestinationResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("SimpleEmail")]
+        public void UpdateConfigurationSetTrackingOptionsMarshallTest()
+        {
+            var operation = service_model.FindOperation("UpdateConfigurationSetTrackingOptions");
+
+            var request = InstantiateClassGenerator.Execute<UpdateConfigurationSetTrackingOptionsRequest>();
+            var marshaller = new UpdateConfigurationSetTrackingOptionsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = UpdateConfigurationSetTrackingOptionsResponseUnmarshaller.Instance.Unmarshall(context)
+                as UpdateConfigurationSetTrackingOptionsResponse;   
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
         }
 

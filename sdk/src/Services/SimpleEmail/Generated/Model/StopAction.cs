@@ -34,8 +34,8 @@ namespace Amazon.SimpleEmail.Model
     /// 
     ///  
     /// <para>
-    /// For information about setting a stop action in a receipt rule, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-action-stop.html">Amazon
-    /// SES Developer Guide</a>.
+    /// For information about setting a stop action in a receipt rule, see the <i> <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-action-stop.html">Amazon
+    /// SES Developer Guide</a>.</i> 
     /// </para>
     /// </summary>
     public partial class StopAction
@@ -46,7 +46,7 @@ namespace Amazon.SimpleEmail.Model
         /// <summary>
         /// Gets and sets the property Scope. 
         /// <para>
-        /// The scope to which the Stop action applies. That is, what is being stopped.
+        /// The name of the RuleSet that is being stopped.
         /// </para>
         /// </summary>
         public StopScope Scope

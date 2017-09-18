@@ -36,6 +36,7 @@ namespace Amazon.SimpleEmail.Model
     {
         private ConfigurationSet _configurationSet;
         private List<EventDestination> _eventDestinations = new List<EventDestination>();
+        private TrackingOptions _trackingOptions;
 
         /// <summary>
         /// Gets and sets the property ConfigurationSet. 
@@ -71,6 +72,25 @@ namespace Amazon.SimpleEmail.Model
         internal bool IsSetEventDestinations()
         {
             return this._eventDestinations != null && this._eventDestinations.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property TrackingOptions. 
+        /// <para>
+        /// The name of the custom open and click tracking domain associated with the configuration
+        /// set.
+        /// </para>
+        /// </summary>
+        public TrackingOptions TrackingOptions
+        {
+            get { return this._trackingOptions; }
+            set { this._trackingOptions = value; }
+        }
+
+        // Check to see if TrackingOptions property is set
+        internal bool IsSetTrackingOptions()
+        {
+            return this._trackingOptions != null;
         }
 
     }

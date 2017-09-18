@@ -35,8 +35,8 @@ namespace Amazon.SimpleEmail.Model
     /// <para>
     /// Event destinations, such as Amazon Kinesis Firehose, are associated with configuration
     /// sets, which enable you to publish email sending events. For information about using
-    /// configuration sets, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon
-    /// SES Developer Guide</a>.
+    /// configuration sets, see the <i> <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon
+    /// SES Developer Guide</a>.</i> 
     /// </para>
     /// </summary>
     public partial class KinesisFirehoseDestination
@@ -47,7 +47,8 @@ namespace Amazon.SimpleEmail.Model
         /// <summary>
         /// Gets and sets the property DeliveryStreamARN. 
         /// <para>
-        /// The ARN of the Amazon Kinesis Firehose stream to which to publish email sending events.
+        /// The ARN of the Amazon Kinesis Firehose stream that email sending events should be
+        /// published to.
         /// </para>
         /// </summary>
         public string DeliveryStreamARN

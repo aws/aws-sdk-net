@@ -150,6 +150,10 @@ namespace Amazon.SimpleEmail
         /// Constant EventDestinations for ConfigurationSetAttribute
         /// </summary>
         public static readonly ConfigurationSetAttribute EventDestinations = new ConfigurationSetAttribute("eventDestinations");
+        /// <summary>
+        /// Constant TrackingOptions for ConfigurationSetAttribute
+        /// </summary>
+        public static readonly ConfigurationSetAttribute TrackingOptions = new ConfigurationSetAttribute("trackingOptions");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

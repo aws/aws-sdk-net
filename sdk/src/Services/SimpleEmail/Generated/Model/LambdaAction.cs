@@ -35,13 +35,13 @@ namespace Amazon.SimpleEmail.Model
     /// <para>
     /// To enable Amazon SES to call your AWS Lambda function or to publish to an Amazon SNS
     /// topic of another account, Amazon SES must have permission to access those resources.
-    /// For information about giving permissions, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-permissions.html">Amazon
-    /// SES Developer Guide</a>.
+    /// For information about giving permissions, see the <i> <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-permissions.html">Amazon
+    /// SES Developer Guide</a>.</i> 
     /// </para>
     ///  
     /// <para>
-    /// For information about using AWS Lambda actions in receipt rules, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-action-lambda.html">Amazon
-    /// SES Developer Guide</a>.
+    /// For information about using AWS Lambda actions in receipt rules, see the <i> <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-action-lambda.html">Amazon
+    /// SES Developer Guide</a>.</i> 
     /// </para>
     /// </summary>
     public partial class LambdaAction
@@ -55,8 +55,8 @@ namespace Amazon.SimpleEmail.Model
         /// <para>
         /// The Amazon Resource Name (ARN) of the AWS Lambda function. An example of an AWS Lambda
         /// function ARN is <code>arn:aws:lambda:us-west-2:account-id:function:MyFunction</code>.
-        /// For more information about AWS Lambda, see the <a href="http://docs.aws.amazon.com/lambda/latest/dg/welcome.html">AWS
-        /// Lambda Developer Guide</a>.
+        /// For more information about AWS Lambda, see the <i> <a href="http://docs.aws.amazon.com/lambda/latest/dg/welcome.html">AWS
+        /// Lambda Developer Guide</a>.</i> 
         /// </para>
         /// </summary>
         public string FunctionArn
@@ -78,8 +78,8 @@ namespace Amazon.SimpleEmail.Model
         /// means that the execution of the function will immediately result in a response, and
         /// a value of <code>Event</code> means that the function will be invoked asynchronously.
         /// The default value is <code>Event</code>. For information about AWS Lambda invocation
-        /// types, see the <a href="http://docs.aws.amazon.com/lambda/latest/dg/API_Invoke.html">AWS
-        /// Lambda Developer Guide</a>.
+        /// types, see the <i> <a href="http://docs.aws.amazon.com/lambda/latest/dg/API_Invoke.html">AWS
+        /// Lambda Developer Guide</a>.</i> 
         /// </para>
         ///  <important> 
         /// <para>
@@ -107,8 +107,8 @@ namespace Amazon.SimpleEmail.Model
         /// <para>
         /// The Amazon Resource Name (ARN) of the Amazon SNS topic to notify when the Lambda action
         /// is taken. An example of an Amazon SNS topic ARN is <code>arn:aws:sns:us-west-2:123456789012:MyTopic</code>.
-        /// For more information about Amazon SNS topics, see the <a href="http://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html">Amazon
-        /// SNS Developer Guide</a>.
+        /// For more information about Amazon SNS topics, see the <i> <a href="http://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html">Amazon
+        /// SNS Developer Guide</a>.</i> 
         /// </para>
         /// </summary>
         public string TopicArn

@@ -33,7 +33,7 @@ namespace Amazon.SimpleEmail.Model
     /// 
     ///  
     /// <para>
-    /// Each receipt rule defines a set of email addresses or domains to which it applies.
+    /// Each receipt rule defines a set of email addresses or domains that it applies to.
     /// If the email addresses or domains match at least one recipient address of the message,
     /// Amazon SES executes all of the receipt rule's actions on the message.
     /// </para>
@@ -124,7 +124,7 @@ namespace Amazon.SimpleEmail.Model
         /// <summary>
         /// Gets and sets the property Recipients. 
         /// <para>
-        /// The recipient domains and email addresses to which the receipt rule applies. If this
+        /// The recipient domains and email addresses that the receipt rule applies to. If this
         /// field is not specified, this rule will match all recipients under all verified domains.
         /// </para>
         /// </summary>
@@ -143,7 +143,7 @@ namespace Amazon.SimpleEmail.Model
         /// <summary>
         /// Gets and sets the property ScanEnabled. 
         /// <para>
-        /// If <code>true</code>, then messages to which this receipt rule applies are scanned
+        /// If <code>true</code>, then messages that this receipt rule applies to are scanned
         /// for spam and viruses. The default value is <code>false</code>.
         /// </para>
         /// </summary>
