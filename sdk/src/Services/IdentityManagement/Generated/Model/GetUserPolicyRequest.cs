@@ -66,7 +66,7 @@ namespace Amazon.IdentityManagement.Model
         /// Instantiates GetUserPolicyRequest with the parameterized properties
         /// </summary>
         /// <param name="userName">The name of the user who the policy is associated with. This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: =,.@-</param>
-        /// <param name="policyName">The name of the policy document to get. This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: =,.@-</param>
+        /// <param name="policyName">The name of the policy document to get. This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: =,.@-+</param>
         public GetUserPolicyRequest(string userName, string policyName)
         {
             _userName = userName;
@@ -82,7 +82,7 @@ namespace Amazon.IdentityManagement.Model
         /// <para>
         /// This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>)
         /// a string of characters consisting of upper and lowercase alphanumeric characters with
-        /// no spaces. You can also include any of the following characters: =,.@-
+        /// no spaces. You can also include any of the following characters: =,.@-+
         /// </para>
         /// </summary>
         public string PolicyName

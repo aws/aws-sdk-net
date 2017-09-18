@@ -67,7 +67,7 @@ namespace Amazon.IdentityManagement.Model
         /// Instantiates GetGroupPolicyRequest with the parameterized properties
         /// </summary>
         /// <param name="groupName">The name of the group the policy is associated with. This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: =,.@-</param>
-        /// <param name="policyName">The name of the policy document to get. This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: =,.@-</param>
+        /// <param name="policyName">The name of the policy document to get. This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: =,.@-+</param>
         public GetGroupPolicyRequest(string groupName, string policyName)
         {
             _groupName = groupName;
@@ -107,7 +107,7 @@ namespace Amazon.IdentityManagement.Model
         /// <para>
         /// This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>)
         /// a string of characters consisting of upper and lowercase alphanumeric characters with
-        /// no spaces. You can also include any of the following characters: =,.@-
+        /// no spaces. You can also include any of the following characters: =,.@-+
         /// </para>
         /// </summary>
         public string PolicyName

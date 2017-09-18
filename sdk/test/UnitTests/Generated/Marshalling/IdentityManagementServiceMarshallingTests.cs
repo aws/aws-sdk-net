@@ -793,6 +793,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("IdentityManagement")]
+        public void DeleteServiceLinkedRoleMarshallTest()
+        {
+            var operation = service_model.FindOperation("DeleteServiceLinkedRole");
+
+            var request = InstantiateClassGenerator.Execute<DeleteServiceLinkedRoleRequest>();
+            var marshaller = new DeleteServiceLinkedRoleRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = DeleteServiceLinkedRoleResponseUnmarshaller.Instance.Unmarshall(context)
+                as DeleteServiceLinkedRoleResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("IdentityManagement")]
         public void DeleteServiceSpecificCredentialMarshallTest()
         {
             var operation = service_model.FindOperation("DeleteServiceSpecificCredential");
@@ -1430,6 +1454,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
             var response = GetServerCertificateResponseUnmarshaller.Instance.Unmarshall(context)
                 as GetServerCertificateResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("IdentityManagement")]
+        public void GetServiceLinkedRoleDeletionStatusMarshallTest()
+        {
+            var operation = service_model.FindOperation("GetServiceLinkedRoleDeletionStatus");
+
+            var request = InstantiateClassGenerator.Execute<GetServiceLinkedRoleDeletionStatusRequest>();
+            var marshaller = new GetServiceLinkedRoleDeletionStatusRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = GetServiceLinkedRoleDeletionStatusResponseUnmarshaller.Instance.Unmarshall(context)
+                as GetServiceLinkedRoleDeletionStatusResponse;   
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
         }
 

@@ -328,6 +328,10 @@ namespace Amazon.IdentityManagement
         /// The request was rejected because it referenced an entity that does not exist. The
         /// error message describes the entity.
         /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.PolicyNotAttachableException">
+        /// The request failed because AWS service role policies can only be attached to the service-linked
+        /// role for that service.
+        /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
@@ -397,6 +401,10 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
         /// The request was rejected because it referenced an entity that does not exist. The
         /// error message describes the entity.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.PolicyNotAttachableException">
+        /// The request failed because AWS service role policies can only be attached to the service-linked
+        /// role for that service.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
@@ -469,6 +477,10 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
         /// The request was rejected because it referenced an entity that does not exist. The
         /// error message describes the entity.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.PolicyNotAttachableException">
+        /// The request failed because AWS service role policies can only be attached to the service-linked
+        /// role for that service.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
@@ -2558,6 +2570,79 @@ namespace Amazon.IdentityManagement
 
         #endregion
         
+        #region  DeleteServiceLinkedRole
+
+
+        /// <summary>
+        /// Submits a service-linked role deletion request and returns a <code>DeletionTaskId</code>,
+        /// which you can use to check the status of the deletion. Before you call this operation,
+        /// confirm that the role has no active sessions and that any resources used by the role
+        /// in the linked service are deleted. If you call this operation more than once for the
+        /// same service-linked role and an earlier deletion task is not complete, then the <code>DeletionTaskId</code>
+        /// of the earlier request is returned.
+        /// 
+        ///  
+        /// <para>
+        /// If you submit a deletion request for a service-linked role whose linked service is
+        /// still accessing a resource, then the deletion task fails. If it fails, the <a>GetServiceLinkedRoleDeletionStatus</a>
+        /// API operation returns the reason for the failure, including the resources that must
+        /// be deleted. To delete the service-linked role, you must first remove those resources
+        /// from the linked service and then submit the deletion request again. Resources are
+        /// specific to the service that is linked to the role. For more information about removing
+        /// resources from a service, see the <a href="http://docs.aws.amazon.com/">AWS documentation</a>
+        /// for your service.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about service-linked roles, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_terms-and-concepts.html#iam-term-service-linked-role">Roles
+        /// Terms and Concepts: AWS Service-Linked Role</a> in the <i>IAM User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteServiceLinkedRole service method.</param>
+        /// 
+        /// <returns>The response from the DeleteServiceLinkedRole service method, as returned by IdentityManagementService.</returns>
+        /// <exception cref="Amazon.IdentityManagement.Model.LimitExceededException">
+        /// The request was rejected because it attempted to create resources beyond the current
+        /// AWS account limits. The error message describes the limit exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
+        /// The request was rejected because it referenced an entity that does not exist. The
+        /// error message describes the entity.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeleteServiceLinkedRole">REST API Reference for DeleteServiceLinkedRole Operation</seealso>
+        DeleteServiceLinkedRoleResponse DeleteServiceLinkedRole(DeleteServiceLinkedRoleRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteServiceLinkedRole operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteServiceLinkedRole operation on AmazonIdentityManagementServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteServiceLinkedRole
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeleteServiceLinkedRole">REST API Reference for DeleteServiceLinkedRole Operation</seealso>
+        IAsyncResult BeginDeleteServiceLinkedRole(DeleteServiceLinkedRoleRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteServiceLinkedRole operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteServiceLinkedRole.</param>
+        /// 
+        /// <returns>Returns a  DeleteServiceLinkedRoleResult from IdentityManagementService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeleteServiceLinkedRole">REST API Reference for DeleteServiceLinkedRole Operation</seealso>
+        DeleteServiceLinkedRoleResponse EndDeleteServiceLinkedRole(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  DeleteServiceSpecificCredential
 
 
@@ -4421,6 +4506,60 @@ namespace Amazon.IdentityManagement
         /// <returns>Returns a  GetServerCertificateResult from IdentityManagementService.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetServerCertificate">REST API Reference for GetServerCertificate Operation</seealso>
         GetServerCertificateResponse EndGetServerCertificate(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  GetServiceLinkedRoleDeletionStatus
+
+
+        /// <summary>
+        /// Retrieves the status of your service-linked role deletion. After you use the <a>DeleteServiceLinkedRole</a>
+        /// API operation to submit a service-linked role for deletion, you can use the <code>DeletionTaskId</code>
+        /// parameter in <code>GetServiceLinkedRoleDeletionStatus</code> to check the status of
+        /// the deletion. If the deletion fails, this operation returns the reason that it failed.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetServiceLinkedRoleDeletionStatus service method.</param>
+        /// 
+        /// <returns>The response from the GetServiceLinkedRoleDeletionStatus service method, as returned by IdentityManagementService.</returns>
+        /// <exception cref="Amazon.IdentityManagement.Model.InvalidInputException">
+        /// The request was rejected because an invalid or out-of-range value was supplied for
+        /// an input parameter.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
+        /// The request was rejected because it referenced an entity that does not exist. The
+        /// error message describes the entity.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetServiceLinkedRoleDeletionStatus">REST API Reference for GetServiceLinkedRoleDeletionStatus Operation</seealso>
+        GetServiceLinkedRoleDeletionStatusResponse GetServiceLinkedRoleDeletionStatus(GetServiceLinkedRoleDeletionStatusRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetServiceLinkedRoleDeletionStatus operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetServiceLinkedRoleDeletionStatus operation on AmazonIdentityManagementServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetServiceLinkedRoleDeletionStatus
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetServiceLinkedRoleDeletionStatus">REST API Reference for GetServiceLinkedRoleDeletionStatus Operation</seealso>
+        IAsyncResult BeginGetServiceLinkedRoleDeletionStatus(GetServiceLinkedRoleDeletionStatusRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetServiceLinkedRoleDeletionStatus operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetServiceLinkedRoleDeletionStatus.</param>
+        /// 
+        /// <returns>Returns a  GetServiceLinkedRoleDeletionStatusResult from IdentityManagementService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetServiceLinkedRoleDeletionStatus">REST API Reference for GetServiceLinkedRoleDeletionStatus Operation</seealso>
+        GetServiceLinkedRoleDeletionStatusResponse EndGetServiceLinkedRoleDeletionStatus(IAsyncResult asyncResult);
 
         #endregion
         
@@ -6949,7 +7088,7 @@ namespace Amazon.IdentityManagement
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.PolicyEvaluationException">
         /// The request failed because a provided policy could not be successfully evaluated.
-        /// An additional detail message indicates the source of the failure.
+        /// An additional detailed message indicates the source of the failure.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/SimulateCustomPolicy">REST API Reference for SimulateCustomPolicy Operation</seealso>
         SimulateCustomPolicyResponse SimulateCustomPolicy(SimulateCustomPolicyRequest request);
@@ -7040,7 +7179,7 @@ namespace Amazon.IdentityManagement
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.PolicyEvaluationException">
         /// The request failed because a provided policy could not be successfully evaluated.
-        /// An additional detail message indicates the source of the failure.
+        /// An additional detailed message indicates the source of the failure.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/SimulatePrincipalPolicy">REST API Reference for SimulatePrincipalPolicy Operation</seealso>
         SimulatePrincipalPolicyResponse SimulatePrincipalPolicy(SimulatePrincipalPolicyRequest request);

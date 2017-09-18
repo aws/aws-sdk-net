@@ -53,7 +53,7 @@ namespace Amazon.IdentityManagement.Model
         /// Instantiates DeleteGroupPolicyRequest with the parameterized properties
         /// </summary>
         /// <param name="groupName">The name (friendly name, not ARN) identifying the group that the policy is embedded in. This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: =,.@-</param>
-        /// <param name="policyName">The name identifying the policy document to delete. This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: =,.@-</param>
+        /// <param name="policyName">The name identifying the policy document to delete. This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: =,.@-+</param>
         public DeleteGroupPolicyRequest(string groupName, string policyName)
         {
             _groupName = groupName;
@@ -94,7 +94,7 @@ namespace Amazon.IdentityManagement.Model
         /// <para>
         /// This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>)
         /// a string of characters consisting of upper and lowercase alphanumeric characters with
-        /// no spaces. You can also include any of the following characters: =,.@-
+        /// no spaces. You can also include any of the following characters: =,.@-+
         /// </para>
         /// </summary>
         public string PolicyName

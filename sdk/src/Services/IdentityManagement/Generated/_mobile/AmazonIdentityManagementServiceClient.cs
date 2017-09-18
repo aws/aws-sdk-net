@@ -1539,6 +1539,38 @@ namespace Amazon.IdentityManagement
 
         #endregion
         
+        #region  DeleteServiceLinkedRole
+
+        internal DeleteServiceLinkedRoleResponse DeleteServiceLinkedRole(DeleteServiceLinkedRoleRequest request)
+        {
+            var marshaller = new DeleteServiceLinkedRoleRequestMarshaller();
+            var unmarshaller = DeleteServiceLinkedRoleResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteServiceLinkedRoleRequest,DeleteServiceLinkedRoleResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteServiceLinkedRole operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteServiceLinkedRole operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeleteServiceLinkedRole">REST API Reference for DeleteServiceLinkedRole Operation</seealso>
+        public Task<DeleteServiceLinkedRoleResponse> DeleteServiceLinkedRoleAsync(DeleteServiceLinkedRoleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DeleteServiceLinkedRoleRequestMarshaller();
+            var unmarshaller = DeleteServiceLinkedRoleResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteServiceLinkedRoleRequest,DeleteServiceLinkedRoleResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeleteServiceSpecificCredential
 
         internal DeleteServiceSpecificCredentialResponse DeleteServiceSpecificCredential(DeleteServiceSpecificCredentialRequest request)
@@ -2717,6 +2749,38 @@ namespace Amazon.IdentityManagement
             var unmarshaller = GetServerCertificateResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetServerCertificateRequest,GetServerCertificateResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetServiceLinkedRoleDeletionStatus
+
+        internal GetServiceLinkedRoleDeletionStatusResponse GetServiceLinkedRoleDeletionStatus(GetServiceLinkedRoleDeletionStatusRequest request)
+        {
+            var marshaller = new GetServiceLinkedRoleDeletionStatusRequestMarshaller();
+            var unmarshaller = GetServiceLinkedRoleDeletionStatusResponseUnmarshaller.Instance;
+
+            return Invoke<GetServiceLinkedRoleDeletionStatusRequest,GetServiceLinkedRoleDeletionStatusResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetServiceLinkedRoleDeletionStatus operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetServiceLinkedRoleDeletionStatus operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetServiceLinkedRoleDeletionStatus">REST API Reference for GetServiceLinkedRoleDeletionStatus Operation</seealso>
+        public Task<GetServiceLinkedRoleDeletionStatusResponse> GetServiceLinkedRoleDeletionStatusAsync(GetServiceLinkedRoleDeletionStatusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new GetServiceLinkedRoleDeletionStatusRequestMarshaller();
+            var unmarshaller = GetServiceLinkedRoleDeletionStatusResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetServiceLinkedRoleDeletionStatusRequest,GetServiceLinkedRoleDeletionStatusResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 

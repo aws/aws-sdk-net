@@ -32,9 +32,9 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for AttachGroupPolicy operation
+    /// Response Unmarshaller for DeleteServiceLinkedRole operation
     /// </summary>  
-    public class AttachGroupPolicyResponseUnmarshaller : XmlResponseUnmarshaller
+    public class DeleteServiceLinkedRoleResponseUnmarshaller : XmlResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,7 +43,7 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context)
         {
-            AttachGroupPolicyResponse response = new AttachGroupPolicyResponse();
+            DeleteServiceLinkedRoleResponse response = new DeleteServiceLinkedRoleResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
@@ -51,7 +51,7 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement)
                 {                    
-                    if(context.TestExpression("AttachGroupPolicyResult", 2))
+                    if(context.TestExpression("DeleteServiceLinkedRoleResult", 2))
                     {
                         UnmarshallResult(context, response);                        
                         continue;
@@ -67,8 +67,7 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
             return response;
         }
 
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA1801:ReviewUnusedParameters", MessageId="response")]
-        private static void UnmarshallResult(XmlUnmarshallerContext context, AttachGroupPolicyResponse response)
+        private static void UnmarshallResult(XmlUnmarshallerContext context, DeleteServiceLinkedRoleResponse response)
         {
             
             int originalDepth = context.CurrentDepth;
@@ -82,6 +81,12 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
                 if (context.IsStartElement || context.IsAttribute)
                 {
 
+                    if (context.TestExpression("DeletionTaskId", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        response.DeletionTaskId = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                 } 
            }
 
@@ -99,10 +104,6 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
         public override AmazonServiceException UnmarshallException(XmlUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
             ErrorResponse errorResponse = ErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
-            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidInput"))
-            {
-                return new InvalidInputException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
             if (errorResponse.Code != null && errorResponse.Code.Equals("LimitExceeded"))
             {
                 return new LimitExceededException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
@@ -111,19 +112,15 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
             {
                 return new NoSuchEntityException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("PolicyNotAttachable"))
-            {
-                return new PolicyNotAttachableException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
             if (errorResponse.Code != null && errorResponse.Code.Equals("ServiceFailure"))
             {
                 return new ServiceFailureException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
             return new AmazonIdentityManagementServiceException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
-        private static AttachGroupPolicyResponseUnmarshaller _instance = new AttachGroupPolicyResponseUnmarshaller();        
+        private static DeleteServiceLinkedRoleResponseUnmarshaller _instance = new DeleteServiceLinkedRoleResponseUnmarshaller();        
 
-        internal static AttachGroupPolicyResponseUnmarshaller GetInstance()
+        internal static DeleteServiceLinkedRoleResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -131,7 +128,7 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static AttachGroupPolicyResponseUnmarshaller Instance
+        public static DeleteServiceLinkedRoleResponseUnmarshaller Instance
         {
             get
             {

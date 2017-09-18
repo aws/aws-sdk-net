@@ -169,6 +169,64 @@ namespace Amazon.IdentityManagement
 
 
     /// <summary>
+    /// Constants used for properties of type DeletionTaskStatusType.
+    /// </summary>
+    public class DeletionTaskStatusType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant FAILED for DeletionTaskStatusType
+        /// </summary>
+        public static readonly DeletionTaskStatusType FAILED = new DeletionTaskStatusType("FAILED");
+        /// <summary>
+        /// Constant IN_PROGRESS for DeletionTaskStatusType
+        /// </summary>
+        public static readonly DeletionTaskStatusType IN_PROGRESS = new DeletionTaskStatusType("IN_PROGRESS");
+        /// <summary>
+        /// Constant NOT_STARTED for DeletionTaskStatusType
+        /// </summary>
+        public static readonly DeletionTaskStatusType NOT_STARTED = new DeletionTaskStatusType("NOT_STARTED");
+        /// <summary>
+        /// Constant SUCCEEDED for DeletionTaskStatusType
+        /// </summary>
+        public static readonly DeletionTaskStatusType SUCCEEDED = new DeletionTaskStatusType("SUCCEEDED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DeletionTaskStatusType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DeletionTaskStatusType FindValue(string value)
+        {
+            return FindValue<DeletionTaskStatusType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DeletionTaskStatusType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type EncodingType.
     /// </summary>
     public class EncodingType : ConstantClass

@@ -84,6 +84,12 @@ namespace Amazon.IdentityManagement.Model
         /// <para>
         /// A list of policy names.
         /// </para>
+        ///  
+        /// <para>
+        /// This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>)
+        /// a string of characters consisting of upper and lowercase alphanumeric characters with
+        /// no spaces. You can also include any of the following characters: =,.@-+
+        /// </para>
         /// </summary>
         public List<string> PolicyNames
         {

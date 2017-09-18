@@ -362,6 +362,17 @@
     <pattern>[\w+=,.@-]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.IdentityManagement.Model.DeleteServiceLinkedRoleRequest.RoleName</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[\w+=,.@-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IdentityManagement.Model.DeleteServiceLinkedRoleResponse.DeletionTaskId</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.IdentityManagement.Model.DeleteServiceSpecificCredentialRequest.ServiceSpecificCredentialId</property>
     <min>20</min>
     <max>128</max>
@@ -652,6 +663,11 @@
     <min>1</min>
     <max>128</max>
     <pattern>[\w+=,.@-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IdentityManagement.Model.GetServiceLinkedRoleDeletionStatusRequest.DeletionTaskId</property>
+    <min>1</min>
+    <max>1000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.GetSSHPublicKeyRequest.SSHPublicKeyId</property>
@@ -1696,6 +1712,10 @@
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.IdentityManagement.Model.DeletionTaskFailureReasonType.Reason</property>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.IdentityManagement.Model.EvaluationResult.EvalActionName</property>
     <min>3</min>
     <max>128</max>
@@ -1995,6 +2015,11 @@
     <min>1</min>
     <max>64</max>
     <pattern>[\w+=,.@-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IdentityManagement.Model.RoleUsageType.Region</property>
+    <min>1</min>
+    <max>100</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.SAMLProviderListEntry.Arn</property>
