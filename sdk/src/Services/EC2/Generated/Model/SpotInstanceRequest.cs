@@ -38,6 +38,7 @@ namespace Amazon.EC2.Model
         private DateTime? _createTime;
         private SpotInstanceStateFault _fault;
         private string _instanceId;
+        private InstanceInterruptionBehavior _instanceInterruptionBehavior;
         private string _launchedAvailabilityZone;
         private string _launchGroup;
         private LaunchSpecification _launchSpecification;
@@ -160,6 +161,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetInstanceId()
         {
             return this._instanceId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property InstanceInterruptionBehavior. 
+        /// <para>
+        /// Indicates whether a Spot instance stops or terminates when it is interrupted.
+        /// </para>
+        /// </summary>
+        public InstanceInterruptionBehavior InstanceInterruptionBehavior
+        {
+            get { return this._instanceInterruptionBehavior; }
+            set { this._instanceInterruptionBehavior = value; }
+        }
+
+        // Check to see if InstanceInterruptionBehavior property is set
+        internal bool IsSetInstanceInterruptionBehavior()
+        {
+            return this._instanceInterruptionBehavior != null;
         }
 
         /// <summary>

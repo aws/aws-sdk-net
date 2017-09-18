@@ -84,6 +84,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.IamFleetRole = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("instanceInterruptionBehavior", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.InstanceInterruptionBehavior = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("launchSpecifications/item", targetDepth))
                     {
                         var unmarshaller = SpotFleetLaunchSpecificationUnmarshaller.Instance;

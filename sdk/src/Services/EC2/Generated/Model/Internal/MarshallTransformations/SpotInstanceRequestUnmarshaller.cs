@@ -90,6 +90,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.InstanceId = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("instanceInterruptionBehavior", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.InstanceInterruptionBehavior = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("launchedAvailabilityZone", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

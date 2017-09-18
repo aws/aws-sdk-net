@@ -80,6 +80,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     {
                         request.Parameters.Add("SpotFleetRequestConfig" + "." + "IamFleetRole", StringUtils.FromString(publicRequest.SpotFleetRequestConfig.IamFleetRole));
                     }
+                    if(publicRequest.SpotFleetRequestConfig.IsSetInstanceInterruptionBehavior())
+                    {
+                        request.Parameters.Add("SpotFleetRequestConfig" + "." + "InstanceInterruptionBehavior", StringUtils.FromString(publicRequest.SpotFleetRequestConfig.InstanceInterruptionBehavior));
+                    }
                     if(publicRequest.SpotFleetRequestConfig.IsSetLaunchSpecifications())
                     {
                         int publicRequestSpotFleetRequestConfiglistValueIndex = 1;

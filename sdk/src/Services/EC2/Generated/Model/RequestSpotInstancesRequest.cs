@@ -41,6 +41,7 @@ namespace Amazon.EC2.Model
         private int? _blockDurationMinutes;
         private string _clientToken;
         private int? _instanceCount;
+        private InstanceInterruptionBehavior _instanceInterruptionBehavior;
         private string _launchGroup;
         private LaunchSpecification _launchSpecification;
         private string _spotPrice;
@@ -174,6 +175,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetInstanceCount()
         {
             return this._instanceCount.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property InstanceInterruptionBehavior. 
+        /// <para>
+        /// Indicates whether a Spot instance stops or terminates when it is interrupted.
+        /// </para>
+        /// </summary>
+        public InstanceInterruptionBehavior InstanceInterruptionBehavior
+        {
+            get { return this._instanceInterruptionBehavior; }
+            set { this._instanceInterruptionBehavior = value; }
+        }
+
+        // Check to see if InstanceInterruptionBehavior property is set
+        internal bool IsSetInstanceInterruptionBehavior()
+        {
+            return this._instanceInterruptionBehavior != null;
         }
 
         /// <summary>

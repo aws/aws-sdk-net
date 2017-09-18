@@ -55,7 +55,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 if (context.IsStartElement || context.IsAttribute)
                 {
 
-                    if (context.TestExpression("elasticGpuSet/member", targetDepth))
+                    if (context.TestExpression("elasticGpuSet/item", targetDepth))
                     {
                         var unmarshaller = ElasticGpusUnmarshaller.Instance;
                         var item = unmarshaller.Unmarshall(context);

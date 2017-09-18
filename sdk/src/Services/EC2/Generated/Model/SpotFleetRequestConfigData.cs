@@ -37,6 +37,7 @@ namespace Amazon.EC2.Model
         private ExcessCapacityTerminationPolicy _excessCapacityTerminationPolicy;
         private double? _fulfilledCapacity;
         private string _iamFleetRole;
+        private InstanceInterruptionBehavior _instanceInterruptionBehavior;
         private List<SpotFleetLaunchSpecification> _launchSpecifications = new List<SpotFleetLaunchSpecification>();
         private bool? _replaceUnhealthyInstances;
         private string _spotPrice;
@@ -140,6 +141,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetIamFleetRole()
         {
             return this._iamFleetRole != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property InstanceInterruptionBehavior. 
+        /// <para>
+        /// Indicates whether a Spot instance stops or terminates when it is interrupted.
+        /// </para>
+        /// </summary>
+        public InstanceInterruptionBehavior InstanceInterruptionBehavior
+        {
+            get { return this._instanceInterruptionBehavior; }
+            set { this._instanceInterruptionBehavior = value; }
+        }
+
+        // Check to see if InstanceInterruptionBehavior property is set
+        internal bool IsSetInstanceInterruptionBehavior()
+        {
+            return this._instanceInterruptionBehavior != null;
         }
 
         /// <summary>

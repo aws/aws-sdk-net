@@ -74,6 +74,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("InstanceCount", StringUtils.FromInt(publicRequest.InstanceCount));
                 }
+                if(publicRequest.IsSetInstanceInterruptionBehavior())
+                {
+                    request.Parameters.Add("InstanceInterruptionBehavior", StringUtils.FromString(publicRequest.InstanceInterruptionBehavior));
+                }
                 if(publicRequest.IsSetLaunchGroup())
                 {
                     request.Parameters.Add("LaunchGroup", StringUtils.FromString(publicRequest.LaunchGroup));
