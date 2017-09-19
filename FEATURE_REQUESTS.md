@@ -164,3 +164,7 @@ See GitHub Issues [#656](https://github.com/aws/aws-sdk-net/issues/656) and [#62
 #### Return list of DynamoDBContext batch-operation unprocessed objects
 
 See [GitHub Issue #623](https://github.com/aws/aws-sdk-net/issues/623)
+
+#### Support AES/GCM/NoPadding content encryption in the AmazonS3EncryptionClient (.NET 3.5/4.5 only)
+
+See [GitHub Issue #748](https://github.com/aws/aws-sdk-net/issues/748)
