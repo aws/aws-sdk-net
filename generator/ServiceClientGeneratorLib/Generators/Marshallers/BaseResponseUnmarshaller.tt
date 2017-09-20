@@ -146,9 +146,15 @@ using Amazon.Runtime.Internal.Util;
 				response.<#=member.PropertyName#> = int.Parse(context.ResponseData.GetHeaderValue("<#=member.MarshallLocationName#>"), CultureInfo.InvariantCulture);
 <#+
 				}
+				else if (member.Shape.IsLong)
+				{
+#>
+				response.<#=member.PropertyName#> = long.Parse(context.ResponseData.GetHeaderValue("<#=member.MarshallLocationName#>"), CultureInfo.InvariantCulture);
+<#+
+				}
 				else
 				{
-					throw new Exception("Member " + member.Shape.Name + " cannot be handled because it's type, " + member.Shape.Type + ", is not handled.  Please Update BaseResponseUnmarshaller.tt.");
+					throw new Exception("Member " + member.Shape.Name + " cannot be handled because its type, " + member.Shape.Type + ", is not handled. Please update BaseResponseUnmarshaller.tt.");
 				}
 			}
 		}

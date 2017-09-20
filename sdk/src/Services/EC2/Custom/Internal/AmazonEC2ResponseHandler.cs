@@ -32,7 +32,6 @@ namespace Amazon.EC2.Internal
     /// </summary>
     public class AmazonEC2ResponseHandler : PipelineHandler
     {
-
         /// <summary>
         /// Calls the post invoke logic after calling the next handler 
         /// in the pipeline.
@@ -86,6 +85,7 @@ namespace Amazon.EC2.Internal
         /// <param name="executionContext"></param>
         protected virtual void PostInvoke(IExecutionContext executionContext)
         {
+            var request = executionContext.RequestContext.OriginalRequest;
             var response = executionContext.ResponseContext.Response;
             var webResponseData = executionContext.ResponseContext.HttpResponse;
 
@@ -135,6 +135,112 @@ namespace Amazon.EC2.Internal
             {
                 PopulateReservationSecurityGroupNames(rir.Reservation);
                 return;
+            }
+
+            // In case of DescribeSecurityGroupsResponse type, the Ipv4Ranges values for each of the retured IpPermissions is unmarshalled
+            // and the extracted Cidr values is set on the IpRanges property of IpPermission. If the customer is using IpRanges, then they will not be broken.
+            var describeSecurityGroupsResponse = response as DescribeSecurityGroupsResponse;
+            if(describeSecurityGroupsResponse!=null)
+            {
+                if(describeSecurityGroupsResponse.IsSetSecurityGroups())
+                {
+                    foreach (var securityGroup in describeSecurityGroupsResponse.SecurityGroups)
+                    {
+                        if (securityGroup.IsSetIpPermissions())
+                        {
+                            SetIpRangesProperty(securityGroup.IpPermissions);
+                        }
+                        else if(securityGroup.IsSetIpPermissionsEgress())
+                        {
+                            SetIpRangesProperty(securityGroup.IpPermissionsEgress);
+                        }
+                    }
+                }
+                return;
+            }
+
+            var authorizeSecurityGroupEgressRequest = request as AuthorizeSecurityGroupEgressRequest;
+            if (authorizeSecurityGroupEgressRequest != null)
+                if (authorizeSecurityGroupEgressRequest.IsSetIpPermissions())
+                {
+                    RestoreRequestIpPermissions(authorizeSecurityGroupEgressRequest.IpPermissions);
+                    return;
+                }
+
+            var authorizeSecurityGroupIngressRequest = request as AuthorizeSecurityGroupIngressRequest;
+            if (authorizeSecurityGroupIngressRequest != null)
+                if (authorizeSecurityGroupIngressRequest.IsSetIpPermissions())
+                {
+                    RestoreRequestIpPermissions(authorizeSecurityGroupIngressRequest.IpPermissions);
+                    return;
+                }
+                    
+
+            var revokeSecurityGroupEgressRequest = request as RevokeSecurityGroupEgressRequest;
+            if (revokeSecurityGroupEgressRequest != null)
+                if (revokeSecurityGroupEgressRequest.IsSetIpPermissions())
+                {
+                    RestoreRequestIpPermissions(revokeSecurityGroupEgressRequest.IpPermissions);
+                    return;
+                }
+                    
+
+            var revokeSecurityGroupIngressRequest = request as RevokeSecurityGroupIngressRequest;
+            if (revokeSecurityGroupIngressRequest != null)
+                if (revokeSecurityGroupIngressRequest.IsSetIpPermissions())
+                {
+                    RestoreRequestIpPermissions(revokeSecurityGroupIngressRequest.IpPermissions);
+                    return;
+                }
+                    
+
+            var updateSecurityGroupRuleDescriptionsEgressRequest = request as UpdateSecurityGroupRuleDescriptionsEgressRequest;
+            if (updateSecurityGroupRuleDescriptionsEgressRequest != null)
+                if (updateSecurityGroupRuleDescriptionsEgressRequest.IsSetIpPermissions())
+                {
+                    RestoreRequestIpPermissions(updateSecurityGroupRuleDescriptionsEgressRequest.IpPermissions);
+                    return;
+                }
+                    
+
+            var updateSecurityGroupRuleDescriptionsIngressRequest = request as UpdateSecurityGroupRuleDescriptionsIngressRequest;
+            if (updateSecurityGroupRuleDescriptionsIngressRequest != null)
+                if (updateSecurityGroupRuleDescriptionsIngressRequest.IsSetIpPermissions())
+                {
+                    RestoreRequestIpPermissions(updateSecurityGroupRuleDescriptionsIngressRequest.IpPermissions);
+                    return;
+                }
+                    
+        }
+
+        /// <summary>
+        /// Cidr values from Ipv4Ranges is extracted and set on IpRanges.
+        /// The internal dictionary collection is also set to the Ipv4Range values.
+        /// </summary>
+        /// <param name="ipPermissions"></param>
+        private static void SetIpRangesProperty(List<IpPermission> ipPermissions)
+        {
+            foreach (var ipPermission in ipPermissions)
+            {
+                ipPermission.IpRanges = ipPermission.Ipv4Ranges.Select(i => i.CidrIp).ToList();
+                ipPermission.CopyIpv4RangesToInternalCollection(ipPermission.Ipv4Ranges);
+            }
+        }
+        /// <summary>
+        /// The original values used by the customer in the Ipv4Ranges property on the request 
+        /// object is restored. This is done when the customer is using the deprecated IpRanges property.
+        /// </summary>
+        /// <param name="IpPermissions"></param>
+        private static void RestoreRequestIpPermissions(List<IpPermission> IpPermissions)
+        {
+            foreach (var ipPermission in IpPermissions)
+            {
+                if(ipPermission.RestoreOldIpV4Range)
+                {
+                    ipPermission.Ipv4Ranges = ipPermission.PreIpv4Ranges;
+                    ipPermission.RestoreOldIpV4Range = false;
+                }
+                    
             }
         }
 

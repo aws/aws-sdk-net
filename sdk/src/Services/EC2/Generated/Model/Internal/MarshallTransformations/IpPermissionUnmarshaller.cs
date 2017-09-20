@@ -66,11 +66,11 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.IpProtocol = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("ipRanges/item/cidrIp", targetDepth))
+                    if (context.TestExpression("ipRanges/item", targetDepth))
                     {
-                        var unmarshaller = StringUnmarshaller.Instance;
+                        var unmarshaller = IpRangeUnmarshaller.Instance;
                         var item = unmarshaller.Unmarshall(context);
-                        unmarshalledObject.IpRanges.Add(item);
+                        unmarshalledObject.Ipv4Ranges.Add(item);
                         continue;
                     }
                     if (context.TestExpression("ipv6Ranges/item", targetDepth))

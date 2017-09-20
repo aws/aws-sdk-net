@@ -82,6 +82,12 @@ if( operation.ResponseHeaderMembers.Count() > 0 )
 					{"<#=member.MarshallLocationName#>",int.MaxValue.ToString(CultureInfo.InvariantCulture)},
 <#	
 				}
+                else if (member.Shape.IsLong)
+                {
+#>
+					{"<#=member.MarshallLocationName#>",long.MaxValue.ToString(CultureInfo.InvariantCulture)},
+<#	
+                }
 				else
 				{
 					throw new Exception("Member " + member.Shape.Name + " cannot be handled because it's type, " + member.Shape.Type + ", is not handled.  Please Update RestMarshallingTests.tt.");

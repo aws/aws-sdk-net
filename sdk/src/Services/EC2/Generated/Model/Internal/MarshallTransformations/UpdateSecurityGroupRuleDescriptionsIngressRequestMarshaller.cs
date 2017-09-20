@@ -79,12 +79,19 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         {
                             request.Parameters.Add("IpPermissions" + "." + publicRequestlistValueIndex + "." + "IpProtocol", StringUtils.FromString(publicRequestlistValue.IpProtocol));
                         }
-                        if(publicRequestlistValue.IsSetIpRanges())
+                        if(publicRequestlistValue.IsSetIpv4Ranges())
                         {
                             int publicRequestlistValuelistValueIndex = 1;
-                            foreach(var publicRequestlistValuelistValue in publicRequestlistValue.IpRanges)
+                            foreach(var publicRequestlistValuelistValue in publicRequestlistValue.Ipv4Ranges)
                             {
-                                request.Parameters.Add("IpPermissions" + "." + publicRequestlistValueIndex + "." + "IpRanges" + "." + publicRequestlistValuelistValueIndex + "." + "CidrIp", StringUtils.FromString(publicRequestlistValuelistValue));
+                                if(publicRequestlistValuelistValue.IsSetCidrIp())
+                                {
+                                    request.Parameters.Add("IpPermissions" + "." + publicRequestlistValueIndex + "." + "IpRanges" + "." + publicRequestlistValuelistValueIndex + "." + "CidrIp", StringUtils.FromString(publicRequestlistValuelistValue.CidrIp));
+                                }
+                                if(publicRequestlistValuelistValue.IsSetDescription())
+                                {
+                                    request.Parameters.Add("IpPermissions" + "." + publicRequestlistValueIndex + "." + "IpRanges" + "." + publicRequestlistValuelistValueIndex + "." + "Description", StringUtils.FromString(publicRequestlistValuelistValue.Description));
+                                }
                                 publicRequestlistValuelistValueIndex++;
                             }
                         }

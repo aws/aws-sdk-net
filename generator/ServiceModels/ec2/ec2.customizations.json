@@ -85,10 +85,6 @@
         "NewDhcpConfiguration": {
             "emitAsShape": "DhcpConfiguration"
         },
-        "IpRange": {
-            "emitAsShape": "String",
-            "emitFromMember": "CidrIp"
-        },
         "RunInstancesMonitoringEnabled": {
             "emitAsShape": "Boolean",
             "emitFromMember": "Enabled"
@@ -189,6 +185,13 @@
             "modify": [
                 {
                     "Ipv6CidrBlock": { "emitPropertyName": "Value" }
+                }
+            ]
+        },
+        "IpPermission": {
+            "modify": [
+                {
+                    "IpRanges": { "emitPropertyName": "Ipv4Ranges" }
                 }
             ]
         },

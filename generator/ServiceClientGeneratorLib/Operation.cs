@@ -610,6 +610,29 @@ namespace ServiceClientGenerator
         }
 
         /// <summary>
+        /// Determines if a given member should be treated as a greedy path, meaning
+        /// that the resource path contains {MEMBER_NAME+} instead of simply {MEMBER_NAME}.
+        /// </summary>
+        /// <param name="member"></param>
+        /// <returns></returns>
+        public string GetUriResourcePathTarget(Member member)
+        {
+            var greedyPathResourcePathIdentifier = "{" + member.MarshallLocationName + "+}";
+            var simplePathResourcePathIdentifier = "{" + member.MarshallLocationName + "}";
+            var isGreedy = this.RequestUri.IndexOf(greedyPathResourcePathIdentifier, StringComparison.Ordinal) >= 0;
+            var isSimple = this.RequestUri.IndexOf(simplePathResourcePathIdentifier, StringComparison.Ordinal) >= 0;
+
+            if (isGreedy && isSimple)
+                throw new Exception(string.Format("Unexpected behavior/model, member {1} of operation {0} is both a simple and a greedy parameter", this.Name, member.PropertyName));
+            else if (!isGreedy && !isSimple)
+                throw new Exception(string.Format("Unexpected behavior/model, member {1} of operation {0} is neither a simple nor a greedy parameter", this.Name, member.PropertyName));
+            else if (isGreedy)
+                return greedyPathResourcePathIdentifier;
+            else
+                return simplePathResourcePathIdentifier;
+        }
+
+        /// <summary>
         /// Represents the operation as a string
         /// </summary>
         /// <returns>The name of the operation, customized if specified</returns>
