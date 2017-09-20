@@ -80,6 +80,20 @@ namespace Amazon.Lex.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.InputText);
                 }
 
+                if(publicRequest.IsSetRequestAttributes())
+                {
+                    context.Writer.WritePropertyName("requestAttributes");
+                    context.Writer.WriteObjectStart();
+                    foreach (var publicRequestRequestAttributesKvp in publicRequest.RequestAttributes)
+                    {
+                        context.Writer.WritePropertyName(publicRequestRequestAttributesKvp.Key);
+                        var publicRequestRequestAttributesValue = publicRequestRequestAttributesKvp.Value;
+
+                            context.Writer.Write(publicRequestRequestAttributesValue);
+                    }
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetSessionAttributes())
                 {
                     context.Writer.WritePropertyName("sessionAttributes");

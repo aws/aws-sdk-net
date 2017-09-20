@@ -80,6 +80,9 @@ namespace Amazon.Lex.Model.Internal.MarshallTransformations
             if(publicRequest.IsSetContentType())
                 request.Headers["Content-Type"] = publicRequest.ContentType;
         
+            if(publicRequest.IsSetRequestAttributes())
+                request.Headers["x-amz-lex-request-attributes"] = Convert.ToBase64String(Encoding.UTF8.GetBytes(publicRequest.RequestAttributes));
+        
             if(publicRequest.IsSetSessionAttributes())
                 request.Headers["x-amz-lex-session-attributes"] = Convert.ToBase64String(Encoding.UTF8.GetBytes(publicRequest.SessionAttributes));
 

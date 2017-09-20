@@ -49,7 +49,7 @@ namespace Amazon.Lex.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>ElicitIntent</code> – Amazon Lex wants to elicit user intent. 
+        ///  <code>ElicitIntent</code> - Amazon Lex wants to elicit user intent. 
         /// </para>
         ///  
         /// <para>
@@ -58,7 +58,7 @@ namespace Amazon.Lex.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ConfirmIntent</code> – Amazon Lex is expecting a "yes" or "no" response. 
+        ///  <code>ConfirmIntent</code> - Amazon Lex is expecting a "yes" or "no" response. 
         /// </para>
         ///  
         /// <para>
@@ -73,7 +73,7 @@ namespace Amazon.Lex.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ElicitSlot</code> – Amazon Lex is expecting a slot value for the current intent.
+        ///  <code>ElicitSlot</code> - Amazon Lex is expecting a slot value for the current intent.
         /// 
         /// </para>
         ///  
@@ -85,17 +85,17 @@ namespace Amazon.Lex.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Fulfilled</code> – Conveys that the Lambda function configured for the intent
+        ///  <code>Fulfilled</code> - Conveys that the Lambda function configured for the intent
         /// has successfully fulfilled the intent. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ReadyForFulfillment</code> – Conveys that the client has to fulfill the intent.
+        ///  <code>ReadyForFulfillment</code> - Conveys that the client has to fulfill the intent.
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Failed</code> – Conveys that the conversation with the user failed. 
+        ///  <code>Failed</code> - Conveys that the conversation with the user failed. 
         /// </para>
         ///  
         /// <para>
@@ -205,8 +205,19 @@ namespace Amazon.Lex.Model
         /// <summary>
         /// Gets and sets the property Slots. 
         /// <para>
-        ///  The intent slots (name/value pairs) that Amazon Lex detected so far from the user
-        /// input in the conversation. 
+        ///  The intent slots that Amazon Lex detected from the user input in the conversation.
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        /// Amazon Lex creates a resolution list containing likely values for a slot. The value
+        /// that it returns is determined by the <code>valueSelectionStrategy</code> selected
+        /// when the slot type was created or updated. If <code>valueSelectionStrategy</code>
+        /// is set to <code>ORIGINAL_VALUE</code>, the value provided by the user is returned,
+        /// if the user value is similar to the slot values. If <code>valueSelectionStrategy</code>
+        /// is set to <code>TOP_RESOLUTION</code> Amazon Lex returns the first value in the resolution
+        /// list or, if there is no resolution list, null. If you don't specify a <code>valueSelectionStrategy</code>,
+        /// the default is <code>ORIGINAL_VALUE</code>.
         /// </para>
         /// </summary>
         public Dictionary<string, string> Slots
