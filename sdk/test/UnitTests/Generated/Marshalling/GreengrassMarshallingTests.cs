@@ -1836,6 +1836,38 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("Greengrass")]
+        public void ResetDeploymentsMarshallTest()
+        {
+            var operation = service_model.FindOperation("ResetDeployments");
+
+            var request = InstantiateClassGenerator.Execute<ResetDeploymentsRequest>();
+            var marshaller = new ResetDeploymentsRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("ResetDeployments", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString());
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = ResetDeploymentsResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as ResetDeploymentsResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("Greengrass")]
         public void UpdateConnectivityInfoMarshallTest()
         {
             var operation = service_model.FindOperation("UpdateConnectivityInfo");

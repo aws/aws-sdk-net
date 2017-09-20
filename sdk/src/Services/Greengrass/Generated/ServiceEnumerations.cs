@@ -31,6 +31,10 @@ namespace Amazon.Greengrass
     {
 
         /// <summary>
+        /// Constant ForceResetDeployment for DeploymentType
+        /// </summary>
+        public static readonly DeploymentType ForceResetDeployment = new DeploymentType("ForceResetDeployment");
+        /// <summary>
         /// Constant NewDeployment for DeploymentType
         /// </summary>
         public static readonly DeploymentType NewDeployment = new DeploymentType("NewDeployment");
@@ -38,6 +42,10 @@ namespace Amazon.Greengrass
         /// Constant Redeployment for DeploymentType
         /// </summary>
         public static readonly DeploymentType Redeployment = new DeploymentType("Redeployment");
+        /// <summary>
+        /// Constant ResetDeployment for DeploymentType
+        /// </summary>
+        public static readonly DeploymentType ResetDeployment = new DeploymentType("ResetDeployment");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

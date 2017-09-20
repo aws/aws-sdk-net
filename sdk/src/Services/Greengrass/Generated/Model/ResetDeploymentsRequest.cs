@@ -28,16 +28,14 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Greengrass.Model
 {
     /// <summary>
-    /// Container for the parameters to the CreateDeployment operation.
-    /// Creates a deployment.
+    /// Container for the parameters to the ResetDeployments operation.
+    /// Resets a group's deployments.
     /// </summary>
-    public partial class CreateDeploymentRequest : AmazonGreengrassRequest
+    public partial class ResetDeploymentsRequest : AmazonGreengrassRequest
     {
         private string _amznClientToken;
-        private string _deploymentId;
-        private DeploymentType _deploymentType;
+        private bool? _force;
         private string _groupId;
-        private string _groupVersionId;
 
         /// <summary>
         /// Gets and sets the property AmznClientToken. The client token used to request idempotent
@@ -56,35 +54,19 @@ namespace Amazon.Greengrass.Model
         }
 
         /// <summary>
-        /// Gets and sets the property DeploymentId. Id of the deployment if you wish to redeploy
-        /// a previous deployment.
+        /// Gets and sets the property Force. When set to true, perform a best-effort only core
+        /// reset.
         /// </summary>
-        public string DeploymentId
+        public bool Force
         {
-            get { return this._deploymentId; }
-            set { this._deploymentId = value; }
+            get { return this._force.GetValueOrDefault(); }
+            set { this._force = value; }
         }
 
-        // Check to see if DeploymentId property is set
-        internal bool IsSetDeploymentId()
+        // Check to see if Force property is set
+        internal bool IsSetForce()
         {
-            return this._deploymentId != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property DeploymentType. Type of deployment. When used in CreateDeployment,
-        /// only NewDeployment and Redeployment are valid.
-        /// </summary>
-        public DeploymentType DeploymentType
-        {
-            get { return this._deploymentType; }
-            set { this._deploymentType = value; }
-        }
-
-        // Check to see if DeploymentType property is set
-        internal bool IsSetDeploymentType()
-        {
-            return this._deploymentType != null;
+            return this._force.HasValue; 
         }
 
         /// <summary>
@@ -100,21 +82,6 @@ namespace Amazon.Greengrass.Model
         internal bool IsSetGroupId()
         {
             return this._groupId != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property GroupVersionId. Group Version you wish to deploy.
-        /// </summary>
-        public string GroupVersionId
-        {
-            get { return this._groupVersionId; }
-            set { this._groupVersionId = value; }
-        }
-
-        // Check to see if GroupVersionId property is set
-        internal bool IsSetGroupVersionId()
-        {
-            return this._groupVersionId != null;
         }
 
     }

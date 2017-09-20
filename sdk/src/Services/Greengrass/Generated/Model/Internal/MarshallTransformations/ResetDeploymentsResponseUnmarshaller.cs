@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Greengrass.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for GetDeploymentStatus operation
+    /// Response Unmarshaller for ResetDeployments operation
     /// </summary>  
-    public class GetDeploymentStatusResponseUnmarshaller : JsonResponseUnmarshaller
+    public class ResetDeploymentsResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,40 +45,22 @@ namespace Amazon.Greengrass.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            GetDeploymentStatusResponse response = new GetDeploymentStatusResponse();
+            ResetDeploymentsResponse response = new ResetDeploymentsResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("DeploymentStatus", targetDepth))
+                if (context.TestExpression("DeploymentArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.DeploymentStatus = unmarshaller.Unmarshall(context);
+                    response.DeploymentArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("DeploymentType", targetDepth))
+                if (context.TestExpression("DeploymentId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.DeploymentType = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("ErrorDetails", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<ErrorDetail, ErrorDetailUnmarshaller>(ErrorDetailUnmarshaller.Instance);
-                    response.ErrorDetails = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("ErrorMessage", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.ErrorMessage = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("UpdatedAt", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.UpdatedAt = unmarshaller.Unmarshall(context);
+                    response.DeploymentId = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -103,9 +85,9 @@ namespace Amazon.Greengrass.Model.Internal.MarshallTransformations
             return new AmazonGreengrassException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
 
-        private static GetDeploymentStatusResponseUnmarshaller _instance = new GetDeploymentStatusResponseUnmarshaller();        
+        private static ResetDeploymentsResponseUnmarshaller _instance = new ResetDeploymentsResponseUnmarshaller();        
 
-        internal static GetDeploymentStatusResponseUnmarshaller GetInstance()
+        internal static ResetDeploymentsResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -113,7 +95,7 @@ namespace Amazon.Greengrass.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static GetDeploymentStatusResponseUnmarshaller Instance
+        public static ResetDeploymentsResponseUnmarshaller Instance
         {
             get
             {

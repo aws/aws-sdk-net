@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Greengrass.Model
 {
     /// <summary>
-    /// Information of a group
+    /// Information on the group
     /// </summary>
     public partial class GroupInformation
     {

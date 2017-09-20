@@ -28,42 +28,41 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Greengrass.Model
 {
     /// <summary>
-    /// This is the response object from the ListDeployments operation.
+    /// ErrorDetail
     /// </summary>
-    public partial class ListDeploymentsResponse : AmazonWebServiceResponse
+    public partial class ErrorDetail
     {
-        private List<Deployment> _deployments = new List<Deployment>();
-        private string _nextToken;
+        private string _detailedErrorCode;
+        private string _detailedErrorMessage;
 
         /// <summary>
-        /// Gets and sets the property Deployments. List of deployments for the requested groups
+        /// Gets and sets the property DetailedErrorCode. Detailed Error Code
         /// </summary>
-        public List<Deployment> Deployments
+        public string DetailedErrorCode
         {
-            get { return this._deployments; }
-            set { this._deployments = value; }
+            get { return this._detailedErrorCode; }
+            set { this._detailedErrorCode = value; }
         }
 
-        // Check to see if Deployments property is set
-        internal bool IsSetDeployments()
+        // Check to see if DetailedErrorCode property is set
+        internal bool IsSetDetailedErrorCode()
         {
-            return this._deployments != null && this._deployments.Count > 0; 
+            return this._detailedErrorCode != null;
         }
 
         /// <summary>
-        /// Gets and sets the property NextToken. The token for the next set of results, or ''null''
-        /// if there are no additional results.
+        /// Gets and sets the property DetailedErrorMessage. Detailed Error Message
         /// </summary>
-        public string NextToken
+        public string DetailedErrorMessage
         {
-            get { return this._nextToken; }
-            set { this._nextToken = value; }
+            get { return this._detailedErrorMessage; }
+            set { this._detailedErrorMessage = value; }
         }
 
-        // Check to see if NextToken property is set
-        internal bool IsSetNextToken()
+        // Check to see if DetailedErrorMessage property is set
+        internal bool IsSetDetailedErrorMessage()
         {
-            return this._nextToken != null;
+            return this._detailedErrorMessage != null;
         }
 
     }

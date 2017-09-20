@@ -2611,6 +2611,48 @@ namespace Amazon.Greengrass
 
         #endregion
         
+        #region  ResetDeployments
+
+
+        /// <summary>
+        /// Resets a group's deployments.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ResetDeployments service method.</param>
+        /// 
+        /// <returns>The response from the ResetDeployments service method, as returned by Greengrass.</returns>
+        /// <exception cref="Amazon.Greengrass.Model.BadRequestException">
+        /// General Error
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/ResetDeployments">REST API Reference for ResetDeployments Operation</seealso>
+        public ResetDeploymentsResponse ResetDeployments(ResetDeploymentsRequest request)
+        {
+            var marshaller = new ResetDeploymentsRequestMarshaller();
+            var unmarshaller = ResetDeploymentsResponseUnmarshaller.Instance;
+
+            return Invoke<ResetDeploymentsRequest,ResetDeploymentsResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ResetDeployments operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ResetDeployments operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/ResetDeployments">REST API Reference for ResetDeployments Operation</seealso>
+        public Task<ResetDeploymentsResponse> ResetDeploymentsAsync(ResetDeploymentsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new ResetDeploymentsRequestMarshaller();
+            var unmarshaller = ResetDeploymentsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ResetDeploymentsRequest,ResetDeploymentsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  UpdateConnectivityInfo
 
 

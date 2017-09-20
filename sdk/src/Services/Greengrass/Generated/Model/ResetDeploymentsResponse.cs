@@ -28,42 +28,41 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Greengrass.Model
 {
     /// <summary>
-    /// This is the response object from the ListDeployments operation.
+    /// This is the response object from the ResetDeployments operation.
     /// </summary>
-    public partial class ListDeploymentsResponse : AmazonWebServiceResponse
+    public partial class ResetDeploymentsResponse : AmazonWebServiceResponse
     {
-        private List<Deployment> _deployments = new List<Deployment>();
-        private string _nextToken;
+        private string _deploymentArn;
+        private string _deploymentId;
 
         /// <summary>
-        /// Gets and sets the property Deployments. List of deployments for the requested groups
+        /// Gets and sets the property DeploymentArn. The arn of the reset deployment.
         /// </summary>
-        public List<Deployment> Deployments
+        public string DeploymentArn
         {
-            get { return this._deployments; }
-            set { this._deployments = value; }
+            get { return this._deploymentArn; }
+            set { this._deploymentArn = value; }
         }
 
-        // Check to see if Deployments property is set
-        internal bool IsSetDeployments()
+        // Check to see if DeploymentArn property is set
+        internal bool IsSetDeploymentArn()
         {
-            return this._deployments != null && this._deployments.Count > 0; 
+            return this._deploymentArn != null;
         }
 
         /// <summary>
-        /// Gets and sets the property NextToken. The token for the next set of results, or ''null''
-        /// if there are no additional results.
+        /// Gets and sets the property DeploymentId. The id of the reset deployment.
         /// </summary>
-        public string NextToken
+        public string DeploymentId
         {
-            get { return this._nextToken; }
-            set { this._nextToken = value; }
+            get { return this._deploymentId; }
+            set { this._deploymentId = value; }
         }
 
-        // Check to see if NextToken property is set
-        internal bool IsSetNextToken()
+        // Check to see if DeploymentId property is set
+        internal bool IsSetDeploymentId()
         {
-            return this._nextToken != null;
+            return this._deploymentId != null;
         }
 
     }

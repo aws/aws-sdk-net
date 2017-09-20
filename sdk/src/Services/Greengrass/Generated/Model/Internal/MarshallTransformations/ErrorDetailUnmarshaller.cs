@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Greengrass.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for Deployment Object
+    /// Response Unmarshaller for ErrorDetail Object
     /// </summary>  
-    public class DeploymentUnmarshaller : IUnmarshaller<Deployment, XmlUnmarshallerContext>, IUnmarshaller<Deployment, JsonUnmarshallerContext>
+    public class ErrorDetailUnmarshaller : IUnmarshaller<ErrorDetail, XmlUnmarshallerContext>, IUnmarshaller<ErrorDetail, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        Deployment IUnmarshaller<Deployment, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        ErrorDetail IUnmarshaller<ErrorDetail, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,45 +53,27 @@ namespace Amazon.Greengrass.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public Deployment Unmarshall(JsonUnmarshallerContext context)
+        public ErrorDetail Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            Deployment unmarshalledObject = new Deployment();
+            ErrorDetail unmarshalledObject = new ErrorDetail();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("CreatedAt", targetDepth))
+                if (context.TestExpression("DetailedErrorCode", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.CreatedAt = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DetailedErrorCode = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("DeploymentArn", targetDepth))
+                if (context.TestExpression("DetailedErrorMessage", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DeploymentArn = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("DeploymentId", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DeploymentId = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("DeploymentType", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DeploymentType = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("GroupArn", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.GroupArn = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DetailedErrorMessage = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -100,12 +82,12 @@ namespace Amazon.Greengrass.Model.Internal.MarshallTransformations
         }
 
 
-        private static DeploymentUnmarshaller _instance = new DeploymentUnmarshaller();        
+        private static ErrorDetailUnmarshaller _instance = new ErrorDetailUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static DeploymentUnmarshaller Instance
+        public static ErrorDetailUnmarshaller Instance
         {
             get
             {

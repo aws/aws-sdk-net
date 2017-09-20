@@ -35,6 +35,7 @@ namespace Amazon.Greengrass.Model
         private string _createdAt;
         private string _deploymentArn;
         private string _deploymentId;
+        private DeploymentType _deploymentType;
         private string _groupArn;
 
         /// <summary>
@@ -80,6 +81,21 @@ namespace Amazon.Greengrass.Model
         internal bool IsSetDeploymentId()
         {
             return this._deploymentId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DeploymentType. The type of deployment.
+        /// </summary>
+        public DeploymentType DeploymentType
+        {
+            get { return this._deploymentType; }
+            set { this._deploymentType = value; }
+        }
+
+        // Check to see if DeploymentType property is set
+        internal bool IsSetDeploymentType()
+        {
+            return this._deploymentType != null;
         }
 
         /// <summary>

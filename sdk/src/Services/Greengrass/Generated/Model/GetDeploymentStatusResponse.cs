@@ -33,6 +33,8 @@ namespace Amazon.Greengrass.Model
     public partial class GetDeploymentStatusResponse : AmazonWebServiceResponse
     {
         private string _deploymentStatus;
+        private DeploymentType _deploymentType;
+        private List<ErrorDetail> _errorDetails = new List<ErrorDetail>();
         private string _errorMessage;
         private string _updatedAt;
 
@@ -49,6 +51,36 @@ namespace Amazon.Greengrass.Model
         internal bool IsSetDeploymentStatus()
         {
             return this._deploymentStatus != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DeploymentType. The type of the deployment.
+        /// </summary>
+        public DeploymentType DeploymentType
+        {
+            get { return this._deploymentType; }
+            set { this._deploymentType = value; }
+        }
+
+        // Check to see if DeploymentType property is set
+        internal bool IsSetDeploymentType()
+        {
+            return this._deploymentType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ErrorDetails. The error Details
+        /// </summary>
+        public List<ErrorDetail> ErrorDetails
+        {
+            get { return this._errorDetails; }
+            set { this._errorDetails = value; }
+        }
+
+        // Check to see if ErrorDetails property is set
+        internal bool IsSetErrorDetails()
+        {
+            return this._errorDetails != null && this._errorDetails.Count > 0; 
         }
 
         /// <summary>
