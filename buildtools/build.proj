@@ -159,13 +159,13 @@
 
     <Target Name="build-sdk-desktop" DependsOnTargets="GetSDKToolingInfoTarget;run-generator;restore-nuget">
         <Message Text="Restore and compile .Net35 SDK"/>
+        <Exec Command="&quot;$(SDKToolingExe)&quot; restore -f  $(Net35SolutionsFile)" WorkingDirectory="..\sdk"/>
         <Exec Command="&quot;$(SDKToolingExe)&quot; clean -c $(Configuration) $(Net35SolutionsFile)" WorkingDirectory="..\sdk"/>
-        <Exec Command="&quot;$(SDKToolingExe)&quot; restore $(Net35SolutionsFile)" WorkingDirectory="..\sdk"/>
         <Exec Command="&quot;$(SDKToolingExe)&quot; build -c $(Configuration) --no-incremental $(Net35SolutionsFile) /p:AWSKeyFile=$(CustomSnkFileLocation);SignAssembly=true" WorkingDirectory="..\sdk"/>
 
         <Message Text="Restore and compile .Net45 SDK"/>
+        <Exec Command="&quot;$(SDKToolingExe)&quot; restore -f  $(Net45SolutionsFile)" WorkingDirectory="..\sdk"/>
         <Exec Command="&quot;$(SDKToolingExe)&quot; clean -c $(Configuration) $(Net45SolutionsFile)" WorkingDirectory="..\sdk"/>
-        <Exec Command="&quot;$(SDKToolingExe)&quot; restore $(Net45SolutionsFile)" WorkingDirectory="..\sdk"/>
         <Exec Command="&quot;$(SDKToolingExe)&quot; build -c $(Configuration) --no-incremental $(Net45SolutionsFile) /p:AWSKeyFile=$(CustomSnkFileLocation);SignAssembly=true" WorkingDirectory="..\sdk"/>
     </Target>
 
@@ -184,8 +184,8 @@
 
     <Target Name="build-sdk-coreclr" DependsOnTargets="GetSDKToolingInfoTarget">
         <Message Text="Restore and compile CoreCLR version of the SDK"/>
+        <Exec Command="&quot;$(SDKToolingExe)&quot; restore -f  $(CoreCLRSolutionFile)" WorkingDirectory="..\sdk"/>
         <Exec Command="&quot;$(SDKToolingExe)&quot; clean -c $(Configuration) $(CoreCLRSolutionFile)" WorkingDirectory="..\sdk"/>
-        <Exec Command="&quot;$(SDKToolingExe)&quot; restore $(CoreCLRSolutionFile)" WorkingDirectory="..\sdk"/>
         <Exec Command="&quot;$(SDKToolingExe)&quot; build -c $(Configuration) --no-incremental $(CoreCLRSolutionFile) /p:AWSKeyFile=$(CustomSnkFileLocation);SignAssembly=true" WorkingDirectory="..\sdk"/>
     </Target>
 	
@@ -210,16 +210,16 @@
     </Target>
 
     <Target Name="build-tests" Condition="'$(PartialBuildList)'!=''" DependsOnTargets="GetSDKToolingInfoTarget">
+        <Exec Command="&quot;$(SDKToolingExe)&quot; restore -f  $(Net35UnitTestProject)" WorkingDirectory="..\sdk\test\UnitTests"/>
         <Exec Command="&quot;$(SDKToolingExe)&quot; clean -c $(Configuration) $(Net35UnitTestProject)" WorkingDirectory="..\sdk\test\UnitTests"/>
-        <Exec Command="&quot;$(SDKToolingExe)&quot; restore $(Net35UnitTestProject)" WorkingDirectory="..\sdk\test\UnitTests"/>
         <Exec Command="&quot;$(SDKToolingExe)&quot; build -c $(Configuration) $(Net35UnitTestProject)" WorkingDirectory="..\sdk\test\UnitTests"/>
 
+        <Exec Command="&quot;$(SDKToolingExe)&quot; restore -f  $(Net45UnitTestProject)" WorkingDirectory="..\sdk\test\UnitTests"/>
         <Exec Command="&quot;$(SDKToolingExe)&quot; clean -c $(Configuration) $(Net45UnitTestProject)" WorkingDirectory="..\sdk\test\UnitTests"/>
-        <Exec Command="&quot;$(SDKToolingExe)&quot; restore $(Net45UnitTestProject)" WorkingDirectory="..\sdk\test\UnitTests"/>
         <Exec Command="&quot;$(SDKToolingExe)&quot; build -c $(Configuration) $(Net45UnitTestProject)" WorkingDirectory="..\sdk\test\UnitTests"/>
 
+        <Exec Command="&quot;$(SDKToolingExe)&quot; restore -f  $(CoreCLRUnitTests)" WorkingDirectory="..\sdk\test\CoreCLR\UnitTests"/>
         <Exec Command="&quot;$(SDKToolingExe)&quot; clean -c $(Configuration) $(CoreCLRUnitTests)" WorkingDirectory="..\sdk\test\CoreCLR\UnitTests"/>
-        <Exec Command="&quot;$(SDKToolingExe)&quot; restore $(CoreCLRUnitTests)" WorkingDirectory="..\sdk\test\CoreCLR\UnitTests"/>
         <Exec Command="&quot;$(SDKToolingExe)&quot; build -c $(Configuration) $(CoreCLRUnitTests)" WorkingDirectory="..\sdk\test\CoreCLR\UnitTests"/>
     </Target>
 
@@ -342,8 +342,8 @@
 	
     <Target Name="build-netcore-extensions" DependsOnTargets="GetSDKToolingInfoTarget">
         <!-- depends: restore-nuget;run-generator -->
+        <Exec Command="&quot;$(SDKToolingExe)&quot; restore -f  AWSSDK.Extensions.sln"  WorkingDirectory="..\extensions"/>
         <Exec Command="&quot;$(SDKToolingExe)&quot; clean AWSSDK.Extensions.sln"    WorkingDirectory="..\extensions"/>
-        <Exec Command="&quot;$(SDKToolingExe)&quot; restore AWSSDK.Extensions.sln"  WorkingDirectory="..\extensions"/>
         <Exec Command="&quot;$(SDKToolingExe)&quot; build -c $(Configuration) AWSSDK.Extensions.sln /p:AWSKeyFile=$(CustomSnkFileLocation);SignAssembly=true"  WorkingDirectory="..\extensions"/>
 
 		<Message Text="Build and Test .NET Core Setup Extension"/>
@@ -358,8 +358,8 @@
     <Target Name="build-cognito-auth-extension-coreCLR" DependsOnTargets="GetSDKToolingInfoTarget">
         <Message Text="Build and Test Cognito Authentication Extension"/>
         
+        <Exec Command="&quot;$(SDKToolingExe)&quot; restore -f  CognitoAuthentication.CoreCLR.sln"    WorkingDirectory="..\extensions"/>
         <Exec Command="&quot;$(SDKToolingExe)&quot; clean CognitoAuthentication.CoreCLR.sln"      WorkingDirectory="..\extensions"/>
-        <Exec Command="&quot;$(SDKToolingExe)&quot; restore CognitoAuthentication.CoreCLR.sln"    WorkingDirectory="..\extensions"/>
         <Exec Command="&quot;$(SDKToolingExe)&quot; build -c $(Configuration) --no-incremental CognitoAuthentication.CoreCLR.sln /p:AWSKeyFile=$(CustomSnkFileLocation);SignAssembly=true" WorkingDirectory="..\extensions"/>
 
         <XUnitWrapperTask
@@ -375,8 +375,8 @@
     <Target Name="build-cognito-auth-extension-net45" DependsOnTargets="GetSDKToolingInfoTarget">
         <Message Text="Build and Test Cognito Authentication Extension"/>
         
+        <Exec Command="&quot;$(SDKToolingExe)&quot; restore -f  CognitoAuthentication.NET45.sln"    WorkingDirectory="..\extensions"/>
         <Exec Command="&quot;$(SDKToolingExe)&quot; clean CognitoAuthentication.NET45.sln"      WorkingDirectory="..\extensions"/>
-        <Exec Command="&quot;$(SDKToolingExe)&quot; restore CognitoAuthentication.NET45.sln"    WorkingDirectory="..\extensions"/>
         <Exec Command="&quot;$(SDKToolingExe)&quot; build -c $(Configuration) --no-incremental CognitoAuthentication.NET45.sln /p:AWSKeyFile=$(CustomSnkFileLocation);SignAssembly=true" WorkingDirectory="..\extensions"/>
 
         <!-- Omit running 45 integration tests as they are the same tests as coreclr.
