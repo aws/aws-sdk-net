@@ -268,6 +268,18 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                         unmarshalledObject.PendingModifiedValues = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("PerformanceInsightsEnabled", targetDepth))
+                    {
+                        var unmarshaller = BoolUnmarshaller.Instance;
+                        unmarshalledObject.PerformanceInsightsEnabled = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("PerformanceInsightsKMSKeyId", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.PerformanceInsightsKMSKeyId = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("PreferredBackupWindow", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

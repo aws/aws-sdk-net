@@ -49,6 +49,7 @@ namespace Amazon.RDS.Model
         private bool? _supportsEnhancedMonitoring;
         private bool? _supportsIAMDatabaseAuthentication;
         private bool? _supportsIops;
+        private bool? _supportsPerformanceInsights;
         private bool? _supportsStorageEncryption;
         private bool? _vpc;
 
@@ -249,6 +250,21 @@ namespace Amazon.RDS.Model
         internal bool IsSetSupportsIops()
         {
             return this._supportsIops.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SupportsPerformanceInsights.
+        /// </summary>
+        public bool SupportsPerformanceInsights
+        {
+            get { return this._supportsPerformanceInsights.GetValueOrDefault(); }
+            set { this._supportsPerformanceInsights = value; }
+        }
+
+        // Check to see if SupportsPerformanceInsights property is set
+        internal bool IsSetSupportsPerformanceInsights()
+        {
+            return this._supportsPerformanceInsights.HasValue; 
         }
 
         /// <summary>

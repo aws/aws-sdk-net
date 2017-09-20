@@ -63,11 +63,13 @@ namespace Amazon.RDS.Model
         private string _dbInstanceIdentifier;
         private string _dbSubnetGroupName;
         private bool? _enableIAMDatabaseAuthentication;
+        private bool? _enablePerformanceInsights;
         private int? _iops;
         private string _kmsKeyId;
         private int? _monitoringInterval;
         private string _monitoringRoleArn;
         private string _optionGroupName;
+        private string _performanceInsightsKMSKeyId;
         private int? _port;
         private string _preSignedUrl;
         private bool? _publiclyAccessible;
@@ -307,6 +309,21 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
+        /// Gets and sets the property EnablePerformanceInsights.
+        /// </summary>
+        public bool EnablePerformanceInsights
+        {
+            get { return this._enablePerformanceInsights.GetValueOrDefault(); }
+            set { this._enablePerformanceInsights = value; }
+        }
+
+        // Check to see if EnablePerformanceInsights property is set
+        internal bool IsSetEnablePerformanceInsights()
+        {
+            return this._enablePerformanceInsights.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property Iops. 
         /// <para>
         /// The amount of Provisioned IOPS (input/output operations per second) to be initially
@@ -434,6 +451,21 @@ namespace Amazon.RDS.Model
         internal bool IsSetOptionGroupName()
         {
             return this._optionGroupName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PerformanceInsightsKMSKeyId.
+        /// </summary>
+        public string PerformanceInsightsKMSKeyId
+        {
+            get { return this._performanceInsightsKMSKeyId; }
+            set { this._performanceInsightsKMSKeyId = value; }
+        }
+
+        // Check to see if PerformanceInsightsKMSKeyId property is set
+        internal bool IsSetPerformanceInsightsKMSKeyId()
+        {
+            return this._performanceInsightsKMSKeyId != null;
         }
 
         /// <summary>

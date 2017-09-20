@@ -92,6 +92,8 @@ namespace Amazon.RDS.Model
         private bool? _multiAZ;
         private List<OptionGroupMembership> _optionGroupMemberships = new List<OptionGroupMembership>();
         private PendingModifiedValues _pendingModifiedValues;
+        private bool? _performanceInsightsEnabled;
+        private string _performanceInsightsKMSKeyId;
         private string _preferredBackupWindow;
         private string _preferredMaintenanceWindow;
         private int? _promotionTier;
@@ -792,6 +794,36 @@ namespace Amazon.RDS.Model
         internal bool IsSetPendingModifiedValues()
         {
             return this._pendingModifiedValues != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PerformanceInsightsEnabled.
+        /// </summary>
+        public bool PerformanceInsightsEnabled
+        {
+            get { return this._performanceInsightsEnabled.GetValueOrDefault(); }
+            set { this._performanceInsightsEnabled = value; }
+        }
+
+        // Check to see if PerformanceInsightsEnabled property is set
+        internal bool IsSetPerformanceInsightsEnabled()
+        {
+            return this._performanceInsightsEnabled.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property PerformanceInsightsKMSKeyId.
+        /// </summary>
+        public string PerformanceInsightsKMSKeyId
+        {
+            get { return this._performanceInsightsKMSKeyId; }
+            set { this._performanceInsightsKMSKeyId = value; }
+        }
+
+        // Check to see if PerformanceInsightsKMSKeyId property is set
+        internal bool IsSetPerformanceInsightsKMSKeyId()
+        {
+            return this._performanceInsightsKMSKeyId != null;
         }
 
         /// <summary>

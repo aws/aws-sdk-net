@@ -50,7 +50,7 @@ namespace Amazon.RDS.Model
     ///  
     /// <para>
     /// If the specified DB instance is part of an Amazon Aurora DB cluster, you cannot delete
-    /// the DB instance if the following are true:
+    /// the DB instance if both of the following conditions are true:
     /// </para>
     ///  <ul> <li> 
     /// <para>

@@ -50,6 +50,7 @@ namespace Amazon.RDS.Model
         private string _domain;
         private string _domainIAMRoleName;
         private bool? _enableIAMDatabaseAuthentication;
+        private bool? _enablePerformanceInsights;
         private string _engineVersion;
         private int? _iops;
         private string _licenseModel;
@@ -59,6 +60,7 @@ namespace Amazon.RDS.Model
         private bool? _multiAZ;
         private string _newDBInstanceIdentifier;
         private string _optionGroupName;
+        private string _performanceInsightsKMSKeyId;
         private string _preferredBackupWindow;
         private string _preferredMaintenanceWindow;
         private int? _promotionTier;
@@ -764,6 +766,21 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
+        /// Gets and sets the property EnablePerformanceInsights.
+        /// </summary>
+        public bool EnablePerformanceInsights
+        {
+            get { return this._enablePerformanceInsights.GetValueOrDefault(); }
+            set { this._enablePerformanceInsights = value; }
+        }
+
+        // Check to see if EnablePerformanceInsights property is set
+        internal bool IsSetEnablePerformanceInsights()
+        {
+            return this._enablePerformanceInsights.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property EngineVersion. 
         /// <para>
         ///  The version number of the database engine to upgrade to. Changing this parameter
@@ -1076,6 +1093,21 @@ namespace Amazon.RDS.Model
         internal bool IsSetOptionGroupName()
         {
             return this._optionGroupName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PerformanceInsightsKMSKeyId.
+        /// </summary>
+        public string PerformanceInsightsKMSKeyId
+        {
+            get { return this._performanceInsightsKMSKeyId; }
+            set { this._performanceInsightsKMSKeyId = value; }
+        }
+
+        // Check to see if PerformanceInsightsKMSKeyId property is set
+        internal bool IsSetPerformanceInsightsKMSKeyId()
+        {
+            return this._performanceInsightsKMSKeyId != null;
         }
 
         /// <summary>

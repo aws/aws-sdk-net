@@ -42,6 +42,7 @@ namespace Amazon.RDS.Model
     {
         private string _dbSnapshotIdentifier;
         private string _engineVersion;
+        private string _optionGroupName;
 
         /// <summary>
         /// Gets and sets the property DBSnapshotIdentifier. 
@@ -77,6 +78,21 @@ namespace Amazon.RDS.Model
         internal bool IsSetEngineVersion()
         {
             return this._engineVersion != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OptionGroupName.
+        /// </summary>
+        public string OptionGroupName
+        {
+            get { return this._optionGroupName; }
+            set { this._optionGroupName = value; }
+        }
+
+        // Check to see if OptionGroupName property is set
+        internal bool IsSetOptionGroupName()
+        {
+            return this._optionGroupName != null;
         }
 
     }

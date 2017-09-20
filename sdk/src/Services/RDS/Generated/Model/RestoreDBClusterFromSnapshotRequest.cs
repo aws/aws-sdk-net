@@ -29,11 +29,19 @@ namespace Amazon.RDS.Model
 {
     /// <summary>
     /// Container for the parameters to the RestoreDBClusterFromSnapshot operation.
-    /// Creates a new DB cluster from a DB cluster snapshot. The target DB cluster is created
-    /// from the source DB cluster restore point with the same configuration as the original
-    /// source DB cluster, except that the new DB cluster is created with the default security
-    /// group.
+    /// Creates a new DB cluster from a DB snapshot or DB cluster snapshot.
     /// 
+    ///  
+    /// <para>
+    /// If a DB snapshot is specified, the target DB cluster is created from the source DB
+    /// snapshot with a default configuration and default security group.
+    /// </para>
+    ///  
+    /// <para>
+    /// If a DB cluster snapshot is specified, the target DB cluster is created from the source
+    /// DB cluster restore point with the same configuration as the original source DB cluster,
+    /// except that the new DB cluster is created with the default security group.
+    /// </para>
     ///  
     /// <para>
     /// For more information on Amazon Aurora, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html">Aurora
@@ -96,8 +104,8 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property DBClusterIdentifier. 
         /// <para>
-        /// The name of the DB cluster to create from the DB cluster snapshot. This parameter
-        /// isn't case-sensitive.
+        /// The name of the DB cluster to create from the DB snapshot or DB cluster snapshot.
+        /// This parameter isn't case-sensitive.
         /// </para>
         ///  
         /// <para>
@@ -229,8 +237,8 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property KmsKeyId. 
         /// <para>
-        /// The KMS key identifier to use when restoring an encrypted DB cluster from a DB cluster
-        /// snapshot.
+        /// The KMS key identifier to use when restoring an encrypted DB cluster from a DB snapshot
+        /// or DB cluster snapshot.
         /// </para>
         ///  
         /// <para>
@@ -246,13 +254,14 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// If the DB cluster snapshot is encrypted, then the restored DB cluster is encrypted
-        /// using the KMS key that was used to encrypt the DB cluster snapshot.
+        /// If the DB snapshot or DB cluster snapshot in <code>SnapshotIdentifier</code> is encrypted,
+        /// then the restored DB cluster is encrypted using the KMS key that was used to encrypt
+        /// the DB snapshot or DB cluster snapshot.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// If the DB cluster snapshot is not encrypted, then the restored DB cluster is encrypted
-        /// using the specified encryption key.
+        /// If the DB snapshot or DB cluster snapshot in <code>SnapshotIdentifier</code> is not
+        /// encrypted, then the restored DB cluster is not encrypted.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -315,7 +324,12 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property SnapshotIdentifier. 
         /// <para>
-        /// The identifier for the DB cluster snapshot to restore from.
+        /// The identifier for the DB snapshot or DB cluster snapshot to restore from.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can use either the name or the Amazon Resource Name (ARN) to specify a DB cluster
+        /// snapshot. However, you can use only the ARN to specify a DB snapshot.
         /// </para>
         ///  
         /// <para>

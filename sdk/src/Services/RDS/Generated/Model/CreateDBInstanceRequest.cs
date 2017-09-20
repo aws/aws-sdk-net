@@ -49,6 +49,7 @@ namespace Amazon.RDS.Model
         private string _domain;
         private string _domainIAMRoleName;
         private bool? _enableIAMDatabaseAuthentication;
+        private bool? _enablePerformanceInsights;
         private string _engine;
         private string _engineVersion;
         private int? _iops;
@@ -60,6 +61,7 @@ namespace Amazon.RDS.Model
         private string _monitoringRoleArn;
         private bool? _multiAZ;
         private string _optionGroupName;
+        private string _performanceInsightsKMSKeyId;
         private int? _port;
         private string _preferredBackupWindow;
         private string _preferredMaintenanceWindow;
@@ -803,6 +805,21 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
+        /// Gets and sets the property EnablePerformanceInsights.
+        /// </summary>
+        public bool EnablePerformanceInsights
+        {
+            get { return this._enablePerformanceInsights.GetValueOrDefault(); }
+            set { this._enablePerformanceInsights = value; }
+        }
+
+        // Check to see if EnablePerformanceInsights property is set
+        internal bool IsSetEnablePerformanceInsights()
+        {
+            return this._enablePerformanceInsights.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property Engine. 
         /// <para>
         /// The name of the database engine to be used for this instance. 
@@ -1140,7 +1157,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <b>Version 9.6.x:</b> <code> 9.6.1 | 9.6.2</code> 
+        ///  <b>Version 9.6.x:</b> <code> 9.6.1 | 9.6.2 | 9.6.3</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -1546,6 +1563,21 @@ namespace Amazon.RDS.Model
         internal bool IsSetOptionGroupName()
         {
             return this._optionGroupName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PerformanceInsightsKMSKeyId.
+        /// </summary>
+        public string PerformanceInsightsKMSKeyId
+        {
+            get { return this._performanceInsightsKMSKeyId; }
+            set { this._performanceInsightsKMSKeyId = value; }
+        }
+
+        // Check to see if PerformanceInsightsKMSKeyId property is set
+        internal bool IsSetPerformanceInsightsKMSKeyId()
+        {
+            return this._performanceInsightsKMSKeyId != null;
         }
 
         /// <summary>
