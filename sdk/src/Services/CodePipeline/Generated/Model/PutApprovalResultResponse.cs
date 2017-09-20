@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CodePipeline.Model
 {
     /// <summary>
-    /// Represents the output of a put approval result action.
+    /// Represents the output of a PutApprovalResult action.
     /// </summary>
     public partial class PutApprovalResultResponse : AmazonWebServiceResponse
     {

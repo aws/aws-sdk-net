@@ -28,14 +28,12 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CodePipeline.Model
 {
     /// <summary>
-    /// Represents the output of a GetPipelineState action.
+    /// Information about a pipeline.
     /// </summary>
-    public partial class GetPipelineStateResponse : AmazonWebServiceResponse
+    public partial class PipelineMetadata
     {
         private DateTime? _created;
-        private string _pipelineName;
-        private int? _pipelineVersion;
-        private List<StageState> _stageStates = new List<StageState>();
+        private string _pipelineArn;
         private DateTime? _updated;
 
         /// <summary>
@@ -57,63 +55,21 @@ namespace Amazon.CodePipeline.Model
         }
 
         /// <summary>
-        /// Gets and sets the property PipelineName. 
+        /// Gets and sets the property PipelineArn. 
         /// <para>
-        /// The name of the pipeline for which you want to get the state.
+        /// The Amazon Resource Name (ARN) of the pipeline.
         /// </para>
         /// </summary>
-        public string PipelineName
+        public string PipelineArn
         {
-            get { return this._pipelineName; }
-            set { this._pipelineName = value; }
+            get { return this._pipelineArn; }
+            set { this._pipelineArn = value; }
         }
 
-        // Check to see if PipelineName property is set
-        internal bool IsSetPipelineName()
+        // Check to see if PipelineArn property is set
+        internal bool IsSetPipelineArn()
         {
-            return this._pipelineName != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property PipelineVersion. 
-        /// <para>
-        /// The version number of the pipeline.
-        /// </para>
-        ///  <note> 
-        /// <para>
-        /// A newly-created pipeline is always assigned a version number of <code>1</code>.
-        /// </para>
-        ///  </note>
-        /// </summary>
-        public int PipelineVersion
-        {
-            get { return this._pipelineVersion.GetValueOrDefault(); }
-            set { this._pipelineVersion = value; }
-        }
-
-        // Check to see if PipelineVersion property is set
-        internal bool IsSetPipelineVersion()
-        {
-            return this._pipelineVersion.HasValue; 
-        }
-
-        /// <summary>
-        /// Gets and sets the property StageStates. 
-        /// <para>
-        /// A list of the pipeline stage output information, including stage name, state, most
-        /// recent run details, whether the stage is disabled, and other data.
-        /// </para>
-        /// </summary>
-        public List<StageState> StageStates
-        {
-            get { return this._stageStates; }
-            set { this._stageStates = value; }
-        }
-
-        // Check to see if StageStates property is set
-        internal bool IsSetStageStates()
-        {
-            return this._stageStates != null && this._stageStates.Count > 0; 
+            return this._pipelineArn != null;
         }
 
         /// <summary>

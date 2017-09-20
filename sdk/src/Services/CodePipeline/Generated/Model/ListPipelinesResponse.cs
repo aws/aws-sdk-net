@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CodePipeline.Model
 {
     /// <summary>
-    /// Represents the output of a list pipelines action.
+    /// Represents the output of a ListPipelines action.
     /// </summary>
     public partial class ListPipelinesResponse : AmazonWebServiceResponse
     {

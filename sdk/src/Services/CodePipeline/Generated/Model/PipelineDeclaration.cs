@@ -41,8 +41,8 @@ namespace Amazon.CodePipeline.Model
         /// <summary>
         /// Gets and sets the property ArtifactStore. 
         /// <para>
-        /// Represents the context of an action within the stage of a pipeline to a job worker.
-        /// 
+        /// Represents information about the Amazon S3 bucket where artifacts are stored for the
+        /// pipeline. 
         /// </para>
         /// </summary>
         public ArtifactStore ArtifactStore

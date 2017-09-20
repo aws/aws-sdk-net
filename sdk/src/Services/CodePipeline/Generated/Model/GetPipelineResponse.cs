@@ -28,11 +28,31 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CodePipeline.Model
 {
     /// <summary>
-    /// Represents the output of a get pipeline action.
+    /// Represents the output of a GetPipeline action.
     /// </summary>
     public partial class GetPipelineResponse : AmazonWebServiceResponse
     {
+        private PipelineMetadata _metadata;
         private PipelineDeclaration _pipeline;
+
+        /// <summary>
+        /// Gets and sets the property Metadata. 
+        /// <para>
+        /// Represents the pipeline metadata information returned as part of the output of a GetPipeline
+        /// action.
+        /// </para>
+        /// </summary>
+        public PipelineMetadata Metadata
+        {
+            get { return this._metadata; }
+            set { this._metadata = value; }
+        }
+
+        // Check to see if Metadata property is set
+        internal bool IsSetMetadata()
+        {
+            return this._metadata != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Pipeline. 

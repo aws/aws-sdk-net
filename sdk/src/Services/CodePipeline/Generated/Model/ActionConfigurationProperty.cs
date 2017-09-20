@@ -97,7 +97,7 @@ namespace Amazon.CodePipeline.Model
         /// <summary>
         /// Gets and sets the property Queryable. 
         /// <para>
-        /// Indicates that the proprety will be used in conjunction with PollForJobs. When creating
+        /// Indicates that the property will be used in conjunction with PollForJobs. When creating
         /// a custom action, an action can have up to one queryable property. If it has one, that
         /// property must be both required and not secret.
         /// </para>

@@ -102,16 +102,16 @@ namespace Amazon.CodePipeline.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Succeeded: The pipeline execution completed successfully. 
+        /// Succeeded: The pipeline execution was completed successfully. 
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// Superseded: While this pipeline execution was waiting for the next stage to be completed,
-        /// a newer pipeline execution caught up and continued through the pipeline instead. 
+        /// a newer pipeline execution advanced and continued through the pipeline instead. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Failed: The pipeline execution did not complete successfully.
+        /// Failed: The pipeline execution was not completed successfully.
         /// </para>
         ///  </li> </ul>
         /// </summary>

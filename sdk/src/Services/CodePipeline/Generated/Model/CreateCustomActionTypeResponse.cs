@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CodePipeline.Model
 {
     /// <summary>
-    /// Represents the output of a create custom action operation.
+    /// Represents the output of a CreateCustomActionType operation.
     /// </summary>
     public partial class CreateCustomActionTypeResponse : AmazonWebServiceResponse
     {

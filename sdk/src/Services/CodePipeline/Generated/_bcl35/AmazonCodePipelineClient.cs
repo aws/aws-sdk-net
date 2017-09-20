@@ -68,7 +68,8 @@ namespace Amazon.CodePipeline
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a>GetPipeline</a>, which returns information about a pipeline structure.
+    ///  <a>GetPipeline</a>, which returns information about the pipeline structure and pipeline
+    /// metadata, including the pipeline Amazon Resource Name (ARN).
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -84,6 +85,11 @@ namespace Amazon.CodePipeline
     /// <para>
     ///  <a>ListPipelines</a>, which gets a summary of all of the pipelines associated with
     /// your account.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>ListPipelineExecutions</a>, which gets a summary of the most recent executions
+    /// for a pipeline.
     /// </para>
     ///  </li> <li> 
     /// <para>

@@ -5,6 +5,11 @@
     <pattern>[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CodePipeline.Model.AcknowledgeThirdPartyJobRequest.ClientToken</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CodePipeline.Model.AcknowledgeThirdPartyJobRequest.JobId</property>
     <min>1</min>
     <max>512</max>
@@ -110,9 +115,24 @@
     <min>1</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CodePipeline.Model.GetThirdPartyJobDetailsRequest.ClientToken</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CodePipeline.Model.GetThirdPartyJobDetailsRequest.JobId</property>
     <min>1</min>
     <max>512</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodePipeline.Model.ListActionTypesRequest.NextToken</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodePipeline.Model.ListActionTypesResponse.NextToken</property>
+    <min>1</min>
+    <max>2048</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodePipeline.Model.ListPipelineExecutionsRequest.MaxResults</property>
@@ -120,10 +140,30 @@
     <max>100</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CodePipeline.Model.ListPipelineExecutionsRequest.NextToken</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CodePipeline.Model.ListPipelineExecutionsRequest.PipelineName</property>
     <min>1</min>
     <max>100</max>
     <pattern>[A-Za-z0-9.@\-_]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodePipeline.Model.ListPipelineExecutionsResponse.NextToken</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodePipeline.Model.ListPipelinesRequest.NextToken</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodePipeline.Model.ListPipelinesResponse.NextToken</property>
+    <min>1</min>
+    <max>2048</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodePipeline.Model.PollForJobsRequest.MaxBatchSize</property>
@@ -186,9 +226,19 @@
     <pattern>[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CodePipeline.Model.PutThirdPartyJobFailureResultRequest.ClientToken</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CodePipeline.Model.PutThirdPartyJobFailureResultRequest.JobId</property>
     <min>1</min>
     <max>512</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodePipeline.Model.PutThirdPartyJobSuccessResultRequest.ClientToken</property>
+    <min>1</min>
+    <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodePipeline.Model.PutThirdPartyJobSuccessResultRequest.JobId</property>
@@ -494,6 +544,10 @@
   <property-value-rule>
     <property>Amazon.CodePipeline.Model.PipelineExecutionSummary.PipelineExecutionId</property>
     <pattern>[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodePipeline.Model.PipelineMetadata.PipelineArn</property>
+    <pattern>arn:aws(-[\w]+)*:codepipeline:.+:[0-9]{12}:.+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodePipeline.Model.PipelineSummary.Name</property>

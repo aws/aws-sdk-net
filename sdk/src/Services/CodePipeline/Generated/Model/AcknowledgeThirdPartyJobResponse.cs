@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CodePipeline.Model
 {
     /// <summary>
-    /// Represents the output of an acknowledge third party job action.
+    /// Represents the output of an AcknowledgeThirdPartyJob action.
     /// </summary>
     public partial class AcknowledgeThirdPartyJobResponse : AmazonWebServiceResponse
     {

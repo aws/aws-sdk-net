@@ -37,7 +37,10 @@ namespace Amazon.CodePipeline.Model
         private StageContext _stage;
 
         /// <summary>
-        /// Gets and sets the property Action.
+        /// Gets and sets the property Action. 
+        /// <para>
+        /// The context of an action to a job worker within the stage of a pipeline.
+        /// </para>
         /// </summary>
         public ActionContext Action
         {

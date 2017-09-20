@@ -51,6 +51,12 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("metadata", targetDepth))
+                {
+                    var unmarshaller = PipelineMetadataUnmarshaller.Instance;
+                    response.Metadata = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("pipeline", targetDepth))
                 {
                     var unmarshaller = PipelineDeclarationUnmarshaller.Instance;
