@@ -39,6 +39,7 @@ namespace Amazon.AppStream.Model
         private string _displayName;
         private DomainJoinInfo _domainJoinInfo;
         private bool? _enableDefaultInternetAccess;
+        private FleetType _fleetType;
         private string _imageName;
         private string _instanceType;
         private int? _maxUserDurationInSeconds;
@@ -158,6 +159,21 @@ namespace Amazon.AppStream.Model
         }
 
         /// <summary>
+        /// Gets and sets the property FleetType.
+        /// </summary>
+        public FleetType FleetType
+        {
+            get { return this._fleetType; }
+            set { this._fleetType = value; }
+        }
+
+        // Check to see if FleetType property is set
+        internal bool IsSetFleetType()
+        {
+            return this._fleetType != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property ImageName. 
         /// <para>
         /// Unique name of the image used by the fleet.
@@ -178,8 +194,8 @@ namespace Amazon.AppStream.Model
         /// <summary>
         /// Gets and sets the property InstanceType. 
         /// <para>
-        /// The instance type of compute resources for the fleet. Fleet instances are launched
-        /// from this instance type. Available instance types are:
+        /// The instance type to use when launching fleet instances. The following instance types
+        /// are available:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -231,6 +247,26 @@ namespace Amazon.AppStream.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// stream.graphics-design.large
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// stream.graphics-design.xlarge
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// stream.graphics-design.2xlarge
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// stream.graphics-design.4xlarge
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// stream.graphics-desktop.2xlarge
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// stream.graphics-pro.4xlarge
         /// </para>
         ///  </li> <li> 
@@ -240,10 +276,6 @@ namespace Amazon.AppStream.Model
         ///  </li> <li> 
         /// <para>
         /// stream.graphics-pro.16xlarge
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// stream.graphics-desktop.2xlarge
         /// </para>
         ///  </li> </ul>
         /// </summary>

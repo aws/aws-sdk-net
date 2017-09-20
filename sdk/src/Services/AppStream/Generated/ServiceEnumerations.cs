@@ -211,6 +211,10 @@ namespace Amazon.AppStream
         /// </summary>
         public static readonly FleetErrorCode IAM_SERVICE_ROLE_MISSING_ENI_DESCRIBE_ACTION = new FleetErrorCode("IAM_SERVICE_ROLE_MISSING_ENI_DESCRIBE_ACTION");
         /// <summary>
+        /// Constant IGW_NOT_ATTACHED for FleetErrorCode
+        /// </summary>
+        public static readonly FleetErrorCode IGW_NOT_ATTACHED = new FleetErrorCode("IGW_NOT_ATTACHED");
+        /// <summary>
         /// Constant IMAGE_NOT_FOUND for FleetErrorCode
         /// </summary>
         public static readonly FleetErrorCode IMAGE_NOT_FOUND = new FleetErrorCode("IMAGE_NOT_FOUND");
@@ -326,6 +330,56 @@ namespace Amazon.AppStream
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator FleetState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type FleetType.
+    /// </summary>
+    public class FleetType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ALWAYS_ON for FleetType
+        /// </summary>
+        public static readonly FleetType ALWAYS_ON = new FleetType("ALWAYS_ON");
+        /// <summary>
+        /// Constant ON_DEMAND for FleetType
+        /// </summary>
+        public static readonly FleetType ON_DEMAND = new FleetType("ON_DEMAND");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public FleetType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static FleetType FindValue(string value)
+        {
+            return FindValue<FleetType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator FleetType(string value)
         {
             return FindValue(value);
         }

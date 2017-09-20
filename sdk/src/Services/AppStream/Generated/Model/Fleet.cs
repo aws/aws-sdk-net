@@ -41,6 +41,7 @@ namespace Amazon.AppStream.Model
         private DomainJoinInfo _domainJoinInfo;
         private bool? _enableDefaultInternetAccess;
         private List<FleetError> _fleetErrors = new List<FleetError>();
+        private FleetType _fleetType;
         private string _imageName;
         private string _instanceType;
         private int? _maxUserDurationInSeconds;
@@ -215,6 +216,21 @@ namespace Amazon.AppStream.Model
         }
 
         /// <summary>
+        /// Gets and sets the property FleetType.
+        /// </summary>
+        public FleetType FleetType
+        {
+            get { return this._fleetType; }
+            set { this._fleetType = value; }
+        }
+
+        // Check to see if FleetType property is set
+        internal bool IsSetFleetType()
+        {
+            return this._fleetType != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property ImageName. 
         /// <para>
         /// The image used by the fleet.
@@ -235,8 +251,7 @@ namespace Amazon.AppStream.Model
         /// <summary>
         /// Gets and sets the property InstanceType. 
         /// <para>
-        /// The instance type of compute resources for the fleet. The fleet instances are launched
-        /// from this instance type. 
+        /// The instance type to use when launching fleet instances.
         /// </para>
         /// </summary>
         public string InstanceType

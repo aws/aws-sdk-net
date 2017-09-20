@@ -113,6 +113,12 @@ namespace Amazon.AppStream.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.EnableDefaultInternetAccess);
                 }
 
+                if(publicRequest.IsSetFleetType())
+                {
+                    context.Writer.WritePropertyName("FleetType");
+                    context.Writer.Write(publicRequest.FleetType);
+                }
+
                 if(publicRequest.IsSetImageName())
                 {
                     context.Writer.WritePropertyName("ImageName");

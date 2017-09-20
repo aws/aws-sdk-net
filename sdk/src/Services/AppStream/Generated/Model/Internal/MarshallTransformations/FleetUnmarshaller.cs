@@ -118,6 +118,12 @@ namespace Amazon.AppStream.Model.Internal.MarshallTransformations
                     unmarshalledObject.FleetErrors = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("FleetType", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.FleetType = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ImageName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
