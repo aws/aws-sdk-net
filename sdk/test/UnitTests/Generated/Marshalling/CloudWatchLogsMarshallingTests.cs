@@ -43,6 +43,22 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Json")]
         [TestCategory("CloudWatchLogs")]
+        public void AssociateKmsKeyMarshallTest()
+        {
+            var request = InstantiateClassGenerator.Execute<AssociateKmsKeyRequest>();
+            var marshaller = new AssociateKmsKeyRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            Comparer.CompareObjectToJson<AssociateKmsKeyRequest>(request,jsonRequest);
+
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("CloudWatchLogs")]
         public void CancelExportTaskMarshallTest()
         {
             var request = InstantiateClassGenerator.Execute<CancelExportTaskRequest>();
@@ -428,6 +444,22 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var response = DescribeSubscriptionFiltersResponseUnmarshaller.Instance.Unmarshall(context)
                 as DescribeSubscriptionFiltersResponse;
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("CloudWatchLogs")]
+        public void DisassociateKmsKeyMarshallTest()
+        {
+            var request = InstantiateClassGenerator.Execute<DisassociateKmsKeyRequest>();
+            var marshaller = new DisassociateKmsKeyRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            Comparer.CompareObjectToJson<DisassociateKmsKeyRequest>(request,jsonRequest);
+
         }
 
         

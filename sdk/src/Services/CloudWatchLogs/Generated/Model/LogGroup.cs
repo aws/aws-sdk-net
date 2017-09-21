@@ -34,6 +34,7 @@ namespace Amazon.CloudWatchLogs.Model
     {
         private string _arn;
         private DateTime? _creationTime;
+        private string _kmsKeyId;
         private string _logGroupName;
         private int? _metricFilterCount;
         private int? _retentionInDays;
@@ -74,6 +75,24 @@ namespace Amazon.CloudWatchLogs.Model
         internal bool IsSetCreationTime()
         {
             return this._creationTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property KmsKeyId. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the CMK to use when encrypting log data.
+        /// </para>
+        /// </summary>
+        public string KmsKeyId
+        {
+            get { return this._kmsKeyId; }
+            set { this._kmsKeyId = value; }
+        }
+
+        // Check to see if KmsKeyId property is set
+        internal bool IsSetKmsKeyId()
+        {
+            return this._kmsKeyId != null;
         }
 
         /// <summary>

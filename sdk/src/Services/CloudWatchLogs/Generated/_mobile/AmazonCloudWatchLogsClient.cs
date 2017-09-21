@@ -265,6 +265,38 @@ namespace Amazon.CloudWatchLogs
         #endregion
 
         
+        #region  AssociateKmsKey
+
+        internal AssociateKmsKeyResponse AssociateKmsKey(AssociateKmsKeyRequest request)
+        {
+            var marshaller = new AssociateKmsKeyRequestMarshaller();
+            var unmarshaller = AssociateKmsKeyResponseUnmarshaller.Instance;
+
+            return Invoke<AssociateKmsKeyRequest,AssociateKmsKeyResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AssociateKmsKey operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AssociateKmsKey operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/AssociateKmsKey">REST API Reference for AssociateKmsKey Operation</seealso>
+        public Task<AssociateKmsKeyResponse> AssociateKmsKeyAsync(AssociateKmsKeyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new AssociateKmsKeyRequestMarshaller();
+            var unmarshaller = AssociateKmsKeyResponseUnmarshaller.Instance;
+
+            return InvokeAsync<AssociateKmsKeyRequest,AssociateKmsKeyResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CancelExportTask
 
         internal CancelExportTaskResponse CancelExportTask(CancelExportTaskRequest request)
@@ -862,6 +894,38 @@ namespace Amazon.CloudWatchLogs
             var unmarshaller = DescribeSubscriptionFiltersResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeSubscriptionFiltersRequest,DescribeSubscriptionFiltersResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DisassociateKmsKey
+
+        internal DisassociateKmsKeyResponse DisassociateKmsKey(DisassociateKmsKeyRequest request)
+        {
+            var marshaller = new DisassociateKmsKeyRequestMarshaller();
+            var unmarshaller = DisassociateKmsKeyResponseUnmarshaller.Instance;
+
+            return Invoke<DisassociateKmsKeyRequest,DisassociateKmsKeyResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DisassociateKmsKey operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateKmsKey operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DisassociateKmsKey">REST API Reference for DisassociateKmsKey Operation</seealso>
+        public Task<DisassociateKmsKeyResponse> DisassociateKmsKeyAsync(DisassociateKmsKeyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DisassociateKmsKeyRequestMarshaller();
+            var unmarshaller = DisassociateKmsKeyResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DisassociateKmsKeyRequest,DisassociateKmsKeyResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 

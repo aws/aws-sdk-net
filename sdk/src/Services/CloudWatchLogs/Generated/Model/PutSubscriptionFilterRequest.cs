@@ -113,9 +113,10 @@ namespace Amazon.CloudWatchLogs.Model
         /// <summary>
         /// Gets and sets the property Distribution. 
         /// <para>
-        /// The method used to distribute log data to the destination, when the destination is
-        /// an Amazon Kinesis stream. By default, log data is grouped by log stream. For a more
-        /// even distribution, you can group log data randomly.
+        /// The method used to distribute log data to the destination. By default log data is
+        /// grouped by log stream, but the grouping can be set to random for a more even distribution.
+        /// This property is only applicable when the destination is an Amazon Kinesis stream.
+        /// 
         /// </para>
         /// </summary>
         public Distribution Distribution

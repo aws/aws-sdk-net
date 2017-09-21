@@ -37,7 +37,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// The tags.
+        /// The tags for the log group.
         /// </para>
         /// </summary>
         public Dictionary<string, string> Tags

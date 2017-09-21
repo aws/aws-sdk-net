@@ -70,6 +70,78 @@ namespace Amazon.CloudWatchLogs
     {
 
         
+        #region  AssociateKmsKey
+
+
+        /// <summary>
+        /// Associates the specified AWS Key Management Service (AWS KMS) customer master key
+        /// (CMK) with the specified log group.
+        /// 
+        ///  
+        /// <para>
+        /// Associating an AWS KMS CMK with a log group overrides any existing associations between
+        /// the log group and a CMK. After a CMK is associated with a log group, all newly ingested
+        /// data for the log group is encrypted using the CMK. This association is stored as long
+        /// as the data encrypted with the CMK is still within Amazon CloudWatch Logs. This enables
+        /// Amazon CloudWatch Logs to decrypt this data whenever it is requested.
+        /// </para>
+        ///  
+        /// <para>
+        /// Note that it can take up to 5 minutes for this operation to take effect.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you attempt to associate a CMK with a log group but the CMK does not exist or the
+        /// CMK is disabled, you will receive an <code>InvalidParameterException</code> error.
+        /// 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateKmsKey service method.</param>
+        /// 
+        /// <returns>The response from the AssociateKmsKey service method, as returned by CloudWatchLogs.</returns>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.InvalidParameterException">
+        /// A parameter is specified incorrectly.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.OperationAbortedException">
+        /// Multiple requests to update the same resource were in conflict.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ServiceUnavailableException">
+        /// The service cannot complete the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/AssociateKmsKey">REST API Reference for AssociateKmsKey Operation</seealso>
+        AssociateKmsKeyResponse AssociateKmsKey(AssociateKmsKeyRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AssociateKmsKey operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AssociateKmsKey operation on AmazonCloudWatchLogsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAssociateKmsKey
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/AssociateKmsKey">REST API Reference for AssociateKmsKey Operation</seealso>
+        IAsyncResult BeginAssociateKmsKey(AssociateKmsKeyRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  AssociateKmsKey operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAssociateKmsKey.</param>
+        /// 
+        /// <returns>Returns a  AssociateKmsKeyResult from CloudWatchLogs.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/AssociateKmsKey">REST API Reference for AssociateKmsKey Operation</seealso>
+        AssociateKmsKeyResponse EndAssociateKmsKey(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  CancelExportTask
 
 
@@ -228,7 +300,19 @@ namespace Amazon.CloudWatchLogs
         /// Log group names consist of the following characters: a-z, A-Z, 0-9, '_' (underscore),
         /// '-' (hyphen), '/' (forward slash), and '.' (period).
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> 
+        /// <para>
+        /// If you associate a AWS Key Management Service (AWS KMS) customer master key (CMK)
+        /// with the log group, ingested data is encrypted using the CMK. This association is
+        /// stored as long as the data encrypted with the CMK is still within Amazon CloudWatch
+        /// Logs. This enables Amazon CloudWatch Logs to decrypt this data whenever it is requested.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you attempt to associate a CMK with the log group but the CMK does not exist or
+        /// the CMK is disabled, you will receive an <code>InvalidParameterException</code> error.
+        /// 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateLogGroup service method.</param>
         /// 
@@ -940,7 +1024,7 @@ namespace Amazon.CloudWatchLogs
 
         /// <summary>
         /// Lists the specified metric filters. You can list all the metric filters or filter
-        /// the results by log name, prefix, metric name, and metric namespace. The results are
+        /// the results by log name, prefix, metric name, or metric namespace. The results are
         /// ASCII-sorted by filter name.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeMetricFilters service method.</param>
@@ -1082,6 +1166,71 @@ namespace Amazon.CloudWatchLogs
 
         #endregion
         
+        #region  DisassociateKmsKey
+
+
+        /// <summary>
+        /// Disassociates the associated AWS Key Management Service (AWS KMS) customer master
+        /// key (CMK) from the specified log group.
+        /// 
+        ///  
+        /// <para>
+        /// After the AWS KMS CMK is disassociated from the log group, AWS CloudWatch Logs stops
+        /// encrypting newly ingested data for the log group. All previously ingested data remains
+        /// encrypted, and AWS CloudWatch Logs requires permissions for the CMK whenever the encrypted
+        /// data is requested.
+        /// </para>
+        ///  
+        /// <para>
+        /// Note that it can take up to 5 minutes for this operation to take effect.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateKmsKey service method.</param>
+        /// 
+        /// <returns>The response from the DisassociateKmsKey service method, as returned by CloudWatchLogs.</returns>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.InvalidParameterException">
+        /// A parameter is specified incorrectly.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.OperationAbortedException">
+        /// Multiple requests to update the same resource were in conflict.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ServiceUnavailableException">
+        /// The service cannot complete the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DisassociateKmsKey">REST API Reference for DisassociateKmsKey Operation</seealso>
+        DisassociateKmsKeyResponse DisassociateKmsKey(DisassociateKmsKeyRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DisassociateKmsKey operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateKmsKey operation on AmazonCloudWatchLogsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDisassociateKmsKey
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DisassociateKmsKey">REST API Reference for DisassociateKmsKey Operation</seealso>
+        IAsyncResult BeginDisassociateKmsKey(DisassociateKmsKeyRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DisassociateKmsKey operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDisassociateKmsKey.</param>
+        /// 
+        /// <returns>Returns a  DisassociateKmsKeyResult from CloudWatchLogs.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DisassociateKmsKey">REST API Reference for DisassociateKmsKey Operation</seealso>
+        DisassociateKmsKeyResponse EndDisassociateKmsKey(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  FilterLogEvents
 
 
@@ -1150,7 +1299,7 @@ namespace Amazon.CloudWatchLogs
         ///  
         /// <para>
         /// By default, this operation returns as many log events as can fit in a response size
-        /// of 1 MB (up to 10,000 log events). You can get additional log events by specifying
+        /// of 1MB (up to 10,000 log events). You can get additional log events by specifying
         /// one of the tokens in a subsequent call.
         /// </para>
         /// </summary>
@@ -1202,11 +1351,6 @@ namespace Amazon.CloudWatchLogs
 
         /// <summary>
         /// Lists the tags for the specified log group.
-        /// 
-        ///  
-        /// <para>
-        /// To add tags, use <a>TagLogGroup</a>. To remove tags, use <a>UntagLogGroup</a>.
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTagsLogGroup service method.</param>
         /// 

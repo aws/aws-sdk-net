@@ -52,10 +52,23 @@ namespace Amazon.CloudWatchLogs.Model
     /// Log group names consist of the following characters: a-z, A-Z, 0-9, '_' (underscore),
     /// '-' (hyphen), '/' (forward slash), and '.' (period).
     /// </para>
-    ///  </li> </ul>
+    ///  </li> </ul> 
+    /// <para>
+    /// If you associate a AWS Key Management Service (AWS KMS) customer master key (CMK)
+    /// with the log group, ingested data is encrypted using the CMK. This association is
+    /// stored as long as the data encrypted with the CMK is still within Amazon CloudWatch
+    /// Logs. This enables Amazon CloudWatch Logs to decrypt this data whenever it is requested.
+    /// </para>
+    ///  
+    /// <para>
+    /// If you attempt to associate a CMK with the log group but the CMK does not exist or
+    /// the CMK is disabled, you will receive an <code>InvalidParameterException</code> error.
+    /// 
+    /// </para>
     /// </summary>
     public partial class CreateLogGroupRequest : AmazonCloudWatchLogsRequest
     {
+        private string _kmsKeyId;
         private string _logGroupName;
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
 
@@ -71,6 +84,26 @@ namespace Amazon.CloudWatchLogs.Model
         public CreateLogGroupRequest(string logGroupName)
         {
             _logGroupName = logGroupName;
+        }
+
+        /// <summary>
+        /// Gets and sets the property KmsKeyId. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the CMK to use when encrypting log data. For more
+        /// information, see <a href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kms">Amazon
+        /// Resource Names - AWS Key Management Service (AWS KMS)</a>.
+        /// </para>
+        /// </summary>
+        public string KmsKeyId
+        {
+            get { return this._kmsKeyId; }
+            set { this._kmsKeyId = value; }
+        }
+
+        // Check to see if KmsKeyId property is set
+        internal bool IsSetKmsKeyId()
+        {
+            return this._kmsKeyId != null;
         }
 
         /// <summary>

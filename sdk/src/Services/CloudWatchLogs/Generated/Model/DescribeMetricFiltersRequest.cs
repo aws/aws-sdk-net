@@ -30,7 +30,7 @@ namespace Amazon.CloudWatchLogs.Model
     /// <summary>
     /// Container for the parameters to the DescribeMetricFilters operation.
     /// Lists the specified metric filters. You can list all the metric filters or filter
-    /// the results by log name, prefix, metric name, and metric namespace. The results are
+    /// the results by log name, prefix, metric name, or metric namespace. The results are
     /// ASCII-sorted by filter name.
     /// </summary>
     public partial class DescribeMetricFiltersRequest : AmazonCloudWatchLogsRequest
@@ -112,10 +112,7 @@ namespace Amazon.CloudWatchLogs.Model
         }
 
         /// <summary>
-        /// Gets and sets the property MetricName. 
-        /// <para>
-        /// The name of the CloudWatch metric.
-        /// </para>
+        /// Gets and sets the property MetricName.
         /// </summary>
         public string MetricName
         {

@@ -28,10 +28,23 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudWatchLogs.Model
 {
     /// <summary>
-    /// Container for the parameters to the ListTagsLogGroup operation.
-    /// Lists the tags for the specified log group.
+    /// Container for the parameters to the DisassociateKmsKey operation.
+    /// Disassociates the associated AWS Key Management Service (AWS KMS) customer master
+    /// key (CMK) from the specified log group.
+    /// 
+    ///  
+    /// <para>
+    /// After the AWS KMS CMK is disassociated from the log group, AWS CloudWatch Logs stops
+    /// encrypting newly ingested data for the log group. All previously ingested data remains
+    /// encrypted, and AWS CloudWatch Logs requires permissions for the CMK whenever the encrypted
+    /// data is requested.
+    /// </para>
+    ///  
+    /// <para>
+    /// Note that it can take up to 5 minutes for this operation to take effect.
+    /// </para>
     /// </summary>
-    public partial class ListTagsLogGroupRequest : AmazonCloudWatchLogsRequest
+    public partial class DisassociateKmsKeyRequest : AmazonCloudWatchLogsRequest
     {
         private string _logGroupName;
 

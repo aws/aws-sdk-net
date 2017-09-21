@@ -1,6 +1,16 @@
 <?xml version="1.0" encoding="utf-16"?>
 <property-value-rules>
   <property-value-rule>
+    <property>Amazon.CloudWatchLogs.Model.AssociateKmsKeyRequest.KmsKeyId</property>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudWatchLogs.Model.AssociateKmsKeyRequest.LogGroupName</property>
+    <min>1</min>
+    <max>512</max>
+    <pattern>[\.\-_/#A-Za-z0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CloudWatchLogs.Model.CancelExportTaskRequest.TaskId</property>
     <min>1</min>
     <max>512</max>
@@ -39,6 +49,10 @@
     <property>Amazon.CloudWatchLogs.Model.CreateExportTaskResponse.TaskId</property>
     <min>1</min>
     <max>512</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudWatchLogs.Model.CreateLogGroupRequest.KmsKeyId</property>
+    <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudWatchLogs.Model.CreateLogGroupRequest.LogGroupName</property>
@@ -265,6 +279,12 @@
   <property-value-rule>
     <property>Amazon.CloudWatchLogs.Model.DescribeSubscriptionFiltersResponse.NextToken</property>
     <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudWatchLogs.Model.DisassociateKmsKeyRequest.LogGroupName</property>
+    <min>1</min>
+    <max>512</max>
+    <pattern>[\.\-_/#A-Za-z0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudWatchLogs.Model.FilterLogEventsRequest.EndTime</property>
@@ -551,6 +571,10 @@
   <property-value-rule>
     <property>Amazon.CloudWatchLogs.Model.LogGroup.CreationTime</property>
     <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudWatchLogs.Model.LogGroup.KmsKeyId</property>
+    <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudWatchLogs.Model.LogGroup.LogGroupName</property>

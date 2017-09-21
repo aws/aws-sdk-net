@@ -28,30 +28,10 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudWatchLogs.Model
 {
     /// <summary>
-    /// Container for the parameters to the ListTagsLogGroup operation.
-    /// Lists the tags for the specified log group.
+    /// This is the response object from the DisassociateKmsKey operation.
     /// </summary>
-    public partial class ListTagsLogGroupRequest : AmazonCloudWatchLogsRequest
+    public partial class DisassociateKmsKeyResponse : AmazonWebServiceResponse
     {
-        private string _logGroupName;
-
-        /// <summary>
-        /// Gets and sets the property LogGroupName. 
-        /// <para>
-        /// The name of the log group.
-        /// </para>
-        /// </summary>
-        public string LogGroupName
-        {
-            get { return this._logGroupName; }
-            set { this._logGroupName = value; }
-        }
-
-        // Check to see if LogGroupName property is set
-        internal bool IsSetLogGroupName()
-        {
-            return this._logGroupName != null;
-        }
 
     }
 }

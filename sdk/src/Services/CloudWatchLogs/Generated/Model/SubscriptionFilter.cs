@@ -78,11 +78,7 @@ namespace Amazon.CloudWatchLogs.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Distribution. 
-        /// <para>
-        /// The method used to distribute log data to the destination, when the destination is
-        /// an Amazon Kinesis stream.
-        /// </para>
+        /// Gets and sets the property Distribution.
         /// </summary>
         public Distribution Distribution
         {
