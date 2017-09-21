@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.3.160.0",
+    "ProductVersion" : "3.3.161.0",
     "CoreVersion"    : "3.3.17.10",
     "DefaultToPreview" : false,
     "ServiceVersions"  : {
@@ -85,7 +85,7 @@
             "InPreview"               : false
         },
         "CloudWatchLogs"    : {
-            "Version" : "3.3.3.0",
+            "Version" : "3.3.4.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.17.0"
@@ -151,7 +151,7 @@
             "InPreview"               : false
         },
         "EC2"               : {
-            "Version" : "3.3.27.0",
+            "Version" : "3.3.28.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.17.0"
@@ -593,7 +593,7 @@
             "InPreview"               : false
         },
         "Budgets"                         : {
-            "Version" : "3.3.3.0",
+            "Version" : "3.3.4.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.17.0"

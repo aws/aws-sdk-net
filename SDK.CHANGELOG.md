@@ -1,3 +1,11 @@
+### 3.3.161.0 (2017-09-21 19:40 UTC)
+* Budgets (3.3.4.0)
+	* Including "DuplicateRecordException" in UpdateNotification and UpdateSubscriber. 
+* CloudWatchLogs (3.3.4.0)
+	* Adds support for associating LogGroups with KMS Keys.
+* EC2 (3.3.28.0)
+	* Add EC2 APIs to copy Amazon FPGA Images (AFIs) within the same region and across multiple regions, delete AFIs, and modify AFI attributes. AFI attributes include name, description and granting/denying other AWS accounts to load the AFI.
+
 ### 3.3.160.0 (2017-09-20 22:48 UTC)
 * AppStream (3.3.5.0)
 	* API updates for supporting On-Demand fleets.
