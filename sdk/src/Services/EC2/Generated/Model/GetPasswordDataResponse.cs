@@ -57,7 +57,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property PasswordData. 
         /// <para>
-        /// The password of the instance.
+        /// The password of the instance. Returns an empty string if the password is not available.
         /// </para>
         /// </summary>
         public string PasswordData

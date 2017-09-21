@@ -682,6 +682,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("EC2")]
+        public void CopyFpgaImageMarshallTest()
+        {
+            var operation = service_model.FindOperation("CopyFpgaImage");
+
+            var request = InstantiateClassGenerator.Execute<CopyFpgaImageRequest>();
+            var marshaller = new CopyFpgaImageRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
+            var response = CopyFpgaImageResponseUnmarshaller.Instance.Unmarshall(context)
+                as CopyFpgaImageResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("EC2")]
         public void CopyImageMarshallTest()
         {
             var operation = service_model.FindOperation("CopyImage");
@@ -1540,6 +1564,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("EC2")]
+        public void DeleteFpgaImageMarshallTest()
+        {
+            var operation = service_model.FindOperation("DeleteFpgaImage");
+
+            var request = InstantiateClassGenerator.Execute<DeleteFpgaImageRequest>();
+            var marshaller = new DeleteFpgaImageRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
+            var response = DeleteFpgaImageResponseUnmarshaller.Instance.Unmarshall(context)
+                as DeleteFpgaImageResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("EC2")]
         public void DeleteInternetGatewayMarshallTest()
         {
             var operation = service_model.FindOperation("DeleteInternetGateway");
@@ -2276,6 +2324,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
             var response = DescribeFlowLogsResponseUnmarshaller.Instance.Unmarshall(context)
                 as DescribeFlowLogsResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("EC2")]
+        public void DescribeFpgaImageAttributeMarshallTest()
+        {
+            var operation = service_model.FindOperation("DescribeFpgaImageAttribute");
+
+            var request = InstantiateClassGenerator.Execute<DescribeFpgaImageAttributeRequest>();
+            var marshaller = new DescribeFpgaImageAttributeRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
+            var response = DescribeFpgaImageAttributeResponseUnmarshaller.Instance.Unmarshall(context)
+                as DescribeFpgaImageAttributeResponse;   
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
         }
 
@@ -4285,6 +4357,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("EC2")]
+        public void ModifyFpgaImageAttributeMarshallTest()
+        {
+            var operation = service_model.FindOperation("ModifyFpgaImageAttribute");
+
+            var request = InstantiateClassGenerator.Execute<ModifyFpgaImageAttributeRequest>();
+            var marshaller = new ModifyFpgaImageAttributeRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
+            var response = ModifyFpgaImageAttributeResponseUnmarshaller.Instance.Unmarshall(context)
+                as ModifyFpgaImageAttributeResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("EC2")]
         public void ModifyHostsMarshallTest()
         {
             var operation = service_model.FindOperation("ModifyHosts");
@@ -5022,6 +5118,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
             var response = RequestSpotInstancesResponseUnmarshaller.Instance.Unmarshall(context)
                 as RequestSpotInstancesResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("EC2")]
+        public void ResetFpgaImageAttributeMarshallTest()
+        {
+            var operation = service_model.FindOperation("ResetFpgaImageAttribute");
+
+            var request = InstantiateClassGenerator.Execute<ResetFpgaImageAttributeRequest>();
+            var marshaller = new ResetFpgaImageAttributeRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
+            var response = ResetFpgaImageAttributeResponseUnmarshaller.Instance.Unmarshall(context)
+                as ResetFpgaImageAttributeResponse;   
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
         }
 

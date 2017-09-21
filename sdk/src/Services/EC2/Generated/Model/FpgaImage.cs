@@ -41,6 +41,7 @@ namespace Amazon.EC2.Model
         private string _ownerId;
         private PciId _pciId;
         private List<ProductCode> _productCodes = new List<ProductCode>();
+        private bool? _public;
         private string _shellVersion;
         private FpgaImageState _state;
         private List<Tag> _tags = new List<Tag>();
@@ -207,6 +208,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetProductCodes()
         {
             return this._productCodes != null && this._productCodes.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Public. 
+        /// <para>
+        /// Indicates whether the AFI is public.
+        /// </para>
+        /// </summary>
+        public bool Public
+        {
+            get { return this._public.GetValueOrDefault(); }
+            set { this._public = value; }
+        }
+
+        // Check to see if Public property is set
+        internal bool IsSetPublic()
+        {
+            return this._public.HasValue; 
         }
 
         /// <summary>

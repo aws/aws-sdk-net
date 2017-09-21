@@ -1603,6 +1603,64 @@ namespace Amazon.EC2
 
 
     /// <summary>
+    /// Constants used for properties of type FpgaImageAttributeName.
+    /// </summary>
+    public class FpgaImageAttributeName : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Description for FpgaImageAttributeName
+        /// </summary>
+        public static readonly FpgaImageAttributeName Description = new FpgaImageAttributeName("description");
+        /// <summary>
+        /// Constant LoadPermission for FpgaImageAttributeName
+        /// </summary>
+        public static readonly FpgaImageAttributeName LoadPermission = new FpgaImageAttributeName("loadPermission");
+        /// <summary>
+        /// Constant Name for FpgaImageAttributeName
+        /// </summary>
+        public static readonly FpgaImageAttributeName Name = new FpgaImageAttributeName("name");
+        /// <summary>
+        /// Constant ProductCodes for FpgaImageAttributeName
+        /// </summary>
+        public static readonly FpgaImageAttributeName ProductCodes = new FpgaImageAttributeName("productCodes");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public FpgaImageAttributeName(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static FpgaImageAttributeName FindValue(string value)
+        {
+            return FindValue<FpgaImageAttributeName>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator FpgaImageAttributeName(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type FpgaImageStateCode.
     /// </summary>
     public class FpgaImageStateCode : ConstantClass
@@ -4048,6 +4106,52 @@ namespace Amazon.EC2
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ReservedInstanceState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ResetFpgaImageAttributeName.
+    /// </summary>
+    public class ResetFpgaImageAttributeName : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant LoadPermission for ResetFpgaImageAttributeName
+        /// </summary>
+        public static readonly ResetFpgaImageAttributeName LoadPermission = new ResetFpgaImageAttributeName("loadPermission");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ResetFpgaImageAttributeName(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ResetFpgaImageAttributeName FindValue(string value)
+        {
+            return FindValue<ResetFpgaImageAttributeName>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ResetFpgaImageAttributeName(string value)
         {
             return FindValue(value);
         }

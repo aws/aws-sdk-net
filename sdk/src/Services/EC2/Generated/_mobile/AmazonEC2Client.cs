@@ -1179,6 +1179,38 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  CopyFpgaImage
+
+        internal CopyFpgaImageResponse CopyFpgaImage(CopyFpgaImageRequest request)
+        {
+            var marshaller = new CopyFpgaImageRequestMarshaller();
+            var unmarshaller = CopyFpgaImageResponseUnmarshaller.Instance;
+
+            return Invoke<CopyFpgaImageRequest,CopyFpgaImageResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CopyFpgaImage operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CopyFpgaImage operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CopyFpgaImage">REST API Reference for CopyFpgaImage Operation</seealso>
+        public Task<CopyFpgaImageResponse> CopyFpgaImageAsync(CopyFpgaImageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new CopyFpgaImageRequestMarshaller();
+            var unmarshaller = CopyFpgaImageResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CopyFpgaImageRequest,CopyFpgaImageResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CopyImage
 
         internal CopyImageResponse CopyImage(CopyImageRequest request)
@@ -2384,6 +2416,38 @@ namespace Amazon.EC2
             var unmarshaller = DeleteFlowLogsResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteFlowLogsRequest,DeleteFlowLogsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteFpgaImage
+
+        internal DeleteFpgaImageResponse DeleteFpgaImage(DeleteFpgaImageRequest request)
+        {
+            var marshaller = new DeleteFpgaImageRequestMarshaller();
+            var unmarshaller = DeleteFpgaImageResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteFpgaImageRequest,DeleteFpgaImageResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteFpgaImage operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteFpgaImage operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteFpgaImage">REST API Reference for DeleteFpgaImage Operation</seealso>
+        public Task<DeleteFpgaImageResponse> DeleteFpgaImageAsync(DeleteFpgaImageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DeleteFpgaImageRequestMarshaller();
+            var unmarshaller = DeleteFpgaImageResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteFpgaImageRequest,DeleteFpgaImageResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -3752,6 +3816,38 @@ namespace Amazon.EC2
             var unmarshaller = DescribeFlowLogsResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeFlowLogsRequest,DescribeFlowLogsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeFpgaImageAttribute
+
+        internal DescribeFpgaImageAttributeResponse DescribeFpgaImageAttribute(DescribeFpgaImageAttributeRequest request)
+        {
+            var marshaller = new DescribeFpgaImageAttributeRequestMarshaller();
+            var unmarshaller = DescribeFpgaImageAttributeResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeFpgaImageAttributeRequest,DescribeFpgaImageAttributeResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeFpgaImageAttribute operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeFpgaImageAttribute operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeFpgaImageAttribute">REST API Reference for DescribeFpgaImageAttribute Operation</seealso>
+        public Task<DescribeFpgaImageAttributeResponse> DescribeFpgaImageAttributeAsync(DescribeFpgaImageAttributeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DescribeFpgaImageAttributeRequestMarshaller();
+            var unmarshaller = DescribeFpgaImageAttributeResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeFpgaImageAttributeRequest,DescribeFpgaImageAttributeResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -7326,6 +7422,38 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  ModifyFpgaImageAttribute
+
+        internal ModifyFpgaImageAttributeResponse ModifyFpgaImageAttribute(ModifyFpgaImageAttributeRequest request)
+        {
+            var marshaller = new ModifyFpgaImageAttributeRequestMarshaller();
+            var unmarshaller = ModifyFpgaImageAttributeResponseUnmarshaller.Instance;
+
+            return Invoke<ModifyFpgaImageAttributeRequest,ModifyFpgaImageAttributeResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ModifyFpgaImageAttribute operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ModifyFpgaImageAttribute operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyFpgaImageAttribute">REST API Reference for ModifyFpgaImageAttribute Operation</seealso>
+        public Task<ModifyFpgaImageAttributeResponse> ModifyFpgaImageAttributeAsync(ModifyFpgaImageAttributeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new ModifyFpgaImageAttributeRequestMarshaller();
+            var unmarshaller = ModifyFpgaImageAttributeResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ModifyFpgaImageAttributeRequest,ModifyFpgaImageAttributeResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ModifyHosts
 
         internal ModifyHostsResponse ModifyHosts(ModifyHostsRequest request)
@@ -8409,6 +8537,38 @@ namespace Amazon.EC2
             var unmarshaller = RequestSpotInstancesResponseUnmarshaller.Instance;
 
             return InvokeAsync<RequestSpotInstancesRequest,RequestSpotInstancesResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ResetFpgaImageAttribute
+
+        internal ResetFpgaImageAttributeResponse ResetFpgaImageAttribute(ResetFpgaImageAttributeRequest request)
+        {
+            var marshaller = new ResetFpgaImageAttributeRequestMarshaller();
+            var unmarshaller = ResetFpgaImageAttributeResponseUnmarshaller.Instance;
+
+            return Invoke<ResetFpgaImageAttributeRequest,ResetFpgaImageAttributeResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ResetFpgaImageAttribute operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ResetFpgaImageAttribute operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ResetFpgaImageAttribute">REST API Reference for ResetFpgaImageAttribute Operation</seealso>
+        public Task<ResetFpgaImageAttributeResponse> ResetFpgaImageAttributeAsync(ResetFpgaImageAttributeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new ResetFpgaImageAttributeRequestMarshaller();
+            var unmarshaller = ResetFpgaImageAttributeResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ResetFpgaImageAttributeRequest,ResetFpgaImageAttributeResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 

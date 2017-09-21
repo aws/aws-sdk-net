@@ -109,6 +109,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.ProductCodes.Add(item);
                         continue;
                     }
+                    if (context.TestExpression("public", targetDepth))
+                    {
+                        var unmarshaller = BoolUnmarshaller.Instance;
+                        unmarshalledObject.Public = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("shellVersion", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

@@ -2038,6 +2038,59 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  CopyFpgaImage
+
+        /// <summary>
+        /// Copies the specified Amazon FPGA Image (AFI) to the current region.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CopyFpgaImage service method.</param>
+        /// 
+        /// <returns>The response from the CopyFpgaImage service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CopyFpgaImage">REST API Reference for CopyFpgaImage Operation</seealso>
+        public CopyFpgaImageResponse CopyFpgaImage(CopyFpgaImageRequest request)
+        {
+            var marshaller = new CopyFpgaImageRequestMarshaller();
+            var unmarshaller = CopyFpgaImageResponseUnmarshaller.Instance;
+
+            return Invoke<CopyFpgaImageRequest,CopyFpgaImageResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CopyFpgaImage operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CopyFpgaImage operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCopyFpgaImage
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CopyFpgaImage">REST API Reference for CopyFpgaImage Operation</seealso>
+        public IAsyncResult BeginCopyFpgaImage(CopyFpgaImageRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new CopyFpgaImageRequestMarshaller();
+            var unmarshaller = CopyFpgaImageResponseUnmarshaller.Instance;
+
+            return BeginInvoke<CopyFpgaImageRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CopyFpgaImage operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCopyFpgaImage.</param>
+        /// 
+        /// <returns>Returns a  CopyFpgaImageResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CopyFpgaImage">REST API Reference for CopyFpgaImage Operation</seealso>
+        public  CopyFpgaImageResponse EndCopyFpgaImage(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CopyFpgaImageResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  CopyImage
 
         /// <summary>
@@ -4599,6 +4652,59 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  DeleteFpgaImage
+
+        /// <summary>
+        /// Deletes the specified Amazon FPGA Image (AFI).
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteFpgaImage service method.</param>
+        /// 
+        /// <returns>The response from the DeleteFpgaImage service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteFpgaImage">REST API Reference for DeleteFpgaImage Operation</seealso>
+        public DeleteFpgaImageResponse DeleteFpgaImage(DeleteFpgaImageRequest request)
+        {
+            var marshaller = new DeleteFpgaImageRequestMarshaller();
+            var unmarshaller = DeleteFpgaImageResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteFpgaImageRequest,DeleteFpgaImageResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteFpgaImage operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteFpgaImage operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteFpgaImage
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteFpgaImage">REST API Reference for DeleteFpgaImage Operation</seealso>
+        public IAsyncResult BeginDeleteFpgaImage(DeleteFpgaImageRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new DeleteFpgaImageRequestMarshaller();
+            var unmarshaller = DeleteFpgaImageResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DeleteFpgaImageRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteFpgaImage operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteFpgaImage.</param>
+        /// 
+        /// <returns>Returns a  DeleteFpgaImageResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteFpgaImage">REST API Reference for DeleteFpgaImage Operation</seealso>
+        public  DeleteFpgaImageResponse EndDeleteFpgaImage(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteFpgaImageResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DeleteInternetGateway
 
         /// <summary>
@@ -6800,6 +6906,59 @@ namespace Amazon.EC2
         public  DescribeFlowLogsResponse EndDescribeFlowLogs(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeFlowLogsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DescribeFpgaImageAttribute
+
+        /// <summary>
+        /// Describes the specified attribute of the specified Amazon FPGA Image (AFI).
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeFpgaImageAttribute service method.</param>
+        /// 
+        /// <returns>The response from the DescribeFpgaImageAttribute service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeFpgaImageAttribute">REST API Reference for DescribeFpgaImageAttribute Operation</seealso>
+        public DescribeFpgaImageAttributeResponse DescribeFpgaImageAttribute(DescribeFpgaImageAttributeRequest request)
+        {
+            var marshaller = new DescribeFpgaImageAttributeRequestMarshaller();
+            var unmarshaller = DescribeFpgaImageAttributeResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeFpgaImageAttributeRequest,DescribeFpgaImageAttributeResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeFpgaImageAttribute operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeFpgaImageAttribute operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeFpgaImageAttribute
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeFpgaImageAttribute">REST API Reference for DescribeFpgaImageAttribute Operation</seealso>
+        public IAsyncResult BeginDescribeFpgaImageAttribute(DescribeFpgaImageAttributeRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new DescribeFpgaImageAttributeRequestMarshaller();
+            var unmarshaller = DescribeFpgaImageAttributeResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DescribeFpgaImageAttributeRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeFpgaImageAttribute operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeFpgaImageAttribute.</param>
+        /// 
+        /// <returns>Returns a  DescribeFpgaImageAttributeResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeFpgaImageAttribute">REST API Reference for DescribeFpgaImageAttribute Operation</seealso>
+        public  DescribeFpgaImageAttributeResponse EndDescribeFpgaImageAttribute(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeFpgaImageAttributeResponse>(asyncResult);
         }
 
         #endregion
@@ -12165,15 +12324,20 @@ namespace Amazon.EC2
         #region  GetPasswordData
 
         /// <summary>
-        /// Retrieves the encrypted administrator password for an instance running Windows.
+        /// Retrieves the encrypted administrator password for a running Windows instance.
         /// 
         ///  
         /// <para>
-        /// The Windows password is generated at boot if the <code>EC2Config</code> service plugin,
-        /// <code>Ec2SetPassword</code>, is enabled. This usually only happens the first time
-        /// an AMI is launched, and then <code>Ec2SetPassword</code> is automatically disabled.
-        /// The password is not generated for rebundled AMIs unless <code>Ec2SetPassword</code>
-        /// is enabled before bundling.
+        /// The Windows password is generated at boot by the <code>EC2Config</code> service or
+        /// <code>EC2Launch</code> scripts (Windows Server 2016 and later). This usually only
+        /// happens the first time an instance is launched. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/UsingConfig_WinAMI.html">EC2Config</a>
+        /// and <a href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2launch.html">EC2Launch</a>
+        /// in the Amazon Elastic Compute Cloud User Guide.
+        /// </para>
+        ///  
+        /// <para>
+        /// For the <code>EC2Config</code> service, the password is not generated for rebundled
+        /// AMIs unless <code>Ec2SetPassword</code> is enabled before bundling.
         /// </para>
         ///  
         /// <para>
@@ -12182,9 +12346,10 @@ namespace Amazon.EC2
         /// </para>
         ///  
         /// <para>
-        /// Password generation and encryption takes a few moments. We recommend that you wait
-        /// up to 15 minutes after launching an instance before trying to retrieve the generated
-        /// password.
+        /// When you launch an instance, password generation and encryption may take a few minutes.
+        /// If you try to retrieve the password before it's available, the output returns an empty
+        /// string. We recommend that you wait up to 15 minutes after launching an instance before
+        /// trying to retrieve the generated password.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetPasswordData service method.</param>
@@ -12580,6 +12745,59 @@ namespace Amazon.EC2
         public  ImportVolumeResponse EndImportVolume(IAsyncResult asyncResult)
         {
             return EndInvoke<ImportVolumeResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ModifyFpgaImageAttribute
+
+        /// <summary>
+        /// Modifies the specified attribute of the specified Amazon FPGA Image (AFI).
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyFpgaImageAttribute service method.</param>
+        /// 
+        /// <returns>The response from the ModifyFpgaImageAttribute service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyFpgaImageAttribute">REST API Reference for ModifyFpgaImageAttribute Operation</seealso>
+        public ModifyFpgaImageAttributeResponse ModifyFpgaImageAttribute(ModifyFpgaImageAttributeRequest request)
+        {
+            var marshaller = new ModifyFpgaImageAttributeRequestMarshaller();
+            var unmarshaller = ModifyFpgaImageAttributeResponseUnmarshaller.Instance;
+
+            return Invoke<ModifyFpgaImageAttributeRequest,ModifyFpgaImageAttributeResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ModifyFpgaImageAttribute operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ModifyFpgaImageAttribute operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndModifyFpgaImageAttribute
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyFpgaImageAttribute">REST API Reference for ModifyFpgaImageAttribute Operation</seealso>
+        public IAsyncResult BeginModifyFpgaImageAttribute(ModifyFpgaImageAttributeRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new ModifyFpgaImageAttributeRequestMarshaller();
+            var unmarshaller = ModifyFpgaImageAttributeResponseUnmarshaller.Instance;
+
+            return BeginInvoke<ModifyFpgaImageAttributeRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ModifyFpgaImageAttribute operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginModifyFpgaImageAttribute.</param>
+        /// 
+        /// <returns>Returns a  ModifyFpgaImageAttributeResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyFpgaImageAttribute">REST API Reference for ModifyFpgaImageAttribute Operation</seealso>
+        public  ModifyFpgaImageAttributeResponse EndModifyFpgaImageAttribute(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ModifyFpgaImageAttributeResponse>(asyncResult);
         }
 
         #endregion
@@ -14814,6 +15032,60 @@ namespace Amazon.EC2
         public  RequestSpotInstancesResponse EndRequestSpotInstances(IAsyncResult asyncResult)
         {
             return EndInvoke<RequestSpotInstancesResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ResetFpgaImageAttribute
+
+        /// <summary>
+        /// Resets the specified attribute of the specified Amazon FPGA Image (AFI) to its default
+        /// value. You can only reset the load permission attribute.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ResetFpgaImageAttribute service method.</param>
+        /// 
+        /// <returns>The response from the ResetFpgaImageAttribute service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ResetFpgaImageAttribute">REST API Reference for ResetFpgaImageAttribute Operation</seealso>
+        public ResetFpgaImageAttributeResponse ResetFpgaImageAttribute(ResetFpgaImageAttributeRequest request)
+        {
+            var marshaller = new ResetFpgaImageAttributeRequestMarshaller();
+            var unmarshaller = ResetFpgaImageAttributeResponseUnmarshaller.Instance;
+
+            return Invoke<ResetFpgaImageAttributeRequest,ResetFpgaImageAttributeResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ResetFpgaImageAttribute operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ResetFpgaImageAttribute operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndResetFpgaImageAttribute
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ResetFpgaImageAttribute">REST API Reference for ResetFpgaImageAttribute Operation</seealso>
+        public IAsyncResult BeginResetFpgaImageAttribute(ResetFpgaImageAttributeRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new ResetFpgaImageAttributeRequestMarshaller();
+            var unmarshaller = ResetFpgaImageAttributeResponseUnmarshaller.Instance;
+
+            return BeginInvoke<ResetFpgaImageAttributeRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ResetFpgaImageAttribute operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginResetFpgaImageAttribute.</param>
+        /// 
+        /// <returns>Returns a  ResetFpgaImageAttributeResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ResetFpgaImageAttribute">REST API Reference for ResetFpgaImageAttribute Operation</seealso>
+        public  ResetFpgaImageAttributeResponse EndResetFpgaImageAttribute(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ResetFpgaImageAttributeResponse>(asyncResult);
         }
 
         #endregion
