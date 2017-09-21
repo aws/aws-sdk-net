@@ -943,6 +943,10 @@ namespace Amazon.Budgets
         /// <param name="request">Container for the necessary parameters to execute the UpdateNotification service method.</param>
         /// 
         /// <returns>The response from the UpdateNotification service method, as returned by Budgets.</returns>
+        /// <exception cref="Amazon.Budgets.Model.DuplicateRecordException">
+        /// The exception is thrown when customer tries to create a record (e.g. budget) that
+        /// already exists.
+        /// </exception>
         /// <exception cref="Amazon.Budgets.Model.InternalErrorException">
         /// This exception is thrown on an unknown internal failure.
         /// </exception>
@@ -1004,6 +1008,10 @@ namespace Amazon.Budgets
         /// <param name="request">Container for the necessary parameters to execute the UpdateSubscriber service method.</param>
         /// 
         /// <returns>The response from the UpdateSubscriber service method, as returned by Budgets.</returns>
+        /// <exception cref="Amazon.Budgets.Model.DuplicateRecordException">
+        /// The exception is thrown when customer tries to create a record (e.g. budget) that
+        /// already exists.
+        /// </exception>
         /// <exception cref="Amazon.Budgets.Model.InternalErrorException">
         /// This exception is thrown on an unknown internal failure.
         /// </exception>
