@@ -240,6 +240,8 @@ namespace Amazon.Runtime
         /// </para>
         /// </summary>
         bool CacheHttpClient { get; }
+
+        int HttpClientCacheSize { get; }
 #endif
     }
 }

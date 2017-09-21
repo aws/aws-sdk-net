@@ -31,6 +31,7 @@ using System.Threading.Tasks;
 
 namespace Amazon.Runtime
 {
+
     /// <summary>
     /// A factory which creates HTTP requests which uses System.Net.Http.HttpClient.
     /// </summary>
@@ -39,12 +40,12 @@ namespace Amazon.Runtime
     {
         // This is the global cache of HttpClient for service clients that are using 
         static readonly ReaderWriterLockSlim _httpClientCacheRWLock = new ReaderWriterLockSlim();
-        static readonly IDictionary<string, HttpClient> _httpClientCache = new Dictionary<string, HttpClient>();
+        static readonly IDictionary<string, HttpClientCache> _httpClientCaches = new Dictionary<string, HttpClientCache>();
 
         // This lock is used for when the instance variable is set.
         readonly object _httpClientCacheCreateLock = new object();
 
-        HttpClient _cachedHttpClient;
+        private HttpClientCache _httpClientCache;
         private IClientConfig _clientConfig;
 
         /// <summary>
@@ -63,28 +64,28 @@ namespace Amazon.Runtime
         /// <returns>An HTTP request.</returns>
         public IHttpRequest<HttpContent> CreateHttpRequest(Uri requestUri)
         {
-            HttpClient httpClient;
+            HttpClient httpClient = null;
             if(_clientConfig.CacheHttpClient)
             {
-                // If a HttpClient has already been created for the service client then just reuse it.
-                if(_cachedHttpClient != null)
+                // If a HttpClientCache has already been created for the service client then just reuse it.
+                if (_httpClientCache != null)
                 {
-                    httpClient = _cachedHttpClient;
+                    httpClient = _httpClientCache.GetNextClient();
                 }
                 else if (!CanClientConfigBeSerialized(_clientConfig))
                 {
                     lock (_httpClientCacheCreateLock)
                     {
-                        // Check if the HttpClient was created by some other thread 
+                        // Check if the HttpClientCache was created by some other thread 
                         // while this thread was waiting for the lock.
-                        if (_cachedHttpClient != null)
+                        if (_httpClientCache != null)
                         {
-                            httpClient = _cachedHttpClient;
+                            httpClient = _httpClientCache.GetNextClient();
                         }
                         else
                         {
-                            httpClient = CreateHttpClient(_clientConfig);
-                            _cachedHttpClient = httpClient;
+                            _httpClientCache = CreateHttpClientCache(_clientConfig);
+                            httpClient = _httpClientCache.GetNextClient();
                         }
                     }
                 }
@@ -97,26 +98,26 @@ namespace Amazon.Runtime
                     _httpClientCacheRWLock.EnterReadLock();
                     try
                     {
-                        found = _httpClientCache.TryGetValue(configUniqueString, out httpClient);
+                        found = _httpClientCaches.TryGetValue(configUniqueString, out _httpClientCache);
+                        if(found)
+                        {
+                            httpClient = _httpClientCache.GetNextClient();
+                        }
                     }
                     finally
                     {
                         _httpClientCacheRWLock.ExitReadLock();
                     }
 
-                    if (found)
-                    {
-                        _cachedHttpClient = httpClient;
-                    }
-                    else
+                    if (!found)
                     {
                         _httpClientCacheRWLock.EnterWriteLock();
                         try
                         {
-                            found = _httpClientCache.TryGetValue(configUniqueString, out httpClient);
+                            found = _httpClientCaches.TryGetValue(configUniqueString, out _httpClientCache);
                             if (found)
                             {
-                                _cachedHttpClient = httpClient;
+                                httpClient = _httpClientCache.GetNextClient();
                             }
                             else
                             {
@@ -124,16 +125,13 @@ namespace Amazon.Runtime
                                 {
                                     // Check if the HttpClient was created by some other thread 
                                     // while this thread was waiting for the lock.
-                                    if (_cachedHttpClient != null)
+                                    if (_httpClientCache == null)
                                     {
-                                        httpClient = _cachedHttpClient;
+                                        _httpClientCache = CreateHttpClientCache(_clientConfig);
+                                        _httpClientCaches[configUniqueString] = _httpClientCache;
                                     }
-                                    else
-                                    {
-                                        httpClient = CreateHttpClient(_clientConfig);
-                                        _cachedHttpClient = httpClient;
-                                        _httpClientCache[configUniqueString] = httpClient;
-                                    }
+
+                                    httpClient = _httpClientCache.GetNextClient();
                                 }
                             }
                         }
@@ -168,6 +166,17 @@ namespace Amazon.Runtime
         /// <param name="disposing"></param>
         protected virtual void Dispose(bool disposing)
         {
+        }
+
+        private static HttpClientCache CreateHttpClientCache(IClientConfig clientConfig)
+        {
+            var clients = new HttpClient[clientConfig.HttpClientCacheSize];
+            for(int i = 0; i < clients.Length; i++)
+            {
+                clients[i] = CreateHttpClient(clientConfig);
+            }
+            var cache = new HttpClientCache(clients);
+            return cache;
         }
 
         private static HttpClient CreateHttpClient(IClientConfig clientConfig)
@@ -218,7 +227,7 @@ namespace Amazon.Runtime
         private static string CreateConfigUniqueString(IClientConfig clientConfig)
         {
             string uniqueString = string.Empty;
-            uniqueString = string.Concat("AllowAutoRedirect:", clientConfig.AllowAutoRedirect.ToString());
+            uniqueString = string.Concat("AllowAutoRedirect:", clientConfig.AllowAutoRedirect.ToString(), "CacheSize:", clientConfig.HttpClientCacheSize);
 
             if (clientConfig.Timeout.HasValue)
                 uniqueString = string.Concat(uniqueString, "Timeout:", clientConfig.Timeout.Value.ToString());
@@ -242,6 +251,47 @@ namespace Amazon.Runtime
 #else
             return clientConfig.ProxyCredentials == null;
 #endif
+        }
+    }
+
+    public class HttpClientCache
+    {
+        readonly object _lockObject = new object();
+
+        HttpClient _singleClient;
+        Queue<HttpClient> _cache;
+
+        public HttpClientCache(HttpClient[] clients)
+        {
+            if (clients.Length == 1)
+            {
+                _singleClient = clients[0];
+            }
+            else
+            {
+                _cache = new Queue<HttpClient>();
+                foreach (var client in clients)
+                {
+                    _cache.Enqueue(client);
+                }
+            }
+        }
+
+        public HttpClient GetNextClient()
+        {
+            if (_singleClient != null)
+            {
+                return _singleClient;
+            }
+            else
+            {
+                lock (_lockObject)
+                {
+                    var client = _cache.Dequeue();
+                    _cache.Enqueue(client);
+                    return client;
+                }
+            }
         }
     }
 

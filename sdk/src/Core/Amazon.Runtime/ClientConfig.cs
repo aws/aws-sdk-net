@@ -22,6 +22,11 @@ using Amazon.Runtime.Internal.Auth;
 using Amazon.Util;
 using System.Globalization;
 
+#if CORECLR
+using System.Runtime.InteropServices;
+#endif
+
+
 namespace Amazon.Runtime
 {
     /// <summary>
@@ -495,6 +500,33 @@ namespace Amazon.Runtime
         {
             get { return this.cacheHttpClient; }
             set { this.cacheHttpClient = value; }
+        }
+
+
+        int? _httpClientCacheSize;
+        public int HttpClientCacheSize
+        {
+            get
+            {
+                if(this._httpClientCacheSize.HasValue)
+                {
+                    return this._httpClientCacheSize.Value;
+                }
+#if CORECLR
+                if(RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
+                {
+                    return 1;
+                }
+
+                return Environment.ProcessorCount;
+#else
+                return 1;
+#endif
+            }
+            set
+            {
+                this._httpClientCacheSize = value;
+            }
         }
 #endif
     }
