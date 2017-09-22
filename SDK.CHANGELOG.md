@@ -1,3 +1,11 @@
+### 3.3.162.0 (2017-09-22 19:56 UTC)
+* ConfigService (3.3.10.0)
+	* AWS Config support for DynamoDB tables and Auto Scaling resource types
+* ECS (3.3.6.0)
+	* Amazon ECS users can now add and drop Linux capabilities to their containers through the use of docker's cap-add and cap-drop features. Customers can specify the capabilities they wish to add or drop for each container in their task definition. 
+* RDS (3.3.14.1)
+	* Documentation updates for rds
+
 ### 3.3.161.0 (2017-09-21 19:40 UTC)
 * Budgets (3.3.4.0)
 	* Including "DuplicateRecordException" in UpdateNotification and UpdateSubscriber. 
