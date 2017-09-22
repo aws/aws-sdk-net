@@ -30,12 +30,11 @@ namespace Amazon.RDS.Model
     /// <summary>
     /// Container for the parameters to the ModifyDBSnapshot operation.
     /// Updates a manual DB snapshot, which can be encrypted or not encrypted, with a new
-    /// engine version. You can update the engine version to either a new major or minor engine
-    /// version. 
+    /// engine version. 
     /// 
     ///  
     /// <para>
-    /// Amazon RDS supports upgrading a MySQL DB snapshot from MySQL 5.1 to MySQL 5.5.
+    /// Amazon RDS supports upgrading DB snapshots for MySQL and Oracle. 
     /// </para>
     /// </summary>
     public partial class ModifyDBSnapshotRequest : AmazonRDSRequest
@@ -65,8 +64,38 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property EngineVersion. 
         /// <para>
-        /// The engine version to update the DB snapshot to. 
+        /// The engine version to upgrade the DB snapshot to. 
         /// </para>
+        ///  
+        /// <para>
+        /// The following are the database engines and engine versions that are available when
+        /// you upgrade a DB snapshot. 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>MySQL</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>5.5.46</code> (supported for 5.1 DB snapshots)
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Oracle</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>12.1.0.2.v8</code> (supported for 12.1.0.1 DB snapshots)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>11.2.0.4.v12</code> (supported for 11.2.0.2 DB snapshots)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>11.2.0.4.v11</code> (supported for 11.2.0.3 DB snapshots)
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public string EngineVersion
         {
@@ -81,7 +110,17 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// Gets and sets the property OptionGroupName.
+        /// Gets and sets the property OptionGroupName. 
+        /// <para>
+        /// The option group to identify with the upgraded DB snapshot. 
+        /// </para>
+        ///  
+        /// <para>
+        /// You can specify this parameter when you upgrade an Oracle DB snapshot. The same option
+        /// group considerations apply when upgrading a DB snapshot as when upgrading a DB instance.
+        /// For more information, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Oracle.html#USER_UpgradeDBInstance.Oracle.OGPG.OG">Option
+        /// Group Considerations</a>. 
+        /// </para>
         /// </summary>
         public string OptionGroupName
         {

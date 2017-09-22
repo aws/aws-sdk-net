@@ -4576,12 +4576,11 @@ namespace Amazon.RDS
 
         /// <summary>
         /// Updates a manual DB snapshot, which can be encrypted or not encrypted, with a new
-        /// engine version. You can update the engine version to either a new major or minor engine
-        /// version. 
+        /// engine version. 
         /// 
         ///  
         /// <para>
-        /// Amazon RDS supports upgrading a MySQL DB snapshot from MySQL 5.1 to MySQL 5.5.
+        /// Amazon RDS supports upgrading DB snapshots for MySQL and Oracle. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ModifyDBSnapshot service method.</param>
