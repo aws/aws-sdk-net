@@ -47,6 +47,7 @@ namespace Amazon.ECS.Model
         private string _hostname;
         private string _image;
         private List<string> _links = new List<string>();
+        private LinuxParameters _linuxParameters;
         private LogConfiguration _logConfiguration;
         private int? _memory;
         private int? _memoryReservation;
@@ -402,18 +403,20 @@ namespace Amazon.ECS.Model
         /// <para>
         /// The image used to start a container. This string is passed directly to the Docker
         /// daemon. Images in the Docker Hub registry are available by default. Other repositories
-        /// are specified with <code> <i>repository-url</i>/<i>image</i>:<i>tag</i> </code>. Up
-        /// to 255 letters (uppercase and lowercase), numbers, hyphens, underscores, colons, periods,
-        /// forward slashes, and number signs are allowed. This parameter maps to <code>Image</code>
-        /// in the <a href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container">Create
+        /// are specified with either <code> <i>repository-url</i>/<i>image</i>:<i>tag</i> </code>
+        /// or <code> <i>repository-url</i>/<i>image</i>@<i>digest</i> </code>. Up to 255 letters
+        /// (uppercase and lowercase), numbers, hyphens, underscores, colons, periods, forward
+        /// slashes, and number signs are allowed. This parameter maps to <code>Image</code> in
+        /// the <a href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container">Create
         /// a container</a> section of the <a href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/">Docker
         /// Remote API</a> and the <code>IMAGE</code> parameter of <a href="https://docs.docker.com/engine/reference/run/">docker
         /// run</a>.
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Images in Amazon ECR repositories use the full registry and repository URI (for example,
-        /// <code>012345678910.dkr.ecr.&lt;region-name&gt;.amazonaws.com/&lt;repository-name&gt;</code>).
+        /// Images in Amazon ECR repositories can be specified by either using the full <code>registry/repository:tag</code>
+        /// or <code>registry/repository@digest</code>. For example, <code>012345678910.dkr.ecr.&lt;region-name&gt;.amazonaws.com/&lt;repository-name&gt;:latest</code>
+        /// or <code>012345678910.dkr.ecr.&lt;region-name&gt;.amazonaws.com/&lt;repository-name&gt;@sha256:94afd1f2e64d908bc90dbca0035a5b567EXAMPLE</code>.
         /// 
         /// </para>
         ///  </li> <li> 
@@ -477,6 +480,24 @@ namespace Amazon.ECS.Model
         internal bool IsSetLinks()
         {
             return this._links != null && this._links.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property LinuxParameters. 
+        /// <para>
+        /// Linux-specific modifications that are applied to the container, such as Linux <a>KernelCapabilities</a>.
+        /// </para>
+        /// </summary>
+        public LinuxParameters LinuxParameters
+        {
+            get { return this._linuxParameters; }
+            set { this._linuxParameters = value; }
+        }
+
+        // Check to see if LinuxParameters property is set
+        internal bool IsSetLinuxParameters()
+        {
+            return this._linuxParameters != null;
         }
 
         /// <summary>

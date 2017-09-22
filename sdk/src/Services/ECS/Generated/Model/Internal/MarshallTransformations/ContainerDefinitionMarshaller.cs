@@ -187,6 +187,17 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
                 context.Writer.WriteArrayEnd();
             }
 
+            if(requestObject.IsSetLinuxParameters())
+            {
+                context.Writer.WritePropertyName("linuxParameters");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = LinuxParametersMarshaller.Instance;
+                marshaller.Marshall(requestObject.LinuxParameters, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetLogConfiguration())
             {
                 context.Writer.WritePropertyName("logConfiguration");
