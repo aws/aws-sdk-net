@@ -583,6 +583,22 @@ namespace Amazon.ConfigService
         /// </summary>
         public static readonly ResourceType AWSACMCertificate = new ResourceType("AWS::ACM::Certificate");
         /// <summary>
+        /// Constant AWSAutoScalingAutoScalingGroup for ResourceType
+        /// </summary>
+        public static readonly ResourceType AWSAutoScalingAutoScalingGroup = new ResourceType("AWS::AutoScaling::AutoScalingGroup");
+        /// <summary>
+        /// Constant AWSAutoScalingLaunchConfiguration for ResourceType
+        /// </summary>
+        public static readonly ResourceType AWSAutoScalingLaunchConfiguration = new ResourceType("AWS::AutoScaling::LaunchConfiguration");
+        /// <summary>
+        /// Constant AWSAutoScalingScalingPolicy for ResourceType
+        /// </summary>
+        public static readonly ResourceType AWSAutoScalingScalingPolicy = new ResourceType("AWS::AutoScaling::ScalingPolicy");
+        /// <summary>
+        /// Constant AWSAutoScalingScheduledAction for ResourceType
+        /// </summary>
+        public static readonly ResourceType AWSAutoScalingScheduledAction = new ResourceType("AWS::AutoScaling::ScheduledAction");
+        /// <summary>
         /// Constant AWSCloudFormationStack for ResourceType
         /// </summary>
         public static readonly ResourceType AWSCloudFormationStack = new ResourceType("AWS::CloudFormation::Stack");
@@ -594,6 +610,10 @@ namespace Amazon.ConfigService
         /// Constant AWSCloudWatchAlarm for ResourceType
         /// </summary>
         public static readonly ResourceType AWSCloudWatchAlarm = new ResourceType("AWS::CloudWatch::Alarm");
+        /// <summary>
+        /// Constant AWSDynamoDBTable for ResourceType
+        /// </summary>
+        public static readonly ResourceType AWSDynamoDBTable = new ResourceType("AWS::DynamoDB::Table");
         /// <summary>
         /// Constant AWSEC2CustomerGateway for ResourceType
         /// </summary>

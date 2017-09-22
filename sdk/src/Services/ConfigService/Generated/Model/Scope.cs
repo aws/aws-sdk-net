@@ -83,8 +83,8 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property TagKey. 
         /// <para>
-        /// The tag key that is applied to only those AWS resources that you want you want to
-        /// trigger an evaluation for the rule.
+        /// The tag key that is applied to only those AWS resources that you want to trigger an
+        /// evaluation for the rule.
         /// </para>
         /// </summary>
         public string TagKey
