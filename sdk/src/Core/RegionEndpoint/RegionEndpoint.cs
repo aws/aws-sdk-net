@@ -237,7 +237,10 @@ namespace Amazon
         /// <summary>
         /// Gets the endpoint for a service in a region.
         /// </summary>
-        /// <param name="serviceName">The services system name.</param>
+        /// <param name="serviceName">
+        /// The services system name. Service system names can be obtained from the
+        /// RegionEndpointServiceName member of the ClientConfig-derived class for the service.
+        /// </param>
         /// <exception cref="System.ArgumentException">Thrown when the request service does not have a valid endpoint in the region.</exception>
         /// <returns></returns>
         public Endpoint GetEndpointForService(string serviceName)
@@ -248,9 +251,12 @@ namespace Amazon
         /// <summary>
         /// Gets the endpoint for a service in a region, optionally selecting a dualstack compatible endpoint.
         /// </summary>
-        /// <param name="serviceName">The services system name.</param>
+        /// <param name="serviceName">
+        /// The services system name. Service system names can be obtained from the
+        /// RegionEndpointServiceName member of the ClientConfig-derived class for the service.
+        /// </param>
         /// <param name="dualStack">
-        /// If true a dualstack endpoint is returned. It is the user's responsibility to verify that the given service 
+        /// If true a dualstack endpoint is returned. It is the user's responsibility to verify that the given service
         /// supports a dualstack endpoint for the region.
         /// </param>
         /// <exception cref="System.ArgumentException">Thrown when the request service does not have a valid endpoint in the region.</exception>
