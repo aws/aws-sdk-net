@@ -504,6 +504,14 @@ namespace Amazon.Runtime
 
 
         int? _httpClientCacheSize;
+        /// <summary>
+        /// If CacheHttpClient is set to true then HttpClientCacheSize controls the number of HttpClients cached.
+        /// <para>
+        /// On Windows the default value is 1 since the underlying native implementation does not have throttling constraints
+        /// like the non Windows Curl based implementation. For non Windows based platforms the default is the value return from 
+        /// System.Environment.ProcessorCount.
+        /// </para>
+        /// </summary>
         public int HttpClientCacheSize
         {
             get

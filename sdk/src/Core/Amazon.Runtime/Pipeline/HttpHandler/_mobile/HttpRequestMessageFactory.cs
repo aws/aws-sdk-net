@@ -254,6 +254,10 @@ namespace Amazon.Runtime
         }
     }
 
+    /// <summary>
+    /// A cache of HttpClient objects. The GetNextClient method does a round robin cycle through the clients
+    /// to distribute the load even across.
+    /// </summary>
     public class HttpClientCache
     {
         readonly object _lockObject = new object();
@@ -261,6 +265,10 @@ namespace Amazon.Runtime
         HttpClient _singleClient;
         Queue<HttpClient> _cache;
 
+        /// <summary>
+        /// Constructs a container for a cache of HttpClient objects
+        /// </summary>
+        /// <param name="clients">The HttpClient to cache</param>
         public HttpClientCache(HttpClient[] clients)
         {
             if (clients.Length == 1)
@@ -277,6 +285,11 @@ namespace Amazon.Runtime
             }
         }
 
+        /// <summary>
+        /// Returns the next HttpClient using a round robin rotation. It is expected that individual clients will be used
+        /// by more then Thread.
+        /// </summary>
+        /// <returns></returns>
         public HttpClient GetNextClient()
         {
             if (_singleClient != null)
