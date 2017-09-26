@@ -110,6 +110,12 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  
         /// <para>
+        /// Note that this setting lets you specify the <i>maximum</i> for operations. For large
+        /// deployments, under certain circumstances the actual number of accounts acted upon
+        /// concurrently may be lower due to service throttling.
+        /// </para>
+        ///  
+        /// <para>
         /// Conditional: You must specify either <code>MaxConcurrentCount</code> or <code>MaxConcurrentPercentage</code>,
         /// but not both.
         /// </para>
@@ -136,6 +142,12 @@ namespace Amazon.CloudFormation.Model
         /// When calculating the number of accounts based on the specified percentage, AWS CloudFormation
         /// rounds down to the next whole number. This is true except in cases where rounding
         /// down would result is zero. In this case, CloudFormation sets the number as one instead.
+        /// </para>
+        ///  
+        /// <para>
+        /// Note that this setting lets you specify the <i>maximum</i> for operations. For large
+        /// deployments, under certain circumstances the actual number of accounts acted upon
+        /// concurrently may be lower due to service throttling.
         /// </para>
         ///  
         /// <para>

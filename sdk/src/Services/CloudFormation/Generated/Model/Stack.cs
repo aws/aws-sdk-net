@@ -35,14 +35,18 @@ namespace Amazon.CloudFormation.Model
         private List<string> _capabilities = new List<string>();
         private string _changeSetId;
         private DateTime? _creationTime;
+        private DateTime? _deletionTime;
         private string _description;
         private bool? _disableRollback;
+        private bool? _enableTerminationProtection;
         private DateTime? _lastUpdatedTime;
         private List<string> _notificationARNs = new List<string>();
         private List<Output> _outputs = new List<Output>();
         private List<Parameter> _parameters = new List<Parameter>();
+        private string _parentId;
         private string _roleARN;
         private RollbackConfiguration _rollbackConfiguration;
+        private string _rootId;
         private string _stackId;
         private string _stackName;
         private StackStatus _stackStatus;
@@ -105,6 +109,24 @@ namespace Amazon.CloudFormation.Model
         }
 
         /// <summary>
+        /// Gets and sets the property DeletionTime. 
+        /// <para>
+        /// The time the stack was deleted.
+        /// </para>
+        /// </summary>
+        public DateTime DeletionTime
+        {
+            get { return this._deletionTime.GetValueOrDefault(); }
+            set { this._deletionTime = value; }
+        }
+
+        // Check to see if DeletionTime property is set
+        internal bool IsSetDeletionTime()
+        {
+            return this._deletionTime.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
         /// A user-defined description associated with the stack.
@@ -147,6 +169,31 @@ namespace Amazon.CloudFormation.Model
         internal bool IsSetDisableRollback()
         {
             return this._disableRollback.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property EnableTerminationProtection. 
+        /// <para>
+        /// Whether termination protection is enabled for the stack.
+        /// </para>
+        ///  
+        /// <para>
+        ///  For <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">nested
+        /// stacks</a>, termination protection is set on the root stack and cannot be changed
+        /// directly on the nested stack. For more information, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-protect-stacks.html">Protecting
+        /// a Stack From Being Deleted</a> in the <i>AWS CloudFormation User Guide</i>.
+        /// </para>
+        /// </summary>
+        public bool EnableTerminationProtection
+        {
+            get { return this._enableTerminationProtection.GetValueOrDefault(); }
+            set { this._enableTerminationProtection = value; }
+        }
+
+        // Check to see if EnableTerminationProtection property is set
+        internal bool IsSetEnableTerminationProtection()
+        {
+            return this._enableTerminationProtection.HasValue; 
         }
 
         /// <summary>
@@ -223,6 +270,31 @@ namespace Amazon.CloudFormation.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ParentId. 
+        /// <para>
+        /// For nested stacks--stacks created as resources for another stack--the stack ID of
+        /// the direct parent of this stack. For the first level of nested stacks, the root stack
+        /// is also the parent stack.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">Working
+        /// with Nested Stacks</a> in the <i>AWS CloudFormation User Guide</i>.
+        /// </para>
+        /// </summary>
+        public string ParentId
+        {
+            get { return this._parentId; }
+            set { this._parentId = value; }
+        }
+
+        // Check to see if ParentId property is set
+        internal bool IsSetParentId()
+        {
+            return this._parentId != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property RoleARN. 
         /// <para>
         /// The Amazon Resource Name (ARN) of an AWS Identity and Access Management (IAM) role
@@ -259,6 +331,30 @@ namespace Amazon.CloudFormation.Model
         internal bool IsSetRollbackConfiguration()
         {
             return this._rollbackConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RootId. 
+        /// <para>
+        /// For nested stacks--stacks created as resources for another stack--the stack ID of
+        /// the the top-level stack to which the nested stack ultimately belongs.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">Working
+        /// with Nested Stacks</a> in the <i>AWS CloudFormation User Guide</i>.
+        /// </para>
+        /// </summary>
+        public string RootId
+        {
+            get { return this._rootId; }
+            set { this._rootId = value; }
+        }
+
+        // Check to see if RootId property is set
+        internal bool IsSetRootId()
+        {
+            return this._rootId != null;
         }
 
         /// <summary>

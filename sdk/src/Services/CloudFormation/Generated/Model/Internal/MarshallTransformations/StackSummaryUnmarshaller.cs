@@ -72,6 +72,18 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                         unmarshalledObject.LastUpdatedTime = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("ParentId", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.ParentId = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("RootId", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.RootId = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("StackId", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

@@ -35,6 +35,8 @@ namespace Amazon.CloudFormation.Model
         private DateTime? _creationTime;
         private DateTime? _deletionTime;
         private DateTime? _lastUpdatedTime;
+        private string _parentId;
+        private string _rootId;
         private string _stackId;
         private string _stackName;
         private StackStatus _stackStatus;
@@ -94,6 +96,55 @@ namespace Amazon.CloudFormation.Model
         internal bool IsSetLastUpdatedTime()
         {
             return this._lastUpdatedTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ParentId. 
+        /// <para>
+        /// For nested stacks--stacks created as resources for another stack--the stack ID of
+        /// the direct parent of this stack. For the first level of nested stacks, the root stack
+        /// is also the parent stack.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">Working
+        /// with Nested Stacks</a> in the <i>AWS CloudFormation User Guide</i>.
+        /// </para>
+        /// </summary>
+        public string ParentId
+        {
+            get { return this._parentId; }
+            set { this._parentId = value; }
+        }
+
+        // Check to see if ParentId property is set
+        internal bool IsSetParentId()
+        {
+            return this._parentId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RootId. 
+        /// <para>
+        /// For nested stacks--stacks created as resources for another stack--the stack ID of
+        /// the the top-level stack to which the nested stack ultimately belongs.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">Working
+        /// with Nested Stacks</a> in the <i>AWS CloudFormation User Guide</i>.
+        /// </para>
+        /// </summary>
+        public string RootId
+        {
+            get { return this._rootId; }
+            set { this._rootId = value; }
+        }
+
+        // Check to see if RootId property is set
+        internal bool IsSetRootId()
+        {
+            return this._rootId != null;
         }
 
         /// <summary>

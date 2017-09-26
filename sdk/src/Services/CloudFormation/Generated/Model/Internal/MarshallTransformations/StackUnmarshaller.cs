@@ -73,6 +73,12 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                         unmarshalledObject.CreationTime = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("DeletionTime", targetDepth))
+                    {
+                        var unmarshaller = DateTimeUnmarshaller.Instance;
+                        unmarshalledObject.DeletionTime = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("Description", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
@@ -83,6 +89,12 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                     {
                         var unmarshaller = BoolUnmarshaller.Instance;
                         unmarshalledObject.DisableRollback = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("EnableTerminationProtection", targetDepth))
+                    {
+                        var unmarshaller = BoolUnmarshaller.Instance;
+                        unmarshalledObject.EnableTerminationProtection = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("LastUpdatedTime", targetDepth))
@@ -112,6 +124,12 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                         unmarshalledObject.Parameters.Add(item);
                         continue;
                     }
+                    if (context.TestExpression("ParentId", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.ParentId = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("RoleARN", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
@@ -122,6 +140,12 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                     {
                         var unmarshaller = RollbackConfigurationUnmarshaller.Instance;
                         unmarshalledObject.RollbackConfiguration = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("RootId", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.RootId = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("StackId", targetDepth))

@@ -38,6 +38,7 @@ namespace Amazon.CloudFormation.Model
         private List<string> _capabilities = new List<string>();
         private string _clientRequestToken;
         private bool? _disableRollback;
+        private bool? _enableTerminationProtection;
         private List<string> _notificationARNs = new List<string>();
         private OnFailure _onFailure;
         private List<Parameter> _parameters = new List<Parameter>();
@@ -159,6 +160,34 @@ namespace Amazon.CloudFormation.Model
         internal bool IsSetDisableRollback()
         {
             return this._disableRollback.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property EnableTerminationProtection. 
+        /// <para>
+        /// Whether to enable termination protection on the specified stack. If a user attempts
+        /// to delete a stack with termination protection enabled, the operation fails and the
+        /// stack remains unchanged. For more information, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-protect-stacks.html">Protecting
+        /// a Stack From Being Deleted</a> in the <i>AWS CloudFormation User Guide</i>. Termination
+        /// protection is disabled on stacks by default. 
+        /// </para>
+        ///  
+        /// <para>
+        ///  For <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">nested
+        /// stacks</a>, termination protection is set on the root stack and cannot be changed
+        /// directly on the nested stack.
+        /// </para>
+        /// </summary>
+        public bool EnableTerminationProtection
+        {
+            get { return this._enableTerminationProtection.GetValueOrDefault(); }
+            set { this._enableTerminationProtection = value; }
+        }
+
+        // Check to see if EnableTerminationProtection property is set
+        internal bool IsSetEnableTerminationProtection()
+        {
+            return this._enableTerminationProtection.HasValue; 
         }
 
         /// <summary>

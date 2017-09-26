@@ -2236,6 +2236,55 @@ namespace Amazon.CloudFormation
 
         #endregion
         
+        #region  UpdateTerminationProtection
+
+
+        /// <summary>
+        /// Updates termination protection for the specified stack. If a user attempts to delete
+        /// a stack with termination protection enabled, the operation fails and the stack remains
+        /// unchanged. For more information, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-protect-stacks.html">Protecting
+        /// a Stack From Being Deleted</a> in the <i>AWS CloudFormation User Guide</i>.
+        /// 
+        ///  
+        /// <para>
+        ///  For <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">nested
+        /// stacks</a>, termination protection is set on the root stack and cannot be changed
+        /// directly on the nested stack.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateTerminationProtection service method.</param>
+        /// 
+        /// <returns>The response from the UpdateTerminationProtection service method, as returned by CloudFormation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/UpdateTerminationProtection">REST API Reference for UpdateTerminationProtection Operation</seealso>
+        public UpdateTerminationProtectionResponse UpdateTerminationProtection(UpdateTerminationProtectionRequest request)
+        {
+            var marshaller = new UpdateTerminationProtectionRequestMarshaller();
+            var unmarshaller = UpdateTerminationProtectionResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateTerminationProtectionRequest,UpdateTerminationProtectionResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateTerminationProtection operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateTerminationProtection operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/UpdateTerminationProtection">REST API Reference for UpdateTerminationProtection Operation</seealso>
+        public Task<UpdateTerminationProtectionResponse> UpdateTerminationProtectionAsync(UpdateTerminationProtectionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new UpdateTerminationProtectionRequestMarshaller();
+            var unmarshaller = UpdateTerminationProtectionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateTerminationProtectionRequest,UpdateTerminationProtectionResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ValidateTemplate
 
 
