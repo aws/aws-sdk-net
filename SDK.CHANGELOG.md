@@ -1,3 +1,7 @@
+### 3.3.163.0 (2017-09-26 18:20 UTC)
+* CloudFormation (3.3.8.0)
+	* You can now prevent a stack from being accidentally deleted by enabling termination protection on the stack. If you attempt to delete a stack with termination protection enabled, the deletion fails and the stack, including its status, remains unchanged. You can enable termination protection on a stack when you create it. Termination protection on stacks is disabled by default. After creation, you can set termination protection on a stack whose status is CREATE_COMPLETE, UPDATE_COMPLETE, or UPDATE_ROLLBACK_COMPLETE.
+
 ### 3.3.162.0 (2017-09-22 19:56 UTC)
 * ConfigService (3.3.10.0)
 	* AWS Config support for DynamoDB tables and Auto Scaling resource types
