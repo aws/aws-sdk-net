@@ -57,6 +57,12 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.SenderId);
             }
 
+            if(requestObject.IsSetShortCode())
+            {
+                context.Writer.WritePropertyName("ShortCode");
+                context.Writer.Write(requestObject.ShortCode);
+            }
+
         }
 
         /// <summary>

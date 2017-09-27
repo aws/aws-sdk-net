@@ -130,6 +130,12 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.SegmentVersion);
             }
 
+            if(requestObject.IsSetTrace())
+            {
+                context.Writer.WritePropertyName("Trace");
+                context.Writer.Write(requestObject.Trace);
+            }
+
             if(requestObject.IsSetTreatmentDescription())
             {
                 context.Writer.WritePropertyName("TreatmentDescription");

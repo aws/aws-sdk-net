@@ -37,7 +37,9 @@ namespace Amazon.Pinpoint.Model
         private string _body;
         private string _category;
         private Dictionary<string, string> _data = new Dictionary<string, string>();
+        private string _jsonData;
         private string _mediaUrl;
+        private string _preferredAuthenticationMethod;
         private string _rawContent;
         private bool? _silentPush;
         private string _sound;
@@ -134,6 +136,22 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
+        /// Gets and sets the property JsonData. The data payload used for a silent push. This
+        /// payload is added to the notifications' data.pinpoint.jsonBody' object
+        /// </summary>
+        public string JsonData
+        {
+            get { return this._jsonData; }
+            set { this._jsonData = value; }
+        }
+
+        // Check to see if JsonData property is set
+        internal bool IsSetJsonData()
+        {
+            return this._jsonData != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property MediaUrl. The URL that points to a video used in the push
         /// notification.
         /// </summary>
@@ -147,6 +165,22 @@ namespace Amazon.Pinpoint.Model
         internal bool IsSetMediaUrl()
         {
             return this._mediaUrl != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PreferredAuthenticationMethod. The preferred authentication
+        /// method, either "CERTIFICATE" or "TOKEN"
+        /// </summary>
+        public string PreferredAuthenticationMethod
+        {
+            get { return this._preferredAuthenticationMethod; }
+            set { this._preferredAuthenticationMethod = value; }
+        }
+
+        // Check to see if PreferredAuthenticationMethod property is set
+        internal bool IsSetPreferredAuthenticationMethod()
+        {
+            return this._preferredAuthenticationMethod != null;
         }
 
         /// <summary>

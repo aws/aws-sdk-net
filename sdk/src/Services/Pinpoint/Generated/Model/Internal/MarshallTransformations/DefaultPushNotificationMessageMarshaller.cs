@@ -71,6 +71,12 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetJsonData())
+            {
+                context.Writer.WritePropertyName("JsonData");
+                context.Writer.Write(requestObject.JsonData);
+            }
+
             if(requestObject.IsSetSilentPush())
             {
                 context.Writer.WritePropertyName("SilentPush");

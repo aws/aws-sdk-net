@@ -33,6 +33,8 @@ namespace Amazon.Pinpoint.Model
     public partial class CampaignLimits
     {
         private int? _daily;
+        private int? _maximumDuration;
+        private int? _messagesPerSecond;
         private int? _total;
 
         /// <summary>
@@ -49,6 +51,39 @@ namespace Amazon.Pinpoint.Model
         internal bool IsSetDaily()
         {
             return this._daily.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property MaximumDuration. The maximum duration of a campaign from
+        /// the scheduled start. Must be a minimum of 60 seconds.
+        /// </summary>
+        public int MaximumDuration
+        {
+            get { return this._maximumDuration.GetValueOrDefault(); }
+            set { this._maximumDuration = value; }
+        }
+
+        // Check to see if MaximumDuration property is set
+        internal bool IsSetMaximumDuration()
+        {
+            return this._maximumDuration.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property MessagesPerSecond. The maximum number of messages per second
+        /// that the campaign will send. This is a best effort maximum cap and can go as high
+        /// as 20000 and as low as 50
+        /// </summary>
+        public int MessagesPerSecond
+        {
+            get { return this._messagesPerSecond.GetValueOrDefault(); }
+            set { this._messagesPerSecond = value; }
+        }
+
+        // Check to see if MessagesPerSecond property is set
+        internal bool IsSetMessagesPerSecond()
+        {
+            return this._messagesPerSecond.HasValue; 
         }
 
         /// <summary>

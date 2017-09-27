@@ -39,7 +39,7 @@ namespace Amazon.Pinpoint
 
 
         /// <summary>
-        /// Used to create an app.
+        /// Creates or updates an app.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateApp service method.</param>
         /// 
@@ -255,6 +255,61 @@ namespace Amazon.Pinpoint
 
         #endregion
         
+        #region  DeleteAdmChannel
+
+
+        /// <summary>
+        /// Delete an ADM channel
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAdmChannel service method.</param>
+        /// 
+        /// <returns>The response from the DeleteAdmChannel service method, as returned by Pinpoint.</returns>
+        /// <exception cref="Amazon.Pinpoint.Model.BadRequestException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.ForbiddenException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.InternalServerErrorException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.MethodNotAllowedException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.NotFoundException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
+        /// Simple message object.
+        /// </exception>
+        DeleteAdmChannelResponse DeleteAdmChannel(DeleteAdmChannelRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteAdmChannel operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAdmChannel operation on AmazonPinpointClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteAdmChannel
+        ///         operation.</returns>
+        IAsyncResult BeginDeleteAdmChannel(DeleteAdmChannelRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteAdmChannel operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteAdmChannel.</param>
+        /// 
+        /// <returns>Returns a  DeleteAdmChannelResult from Pinpoint.</returns>
+        DeleteAdmChannelResponse EndDeleteAdmChannel(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  DeleteApnsChannel
 
 
@@ -417,6 +472,61 @@ namespace Amazon.Pinpoint
         /// 
         /// <returns>Returns a  DeleteAppResult from Pinpoint.</returns>
         DeleteAppResponse EndDeleteApp(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DeleteBaiduChannel
+
+
+        /// <summary>
+        /// Delete a BAIDU GCM channel
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteBaiduChannel service method.</param>
+        /// 
+        /// <returns>The response from the DeleteBaiduChannel service method, as returned by Pinpoint.</returns>
+        /// <exception cref="Amazon.Pinpoint.Model.BadRequestException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.ForbiddenException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.InternalServerErrorException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.MethodNotAllowedException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.NotFoundException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
+        /// Simple message object.
+        /// </exception>
+        DeleteBaiduChannelResponse DeleteBaiduChannel(DeleteBaiduChannelRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteBaiduChannel operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteBaiduChannel operation on AmazonPinpointClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteBaiduChannel
+        ///         operation.</returns>
+        IAsyncResult BeginDeleteBaiduChannel(DeleteBaiduChannelRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteBaiduChannel operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteBaiduChannel.</param>
+        /// 
+        /// <returns>Returns a  DeleteBaiduChannelResult from Pinpoint.</returns>
+        DeleteBaiduChannelResponse EndDeleteBaiduChannel(IAsyncResult asyncResult);
 
         #endregion
         
@@ -750,6 +860,61 @@ namespace Amazon.Pinpoint
 
         #endregion
         
+        #region  GetAdmChannel
+
+
+        /// <summary>
+        /// Get an ADM channel
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAdmChannel service method.</param>
+        /// 
+        /// <returns>The response from the GetAdmChannel service method, as returned by Pinpoint.</returns>
+        /// <exception cref="Amazon.Pinpoint.Model.BadRequestException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.ForbiddenException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.InternalServerErrorException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.MethodNotAllowedException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.NotFoundException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
+        /// Simple message object.
+        /// </exception>
+        GetAdmChannelResponse GetAdmChannel(GetAdmChannelRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetAdmChannel operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetAdmChannel operation on AmazonPinpointClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetAdmChannel
+        ///         operation.</returns>
+        IAsyncResult BeginGetAdmChannel(GetAdmChannelRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetAdmChannel operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetAdmChannel.</param>
+        /// 
+        /// <returns>Returns a  GetAdmChannelResult from Pinpoint.</returns>
+        GetAdmChannelResponse EndGetAdmChannel(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  GetApnsChannel
 
 
@@ -1022,6 +1187,61 @@ namespace Amazon.Pinpoint
         /// 
         /// <returns>Returns a  GetAppsResult from Pinpoint.</returns>
         GetAppsResponse EndGetApps(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  GetBaiduChannel
+
+
+        /// <summary>
+        /// Get a BAIDU GCM channel
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetBaiduChannel service method.</param>
+        /// 
+        /// <returns>The response from the GetBaiduChannel service method, as returned by Pinpoint.</returns>
+        /// <exception cref="Amazon.Pinpoint.Model.BadRequestException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.ForbiddenException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.InternalServerErrorException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.MethodNotAllowedException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.NotFoundException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
+        /// Simple message object.
+        /// </exception>
+        GetBaiduChannelResponse GetBaiduChannel(GetBaiduChannelRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetBaiduChannel operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetBaiduChannel operation on AmazonPinpointClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetBaiduChannel
+        ///         operation.</returns>
+        IAsyncResult BeginGetBaiduChannel(GetBaiduChannelRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetBaiduChannel operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetBaiduChannel.</param>
+        /// 
+        /// <returns>Returns a  GetBaiduChannelResult from Pinpoint.</returns>
+        GetBaiduChannelResponse EndGetBaiduChannel(IAsyncResult asyncResult);
 
         #endregion
         
@@ -2070,6 +2290,116 @@ namespace Amazon.Pinpoint
 
         #endregion
         
+        #region  SendUsersMessages
+
+
+        /// <summary>
+        /// Send a batch of messages to users
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SendUsersMessages service method.</param>
+        /// 
+        /// <returns>The response from the SendUsersMessages service method, as returned by Pinpoint.</returns>
+        /// <exception cref="Amazon.Pinpoint.Model.BadRequestException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.ForbiddenException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.InternalServerErrorException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.MethodNotAllowedException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.NotFoundException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
+        /// Simple message object.
+        /// </exception>
+        SendUsersMessagesResponse SendUsersMessages(SendUsersMessagesRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the SendUsersMessages operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the SendUsersMessages operation on AmazonPinpointClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndSendUsersMessages
+        ///         operation.</returns>
+        IAsyncResult BeginSendUsersMessages(SendUsersMessagesRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  SendUsersMessages operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginSendUsersMessages.</param>
+        /// 
+        /// <returns>Returns a  SendUsersMessagesResult from Pinpoint.</returns>
+        SendUsersMessagesResponse EndSendUsersMessages(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  UpdateAdmChannel
+
+
+        /// <summary>
+        /// Update an ADM channel
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateAdmChannel service method.</param>
+        /// 
+        /// <returns>The response from the UpdateAdmChannel service method, as returned by Pinpoint.</returns>
+        /// <exception cref="Amazon.Pinpoint.Model.BadRequestException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.ForbiddenException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.InternalServerErrorException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.MethodNotAllowedException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.NotFoundException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
+        /// Simple message object.
+        /// </exception>
+        UpdateAdmChannelResponse UpdateAdmChannel(UpdateAdmChannelRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateAdmChannel operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateAdmChannel operation on AmazonPinpointClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateAdmChannel
+        ///         operation.</returns>
+        IAsyncResult BeginUpdateAdmChannel(UpdateAdmChannelRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateAdmChannel operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateAdmChannel.</param>
+        /// 
+        /// <returns>Returns a  UpdateAdmChannelResult from Pinpoint.</returns>
+        UpdateAdmChannelResponse EndUpdateAdmChannel(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  UpdateApnsChannel
 
 
@@ -2232,6 +2562,61 @@ namespace Amazon.Pinpoint
         /// 
         /// <returns>Returns a  UpdateApplicationSettingsResult from Pinpoint.</returns>
         UpdateApplicationSettingsResponse EndUpdateApplicationSettings(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  UpdateBaiduChannel
+
+
+        /// <summary>
+        /// Update a BAIDU GCM channel
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateBaiduChannel service method.</param>
+        /// 
+        /// <returns>The response from the UpdateBaiduChannel service method, as returned by Pinpoint.</returns>
+        /// <exception cref="Amazon.Pinpoint.Model.BadRequestException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.ForbiddenException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.InternalServerErrorException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.MethodNotAllowedException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.NotFoundException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
+        /// Simple message object.
+        /// </exception>
+        UpdateBaiduChannelResponse UpdateBaiduChannel(UpdateBaiduChannelRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateBaiduChannel operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateBaiduChannel operation on AmazonPinpointClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateBaiduChannel
+        ///         operation.</returns>
+        IAsyncResult BeginUpdateBaiduChannel(UpdateBaiduChannelRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateBaiduChannel operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateBaiduChannel.</param>
+        /// 
+        /// <returns>Returns a  UpdateBaiduChannelResult from Pinpoint.</returns>
+        UpdateBaiduChannelResponse EndUpdateBaiduChannel(IAsyncResult asyncResult);
 
         #endregion
         

@@ -209,6 +209,10 @@ namespace Amazon.Pinpoint
         /// </summary>
         public static readonly ChannelType APNS_SANDBOX = new ChannelType("APNS_SANDBOX");
         /// <summary>
+        /// Constant BAIDU for ChannelType
+        /// </summary>
+        public static readonly ChannelType BAIDU = new ChannelType("BAIDU");
+        /// <summary>
         /// Constant EMAIL for ChannelType
         /// </summary>
         public static readonly ChannelType EMAIL = new ChannelType("EMAIL");
@@ -263,6 +267,14 @@ namespace Amazon.Pinpoint
     {
 
         /// <summary>
+        /// Constant DUPLICATE for DeliveryStatus
+        /// </summary>
+        public static readonly DeliveryStatus DUPLICATE = new DeliveryStatus("DUPLICATE");
+        /// <summary>
+        /// Constant OPT_OUT for DeliveryStatus
+        /// </summary>
+        public static readonly DeliveryStatus OPT_OUT = new DeliveryStatus("OPT_OUT");
+        /// <summary>
         /// Constant PERMANENT_FAILURE for DeliveryStatus
         /// </summary>
         public static readonly DeliveryStatus PERMANENT_FAILURE = new DeliveryStatus("PERMANENT_FAILURE");
@@ -278,6 +290,10 @@ namespace Amazon.Pinpoint
         /// Constant THROTTLED for DeliveryStatus
         /// </summary>
         public static readonly DeliveryStatus THROTTLED = new DeliveryStatus("THROTTLED");
+        /// <summary>
+        /// Constant UNKNOWN_FAILURE for DeliveryStatus
+        /// </summary>
+        public static readonly DeliveryStatus UNKNOWN_FAILURE = new DeliveryStatus("UNKNOWN_FAILURE");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

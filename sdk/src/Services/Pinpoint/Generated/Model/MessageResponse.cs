@@ -33,6 +33,7 @@ namespace Amazon.Pinpoint.Model
     public partial class MessageResponse
     {
         private string _applicationId;
+        private Dictionary<string, EndpointMessageResult> _endpointResult = new Dictionary<string, EndpointMessageResult>();
         private string _requestId;
         private Dictionary<string, MessageResult> _result = new Dictionary<string, MessageResult>();
 
@@ -49,6 +50,22 @@ namespace Amazon.Pinpoint.Model
         internal bool IsSetApplicationId()
         {
             return this._applicationId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EndpointResult. A map containing a multi part response
+        /// for each address, with the endpointId as the key and the result as the value.
+        /// </summary>
+        public Dictionary<string, EndpointMessageResult> EndpointResult
+        {
+            get { return this._endpointResult; }
+            set { this._endpointResult = value; }
+        }
+
+        // Check to see if EndpointResult property is set
+        internal bool IsSetEndpointResult()
+        {
+            return this._endpointResult != null && this._endpointResult.Count > 0; 
         }
 
         /// <summary>

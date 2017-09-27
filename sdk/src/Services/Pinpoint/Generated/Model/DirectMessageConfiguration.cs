@@ -32,11 +32,30 @@ namespace Amazon.Pinpoint.Model
     /// </summary>
     public partial class DirectMessageConfiguration
     {
+        private ADMMessage _admMessage;
         private APNSMessage _apnsMessage;
+        private BaiduMessage _baiduMessage;
         private DefaultMessage _defaultMessage;
         private DefaultPushNotificationMessage _defaultPushNotificationMessage;
+        private EmailMessage _emailMessage;
         private GCMMessage _gcmMessage;
         private SMSMessage _smsMessage;
+
+        /// <summary>
+        /// Gets and sets the property ADMMessage. The message to ADM channels. Overrides the
+        /// default push notification message.
+        /// </summary>
+        public ADMMessage ADMMessage
+        {
+            get { return this._admMessage; }
+            set { this._admMessage = value; }
+        }
+
+        // Check to see if ADMMessage property is set
+        internal bool IsSetADMMessage()
+        {
+            return this._admMessage != null;
+        }
 
         /// <summary>
         /// Gets and sets the property APNSMessage. The message to APNS channels. Overrides the
@@ -52,6 +71,22 @@ namespace Amazon.Pinpoint.Model
         internal bool IsSetAPNSMessage()
         {
             return this._apnsMessage != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property BaiduMessage. The message to Baidu GCM channels. Overrides
+        /// the default push notification message.
+        /// </summary>
+        public BaiduMessage BaiduMessage
+        {
+            get { return this._baiduMessage; }
+            set { this._baiduMessage = value; }
+        }
+
+        // Check to see if BaiduMessage property is set
+        internal bool IsSetBaiduMessage()
+        {
+            return this._baiduMessage != null;
         }
 
         /// <summary>
@@ -83,6 +118,22 @@ namespace Amazon.Pinpoint.Model
         internal bool IsSetDefaultPushNotificationMessage()
         {
             return this._defaultPushNotificationMessage != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EmailMessage. The message to Email channels. Overrides
+        /// the default message.
+        /// </summary>
+        public EmailMessage EmailMessage
+        {
+            get { return this._emailMessage; }
+            set { this._emailMessage = value; }
+        }
+
+        // Check to see if EmailMessage property is set
+        internal bool IsSetEmailMessage()
+        {
+            return this._emailMessage != null;
         }
 
         /// <summary>

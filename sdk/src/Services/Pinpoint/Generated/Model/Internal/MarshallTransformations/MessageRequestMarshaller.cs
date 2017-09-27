@@ -64,6 +64,20 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetCampaign())
+            {
+                context.Writer.WritePropertyName("Campaign");
+                context.Writer.WriteObjectStart();
+                foreach (var requestObjectCampaignKvp in requestObject.Campaign)
+                {
+                    context.Writer.WritePropertyName(requestObjectCampaignKvp.Key);
+                    var requestObjectCampaignValue = requestObjectCampaignKvp.Value;
+
+                        context.Writer.Write(requestObjectCampaignValue);
+                }
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetContext())
             {
                 context.Writer.WritePropertyName("Context");
@@ -78,6 +92,25 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetEndpoints())
+            {
+                context.Writer.WritePropertyName("Endpoints");
+                context.Writer.WriteObjectStart();
+                foreach (var requestObjectEndpointsKvp in requestObject.Endpoints)
+                {
+                    context.Writer.WritePropertyName(requestObjectEndpointsKvp.Key);
+                    var requestObjectEndpointsValue = requestObjectEndpointsKvp.Value;
+
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = EndpointSendConfigurationMarshaller.Instance;
+                    marshaller.Marshall(requestObjectEndpointsValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetMessageConfiguration())
             {
                 context.Writer.WritePropertyName("MessageConfiguration");
@@ -87,6 +120,12 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
                 marshaller.Marshall(requestObject.MessageConfiguration, context);
 
                 context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetRequestId())
+            {
+                context.Writer.WritePropertyName("RequestId");
+                context.Writer.Write(requestObject.RequestId);
             }
 
         }

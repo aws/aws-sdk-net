@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Pinpoint.Model
 {
     /// <summary>
-    /// DeleteEventStream Response
+    /// This is the response object from the DeleteEventStream operation.
     /// </summary>
     public partial class DeleteEventStreamResponse : AmazonWebServiceResponse
     {

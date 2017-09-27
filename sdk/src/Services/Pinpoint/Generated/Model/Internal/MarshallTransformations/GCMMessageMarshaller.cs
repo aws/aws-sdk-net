@@ -95,6 +95,12 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.ImageUrl);
             }
 
+            if(requestObject.IsSetJsonData())
+            {
+                context.Writer.WritePropertyName("JsonData");
+                context.Writer.Write(requestObject.JsonData);
+            }
+
             if(requestObject.IsSetRawContent())
             {
                 context.Writer.WritePropertyName("RawContent");

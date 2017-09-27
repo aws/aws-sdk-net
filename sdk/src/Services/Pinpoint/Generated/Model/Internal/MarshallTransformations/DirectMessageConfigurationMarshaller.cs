@@ -45,6 +45,17 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(DirectMessageConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetADMMessage())
+            {
+                context.Writer.WritePropertyName("ADMMessage");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = ADMMessageMarshaller.Instance;
+                marshaller.Marshall(requestObject.ADMMessage, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetAPNSMessage())
             {
                 context.Writer.WritePropertyName("APNSMessage");
@@ -52,6 +63,17 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
 
                 var marshaller = APNSMessageMarshaller.Instance;
                 marshaller.Marshall(requestObject.APNSMessage, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetBaiduMessage())
+            {
+                context.Writer.WritePropertyName("BaiduMessage");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = BaiduMessageMarshaller.Instance;
+                marshaller.Marshall(requestObject.BaiduMessage, context);
 
                 context.Writer.WriteObjectEnd();
             }
@@ -74,6 +96,17 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
 
                 var marshaller = DefaultPushNotificationMessageMarshaller.Instance;
                 marshaller.Marshall(requestObject.DefaultPushNotificationMessage, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetEmailMessage())
+            {
+                context.Writer.WritePropertyName("EmailMessage");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = EmailMessageMarshaller.Instance;
+                marshaller.Marshall(requestObject.EmailMessage, context);
 
                 context.Writer.WriteObjectEnd();
             }

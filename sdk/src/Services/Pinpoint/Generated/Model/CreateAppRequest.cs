@@ -29,7 +29,7 @@ namespace Amazon.Pinpoint.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateApp operation.
-    /// Used to create an app.
+    /// Creates or updates an app.
     /// </summary>
     public partial class CreateAppRequest : AmazonPinpointRequest
     {

@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Pinpoint.Model
 {
     /// <summary>
-    /// GetEventStream Response
+    /// This is the response object from the GetEventStream operation.
     /// </summary>
     public partial class GetEventStreamResponse : AmazonWebServiceResponse
     {

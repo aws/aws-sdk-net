@@ -278,7 +278,7 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ShardId. The ShardId of endpoint
+        /// Gets and sets the property ShardId. The ShardId of endpoint.
         /// </summary>
         public string ShardId
         {

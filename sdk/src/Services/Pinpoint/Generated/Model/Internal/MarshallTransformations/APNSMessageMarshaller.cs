@@ -83,10 +83,22 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetJsonData())
+            {
+                context.Writer.WritePropertyName("JsonData");
+                context.Writer.Write(requestObject.JsonData);
+            }
+
             if(requestObject.IsSetMediaUrl())
             {
                 context.Writer.WritePropertyName("MediaUrl");
                 context.Writer.Write(requestObject.MediaUrl);
+            }
+
+            if(requestObject.IsSetPreferredAuthenticationMethod())
+            {
+                context.Writer.WritePropertyName("PreferredAuthenticationMethod");
+                context.Writer.Write(requestObject.PreferredAuthenticationMethod);
             }
 
             if(requestObject.IsSetRawContent())

@@ -34,6 +34,7 @@ namespace Amazon.Pinpoint.Model
     {
         private bool? _enabled;
         private string _senderId;
+        private string _shortCode;
 
         /// <summary>
         /// Gets and sets the property Enabled. If the channel is enabled for sending messages.
@@ -63,6 +64,21 @@ namespace Amazon.Pinpoint.Model
         internal bool IsSetSenderId()
         {
             return this._senderId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ShortCode. ShortCode registered with phone provider.
+        /// </summary>
+        public string ShortCode
+        {
+            get { return this._shortCode; }
+            set { this._shortCode = value; }
+        }
+
+        // Check to see if ShortCode property is set
+        internal bool IsSetShortCode()
+        {
+            return this._shortCode != null;
         }
 
     }

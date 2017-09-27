@@ -51,6 +51,18 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.Daily);
             }
 
+            if(requestObject.IsSetMaximumDuration())
+            {
+                context.Writer.WritePropertyName("MaximumDuration");
+                context.Writer.Write(requestObject.MaximumDuration);
+            }
+
+            if(requestObject.IsSetMessagesPerSecond())
+            {
+                context.Writer.WritePropertyName("MessagesPerSecond");
+                context.Writer.Write(requestObject.MessagesPerSecond);
+            }
+
             if(requestObject.IsSetTotal())
             {
                 context.Writer.WritePropertyName("Total");

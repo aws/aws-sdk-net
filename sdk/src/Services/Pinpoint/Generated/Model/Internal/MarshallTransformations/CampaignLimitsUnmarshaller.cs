@@ -70,6 +70,18 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
                     unmarshalledObject.Daily = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("MaximumDuration", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.MaximumDuration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("MessagesPerSecond", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.MessagesPerSecond = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Total", targetDepth))
                 {
                     var unmarshaller = IntUnmarshaller.Instance;

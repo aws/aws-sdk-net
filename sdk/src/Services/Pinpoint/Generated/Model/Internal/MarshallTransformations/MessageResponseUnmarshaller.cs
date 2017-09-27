@@ -70,6 +70,12 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
                     unmarshalledObject.ApplicationId = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("EndpointResult", targetDepth))
+                {
+                    var unmarshaller = new DictionaryUnmarshaller<string, EndpointMessageResult, StringUnmarshaller, EndpointMessageResultUnmarshaller>(StringUnmarshaller.Instance, EndpointMessageResultUnmarshaller.Instance);
+                    unmarshalledObject.EndpointResult = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("RequestId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

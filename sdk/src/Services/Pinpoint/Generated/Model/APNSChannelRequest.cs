@@ -32,9 +32,29 @@ namespace Amazon.Pinpoint.Model
     /// </summary>
     public partial class APNSChannelRequest
     {
+        private string _bundleId;
         private string _certificate;
+        private string _defaultAuthenticationMethod;
         private bool? _enabled;
         private string _privateKey;
+        private string _teamId;
+        private string _tokenKey;
+        private string _tokenKeyId;
+
+        /// <summary>
+        /// Gets and sets the property BundleId. The bundle id used for APNs Tokens.
+        /// </summary>
+        public string BundleId
+        {
+            get { return this._bundleId; }
+            set { this._bundleId = value; }
+        }
+
+        // Check to see if BundleId property is set
+        internal bool IsSetBundleId()
+        {
+            return this._bundleId != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Certificate. The distribution certificate from Apple.
@@ -49,6 +69,22 @@ namespace Amazon.Pinpoint.Model
         internal bool IsSetCertificate()
         {
             return this._certificate != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DefaultAuthenticationMethod. The default authentication
+        /// method used for APNs.
+        /// </summary>
+        public string DefaultAuthenticationMethod
+        {
+            get { return this._defaultAuthenticationMethod; }
+            set { this._defaultAuthenticationMethod = value; }
+        }
+
+        // Check to see if DefaultAuthenticationMethod property is set
+        internal bool IsSetDefaultAuthenticationMethod()
+        {
+            return this._defaultAuthenticationMethod != null;
         }
 
         /// <summary>
@@ -79,6 +115,51 @@ namespace Amazon.Pinpoint.Model
         internal bool IsSetPrivateKey()
         {
             return this._privateKey != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TeamId. The team id used for APNs Tokens.
+        /// </summary>
+        public string TeamId
+        {
+            get { return this._teamId; }
+            set { this._teamId = value; }
+        }
+
+        // Check to see if TeamId property is set
+        internal bool IsSetTeamId()
+        {
+            return this._teamId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TokenKey. The token key used for APNs Tokens.
+        /// </summary>
+        public string TokenKey
+        {
+            get { return this._tokenKey; }
+            set { this._tokenKey = value; }
+        }
+
+        // Check to see if TokenKey property is set
+        internal bool IsSetTokenKey()
+        {
+            return this._tokenKey != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TokenKeyId. The token key used for APNs Tokens.
+        /// </summary>
+        public string TokenKeyId
+        {
+            get { return this._tokenKeyId; }
+            set { this._tokenKeyId = value; }
+        }
+
+        // Check to see if TokenKeyId property is set
+        internal bool IsSetTokenKeyId()
+        {
+            return this._tokenKeyId != null;
         }
 
     }

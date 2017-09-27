@@ -45,10 +45,22 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(APNSChannelRequest requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetBundleId())
+            {
+                context.Writer.WritePropertyName("BundleId");
+                context.Writer.Write(requestObject.BundleId);
+            }
+
             if(requestObject.IsSetCertificate())
             {
                 context.Writer.WritePropertyName("Certificate");
                 context.Writer.Write(requestObject.Certificate);
+            }
+
+            if(requestObject.IsSetDefaultAuthenticationMethod())
+            {
+                context.Writer.WritePropertyName("DefaultAuthenticationMethod");
+                context.Writer.Write(requestObject.DefaultAuthenticationMethod);
             }
 
             if(requestObject.IsSetEnabled())
@@ -61,6 +73,24 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("PrivateKey");
                 context.Writer.Write(requestObject.PrivateKey);
+            }
+
+            if(requestObject.IsSetTeamId())
+            {
+                context.Writer.WritePropertyName("TeamId");
+                context.Writer.Write(requestObject.TeamId);
+            }
+
+            if(requestObject.IsSetTokenKey())
+            {
+                context.Writer.WritePropertyName("TokenKey");
+                context.Writer.Write(requestObject.TokenKey);
+            }
+
+            if(requestObject.IsSetTokenKeyId())
+            {
+                context.Writer.WritePropertyName("TokenKeyId");
+                context.Writer.Write(requestObject.TokenKeyId);
             }
 
         }

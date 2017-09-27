@@ -354,6 +354,37 @@ namespace Amazon.Pinpoint
 
         #endregion
         
+        #region  DeleteAdmChannel
+
+        internal DeleteAdmChannelResponse DeleteAdmChannel(DeleteAdmChannelRequest request)
+        {
+            var marshaller = new DeleteAdmChannelRequestMarshaller();
+            var unmarshaller = DeleteAdmChannelResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteAdmChannelRequest,DeleteAdmChannelResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteAdmChannel operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAdmChannel operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<DeleteAdmChannelResponse> DeleteAdmChannelAsync(DeleteAdmChannelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DeleteAdmChannelRequestMarshaller();
+            var unmarshaller = DeleteAdmChannelResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteAdmChannelRequest,DeleteAdmChannelResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeleteApnsChannel
 
         internal DeleteApnsChannelResponse DeleteApnsChannel(DeleteApnsChannelRequest request)
@@ -442,6 +473,37 @@ namespace Amazon.Pinpoint
             var unmarshaller = DeleteAppResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteAppRequest,DeleteAppResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteBaiduChannel
+
+        internal DeleteBaiduChannelResponse DeleteBaiduChannel(DeleteBaiduChannelRequest request)
+        {
+            var marshaller = new DeleteBaiduChannelRequestMarshaller();
+            var unmarshaller = DeleteBaiduChannelResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteBaiduChannelRequest,DeleteBaiduChannelResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteBaiduChannel operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteBaiduChannel operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<DeleteBaiduChannelResponse> DeleteBaiduChannelAsync(DeleteBaiduChannelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DeleteBaiduChannelRequestMarshaller();
+            var unmarshaller = DeleteBaiduChannelResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteBaiduChannelRequest,DeleteBaiduChannelResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -633,6 +695,37 @@ namespace Amazon.Pinpoint
 
         #endregion
         
+        #region  GetAdmChannel
+
+        internal GetAdmChannelResponse GetAdmChannel(GetAdmChannelRequest request)
+        {
+            var marshaller = new GetAdmChannelRequestMarshaller();
+            var unmarshaller = GetAdmChannelResponseUnmarshaller.Instance;
+
+            return Invoke<GetAdmChannelRequest,GetAdmChannelResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetAdmChannel operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetAdmChannel operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<GetAdmChannelResponse> GetAdmChannelAsync(GetAdmChannelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new GetAdmChannelRequestMarshaller();
+            var unmarshaller = GetAdmChannelResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetAdmChannelRequest,GetAdmChannelResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetApnsChannel
 
         internal GetApnsChannelResponse GetApnsChannel(GetApnsChannelRequest request)
@@ -783,6 +876,37 @@ namespace Amazon.Pinpoint
             var unmarshaller = GetAppsResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetAppsRequest,GetAppsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetBaiduChannel
+
+        internal GetBaiduChannelResponse GetBaiduChannel(GetBaiduChannelRequest request)
+        {
+            var marshaller = new GetBaiduChannelRequestMarshaller();
+            var unmarshaller = GetBaiduChannelResponseUnmarshaller.Instance;
+
+            return Invoke<GetBaiduChannelRequest,GetBaiduChannelResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetBaiduChannel operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetBaiduChannel operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<GetBaiduChannelResponse> GetBaiduChannelAsync(GetBaiduChannelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new GetBaiduChannelRequestMarshaller();
+            var unmarshaller = GetBaiduChannelResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetBaiduChannelRequest,GetBaiduChannelResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -1377,6 +1501,68 @@ namespace Amazon.Pinpoint
 
         #endregion
         
+        #region  SendUsersMessages
+
+        internal SendUsersMessagesResponse SendUsersMessages(SendUsersMessagesRequest request)
+        {
+            var marshaller = new SendUsersMessagesRequestMarshaller();
+            var unmarshaller = SendUsersMessagesResponseUnmarshaller.Instance;
+
+            return Invoke<SendUsersMessagesRequest,SendUsersMessagesResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the SendUsersMessages operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the SendUsersMessages operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<SendUsersMessagesResponse> SendUsersMessagesAsync(SendUsersMessagesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new SendUsersMessagesRequestMarshaller();
+            var unmarshaller = SendUsersMessagesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<SendUsersMessagesRequest,SendUsersMessagesResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateAdmChannel
+
+        internal UpdateAdmChannelResponse UpdateAdmChannel(UpdateAdmChannelRequest request)
+        {
+            var marshaller = new UpdateAdmChannelRequestMarshaller();
+            var unmarshaller = UpdateAdmChannelResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateAdmChannelRequest,UpdateAdmChannelResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateAdmChannel operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateAdmChannel operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<UpdateAdmChannelResponse> UpdateAdmChannelAsync(UpdateAdmChannelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new UpdateAdmChannelRequestMarshaller();
+            var unmarshaller = UpdateAdmChannelResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateAdmChannelRequest,UpdateAdmChannelResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  UpdateApnsChannel
 
         internal UpdateApnsChannelResponse UpdateApnsChannel(UpdateApnsChannelRequest request)
@@ -1465,6 +1651,37 @@ namespace Amazon.Pinpoint
             var unmarshaller = UpdateApplicationSettingsResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdateApplicationSettingsRequest,UpdateApplicationSettingsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateBaiduChannel
+
+        internal UpdateBaiduChannelResponse UpdateBaiduChannel(UpdateBaiduChannelRequest request)
+        {
+            var marshaller = new UpdateBaiduChannelRequestMarshaller();
+            var unmarshaller = UpdateBaiduChannelResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateBaiduChannelRequest,UpdateBaiduChannelResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateBaiduChannel operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateBaiduChannel operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<UpdateBaiduChannelResponse> UpdateBaiduChannelAsync(UpdateBaiduChannelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new UpdateBaiduChannelRequestMarshaller();
+            var unmarshaller = UpdateBaiduChannelResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateBaiduChannelRequest,UpdateBaiduChannelResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
