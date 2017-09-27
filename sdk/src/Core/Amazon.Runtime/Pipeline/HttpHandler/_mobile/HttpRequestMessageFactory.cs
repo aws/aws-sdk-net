@@ -42,8 +42,6 @@ namespace Amazon.Runtime
         static readonly ReaderWriterLockSlim _httpClientCacheRWLock = new ReaderWriterLockSlim();
         static readonly IDictionary<string, HttpClientCache> _httpClientCaches = new Dictionary<string, HttpClientCache>();
 
-        // This lock is used for when the instance variable is set.
-        readonly object _httpClientCacheCreateLock = new object();
 
         private HttpClientCache _httpClientCache;
         private IClientConfig _clientConfig;
@@ -67,72 +65,16 @@ namespace Amazon.Runtime
             HttpClient httpClient = null;
             if(_clientConfig.CacheHttpClient)
             {
-                // If a HttpClientCache has already been created for the service client then just reuse it.
-                if (_httpClientCache != null)
+                if(_httpClientCache == null)
                 {
-                    httpClient = _httpClientCache.GetNextClient();
-                }
-                else if (!CanClientConfigBeSerialized(_clientConfig))
-                {
-                    lock (_httpClientCacheCreateLock)
-                    {
-                        // Check if the HttpClientCache was created by some other thread 
-                        // while this thread was waiting for the lock.
-                        if (_httpClientCache != null)
-                        {
-                            httpClient = _httpClientCache.GetNextClient();
-                        }
-                        else
-                        {
-                            _httpClientCache = CreateHttpClientCache(_clientConfig);
-                            httpClient = _httpClientCache.GetNextClient();
-                        }
-                    }
-                }
-                else
-                {
-                    // Check to see if an HttpClient was created by another service client with the 
-                    // same settings on the ClientConfig.
-                    var configUniqueString = CreateConfigUniqueString(_clientConfig);
-                    bool found;
-                    _httpClientCacheRWLock.EnterReadLock();
-                    try
-                    {
-                        found = _httpClientCaches.TryGetValue(configUniqueString, out _httpClientCache);
-                        if(found)
-                        {
-                            httpClient = _httpClientCache.GetNextClient();
-                        }
-                    }
-                    finally
-                    {
-                        _httpClientCacheRWLock.ExitReadLock();
-                    }
-
-                    if (!found)
+                    if (!CanClientConfigBeSerialized(_clientConfig))
                     {
                         _httpClientCacheRWLock.EnterWriteLock();
                         try
                         {
-                            found = _httpClientCaches.TryGetValue(configUniqueString, out _httpClientCache);
-                            if (found)
+                            if (_httpClientCache == null)
                             {
-                                httpClient = _httpClientCache.GetNextClient();
-                            }
-                            else
-                            {
-                                lock (_httpClientCacheCreateLock)
-                                {
-                                    // Check if the HttpClient was created by some other thread 
-                                    // while this thread was waiting for the lock.
-                                    if (_httpClientCache == null)
-                                    {
-                                        _httpClientCache = CreateHttpClientCache(_clientConfig);
-                                        _httpClientCaches[configUniqueString] = _httpClientCache;
-                                    }
-
-                                    httpClient = _httpClientCache.GetNextClient();
-                                }
+                                _httpClientCache = CreateHttpClientCache(_clientConfig);
                             }
                         }
                         finally
@@ -140,7 +82,47 @@ namespace Amazon.Runtime
                             _httpClientCacheRWLock.ExitWriteLock();
                         }
                     }
+                    else
+                    {
+                        // Check to see if an HttpClient was created by another service client with the 
+                        // same settings on the ClientConfig.
+                        var configUniqueString = CreateConfigUniqueString(_clientConfig);
+                        _httpClientCacheRWLock.EnterReadLock();
+                        try
+                        {
+                            _httpClientCaches.TryGetValue(configUniqueString, out _httpClientCache);
+                        }
+                        finally
+                        {
+                            _httpClientCacheRWLock.ExitReadLock();
+                        }
+
+                        // If a HttpClientCache is not found in the global cache then create one
+                        // for this and other service clients to use.
+                        if (_httpClientCache == null)
+                        {
+                            _httpClientCacheRWLock.EnterWriteLock();
+                            try
+                            {
+                                // Check if the HttpClientCache was created by some other thread 
+                                // while this thread was waiting for the lock.
+                                if (!_httpClientCaches.TryGetValue(configUniqueString, out _httpClientCache))
+                                {
+                                    _httpClientCache = CreateHttpClientCache(_clientConfig);
+                                    _httpClientCaches[configUniqueString] = _httpClientCache;
+                                }
+                            }
+                            finally
+                            {
+                                _httpClientCacheRWLock.ExitWriteLock();
+                            }
+                        }
+                    }
                 }
+
+                // Now that we have a HttpClientCache from either the global cache or just created a new HttpClientCache
+                // get the next HttpClient to be used for making a web request.
+                httpClient = _httpClientCache.GetNextClient();
             }
             else
             {
