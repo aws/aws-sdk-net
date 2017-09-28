@@ -59,13 +59,25 @@ namespace CustomTasks
 
         private string GetBaseName(string directory, string modelName)
         {
-            string baseName;
+            string baseName = "";
 
-            {
-                Metadata metadata = JsonConvert.DeserializeObject<Metadata>(
-                                    File.ReadAllText(Path.Combine(directory, METADATA_JSON)));
-                baseName = metadata.BaseName;
-            }
+            try {
+                var metadatapath = Path.Combine(directory, METADATA_JSON);
+                Metadata metadatajson = new Metadata();
+                if (File.Exists(metadatapath))
+                {
+                    metadatajson = JsonConvert.DeserializeObject<Metadata>(
+                                    File.ReadAllText(metadatapath));
+                }
+                else
+                {
+                    metadatajson.Active = true;
+                    metadatajson.Synopsis = "Generated from self-service";
+                    File.WriteAllText(metadatapath, JsonConvert.SerializeObject(metadatajson));
+                }
+
+                baseName = metadatajson.BaseName;
+            } catch {};
 
             if (string.IsNullOrEmpty(baseName))
             {
@@ -100,8 +112,14 @@ namespace CustomTasks
 
         private class Metadata
         {
+            [JsonProperty("active")]
+            public bool Active { get; set; }
+
             [JsonProperty("base-name")]
             public string BaseName { get; set; }
+
+            [JsonProperty("synopsis")]
+            public string Synopsis { get; set; }
         }
 
         private class C2JMetadata
