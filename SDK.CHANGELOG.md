@@ -1,3 +1,15 @@
+### 3.3.165.0 (2017-09-29 20:03 UTC)
+* AppStream (3.3.6.0)
+	* Includes APIs for managing and accessing image builders, and deleting images.
+* CodeBuild (3.3.5.0)
+	* Adding support for Building GitHub Pull Requests in AWS CodeBuild
+* MTurk (3.3.1.0)
+	* Today, Amazon Mechanical Turk (MTurk) supports SQS Notifications being delivered to Customers' SQS queues when different stages of the MTurk workflow are complete.  We are going to create new functionality so that Customers can leverage SNS topics as a destination for notification messages when various stages of the MTurk workflow are complete. 
+* Organizations (3.3.5.0)
+	* This release flags the HandshakeParty structure's Type and Id fields as 'required'. They effectively were required in the past, as you received an error if you did not include them. This is now reflected at the API definition level. 
+* Route53 (3.3.9.0)
+	* This change allows customers to reset elements of health check.
+
 ### 3.3.164.0 (2017-09-27 22:03 UTC)
 * Pinpoint (3.3.4.0)
 	* Added two new push notification channels: Amazon Device Messaging (ADM) and, for push notification support in China, Baidu Cloud Push. Added support for APNs auth via .p8 key file. Added operation for direct message deliveries to user IDs, enabling you to message an individual user on multiple endpoints.
