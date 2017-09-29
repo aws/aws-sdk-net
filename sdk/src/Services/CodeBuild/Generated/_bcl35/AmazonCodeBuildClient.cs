@@ -39,7 +39,7 @@ namespace Amazon.CodeBuild
     /// your source code, runs unit tests, and produces artifacts that are ready to deploy.
     /// AWS CodeBuild eliminates the need to provision, manage, and scale your own build servers.
     /// It provides prepackaged build environments for the most popular programming languages
-    /// and build tools, such as Apach Maven, Gradle, and more. You can also fully customize
+    /// and build tools, such as Apache Maven, Gradle, and more. You can also fully customize
     /// build environments in AWS CodeBuild to use your own build tools. AWS CodeBuild scales
     /// automatically to meet peak build requests, and you pay only for the build time you
     /// consume. For more information about AWS CodeBuild, see the <i>AWS CodeBuild User Guide</i>.
@@ -68,7 +68,19 @@ namespace Amazon.CodeBuild
     /// </para>
     ///  </li> <li> 
     /// <para>
+    ///  <code>CreateWebhook</code>: For an existing AWS CodeBuild build project that has
+    /// its source code stored in a GitHub repository, enables AWS CodeBuild to begin automatically
+    /// rebuilding the source code every time a code change is pushed to the repository.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
     ///  <code>DeleteProject</code>: Deletes a build project.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>DeleteWebhook</code>: For an existing AWS CodeBuild build project that has
+    /// its source code stored in a GitHub repository, stops AWS CodeBuild from automatically
+    /// rebuilding the source code every time a code change is pushed to the repository.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -527,6 +539,87 @@ namespace Amazon.CodeBuild
 
         #endregion
         
+        #region  CreateWebhook
+
+        /// <summary>
+        /// For an existing AWS CodeBuild build project that has its source code stored in a GitHub
+        /// repository, enables AWS CodeBuild to begin automatically rebuilding the source code
+        /// every time a code change is pushed to the repository.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// If you enable webhooks for an AWS CodeBuild project, and the project is used as a
+        /// build step in AWS CodePipeline, then two identical builds will be created for each
+        /// commit. One build is triggered through webhooks, and one through AWS CodePipeline.
+        /// Because billing is on a per-build basis, you will be billed for both builds. Therefore,
+        /// if you are using AWS CodePipeline, we recommend that you disable webhooks in CodeBuild.
+        /// In the AWS CodeBuild console, clear the Webhook box. For more information, see step
+        /// 9 in <a href="http://docs.aws.amazon.com/codebuild/latest/userguide/change-project.html#change-project-console">Change
+        /// a Build Project’s Settings</a>.
+        /// </para>
+        ///  </important>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateWebhook service method.</param>
+        /// 
+        /// <returns>The response from the CreateWebhook service method, as returned by CodeBuild.</returns>
+        /// <exception cref="Amazon.CodeBuild.Model.InvalidInputException">
+        /// The input value that was provided is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CodeBuild.Model.OAuthProviderException">
+        /// There was a problem with the underlying OAuth provider.
+        /// </exception>
+        /// <exception cref="Amazon.CodeBuild.Model.ResourceAlreadyExistsException">
+        /// The specified AWS resource cannot be created, because an AWS resource with the same
+        /// settings already exists.
+        /// </exception>
+        /// <exception cref="Amazon.CodeBuild.Model.ResourceNotFoundException">
+        /// The specified AWS resource cannot be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/CreateWebhook">REST API Reference for CreateWebhook Operation</seealso>
+        public CreateWebhookResponse CreateWebhook(CreateWebhookRequest request)
+        {
+            var marshaller = new CreateWebhookRequestMarshaller();
+            var unmarshaller = CreateWebhookResponseUnmarshaller.Instance;
+
+            return Invoke<CreateWebhookRequest,CreateWebhookResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateWebhook operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateWebhook operation on AmazonCodeBuildClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateWebhook
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/CreateWebhook">REST API Reference for CreateWebhook Operation</seealso>
+        public IAsyncResult BeginCreateWebhook(CreateWebhookRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new CreateWebhookRequestMarshaller();
+            var unmarshaller = CreateWebhookResponseUnmarshaller.Instance;
+
+            return BeginInvoke<CreateWebhookRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateWebhook operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateWebhook.</param>
+        /// 
+        /// <returns>Returns a  CreateWebhookResult from CodeBuild.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/CreateWebhook">REST API Reference for CreateWebhook Operation</seealso>
+        public  CreateWebhookResponse EndCreateWebhook(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateWebhookResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DeleteProject
 
         /// <summary>
@@ -579,6 +672,70 @@ namespace Amazon.CodeBuild
         public  DeleteProjectResponse EndDeleteProject(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteProjectResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeleteWebhook
+
+        /// <summary>
+        /// For an existing AWS CodeBuild build project that has its source code stored in a GitHub
+        /// repository, stops AWS CodeBuild from automatically rebuilding the source code every
+        /// time a code change is pushed to the repository.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteWebhook service method.</param>
+        /// 
+        /// <returns>The response from the DeleteWebhook service method, as returned by CodeBuild.</returns>
+        /// <exception cref="Amazon.CodeBuild.Model.InvalidInputException">
+        /// The input value that was provided is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CodeBuild.Model.OAuthProviderException">
+        /// There was a problem with the underlying OAuth provider.
+        /// </exception>
+        /// <exception cref="Amazon.CodeBuild.Model.ResourceNotFoundException">
+        /// The specified AWS resource cannot be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/DeleteWebhook">REST API Reference for DeleteWebhook Operation</seealso>
+        public DeleteWebhookResponse DeleteWebhook(DeleteWebhookRequest request)
+        {
+            var marshaller = new DeleteWebhookRequestMarshaller();
+            var unmarshaller = DeleteWebhookResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteWebhookRequest,DeleteWebhookResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteWebhook operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteWebhook operation on AmazonCodeBuildClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteWebhook
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/DeleteWebhook">REST API Reference for DeleteWebhook Operation</seealso>
+        public IAsyncResult BeginDeleteWebhook(DeleteWebhookRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new DeleteWebhookRequestMarshaller();
+            var unmarshaller = DeleteWebhookResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DeleteWebhookRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteWebhook operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteWebhook.</param>
+        /// 
+        /// <returns>Returns a  DeleteWebhookResult from CodeBuild.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/DeleteWebhook">REST API Reference for DeleteWebhook Operation</seealso>
+        public  DeleteWebhookResponse EndDeleteWebhook(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteWebhookResponse>(asyncResult);
         }
 
         #endregion

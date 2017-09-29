@@ -136,6 +136,12 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
                     unmarshalledObject.TimeoutInMinutes = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("webhook", targetDepth))
+                {
+                    var unmarshaller = WebhookUnmarshaller.Instance;
+                    unmarshalledObject.Webhook = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;

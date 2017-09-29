@@ -44,6 +44,7 @@ namespace Amazon.CodeBuild.Model
         private ProjectSource _source;
         private List<Tag> _tags = new List<Tag>();
         private int? _timeoutInMinutes;
+        private Webhook _webhook;
 
         /// <summary>
         /// Gets and sets the property Arn. 
@@ -272,6 +273,25 @@ namespace Amazon.CodeBuild.Model
         internal bool IsSetTimeoutInMinutes()
         {
             return this._timeoutInMinutes.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Webhook. 
+        /// <para>
+        /// Information about a webhook in GitHub that connects repository events to a build project
+        /// in AWS CodeBuild.
+        /// </para>
+        /// </summary>
+        public Webhook Webhook
+        {
+            get { return this._webhook; }
+            set { this._webhook = value; }
+        }
+
+        // Check to see if Webhook property is set
+        internal bool IsSetWebhook()
+        {
+            return this._webhook != null;
         }
 
     }

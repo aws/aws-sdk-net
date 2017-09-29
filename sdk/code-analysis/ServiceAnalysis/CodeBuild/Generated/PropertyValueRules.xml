@@ -25,8 +25,20 @@
     <max>480</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CodeBuild.Model.CreateWebhookRequest.ProjectName</property>
+    <min>2</min>
+    <max>255</max>
+    <pattern>[A-Za-z0-9][A-Za-z0-9\-_]{1,254}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CodeBuild.Model.DeleteProjectRequest.Name</property>
     <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeBuild.Model.DeleteWebhookRequest.ProjectName</property>
+    <min>2</min>
+    <max>255</max>
+    <pattern>[A-Za-z0-9][A-Za-z0-9\-_]{1,254}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeBuild.Model.ListBuildsForProjectRequest.ProjectName</property>
@@ -134,5 +146,9 @@
     <min>1</min>
     <max>255</max>
     <pattern>^([\\p{L}\\p{Z}\\p{N}_.:/=@+\\-]*)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeBuild.Model.Webhook.Url</property>
+    <min>1</min>
   </property-value-rule>
 </property-value-rules>

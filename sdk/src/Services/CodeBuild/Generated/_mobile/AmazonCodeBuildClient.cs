@@ -42,7 +42,7 @@ namespace Amazon.CodeBuild
     /// your source code, runs unit tests, and produces artifacts that are ready to deploy.
     /// AWS CodeBuild eliminates the need to provision, manage, and scale your own build servers.
     /// It provides prepackaged build environments for the most popular programming languages
-    /// and build tools, such as Apach Maven, Gradle, and more. You can also fully customize
+    /// and build tools, such as Apache Maven, Gradle, and more. You can also fully customize
     /// build environments in AWS CodeBuild to use your own build tools. AWS CodeBuild scales
     /// automatically to meet peak build requests, and you pay only for the build time you
     /// consume. For more information about AWS CodeBuild, see the <i>AWS CodeBuild User Guide</i>.
@@ -71,7 +71,19 @@ namespace Amazon.CodeBuild
     /// </para>
     ///  </li> <li> 
     /// <para>
+    ///  <code>CreateWebhook</code>: For an existing AWS CodeBuild build project that has
+    /// its source code stored in a GitHub repository, enables AWS CodeBuild to begin automatically
+    /// rebuilding the source code every time a code change is pushed to the repository.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
     ///  <code>DeleteProject</code>: Deletes a build project.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>DeleteWebhook</code>: For an existing AWS CodeBuild build project that has
+    /// its source code stored in a GitHub repository, stops AWS CodeBuild from automatically
+    /// rebuilding the source code every time a code change is pushed to the repository.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -431,6 +443,38 @@ namespace Amazon.CodeBuild
 
         #endregion
         
+        #region  CreateWebhook
+
+        internal CreateWebhookResponse CreateWebhook(CreateWebhookRequest request)
+        {
+            var marshaller = new CreateWebhookRequestMarshaller();
+            var unmarshaller = CreateWebhookResponseUnmarshaller.Instance;
+
+            return Invoke<CreateWebhookRequest,CreateWebhookResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateWebhook operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateWebhook operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/CreateWebhook">REST API Reference for CreateWebhook Operation</seealso>
+        public Task<CreateWebhookResponse> CreateWebhookAsync(CreateWebhookRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new CreateWebhookRequestMarshaller();
+            var unmarshaller = CreateWebhookResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateWebhookRequest,CreateWebhookResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeleteProject
 
         internal DeleteProjectResponse DeleteProject(DeleteProjectRequest request)
@@ -458,6 +502,38 @@ namespace Amazon.CodeBuild
             var unmarshaller = DeleteProjectResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteProjectRequest,DeleteProjectResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteWebhook
+
+        internal DeleteWebhookResponse DeleteWebhook(DeleteWebhookRequest request)
+        {
+            var marshaller = new DeleteWebhookRequestMarshaller();
+            var unmarshaller = DeleteWebhookResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteWebhookRequest,DeleteWebhookResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteWebhook operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteWebhook operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/DeleteWebhook">REST API Reference for DeleteWebhook Operation</seealso>
+        public Task<DeleteWebhookResponse> DeleteWebhookAsync(DeleteWebhookRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DeleteWebhookRequestMarshaller();
+            var unmarshaller = DeleteWebhookResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteWebhookRequest,DeleteWebhookResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
