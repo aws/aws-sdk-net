@@ -135,6 +135,18 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetInsufficientDataHealthStatus())
                     xmlWriter.WriteElementString("InsufficientDataHealthStatus", "https://route53.amazonaws.com/doc/2013-04-01/", StringUtils.FromString(publicRequest.InsufficientDataHealthStatus));                    
 
+                var publicRequestResetElements = publicRequest.ResetElements;
+                if (publicRequestResetElements != null && publicRequestResetElements.Count > 0) 
+                {                        
+                    xmlWriter.WriteStartElement("ResetElements", "https://route53.amazonaws.com/doc/2013-04-01/");
+                    foreach (var publicRequestResetElementsValue in publicRequestResetElements) 
+                    {
+                        xmlWriter.WriteStartElement("ResettableElementName", "https://route53.amazonaws.com/doc/2013-04-01/");
+                        xmlWriter.WriteValue(publicRequestResetElementsValue);
+                        xmlWriter.WriteEndElement();
+                    }            
+                    xmlWriter.WriteEndElement();            
+                }
 
                 xmlWriter.WriteEndElement();
             }

@@ -54,6 +54,7 @@ namespace Amazon.Route53.Model
         private List<string> _regions = new List<string>();
         private AlarmIdentifier _alarmIdentifier;
         private InsufficientDataHealthStatus _insufficientDataHealthStatus;
+        private List<string> _resetElements = new List<string>();
 
         /// <summary>
         /// Gets and sets the property HealthCheckId. 
@@ -584,6 +585,47 @@ namespace Amazon.Route53.Model
         internal bool IsSetInsufficientDataHealthStatus()
         {
             return this._insufficientDataHealthStatus != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ResetElements. 
+        /// <para>
+        /// A complex type that contains one <code>ResetElement</code> element for each element
+        /// that you want to reset to the default value. Valid values for <code>ResetElement</code>
+        /// include the following:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>ChildHealthChecks</code>: Amazon Route 53 resets <a>HealthCheckConfig$ChildHealthChecks</a>
+        /// to null.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>FullyQualifiedDomainName</code>: Amazon Route 53 resets <a>HealthCheckConfig$FullyQualifiedDomainName</a>
+        /// to null.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>Regions</code>: Amazon Route 53 resets the <a>HealthCheckConfig$Regions</a>
+        /// list to the default set of regions. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>ResourcePath</code>: Amazon Route 53 resets <a>HealthCheckConfig$ResourcePath</a>
+        /// to null.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public List<string> ResetElements
+        {
+            get { return this._resetElements; }
+            set { this._resetElements = value; }
+        }
+
+        // Check to see if ResetElements property is set
+        internal bool IsSetResetElements()
+        {
+            return this._resetElements != null && this._resetElements.Count > 0; 
         }
 
     }
