@@ -67,7 +67,7 @@ namespace Amazon.Organizations.Model
         /// Gets and sets the property RootId. 
         /// <para>
         /// The unique identifier (ID) of the root in which you want to disable a policy type.
-        /// You can get the ID from the <a>ListPolicies</a> operation.
+        /// You can get the ID from the <a>ListRoots</a> operation.
         /// </para>
         ///  
         /// <para>
