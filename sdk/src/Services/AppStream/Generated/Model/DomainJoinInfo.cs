@@ -28,8 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AppStream.Model
 {
     /// <summary>
-    /// The <i>DirectoryName</i> and <i>OrganizationalUnitDistinguishedName</i> values, which
-    /// are used to join domains for the AppStream 2.0 streaming instances.
+    /// Contains the information needed for streaming instances to join a domain.
     /// </summary>
     public partial class DomainJoinInfo
     {
@@ -39,7 +38,7 @@ namespace Amazon.AppStream.Model
         /// <summary>
         /// Gets and sets the property DirectoryName. 
         /// <para>
-        /// The fully qualified name of the directory, such as corp.example.com
+        /// The fully qualified name of the directory (for example, corp.example.com).
         /// </para>
         /// </summary>
         public string DirectoryName
@@ -57,7 +56,7 @@ namespace Amazon.AppStream.Model
         /// <summary>
         /// Gets and sets the property OrganizationalUnitDistinguishedName. 
         /// <para>
-        /// The distinguished name of the organizational unit to place the computer account in.
+        /// The distinguished name of the organizational unit for computer accounts.
         /// </para>
         /// </summary>
         public string OrganizationalUnitDistinguishedName

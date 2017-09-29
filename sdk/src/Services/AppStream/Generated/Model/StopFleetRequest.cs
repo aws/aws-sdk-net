@@ -29,7 +29,7 @@ namespace Amazon.AppStream.Model
 {
     /// <summary>
     /// Container for the parameters to the StopFleet operation.
-    /// Stops a fleet.
+    /// Stops the specified fleet.
     /// </summary>
     public partial class StopFleetRequest : AmazonAppStreamRequest
     {
@@ -38,7 +38,7 @@ namespace Amazon.AppStream.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the fleet to stop.
+        /// The name of the fleet.
         /// </para>
         /// </summary>
         public string Name

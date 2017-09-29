@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AppStream.Model
 {
     /// <summary>
-    /// Contains the parameters for a storage connector.
+    /// Describes a storage connector.
     /// </summary>
     public partial class StorageConnector
     {
@@ -38,7 +38,7 @@ namespace Amazon.AppStream.Model
         /// <summary>
         /// Gets and sets the property ConnectorType. 
         /// <para>
-        /// The type of storage connector. The possible values include: HOMEFOLDERS.
+        /// The type of storage connector.
         /// </para>
         /// </summary>
         public StorageConnectorType ConnectorType
@@ -56,7 +56,7 @@ namespace Amazon.AppStream.Model
         /// <summary>
         /// Gets and sets the property ResourceIdentifier. 
         /// <para>
-        /// The ARN associated with the storage connector.
+        /// The ARN of the storage connector.
         /// </para>
         /// </summary>
         public string ResourceIdentifier

@@ -29,10 +29,15 @@ namespace Amazon.AppStream.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateFleet operation.
-    /// Updates an existing fleet. All the attributes except the fleet name can be updated
-    /// in the <b>STOPPED</b> state. When a fleet is in the <b>RUNNING</b> state, only <code>DisplayName</code>
-    /// and <code>ComputeCapacity</code> can be updated. A fleet cannot be updated in a status
-    /// of <b>STARTING</b> or <b>STOPPING</b>.
+    /// Updates the specified fleet.
+    /// 
+    ///  
+    /// <para>
+    /// If the fleet is in the <code>STOPPED</code> state, you can update any attribute except
+    /// the fleet name. If the fleet is in the <code>RUNNING</code> state, you can update
+    /// the <code>DisplayName</code> and <code>ComputeCapacity</code> attributes. If the fleet
+    /// is in the <code>STARTING</code> or <code>STOPPING</code> state, you can't update it.
+    /// </para>
     /// </summary>
     public partial class UpdateFleetRequest : AmazonAppStreamRequest
     {
@@ -53,7 +58,7 @@ namespace Amazon.AppStream.Model
         /// <summary>
         /// Gets and sets the property AttributesToDelete. 
         /// <para>
-        /// Fleet attributes to be deleted.
+        /// The fleet attributes to delete.
         /// </para>
         /// </summary>
         public List<string> AttributesToDelete
@@ -71,7 +76,7 @@ namespace Amazon.AppStream.Model
         /// <summary>
         /// Gets and sets the property ComputeCapacity. 
         /// <para>
-        /// The parameters for the capacity allocated to the fleet. 
+        /// The desired capacity for the fleet.
         /// </para>
         /// </summary>
         public ComputeCapacity ComputeCapacity
@@ -89,7 +94,7 @@ namespace Amazon.AppStream.Model
         /// <summary>
         /// Gets and sets the property DeleteVpcConfig. 
         /// <para>
-        /// Delete the VPC association for the specified fleet.
+        /// Deletes the VPC association for the specified fleet.
         /// </para>
         /// </summary>
         public bool DeleteVpcConfig
@@ -107,7 +112,7 @@ namespace Amazon.AppStream.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// The description displayed to end users on the AppStream 2.0 portal.
+        /// The description displayed to end users.
         /// </para>
         /// </summary>
         public string Description
@@ -125,10 +130,9 @@ namespace Amazon.AppStream.Model
         /// <summary>
         /// Gets and sets the property DisconnectTimeoutInSeconds. 
         /// <para>
-        /// The time after disconnection when a session is considered to have ended. If a user
-        /// who got disconnected reconnects within this timeout interval, the user is connected
-        /// back to their previous session. The input can be any numeric value in seconds between
-        /// 60 and 57600.
+        /// The time after disconnection when a session is considered to have ended, in seconds.
+        /// If a user who was disconnected reconnects within this time interval, the user is connected
+        /// to their previous session. Specify a value between 60 and 57600.
         /// </para>
         /// </summary>
         public int DisconnectTimeoutInSeconds
@@ -146,7 +150,7 @@ namespace Amazon.AppStream.Model
         /// <summary>
         /// Gets and sets the property DisplayName. 
         /// <para>
-        /// The name displayed to end users on the AppStream 2.0 portal.
+        /// The fleet name displayed to end users.
         /// </para>
         /// </summary>
         public string DisplayName
@@ -164,8 +168,7 @@ namespace Amazon.AppStream.Model
         /// <summary>
         /// Gets and sets the property DomainJoinInfo. 
         /// <para>
-        /// The <i>DirectoryName</i> and <i>OrganizationalUnitDistinguishedName</i> values, which
-        /// are used to join domains for the AppStream 2.0 streaming instances.
+        /// The information needed for streaming instances to join a domain.
         /// </para>
         /// </summary>
         public DomainJoinInfo DomainJoinInfo
@@ -201,7 +204,7 @@ namespace Amazon.AppStream.Model
         /// <summary>
         /// Gets and sets the property ImageName. 
         /// <para>
-        /// The image name from which a fleet is created.
+        /// The name of the image used by the fleet.
         /// </para>
         /// </summary>
         public string ImageName
@@ -319,8 +322,8 @@ namespace Amazon.AppStream.Model
         /// <summary>
         /// Gets and sets the property MaxUserDurationInSeconds. 
         /// <para>
-        /// The maximum time for which a streaming session can run. The input can be any numeric
-        /// value in seconds between 600 and 57600.
+        /// The maximum time that a streaming session can run, in seconds. Specify a value between
+        /// 600 and 57600.
         /// </para>
         /// </summary>
         public int MaxUserDurationInSeconds
@@ -338,7 +341,7 @@ namespace Amazon.AppStream.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the fleet.
+        /// A unique name for the fleet.
         /// </para>
         /// </summary>
         public string Name

@@ -29,7 +29,7 @@ namespace Amazon.AppStream.Model
 {
     /// <summary>
     /// Container for the parameters to the AssociateFleet operation.
-    /// Associate a fleet to a stack.
+    /// Associates the specified fleet with the specified stack.
     /// </summary>
     public partial class AssociateFleetRequest : AmazonAppStreamRequest
     {
@@ -39,7 +39,7 @@ namespace Amazon.AppStream.Model
         /// <summary>
         /// Gets and sets the property FleetName. 
         /// <para>
-        /// The name of the fleet to associate.
+        /// The name of the fleet.
         /// </para>
         /// </summary>
         public string FleetName
@@ -57,7 +57,7 @@ namespace Amazon.AppStream.Model
         /// <summary>
         /// Gets and sets the property StackName. 
         /// <para>
-        /// The name of the stack to which the fleet is associated.
+        /// The name of the stack.
         /// </para>
         /// </summary>
         public string StackName

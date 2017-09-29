@@ -29,7 +29,7 @@ namespace Amazon.AppStream.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteDirectoryConfig operation.
-    /// Deletes the directory configuration with the given parameters.
+    /// Deletes the specified directory configuration.
     /// </summary>
     public partial class DeleteDirectoryConfigRequest : AmazonAppStreamRequest
     {
@@ -38,7 +38,7 @@ namespace Amazon.AppStream.Model
         /// <summary>
         /// Gets and sets the property DirectoryName. 
         /// <para>
-        /// The name of the directory configuration to be deleted.
+        /// The name of the directory configuration.
         /// </para>
         /// </summary>
         public string DirectoryName

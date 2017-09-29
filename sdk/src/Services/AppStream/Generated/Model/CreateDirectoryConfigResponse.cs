@@ -37,7 +37,7 @@ namespace Amazon.AppStream.Model
         /// <summary>
         /// Gets and sets the property DirectoryConfig. 
         /// <para>
-        /// Directory configuration details.
+        /// Information about the directory configuration.
         /// </para>
         /// </summary>
         public DirectoryConfig DirectoryConfig

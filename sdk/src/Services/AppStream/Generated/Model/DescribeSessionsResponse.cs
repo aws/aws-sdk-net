@@ -57,7 +57,7 @@ namespace Amazon.AppStream.Model
         /// <summary>
         /// Gets and sets the property Sessions. 
         /// <para>
-        /// The list of streaming sessions.
+        /// Information about the streaming sessions.
         /// </para>
         /// </summary>
         public List<Session> Sessions

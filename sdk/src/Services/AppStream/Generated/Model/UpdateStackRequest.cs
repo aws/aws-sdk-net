@@ -29,7 +29,7 @@ namespace Amazon.AppStream.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateStack operation.
-    /// Updates the specified fields in the stack with the specified name.
+    /// Updates the specified stack.
     /// </summary>
     public partial class UpdateStackRequest : AmazonAppStreamRequest
     {
@@ -42,7 +42,7 @@ namespace Amazon.AppStream.Model
         /// <summary>
         /// Gets and sets the property DeleteStorageConnectors. 
         /// <para>
-        /// Remove all the storage connectors currently enabled for the stack.
+        /// Deletes the storage connectors currently enabled for the stack.
         /// </para>
         /// </summary>
         public bool DeleteStorageConnectors
@@ -60,7 +60,7 @@ namespace Amazon.AppStream.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// The description displayed to end users on the AppStream 2.0 portal.
+        /// The description displayed to end users.
         /// </para>
         /// </summary>
         public string Description
@@ -78,7 +78,7 @@ namespace Amazon.AppStream.Model
         /// <summary>
         /// Gets and sets the property DisplayName. 
         /// <para>
-        /// The name displayed to end users on the AppStream 2.0 portal.
+        /// The stack name displayed to end users.
         /// </para>
         /// </summary>
         public string DisplayName
@@ -96,7 +96,7 @@ namespace Amazon.AppStream.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the stack to update.
+        /// The name of the stack.
         /// </para>
         /// </summary>
         public string Name
@@ -114,7 +114,7 @@ namespace Amazon.AppStream.Model
         /// <summary>
         /// Gets and sets the property StorageConnectors. 
         /// <para>
-        /// The storage connectors to be enabled for the stack.
+        /// The storage connectors to enable.
         /// </para>
         /// </summary>
         public List<StorageConnector> StorageConnectors

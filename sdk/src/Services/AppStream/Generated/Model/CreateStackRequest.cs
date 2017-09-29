@@ -29,7 +29,7 @@ namespace Amazon.AppStream.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateStack operation.
-    /// Create a new stack.
+    /// Creates a stack.
     /// </summary>
     public partial class CreateStackRequest : AmazonAppStreamRequest
     {
@@ -41,7 +41,7 @@ namespace Amazon.AppStream.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// The description displayed to end users on the AppStream 2.0 portal.
+        /// The description displayed to end users.
         /// </para>
         /// </summary>
         public string Description
@@ -59,7 +59,7 @@ namespace Amazon.AppStream.Model
         /// <summary>
         /// Gets and sets the property DisplayName. 
         /// <para>
-        /// The name displayed to end users on the AppStream 2.0 portal.
+        /// The stack name displayed to end users.
         /// </para>
         /// </summary>
         public string DisplayName
@@ -77,7 +77,7 @@ namespace Amazon.AppStream.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The unique identifier for this stack.
+        /// The name of the stack.
         /// </para>
         /// </summary>
         public string Name
@@ -95,7 +95,7 @@ namespace Amazon.AppStream.Model
         /// <summary>
         /// Gets and sets the property StorageConnectors. 
         /// <para>
-        /// The storage connectors to be enabled for the stack.
+        /// The storage connectors to enable.
         /// </para>
         /// </summary>
         public List<StorageConnector> StorageConnectors

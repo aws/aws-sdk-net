@@ -37,7 +37,7 @@ namespace Amazon.AppStream.Model
         /// <summary>
         /// Gets and sets the property Stack. 
         /// <para>
-        /// The details for the created stack.
+        /// Information about the stack.
         /// </para>
         /// </summary>
         public Stack Stack

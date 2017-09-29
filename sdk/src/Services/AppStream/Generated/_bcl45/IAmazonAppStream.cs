@@ -33,7 +33,8 @@ namespace Amazon.AppStream
     ///
     /// Amazon AppStream 2.0 
     /// <para>
-    /// API documentation for Amazon AppStream 2.0.
+    /// You can use Amazon AppStream 2.0 to stream desktop applications to any device running
+    /// a web browser, without rewriting them.
     /// </para>
     /// </summary>
     public partial interface IAmazonAppStream : IAmazonService, IDisposable
@@ -44,7 +45,7 @@ namespace Amazon.AppStream
 
 
         /// <summary>
-        /// Associate a fleet to a stack.
+        /// Associates the specified fleet with the specified stack.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AssociateFleet service method.</param>
         /// 
@@ -86,7 +87,7 @@ namespace Amazon.AppStream
 
 
         /// <summary>
-        /// Creates a directory configuration with the given parameters.
+        /// Creates a directory configuration.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateDirectoryConfig service method.</param>
         /// 
@@ -119,7 +120,7 @@ namespace Amazon.AppStream
 
 
         /// <summary>
-        /// Creates a new fleet.
+        /// Creates a fleet.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateFleet service method.</param>
         /// 
@@ -166,11 +167,95 @@ namespace Amazon.AppStream
 
         #endregion
         
+        #region  CreateImageBuilder
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateImageBuilder service method.</param>
+        /// 
+        /// <returns>The response from the CreateImageBuilder service method, as returned by AppStream.</returns>
+        /// <exception cref="Amazon.AppStream.Model.ConcurrentModificationException">
+        /// An API error occurred. Wait a few minutes and try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.IncompatibleImageException">
+        /// The image does not support storage connectors.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.InvalidParameterCombinationException">
+        /// Indicates an incorrect combination of parameters, or a missing parameter.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.InvalidRoleException">
+        /// The specified role is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.LimitExceededException">
+        /// The requested limit exceeds the permitted limit for an account.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.ResourceAlreadyExistsException">
+        /// The specified resource already exists.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.ResourceNotAvailableException">
+        /// The specified resource exists and is not in use, but isn't available.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/CreateImageBuilder">REST API Reference for CreateImageBuilder Operation</seealso>
+        CreateImageBuilderResponse CreateImageBuilder(CreateImageBuilderRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateImageBuilder operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateImageBuilder operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/CreateImageBuilder">REST API Reference for CreateImageBuilder Operation</seealso>
+        Task<CreateImageBuilderResponse> CreateImageBuilderAsync(CreateImageBuilderRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  CreateImageBuilderStreamingURL
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateImageBuilderStreamingURL service method.</param>
+        /// 
+        /// <returns>The response from the CreateImageBuilderStreamingURL service method, as returned by AppStream.</returns>
+        /// <exception cref="Amazon.AppStream.Model.OperationNotPermittedException">
+        /// The attempted operation is not permitted.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/CreateImageBuilderStreamingURL">REST API Reference for CreateImageBuilderStreamingURL Operation</seealso>
+        CreateImageBuilderStreamingURLResponse CreateImageBuilderStreamingURL(CreateImageBuilderStreamingURLRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateImageBuilderStreamingURL operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateImageBuilderStreamingURL operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/CreateImageBuilderStreamingURL">REST API Reference for CreateImageBuilderStreamingURL Operation</seealso>
+        Task<CreateImageBuilderStreamingURLResponse> CreateImageBuilderStreamingURLAsync(CreateImageBuilderStreamingURLRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  CreateStack
 
 
         /// <summary>
-        /// Create a new stack.
+        /// Creates a stack.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateStack service method.</param>
         /// 
@@ -215,8 +300,12 @@ namespace Amazon.AppStream
 
 
         /// <summary>
-        /// Creates a URL to start an AppStream 2.0 streaming session for a user. By default,
-        /// the URL is valid only for 1 minute from the time that it is generated.
+        /// Creates a URL to start a streaming session for the specified user.
+        /// 
+        ///  
+        /// <para>
+        /// By default, the URL is valid only for one minute from the time that it is generated.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateStreamingURL service method.</param>
         /// 
@@ -255,7 +344,7 @@ namespace Amazon.AppStream
 
 
         /// <summary>
-        /// Deletes the directory configuration with the given parameters.
+        /// Deletes the specified directory configuration.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteDirectoryConfig service method.</param>
         /// 
@@ -288,7 +377,7 @@ namespace Amazon.AppStream
 
 
         /// <summary>
-        /// Deletes a fleet.
+        /// Deletes the specified fleet.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteFleet service method.</param>
         /// 
@@ -320,12 +409,87 @@ namespace Amazon.AppStream
 
         #endregion
         
+        #region  DeleteImage
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteImage service method.</param>
+        /// 
+        /// <returns>The response from the DeleteImage service method, as returned by AppStream.</returns>
+        /// <exception cref="Amazon.AppStream.Model.ConcurrentModificationException">
+        /// An API error occurred. Wait a few minutes and try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.OperationNotPermittedException">
+        /// The attempted operation is not permitted.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.ResourceInUseException">
+        /// The specified resource is in use.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DeleteImage">REST API Reference for DeleteImage Operation</seealso>
+        DeleteImageResponse DeleteImage(DeleteImageRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteImage operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteImage operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DeleteImage">REST API Reference for DeleteImage Operation</seealso>
+        Task<DeleteImageResponse> DeleteImageAsync(DeleteImageRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DeleteImageBuilder
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteImageBuilder service method.</param>
+        /// 
+        /// <returns>The response from the DeleteImageBuilder service method, as returned by AppStream.</returns>
+        /// <exception cref="Amazon.AppStream.Model.ConcurrentModificationException">
+        /// An API error occurred. Wait a few minutes and try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.OperationNotPermittedException">
+        /// The attempted operation is not permitted.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DeleteImageBuilder">REST API Reference for DeleteImageBuilder Operation</seealso>
+        DeleteImageBuilderResponse DeleteImageBuilder(DeleteImageBuilderRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteImageBuilder operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteImageBuilder operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DeleteImageBuilder">REST API Reference for DeleteImageBuilder Operation</seealso>
+        Task<DeleteImageBuilderResponse> DeleteImageBuilderAsync(DeleteImageBuilderRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  DeleteStack
 
 
         /// <summary>
-        /// Deletes the stack. After this operation completes, the environment can no longer be
-        /// activated, and any reservations made for the stack are released.
+        /// Deletes the specified stack. After this operation completes, the environment can no
+        /// longer be activated and any reservations made for the stack are released.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteStack service method.</param>
         /// 
@@ -361,7 +525,7 @@ namespace Amazon.AppStream
 
 
         /// <summary>
-        /// Returns a list describing the specified directory configurations.
+        /// Describes the specified directory configurations.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeDirectoryConfigs service method.</param>
         /// 
@@ -391,8 +555,7 @@ namespace Amazon.AppStream
 
 
         /// <summary>
-        /// If fleet names are provided, this operation describes the specified fleets; otherwise,
-        /// all the fleets in the account are described.
+        /// Describes the specified fleets or all fleets in the account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeFleets service method.</param>
         /// 
@@ -418,12 +581,41 @@ namespace Amazon.AppStream
 
         #endregion
         
+        #region  DescribeImageBuilders
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeImageBuilders service method.</param>
+        /// 
+        /// <returns>The response from the DescribeImageBuilders service method, as returned by AppStream.</returns>
+        /// <exception cref="Amazon.AppStream.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeImageBuilders">REST API Reference for DescribeImageBuilders Operation</seealso>
+        DescribeImageBuildersResponse DescribeImageBuilders(DescribeImageBuildersRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeImageBuilders operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeImageBuilders operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeImageBuilders">REST API Reference for DescribeImageBuilders Operation</seealso>
+        Task<DescribeImageBuildersResponse> DescribeImageBuildersAsync(DescribeImageBuildersRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  DescribeImages
 
 
         /// <summary>
-        /// Describes the images. If a list of names is not provided, all images in your account
-        /// are returned. This operation does not return a paginated result.
+        /// Describes the specified images or all images in the account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeImages service method.</param>
         /// 
@@ -453,11 +645,9 @@ namespace Amazon.AppStream
 
 
         /// <summary>
-        /// Describes the streaming sessions for a stack and a fleet. If a user ID is provided,
-        /// this operation returns streaming sessions for only that user. To retrieve the next
-        /// set of items, pass this value for the <code>nextToken</code> parameter in a subsequent
-        /// call to this operation. If an authentication type is not provided, the operation defaults
-        /// to users authenticated using a streaming URL.
+        /// Describes the streaming sessions for the specified stack and fleet. If a user ID is
+        /// provided, only the streaming sessions for only that user are returned. If an authentication
+        /// type is not provided, the default is to authenticate users using a streaming URL.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeSessions service method.</param>
         /// 
@@ -487,9 +677,7 @@ namespace Amazon.AppStream
 
 
         /// <summary>
-        /// If stack names are not provided, this operation describes the specified stacks; otherwise,
-        /// all stacks in the account are described. To retrieve the next set of items, pass the
-        /// <code>nextToken</code> value in a subsequent call to this operation.
+        /// Describes the specified stacks or all stacks in the account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeStacks service method.</param>
         /// 
@@ -519,7 +707,7 @@ namespace Amazon.AppStream
 
 
         /// <summary>
-        /// Disassociates a fleet from a stack.
+        /// Disassociates the specified fleet from the specified stack.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisassociateFleet service method.</param>
         /// 
@@ -555,7 +743,7 @@ namespace Amazon.AppStream
 
 
         /// <summary>
-        /// This operation immediately stops a streaming session.
+        /// Stops the specified streaming session.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ExpireSession service method.</param>
         /// 
@@ -582,7 +770,7 @@ namespace Amazon.AppStream
 
 
         /// <summary>
-        /// Lists all fleets associated with the stack.
+        /// Lists the fleets associated with the specified stack.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListAssociatedFleets service method.</param>
         /// 
@@ -609,7 +797,7 @@ namespace Amazon.AppStream
 
 
         /// <summary>
-        /// Lists all stacks to which the specified fleet is associated.
+        /// Lists the stacks associated with the specified fleet.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListAssociatedStacks service method.</param>
         /// 
@@ -636,7 +824,7 @@ namespace Amazon.AppStream
 
 
         /// <summary>
-        /// Starts a fleet.
+        /// Starts the specified fleet.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartFleet service method.</param>
         /// 
@@ -671,11 +859,47 @@ namespace Amazon.AppStream
 
         #endregion
         
+        #region  StartImageBuilder
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartImageBuilder service method.</param>
+        /// 
+        /// <returns>The response from the StartImageBuilder service method, as returned by AppStream.</returns>
+        /// <exception cref="Amazon.AppStream.Model.ConcurrentModificationException">
+        /// An API error occurred. Wait a few minutes and try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.ResourceNotAvailableException">
+        /// The specified resource exists and is not in use, but isn't available.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/StartImageBuilder">REST API Reference for StartImageBuilder Operation</seealso>
+        StartImageBuilderResponse StartImageBuilder(StartImageBuilderRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StartImageBuilder operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StartImageBuilder operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/StartImageBuilder">REST API Reference for StartImageBuilder Operation</seealso>
+        Task<StartImageBuilderResponse> StartImageBuilderAsync(StartImageBuilderRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  StopFleet
 
 
         /// <summary>
-        /// Stops a fleet.
+        /// Stops the specified fleet.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StopFleet service method.</param>
         /// 
@@ -704,11 +928,47 @@ namespace Amazon.AppStream
 
         #endregion
         
+        #region  StopImageBuilder
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StopImageBuilder service method.</param>
+        /// 
+        /// <returns>The response from the StopImageBuilder service method, as returned by AppStream.</returns>
+        /// <exception cref="Amazon.AppStream.Model.ConcurrentModificationException">
+        /// An API error occurred. Wait a few minutes and try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.OperationNotPermittedException">
+        /// The attempted operation is not permitted.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/StopImageBuilder">REST API Reference for StopImageBuilder Operation</seealso>
+        StopImageBuilderResponse StopImageBuilder(StopImageBuilderRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StopImageBuilder operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StopImageBuilder operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/StopImageBuilder">REST API Reference for StopImageBuilder Operation</seealso>
+        Task<StopImageBuilderResponse> StopImageBuilderAsync(StopImageBuilderRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  UpdateDirectoryConfig
 
 
         /// <summary>
-        /// Updates the directory configuration with the given parameters.
+        /// Updates the specified directory configuration.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateDirectoryConfig service method.</param>
         /// 
@@ -744,10 +1004,15 @@ namespace Amazon.AppStream
 
 
         /// <summary>
-        /// Updates an existing fleet. All the attributes except the fleet name can be updated
-        /// in the <b>STOPPED</b> state. When a fleet is in the <b>RUNNING</b> state, only <code>DisplayName</code>
-        /// and <code>ComputeCapacity</code> can be updated. A fleet cannot be updated in a status
-        /// of <b>STARTING</b> or <b>STOPPING</b>.
+        /// Updates the specified fleet.
+        /// 
+        ///  
+        /// <para>
+        /// If the fleet is in the <code>STOPPED</code> state, you can update any attribute except
+        /// the fleet name. If the fleet is in the <code>RUNNING</code> state, you can update
+        /// the <code>DisplayName</code> and <code>ComputeCapacity</code> attributes. If the fleet
+        /// is in the <code>STARTING</code> or <code>STOPPING</code> state, you can't update it.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateFleet service method.</param>
         /// 
@@ -801,7 +1066,7 @@ namespace Amazon.AppStream
 
 
         /// <summary>
-        /// Updates the specified fields in the stack with the specified name.
+        /// Updates the specified stack.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateStack service method.</param>
         /// 

@@ -57,7 +57,7 @@ namespace Amazon.AppStream.Model
         /// <summary>
         /// Gets and sets the property Stacks. 
         /// <para>
-        /// The list of stack details.
+        /// Information about the stacks.
         /// </para>
         /// </summary>
         public List<Stack> Stacks

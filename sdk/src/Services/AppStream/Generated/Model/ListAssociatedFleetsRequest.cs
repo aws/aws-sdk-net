@@ -29,7 +29,7 @@ namespace Amazon.AppStream.Model
 {
     /// <summary>
     /// Container for the parameters to the ListAssociatedFleets operation.
-    /// Lists all fleets associated with the stack.
+    /// Lists the fleets associated with the specified stack.
     /// </summary>
     public partial class ListAssociatedFleetsRequest : AmazonAppStreamRequest
     {
@@ -58,7 +58,7 @@ namespace Amazon.AppStream.Model
         /// <summary>
         /// Gets and sets the property StackName. 
         /// <para>
-        /// The name of the stack whose associated fleets are listed.
+        /// The name of the stack.
         /// </para>
         /// </summary>
         public string StackName

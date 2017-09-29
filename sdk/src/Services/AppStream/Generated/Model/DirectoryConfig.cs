@@ -28,8 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AppStream.Model
 {
     /// <summary>
-    /// Full directory configuration details, which are used to join domains for the AppStream
-    /// 2.0 streaming instances.
+    /// Configuration information for the directory used to join domains.
     /// </summary>
     public partial class DirectoryConfig
     {
@@ -41,7 +40,7 @@ namespace Amazon.AppStream.Model
         /// <summary>
         /// Gets and sets the property CreatedTime. 
         /// <para>
-        /// The time stamp when the directory configuration was created within AppStream 2.0.
+        /// The time the directory configuration was created.
         /// </para>
         /// </summary>
         public DateTime CreatedTime
@@ -59,7 +58,7 @@ namespace Amazon.AppStream.Model
         /// <summary>
         /// Gets and sets the property DirectoryName. 
         /// <para>
-        /// The fully qualified name of the directory, such as corp.example.com
+        /// The fully qualified name of the directory (for example, corp.example.com).
         /// </para>
         /// </summary>
         public string DirectoryName
@@ -77,8 +76,7 @@ namespace Amazon.AppStream.Model
         /// <summary>
         /// Gets and sets the property OrganizationalUnitDistinguishedNames. 
         /// <para>
-        /// The list of the distinguished names of organizational units in which to place computer
-        /// accounts.
+        /// The distinguished names of the organizational units for computer accounts.
         /// </para>
         /// </summary>
         public List<string> OrganizationalUnitDistinguishedNames
@@ -96,8 +94,8 @@ namespace Amazon.AppStream.Model
         /// <summary>
         /// Gets and sets the property ServiceAccountCredentials. 
         /// <para>
-        /// The <i>AccountName</i> and <i>AccountPassword</i> of the service account, to be used
-        /// by the streaming instance to connect to the directory.
+        /// The credentials for the service account used by the streaming instance to connect
+        /// to the directory.
         /// </para>
         /// </summary>
         public ServiceAccountCredentials ServiceAccountCredentials

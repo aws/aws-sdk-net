@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AppStream.Model
 {
     /// <summary>
-    /// The response from a successful operation.
+    /// This is the response object from the ListAssociatedFleets operation.
     /// </summary>
     public partial class ListAssociatedFleetsResponse : AmazonWebServiceResponse
     {
@@ -38,7 +38,7 @@ namespace Amazon.AppStream.Model
         /// <summary>
         /// Gets and sets the property Names. 
         /// <para>
-        /// The names of associated fleets.
+        /// The names of the fleets.
         /// </para>
         /// </summary>
         public List<string> Names

@@ -387,6 +387,130 @@ namespace Amazon.AppStream
 
 
     /// <summary>
+    /// Constants used for properties of type ImageBuilderState.
+    /// </summary>
+    public class ImageBuilderState : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DELETING for ImageBuilderState
+        /// </summary>
+        public static readonly ImageBuilderState DELETING = new ImageBuilderState("DELETING");
+        /// <summary>
+        /// Constant FAILED for ImageBuilderState
+        /// </summary>
+        public static readonly ImageBuilderState FAILED = new ImageBuilderState("FAILED");
+        /// <summary>
+        /// Constant PENDING for ImageBuilderState
+        /// </summary>
+        public static readonly ImageBuilderState PENDING = new ImageBuilderState("PENDING");
+        /// <summary>
+        /// Constant REBOOTING for ImageBuilderState
+        /// </summary>
+        public static readonly ImageBuilderState REBOOTING = new ImageBuilderState("REBOOTING");
+        /// <summary>
+        /// Constant RUNNING for ImageBuilderState
+        /// </summary>
+        public static readonly ImageBuilderState RUNNING = new ImageBuilderState("RUNNING");
+        /// <summary>
+        /// Constant SNAPSHOTTING for ImageBuilderState
+        /// </summary>
+        public static readonly ImageBuilderState SNAPSHOTTING = new ImageBuilderState("SNAPSHOTTING");
+        /// <summary>
+        /// Constant STOPPED for ImageBuilderState
+        /// </summary>
+        public static readonly ImageBuilderState STOPPED = new ImageBuilderState("STOPPED");
+        /// <summary>
+        /// Constant STOPPING for ImageBuilderState
+        /// </summary>
+        public static readonly ImageBuilderState STOPPING = new ImageBuilderState("STOPPING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ImageBuilderState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ImageBuilderState FindValue(string value)
+        {
+            return FindValue<ImageBuilderState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ImageBuilderState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ImageBuilderStateChangeReasonCode.
+    /// </summary>
+    public class ImageBuilderStateChangeReasonCode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant IMAGE_UNAVAILABLE for ImageBuilderStateChangeReasonCode
+        /// </summary>
+        public static readonly ImageBuilderStateChangeReasonCode IMAGE_UNAVAILABLE = new ImageBuilderStateChangeReasonCode("IMAGE_UNAVAILABLE");
+        /// <summary>
+        /// Constant INTERNAL_ERROR for ImageBuilderStateChangeReasonCode
+        /// </summary>
+        public static readonly ImageBuilderStateChangeReasonCode INTERNAL_ERROR = new ImageBuilderStateChangeReasonCode("INTERNAL_ERROR");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ImageBuilderStateChangeReasonCode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ImageBuilderStateChangeReasonCode FindValue(string value)
+        {
+            return FindValue<ImageBuilderStateChangeReasonCode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ImageBuilderStateChangeReasonCode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ImageState.
     /// </summary>
     public class ImageState : ConstantClass

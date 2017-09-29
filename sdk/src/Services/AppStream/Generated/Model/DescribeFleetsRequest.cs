@@ -29,8 +29,7 @@ namespace Amazon.AppStream.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeFleets operation.
-    /// If fleet names are provided, this operation describes the specified fleets; otherwise,
-    /// all the fleets in the account are described.
+    /// Describes the specified fleets or all fleets in the account.
     /// </summary>
     public partial class DescribeFleetsRequest : AmazonAppStreamRequest
     {
@@ -40,7 +39,7 @@ namespace Amazon.AppStream.Model
         /// <summary>
         /// Gets and sets the property Names. 
         /// <para>
-        /// The fleet names to describe. Use null to describe all the fleets for the AWS account.
+        /// The names of the fleets to describe.
         /// </para>
         /// </summary>
         public List<string> Names

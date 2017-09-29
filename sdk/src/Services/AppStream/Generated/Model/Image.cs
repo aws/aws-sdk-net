@@ -28,8 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AppStream.Model
 {
     /// <summary>
-    /// New streaming instances are booted from images. The image stores the application catalog
-    /// and is connected to fleets.
+    /// Describes an image.
     /// </summary>
     public partial class Image
     {
@@ -50,7 +49,7 @@ namespace Amazon.AppStream.Model
         /// <summary>
         /// Gets and sets the property Applications. 
         /// <para>
-        /// The applications associated with an image.
+        /// The applications associated with the image.
         /// </para>
         /// </summary>
         public List<Application> Applications
@@ -68,7 +67,7 @@ namespace Amazon.AppStream.Model
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
-        /// The ARN for the image.
+        /// The ARN of the image.
         /// </para>
         /// </summary>
         public string Arn
@@ -86,7 +85,7 @@ namespace Amazon.AppStream.Model
         /// <summary>
         /// Gets and sets the property BaseImageArn. 
         /// <para>
-        /// The source image ARN from which this image was created.
+        /// The ARN of the image from which this image was created.
         /// </para>
         /// </summary>
         public string BaseImageArn
@@ -104,7 +103,7 @@ namespace Amazon.AppStream.Model
         /// <summary>
         /// Gets and sets the property CreatedTime. 
         /// <para>
-        /// The time stamp when the image was created.
+        /// The time the image was created.
         /// </para>
         /// </summary>
         public DateTime CreatedTime
@@ -122,7 +121,7 @@ namespace Amazon.AppStream.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// A meaningful description for the image.
+        /// The description displayed to end users.
         /// </para>
         /// </summary>
         public string Description
@@ -140,7 +139,7 @@ namespace Amazon.AppStream.Model
         /// <summary>
         /// Gets and sets the property DisplayName. 
         /// <para>
-        /// The display name for the image.
+        /// The image name displayed to end users.
         /// </para>
         /// </summary>
         public string DisplayName
@@ -158,7 +157,7 @@ namespace Amazon.AppStream.Model
         /// <summary>
         /// Gets and sets the property ImageBuilderSupported. 
         /// <para>
-        /// Whether an image builder can be launched from this image.
+        /// Indicates whether an image builder can be launched from this image.
         /// </para>
         /// </summary>
         public bool ImageBuilderSupported
@@ -176,7 +175,7 @@ namespace Amazon.AppStream.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The unique identifier for the image.
+        /// The name of the image.
         /// </para>
         /// </summary>
         public string Name
@@ -212,8 +211,8 @@ namespace Amazon.AppStream.Model
         /// <summary>
         /// Gets and sets the property PublicBaseImageReleasedDate. 
         /// <para>
-        /// The AWS release date of the public base image. For private images, this date is the
-        /// release date of the base image from which the image was created.
+        /// The release date of the public base image. For private images, this date is the release
+        /// date of the base image from which the image was created.
         /// </para>
         /// </summary>
         public DateTime PublicBaseImageReleasedDate
@@ -231,8 +230,8 @@ namespace Amazon.AppStream.Model
         /// <summary>
         /// Gets and sets the property State. 
         /// <para>
-        /// The image starts in the <b>PENDING</b> state. If image creation succeeds, it moves
-        /// to <b>AVAILABLE</b>. If image creation fails, it moves to <b>FAILED</b>.
+        /// The image starts in the <code>PENDING</code> state. If image creation succeeds, the
+        /// state is <code>AVAILABLE</code>. If image creation fails, the state is <code>FAILED</code>.
         /// </para>
         /// </summary>
         public ImageState State
@@ -268,7 +267,7 @@ namespace Amazon.AppStream.Model
         /// <summary>
         /// Gets and sets the property Visibility. 
         /// <para>
-        /// The visibility of an image to the user; images can be public or private.
+        /// Indicates whether the image is public or private.
         /// </para>
         /// </summary>
         public VisibilityType Visibility

@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AppStream.Model
 {
     /// <summary>
-    /// The capacity information for the fleet.
+    /// Describes the capacity status for a fleet.
     /// </summary>
     public partial class ComputeCapacityStatus
     {
@@ -76,7 +76,7 @@ namespace Amazon.AppStream.Model
         /// <summary>
         /// Gets and sets the property InUse. 
         /// <para>
-        /// The number of instances that are being used for streaming.
+        /// The number of instances in use for streaming.
         /// </para>
         /// </summary>
         public int InUse

@@ -28,8 +28,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AppStream.Model
 {
     /// <summary>
-    /// The <i>AccountName</i> and <i>AccountPassword</i> of the service account, to be used
-    /// by the streaming instance to connect to the directory.
+    /// Describes the credentials for the service account used by the streaming instance to
+    /// connect to the directory.
     /// </summary>
     public partial class ServiceAccountCredentials
     {
@@ -39,10 +39,9 @@ namespace Amazon.AppStream.Model
         /// <summary>
         /// Gets and sets the property AccountName. 
         /// <para>
-        /// The user name of an account in the directory that is used by AppStream 2.0 streaming
-        /// instances to connect to the directory. This account must have the following privileges:
-        /// create computer objects, join computers to the domain, change/reset the password on
-        /// descendant computer objects for the organizational units specified.
+        /// The user name of the account. This account must have the following privileges: create
+        /// computer objects, join computers to the domain, and change/reset the password on descendant
+        /// computer objects for the organizational units specified.
         /// </para>
         /// </summary>
         public string AccountName
@@ -60,7 +59,7 @@ namespace Amazon.AppStream.Model
         /// <summary>
         /// Gets and sets the property AccountPassword. 
         /// <para>
-        /// The password for the user account for directory actions.
+        /// The password for the account.
         /// </para>
         /// </summary>
         public string AccountPassword

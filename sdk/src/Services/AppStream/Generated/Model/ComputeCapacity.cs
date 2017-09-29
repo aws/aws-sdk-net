@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AppStream.Model
 {
     /// <summary>
-    /// The capacity configuration for the fleet.
+    /// Describes the capacity for a fleet.
     /// </summary>
     public partial class ComputeCapacity
     {

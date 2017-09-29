@@ -29,7 +29,7 @@ namespace Amazon.AppStream.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeDirectoryConfigs operation.
-    /// Returns a list describing the specified directory configurations.
+    /// Describes the specified directory configurations.
     /// </summary>
     public partial class DescribeDirectoryConfigsRequest : AmazonAppStreamRequest
     {
@@ -40,7 +40,7 @@ namespace Amazon.AppStream.Model
         /// <summary>
         /// Gets and sets the property DirectoryNames. 
         /// <para>
-        /// A specific list of directory names.
+        /// The directory names.
         /// </para>
         /// </summary>
         public List<string> DirectoryNames
@@ -58,7 +58,7 @@ namespace Amazon.AppStream.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// The size of each page of results.
+        /// The maximum size of each page of results.
         /// </para>
         /// </summary>
         public int MaxResults
@@ -76,8 +76,8 @@ namespace Amazon.AppStream.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// The DescribeDirectoryConfigsResult.NextToken from a previous call to DescribeDirectoryConfigs.
-        /// If this is the first call, pass null.
+        /// The pagination token to use to retrieve the next page of results for this operation.
+        /// If this value is null, it retrieves the first page.
         /// </para>
         /// </summary>
         public string NextToken

@@ -29,7 +29,7 @@ namespace Amazon.AppStream.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateDirectoryConfig operation.
-    /// Updates the directory configuration with the given parameters.
+    /// Updates the specified directory configuration.
     /// </summary>
     public partial class UpdateDirectoryConfigRequest : AmazonAppStreamRequest
     {
@@ -40,7 +40,7 @@ namespace Amazon.AppStream.Model
         /// <summary>
         /// Gets and sets the property DirectoryName. 
         /// <para>
-        /// The name of the existing directory configuration to be updated.
+        /// The name of the directory configuration.
         /// </para>
         /// </summary>
         public string DirectoryName
@@ -58,8 +58,7 @@ namespace Amazon.AppStream.Model
         /// <summary>
         /// Gets and sets the property OrganizationalUnitDistinguishedNames. 
         /// <para>
-        /// The list of the distinguished names of organizational units to place computer accounts
-        /// in.
+        /// The distinguished names of the organizational units for computer accounts.
         /// </para>
         /// </summary>
         public List<string> OrganizationalUnitDistinguishedNames
@@ -77,8 +76,8 @@ namespace Amazon.AppStream.Model
         /// <summary>
         /// Gets and sets the property ServiceAccountCredentials. 
         /// <para>
-        /// The <i>AccountName</i> and <i>AccountPassword</i> values for the service account,
-        /// which are used by the streaming instance to connect to the directory
+        /// The credentials for the service account used by the streaming instance to connect
+        /// to the directory.
         /// </para>
         /// </summary>
         public ServiceAccountCredentials ServiceAccountCredentials

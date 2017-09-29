@@ -29,7 +29,7 @@ namespace Amazon.AppStream.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateDirectoryConfig operation.
-    /// Creates a directory configuration with the given parameters.
+    /// Creates a directory configuration.
     /// </summary>
     public partial class CreateDirectoryConfigRequest : AmazonAppStreamRequest
     {
@@ -40,7 +40,7 @@ namespace Amazon.AppStream.Model
         /// <summary>
         /// Gets and sets the property DirectoryName. 
         /// <para>
-        /// The fully qualified name of the directory, such as corp.example.com
+        /// The fully qualified name of the directory (for example, corp.example.com).
         /// </para>
         /// </summary>
         public string DirectoryName
@@ -58,8 +58,7 @@ namespace Amazon.AppStream.Model
         /// <summary>
         /// Gets and sets the property OrganizationalUnitDistinguishedNames. 
         /// <para>
-        /// The list of the distinguished names of organizational units to place computer accounts
-        /// in.
+        /// The distinguished names of the organizational units for computer accounts.
         /// </para>
         /// </summary>
         public List<string> OrganizationalUnitDistinguishedNames
@@ -77,8 +76,8 @@ namespace Amazon.AppStream.Model
         /// <summary>
         /// Gets and sets the property ServiceAccountCredentials. 
         /// <para>
-        /// The <i>AccountName</i> and <i>AccountPassword</i> values for the service account,
-        /// which are used by the streaming instance to connect to the directory.
+        /// The credentials for the service account used by the streaming instance to connect
+        /// to the directory.
         /// </para>
         /// </summary>
         public ServiceAccountCredentials ServiceAccountCredentials

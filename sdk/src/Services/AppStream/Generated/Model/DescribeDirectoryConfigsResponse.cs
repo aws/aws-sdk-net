@@ -38,7 +38,7 @@ namespace Amazon.AppStream.Model
         /// <summary>
         /// Gets and sets the property DirectoryConfigs. 
         /// <para>
-        /// The list of directory configurations.
+        /// Information about the directory configurations.
         /// </para>
         /// </summary>
         public List<DirectoryConfig> DirectoryConfigs
@@ -56,8 +56,8 @@ namespace Amazon.AppStream.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// If not null, more results are available. To retrieve the next set of items, pass this
-        /// value for the NextToken parameter in a subsequent call to DescribeDirectoryConfigs.
+        /// The pagination token to use to retrieve the next page of results for this operation.
+        /// If there are no more pages, this value is null.
         /// </para>
         /// </summary>
         public string NextToken

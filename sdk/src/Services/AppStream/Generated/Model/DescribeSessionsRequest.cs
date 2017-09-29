@@ -29,11 +29,9 @@ namespace Amazon.AppStream.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeSessions operation.
-    /// Describes the streaming sessions for a stack and a fleet. If a user ID is provided,
-    /// this operation returns streaming sessions for only that user. To retrieve the next
-    /// set of items, pass this value for the <code>nextToken</code> parameter in a subsequent
-    /// call to this operation. If an authentication type is not provided, the operation defaults
-    /// to users authenticated using a streaming URL.
+    /// Describes the streaming sessions for the specified stack and fleet. If a user ID is
+    /// provided, only the streaming sessions for only that user are returned. If an authentication
+    /// type is not provided, the default is to authenticate users using a streaming URL.
     /// </summary>
     public partial class DescribeSessionsRequest : AmazonAppStreamRequest
     {
@@ -47,10 +45,9 @@ namespace Amazon.AppStream.Model
         /// <summary>
         /// Gets and sets the property AuthenticationType. 
         /// <para>
-        /// The authentication method of the user. It can be <code>API</code> for a user authenticated
-        /// using a streaming URL, or <code>SAML</code> for a SAML federated user. If an authentication
-        /// type is not provided, the operation defaults to users authenticated using a streaming
-        /// URL.
+        /// The authentication method. Specify <code>API</code> for a user authenticated using
+        /// a streaming URL or <code>SAML</code> for a SAML federated user. The default is to
+        /// authenticate users using a streaming URL.
         /// </para>
         /// </summary>
         public AuthenticationType AuthenticationType
@@ -68,7 +65,7 @@ namespace Amazon.AppStream.Model
         /// <summary>
         /// Gets and sets the property FleetName. 
         /// <para>
-        /// The name of the fleet for which to list sessions.
+        /// The name of the fleet.
         /// </para>
         /// </summary>
         public string FleetName
@@ -86,8 +83,8 @@ namespace Amazon.AppStream.Model
         /// <summary>
         /// Gets and sets the property Limit. 
         /// <para>
-        /// The size of each page of results. The default value is 20 and the maximum supported
-        /// value is 50.
+        /// The size of each page of results. The default value is 20 and the maximum value is
+        /// 50.
         /// </para>
         /// </summary>
         public int Limit
@@ -124,7 +121,7 @@ namespace Amazon.AppStream.Model
         /// <summary>
         /// Gets and sets the property StackName. 
         /// <para>
-        /// The name of the stack for which to list sessions.
+        /// The name of the stack.
         /// </para>
         /// </summary>
         public string StackName
@@ -142,8 +139,7 @@ namespace Amazon.AppStream.Model
         /// <summary>
         /// Gets and sets the property UserId. 
         /// <para>
-        /// The user for whom to list sessions. Use null to describe all the sessions for the
-        /// stack and fleet.
+        /// The user ID.
         /// </para>
         /// </summary>
         public string UserId

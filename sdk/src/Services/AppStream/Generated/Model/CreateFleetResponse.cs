@@ -37,7 +37,7 @@ namespace Amazon.AppStream.Model
         /// <summary>
         /// Gets and sets the property Fleet. 
         /// <para>
-        /// The details for the created fleet.
+        /// Information about the fleet.
         /// </para>
         /// </summary>
         public Fleet Fleet

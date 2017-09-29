@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AppStream.Model
 {
     /// <summary>
-    /// An entry for a single application in the application catalog.
+    /// Describes an application in the application catalog.
     /// </summary>
     public partial class Application
     {
@@ -43,7 +43,7 @@ namespace Amazon.AppStream.Model
         /// <summary>
         /// Gets and sets the property DisplayName. 
         /// <para>
-        /// The name of the application shown to the end users.
+        /// The application name displayed to end users.
         /// </para>
         /// </summary>
         public string DisplayName
@@ -61,7 +61,7 @@ namespace Amazon.AppStream.Model
         /// <summary>
         /// Gets and sets the property Enabled. 
         /// <para>
-        /// If there is a problem, an application can be disabled after image creation.
+        /// If there is a problem, the application can be disabled after image creation.
         /// </para>
         /// </summary>
         public bool Enabled
@@ -79,7 +79,7 @@ namespace Amazon.AppStream.Model
         /// <summary>
         /// Gets and sets the property IconURL. 
         /// <para>
-        /// The URL for the application icon. This URL may be time-limited.
+        /// The URL for the application icon. This URL might be time-limited.
         /// </para>
         /// </summary>
         public string IconURL
@@ -97,7 +97,7 @@ namespace Amazon.AppStream.Model
         /// <summary>
         /// Gets and sets the property LaunchParameters. 
         /// <para>
-        /// A list of arguments that are passed to the application at launch.
+        /// The arguments that are passed to the application at launch.
         /// </para>
         /// </summary>
         public string LaunchParameters
@@ -151,7 +151,7 @@ namespace Amazon.AppStream.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The unique identifier for the application.
+        /// The name of the application.
         /// </para>
         /// </summary>
         public string Name

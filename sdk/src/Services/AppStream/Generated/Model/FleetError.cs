@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AppStream.Model
 {
     /// <summary>
-    /// The details of the fleet error.
+    /// Describes a fleet error.
     /// </summary>
     public partial class FleetError
     {
@@ -38,7 +38,7 @@ namespace Amazon.AppStream.Model
         /// <summary>
         /// Gets and sets the property ErrorCode. 
         /// <para>
-        /// The error code for the fleet error.
+        /// The error code.
         /// </para>
         /// </summary>
         public FleetErrorCode ErrorCode
@@ -56,7 +56,7 @@ namespace Amazon.AppStream.Model
         /// <summary>
         /// Gets and sets the property ErrorMessage. 
         /// <para>
-        /// The error message generated when the fleet has errors.
+        /// The error message.
         /// </para>
         /// </summary>
         public string ErrorMessage

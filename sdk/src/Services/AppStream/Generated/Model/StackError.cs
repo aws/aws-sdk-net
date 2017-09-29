@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AppStream.Model
 {
     /// <summary>
-    /// Contains the parameters for a stack error.
+    /// Describes a stack error.
     /// </summary>
     public partial class StackError
     {
@@ -38,7 +38,7 @@ namespace Amazon.AppStream.Model
         /// <summary>
         /// Gets and sets the property ErrorCode. 
         /// <para>
-        /// The error code of a stack error.
+        /// The error code.
         /// </para>
         /// </summary>
         public StackErrorCode ErrorCode
@@ -56,7 +56,7 @@ namespace Amazon.AppStream.Model
         /// <summary>
         /// Gets and sets the property ErrorMessage. 
         /// <para>
-        /// The error message of a stack error.
+        /// The error message.
         /// </para>
         /// </summary>
         public string ErrorMessage

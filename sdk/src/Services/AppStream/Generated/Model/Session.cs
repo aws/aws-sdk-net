@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AppStream.Model
 {
     /// <summary>
-    /// Contains the parameters for a streaming session.
+    /// Describes a streaming session.
     /// </summary>
     public partial class Session
     {
@@ -42,9 +42,8 @@ namespace Amazon.AppStream.Model
         /// <summary>
         /// Gets and sets the property AuthenticationType. 
         /// <para>
-        /// The authentication method of the user for whom the session was created. It can be
-        /// <code>API</code> for a user authenticated using a streaming URL or <code>SAML</code>
-        /// for a SAML federated user.
+        /// The authentication method. The user is authenticated using a streaming URL (<code>API</code>)
+        /// or SAML federation (<code>SAML</code>).
         /// </para>
         /// </summary>
         public AuthenticationType AuthenticationType
@@ -62,7 +61,7 @@ namespace Amazon.AppStream.Model
         /// <summary>
         /// Gets and sets the property FleetName. 
         /// <para>
-        /// The name of the fleet for which the streaming session was created.
+        /// The name of the fleet for the streaming session.
         /// </para>
         /// </summary>
         public string FleetName
@@ -80,7 +79,7 @@ namespace Amazon.AppStream.Model
         /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
-        /// The unique ID for a streaming session.
+        /// The ID of the streaming session.
         /// </para>
         /// </summary>
         public string Id
@@ -98,7 +97,7 @@ namespace Amazon.AppStream.Model
         /// <summary>
         /// Gets and sets the property StackName. 
         /// <para>
-        /// The name of the stack for which the streaming session was created.
+        /// The name of the stack for the streaming session.
         /// </para>
         /// </summary>
         public string StackName

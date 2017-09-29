@@ -38,7 +38,8 @@ namespace Amazon.AppStream
     ///
     /// Amazon AppStream 2.0 
     /// <para>
-    /// API documentation for Amazon AppStream 2.0.
+    /// You can use Amazon AppStream 2.0 to stream desktop applications to any device running
+    /// a web browser, without rewriting them.
     /// </para>
     /// </summary>
     public partial class AmazonAppStreamClient : AmazonServiceClient, IAmazonAppStream
@@ -329,6 +330,70 @@ namespace Amazon.AppStream
 
         #endregion
         
+        #region  CreateImageBuilder
+
+        internal CreateImageBuilderResponse CreateImageBuilder(CreateImageBuilderRequest request)
+        {
+            var marshaller = new CreateImageBuilderRequestMarshaller();
+            var unmarshaller = CreateImageBuilderResponseUnmarshaller.Instance;
+
+            return Invoke<CreateImageBuilderRequest,CreateImageBuilderResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateImageBuilder operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateImageBuilder operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/CreateImageBuilder">REST API Reference for CreateImageBuilder Operation</seealso>
+        public Task<CreateImageBuilderResponse> CreateImageBuilderAsync(CreateImageBuilderRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new CreateImageBuilderRequestMarshaller();
+            var unmarshaller = CreateImageBuilderResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateImageBuilderRequest,CreateImageBuilderResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CreateImageBuilderStreamingURL
+
+        internal CreateImageBuilderStreamingURLResponse CreateImageBuilderStreamingURL(CreateImageBuilderStreamingURLRequest request)
+        {
+            var marshaller = new CreateImageBuilderStreamingURLRequestMarshaller();
+            var unmarshaller = CreateImageBuilderStreamingURLResponseUnmarshaller.Instance;
+
+            return Invoke<CreateImageBuilderStreamingURLRequest,CreateImageBuilderStreamingURLResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateImageBuilderStreamingURL operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateImageBuilderStreamingURL operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/CreateImageBuilderStreamingURL">REST API Reference for CreateImageBuilderStreamingURL Operation</seealso>
+        public Task<CreateImageBuilderStreamingURLResponse> CreateImageBuilderStreamingURLAsync(CreateImageBuilderStreamingURLRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new CreateImageBuilderStreamingURLRequestMarshaller();
+            var unmarshaller = CreateImageBuilderStreamingURLResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateImageBuilderStreamingURLRequest,CreateImageBuilderStreamingURLResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateStack
 
         internal CreateStackResponse CreateStack(CreateStackRequest request)
@@ -457,6 +522,70 @@ namespace Amazon.AppStream
 
         #endregion
         
+        #region  DeleteImage
+
+        internal DeleteImageResponse DeleteImage(DeleteImageRequest request)
+        {
+            var marshaller = new DeleteImageRequestMarshaller();
+            var unmarshaller = DeleteImageResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteImageRequest,DeleteImageResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteImage operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteImage operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DeleteImage">REST API Reference for DeleteImage Operation</seealso>
+        public Task<DeleteImageResponse> DeleteImageAsync(DeleteImageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DeleteImageRequestMarshaller();
+            var unmarshaller = DeleteImageResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteImageRequest,DeleteImageResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteImageBuilder
+
+        internal DeleteImageBuilderResponse DeleteImageBuilder(DeleteImageBuilderRequest request)
+        {
+            var marshaller = new DeleteImageBuilderRequestMarshaller();
+            var unmarshaller = DeleteImageBuilderResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteImageBuilderRequest,DeleteImageBuilderResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteImageBuilder operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteImageBuilder operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DeleteImageBuilder">REST API Reference for DeleteImageBuilder Operation</seealso>
+        public Task<DeleteImageBuilderResponse> DeleteImageBuilderAsync(DeleteImageBuilderRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DeleteImageBuilderRequestMarshaller();
+            var unmarshaller = DeleteImageBuilderResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteImageBuilderRequest,DeleteImageBuilderResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeleteStack
 
         internal DeleteStackResponse DeleteStack(DeleteStackRequest request)
@@ -548,6 +677,38 @@ namespace Amazon.AppStream
             var unmarshaller = DescribeFleetsResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeFleetsRequest,DescribeFleetsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeImageBuilders
+
+        internal DescribeImageBuildersResponse DescribeImageBuilders(DescribeImageBuildersRequest request)
+        {
+            var marshaller = new DescribeImageBuildersRequestMarshaller();
+            var unmarshaller = DescribeImageBuildersResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeImageBuildersRequest,DescribeImageBuildersResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeImageBuilders operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeImageBuilders operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeImageBuilders">REST API Reference for DescribeImageBuilders Operation</seealso>
+        public Task<DescribeImageBuildersResponse> DescribeImageBuildersAsync(DescribeImageBuildersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DescribeImageBuildersRequestMarshaller();
+            var unmarshaller = DescribeImageBuildersResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeImageBuildersRequest,DescribeImageBuildersResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -809,6 +970,38 @@ namespace Amazon.AppStream
 
         #endregion
         
+        #region  StartImageBuilder
+
+        internal StartImageBuilderResponse StartImageBuilder(StartImageBuilderRequest request)
+        {
+            var marshaller = new StartImageBuilderRequestMarshaller();
+            var unmarshaller = StartImageBuilderResponseUnmarshaller.Instance;
+
+            return Invoke<StartImageBuilderRequest,StartImageBuilderResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StartImageBuilder operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StartImageBuilder operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/StartImageBuilder">REST API Reference for StartImageBuilder Operation</seealso>
+        public Task<StartImageBuilderResponse> StartImageBuilderAsync(StartImageBuilderRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new StartImageBuilderRequestMarshaller();
+            var unmarshaller = StartImageBuilderResponseUnmarshaller.Instance;
+
+            return InvokeAsync<StartImageBuilderRequest,StartImageBuilderResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  StopFleet
 
         internal StopFleetResponse StopFleet(StopFleetRequest request)
@@ -836,6 +1029,38 @@ namespace Amazon.AppStream
             var unmarshaller = StopFleetResponseUnmarshaller.Instance;
 
             return InvokeAsync<StopFleetRequest,StopFleetResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  StopImageBuilder
+
+        internal StopImageBuilderResponse StopImageBuilder(StopImageBuilderRequest request)
+        {
+            var marshaller = new StopImageBuilderRequestMarshaller();
+            var unmarshaller = StopImageBuilderResponseUnmarshaller.Instance;
+
+            return Invoke<StopImageBuilderRequest,StopImageBuilderResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StopImageBuilder operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StopImageBuilder operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/StopImageBuilder">REST API Reference for StopImageBuilder Operation</seealso>
+        public Task<StopImageBuilderResponse> StopImageBuilderAsync(StopImageBuilderRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new StopImageBuilderRequestMarshaller();
+            var unmarshaller = StopImageBuilderResponseUnmarshaller.Instance;
+
+            return InvokeAsync<StopImageBuilderRequest,StopImageBuilderResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 

@@ -37,7 +37,7 @@ namespace Amazon.AppStream.Model
         /// <summary>
         /// Gets and sets the property Images. 
         /// <para>
-        /// The list of images.
+        /// Information about the images.
         /// </para>
         /// </summary>
         public List<Image> Images

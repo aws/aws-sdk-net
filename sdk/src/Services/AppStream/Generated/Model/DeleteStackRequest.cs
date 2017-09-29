@@ -29,8 +29,8 @@ namespace Amazon.AppStream.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteStack operation.
-    /// Deletes the stack. After this operation completes, the environment can no longer be
-    /// activated, and any reservations made for the stack are released.
+    /// Deletes the specified stack. After this operation completes, the environment can no
+    /// longer be activated and any reservations made for the stack are released.
     /// </summary>
     public partial class DeleteStackRequest : AmazonAppStreamRequest
     {
@@ -39,7 +39,7 @@ namespace Amazon.AppStream.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the stack to delete.
+        /// The name of the stack.
         /// </para>
         /// </summary>
         public string Name

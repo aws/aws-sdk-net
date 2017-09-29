@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AppStream.Model
 {
     /// <summary>
-    /// Details about a stack.
+    /// Describes a stack.
     /// </summary>
     public partial class Stack
     {
@@ -61,7 +61,7 @@ namespace Amazon.AppStream.Model
         /// <summary>
         /// Gets and sets the property CreatedTime. 
         /// <para>
-        /// The time stamp when the stack was created.
+        /// The time the stack was created.
         /// </para>
         /// </summary>
         public DateTime CreatedTime
@@ -79,7 +79,7 @@ namespace Amazon.AppStream.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// A meaningful description for the stack.
+        /// The description displayed to end users.
         /// </para>
         /// </summary>
         public string Description
@@ -97,7 +97,7 @@ namespace Amazon.AppStream.Model
         /// <summary>
         /// Gets and sets the property DisplayName. 
         /// <para>
-        /// A display name for the stack.
+        /// The stack name displayed to end users.
         /// </para>
         /// </summary>
         public string DisplayName
@@ -115,7 +115,7 @@ namespace Amazon.AppStream.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The unique identifier of the stack.
+        /// The name of the stack.
         /// </para>
         /// </summary>
         public string Name
@@ -133,7 +133,7 @@ namespace Amazon.AppStream.Model
         /// <summary>
         /// Gets and sets the property StackErrors. 
         /// <para>
-        /// The list of errors associated with the stack.
+        /// The errors for the stack.
         /// </para>
         /// </summary>
         public List<StackError> StackErrors
@@ -151,7 +151,7 @@ namespace Amazon.AppStream.Model
         /// <summary>
         /// Gets and sets the property StorageConnectors. 
         /// <para>
-        /// The storage connectors to be enabled for the stack.
+        /// The storage connectors to enable.
         /// </para>
         /// </summary>
         public List<StorageConnector> StorageConnectors

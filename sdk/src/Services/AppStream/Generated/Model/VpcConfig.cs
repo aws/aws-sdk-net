@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AppStream.Model
 {
     /// <summary>
-    /// VPC configuration information.
+    /// Describes VPC configuration information.
     /// </summary>
     public partial class VpcConfig
     {
@@ -38,7 +38,7 @@ namespace Amazon.AppStream.Model
         /// <summary>
         /// Gets and sets the property SecurityGroupIds. 
         /// <para>
-        /// Security groups associated with the fleet.
+        /// The security groups for the fleet.
         /// </para>
         /// </summary>
         public List<string> SecurityGroupIds
@@ -56,7 +56,7 @@ namespace Amazon.AppStream.Model
         /// <summary>
         /// Gets and sets the property SubnetIds. 
         /// <para>
-        /// The list of subnets to which a network interface is established from the fleet instance.
+        /// The subnets to which a network interface is established from the fleet instance.
         /// </para>
         /// </summary>
         public List<string> SubnetIds

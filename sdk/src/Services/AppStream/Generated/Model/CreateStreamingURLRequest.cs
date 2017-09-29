@@ -29,8 +29,12 @@ namespace Amazon.AppStream.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateStreamingURL operation.
-    /// Creates a URL to start an AppStream 2.0 streaming session for a user. By default,
-    /// the URL is valid only for 1 minute from the time that it is generated.
+    /// Creates a URL to start a streaming session for the specified user.
+    /// 
+    ///  
+    /// <para>
+    /// By default, the URL is valid only for one minute from the time that it is generated.
+    /// </para>
     /// </summary>
     public partial class CreateStreamingURLRequest : AmazonAppStreamRequest
     {
@@ -62,7 +66,7 @@ namespace Amazon.AppStream.Model
         /// <summary>
         /// Gets and sets the property FleetName. 
         /// <para>
-        /// The fleet for which the URL is generated.
+        /// The name of the fleet.
         /// </para>
         /// </summary>
         public string FleetName
@@ -80,7 +84,7 @@ namespace Amazon.AppStream.Model
         /// <summary>
         /// Gets and sets the property SessionContext. 
         /// <para>
-        /// The sessionContext of the streaming URL.
+        /// The session context of the streaming URL.
         /// </para>
         /// </summary>
         public string SessionContext
@@ -98,7 +102,7 @@ namespace Amazon.AppStream.Model
         /// <summary>
         /// Gets and sets the property StackName. 
         /// <para>
-        /// The stack for which the URL is generated.
+        /// The name of the stack.
         /// </para>
         /// </summary>
         public string StackName
@@ -116,7 +120,7 @@ namespace Amazon.AppStream.Model
         /// <summary>
         /// Gets and sets the property UserId. 
         /// <para>
-        /// A unique user ID for whom the URL is generated.
+        /// The ID of the user.
         /// </para>
         /// </summary>
         public string UserId
@@ -134,8 +138,8 @@ namespace Amazon.AppStream.Model
         /// <summary>
         /// Gets and sets the property Validity. 
         /// <para>
-        /// The duration up to which the URL returned by this action is valid. The input can be
-        /// any numeric value in seconds between 1 and 604800 seconds.
+        /// The time that the streaming URL will be valid, in seconds. Specify a value between
+        /// 1 and 604800 seconds.
         /// </para>
         /// </summary>
         public long Validity

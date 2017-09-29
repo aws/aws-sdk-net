@@ -38,7 +38,7 @@ namespace Amazon.AppStream.Model
         /// <summary>
         /// Gets and sets the property Expires. 
         /// <para>
-        /// Elapsed seconds after the Unix epoch, when this URL expires.
+        /// The elapsed time, in seconds after the Unix epoch, when this URL expires.
         /// </para>
         /// </summary>
         public DateTime Expires
