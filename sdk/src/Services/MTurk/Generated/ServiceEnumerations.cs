@@ -381,6 +381,10 @@ namespace Amazon.MTurk
         /// </summary>
         public static readonly NotificationTransport Email = new NotificationTransport("Email");
         /// <summary>
+        /// Constant SNS for NotificationTransport
+        /// </summary>
+        public static readonly NotificationTransport SNS = new NotificationTransport("SNS");
+        /// <summary>
         /// Constant SQS for NotificationTransport
         /// </summary>
         public static readonly NotificationTransport SQS = new NotificationTransport("SQS");

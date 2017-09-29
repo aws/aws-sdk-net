@@ -41,10 +41,22 @@ namespace Amazon.MTurk.Model
         /// <summary>
         /// Gets and sets the property Destination. 
         /// <para>
-        ///  The destination for notification messages. or email notifications (if Transport is
-        /// Email), this is an email address. For Amazon Simple Queue Service (Amazon SQS) notifications
-        /// (if Transport is SQS), this is the URL for your Amazon SQS queue. 
+        ///  The target for notification messages. The Destination’s format is determined by the
+        /// specified Transport: 
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// When Transport is Email, the Destination is your email address.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// When Transport is SQS, the Destination is your queue URL.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// When Transport is SNS, the Destination is the ARN of your topic.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public string Destination
         {
@@ -84,7 +96,7 @@ namespace Amazon.MTurk.Model
         /// Gets and sets the property Transport. 
         /// <para>
         ///  The method Amazon Mechanical Turk uses to send the notification. Valid Values: Email
-        /// | SQS. 
+        /// | SQS | SNS. 
         /// </para>
         /// </summary>
         public NotificationTransport Transport

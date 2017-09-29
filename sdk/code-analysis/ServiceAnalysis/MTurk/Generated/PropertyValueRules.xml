@@ -37,7 +37,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MTurk.Model.CreateHITRequest.Reward</property>
-    <pattern>^[0-9]+(\.)?[0-9]*$</pattern>
+    <pattern>^[0-9]+(\.)?[0-9]{0,2}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MTurk.Model.CreateHITRequest.UniqueRequestToken</property>
@@ -46,7 +46,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MTurk.Model.CreateHITTypeRequest.Reward</property>
-    <pattern>^[0-9]+(\.)?[0-9]*$</pattern>
+    <pattern>^[0-9]+(\.)?[0-9]{0,2}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MTurk.Model.CreateHITTypeResponse.HITTypeId</property>
@@ -109,11 +109,11 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MTurk.Model.GetAccountBalanceResponse.AvailableBalance</property>
-    <pattern>^[0-9]+(\.)?[0-9]*$</pattern>
+    <pattern>^[0-9]+(\.)?[0-9]{0,2}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MTurk.Model.GetAccountBalanceResponse.OnHoldBalance</property>
-    <pattern>^[0-9]+(\.)?[0-9]*$</pattern>
+    <pattern>^[0-9]+(\.)?[0-9]{0,2}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MTurk.Model.GetAssignmentRequest.AssignmentId</property>
@@ -369,7 +369,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MTurk.Model.SendBonusRequest.BonusAmount</property>
-    <pattern>^[0-9]+(\.)?[0-9]*$</pattern>
+    <pattern>^[0-9]+(\.)?[0-9]{0,2}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MTurk.Model.SendBonusRequest.UniqueRequestToken</property>
@@ -444,7 +444,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MTurk.Model.BonusPayment.BonusAmount</property>
-    <pattern>^[0-9]+(\.)?[0-9]*$</pattern>
+    <pattern>^[0-9]+(\.)?[0-9]{0,2}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MTurk.Model.BonusPayment.WorkerId</property>
@@ -478,7 +478,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MTurk.Model.HIT.Reward</property>
-    <pattern>^[0-9]+(\.)?[0-9]*$</pattern>
+    <pattern>^[0-9]+(\.)?[0-9]{0,2}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MTurk.Model.Locale.Country</property>
