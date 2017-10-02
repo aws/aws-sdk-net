@@ -56,8 +56,8 @@ namespace Amazon.CloudHSM.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// If not null, more results are available. Pass this value to <a>ListHapgs</a> to retrieve
-        /// the next set of items.
+        /// If not null, more results are available. Pass this value to <code>ListHapgs</code>
+        /// to retrieve the next set of items.
         /// </para>
         /// </summary>
         public string NextToken

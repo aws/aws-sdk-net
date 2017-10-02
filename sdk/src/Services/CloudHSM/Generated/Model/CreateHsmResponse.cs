@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudHSM.Model
 {
     /// <summary>
-    /// Contains the output of the <a>CreateHsm</a> operation.
+    /// Contains the output of the <code>CreateHsm</code> operation.
     /// </summary>
     public partial class CreateHsmResponse : AmazonWebServiceResponse
     {

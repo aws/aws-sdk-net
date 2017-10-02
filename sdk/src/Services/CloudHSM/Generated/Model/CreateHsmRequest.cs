@@ -33,9 +33,9 @@ namespace Amazon.CloudHSM.Model
     /// 
     ///  
     /// <para>
-    /// There is an upfront fee charged for each HSM instance that you create with the <a>CreateHsm</a>
+    /// There is an upfront fee charged for each HSM instance that you create with the <code>CreateHsm</code>
     /// operation. If you accidentally provision an HSM and want to request a refund, delete
-    /// the instance using the <a>DeleteHsm</a> operation, go to the <a href="https://console.aws.amazon.com/support/home#/">AWS
+    /// the instance using the <a>DeleteHsm</a> operation, go to the <a href="https://console.aws.amazon.com/support/home">AWS
     /// Support Center</a>, create a new case, and select <b>Account and Billing Support</b>.
     /// </para>
     ///  <important> 
@@ -102,7 +102,7 @@ namespace Amazon.CloudHSM.Model
         /// <summary>
         /// Gets and sets the property ExternalId. 
         /// <para>
-        /// The external ID from <b>IamRoleArn</b>, if present.
+        /// The external ID from <code>IamRoleArn</code>, if present.
         /// </para>
         /// </summary>
         public string ExternalId

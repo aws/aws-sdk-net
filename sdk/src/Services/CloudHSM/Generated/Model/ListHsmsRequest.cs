@@ -33,10 +33,10 @@ namespace Amazon.CloudHSM.Model
     /// 
     ///  
     /// <para>
-    /// This operation supports pagination with the use of the <i>NextToken</i> member. If
-    /// more results are available, the <i>NextToken</i> member of the response contains a
-    /// token that you pass in the next call to <a>ListHsms</a> to retrieve the next set of
-    /// items.
+    /// This operation supports pagination with the use of the <code>NextToken</code> member.
+    /// If more results are available, the <code>NextToken</code> member of the response contains
+    /// a token that you pass in the next call to <code>ListHsms</code> to retrieve the next
+    /// set of items.
     /// </para>
     /// </summary>
     public partial class ListHsmsRequest : AmazonCloudHSMRequest
@@ -46,8 +46,8 @@ namespace Amazon.CloudHSM.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// The <i>NextToken</i> value from a previous call to <a>ListHsms</a>. Pass null if this
-        /// is the first call.
+        /// The <code>NextToken</code> value from a previous call to <code>ListHsms</code>. Pass
+        /// null if this is the first call.
         /// </para>
         /// </summary>
         public string NextToken

@@ -31,7 +31,18 @@ namespace Amazon.CloudHSM
     /// <summary>
     /// Interface for accessing CloudHSM
     ///
-    /// AWS CloudHSM Service
+    /// AWS CloudHSM Service 
+    /// <para>
+    /// This is the reference for AWS CloudHSM Classic. For more information, see <a href="http://aws.amazon.com/cloudhsm/faqs-classic/">AWS
+    /// CloudHSM Classic FAQs</a> and the <a href="http://docs.aws.amazon.com/cloudhsm/classic/userguide/">AWS
+    /// CloudHSM Classic User Guide</a>.
+    /// </para>
+    ///  
+    /// <para>
+    /// For more information about AWS CloudHSM, see <a href="http://aws.amazon.com/cloudhsm/">AWS
+    /// CloudHSM</a> and the <a href="http://docs.aws.amazon.com/cloudhsm/latest/userguide/">AWS
+    /// CloudHSM User Guide</a>.
+    /// </para>
     /// </summary>
     public partial interface IAmazonCloudHSM : IAmazonService, IDisposable
     {
@@ -286,7 +297,7 @@ namespace Amazon.CloudHSM
         /// Retrieves information about an HSM. You can identify the HSM by its ARN or its serial
         /// number.
         /// </summary>
-        /// <param name="hsmArn">The ARN of the HSM. Either the <i>HsmArn</i> or the <i>SerialNumber</i> parameter must be specified.</param>
+        /// <param name="hsmArn">The ARN of the HSM. Either the <code>HsmArn</code> or the <code>SerialNumber</code> parameter must be specified.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
@@ -397,10 +408,10 @@ namespace Amazon.CloudHSM
         /// 
         ///  
         /// <para>
-        /// This operation supports pagination with the use of the <i>NextToken</i> member. If
-        /// more results are available, the <i>NextToken</i> member of the response contains a
-        /// token that you pass in the next call to <a>ListHapgs</a> to retrieve the next set
-        /// of items.
+        /// This operation supports pagination with the use of the <code>NextToken</code> member.
+        /// If more results are available, the <code>NextToken</code> member of the response contains
+        /// a token that you pass in the next call to <code>ListHapgs</code> to retrieve the next
+        /// set of items.
         /// </para>
         /// </summary>
         /// <param name="cancellationToken">
@@ -442,10 +453,10 @@ namespace Amazon.CloudHSM
         /// 
         ///  
         /// <para>
-        /// This operation supports pagination with the use of the <i>NextToken</i> member. If
-        /// more results are available, the <i>NextToken</i> member of the response contains a
-        /// token that you pass in the next call to <a>ListHsms</a> to retrieve the next set of
-        /// items.
+        /// This operation supports pagination with the use of the <code>NextToken</code> member.
+        /// If more results are available, the <code>NextToken</code> member of the response contains
+        /// a token that you pass in the next call to <code>ListHsms</code> to retrieve the next
+        /// set of items.
         /// </para>
         /// </summary>
         /// <param name="cancellationToken">
@@ -487,10 +498,10 @@ namespace Amazon.CloudHSM
         /// 
         ///  
         /// <para>
-        /// This operation supports pagination with the use of the <i>NextToken</i> member. If
-        /// more results are available, the <i>NextToken</i> member of the response contains a
-        /// token that you pass in the next call to <a>ListLunaClients</a> to retrieve the next
-        /// set of items.
+        /// This operation supports pagination with the use of the <code>NextToken</code> member.
+        /// If more results are available, the <code>NextToken</code> member of the response contains
+        /// a token that you pass in the next call to <code>ListLunaClients</code> to retrieve
+        /// the next set of items.
         /// </para>
         /// </summary>
         /// <param name="cancellationToken">
