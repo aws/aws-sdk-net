@@ -1,3 +1,7 @@
+### 3.3.165.1 (2017-10-02 19:28 UTC)
+* CloudHSM (3.3.0.21)
+	* Documentation updates for CloudHSM
+
 ### 3.3.165.0 (2017-09-29 20:03 UTC)
 * AppStream (3.3.6.0)
 	* Includes APIs for managing and accessing image builders, and deleting images.
