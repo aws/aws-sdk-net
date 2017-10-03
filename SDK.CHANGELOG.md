@@ -1,3 +1,9 @@
+### 3.3.166.0 (2017-10-03 17:20 UTC)
+* EC2 (3.3.29.0)
+	* This release includes service updates to AWS VPN.
+* SimpleSystemsManagement (3.3.12.0)
+	* EC2 Systems Manager support for tagging SSM Documents. Also support for tag-based permissions to restrict access to SSM Documents based on these tags.
+
 ### 3.3.165.1 (2017-10-02 19:28 UTC)
 * CloudHSM (3.3.0.21)
 	* Documentation updates for CloudHSM
