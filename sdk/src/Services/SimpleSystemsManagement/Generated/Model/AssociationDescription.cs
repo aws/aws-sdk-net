@@ -214,7 +214,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the SSM document.
+        /// The name of the Systems Manager document.
         /// </para>
         /// </summary>
         public string Name

@@ -50,6 +50,13 @@ namespace Amazon.SimpleSystemsManagement
     /// see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-setting-up.html">Systems
     /// Manager Prerequisites</a>.
     /// </para>
+    ///  
+    /// <para>
+    /// For information about other API actions you can perform on Amazon EC2 instances, see
+    /// the <a href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/">Amazon EC2 API
+    /// Reference</a>. For information about how to use a Query API, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/making-api-requests.html">Making
+    /// API Requests</a>. 
+    /// </para>
     /// </summary>
     public partial interface IAmazonSimpleSystemsManagement : IAmazonService, IDisposable
     {
@@ -60,13 +67,13 @@ namespace Amazon.SimpleSystemsManagement
 
         /// <summary>
         /// Adds or overwrites one or more tags for the specified resource. Tags are metadata
-        /// that you assign to your managed instances, Maintenance Windows, or Parameter Store
-        /// parameters. Tags enable you to categorize your resources in different ways, for example,
-        /// by purpose, owner, or environment. Each tag consists of a key and an optional value,
-        /// both of which you define. For example, you could define a set of tags for your account's
-        /// managed instances that helps you track each instance's owner and stack level. For
-        /// example: Key=Owner and Value=DbAdmin, SysAdmin, or Dev. Or Key=Stack and Value=Production,
-        /// Pre-Production, or Test.
+        /// that you can assign to your documents, managed instances, Maintenance Windows, Parameter
+        /// Store parameters, and patch baselines. Tags enable you to categorize your resources
+        /// in different ways, for example, by purpose, owner, or environment. Each tag consists
+        /// of a key and an optional value, both of which you define. For example, you could define
+        /// a set of tags for your account's managed instances that helps you track each instance's
+        /// owner and stack level. For example: Key=Owner and Value=DbAdmin, SysAdmin, or Dev.
+        /// Or Key=Stack and Value=Production, Pre-Production, or Test.
         /// 
         ///  
         /// <para>
@@ -96,8 +103,8 @@ namespace Amazon.SimpleSystemsManagement
         /// The resource ID is not valid. Verify that you entered the correct ID and try again.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidResourceTypeException">
-        /// The resource type is not valid. If you are attempting to tag an instance, the instance
-        /// must be a registered, managed instance.
+        /// The resource type is not valid. For example, if you are attempting to tag an instance,
+        /// the instance must be a registered, managed instance.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.TooManyTagsErrorException">
         /// The Targets parameter includes too many tags. Remove one or more tags and try the
@@ -408,8 +415,8 @@ namespace Amazon.SimpleSystemsManagement
         /// The output location is not valid or does not exist.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidParametersException">
-        /// You must specify values for all required parameters in the SSM document. You can only
-        /// supply values to parameters defined in the SSM document.
+        /// You must specify values for all required parameters in the Systems Manager document.
+        /// You can only supply values to parameters defined in the Systems Manager document.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidScheduleException">
         /// The schedule is invalid. Verify your cron or rate expression and try again.
@@ -487,8 +494,8 @@ namespace Amazon.SimpleSystemsManagement
         /// The output location is not valid or does not exist.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidParametersException">
-        /// You must specify values for all required parameters in the SSM document. You can only
-        /// supply values to parameters defined in the SSM document.
+        /// You must specify values for all required parameters in the Systems Manager document.
+        /// You can only supply values to parameters defined in the Systems Manager document.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidScheduleException">
         /// The schedule is invalid. Verify your cron or rate expression and try again.
@@ -597,8 +604,8 @@ namespace Amazon.SimpleSystemsManagement
         /// The output location is not valid or does not exist.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidParametersException">
-        /// You must specify values for all required parameters in the SSM document. You can only
-        /// supply values to parameters defined in the SSM document.
+        /// You must specify values for all required parameters in the Systems Manager document.
+        /// You can only supply values to parameters defined in the Systems Manager document.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidScheduleException">
         /// The schedule is invalid. Verify your cron or rate expression and try again.
@@ -662,7 +669,7 @@ namespace Amazon.SimpleSystemsManagement
         /// The specified document already exists.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.DocumentLimitExceededException">
-        /// You can have at most 200 active SSM documents.
+        /// You can have at most 200 active Systems Manager documents.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
         /// An error occurred on the server side.
@@ -695,7 +702,7 @@ namespace Amazon.SimpleSystemsManagement
         /// The specified document already exists.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.DocumentLimitExceededException">
-        /// You can have at most 200 active SSM documents.
+        /// You can have at most 200 active Systems Manager documents.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
         /// An error occurred on the server side.
@@ -1687,7 +1694,7 @@ namespace Amazon.SimpleSystemsManagement
         /// Describes the associations for the specified Systems Manager document or instance.
         /// </summary>
         /// <param name="instanceId">The instance ID.</param>
-        /// <param name="name">The name of the SSM document.</param>
+        /// <param name="name">The name of the Systems Manager document.</param>
         /// 
         /// <returns>The response from the DescribeAssociation service method, as returned by SimpleSystemsManagement.</returns>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.AssociationDoesNotExistException">
@@ -1899,9 +1906,9 @@ namespace Amazon.SimpleSystemsManagement
 
 
         /// <summary>
-        /// Describes the specified SSM document.
+        /// Describes the specified Systems Manager document.
         /// </summary>
-        /// <param name="name">The name of the SSM document.</param>
+        /// <param name="name">The name of the Systems Manager document.</param>
         /// 
         /// <returns>The response from the DescribeDocument service method, as returned by SimpleSystemsManagement.</returns>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
@@ -1917,7 +1924,7 @@ namespace Amazon.SimpleSystemsManagement
         DescribeDocumentResponse DescribeDocument(string name);
 
         /// <summary>
-        /// Describes the specified SSM document.
+        /// Describes the specified Systems Manager document.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeDocument service method.</param>
         /// 
@@ -3207,9 +3214,9 @@ namespace Amazon.SimpleSystemsManagement
 
 
         /// <summary>
-        /// Gets the contents of the specified SSM document.
+        /// Gets the contents of the specified Systems Manager document.
         /// </summary>
-        /// <param name="name">The name of the SSM document.</param>
+        /// <param name="name">The name of the Systems Manager document.</param>
         /// 
         /// <returns>The response from the GetDocument service method, as returned by SimpleSystemsManagement.</returns>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
@@ -3225,7 +3232,7 @@ namespace Amazon.SimpleSystemsManagement
         GetDocumentResponse GetDocument(string name);
 
         /// <summary>
-        /// Gets the contents of the specified SSM document.
+        /// Gets the contents of the specified Systems Manager document.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetDocument service method.</param>
         /// 
@@ -4384,8 +4391,8 @@ namespace Amazon.SimpleSystemsManagement
         /// The resource ID is not valid. Verify that you entered the correct ID and try again.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidResourceTypeException">
-        /// The resource type is not valid. If you are attempting to tag an instance, the instance
-        /// must be a registered, managed instance.
+        /// The resource type is not valid. For example, if you are attempting to tag an instance,
+        /// the instance must be a registered, managed instance.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListComplianceItems">REST API Reference for ListComplianceItems Operation</seealso>
         ListComplianceItemsResponse ListComplianceItems(ListComplianceItemsRequest request);
@@ -4473,7 +4480,7 @@ namespace Amazon.SimpleSystemsManagement
 
 
         /// <summary>
-        /// Describes one or more of your SSM documents.
+        /// Describes one or more of your Systems Manager documents.
         /// </summary>
         /// 
         /// <returns>The response from the ListDocuments service method, as returned by SimpleSystemsManagement.</returns>
@@ -4490,7 +4497,7 @@ namespace Amazon.SimpleSystemsManagement
         ListDocumentsResponse ListDocuments();
 
         /// <summary>
-        /// Describes one or more of your SSM documents.
+        /// Describes one or more of your Systems Manager documents.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListDocuments service method.</param>
         /// 
@@ -4786,8 +4793,8 @@ namespace Amazon.SimpleSystemsManagement
         /// The resource ID is not valid. Verify that you entered the correct ID and try again.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidResourceTypeException">
-        /// The resource type is not valid. If you are attempting to tag an instance, the instance
-        /// must be a registered, managed instance.
+        /// The resource type is not valid. For example, if you are attempting to tag an instance,
+        /// the instance must be a registered, managed instance.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request);
@@ -4832,7 +4839,7 @@ namespace Amazon.SimpleSystemsManagement
         /// 
         /// <returns>The response from the ModifyDocumentPermission service method, as returned by SimpleSystemsManagement.</returns>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.DocumentLimitExceededException">
-        /// You can have at most 200 active SSM documents.
+        /// You can have at most 200 active Systems Manager documents.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.DocumentPermissionLimitException">
         /// The document cannot be shared with more AWS user accounts. You can share a document
@@ -4906,8 +4913,8 @@ namespace Amazon.SimpleSystemsManagement
         /// The resource ID is not valid. Verify that you entered the correct ID and try again.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidResourceTypeException">
-        /// The resource type is not valid. If you are attempting to tag an instance, the instance
-        /// must be a registered, managed instance.
+        /// The resource type is not valid. For example, if you are attempting to tag an instance,
+        /// the instance must be a registered, managed instance.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.ItemSizeLimitExceededException">
         /// The inventory item size has exceeded the size limit.
@@ -5370,8 +5377,8 @@ namespace Amazon.SimpleSystemsManagement
         /// The resource ID is not valid. Verify that you entered the correct ID and try again.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidResourceTypeException">
-        /// The resource type is not valid. If you are attempting to tag an instance, the instance
-        /// must be a registered, managed instance.
+        /// The resource type is not valid. For example, if you are attempting to tag an instance,
+        /// the instance must be a registered, managed instance.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/RemoveTagsFromResource">REST API Reference for RemoveTagsFromResource Operation</seealso>
         RemoveTagsFromResourceResponse RemoveTagsFromResource(RemoveTagsFromResourceRequest request);
@@ -5506,8 +5513,8 @@ namespace Amazon.SimpleSystemsManagement
         /// The S3 bucket does not exist.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidParametersException">
-        /// You must specify values for all required parameters in the SSM document. You can only
-        /// supply values to parameters defined in the SSM document.
+        /// You must specify values for all required parameters in the Systems Manager document.
+        /// You can only supply values to parameters defined in the Systems Manager document.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidRoleException">
         /// The role name can't contain invalid characters. Also verify that you specified an
@@ -5573,8 +5580,8 @@ namespace Amazon.SimpleSystemsManagement
         /// The S3 bucket does not exist.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidParametersException">
-        /// You must specify values for all required parameters in the SSM document. You can only
-        /// supply values to parameters defined in the SSM document.
+        /// You must specify values for all required parameters in the Systems Manager document.
+        /// You can only supply values to parameters defined in the Systems Manager document.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidRoleException">
         /// The role name can't contain invalid characters. Also verify that you specified an
@@ -5765,8 +5772,8 @@ namespace Amazon.SimpleSystemsManagement
         /// The output location is not valid or does not exist.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidParametersException">
-        /// You must specify values for all required parameters in the SSM document. You can only
-        /// supply values to parameters defined in the SSM document.
+        /// You must specify values for all required parameters in the Systems Manager document.
+        /// You can only supply values to parameters defined in the Systems Manager document.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidScheduleException">
         /// The schedule is invalid. Verify your cron or rate expression and try again.

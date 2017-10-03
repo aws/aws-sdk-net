@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
-    /// Describes an SSM document.
+    /// Describes a Systems Manager document.
     /// </summary>
     public partial class DocumentDescription
     {
@@ -47,6 +47,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         private string _schemaVersion;
         private string _sha1;
         private DocumentStatus _status;
+        private List<Tag> _tags = new List<Tag>();
 
         /// <summary>
         /// Gets and sets the property CreatedDate. 
@@ -205,7 +206,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the SSM document.
+        /// The name of the Systems Manager document.
         /// </para>
         /// </summary>
         public string Name
@@ -223,7 +224,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property Owner. 
         /// <para>
-        /// The AWS user account of the person who created the document.
+        /// The AWS user account that created the document.
         /// </para>
         /// </summary>
         public string Owner
@@ -259,7 +260,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property PlatformTypes. 
         /// <para>
-        /// The list of OS platforms compatible with this SSM document. 
+        /// The list of OS platforms compatible with this Systems Manager document. 
         /// </para>
         /// </summary>
         public List<string> PlatformTypes
@@ -295,7 +296,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property Sha1. 
         /// <para>
-        /// The SHA1 hash of the document, which you can use for verification purposes.
+        /// The SHA1 hash of the document, which you can use for verification.
         /// </para>
         /// </summary>
         public string Sha1
@@ -313,7 +314,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The status of the SSM document.
+        /// The status of the Systems Manager document.
         /// </para>
         /// </summary>
         public DocumentStatus Status
@@ -326,6 +327,24 @@ namespace Amazon.SimpleSystemsManagement.Model
         internal bool IsSetStatus()
         {
             return this._status != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// The tags, or metadata, that have been applied to the document.
+        /// </para>
+        /// </summary>
+        public List<Tag> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
     }

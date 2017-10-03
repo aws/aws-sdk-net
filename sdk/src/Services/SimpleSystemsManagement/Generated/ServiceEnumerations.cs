@@ -2409,6 +2409,10 @@ namespace Amazon.SimpleSystemsManagement
     {
 
         /// <summary>
+        /// Constant Document for ResourceTypeForTagging
+        /// </summary>
+        public static readonly ResourceTypeForTagging Document = new ResourceTypeForTagging("Document");
+        /// <summary>
         /// Constant MaintenanceWindow for ResourceTypeForTagging
         /// </summary>
         public static readonly ResourceTypeForTagging MaintenanceWindow = new ResourceTypeForTagging("MaintenanceWindow");
@@ -2420,6 +2424,10 @@ namespace Amazon.SimpleSystemsManagement
         /// Constant Parameter for ResourceTypeForTagging
         /// </summary>
         public static readonly ResourceTypeForTagging Parameter = new ResourceTypeForTagging("Parameter");
+        /// <summary>
+        /// Constant PatchBaseline for ResourceTypeForTagging
+        /// </summary>
+        public static readonly ResourceTypeForTagging PatchBaseline = new ResourceTypeForTagging("PatchBaseline");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

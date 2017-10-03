@@ -29,11 +29,12 @@ namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
     /// Container for the parameters to the ListDocuments operation.
-    /// Describes one or more of your SSM documents.
+    /// Describes one or more of your Systems Manager documents.
     /// </summary>
     public partial class ListDocumentsRequest : AmazonSimpleSystemsManagementRequest
     {
         private List<DocumentFilter> _documentFilterList = new List<DocumentFilter>();
+        private List<DocumentKeyValuesFilter> _filters = new List<DocumentKeyValuesFilter>();
         private int? _maxResults;
         private string _nextToken;
 
@@ -67,6 +68,24 @@ namespace Amazon.SimpleSystemsManagement.Model
         internal bool IsSetDocumentFilterList()
         {
             return this._documentFilterList != null && this._documentFilterList.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Filters. 
+        /// <para>
+        /// One or more filters. Use a filter to return a more specific list of results.
+        /// </para>
+        /// </summary>
+        public List<DocumentKeyValuesFilter> Filters
+        {
+            get { return this._filters; }
+            set { this._filters = value; }
+        }
+
+        // Check to see if Filters property is set
+        internal bool IsSetFilters()
+        {
+            return this._filters != null && this._filters.Count > 0; 
         }
 
         /// <summary>

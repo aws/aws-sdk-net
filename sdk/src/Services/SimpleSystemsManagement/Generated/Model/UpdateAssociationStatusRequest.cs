@@ -47,7 +47,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// </summary>
         /// <param name="associationStatus">The association status.</param>
         /// <param name="instanceId">The ID of the instance.</param>
-        /// <param name="name">The name of the SSM document.</param>
+        /// <param name="name">The name of the Systems Manager document.</param>
         public UpdateAssociationStatusRequest(AssociationStatus associationStatus, string instanceId, string name)
         {
             _associationStatus = associationStatus;
@@ -94,7 +94,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the SSM document.
+        /// The name of the Systems Manager document.
         /// </para>
         /// </summary>
         public string Name

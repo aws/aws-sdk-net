@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
-    /// Describes the name of an SSM document.
+    /// Describes the name of a Systems Manager document.
     /// </summary>
     public partial class DocumentIdentifier
     {
@@ -38,6 +38,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         private string _owner;
         private List<string> _platformTypes = new List<string>();
         private string _schemaVersion;
+        private List<Tag> _tags = new List<Tag>();
 
         /// <summary>
         /// Empty constructor used to set  properties independently even when a simple constructor is available
@@ -47,7 +48,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Instantiates DocumentIdentifier with the parameterized properties
         /// </summary>
-        /// <param name="name">The name of the SSM document.</param>
+        /// <param name="name">The name of the Systems Manager document.</param>
         public DocumentIdentifier(string name)
         {
             _name = name;
@@ -92,7 +93,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the SSM document.
+        /// The name of the Systems Manager document.
         /// </para>
         /// </summary>
         public string Name
@@ -110,7 +111,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property Owner. 
         /// <para>
-        /// The AWS user account of the person who created the document.
+        /// The AWS user account that created the document.
         /// </para>
         /// </summary>
         public string Owner
@@ -159,6 +160,24 @@ namespace Amazon.SimpleSystemsManagement.Model
         internal bool IsSetSchemaVersion()
         {
             return this._schemaVersion != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// The tags, or metadata, that have been applied to the document.
+        /// </para>
+        /// </summary>
+        public List<Tag> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
     }

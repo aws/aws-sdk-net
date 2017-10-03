@@ -47,7 +47,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Instantiates DescribeAssociationRequest with the parameterized properties
         /// </summary>
         /// <param name="instanceId">The instance ID.</param>
-        /// <param name="name">The name of the SSM document.</param>
+        /// <param name="name">The name of the Systems Manager document.</param>
         public DescribeAssociationRequest(string instanceId, string name)
         {
             _instanceId = instanceId;
@@ -114,7 +114,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the SSM document.
+        /// The name of the Systems Manager document.
         /// </para>
         /// </summary>
         public string Name

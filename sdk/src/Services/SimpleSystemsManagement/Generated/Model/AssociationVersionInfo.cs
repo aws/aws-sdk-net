@@ -118,7 +118,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property DocumentVersion. 
         /// <para>
-        /// The version of an SSM document used when the association version was created.
+        /// The version of a Systems Manager document used when the association version was created.
         /// </para>
         /// </summary>
         public string DocumentVersion
