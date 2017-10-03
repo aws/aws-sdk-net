@@ -41,7 +41,7 @@ namespace Amazon.EC2.Model
     ///  
     /// <para>
     /// Instance console output is buffered and posted shortly after instance boot, reboot,
-    /// and termination. Amazon EC2 preserves the most recent 64 KB output which is available
+    /// and termination. Amazon EC2 preserves the most recent 64 KB output, which is available
     /// for at least one hour after the most recent post.
     /// </para>
     ///  

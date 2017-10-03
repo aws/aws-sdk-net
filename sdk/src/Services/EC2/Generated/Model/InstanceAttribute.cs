@@ -88,7 +88,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property EbsOptimized. 
         /// <para>
-        /// Indicates whether the instance is optimized for EBS I/O.
+        /// Indicates whether the instance is optimized for Amazon EBS I/O.
         /// </para>
         /// </summary>
         public bool EbsOptimized
@@ -270,8 +270,8 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property SourceDestCheck. 
         /// <para>
         /// Indicates whether source/destination checking is enabled. A value of <code>true</code>
-        /// means checking is enabled, and <code>false</code> means checking is disabled. This
-        /// value must be <code>false</code> for a NAT instance to perform NAT.
+        /// means that checking is enabled, and <code>false</code> means that checking is disabled.
+        /// This value must be <code>false</code> for a NAT instance to perform NAT.
         /// </para>
         /// </summary>
         public bool SourceDestCheck

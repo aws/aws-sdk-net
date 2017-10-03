@@ -78,8 +78,8 @@ namespace Amazon.EC2.Model
     ///  </li> </ul> 
     /// <para>
     /// To ensure faster instance launches, break up large requests into smaller batches.
-    /// For example, create 5 separate launch requests for 100 instances each instead of 1
-    /// launch request for 500 instances.
+    /// For example, create five separate launch requests for 100 instances each instead of
+    /// one launch request for 500 instances.
     /// </para>
     ///  
     /// <para>
@@ -248,10 +248,10 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property EbsOptimized. 
         /// <para>
-        /// Indicates whether the instance is optimized for EBS I/O. This optimization provides
-        /// dedicated throughput to Amazon EBS and an optimized configuration stack to provide
-        /// optimal EBS I/O performance. This optimization isn't available with all instance types.
-        /// Additional usage charges apply when using an EBS-optimized instance.
+        /// Indicates whether the instance is optimized for Amazon EBS I/O. This optimization
+        /// provides dedicated throughput to Amazon EBS and an optimized configuration stack to
+        /// provide optimal Amazon EBS I/O performance. This optimization isn't available with
+        /// all instance types. Additional usage charges apply when using an EBS-optimized instance.
         /// </para>
         ///  
         /// <para>
@@ -709,9 +709,9 @@ namespace Amazon.EC2.Model
         /// <para>
         /// The user data to make available to the instance. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/user-data.html">Running
         /// Commands on Your Linux Instance at Launch</a> (Linux) and <a href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-instance-metadata.html#instancedata-add-user-data">Adding
-        /// User Data</a> (Windows). If you are using an AWS SDK or command line tool, Base64-encoding
+        /// User Data</a> (Windows). If you are using an AWS SDK or command line tool, base64-encoding
         /// is performed for you, and you can load the text from a file. Otherwise, you must provide
-        /// Base64-encoded text.
+        /// base64-encoded text.
         /// </para>
         /// </summary>
         public string UserData

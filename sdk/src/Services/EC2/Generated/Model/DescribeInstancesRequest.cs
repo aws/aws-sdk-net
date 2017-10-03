@@ -333,9 +333,10 @@ namespace Amazon.EC2.Model
         ///  </li> <li> 
         /// <para>
         ///  <code>network-interface.source-dest-check</code> - Whether the network interface
-        /// performs source/destination checking. A value of <code>true</code> means checking
-        /// is enabled, and <code>false</code> means checking is disabled. The value must be <code>false</code>
-        /// for the network interface to perform network address translation (NAT) in your VPC.
+        /// performs source/destination checking. A value of <code>true</code> means that checking
+        /// is enabled, and <code>false</code> means that checking is disabled. The value must
+        /// be <code>false</code> for the network interface to perform network address translation
+        /// (NAT) in your VPC.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -397,8 +398,8 @@ namespace Amazon.EC2.Model
         /// ID is created any time you launch an instance. A reservation ID has a one-to-one relationship
         /// with an instance launch request, but can be associated with more than one instance
         /// if you launch multiple instances using the same launch request. For example, if you
-        /// launch one instance, you'll get one reservation ID. If you launch ten instances using
-        /// the same launch request, you'll also get one reservation ID.
+        /// launch one instance, you get one reservation ID. If you launch ten instances using
+        /// the same launch request, you also get one reservation ID.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -414,12 +415,12 @@ namespace Amazon.EC2.Model
         /// <para>
         ///  <code>source-dest-check</code> - Indicates whether the instance performs source/destination
         /// checking. A value of <code>true</code> means that checking is enabled, and <code>false</code>
-        /// means checking is disabled. The value must be <code>false</code> for the instance
+        /// means that checking is disabled. The value must be <code>false</code> for the instance
         /// to perform network address translation (NAT) in your VPC. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>spot-instance-request-id</code> - The ID of the Spot instance request.
+        ///  <code>spot-instance-request-id</code> - The ID of the Spot Instance request.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -446,8 +447,8 @@ namespace Amazon.EC2.Model
         /// independent of the <code>tag-value</code> filter. For example, if you use both the
         /// filter "tag-key=Purpose" and the filter "tag-value=X", you get any resources assigned
         /// both the tag key Purpose (regardless of what the tag's value is), and the tag value
-        /// X (regardless of what the tag's key is). If you want to list only resources where
-        /// Purpose is X, see the <code>tag</code>:<i>key</i>=<i>value</i> filter.
+        /// X (regardless of the tag's key). If you want to list only resources where Purpose
+        /// is X, see the <code>tag</code>:<i>key</i>=<i>value</i> filter.
         /// </para>
         ///  </li> <li> 
         /// <para>

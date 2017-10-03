@@ -61,7 +61,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         response.CurrencyCode = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("purchase/member", targetDepth))
+                    if (context.TestExpression("purchase/item", targetDepth))
                     {
                         var unmarshaller = PurchaseUnmarshaller.Instance;
                         var item = unmarshaller.Unmarshall(context);

@@ -29,8 +29,8 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the CreatePlacementGroup operation.
-    /// Creates a placement group that you launch cluster instances into. You must give the
-    /// group a name that's unique within the scope of your account.
+    /// Creates a placement group that you launch cluster instances into. Give the group a
+    /// name that's unique within the scope of your account.
     /// 
     ///  
     /// <para>

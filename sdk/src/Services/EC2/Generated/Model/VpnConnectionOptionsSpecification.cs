@@ -33,12 +33,17 @@ namespace Amazon.EC2.Model
     public partial class VpnConnectionOptionsSpecification
     {
         private bool? _staticRoutesOnly;
+        private List<VpnTunnelOptionsSpecification> _tunnelOptions = new List<VpnTunnelOptionsSpecification>();
 
         /// <summary>
         /// Gets and sets the property StaticRoutesOnly. 
         /// <para>
-        /// Indicates whether the VPN connection uses static routes only. Static routes must be
-        /// used for devices that don't support BGP.
+        /// Indicate whether the VPN connection uses static routes only. If you are creating a
+        /// VPN connection for a device that does not support BGP, you must specify <code>true</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Default: <code>false</code> 
         /// </para>
         /// </summary>
         public bool StaticRoutesOnly
@@ -51,6 +56,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetStaticRoutesOnly()
         {
             return this._staticRoutesOnly.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property TunnelOptions. 
+        /// <para>
+        /// The tunnel options for the VPN connection.
+        /// </para>
+        /// </summary>
+        public List<VpnTunnelOptionsSpecification> TunnelOptions
+        {
+            get { return this._tunnelOptions; }
+            set { this._tunnelOptions = value; }
+        }
+
+        // Check to see if TunnelOptions property is set
+        internal bool IsSetTunnelOptions()
+        {
+            return this._tunnelOptions != null && this._tunnelOptions.Count > 0; 
         }
 
     }

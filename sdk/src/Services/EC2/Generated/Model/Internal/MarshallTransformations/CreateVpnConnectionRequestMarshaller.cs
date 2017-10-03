@@ -68,6 +68,22 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     {
                         request.Parameters.Add("Options" + "." + "StaticRoutesOnly", StringUtils.FromBool(publicRequest.Options.StaticRoutesOnly));
                     }
+                    if(publicRequest.Options.IsSetTunnelOptions())
+                    {
+                        int publicRequestOptionslistValueIndex = 1;
+                        foreach(var publicRequestOptionslistValue in publicRequest.Options.TunnelOptions)
+                        {
+                            if(publicRequestOptionslistValue.IsSetPreSharedKey())
+                            {
+                                request.Parameters.Add("Options" + "." + "TunnelOptions" + "." + publicRequestOptionslistValueIndex + "." + "PreSharedKey", StringUtils.FromString(publicRequestOptionslistValue.PreSharedKey));
+                            }
+                            if(publicRequestOptionslistValue.IsSetTunnelInsideCidr())
+                            {
+                                request.Parameters.Add("Options" + "." + "TunnelOptions" + "." + publicRequestOptionslistValueIndex + "." + "TunnelInsideCidr", StringUtils.FromString(publicRequestOptionslistValue.TunnelInsideCidr));
+                            }
+                            publicRequestOptionslistValueIndex++;
+                        }
+                    }
                 }
                 if(publicRequest.IsSetType())
                 {

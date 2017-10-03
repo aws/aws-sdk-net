@@ -55,9 +55,8 @@ namespace Amazon.EC2.Model
     /// </para>
     ///  
     /// <para>
-    /// For more information about VPN connections, see <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_VPN.html">Adding
-    /// a Hardware Virtual Private Gateway to Your VPC</a> in the <i>Amazon Virtual Private
-    /// Cloud User Guide</i>.
+    /// For more information, see <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_VPN.html">AWS
+    /// Managed VPN Connections</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
     /// </para>
     /// </summary>
     public partial class CreateVpnConnectionRequest : AmazonEC2Request
@@ -106,12 +105,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Options. 
         /// <para>
-        /// Indicates whether the VPN connection requires static routes. If you are creating a
-        /// VPN connection for a device that does not support BGP, you must specify <code>true</code>.
-        /// </para>
-        ///  
-        /// <para>
-        /// Default: <code>false</code> 
+        /// The options for the VPN connection.
         /// </para>
         /// </summary>
         public VpnConnectionOptionsSpecification Options

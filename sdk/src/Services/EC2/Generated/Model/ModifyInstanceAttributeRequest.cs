@@ -141,10 +141,10 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property EbsOptimized. 
         /// <para>
-        /// Specifies whether the instance is optimized for EBS I/O. This optimization provides
-        /// dedicated throughput to Amazon EBS and an optimized configuration stack to provide
-        /// optimal EBS I/O performance. This optimization isn't available with all instance types.
-        /// Additional usage charges apply when using an EBS Optimized instance.
+        /// Specifies whether the instance is optimized for Amazon EBS I/O. This optimization
+        /// provides dedicated throughput to Amazon EBS and an optimized configuration stack to
+        /// provide optimal EBS I/O performance. This optimization isn't available with all instance
+        /// types. Additional usage charges apply when using an EBS Optimized instance.
         /// </para>
         /// </summary>
         public bool EbsOptimized
@@ -300,7 +300,7 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property SourceDestCheck. 
         /// <para>
         /// Specifies whether source/destination checking is enabled. A value of <code>true</code>
-        /// means that checking is enabled, and <code>false</code> means checking is disabled.
+        /// means that checking is enabled, and <code>false</code> means that checking is disabled.
         /// This value must be <code>false</code> for a NAT instance to perform NAT.
         /// </para>
         /// </summary>
@@ -349,8 +349,8 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property UserData. 
         /// <para>
         /// Changes the instance's user data to the specified value. If you are using an AWS SDK
-        /// or command line tool, Base64-encoding is performed for you, and you can load the text
-        /// from a file. Otherwise, you must provide Base64-encoded text.
+        /// or command line tool, base64-encoding is performed for you, and you can load the text
+        /// from a file. Otherwise, you must provide base64-encoded text.
         /// </para>
         /// </summary>
         public string UserData

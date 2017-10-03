@@ -147,10 +147,10 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property EbsOptimized. 
         /// <para>
-        /// Indicates whether the instance is optimized for EBS I/O. This optimization provides
-        /// dedicated throughput to Amazon EBS and an optimized configuration stack to provide
-        /// optimal I/O performance. This optimization isn't available with all instance types.
-        /// Additional usage charges apply when using an EBS Optimized instance.
+        /// Indicates whether the instance is optimized for Amazon EBS I/O. This optimization
+        /// provides dedicated throughput to Amazon EBS and an optimized configuration stack to
+        /// provide optimal I/O performance. This optimization isn't available with all instance
+        /// types. Additional usage charges apply when using an EBS Optimized instance.
         /// </para>
         /// </summary>
         public bool EbsOptimized
@@ -276,7 +276,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property InstanceLifecycle. 
         /// <para>
-        /// Indicates whether this is a Spot instance or a Scheduled Instance.
+        /// Indicates whether this is a Spot Instance or a Scheduled Instance.
         /// </para>
         /// </summary>
         public InstanceLifecycleType InstanceLifecycle
@@ -444,10 +444,10 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  
         /// <para>
-        /// [EC2-VPC] The Amazon-provided DNS server will resolve Amazon-provided private DNS
-        /// hostnames if you've enabled DNS resolution and DNS hostnames in your VPC. If you are
-        /// not using the Amazon-provided DNS server in your VPC, your custom domain name servers
-        /// must resolve the hostname as appropriate.
+        /// [EC2-VPC] The Amazon-provided DNS server resolves Amazon-provided private DNS hostnames
+        /// if you've enabled DNS resolution and DNS hostnames in your VPC. If you are not using
+        /// the Amazon-provided DNS server in your VPC, your custom domain name servers must resolve
+        /// the hostname as appropriate.
         /// </para>
         /// </summary>
         public string PrivateDnsName
@@ -614,8 +614,8 @@ namespace Amazon.EC2.Model
         /// <para>
         /// Specifies whether to enable an instance launched in a VPC to perform NAT. This controls
         /// whether source/destination checking is enabled on the instance. A value of <code>true</code>
-        /// means checking is enabled, and <code>false</code> means checking is disabled. The
-        /// value must be <code>false</code> for the instance to perform NAT. For more information,
+        /// means that checking is enabled, and <code>false</code> means that checking is disabled.
+        /// The value must be <code>false</code> for the instance to perform NAT. For more information,
         /// see <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_NAT_Instance.html">NAT
         /// Instances</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
         /// </para>
@@ -635,7 +635,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property SpotInstanceRequestId. 
         /// <para>
-        /// If the request is a Spot instance request, the ID of the request.
+        /// If the request is a Spot Instance request, the ID of the request.
         /// </para>
         /// </summary>
         public string SpotInstanceRequestId

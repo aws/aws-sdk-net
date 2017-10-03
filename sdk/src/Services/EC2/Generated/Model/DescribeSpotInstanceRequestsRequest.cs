@@ -133,8 +133,8 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>launch.monitoring-enabled</code> - Whether monitoring is enabled for the Spot
-        /// instance.
+        ///  <code>launch.monitoring-enabled</code> - Whether detailed monitoring is enabled for
+        /// the Spot instance.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -142,25 +142,13 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>network-interface.network-interface-id</code> - The ID of the network interface.
+        ///  <code>launched-availability-zone</code> - The Availability Zone in which the bid
+        /// is launched.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>network-interface.device-index</code> - The index of the device for the network
-        /// interface attachment on the instance.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>network-interface.subnet-id</code> - The ID of the subnet for the instance.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>network-interface.description</code> - A description of the network interface.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>network-interface.private-ip-address</code> - The primary private IP address
-        /// of the network interface.
+        ///  <code>network-interface.addresses.primary</code> - Indicates whether the IP address
+        /// is the primary private IP address.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -169,18 +157,30 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        ///  <code>network-interface.description</code> - A description of the network interface.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>network-interface.device-index</code> - The index of the device for the network
+        /// interface attachment on the instance.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <code>network-interface.group-id</code> - The ID of the security group associated
         /// with the network interface.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>network-interface.group-name</code> - The name of the security group associated
-        /// with the network interface.
+        ///  <code>network-interface.network-interface-id</code> - The ID of the network interface.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>network-interface.addresses.primary</code> - Indicates whether the IP address
-        /// is the primary private IP address.
+        ///  <code>network-interface.private-ip-address</code> - The primary private IP address
+        /// of the network interface.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>network-interface.subnet-id</code> - The ID of the subnet for the instance.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -238,11 +238,6 @@ namespace Amazon.EC2.Model
         ///  </li> <li> 
         /// <para>
         ///  <code>type</code> - The type of Spot instance request (<code>one-time</code> | <code>persistent</code>).
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>launched-availability-zone</code> - The Availability Zone in which the bid
-        /// is launched.
         /// </para>
         ///  </li> <li> 
         /// <para>

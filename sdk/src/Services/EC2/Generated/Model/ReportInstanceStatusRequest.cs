@@ -106,7 +106,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property ReasonCodes. 
         /// <para>
-        /// One or more reason codes that describes the health state of your instance.
+        /// One or more reason codes that describe the health state of your instance.
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -127,17 +127,17 @@ namespace Amazon.EC2.Model
         ///  </li> <li> 
         /// <para>
         ///  <code>performance-network</code>: My instance is experiencing performance problems
-        /// which I believe are network related.
+        /// that I believe are network related.
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <code>performance-instance-store</code>: My instance is experiencing performance
-        /// problems which I believe are related to the instance stores.
+        /// problems that I believe are related to the instance stores.
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <code>performance-ebs-volume</code>: My instance is experiencing performance problems
-        /// which I believe are related to an EBS volume.
+        /// that I believe are related to an EBS volume.
         /// </para>
         ///  </li> <li> 
         /// <para>
