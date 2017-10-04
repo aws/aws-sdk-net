@@ -10,6 +10,7 @@
     <ServicePrefix></ServicePrefix>
     <BaseName></BaseName>
     <CustomTasksAssembly>CustomTasks\bin\Debug\CustomTasks.dll</CustomTasksAssembly>
+    <SignAssembly>true</SignAssembly>
   </PropertyGroup>
 
   <Target Name="build-custom-tasks">
@@ -46,15 +47,15 @@
   <Target Name="build-sdk">
     <Message Text="Compile the core runtime"/>
     <Exec Command="dotnet restore -f ..\sdk\src\Core\AWSSDK.Core.Net35.csproj"/>
-    <Exec Command="dotnet msbuild ..\sdk\src\Core\AWSSDK.Core.Net35.csproj /p:Configuration=Release;AWSKeyFile=$(CustomSnkFileLocation);ResolveNuGetPackages=false"/>
+    <Exec Command="dotnet msbuild ..\sdk\src\Core\AWSSDK.Core.Net35.csproj /p:Configuration=Release;AWSKeyFile=$(CustomSnkFileLocation);SignAssembly=$(SignAssembly);ResolveNuGetPackages=false"/>
     <Exec Command="dotnet restore -f ..\sdk\src\Core\AWSSDK.Core.Net45.csproj"/>
-    <Exec Command="dotnet msbuild ..\sdk\src\Core\AWSSDK.Core.Net45.csproj /p:Configuration=Release;AWSKeyFile=$(CustomSnkFileLocation);ResolveNuGetPackages=false"/>
+    <Exec Command="dotnet msbuild ..\sdk\src\Core\AWSSDK.Core.Net45.csproj /p:Configuration=Release;AWSKeyFile=$(CustomSnkFileLocation);SignAssembly=$(SignAssembly);ResolveNuGetPackages=false"/>
 
     <Message Text="Compile the service $(BaseName)"/>
     <Exec Command="dotnet restore -f ..\sdk\src\Services\$(BaseName)\AWSSDK.$(BaseName).Net35.csproj"/>
-    <Exec Command="dotnet msbuild ..\sdk\src\Services\$(BaseName)\AWSSDK.$(BaseName).Net35.csproj /p:Configuration=Release;AWSKeyFile=$(CustomSnkFileLocation);ResolveNuGetPackages=false"/>
+    <Exec Command="dotnet msbuild ..\sdk\src\Services\$(BaseName)\AWSSDK.$(BaseName).Net35.csproj /p:Configuration=Release;AWSKeyFile=$(CustomSnkFileLocation);SignAssembly=$(SignAssembly);ResolveNuGetPackages=false"/>
     <Exec Command="dotnet restore -f ..\sdk\src\Services\$(BaseName)\AWSSDK.$(BaseName).Net45.csproj"/>
-    <Exec Command="dotnet msbuild ..\sdk\src\Services\$(BaseName)\AWSSDK.$(BaseName).Net45.csproj /p:Configuration=Release;AWSKeyFile=$(CustomSnkFileLocation);ResolveNuGetPackages=false"/>
+    <Exec Command="dotnet msbuild ..\sdk\src\Services\$(BaseName)\AWSSDK.$(BaseName).Net45.csproj /p:Configuration=Release;AWSKeyFile=$(CustomSnkFileLocation);SignAssembly=$(SignAssembly);ResolveNuGetPackages=false"/>
   </Target>
   
   <Target Name="consolidate-build">
