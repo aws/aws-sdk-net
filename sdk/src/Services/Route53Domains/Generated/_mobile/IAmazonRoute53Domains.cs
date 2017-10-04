@@ -53,6 +53,23 @@ namespace Amazon.Route53Domains
 
         #endregion
                 
+        #region  CheckDomainTransferability
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CheckDomainTransferability operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CheckDomainTransferability operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/CheckDomainTransferability">REST API Reference for CheckDomainTransferability Operation</seealso>
+        Task<CheckDomainTransferabilityResponse> CheckDomainTransferabilityAsync(CheckDomainTransferabilityRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  DeleteTagsForDomain
 
 
@@ -61,7 +78,7 @@ namespace Amazon.Route53Domains
         /// 
         ///  
         /// <para>
-        /// All tag operations are eventually consistent; subsequent operations may not immediately
+        /// All tag operations are eventually consistent; subsequent operations might not immediately
         /// represent all issued operations.
         /// </para>
         /// </summary>
@@ -73,15 +90,15 @@ namespace Amazon.Route53Domains
         /// 
         /// <returns>The response from the DeleteTagsForDomain service method, as returned by Route53Domains.</returns>
         /// <exception cref="Amazon.Route53Domains.Model.InvalidInputException">
-        /// The requested item is not acceptable. For example, for an OperationId it may refer
-        /// to the ID of an operation that is already completed. For a domain name, it may not
+        /// The requested item is not acceptable. For example, for an OperationId it might refer
+        /// to the ID of an operation that is already completed. For a domain name, it might not
         /// be a valid domain name or belong to the requester account.
         /// </exception>
         /// <exception cref="Amazon.Route53Domains.Model.OperationLimitExceededException">
         /// The number of operations or jobs running exceeded the allowed threshold for the account.
         /// </exception>
         /// <exception cref="Amazon.Route53Domains.Model.UnsupportedTLDException">
-        /// Amazon Route 53 does not support this top-level domain.
+        /// Amazon Route 53 does not support this top-level domain (TLD).
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/DeleteTagsForDomain">REST API Reference for DeleteTagsForDomain Operation</seealso>
         Task<DeleteTagsForDomainResponse> DeleteTagsForDomainAsync(string domainName, List<string> tagsToDelete, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -249,8 +266,8 @@ namespace Amazon.Route53Domains
         /// 
         /// <returns>The response from the ListDomains service method, as returned by Route53Domains.</returns>
         /// <exception cref="Amazon.Route53Domains.Model.InvalidInputException">
-        /// The requested item is not acceptable. For example, for an OperationId it may refer
-        /// to the ID of an operation that is already completed. For a domain name, it may not
+        /// The requested item is not acceptable. For example, for an OperationId it might refer
+        /// to the ID of an operation that is already completed. For a domain name, it might not
         /// be a valid domain name or belong to the requester account.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/ListDomains">REST API Reference for ListDomains Operation</seealso>
@@ -283,8 +300,8 @@ namespace Amazon.Route53Domains
         /// 
         /// <returns>The response from the ListOperations service method, as returned by Route53Domains.</returns>
         /// <exception cref="Amazon.Route53Domains.Model.InvalidInputException">
-        /// The requested item is not acceptable. For example, for an OperationId it may refer
-        /// to the ID of an operation that is already completed. For a domain name, it may not
+        /// The requested item is not acceptable. For example, for an OperationId it might refer
+        /// to the ID of an operation that is already completed. For a domain name, it might not
         /// be a valid domain name or belong to the requester account.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/ListOperations">REST API Reference for ListOperations Operation</seealso>
@@ -313,7 +330,7 @@ namespace Amazon.Route53Domains
         /// 
         ///  
         /// <para>
-        /// All tag operations are eventually consistent; subsequent operations may not immediately
+        /// All tag operations are eventually consistent; subsequent operations might not immediately
         /// represent all issued operations.
         /// </para>
         /// </summary>
@@ -324,15 +341,15 @@ namespace Amazon.Route53Domains
         /// 
         /// <returns>The response from the ListTagsForDomain service method, as returned by Route53Domains.</returns>
         /// <exception cref="Amazon.Route53Domains.Model.InvalidInputException">
-        /// The requested item is not acceptable. For example, for an OperationId it may refer
-        /// to the ID of an operation that is already completed. For a domain name, it may not
+        /// The requested item is not acceptable. For example, for an OperationId it might refer
+        /// to the ID of an operation that is already completed. For a domain name, it might not
         /// be a valid domain name or belong to the requester account.
         /// </exception>
         /// <exception cref="Amazon.Route53Domains.Model.OperationLimitExceededException">
         /// The number of operations or jobs running exceeded the allowed threshold for the account.
         /// </exception>
         /// <exception cref="Amazon.Route53Domains.Model.UnsupportedTLDException">
-        /// Amazon Route 53 does not support this top-level domain.
+        /// Amazon Route 53 does not support this top-level domain (TLD).
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/ListTagsForDomain">REST API Reference for ListTagsForDomain Operation</seealso>
         Task<ListTagsForDomainResponse> ListTagsForDomainAsync(string domainName, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -495,7 +512,7 @@ namespace Amazon.Route53Domains
         /// 
         ///  
         /// <para>
-        /// All tag operations are eventually consistent; subsequent operations may not immediately
+        /// All tag operations are eventually consistent; subsequent operations might not immediately
         /// represent all issued operations.
         /// </para>
         /// </summary>
@@ -507,15 +524,15 @@ namespace Amazon.Route53Domains
         /// 
         /// <returns>The response from the UpdateTagsForDomain service method, as returned by Route53Domains.</returns>
         /// <exception cref="Amazon.Route53Domains.Model.InvalidInputException">
-        /// The requested item is not acceptable. For example, for an OperationId it may refer
-        /// to the ID of an operation that is already completed. For a domain name, it may not
+        /// The requested item is not acceptable. For example, for an OperationId it might refer
+        /// to the ID of an operation that is already completed. For a domain name, it might not
         /// be a valid domain name or belong to the requester account.
         /// </exception>
         /// <exception cref="Amazon.Route53Domains.Model.OperationLimitExceededException">
         /// The number of operations or jobs running exceeded the allowed threshold for the account.
         /// </exception>
         /// <exception cref="Amazon.Route53Domains.Model.UnsupportedTLDException">
-        /// Amazon Route 53 does not support this top-level domain.
+        /// Amazon Route 53 does not support this top-level domain (TLD).
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/UpdateTagsForDomain">REST API Reference for UpdateTagsForDomain Operation</seealso>
         Task<UpdateTagsForDomainResponse> UpdateTagsForDomainAsync(string domainName, List<Tag> tagsToUpdate, System.Threading.CancellationToken cancellationToken = default(CancellationToken));

@@ -28,23 +28,42 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Route53Domains.Model
 {
     /// <summary>
-    /// Container for the parameters to the ListTagsForDomain operation.
-    /// This operation returns all of the tags that are associated with the specified domain.
-    /// 
-    ///  
-    /// <para>
-    /// All tag operations are eventually consistent; subsequent operations might not immediately
-    /// represent all issued operations.
-    /// </para>
+    /// Container for the parameters to the CheckDomainTransferability operation.
+    /// Checks whether a domain name can be transferred to Amazon Route 53.
     /// </summary>
-    public partial class ListTagsForDomainRequest : AmazonRoute53DomainsRequest
+    public partial class CheckDomainTransferabilityRequest : AmazonRoute53DomainsRequest
     {
+        private string _authCode;
         private string _domainName;
+
+        /// <summary>
+        /// Gets and sets the property AuthCode. 
+        /// <para>
+        /// If the registrar for the top-level domain (TLD) requires an authorization code to
+        /// transfer the domain, the code that you got from the current registrar for the domain.
+        /// </para>
+        /// </summary>
+        public string AuthCode
+        {
+            get { return this._authCode; }
+            set { this._authCode = value; }
+        }
+
+        // Check to see if AuthCode property is set
+        internal bool IsSetAuthCode()
+        {
+            return this._authCode != null;
+        }
 
         /// <summary>
         /// Gets and sets the property DomainName. 
         /// <para>
-        /// The domain for which you want to get a list of tags.
+        /// The name of the domain that you want to transfer to Amazon Route 53.
+        /// </para>
+        ///  
+        /// <para>
+        /// Constraints: The domain name can contain only the letters a through z, the numbers
+        /// 0 through 9, and hyphen (-). Internationalized Domain Names are not supported.
         /// </para>
         /// </summary>
         public string DomainName

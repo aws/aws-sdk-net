@@ -28,35 +28,29 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Route53Domains.Model
 {
     /// <summary>
-    /// Container for the parameters to the ListTagsForDomain operation.
-    /// This operation returns all of the tags that are associated with the specified domain.
-    /// 
-    ///  
-    /// <para>
-    /// All tag operations are eventually consistent; subsequent operations might not immediately
-    /// represent all issued operations.
-    /// </para>
+    /// The CheckDomainTransferability response includes the following elements.
     /// </summary>
-    public partial class ListTagsForDomainRequest : AmazonRoute53DomainsRequest
+    public partial class CheckDomainTransferabilityResponse : AmazonWebServiceResponse
     {
-        private string _domainName;
+        private DomainTransferability _transferability;
 
         /// <summary>
-        /// Gets and sets the property DomainName. 
+        /// Gets and sets the property Transferability. 
         /// <para>
-        /// The domain for which you want to get a list of tags.
+        /// A complex type that contains information about whether the specified domain can be
+        /// transferred to Amazon Route 53.
         /// </para>
         /// </summary>
-        public string DomainName
+        public DomainTransferability Transferability
         {
-            get { return this._domainName; }
-            set { this._domainName = value; }
+            get { return this._transferability; }
+            set { this._transferability = value; }
         }
 
-        // Check to see if DomainName property is set
-        internal bool IsSetDomainName()
+        // Check to see if Transferability property is set
+        internal bool IsSetTransferability()
         {
-            return this._domainName != null;
+            return this._transferability != null;
         }
 
     }

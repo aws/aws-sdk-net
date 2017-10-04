@@ -1189,9 +1189,21 @@ namespace Amazon.Route53Domains
         /// </summary>
         public static readonly ExtraParamName FI_ID_NUMBER = new ExtraParamName("FI_ID_NUMBER");
         /// <summary>
+        /// Constant FI_NATIONALITY for ExtraParamName
+        /// </summary>
+        public static readonly ExtraParamName FI_NATIONALITY = new ExtraParamName("FI_NATIONALITY");
+        /// <summary>
+        /// Constant FI_ORGANIZATION_TYPE for ExtraParamName
+        /// </summary>
+        public static readonly ExtraParamName FI_ORGANIZATION_TYPE = new ExtraParamName("FI_ORGANIZATION_TYPE");
+        /// <summary>
         /// Constant IT_PIN for ExtraParamName
         /// </summary>
         public static readonly ExtraParamName IT_PIN = new ExtraParamName("IT_PIN");
+        /// <summary>
+        /// Constant IT_REGISTRANT_ENTITY_TYPE for ExtraParamName
+        /// </summary>
+        public static readonly ExtraParamName IT_REGISTRANT_ENTITY_TYPE = new ExtraParamName("IT_REGISTRANT_ENTITY_TYPE");
         /// <summary>
         /// Constant RU_PASSPORT_DATA for ExtraParamName
         /// </summary>
@@ -1204,6 +1216,14 @@ namespace Amazon.Route53Domains
         /// Constant SG_ID_NUMBER for ExtraParamName
         /// </summary>
         public static readonly ExtraParamName SG_ID_NUMBER = new ExtraParamName("SG_ID_NUMBER");
+        /// <summary>
+        /// Constant UK_COMPANY_NUMBER for ExtraParamName
+        /// </summary>
+        public static readonly ExtraParamName UK_COMPANY_NUMBER = new ExtraParamName("UK_COMPANY_NUMBER");
+        /// <summary>
+        /// Constant UK_CONTACT_TYPE for ExtraParamName
+        /// </summary>
+        public static readonly ExtraParamName UK_CONTACT_TYPE = new ExtraParamName("UK_CONTACT_TYPE");
         /// <summary>
         /// Constant VAT_NUMBER for ExtraParamName
         /// </summary>
@@ -1313,6 +1333,14 @@ namespace Amazon.Route53Domains
     {
 
         /// <summary>
+        /// Constant ADD_DNSSEC for OperationType
+        /// </summary>
+        public static readonly OperationType ADD_DNSSEC = new OperationType("ADD_DNSSEC");
+        /// <summary>
+        /// Constant CHANGE_DOMAIN_OWNER for OperationType
+        /// </summary>
+        public static readonly OperationType CHANGE_DOMAIN_OWNER = new OperationType("CHANGE_DOMAIN_OWNER");
+        /// <summary>
         /// Constant CHANGE_PRIVACY_PROTECTION for OperationType
         /// </summary>
         public static readonly OperationType CHANGE_PRIVACY_PROTECTION = new OperationType("CHANGE_PRIVACY_PROTECTION");
@@ -1321,17 +1349,45 @@ namespace Amazon.Route53Domains
         /// </summary>
         public static readonly OperationType DELETE_DOMAIN = new OperationType("DELETE_DOMAIN");
         /// <summary>
+        /// Constant DISABLE_AUTORENEW for OperationType
+        /// </summary>
+        public static readonly OperationType DISABLE_AUTORENEW = new OperationType("DISABLE_AUTORENEW");
+        /// <summary>
         /// Constant DOMAIN_LOCK for OperationType
         /// </summary>
         public static readonly OperationType DOMAIN_LOCK = new OperationType("DOMAIN_LOCK");
+        /// <summary>
+        /// Constant ENABLE_AUTORENEW for OperationType
+        /// </summary>
+        public static readonly OperationType ENABLE_AUTORENEW = new OperationType("ENABLE_AUTORENEW");
+        /// <summary>
+        /// Constant EXPIRE_DOMAIN for OperationType
+        /// </summary>
+        public static readonly OperationType EXPIRE_DOMAIN = new OperationType("EXPIRE_DOMAIN");
+        /// <summary>
+        /// Constant PUSH_DOMAIN for OperationType
+        /// </summary>
+        public static readonly OperationType PUSH_DOMAIN = new OperationType("PUSH_DOMAIN");
         /// <summary>
         /// Constant REGISTER_DOMAIN for OperationType
         /// </summary>
         public static readonly OperationType REGISTER_DOMAIN = new OperationType("REGISTER_DOMAIN");
         /// <summary>
+        /// Constant REMOVE_DNSSEC for OperationType
+        /// </summary>
+        public static readonly OperationType REMOVE_DNSSEC = new OperationType("REMOVE_DNSSEC");
+        /// <summary>
+        /// Constant RENEW_DOMAIN for OperationType
+        /// </summary>
+        public static readonly OperationType RENEW_DOMAIN = new OperationType("RENEW_DOMAIN");
+        /// <summary>
         /// Constant TRANSFER_IN_DOMAIN for OperationType
         /// </summary>
         public static readonly OperationType TRANSFER_IN_DOMAIN = new OperationType("TRANSFER_IN_DOMAIN");
+        /// <summary>
+        /// Constant TRANSFER_OUT_DOMAIN for OperationType
+        /// </summary>
+        public static readonly OperationType TRANSFER_OUT_DOMAIN = new OperationType("TRANSFER_OUT_DOMAIN");
         /// <summary>
         /// Constant UPDATE_DOMAIN_CONTACT for OperationType
         /// </summary>
@@ -1424,6 +1480,60 @@ namespace Amazon.Route53Domains
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ReachabilityStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type Transferable.
+    /// </summary>
+    public class Transferable : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DONT_KNOW for Transferable
+        /// </summary>
+        public static readonly Transferable DONT_KNOW = new Transferable("DONT_KNOW");
+        /// <summary>
+        /// Constant TRANSFERABLE for Transferable
+        /// </summary>
+        public static readonly Transferable TRANSFERABLE = new Transferable("TRANSFERABLE");
+        /// <summary>
+        /// Constant UNTRANSFERABLE for Transferable
+        /// </summary>
+        public static readonly Transferable UNTRANSFERABLE = new Transferable("UNTRANSFERABLE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public Transferable(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static Transferable FindValue(string value)
+        {
+            return FindValue<Transferable>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator Transferable(string value)
         {
             return FindValue(value);
         }

@@ -33,7 +33,7 @@ namespace Amazon.Route53Domains.Model
     /// 
     ///  
     /// <para>
-    /// All tag operations are eventually consistent; subsequent operations may not immediately
+    /// All tag operations are eventually consistent; subsequent operations might not immediately
     /// represent all issued operations.
     /// </para>
     /// </summary>

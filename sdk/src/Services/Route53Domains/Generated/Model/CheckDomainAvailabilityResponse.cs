@@ -41,7 +41,7 @@ namespace Amazon.Route53Domains.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// You can only register domains designated as <code>AVAILABLE</code>.
+        /// You can register only domains designated as <code>AVAILABLE</code>.
         /// </para>
         ///  </note> 
         /// <para>
