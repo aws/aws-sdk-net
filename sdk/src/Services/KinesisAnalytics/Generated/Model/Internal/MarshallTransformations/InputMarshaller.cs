@@ -56,6 +56,17 @@ namespace Amazon.KinesisAnalytics.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetInputProcessingConfiguration())
+            {
+                context.Writer.WritePropertyName("InputProcessingConfiguration");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = InputProcessingConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.InputProcessingConfiguration, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetInputSchema())
             {
                 context.Writer.WritePropertyName("InputSchema");

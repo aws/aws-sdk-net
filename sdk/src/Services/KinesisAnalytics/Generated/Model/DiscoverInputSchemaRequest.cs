@@ -50,9 +50,30 @@ namespace Amazon.KinesisAnalytics.Model
     /// </summary>
     public partial class DiscoverInputSchemaRequest : AmazonKinesisAnalyticsRequest
     {
+        private InputProcessingConfiguration _inputProcessingConfiguration;
         private InputStartingPositionConfiguration _inputStartingPositionConfiguration;
         private string _resourceARN;
         private string _roleARN;
+        private S3Configuration _s3Configuration;
+
+        /// <summary>
+        /// Gets and sets the property InputProcessingConfiguration. 
+        /// <para>
+        /// The <a>InputProcessingConfiguration</a> to use to preprocess the records before discovering
+        /// the schema of the records.
+        /// </para>
+        /// </summary>
+        public InputProcessingConfiguration InputProcessingConfiguration
+        {
+            get { return this._inputProcessingConfiguration; }
+            set { this._inputProcessingConfiguration = value; }
+        }
+
+        // Check to see if InputProcessingConfiguration property is set
+        internal bool IsSetInputProcessingConfiguration()
+        {
+            return this._inputProcessingConfiguration != null;
+        }
 
         /// <summary>
         /// Gets and sets the property InputStartingPositionConfiguration. 
@@ -108,6 +129,21 @@ namespace Amazon.KinesisAnalytics.Model
         internal bool IsSetRoleARN()
         {
             return this._roleARN != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property S3Configuration.
+        /// </summary>
+        public S3Configuration S3Configuration
+        {
+            get { return this._s3Configuration; }
+            set { this._s3Configuration = value; }
+        }
+
+        // Check to see if S3Configuration property is set
+        internal bool IsSetS3Configuration()
+        {
+            return this._s3Configuration != null;
         }
 
     }

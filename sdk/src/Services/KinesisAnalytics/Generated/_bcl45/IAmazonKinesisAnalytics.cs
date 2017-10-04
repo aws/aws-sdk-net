@@ -143,6 +143,49 @@ namespace Amazon.KinesisAnalytics
 
         #endregion
         
+        #region  AddApplicationInputProcessingConfiguration
+
+
+        /// <summary>
+        /// Adds an <a>InputProcessingConfiguration</a> to an application. An input processor
+        /// preprocesses records on the input stream before the application's SQL code executes.
+        /// Currently, the only input processor available is <a href="https://aws.amazon.com/documentation/lambda/">AWS
+        /// Lambda</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AddApplicationInputProcessingConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the AddApplicationInputProcessingConfiguration service method, as returned by KinesisAnalytics.</returns>
+        /// <exception cref="Amazon.KinesisAnalytics.Model.ConcurrentModificationException">
+        /// Exception thrown as a result of concurrent modification to an application. For example,
+        /// two individuals attempting to edit the same application at the same time.
+        /// </exception>
+        /// <exception cref="Amazon.KinesisAnalytics.Model.InvalidArgumentException">
+        /// Specified input parameter value is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.KinesisAnalytics.Model.ResourceInUseException">
+        /// Application is not available for this operation.
+        /// </exception>
+        /// <exception cref="Amazon.KinesisAnalytics.Model.ResourceNotFoundException">
+        /// Specified application can't be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/AddApplicationInputProcessingConfiguration">REST API Reference for AddApplicationInputProcessingConfiguration Operation</seealso>
+        AddApplicationInputProcessingConfigurationResponse AddApplicationInputProcessingConfiguration(AddApplicationInputProcessingConfigurationRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AddApplicationInputProcessingConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AddApplicationInputProcessingConfiguration operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/AddApplicationInputProcessingConfiguration">REST API Reference for AddApplicationInputProcessingConfiguration Operation</seealso>
+        Task<AddApplicationInputProcessingConfigurationResponse> AddApplicationInputProcessingConfigurationAsync(AddApplicationInputProcessingConfigurationRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  AddApplicationOutput
 
 
@@ -435,6 +478,46 @@ namespace Amazon.KinesisAnalytics
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/DeleteApplicationCloudWatchLoggingOption">REST API Reference for DeleteApplicationCloudWatchLoggingOption Operation</seealso>
         Task<DeleteApplicationCloudWatchLoggingOptionResponse> DeleteApplicationCloudWatchLoggingOptionAsync(DeleteApplicationCloudWatchLoggingOptionRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DeleteApplicationInputProcessingConfiguration
+
+
+        /// <summary>
+        /// Deletes an <a>InputProcessingConfiguration</a> from an input.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteApplicationInputProcessingConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the DeleteApplicationInputProcessingConfiguration service method, as returned by KinesisAnalytics.</returns>
+        /// <exception cref="Amazon.KinesisAnalytics.Model.ConcurrentModificationException">
+        /// Exception thrown as a result of concurrent modification to an application. For example,
+        /// two individuals attempting to edit the same application at the same time.
+        /// </exception>
+        /// <exception cref="Amazon.KinesisAnalytics.Model.InvalidArgumentException">
+        /// Specified input parameter value is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.KinesisAnalytics.Model.ResourceInUseException">
+        /// Application is not available for this operation.
+        /// </exception>
+        /// <exception cref="Amazon.KinesisAnalytics.Model.ResourceNotFoundException">
+        /// Specified application can't be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/DeleteApplicationInputProcessingConfiguration">REST API Reference for DeleteApplicationInputProcessingConfiguration Operation</seealso>
+        DeleteApplicationInputProcessingConfigurationResponse DeleteApplicationInputProcessingConfiguration(DeleteApplicationInputProcessingConfigurationRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteApplicationInputProcessingConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteApplicationInputProcessingConfiguration operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/DeleteApplicationInputProcessingConfiguration">REST API Reference for DeleteApplicationInputProcessingConfiguration Operation</seealso>
+        Task<DeleteApplicationInputProcessingConfigurationResponse> DeleteApplicationInputProcessingConfigurationAsync(DeleteApplicationInputProcessingConfigurationRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         

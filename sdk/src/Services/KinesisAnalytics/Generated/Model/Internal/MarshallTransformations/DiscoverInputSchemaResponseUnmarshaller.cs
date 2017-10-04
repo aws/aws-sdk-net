@@ -63,6 +63,12 @@ namespace Amazon.KinesisAnalytics.Model.Internal.MarshallTransformations
                     response.ParsedInputRecords = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ProcessedInputRecords", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    response.ProcessedInputRecords = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("RawInputRecords", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);

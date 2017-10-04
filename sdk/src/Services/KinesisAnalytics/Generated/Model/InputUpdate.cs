@@ -35,6 +35,7 @@ namespace Amazon.KinesisAnalytics.Model
     {
         private string _inputId;
         private InputParallelismUpdate _inputParallelismUpdate;
+        private InputProcessingConfigurationUpdate _inputProcessingConfigurationUpdate;
         private InputSchemaUpdate _inputSchemaUpdate;
         private KinesisFirehoseInputUpdate _kinesisFirehoseInputUpdate;
         private KinesisStreamsInputUpdate _kinesisStreamsInputUpdate;
@@ -75,6 +76,24 @@ namespace Amazon.KinesisAnalytics.Model
         internal bool IsSetInputParallelismUpdate()
         {
             return this._inputParallelismUpdate != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property InputProcessingConfigurationUpdate. 
+        /// <para>
+        /// Describes updates for an input processing configuration.
+        /// </para>
+        /// </summary>
+        public InputProcessingConfigurationUpdate InputProcessingConfigurationUpdate
+        {
+            get { return this._inputProcessingConfigurationUpdate; }
+            set { this._inputProcessingConfigurationUpdate = value; }
+        }
+
+        // Check to see if InputProcessingConfigurationUpdate property is set
+        internal bool IsSetInputProcessingConfigurationUpdate()
+        {
+            return this._inputProcessingConfigurationUpdate != null;
         }
 
         /// <summary>

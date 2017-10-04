@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.KinesisAnalytics.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// DiscoverInputSchema Request Marshaller
+    /// DeleteApplicationInputProcessingConfiguration Request Marshaller
     /// </summary>       
-    public class DiscoverInputSchemaRequestMarshaller : IMarshaller<IRequest, DiscoverInputSchemaRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class DeleteApplicationInputProcessingConfigurationRequestMarshaller : IMarshaller<IRequest, DeleteApplicationInputProcessingConfigurationRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.KinesisAnalytics.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((DiscoverInputSchemaRequest)input);
+            return this.Marshall((DeleteApplicationInputProcessingConfigurationRequest)input);
         }
 
         /// <summary>
@@ -52,10 +52,10 @@ namespace Amazon.KinesisAnalytics.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(DiscoverInputSchemaRequest publicRequest)
+        public IRequest Marshall(DeleteApplicationInputProcessingConfigurationRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.KinesisAnalytics");
-            string target = "KinesisAnalytics_20150814.DiscoverInputSchema";
+            string target = "KinesisAnalytics_20150814.DeleteApplicationInputProcessingConfiguration";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
             request.HttpMethod = "POST";
@@ -67,49 +67,22 @@ namespace Amazon.KinesisAnalytics.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetInputProcessingConfiguration())
+                if(publicRequest.IsSetApplicationName())
                 {
-                    context.Writer.WritePropertyName("InputProcessingConfiguration");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = InputProcessingConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.InputProcessingConfiguration, context);
-
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WritePropertyName("ApplicationName");
+                    context.Writer.Write(publicRequest.ApplicationName);
                 }
 
-                if(publicRequest.IsSetInputStartingPositionConfiguration())
+                if(publicRequest.IsSetCurrentApplicationVersionId())
                 {
-                    context.Writer.WritePropertyName("InputStartingPositionConfiguration");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = InputStartingPositionConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.InputStartingPositionConfiguration, context);
-
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WritePropertyName("CurrentApplicationVersionId");
+                    context.Writer.Write(publicRequest.CurrentApplicationVersionId);
                 }
 
-                if(publicRequest.IsSetResourceARN())
+                if(publicRequest.IsSetInputId())
                 {
-                    context.Writer.WritePropertyName("ResourceARN");
-                    context.Writer.Write(publicRequest.ResourceARN);
-                }
-
-                if(publicRequest.IsSetRoleARN())
-                {
-                    context.Writer.WritePropertyName("RoleARN");
-                    context.Writer.Write(publicRequest.RoleARN);
-                }
-
-                if(publicRequest.IsSetS3Configuration())
-                {
-                    context.Writer.WritePropertyName("S3Configuration");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = S3ConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.S3Configuration, context);
-
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WritePropertyName("InputId");
+                    context.Writer.Write(publicRequest.InputId);
                 }
 
         

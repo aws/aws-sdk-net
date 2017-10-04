@@ -36,6 +36,7 @@ namespace Amazon.KinesisAnalytics.Model
         private List<string> _inAppStreamNames = new List<string>();
         private string _inputId;
         private InputParallelism _inputParallelism;
+        private InputProcessingConfigurationDescription _inputProcessingConfigurationDescription;
         private SourceSchema _inputSchema;
         private InputStartingPositionConfiguration _inputStartingPositionConfiguration;
         private KinesisFirehoseInputDescription _kinesisFirehoseInputDescription;
@@ -99,7 +100,31 @@ namespace Amazon.KinesisAnalytics.Model
         }
 
         /// <summary>
-        /// Gets and sets the property InputSchema.
+        /// Gets and sets the property InputProcessingConfigurationDescription. 
+        /// <para>
+        /// The description of the preprocessor that executes on records in this input before
+        /// the application's code is run.
+        /// </para>
+        /// </summary>
+        public InputProcessingConfigurationDescription InputProcessingConfigurationDescription
+        {
+            get { return this._inputProcessingConfigurationDescription; }
+            set { this._inputProcessingConfigurationDescription = value; }
+        }
+
+        // Check to see if InputProcessingConfigurationDescription property is set
+        internal bool IsSetInputProcessingConfigurationDescription()
+        {
+            return this._inputProcessingConfigurationDescription != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property InputSchema. 
+        /// <para>
+        /// Describes the format of the data in the streaming source, and how each data element
+        /// maps to corresponding columns in the in-application stream that is being created.
+        /// 
+        /// </para>
         /// </summary>
         public SourceSchema InputSchema
         {

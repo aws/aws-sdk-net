@@ -36,6 +36,7 @@ namespace Amazon.KinesisAnalytics.Model
     public partial class Input
     {
         private InputParallelism _inputParallelism;
+        private InputProcessingConfiguration _inputProcessingConfiguration;
         private SourceSchema _inputSchema;
         private KinesisFirehoseInput _kinesisFirehoseInput;
         private KinesisStreamsInput _kinesisStreamsInput;
@@ -66,6 +67,26 @@ namespace Amazon.KinesisAnalytics.Model
         internal bool IsSetInputParallelism()
         {
             return this._inputParallelism != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property InputProcessingConfiguration. 
+        /// <para>
+        /// The <a>InputProcessingConfiguration</a> for the Input. An input processor transforms
+        /// records as they are received from the stream, before the application's SQL code executes.
+        /// Currently, the only input processing configuration available is <a>InputLambdaProcessor</a>.
+        /// </para>
+        /// </summary>
+        public InputProcessingConfiguration InputProcessingConfiguration
+        {
+            get { return this._inputProcessingConfiguration; }
+            set { this._inputProcessingConfiguration = value; }
+        }
+
+        // Check to see if InputProcessingConfiguration property is set
+        internal bool IsSetInputProcessingConfiguration()
+        {
+            return this._inputProcessingConfiguration != null;
         }
 
         /// <summary>

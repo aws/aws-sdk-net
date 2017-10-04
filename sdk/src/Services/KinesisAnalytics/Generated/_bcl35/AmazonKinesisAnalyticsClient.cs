@@ -381,6 +381,75 @@ namespace Amazon.KinesisAnalytics
 
         #endregion
         
+        #region  AddApplicationInputProcessingConfiguration
+
+        /// <summary>
+        /// Adds an <a>InputProcessingConfiguration</a> to an application. An input processor
+        /// preprocesses records on the input stream before the application's SQL code executes.
+        /// Currently, the only input processor available is <a href="https://aws.amazon.com/documentation/lambda/">AWS
+        /// Lambda</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AddApplicationInputProcessingConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the AddApplicationInputProcessingConfiguration service method, as returned by KinesisAnalytics.</returns>
+        /// <exception cref="Amazon.KinesisAnalytics.Model.ConcurrentModificationException">
+        /// Exception thrown as a result of concurrent modification to an application. For example,
+        /// two individuals attempting to edit the same application at the same time.
+        /// </exception>
+        /// <exception cref="Amazon.KinesisAnalytics.Model.InvalidArgumentException">
+        /// Specified input parameter value is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.KinesisAnalytics.Model.ResourceInUseException">
+        /// Application is not available for this operation.
+        /// </exception>
+        /// <exception cref="Amazon.KinesisAnalytics.Model.ResourceNotFoundException">
+        /// Specified application can't be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/AddApplicationInputProcessingConfiguration">REST API Reference for AddApplicationInputProcessingConfiguration Operation</seealso>
+        public AddApplicationInputProcessingConfigurationResponse AddApplicationInputProcessingConfiguration(AddApplicationInputProcessingConfigurationRequest request)
+        {
+            var marshaller = new AddApplicationInputProcessingConfigurationRequestMarshaller();
+            var unmarshaller = AddApplicationInputProcessingConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<AddApplicationInputProcessingConfigurationRequest,AddApplicationInputProcessingConfigurationResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AddApplicationInputProcessingConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AddApplicationInputProcessingConfiguration operation on AmazonKinesisAnalyticsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAddApplicationInputProcessingConfiguration
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/AddApplicationInputProcessingConfiguration">REST API Reference for AddApplicationInputProcessingConfiguration Operation</seealso>
+        public IAsyncResult BeginAddApplicationInputProcessingConfiguration(AddApplicationInputProcessingConfigurationRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new AddApplicationInputProcessingConfigurationRequestMarshaller();
+            var unmarshaller = AddApplicationInputProcessingConfigurationResponseUnmarshaller.Instance;
+
+            return BeginInvoke<AddApplicationInputProcessingConfigurationRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  AddApplicationInputProcessingConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAddApplicationInputProcessingConfiguration.</param>
+        /// 
+        /// <returns>Returns a  AddApplicationInputProcessingConfigurationResult from KinesisAnalytics.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/AddApplicationInputProcessingConfiguration">REST API Reference for AddApplicationInputProcessingConfiguration Operation</seealso>
+        public  AddApplicationInputProcessingConfigurationResponse EndAddApplicationInputProcessingConfiguration(IAsyncResult asyncResult)
+        {
+            return EndInvoke<AddApplicationInputProcessingConfigurationResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  AddApplicationOutput
 
         /// <summary>
@@ -802,6 +871,72 @@ namespace Amazon.KinesisAnalytics
         public  DeleteApplicationCloudWatchLoggingOptionResponse EndDeleteApplicationCloudWatchLoggingOption(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteApplicationCloudWatchLoggingOptionResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeleteApplicationInputProcessingConfiguration
+
+        /// <summary>
+        /// Deletes an <a>InputProcessingConfiguration</a> from an input.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteApplicationInputProcessingConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the DeleteApplicationInputProcessingConfiguration service method, as returned by KinesisAnalytics.</returns>
+        /// <exception cref="Amazon.KinesisAnalytics.Model.ConcurrentModificationException">
+        /// Exception thrown as a result of concurrent modification to an application. For example,
+        /// two individuals attempting to edit the same application at the same time.
+        /// </exception>
+        /// <exception cref="Amazon.KinesisAnalytics.Model.InvalidArgumentException">
+        /// Specified input parameter value is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.KinesisAnalytics.Model.ResourceInUseException">
+        /// Application is not available for this operation.
+        /// </exception>
+        /// <exception cref="Amazon.KinesisAnalytics.Model.ResourceNotFoundException">
+        /// Specified application can't be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/DeleteApplicationInputProcessingConfiguration">REST API Reference for DeleteApplicationInputProcessingConfiguration Operation</seealso>
+        public DeleteApplicationInputProcessingConfigurationResponse DeleteApplicationInputProcessingConfiguration(DeleteApplicationInputProcessingConfigurationRequest request)
+        {
+            var marshaller = new DeleteApplicationInputProcessingConfigurationRequestMarshaller();
+            var unmarshaller = DeleteApplicationInputProcessingConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteApplicationInputProcessingConfigurationRequest,DeleteApplicationInputProcessingConfigurationResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteApplicationInputProcessingConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteApplicationInputProcessingConfiguration operation on AmazonKinesisAnalyticsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteApplicationInputProcessingConfiguration
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/DeleteApplicationInputProcessingConfiguration">REST API Reference for DeleteApplicationInputProcessingConfiguration Operation</seealso>
+        public IAsyncResult BeginDeleteApplicationInputProcessingConfiguration(DeleteApplicationInputProcessingConfigurationRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new DeleteApplicationInputProcessingConfigurationRequestMarshaller();
+            var unmarshaller = DeleteApplicationInputProcessingConfigurationResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DeleteApplicationInputProcessingConfigurationRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteApplicationInputProcessingConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteApplicationInputProcessingConfiguration.</param>
+        /// 
+        /// <returns>Returns a  DeleteApplicationInputProcessingConfigurationResult from KinesisAnalytics.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/DeleteApplicationInputProcessingConfiguration">REST API Reference for DeleteApplicationInputProcessingConfiguration Operation</seealso>
+        public  DeleteApplicationInputProcessingConfigurationResponse EndDeleteApplicationInputProcessingConfiguration(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteApplicationInputProcessingConfigurationResponse>(asyncResult);
         }
 
         #endregion

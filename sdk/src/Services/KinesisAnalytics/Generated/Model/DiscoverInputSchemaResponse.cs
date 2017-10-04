@@ -34,6 +34,7 @@ namespace Amazon.KinesisAnalytics.Model
     {
         private SourceSchema _inputSchema;
         private List<List<string>> _parsedInputRecords = new List<List<string>>();
+        private List<string> _processedInputRecords = new List<string>();
         private List<string> _rawInputRecords = new List<string>();
 
         /// <summary>
@@ -73,6 +74,25 @@ namespace Amazon.KinesisAnalytics.Model
         internal bool IsSetParsedInputRecords()
         {
             return this._parsedInputRecords != null && this._parsedInputRecords.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ProcessedInputRecords. 
+        /// <para>
+        /// Stream data that was modified by the processor specified in the <code>InputProcessingConfiguration</code>
+        /// parameter.
+        /// </para>
+        /// </summary>
+        public List<string> ProcessedInputRecords
+        {
+            get { return this._processedInputRecords; }
+            set { this._processedInputRecords = value; }
+        }
+
+        // Check to see if ProcessedInputRecords property is set
+        internal bool IsSetProcessedInputRecords()
+        {
+            return this._processedInputRecords != null && this._processedInputRecords.Count > 0; 
         }
 
         /// <summary>

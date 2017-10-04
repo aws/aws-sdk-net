@@ -28,40 +28,19 @@ using Amazon.Runtime.Internal;
 namespace Amazon.KinesisAnalytics.Model
 {
     /// <summary>
-    /// Container for the parameters to the AddApplicationInput operation.
-    /// Adds a streaming source to your Amazon Kinesis application. For conceptual information,
-    /// see <a href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-input.html">Configuring
-    /// Application Input</a>. 
-    /// 
-    ///  
-    /// <para>
-    /// You can add a streaming source either when you create an application or you can use
-    /// this operation to add a streaming source after you create an application. For more
-    /// information, see <a>CreateApplication</a>.
-    /// </para>
-    ///  
-    /// <para>
-    /// Any configuration update, including adding a streaming source using this operation,
-    /// results in a new version of the application. You can use the <a>DescribeApplication</a>
-    /// operation to find the current application version. 
-    /// </para>
-    ///  
-    /// <para>
-    /// This operation requires permissions to perform the <code>kinesisanalytics:AddApplicationInput</code>
-    /// action.
-    /// </para>
+    /// Container for the parameters to the DeleteApplicationInputProcessingConfiguration operation.
+    /// Deletes an <a>InputProcessingConfiguration</a> from an input.
     /// </summary>
-    public partial class AddApplicationInputRequest : AmazonKinesisAnalyticsRequest
+    public partial class DeleteApplicationInputProcessingConfigurationRequest : AmazonKinesisAnalyticsRequest
     {
         private string _applicationName;
         private long? _currentApplicationVersionId;
-        private Input _input;
+        private string _inputId;
 
         /// <summary>
         /// Gets and sets the property ApplicationName. 
         /// <para>
-        /// Name of your existing Amazon Kinesis Analytics application to which you want to add
-        /// the streaming source.
+        /// The Kinesis Analytics application name.
         /// </para>
         /// </summary>
         public string ApplicationName
@@ -79,8 +58,7 @@ namespace Amazon.KinesisAnalytics.Model
         /// <summary>
         /// Gets and sets the property CurrentApplicationVersionId. 
         /// <para>
-        /// Current version of your Amazon Kinesis Analytics application. You can use the <a>DescribeApplication</a>
-        /// operation to find the current application version.
+        /// The version ID of the Kinesis Analytics application.
         /// </para>
         /// </summary>
         public long CurrentApplicationVersionId
@@ -96,21 +74,23 @@ namespace Amazon.KinesisAnalytics.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Input. 
+        /// Gets and sets the property InputId. 
         /// <para>
-        /// The <a>Input</a> to add.
+        /// The ID of the input configuration from which to delete the input configuration. You
+        /// can get a list of the input IDs for an application using the <a>DescribeApplication</a>
+        /// operation.
         /// </para>
         /// </summary>
-        public Input Input
+        public string InputId
         {
-            get { return this._input; }
-            set { this._input = value; }
+            get { return this._inputId; }
+            set { this._inputId = value; }
         }
 
-        // Check to see if Input property is set
-        internal bool IsSetInput()
+        // Check to see if InputId property is set
+        internal bool IsSetInputId()
         {
-            return this._input != null;
+            return this._inputId != null;
         }
 
     }

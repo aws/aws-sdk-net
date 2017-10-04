@@ -82,6 +82,12 @@ namespace Amazon.KinesisAnalytics.Model.Internal.MarshallTransformations
                     unmarshalledObject.InputParallelism = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("InputProcessingConfigurationDescription", targetDepth))
+                {
+                    var unmarshaller = InputProcessingConfigurationDescriptionUnmarshaller.Instance;
+                    unmarshalledObject.InputProcessingConfigurationDescription = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("InputSchema", targetDepth))
                 {
                     var unmarshaller = SourceSchemaUnmarshaller.Instance;
