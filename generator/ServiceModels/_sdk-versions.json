@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.3.166.0",
+    "ProductVersion" : "3.3.167.0",
     "CoreVersion"    : "3.3.17.10",
     "DefaultToPreview" : false,
     "ServiceVersions"  : {
@@ -305,7 +305,7 @@
             "InPreview"               : false
         },
         "Route53Domains"       : {
-            "Version" : "3.3.0.21",
+            "Version" : "3.3.1.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.17.0"
@@ -577,7 +577,7 @@
             "InPreview"               : false
         },
         "KinesisAnalytics"                : {
-            "Version" : "3.3.2.0",
+            "Version" : "3.3.3.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.17.0"

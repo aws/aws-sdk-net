@@ -1,3 +1,9 @@
+### 3.3.167.0 (2017-10-04 21:44 UTC)
+* KinesisAnalytics (3.3.3.0)
+	* Kinesis Analytics now supports schema discovery on objects in S3.  Additionally, Kinesis Analytics now supports input data preprocessing through Lambda.
+* Route53Domains (3.3.1.0)
+	* Added a new API that checks whether a domain name can be transferred to Amazon Route 53.
+
 ### 3.3.166.0 (2017-10-03 17:20 UTC)
 * EC2 (3.3.29.0)
 	* This release includes service updates to AWS VPN.
