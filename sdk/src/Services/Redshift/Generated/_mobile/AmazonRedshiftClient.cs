@@ -1622,15 +1622,32 @@ namespace Amazon.Redshift
 
 
         /// <summary>
-        /// Lists descriptions of all the Amazon Redshift event notifications subscription for
+        /// Lists descriptions of all the Amazon Redshift event notification subscriptions for
         /// a customer account. If you specify a subscription name, lists the description for
         /// that subscription.
+        /// 
+        ///  
+        /// <para>
+        /// If you specify both tag keys and tag values in the same request, Amazon Redshift returns
+        /// all event notification subscriptions that match any combination of the specified keys
+        /// and values. For example, if you have <code>owner</code> and <code>environment</code>
+        /// for tag keys, and <code>admin</code> and <code>test</code> for tag values, all subscriptions
+        /// that have any combination of those values are returned.
+        /// </para>
+        ///  
+        /// <para>
+        /// If both tag keys and values are omitted from the request, subscriptions are returned
+        /// regardless of whether they have tag keys or values associated with them.
+        /// </para>
         /// </summary>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// 
         /// <returns>The response from the DescribeEventSubscriptions service method, as returned by Redshift.</returns>
+        /// <exception cref="Amazon.Redshift.Model.InvalidTagException">
+        /// The tag is invalid.
+        /// </exception>
         /// <exception cref="Amazon.Redshift.Model.SubscriptionNotFoundException">
         /// An Amazon Redshift event notification subscription with the specified name does not
         /// exist.

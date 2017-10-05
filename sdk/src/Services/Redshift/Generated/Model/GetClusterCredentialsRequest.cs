@@ -30,21 +30,21 @@ namespace Amazon.Redshift.Model
     /// <summary>
     /// Container for the parameters to the GetClusterCredentials operation.
     /// Returns a database user name and temporary password with temporary authorization to
-    /// log in to an Amazon Redshift database. The action returns the database user name prefixed
+    /// log on to an Amazon Redshift database. The action returns the database user name prefixed
     /// with <code>IAM:</code> if <code>AutoCreate</code> is <code>False</code> or <code>IAMA:</code>
     /// if <code>AutoCreate</code> is <code>True</code>. You can optionally specify one or
-    /// more database user groups that the user will join at log in. By default, the temporary
+    /// more database user groups that the user will join at log on. By default, the temporary
     /// credentials expire in 900 seconds. You can optionally specify a duration between 900
-    /// seconds (15 minutes) and 3600 seconds (60 minutes). For more information, see Generating
-    /// IAM Database User Credentials in the Amazon Redshift Cluster Management Guide.
+    /// seconds (15 minutes) and 3600 seconds (60 minutes). For more information, see <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/generating-user-credentials.html">Using
+    /// IAM Authentication to Generate Database User Credentials</a> in the Amazon Redshift
+    /// Cluster Management Guide.
     /// 
     ///  
     /// <para>
-    /// The IAM user or role that executes GetClusterCredentials must have an IAM policy attached
-    /// that allows the <code>redshift:GetClusterCredentials</code> action with access to
-    /// the <code>dbuser</code> resource on the cluster. The user name specified for <code>dbuser</code>
-    /// in the IAM policy and the user name specified for the <code>DbUser</code> parameter
-    /// must match.
+    /// The AWS Identity and Access Management (IAM)user or role that executes GetClusterCredentials
+    /// must have an IAM policy attached that allows access to all necessary actions and resources.
+    /// For more information about permissions, see <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/redshift-iam-access-control-identity-based.html#redshift-policy-resources.getclustercredentials-resources">Resource
+    /// Policies for GetClusterCredentials</a> in the Amazon Redshift Cluster Management Guide.
     /// </para>
     ///  
     /// <para>
@@ -75,8 +75,8 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property AutoCreate. 
         /// <para>
-        /// Create a database user with the name specified for <code>DbUser</code> if one does
-        /// not exist.
+        /// Create a database user with the name specified for the user named in <code>DbUser</code>
+        /// if one does not exist.
         /// </para>
         /// </summary>
         public bool AutoCreate
@@ -113,9 +113,37 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property DbGroups. 
         /// <para>
-        /// A list of the names of existing database groups that <code>DbUser</code> will join
-        /// for the current session. If not specified, the new user is added only to PUBLIC.
+        /// A list of the names of existing database groups that the user named in <code>DbUser</code>
+        /// will join for the current session, in addition to any group memberships for an existing
+        /// user. If not specified, a new user is added only to PUBLIC.
         /// </para>
+        ///  
+        /// <para>
+        /// Database group name constraints
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Must be 1 to 64 alphanumeric characters or hyphens
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Must contain only lowercase letters, numbers, underscore, plus sign, period (dot),
+        /// at symbol (@), or hyphen.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// First character must be a letter.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Must not contain a colon ( : ) or slash ( / ). 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Cannot be a reserved word. A list of reserved words can be found in <a href="http://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html">Reserved
+        /// Words</a> in the Amazon Redshift Database Developer Guide.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public List<string> DbGroups
         {
@@ -133,7 +161,7 @@ namespace Amazon.Redshift.Model
         /// Gets and sets the property DbName. 
         /// <para>
         /// The name of a database that <code>DbUser</code> is authorized to log on to. If <code>DbName</code>
-        /// is not specified, <code>DbUser</code> can log in to any existing database.
+        /// is not specified, <code>DbUser</code> can log on to any existing database.
         /// </para>
         ///  
         /// <para>
@@ -145,7 +173,16 @@ namespace Amazon.Redshift.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Must contain only lowercase letters.
+        /// Must contain only lowercase letters, numbers, underscore, plus sign, period (dot),
+        /// at symbol (@), or hyphen.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// First character must be a letter.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Must not contain a colon ( : ) or slash ( / ). 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -180,7 +217,7 @@ namespace Amazon.Redshift.Model
         /// </para>
         ///  
         /// <para>
-        /// For more information, see <a href="http://docs.aws.amazon.com/http:/docs.aws.amazon.com/redshift/latest/dg/r_CREATE_USER.html">CREATE
+        /// For more information, see <a href="http://docs.aws.amazon.com/redshift/latest/dg/r_CREATE_USER.html">CREATE
         /// USER</a> in the Amazon Redshift Database Developer Guide. 
         /// </para>
         ///  
@@ -189,11 +226,12 @@ namespace Amazon.Redshift.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Must be 1 to 128 alphanumeric characters or hyphens
+        /// Must be 1 to 64 alphanumeric characters or hyphens
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Must contain only lowercase letters.
+        /// Must contain only lowercase letters, numbers, underscore, plus sign, period (dot),
+        /// at symbol (@), or hyphen.
         /// </para>
         ///  </li> <li> 
         /// <para>

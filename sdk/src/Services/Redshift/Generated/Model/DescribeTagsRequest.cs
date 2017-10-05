@@ -184,9 +184,9 @@ namespace Amazon.Redshift.Model
         ///  </li> </ul> 
         /// <para>
         /// For more information about Amazon Redshift resource types and constructing ARNs, go
-        /// to <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/constructing-redshift-arn.html">Constructing
-        /// an Amazon Redshift Amazon Resource Name (ARN)</a> in the Amazon Redshift Cluster Management
-        /// Guide. 
+        /// to <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/redshift-iam-access-control-overview.html#redshift-iam-access-control-specify-actions">Specifying
+        /// Policy Elements: Actions, Effects, Resources, and Principals</a> in the Amazon Redshift
+        /// Cluster Management Guide. 
         /// </para>
         /// </summary>
         public string ResourceType

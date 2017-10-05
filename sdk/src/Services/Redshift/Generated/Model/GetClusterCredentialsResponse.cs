@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Redshift.Model
 {
     /// <summary>
-    /// Temporary credentials with authorization to log in to an Amazon Redshift database.
+    /// Temporary credentials with authorization to log on to an Amazon Redshift database.
     /// </summary>
     public partial class GetClusterCredentialsResponse : AmazonWebServiceResponse
     {
@@ -59,10 +59,11 @@ namespace Amazon.Redshift.Model
         /// Gets and sets the property DbUser. 
         /// <para>
         /// A database user name that is authorized to log on to the database <code>DbName</code>
-        /// using the password <code>DbPassword</code>. If the <code>DbGroups</code> parameter
-        /// is specifed, <code>DbUser</code> is added to the listed groups for the current session.
-        /// The user name is prefixed with <code>IAM:</code> for an existing user name or <code>IAMA:</code>
-        /// if the user was auto-created. 
+        /// using the password <code>DbPassword</code>. If the specified DbUser exists in the
+        /// database, the new user name has the same database privileges as the the user named
+        /// in DbUser. By default, the user is added to PUBLIC. If the <code>DbGroups</code> parameter
+        /// is specifed, <code>DbUser</code> is added to the listed groups for any sessions created
+        /// using these credentials.
         /// </para>
         /// </summary>
         public string DbUser
@@ -80,7 +81,7 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property Expiration. 
         /// <para>
-        /// The date and time <code>DbPassword</code> expires.
+        /// The date and time the password in <code>DbPassword</code> expires.
         /// </para>
         /// </summary>
         public DateTime Expiration
