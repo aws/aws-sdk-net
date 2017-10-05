@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.3.167.0",
+    "ProductVersion" : "3.3.168.0",
     "CoreVersion"    : "3.3.17.10",
     "DefaultToPreview" : false,
     "ServiceVersions"  : {
@@ -289,7 +289,7 @@
             "InPreview"               : false
         },
         "Redshift"             : {
-            "Version" : "3.3.2.9",
+            "Version" : "3.3.3.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.17.0"

@@ -1,3 +1,7 @@
+### 3.3.168.0 (2017-10-05 19:28 UTC)
+* Redshift (3.3.3.0)
+	* DescribeEventSubscriptions API supports tag keys and tag values as request parameters. 
+
 ### 3.3.167.0 (2017-10-04 21:44 UTC)
 * KinesisAnalytics (3.3.3.0)
 	* Kinesis Analytics now supports schema discovery on objects in S3.  Additionally, Kinesis Analytics now supports input data preprocessing through Lambda.
