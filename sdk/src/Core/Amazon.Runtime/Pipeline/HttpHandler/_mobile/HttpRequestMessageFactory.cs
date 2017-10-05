@@ -242,10 +242,7 @@ namespace Amazon.Runtime
     /// </summary>
     public class HttpClientCache
     {
-        readonly object _lockObject = new object();
-
-        HttpClient _singleClient;
-        Queue<HttpClient> _cache;
+        HttpClient[] _clients;
 
         /// <summary>
         /// Constructs a container for a cache of HttpClient objects
@@ -253,39 +250,26 @@ namespace Amazon.Runtime
         /// <param name="clients">The HttpClient to cache</param>
         public HttpClientCache(HttpClient[] clients)
         {
-            if (clients.Length == 1)
-            {
-                _singleClient = clients[0];
-            }
-            else
-            {
-                _cache = new Queue<HttpClient>();
-                foreach (var client in clients)
-                {
-                    _cache.Enqueue(client);
-                }
-            }
+            _clients = clients;
         }
 
+        private int count = 0;
         /// <summary>
         /// Returns the next HttpClient using a round robin rotation. It is expected that individual clients will be used
-        /// by more then Thread.
+        /// by more then one Thread.
         /// </summary>
         /// <returns></returns>
         public HttpClient GetNextClient()
         {
-            if (_singleClient != null)
+            if (_clients.Length == 1)
             {
-                return _singleClient;
+                return _clients[0];
             }
             else
             {
-                lock (_lockObject)
-                {
-                    var client = _cache.Dequeue();
-                    _cache.Enqueue(client);
-                    return client;
-                }
+                int next = Interlocked.Increment(ref count);
+                int nextIndex = Math.Abs(next % _clients.Length);
+                return _clients[nextIndex];
             }
         }
     }
