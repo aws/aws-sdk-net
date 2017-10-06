@@ -1,3 +1,7 @@
+### 3.3.168.1 (2017-10-06 22:28 UTC)
+* SQS (3.3.2.8)
+	* Documentation updates regarding availability of FIFO queues and miscellaneous corrections.
+
 ### 3.3.168.0 (2017-10-05 19:28 UTC)
 * Redshift (3.3.3.0)
 	* DescribeEventSubscriptions API supports tag keys and tag values as request parameters. 
