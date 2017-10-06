@@ -30,12 +30,12 @@ namespace Amazon.SQS.Model
     /// <summary>
     /// Container for the parameters to the ListDeadLetterSourceQueues operation.
     /// Returns a list of your queues that have the <code>RedrivePolicy</code> queue attribute
-    /// configured with a dead letter queue.
+    /// configured with a dead-letter queue.
     /// 
     ///  
     /// <para>
-    /// For more information about using dead letter queues, see <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html">Using
-    /// Amazon SQS Dead Letter Queues</a> in the <i>Amazon SQS Developer Guide</i>.
+    /// For more information about using dead-letter queues, see <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html">Using
+    /// Amazon SQS Dead-Letter Queues</a> in the <i>Amazon SQS Developer Guide</i>.
     /// </para>
     /// </summary>
     public partial class ListDeadLetterSourceQueuesRequest : AmazonSQSRequest
@@ -45,7 +45,7 @@ namespace Amazon.SQS.Model
         /// <summary>
         /// Gets and sets the property QueueUrl. 
         /// <para>
-        /// The URL of a dead letter queue.
+        /// The URL of a dead-letter queue.
         /// </para>
         ///  
         /// <para>

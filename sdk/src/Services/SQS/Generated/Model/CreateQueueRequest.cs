@@ -156,15 +156,26 @@ namespace Amazon.SQS.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>RedrivePolicy</code> - The parameters for the dead letter queue functionality
-        /// of the source queue. For more information about the redrive policy and dead letter
-        /// queues, see <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html">Using
-        /// Amazon SQS Dead Letter Queues</a> in the <i>Amazon SQS Developer Guide</i>. 
+        ///  <code>RedrivePolicy</code> - The string that includes the parameters for the dead-letter
+        /// queue functionality of the source queue. For more information about the redrive policy
+        /// and dead-letter queues, see <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html">Using
+        /// Amazon SQS Dead-Letter Queues</a> in the <i>Amazon SQS Developer Guide</i>. 
         /// </para>
-        ///  <note> 
+        ///  <ul> <li> 
         /// <para>
-        /// The dead letter queue of a FIFO queue must also be a FIFO queue. Similarly, the dead
-        /// letter queue of a standard queue must also be a standard queue.
+        ///  <code>deadLetterTargetArn</code> - The Amazon Resource Name (ARN) of the dead-letter
+        /// queue to which Amazon SQS moves messages after the value of <code>maxReceiveCount</code>
+        /// is exceeded.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>maxReceiveCount</code> - The number of times a message is delivered to the
+        /// source queue before being moved to the dead-letter queue.
+        /// </para>
+        ///  </li> </ul> <note> 
+        /// <para>
+        /// The dead-letter queue of a FIFO queue must also be a FIFO queue. Similarly, the dead-letter
+        /// queue of a standard queue must also be a standard queue.
         /// </para>
         ///  </note> </li> <li> 
         /// <para>
@@ -182,8 +193,8 @@ namespace Amazon.SQS.Model
         ///  <code>KmsMasterKeyId</code> - The ID of an AWS-managed customer master key (CMK)
         /// for Amazon SQS or a custom CMK. For more information, see <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html#sqs-sse-key-terms">Key
         /// Terms</a>. While the alias of the AWS-managed CMK for Amazon SQS is always <code>alias/aws/sqs</code>,
-        /// the alias of a custom CMK can, for example, be <code>alias/aws/sqs</code>. For more
-        /// examples, see <a href="http://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters">KeyId</a>
+        /// the alias of a custom CMK can, for example, be <code>alias/<i>MyAlias</i> </code>.
+        /// For more examples, see <a href="http://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters">KeyId</a>
         /// in the <i>AWS Key Management Service API Reference</i>. 
         /// </para>
         ///  </li> <li> 
@@ -193,8 +204,8 @@ namespace Amazon.SQS.Model
         /// key</a> to encrypt or decrypt messages before calling AWS KMS again. An integer representing
         /// seconds, between 60 seconds (1 minute) and 86,400 seconds (24 hours). The default
         /// is 300 (5 minutes). A shorter time period provides better security but results in
-        /// more calls to KMS which incur charges after Free Tier. For more information, see <a
-        /// href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html#sqs-how-does-the-data-key-reuse-period-work">How
+        /// more calls to KMS which might incur charges after Free Tier. For more information,
+        /// see <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html#sqs-how-does-the-data-key-reuse-period-work">How
         /// Does the Data Key Reuse Period Work?</a>. 
         /// </para>
         ///  </li> </ul> 

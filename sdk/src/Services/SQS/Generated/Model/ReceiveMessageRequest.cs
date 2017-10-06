@@ -89,7 +89,7 @@ namespace Amazon.SQS.Model
     /// <para>
     /// A message that isn't deleted or a message whose visibility isn't extended before the
     /// visibility timeout expires counts as a failed receive. Depending on the configuration
-    /// of the queue, the message might be sent to the dead letter queue.
+    /// of the queue, the message might be sent to the dead-letter queue.
     /// </para>
     ///  <note> 
     /// <para>
@@ -458,6 +458,8 @@ namespace Amazon.SQS.Model
         /// <para>
         /// The duration (in seconds) for which the call waits for a message to arrive in the
         /// queue before returning. If a message is available, the call returns sooner than <code>WaitTimeSeconds</code>.
+        /// If no messages are available and the wait time expires, the call returns successfully
+        /// with an empty list of messages.
         /// </para>
         /// </summary>
         public int WaitTimeSeconds

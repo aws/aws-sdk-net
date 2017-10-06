@@ -29,8 +29,8 @@ namespace Amazon.SQS.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteQueue operation.
-    /// Deletes the queue specified by the <code>QueueUrl</code>, even if the queue is empty.
-    /// If the specified queue doesn't exist, Amazon SQS returns a successful response.
+    /// Deletes the queue specified by the <code>QueueUrl</code>, regardless of the queue's
+    /// contents. If the specified queue doesn't exist, Amazon SQS returns a successful response.
     /// 
     ///  <important> 
     /// <para>

@@ -38,7 +38,7 @@ namespace Amazon.SQS.Model
         /// Gets and sets the property QueueUrls. 
         /// <para>
         /// A list of source queue URLs that have the <code>RedrivePolicy</code> queue attribute
-        /// configured with a dead letter queue.
+        /// configured with a dead-letter queue.
         /// </para>
         /// </summary>
         public List<string> QueueUrls
